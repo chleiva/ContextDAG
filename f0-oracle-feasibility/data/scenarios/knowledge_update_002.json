@@ -1,0 +1,103 @@
+{
+  "scenario_id": "knowledge_update_002",
+  "family": "knowledge_update",
+  "label": "UPDATE",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "Hey, I'm sourcing Gateron Yellow switches for my next keyboard run. I've got a quote from my supplier for $0.28 per switch, and I'm planning to order 5,000 units. Can you help me figure out the total cost?",
+      "assistant_message": "Sure! At $0.28 per switch and 5,000 units, your total cost would come out to $1,400.00. That's a reasonable price point for Gateron Yellows in that quantity, though it's worth checking if your supplier offers a volume discount at higher tiers.",
+      "gold_parents": [],
+      "stale": true,
+      "superseded_by": "t5"
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Good to know. I'm planning to sell kits of 70 switches each, and I want to figure out how many complete kits I can build from that order.",
+      "assistant_message": "With 5,000 switches and 70 per kit, you can build exactly 71 complete kits, with 30 switches left over. That leftover stock is worth keeping as spares for warranty replacements or for topping off a future partial order.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "What PCB thickness should I spec for a standard tray-mount 65% keyboard? I've seen both 1.2mm and 1.6mm mentioned.",
+      "assistant_message": "For a tray-mount 65% design, 1.6mm is the more common and recommended spec. It provides better rigidity and is the thickness most switch footprints and stabilizer cutouts are designed around, whereas 1.2mm PCBs are typically reserved for flex-cut or gasket-mount builds where deliberate flex is part of the design intent.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "My manufacturer also asked whether I want ENIG or HASL surface finish on the PCB. Does it matter much for a keyboard?",
+      "assistant_message": "ENIG (Electroless Nickel Immersion Gold) gives you a flatter, more corrosion-resistant surface and is generally preferred for fine-pitch components and a more premium feel. HASL (Hot Air Solder Leveling) is cheaper and perfectly functional for a keyboard's through-hole and standard SMD components, so if cost is a concern it's a reasonable choice without meaningful performance trade-offs.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "Actually, I need to correct myself on the switch price — I misread the quote. It's $0.35 per switch, not $0.28. The quantity is still 5,000.",
+      "assistant_message": "Thanks for the correction — noted that the price is $0.35 per switch, not $0.28. That changes the numbers, so we should use $0.35 going forward for any cost calculations.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What's the total I'd be spending on switches for the full order?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t5"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer uses the corrected price of $0.35 per switch (stated in t5) as the basis for the calculation.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer uses the quantity of 5,000 switches (confirmed in t5) in the calculation.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer arrives at a total of $1,750.00 (5,000 × $0.35).",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not state a total of $1,400.00, which is the result of using the stale price of $0.28 per switch from t1.",
+      "required": true
+    }
+  ],
+  "notes": "t5 holds the corrected value ($0.35) that the query depends on; t1 holds the trap value ($0.28) that would produce the wrong total of $1,400. t3 and t4 are genuine distractors about PCB spec choices entirely unrelated to switch cost.\n\nReference answer: With the corrected price of $0.35 per switch and an order of 5,000 units, your total spend on switches comes to $1,750.00. That's $350 more than the initial estimate based on the misread quote, so it's worth factoring that into your kit pricing to protect your margins.",
+  "evidence_note": null,
+  "premise": "an indie hardware maker sourcing parts for a mechanical keyboard"
+}

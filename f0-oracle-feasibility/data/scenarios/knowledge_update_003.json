@@ -1,0 +1,103 @@
+{
+  "scenario_id": "knowledge_update_003",
+  "family": "knowledge_update",
+  "label": "UPDATE",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "Hey, so for our short film shoot next month I've confirmed we can rent the RED Komodo camera package from Lens & Light Rentals for $180 per day.",
+      "assistant_message": "That's a solid choice for a low-budget short — the RED Komodo is a great camera for the price point. At $180 per day, if you're shooting a standard three-day schedule that would come to $540 total for the camera package, which seems very manageable.",
+      "gold_parents": [],
+      "stale": true,
+      "superseded_by": "t5"
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Exactly, and we have a four-day shoot scheduled, so I was budgeting $720 for the camera rental.",
+      "assistant_message": "Right, four days at $180 per day lands you at $720 for the camera package — that tracks perfectly. Make sure to factor in any insurance or damage deposit Lens & Light might require on top of that daily rate, as rental houses often ask for a deposit equal to one or two days' rental.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "Also, I need to figure out catering. Our shoot location is at the Millbrook Community Center, and their kitchen use policy requires us to hire a licensed catering company rather than doing craft services ourselves.",
+      "assistant_message": "That's an important policy to note — it means you can't just bring in a cooler of snacks and call it done. You'll want to get quotes from licensed caterers early, since availability on short notice can be limited, and their pricing often depends on crew headcount and meal type.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "We have a crew of 12 people plus 4 cast members, so 16 total for meals. I found a caterer called Fresh Set who charges $22 per person per meal.",
+      "assistant_message": "With 16 people at $22 per person per meal, each meal service would run you $352. If you're doing two meals per day — say lunch and dinner — that's $704 per shoot day just for catering, so over four days that could add up to $2,816, which is worth building into your budget carefully.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "Wait, I need to correct myself on the camera rental — I just re-read the quote from Lens & Light and it's actually $210 per day, not $180. I must have misread it the first time.",
+      "assistant_message": "Thanks for catching that — $210 per day is what we should be working with, not $180. That's a meaningful difference, so it's good you double-checked before locking in the budget.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "Right, so what's the total camera rental cost for the full four-day shoot at the corrected rate?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t5"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer uses the corrected daily rate of $210 per day (established in t5) to calculate the total.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer uses four days as the shoot duration (established in t2) in the calculation.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer arrives at a total of $840 (4 days × $210).",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not use $180 per day (the original incorrect rate from t1) as the basis for the total.",
+      "required": true
+    }
+  ],
+  "notes": "t5 holds the critical correction (VALUE_2 = $210/day superseding VALUE_1 = $180/day from t1); t3 and t4 are the distractor turns about catering at the Millbrook Community Center, which are entirely irrelevant to the camera rental cost query.\n\nReference answer: At the corrected rate of $210 per day, the camera rental for a four-day shoot comes to $840 in total. That's $60 more than the earlier estimate of $720, so the budget line for the camera package needs to be updated accordingly.",
+  "evidence_note": null,
+  "premise": "a film crew scheduling a low-budget short shoot"
+}

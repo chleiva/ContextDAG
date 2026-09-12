@@ -1,0 +1,150 @@
+{
+  "scenario_id": "two_branch_join_003",
+  "family": "two_branch_join",
+  "label": "JOIN",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We've decided we're moving from Austin, Texas to Portland, Oregon in early June. I've been getting quotes from moving companies and I think we're going with Bekins Van Lines. They gave us a binding estimate of $8,400 for a full-service pack-and-move.",
+      "assistant_message": "That sounds like a solid choice — Bekins is one of the larger, more established interstate movers, so a binding estimate of $8,400 gives you real cost certainty. Just make sure you have a copy of the binding estimate in writing before moving day so there are no surprises at delivery.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "I also need to figure out the road trip logistics since my husband is driving the moving truck and I'll be driving our SUV with the kids. We have a 7-year-old and a 4-year-old.",
+      "assistant_message": "With a 7-year-old and a 4-year-old, you'll want to plan for frequent breaks — young kids generally do best with a stop every 2 hours or so. Mapping out the route in advance with specific rest stops and kid-friendly spots can make the trip much more manageable.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "The drive from Austin to Portland is about 1,900 miles. We're planning to split it over three days, so roughly 633 miles per day. Does that sound reasonable with young kids?",
+      "assistant_message": "633 miles per day is on the ambitious side with a 4-year-old and a 7-year-old — you'll likely average 50–55 mph including stops, which puts each driving day at around 11–12 hours of total travel time. Many families with young children aim for 500 miles or fewer per day to keep everyone sane; you might consider stretching it to four days if your schedule allows.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "I'm also stressing about the kids' school enrollment in Portland. My 7-year-old will need to start second grade in the fall.",
+      "assistant_message": "Portland Public Schools typically opens online enrollment for incoming students in late February through March for the following fall, so depending on your move date you may need to enroll shortly after arriving. You'll generally need proof of residency, immunization records, and a birth certificate to complete registration.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "The school we're zoned for is Glencoe Elementary in the Beaverton School District actually, not Portland Public. Do they have a different enrollment timeline?",
+      "assistant_message": "Beaverton School District typically runs its open enrollment window from early January through mid-February for the following school year, though new students moving into the district can register on a rolling basis outside that window. Glencoe Elementary specifically has a strong dual-language immersion program, so it's worth asking about waitlist status for that track when you register.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "One thing I realized is that we also have our dog, a 60-pound Labrador named Biscuit. Bekins told me they don't transport pets, so Biscuit will ride in the SUV with me and the kids.",
+      "assistant_message": "That's standard — virtually no moving company will transport live animals, so Biscuit riding with you is the right call. With a 60-pound Lab plus two young children in the SUV, you'll want to make sure you have a secured crate or a dog seatbelt harness rated for his weight, both for safety and to keep the trip manageable over multiple days.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "We've been looking at hotels along the route and most of them charge a pet fee. We found that La Quinta generally allows pets for free, but a lot of the specific locations along our route charge $25 per night per pet.",
+      "assistant_message": "La Quinta's corporate policy is pet-friendly at no charge, but individual franchise locations do sometimes add their own fees, so that $25-per-night figure at specific stops is unfortunately not unusual. It's worth calling ahead to confirm each location's policy rather than relying solely on what's listed online, since fees can also vary by pet size.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "We've confirmed two overnight stops — one in Albuquerque, New Mexico and one in Salt Lake City, Utah. Both hotels are pet-friendly and will each charge that $25 pet fee. So that's two nights with the pet fee.",
+      "assistant_message": "With two confirmed overnight stops in Albuquerque and Salt Lake City, each carrying a $25 pet fee, you're looking at $50 total in pet surcharges for the road trip portion. That's a pretty manageable addition to your overall trip budget, especially compared to last-minute scrambling to find pet-friendly lodging.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "I want to make sure my older one doesn't fall behind academically over the summer with the move disruption. Are there any good summer bridge programs?",
+      "assistant_message": "Many districts, including Beaverton, offer summer learning programs specifically for incoming students, and there are also independent options like Kumon or Khan Academy's free online curriculum for self-paced review. For a rising second-grader, focusing on reading fluency and basic addition and subtraction facts over the summer would give a solid academic foundation heading into the new school year.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "Can you give me a total estimated cost just for the move itself plus the road trip pet expenses, so I have a single number to plug into our budget spreadsheet?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t6",
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t6",
+    "t7",
+    "t8"
+  ],
+  "distractor_turn_ids": [
+    "t4",
+    "t5",
+    "t9"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer includes $8,400 as the binding estimate from Bekins Van Lines for the move.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer includes $50 as the total pet fees (two overnight stops at $25 each, in Albuquerque and Salt Lake City).",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer states the combined total is $8,450 ($8,400 + $50).",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not include any costs related to school enrollment fees, summer programs, or Beaverton School District registration as part of this budget figure.",
+      "required": true
+    }
+  ],
+  "notes": "t6 establishes that Biscuit (60 lbs) will ride in the SUV and t1 establishes the $8,400 Bekins binding estimate — both needed for the query. t8 establishes the two confirmed overnight stops with $25 pet fees each ($50 total), built on t7 and t3. The distractor branch (t4, t5, t9) covers school enrollment details for Glencoe Elementary/Beaverton School District, which are plausible move concerns but irrelevant to the cost-total query.\n\nReference answer: Your move cost from the Bekins Van Lines binding estimate is $8,400. For the road trip, you have two confirmed overnight stops — Albuquerque and Salt Lake City — each with a $25 pet fee for Biscuit, totaling $50 in pet surcharges. Adding those together gives you a combined figure of $8,450 to plug into your budget spreadsheet for the move itself plus road-trip pet expenses.",
+  "evidence_note": null,
+  "premise": "planning a cross-country house move with two kids and a dog"
+}

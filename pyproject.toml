@@ -1,0 +1,16 @@
+[project]
+name = "contextdag"
+version = "0.0.1"
+description = "F0 oracle feasibility study for dependency-graph conversation context"
+requires-python = ">=3.11"
+license = { text = "Apache-2.0" }
+dependencies = [
+  "anthropic[bedrock]>=1.5",
+  "sentence-transformers",
+  "tiktoken",
+  "numpy",
+  "pandas",
+  "matplotlib",
+  "pyyaml",
+  "pydantic>=2",
+]

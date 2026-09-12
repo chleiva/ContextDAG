@@ -1,0 +1,105 @@
+{
+  "scenario_id": "compound_turn_001",
+  "family": "compound_turn",
+  "label": "COMPOUND",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're switching from Dentrix G7 to Carestream Dental's Sensei Cloud starting March 1st. I'm trying to figure out how long the data migration is going to take for about 4,200 patient records.",
+      "assistant_message": "For a practice with around 4,200 patient records migrating from Dentrix G7 to Sensei Cloud, you should budget roughly 5 to 10 business days for the full data migration process, depending on how complete and clean your existing records are. Carestream's implementation team typically handles the extraction and mapping of patient demographics, appointment history, and treatment notes, but they'll need a full backup of your Dentrix G7 database before they can begin. I'd recommend scheduling a kickoff call with their migration specialists at least four weeks before your March 1st go-live date.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "That timeline is tighter than I expected. Will the Dentrix G7 perio charting data transfer over cleanly, or is that usually a problem area?",
+      "assistant_message": "Perio charting is one of the more common pain points in Dentrix-to-Sensei migrations because Dentrix stores perio data in a proprietary format that doesn't map one-to-one with Sensei Cloud's data schema. In practice, pocket depth measurements and bleeding point records often come across correctly, but mobility scores and furcation grades sometimes require manual verification after the migration. Carestream recommends spot-checking at least 50 random patient perio charts post-migration before your go-live date to catch any systematic mapping errors.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "Got it, we'll plan for that audit. Also, our front desk staff has never used cloud-based software before — what's the average learning curve for Sensei Cloud for someone with no prior cloud experience, and does Carestream offer any live training?",
+      "assistant_message": "On the perio audit, keep a printed export of your top 20 most complex perio cases from Dentrix as a reference baseline so your hygienists can cross-check quickly on day one. For Sensei Cloud training, Carestream offers a structured onboarding program called Sensei Launch, which includes four live virtual instructor-led sessions of 90 minutes each, typically spread over two weeks. Independent studies and Carestream's own published onboarding data indicate that front desk staff with no prior cloud software experience reach basic scheduling proficiency — meaning they can book, reschedule, and check out patients without assistance — in an average of 8 to 12 business days. Carestream also provides on-demand video modules through their customer portal at learn.carestreamdental.com, and practices get 90 days of post-go-live support from a dedicated Customer Success Manager included in the standard contract.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "Good to know on the audit approach. One more migration concern — what happens to our existing insurance fee schedules in Dentrix? Do those transfer automatically?",
+      "assistant_message": "Insurance fee schedules are another area that rarely transfers automatically between these two systems. Dentrix stores fee schedules as flat files tied to insurance plan records, while Sensei Cloud uses a relational structure that links fees directly to CDT procedure codes at the plan level. In most migrations, Carestream's team can import the raw fee data, but you'll need to manually verify and re-link each fee schedule to the correct insurance plans inside Sensei Cloud before you start submitting claims.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "That's frustrating. How many insurance plans are typically involved in a practice our size, and is there a faster way to handle the relinking?",
+      "assistant_message": "A general dentistry practice with around 4,200 active patients typically carries between 30 and 60 distinct insurance plans, though high-volume PPO practices sometimes exceed 80. Carestream offers a fee schedule import template — a standardized CSV file — that lets you bulk-upload pre-mapped fee schedules rather than entering them one by one, which can cut the relinking time from several days down to a few hours. Your Dentrix G7 system can export a fee schedule report under Reports > Practice Management > Fee Schedule that gives you the raw data you need to populate that CSV.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "Can you remind me what the training program is called and exactly how many live sessions it includes, and how long do we get post-launch support from Carestream?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t3"
+  ],
+  "distractor_turn_ids": [
+    "t1",
+    "t2",
+    "t4",
+    "t5"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer names the training program as 'Sensei Launch'.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states the program includes exactly four live virtual instructor-led sessions, each 90 minutes long.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer states that post-go-live support from a dedicated Customer Success Manager lasts 90 days and is included in the standard contract.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not reference the number of insurance plans (30–60 or 80) or details about fee schedule CSV imports, which come from the distractor turns.",
+      "required": true
+    }
+  ],
+  "notes": "The facts the query needs — the 'Sensei Launch' name, four 90-minute sessions, and 90-day Customer Success Manager support — all appear in the assistant's response to the compound turn t3 (the B portion). Turns t4 and t5 about insurance fee schedules and plan counts are the traps; those details must not bleed into the answer.\n\nReference answer: The training program is called Sensei Launch and it includes four live virtual instructor-led sessions, each 90 minutes long, typically delivered over two weeks. After your go-live date, Carestream provides 90 days of post-launch support from a dedicated Customer Success Manager, and this is included in the standard contract.",
+  "evidence_note": "Query depends only on the B half of the compound turn t3. Its ancestor closure {t3,t2,t1} includes A turns that are conversationally upstream of t3 but not needed for the B question; evidence is deliberately just {t3}. This is the granularity cost the family is designed to expose.",
+  "premise": "a dentist's office replacing its appointment software"
+}

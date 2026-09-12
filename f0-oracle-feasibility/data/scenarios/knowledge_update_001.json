@@ -1,0 +1,115 @@
+{
+  "scenario_id": "knowledge_update_001",
+  "family": "knowledge_update",
+  "label": "UPDATE",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're planning our wedding reception on Lake Meridian and we got a quote from Lakeside Catering — they charge $85 per person for their full reception package. We're expecting 120 guests, so I want to make sure we budget this correctly.",
+      "assistant_message": "At $85 per person for 120 guests, your catering total would come to $10,200. That's a solid baseline for your budget — keep in mind that most caterers also add a service charge and tax on top of that per-person rate, so your final invoice could run 20–25% higher than the base figure.",
+      "gold_parents": [],
+      "stale": true,
+      "superseded_by": "t6"
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Right, they mentioned an 18% service charge on top of the per-person rate. So what would the total catering cost be including that charge?",
+      "assistant_message": "With an 18% service charge applied to the $10,200 base, the service charge comes to $1,836, bringing the pre-tax total to $12,036. Once you factor in local sales tax — which varies by county — you should budget somewhere around $12,500–$13,000 to be safe.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "How early do we need to arrive at the venue to set up if the ceremony starts at 5:00 PM?",
+      "assistant_message": "For a 120-guest lakeside ceremony, most event coordinators recommend arriving at least 3 to 4 hours before the start time, so around 1:00–2:00 PM. This gives your florist, sound technician, and any rental companies enough time to deliver and arrange everything without feeling rushed.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "The venue has a noise ordinance — music has to stop by 10:00 PM. Does that give us enough time for a proper reception?",
+      "assistant_message": "A 5:00 PM ceremony with a 10:00 PM music cutoff gives you roughly five hours of celebration, which is actually a comfortable window. A typical timeline might be: ceremony from 5:00–5:30 PM, cocktail hour from 5:30–6:30 PM, dinner from 6:30–8:00 PM, and then dancing and toasts from 8:00–10:00 PM.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "The venue requires event liability insurance with a minimum of $1,000,000 in coverage. Is that standard for lakeside venues?",
+      "assistant_message": "Yes, a $1,000,000 general liability minimum is very standard — in fact, it's the baseline requirement at the majority of event venues across the country, particularly those near water. You can typically purchase a one-day event insurance policy for $75–$200 that meets that requirement, and some homeowner's or renter's insurance policies can be extended to cover it as well.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "I need to correct something — I looked at the actual quote again and the per-person rate from Lakeside Catering is $95, not $85. I misread the proposal the first time.",
+      "assistant_message": "Thanks for catching that — so the correct per-person rate is $95, not $85. That means the revised base catering cost for 120 guests is $11,400, and we should use that figure for all the calculations going forward.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "With the 18% service charge included, what is the total catering cost now?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t6"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4",
+    "t5"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer uses the corrected per-person rate of $95 (not $85) as the basis for calculation.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer correctly calculates the base cost as $95 × 120 = $11,400.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer correctly applies the 18% service charge to $11,400, yielding a service charge of $2,052 and a total of $13,452.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not use $85 per person or the outdated base total of $10,200 in its calculation.",
+      "required": true
+    }
+  ],
+  "notes": "t6 holds the correcting fact (VALUE_2 = $95 per person) that supersedes t1's VALUE_1 ($85 per person); t2 establishes the 18% service charge. The trap is using the $85 rate and arriving at $12,036 instead of the correct $13,452. Turns t3–t5 are genuine distractors about setup timing, noise ordinance, and insurance.\n\nReference answer: With the corrected per-person rate of $95 for 120 guests, the base catering cost is $11,400. Applying the 18% service charge adds $2,052, bringing the total pre-tax catering cost to $13,452. You should still budget a bit above that to account for local sales tax.",
+  "evidence_note": null,
+  "premise": "a couple planning a 120-guest wedding on a lake"
+}

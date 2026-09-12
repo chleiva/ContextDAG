@@ -1,0 +1,117 @@
+{
+  "scenario_id": "compound_turn_002",
+  "family": "compound_turn",
+  "label": "COMPOUND",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're rolling out a new shift-scheduling process on Ward 7B starting Monday the 14th. The charge nurse, Sandra Okafor, wants to use a 6-week rotating block pattern instead of the old 4-week fixed schedule. Can you help us think through the transition?",
+      "assistant_message": "A 6-week rotating block is a solid choice for a ward like 7B because it gives staff more predictable long stretches of days off while still covering the 24/7 roster. The key transition risk is the overlap period: staff currently mid-cycle on the 4-week fixed schedule will need a one-time bridge week to align with the new blocks, so Sandra should plan that bridge for the week before the 14th. I'd recommend circulating the new rotation matrix at least 10 days in advance so staff can arrange childcare or secondary commitments.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Sandra is worried about the night shift coverage specifically. Under the old 4-week plan, nights were staffed by a dedicated pool of 8 nurses, but the new 6-week block will integrate nights into the general rotation. How should she handle nurses who have a medical exemption from nights?",
+      "assistant_message": "Nurses with a documented medical exemption should be flagged in the scheduling system before the rotation matrix is finalized so the algorithm never assigns them a night slot. Sandra should collect updated exemption letters—most occupational health departments require these to be renewed annually—and submit them to HR at least 5 business days before the new schedule goes live on the 14th. For the integrated rotation, she can designate those nurses as 'day/evening only' in whatever scheduling software the ward uses, and the remaining night slots should be distributed proportionally across the non-exempt pool.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "Got it. Also, can you clarify the mandatory rest period rules under the UK Working Time Regulations 1998? I need to know the minimum hours between shifts and the maximum weekly hours for our nursing staff. And on the scheduling side, what's the best way to handle shift-swap requests once the new rotation is live?",
+      "assistant_message": "Under the UK Working Time Regulations 1998, workers are entitled to a minimum of 11 consecutive hours of rest in every 24-hour period, and an uninterrupted 24-hour rest period in every 7-day period (or 48 hours in every 14-day period). The maximum average working week is 48 hours, calculated over a 17-week reference period, although individual workers can sign a written opt-out agreement to exceed this. For shift-swap requests once the new rotation is live, the cleanest approach is a two-step approval: the swapping nurses agree between themselves first, then Sandra or a deputy charge nurse signs off within 48 hours to confirm the swap doesn't breach any rest-period rules or leave a specialty skill gap on either shift.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "For the shift-swap approval process, should Sandra keep a paper log or is there a digital system you'd recommend?",
+      "assistant_message": "A digital system is strongly preferable because it creates an automatic audit trail that paper logs can't easily provide. Many NHS trusts use systems like Allocate HealthRoster or Rotamaster, both of which have built-in swap-request workflows that notify the approving charge nurse by email and timestamp every action. If the trust hasn't licensed one of those, even a simple shared SharePoint form with version history would give Sandra the documentation she needs if a rest-period dispute ever arises.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "Allocate HealthRoster sounds promising. Does it integrate with the NHS Electronic Staff Record system?",
+      "assistant_message": "Yes, Allocate HealthRoster has a certified integration with NHS Electronic Staff Record (ESR) through the NHS Digital interface standard, which means employee contracts, pay bands, and leave balances can sync automatically rather than being entered twice. The integration typically requires a one-time configuration by the trust's IT department and an ESR interface activation request submitted to NHS Shared Business Services. Once live, roster exports from HealthRoster can feed directly into ESR payroll runs, which reduces the manual reconciliation burden on ward administrators significantly.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What about bank and agency staff — does the HealthRoster integration handle them differently than permanent staff when it comes to the 6-week rotation?",
+      "assistant_message": "Bank and agency staff are handled as separate worker categories in HealthRoster and don't slot into the permanent rotation blocks automatically; instead, they appear in a separate 'bank pool' that Sandra can draw from to fill gaps. For ESR integration purposes, bank staff who are directly employed by the trust will have ESR records and sync normally, but agency staff sourced through a third-party framework — such as NHS Professionals or a private agency — typically won't have ESR entries, so their hours must be logged manually or through the agency's own timesheet portal. Sandra should confirm with the trust's workforce team which agencies are on the approved supplier list before the 14th to avoid any payroll delays.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "If a nurse works more than 48 hours in a week, does she need to do anything formal to make that legal?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t3"
+  ],
+  "distractor_turn_ids": [
+    "t1",
+    "t2",
+    "t4",
+    "t5",
+    "t6"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that the 48-hour weekly maximum under the UK Working Time Regulations 1998 can be exceeded if the individual worker signs a written opt-out agreement.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer correctly identifies the 17-week reference period over which the 48-hour average is calculated.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not mention the 6-week rotating block schedule, Sandra Okafor, Ward 7B, or any other detail specific to the shift-rotation topic (topic A).",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer attributes the rest and working-time rules to the UK Working Time Regulations 1998 specifically, not to a generic or unnamed source.",
+      "required": true
+    }
+  ],
+  "notes": "The facts the query needs (48-hour cap, 17-week reference period, written opt-out) are all in t3, the compound EVIDENCE turn. Turns t1, t2, t4, t5, and t6 are distractors about the shift-rotation rollout and must not bleed into the answer.\n\nReference answer: Yes, under the UK Working Time Regulations 1998, a worker can lawfully average more than 48 hours a week by signing a written opt-out agreement with their employer. Without that signed opt-out, the 48-hour average — measured over a 17-week reference period — is the legal maximum. The opt-out must be voluntary and in writing, and the worker can cancel it by giving at least seven days' written notice (or longer if agreed, up to a maximum of three months).",
+  "evidence_note": "Query depends only on the B half of the compound turn t3. Its ancestor closure {t3,t2,t1} includes A turns that are conversationally upstream of t3 but not needed for the B question; evidence is deliberately just {t3}. This is the granularity cost the family is designed to expose.",
+  "premise": "a hospital ward rolling out a new shift-scheduling process"
+}

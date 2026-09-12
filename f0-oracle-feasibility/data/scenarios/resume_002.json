@@ -1,0 +1,103 @@
+{
+  "scenario_id": "resume_002",
+  "family": "resume",
+  "label": "RESUME",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're updating our fall menu and want to retire the heirloom tomato flatbread. It's been on the menu since June 12th and we need to pull it by September 1st. The dish currently sells for $16.50 and uses about 4 oz of fresh tomatoes per serving.",
+      "assistant_message": "That gives you a clear window to phase it out before September 1st. The $16.50 price point and the 4 oz tomato portion are useful benchmarks to keep in mind as you think about what replaces it on the fall menu. Do you have a candidate dish in mind for that slot?",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "We're thinking of replacing it with a roasted butternut squash flatbread. We want to price it at $17.00 and keep the portion size consistent, so still 4 oz of the main vegetable component. Our food cost target for that item is 28%.",
+      "assistant_message": "A $17.00 price with a 28% food cost target means your maximum allowable food cost per serving is $4.76. Keeping the main vegetable component at 4 oz aligns the new dish structurally with the outgoing tomato flatbread, which should make the transition easier for your kitchen prep workflow. That $4.76 ceiling will be the key number to work against when you source butternut squash for the fall.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "How should we handle staff training when the new menu launches? We have 14 servers and 3 bartenders and want everyone ready before opening on the launch day.",
+      "assistant_message": "For a team of 17 front-of-house staff, a structured tasting session the afternoon before launch day is one of the most effective approaches. Having each server and bartender taste every new dish and receive a one-page reference card with flavor descriptors, allergens, and suggested pairings tends to build real confidence. You might also designate two or three senior servers as menu champions who can answer questions on the floor during the first week of service.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "We're planning to hold the tasting on August 31st from 2 PM to 4 PM. Should we pay staff their regular hourly rate for that time or offer a flat stipend?",
+      "assistant_message": "Paying the regular hourly rate is generally the safer choice from a wage-compliance standpoint, since mandatory training time is typically compensable under the Fair Labor Standards Act. A flat stipend can work if it meets or exceeds what the hourly rate would yield for those two hours, but verifying that for each employee's rate adds administrative overhead. Most operators find that simply running it through payroll at the standard rate is the cleanest solution.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "Good point. We also want to print a one-page menu insert for the launch week rather than reprinting the full menu. The insert will highlight three new dishes. What size and stock do you recommend for something like that?",
+      "assistant_message": "A 5-by-7-inch insert on 100 lb gloss cover stock is a popular choice because it feels substantial without overwhelming a standard menu cover pocket. If your menus are leather-bound with a full-page sleeve, bumping up to a 4.25-by-11-inch half-sheet lets you showcase each of the three dishes with a short description and still slip neatly inside. Ordering at least 10 to 15 percent more copies than your expected peak covers for the week gives you a buffer for reprints or damage.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What's the maximum we can spend on butternut squash and the other ingredients combined for a single serving of that new flatbread?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4",
+    "t5"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states the maximum allowable food cost per serving is $4.76 (derived from $17.00 price × 28% food cost target).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer references the 28% food cost target and the $17.00 menu price as the basis for the $4.76 figure.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not reference the staff training tasting date of August 31st, the 17-person front-of-house team size, or the menu insert specifications (5×7 inches, 100 lb stock) from the B branch.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer does not use the old flatbread's price of $16.50 as the pricing basis for the calculation.",
+      "required": true
+    }
+  ],
+  "notes": "t2 holds both critical facts the query needs: the $17.00 price and the 28% food cost target, which together yield the $4.76 maximum. Turns t3–t5 cover staff training scheduling, compensation, and menu insert printing — all plausible restaurant concerns but entirely irrelevant to the food cost calculation, serving as the distractor branch.\n\nReference answer: The maximum you can spend on all ingredients combined for a single serving of the butternut squash flatbread is $4.76. That figure comes from your stated food cost target of 28% applied to the planned menu price of $17.00 (0.28 × $17.00 = $4.76). Every ingredient in the dish — the squash, the flatbread base, cheese, oil, and any garnishes — needs to fit within that $4.76 ceiling per plate.",
+  "evidence_note": null,
+  "premise": "a restaurant redesigning its menu for a seasonal change"
+}

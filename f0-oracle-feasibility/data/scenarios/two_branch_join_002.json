@@ -1,0 +1,115 @@
+{
+  "scenario_id": "two_branch_join_002",
+  "family": "two_branch_join",
+  "label": "JOIN",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm designing a semester-long ecology project for my high school students and I want them to monitor a local pond ecosystem. What are the most important abiotic factors they should measure?",
+      "assistant_message": "For a pond ecosystem, the four core abiotic factors your students should measure are water temperature, dissolved oxygen concentration, pH, and turbidity. Dissolved oxygen is especially critical because levels below 5 mg/L begin to stress most fish and macroinvertebrates, while levels below 3 mg/L are considered hypoxic and can cause die-offs. I'd recommend students record each measurement at the same time of day to control for diel variation.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "That makes sense. How often should they be collecting these measurements to get meaningful data over a semester?",
+      "assistant_message": "For a semester-long study, a biweekly sampling schedule — every two weeks — gives you enough data points to detect seasonal trends without overwhelming students with logistics. That yields roughly 8 sampling events over a 16-week semester, which is sufficient to run basic correlation analyses. Make sure each sampling event includes at least three replicate measurements per factor so students can calculate means and standard deviations.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "I also need to figure out how to grade this project. I'm thinking of using a rubric with a point-based system. What are the key components I should assess?",
+      "assistant_message": "A strong rubric for a field ecology project typically assesses four components: data collection accuracy, data analysis and graphing, written scientific interpretation, and field notebook quality. Weighting them appropriately matters — I'd suggest data analysis carry the most weight since it reflects the core learning goals. A common breakdown is 30 points for data collection, 40 points for analysis, 20 points for interpretation, and 10 points for the field notebook, totaling 100 points.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "For the dissolved oxygen measurements specifically, what equipment should I order for the class?",
+      "assistant_message": "The most practical and cost-effective tool for high school field work is a handheld digital dissolved oxygen meter. The YSI Pro20i is a widely used model in educational settings; it measures dissolved oxygen in mg/L with an accuracy of ±0.1 mg/L and also logs water temperature simultaneously. You'll need one meter per student group, and replacement membrane cap kits should be ordered alongside the units since membranes typically need replacing every 30 days of regular use.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "What dissolved oxygen reading should students flag as a concern worth writing up in their field notebooks?",
+      "assistant_message": "Students should flag any dissolved oxygen reading at or below 5 mg/L as a stress threshold event requiring a written field note, since that is the established ecological threshold for aquatic organism stress in freshwater systems. If they record a reading at or below 3 mg/L, that should trigger a formal incident report section in the notebook, as it indicates hypoxic conditions. Pairing the flagged DO reading with a simultaneous temperature and pH measurement will help them begin to reason about potential causes.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "For the rubric, how should I handle late submissions from students who miss a sampling event due to illness?",
+      "assistant_message": "A fair and common policy is to allow one excused absence from a sampling event without penalty, provided the student submits a written absence report within 48 hours of the missed event. For that missed event, the student should receive the class-averaged data for their group rather than a zero, so the absence doesn't distort their dataset. Any additional missed sampling events beyond the first excused one should result in a 10-point deduction from the data collection component of the rubric, which is the 30-point category.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "If a student misses a second sampling event without an excuse and their field notebook shows a dissolved oxygen reading of 4.2 mg/L from a previous session, what should happen on both the grading and the notebook documentation sides?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t5",
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5",
+    "t6"
+  ],
+  "distractor_turn_ids": [],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer correctly states that a second unexcused missed sampling event results in a 10-point deduction from the data collection component (the 30-point category of the rubric).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer correctly identifies that a dissolved oxygen reading of 4.2 mg/L is at or below the 5 mg/L stress threshold and therefore requires a written field note in the notebook, but is above the 3 mg/L hypoxic threshold so does NOT require a formal incident report.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not state that a 4.2 mg/L reading triggers a formal incident report; the incident report threshold is 3 mg/L or below, and 4.2 mg/L is above that level.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer correctly identifies that the deduction applies specifically to the data collection component of the rubric, not to the analysis (40-point) or interpretation (20-point) components.",
+      "required": false
+    }
+  ],
+  "notes": "t5 holds the two DO threshold values (5 mg/L for field note, 3 mg/L for incident report) needed to classify the 4.2 mg/L reading correctly; t6 holds the late-submission penalty rule (10-point deduction from the 30-point data collection component for a second unexcused absence). The main trap is conflating the 4.2 mg/L reading with the 3 mg/L incident-report threshold and incorrectly triggering a formal incident report.\n\nReference answer: For the grading side, because this is a second missed sampling event and it is unexcused, the student should receive a 10-point deduction from the data collection component of the rubric, which is the 30-point category. For the notebook documentation side, a dissolved oxygen reading of 4.2 mg/L is at or below the 5 mg/L stress threshold, so the student must include a written field note flagging it as a stress threshold event. However, since 4.2 mg/L is above the 3 mg/L hypoxic threshold, no formal incident report is required — only the standard written field note is needed for that reading.",
+  "evidence_note": null,
+  "premise": "a teacher designing a semester-long ecology project"
+}

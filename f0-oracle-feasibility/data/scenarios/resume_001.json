@@ -1,0 +1,103 @@
+{
+  "scenario_id": "resume_001",
+  "family": "resume",
+  "label": "RESUME",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're trying to nail down the lumber specs for the new dock. The design calls for 2×10 pressure-treated southern yellow pine for the decking boards, and the marina inspector said all lumber must meet a minimum retention level of 0.40 pcf CCA treatment for saltwater exposure. Does that sound right for a fixed pier in tidal saltwater?",
+      "assistant_message": "Yes, 0.40 pcf CCA (or its modern equivalent, CA-C or MCA at the same retention) is the industry-standard minimum for lumber in contact with saltwater or brackish tidal water, per the American Wood Protection Association's Use Category 4B designation. For a fixed pier subject to regular wave wash and tidal immersion, some inspectors actually prefer 0.60 pcf for the substructure piling and framing, though decking boards at 0.40 pcf is widely accepted. Using 2×10 SYP at that treatment level for decking is a solid, code-compliant choice for saltwater dock construction.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Good. The dock will be 120 feet long and 8 feet wide. We've settled on 16-inch on-center spacing for the decking joists, and the board supplier quoted us $4.85 per linear foot for the treated 2×10 SYP. How many linear feet of decking boards do we need, and what's the rough material cost just for the decking?",
+      "assistant_message": "For an 8-foot-wide deck running 120 feet long, you'll need boards spanning the 8-foot width, placed perpendicular to the joists, with 16-inch joist spacing meaning roughly 91 joist bays across the 120-foot run. At 8 linear feet per board and approximately 91 boards, you need about 728 linear feet of 2×10 decking; adding a standard 10% waste factor brings that to 801 linear feet. At $4.85 per linear foot, the rough material cost for decking boards comes to approximately $3,885, though you should confirm the exact board count with your layout drawing. That figure covers only the decking surface, not framing, hardware, or pilings.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "The club's junior sailing program runs eight weeks in summer and we need to figure out instructor-to-student ratios. US Sailing's Level 1 certification guidelines recommend a maximum of 8 students per certified instructor on the water at one time — is that the right standard to apply?",
+      "assistant_message": "US Sailing's Small Boat Instructor program does recommend a maximum of 8 students per instructor as a general on-water guideline, though the exact ratio can tighten to 6:1 for students under age 10 or in high-wind conditions above 15 knots. Many clubs also require a dedicated safety-boat operator separate from the instructor count, which effectively adds supervision capacity without changing the ratio. Checking your local US Sailing regional coordinator is worthwhile since some districts have adopted stricter standards than the national baseline.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "We have 48 kids enrolled for the first session. If we split them into two age groups — under-12 and 12-and-up — and the under-12 group is 20 kids, how many instructors do we need for each group?",
+      "assistant_message": "For the 20 under-12 sailors, using the 6:1 ratio means you need a minimum of 4 instructors, since 20 divided by 6 rounds up to 3.33. The remaining 28 kids in the 12-and-up group fall under the standard 8:1 ratio, requiring 4 instructors there as well (28 ÷ 8 = 3.5, rounded up to 4). So you'd need at least 8 certified instructors total for that first session, not counting safety-boat operators.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "The club only has 6 certified instructors available for the first week. Can we legally run both groups simultaneously with that staffing level?",
+      "assistant_message": "With only 6 certified instructors, you'd fall short of the 8 needed to run both groups simultaneously at the recommended ratios. One practical option is to stagger the groups — run the under-12 group in the morning with 4 instructors and the older group in the afternoon with the same 4, freeing the other 2 instructors for breaks or safety-boat duty. Alternatively, you could recruit two more US Sailing-certified instructors, even on a temporary or volunteer basis, to meet the ratio requirements for concurrent sessions. Running both groups at the same time with 6 instructors would leave at least one group out of compliance with the recommended supervision standard.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What's the total estimated cost just for the decking boards, and what treatment retention level do those boards need to meet?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4",
+    "t5"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states the decking material cost is approximately $3,885 (derived from 801 linear feet × $4.85/linear foot, or the equivalent ~728–801 LF range at that unit price).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states the minimum CCA (or equivalent) treatment retention level for the decking boards is 0.40 pcf.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not import any figures or facts from the instructor-ratio discussion (e.g., the numbers 6, 8, 48, 20, 28, or any ratio such as 6:1 or 8:1).",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer references the 2×10 southern yellow pine decking boards at $4.85 per linear foot as the basis for the cost estimate.",
+      "required": true
+    }
+  ],
+  "notes": "The key evidence for the query lives in t1 (0.40 pcf treatment requirement) and t2 ($4.85/LF unit price, ~801 LF quantity, ~$3,885 total cost). Turns t3–t5 are the distractor branch covering junior-program instructor ratios; none of those numbers (6, 8, 48, 20, 28, 6:1, 8:1) should appear in a correct answer to t6.\n\nReference answer: The decking boards must meet a minimum retention level of 0.40 pcf CCA treatment (or equivalent, such as CA-C or MCA at the same retention) to satisfy the saltwater/tidal Use Category 4B requirement. Based on the 120-foot by 8-foot deck layout, you need approximately 728 linear feet of 2×10 SYP decking boards, or about 801 linear feet after a 10% waste allowance. At the quoted price of $4.85 per linear foot, the rough material cost for the decking boards alone is approximately $3,885. That figure covers only the surface decking and does not include framing, hardware, or pilings.",
+  "evidence_note": null,
+  "premise": "a sailing club replacing its aging dock"
+}
