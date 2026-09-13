@@ -6,17 +6,17 @@
     {
       "turn_id": "t1",
       "turn_index": 0,
-      "user_message": "Hey, I'm sourcing Gateron Yellow switches for my next keyboard run. I've got a quote from my supplier for $0.28 per switch, and I'm planning to order 5,000 units. Can you help me figure out the total cost?",
-      "assistant_message": "Sure! At $0.28 per switch and 5,000 units, your total cost would come out to $1,400.00. That's a reasonable price point for Gateron Yellows in that quantity, though it's worth checking if your supplier offers a volume discount at higher tiers.",
+      "user_message": "I'm training for my first marathon in 16 weeks. My long run this weekend was 8 miles, and I want to figure out how to build my weekly mileage from here.",
+      "assistant_message": "That's a solid base to start from — 8 miles for a long run gives you good runway for a 16-week plan. A common approach is to increase your long run by about 1–2 miles each week, with a cutback week every third or fourth week to let your body recover. Starting at 8 miles, you could be comfortably in the 18–20 mile range for your peak long runs before tapering.",
       "gold_parents": [],
       "stale": true,
-      "superseded_by": "t5"
+      "superseded_by": "t7"
     },
     {
       "turn_id": "t2",
       "turn_index": 1,
-      "user_message": "Good to know. I'm planning to sell kits of 70 switches each, and I want to figure out how many complete kits I can build from that order.",
-      "assistant_message": "With 5,000 switches and 70 per kit, you can build exactly 71 complete kits, with 30 switches left over. That leftover stock is worth keeping as spares for warranty replacements or for topping off a future partial order.",
+      "user_message": "That sounds right. How many total miles would I add to my long run across the whole training block if I go up 1 mile per week with a cutback every third week?",
+      "assistant_message": "With a cutback every third week, you'd have roughly 10–11 weeks of progression out of 16. Starting at 8 miles and adding 1 mile on progression weeks, your long run would peak somewhere around 18–19 miles before a 2–3 week taper. That's a net gain of about 10–11 miles on your long run from your starting point of 8.",
       "gold_parents": [
         "t1"
       ],
@@ -26,8 +26,8 @@
     {
       "turn_id": "t3",
       "turn_index": 2,
-      "user_message": "What PCB thickness should I spec for a standard tray-mount 65% keyboard? I've seen both 1.2mm and 1.6mm mentioned.",
-      "assistant_message": "For a tray-mount 65% design, 1.6mm is the more common and recommended spec. It provides better rigidity and is the thickness most switch footprints and stabilizer cutouts are designed around, whereas 1.2mm PCBs are typically reserved for flex-cut or gasket-mount builds where deliberate flex is part of the design intent.",
+      "user_message": "What kind of running shoes should I be looking at for marathon training? I've only ever run in cheap sneakers.",
+      "assistant_message": "For marathon training you'll want a shoe specifically designed for road running with good cushioning and support for high mileage. Popular options for first-timers include the Brooks Ghost, ASICS Gel-Nimbus, and New Balance Fresh Foam 1080 — all of which offer cushioning suited for long runs. I'd strongly recommend going to a specialty running store so a staff member can watch you run and assess your gait before you buy.",
       "gold_parents": [],
       "stale": false,
       "superseded_by": null
@@ -35,8 +35,8 @@
     {
       "turn_id": "t4",
       "turn_index": 3,
-      "user_message": "My manufacturer also asked whether I want ENIG or HASL surface finish on the PCB. Does it matter much for a keyboard?",
-      "assistant_message": "ENIG (Electroless Nickel Immersion Gold) gives you a flatter, more corrosion-resistant surface and is generally preferred for fine-pitch components and a more premium feel. HASL (Hot Air Solder Leveling) is cheaper and perfectly functional for a keyboard's through-hole and standard SMD components, so if cost is a concern it's a reasonable choice without meaningful performance trade-offs.",
+      "user_message": "How often should I replace them during training?",
+      "assistant_message": "Running shoes typically last between 300 and 500 miles before the midsole cushioning breaks down enough to affect your joints and injury risk. Over a 16-week marathon training block you might log 300–400 miles total, so you could go through one full pair, possibly slightly more if you're on the higher end of mileage. It's smart to rotate two pairs if your budget allows, which extends each shoe's life and gives the foam time to decompress between runs.",
       "gold_parents": [
         "t3"
       ],
@@ -46,10 +46,10 @@
     {
       "turn_id": "t5",
       "turn_index": 4,
-      "user_message": "Actually, I need to correct myself on the switch price — I misread the quote. It's $0.35 per switch, not $0.28. The quantity is still 5,000.",
-      "assistant_message": "Thanks for the correction — noted that the price is $0.35 per switch, not $0.28. That changes the numbers, so we should use $0.35 going forward for any cost calculations.",
+      "user_message": "Is it okay to do some runs in an older pair while I break in a new one?",
+      "assistant_message": "Yes, rotating an older pair with a new one is actually a well-established practice among distance runners. Just make sure the older pair still has some life left — if the outsole is visibly compressed or you feel pavement more than cushion, retire them for running. Keeping the older pair for shorter, easy runs while saving the new pair for long runs and workouts is a sensible way to manage the transition.",
       "gold_parents": [
-        "t2"
+        "t4"
       ],
       "stale": false,
       "superseded_by": null
@@ -57,10 +57,162 @@
     {
       "turn_id": "t6",
       "turn_index": 5,
-      "user_message": "What's the total I'd be spending on switches for the full order?",
-      "assistant_message": null,
+      "user_message": "Got it. Should I be doing all my easy runs in the cushioned shoe or is a slightly firmer shoe okay for shorter stuff?",
+      "assistant_message": "A firmer, lighter shoe is absolutely fine for shorter easy runs and can even help build a bit of foot strength and proprioception over time. Many runners use a daily trainer like the Nike Pegasus or Saucony Ride for medium-distance easy runs and save the maximally cushioned shoe for long runs and recovery days. The key is not doing back-to-back hard efforts in a very minimal or firm shoe until your feet have adapted, which usually takes several weeks.",
       "gold_parents": [
         "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "Actually, I need to correct myself — my long run last weekend was 6 miles, not 8. I miscounted because I included a warm-up walk. So the starting point is 6, not 8.",
+      "assistant_message": "Thanks for the correction — noted, your current long run baseline is 6 miles, not 8. That shifts the picture a bit: with the same 1-mile-per-week progression and cutback weeks, your peak long run would land closer to 16–17 miles, and the net gain across training would be about 10–11 miles added on top of that 6-mile starting point.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "How should I be fueling during long runs? I've never used gels or anything like that.",
+      "assistant_message": "For runs under about 60–75 minutes you generally don't need to take in fuel during the run itself, but once you're pushing past 90 minutes you'll want to start practicing with carbohydrate sources. Energy gels like GU or Maurten are common, and most provide around 20–25 grams of carbohydrates per packet, which you'd take every 30–45 minutes after the first hour. The most important thing is to practice with your fueling strategy on long runs well before race day so your stomach is adapted.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "What about electrolytes? Do I need those too?",
+      "assistant_message": "Yes, electrolytes become important on runs lasting longer than an hour, especially if you're a heavy sweater or training in heat. Sodium is the most critical electrolyte to replace — you lose it through sweat and low sodium can contribute to hyponatremia in extreme cases. You can get electrolytes from sports drinks like Gatorade Endurance, electrolyte tablets like Nuun or SaltStick, or some gels that include sodium alongside the carbohydrates.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "How much water should I be drinking on a run that's, say, 2 hours long?",
+      "assistant_message": "A general guideline is to drink 4–8 ounces of water or sports drink every 15–20 minutes during a run, which works out to roughly 24–48 ounces over two hours. However, the better modern advice is to drink to thirst rather than on a rigid schedule, since overdrinking can be as dangerous as underdrinking. Weigh yourself before and after a long training run — each pound of body weight lost represents about 16 ounces of fluid you need to replace.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "Should I carry water myself or rely on water stops on my training routes?",
+      "assistant_message": "That depends on the length of your run and how reliably spaced the water stops or water fountains are on your route. For runs over 90 minutes, most coaches recommend carrying at least some fluid rather than depending entirely on external sources, since fountains can be out of service and you may not always run a route with regular stops. Handheld bottles, hydration vests, and waist-belt bottles are the main options — vests become especially practical once your long runs exceed 14–15 miles.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "I'm thinking about using a hydration vest. How much capacity do I actually need?",
+      "assistant_message": "For marathon training long runs, a vest with a 1–1.5 liter reservoir is usually sufficient, since you'll typically be out for 2–3 hours at most and can supplement at water fountains if available. Vests like the Salomon Active Skin 8 hold up to 1.5 liters and weigh very little when empty, making them a popular choice for road marathon training. If you ever plan to do trail running or ultras down the road, you'd want to go up to 2 liters or more.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "What about nutrition the night before a long run — is carb loading a real thing?",
+      "assistant_message": "Carb loading is real, but it's most effective for events lasting longer than 90 minutes and works best when done over 2–3 days rather than just the night before. The classic protocol involves increasing carbohydrate intake to around 8–12 grams per kilogram of body weight per day in the 2–3 days before a race, while tapering your exercise. For a weekly long training run you don't need a full loading protocol — just make sure dinner the night before is carbohydrate-rich and easily digestible, like pasta, rice, or potatoes with a moderate amount of protein.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "What foods should I avoid the night before a long run?",
+      "assistant_message": "You want to avoid anything high in fiber, fat, or spice the night before, since these slow digestion and can cause gastrointestinal distress during your run. Specifically, steer clear of things like large salads with raw cruciferous vegetables, heavily fried foods, rich creamy sauces, very spicy dishes, and excessive alcohol. A reliable pre-long-run dinner for many runners is plain pasta with a light tomato sauce, white rice with chicken, or a baked potato — simple, familiar, and easy on the stomach.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "Makes sense. I'm also thinking about my breakfast the morning of the long run — should I eat the same thing every time so my stomach knows what to expect? Like I could try to standardize it the same way I'm standardizing my mileage increase from that 8-mile starting point.",
+      "assistant_message": "Consistency in your pre-run breakfast is definitely a good idea — it trains your gut just as much as your legs. Most runners settle on something like a banana with peanut butter, oatmeal with honey, or white toast with jam, eaten about 60–90 minutes before the run starts. Repeating the same meal every long-run morning also removes decision fatigue and lets you zero in on what feels best.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "How long before the run should I stop eating? You mentioned 60–90 minutes — is earlier better?",
+      "assistant_message": "For most runners, 60–90 minutes is the sweet spot — it gives food time to leave your stomach without leaving you feeling depleted from hunger. Some people with sensitive stomachs do better eating 2 hours before, especially for meals with more protein or fat. Eating too close to the run, within 30 minutes or so, often causes cramping or a stitch, so if you're unsure, erring on the side of earlier is safer.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "What about coffee? I drink a cup every morning and I don't want to mess with my routine.",
+      "assistant_message": "Caffeine is actually a well-documented ergogenic aid for endurance running — studies show that 3–6 mg per kilogram of body weight consumed about 60 minutes before exercise can measurably improve performance and perceived effort. A standard 8-ounce cup of drip coffee contains roughly 80–100 mg of caffeine, so for most people one cup is well within the beneficial range. Keep your routine — just make sure you're accounting for the mild diuretic effect and drinking some water alongside it.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "I read that some elite runners use caffeine gels late in the race. Is that something I should try in training?",
+      "assistant_message": "Yes, caffeinated gels can be a useful tool in the later miles when fatigue is highest — brands like GU offer caffeinated versions with 20–40 mg of caffeine per gel. The strategy many runners use is to take non-caffeinated gels for the first half of a long effort and switch to a caffeinated gel around the two-thirds mark for a mental and physical boost. Practice it in training first so you know how your stomach handles caffeine mid-run, since some people experience GI upset from it.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "Good to know. Should I keep a training log to track all this stuff — gels used, how I felt, weather conditions?",
+      "assistant_message": "Keeping a training log is one of the most valuable habits a first-time marathoner can develop. Recording data points like distance, pace, perceived effort, weather, temperature, fueling choices, and how your legs felt afterward gives you a feedback loop that helps you spot patterns — for example, which meals correlate with good long runs, or which weather conditions tank your pace. Apps like Strava or Garmin Connect do this automatically if you wear a GPS watch, but even a simple notebook works perfectly well.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "If I stick to the 1-mile-per-week increase with cutback weeks, what will my long run distance be at the end of week 10 of training?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t7"
       ],
       "stale": false,
       "superseded_by": null
@@ -69,35 +221,51 @@
   "evidence_turn_ids": [
     "t1",
     "t2",
-    "t5"
+    "t7"
   ],
   "distractor_turn_ids": [
     "t3",
-    "t4"
+    "t4",
+    "t5",
+    "t6",
+    "t8",
+    "t9",
+    "t10",
+    "t11",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19"
   ],
   "answer_checklist": [
     {
       "id": "c1",
-      "criterion": "The answer uses the corrected price of $0.35 per switch (stated in t5) as the basis for the calculation.",
+      "criterion": "The answer uses 6 miles as the starting long-run distance (VALUE_2, the corrected value from t7).",
       "required": true
     },
     {
       "id": "c2",
-      "criterion": "The answer uses the quantity of 5,000 switches (confirmed in t5) in the calculation.",
+      "criterion": "The answer must not use 8 miles as the starting long-run distance (VALUE_1, the stale value from t1 that was corrected in t7).",
       "required": true
     },
     {
       "id": "c3",
-      "criterion": "The answer arrives at a total of $1,750.00 (5,000 × $0.35).",
+      "criterion": "The answer accounts for cutback weeks (approximately one every third week) when calculating the week-10 long run distance.",
       "required": true
     },
     {
       "id": "c4",
-      "criterion": "The answer must not state a total of $1,400.00, which is the result of using the stale price of $0.28 per switch from t1.",
+      "criterion": "The answer arrives at a peak long run of approximately 12–13 miles at week 10, consistent with starting at 6 miles, adding 1 mile on progression weeks, and cutting back every third week.",
       "required": true
     }
   ],
-  "notes": "t5 holds the corrected value ($0.35) that the query depends on; t1 holds the trap value ($0.28) that would produce the wrong total of $1,400. t3 and t4 are genuine distractors about PCB spec choices entirely unrelated to switch cost.\n\nReference answer: With the corrected price of $0.35 per switch and an order of 5,000 units, your total spend on switches comes to $1,750.00. That's $350 more than the initial estimate based on the misread quote, so it's worth factoring that into your kit pricing to protect your margins.",
+  "notes": "t7 holds the critical correction (6 miles replaces 8 miles as the long-run baseline); t15 is the trap turn where the old value of 8 miles is mentioned in passing and must not be used to answer t20.\n\nReference answer: Starting from a 6-mile long run (the corrected baseline from t7), and adding 1 mile per week with a cutback every third week, the progression over 10 weeks looks like this: weeks 1–2 are progression (7, 8 miles), week 3 is a cutback (~6–7 miles), weeks 4–5 are progression (8, 9 miles), week 6 is a cutback (~7–8 miles), weeks 7–8 are progression (9, 10 miles), week 9 is a cutback (~8–9 miles), and week 10 is a progression week bringing the long run to approximately 11–12 miles. So by the end of week 10 your long run would be in the 11–12 mile range.",
   "evidence_note": null,
-  "premise": "an indie hardware maker sourcing parts for a mechanical keyboard"
+  "premise": "training for a first marathon in 16 weeks",
+  "evidence_spans": null,
+  "benchmark_version": "1.1"
 }

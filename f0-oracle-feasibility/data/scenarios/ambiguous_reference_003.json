@@ -76,7 +76,7 @@
   "answer_checklist": [
     {
       "id": "c1",
-      "criterion": "The answer correctly resolves 'they' to FrostShield Solutions (not GreenLayer Insulation).",
+      "criterion": "The answer applies FrostShield Solutions' availability (the March 15, 2025 earliest start) to the question; it need not name FrostShield explicitly, but it must not use GreenLayer Insulation's availability instead.",
       "required": true
     },
     {
@@ -95,7 +95,8 @@
       "required": true
     }
   ],
-  "notes": "t2 holds the critical fact (FrostShield's March 15, 2025 start constraint); t5 is the primary trap, introducing GreenLayer's February 3 availability, which matches the query's 'before February' framing and could mislead a resolver that ignores branch structure.\n\nReference answer: No — FrostShield Solutions cannot do the work before February. Their earliest possible start date is March 15, 2025, because that is when their spray foam rig comes out of winter storage, as established in their quote. If you need insulation installed before February, FrostShield is not an option under any circumstances.",
+  "notes": "t2 holds the critical fact (FrostShield's March 15, 2025 start constraint); t5 is the primary trap, introducing GreenLayer's February 3 availability, which matches the query's 'before February' framing and could mislead a resolver that ignores branch structure.\n\nReference answer: No — FrostShield Solutions cannot do the work before February. Their earliest possible start date is March 15, 2025, because that is when their spray foam rig comes out of winter storage, as established in their quote. If you need insulation installed before February, FrostShield is not an option under any circumstances.\n\nBenchmark 1.1 edit (14 Sep 2026): disambiguation item rephrased to require using the correct entity's facts rather than naming the entity, so oracle contexts that never see the decoy are not penalized.",
   "evidence_note": null,
-  "premise": "a landlord deciding on energy-efficiency upgrades for a duplex"
+  "premise": "a landlord deciding on energy-efficiency upgrades for a duplex",
+  "benchmark_version": "1.1"
 }

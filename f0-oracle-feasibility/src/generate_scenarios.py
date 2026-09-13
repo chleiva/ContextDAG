@@ -280,23 +280,33 @@ def build_constraint_retention(rng: random.Random) -> ScenarioPlan:
 
 
 def build_knowledge_update(rng: random.Random) -> ScenarioPlan:
-    b_n = rng.randint(2, 5)
+    """Benchmark 1.1: the correction sits 12-20 turns before the query, and one later distractor
+    casually restates the stale value, so staleness handling actually separates methods."""
+    b_pre = rng.randint(2, 4)          # detour between A2 and the correction
+    b_post = rng.randint(12, 20)       # distractors between the correction and the query
+    restate_at = rng.randint(3, b_post - 2)
     dA = ["Branch A turn 1: the user states a specific fact (a price, version, date, quantity, or name) as VALUE_1 and the assistant works with it.",
-          "Branch A turn 2: continue topic A building on VALUE_1.",
-          "Branch A turn 3: the user CORRECTS the fact from A1 to VALUE_2 (clearly different), e.g. 'actually it's ... not ...'; the assistant acknowledges the correction. No other new facts."]
-    dB = [f"Branch B turn {i + 1}: an unrelated concern within the premise; concrete but irrelevant." for i in range(b_n)]
+          "Branch A turn 2: continue topic A building on VALUE_1 (e.g. the assistant derives a number from it).",
+          "Branch A turn 3: the user CORRECTS the fact from A1 to VALUE_2 (clearly different), e.g. 'actually it's ... not ...'; the assistant acknowledges the correction and restates VALUE_2. No other new facts."]
+    dB = [f"Branch B turn {i + 1}: an unrelated concern within the premise; concrete but irrelevant to topic A." for i in range(b_pre)]
+    dC = []
+    for i in range(b_post):
+        if i == restate_at:
+            dC.append(f"Branch C turn {i + 1}: an unrelated concern within the premise, in which the user or assistant casually mentions VALUE_1 (the OLD, superseded value from A1) in passing as if it were still current, e.g. 'like the {{VALUE_1}} we talked about'. This is a deliberate trap; it must not be corrected here and must not introduce any new A facts.")
+        else:
+            dC.append(f"Branch C turn {i + 1}: an unrelated concern within the premise (one coherent side thread, developed step by step); concrete but irrelevant to topic A.")
     A = _chain("A", 3, [], dA, "evidence")
     A[0].stale, A[0].superseded_by = True, "A3"
-    B = _chain("B", b_n, [], dB, "distractor")
-    # B sits between A2 and A3 so the correction comes after a detour
-    body = A[:2] + B + A[2:]
-    q = TurnPlan("Q1", "Q", ["A3"], "query", "QUERY: a follow-up on topic A whose correct answer depends on using VALUE_2 (the corrected value); using VALUE_1 would give a wrong answer.")
+    B = _chain("B", b_pre, [], dB, "distractor")
+    C = _chain("C", b_post, [], dC, "distractor")
+    body = A[:2] + B + A[2:] + C
+    q = TurnPlan("Q1", "Q", ["A3"], "query", "QUERY: a follow-up on topic A whose correct answer depends on using VALUE_2 (the corrected value); using VALUE_1 would give a wrong answer. Do not restate either value in the query.")
     turns = _finalize(body + [q])
     ev = set(t.turn_id for t in turns if t.branch == "A")
     e, di = _sets(turns, ev)
     return ScenarioPlan("knowledge_update", turns, e, di,
-                        "A1 states a fact, A2 continues, an unrelated B detour, then A3 corrects the fact (A1 is marked stale, superseded by A3); the query needs the corrected value.",
-                        "One item requires VALUE_2 to be used; the negative item says the answer must not use VALUE_1 (name it).")
+                        "A1 states a fact, A2 continues, a short B detour, then A3 corrects the fact (A1 is marked stale, superseded by A3); then 12-20 turns of an unrelated C thread, one of which casually repeats the OLD value; the query needs the corrected value.",
+                        "One item requires VALUE_2 to be used; the negative item says the answer must not use VALUE_1 (name it). Do not require the answer to mention VALUE_1 or the correction explicitly; using VALUE_2 correctly is sufficient.")
 
 
 def build_ambiguous_reference(rng: random.Random) -> ScenarioPlan:
@@ -350,23 +360,36 @@ def build_join_then_split(rng: random.Random) -> ScenarioPlan:
                         "One item needs an A detail; the negative item names a B or J-specific fact that must not be imported.")
 
 
-def build_compound_turn(rng: random.Random) -> ScenarioPlan:
-    a_after = rng.randint(2, 4)
-    dA = ["Branch A turn 1: open topic A with concrete specifics.", "Branch A turn 2: develop topic A."]
-    dC = ["COMPOUND turn: the user's single message bundles TWO unrelated requests: (1) a continuation of topic A, and (2) a brand-new, self-contained request on topic B (a different concern) with its own specifics. The assistant answers both parts in one reply, giving concrete B-specific facts."]
-    dAa = [f"Branch A turn {3 + i}: continue ONLY topic A (never mention B)." for i in range(a_after)]
-    A = _chain("A", 2, [], dA, "distractor")
+def build_compound_turn(rng: random.Random, variant: str = "second_request") -> ScenarioPlan:
+    """A compound turn bundles an A continuation (first request) with a new B request (second).
+    variant "second_request": the query follows up on B only (evidence = the compound turn alone).
+    variant "first_request" (benchmark 1.1): the query follows up on A; the B request spawns its
+    own distractor branch, so the compound turn's B half is the unavoidable irrelevant content."""
+    dA = ["Branch A turn 1: open topic A with concrete specifics.", "Branch A turn 2: develop topic A; settle a specific detail."]
+    dC = ["COMPOUND turn: the user's single message bundles TWO unrelated requests: (1) a continuation of topic A that needs a specific new A fact settled, and (2) a brand-new, self-contained request on topic B (a different concern) with its own specifics. The assistant answers both parts in one reply, giving concrete A-specific and B-specific facts."]
+    A = _chain("A", 2, [], dA, "evidence" if variant == "first_request" else "distractor")
     C = TurnPlan("C1", "C", ["A2"], "evidence", dC[0])
-    Aa = _chain("D", a_after, ["C1"], dAa, "distractor")
-    for t in Aa:
-        t.branch = "A"
-    q = TurnPlan("Q1", "Q", ["C1"], "query", "QUERY: a follow-up ONLY on the B part of the compound turn (needs the B-specific facts the assistant gave there); nothing about topic A is relevant.")
-    turns = _finalize(A + [C] + Aa + [q])
-    e, di = _sets(turns, {"t3"})
+    if variant == "second_request":
+        a_after = rng.randint(2, 4)
+        after = _chain("D", a_after, ["C1"], [f"Branch A turn {3 + i}: continue ONLY topic A (never mention B)." for i in range(a_after)], "distractor")
+        for tt in after:
+            tt.branch = "A"
+        q = TurnPlan("Q1", "Q", ["C1"], "query", "QUERY: a follow-up ONLY on the B part of the compound turn (needs the B-specific facts the assistant gave there); nothing about topic A is relevant.")
+        turns = _finalize(A + [C] + after + [q])
+        e, di = _sets(turns, {"t3"})
+        return ScenarioPlan("compound_turn", turns, e, di,
+                            "A1->A2->C (a compound turn bundling an A continuation with an unrelated B request)->A3..; the query follows up on B only, so its parent is C.",
+                            "One item requires B-specific facts from the compound turn; the negative item names an A detail that must not be imported.",
+                            evidence_note="Query depends only on the B half of the compound turn t3. Its ancestor closure {t3,t2,t1} includes A turns that are conversationally upstream of t3 but not needed for the B question; evidence is deliberately just {t3}. This is the granularity cost the family is designed to expose.")
+    b_after = rng.randint(2, 4)
+    after = _chain("B", b_after, ["C1"], [f"Branch B turn {i + 1}: continue ONLY topic B (the second request from the compound turn); never mention topic A." for i in range(b_after)], "distractor")
+    q = TurnPlan("Q1", "Q", ["C1"], "query", "QUERY: a follow-up ONLY on the A part of the compound turn (needs the A facts from A1, A2 and the A half of the compound reply); nothing about topic B is relevant.")
+    turns = _finalize(A + [C] + after + [q])
+    e, di = _sets(turns, {"t1", "t2", "t3"})
     return ScenarioPlan("compound_turn", turns, e, di,
-                        "A1→A2→C (a compound turn bundling an A continuation with an unrelated B request)→A3..; the query follows up on B only, so its parent is C.",
-                        "One item requires B-specific facts from the compound turn; the negative item names an A detail that must not be imported.",
-                        evidence_note="Query depends only on the B half of the compound turn t3. Its ancestor closure {t3,t2,t1} includes A turns that are conversationally upstream of t3 but not needed for the B question; evidence is deliberately just {t3}. This is the granularity cost the family is designed to expose.")
+                        "A1->A2->C (a compound turn bundling an A continuation with an unrelated B request)->B1..; the query follows up on A only, so its parent is C and its evidence is the A chain.",
+                        "Items require A facts (at least one from the A half of the compound reply); the negative item names a B detail (from the compound turn's B half or the B branch) that must not be imported.",
+                        evidence_note="Query depends on the A half of the compound turn t3 plus t1, t2; evidence equals the closure, but t3's B half is unavoidable irrelevant content at turn granularity (see evidence_spans).")
 
 
 BUILDERS = {
@@ -468,17 +491,24 @@ def assemble(plan: ScenarioPlan, scenario_id: str, premise: str, data: dict) -> 
     ref = (data.get("reference_answer") or "").strip()
     if ref:
         notes = (notes + "\n\nReference answer: " + ref).strip()
+    spans = None
+    if plan.family == "compound_turn":
+        spans = {"t3": "first_request" if "A half" in (plan.evidence_note or "") else "second_request"}
     return Scenario(
         scenario_id=scenario_id, family=plan.family, label=LABELS[plan.family], turns=turns,
         evidence_turn_ids=list(plan.evidence_turn_ids), distractor_turn_ids=list(plan.distractor_turn_ids),
         answer_checklist=checklist, notes=notes, evidence_note=plan.evidence_note, premise=premise,
+        evidence_spans=spans, benchmark_version="1.1",
     )
 
 
 def generate(family: str, index: int, seed: int, manifest: dict, domains_used: set[str]) -> Scenario:
     scenario_id = f"{family}_{index:03d}"
     rng = random.Random(f"{seed}:{scenario_id}")
-    plan = BUILDERS[family](rng)
+    if family == "compound_turn" and index >= 11:
+        plan = build_compound_turn(rng, variant="first_request")
+    else:
+        plan = BUILDERS[family](rng)
     # spread domains: prefer one not yet used in this batch
     pool = [d for d in DOMAINS if d not in domains_used] or DOMAINS
     premise = rng.choice(pool)

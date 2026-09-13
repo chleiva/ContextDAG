@@ -6,17 +6,17 @@
     {
       "turn_id": "t1",
       "turn_index": 0,
-      "user_message": "I'm building the magic system for my fantasy novel. I've decided that casting any spell costs the mage exactly 12 vitality points, regardless of the spell's power level.",
-      "assistant_message": "That's a clean, flat-cost model — it makes bookkeeping simple and puts the drama on resource management rather than spell selection. With every spell costing exactly 12 vitality points, a mage's total vitality pool becomes the central strategic constraint, and readers can easily track how many more casts a character has left before they're depleted.",
+      "user_message": "I'm planning a semester-long ecology project for my high school class and I want each student group to monitor a 12-square-meter study plot throughout the semester. Does that plot size work for tracking plant diversity?",
+      "assistant_message": "A 12-square-meter plot can work for introductory plant diversity surveys, especially in grassland or meadow habitats. That size is large enough for students to identify and count individual species without being overwhelming to manage. You could use a 3×4 meter rectangle marked with stakes and string, which is easy to set up and re-visit each week.",
       "gold_parents": [],
       "stale": true,
-      "superseded_by": "t5"
+      "superseded_by": "t7"
     },
     {
       "turn_id": "t2",
       "turn_index": 1,
-      "user_message": "Right, and I'm thinking the average mage starts with a pool of 120 vitality points, so they can cast exactly 10 spells before they're exhausted.",
-      "assistant_message": "Ten casts per mage is a tight, meaningful budget — it forces your characters to make real tactical decisions rather than spamming magic carelessly. At 12 points per spell and a 120-point pool, you also get a satisfying round number that readers can track intuitively. You could even use that limit as a plot device, counting down the casts during a climactic battle to build tension.",
+      "user_message": "Good. If each group visits their plot once a week for 16 weeks, how many total plot-visits will my 6 groups complete across the whole semester?",
+      "assistant_message": "With 6 groups each visiting once a week for 16 weeks, that comes to 96 total plot-visits across the semester. That's a solid dataset — 96 data points gives you enough to look at seasonal trends and compare diversity indices between groups. You might want to build in one or two makeup weeks in case of bad weather.",
       "gold_parents": [
         "t1"
       ],
@@ -26,8 +26,8 @@
     {
       "turn_id": "t3",
       "turn_index": 2,
-      "user_message": "I also need to figure out the naming conventions for the three main factions in the novel. I'm thinking the northern faction should be called the Ashen Covenant.",
-      "assistant_message": "The Ashen Covenant is a strong name — it carries connotations of burned-out loyalty and ancient oaths, which could hint at a dark or tragic history for that group. The word 'Ashen' in particular evokes both destruction and something cold and enduring, which might suit a northern, possibly harsh-climate faction very well.",
+      "user_message": "What's the best way to teach students to identify plant species they've never seen before? I'm worried they'll just guess.",
+      "assistant_message": "A tiered identification approach works well: start with a curated field guide specific to your region, then layer in a dichotomous key exercise before students go out to the plots. Pairing each group with a laminated photo reference sheet of the 20 most common local species dramatically reduces guessing. You could also run a 'mystery plant' warm-up at the start of each lab session where students practice on pressed specimens.",
       "gold_parents": [],
       "stale": false,
       "superseded_by": null
@@ -35,8 +35,8 @@
     {
       "turn_id": "t4",
       "turn_index": 3,
-      "user_message": "For the southern faction I'm leaning toward the Gilded Meridian, since they control the trade routes and are more merchant-focused.",
-      "assistant_message": "The Gilded Meridian works beautifully for a mercantile southern power — 'Gilded' signals wealth and perhaps a veneer of respectability over something more ruthless, while 'Meridian' evokes the sun at its peak and the idea of being at the center of all things. The contrast with the Ashen Covenant is sharp and memorable, which will help readers keep the two factions distinct from the first time they're introduced.",
+      "user_message": "Should I require students to use scientific names or is common names okay for the data sheets?",
+      "assistant_message": "Requiring scientific names is best practice for data integrity, but a hybrid approach is very practical for high schoolers. Have students record both the common name and the scientific name on the data sheet — the common name helps them work quickly in the field, while the scientific name ensures consistency when you compile results across groups. You can scaffold this by pre-populating the data sheet with the scientific names of expected species and having students confirm or add new ones.",
       "gold_parents": [
         "t3"
       ],
@@ -46,10 +46,10 @@
     {
       "turn_id": "t5",
       "turn_index": 4,
-      "user_message": "Actually, I need to correct myself on the vitality cost — it's 8 points per spell, not 12. I had written down the wrong number from my notes.",
-      "assistant_message": "Got it, the correction is noted — each spell costs 8 vitality points, not 12. That changes the math across the whole system, so I'll work from 8 going forward.",
+      "user_message": "How should I handle it if two groups disagree on whether a plant is Species A or Species B?",
+      "assistant_message": "Designate a 'voucher specimen' protocol: if groups are uncertain, they collect a small sample (a leaf and stem, no uprooting) and bring it to a class voucher binder for you to adjudicate. This turns disagreements into a learning moment rather than a data quality crisis. You can also schedule a mid-semester 'calibration day' where all groups visit one plot together to align their identification standards before the second half of data collection.",
       "gold_parents": [
-        "t2"
+        "t4"
       ],
       "stale": false,
       "superseded_by": null
@@ -57,10 +57,162 @@
     {
       "turn_id": "t6",
       "turn_index": 5,
-      "user_message": "So with the standard 120-point pool, how many spells can an average mage cast before exhaustion, and how does that affect the tension in a combat scene?",
-      "assistant_message": null,
+      "user_message": "That calibration day idea is great. How long should I budget for it?",
+      "assistant_message": "Plan for a full 90-minute class period for the calibration day — about 20 minutes of classroom review, 50 minutes in the field at a shared reference plot, and 20 minutes for debrief and reconciling any discrepancies in the data sheets. If your class periods are shorter, you could split it across two 50-minute sessions, with the field portion on day one and the debrief on day two.",
       "gold_parents": [
         "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "Actually, I need to correct what I said at the start — the plots are going to be 20 square meters each, not 12. The site coordinator confirmed the dimensions this morning.",
+      "assistant_message": "Thanks for the correction — noted that each study plot is 20 square meters, not 12. That's actually a more standard size for plant diversity monitoring and will give student groups a richer sampling area. All the visit and scheduling logistics we discussed still apply; the larger plot just means students may need a bit more time per visit to do a thorough census.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "I also need to figure out the grading rubric. What components should I include for a semester-long field project like this?",
+      "assistant_message": "A strong rubric for a semester-long field project typically covers four areas: data collection accuracy, lab notebook quality, a midterm progress report, and a final analysis presentation. Weighting data collection and the final presentation most heavily — say 30% each — reflects that the fieldwork and synthesis are the core skills. You can also include a peer-evaluation component worth 10% to build collaborative accountability.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "How detailed should the lab notebook requirements be? I don't want it to become busywork.",
+      "assistant_message": "Keep the lab notebook requirements focused on three essentials: date and weather conditions, a species tally with counts, and a brief observational note (2–3 sentences) about anything unusual in the plot. Requiring a sketch or photo of one 'featured species' per visit adds rigor without becoming excessive. Avoid requiring students to rewrite data they've already recorded on the standardized data sheet — that kind of duplication is exactly what feels like busywork.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "Should the midterm progress report be individual or a group submission?",
+      "assistant_message": "A group submission works best for the midterm progress report because it reflects the collaborative nature of the fieldwork and reduces your grading load mid-semester. However, include one individually written reflection section — roughly one page — where each student comments on what they personally contributed and what they found most challenging so far. This prevents free-riding and gives you insight into each student's engagement with the material.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "For the final presentation, should groups present to the class or submit a written report?",
+      "assistant_message": "A 10-minute oral presentation to the class is more valuable than a written report alone because it builds scientific communication skills and lets groups learn from each other's findings. You can require a one-page data summary sheet to accompany the presentation, which gives you a written artifact to grade without the overhead of a full formal report. Building in 5 minutes of peer questions after each presentation also deepens everyone's engagement with the data.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "What statistical analysis should I expect from high school students for the final presentation?",
+      "assistant_message": "At the high school level, the Shannon Diversity Index (H') is the right target — it's meaningful, ecologically standard, and manageable with a spreadsheet. Students should also calculate species richness (the raw count of distinct species) and plot a simple line graph of richness over the 16 weeks to visualize seasonal change. Asking them to compare their plot's H' value against the class average gives them a genuine comparative analysis without requiring inferential statistics.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "Is the Shannon Index calculation something I should walk them through or let them figure out from a handout?",
+      "assistant_message": "Walk them through it once, explicitly, during a dedicated 30-minute lesson about three weeks before presentations are due — that's enough lead time for them to apply it to their own data. Provide a worked example using fictional plot data so they understand each step: computing the proportion (p_i) for each species, multiplying by ln(p_i), summing, and negating. After that lesson, a one-page reference handout is sufficient; students who need more support can revisit the worked example.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "I'm thinking the data summary sheet should also include a site map — like the 12-square-meter layout we talked about, so reviewers can see where each species was found.",
+      "assistant_message": "A site map is a great addition to the data summary sheet and helps contextualize the species distribution data. Students can draw a simple grid overlay on the plot diagram and mark which cells each species occupied during their final visit. Including a compass rose and a note on any distinctive features — a large rock, a shaded corner — makes the map genuinely useful for interpreting the results.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "How much class time should I set aside for students to work on their final presentations?",
+      "assistant_message": "Reserve two full class periods — ideally in the final two weeks — for in-class preparation time. The first period works well for groups to compile their data, run their Shannon Index calculations, and draft their slides or poster. The second period can serve as a rehearsal day where groups do a timed run-through and get peer feedback before the actual presentation day.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "Should I invite outside guests to the presentations, like a local ecologist or park ranger?",
+      "assistant_message": "Inviting one external guest — a local ecologist, a park naturalist, or a university graduate student in ecology — adds real stakes and motivates students to prepare more carefully. One guest is manageable; more than two can make the event feel like a formal defense and increase student anxiety unproductively. Send the invitation at least three weeks in advance and share the student data summary sheets with the guest beforehand so they can ask informed questions.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "What if a group's data is really messy or incomplete because of absences? Should they still present?",
+      "assistant_message": "Yes, they should still present — handling incomplete data is itself an authentic scientific skill. Require the group to explicitly acknowledge the gaps in their dataset and discuss how the missing visits might have affected their species counts or diversity index. You can build a 'data completeness' criterion into the rubric worth 10 points that rewards groups who address limitations honestly rather than penalizing them purely for circumstances outside their control.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "How should I handle a student who misses most of the field visits but shows up for the final presentation?",
+      "assistant_message": "Separate the individual grade components from the group components in your rubric so a student who missed field visits can't coast on their group's data collection work. The lab notebook and individual reflection sections of the midterm report are the key levers here — if a student missed visits, their notebook will reflect that and their reflection will ring hollow, which naturally affects their individual score. You can also add a brief individual oral check-in during the presentation period where you ask each student one question about their group's dataset.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "This is all really helpful. Should I share the full rubric with students at the start of the semester or reveal it in stages?",
+      "assistant_message": "Share the complete rubric on day one — transparency about expectations is one of the highest-leverage things you can do for student performance and buy-in. When students can see from the start that the final presentation is worth 30% and data collection is worth 30%, they understand why showing up to field visits matters. You can still introduce the specific technical requirements (like the Shannon Index) at the appropriate point in the semester without withholding the overall grading structure.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "If I want to calculate the total area being monitored across all six groups simultaneously, what number should I use for each plot?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t7"
       ],
       "stale": false,
       "superseded_by": null
@@ -69,35 +221,46 @@
   "evidence_turn_ids": [
     "t1",
     "t2",
-    "t5"
+    "t7"
   ],
   "distractor_turn_ids": [
     "t3",
-    "t4"
+    "t4",
+    "t5",
+    "t6",
+    "t8",
+    "t9",
+    "t10",
+    "t11",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19"
   ],
   "answer_checklist": [
     {
       "id": "c1",
-      "criterion": "The answer states that an average mage can cast exactly 15 spells (120 divided by 8) before exhaustion.",
+      "criterion": "The answer uses 20 square meters as the area of each individual plot (the corrected value from t7).",
       "required": true
     },
     {
       "id": "c2",
-      "criterion": "The answer uses the corrected vitality cost of 8 points per spell in its calculation.",
+      "criterion": "The answer correctly computes the total monitored area as 120 square meters (6 groups × 20 square meters each).",
       "required": true
     },
     {
       "id": "c3",
-      "criterion": "The answer must not state that a mage can cast 10 spells (the figure derived from the stale VALUE_1 of 12 points per spell).",
+      "criterion": "The answer must not use 12 square meters as the plot size (the original, superseded value from t1 and casually repeated in t14).",
       "required": true
-    },
-    {
-      "id": "c4",
-      "criterion": "The answer addresses how the 15-spell limit creates or shapes tension in a combat scene.",
-      "required": false
     }
   ],
-  "notes": "t5 holds the corrected VALUE_2 (8 points per spell) that supersedes t1's VALUE_1 (12 points per spell); t2 establishes the 120-point pool used in the query. The trap is using VALUE_1 (12 pts) to get 10 spells instead of the correct 15 spells from VALUE_2 (8 pts). t3 and t4 are faction-naming distractors irrelevant to the vitality calculation.\n\nReference answer: With each spell costing 8 vitality points and a standard pool of 120 points, an average mage can cast exactly 15 spells before reaching exhaustion. That's a notably more generous budget than 10, which shifts the tension in combat: rather than running dry after a handful of exchanges, a mage can sustain a prolonged fight, but the reader still knows the ceiling is fixed. The drama comes from watching the count approach 15, especially if the character is forced to burn multiple spells in quick succession to survive, spending in minutes what was meant to last a whole encounter.",
+  "notes": "The corrected fact (20 sq m) is established in t7 and is the value the query depends on. The trap is in t14, where the old value of 12 square meters is casually reintroduced in a distractor turn about the site map, and the original statement in t1 also carries the stale value of 12 square meters.\n\nReference answer: Each study plot is 20 square meters, as corrected in our earlier exchange. With six groups each monitoring one plot simultaneously, the total area being monitored at any given time is 6 × 20 = 120 square meters. So 20 square meters is the figure to use for each individual plot in any area calculations.",
   "evidence_note": null,
-  "premise": "writing a fantasy novel and planning its magic system"
+  "premise": "a teacher designing a semester-long ecology project",
+  "evidence_spans": null,
+  "benchmark_version": "1.1"
 }

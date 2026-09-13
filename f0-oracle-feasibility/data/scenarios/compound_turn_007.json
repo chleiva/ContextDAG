@@ -113,5 +113,9 @@
   ],
   "notes": "The facts the query needs (Norse/Odin parallel, Catholic/Thomistic influence, the 1947 'On Fairy-Stories' essay and subcreation concept) are all introduced in t3, the compound turn. Turns t1, t2, t4, t5, and t6 are traps containing only topic-A details about the lifespan magic system's conversion rates, blood magic ratios, and the Aetheri, none of which are relevant to the Tolkien query.\n\nReference answer: Tolkien drew primarily from Norse mythology and Old English tradition; the Istari such as Gandalf closely parallel the Norse god Odin, a wandering staff-bearer who conceals his true power and works through wisdom rather than overt sorcery. His Catholic faith was equally formative: magic in Middle-earth is morally charged rather than neutral, and the corrupting effect of the One Ring reflects the Thomistic concept that evil is a privation or distortion of good rather than an independent force. Tolkien articulated the philosophical underpinning of his approach in his 1947 essay 'On Fairy-Stories,' where he introduced the concept of 'subcreation' — the idea that a fantasy author participates in divine creativity by constructing a coherent secondary world.",
   "evidence_note": "Query depends only on the B half of the compound turn t3. Its ancestor closure {t3,t2,t1} includes A turns that are conversationally upstream of t3 but not needed for the B question; evidence is deliberately just {t3}. This is the granularity cost the family is designed to expose.",
-  "premise": "writing a fantasy novel and planning its magic system"
+  "premise": "writing a fantasy novel and planning its magic system",
+  "evidence_spans": {
+    "t3": "second_request"
+  },
+  "benchmark_version": "1.1"
 }

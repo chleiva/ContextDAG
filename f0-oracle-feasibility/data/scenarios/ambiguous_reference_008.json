@@ -76,7 +76,7 @@
   "answer_checklist": [
     {
       "id": "c1",
-      "criterion": "The answer identifies GreenCycle Solutions as the vendor being asked about, not Timber & Roots Co.",
+      "criterion": "The answer applies GreenCycle Solutions' installation terms (the March 14, 2025 earliest date and the concrete-pad prerequisite) to the question; it need not name GreenCycle explicitly, but it must not use Timber & Roots Co.'s timeline instead.",
       "required": true
     },
     {
@@ -95,7 +95,8 @@
       "required": true
     }
   ],
-  "notes": "t2 holds the critical facts (March 14, 2025 installation date and the concrete pad prerequisite) for GreenCycle Solutions (ENTITY_1). t5 is the trap: it describes Timber & Roots Co. (ENTITY_2), a vendor of the same general kind, whose delivery timeline details could mistakenly be used to answer the pronoun-based query in t6.\n\nReference answer: Based on what GreenCycle Solutions told you, the earliest the composting unit could be on-site and installed is March 14, 2025. However, that date is contingent on having the required 6-foot concrete pad already poured before they'll schedule delivery, so the actual ready-to-use date depends on when that site prep can be completed. If the pad isn't in place well before mid-March, the installation date could slip further.",
+  "notes": "t2 holds the critical facts (March 14, 2025 installation date and the concrete pad prerequisite) for GreenCycle Solutions (ENTITY_1). t5 is the trap: it describes Timber & Roots Co. (ENTITY_2), a vendor of the same general kind, whose delivery timeline details could mistakenly be used to answer the pronoun-based query in t6.\n\nReference answer: Based on what GreenCycle Solutions told you, the earliest the composting unit could be on-site and installed is March 14, 2025. However, that date is contingent on having the required 6-foot concrete pad already poured before they'll schedule delivery, so the actual ready-to-use date depends on when that site prep can be completed. If the pad isn't in place well before mid-March, the installation date could slip further.\n\nBenchmark 1.1 edit (14 Sep 2026): disambiguation item rephrased to require using the correct entity's facts rather than naming the entity, so oracle contexts that never see the decoy are not penalized.",
   "evidence_note": null,
-  "premise": "a community garden applying for a municipal grant"
+  "premise": "a community garden applying for a municipal grant",
+  "benchmark_version": "1.1"
 }

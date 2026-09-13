@@ -4,6 +4,7 @@
 run:
   name: f0-oracle-feasibility
   version: 1
+  benchmark_version: 1.1   # 1.0 = F0 run of 13-14 Sep 2026; 1.1 = three post-F0 fixes (compound spans, harder knowledge_update, checklist wording)
   created: 2026-09-13
   seed: 20260913
 
@@ -98,7 +99,7 @@ benchmark:
     ambiguous_reference: 8
     long_noisy_side_thread: 10
     join_then_split: 10
-    compound_turn: 10
+    compound_turn: 15      # 10 second-half + 5 first-half variants (benchmark 1.1)
 
 analysis:
   bootstrap_resamples: 10000
@@ -118,6 +119,6 @@ pricing_usd_per_1m_tokens:            # Bedrock list prices, checked 13 Sep 2026
   us.anthropic.claude-opus-4-6-v1: {input: 5.00, output: 25.00}
   global.anthropic.claude-opus-4-6-v1: {input: 5.00, output: 25.00}   # same model, global routing profile; used as a 2nd judge shard for throughput
 budget:
-  estimate_usd: 52
-  warn_usd: 52          # print a warning once cumulative spend passes this
-  hard_limit_usd: 70    # refuse any further LLM call once cumulative spend reaches this
+  estimate_usd: 75      # F0 run $62.27 + benchmark 1.1 fixes ~$13
+  warn_usd: 75          # print a warning once cumulative spend passes this
+  hard_limit_usd: 82    # F0 was capped at 70; raised by the user's $20 cap for the 1.1 fixes (approved 14 Sep 2026)

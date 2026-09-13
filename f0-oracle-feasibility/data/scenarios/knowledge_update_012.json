@@ -6,17 +6,17 @@
     {
       "turn_id": "t1",
       "turn_index": 0,
-      "user_message": "Hey, I'm sourcing Gateron Yellow switches for my next keyboard run. I've been quoted $0.28 per switch from my usual supplier, and I'm planning to build 60 units of a 65% board with 68 keys each. Can you help me figure out total switch cost?",
-      "assistant_message": "Sure! At $0.28 per switch and 68 keys per board across 60 units, you're looking at 60 × 68 = 4,080 switches total. That puts your total switch cost at 4,080 × $0.28 = $1,142.40 before any bulk discounts or shipping.",
+      "user_message": "We're trying to decide between Northgate Academy and Riverside Secondary. Northgate charges £1,200 per term for their optional enrichment programme, and we're trying to figure out if it's worth it.",
+      "assistant_message": "That's a meaningful cost to weigh up. At £1,200 per term, a full academic year of three terms would come to £3,600 for the enrichment programme alone, so it's definitely worth scrutinising what's included before committing.",
       "gold_parents": [],
       "stale": true,
-      "superseded_by": "t8"
+      "superseded_by": "t6"
     },
     {
       "turn_id": "t2",
       "turn_index": 1,
-      "user_message": "Good. I usually order a 10% overage on switches to account for testing and defects, so I should factor that in. What does the total look like with that buffer?",
-      "assistant_message": "With a 10% overage, you'd need 4,080 × 1.10 = 4,488 switches in total. At $0.28 each, that brings your procurement cost to 4,488 × $0.28 = $1,256.64. It's a reasonable buffer for a production run of this size, especially for linear switches where stem tolerance can vary batch to batch.",
+      "user_message": "Right, and our daughter would be there for five years, so the total outlay is quite significant.",
+      "assistant_message": "Over five years, at £3,600 per year, you'd be looking at a total of £18,000 for the enrichment programme across her time at Northgate. That's a substantial sum and it makes sense to compare it carefully against what Riverside Secondary offers in its standard curriculum.",
       "gold_parents": [
         "t1"
       ],
@@ -26,8 +26,8 @@
     {
       "turn_id": "t3",
       "turn_index": 2,
-      "user_message": "What PCB thickness is typically recommended for a 65% hot-swap build? I've seen both 1.2mm and 1.6mm mentioned.",
-      "assistant_message": "For hot-swap builds, 1.6mm is the more common recommendation because the added rigidity reduces stress on the hot-swap sockets, particularly Kailh or Mill-Max variants that rely on a tight friction fit. 1.2mm PCBs are sometimes used for flex-cut designs where deliberate board flex is part of the typing feel, but the thinner material can cause socket fatigue over repeated switch swaps. Most production-oriented 65% layouts stick with 1.6mm for reliability.",
+      "user_message": "What questions should we be asking about the pastoral care at each school? Our daughter has mild anxiety and we want to make sure there's proper support.",
+      "assistant_message": "It's worth asking whether each school has a dedicated school counsellor on site every day, or only part-time. You should also ask how form tutors are trained to identify signs of anxiety, and what the referral pathway looks like when a student needs more than classroom support.",
       "gold_parents": [],
       "stale": false,
       "superseded_by": null
@@ -35,8 +35,8 @@
     {
       "turn_id": "t4",
       "turn_index": 3,
-      "user_message": "What about plate material? I'm deciding between aluminum and polycarbonate for the top plate.",
-      "assistant_message": "Aluminum plates give a stiffer, crisper typing feel and are easier to source in bulk at consistent tolerances, typically around 1.5mm thickness for a standard plate. Polycarbonate plates flex more, softening the bottom-out feel and reducing noise, but they can warp under high temperatures during shipping if not packaged carefully. For an indie production run where consistency matters, aluminum is generally the safer choice unless your design specifically targets a softer sound profile.",
+      "user_message": "Northgate said they have a full-time counsellor plus a learning mentor who works specifically with students with anxiety and low-level mental health needs.",
+      "assistant_message": "That sounds like a solid pastoral structure. Having both a counsellor and a specialist learning mentor means your daughter would have two distinct points of contact depending on whether her needs are more emotional or more academic in nature, which can make a real difference day to day.",
       "gold_parents": [
         "t3"
       ],
@@ -46,8 +46,8 @@
     {
       "turn_id": "t5",
       "turn_index": 4,
-      "user_message": "I'm also considering whether to include a gasket mount or go with a top mount. Does gasket mount significantly increase the BOM cost?",
-      "assistant_message": "Gasket mounting typically adds cost through the silicone or poron gasket strips themselves, plus the modified top and bottom case geometry that requires more precise CNC tolerances. In practice, for an aluminum case, gasket mounting can add roughly $8–$15 per unit to your case manufacturing cost compared to a straightforward top mount, depending on your CNC vendor and gasket material. It's a meaningful premium for an indie run, though many enthusiasts consider it worth it for the improved typing feel.",
+      "user_message": "Riverside only has a part-time counsellor who comes in on Tuesdays and Thursdays. Does that seem like a gap?",
+      "assistant_message": "It could be, particularly on days when she's struggling and the counsellor isn't available. It would be worth asking Riverside who covers pastoral support on the other three days, and whether form tutors or a head of year have any formal mental health first aid training to bridge those gaps.",
       "gold_parents": [
         "t4"
       ],
@@ -57,30 +57,8 @@
     {
       "turn_id": "t6",
       "turn_index": 5,
-      "user_message": "What USB connector should I spec on the PCB? I want something durable for repeated cable swaps.",
-      "assistant_message": "USB Type-C is the current standard recommendation for durability and user expectation, specifically connectors rated for at least 10,000 insertion cycles, such as those from JST or Amphenol. You'll want a through-hole or reinforced SMD footprint rather than a basic SMD pad-only mount, since the latter tends to delaminate from the PCB after heavy use. Most reputable PCB fabs targeting the keyboard market default to a reinforced USB-C footprint now, so it's worth confirming that spec explicitly in your Gerber notes.",
-      "gold_parents": [
-        "t5"
-      ],
-      "stale": false,
-      "superseded_by": null
-    },
-    {
-      "turn_id": "t7",
-      "turn_index": 6,
-      "user_message": "Should I use QMK or ZMK firmware for a wired-only 65% board?",
-      "assistant_message": "For a wired-only build, QMK is the more practical choice given its massive community support, extensive documentation, and compatibility with virtually every common microcontroller used in keyboard PCBs, including the ATmega32U4 and RP2040. ZMK is purpose-built for wireless and while it technically supports wired operation, its feature set and community resources are optimized for Bluetooth use cases. Unless you anticipate adding wireless capability later, QMK will give you faster development time and easier long-term maintenance.",
-      "gold_parents": [
-        "t6"
-      ],
-      "stale": false,
-      "superseded_by": null
-    },
-    {
-      "turn_id": "t8",
-      "turn_index": 7,
-      "user_message": "Actually, I need to correct the switch price I mentioned earlier — my supplier just sent a revised quote and it's $0.35 per switch, not $0.28. The quantity is all the same.",
-      "assistant_message": "Got it, thanks for the correction. The price per switch is $0.35, not $0.28, and all the quantities remain unchanged: 60 units, 68 keys each, with a 10% overage buffer bringing the total to 4,488 switches. I'll use $0.35 going forward for any cost calculations.",
+      "user_message": "Actually, I got the enrichment programme fee wrong earlier — it's £1,450 per term, not £1,200. I misread the prospectus.",
+      "assistant_message": "Thanks for the correction — so the fee is £1,450 per term, not £1,200. That changes the totals we worked out before, and it's important to use the right figure going forward.",
       "gold_parents": [
         "t2"
       ],
@@ -88,12 +66,230 @@
       "superseded_by": null
     },
     {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "How do the two schools compare on GCSE results? That's obviously a big factor for us.",
+      "assistant_message": "Comparing headline figures is a good starting point, but you'll want to look at Progress 8 scores rather than just raw attainment, since Progress 8 measures how much value the school adds relative to each pupil's starting point. It's also worth checking the percentage achieving grade 5 or above in both English and Maths, which is the standard 'strong pass' benchmark.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "Northgate's last Ofsted report rated them Outstanding, and their Progress 8 score was +0.41. Riverside was rated Good with a Progress 8 of +0.18.",
+      "assistant_message": "Both positive Progress 8 scores mean both schools are adding value above the national average, which is encouraging. Northgate's +0.41 is notably stronger, though it's worth checking how recent those figures are and whether Riverside has shown an improving trend, since a school on the way up can sometimes outperform a static Outstanding school.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
       "turn_id": "t9",
       "turn_index": 8,
-      "user_message": "With the corrected price, what's the total I should budget for switches including the overage buffer?",
-      "assistant_message": null,
+      "user_message": "The Northgate report is from 2022 and Riverside's is from 2023, so Riverside's is actually more recent.",
+      "assistant_message": "That's a useful detail — Riverside's 2023 rating is more current, so it may better reflect where the school is now. It would be worth checking whether Northgate has had any interim monitoring visits since their 2022 inspection, as Outstanding schools can sometimes go longer between full inspections.",
       "gold_parents": [
         "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "What subjects does your typical strong secondary school offer at GCSE beyond the core? We want to know if the options are broad enough.",
+      "assistant_message": "A well-rounded GCSE offer usually includes at least one modern foreign language, history, geography, the three separate sciences, design and technology, music, art, drama, and computer science. Schools that also offer vocational options like health and social care or business studies give students more flexibility, particularly those whose strengths lie outside traditional academic subjects.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "Northgate offers 22 GCSE subjects and Riverside offers 17. Is 17 considered limited?",
+      "assistant_message": "Seventeen is on the lower end but not unusually restricted — many good schools operate comfortably in the 16 to 20 range. The more important question is whether Riverside's 17 subjects cover the areas your daughter is interested in, since a smaller offer that includes her preferences is more useful than a larger one that doesn't.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "She wants to do Drama and Computer Science, and both of those are available at Riverside, so that's reassuring.",
+      "assistant_message": "That's the key thing — the headline number matters less than whether her specific choices are there. If Drama and Computer Science are both on Riverside's timetable, the difference in the overall subject count probably won't affect her directly.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "She's also keen on sports, and we noticed Northgate has a really impressive sports programme — reminded us of the kind of investment you'd expect from a school charging, say, £1,200 a term for extras.",
+      "assistant_message": "It's not uncommon for schools with strong enrichment fees to channel some of that income into facilities and co-curricular activities, so a well-funded sports programme would fit that picture. It's worth asking Northgate specifically which sports are available, whether they compete in regional leagues, and whether participation in sports teams is included in the standard fee or costs extra.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "Northgate has a 25-metre indoor swimming pool, four tennis courts, and a full-size 3G pitch. Riverside just has a small sports hall and a grass field.",
+      "assistant_message": "That's a significant difference in facilities, particularly the indoor pool and the 3G pitch, which allow year-round training regardless of weather. If sport is a genuine priority for your daughter, Northgate's infrastructure could give her meaningfully more opportunity, though it's still worth asking whether access to those facilities is timetabled for all students or mainly for pupils in elite squads.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "She swims competitively at county level, so the pool is actually a big practical benefit — she could train before school.",
+      "assistant_message": "That changes things considerably — having a 25-metre pool on site means she could potentially train early morning before lessons without the additional travel to a separate leisure centre. It's worth confirming with Northgate whether they have a formal arrangement for competitive swimmers, and whether a coach is present during those early sessions.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "They do have a swimming coach on site three mornings a week starting at 7am. That would fit perfectly with her current training schedule.",
+      "assistant_message": "That's a genuinely compelling practical advantage — three coached sessions a week before school starts, without any extra travel, could make a real difference to her development and remove a lot of logistical pressure from your family. It's the kind of detail that doesn't show up in a prospectus headline but can be decisive.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "What's the typical class size at each school? We've heard mixed things.",
+      "assistant_message": "Average class sizes at secondary level in England tend to run between 25 and 32 pupils, with selective or independent schools often smaller. It's worth asking each school for their actual average rather than their maximum, and also whether sets are used in core subjects, since a top maths set might have 20 pupils while a mixed-ability English class has 30.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "Northgate said their average is 26 and Riverside said theirs is 29. Both use setting for Maths and English from Year 7.",
+      "assistant_message": "Both averages are reasonable, and the fact that both schools set for Maths and English from Year 7 means your daughter's experience in those core subjects will depend more on which set she's placed in than on the overall class-size average. A three-pupil difference across the school is unlikely to be decisive on its own.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "What should we look for when we do the open day visits next month?",
+      "assistant_message": "Pay attention to how students behave in corridors between lessons — whether they're calm and purposeful is often a better indicator of school culture than anything staff say in a formal presentation. It's also worth asking to see a lesson in progress rather than just the show rooms, and speaking directly to current students without a teacher present to get honest impressions.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "Good idea. We've booked Northgate on the 14th October and Riverside on the 21st October.",
+      "assistant_message": "Having them a week apart is useful — your impressions of Northgate will still be fresh when you visit Riverside, which makes it easier to draw direct comparisons. Try to take notes or photos of anything specific so the details don't blur together by the time you're making the final decision.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "Is there a standard checklist of questions families should ask on school open days?",
+      "assistant_message": "Some of the most useful questions include: what the school's policy is on mobile phones during the day, how they handle bullying and what their typical response timeline is, what support is available for students who fall behind in a subject, and how the school communicates with parents — whether that's through an app, a portal, or letters home. Asking about staff turnover in the last two years can also be revealing.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "That's helpful. We'll also ask about the sixth form offer, since we want to know if she could stay on for A-levels.",
+      "assistant_message": "That's a sensible thing to investigate early — some families choose a secondary school partly on the strength of its sixth form, since continuity of relationships with teachers can be valuable at A-level. You'll want to ask about the range of A-level subjects, whether the school has any entry requirements for its own sixth form, and what proportion of Year 11 students typically stay on.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "Northgate has a dedicated sixth form building with 340 students currently enrolled. Riverside doesn't have a sixth form at all — students have to move to the local FE college.",
+      "assistant_message": "That's a notable difference if continuity matters to you. A sixth form of 340 is a reasonable size — large enough to offer a decent range of A-level subjects and have peer groups, but not so large that students get lost. The FE college route isn't necessarily worse, but it does mean your daughter would need to make a fresh transition at 16 rather than staying in a familiar environment.",
+      "gold_parents": [
+        "t22"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "The FE college is Westfield College and it's about a 20-minute bus journey from the Riverside catchment area.",
+      "assistant_message": "Twenty minutes is manageable, and many students find the greater independence of an FE college suits them well at 16. It's worth visiting Westfield College separately if Riverside moves up your list, since the quality and subject range there would effectively be part of the Riverside package for the post-16 years.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "Do schools have to publish their admissions criteria publicly? We're not sure we live close enough to Northgate to get a place.",
+      "assistant_message": "Yes — all state-funded schools in England are legally required to publish their admissions criteria in a School Admissions Policy, which must be on their website and submitted to the local authority each year. For oversubscribed schools the criteria typically prioritise looked-after children first, then siblings, then distance from the school gate, so it's worth checking the last distance offered in the most recent admissions round.",
+      "gold_parents": [
+        "t24"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "Northgate's admissions page says the furthest distance offered last year was 1.3 kilometres and we live 1.1 kilometres away, so we should be within range.",
+      "assistant_message": "That's a relatively comfortable margin — 200 metres inside the furthest-offered distance gives you a reasonable buffer, though it's worth noting that the cut-off distance can shift slightly year on year depending on sibling applications and the size of the cohort. Checking whether you're also in the correct local authority catchment zone is worth confirming before you get too far into planning.",
+      "gold_parents": [
+        "t25"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "If we did choose Northgate and paid for the enrichment programme every term for all five years, what would the total cost be?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t6"
       ],
       "stale": false,
       "superseded_by": null
@@ -102,38 +298,58 @@
   "evidence_turn_ids": [
     "t1",
     "t2",
-    "t8"
+    "t6"
   ],
   "distractor_turn_ids": [
     "t3",
     "t4",
     "t5",
-    "t6",
-    "t7"
+    "t7",
+    "t8",
+    "t9",
+    "t10",
+    "t11",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t20",
+    "t21",
+    "t22",
+    "t23",
+    "t24",
+    "t25",
+    "t26"
   ],
   "answer_checklist": [
     {
       "id": "c1",
-      "criterion": "The answer uses $0.35 as the per-switch price (the corrected VALUE_2 from t8).",
+      "criterion": "The answer uses £1,450 as the per-term fee for the enrichment programme (the corrected VALUE_2 from t6).",
       "required": true
     },
     {
       "id": "c2",
-      "criterion": "The answer must not use $0.28 as the per-switch price (the original VALUE_1 from t1, which was explicitly corrected).",
+      "criterion": "The answer calculates the annual cost as £4,350 (£1,450 × 3 terms) or uses an equivalent correct step.",
       "required": true
     },
     {
       "id": "c3",
-      "criterion": "The answer calculates total switch count as 4,488 (60 units × 68 keys × 1.10 overage, established in t2 and confirmed in t8).",
+      "criterion": "The answer gives the five-year total as £21,750 (£4,350 × 5 years or £1,450 × 15 terms).",
       "required": true
     },
     {
       "id": "c4",
-      "criterion": "The answer arrives at a total budget of $1,570.80 (4,488 switches × $0.35).",
+      "criterion": "The answer must not use £1,200 as the per-term fee (the stale VALUE_1 from t1, incorrectly repeated in t13), which would yield a wrong total of £18,000.",
       "required": true
     }
   ],
-  "notes": "t1 introduces VALUE_1 ($0.28/switch) and t8 corrects it to VALUE_2 ($0.35/switch); the query at t9 requires VALUE_2 to produce the correct total of $1,570.80. Using VALUE_1 instead yields $1,256.64, which is the trap answer established in t2.\n\nReference answer: With the corrected price of $0.35 per switch, and the previously established total of 4,488 switches (60 units × 68 keys × 1.10 overage buffer), your total switch budget comes to 4,488 × $0.35 = $1,570.80. That's an increase of $314.16 over the original estimate based on the old $0.28 quote. You should plan for approximately $1,571 in your BOM for switches alone.",
+  "notes": "t6 is the critical evidence turn, correcting VALUE_1 (£1,200) from t1 to VALUE_2 (£1,450); the five-year total calculation in t2 is therefore stale. t13 is the deliberate trap, casually repeating the old £1,200 figure in an unrelated sports discussion without triggering a correction.\n\nReference answer: The corrected enrichment programme fee is £1,450 per term. Over three terms that comes to £4,350 per year, and over five years the total cost would be £21,750. That's a significant commitment, so it's worth being clear about exactly which activities and resources are included in that fee.",
   "evidence_note": null,
-  "premise": "an indie hardware maker sourcing parts for a mechanical keyboard"
+  "premise": "a family choosing between two secondary schools",
+  "evidence_spans": null,
+  "benchmark_version": "1.1"
 }

@@ -96,5 +96,9 @@
   ],
   "notes": "The facts the query needs (artwork dimensions of 1400×1400–3000×3000 px, JPEG/PNG formats) are established only in t3's assistant message. Turns t1, t2, t4, and t5 are all about the Millhaven podcast content—the labor dispute, primary sources, and oral history—and are pure distractors that must not bleed into the answer.\n\nReference answer: Apple Podcasts requires podcast cover artwork to be a square image with dimensions between 1400×1400 pixels and 3000×3000 pixels. The accepted file formats are JPEG and PNG. Both constraints must be met for the feed to be accepted during submission.",
   "evidence_note": "Query depends only on the B half of the compound turn t3. Its ancestor closure {t3,t2,t1} includes A turns that are conversationally upstream of t3 but not needed for the B question; evidence is deliberately just {t3}. This is the granularity cost the family is designed to expose.",
-  "premise": "launching a podcast about local history"
+  "premise": "launching a podcast about local history",
+  "evidence_spans": {
+    "t3": "second_request"
+  },
+  "benchmark_version": "1.1"
 }

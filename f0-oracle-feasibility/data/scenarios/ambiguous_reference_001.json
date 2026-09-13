@@ -76,7 +76,7 @@
   "answer_checklist": [
     {
       "id": "c1",
-      "criterion": "The answer correctly resolves 'there' to Ridgeline Nature Reserve (not Saltmarsh Creek Wetlands) based on the branch-A conversation thread.",
+      "criterion": "The answer applies Ridgeline Nature Reserve's requirement (the Educational Use Permit application) to the question; it need not name Ridgeline explicitly, but it must not apply Saltmarsh Creek Wetlands' process instead.",
       "required": true
     },
     {
@@ -95,7 +95,8 @@
       "required": false
     }
   ],
-  "notes": "Turns t1 and t2 (branch A) hold the critical fact: Ridgeline requires a 30-day advance permit. The query's pronoun 'there' depends on branch A context. Turns t3 and t4 (branch B) introduce Saltmarsh Creek Wetlands as a same-category distractor with its own unrelated logistics ($45 rental fee, monthly orientations), tempting a resolver to conflate the two sites.\n\nReference answer: Since you're planning a visit to Ridgeline Nature Reserve, you need to submit the formal Educational Use Permit application at least 30 days before your field day. For an early April visit — say, April 4 — that means your paperwork should be in by approximately March 5 at the latest. It would be wise to aim even earlier to give yourself a buffer in case the reserve requests any revisions to the application.",
+  "notes": "Turns t1 and t2 (branch A) hold the critical fact: Ridgeline requires a 30-day advance permit. The query's pronoun 'there' depends on branch A context. Turns t3 and t4 (branch B) introduce Saltmarsh Creek Wetlands as a same-category distractor with its own unrelated logistics ($45 rental fee, monthly orientations), tempting a resolver to conflate the two sites.\n\nReference answer: Since you're planning a visit to Ridgeline Nature Reserve, you need to submit the formal Educational Use Permit application at least 30 days before your field day. For an early April visit — say, April 4 — that means your paperwork should be in by approximately March 5 at the latest. It would be wise to aim even earlier to give yourself a buffer in case the reserve requests any revisions to the application.\n\nBenchmark 1.1 edit (14 Sep 2026): disambiguation item rephrased to require using the correct entity's facts rather than naming the entity, so oracle contexts that never see the decoy are not penalized.",
   "evidence_note": null,
-  "premise": "a teacher designing a semester-long ecology project"
+  "premise": "a teacher designing a semester-long ecology project",
+  "benchmark_version": "1.1"
 }

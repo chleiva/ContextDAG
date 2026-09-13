@@ -118,7 +118,7 @@ def main() -> None:
 
     report = f"""# F0 Oracle Feasibility — Results
 
-Run date: {date.today().isoformat()}
+Run date: {date.today().isoformat()} (benchmark {m['run'].get('benchmark_version', '1.0')}; the original 12-13 Sep 2026 run on benchmark 1.0 is described in `F0_PHASE_REPORT.md`)
 Manifest: `f0-oracle-feasibility/manifest.yaml` at commit `{commit}`
 Scenario count: {len(scenarios)} (by family: {fam_line})
 Models: Response A = {disp('response_a')}, Response B = {disp('response_b')}, Judge = {disp('judge')}, Embedding = `{models['embedding']['id']}` (local), Generator = {disp('generator')}

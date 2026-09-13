@@ -1,6 +1,6 @@
 # ContextDAG — F0 Oracle Feasibility: Phase Report
 
-Written 14 September 2026, at the close of the F0 phase.
+Written 13 September 2026, at the close of the F0 phase.
 Companion to `F0_RESULTS.md` (the numeric report in the handoff's template). This document is the narrative record: what was built, how the run actually went, every decision and deviation, what the numbers mean, and what should happen before F0.5 starts.
 
 ---
@@ -31,7 +31,7 @@ Total spend: $62.27 across 5,451 LLM calls, against a $70 hard limit. Wall-clock
 
 ## 3. Timeline
 
-| When (13–14 Sep 2026) | What |
+| When (13–13 Sep 2026) | What |
 |---|---|
 | Evening, hour 0 | Handoff read; environment checked; no API keys present |
 | Hour 0–1 | Provider decision: Bedrock token verified, OpenAI key tested (GPT-6 Astra reachable), cost estimates compared, user chose "option 4" (Bedrock: Sonnet 4.6 + Haiku 4.5 responders, Opus 4.6 judge) |
@@ -330,3 +330,41 @@ Two operational recommendations for any later phase on this account: budget wall
 | `results/tables/summary.csv`, `pairwise.csv`, `by_family.csv`, `per_instance.csv`, `failure_cases.csv`, `decision.json` | Analysis outputs |
 | `results/plots/pareto.png` | The headline plot |
 | Commits `bbef827`, `ac31d02`, `08b3f87`, `2707009` on `main` | Scaffold, benchmark, run, report |
+
+---
+
+## Addendum: benchmark 1.1 (13 September 2026)
+
+The three fixes recommended in §13 were applied before F0.5, and the affected scenarios were re-run with the same models and judge so that `F0_RESULTS.md` reflects benchmark 1.1 throughout. Cost of the addendum: $10.59 (17 scenarios regenerated, 306 answers, 486 judgments), bringing the phase total to $72.86.
+
+### What changed
+
+| Fix | Change | Scenarios touched |
+|---|---|---|
+| 1. Compound turns | Added `evidence_spans` to the schema, marking which request within a compound turn the query depends on. Added a `first_request` variant (query follows up on the A half; the B half spawns its own distractor branch). | 10 annotated, 5 new (`compound_turn_011`–`015`); family now 15 |
+| 2. Harder knowledge_update | Correction now sits 12–20 turns before the query, and one later distractor casually restates the stale value. | 12 regenerated; mean length 23 turns, was 7 |
+| 3. Disambiguation wording | Items of the form "resolves *they* to X (not Y)" rephrased as "applies X's facts; need not name X; must not use Y's". | 10 items in 10 scenarios (8 `ambiguous_reference`, 2 `semantic_decoy`) |
+
+### Effect on the results
+
+| Metric | Benchmark 1.0 (140 scenarios) | Benchmark 1.1 (145 scenarios) |
+|---|---|---|
+| Oracle DAG token reduction vs full history | 66.3% | 68.8% |
+| Oracle DAG − full history, Sonnet 4.6 | +2.4 pp [−1.1, +6.3] | +2.7 pp [−0.8, +6.1] |
+| Oracle DAG − full history, Haiku 4.5 | +3.5 pp [−0.6, +7.7] | +2.6 pp [−1.4, +6.8] |
+| Oracle DAG − oracle tree, join families | +0.315 / +0.328 | +0.315 / +0.328 (unchanged, no join scenario touched) |
+| Verdict | GO / GO | GO / GO |
+
+Family-level effects, Sonnet 4.6 checklist score:
+
+- **knowledge_update now separates methods.** Full history, oracle DAG and semantic retrieval all score 1.00; sliding window at 1,024 tokens drops to 0.22 and at 2,048 to 0.62, because the correction turn now falls outside the window and the restated stale value is inside it. On 1.0 every method scored 0.98. The family finally tests what it was designed to test.
+- **compound_turn gap closed.** Oracle DAG 0.77 versus full history 0.78 (was 0.70 vs 0.79). The five first-request variants score well for the oracle because their evidence equals the closure; the ten second-request scenarios keep the granularity penalty. The family now measures both directions of the sub-turn problem.
+- **ambiguous_reference did not move as expected.** Oracle DAG went from 0.83 to 0.79 and full history stayed at 0.64 after rephrasing. Reading the new judge reasons: the oracle answers still lose the rephrased item when they hedge ("I don't know which site you mean") rather than apply the branch-A facts, which the rephrased criterion correctly counts as a miss. The original artifact (penalizing an oracle answer for not naming the decoy) is gone; what remains is a real behavior of the response model with short single-branch context. The judge-measured leakage for full history on this family is 62%, so the baseline's 0.64 is not a ceiling effect either.
+
+Token reduction rose from 66.3% to 68.8% solely because the regenerated knowledge_update scenarios are longer; the oracle context for them is unchanged in size (three A turns).
+
+### Bookkeeping
+
+- Manifest: `benchmark_version: 1.1`, `family_targets.compound_turn: 15`, hard spend limit raised from $70 to $82 with the user's approval for this addendum.
+- Records for the 27 re-run or re-judged scenarios were purged before re-running; every other record is unchanged from the 1.0 run. All judge calls for the addendum used the global Opus 4.6 inference profile.
+- Judge prompt-fallback rate on the full 2,610: 25 (1.0%).

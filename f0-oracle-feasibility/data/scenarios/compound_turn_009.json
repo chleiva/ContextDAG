@@ -113,5 +113,9 @@
   ],
   "notes": "The facts the query needs (1099-NEC $600 threshold, January 31 deadlines, S-corp exemption, W-9 confirmation) all appear exclusively in t3, the compound turn. Turns t1, t2, t4, t5, and t6 are the traps—they contain plausible migration details (800 soft-credit records, 12,000 contacts, two-pass load, dedup tools, preferred_contact_method field) that are entirely irrelevant to the 1099/W-9 question.\n\nReference answer: You should collect the W-9 from your consultant before year-end—ideally before or at the time of payment—so you know their entity type before the filing deadline. If the W-9 shows they are an S-corporation, you are not required to file a Form 1099-NEC; the corporate exemption applies to both C-corporations and S-corporations. If they are an individual or unincorporated entity, the $3,200 payment exceeds the $600 IRS threshold, so you must furnish the 1099-NEC to them by January 31 and file it with the IRS by January 31 of the following year.",
   "evidence_note": "Query depends only on the B half of the compound turn t3. Its ancestor closure {t3,t2,t1} includes A turns that are conversationally upstream of t3 but not needed for the B question; evidence is deliberately just {t3}. This is the granularity cost the family is designed to expose.",
-  "premise": "a nonprofit migrating its donor database to a new CRM"
+  "premise": "a nonprofit migrating its donor database to a new CRM",
+  "evidence_spans": {
+    "t3": "second_request"
+  },
+  "benchmark_version": "1.1"
 }

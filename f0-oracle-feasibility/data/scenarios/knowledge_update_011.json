@@ -6,17 +6,17 @@
     {
       "turn_id": "t1",
       "turn_index": 0,
-      "user_message": "I'm training for my first marathon in 16 weeks and my long run this weekend is scheduled for 14 miles. Can you help me figure out my target pace for that run?",
-      "assistant_message": "Absolutely! For a long training run, you generally want to run at a conversational, easy pace — typically 60 to 90 seconds per mile slower than your goal marathon pace. If you let me know your target marathon finish time, I can give you a more precise long-run pace range to aim for on that 14-mile effort.",
+      "user_message": "Hey, I'm planning our summer live-ops event and the premium battle pass will cost 950 Gems for players to unlock. Can you help me think through the event structure?",
+      "assistant_message": "Absolutely, a 950 Gem price point for the premium battle pass is a solid starting point. That puts it in a range that feels meaningful without being prohibitive for engaged players. Let's build out the event structure around that unlockable tier.",
       "gold_parents": [],
       "stale": true,
-      "superseded_by": "t6"
+      "superseded_by": "t5"
     },
     {
       "turn_id": "t2",
       "turn_index": 1,
-      "user_message": "My goal marathon time is 4 hours 30 minutes. So what pace per mile should I be running for the 14-mile long run?",
-      "assistant_message": "A 4:30 marathon works out to roughly a 10:18 per mile race pace. For your 14-mile long run, you'd want to stay in the range of 11:18 to 11:48 per mile — that's 60 to 90 seconds slower than race pace. Running in that zone keeps the effort aerobic and promotes endurance adaptation without digging too deep into your recovery reserves.",
+      "user_message": "Right, and we're thinking the pass will have 50 tiers of rewards. What's the average Gem value per tier if we want players to feel like they're getting a good deal?",
+      "assistant_message": "If the pass costs 950 Gems and delivers 50 tiers, the average value per tier needs to feel like at least 1.5x to 2x the cost to justify the purchase. That means you'd want each tier to represent roughly 28 to 38 Gems worth of content on average. Aiming for a perceived total reward value of around 1,900 Gems across all 50 tiers would be a strong benchmark to hit.",
       "gold_parents": [
         "t1"
       ],
@@ -26,8 +26,8 @@
     {
       "turn_id": "t3",
       "turn_index": 2,
-      "user_message": "What should I be eating the night before a long run like that?",
-      "assistant_message": "The classic pre-long-run dinner is a carbohydrate-focused meal that's easy to digest — something like pasta, rice, or a baked potato with a modest portion of lean protein. You want to avoid high-fiber vegetables, heavy sauces, or anything unfamiliar that might cause GI distress the next morning. Aim to eat about 2 to 3 hours before you go to sleep so digestion isn't competing with your rest.",
+      "user_message": "What time zone should we use for event start and end times displayed in-game?",
+      "assistant_message": "The industry standard is to display event times in UTC and then localize them on the client side based on the player's device settings. This avoids confusion during daylight saving transitions and keeps your server-side logic clean. Many studios also show a countdown timer alongside the absolute time so players aren't doing mental math.",
       "gold_parents": [],
       "stale": false,
       "superseded_by": null
@@ -35,8 +35,8 @@
     {
       "turn_id": "t4",
       "turn_index": 3,
-      "user_message": "What about hydration the day before — how much water should I be drinking?",
-      "assistant_message": "A solid guideline is to target about half an ounce to one ounce of water per pound of body weight on the day before a long run. For a 160-pound runner, that's roughly 80 to 160 ounces, or 10 to 20 cups throughout the day. A practical check is to make sure your urine is pale yellow — not clear and not dark — by the evening before your run.",
+      "user_message": "Should the event reset at midnight UTC or at a different hour to avoid peak traffic?",
+      "assistant_message": "Midnight UTC often coincides with peak evening hours in North America, which can spike your server load right at reset. A lot of studios shift the reset to 10:00 AM UTC, which lands during off-peak hours globally and still feels like a clean daily boundary. I'd recommend load-testing your reset logic at whatever time you choose before the event goes live.",
       "gold_parents": [
         "t3"
       ],
@@ -46,19 +46,8 @@
     {
       "turn_id": "t5",
       "turn_index": 4,
-      "user_message": "Should I take any electrolytes during the 14-mile run itself?",
-      "assistant_message": "Yes, for anything over 60 to 75 minutes you'll want to replace sodium and other electrolytes lost through sweat, not just water. A common approach is to take an electrolyte product — a gel with sodium, a sports drink, or salt tabs — roughly every 45 to 60 minutes once you're past the one-hour mark. Look for products that deliver at least 200 to 300 mg of sodium per serving to meaningfully offset sweat losses on a run that length.",
-      "gold_parents": [
-        "t4"
-      ],
-      "stale": false,
-      "superseded_by": null
-    },
-    {
-      "turn_id": "t6",
-      "turn_index": 5,
-      "user_message": "Actually, I need to correct myself — my goal marathon time is 4 hours 00 minutes, not 4:30. I misread my training plan earlier.",
-      "assistant_message": "No problem, that's an important correction! A 4:00 marathon translates to a race pace of approximately 9:09 per mile, which is noticeably faster than the 10:18 we were working with before. All the long-run pace guidance should now be based on that 9:09 figure rather than the earlier number.",
+      "user_message": "Actually, I need to correct myself — the premium battle pass is 1,200 Gems, not 950. We updated the pricing last week after the monetization review.",
+      "assistant_message": "Got it, thanks for the correction — the premium battle pass price is 1,200 Gems, not 950. I'll use 1,200 Gems as the baseline for all our battle pass calculations going forward. That's a meaningful bump that should also affect the perceived-value targets we discussed.",
       "gold_parents": [
         "t2"
       ],
@@ -66,12 +55,153 @@
       "superseded_by": null
     },
     {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "We're also trying to figure out the daily quest system for the event. How many daily quests should we offer players?",
+      "assistant_message": "Most successful live-ops events offer between 3 and 5 daily quests to keep engagement high without causing burnout. Three quests is the minimum to make the system feel alive, while five gives players enough variety that they can skip one they dislike and still feel productive. I'd recommend starting with 4 daily quests and adjusting based on completion rate data after the first week.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
       "turn_id": "t7",
       "turn_index": 6,
-      "user_message": "So what's the correct long-run pace range I should be targeting for the 14-mile run?",
-      "assistant_message": null,
+      "user_message": "Each quest should reward Event Tokens. How many tokens per quest feels right if the event runs for 28 days?",
+      "assistant_message": "If the event runs 28 days and you want a dedicated player to feel rewarded but not overwhelmed, somewhere around 50 to 75 Event Tokens per quest works well. At 4 quests per day and 50 tokens each, a player completing everything earns 5,600 tokens over the full event. That gives you a clear ceiling to design your token shop rewards around.",
       "gold_parents": [
         "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "The token shop will have a legendary skin for 3,500 tokens. Does 5,600 tokens as the ceiling give enough headroom?",
+      "assistant_message": "Yes, 5,600 tokens as the ceiling against a 3,500-token legendary skin is a healthy ratio — players who complete roughly 63% of daily quests can unlock the marquee item. That threshold is achievable for casual players while still feeling like an accomplishment. You'd also have around 2,100 tokens of headroom for players to spend on secondary shop items.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "We want to add a weekly challenge on top of the dailies. Should it award bonus tokens or a unique cosmetic?",
+      "assistant_message": "A unique cosmetic for weekly challenges is generally more motivating than bonus tokens because it creates a distinct collectible that players can't get any other way. If you award tokens instead, players will just mentally fold it into their shop math, which dilutes the sense of achievement. I'd suggest a unique avatar frame or weapon charm that's visually distinct and labeled 'Weekly Challenge Exclusive' in the UI.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "How many weekly challenges should there be across the 28-day event?",
+      "assistant_message": "A 28-day event naturally divides into 4 full weeks, so 4 weekly challenges is the clean answer. Each challenge can escalate in difficulty — week 1 being introductory, week 4 being the hardest — to create a narrative arc of progression. That also means 4 unique cosmetics to design, which is a manageable scope for your art team.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "For the week 4 challenge, we're thinking players need to win 20 ranked matches. Is that too steep?",
+      "assistant_message": "20 ranked wins in a week is on the steeper side — it assumes a player can dedicate significant daily time and maintain a positive win rate. If your average match length is around 15 minutes, that's a minimum of 5 hours of winning play, likely more accounting for losses. You might consider 15 ranked wins as a threshold that still feels prestigious but doesn't alienate players with busier schedules.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "Good point. We'll go with 15 ranked wins for week 4. What should the week 1 challenge be to ease players in?",
+      "assistant_message": "Week 1 should be something almost every player can complete regardless of skill level — something like 'Play 5 matches of any mode' or 'Log in on 3 different days this week.' Completion of the week 1 challenge should feel nearly guaranteed so players get hooked on the reward loop early. High week 1 completion rates are one of the strongest predictors of players staying engaged through the full event.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "We're also planning a referral bonus during the event. New players referred by an existing player get a starter pack. What should be in that starter pack?",
+      "assistant_message": "A strong referral starter pack should include enough to get the new player meaningfully into the event — something like 500 Event Tokens, one common cosmetic, and a 3-day XP booster. The 500 tokens gives them an immediate head start in the token shop without making the referred player feel like the system is exploitable. Keep the cosmetic common so it doesn't devalue your rare rewards but still feels like a real gift.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "Should the referring player get a reward too, and if so what?",
+      "assistant_message": "Yes, the referring player absolutely needs a reward or the referral system won't drive organic sharing. A tiered reward works well — for example, 200 Event Tokens per successful referral, with a bonus unique cosmetic unlocked at 5 referrals. Capping the bonus cosmetic at 5 referrals keeps it aspirational without letting a handful of super-connectors flood your new player pool with low-quality sign-ups.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "We need a name for the event. We're going with a summer solstice theme. Any suggestions?",
+      "assistant_message": "A few strong options for a summer solstice theme: 'Festival of the Longest Day,' 'Solar Apex,' or 'The Sunfire Convergence.' 'Solar Apex' is punchy and works well in UI labels and push notifications where space is tight. 'The Sunfire Convergence' has more lore flavor if your game has a fantasy or sci-fi setting that can support that kind of language.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "We'll go with Solar Apex. How early should we start marketing it before the event launches?",
+      "assistant_message": "For a 28-day live-ops event like Solar Apex, a two-week pre-launch marketing window is the sweet spot. You'd want a teaser announcement at the two-week mark, a full reveal with trailer at one week out, and a 'going live tomorrow' push notification the day before. That cadence builds anticipation without giving players so much lead time that excitement fades before the event starts.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "For the push notification copy on launch day, should we mention the battle pass price? Like '950 Gems unlocks the full Solar Apex experience'?",
+      "assistant_message": "The copy angle is solid — leading with the price in a push notification can work if the number feels accessible. I'd keep the focus on the value and excitement rather than the cost in that limited character space, though. Something like 'Solar Apex is LIVE — unlock the full experience and claim your first reward now' tends to drive more taps than price-forward messaging.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "That makes sense. Should the push notification go out at the same 10:00 AM UTC time as the event reset?",
+      "assistant_message": "Yes, aligning the launch push notification with the 10:00 AM UTC event reset is the right call — players who tap the notification are immediately dropped into a live, active event rather than a holding screen. Schedule the notification to fire at 10:05 AM UTC so the servers have a five-minute buffer to stabilize before the traffic spike from the notification hits. You can also queue a second reminder notification for 6 hours later to catch players in different time zones.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "If a player buys the premium battle pass and also earns the maximum tokens from daily quests, how much total Gem-equivalent value are they investing in the event at minimum just to unlock the pass?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t5"
       ],
       "stale": false,
       "superseded_by": null
@@ -80,31 +210,45 @@
   "evidence_turn_ids": [
     "t1",
     "t2",
-    "t6"
+    "t5"
   ],
   "distractor_turn_ids": [
     "t3",
     "t4",
-    "t5"
+    "t6",
+    "t7",
+    "t8",
+    "t9",
+    "t10",
+    "t11",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18"
   ],
   "answer_checklist": [
     {
       "id": "c1",
-      "criterion": "The answer bases the long-run pace on a goal marathon time of 4:00 (race pace ~9:09 per mile), as corrected in t6.",
+      "criterion": "The answer uses 1,200 Gems as the cost of the premium battle pass.",
       "required": true
     },
     {
       "id": "c2",
-      "criterion": "The answer gives a long-run pace range that is 60 to 90 seconds per mile slower than 9:09/mile, i.e., approximately 10:09 to 10:39 per mile.",
+      "criterion": "The answer must not use 950 Gems as the cost of the premium battle pass.",
       "required": true
     },
     {
       "id": "c3",
-      "criterion": "The answer must not use the stale goal time of 4:30 or the corresponding race pace of 10:18 per mile as the basis for the long-run pace calculation.",
+      "criterion": "The answer correctly identifies the minimum Gem investment to unlock the pass as 1,200 Gems (the corrected VALUE_2 from t5).",
       "required": true
     }
   ],
-  "notes": "t1 and t2 establish the stale VALUE_1 (4:30 goal / 10:18 race pace); t6 corrects it to VALUE_2 (4:00 goal / 9:09 race pace). t3, t4, and t5 are the distractor branch covering nutrition and hydration, which are irrelevant to the pace query. A model that fails to update from t6 and uses the 10:18 pace from t2 will produce a wrong answer (11:18–11:48 range).\n\nReference answer: With a corrected goal time of 4:00 for the marathon, your race pace is approximately 9:09 per mile. For your 14-mile long run, you should target a pace of roughly 10:09 to 10:39 per mile — that is, 60 to 90 seconds slower than your race pace. Staying in that range keeps the run aerobic and supports endurance development without excessive fatigue.",
+  "notes": "t5 is the critical evidence turn that corrects the battle pass price from 950 Gems (t1) to 1,200 Gems. t17 is the deliberate trap that reintroduces the stale value of 950 Gems in passing; the query (t19) requires the corrected 1,200 Gem value from t5 to answer correctly.\n\nReference answer: The minimum Gem investment to unlock the premium battle pass is 1,200 Gems, which is the corrected price established after the monetization review. That 1,200 Gem cost is the only direct Gem expenditure required to unlock the pass itself; daily quest tokens are earned through gameplay and don't require additional Gem spending. So the player's minimum Gem outlay for the pass alone is 1,200 Gems.",
   "evidence_note": null,
-  "premise": "training for a first marathon in 16 weeks"
+  "premise": "a game studio planning a live-ops event calendar",
+  "evidence_spans": null,
+  "benchmark_version": "1.1"
 }

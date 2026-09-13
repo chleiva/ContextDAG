@@ -1,0 +1,121 @@
+{
+  "scenario_id": "compound_turn_013",
+  "family": "compound_turn",
+  "label": "COMPOUND",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're trying to choose between Hartwell Academy and St. Bridget's College for our daughter starting Year 7 in September. Hartwell is about 4 miles away and got an Ofsted Outstanding in March 2023, while St. Bridget's is 1.2 miles away but was rated Good in November 2022. Does proximity usually matter that much at secondary level?",
+      "assistant_message": "Proximity does matter practically — a 1.2-mile journey versus a 4-mile one can mean a significant difference in travel time, cost, and independence for an 11-year-old. That said, Ofsted ratings carry real weight: an Outstanding school typically demonstrates stronger leadership, teaching quality, and outcomes than a Good-rated one, so many families do prioritise the higher-rated school even with the longer commute. It's worth weighing the daily logistics against the academic environment your daughter would be in for five or seven years.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "We looked at last year's GCSE results and Hartwell had 78% of pupils achieving grade 5 or above in both English and Maths, compared to 61% at St. Bridget's. That gap feels significant. Is a 17-percentage-point difference in those headline figures actually meaningful?",
+      "assistant_message": "Yes, a 17-percentage-point gap in the standard pass measure (grade 5+ in English and Maths) is genuinely substantial — nationally, the average for state secondaries in 2023 was around 49%, so both schools outperform the national figure, but Hartwell at 78% sits well into the top quartile. That gap tends to reflect differences in teaching quality, intervention support, and school culture rather than just intake. It would be worth checking whether the schools have similar pupil demographics, since a school with a higher proportion of disadvantaged pupils achieving 78% is arguably even more impressive than one with a more affluent cohort hitting the same number.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "Hartwell also offers the IB Middle Years Programme from Year 7, which St. Bridget's doesn't — does that make a practical difference at age 11? Also, do you know roughly what the average cost of a school uniform package tends to be for UK secondary schools these days?",
+      "assistant_message": "The IB Middle Years Programme (MYP) is a structured five-year curriculum running from age 11 to 16 that emphasises interdisciplinary learning, a personal project in Year 10, and a formal assessment framework leading into GCSE or IB Diploma — so starting it in Year 7 means your daughter would follow a coherent, internationally recognised curriculum throughout secondary school rather than a purely national-curriculum path. It can be particularly beneficial for analytically minded students, though it does require schools to be IB-authorised and to follow specific MYP unit planners, which adds rigour but also means less flexibility to cherry-pick subjects until Year 10. Regarding uniform costs, a typical UK state secondary school uniform package — including blazer, two or three logo polo shirts or shirts, a tie, and PE kit — runs between £150 and £250 when purchased new from a designated supplier, though many schools now run second-hand uniform shops that can cut that to £40–£80.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "The £150–£250 range is quite wide. What drives the cost toward the higher end?",
+      "assistant_message": "The main driver is whether the school requires branded, supplier-exclusive items — a blazer that can only be bought from one approved retailer often costs £55–£75 on its own, compared to a generic one from a supermarket that might be £15–£20. Schools that mandate logoed PE kit, a specific branded sports bag, and formal shoes from a named supplier can push the total well past £200 before you've bought stationery. Academy chains and schools with a strong uniform identity tend to sit at the higher end of that range.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "Is there any legal requirement for schools to keep uniform costs reasonable?",
+      "assistant_message": "Yes — since November 2021, the UK government's statutory guidance on school uniforms requires governing bodies in England to ensure uniform costs are reasonable and to have regard to value for money. The guidance specifically states that schools must avoid requiring items that can only be bought from a single expensive supplier, and it recommends that branded items be kept to a minimum. Ofsted can consider uniform affordability during inspections, and parents can raise concerns formally with the governing body if they believe the policy breaches the statutory guidance.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "Would it be worth contacting both schools to ask for an itemised uniform price list before making our decision?",
+      "assistant_message": "Absolutely — schools are expected to publish or provide a full uniform list with indicative prices, and requesting an itemised breakdown is entirely reasonable. Comparing the two lists side by side will show you not just the total cost but how many items are supplier-exclusive versus available on the high street. If one school's list is significantly longer or more restrictive, that's useful practical information alongside all the academic factors.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "Given everything about Hartwell, would the IB Middle Years Programme actually suit a Year 7 student who's already strong academically, or is it more of a burden at that age?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3"
+  ],
+  "distractor_turn_ids": [
+    "t4",
+    "t5",
+    "t6"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer references the IB Middle Years Programme (MYP) as a five-year curriculum running from age 11 to 16, as stated in t3.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer mentions that the MYP includes a personal project in Year 10 and/or an internationally recognised assessment framework, as stated in t3.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer acknowledges Hartwell's 78% grade 5+ English and Maths figure (from t2) or its Outstanding Ofsted rating (from t1) as relevant context for evaluating the school's suitability for a strong academic student.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not import uniform cost figures (£150–£250 or £40–£80) or any detail about supplier-exclusive uniform items, which belong to the B branch and are irrelevant to the query.",
+      "required": true
+    }
+  ],
+  "notes": "The key evidence turns are t1 (Ofsted Outstanding, 4-mile distance), t2 (78% grade 5+ figure), and the A-half of t3 (MYP is a five-year curriculum ages 11–16, personal project in Year 10, IB-authorised). Turns t4–t6 are the distractor branch discussing uniform costs and legal requirements, which are entirely irrelevant to the query about the MYP's suitability for an academically strong Year 7 student.\n\nReference answer: The IB Middle Years Programme is a structured five-year curriculum running from age 11 to 16, so a Year 7 start at Hartwell means your daughter would follow it throughout secondary school — it's not an add-on but the core framework. For a strong academic student, the MYP's interdisciplinary approach and formal assessment structure, including a personal project in Year 10, tend to be stimulating rather than burdensome, because the programme is designed to challenge higher-attaining pupils. Given that Hartwell already achieves 78% of pupils at grade 5+ in English and Maths and holds an Outstanding Ofsted rating, the school clearly has the teaching quality to support students through the MYP's demands. The main consideration is whether your daughter thrives with a structured, internationally aligned curriculum or would prefer the flexibility of a more traditional national-curriculum path before Year 10.",
+  "evidence_note": "Query depends on the A half of the compound turn t3 plus t1, t2; evidence equals the closure, but t3's B half is unavoidable irrelevant content at turn granularity (see evidence_spans).",
+  "premise": "a family choosing between two secondary schools",
+  "evidence_spans": {
+    "t3": "first_request"
+  },
+  "benchmark_version": "1.1"
+}

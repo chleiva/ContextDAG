@@ -6,17 +6,17 @@
     {
       "turn_id": "t1",
       "turn_index": 0,
-      "user_message": "I'm planning my backyard observatory build and I've budgeted $1,200 for the primary telescope — a 10-inch Dobsonian reflector. Does that seem like a realistic figure for a decent mid-range scope?",
-      "assistant_message": "A $1,200 budget for a 10-inch Dobsonian is actually quite reasonable and puts you in solid mid-range territory. At that price point you can expect a well-collimated parabolic primary mirror, a sturdy alt-azimuth rocker box, and good enough focuser quality to handle eyepiece swaps without much slop. Brands like Apertura and Zhumell both offer 10-inch Dobsonians in roughly that range, so you have competitive options to compare.",
+      "user_message": "I'm building a magic system for my fantasy novel where spellcasters draw power from a central reservoir. I've decided that the reservoir holds exactly 500 units of aether, and each spell costs a fixed amount to cast.",
+      "assistant_message": "That's a solid foundation for a hard magic system. With a 500-unit reservoir, you have a clear resource cap that forces your characters to make strategic choices about when and how they spend their power. You can build a lot of tension around mages running low mid-battle or having to ration their casts across a long journey.",
       "gold_parents": [],
       "stale": true,
-      "superseded_by": "t6"
+      "superseded_by": "t5"
     },
     {
       "turn_id": "t2",
       "turn_index": 1,
-      "user_message": "Good to know. With that $1,200 scope as the anchor of my budget, I'm trying to figure out how much I should set aside for eyepieces and a Telrad finder as accessories on top of it.",
-      "assistant_message": "A sensible rule of thumb is to spend roughly 20–25% of your telescope's cost on initial eyepiece and accessory upgrades, which on a $1,200 scope works out to about $240–$300. For a starter eyepiece kit, a quality 2-inch wide-field eyepiece around 35mm (like the Apertura SWA) runs about $80, and a mid-range 9mm planetary eyepiece adds another $60–$80. A Telrad finder itself is inexpensive at around $45, so you could fully kit out the scope for roughly $250–$300 and still have excellent views.",
+      "user_message": "Right, and I want a basic fireball to cost 50 units. How many fireballs can a fully charged mage throw before running dry?",
+      "assistant_message": "With a 500-unit reservoir and a cost of 50 units per fireball, a fully charged mage can throw exactly 10 fireballs before the reservoir is completely depleted. That's a meaningful limit — ten shots sounds like a lot until your mage is in a prolonged siege or facing multiple enemies, and suddenly every fireball becomes a weighty decision.",
       "gold_parents": [
         "t1"
       ],
@@ -26,8 +26,8 @@
     {
       "turn_id": "t3",
       "turn_index": 2,
-      "user_message": "What kind of concrete pad thickness do I need for the observatory floor to keep the telescope pier stable?",
-      "assistant_message": "For a backyard observatory pier, most builders recommend a concrete pad that is at least 12 inches (30 cm) thick and extends below the local frost line to prevent heaving through freeze-thaw cycles. The pier foundation should also be isolated from the observatory floor slab itself so that footsteps and vibrations in the building don't transfer to the telescope. In many parts of the continental US the frost line sits between 12 and 48 inches deep depending on latitude, so you'd want to check your local building code for the exact depth requirement.",
+      "user_message": "What kinds of secondary characters should I develop alongside the main mage protagonist?",
+      "assistant_message": "A well-rounded supporting cast for a mage protagonist often includes a non-magical foil who challenges the mage's reliance on power, a mentor figure who understands the system's limits from hard experience, and perhaps a rival mage with a contrasting philosophy. You might also consider a scholar or archivist character who can naturally deliver exposition about your world's magical history without it feeling forced.",
       "gold_parents": [],
       "stale": false,
       "superseded_by": null
@@ -35,8 +35,8 @@
     {
       "turn_id": "t4",
       "turn_index": 3,
-      "user_message": "The observatory roof is going to be a 6-foot diameter dome. What's the minimum wall height I need so I can actually stand up and use the telescope comfortably inside?",
-      "assistant_message": "For a 6-foot diameter dome, most amateur builders find that a wall height of at least 5 feet (roughly 1.5 meters) is necessary to give comfortable standing room once you account for the dome's curvature eating into usable headspace. The shutter opening on a 6-foot dome typically spans about 18–24 inches wide, so you also want your wall height to position that opening high enough that low-altitude objects aren't blocked by the dome ring. Many designs land on a wall height between 5 and 5.5 feet as a practical sweet spot for a single observer.",
+      "user_message": "I like the idea of a rival mage. Should the rival use the same aether system or a completely different type of magic?",
+      "assistant_message": "Having the rival use the same aether system but exploit it differently creates rich thematic contrast — they might be reckless and burn through reserves quickly while your protagonist is conservative, or vice versa. A completely different magic type works well too if you want to highlight that your world has multiple magical traditions and raise questions about which approach is superior. Either choice lets you dramatize the cost-versus-power tradeoffs you've built into your system.",
       "gold_parents": [
         "t3"
       ],
@@ -46,19 +46,8 @@
     {
       "turn_id": "t5",
       "turn_index": 4,
-      "user_message": "I live in a suburban area with moderate light pollution — Bortle 6 skies. Is a 10-inch aperture still worthwhile, or am I wasting it under those conditions?",
-      "assistant_message": "A 10-inch aperture is absolutely still worthwhile under Bortle 6 skies, though you'll notice the light pollution most on low-surface-brightness targets like large emission nebulae and faint galaxies. Where the aperture really pays off under suburban skies is on high-contrast objects: globular clusters, planetary nebulae, double stars, and the planets themselves are largely unaffected by sky glow and will look stunning in a 10-inch. A narrowband or OIII filter can also help you recover significant detail on nebulae even from a Bortle 6 site, so the aperture is far from wasted.",
-      "gold_parents": [
-        "t4"
-      ],
-      "stale": false,
-      "superseded_by": null
-    },
-    {
-      "turn_id": "t6",
-      "turn_index": 5,
-      "user_message": "Actually, I need to correct myself — the scope I'm actually buying is $1,800, not $1,200. I misread the model number and had the wrong price in mind the whole time.",
-      "assistant_message": "Thanks for the correction — that's an important difference and it changes the numbers we were working with. So the actual telescope budget is $1,800, not $1,200, and we should use that figure going forward for any calculations tied to the scope's cost.",
+      "user_message": "Actually, I need to correct something — the reservoir isn't 500 units, it's 800 units. I miscalculated earlier when I was working out the world's lore.",
+      "assistant_message": "Got it, the reservoir holds 800 units of aether, not 500. I'll work with 800 going forward. That changes the overall capacity significantly and gives your mages more staying power before they hit their limit.",
       "gold_parents": [
         "t2"
       ],
@@ -66,12 +55,197 @@
       "superseded_by": null
     },
     {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "I want to figure out the geography of the world. The story takes place on a continent with a large central desert — what's a good way to make that desert feel dangerous without just making it hot?",
+      "assistant_message": "A desert becomes truly threatening when it attacks multiple senses and survival systems simultaneously. Consider making the desert a place where compasses malfunction due to magnetic ore deposits, where the sand itself is a fine glass-like powder that damages lungs over days, or where the dunes shift so quickly that paths disappear overnight. You could also populate it with creatures or ruins that are only dangerous to those who don't know the local lore, rewarding characters who do their research.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
       "turn_id": "t7",
       "turn_index": 6,
-      "user_message": "So using that 20–25% accessory guideline you mentioned, what's the dollar range I should actually be budgeting for eyepieces and the Telrad?",
-      "assistant_message": null,
+      "user_message": "I love the idea of shifting dunes erasing paths. What if there's a nomadic culture that navigates by star patterns specific to that desert region?",
+      "assistant_message": "That's a wonderful detail — it immediately makes the nomads indispensable as guides while also giving them a form of cultural knowledge that outsiders can't easily steal or replicate. You could develop a specific constellation they call the Wanderer's Chain, which only appears at the desert's latitude, and make knowledge of its seasonal drift a closely guarded tradition passed from elder to apprentice. This also creates natural story hooks: outsiders who want to cross the desert must negotiate with or earn the trust of these navigators.",
       "gold_parents": [
         "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "What would the nomads trade for? They can navigate the desert but what do they actually need from outside societies?",
+      "assistant_message": "Desert nomads in a pre-industrial fantasy setting would most urgently need metals, since smelting requires fuel that's scarce in a treeless desert. They'd also prize certain medicines, preserved foods that don't spoil in heat, and textiles with high UV resistance — or in a fantasy context, cloth woven with cooling enchantments. Their trade relationships with border cities would naturally create tension points in your plot, especially if one of those cities decides to cut off trade as political leverage.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "I want one of the nomadic elders to be a major character. What kind of backstory would make her compelling without being a cliché wise old mentor?",
+      "assistant_message": "Give her a history of making a catastrophically wrong decision — perhaps she once sold navigation rights to a foreign army that she believed was merely a trading expedition, and that army used her guidance to invade a neighboring culture. Her current wisdom isn't innate; it's the hard-won scar tissue of that failure. She helps your protagonist not out of pure altruism but because she's looking for a way to balance a ledger she knows can never truly be balanced, which creates moral complexity every time she appears on the page.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "That's great. How do I handle her dialogue so she sounds authoritative but not preachy?",
+      "assistant_message": "The key is to have her speak in specific, concrete observations rather than general wisdom — she notices the particular way your protagonist holds a water flask and comments on it, rather than lecturing about desert survival. Let her be wrong about things outside her domain of expertise, and let her admit it bluntly. Preachy characters tend to exist to deliver themes; an authoritative character exists to pursue her own goals, and the thematic weight emerges as a byproduct of watching her act.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "How long should her scenes be relative to the main plot? I don't want her to overshadow the protagonist.",
+      "assistant_message": "A strong supporting character typically gets enough page time to feel three-dimensional but not so much that readers start asking why she isn't the protagonist. A rough heuristic is that she should appear in roughly 15 to 20 percent of your scenes, concentrated in the second act when the protagonist most needs external pressure and guidance. Her exit from the story — whether through death, departure, or a decisive break — should feel like a genuine loss that raises the stakes for the finale.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "Speaking of the second act, I'm struggling with the midpoint. What's a strong midpoint structure for a quest-style fantasy?",
+      "assistant_message": "The classic midpoint move is a false victory or false defeat that fundamentally shifts what the quest is about. Your protagonist either achieves the surface goal only to discover it was the wrong goal, or suffers a loss that forces them to reframe what success even means. In a quest narrative, a strong midpoint often involves the protagonist finally reaching a destination they've been traveling toward, only to find the situation there is completely different from what they expected — the artifact is gone, the ally is compromised, the information was wrong.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "What if the midpoint is when the protagonist discovers the source of aether in the world is actually a living entity that's been slowly dying?",
+      "assistant_message": "That's an excellent midpoint reversal — it recontextualizes every spell cast before that moment as an act of inadvertent harm, which creates immediate retroactive guilt and a completely new moral stakes. The quest shifts from 'master magic and defeat the antagonist' to 'can magic even be used ethically, and is the antagonist perhaps trying to solve the same problem by different means.' This also gives your magic system a ticking clock that isn't just about individual mages running out of aether, but about the world itself running out.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "I want to name the living aether entity. What makes a good name for an ancient, dying cosmic being?",
+      "assistant_message": "Names for ancient cosmic entities work best when they sound like they've been worn down by time — short, vowel-heavy, with a sense that the full name has been forgotten and only a fragment remains. Something like Ael, Orun, or Vaeth suggests antiquity without being unpronounceable. You could also layer in the idea that different cultures have different names for it, and one of the plot's revelations is that scholars arguing about three separate mythological figures are actually all describing the same being.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "I'll call it Vaeth. How do I write scenes where Vaeth communicates with the protagonist without it becoming an info-dump?",
+      "assistant_message": "Have Vaeth communicate in sensory impressions and emotional states rather than sentences — the protagonist feels an overwhelming grief that isn't their own, or tastes salt, or hears a chord that resolves into silence. The protagonist then has to interpret these communications, which means they can be wrong, and their misinterpretations can drive plot. Reserve direct, comprehensible communication for one or two pivotal scenes so that when Vaeth finally speaks clearly, it lands with enormous weight.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "I want Vaeth's visual design to reflect the world's history. The number of visible wounds on its form could mirror how long mages have been depleting it — like the 500 units we originally talked about as the starting reservoir capacity could be visualized as five hundred old scars.",
+      "assistant_message": "That's a striking visual metaphor — Vaeth's body as a living record of every spell ever cast. Using a numerical count of wounds to externalize the depletion gives readers an immediate, visceral sense of the damage without requiring exposition. You could show the scars multiplying in real time during major battles, so the visual cost of magic is literally inscribed on the entity your protagonist is trying to save.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "How should I handle the antagonist's motivation? I want them to also care about Vaeth but disagree on the solution.",
+      "assistant_message": "The most compelling version of this antagonist believes that Vaeth can only be saved through a controlled, painful sacrifice — perhaps killing a large number of people whose life force would replenish the entity, or destroying all existing magical knowledge so no future mages can draw from it. Their logic is internally consistent and even compassionate by their own lights, which means every debate between them and your protagonist is a genuine argument rather than a hero lecturing a villain. The tragedy is that they might even be right about the diagnosis while being catastrophically wrong about the cure.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "Should the antagonist know about Vaeth from the beginning of the story, or discover it partway through?",
+      "assistant_message": "Having the antagonist know from the beginning creates a dramatic irony that rewards attentive readers — their early actions that seem villainous acquire a second layer of meaning on re-read. Alternatively, if they discover Vaeth partway through, they can serve as a dark mirror of your protagonist: both learn the same truth and reach opposite conclusions, which raises the terrifying question of why. The second structure tends to produce a more emotionally immediate final confrontation because the antagonist's radicalization is something readers have witnessed.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "What's a good way to plant early clues that the antagonist is not simply evil?",
+      "assistant_message": "Show the antagonist being genuinely kind to someone who can do nothing for them — a street child, a wounded animal, a dying stranger — in a scene where there is no strategic benefit to the kindness. Let them express an aesthetic preference that humanizes them, like a love of a particular kind of music or a habit of pressing flowers. Most importantly, have a minor character who knows the antagonist speak of them with genuine affection and confusion, so readers hold both the villain's crimes and that affection in tension.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "I want the climax to involve a choice between saving Vaeth and saving a specific character. How do I make both options feel genuinely impossible?",
+      "assistant_message": "Both options need to have been established as equally non-negotiable long before the climax arrives. The specific character must have been shown doing something irreplaceable — not just beloved, but necessary in a concrete way that can't be replicated. Vaeth's survival must have been framed as the condition for all other life continuing, not just a symbolic loss. If readers can imagine a version of the world where one loss is acceptable, the choice collapses; you need both to feel like the end of something that cannot be replaced or rebuilt.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "What's the right pacing for the climax scene itself? I tend to write action too quickly.",
+      "assistant_message": "Slow down at moments of decision, not moments of movement — physical action can move quickly, but the instants where your protagonist chooses should be stretched into near-stillness. Use sensory detail to dilate time: the sound of breathing, the specific texture of what their hands are touching, the way light looks in that moment. A climax that rushes through its decisions feels cheap even if the action beats are vivid; readers need to feel the weight of the choice in real time.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "How long should the resolution chapter be after the climax? I've heard it should be short but I'm not sure.",
+      "assistant_message": "Resolution chapters work best when they're long enough to let the emotional consequence of the climax settle but short enough that they don't introduce new complications. For a novel-length fantasy, somewhere between 1,500 and 3,000 words is a reasonable range — enough for two or three scenes that show the changed world without overstaying. The key is that every element of the resolution should echo something established earlier, so it reads as completion rather than addition.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "If my protagonist casts 6 fireballs in the final battle, how much aether is left in the reservoir afterward?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t5"
       ],
       "stale": false,
       "superseded_by": null
@@ -80,36 +254,54 @@
   "evidence_turn_ids": [
     "t1",
     "t2",
-    "t6"
+    "t5"
   ],
   "distractor_turn_ids": [
     "t3",
     "t4",
-    "t5"
+    "t6",
+    "t7",
+    "t8",
+    "t9",
+    "t10",
+    "t11",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t20",
+    "t21",
+    "t22"
   ],
   "answer_checklist": [
     {
       "id": "c1",
-      "criterion": "The answer calculates the accessory budget using the corrected telescope price of $1,800 (not $1,200).",
+      "criterion": "The answer uses a starting reservoir value of 800 units (the corrected VALUE_2 from t5).",
       "required": true
     },
     {
       "id": "c2",
-      "criterion": "The answer applies the 20–25% guideline established in t2, yielding a range of $360–$450.",
+      "criterion": "The answer calculates 6 fireballs × 50 units each = 300 units spent, leaving 500 units remaining.",
       "required": true
     },
     {
       "id": "c3",
-      "criterion": "The answer must not use $1,200 as the telescope price or derive a $240–$300 accessory range from it.",
+      "criterion": "The answer must not use 500 units as the starting reservoir capacity (VALUE_1 from t1, which was superseded in t5).",
       "required": true
     },
     {
       "id": "c4",
-      "criterion": "The answer gives a specific dollar range (both a low and high end) rather than a vague or single-figure estimate.",
+      "criterion": "The answer states that 500 units of aether remain after the battle (not 200, which would result from incorrectly using the old 500-unit reservoir).",
       "required": true
     }
   ],
-  "notes": "t1 introduces VALUE_1 ($1,200) and t2 builds the 20–25% rule on top of it; t6 corrects the price to VALUE_2 ($1,800). The trap is using the $1,200 figure from t1/t2 rather than the corrected $1,800 from t6. Turns t3–t5 are genuine distractors about concrete pad depth, dome wall height, and light pollution, none of which affect the accessory budget calculation.\n\nReference answer: With the corrected telescope price of $1,800, the 20–25% accessory guideline discussed earlier puts your eyepiece and Telrad budget at roughly $360–$450. The lower end of that range ($360) is 20% of $1,800, and the upper end ($450) is 25%. That's a meaningful step up from the earlier estimate and gives you more room to invest in a higher-quality wide-field eyepiece or an additional planetary eyepiece alongside the Telrad.",
+  "notes": "t5 holds the corrected fact (800 units) that the query depends on; t1 and t2 establish the stale value (500 units). t16 is the deliberate trap, casually re-introducing the old 500-unit figure in a distractor context without correcting it, which could mislead a model that weights recency over explicit correction.\n\nReference answer: Each fireball costs 50 units of aether, and the reservoir holds 800 units in total after the correction made earlier. Six fireballs consume 300 units, leaving 500 units of aether remaining in the reservoir after the final battle. That actually leaves the protagonist with a substantial reserve — more than half their full capacity still available.",
   "evidence_note": null,
-  "premise": "a hobbyist building a backyard observatory"
+  "premise": "writing a fantasy novel and planning its magic system",
+  "evidence_spans": null,
+  "benchmark_version": "1.1"
 }

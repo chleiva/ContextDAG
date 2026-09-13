@@ -129,11 +129,12 @@
     },
     {
       "id": "c4",
-      "criterion": "The answer references the Luminary v2.4.0 release (not v3.1.0, which belongs to Tableaux).",
+      "criterion": "The answer's figures are those for the Luminary v2.4.0 test; it need not repeat the version string, but it must not substitute figures from the Tableaux v3.1.0 discussion.",
       "required": true
     }
   ],
-  "notes": "The evidence turns for the query are t7 (which specifies 1,200 per variant / 2,400 total and a 3-week duration for Luminary v2.4.0) and t1/t3/t5 (providing the Luminary context). The semantic trap is t8, which uses nearly identical vocabulary — 'A/B test', 'sample size', 'variants', 'per week', 'test duration' — but gives the Tableaux v3.1.0 figures of 1,800 total users and 5 weeks; a model relying on lexical similarity rather than referent tracking would pull those wrong numbers.\n\nReference answer: For the Luminary v2.4.0 A/B test, you need to enroll 2,400 users in total — 1,200 per variant. Based on Luminary's install velocity of roughly 800 new users per week, the test should run for a minimum of 3 weeks (21 days) to reach statistical significance and capture meaningful day-3 retention data. Starting on a Tuesday and holding for exactly 21 days before reading results is the recommended approach.",
+  "notes": "The evidence turns for the query are t7 (which specifies 1,200 per variant / 2,400 total and a 3-week duration for Luminary v2.4.0) and t1/t3/t5 (providing the Luminary context). The semantic trap is t8, which uses nearly identical vocabulary — 'A/B test', 'sample size', 'variants', 'per week', 'test duration' — but gives the Tableaux v3.1.0 figures of 1,800 total users and 5 weeks; a model relying on lexical similarity rather than referent tracking would pull those wrong numbers.\n\nReference answer: For the Luminary v2.4.0 A/B test, you need to enroll 2,400 users in total — 1,200 per variant. Based on Luminary's install velocity of roughly 800 new users per week, the test should run for a minimum of 3 weeks (21 days) to reach statistical significance and capture meaningful day-3 retention data. Starting on a Tuesday and holding for exactly 21 days before reading results is the recommended approach.\n\nBenchmark 1.1 edit (14 Sep 2026): disambiguation item rephrased to require using the correct entity's facts rather than naming the entity, so oracle contexts that never see the decoy are not penalized.",
   "evidence_note": null,
-  "premise": "a mobile app team fixing onboarding drop-off"
+  "premise": "a mobile app team fixing onboarding drop-off",
+  "benchmark_version": "1.1"
 }

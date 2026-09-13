@@ -120,5 +120,9 @@
   ],
   "notes": "The facts the query depends on are exclusively in t3 (the compound turn's B-part answer), which gives the 4-consecutive-nights limit, the 11-hour rest minimum citing Regulation 10, and the 8-hour night-work average. Turns t1, t2, t4–t7 are all Topic A distractors about the portal rollout and scheduling logistics; any answer that imports those details (e.g. the Wednesday noon deadline or the 14 unlogged nurses) should fail the negative checklist item.\n\nReference answer: Under NHS guidelines, the senior nurse can be scheduled for a maximum of 4 consecutive night shifts before a rest break is required; any pattern exceeding 4 consecutive nights must be flagged to the ward manager and documented in the scheduling system. She is also entitled to a minimum of 11 consecutive hours of rest between any two shifts under Regulation 10 of the Working Time Regulations 1998. Beyond that, the Working Time Regulations 1998 specify that night workers should not average more than 8 hours of work in any 24-hour period over a 17-week reference period.",
   "evidence_note": "Query depends only on the B half of the compound turn t3. Its ancestor closure {t3,t2,t1} includes A turns that are conversationally upstream of t3 but not needed for the B question; evidence is deliberately just {t3}. This is the granularity cost the family is designed to expose.",
-  "premise": "a hospital ward rolling out a new shift-scheduling process"
+  "premise": "a hospital ward rolling out a new shift-scheduling process",
+  "evidence_spans": {
+    "t3": "second_request"
+  },
+  "benchmark_version": "1.1"
 }

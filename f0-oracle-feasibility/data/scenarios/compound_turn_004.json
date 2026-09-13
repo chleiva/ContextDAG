@@ -120,5 +120,9 @@
   ],
   "notes": "The critical facts for the query (sync speed range of 1/200s–1/250s and the dark-band artifact from the shutter curtain) are established in t3, the compound turn. Turns t1, t2, t4–t7 are all about backdrop systems and lighting placement, which are genuine distractors; the answer_checklist's negative item guards against importing backdrop color or paper details into the sync-speed answer.\n\nReference answer: If you exceed your camera's maximum flash sync speed — typically 1/200s or 1/250s depending on your specific camera body — you'll see a dark band appear across part of the image. This happens because the second shutter curtain starts closing before the first has fully traveled across the sensor, so the strobe fires while part of the sensor is still blocked. The result is a frame that is only partially exposed. To avoid this, always keep your shutter speed at or below your camera's stated sync speed when shooting with studio strobes.",
   "evidence_note": "Query depends only on the B half of the compound turn t3. Its ancestor closure {t3,t2,t1} includes A turns that are conversationally upstream of t3 but not needed for the B question; evidence is deliberately just {t3}. This is the granularity cost the family is designed to expose.",
-  "premise": "a freelance photographer setting up a home studio"
+  "premise": "a freelance photographer setting up a home studio",
+  "evidence_spans": {
+    "t3": "second_request"
+  },
+  "benchmark_version": "1.1"
 }

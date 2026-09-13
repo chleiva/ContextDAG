@@ -6,17 +6,17 @@
     {
       "turn_id": "t1",
       "turn_index": 0,
-      "user_message": "Hey, so for our short film shoot next month I've confirmed we can rent the RED Komodo camera package from Lens & Light Rentals for $180 per day.",
-      "assistant_message": "That's a solid choice for a low-budget short — the RED Komodo is a great camera for the price point. At $180 per day, if you're shooting a standard three-day schedule that would come to $540 total for the camera package, which seems very manageable.",
+      "user_message": "I'm designing a semester-long ecology project for my high school class. I'm planning to have students monitor a local pond, and I want each student group to collect water samples from 8 designated sites around the pond.",
+      "assistant_message": "That sounds like a great hands-on project! With 8 sampling sites per group, students will get a solid spatial picture of the pond's water quality. You could assign each site a fixed GPS coordinate so groups can return to the exact same spot throughout the semester, which will make longitudinal comparisons much more meaningful.",
       "gold_parents": [],
       "stale": true,
-      "superseded_by": "t5"
+      "superseded_by": "t7"
     },
     {
       "turn_id": "t2",
       "turn_index": 1,
-      "user_message": "Exactly, and we have a four-day shoot scheduled, so I was budgeting $720 for the camera rental.",
-      "assistant_message": "Right, four days at $180 per day lands you at $720 for the camera package — that tracks perfectly. Make sure to factor in any insurance or damage deposit Lens & Light might require on top of that daily rate, as rental houses often ask for a deposit equal to one or two days' rental.",
+      "user_message": "Good idea. There are 6 student groups total, so how many total water samples will be collected per sampling event?",
+      "assistant_message": "With 6 groups each collecting from 8 sites, you'll have 48 total water samples per sampling event. If you plan to run sampling events once every two weeks over a 16-week semester, that would give you 8 sampling events and 384 samples across the whole semester — a very robust dataset for students to analyze.",
       "gold_parents": [
         "t1"
       ],
@@ -26,8 +26,8 @@
     {
       "turn_id": "t3",
       "turn_index": 2,
-      "user_message": "Also, I need to figure out catering. Our shoot location is at the Millbrook Community Center, and their kitchen use policy requires us to hire a licensed catering company rather than doing craft services ourselves.",
-      "assistant_message": "That's an important policy to note — it means you can't just bring in a cooler of snacks and call it done. You'll want to get quotes from licensed caterers early, since availability on short notice can be limited, and their pricing often depends on crew headcount and meal type.",
+      "user_message": "What kind of data recording sheet should I give the students for each sample?",
+      "assistant_message": "A good field data sheet for each sample should include columns for date, time, site ID, GPS coordinates, collector name, water temperature in Celsius, pH reading, dissolved oxygen in mg/L, and a brief visual observation note such as color or turbidity. Keeping it to one double-sided page per sampling event per site will make it easy for students to manage in the field without losing papers.",
       "gold_parents": [],
       "stale": false,
       "superseded_by": null
@@ -35,8 +35,8 @@
     {
       "turn_id": "t4",
       "turn_index": 3,
-      "user_message": "We have a crew of 12 people plus 4 cast members, so 16 total for meals. I found a caterer called Fresh Set who charges $22 per person per meal.",
-      "assistant_message": "With 16 people at $22 per person per meal, each meal service would run you $352. If you're doing two meals per day — say lunch and dinner — that's $704 per shoot day just for catering, so over four days that could add up to $2,816, which is worth building into your budget carefully.",
+      "user_message": "Should students use paper sheets or some kind of digital form?",
+      "assistant_message": "A hybrid approach tends to work well — have students fill out paper sheets in the field as a backup, then transfer data into a shared Google Form or spreadsheet within 24 hours of returning from the site. This protects you from data loss if a device gets wet or loses battery, and it also teaches students good data management habits.",
       "gold_parents": [
         "t3"
       ],
@@ -46,10 +46,10 @@
     {
       "turn_id": "t5",
       "turn_index": 4,
-      "user_message": "Wait, I need to correct myself on the camera rental — I just re-read the quote from Lens & Light and it's actually $210 per day, not $180. I must have misread it the first time.",
-      "assistant_message": "Thanks for catching that — $210 per day is what we should be working with, not $180. That's a meaningful difference, so it's good you double-checked before locking in the budget.",
+      "user_message": "I like that. Can I set up a Google Sheet that automatically calculates averages across all groups after they enter data?",
+      "assistant_message": "Absolutely. You can create a master Google Sheet where each group has its own tab, and then add a summary tab that uses the IMPORTRANGE or direct cell-reference formulas to pull all group data together. From there, AVERAGE and AVERAGEIF functions can automatically compute site-specific and date-specific means as soon as students submit their entries.",
       "gold_parents": [
-        "t2"
+        "t4"
       ],
       "stale": false,
       "superseded_by": null
@@ -57,10 +57,250 @@
     {
       "turn_id": "t6",
       "turn_index": 5,
-      "user_message": "Right, so what's the total camera rental cost for the full four-day shoot at the corrected rate?",
-      "assistant_message": null,
+      "user_message": "That would save me a lot of grading time. I'll also want a rubric for the final lab report — what are the most important components to grade?",
+      "assistant_message": "For an ecology field study report, the most important components to grade are typically the introduction with a clear hypothesis (about 15% of the grade), methods section with enough detail to replicate the study (15%), data presentation including well-labeled graphs and tables (25%), analysis and interpretation of trends (30%), and conclusion with reflection on sources of error (15%). Weighting the analysis and interpretation most heavily encourages students to think critically rather than just report numbers.",
       "gold_parents": [
         "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "Actually, I need to correct something from earlier — it's not 8 sampling sites per group, it's 5 sampling sites per group. I miscounted when I looked at the map.",
+      "assistant_message": "No problem, thanks for the correction! So the updated figure is 5 sampling sites per group, not 8. I'll work from that going forward, which also changes the per-event total — with 6 groups and 5 sites each, you'd have 30 samples per sampling event instead of the 48 we calculated before.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "I also need to think about safety protocols for students working near the water. What are the standard precautions?",
+      "assistant_message": "Standard safety protocols for fieldwork near open water include requiring students to wear personal flotation devices (PFDs) whenever they are within 3 feet of the water's edge, maintaining a buddy system so no student is ever alone, and designating one adult supervisor per group. You should also have a first aid kit on site and ensure all participants know the location of the nearest emergency exit from the field area before starting any sampling.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "Do I need parental consent forms for this kind of off-campus fieldwork?",
+      "assistant_message": "Yes, off-campus fieldwork almost always requires signed parental consent forms, and most districts also require a separate field trip approval form submitted to the principal at least two weeks before the trip date. You'll likely also need to provide parents with a written itinerary that includes the site address, arrival and departure times, emergency contact information, and a list of required safety equipment so they can prepare their student appropriately.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "The pond is only about a 10-minute walk from school, so I want to take students there during a 50-minute class period. Is that feasible?",
+      "assistant_message": "A 50-minute period with a 10-minute walk each way leaves you only 30 minutes of actual sampling time at the site, which is tight but workable if students are well-prepared. I'd recommend doing a dry run in the classroom where groups practice the full sampling procedure — measuring pH, temperature, and dissolved oxygen — so that when they're in the field they can complete all their site measurements efficiently within that window.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "That classroom dry run is a great idea. How long should I budget for it?",
+      "assistant_message": "Plan for the dry run to take a full 50-minute class period on its own. Spend the first 10 minutes demonstrating the instruments, then give groups 25 minutes to practice the full measurement protocol at their lab stations, and reserve the last 15 minutes for troubleshooting questions and checking that every student can record data correctly on the field sheet.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "What dissolved oxygen meter would you recommend for high school students? Something durable and easy to use.",
+      "assistant_message": "The YSI Pro20i is a popular choice for high school fieldwork — it's a rugged, waterproof handheld meter that gives reliable dissolved oxygen readings in mg/L and percent saturation, and it has a simple two-button interface that students can learn in minutes. If budget is a concern, the Hanna Instruments HI9146 is a less expensive alternative that still provides accurate readings and holds up well in wet field conditions.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "How do I calibrate the dissolved oxygen meter before each field session?",
+      "assistant_message": "For most handheld DO meters, including the YSI Pro20i, you calibrate using the water-saturated air method: remove the probe from storage solution, shake off any excess liquid, and then expose the probe to open air for at least 60 seconds while the meter stabilizes. You then enter the current barometric pressure and water temperature — which the meter often reads automatically — and press the calibrate button to set 100% saturation as the baseline; this ensures your dissolved oxygen readings in mg/L will be accurate for that day's conditions.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "Got it. I'm also realizing I should build in time for students to graph their data after each sampling event, kind of like processing the 8 sites worth of data we discussed before. How much class time should I set aside for that?",
+      "assistant_message": "Graphing and initial data processing after each sampling event typically takes about 30 to 40 minutes of class time if students are working in their groups with a pre-formatted spreadsheet template. Having the template ready with axes already labeled and color-coded by site will cut down on formatting confusion and let students focus on interpreting the patterns rather than wrestling with the software.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "Should I have students make one graph per parameter or one combined graph?",
+      "assistant_message": "It's best to have students create one separate graph per parameter — so one for pH over time, one for dissolved oxygen over time, and one for temperature over time — because overlaying all three on a single graph at different scales tends to confuse interpretation. Once they have the individual graphs, you can ask them to write a short paragraph comparing trends across parameters, which builds the analytical thinking you want without the visual clutter of a combined chart.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "I want to teach students about macroinvertebrates too, since they're great bioindicators. Which species should I focus on?",
+      "assistant_message": "For a freshwater pond in a temperate region, focus on three indicator groups: EPT taxa (Ephemeroptera — mayflies, Plecoptera — stoneflies, and Trichoptera — caddisflies), which are sensitive to pollution and signal good water quality; Chironomidae (midge larvae), which tolerate low oxygen and indicate stressed conditions; and Oligochaeta (aquatic worms), which are associated with high organic loading. Teaching students to identify these three groups and use a simple biotic index score gives them a powerful biological complement to the chemical water quality data they're already collecting.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "How do students collect macroinvertebrates without harming them too much?",
+      "assistant_message": "The standard method for benthic macroinvertebrates in a shallow pond is kick-netting: students hold a D-frame net with 500-micron mesh downstream while disturbing the substrate with their feet for exactly 30 seconds, then immediately transfer the net contents into a white sorting tray filled with pond water. Students identify and count organisms under a hand lens or dissecting microscope, then return all live animals to the pond within 20 minutes to minimize stress and mortality.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "Should macroinvertebrate sampling happen at the same sites as the water quality sampling?",
+      "assistant_message": "Ideally yes — co-locating macroinvertebrate sampling with your water quality sites allows students to directly correlate biological indicators with chemical measurements at each location. However, kick-netting requires a substrate that can be disturbed, so if any of your sites are over deep soft mud rather than gravel or leaf litter, you may need to shift those macroinvertebrate sampling points a meter or two to a more suitable substrate while keeping the water chemistry probe at the original GPS coordinate.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "How often should macroinvertebrate sampling happen compared to water quality sampling?",
+      "assistant_message": "Water quality parameters like pH, temperature, and dissolved oxygen can change significantly day to day, so sampling every two weeks makes sense for those. Macroinvertebrate communities shift much more slowly — typically over weeks to months — so sampling once per month is sufficient and also reduces the disturbance to the benthic habitat; over a 16-week semester, that gives you four macroinvertebrate sampling events, which is enough to detect seasonal trends.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "I want students to calculate a biotic index score from the macroinvertebrate data. Which index is best for this level?",
+      "assistant_message": "The Hilsenhoff Biotic Index (HBI) is well-suited for high school students because the math is straightforward: each taxon has a tolerance value between 0 and 10, and you calculate HBI as the sum of (abundance × tolerance value) divided by total organism count. An HBI score below 3.5 indicates excellent water quality, 3.5 to 4.5 is very good, 4.5 to 5.5 is good, and scores above 7.0 suggest poor water quality — the clear numerical thresholds make it easy for students to interpret and compare across sites and sampling dates.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "How should I teach students to identify the macroinvertebrates to the right taxonomic level for the HBI?",
+      "assistant_message": "For the HBI you only need identification to the order or family level, not species, which is very manageable for high school students. Give each group a laminated field identification key — the Stroud Water Research Center publishes a free, color-coded benthic macroinvertebrate key specifically designed for student use — and run a 30-minute indoor lab session using preserved specimens before the first field collection so students can practice matching real organisms to the key before they're kneeling in the mud.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "What preserved specimens should I order, and where do I get them?",
+      "assistant_message": "Carolina Biological Supply Company sells a freshwater macroinvertebrate preserved specimen set (item #W-47-4900) that includes representatives from all major indicator groups including mayfly nymphs, stonefly nymphs, caddisfly larvae, midge larvae, and aquatic worms — it's priced around $85 and is sufficient for a class of 30 students working in groups. Alternatively, Flinn Scientific carries a similar set; either supplier can usually ship within 5 to 7 business days if you order at least two weeks before you need them.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "I should also think about how to assess students during the fieldwork itself, not just on the final report. Any ideas?",
+      "assistant_message": "A fieldwork participation rubric works well for in-the-moment assessment — score each student on four criteria during each site visit: correct use of equipment (25 points), accurate data recording (25 points), adherence to safety protocols (25 points), and contribution to group teamwork (25 points), for a total of 100 points per field session. Having a clipboard with a pre-printed roster and rubric lets you make quick observational notes while circulating among groups without disrupting the sampling.",
+      "gold_parents": [
+        "t22"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "Should I grade every field session or just a few of them?",
+      "assistant_message": "Grading every session is ideal for accountability, but if that's too much to manage logistically, a practical compromise is to formally grade the first session (when habits are being established), one mid-semester session chosen at random without telling students in advance, and the final session. Announcing that any session could be graded keeps students consistently engaged throughout the semester without requiring you to score 30 rubrics after every single field visit.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "How should the final report be structured in terms of length and sections?",
+      "assistant_message": "A well-structured final ecology field report for high school should be 8 to 12 pages including figures, organized into five sections: Introduction with background on the pond ecosystem and the student group's specific hypothesis (1–2 pages), Methods describing the sampling protocol and instruments used (1–2 pages), Results presenting labeled graphs and a data summary table (2–3 pages), Discussion interpreting trends and connecting chemical data to macroinvertebrate findings (2–3 pages), and a Conclusion with a brief reflection on sources of error and suggestions for future study (1 page). Requiring students to include at least three peer-reviewed citations in the Introduction and Discussion sections adds an important research literacy component.",
+      "gold_parents": [
+        "t24"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "How do I teach high school students to find and cite peer-reviewed sources? Most of them have never done it.",
+      "assistant_message": "Start with a 45-minute library session — either in person with your school librarian or virtually — where students are shown how to access Google Scholar and at least one subscription database your school likely has, such as JSTOR or EBSCO. Teach them to filter for peer-reviewed articles, check the journal name in Scimago or the journal's own website to confirm it's peer-reviewed, and then format citations in APA 7th edition, which is the most widely used style in the natural sciences; providing a one-page APA cheat sheet for the three most common source types (journal article, website, book chapter) is usually enough for students to manage independently.",
+      "gold_parents": [
+        "t25"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "Should I require students to submit a draft of the report before the final version?",
+      "assistant_message": "Yes, requiring at least one draft submission — ideally two weeks before the final deadline — significantly improves report quality and reduces the number of students who submit fundamentally flawed work on the last day. A structured peer-review session where each group reads and comments on another group's draft using a checklist tied to the rubric criteria also reinforces the scientific writing standards while distributing some of the feedback workload away from you.",
+      "gold_parents": [
+        "t26"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "Given the corrected number of sampling sites, how many total water samples will each group collect over the entire 16-week semester?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t7"
       ],
       "stale": false,
       "superseded_by": null
@@ -69,35 +309,59 @@
   "evidence_turn_ids": [
     "t1",
     "t2",
-    "t5"
+    "t7"
   ],
   "distractor_turn_ids": [
     "t3",
-    "t4"
+    "t4",
+    "t5",
+    "t6",
+    "t8",
+    "t9",
+    "t10",
+    "t11",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t20",
+    "t21",
+    "t22",
+    "t23",
+    "t24",
+    "t25",
+    "t26",
+    "t27"
   ],
   "answer_checklist": [
     {
       "id": "c1",
-      "criterion": "The answer uses the corrected daily rate of $210 per day (established in t5) to calculate the total.",
+      "criterion": "The answer uses 5 sampling sites per group (VALUE_2 from t7), not 8 (VALUE_1 from t1).",
       "required": true
     },
     {
       "id": "c2",
-      "criterion": "The answer uses four days as the shoot duration (established in t2) in the calculation.",
+      "criterion": "The answer correctly calculates 8 sampling events over the 16-week semester (one every two weeks, established in t2).",
       "required": true
     },
     {
       "id": "c3",
-      "criterion": "The answer arrives at a total of $840 (4 days × $210).",
+      "criterion": "The answer arrives at 40 total samples per group (5 sites × 8 events = 40).",
       "required": true
     },
     {
       "id": "c4",
-      "criterion": "The answer must not use $180 per day (the original incorrect rate from t1) as the basis for the total.",
+      "criterion": "The answer must not use 8 sampling sites per group (VALUE_1) in its calculation, which would yield the incorrect total of 64 samples per group.",
       "required": true
     }
   ],
-  "notes": "t5 holds the critical correction (VALUE_2 = $210/day superseding VALUE_1 = $180/day from t1); t3 and t4 are the distractor turns about catering at the Millbrook Community Center, which are entirely irrelevant to the camera rental cost query.\n\nReference answer: At the corrected rate of $210 per day, the camera rental for a four-day shoot comes to $840 in total. That's $60 more than the earlier estimate of $720, so the budget line for the camera package needs to be updated accordingly.",
+  "notes": "The corrected VALUE_2 (5 sites) is established in t7 and supersedes VALUE_1 (8 sites) from t1. The trap is in t14, where the user casually refers back to '8 sites' as if it were still current; the query in t28 depends on using the corrected value of 5 sites from t7 combined with the 8-event semester schedule from t2.\n\nReference answer: With the corrected figure of 5 sampling sites per group, and sampling events occurring once every two weeks over a 16-week semester (giving 8 events total), each group will collect 5 × 8 = 40 water samples over the entire semester. That's a solid dataset for each group to work with for their final analysis and report.",
   "evidence_note": null,
-  "premise": "a film crew scheduling a low-budget short shoot"
+  "premise": "a teacher designing a semester-long ecology project",
+  "evidence_spans": null,
+  "benchmark_version": "1.1"
 }

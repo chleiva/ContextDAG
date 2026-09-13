@@ -6,8 +6,8 @@
     {
       "turn_id": "t1",
       "turn_index": 0,
-      "user_message": "I'm renovating a 1920s kitchen and I found white subway tile at a local tile shop for $4.50 per square foot. My kitchen backsplash area is about 40 square feet, so I'm budgeting around $180 for the tile.",
-      "assistant_message": "That sounds like a solid find for a 1920s-style kitchen — white subway tile is period-appropriate and $4.50 per square foot is a reasonable price for that classic look. At 40 square feet, your $180 estimate is correct, though you'll want to add about 10% extra for cuts and breakage, which would bring your tile purchase to roughly 44 square feet, or about $198 total. Keep that buffer in mind when you finalize your budget.",
+      "user_message": "Hey, so for the nightly batch migration, the source table `orders_raw` currently has 4.2 million rows and that's what we're planning around for the initial load.",
+      "assistant_message": "Got it — 4.2 million rows in `orders_raw` as the baseline for the initial load. That's a reasonable size to plan around; we'll want to make sure the warehouse ingestion job has enough memory headroom and that the load window fits comfortably within the nightly batch schedule.",
       "gold_parents": [],
       "stale": true,
       "superseded_by": "t7"
@@ -15,8 +15,8 @@
     {
       "turn_id": "t2",
       "turn_index": 1,
-      "user_message": "Good point on the overage. I was also thinking I'd need tile adhesive and grout — do those add significantly to the cost?",
-      "assistant_message": "For a 40-square-foot backsplash, you'd typically need one 50-pound bag of mastic adhesive, which runs about $25 to $30, and one 10-pound bag of unsanded grout (appropriate for subway tile with tight joints), which is usually $15 to $20. So you're looking at roughly $40 to $50 in additional materials on top of your tile cost. That brings your total backsplash material budget to approximately $238 to $248 before any tools or labor.",
+      "user_message": "Right, and we're estimating about 15 minutes per million rows for the full scan, so how long should we budget for the initial load?",
+      "assistant_message": "At 15 minutes per million rows, 4.2 million rows comes out to 63 minutes for the full scan portion of the initial load. You'll want to add buffer time for index rebuilding and any post-load validation steps, so I'd plan for at least 90 minutes total in your batch window.",
       "gold_parents": [
         "t1"
       ],
@@ -26,8 +26,8 @@
     {
       "turn_id": "t3",
       "turn_index": 2,
-      "user_message": "The kitchen has the original cast iron sink — it's in decent shape but the faucet is shot. What should I know about replacing a faucet on a cast iron farmhouse sink?",
-      "assistant_message": "Cast iron farmhouse sinks from the 1920s typically have pre-drilled holes in a 4-inch center spread configuration, so you'll need to find a faucet specifically rated for that hole spacing rather than the more modern 8-inch widespread style. Make sure to check whether your sink has one, two, or three holes, since that determines whether you can use a single-handle or double-handle faucet without drilling. Also worth noting: the cast iron surface is heavy and brittle, so if you ever do need to re-drill, it requires a diamond-tipped bit and a very slow speed to avoid cracking.",
+      "user_message": "What's the recommended way to handle schema drift if the source system adds a new column overnight?",
+      "assistant_message": "The safest approach is to enable schema evolution on your target warehouse tables so new columns are automatically appended rather than causing the job to fail. You should also set up an alerting rule that fires whenever the source schema fingerprint changes, so the team is notified before the next nightly run rather than discovering it in a failure log.",
       "gold_parents": [],
       "stale": false,
       "superseded_by": null
@@ -35,8 +35,8 @@
     {
       "turn_id": "t4",
       "turn_index": 3,
-      "user_message": "The sink has three holes in a 4-inch spread. I found a bridge faucet that fits — but what kind of supply lines should I use with a cast iron sink that old?",
-      "assistant_message": "For that setup, braided stainless steel supply lines are the best choice — they're flexible, corrosion-resistant, and won't react with older copper or galvanized pipes that are common in 1920s plumbing. You'll want lines that are at least 20 inches long to give yourself slack during installation, and make sure the connections are 3/8-inch compression fittings on the valve end and 1/2-inch IPS on the faucet end, which is standard for that era. Avoid plastic supply lines entirely, as they degrade faster and can fail at the compression fittings.",
+      "user_message": "We're using Snowflake as the target. Does it support that kind of automatic schema evolution natively?",
+      "assistant_message": "Snowflake doesn't do fully automatic column addition out of the box during a COPY INTO operation — if the source file has extra columns, the load will error unless you use a defined file format with the STRIP_NULL_VALUES or PURGE options, or route through a staging layer. The cleaner pattern is to land data in a raw variant column or use a transformation layer like dbt that can handle column additions explicitly before writing to the typed target table.",
       "gold_parents": [
         "t3"
       ],
@@ -46,8 +46,8 @@
     {
       "turn_id": "t5",
       "turn_index": 4,
-      "user_message": "The shutoff valves under the sink look original — they're those old oval-handle compression valves. Should I replace them before installing the new faucet?",
-      "assistant_message": "Yes, absolutely replace them — original compression shutoff valves from that era are notorious for seizing up or failing to fully close after sitting untouched for decades, and the last thing you want is an emergency with no working shutoff. The modern replacement is a 1/2-inch nominal quarter-turn ball valve, which is far more reliable and costs only about $8 to $12 per valve at any hardware store. Since you'll already have the water supply off for the faucet installation, it's the perfect time to swap them out with minimal extra effort.",
+      "user_message": "We're actually using dbt for the transformation layer. Should we version-pin dbt-snowflake in the project?",
+      "assistant_message": "Yes, absolutely — you should pin both `dbt-core` and `dbt-snowflake` to exact versions in your `requirements.txt` or `packages.yml` so a surprise upgrade doesn't break the nightly run. A common practice is to test the upgrade in a staging environment first, then bump the pin in a PR so the change is reviewed and the pipeline is validated before it touches production.",
       "gold_parents": [
         "t4"
       ],
@@ -57,8 +57,8 @@
     {
       "turn_id": "t6",
       "turn_index": 5,
-      "user_message": "Makes sense. The original kitchen also has these wide-plank pine floors — they're rough but intact. Is it worth refinishing them or just covering them?",
-      "assistant_message": "Wide-plank pine floors from the 1920s are genuinely valuable and often irreplaceable, so refinishing is almost always worth it if the planks are structurally sound and at least 3/4 inch thick. The main caveat with pine is that it's a softwood and will show dents and scratches more readily than oak, so you'd want to use a penetrating oil finish rather than a hard polyurethane, which tends to peel on soft woods. If the boards are cupped or have significant gaps, a professional floor sander can address that before finishing, though that typically runs $2 to $4 per square foot depending on your region.",
+      "user_message": "We're currently on dbt-core 1.7.4 and dbt-snowflake 1.7.3. Are those compatible with each other?",
+      "assistant_message": "Yes, dbt-core 1.7.4 and dbt-snowflake 1.7.3 are compatible — the dbt-snowflake adapter minor version tracks dbt-core, so both being on the 1.7.x line means they're designed to work together. Just make sure your Snowflake account is on a supported driver version and that you test any metadata queries after upgrading, since dbt 1.7 introduced some changes to how relation metadata is fetched.",
       "gold_parents": [
         "t5"
       ],
@@ -68,8 +68,8 @@
     {
       "turn_id": "t7",
       "turn_index": 6,
-      "user_message": "Actually, I need to correct myself on the tile — I went back to check my notes and the price is $6.75 per square foot, not $4.50. I must have misread my notes the first time.",
-      "assistant_message": "Thanks for the correction — $6.75 per square foot is quite a bit different from $4.50, so that definitely changes the numbers. At 40 square feet (plus the 10% overage bringing you to 44 square feet), you're now looking at $297 for tile rather than the $198 we calculated earlier. That's a meaningful jump, so it's good you caught it before locking in your overall budget.",
+      "user_message": "Actually, I need to correct myself on the row count — `orders_raw` has 6.8 million rows, not 4.2 million. The 4.2M figure was from an old export before we merged in the archived orders.",
+      "assistant_message": "Thanks for the correction — noted that `orders_raw` is 6.8 million rows, not 4.2 million. I'll discard the earlier figure; all planning going forward should be based on 6.8 million rows.",
       "gold_parents": [
         "t2"
       ],
@@ -79,7 +79,181 @@
     {
       "turn_id": "t8",
       "turn_index": 7,
-      "user_message": "With that corrected tile price, what's my revised total materials budget for the backsplash including the adhesive and grout?",
+      "user_message": "What's the best strategy for handling incremental loads after the initial load is done?",
+      "assistant_message": "The standard approach is to use a high-watermark column — typically an `updated_at` or `created_at` timestamp — and on each nightly run, load only rows where that column is greater than the last successful run's watermark. You store the watermark in a metadata or audit table in the warehouse, and the job reads it at the start of each run to determine the incremental window.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "The source system doesn't always update `updated_at` reliably — sometimes rows are modified without that column changing. What's the fallback?",
+      "assistant_message": "When the source timestamp can't be trusted, the most reliable fallback is row-level checksumming: compute a hash of all relevant columns for each row and compare against the previously stored hash in a shadow table on the warehouse side. Any row whose hash has changed is treated as modified and re-loaded, though this is significantly more expensive at scale since it requires a full scan of the source table on every run.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "We also have a hard delete problem — rows get physically deleted from the source and we need to reflect that in the warehouse. How do we detect those?",
+      "assistant_message": "Hard deletes are tricky because there's nothing in the source to flag them — the row is simply gone. The cleanest solution is to do a full key-set comparison: on each nightly run, extract all primary keys from the source, compare them against the warehouse, and mark any key present in the warehouse but absent in the source as deleted, typically by setting a `is_deleted` flag and a `deleted_at` timestamp rather than physically removing the row.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "The primary key on `orders_raw` is a composite of `order_id` and `tenant_id`. Does that complicate the key-set comparison?",
+      "assistant_message": "It adds a bit of complexity but nothing unmanageable — you'll just need to concatenate or hash the two columns together to form a single surrogate key for the comparison, or join on both columns simultaneously. Make sure both `order_id` and `tenant_id` are indexed or clustered appropriately in your warehouse target table so the anti-join to detect missing keys doesn't become a full cross-scan.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "For the key-set comparison, should we pull the full key list into memory or stream it? Like with 4.2 million rows it might be tight.",
+      "assistant_message": "Streaming is the safer choice at that scale — pulling millions of key pairs into application memory can easily exhaust heap space, especially if the orchestrator has limited resources. A better pattern is to push the comparison entirely into the warehouse using a SQL anti-join between the staged source keys and the existing warehouse keys, so the data never has to leave the database layer.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "Got it. What orchestrator would you recommend for scheduling these nightly jobs?",
+      "assistant_message": "Apache Airflow is the most widely adopted choice for this kind of data pipeline orchestration — it has mature Snowflake and dbt operators, strong retry and alerting support, and a large community. If you want something lighter to manage, Prefect 2 or Dagster are strong alternatives that have better native support for data-aware scheduling and asset-based pipelines.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "We're leaning toward Airflow. What's the minimum recommended setup for a production Airflow deployment?",
+      "assistant_message": "For production you want at minimum a dedicated metadata database — PostgreSQL 13 or later is recommended — separate from your warehouse, and at least two workers running in CeleryExecutor or KubernetesExecutor rather than the default SequentialExecutor. You should also run the scheduler with high availability enabled (two scheduler instances) to avoid a single point of failure for your nightly window.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "We're planning to run Airflow on Kubernetes. Is the KubernetesExecutor better than CeleryExecutor in that environment?",
+      "assistant_message": "In a Kubernetes environment, KubernetesExecutor is generally the cleaner fit because each task spins up its own pod and is fully isolated, which means you get per-task resource limits and no need to manage a separate Celery broker like Redis or RabbitMQ. The trade-off is slightly higher task startup latency due to pod scheduling overhead, so if your nightly jobs have hundreds of very short tasks, a CeleryExecutor backed by Redis might still be faster end-to-end.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "Our nightly DAG has about 40 tasks in total. Is that small enough that pod startup overhead won't be a problem?",
+      "assistant_message": "Forty tasks is well within the range where KubernetesExecutor overhead is negligible — pod startup typically adds 5 to 15 seconds per task, so across 40 tasks you're looking at a worst-case overhead of around 10 minutes if all tasks are sequential, and much less if they run in parallel. For a nightly batch window measured in hours, that's not a meaningful concern.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "How should we handle secrets like the Snowflake credentials inside the Kubernetes pods?",
+      "assistant_message": "The standard approach is to store credentials in a secrets manager — HashiCorp Vault or AWS Secrets Manager are common choices — and inject them into pods as environment variables or mounted files at runtime, rather than baking them into the container image or Kubernetes Secrets in plain base64. Airflow has native integrations with both Vault and AWS Secrets Manager through its `SecretsBackend` interface, so the DAG code never has to reference credentials directly.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "We're on AWS, so Secrets Manager makes sense. Does Airflow's AWS Secrets Manager backend support automatic secret rotation?",
+      "assistant_message": "Yes — because Airflow fetches the secret value at task execution time rather than at DAG parse time, if AWS Secrets Manager rotates the credential between runs, the next task execution will automatically pick up the new value. You do need to make sure your IAM role attached to the pod has `secretsmanager:GetSecretValue` permission for the relevant secret ARNs, and it's worth setting a short cache TTL in Airflow's secrets backend config so rotated values propagate quickly.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "What IAM permission boundary should we set to limit the blast radius if the pod credentials are compromised?",
+      "assistant_message": "You should scope the IAM role to only the specific Secrets Manager ARNs the pipeline needs — no wildcard resource on `secretsmanager:GetSecretValue`. Beyond that, apply least-privilege by restricting the Snowflake-related role to only the target database and schema, and use a permission boundary policy on the IAM role itself so that even if someone attaches a more permissive policy later, the effective permissions can't exceed what the boundary allows.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "How often should we rotate the Snowflake service account password in AWS Secrets Manager?",
+      "assistant_message": "A 90-day rotation is a common baseline that aligns with many security compliance frameworks like SOC 2 and PCI-DSS, but 30 days is a stronger posture if your threat model warrants it. AWS Secrets Manager's built-in rotation with a Lambda function can automate this entirely — you define the rotation Lambda once, set the rotation schedule, and the password update in Secrets Manager and in Snowflake happens without manual intervention.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "Does the rotation Lambda need to be in the same VPC as Snowflake?",
+      "assistant_message": "Not necessarily — Snowflake is a cloud SaaS endpoint accessible over the public internet or via AWS PrivateLink, so the Lambda just needs outbound network access to the Snowflake account URL. If you're using PrivateLink for Snowflake, then yes, the Lambda needs to be in the same VPC or a peered VPC with routing to the PrivateLink endpoint; otherwise a Lambda without a VPC attachment can reach Snowflake directly over HTTPS.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "We're using Snowflake's AWS PrivateLink. What port does Snowflake PrivateLink traffic use?",
+      "assistant_message": "Snowflake PrivateLink uses port 443 — it's standard HTTPS traffic over TLS, just routed through the private endpoint rather than the public internet. You'll need to make sure the security group on your VPC endpoint allows inbound 443 from the Lambda's security group, and that the Lambda's security group allows outbound 443 to the endpoint.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "Is there a way to verify the PrivateLink connection is actually being used and traffic isn't accidentally going over the public route?",
+      "assistant_message": "Yes — you can check Snowflake's `QUERY_HISTORY` view and look at the `CLIENT_NET_ADDRESS` column; connections through PrivateLink will show a private IP in your VPC range rather than a public IP. Additionally, you can configure a restrictive outbound security group rule on your Lambda that explicitly blocks all traffic except to the PrivateLink endpoint's private IP, which forces the connection to fail if it ever tries to route publicly.",
+      "gold_parents": [
+        "t22"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "Given the actual row count in `orders_raw`, how long should we budget for the initial load if we stick with the 15-minutes-per-million-rows estimate?",
       "assistant_message": null,
       "gold_parents": [
         "t7"
@@ -97,31 +271,49 @@
     "t3",
     "t4",
     "t5",
-    "t6"
+    "t6",
+    "t8",
+    "t9",
+    "t10",
+    "t11",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t20",
+    "t21",
+    "t22",
+    "t23"
   ],
   "answer_checklist": [
     {
       "id": "c1",
-      "criterion": "The answer uses the corrected tile price of $6.75 per square foot (from t7) to calculate tile cost.",
+      "criterion": "The answer uses the corrected row count of 6.8 million rows (from t7) to compute the load time.",
       "required": true
     },
     {
       "id": "c2",
-      "criterion": "The answer must not use the original tile price of $4.50 per square foot (from t1) in any calculation.",
+      "criterion": "The answer arrives at 102 minutes (6.8 × 15) as the scan time, or a value derived correctly from 6.8 million rows at 15 min/million.",
       "required": true
     },
     {
       "id": "c3",
-      "criterion": "The answer accounts for 44 square feet of tile (40 sq ft plus 10% overage), yielding a tile cost of $297.",
+      "criterion": "The answer must not use 4.2 million rows (the stale value from t1/t12) to compute the load time.",
       "required": true
     },
     {
       "id": "c4",
-      "criterion": "The answer adds the adhesive and grout cost range of $40–$50 (from t2) to arrive at a total backsplash materials estimate of approximately $337–$347.",
-      "required": true
+      "criterion": "The answer recommends budgeting additional buffer beyond the raw scan time (consistent with the guidance in t2 to add buffer for index rebuilding and validation).",
+      "required": false
     }
   ],
-  "notes": "t7 is the critical evidence turn that corrects the tile price from $4.50 (t1, stale) to $6.75; t2 holds the adhesive and grout costs needed to answer the query. Turns t3–t6 are the distractor chain about the sink faucet, supply lines, shutoff valves, and pine floors — all plausible kitchen renovation details but irrelevant to the tile budget calculation.\n\nReference answer: With the corrected price of $6.75 per square foot and 44 square feet of tile (including the 10% overage for cuts and breakage), the tile alone will cost $297. Adding the mastic adhesive ($25–$30) and unsanded grout ($15–$20) from the earlier estimate, your total backsplash materials budget is approximately $337 to $347. That's roughly $140 more than the original incorrect estimate, so it's a significant difference for a fixed renovation budget.",
+  "notes": "t7 is the authoritative correction setting the row count to 6.8 million; t1 and t12 both carry the stale value of 4.2 million rows and serve as the primary traps. The query in t24 depends on t7 and requires 6.8 million to compute the correct load duration.\n\nReference answer: Based on the corrected row count of 6.8 million rows in `orders_raw` and the 15-minutes-per-million-rows scan rate, the raw scan time comes to 102 minutes. You should budget beyond that for index rebuilding and post-load validation, so a total window of around 2 hours and 30 minutes to 3 hours is a reasonable estimate for the initial load.",
   "evidence_note": null,
-  "premise": "renovating a 1920s kitchen on a fixed budget"
+  "premise": "a data team migrating nightly batch jobs to a new warehouse",
+  "evidence_spans": null,
+  "benchmark_version": "1.1"
 }

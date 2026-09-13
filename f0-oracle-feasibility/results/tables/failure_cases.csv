@@ -11,7 +11,6 @@ full_history_ge_oracle_dag,continuation_005,response_a,full=0.50 dag=0.50
 full_history_ge_oracle_dag,continuation_010,response_a,full=0.50 dag=0.50
 full_history_ge_oracle_dag,join_then_split_002,response_a,full=0.75 dag=0.50
 full_history_ge_oracle_dag,join_then_split_007,response_a,full=1.00 dag=0.67
-full_history_ge_oracle_dag,knowledge_update_004,response_a,full=1.00 dag=0.75
 full_history_ge_oracle_dag,long_noisy_side_thread_006,response_a,full=1.00 dag=0.75
 full_history_ge_oracle_dag,new_root_001,response_a,full=1.00 dag=0.67
 full_history_ge_oracle_dag,new_root_006,response_a,full=0.67 dag=0.67
@@ -35,6 +34,7 @@ full_history_ge_oracle_dag,topic_fork_007,response_a,full=0.75 dag=0.75
 full_history_ge_oracle_dag,two_branch_join_007,response_a,full=1.00 dag=0.75
 full_history_ge_oracle_dag,two_branch_join_011,response_a,full=0.75 dag=0.75
 full_history_ge_oracle_dag,two_branch_join_014,response_a,full=0.75 dag=0.75
+full_history_ge_oracle_dag,ambiguous_reference_002,response_b,full=0.33 dag=0.33
 full_history_ge_oracle_dag,compound_turn_002,response_b,full=0.50 dag=0.50
 full_history_ge_oracle_dag,compound_turn_004,response_b,full=1.00 dag=0.67
 full_history_ge_oracle_dag,compound_turn_006,response_b,full=1.00 dag=0.33
@@ -50,7 +50,6 @@ full_history_ge_oracle_dag,join_then_split_002,response_b,full=0.50 dag=0.50
 full_history_ge_oracle_dag,join_then_split_003,response_b,full=1.00 dag=0.75
 full_history_ge_oracle_dag,join_then_split_006,response_b,full=1.00 dag=0.75
 full_history_ge_oracle_dag,join_then_split_007,response_b,full=0.67 dag=0.67
-full_history_ge_oracle_dag,knowledge_update_004,response_b,full=0.75 dag=0.75
 full_history_ge_oracle_dag,long_noisy_side_thread_001,response_b,full=0.75 dag=0.75
 full_history_ge_oracle_dag,long_noisy_side_thread_003,response_b,full=0.75 dag=0.75
 full_history_ge_oracle_dag,long_noisy_side_thread_006,response_b,full=0.75 dag=0.75
@@ -63,7 +62,6 @@ full_history_ge_oracle_dag,resume_006,response_b,full=0.75 dag=0.75
 full_history_ge_oracle_dag,resume_007,response_b,full=0.33 dag=0.33
 full_history_ge_oracle_dag,resume_014,response_b,full=1.00 dag=0.33
 full_history_ge_oracle_dag,semantic_decoy_001,response_b,full=0.50 dag=0.50
-full_history_ge_oracle_dag,semantic_decoy_004,response_b,full=1.00 dag=0.75
 full_history_ge_oracle_dag,semantic_decoy_005,response_b,full=0.75 dag=0.75
 full_history_ge_oracle_dag,semantic_decoy_006,response_b,full=0.75 dag=0.75
 full_history_ge_oracle_dag,semantic_decoy_007,response_b,full=0.67 dag=0.67
@@ -79,3 +77,8 @@ full_history_ge_oracle_dag,two_branch_join_004,response_b,full=0.75 dag=0.50
 full_history_ge_oracle_dag,two_branch_join_011,response_b,full=0.75 dag=0.75
 full_history_ge_oracle_dag,two_branch_join_014,response_b,full=0.75 dag=0.75
 full_history_ge_oracle_dag,two_branch_join_015,response_b,full=1.00 dag=0.67
+full_history_ge_oracle_dag,compound_turn_011,response_b,full=0.75 dag=0.75
+full_history_ge_oracle_dag,compound_turn_012,response_b,full=0.75 dag=0.75
+full_history_ge_oracle_dag,compound_turn_013,response_b,full=0.25 dag=0.25
+full_history_ge_oracle_dag,compound_turn_015,response_b,full=0.75 dag=0.25
+full_history_ge_oracle_dag,knowledge_update_011,response_b,full=1.00 dag=0.33

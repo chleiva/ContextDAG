@@ -1,0 +1,109 @@
+{
+  "scenario_id": "compound_turn_011",
+  "family": "compound_turn",
+  "label": "COMPOUND",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm planning a backyard observatory and I want to use a 10-inch f/4.7 Newtonian reflector as the main scope. I'm trying to figure out the right pier height so the eyepiece stays at a comfortable standing height. My eye level is 66 inches off the ground.",
+      "assistant_message": "For a 10-inch f/4.7 Newtonian, the focuser sits near the top of the tube, which is roughly 47 inches long (focal length 1175mm / 25.4 ≈ 46.3 inches). With the scope pointed at the zenith, the focuser is essentially at the top of the tube, so your pier plus mount height needs to put that focuser at or near your 66-inch eye level. A common rule of thumb is to subtract about 10–15 inches for the mount saddle and dovetail hardware, meaning a pier height in the range of 42–48 inches is a reasonable starting target for zenith viewing.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "That makes sense. I'm planning to use a SkyWatcher EQ6-R Pro mount, which adds 14 inches from the top of the pier to the dovetail saddle. So what exact pier height should I go with?",
+      "assistant_message": "With the EQ6-R Pro adding 14 inches and your tube being approximately 47 inches long, the focuser at zenith sits 14 + 47 = 61 inches above the pier top. To bring the focuser to your 66-inch eye level, you'd need a pier height of about 5 inches — but that's impractically low and ignores the scope's balance point and the fact that you rarely observe straight up. For a realistic average observing angle of around 60 degrees altitude, the effective focuser height drops, so a pier height of 36 inches is a well-accepted standard that keeps the eyepiece between 55 and 68 inches for most sky positions with this setup.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "Got it on the pier. I also want to pour a concrete pier footer — what diameter and depth should the footer be for a 36-inch steel pier in a climate with frost? Also, what's the best way to seal the gap between my observatory's dome shutter and the dome ring to keep rain out?",
+      "assistant_message": "For a 36-inch steel pier in a frost-prone climate, the standard recommendation is a footer that is at least 18 inches in diameter and extends 6 inches below the local frost line; in most of the northern US that frost line is 36–48 inches, so a total footer depth of 42–54 inches is typical, with a common practical spec of 18 inches diameter × 48 inches deep. Rebar cage of four #4 bars tied in a 12-inch square pattern inside that footer is standard practice to resist frost heave. For the dome shutter seal, the most effective approach is a continuous brush seal — a 2-inch-wide nylon pile weatherstrip (the same type used on commercial garage doors) glued and screwed to the lower edge of the shutter panel, pressing against the dome ring; this tolerates the rotational movement of the dome while blocking wind-driven rain reliably.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "How do I attach that brush seal to a fiberglass dome shutter? I'm worried screws won't hold well in fiberglass.",
+      "assistant_message": "Fiberglass holds screws reasonably well as long as you use the right fasteners and technique. Use #10 stainless steel pan-head screws with a neoprene bonded washer, spaced every 6 inches along the seal's backing channel, and pre-drill each hole at 3/32 inch to avoid cracking the laminate. For extra security, run a bead of 3M 5200 marine adhesive sealant behind the backing channel before screwing it down — that adhesive bonds tenaciously to fiberglass and makes the attachment essentially permanent while also sealing the screw holes against water intrusion.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "Will the 3M 5200 hold up to UV exposure on the dome exterior, or should I use something else?",
+      "assistant_message": "3M 5200 is rated for continuous UV and saltwater exposure and carries a 20-year durability rating in marine applications, so it will hold up well on an observatory dome exterior. If you ever need a removable option — say, to replace the seal in 10–15 years — consider 3M 4200 instead, which has the same UV resistance but is formulated to release with effort rather than being truly permanent like 5200. Either way, apply it when surface temperatures are between 40°F and 100°F for proper cure.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "For the concrete footer under that 36-inch pier, how deep does it need to go and what diameter did you recommend?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3"
+  ],
+  "distractor_turn_ids": [
+    "t4",
+    "t5"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states the recommended footer diameter is 18 inches.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states the footer must extend 6 inches below the local frost line, and/or gives a total typical depth of 48 inches (or 42–54 inches range) for northern US frost conditions.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer mentions that the pier height being referenced is 36 inches (the settled A-chain value from t2).",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not mention brush seals, nylon pile weatherstrip, 3M 5200/4200, fiberglass screws, or any other dome-shutter sealing detail from the B topic.",
+      "required": true
+    }
+  ],
+  "notes": "The facts the query needs (18-inch diameter, 48-inch depth, frost-line rule, rebar spec) are all in the A half of the compound turn t3, supported by the pier height of 36 inches settled in t2. Turns t4 and t5 discuss dome-shutter sealing hardware (brush seal, 3M 5200/4200, fiberglass screws) and are the distractor traps — none of that content is relevant to the footer question.\n\nReference answer: For the 36-inch pier settled on in our earlier discussion, the footer should be 18 inches in diameter. It needs to extend at least 6 inches below the local frost line, which in most of the northern US puts the frost line at 36–48 inches depth, giving a typical total footer depth of 42–54 inches — a common practical spec is 18 inches diameter by 48 inches deep. A rebar cage of four #4 bars in a 12-inch square pattern inside the footer is also recommended to resist frost heave.",
+  "evidence_note": "Query depends on the A half of the compound turn t3 plus t1, t2; evidence equals the closure, but t3's B half is unavoidable irrelevant content at turn granularity (see evidence_spans).",
+  "premise": "a hobbyist building a backyard observatory",
+  "evidence_spans": {
+    "t3": "first_request"
+  },
+  "benchmark_version": "1.1"
+}

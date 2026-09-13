@@ -62,6 +62,12 @@ class Scenario(BaseModel):
     # closure (handoff §2.2); the validator then reports it as "reviewed" instead of "flagged".
     evidence_note: Optional[str] = None
     premise: Optional[str] = None
+    # Benchmark 1.1: for turns whose user message bundles two requests, which part the query
+    # actually depends on. Keys are turn_ids in evidence_turn_ids; values describe the part
+    # (e.g. "first_request", "second_request"). Context methods stay turn-level; this lets a
+    # later phase measure the sub-turn granularity cost.
+    evidence_spans: Optional[dict[str, str]] = None
+    benchmark_version: str = "1.0"
 
     # ---- helpers ----
     def turns_by_id(self) -> dict[str, Turn]:
@@ -148,6 +154,9 @@ def validate_scenario(s: Scenario) -> ValidationResult:
         for tid in getattr(s, field):
             if tid not in idset:
                 err(f"{field} references missing turn {tid!r}")
+    for tid in (s.evidence_spans or {}):
+        if tid not in s.evidence_turn_ids:
+            err(f"evidence_spans key {tid!r} is not in evidence_turn_ids")
 
     # query turn
     q = s.query

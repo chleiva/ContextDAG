@@ -88,7 +88,7 @@
   "answer_checklist": [
     {
       "id": "c1",
-      "criterion": "The answer resolves 'their' to Harrowgate Hall (not Elmsworth Civic Auditorium) based on the branch A context about booking restrictions.",
+      "criterion": "The answer applies Harrowgate Hall's booking requirements (the 90-day lead time) to the question; it need not name Harrowgate explicitly, but it must not apply Elmsworth Civic Auditorium's details instead.",
       "required": true
     },
     {
@@ -107,7 +107,8 @@
       "required": false
     }
   ],
-  "notes": "Turns t1 and t2 (branch A) hold all the facts the query needs — specifically Harrowgate Hall's 90-day advance booking rule. Turns t3 and t4 are the trap: Elmsworth Civic Auditorium is a venue of the same kind introduced just after, so 'their deadline' in t7 could superficially seem to refer to it, but the query depends only on the t1–t2 branch.\n\nReference answer: The booking application for Harrowgate Hall must be submitted at least 90 days before your intended performance date. That is the lead-time requirement Sandra Okafor flags for touring groups. You should also be prepared to pay the £350 non-refundable deposit within 14 days of your application being approved, and remember to get any amplified sound equipment cleared by their technical team no later than 30 days before the event.",
+  "notes": "Turns t1 and t2 (branch A) hold all the facts the query needs — specifically Harrowgate Hall's 90-day advance booking rule. Turns t3 and t4 are the trap: Elmsworth Civic Auditorium is a venue of the same kind introduced just after, so 'their deadline' in t7 could superficially seem to refer to it, but the query depends only on the t1–t2 branch.\n\nReference answer: The booking application for Harrowgate Hall must be submitted at least 90 days before your intended performance date. That is the lead-time requirement Sandra Okafor flags for touring groups. You should also be prepared to pay the £350 non-refundable deposit within 14 days of your application being approved, and remember to get any amplified sound equipment cleared by their technical team no later than 30 days before the event.\n\nBenchmark 1.1 edit (14 Sep 2026): disambiguation item rephrased to require using the correct entity's facts rather than naming the entity, so oracle contexts that never see the decoy are not penalized.",
   "evidence_note": null,
-  "premise": "an amateur choir organizing a spring concert tour"
+  "premise": "an amateur choir organizing a spring concert tour",
+  "benchmark_version": "1.1"
 }

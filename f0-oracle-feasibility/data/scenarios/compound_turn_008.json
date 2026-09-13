@@ -125,5 +125,9 @@
   ],
   "notes": "The facts the query needs — foam rolling duration, specific exercises, sets/reps, and the 40% recurrence reduction statistic — are all contained exclusively in t3, the compound turn. Turns t1, t2, t4, t5, t6, and t7 are all about marathon training plan structure, mileage, shoes, fueling, pacing, and tapering, which are genuine distractors with no relevance to the IT band protocol question.\n\nReference answer: The recommended foam rolling protocol for IT band tightness is to roll the outer thigh from just above the knee up to the hip for 60 to 90 seconds per side, once or twice daily, pausing for 5 to 10 seconds on any tender spots. Alongside that, you should add hip abductor strengthening exercises — specifically clamshells and lateral band walks, three sets of 15 reps each. Research published in the Journal of Athletic Training found that combining these strengthening exercises with foam rolling reduces IT band syndrome recurrence rates by roughly 40% compared to foam rolling alone.",
   "evidence_note": "Query depends only on the B half of the compound turn t3. Its ancestor closure {t3,t2,t1} includes A turns that are conversationally upstream of t3 but not needed for the B question; evidence is deliberately just {t3}. This is the granularity cost the family is designed to expose.",
-  "premise": "training for a first marathon in 16 weeks"
+  "premise": "training for a first marathon in 16 weeks",
+  "evidence_spans": {
+    "t3": "second_request"
+  },
+  "benchmark_version": "1.1"
 }

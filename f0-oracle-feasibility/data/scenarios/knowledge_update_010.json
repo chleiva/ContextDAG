@@ -6,17 +6,17 @@
     {
       "turn_id": "t1",
       "turn_index": 0,
-      "user_message": "We're trying to decide between Northgate Academy and Riverside Secondary for our daughter. Northgate's annual tuition is £4,200 and I'm trying to figure out if the extracurricular budget they offer per pupil makes it worth it.",
-      "assistant_message": "That's a meaningful decision to work through. At £4,200 per year in tuition, it's important to weigh what Northgate is actually providing beyond core lessons. If you can tell me the per-pupil extracurricular budget, I can help you compare the overall value proposition against Riverside.",
+      "user_message": "We're setting up online ordering for our farm cooperative and I need to figure out our delivery fee structure. We've agreed on charging members $4.50 per delivery order.",
+      "assistant_message": "Got it — $4.50 per delivery order is a clean, easy-to-communicate flat fee for your members. That should cover a reasonable portion of your fuel and labor costs depending on your delivery radius. We can build the checkout flow around that figure.",
       "gold_parents": [],
       "stale": true,
-      "superseded_by": "t6"
+      "superseded_by": "t5"
     },
     {
       "turn_id": "t2",
       "turn_index": 1,
-      "user_message": "Northgate allocates £350 per pupil annually for extracurriculars, which covers things like sports kits, art supplies, and club fees. So the total effective cost per year would be £4,200 tuition plus whatever we'd otherwise pay out of pocket.",
-      "assistant_message": "That's a reasonable way to frame it. With £350 per pupil covered by Northgate, families save on those incidental costs that can add up quickly across a school year. So the real question is whether the £4,200 tuition, offset by that £350 in covered extras, represents better value than what Riverside charges and provides. Do you have comparable figures for Riverside?",
+      "user_message": "Right, and we expect about 80 orders a week, so I want to make sure the fee is sustainable.",
+      "assistant_message": "At $4.50 per order and 80 orders a week, you'd be collecting $360 per week in delivery fees — roughly $1,440 a month. That's a useful baseline to compare against your actual weekly delivery costs, like driver pay and fuel, to see whether the fee covers expenses or needs a subsidy from cooperative dues.",
       "gold_parents": [
         "t1"
       ],
@@ -26,8 +26,8 @@
     {
       "turn_id": "t3",
       "turn_index": 2,
-      "user_message": "Riverside has a strong GCSE track record — last year 78% of their students achieved grade 5 or above in both English and Maths. Does that kind of attainment figure tell us much about how an individual child might do?",
-      "assistant_message": "It's a useful headline figure, but it does have limits as a predictor for any individual student. A 78% pass rate at grade 5 or above in English and Maths is above the national average, which is encouraging, but it reflects the whole cohort rather than students with your daughter's particular profile. It's worth asking the school how they support students across the ability range, not just those already on track to hit grade 5.",
+      "user_message": "How should we handle members who want to pick up their orders instead of getting delivery? Do we need a separate workflow for that?",
+      "assistant_message": "Yes, it's worth building a distinct pickup workflow. You'd want members to select 'pickup' at checkout, which suppresses the delivery fee and routes the order to a fulfillment queue tied to your designated pickup window — say, Saturdays 9 a.m. to noon at your barn. This keeps pickup orders separate from the delivery manifest so your drivers aren't sorting through them.",
       "gold_parents": [],
       "stale": false,
       "superseded_by": null
@@ -35,8 +35,8 @@
     {
       "turn_id": "t4",
       "turn_index": 3,
-      "user_message": "Riverside's Ofsted rating was 'Good' in their last inspection, which was in March 2022. Northgate was rated 'Outstanding' in 2021. Does the age of an Ofsted report matter much?",
-      "assistant_message": "It matters quite a bit, actually. An Ofsted rating captures a school at a specific moment, and a lot can change in leadership, staffing, and culture within two or three years. Riverside's March 2022 'Good' rating is more recent than Northgate's 2021 'Outstanding,' so while Northgate's label sounds more impressive, Riverside's picture is fresher. Ideally you'd look at both schools' most recent data and arrange visits to get a current feel for each.",
+      "user_message": "We have two pickup locations — the main barn on Route 9 and a satellite spot at the Millfield Community Center. Can the system handle assigning orders to one or the other?",
+      "assistant_message": "Absolutely. Most cooperative ordering platforms let you define multiple pickup locations as selectable options during checkout, so members choose between the Route 9 barn and the Millfield Community Center when they place their order. Each location can then have its own fulfillment list, which your volunteers at each site print or view on a tablet. Just make sure you set cutoff times per location if their pickup windows differ.",
       "gold_parents": [
         "t3"
       ],
@@ -46,19 +46,8 @@
     {
       "turn_id": "t5",
       "turn_index": 4,
-      "user_message": "Riverside also has a uniform policy that requires a specific branded blazer that costs £65 and can only be bought through the school's supplier. Is that kind of restricted purchasing arrangement normal?",
-      "assistant_message": "It's fairly common, unfortunately, though it has attracted criticism from parent groups and even some government guidance discouraging overly restrictive uniform contracts. The £65 branded blazer from a single supplier is on the pricier end, and without competition there's little pressure to keep costs down. It's worth checking whether the school offers any second-hand uniform scheme, which many schools now run to offset exactly this kind of expense.",
-      "gold_parents": [
-        "t4"
-      ],
-      "stale": false,
-      "superseded_by": null
-    },
-    {
-      "turn_id": "t6",
-      "turn_index": 5,
-      "user_message": "Actually, I need to correct myself — Northgate's tuition is £4,800 per year, not £4,200. I was looking at the wrong year's fee schedule.",
-      "assistant_message": "Thanks for catching that — it's an important correction. At £4,800 per year rather than £4,200, the tuition is £600 higher than we'd been working with, which does shift the overall cost comparison with Riverside. We should use £4,800 as the baseline going forward when thinking about Northgate's value.",
+      "user_message": "Actually, I need to correct myself on the delivery fee — the board finalized it at $6.00, not $4.50. We bumped it up to better cover driver costs.",
+      "assistant_message": "Thanks for the correction — noted that the delivery fee is $6.00 per order, not $4.50. That's the figure we'll use going forward for all the checkout configuration and financial projections. At $6.00 it gives you a stronger cushion against driver costs.",
       "gold_parents": [
         "t2"
       ],
@@ -66,12 +55,164 @@
       "superseded_by": null
     },
     {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "We also need to decide how members register on the platform. Should we require them to use their cooperative membership ID to sign up?",
+      "assistant_message": "Requiring the membership ID during registration is a solid approach because it ensures only current members can place orders without any manual vetting on your end. You'd store the ID in their profile and validate it against your membership database — or even a simple spreadsheet — before activating the account. Just make sure you have a clear process for new members who joined recently and may not have their ID yet when they try to register.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
       "turn_id": "t7",
       "turn_index": 6,
-      "user_message": "Given the extracurricular budget Northgate provides, what is the net annual cost a family would effectively be paying at Northgate?",
-      "assistant_message": null,
+      "user_message": "Our membership database is in a Google Sheet right now. Is there a straightforward way to connect that to the ordering platform for ID validation?",
+      "assistant_message": "Many lightweight ordering platforms support Zapier or direct Google Sheets API integration, so when a new user submits their membership ID the system can do a lookup against your sheet in near-real time. If the ID matches a row in the sheet, registration proceeds; if not, the user gets a message to contact the cooperative administrator. It's not enterprise-grade but it's reliable enough for a cooperative of typical size.",
       "gold_parents": [
         "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "We have 214 active member households right now. Does that affect which platform tier we'd need?",
+      "assistant_message": "214 households is well within the limits of most entry-level cooperative or CSA platform tiers, which typically cap at 250 to 500 members. You likely won't need to pay for a higher tier until you grow past that range. It's worth confirming the exact member cap in the pricing plan you're evaluating, since some platforms count individual user accounts rather than households.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "We're looking at Farmigo and Local Line as our two main options. Do you have a sense of how they compare for something our size?",
+      "assistant_message": "Both are well-regarded for small-to-mid-size cooperatives and CSAs. Local Line tends to have a cleaner modern interface and stronger inventory management tools, while Farmigo has historically been popular with food hubs that need more customizable member-facing storefronts. At 214 households and with your pickup and delivery split, either should handle your volume — Local Line's pricing is generally more transparent upfront, which might simplify your board approval process.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "What payment processors do those platforms support? We want to accept credit cards and also ACH bank transfers.",
+      "assistant_message": "Local Line integrates natively with Stripe, which supports both credit card payments and ACH bank transfers through its platform. Farmigo has historically used Stripe as well, though their ACH support depends on which plan you're on — it's worth confirming with their sales team before committing. ACH typically has a lower processing fee (around 0.8% capped at $5 per transaction on Stripe) compared to credit cards, so offering it can meaningfully reduce your transaction costs over a year.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "We'd also like to let members pay with their cooperative credit balance — basically a prepaid account they top up. Is that a standard feature?",
+      "assistant_message": "It's offered by some platforms but not all at the base tier. In Local Line it's called a 'store credit' or 'wallet' feature and is available on their mid-tier plan. Farmigo has a similar prepaid balance function they refer to as a member account credit. You'd want to confirm whether applying store credit at checkout can be combined with a partial card payment for orders that exceed the balance, since that split-tender scenario trips up some implementations.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "For the prepaid top-up, should we set a minimum top-up amount? I'm thinking $20 minimum so members don't top up in tiny increments and create accounting headaches.",
+      "assistant_message": "A $20 minimum top-up is sensible and pretty standard — it reduces the number of small transactions you have to reconcile and keeps the per-transaction payment processing cost proportionally low. You might also consider a suggested top-up amount, like the $4.50 per-order figure we were working with earlier, to help members load enough for a few weeks of orders at a time. A clear expiration policy for unused credits, such as rolling over annually, is also worth adding to your member agreement.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "Good point on the expiration policy. What's a reasonable timeframe — one year or two years before unused credit expires?",
+      "assistant_message": "One year is the more common choice for small cooperatives because it keeps your liability ledger clean and prompts members to stay engaged with the platform. Two years is more member-friendly but means you're carrying that liability longer on your books. A practical middle ground some cooperatives use is a rolling 12-month inactivity rule — credit expires only if the member hasn't placed any order in 12 months, which avoids penalizing active members who simply haven't spent down their balance.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "We'll probably go with the 12-month inactivity rule. Should that be spelled out in the membership agreement or just in the platform's terms of service?",
+      "assistant_message": "It should appear in both, but the membership agreement is the more binding document from your cooperative's legal standpoint. Putting it there ensures members have explicitly acknowledged the policy at the time they join, which protects you if someone disputes a forfeited balance. A brief plain-language summary in the platform's checkout or account page is also helpful so members encounter the reminder in context rather than only in a document they signed once.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "Our membership agreement is currently a two-page PDF that members sign at the annual meeting. Can we move to e-signatures for new members who join online?",
+      "assistant_message": "Yes, e-signatures are legally valid for this kind of membership agreement in all U.S. states under the federal E-SIGN Act and the Uniform Electronic Transactions Act. Tools like DocuSign, HelloSign (now Dropbox Sign), or even a simple checkbox acknowledgment with a timestamped record can satisfy the requirement. A checkbox with a stored timestamp and the member's IP address is the lightest-weight option and is generally sufficient for a cooperative membership agreement that doesn't involve real estate or other high-stakes transactions.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "We'd want to store those signed agreements somewhere accessible for our board. Is there a good document management approach for a small operation like ours?",
+      "assistant_message": "A shared Google Drive folder with a consistent naming convention — something like MemberID_LastName_AgreementYear — works well for cooperatives at your scale and costs nothing beyond your existing Google Workspace subscription if you have one. For e-signed documents, DocuSign and Dropbox Sign both include cloud storage and audit trails in their base plans, so you may not need a separate system. The key is making sure at least two board members have admin access to the repository so there's no single point of failure.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "We have five board members. Should all five have admin access or just two or three?",
+      "assistant_message": "Three is a practical sweet spot — it gives you redundancy without creating confusion about who's responsible for keeping the repository organized. A common structure is the cooperative manager plus two board officers, such as the president and treasurer, holding admin rights, while the remaining board members have read-only access. That way sensitive member documents aren't editable by everyone, but multiple people can retrieve them when needed.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "That makes sense. We should also think about what happens when a board member's term ends — how do we handle revoking their access?",
+      "assistant_message": "The cleanest approach is to tie access reviews to your board transition dates, which for most cooperatives fall right after the annual meeting. On that date, the outgoing member's account should be downgraded to no-access or removed entirely, and the incoming member's account upgraded. Putting a calendar reminder in your cooperative's shared calendar 48 hours before the transition date ensures it doesn't get overlooked in the post-meeting rush.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "Our annual meeting is the second Saturday of March each year, so March 8, 2025 is the next one. I'll set that reminder for March 6.",
+      "assistant_message": "March 6 is a good lead time — it gives whoever handles admin access a full day to prepare the account changes before the meeting itself. You might also add a brief line to the meeting agenda confirming that access transitions were completed, so it's on the record. That kind of documentation is useful if questions ever come up later about when a former board member's access was revoked.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "With 80 orders a week expected, how much should we be projecting in weekly delivery fee revenue for our budget proposal to the board?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t5"
       ],
       "stale": false,
       "superseded_by": null
@@ -80,36 +221,51 @@
   "evidence_turn_ids": [
     "t1",
     "t2",
-    "t6"
+    "t5"
   ],
   "distractor_turn_ids": [
     "t3",
     "t4",
-    "t5"
+    "t6",
+    "t7",
+    "t8",
+    "t9",
+    "t10",
+    "t11",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19"
   ],
   "answer_checklist": [
     {
       "id": "c1",
-      "criterion": "The answer uses £4,800 as Northgate's annual tuition (the corrected VALUE_2 from t6).",
+      "criterion": "The answer uses $6.00 as the delivery fee per order (the corrected VALUE_2 from t5).",
       "required": true
     },
     {
       "id": "c2",
-      "criterion": "The answer subtracts the £350 per-pupil extracurricular budget (stated in t2) from the tuition to arrive at a net figure.",
+      "criterion": "The answer calculates weekly delivery fee revenue as $480 (80 orders × $6.00), or states $480 explicitly.",
       "required": true
     },
     {
       "id": "c3",
-      "criterion": "The answer arrives at a net effective annual cost of £4,450 (£4,800 minus £350).",
+      "criterion": "The answer must not use $4.50 as the delivery fee (the stale VALUE_1 from t1, which would incorrectly yield $360/week).",
       "required": true
     },
     {
       "id": "c4",
-      "criterion": "The answer must not use £4,200 as Northgate's tuition (the stale VALUE_1 from t1, superseded in t6).",
+      "criterion": "The answer uses 80 orders per week as the order volume (stated in t2 and confirmed in t20).",
       "required": true
     }
   ],
-  "notes": "t6 corrects the tuition from £4,200 (t1) to £4,800, and t2 establishes the £350 extracurricular budget; the query requires both figures but only the corrected tuition. t3, t4, and t5 are the distractor branch covering GCSE attainment, Ofsted ratings, and uniform costs — none of these feed into the net cost calculation.\n\nReference answer: With Northgate's corrected annual tuition of £4,800 and their per-pupil extracurricular budget of £350 covering costs like sports kits, art supplies, and club fees, the net effective annual cost to a family would be £4,450. That £350 offsets expenses families would otherwise pay out of pocket, so £4,450 is the realistic baseline for comparing Northgate's cost against Riverside's.",
+  "notes": "The key evidence turns are t5 (correction of delivery fee to $6.00) and t2 (80 orders/week volume). The trap is t12, where the assistant casually references the old $4.50 figure in the context of prepaid top-up suggestions, which could mislead a system into using the stale value when answering t20.\n\nReference answer: Based on the corrected delivery fee of $6.00 per order and your projected 80 orders per week, you should budget $480 per week in delivery fee revenue. Over a typical four-week month that comes to $1,920 in delivery fee income. That's the figure to present to the board as your baseline delivery revenue projection.",
   "evidence_note": null,
-  "premise": "a family choosing between two secondary schools"
+  "premise": "a farm cooperative setting up online ordering",
+  "evidence_spans": null,
+  "benchmark_version": "1.1"
 }

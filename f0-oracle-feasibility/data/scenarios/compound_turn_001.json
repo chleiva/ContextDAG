@@ -101,5 +101,9 @@
   ],
   "notes": "The facts the query needs — the 'Sensei Launch' name, four 90-minute sessions, and 90-day Customer Success Manager support — all appear in the assistant's response to the compound turn t3 (the B portion). Turns t4 and t5 about insurance fee schedules and plan counts are the traps; those details must not bleed into the answer.\n\nReference answer: The training program is called Sensei Launch and it includes four live virtual instructor-led sessions, each 90 minutes long, typically delivered over two weeks. After your go-live date, Carestream provides 90 days of post-launch support from a dedicated Customer Success Manager, and this is included in the standard contract.",
   "evidence_note": "Query depends only on the B half of the compound turn t3. Its ancestor closure {t3,t2,t1} includes A turns that are conversationally upstream of t3 but not needed for the B question; evidence is deliberately just {t3}. This is the granularity cost the family is designed to expose.",
-  "premise": "a dentist's office replacing its appointment software"
+  "premise": "a dentist's office replacing its appointment software",
+  "evidence_spans": {
+    "t3": "second_request"
+  },
+  "benchmark_version": "1.1"
 }

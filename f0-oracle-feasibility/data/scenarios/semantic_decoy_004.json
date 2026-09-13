@@ -105,11 +105,12 @@
     },
     {
       "id": "c4",
-      "criterion": "The answer correctly identifies the podcast as 'Cobblestone Chronicles' and not a generic or unnamed show.",
+      "criterion": "The answer's runtimes are those planned for Cobblestone Chronicles (35 and 50 minutes); it need not repeat the show's name, but it must not substitute the other show's episode lengths.",
       "required": true
     }
   ],
-  "notes": "t1, t5, and t6 carry all the facts needed to answer the query (podcast name, episode runtimes of 35 and 50 minutes). t2, t3, and t4 are the semantic decoys, using timing and duration vocabulary (20-minute cycles, flow rates, pressure values) that could confuse a lexically-driven system into retrieving irrigation numbers instead of podcast runtimes.\n\nReference answer: For Cobblestone Chronicles, the first episode covering the 1887 Millhaven mill fire is planned at 35 minutes. The second episode is intended to run longer at 50 minutes, since there is more historical ground to cover on that subject. That means the second episode is 15 minutes longer than the first.",
+  "notes": "t1, t5, and t6 carry all the facts needed to answer the query (podcast name, episode runtimes of 35 and 50 minutes). t2, t3, and t4 are the semantic decoys, using timing and duration vocabulary (20-minute cycles, flow rates, pressure values) that could confuse a lexically-driven system into retrieving irrigation numbers instead of podcast runtimes.\n\nReference answer: For Cobblestone Chronicles, the first episode covering the 1887 Millhaven mill fire is planned at 35 minutes. The second episode is intended to run longer at 50 minutes, since there is more historical ground to cover on that subject. That means the second episode is 15 minutes longer than the first.\n\nBenchmark 1.1 edit (14 Sep 2026): disambiguation item rephrased to require using the correct entity's facts rather than naming the entity, so oracle contexts that never see the decoy are not penalized.",
   "evidence_note": null,
-  "premise": "launching a podcast about local history"
+  "premise": "launching a podcast about local history",
+  "benchmark_version": "1.1"
 }

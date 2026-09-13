@@ -4,7 +4,7 @@ Research framework for dependency-graph context management in multi-turn LLM con
 
 > **Early-stage research.** This repository currently contains only the **F0 oracle feasibility study**, the first step in a staged evaluation plan before any automatic system is built. It is not a usable framework yet. Anyone cloning early should expect a benchmark and an offline experiment, not a library.
 >
-> **F0 status: complete (13 Sep 2026), verdict GO on both response models.** With a hand-labeled dependency graph, oracle DAG context used 66% fewer tokens than full history at equal-or-better checklist quality (+2.4 pp Sonnet 4.6, +3.5 pp Haiku 4.5; both within the pre-registered non-inferiority margin), and beat the single-parent oracle tree by +0.32 on join-family scenarios. Full numbers, plot, comparisons and limitations: [`f0-oracle-feasibility/F0_RESULTS.md`](f0-oracle-feasibility/F0_RESULTS.md). Next step per the plan is F0.5 (candidate-realism check), not an automatic router.
+> **F0 status: complete (13 Sep 2026, benchmark 1.1), verdict GO on both response models.** With a hand-labeled dependency graph, oracle DAG context used 69% fewer tokens than full history at equal-or-better checklist quality (+2.7 pp Sonnet 4.6, +2.6 pp Haiku 4.5; both within the pre-registered non-inferiority margin), and beat the single-parent oracle tree by +0.32 on join-family scenarios. 145 scenarios across 13 families. Full numbers, plot, comparisons and limitations: [`f0-oracle-feasibility/F0_RESULTS.md`](f0-oracle-feasibility/F0_RESULTS.md). Next step per the plan is F0.5 (candidate-realism check), not an automatic router.
 
 ## What F0 asks
 

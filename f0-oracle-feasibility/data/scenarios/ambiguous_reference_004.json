@@ -81,7 +81,7 @@
     },
     {
       "id": "c2",
-      "criterion": "The answer correctly resolves 'they' to the Renfield Street / Gus Tamboli space (Entity 1), not to Hartwell & Dunn / Caldwell Avenue (Entity 2).",
+      "criterion": "The answer applies the Renfield Street lease terms (Gus Tamboli's signing deadline and rent-free concession) to the question; it need not name the landlord explicitly, but it must not use Hartwell & Dunn / Caldwell Avenue terms instead.",
       "required": true
     },
     {
@@ -95,7 +95,8 @@
       "required": false
     }
   ],
-  "notes": "t2 holds the critical facts the query needs (March 14th deadline and 60-day rent-free period tied to the Renfield Street / Gus Tamboli space). t3 and t4 introduce the Caldwell Avenue / Hartwell & Dunn space as the distractor — a pronoun in t6 referring to 'they' could superficially apply to either landlord, but only the Renfield Street branch (t1–t2) established any signing deadline.\n\nReference answer: The deadline to take advantage of the rent-free period on the Renfield Street space is March 14th — that's the date Gus Tamboli set for signing the lease in order to qualify for the 60-day rent-free build-out period. That concession is worth $9,600 in deferred rent, so it's worth making sure your financing and contractor bids are ready well before that date. Be sure the 60-day rent-free provision is written explicitly into the lease agreement.",
+  "notes": "t2 holds the critical facts the query needs (March 14th deadline and 60-day rent-free period tied to the Renfield Street / Gus Tamboli space). t3 and t4 introduce the Caldwell Avenue / Hartwell & Dunn space as the distractor — a pronoun in t6 referring to 'they' could superficially apply to either landlord, but only the Renfield Street branch (t1–t2) established any signing deadline.\n\nReference answer: The deadline to take advantage of the rent-free period on the Renfield Street space is March 14th — that's the date Gus Tamboli set for signing the lease in order to qualify for the 60-day rent-free build-out period. That concession is worth $9,600 in deferred rent, so it's worth making sure your financing and contractor bids are ready well before that date. Be sure the 60-day rent-free provision is written explicitly into the lease agreement.\n\nBenchmark 1.1 edit (14 Sep 2026): disambiguation item rephrased to require using the correct entity's facts rather than naming the entity, so oracle contexts that never see the decoy are not penalized.",
   "evidence_note": null,
-  "premise": "a small bakery deciding whether to open a second location"
+  "premise": "a small bakery deciding whether to open a second location",
+  "benchmark_version": "1.1"
 }

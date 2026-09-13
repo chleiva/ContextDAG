@@ -6,17 +6,17 @@
     {
       "turn_id": "t1",
       "turn_index": 0,
-      "user_message": "I'm planning a field study on urban bird populations and I've budgeted $1,200 for my acoustic recording equipment — specifically the Song Meter SM4 units. Does that sound like a reasonable allocation for two devices?",
-      "assistant_message": "At $600 per unit, $1,200 for two Song Meter SM4 recorders is a tight but plausible budget if you're buying directly from Wildlife Acoustics. Keep in mind you'll also need SD cards, batteries, and mounting hardware, which can add another $100–$150 per unit on top of that base price.",
+      "user_message": "We're finalizing the fall menu and I want to price the butternut squash bisque at $12 a bowl. Can you help me think through how that fits into our overall pricing strategy?",
+      "assistant_message": "A $12 price point for the butternut squash bisque sounds reasonable for a seasonal starter. That positions it in the mid-range for soups, which typically run $9–$15 at casual-upscale restaurants, so it should feel accessible without undercutting your margin.",
       "gold_parents": [],
       "stale": true,
-      "superseded_by": "t8"
+      "superseded_by": "t6"
     },
     {
       "turn_id": "t2",
       "turn_index": 1,
-      "user_message": "Right, so with two SM4 units at $600 each, I'm thinking I can deploy one in a park-edge habitat and one in a dense urban core to compare dawn chorus activity. How many days of continuous recording can I realistically expect per deployment before I need to swap batteries?",
-      "assistant_message": "With the SM4 running on eight D-cell alkaline batteries and recording at a typical 16-bit, 24 kHz sample rate for six hours per day around dawn, you can expect roughly 10 to 14 days of deployment before battery levels become a concern. If you reduce your daily recording window or use lithium batteries, you can push that closer to 20 days. Planning a swap schedule every 10 days is a conservative and reliable approach for a comparative urban study.",
+      "user_message": "Our food cost target is 30%. So what would the maximum allowable ingredient cost per bowl be at that $12 price?",
+      "assistant_message": "At a $12 selling price with a 30% food cost target, you'd want ingredient costs to come in at no more than $3.60 per bowl. That gives you $8.40 to cover labor, overhead, and profit, which is a solid margin for a soup course.",
       "gold_parents": [
         "t1"
       ],
@@ -26,8 +26,8 @@
     {
       "turn_id": "t3",
       "turn_index": 2,
-      "user_message": "I also need to think about my survey transect design. For point count surveys, what's the standard radius used for detecting passerines in urban environments?",
-      "assistant_message": "The most widely used fixed-radius point count for passerines in urban settings is 50 meters, as recommended in the North American Breeding Bird Survey protocol adapted for urban use. Some studies use a 25-meter inner radius and a 25–50-meter outer annulus to separate detection distances, which helps account for the noise masking that is common near roads and buildings. Choosing the right radius depends on your specific habitat density and the species groups you're targeting.",
+      "user_message": "I also need to figure out the font situation for the printed menus. Our designer suggested using a serif font for the dish names — something like Garamond. Does that typically work well for restaurant menus?",
+      "assistant_message": "Garamond is a classic choice and reads very elegantly on printed menus, especially for upscale or seasonal concepts. It pairs well with a simpler sans-serif font for descriptions, which keeps the hierarchy clear and prevents the page from feeling too heavy.",
       "gold_parents": [],
       "stale": false,
       "superseded_by": null
@@ -35,8 +35,8 @@
     {
       "turn_id": "t4",
       "turn_index": 3,
-      "user_message": "How long should each point count station be held? I've seen recommendations ranging from 3 minutes to 10 minutes.",
-      "assistant_message": "The standard duration recommended by the Institute for Bird Populations for stationary point counts in urban studies is 5 minutes per station, which balances detection probability against observer fatigue and time constraints. Some researchers extend to 8 minutes when targeting secretive species like rails or wrens in dense vegetation, but for a general passerine survey in an urban matrix, 5 minutes is the most defensible and widely accepted duration. Consistency across all stations is more important than the exact duration you choose.",
+      "user_message": "We're printing on 100 lb. matte card stock. Will Garamond hold up at smaller point sizes, like 9pt for the descriptions?",
+      "assistant_message": "Garamond at 9pt on 100 lb. matte card stock can work, but it's right at the edge of comfortable readability — some guests, especially in dim lighting, may struggle with it. I'd recommend bumping descriptions to 10pt or 10.5pt to be safe, keeping dish names at 13–14pt for clear visual hierarchy.",
       "gold_parents": [
         "t3"
       ],
@@ -46,8 +46,8 @@
     {
       "turn_id": "t5",
       "turn_index": 4,
-      "user_message": "I'm also worried about observer bias. Should I use a single observer for all transects throughout the study, or is it okay to rotate two observers?",
-      "assistant_message": "Using a single observer throughout the study is the gold standard for minimizing inter-observer variability, since individual detection abilities for bird calls and songs can differ by as much as 20–30% between experienced ornithologists. If you must use two observers, you should conduct a calibration session where both survey the same locations simultaneously and then calculate a correction factor based on their detection overlap. The calibration should be done at the start of the field season and repeated if there is a gap of more than four weeks between sessions.",
+      "user_message": "Our printer quoted a turnaround of 5 business days for 200 copies. Does that sound normal?",
+      "assistant_message": "Five business days for 200 copies of a menu on specialty card stock is a pretty standard turnaround for a short-run commercial print job. If your seasonal launch has a hard date, I'd still recommend submitting the files at least a week early to leave room for a proof review and any last-minute corrections.",
       "gold_parents": [
         "t4"
       ],
@@ -57,30 +57,8 @@
     {
       "turn_id": "t6",
       "turn_index": 5,
-      "user_message": "What time of day should I start the point counts to capture peak singing activity? I'll be working in a mid-latitude North American city.",
-      "assistant_message": "For passerines at mid-latitudes in North America, the optimal window is from 30 minutes before local sunrise to 4 hours after sunrise, which typically corresponds to roughly 5:00–9:00 AM in summer months. Outside this window, singing rates drop substantially and your detection probability decreases, which undermines comparability across survey days. Most standardized urban bird protocols, including those used by the Cornell Lab of Ornithology's citizen science programs, anchor the start time to civil twilight rather than a fixed clock time to account for seasonal variation.",
-      "gold_parents": [
-        "t5"
-      ],
-      "stale": false,
-      "superseded_by": null
-    },
-    {
-      "turn_id": "t7",
-      "turn_index": 6,
-      "user_message": "I need to get a permit to access one of the city parks for my study. How far in advance should I apply for a research permit from a typical urban parks department?",
-      "assistant_message": "Most urban parks departments in large North American cities require research permit applications to be submitted at least 6 to 8 weeks before the intended start date, with some larger systems like the New York City Department of Parks and Recreation requesting up to 12 weeks for studies involving equipment installation. You'll typically need to submit a project summary, proof of institutional affiliation, and a site map showing where equipment will be placed. Starting the process 10–12 weeks out gives you a comfortable buffer for back-and-forth correspondence.",
-      "gold_parents": [
-        "t6"
-      ],
-      "stale": false,
-      "superseded_by": null
-    },
-    {
-      "turn_id": "t8",
-      "turn_index": 7,
-      "user_message": "I went back and checked the Wildlife Acoustics website — the SM4 is actually $749 per unit, not $600. So my original budget estimate was off.",
-      "assistant_message": "Thanks for the correction — $749 per unit is the accurate current price for the Song Meter SM4 from Wildlife Acoustics, not $600 as we had been working with. That's a meaningful difference, so your original $1,200 budget would actually fall short of covering two units. You'd need to revise your equipment budget upward to account for that corrected figure.",
+      "user_message": "Actually, I need to correct myself on the bisque price — we decided to set it at $14, not $12. Sorry about that.",
+      "assistant_message": "No problem at all — noted that the butternut squash bisque is priced at $14, not $12. That's actually a stronger price point and gives you a bit more room to work with on food cost.",
       "gold_parents": [
         "t2"
       ],
@@ -88,12 +66,142 @@
       "superseded_by": null
     },
     {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "What vegetables are typically at peak in fall that we should be highlighting on the menu?",
+      "assistant_message": "Fall is prime season for root vegetables and alliums — think parsnips, turnips, celeriac, and sweet potatoes alongside the obvious butternut squash and pumpkin. Brassicas like Brussels sprouts, cauliflower, and kale are also at their best in cool weather, and late-season apples and pears can add a lot to both savory dishes and desserts.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "We want to feature a roasted beet salad. What cheese tends to pair best with beets?",
+      "assistant_message": "Goat cheese is the classic pairing — its tanginess cuts through the earthiness of roasted beets beautifully. Aged ricotta salata or a creamy gorgonzola can also work really well if you want something a bit more complex or crowd-pleasing.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
       "turn_id": "t9",
       "turn_index": 8,
-      "user_message": "Given the correct price per unit, how much would I need to budget in total to purchase exactly two SM4 recorders, and how does that compare to my original allocation?",
-      "assistant_message": null,
+      "user_message": "Should we offer the beet salad in a half-portion option for appetizer size?",
+      "assistant_message": "Offering a half-portion as a starter is a smart move — it lowers the entry price, reduces food commitment for guests who want to try multiple dishes, and can actually increase overall table spend. Just make sure the half-portion still looks generous and composed on the plate, since sparse presentations can feel like poor value even at a lower price.",
       "gold_parents": [
         "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "How many new dishes is it reasonable to introduce in a single seasonal menu update?",
+      "assistant_message": "Most restaurants find that introducing 4 to 8 new dishes in a seasonal update is manageable without overwhelming the kitchen or confusing regulars. Going beyond 10 new items at once tends to strain prep workflows and staff training, especially if the dishes require unfamiliar techniques or sourcing.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "We're thinking of adding a braised short rib entrée. What's a good braising liquid for fall flavors?",
+      "assistant_message": "A combination of red wine, beef stock, and aromatic vegetables — carrots, celery, onion, garlic — is a reliable fall braise base. For a more distinctly seasonal profile, you could add a splash of apple cider and a few sprigs of fresh thyme, which gives the finished sauce a subtle sweetness that complements root vegetable sides nicely.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "What internal temperature should we be hitting for the short ribs to be properly braised and tender?",
+      "assistant_message": "For braised short ribs, you're aiming for an internal temperature around 200–210°F — that's the range where the collagen fully converts to gelatin and the meat becomes fall-off-the-bone tender. Unlike a steak where you'd pull it early, braised beef needs to push well past the 'done' zone to achieve that silky, yielding texture.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "We want to pair the short rib with a celery root purée. What ratio of celery root to potato gives the best texture?",
+      "assistant_message": "A ratio of about 70% celery root to 30% potato is a good starting point — the potato adds body and smoothness without overwhelming the celeriac's delicate, slightly nutty flavor. If the purée feels too loose, you can adjust by reducing the cream slightly or increasing the potato portion, but keep it under 40% potato or the celery root character starts to disappear.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "Our sous chef wants to add a mushroom risotto as a vegetarian entrée. What mushroom varieties work best for a fall risotto?",
+      "assistant_message": "Porcini — either fresh or rehydrated dried — are the gold standard for a fall risotto because of their deep, woodsy flavor. Hen-of-the-woods (maitake) and chanterelles are also excellent choices, and blending two or three varieties tends to create more complexity than using a single type alone.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "What's the right starch-to-liquid ratio for risotto? We want to nail the consistency.",
+      "assistant_message": "A standard ratio is about 1 cup of Arborio rice to 4 cups of warm stock, added gradually in half-cup increments over roughly 18–20 minutes of cooking. The key is that the stock should be at a gentle simmer when you add it — cold stock shocks the rice and breaks the starch release that gives risotto its creamy consistency.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "For portion costing purposes, should we be thinking about each entrée differently, like the $12 bisque was a useful reference point for starters?",
+      "assistant_message": "Portion costing definitely works differently across courses — starters have tighter margins because of their lower price ceiling, while entrees can absorb higher food costs and still hit your 30% target. The bisque reference is a helpful anchor for starters, but for the short rib and risotto you'd be looking at ingredient costs in the $5–$8 range per plate at typical entrée pricing.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "How should we handle dietary labeling on the new menu — do we need to call out gluten-free and vegan items?",
+      "assistant_message": "Dietary labeling has become a strong customer expectation, especially for seasonal menus that may feature unfamiliar dishes. Using small, consistent icons for gluten-free, vegan, and vegetarian items is the cleanest approach — it keeps the menu uncluttered while giving guests the information they need without requiring them to ask a server.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "Should the icons be placed before or after the dish name on the menu?",
+      "assistant_message": "Placing icons after the dish name — typically at the end of the description — is the most common and visually cleaner convention. It lets the dish name read first and stand on its own, and the icons function more as supplementary information rather than leading with a dietary category that might narrow a guest's interest before they've even read the dish.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "Given our food cost target of 30%, what's the maximum we can spend on ingredients per bowl of the bisque?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t6"
       ],
       "stale": false,
       "superseded_by": null
@@ -102,38 +210,50 @@
   "evidence_turn_ids": [
     "t1",
     "t2",
-    "t8"
+    "t6"
   ],
   "distractor_turn_ids": [
     "t3",
     "t4",
     "t5",
-    "t6",
-    "t7"
+    "t7",
+    "t8",
+    "t9",
+    "t10",
+    "t11",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18"
   ],
   "answer_checklist": [
     {
       "id": "c1",
-      "criterion": "The answer uses $749 as the correct per-unit price of the Song Meter SM4 (the corrected VALUE_2 from t8).",
+      "criterion": "The answer uses $14 as the price of the butternut squash bisque (the corrected VALUE_2 from t6).",
       "required": true
     },
     {
       "id": "c2",
-      "criterion": "The answer states that two SM4 units cost $1,498 in total (2 × $749).",
+      "criterion": "The answer calculates the maximum ingredient cost as $4.20 per bowl (30% of $14).",
       "required": true
     },
     {
       "id": "c3",
-      "criterion": "The answer must not use $600 as the per-unit price or $1,200 as the correct total cost for two units (VALUE_1 from t1, superseded in t8).",
+      "criterion": "The answer must not use $12 as the bisque price (the stale VALUE_1 from t1, repeated as a trap in t16).",
       "required": true
     },
     {
       "id": "c4",
-      "criterion": "The answer notes that the original $1,200 budget is insufficient to cover two units at the corrected price, reflecting a shortfall of $298.",
+      "criterion": "The answer correctly applies the 30% food cost target stated in t2.",
       "required": true
     }
   ],
-  "notes": "t1 establishes the stale VALUE_1 ($600/unit, $1,200 total) and t8 corrects it to VALUE_2 ($749/unit); the query in t9 requires the corrected per-unit price to compute the right total. Turns t3–t7 are the distractor branch covering transect design, point count protocol, observer bias, timing, and permits — none of which bear on the equipment budget query.\n\nReference answer: At the corrected price of $749 per unit, two Song Meter SM4 recorders would cost $1,498 in total. Your original allocation of $1,200 falls $298 short of that amount, meaning you would need to increase your equipment budget by roughly 25% just to cover the two units before accounting for accessories like SD cards and batteries.",
+  "notes": "The corrected price VALUE_2 = $14 is established in t6 and is the only value relevant to the query in t19. The trap is in t16, where the old VALUE_1 = $12 is casually reintroduced in passing during the unrelated C thread on entrée costing; the correct answer must use $14, yielding $4.20, not $12, which would yield $3.60.\n\nReference answer: With the corrected price of $14 per bowl and a 30% food cost target, the maximum allowable ingredient cost for the butternut squash bisque is $4.20 per bowl. That leaves $9.80 to cover labor, overhead, and profit margin on each serving.",
   "evidence_note": null,
-  "premise": "a PhD student planning a field study on urban bird populations"
+  "premise": "a restaurant redesigning its menu for a seasonal change",
+  "evidence_spans": null,
+  "benchmark_version": "1.1"
 }

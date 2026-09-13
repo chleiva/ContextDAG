@@ -125,5 +125,9 @@
   ],
   "notes": "The facts the query needs are in t3 (the compound turn), specifically the insurance policy specifics given in the second half of the assistant's reply. Turns t4 through t7 are all on-premise distractor turns about permitting, drawing standards, materials, and pile driving that must not be imported into the answer.\n\nReference answer: The Commercial General Liability policy should carry a minimum of $1 million per occurrence and $2 million in aggregate. The Marine General Liability coverage can be structured either as an endorsement added to the CGL policy or as a completely separate standalone policy, depending on what your broker can arrange. The key reason to treat it separately or add the endorsement is that standard CGL policies typically exclude marine exposures such as watercraft and dock operations, so without it you'd have a gap in coverage.",
   "evidence_note": "Query depends only on the B half of the compound turn t3. Its ancestor closure {t3,t2,t1} includes A turns that are conversationally upstream of t3 but not needed for the B question; evidence is deliberately just {t3}. This is the granularity cost the family is designed to expose.",
-  "premise": "a sailing club replacing its aging dock"
+  "premise": "a sailing club replacing its aging dock",
+  "evidence_spans": {
+    "t3": "second_request"
+  },
+  "benchmark_version": "1.1"
 }

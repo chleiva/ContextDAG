@@ -1,0 +1,109 @@
+{
+  "scenario_id": "compound_turn_014",
+  "family": "compound_turn",
+  "label": "COMPOUND",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're planning a 120-guest wedding on Lake Tahoe this coming June 14th and we need to figure out tent sizing. The ceremony and reception will both be under the same tent on a private lakeside property in Incline Village.",
+      "assistant_message": "For 120 guests with a combined ceremony and reception under one tent, you'll generally need to plan for about 15 square feet per person for a seated dinner layout, which puts you at a minimum of 1,800 square feet of usable floor space. A standard 40×60-foot frame tent (2,400 sq ft) is the most common recommendation for that guest count because it gives you room for a dance floor, a buffet or bar station, and a small staging area without feeling cramped. Keep in mind that Incline Village sits at roughly 6,229 feet elevation, so you'll want a tent rated for higher wind loads—look for a structure rated to at least 70 mph.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "That 40×60 sounds right. We also want a 12×20-foot catering tent attached to the side for the kitchen staging area. Does that change anything structurally?",
+      "assistant_message": "Adding a 12×20-foot catering annex (240 sq ft) attached via a connecting sidewall is very common and won't compromise the main 40×60 frame tent's structural integrity as long as both tents are from the same manufacturer's compatible system—most rental companies use Losberger or Röder frame systems that have certified attachment kits for exactly this configuration. Your total covered footprint becomes 2,640 square feet, and the rental company will need a clear, level run of at least 52 feet along the attachment side to stake both frames properly. Make sure the attachment point is on one of the long 60-foot sides so the catering traffic doesn't cut through the guest seating area.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "Got it. For the main tent we're thinking a clear-span sailcloth rather than a frame tent—does that change the footprint math, and what's the smallest sailcloth size that works for 120 guests? Also, what's the Nevada state rule on serving alcohol at a private event with a hired bartender—do we need a special license?",
+      "assistant_message": "Sailcloth tents are clear-span structures with no interior poles, so the full square footage is usable floor space—that actually works in your favor. The smallest standard sailcloth size that comfortably fits 120 guests at 15 sq ft per person plus a dance floor and bar is a 44×84-foot sailcloth tent (3,696 sq ft), which is the next standard size up from a 40×60 in most sailcloth lines like Sperry or Century Tent; this gives you roughly 1,896 sq ft of flex space beyond the minimum seating requirement. On the alcohol question, Nevada Revised Statute 369.180 requires that any person or entity that charges for alcohol or receives compensation related to its service must hold a catering liquor license issued by the Nevada Department of Taxation; for a private event where guests are not charged per drink, the host can serve alcohol without a license, but the hired bartender's employer must hold a valid Nevada Catering License (Category 3) if that company is being paid for bartending services.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "So if we hire a bartending service that already holds the Category 3 license, we're covered for the whole event?",
+      "assistant_message": "Yes, as long as the bartending company's Category 3 Nevada Catering License is current and lists your event date within its coverage period, you are covered and no additional license is required from you as the host. You should ask the company to provide a copy of their license certificate at least 30 days before the event, and confirm that the license explicitly covers Washoe County, since some Category 3 licenses are issued with county-specific restrictions. Keep a copy of that certificate on-site during the event in case a Nevada Department of Taxation compliance officer requests it.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "What happens if the bartending company's license lapses between now and June 14th?",
+      "assistant_message": "If the company's Category 3 license lapses before or on your event date, serving alcohol through them would be a violation of NRS 369.180, which carries a misdemeanor charge and a fine of up to $1,000 per violation for the unlicensed party. To protect yourselves, include a clause in your vendor contract requiring the bartending company to maintain valid licensure through June 15th and to provide proof of renewal within 10 business days of any renewal date that falls before your event. You could also name a backup licensed bartending service in the contract as a contingency if the primary vendor fails to maintain compliance.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What's the exact square footage of the 44×84 sailcloth tent, and how much flex space does that leave us beyond the minimum needed for 120 guests?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3"
+  ],
+  "distractor_turn_ids": [
+    "t4",
+    "t5"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that the 44×84-foot sailcloth tent has a total square footage of 3,696 sq ft.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that the flex space beyond the minimum seating requirement (1,800 sq ft) is approximately 1,896 sq ft.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer correctly attributes the minimum floor space calculation to 15 sq ft per person × 120 guests = 1,800 sq ft.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not mention Nevada Revised Statute 369.180, the Category 3 Catering License, or any detail about alcohol licensing from the B branch of the conversation.",
+      "required": true
+    }
+  ],
+  "notes": "The key facts the query needs—3,696 sq ft total, 1,896 sq ft flex space, and the 15 sq ft/person baseline—all appear in t1 (15 sq ft rule), t2 (confirming the layout needs), and the A half of t3 (the 44×84 sailcloth size). Turns t4 and t5 are the distractors, covering Nevada alcohol licensing details that are entirely irrelevant to the square-footage question.\n\nReference answer: The 44×84-foot sailcloth tent has a total square footage of 3,696 sq ft. Because sailcloth tents are clear-span with no interior poles, that entire 3,696 sq ft is usable floor space. The minimum requirement for 120 guests at 15 square feet per person is 1,800 sq ft, so the 44×84 leaves approximately 1,896 square feet of flex space for the dance floor, bar station, and any other layout needs.",
+  "evidence_note": "Query depends on the A half of the compound turn t3 plus t1, t2; evidence equals the closure, but t3's B half is unavoidable irrelevant content at turn granularity (see evidence_spans).",
+  "premise": "a couple planning a 120-guest wedding on a lake",
+  "evidence_spans": {
+    "t3": "first_request"
+  },
+  "benchmark_version": "1.1"
+}

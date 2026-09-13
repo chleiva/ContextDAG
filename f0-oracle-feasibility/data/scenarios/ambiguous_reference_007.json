@@ -76,7 +76,7 @@
   "answer_checklist": [
     {
       "id": "c1",
-      "criterion": "The answer resolves 'them' to Marcus Hale / Starburst Data / Redshift Serverless (ENTITY_1 from branch A), not to Priya Nandakumar / Databricks (ENTITY_2 from branch B).",
+      "criterion": "The answer applies the Starburst Data / Redshift Serverless contract terms (the 32 RPU minimum) to the question; it need not name the vendor or Marcus Hale explicitly, but it must not use Databricks / DBU figures instead.",
       "required": true
     },
     {
@@ -95,7 +95,8 @@
       "required": true
     }
   ],
-  "notes": "t2 holds the critical fact (32 RPU contractual floor tied to Marcus Hale / Redshift Serverless). t4 is the trap: it introduces a superficially similar 'minimum capacity' figure (16 DBUs/hour) for Databricks/Priya Nandakumar, which the ambiguous pronoun 'them' in t6 could wrongly resolve to.\n\nReference answer: Under your enterprise contract with Starburst Data / Redshift Serverless, the minimum RPU count you're locked into is 32 RPUs — Marcus Hale confirmed that this is the contractual floor and you cannot configure the base capacity any lower than that tier. This means your cost baseline will always reflect at least 32 RPUs of capacity, even during low-activity overnight windows.",
+  "notes": "t2 holds the critical fact (32 RPU contractual floor tied to Marcus Hale / Redshift Serverless). t4 is the trap: it introduces a superficially similar 'minimum capacity' figure (16 DBUs/hour) for Databricks/Priya Nandakumar, which the ambiguous pronoun 'them' in t6 could wrongly resolve to.\n\nReference answer: Under your enterprise contract with Starburst Data / Redshift Serverless, the minimum RPU count you're locked into is 32 RPUs — Marcus Hale confirmed that this is the contractual floor and you cannot configure the base capacity any lower than that tier. This means your cost baseline will always reflect at least 32 RPUs of capacity, even during low-activity overnight windows.\n\nBenchmark 1.1 edit (14 Sep 2026): disambiguation item rephrased to require using the correct entity's facts rather than naming the entity, so oracle contexts that never see the decoy are not penalized.",
   "evidence_note": null,
-  "premise": "a data team migrating nightly batch jobs to a new warehouse"
+  "premise": "a data team migrating nightly batch jobs to a new warehouse",
+  "benchmark_version": "1.1"
 }

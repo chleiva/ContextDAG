@@ -113,5 +113,9 @@
   ],
   "notes": "The facts the query needs (48-hour cap, 17-week reference period, written opt-out) are all in t3, the compound EVIDENCE turn. Turns t1, t2, t4, t5, and t6 are distractors about the shift-rotation rollout and must not bleed into the answer.\n\nReference answer: Yes, under the UK Working Time Regulations 1998, a worker can lawfully average more than 48 hours a week by signing a written opt-out agreement with their employer. Without that signed opt-out, the 48-hour average — measured over a 17-week reference period — is the legal maximum. The opt-out must be voluntary and in writing, and the worker can cancel it by giving at least seven days' written notice (or longer if agreed, up to a maximum of three months).",
   "evidence_note": "Query depends only on the B half of the compound turn t3. Its ancestor closure {t3,t2,t1} includes A turns that are conversationally upstream of t3 but not needed for the B question; evidence is deliberately just {t3}. This is the granularity cost the family is designed to expose.",
-  "premise": "a hospital ward rolling out a new shift-scheduling process"
+  "premise": "a hospital ward rolling out a new shift-scheduling process",
+  "evidence_spans": {
+    "t3": "second_request"
+  },
+  "benchmark_version": "1.1"
 }

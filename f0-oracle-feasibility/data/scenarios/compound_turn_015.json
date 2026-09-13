@@ -1,0 +1,109 @@
+{
+  "scenario_id": "compound_turn_015",
+  "family": "compound_turn",
+  "label": "COMPOUND",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm designing a field study on urban bird populations in Chicago and I need to decide on point-count survey methodology. I'm planning to use 5-minute fixed-radius point counts with a 50-meter radius at each station. Does that radius work well for dense urban environments?",
+      "assistant_message": "A 50-meter fixed radius is actually one of the most widely validated choices for urban point counts and is used in the North American Breeding Bird Survey's urban supplement protocols. In dense urban settings, vegetation and buildings reduce detection distances significantly, so 50 meters keeps your detection probability more homogeneous across stations than a wider 100-meter radius would. Studies in cities like Chicago have shown that observer detection efficiency drops to roughly 60–70% beyond 50 meters in areas with heavy tree canopy or tall structures, so your chosen radius is well-justified. You'll still want to note whether each detection falls inside or outside a 25-meter inner circle to allow for distance-sampling analysis later.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "That makes sense. I'm planning to run surveys from mid-May to late June to capture peak breeding activity. Is that window appropriate for Chicago's breeding passerines?",
+      "assistant_message": "Yes, May 15 through June 25 is the standard recommended window for breeding passerine surveys in the Chicago region, aligning with the Illinois Breeding Bird Atlas II protocol, which uses exactly those dates for its point-count effort. Most resident and neotropical migrant passerines in northeastern Illinois have settled on territories and are actively singing by the third week of May, giving you reliable detection rates. Running surveys between 30 minutes before sunrise and 4 hours after sunrise during that window will capture the peak dawn chorus, which is when detection probabilities are highest—typically 2–3 times higher than midday counts. Avoid surveys on days with sustained wind above Beaufort scale 3, as that threshold is cited in the atlas protocol as the cutoff for acceptable survey conditions.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "How many point-count stations should I aim for to get statistically adequate coverage of Chicago's roughly 234 square kilometers of parkland, and what statistical model should I use to estimate occupancy? Also, what IRB exemption category covers passive observational wildlife fieldwork that involves no human subjects?",
+      "assistant_message": "For 234 square kilometers of parkland, a density of roughly one station per 2 square kilometers gives you approximately 117 stations, which is the minimum recommended by the Partners in Flight Landbird Population Monitoring handbook (2017 revision) for detecting a 30% population change with 80% power at α=0.05. You should use a single-season occupancy model in the R package 'unmarked' (version 1.3.0 or later), specifically the occu() function, which fits the MacKenzie et al. 2002 model and corrects for imperfect detection across your repeat visits. Regarding IRB exemption, passive observational research that involves no interaction with human subjects and collects no private identifiable information falls under 45 CFR 46.104(d) Category 1 exemption, which covers research conducted in established educational settings or involving observation of public behavior where subjects cannot be identified. You would submit an exemption determination request to your institution's IRB rather than a full protocol, and most universities process these within 5–10 business days.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "Does the Category 1 exemption cover situations where I might incidentally record audio of people in the park while doing dawn chorus recordings?",
+      "assistant_message": "Incidental audio recording of people in a public park is generally still covered under Category 1 if the recordings are not analyzed for human content and subjects cannot be identified, but many IRB offices will push this toward a Category 2 or Category 3 determination if the audio could capture private conversations. The key regulatory language in 45 CFR 46.104(d)(2) requires that any disclosure of responses outside the research context would not reasonably place subjects at risk of harm, and identifiable voice recordings could theoretically fail that test. To stay cleanly within Category 1, you could document in your exemption request that audio files will be processed only through automated bird-detection software such as BirdNET and immediately overwritten, with no human-audible playback. That procedural safeguard is usually sufficient to satisfy an IRB reviewer without escalating to a full review.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "My institution uses the Kuali Research system for IRB submissions. Is there a standard template for the exemption determination request I should look for in that system?",
+      "assistant_message": "In Kuali Research, exemption determination requests are typically initiated through the 'New Study' workflow, where you select 'Exempt' as the review type on the initial submission screen rather than 'Expedited' or 'Full Board.' Most institutions that use Kuali have pre-loaded a smart form called the Exempt Research Determination Form, which walks you through the 45 CFR 46.104(d) categories with branching logic questions so you self-identify the applicable exemption. You should check your institution's research compliance office webpage for any locally customized version, since Kuali allows significant template modification at the institutional level. If you cannot locate it, the research compliance office can usually point you to the correct form within one business day.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "Given the survey window and station count we settled on, how many total survey visits would I need across all stations to meet the detection-power requirement you mentioned?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3"
+  ],
+  "distractor_turn_ids": [
+    "t4",
+    "t5"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer references approximately 117 stations as the target station count derived from one station per 2 square kilometers across 234 square kilometers.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer references the 80% power at α=0.05 standard for detecting a 30% population change, as specified in the Partners in Flight Landbird Population Monitoring handbook (2017 revision).",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer references the survey window of May 15 through June 25 (or equivalent: mid-May to late June) as the operative field season.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not import details about the IRB exemption category (45 CFR 46.104(d) Category 1), the Kuali Research system, or any other topic-B content about human-subjects compliance.",
+      "required": true
+    }
+  ],
+  "notes": "The facts the query needs are distributed across t1 (50-meter radius, point-count design), t2 (May 15–June 25 window, Beaufort 3 wind limit), and the A half of t3 (117 stations, 30% change / 80% power / α=0.05, Partners in Flight 2017, unmarked occu() function). Turns t4 and t5 are the traps: they develop the IRB/Kuali topic from the B half of t3 and contain no information relevant to station counts, survey windows, or power calculations.\n\nReference answer: With 117 stations to survey across the May 15–June 25 window (41 days), and given that the Partners in Flight protocol recommends at least 3 repeat visits per station within the season to support the MacKenzie occupancy model's imperfect-detection correction, you would need a minimum of 351 total station-visits. Completing that workload across roughly six weeks is feasible with one or two observers if stations are clustered geographically into daily routes of 8–12 stations each, fitting within the 4-hour post-sunrise survey window. The 3-visit minimum is what drives the 80% power to detect a 30% population change at α=0.05 cited in the 2017 Partners in Flight handbook for a dataset of this size.",
+  "evidence_note": "Query depends on the A half of the compound turn t3 plus t1, t2; evidence equals the closure, but t3's B half is unavoidable irrelevant content at turn granularity (see evidence_spans).",
+  "premise": "a PhD student planning a field study on urban bird populations",
+  "evidence_spans": {
+    "t3": "first_request"
+  },
+  "benchmark_version": "1.1"
+}

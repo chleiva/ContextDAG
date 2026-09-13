@@ -76,7 +76,7 @@
   "answer_checklist": [
     {
       "id": "c1",
-      "criterion": "The answer correctly resolves 'them' to Thornfield Nursery Supply (not GreenRoots Co-op), based on the branch A query dependency.",
+      "criterion": "The answer applies Thornfield Nursery Supply's delivery window (April 1 through October 31) to the question; it need not name Thornfield explicitly, but it must not use GreenRoots Co-op's year-round delivery instead.",
       "required": true
     },
     {
@@ -95,7 +95,8 @@
       "required": true
     }
   ],
-  "notes": "Turns t1 and t2 (branch A) hold the critical facts: Thornfield Nursery Supply's identity and their October 31 season cutoff. Turns t3 and t4 (branch B) are the trap — GreenRoots Co-op delivers year-round with no minimum, so a reader who confuses the pronoun 'them' with GreenRoots would incorrectly answer that a November order is fine.\n\nReference answer: Unfortunately, Thornfield Nursery Supply would not be available for a November order. Their delivery window runs only from April 1 through October 31, so any deliveries outside that seasonal range are not offered. You would need to either advance your order to late October at the latest or source from a different supplier for November needs.",
+  "notes": "Turns t1 and t2 (branch A) hold the critical facts: Thornfield Nursery Supply's identity and their October 31 season cutoff. Turns t3 and t4 (branch B) are the trap — GreenRoots Co-op delivers year-round with no minimum, so a reader who confuses the pronoun 'them' with GreenRoots would incorrectly answer that a November order is fine.\n\nReference answer: Unfortunately, Thornfield Nursery Supply would not be available for a November order. Their delivery window runs only from April 1 through October 31, so any deliveries outside that seasonal range are not offered. You would need to either advance your order to late October at the latest or source from a different supplier for November needs.\n\nBenchmark 1.1 edit (14 Sep 2026): disambiguation item rephrased to require using the correct entity's facts rather than naming the entity, so oracle contexts that never see the decoy are not penalized.",
   "evidence_note": null,
-  "premise": "a community garden applying for a municipal grant"
+  "premise": "a community garden applying for a municipal grant",
+  "benchmark_version": "1.1"
 }

@@ -6,17 +6,17 @@
     {
       "turn_id": "t1",
       "turn_index": 0,
-      "user_message": "We're planning our wedding reception on Lake Meridian and we got a quote from Lakeside Catering — they charge $85 per person for their full reception package. We're expecting 120 guests, so I want to make sure we budget this correctly.",
-      "assistant_message": "At $85 per person for 120 guests, your catering total would come to $10,200. That's a solid baseline for your budget — keep in mind that most caterers also add a service charge and tax on top of that per-person rate, so your final invoice could run 20–25% higher than the base figure.",
+      "user_message": "We're planning our lake wedding and just got a quote from Harborview Catering. They charge $85 per person for their lakeside reception package.",
+      "assistant_message": "That's a solid starting point to work with. At $85 per person, you'll want to factor that rate carefully into your overall budget as you finalize your guest count.",
       "gold_parents": [],
       "stale": true,
-      "superseded_by": "t6"
+      "superseded_by": "t5"
     },
     {
       "turn_id": "t2",
       "turn_index": 1,
-      "user_message": "Right, they mentioned an 18% service charge on top of the per-person rate. So what would the total catering cost be including that charge?",
-      "assistant_message": "With an 18% service charge applied to the $10,200 base, the service charge comes to $1,836, bringing the pre-tax total to $12,036. Once you factor in local sales tax — which varies by county — you should budget somewhere around $12,500–$13,000 to be safe.",
+      "user_message": "We're expecting 120 guests, so I'm trying to figure out what the catering subtotal would look like before we add gratuity and taxes.",
+      "assistant_message": "At $85 per person for 120 guests, your catering subtotal before gratuity and taxes would be $10,200. That's a useful baseline number — once you add a standard 20% gratuity and your local sales tax, you can expect the final catering bill to climb closer to $12,500 or more depending on your jurisdiction.",
       "gold_parents": [
         "t1"
       ],
@@ -26,8 +26,8 @@
     {
       "turn_id": "t3",
       "turn_index": 2,
-      "user_message": "How early do we need to arrive at the venue to set up if the ceremony starts at 5:00 PM?",
-      "assistant_message": "For a 120-guest lakeside ceremony, most event coordinators recommend arriving at least 3 to 4 hours before the start time, so around 1:00–2:00 PM. This gives your florist, sound technician, and any rental companies enough time to deliver and arrange everything without feeling rushed.",
+      "user_message": "Do you know anything about permits for having an outdoor ceremony directly on a lake dock? We're using a private property on Lake Champlain.",
+      "assistant_message": "For a private-property dock ceremony on Lake Champlain, you'll generally need to check with the Vermont or New York Department of Environmental Conservation depending on which shore you're on, since the lake straddles the state line. Even on private land, gatherings of over 50 people often trigger a special-use or assembly permit requirement, so it's worth contacting the local town clerk's office at least 60 days before your event date.",
       "gold_parents": [],
       "stale": false,
       "superseded_by": null
@@ -35,8 +35,8 @@
     {
       "turn_id": "t4",
       "turn_index": 3,
-      "user_message": "The venue has a noise ordinance — music has to stop by 10:00 PM. Does that give us enough time for a proper reception?",
-      "assistant_message": "A 5:00 PM ceremony with a 10:00 PM music cutoff gives you roughly five hours of celebration, which is actually a comfortable window. A typical timeline might be: ceremony from 5:00–5:30 PM, cocktail hour from 5:30–6:30 PM, dinner from 6:30–8:00 PM, and then dancing and toasts from 8:00–10:00 PM.",
+      "user_message": "The property is on the Vermont side, in South Hero. Is there anything specific to that town we should know about?",
+      "assistant_message": "South Hero is in Grand Isle County, and the town operates under Vermont's Act 250 land-use rules for larger gatherings on waterfront property. You'd want to contact the South Hero Town Clerk directly — their office handles event assembly notices — and also confirm with the Grand Isle County Natural Resources Board whether your dock setup requires any shoreline impact review, especially if you're adding temporary structures like an arch or chairs on the dock itself.",
       "gold_parents": [
         "t3"
       ],
@@ -46,19 +46,8 @@
     {
       "turn_id": "t5",
       "turn_index": 4,
-      "user_message": "The venue requires event liability insurance with a minimum of $1,000,000 in coverage. Is that standard for lakeside venues?",
-      "assistant_message": "Yes, a $1,000,000 general liability minimum is very standard — in fact, it's the baseline requirement at the majority of event venues across the country, particularly those near water. You can typically purchase a one-day event insurance policy for $75–$200 that meets that requirement, and some homeowner's or renter's insurance policies can be extended to cover it as well.",
-      "gold_parents": [
-        "t4"
-      ],
-      "stale": false,
-      "superseded_by": null
-    },
-    {
-      "turn_id": "t6",
-      "turn_index": 5,
-      "user_message": "I need to correct something — I looked at the actual quote again and the per-person rate from Lakeside Catering is $95, not $85. I misread the proposal the first time.",
-      "assistant_message": "Thanks for catching that — so the correct per-person rate is $95, not $85. That means the revised base catering cost for 120 guests is $11,400, and we should use that figure for all the calculations going forward.",
+      "user_message": "Actually, I need to correct what I said earlier — Harborview's lakeside package is $95 per person, not $85. I was looking at their standard ballroom rate by mistake.",
+      "assistant_message": "Thanks for catching that — I'll update the figure. The correct rate for Harborview Catering's lakeside reception package is $95 per person, not $85. That changes the numbers we were working with, so keep that corrected rate in mind as we continue planning.",
       "gold_parents": [
         "t2"
       ],
@@ -66,12 +55,219 @@
       "superseded_by": null
     },
     {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What kind of flowers work well for a lakeside summer wedding in Vermont? We're thinking late July.",
+      "assistant_message": "Late July in Vermont is a wonderful time for flowers — you'll have access to locally grown dahlias, zinnias, lavender, and lisianthus, all of which hold up well in summer heat. For a lakeside setting, loose, garden-style arrangements tend to photograph beautifully against the water, and locally sourced blooms from a Vermont flower farm will be at peak freshness that time of year.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
       "turn_id": "t7",
       "turn_index": 6,
-      "user_message": "With the 18% service charge included, what is the total catering cost now?",
-      "assistant_message": null,
+      "user_message": "We really love the idea of using wildflowers mixed in with cultivated ones. Are there any Vermont flower farms near South Hero that do wedding work?",
+      "assistant_message": "Pitchfork Farm in Burlington, which is about 20 minutes from South Hero, is known for mixed wildflower and cultivated arrangements and has done lakeside weddings before. Stonewood Farm in Shelburne is another option worth contacting — they specialize in seasonal cutting gardens and often work with couples who want that natural, loose aesthetic you're describing.",
       "gold_parents": [
         "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "That's helpful. How many centerpieces would we typically need for 120 guests, assuming round tables of 8?",
+      "assistant_message": "At 8 guests per table, 120 guests would fill 15 tables, so you'd need 15 centerpieces. It's also common to add 2 or 3 accent arrangements for the ceremony arch, welcome table, and cake table, so budget for roughly 18 to 20 floral pieces in total when you speak with your florist.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "We're debating between tall centerpieces and low ones. Does one style work better on a dock or near water?",
+      "assistant_message": "Low centerpieces are generally the safer choice for a lakeside or dock-adjacent setting because they're much less susceptible to wind, which can be unpredictable near open water. They also keep sightlines open across the table, which guests tend to appreciate, and they're less likely to tip if a breeze picks up during the reception.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "Good point about the wind. What about the ceremony itself — we want to do it on the dock at sunset. When does the sun set in South Hero in late July?",
+      "assistant_message": "In South Hero, Vermont, in late July, sunset typically falls between 8:15 and 8:25 PM Eastern Daylight Time. If you schedule your ceremony to begin around 7:45 PM, you should have beautiful golden-hour light for the vows and be wrapping up right as the sun dips below the Adirondacks to the west, which is a stunning backdrop from that side of Lake Champlain.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "That sounds perfect. We'll need lighting once the sun goes down — what are good options for outdoor lakeside lighting?",
+      "assistant_message": "String lights strung between poles or trees are the most popular choice for lakeside receptions because they create a warm, festive glow without overpowering the natural surroundings. You might also consider floating lanterns anchored just offshore, uplighting on any trees near the reception area, and battery-powered LED candles on tables since open flames near water can be a permit issue in Vermont.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "We love the string light idea. How much string lighting would we roughly need to cover a reception area for 120 people?",
+      "assistant_message": "A seated reception for 120 guests typically requires a footprint of about 1,500 to 2,000 square feet including the dance floor. To canopy that area with string lights in a grid pattern spaced about 2 feet apart, you'd want somewhere between 600 and 900 feet of string lights total, plus the poles or anchor points to support them.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "We're also thinking about a live band. What's a typical size band for a 120-person outdoor wedding reception?",
+      "assistant_message": "A 5 to 7 piece band is the sweet spot for a 120-person outdoor reception — that usually means a lead vocalist, guitarist, bassist, drummer, and a keys player, with optional horn players added for a fuller sound. For an outdoor lakeside venue, make sure the band has its own PA system rated for outdoor use, since the open air absorbs sound much more than an indoor ballroom does.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "What about noise ordinances? I'd hate to have the band shut down mid-reception.",
+      "assistant_message": "South Hero and Grand Isle County generally follow Vermont's standard nuisance noise guidelines, which don't specify a hard decibel limit by statute but give neighbors and local officers discretion to act on complaints. As a practical rule, most Vermont lakeside venues wrap amplified music by 10:00 PM to avoid issues, and I'd strongly recommend confirming the specific cutoff time with the South Hero Town Clerk when you apply for your assembly permit.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "10 PM feels tight. Our ceremony starts at 7:45, so that's barely two hours of dancing.",
+      "assistant_message": "That's a real constraint worth planning around. One approach is to move the ceremony start to 7:00 PM so you're into dinner by 8:15 and on the dance floor by 9:00, giving you a full hour of amplified music before the 10:00 cutoff. You could also ask the property owner whether they've hosted events before and what informal understanding, if any, they have with neighbors, since that can make a meaningful difference in practice.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "That's a good idea. What about transportation for guests? The South Hero property is pretty remote.",
+      "assistant_message": "Chartering a shuttle service from Burlington is the most practical solution — a 120-person guest list typically requires two or three coach buses running staggered loops from a central Burlington parking area to the venue. Companies like Stagecoach Transportation and Burlington-based charter services do this regularly for Lake Champlain events, and booking 6 to 9 months in advance is advisable for a July date.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "We're thinking guests could park at the Grand Isle ferry terminal and take a shuttle from there. It's only about 5 minutes from the property.",
+      "assistant_message": "That's a smart and practical plan — the Grand Isle ferry terminal lot is spacious and well-known to locals, which makes it an easy landmark for out-of-town guests to find. A 5-minute shuttle loop means even a single 30-passenger van could turn around quickly enough to move 120 guests in under an hour, keeping the pre-ceremony logistics smooth.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "For the catering setup, we need a tent in case of rain. What size tent would cover both dining and a dance floor for our group?",
+      "assistant_message": "For 120 guests with round tables of 8, a dance floor, a buffet or food station area, and a bar, you'd typically need a tent in the range of 3,000 to 3,500 square feet — something like a 40 by 80 foot frame tent is a common choice for that guest count. Make sure the tent rental company can stake into the ground near the waterfront, as some lakeside properties have shallow soil or bedrock close to the surface that requires ballast weights instead.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "Good to know about the staking issue. What's the typical lead time for renting a tent that size in Vermont for a July wedding?",
+      "assistant_message": "For a July wedding in Vermont, tent rental companies book up fast — you should expect to reserve a 40 by 80 foot tent at least 9 to 12 months in advance for a peak summer date. Companies like Higgins Event Rentals and New England Tent & Party serve the Lake Champlain region and can also provide tables, chairs, and flooring, which simplifies your vendor coordination.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "We haven't picked a specific date yet. What are the pros and cons of the last weekend of July versus the first weekend of August for an outdoor Vermont wedding?",
+      "assistant_message": "The last weekend of July tends to have slightly lower humidity and longer daylight hours, which is ideal for an outdoor sunset ceremony, but it falls during peak Vermont tourist season so accommodations in Burlington fill up fast. The first weekend of August is marginally cooler on average and can be easier for out-of-town guests to find lodging, though you lose about 10 to 15 minutes of evening daylight compared to late July, which could affect your sunset ceremony timing.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "We're leaning toward July 26th. Is there anything notable about that date we should check before committing?",
+      "assistant_message": "July 26th, 2025 falls on a Saturday, which is ideal for a wedding. You'll want to cross-reference it against the Vermont Lake Monsters home game schedule at Centennial Field in Burlington, since a home game that evening could affect traffic and parking availability for guests coming from the city — it's a small detail but worth a quick check.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "That's a good catch. We'll check the schedule. I was also just thinking about how all these vendors add up — like the $85 a head we talked about for catering, plus the tent, the band, the flowers — it's a lot to track.",
+      "assistant_message": "It really does add up quickly when you start listing everything out. A detailed spreadsheet with each vendor's contracted amount and payment schedule is the best way to keep it all visible in one place so nothing sneaks up on you as the date approaches.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "Should we hire a day-of coordinator or a full wedding planner for something this size?",
+      "assistant_message": "For a 120-person outdoor lakeside wedding with multiple vendors, a full-service wedding planner is genuinely worth the investment — they'll manage vendor contracts, timeline logistics, and on-site coordination in a way that a day-of coordinator, who typically only steps in 4 to 6 weeks out, simply can't match. If budget is a concern, a month-of coordinator is a reasonable middle ground, but given the complexity of a waterfront venue with permitting, shuttles, a tent, and a live band, earlier involvement pays off.",
+      "gold_parents": [
+        "t22"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "What questions should we ask when interviewing wedding planners to make sure they have experience with outdoor lakeside events?",
+      "assistant_message": "Ask specifically how many outdoor waterfront weddings they've coordinated in Vermont and whether they've worked with venues that required assembly permits or environmental review. You should also ask how they handle last-minute weather changes — a good planner will have a concrete rain plan protocol, established relationships with tent and rental vendors, and experience renegotiating timelines on the fly, which is especially important for a sunset ceremony with a hard noise cutoff.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "With the corrected catering rate, what would our total catering cost be for all 120 guests before gratuity and taxes?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t5"
       ],
       "stale": false,
       "superseded_by": null
@@ -80,36 +276,56 @@
   "evidence_turn_ids": [
     "t1",
     "t2",
-    "t6"
+    "t5"
   ],
   "distractor_turn_ids": [
     "t3",
     "t4",
-    "t5"
+    "t6",
+    "t7",
+    "t8",
+    "t9",
+    "t10",
+    "t11",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t20",
+    "t21",
+    "t22",
+    "t23",
+    "t24"
   ],
   "answer_checklist": [
     {
       "id": "c1",
-      "criterion": "The answer uses the corrected per-person rate of $95 (not $85) as the basis for calculation.",
+      "criterion": "The answer uses $95 per person as the catering rate (the corrected VALUE_2 from t5).",
       "required": true
     },
     {
       "id": "c2",
-      "criterion": "The answer correctly calculates the base cost as $95 × 120 = $11,400.",
+      "criterion": "The answer calculates the subtotal as $11,400 (120 guests × $95 per person).",
       "required": true
     },
     {
       "id": "c3",
-      "criterion": "The answer correctly applies the 18% service charge to $11,400, yielding a service charge of $2,052 and a total of $13,452.",
+      "criterion": "The answer must not use $85 per person (VALUE_1, the original stale rate from t1) in its calculation.",
       "required": true
     },
     {
       "id": "c4",
-      "criterion": "The answer must not use $85 per person or the outdated base total of $10,200 in its calculation.",
+      "criterion": "The answer correctly applies the guest count of 120 (established in t2 and never changed).",
       "required": true
     }
   ],
-  "notes": "t6 holds the correcting fact (VALUE_2 = $95 per person) that supersedes t1's VALUE_1 ($85 per person); t2 establishes the 18% service charge. The trap is using the $85 rate and arriving at $12,036 instead of the correct $13,452. Turns t3–t5 are genuine distractors about setup timing, noise ordinance, and insurance.\n\nReference answer: With the corrected per-person rate of $95 for 120 guests, the base catering cost is $11,400. Applying the 18% service charge adds $2,052, bringing the total pre-tax catering cost to $13,452. You should still budget a bit above that to account for local sales tax.",
+  "notes": "t5 is the critical correction turn, establishing VALUE_2 ($95/person) and superseding t1's VALUE_1 ($85/person). t22 is the deliberate trap, casually re-introducing the stale $85 figure in a budget aside; a correct answer to t25 must use $95, not $85, yielding $11,400 not $10,200.\n\nReference answer: With the corrected rate of $95 per person from Harborview Catering's lakeside reception package, the catering subtotal for all 120 guests before gratuity and taxes comes to $11,400. That replaces the earlier $10,200 figure we had calculated using the incorrect $85 ballroom rate.",
   "evidence_note": null,
-  "premise": "a couple planning a 120-guest wedding on a lake"
+  "premise": "a couple planning a 120-guest wedding on a lake",
+  "evidence_spans": null,
+  "benchmark_version": "1.1"
 }

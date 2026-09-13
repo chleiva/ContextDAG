@@ -100,7 +100,7 @@
   "answer_checklist": [
     {
       "id": "c1",
-      "criterion": "The answer resolves 'them' to SkyAnchor Fabrications (ENTITY_1), not IronSky Custom Piers / Marcus Delray (ENTITY_2).",
+      "criterion": "The answer applies SkyAnchor Fabrications' lead time (14 weeks on the PA-7) to the question; it need not name SkyAnchor explicitly, but it must not use IronSky Custom Piers / Meridian-3 lead times instead.",
       "required": true
     },
     {
@@ -119,7 +119,8 @@
       "required": false
     }
   ],
-  "notes": "The critical facts live in t1 and t2 (SkyAnchor Fabrications, PA-7, 14-week lead time, first-week-of-January deadline, 6-week expedited option). The traps are t3, t4, and t7, which describe IronSky Custom Piers / the Meridian-3 — a pier of the same category whose details (60 lb rating, custom heights, $620 price) are entirely irrelevant to the deadline question but whose pronoun 'them' could plausibly be misread as referring to Marcus Delray's shop.\n\nReference answer: The 'them' in your question refers to SkyAnchor Fabrications, and their PA-7 has a standard lead time of 14 weeks from order confirmation. To have the pier ready for an early April foundation pour, you would need to place your order no later than the first week of January. If that window has already passed, SkyAnchor does offer an expedited 6-week turnaround for an extra $185, which would push your ordering deadline to around mid-February.",
+  "notes": "The critical facts live in t1 and t2 (SkyAnchor Fabrications, PA-7, 14-week lead time, first-week-of-January deadline, 6-week expedited option). The traps are t3, t4, and t7, which describe IronSky Custom Piers / the Meridian-3 — a pier of the same category whose details (60 lb rating, custom heights, $620 price) are entirely irrelevant to the deadline question but whose pronoun 'them' could plausibly be misread as referring to Marcus Delray's shop.\n\nReference answer: The 'them' in your question refers to SkyAnchor Fabrications, and their PA-7 has a standard lead time of 14 weeks from order confirmation. To have the pier ready for an early April foundation pour, you would need to place your order no later than the first week of January. If that window has already passed, SkyAnchor does offer an expedited 6-week turnaround for an extra $185, which would push your ordering deadline to around mid-February.\n\nBenchmark 1.1 edit (14 Sep 2026): disambiguation item rephrased to require using the correct entity's facts rather than naming the entity, so oracle contexts that never see the decoy are not penalized.",
   "evidence_note": null,
-  "premise": "a hobbyist building a backyard observatory"
+  "premise": "a hobbyist building a backyard observatory",
+  "benchmark_version": "1.1"
 }

@@ -1,0 +1,109 @@
+{
+  "scenario_id": "compound_turn_012",
+  "family": "compound_turn",
+  "label": "COMPOUND",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're putting together a grant application for Riverside Community Garden and need help figuring out the budget section. The municipal grant program is the City of Maplewood Neighborhood Green Spaces Grant, and the maximum award is $15,000. We're applying for the full amount and need to justify every line item.",
+      "assistant_message": "For a $15,000 municipal grant application like the Maplewood Neighborhood Green Spaces Grant, your budget justification should tie each line item directly to a measurable project outcome. Standard categories for a community garden grant include site preparation, infrastructure (raised beds, irrigation), educational programming, and contingency — typically capped at 10% of total project cost, which would be $1,500 in your case. Make sure every figure is supported by at least one vendor quote or published cost estimate, since Maplewood's grant guidelines specifically require two competitive bids for any single purchase over $500.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Good to know about the two-bid rule. We've already gotten quotes for the raised beds — Cedar Supply Co. quoted $4,200 for twelve 4×8 raised beds, and Green Thumb Materials quoted $3,850 for the same spec. So we'd go with Green Thumb. How should we handle the irrigation line item?",
+      "assistant_message": "Since you have two competitive bids and are selecting the lower quote of $3,850 from Green Thumb Materials, you should document both bids in an appendix and note the savings in your narrative — Maplewood reviewers look favorably on demonstrated cost-consciousness. For irrigation, drip systems for a 12-bed garden typically run between $800 and $1,200 installed; I'd recommend budgeting $1,100 and attaching a quote from a licensed plumber or irrigation contractor to satisfy the two-bid requirement. Label the line item 'drip irrigation system — 12-bed installation' and cross-reference it to your site map so reviewers can verify the scope.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "That makes sense. For the raised beds line item, should we list the Green Thumb quote as $3,850 or round it, and does the contingency apply on top of that subtotal? Also, what do we need to know about liability insurance for volunteer workdays — our first one is scheduled for March 15th and we want to make sure we're covered.",
+      "assistant_message": "You should list the exact Green Thumb Materials figure of $3,850 — never round grant budget numbers, as discrepancies between your narrative and attached bids are a common reason for disqualification in Maplewood's review process. The 10% contingency ($1,500 maximum) is calculated on the total direct project costs before contingency, so the $3,850 raised-bed line and the $1,100 irrigation line both feed into that subtotal. For volunteer workday liability, most municipalities including Maplewood require organizations to carry a minimum of $1,000,000 per-occurrence general liability coverage before any volunteer event on city-adjacent land; you can typically obtain a short-term event policy through a carrier like K&K Insurance for roughly $85–$120 per event day, and you'll need to name the City of Maplewood as an additional insured on the certificate.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "The $85–$120 range is helpful. Is a single-day event policy enough, or should we look at an annual volunteer program policy instead?",
+      "assistant_message": "If your garden plans to hold more than three or four volunteer events per year, an annual volunteer program policy is almost always more cost-effective than stacking single-day policies. A typical annual general liability policy for a small nonprofit community garden runs $300–$500 per year through carriers like Philadelphia Insurance Companies or Markel, and it covers all scheduled volunteer activities without requiring you to file a new certificate for each event. You'd still need to issue updated additional-insured certificates to the city for each specific event date, but the underlying coverage stays in place year-round.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "Does the annual policy cover injuries to the volunteers themselves, or just third-party liability?",
+      "assistant_message": "Standard general liability policies cover third-party bodily injury and property damage, meaning a visitor or neighbor who is hurt, but they do not cover injuries to the volunteers themselves while they are working. For volunteer injury coverage you need a separate Volunteer Accident policy, which typically provides medical expense benefits of $5,000–$25,000 per volunteer per incident and costs roughly $150–$250 annually for a small garden program. Some umbrella policies can extend coverage, but you should confirm the scope in writing with your broker before your March 15th event.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "When we total up the direct costs before adding contingency, does the raised-bed amount we're using affect how large the contingency can be?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3"
+  ],
+  "distractor_turn_ids": [
+    "t4",
+    "t5"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that the raised-bed line item is listed as exactly $3,850 (the Green Thumb Materials quote), not a rounded figure.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that the 10% contingency is calculated on the total direct project costs (including the $3,850 raised-bed line and the $1,100 irrigation line) before contingency, with a maximum of $1,500.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer correctly identifies that the $3,850 raised-bed cost feeds into the subtotal on which the contingency percentage is applied, meaning a higher direct-cost subtotal yields a larger contingency (up to the $1,500 cap).",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not import insurance pricing details (e.g., the $85–$120 per-event policy cost or the $300–$500 annual policy cost) as if they are relevant to the contingency or budget calculation.",
+      "required": true
+    }
+  ],
+  "notes": "The facts the query needs come from t1 (10% contingency cap, $1,500 maximum), t2 (Green Thumb quote of $3,850 selected), and the A-half of t3 (list exact $3,850, contingency calculated on direct-cost subtotal including raised beds and irrigation). The distractor trap is t3's B-half and t4/t5, which discuss insurance costs — those figures are irrelevant to the contingency calculation and must not appear in the answer.\n\nReference answer: The raised-bed line item must be listed at the exact Green Thumb Materials quote of $3,850 — rounding is not acceptable under Maplewood's review standards. The contingency is capped at 10% of total direct project costs, which means the $3,850 raised-bed figure and the $1,100 irrigation figure both count toward the subtotal on which that percentage is applied. A higher direct-cost subtotal produces a larger allowable contingency, up to the absolute maximum of $1,500. So yes, using the full $3,850 figure (rather than a lower rounded number) slightly increases the base on which your contingency is calculated.",
+  "evidence_note": "Query depends on the A half of the compound turn t3 plus t1, t2; evidence equals the closure, but t3's B half is unavoidable irrelevant content at turn granularity (see evidence_spans).",
+  "premise": "a community garden applying for a municipal grant",
+  "evidence_spans": {
+    "t3": "first_request"
+  },
+  "benchmark_version": "1.1"
+}

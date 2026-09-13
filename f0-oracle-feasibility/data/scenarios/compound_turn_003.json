@@ -113,5 +113,9 @@
   ],
   "notes": "The key facts the query needs (60mA per WS2812B at full white, 5V operating voltage, 10–14 LEDs for a 65% board) all come from the compound turn t3. Turns t1, t2, t4, t5, and t6 are all about switches, plate material, and foam mods — plausible distractors that share no relevant details with the LED current question.\n\nReference answer: For WS2812B addressable LEDs in the 5050 package, you need to budget up to 60mA per LED at full white brightness, and they run at 5V, so your controller's power rail needs to support that load. A standard 65% board typically uses between 10 and 14 underglow LEDs, meaning worst-case full-white draw across all LEDs could reach 840mA, so it's worth checking your PCB's power trace rating and USB current budget before running them all at maximum brightness.",
   "evidence_note": "Query depends only on the B half of the compound turn t3. Its ancestor closure {t3,t2,t1} includes A turns that are conversationally upstream of t3 but not needed for the B question; evidence is deliberately just {t3}. This is the granularity cost the family is designed to expose.",
-  "premise": "an indie hardware maker sourcing parts for a mechanical keyboard"
+  "premise": "an indie hardware maker sourcing parts for a mechanical keyboard",
+  "evidence_spans": {
+    "t3": "second_request"
+  },
+  "benchmark_version": "1.1"
 }
