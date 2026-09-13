@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 import os
+import random
 import threading
 import time
 from dataclasses import dataclass, asdict
@@ -63,7 +64,7 @@ def client() -> AnthropicBedrock:
 
 
 def complete(model: str, prompt: str, *, system: Optional[str] = None, temperature: float = 0.0,
-             max_tokens: int = 2048, retries: int = 3, purpose: str = "other", ref: str = "") -> LLMResult:
+             max_tokens: int = 2048, retries: int = 6, purpose: str = "other", ref: str = "") -> LLMResult:
     """Single-turn call. Streams so long generations don't hit HTTP timeouts.
 
     Refuses to start if the spend ledger has hit the hard limit; records actual usage after.
@@ -89,7 +90,11 @@ def complete(model: str, prompt: str, *, system: Optional[str] = None, temperatu
                 latency_s=time.time() - t0, stop_reason=msg.stop_reason, system=system,
                 prompt=prompt, temperature=temperature, max_tokens=max_tokens,
             )
-        except (RateLimitError, APIConnectionError) as e:
+        except RateLimitError as e:
+            # Bedrock's Opus quota on this account is low; back off patiently rather than fail.
+            last_err = e
+            time.sleep(min(120, 10 * 2 ** attempt) + random.uniform(0, 5))
+        except APIConnectionError as e:
             last_err = e
             time.sleep(min(60, 2 ** attempt * 3))
         except APIStatusError as e:

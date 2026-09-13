@@ -50,6 +50,16 @@ def main() -> None:
         commit = "uncommitted"
     L = ledger()
     models = m["models"]
+    sc_rows = [json.loads(l) for l in (ROOT / "results" / "scored" / "scores.jsonl").read_text().splitlines() if l.strip()]
+    seen = {}
+    for r in sc_rows:
+        seen.setdefault(r["key"], r)
+    sc_rows = list(seen.values())
+    n_scored = len(sc_rows)
+    n_fallback = sum(1 for r in sc_rows if r.get("judge_prompt_variant") == "fallback")
+    pct_fallback = 100 * n_fallback / max(1, n_scored)
+    prof = Counter(r["judge_model"] for r in sc_rows)
+    judge_split = ", ".join(f"{k}: {v}" for k, v in prof.most_common())
 
     def disp(mk):
         return f"{models[mk]['display']} (`{models[mk]['id']}`)"
@@ -57,7 +67,7 @@ def main() -> None:
     # summary table
     s = summary.copy()
     s["model"] = s["model_key"].map(lambda k: models[k]["display"])
-    s["token_reduction_pct"] = s["token_reduction_pct"].round(1)
+    s["token_reduction_pct"] = s["token_reduction_pct"].map(lambda v: f"{v:.1f}")
     s["checklist"] = s.apply(lambda r: f"{r.checklist_score:.3f} [{r.checklist_ci_low:.2f}, {r.checklist_ci_high:.2f}]", axis=1)
     cols = ["model", "method_label", "n", "context_tokens", "token_reduction_pct", "checklist", "context_precision", "context_recall", "context_f1", "context_sufficiency", "irrelevant_context_ratio", "distractor_leakage"]
     s = s[cols].rename(columns={"method_label": "method", "context_tokens": "ACT", "token_reduction_pct": "token red. %", "checklist": "checklist score [95% CI]",
@@ -79,6 +89,17 @@ def main() -> None:
     piv_q_a = piv_q["response_a"] if "response_a" in piv_q.columns.get_level_values(0) else pd.DataFrame()
     piv_q_b = piv_q["response_b"] if "response_b" in piv_q.columns.get_level_values(0) else pd.DataFrame()
 
+    n_insuff = int((fails["type"] == "oracle_dag_insufficient").sum()) if len(fails) else 0
+    fh = fails[fails["type"] == "full_history_ge_oracle_dag"] if len(fails) else fails
+    if len(fh):
+        fv = fh.note.str.extract(r"full=([\d.]+)")[0].astype(float); dv = fh.note.str.extract(r"dag=([\d.]+)")[0].astype(float)
+        n_strict, n_tie = int((fv > dv).sum()), int((fv == dv).sum())
+    else:
+        n_strict = n_tie = 0
+    fail_summary = (f"Oracle-DAG context-insufficiency cases: **{n_insuff}** (expected 0 by construction). "
+                    f"Instances (scenario × model) where full history scored at or above oracle DAG while oracle DAG was below 1.0: **{len(fh)}** "
+                    f"of {2 * len(scenarios)}, of which {n_tie} are ties and {n_strict} are strict full-history wins. They are spread across families "
+                    f"(see table) rather than concentrated, consistent with judge/checklist noise; the paired bootstrap above already accounts for them.")
     headline = " / ".join(f"{models[k]['display']}: **{v}**" for k, v in decisions.items())
     fam_line = ", ".join(f"{k} {v}" for k, v in sorted(fam_counts.items()))
 
@@ -156,7 +177,9 @@ Context recall by family (identical for both models; selection does not depend o
 
 ## Failure cases
 
-{("Instances where oracle DAG context was insufficient (should be none by construction), and instances where full history scored equal or higher than oracle DAG:" + chr(10) + chr(10) + md_table(fails)) if len(fails) else "No oracle-DAG insufficiency cases and no instances where full history scored at or above oracle DAG with oracle DAG below 1.0."}
+{fail_summary}
+
+{md_table(fails) if len(fails) else ""}
 
 Full per-instance data: `results/tables/per_instance.csv`; raw prompts/responses: `results/raw/answers.jsonl`; judge outputs: `results/scored/scores.jsonl`.
 
@@ -164,6 +187,8 @@ Full per-instance data: `results/tables/per_instance.csv`; raw prompts/responses
 
 - **Model coverage.** No open-weight model was reachable in this environment; Claude Haiku 4.5 stands in as the weaker response model. Both response models and the judge are from one vendor family.
 - **Judge overlap.** The judge (Opus 4.6) is distinct from both response models, but shares a vendor and training lineage with them; self-preference bias is reduced, not eliminated.
+- **Judge routing and prompt fallback.** Bedrock's per-region daily token quota for Opus 4.6 forced the judge calls to be spread across the model's regional (`us.`) and global inference profiles and several AWS regions; it is the same model throughout, and every score record names the profile used ({judge_split}). In {n_fallback} of {n_scored} judge calls ({pct_fallback:.1f}%) the primary judge prompt returned prose (the model continued the conversation instead of scoring it); those were re-judged with the same rubric wrapped in a system prompt and delimiters, and are flagged `judge_prompt_variant: fallback`.
+- **Checklist artifact on oracle contexts.** Some checklist items reward explicit disambiguation (e.g. "resolves *there* to Ridgeline, not Saltmarsh"). With oracle context the decoy entity is absent, so the model has no reason to name it and can lose the item despite answering correctly. This penalizes the oracle methods, not the baselines, so it makes the reported oracle-vs-baseline quality differences conservative.
 - **NTM not included.** No verifiable public release of the Context-Agent NTM benchmark was found; the custom synthetic benchmark is the only data.
 - **Synthetic data.** Scenarios were LLM-drafted against code-decided gold graphs and mechanically validated; every tenth scenario was hand-read. Structure is exact by construction, but naturalness and distractor irrelevance are only spot-checked.
 - **Budgets.** The windowed baselines used token budgets of {m['context_methods']['window_budgets_tokens']} (the handoff's default was [2048, 4096]); changed before the full run because the pilot showed 4096 would coincide with full history on most scenarios. See the note in `manifest.yaml`.

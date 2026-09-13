@@ -34,7 +34,10 @@ def existing_keys() -> set[str]:
     if ANSWERS.exists():
         for line in ANSWERS.read_text().splitlines():
             if line.strip():
-                keys.add(json.loads(line)["key"])
+                try:
+                    keys.add(json.loads(line)["key"])
+                except json.JSONDecodeError:
+                    pass
     return keys
 
 
@@ -106,7 +109,7 @@ def main() -> None:
     print(f"{len(scenarios)} scenarios, {len(todo)} instances to run ({len(done)} already done)")
     if not todo:
         return
-    embedder = load_embedder() if "semantic_retrieval" in methods else None
+    embedder = None   # semantic selections come from the precomputed cache (see context_methods --precompute)
     L = ledger()
     start_spend = L.total
 

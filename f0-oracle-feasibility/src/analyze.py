@@ -28,6 +28,8 @@ def method_label(method: str, budget) -> str:
 def load() -> pd.DataFrame:
     a = pd.DataFrame([json.loads(l) for l in ANSWERS.read_text().splitlines() if l.strip()])
     s = pd.DataFrame([json.loads(l) for l in SCORES.read_text().splitlines() if l.strip()]) if SCORES.exists() else pd.DataFrame(columns=["key"])
+    if len(s):
+        s = s.drop_duplicates("key", keep="first")   # a re-run may have scored an instance twice; keep the first verdict
     keep = ["key", "checklist_score", "all_required_satisfied", "distractor_leakage", "judge_model", "judge_input_tokens", "judge_output_tokens"]
     df = a.merge(s[[c for c in keep if c in s.columns]], on="key", how="left")
     df["method_label"] = [method_label(m, b) for m, b in zip(df["method"], df["budget"])]

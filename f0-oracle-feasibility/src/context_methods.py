@@ -22,6 +22,7 @@ from schema import Scenario, Turn, ancestors  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 SUMMARY_CACHE = ROOT / "results" / "raw" / "summaries.jsonl"
+SEMANTIC_CACHE = ROOT / "results" / "raw" / "semantic_selection.json"
 
 METHODS = ["full_history", "sliding_window", "rolling_summary", "semantic_retrieval", "oracle_tree", "oracle_dag"]
 BUDGETED = {"sliding_window", "rolling_summary", "semantic_retrieval"}
@@ -175,9 +176,24 @@ def _embed(embedder, texts: list[str]) -> np.ndarray:
     return np.stack([_embed_cache[t] for t in texts])
 
 
+_semantic_cache: Optional[dict[str, list[str]]] = None
+
+
 def semantic_retrieval(scenario: Scenario, config: dict) -> ContextResult:
+    """If no embedder is supplied, use the on-disk selection cache written by
+    `python src/context_methods.py --precompute` (keeps torch out of the long answer run)."""
+    global _semantic_cache
     t0 = time.time()
-    budget, embedder = config["budget"], config["embedder"]
+    budget, embedder = config["budget"], config.get("embedder")
+    if embedder is None:
+        if _semantic_cache is None:
+            if not SEMANTIC_CACHE.exists():
+                raise RuntimeError("no embedder and no semantic selection cache; run `python src/context_methods.py --precompute`")
+            _semantic_cache = json.loads(SEMANTIC_CACHE.read_text())
+        key = f"{scenario.scenario_id}|{budget}"
+        if key not in _semantic_cache:
+            raise RuntimeError(f"semantic selection cache has no entry for {key}; re-run --precompute")
+        return _finish(scenario, "semantic_retrieval", budget, list(_semantic_cache[key]), t0)
     hist = scenario.history
     docs = [f"{t.user_message}\n{t.assistant_message}" for t in hist]
     q = _embed(embedder, [scenario.query.user_message])[0]
@@ -224,3 +240,25 @@ def load_embedder():
     from sentence_transformers import SentenceTransformer
     from llm import load_manifest
     return SentenceTransformer(load_manifest()["models"]["embedding"]["id"])
+
+
+def precompute_semantic_cache() -> None:
+    """Embed every scenario once and store the per-budget selections."""
+    from llm import load_manifest
+    from schema import load_all
+    manifest = load_manifest()
+    embedder = load_embedder()
+    out: dict[str, list[str]] = {}
+    for sc in load_all(ROOT / "data" / "scenarios"):
+        for b in manifest["context_methods"]["window_budgets_tokens"]:
+            r = semantic_retrieval(sc, {"budget": b, "embedder": embedder})
+            out[f"{sc.scenario_id}|{b}"] = r.selected_turn_ids
+    SEMANTIC_CACHE.parent.mkdir(parents=True, exist_ok=True)
+    SEMANTIC_CACHE.write_text(json.dumps(out, indent=0))
+    print(f"wrote {len(out)} selections to {SEMANTIC_CACHE}")
+
+
+if __name__ == "__main__":
+    import sys as _sys
+    if "--precompute" in _sys.argv:
+        precompute_semantic_cache()

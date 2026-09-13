@@ -30,6 +30,10 @@ models:
     id: us.anthropic.claude-opus-4-6-v1
     display: Claude Opus 4.6
     role: LLM judge; distinct from both response models
+    # Same model was also called via its global inference profile (global.anthropic.claude-opus-4-6-v1)
+    # and via other AWS regions to work around per-region daily token quotas; each score record
+    # carries the exact profile id used in judge_model. Final passes used the global profile only.
+    alt_profiles: [global.anthropic.claude-opus-4-6-v1]
     temperature: 0.0
     max_tokens: 2048
   summarizer:
@@ -112,6 +116,7 @@ pricing_usd_per_1m_tokens:            # Bedrock list prices, checked 13 Sep 2026
   us.anthropic.claude-sonnet-4-6: {input: 3.00, output: 15.00}
   us.anthropic.claude-haiku-4-5-20251001-v1:0: {input: 1.00, output: 5.00}
   us.anthropic.claude-opus-4-6-v1: {input: 5.00, output: 25.00}
+  global.anthropic.claude-opus-4-6-v1: {input: 5.00, output: 25.00}   # same model, global routing profile; used as a 2nd judge shard for throughput
 budget:
   estimate_usd: 52
   warn_usd: 52          # print a warning once cumulative spend passes this

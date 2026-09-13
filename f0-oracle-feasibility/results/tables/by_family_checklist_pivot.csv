@@ -1,0 +1,16 @@
+model_key,response_a,response_a,response_a,response_a,response_a,response_a,response_a,response_a,response_a,response_b,response_b,response_b,response_b,response_b,response_b,response_b,response_b,response_b
+method_label,full_history,oracle_dag,oracle_tree,rolling_summary@1024,rolling_summary@2048,semantic_retrieval@1024,semantic_retrieval@2048,sliding_window@1024,sliding_window@2048,full_history,oracle_dag,oracle_tree,rolling_summary@1024,rolling_summary@2048,semantic_retrieval@1024,semantic_retrieval@2048,sliding_window@1024,sliding_window@2048
+family,,,,,,,,,,,,,,,,,,
+ambiguous_reference,0.64,0.83,0.83,0.64,0.64,0.64,0.59,0.59,0.59,0.57,0.92,0.92,0.57,0.57,0.57,0.6,0.6,0.6
+compound_turn,0.79,0.7,0.68,0.79,0.77,0.82,0.77,0.78,0.74,0.78,0.72,0.72,0.79,0.78,0.74,0.78,0.85,0.78
+constraint_retention,0.89,0.97,0.97,0.92,0.86,0.97,1.0,0.38,0.42,0.94,0.86,0.82,0.82,0.89,0.92,0.97,0.19,0.19
+continuation,0.82,0.82,0.82,0.85,0.85,0.78,0.82,0.82,0.82,0.9,0.9,0.9,0.9,0.9,0.85,0.9,0.85,0.9
+join_then_split,0.9,0.92,0.89,0.92,0.82,0.92,0.88,0.82,0.85,0.82,0.87,0.9,0.82,0.82,0.84,0.82,0.82,0.82
+knowledge_update,1.0,0.98,0.98,0.98,0.98,0.98,0.98,0.98,0.98,0.98,0.98,0.98,0.98,0.98,0.98,0.98,0.98,0.98
+long_noisy_side_thread,0.94,0.98,0.95,0.88,0.94,0.92,0.94,0.31,0.21,0.9,0.83,0.83,0.88,0.87,0.92,0.92,0.15,0.13
+new_root,0.8,0.92,0.92,0.82,0.77,0.81,0.89,0.77,0.77,0.35,0.88,0.88,0.39,0.35,0.35,0.35,0.35,0.35
+resume,0.91,0.87,0.87,0.91,0.95,0.95,0.91,0.82,0.91,0.91,0.86,0.86,0.87,0.91,0.88,0.88,0.78,0.86
+semantic_decoy,0.88,0.85,0.92,0.85,0.88,0.85,0.92,0.92,0.83,0.81,0.81,0.81,0.83,0.81,0.81,0.81,0.83,0.81
+three_way_join,0.62,0.69,0.44,0.69,0.59,0.62,0.66,0.59,0.72,0.88,0.88,0.38,0.88,0.88,0.88,0.88,0.84,0.88
+topic_fork,0.78,0.9,0.9,0.8,0.85,0.8,0.88,0.78,0.85,0.78,0.82,0.82,0.88,0.78,0.78,0.78,0.8,0.78
+two_branch_join,0.97,0.95,0.41,0.92,0.94,0.98,0.97,0.92,0.92,0.88,0.88,0.4,0.87,0.86,0.85,0.86,0.87,0.86
