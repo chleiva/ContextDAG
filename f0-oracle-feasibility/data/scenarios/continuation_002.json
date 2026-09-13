@@ -1,0 +1,116 @@
+{
+  "scenario_id": "continuation_002",
+  "family": "continuation",
+  "label": "CONTINUE",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're trying to decide between Hartwell Academy and Brindlewood Secondary for our daughter Maya. Can you help us think through this? She's currently in Year 9 and would be transferring for Year 10.",
+      "assistant_message": "Happy to help you work through this decision. One important starting point is that Hartwell Academy runs a two-year GCSE programme beginning in Year 10, which means a mid-course transfer in Year 11 would be very disruptive — so if Maya joins in Year 10, she'd ideally stay through to Year 11 to sit her GCSEs there. Brindlewood Secondary also follows the standard two-year GCSE model, so both schools share that structural timeline.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "That's helpful context. What about class sizes? Maya struggles a bit in large groups.",
+      "assistant_message": "That's a meaningful consideration for Maya. Hartwell Academy caps its Year 10 and 11 core subject classes at 24 students, which is slightly below the national average. Brindlewood Secondary, by contrast, has a standard cap of 30 students per class for the same year groups, which it has maintained since its last Ofsted inspection in March 2022.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "She's also really interested in pursuing art at A-level eventually. Does either school have a strong art department?",
+      "assistant_message": "Hartwell Academy has a well-regarded art programme — in the 2023 GCSE results, 78% of its art students achieved a grade 7 or above, which is notably high. Brindlewood Secondary's art department is smaller; their equivalent figure for 2023 was 54% at grade 7 or above. Hartwell also employs a dedicated ceramics technician named Ms. Okafor, which gives students access to a working kiln and specialist materials not commonly available at secondary level.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "What about the commute? We live about 4 miles from each school, but I've heard transport links matter a lot.",
+      "assistant_message": "Transport is worth factoring in carefully. Hartwell Academy is served by the 47A bus route, which runs every 20 minutes on school days and has a direct stop at the school gate. Brindlewood Secondary requires a bus plus a 12-minute walk from the nearest stop on the 31 route, and that service runs only every 40 minutes during peak hours. If Maya is involved in after-school activities, the less frequent service to Brindlewood could make late pickups more complicated.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "Speaking of after-school activities, Maya plays the violin. Does either school have an orchestra or music programme she could join?",
+      "assistant_message": "Both schools have music programmes, but they differ in scope. Hartwell Academy has a full chamber orchestra that rehearses every Tuesday at 4 p.m. and performed at the regional schools' festival in November 2023. Brindlewood Secondary has a smaller ensemble group of about 12 players rather than a full orchestra, and it meets fortnightly rather than weekly. If regular orchestral playing is important to Maya, Hartwell's programme would give her more consistent opportunities.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "We also need to think about the application deadline. We can't miss it — what are the cut-off dates for in-year transfers to Year 10 at each school?",
+      "assistant_message": "For in-year transfers into Year 10, Hartwell Academy's admissions office requires all application forms to be submitted by 31 January of the year of entry — so for a September start, the deadline is 31 January of that same calendar year. Brindlewood Secondary follows the local authority's in-year admissions process, which has a rolling deadline but requires the completed form and supporting documents to be received no later than 28 February for a September start. Missing Hartwell's deadline by even a day means Maya's application would roll over to the next academic year's waiting list.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "If we decide Hartwell is the better fit for Maya, what's the latest date we could submit her application and still get her in for September, and what happens if we miss it?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5",
+    "t6"
+  ],
+  "distractor_turn_ids": [],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer correctly states that Hartwell Academy's in-year transfer application deadline is 31 January of the year of entry.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer correctly states that missing the deadline means Maya's application rolls over to the next academic year's waiting list (not simply that it is rejected or reconsidered in another way).",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not cite 28 February as the deadline for Hartwell Academy — that date applies to Brindlewood Secondary only.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer correctly identifies that the consequence of missing the deadline is placement on a waiting list for the following academic year, not for the current September intake.",
+      "required": true
+    }
+  ],
+  "notes": "The key facts the query depends on are in t6: Hartwell's 31 January deadline and the waiting-list consequence of missing it. The trap is t6's mention of Brindlewood's 28 February deadline, which a poor answer might incorrectly attribute to Hartwell.\n\nReference answer: For a September start at Hartwell Academy, the absolute latest Maya's application can be submitted is 31 January of that same calendar year. If the family misses that date by even one day, her application will not be considered for the upcoming September intake and will instead roll over to the next academic year's waiting list. The 28 February deadline belongs to Brindlewood Secondary, which uses the local authority's rolling in-year admissions process, so the two schools' deadlines should not be confused.",
+  "evidence_note": null,
+  "premise": "a family choosing between two secondary schools"
+}

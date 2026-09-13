@@ -1,0 +1,139 @@
+{
+  "scenario_id": "semantic_decoy_001",
+  "family": "semantic_decoy",
+  "label": "DECOY",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're migrating our nightly Spark jobs over to Snowflake. The main job is called `customer_aggregation_v3` and it currently runs on Spark 3.2.1. What do we need to know about compatibility?",
+      "assistant_message": "Spark 3.2.1 jobs migrating to Snowflake typically need the Snowflake Spark Connector version 2.11.0 or later to maintain full compatibility with DataFrame operations. Your `customer_aggregation_v3` job will need its UDFs reviewed, since Snowflake handles Python UDFs differently than Spark — specifically, any UDFs relying on the `pyspark.sql.functions` library will need to be rewritten as Snowflake JavaScript or Python UDFs. I'd also recommend targeting Snowflake's `CUSTOMER_DW` database with a dedicated warehouse named `AGG_WH_PROD` sized at X-Large to match the compute your current Spark cluster provides.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "The job currently processes about 4.2 TB of raw event data per night and finishes in roughly 2 hours 15 minutes on a 40-node Spark cluster. Will an X-Large Snowflake warehouse keep up with that?",
+      "assistant_message": "An X-Large Snowflake warehouse has 16 nodes and should handle your 4.2 TB nightly load, but you'll likely see a longer wall-clock time initially — expect around 3 hours 10 minutes until you tune the clustering keys on the target tables. For `customer_aggregation_v3` specifically, setting a clustering key on `event_date` and `customer_id` in the `EVENTS_RAW` table has shown a 35% query pruning improvement in similar migrations. You may also want to enable auto-suspend after 300 seconds of inactivity on `AGG_WH_PROD` to control costs during off-peak windows.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "We also have a separate dbt project managing our transformations. It's on dbt Core 1.5.4. Are there any version-specific things we should watch for?",
+      "assistant_message": "dbt Core 1.5.4 introduced model contracts, which let you enforce column-level data types and constraints directly in your YAML files — this is worth enabling for your most critical models to catch schema drift early. One known issue in 1.5.4 is that incremental models using the `merge` strategy can silently skip rows if the `unique_key` config references a column with mixed-case names, so double-check your model configs. You'll also want to pin the `dbt-snowflake` adapter to version 1.5.4 exactly, since the 1.5.3 adapter has a bug where `dbt run --select` with tag filters doesn't correctly exclude disabled models.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "For `customer_aggregation_v3`, what's the recommended way to handle the incremental load pattern in Snowflake?",
+      "assistant_message": "For `customer_aggregation_v3`, the recommended pattern is to use a `MERGE` statement targeting the `CUSTOMER_AGGREGATES` table, matching on `customer_id` and `event_date` as the composite key. You should stage incoming data into a transient table named `CUSTOMER_AGG_STAGE` first, run your deduplication logic there, and then execute the MERGE — this keeps your main table's change history clean in Snowflake's Time Travel, which is set to 7 days on `CUSTOMER_DW`. Make sure the MERGE is wrapped in an explicit transaction so that if the 4.2 TB load partially fails, the entire nightly run rolls back cleanly rather than leaving partial data in `CUSTOMER_AGGREGATES`.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "In dbt 1.5.4, how do we handle incremental models when we need to backfill a specific date range?",
+      "assistant_message": "In dbt Core 1.5.4, the cleanest backfill approach is to use the `--full-refresh` flag combined with a custom `is_incremental()` filter that reads from a variable, like `var('start_date')` and `var('end_date')`. You'd run something like `dbt run --select my_model --vars '{start_date: 2024-01-01, end_date: 2024-03-31}'` and let your model's WHERE clause scope the data. Keep in mind that in 1.5.4, using `--full-refresh` on a model with a contract defined will raise a warning but not an error, so you won't get blocked during backfills.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What monitoring should we set up for the nightly `customer_aggregation_v3` run in Snowflake to catch failures or slowdowns?",
+      "assistant_message": "For `customer_aggregation_v3`, you should create a Resource Monitor on `AGG_WH_PROD` with a monthly credit quota of 2,000 credits and alert thresholds at 75% and 95% to catch unexpected compute spikes. You should also query the `SNOWFLAKE.ACCOUNT_USAGE.QUERY_HISTORY` view nightly and alert if any query tagged with `customer_aggregation_v3` exceeds a runtime of 4 hours — that gives you a 45-minute buffer above the expected 3 hours 10 minutes before paging the on-call engineer. Finally, set up a row-count validation step that checks `CUSTOMER_AGGREGATES` has received at least 50 million new rows each night, which is the baseline observed during your pilot runs on the migrated dataset.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "For the dbt project, what's the best way to monitor model run times and catch regressions?",
+      "assistant_message": "dbt Core 1.5.4 emits structured run results to `target/run_results.json` after every invocation, and you can parse that file to extract per-model execution times and compare them against a baseline. A common pattern is to ship those results to your observability platform — many teams send them to a `dbt_run_results` table in Snowflake itself — and then alert if any model's execution time exceeds 150% of its 30-day rolling average. You can also use dbt's built-in `--log-format json` flag in 1.5.4 to stream structured logs to a log aggregator like Datadog or Splunk for real-time alerting.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "Does dbt Core 1.5.4 have any native alerting or is it all handled externally?",
+      "assistant_message": "dbt Core 1.5.4 does not include native alerting — it is a pure transformation framework, so all alerting must be handled by external orchestration tools like Airflow, Prefect, or your CI/CD pipeline catching non-zero exit codes. The `dbt-artifacts` package can help by persisting run metadata into your warehouse automatically, making it easier to build dashboards and threshold-based alerts on top of that data. For teams using Airflow, the `DbtRunOperator` will propagate failures as task failures, which you can hook into PagerDuty or Slack via standard Airflow callback mechanisms.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "If the nightly run for `customer_aggregation_v3` starts slowing down past the alert threshold, what's the first thing we should check on the warehouse side?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t4",
+    "t6"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t5",
+    "t7",
+    "t8"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer references the alert threshold of 4 hours runtime for customer_aggregation_v3 queries (as set up in QUERY_HISTORY monitoring in t6).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer references AGG_WH_PROD as the warehouse to inspect, and/or the Resource Monitor with its 2,000 credit monthly quota or the 75%/95% alert thresholds from t6.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer references the expected baseline runtime of 3 hours 10 minutes (from t2) as the normal benchmark against which slowdowns are measured.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not reference dbt Core 1.5.4 or the dbt run_results.json / 150% rolling average threshold, which belongs to branch B (the dbt monitoring discussion), not to the Snowflake warehouse monitoring for customer_aggregation_v3.",
+      "required": true
+    }
+  ],
+  "notes": "t2, t4, and t6 hold the key facts: the 3h10m baseline, the CUSTOMER_AGGREGATES/AGG_WH_PROD setup, and the 4-hour alert threshold plus 2,000-credit Resource Monitor. t7 and t8 are the traps — they use nearly identical monitoring vocabulary (alert thresholds, execution times, rolling averages) but apply to the dbt branch, not the Snowflake warehouse branch.\n\nReference answer: The first thing to check is the `SNOWFLAKE.ACCOUNT_USAGE.QUERY_HISTORY` view for any query tagged with `customer_aggregation_v3` that is approaching or has exceeded the 4-hour alert threshold, which is the 45-minute buffer above the expected 3 hours 10 minutes baseline established during migration tuning. Next, review the Resource Monitor on `AGG_WH_PROD` to see if the warehouse is near its 2,000 monthly credit quota or has triggered the 75% or 95% usage alerts, which could indicate unexpected compute demand. If credits look normal, check whether the clustering on `event_date` and `customer_id` in `EVENTS_RAW` has degraded, as poor pruning was the main driver of extended runtimes during the initial migration.",
+  "evidence_note": null,
+  "premise": "a data team migrating nightly batch jobs to a new warehouse"
+}

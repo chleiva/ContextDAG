@@ -1,0 +1,127 @@
+{
+  "scenario_id": "semantic_decoy_007",
+  "family": "semantic_decoy",
+  "label": "DECOY",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're trying to figure out the JR Pass situation for our Japan trip. There are four of us going for 10 days, and we want to know which pass to get.",
+      "assistant_message": "For a 10-day trip with four people, the 14-day JR Pass is the most flexible option. As of October 2023, the 14-day Ordinary JR Pass costs ¥50,000 per person, so you'd be looking at ¥200,000 total for your group. It covers the Shinkansen Hikari and Kodama services, as well as most JR local lines throughout Japan.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "What about luggage forwarding services? I've heard you can send bags ahead to hotels in Japan.",
+      "assistant_message": "Yes, the takkyubin luggage forwarding service is very popular with tourists. Yamato Transport's TA-Q-BIN is the most widely used provider, and a standard suitcase (up to 30 kg) sent between Tokyo and Kyoto typically costs around ¥1,500 to ¥2,000 per bag. You can drop off luggage at convenience stores like FamilyMart or Lawson, and it usually arrives at the destination hotel the next day by 2 PM.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "Can we use the JR Pass to get from Osaka to Hiroshima? We're planning to visit Miyajima as well.",
+      "assistant_message": "Absolutely, the JR Pass covers the Shinkansen from Osaka (Shin-Osaka station) to Hiroshima on the Hikari service, which takes about 45 minutes. From Hiroshima, the JR Sanyo Line to Miyajimaguchi ferry terminal is also covered, and that leg takes about 25 minutes. Note that the Nozomi Shinkansen is NOT covered by the standard JR Pass, so you must specifically board Hikari or Kodama trains for that route.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "How far in advance should we arrange the luggage forwarding? We arrive at Narita and our first hotel is in Shinjuku.",
+      "assistant_message": "For Narita to Shinjuku, Yamato Transport has counters at Narita Terminal 1 and Terminal 2 arrivals halls, and you can arrange same-day forwarding directly there. The cut-off time for next-day delivery is generally 12 noon, and the service to central Tokyo hotels typically costs around ¥2,500 per large bag. If you book through your hotel concierge in advance, some hotels offer a slightly discounted rate of around ¥2,200 per piece.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "We also want to do a day trip from Tokyo to Nikko. Does the JR Pass cover that route?",
+      "assistant_message": "The standard 14-day JR Pass does cover the JR Utsunomiya Line from Tokyo's Ueno station to Utsunomiya, which takes about 2 hours, and from there you'd take the Nikko Line to Nikko station, another 45 minutes — both fully covered. However, the faster and more direct Tobu Nikko Line from Asakusa is not a JR line, so it is not covered by the pass. If you want the quickest route, you'd need to pay separately for the Tobu express, which costs ¥1,400 per person each way.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "Can we send luggage from Kyoto to Tokyo near the end of the trip, or does the forwarding only work in one direction?",
+      "assistant_message": "Yamato Transport's TA-Q-BIN works in any direction across Japan, so sending bags from Kyoto to Tokyo is no problem at all. Drop-off points in Kyoto include 7-Eleven and FamilyMart locations, and the standard rate for a large suitcase on that route is approximately ¥1,800 to ¥2,200 depending on size and weight. Delivery to your Tokyo hotel is typically guaranteed by 2 PM the following day if you drop off before noon.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "One of our friends might need to travel from Hiroshima back to Tokyo directly. Is that doable on the JR Pass without going back through Osaka?",
+      "assistant_message": "Yes, the JR Pass fully covers a direct Shinkansen ride from Hiroshima to Tokyo on the Hikari service, which runs along the Tokaido-Sanyo Shinkansen line and takes approximately 4 hours. The Nozomi would do it in about 3 hours 20 minutes, but again, Nozomi is excluded from the standard 14-day Ordinary JR Pass. Your friend should reserve a seat in advance at any JR ticket office — seat reservations are free for pass holders and are strongly recommended on busy routes.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "What's the fastest Shinkansen service our pass actually covers for the Hiroshima to Tokyo leg, and roughly how long will it take?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t3",
+    "t5",
+    "t7"
+  ],
+  "distractor_turn_ids": [
+    "t2",
+    "t4",
+    "t6"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer identifies the Hikari service as the fastest Shinkansen covered by the 14-day Ordinary JR Pass.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states the Hikari journey from Hiroshima to Tokyo takes approximately 4 hours.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not state the journey takes 3 hours 20 minutes, which is the Nozomi travel time mentioned in t7 and is not covered by the pass.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not refer to luggage forwarding costs or Yamato Transport delivery times, which belong to the distractor branch and are irrelevant to the query.",
+      "required": false
+    }
+  ],
+  "notes": "Turns t1, t3, t5, and t7 (branch A) hold all the facts needed to answer the query about the JR Pass and Hiroshima-Tokyo Shinkansen options. Turns t2, t4, and t6 (branch B) discuss Yamato Transport luggage forwarding with similarly structured cost-and-timing language, creating a lexical trap; a model confused by surface similarity might pull delivery times or pricing from those turns instead of the Shinkansen travel times from branch A.\n\nReference answer: The fastest Shinkansen service covered by the standard 14-day Ordinary JR Pass is the Hikari, which runs along the Tokaido-Sanyo Shinkansen line from Hiroshima to Tokyo in approximately 4 hours. The faster Nozomi service completes the same journey in about 3 hours 20 minutes, but it is explicitly excluded from the JR Pass, so your friend must board a Hikari train. Free seat reservations are available at any JR ticket office and are strongly recommended for this busy route.",
+  "evidence_note": null,
+  "premise": "organizing a 10-day trip to Japan for four friends"
+}

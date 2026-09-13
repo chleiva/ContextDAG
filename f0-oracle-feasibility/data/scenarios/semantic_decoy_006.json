@@ -1,0 +1,139 @@
+{
+  "scenario_id": "semantic_decoy_006",
+  "family": "semantic_decoy",
+  "label": "DECOY",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm designing a semester-long ecology project for my 10th graders centered on a local freshwater pond ecosystem. I want them to track macroinvertebrate populations as bioindicators. Can you help me outline the monitoring phases?",
+      "assistant_message": "Absolutely — macroinvertebrates are excellent bioindicators because their sensitivity to dissolved oxygen and pollution varies by order. I'd suggest structuring the project in three monitoring phases: a baseline census in Week 2, a mid-semester recount in Week 9, and a final comparative analysis in Week 16. Students should use the Hilsenhoff Biotic Index (HBI) to score water quality, where a score of 0–2.5 indicates excellent quality and a score above 6.5 indicates poor quality.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "I also need to plan a separate unit on soil composition for my 7th graders. They'll be testing soil samples from three different garden beds. What testing sequence would you recommend?",
+      "assistant_message": "For a soil composition unit, I'd recommend a four-stage testing sequence: texture analysis in Session 1, pH measurement in Session 2, nutrient profiling (nitrogen, phosphorus, potassium) in Session 3, and a moisture-retention comparison in Session 4. Students can use the USDA Soil Texture Triangle to classify samples as sandy loam, clay loam, or silt loam based on particle percentages. A reliable field kit like the Rapitest 1662 gives pH readings accurate to within 0.2 units, which is sufficient for 7th-grade precision.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "For the pond project, how many sample sites should students set up, and what collection method works best for macroinvertebrates?",
+      "assistant_message": "For a class-sized study, five sample sites distributed around the pond perimeter gives enough spatial variation without overwhelming students with data. The D-frame kick net method — where students disturb a 0.5-square-meter patch of substrate for exactly 30 seconds and sweep the net downstream — is the standard field protocol for wadeable streams and shallow ponds. Each site should be sampled three times per monitoring phase to account for microhabitat variability, giving students 15 total samples per phase and 45 samples across the full semester.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "For the soil unit, how many samples per garden bed should the 7th graders collect, and what depth should they dig to?",
+      "assistant_message": "Three core samples per garden bed is the standard for a student-scale study, giving nine total samples across the three beds. Students should collect from the topsoil horizon, which typically means digging to a depth of 15 centimeters — deep enough to capture the O and A horizons where most biological activity occurs. Using a 2.5-centimeter diameter soil probe ensures consistent sample volume, and each core should be air-dried for 24 hours before texture or nutrient testing begins.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "What taxa should students focus on identifying in the pond samples, and how do they connect to the HBI scoring?",
+      "assistant_message": "Students should focus on three indicator groups: Ephemeroptera (mayfly larvae), Plecoptera (stonefly larvae), and Trichoptera (caddisfly larvae) — collectively called EPT taxa — which are the most pollution-sensitive and carry HBI tolerance values of 0 to 2. Moderately tolerant taxa like Chironomidae (midge larvae) have HBI tolerance values around 6 to 8 and signal degraded conditions when they dominate. Each specimen gets a tolerance value multiplied by its abundance, and the weighted sum divided by total organism count produces the site's HBI score, which students then map against the 0–2.5 excellent to above-6.5 poor scale established in the baseline phase.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What indicators should 7th graders look for when comparing the nutrient profiles of the three garden beds?",
+      "assistant_message": "Students should focus on three macronutrients: nitrogen (N), phosphorus (P), and potassium (K), reported in parts per million. A healthy vegetable garden bed typically shows nitrogen in the 40–80 ppm range, phosphorus between 30–50 ppm, and potassium between 100–150 ppm using a standard colorimetric test kit. If one bed shows nitrogen above 120 ppm, that signals over-fertilization, while phosphorus below 15 ppm suggests the bed may need amendment before planting. These thresholds come from the Cornell Cooperative Extension soil fertility guidelines for school garden programs.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "How should students present their final HBI findings, and what would count as a meaningful change in water quality over the semester?",
+      "assistant_message": "Students should present their findings as a site-by-site HBI score comparison across all three monitoring phases — Week 2 baseline, Week 9 mid-semester, and Week 16 final — displayed in a data table with calculated means and standard deviations per site. A shift of 1.0 or more HBI units between the Week 2 baseline and the Week 16 final score at any single site constitutes a meaningful, reportable change in water quality according to standard bioassessment protocols. If the pond-wide average HBI drops below 3.5 by Week 16, students can conclude that overall water quality improved during the monitoring period; if it rises above 5.0, they should flag potential stressors for further investigation.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "What should 7th graders conclude if one garden bed shows consistently low potassium across all three samples?",
+      "assistant_message": "A consistently low potassium reading — below 80 ppm across all three cores from a single bed — is a strong indicator of nutrient leaching, especially in sandy-textured soils that don't retain cations well. Students should cross-reference that bed's texture classification from Session 1: if it was identified as sandy loam on the USDA Soil Texture Triangle, leaching is the most probable explanation. The recommended student conclusion would be to suggest a potassium amendment such as greensand at a rate of 2.2 kilograms per 10 square meters, then retest after 30 days to evaluate uptake. This gives them a complete inquiry cycle: observe, explain, recommend, and verify.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "If my students finish their final round of sample collection in Week 16 and calculate a pond-wide average HBI score of 4.2, what should they conclude about the water quality, and does that count as a meaningful shift from the baseline?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t3",
+    "t5",
+    "t7"
+  ],
+  "distractor_turn_ids": [
+    "t2",
+    "t4",
+    "t6",
+    "t8"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer identifies that a pond-wide average HBI score of 4.2 falls between 3.5 and 5.0, placing it in a middle-quality range that does not trigger either the 'improved' conclusion (below 3.5) or the 'flag stressors' conclusion (above 5.0).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that a meaningful change requires a shift of 1.0 or more HBI units between the Week 2 baseline and the Week 16 final score at a single site (or compares the 4.2 to the Week 2 baseline to determine whether that threshold was crossed).",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer references the HBI scale established in the evidence: 0–2.5 is excellent quality and above 6.5 is poor quality, correctly situating 4.2 as a moderate/mid-range score.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not use the soil-unit thresholds (e.g., 80 ppm potassium, 15 ppm phosphorus, 40–80 ppm nitrogen, or the Cornell Cooperative Extension guidelines) as if they were relevant to interpreting the HBI score.",
+      "required": true
+    }
+  ],
+  "notes": "The evidence turns t1, t3, t5, and t7 hold all the facts needed to answer the query (HBI scale, monitoring phases in weeks 2/9/16, the 1.0-unit threshold for meaningful change, and the 3.5/5.0 pond-wide conclusion thresholds). Turns t2, t4, t6, and t8 are the traps: they use parallel vocabulary (samples, phases, thresholds, indicators, scores) from the soil composition unit, and a lexically confused model might import nutrient-level numbers or the Cornell guidelines as if they were relevant to HBI interpretation.\n\nReference answer: A pond-wide average HBI score of 4.2 at Week 16 places the pond in a moderate water-quality range — it is neither excellent (which would require a score below 2.5) nor poor (which would require a score above 6.5). Because 4.2 falls between 3.5 and 5.0, students cannot conclude that overall water quality clearly improved or that stressors need to be flagged; the pond sits in an ambiguous middle band. To determine whether a meaningful change occurred, students must compare the 4.2 to their Week 2 baseline: if any individual site shifted by 1.0 or more HBI units over the semester, that site-level change is reportable. If the baseline average was also near 4.2, the semester's data suggest water quality remained stable rather than improving or degrading.",
+  "evidence_note": null,
+  "premise": "a teacher designing a semester-long ecology project"
+}

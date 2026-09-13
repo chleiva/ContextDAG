@@ -1,0 +1,126 @@
+{
+  "scenario_id": "two_branch_join_014",
+  "family": "two_branch_join",
+  "label": "JOIN",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We've been looking at a storefront on Maple Avenue for our second location. The lease is $4,200 per month, and the landlord requires a 24-month minimum commitment.",
+      "assistant_message": "That's a significant fixed cost to plan around. Over the full 24-month minimum, you'd be locked into $100,800 in rent alone, so your revenue projections need to be solid before signing. It's worth modeling a break-even scenario against your current profit margins to see how quickly the second location would need to perform.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "We also need to update our logo before the holiday season. The designer quoted us $850 for a full rebrand package.",
+      "assistant_message": "That's a reasonable price for a professional rebrand, especially if it includes file formats suitable for signage, packaging, and digital use. Make sure the deliverables include vector source files so you're not paying for revisions every time you need a new application. Timing it before the holiday rush could give the new look good visibility.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "I've been reviewing our current bakery's financials. Our net profit margin has been running at 18% for the past three quarters.",
+      "assistant_message": "An 18% net profit margin is actually quite healthy for a small bakery, where industry averages often sit between 4% and 9%. That cushion gives you more flexibility when evaluating expansion, though you'll want to make sure that margin holds under the added overhead of managing two locations. It's a strong foundation to build a second-location business case from.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "The landlord also mentioned that the Maple Avenue space requires a $12,600 security deposit upfront — three months' rent — before we can take possession.",
+      "assistant_message": "So your immediate cash outlay just to get the keys would be $12,600, before you spend a dollar on fit-out, equipment, or staffing. That's a meaningful liquidity test — you'd want to confirm that paying this deposit wouldn't strain your operating reserves at the current location. Some landlords will negotiate the deposit down if you can show strong financials, so it may be worth asking.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "The designer also said the turnaround time for the rebrand is six weeks from when we sign the contract.",
+      "assistant_message": "Six weeks is a fairly standard timeline for a thorough rebrand process, including concept rounds and revisions. If your holiday season starts ramping up in mid-November, you'd want to sign the contract by early October at the latest to have everything ready in time. Building in a small buffer for unexpected revision rounds would be wise.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "We're thinking of using the new logo on custom printed boxes too. The box supplier has a minimum order of 500 units.",
+      "assistant_message": "A 500-unit minimum is pretty standard for custom printed packaging, and it's worth calculating the per-unit cost against your current plain box spend to see if the branding premium is justified. If your holiday volume is high enough, 500 units might not last long anyway, making the minimum order less of a concern. Just make sure the box dimensions are finalized before you go to print so you're not stuck with packaging that doesn't fit your products.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "I ran the numbers on what the second location would need to generate. Based on our costs, we'd need the new location to bring in at least $23,500 per month in revenue just to break even.",
+      "assistant_message": "That $23,500 monthly break-even is a concrete target you can pressure-test against local market data. You'd want to look at foot traffic counts for the Maple Avenue area, average transaction values, and realistic customer volume to see if that number is achievable. If your current location's revenue trajectory gives you a benchmark, you can estimate how long it took to reach a similar threshold and apply that to your timeline expectations for the new spot.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "Given everything, if we open the second location and it only hits 80% of the break-even revenue in its first month, how much money would we be losing that month, and how does the upfront cash commitment compare to what we'd expect to recoup given our profit margin?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t4",
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t3",
+    "t4",
+    "t7"
+  ],
+  "distractor_turn_ids": [
+    "t2",
+    "t5",
+    "t6"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer correctly calculates 80% of the $23,500 monthly break-even as $18,800 in revenue, and identifies the monthly shortfall as $4,700 ($23,500 minus $18,800).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer uses the $12,600 upfront security deposit (from branch A, t4) as the key upfront cash commitment figure when discussing initial outlay.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer applies the 18% net profit margin (from branch B, t3) to the $18,800 first-month revenue to estimate recoupable profit (approximately $3,384), and compares that to the $12,600 deposit.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not incorporate the $850 logo rebrand cost or the 500-unit box minimum order as part of the financial calculation, as those figures are irrelevant to this query.",
+      "required": true
+    }
+  ],
+  "notes": "t4 (branch A) holds the $12,600 security deposit and t7 (branch B) holds the $23,500 break-even figure — both are required to answer the query fully. t3 (branch B) holds the 18% margin needed for the recoupment calculation. The distractor branch (t2, t5, t6) introduces the $850 rebrand and 500-unit box minimum, which are on-premise but must not appear in the answer.\n\nReference answer: At 80% of the $23,500 break-even, the second location would generate $18,800 in its first month, leaving a shortfall of $4,700 against break-even costs. The upfront cash commitment is the $12,600 security deposit required before taking possession of the Maple Avenue space. Applying the current 18% net profit margin to the $18,800 in first-month revenue yields roughly $3,384 in net profit — meaning the deposit alone would take nearly four months of that reduced-performance profit to recoup, assuming all other costs are covered. This paints a cautious picture: the location would be underwater on a cash basis in month one and the deposit recovery timeline is long if performance stays at 80%.",
+  "evidence_note": null,
+  "premise": "a small bakery deciding whether to open a second location"
+}

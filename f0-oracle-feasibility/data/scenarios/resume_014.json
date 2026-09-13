@@ -1,0 +1,127 @@
+{
+  "scenario_id": "resume_014",
+  "family": "resume",
+  "label": "RESUME",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm converting my spare bedroom into a home studio and I need to figure out the lighting setup. The room is 10 feet by 12 feet, and I mostly shoot portrait and product work. I was thinking about starting with two continuous LED panels.",
+      "assistant_message": "That's a solid starting point for a dual-panel continuous setup. For a 10×12 room doing portraits and product work, you'll want panels in the 100–200W equivalent output range so you can balance key and fill without overpowering the space. Look at color-accurate options with a CRI of at least 95 so your skin tones and product colors render faithfully in-camera.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "That makes sense. What distance should I place the key light from my subject for a standard portrait setup in a room that size?",
+      "assistant_message": "For a standard Rembrandt or broad-light portrait in a room that size, place your key light approximately 3 feet from the subject. That distance, combined with a medium softbox — typically 24×36 inches — gives you soft, wrapping light without the falloff you'd get pushing it further back in a constrained 10×12 space. Your fill can sit at roughly 5 to 6 feet on the opposite side at about half the output power to keep a 2:1 lighting ratio.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "What kind of flooring would you recommend for a home studio? I want something that looks good on camera but is also easy to clean.",
+      "assistant_message": "Luxury vinyl plank, often called LVP, is a popular choice for home studios because it photographs well, mimics hardwood convincingly on camera, and wipes clean in seconds. A mid-tone gray or warm oak finish tends to be the most versatile neutral — it doesn't compete with subjects and works across multiple shooting styles. Brands like LifeProof and COREtec offer click-lock floating planks that are DIY-friendly and run roughly $2 to $4 per square foot for material alone.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "I've also been thinking about putting up a seamless paper backdrop system. How do I mount those in a room with standard 8-foot ceilings?",
+      "assistant_message": "With 8-foot ceilings, a wall-mounted roller system is usually the best approach because a freestanding stand would eat too much floor space and limit your shooting distance. Companies like Savage and Kate sell wall-mount brackets that hold 2-inch diameter backdrop tubes and can be installed directly into wall studs with lag bolts. You'd typically mount the brackets about 7.5 feet high so the paper unrolls with a few inches of clearance, letting you sweep it onto the floor for a seamless curve.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "How wide a seamless paper roll do I need for full-length portraits?",
+      "assistant_message": "For full-length portraits, a 107-inch-wide roll — that's the standard 9-foot width — is the industry go-to because it comfortably frames a standing adult with room to spare on both sides. If you're shooting only headshots or half-body, a 53-inch (4.5-foot) roll can work and is cheaper to replace. Savage Widetone and Colorama are the two most widely stocked brands, and a single 107-inch roll in a neutral color like Arctic White or Super White runs about $60 to $80 for a 36-foot length.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What colors of seamless paper are considered must-haves to start with?",
+      "assistant_message": "Most working photographers start with three rolls: Super White for high-key and product work, a medium gray like Savage's #17 Gray or Colorama's Smoke Gray for versatile portrait work, and a dark tone like Black or Deep Olive for dramatic low-key setups. Those three cover the majority of client requests without requiring you to stock a full range. Once your business grows you can add fashion-forward accent colors, but white, gray, and black form the practical foundation.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "Is there a way to extend the life of seamless paper so I'm not replacing rolls constantly?",
+      "assistant_message": "The biggest life-extender is asking subjects to remove shoes before stepping onto the paper, which alone can triple the usable footage on a roll. You can also roll the paper back up after each session rather than leaving it unrolled, which prevents dust accumulation and edge curling. Some photographers tape a 12-inch strip of black gaffer tape along the leading edge as a sacrificial walkway; when that strip gets scuffed, they pull it off and expose fresh paper underneath.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "For the LED panel setup we discussed, how far should the key light be from my subject, and what softbox size goes with that?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t7"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states the key light should be placed approximately 3 feet from the subject.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer specifies a 24×36 inch softbox as the recommended size for that distance.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not mention seamless paper roll widths (107-inch / 9-foot or 53-inch / 4.5-foot) drawn from the backdrop discussion in turns t5–t7.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer does not contradict the 2:1 lighting ratio and fill placement at 5–6 feet mentioned in t2 if fill light is discussed.",
+      "required": false
+    }
+  ],
+  "notes": "The critical evidence is in t2, which establishes the 3-foot key light distance and 24×36-inch softbox size. Turns t3 through t7 cover flooring, backdrop mounting, paper roll widths, paper colors, and paper longevity — all plausible studio concerns but entirely irrelevant to the lighting geometry question, making them the distractor trap.\n\nReference answer: For a standard portrait setup in a 10×12 room, place your key light approximately 3 feet from your subject. Pair it with a 24×36 inch medium softbox at that distance to get soft, wrapping light that suits the constrained space. Your fill light can sit at roughly 5 to 6 feet on the opposite side at about half the output to maintain a 2:1 lighting ratio.",
+  "evidence_note": null,
+  "premise": "a freelance photographer setting up a home studio"
+}

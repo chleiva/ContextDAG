@@ -1,0 +1,129 @@
+{
+  "scenario_id": "topic_fork_009",
+  "family": "topic_fork",
+  "label": "FORK",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I own a duplex in Denver built in 1962 and I'm trying to decide which energy-efficiency upgrades make the most financial sense. The two units are identical — each is about 900 square feet with forced-air gas furnaces and single-pane aluminum-frame windows throughout.",
+      "assistant_message": "For a 1962 Denver duplex with those characteristics, the highest-impact upgrades are typically air sealing and attic insulation, window replacement, and furnace upgrades. Single-pane aluminum-frame windows are particularly costly in Denver's climate because aluminum conducts heat rapidly and single-pane glass has an R-value of roughly 1, compared to R-3 to R-4 for a standard double-pane low-E unit. I'd recommend getting a blower-door test first so you have a baseline infiltration measurement before spending on anything else.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "I'm leaning toward replacing the windows first. I got a quote for Andersen 100 Series double-pane vinyl windows — 6 windows per unit, 12 total — at $380 per window installed, so $4,560 per unit.",
+      "assistant_message": "That price is reasonable for the Andersen 100 Series; the 100 Series uses Fibrex composite frames rather than pure vinyl, which is worth noting because Fibrex has better dimensional stability in temperature swings. At $4,560 per unit for 6 windows, your total project cost would be $9,120 for the duplex, and Colorado's current Xcel Energy rebate program offers $40 per qualifying ENERGY STAR window, which would offset $480 of that total. You should also check whether you qualify for the federal 25C tax credit, which as of 2024 covers 30% of window costs up to a $600 annual credit cap per taxpayer.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "You mentioned Fibrex frames — how does the thermal performance of the Andersen 100 Series actually compare to a standard vinyl window?",
+      "assistant_message": "The Andersen 100 Series with Fibrex frames carries a whole-window U-factor of about 0.30 for a typical double-pane low-E configuration, which translates to roughly R-3.3. A mid-range vinyl double-pane low-E window typically achieves a U-factor around 0.27 to 0.28, so vinyl edges out Fibrex slightly on thermal performance. However, Fibrex is approximately twice as rigid as vinyl and resists expansion and contraction better, which matters in Denver where temperature swings can exceed 50°F in a single day and can cause vinyl frames to warp or gap over time.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "What about the furnaces? Both units still have the original 1962 gas furnaces and I know those are ancient.",
+      "assistant_message": "A 1962 gas furnace almost certainly runs at 55–65% AFUE (Annual Fuel Utilization Efficiency), meaning up to 45 cents of every dollar spent on gas is lost as exhaust. Replacing them with modern 96% AFUE condensing furnaces — brands like Carrier, Lennox, or Trane all make well-reviewed units in that range — would dramatically cut heating costs, and Xcel Energy offers a $200 rebate per furnace when you upgrade to a unit with 95% AFUE or higher. For a 900-square-foot Denver unit, a 60,000 BTU input furnace is typically sufficient.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "One of my tenants mentioned the water heater in their unit is also original and making noise. Should I factor that into my upgrade budget?",
+      "assistant_message": "A 1962 water heater would be extraordinarily old if it's truly original — most tank water heaters last 10–15 years, so it's almost certainly been replaced at least once. If the current unit is making rumbling or popping sounds, that typically indicates sediment buildup on the heating element, which is a sign the tank is near end of life. Replacing it with a heat-pump water heater like the Rheem ProTerra 50-gallon (model XE50T10H45U0) would qualify for a $300 federal 25C tax credit and uses roughly 70% less electricity than a conventional electric resistance unit.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "So if I go with the Andersen 100 Series, will they meet the ENERGY STAR requirements needed to get that Xcel rebate you mentioned?",
+      "assistant_message": "Yes, the Andersen 100 Series double-pane low-E windows meet ENERGY STAR requirements for the Northern climate zone, which covers Denver. ENERGY STAR's Northern zone requires a maximum U-factor of 0.27 and a maximum Solar Heat Gain Coefficient (SHGC) of 0.40; the 100 Series low-E units come in right at U-0.30 for most sizes, which actually means only the configurations certified at or below U-0.27 would qualify — you'll want to confirm the specific unit certification on the ENERGY STAR product finder before ordering. The $40-per-window Xcel rebate specifically requires an ENERGY STAR certification label on the product.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "That's a concern — if some of the 100 Series windows don't qualify, what would the rebate shortfall actually look like for my project?",
+      "assistant_message": "If none of the 12 windows qualify, you'd lose the full $480 in Xcel rebates and your net project cost stays at $9,120. If only half qualify — say 6 of the 12 windows pass the U-0.27 threshold — you'd collect $240 in rebates, bringing the net cost to $8,880. It's also worth noting that the 25C federal tax credit eligibility is tied to the same ENERGY STAR certification, so non-qualifying windows would reduce your federal credit too; at 30% of $380 per window, each qualifying window is worth $114 toward the $600 annual cap.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "If all 12 windows end up qualifying for both the Xcel rebate and the federal tax credit, what's the lowest my total out-of-pocket cost for the window project could realistically be?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t6",
+    "t7"
+  ],
+  "distractor_turn_ids": [
+    "t4",
+    "t5"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer uses the total project cost of $9,120 for 12 windows (established in t2 as $380/window × 12) as the starting figure.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer subtracts the full Xcel rebate of $480 (12 windows × $40 per window, from t2 and t7) from the project cost.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer applies the federal 25C tax credit capped at $600 (not the uncapped 30% of full project cost), as stated in t2 and confirmed in t7.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not incorporate furnace rebate amounts ($200 per furnace from t4) or water heater tax credit amounts ($300 from t5) in the window cost calculation.",
+      "required": true
+    }
+  ],
+  "notes": "The fork-point detail needed is the $9,120 total cost from t2; t3, t6, and t7 carry the qualifying/rebate specifics for branch B. The distractor turns t4 and t5 introduce furnace and water heater rebate figures that must not appear in the window cost calculation.\n\nReference answer: If all 12 windows qualify, you'd collect the full $480 Xcel rebate (12 × $40) and the federal 25C tax credit, which is capped at $600 annually regardless of the 30% rate. Subtracting both from your $9,120 total project cost gives a minimum out-of-pocket figure of $8,040. That assumes you have no other 25C-eligible purchases in the same tax year that would eat into the $600 cap, and that you confirm each window's ENERGY STAR certification before ordering.",
+  "evidence_note": null,
+  "premise": "a landlord deciding on energy-efficiency upgrades for a duplex"
+}

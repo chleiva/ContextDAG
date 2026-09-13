@@ -1,0 +1,138 @@
+{
+  "scenario_id": "new_root_003",
+  "family": "new_root",
+  "label": "NEW_ROOT",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're locking in our shoot days for the short film. We have the Riverside Warehouse location confirmed for Saturday, March 15th, and Sunday, March 16th. How should we structure the two-day call sheet?",
+      "assistant_message": "For a two-day warehouse shoot, it's standard practice to front-load your most complex, multi-character scenes on day one when the crew is freshest. Reserve day two for coverage, pickups, and any single-actor inserts that can be reorganized if something runs long on day one. Make sure your call sheet lists the first unit call time, talent call times, and a hard wrap time so everyone knows the outer limits of the day.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Our director wants a 7 AM crew call on Saturday. We have 6 principal cast members and a crew of 14. Does that size change anything about how we run the day?",
+      "assistant_message": "With 14 crew and 6 principals, you're squarely in low-budget short-film territory, so a single AD can realistically manage the floor as long as scenes don't require simultaneous unit splits. At that crew size, SAG-AFTRA's Short Film Agreement kicks in if any of your principals are union members — that agreement caps your shoot day at 10 hours before overtime penalties apply. With a 7 AM crew call, that puts your base wrap at 5 PM, so plan your scene order accordingly.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "Two of our principals are SAG members. Under that Short Film Agreement, what's the daily rate we need to pay them?",
+      "assistant_message": "Under the SAG-AFTRA Low Budget Short Film Agreement (the current version ratified in 2023), the minimum day rate for a principal performer is $216 per day for projects with total budgets under $50,000. If your total budget is between $50,000 and $200,000, the rate steps up to $335 per day. Both tiers still require pension and health contributions at 21.5% on top of the base scale.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "Our total budget is $38,000, so we're in that lower tier. What about meal breaks — are those regulated under the same agreement?",
+      "assistant_message": "Yes, the SAG-AFTRA Short Film Agreement requires a meal break of no less than 30 minutes within every 6 hours of work from the performer's call time, not from general crew call. If you exceed that 6-hour window without a break, you owe a meal penalty of $25 for the first half-hour and $35 for each subsequent half-hour. For a 7 AM talent call, you must have lunch no later than 1 PM to stay compliant.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "Good to know. We're planning to cater lunch on both days. The warehouse doesn't have a kitchen, so we're hiring a craft services vendor. Any guidance on budgeting for that?",
+      "assistant_message": "For a crew of 14 plus 6 principals, that's 20 people to feed. A typical low-budget catering vendor in most U.S. markets charges between $18 and $28 per person per meal for a hot lunch, so budget roughly $360 to $560 per lunch day, or $720 to $1,120 across both shoot days. Don't forget to add craft services snacks and beverages separately — a standard craft services daily rate for a crew your size runs about $150 to $200 per day.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "We've set aside $900 total for catering both days. Is that going to be tight? We also need to account for the craft services person's day rate as a crew member.",
+      "assistant_message": "At $900 for two lunch services for 20 people, you're working with $450 per day, which is $22.50 per head — that's achievable but at the high end of modest. You'll likely need to negotiate with vendors or choose a simpler menu to stay there. The craft services PA day rate on a non-union low-budget production typically runs $150 to $200 for a 10-hour day, so add that to your crew costs separately from the food budget itself.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "The warehouse rental is $800 for the full weekend. We also need a generator because there's no accessible power on the floor. What size generator should we be renting?",
+      "assistant_message": "For a small narrative short with a standard lighting package — typically a 1.2K HMI, a few 650W fresnels, and monitor/playback equipment — a 45 kW generator is the common floor for professional sets of your size, though a 30 kW unit can work if your gaffer is disciplined about load management. Generator rentals in that range run approximately $350 to $550 per day from most grip-and-electric houses, so budget $700 to $1,100 for the two-day weekend. Always confirm fuel is included or budget an additional $80 to $120 per day for diesel.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "Our gaffer says she can work with a 30 kW. She's also asking whether we need a film permit for the warehouse since it's private property.",
+      "assistant_message": "Generally, shooting on private property does not require a city film permit as long as you're fully contained within that property and not affecting public streets, sidewalks, or right-of-way. However, many cities — including Los Angeles, New York, and Chicago — require a permit any time you use a generator on a production regardless of whether you're on private property, because the generator is often positioned near a public street. Check with your specific city's film office; in Los Angeles, for example, the Entertainment Permit desk at FilmLA requires a permit for any production that uses a generator or production vehicles on or adjacent to public space.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "What's the standard aspect ratio used for theatrical short film screenings at major festivals like Sundance and Tribeca?",
+      "assistant_message": null,
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [],
+  "distractor_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t7",
+    "t8"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer identifies 1.85:1 (flat) and/or 2.39:1 (scope) as the standard theatrical aspect ratios used at major festivals such as Sundance and Tribeca, or correctly states that 1.85:1 is the most common default for short film projection.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer addresses the question in terms of projection/screening standards, not camera acquisition formats.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not import the $38,000 budget figure or any SAG-AFTRA rate from the prior conversation as relevant context for this question.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer names at least one of the two festivals mentioned in the query (Sundance or Tribeca) when characterizing the standard.",
+      "required": false
+    }
+  ],
+  "notes": "The query (t9) is a self-contained general knowledge question about aspect ratios and has zero dependency on the shoot-scheduling, SAG rates, catering, generator, or permitting details developed in t1–t8. The main trap in the answer_checklist is importing the $38,000 budget or the SAG day rate ($216) from t3, which would be a spurious use of distractor context.\n\nReference answer: The standard theatrical aspect ratio for short film screenings at major festivals like Sundance and Tribeca is 1.85:1 (flat), which is the most commonly accepted default for narrative shorts projected in festival theaters. Some filmmakers choose 2.39:1 (anamorphic scope) for a wider cinematic look, and both ratios are accepted by most major festivals. Festivals typically request a DCP (Digital Cinema Package) formatted to one of these two aspect ratios, so filmmakers should confirm the specific deliverable specs with each festival's submission guidelines.",
+  "evidence_note": null,
+  "premise": "a film crew scheduling a low-budget short shoot"
+}

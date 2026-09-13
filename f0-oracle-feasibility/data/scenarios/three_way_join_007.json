@@ -1,0 +1,149 @@
+{
+  "scenario_id": "three_way_join_007",
+  "family": "three_way_join",
+  "label": "JOIN",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm planning my backyard observatory build and want to nail down the pier foundation. What diameter and depth should a concrete pier be for a mid-sized mount like a Losmandy G11?",
+      "assistant_message": "For a mount like the Losmandy G11, a concrete pier foundation should be at least 12 inches (30 cm) in diameter and extend a minimum of 48 inches (122 cm) below grade to get below the frost line in most temperate climates. This depth ensures the pier stays thermally stable and vibration-free during long imaging sessions.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "What's the typical slew speed of the Losmandy G11 mount, and does it affect how I plan the observatory's shutter or roof opening?",
+      "assistant_message": "The Losmandy G11's Gemini 2 controller has a maximum slew speed of 3.5 degrees per second, which is relatively modest compared to some modern goto mounts. This does matter for roof or shutter design: if you have a roll-off roof or clamshell, the mount's slew won't outpace a manual or slow motorized opening, so there's no need to engineer a fast-opening mechanism purely on account of slew speed.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "I've been reading that the G11 has a specific payload capacity I need to respect. What's the rated capacity and how should I think about staying within it?",
+      "assistant_message": "The Losmandy G11 has a rated payload capacity of 60 pounds (27 kg), and experienced users recommend staying at or below 75% of that — so roughly 45 pounds — to preserve pointing accuracy and reduce wear on the worm gears. You should add up your OTA, focuser, camera, guide scope, guide camera, and any dew heaters or counterweight-side accessories before committing to a telescope configuration.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "What's the head height of the G11 mount — meaning the distance from the top of the pier adapter to the optical axis — since that affects how high I need my observatory walls?",
+      "assistant_message": "The G11's mount head, from the pier adapter plate to the optical axis (declination axis centerline), measures approximately 14 inches (35.6 cm). This figure is critical for wall height calculations: you need to ensure the telescope tube clears the walls at all pointing positions, so the pier height plus those 14 inches plus your longest OTA radius all factor into your minimum usable interior wall height.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "I want to build a roll-off roof observatory. What's a practical minimum interior floor area for a setup like this?",
+      "assistant_message": "For a roll-off roof observatory housing a single mount and allowing comfortable movement around it, a practical minimum interior floor area is 8 feet by 8 feet (64 square feet). Going smaller than that makes it difficult to walk around the telescope at full extension and limits where you can place accessories like a laptop table or eyepiece storage.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "How far does the roof typically need to roll back to give full sky access, and does the roll-off track need to extend beyond the building footprint?",
+      "assistant_message": "A roll-off roof needs to retract at least the full length of the roof panel — so for an 8×8 ft observatory, the roof must slide back at least 8 feet — to clear the walls on all sides and give unobstructed access down to roughly 20 degrees above the horizon. The track does extend beyond the building footprint: you need to add at least 1 foot of extra track beyond the roof's travel distance to keep the roof securely on the rails, meaning the track structure projects at least 9 feet past the rear wall.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "I'm also thinking about whether to pour a separate concrete slab for the floor or just use compacted gravel. Which is better for drainage in a wet climate?",
+      "assistant_message": "Compacted gravel with a landscape fabric underlayer is often preferred in wet climates because it allows rainwater and condensation to drain freely rather than pooling on a slab. A concrete slab can work if you add a slight slope (about 1/8 inch per foot) toward a drain, but gravel is simpler and cheaper for a backyard observatory where you don't need a perfectly level working surface.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "How tall should the finished pier be above the floor so that the eyepiece or camera is at a comfortable working height?",
+      "assistant_message": "A comfortable working height for most adults puts the eyepiece or camera between 55 and 65 inches above the floor, with 60 inches (5 feet) being a common target. Since the G11 mount head adds about 14 inches above the pier adapter, the finished pier top should sit at roughly 46 inches (about 3 feet 10 inches) above the observatory floor to land the optical axis near that 60-inch sweet spot.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "If I want the track to run along the outside of the building on one side, how much clearance do I need to leave between the observatory wall and any fence or structure next to it?",
+      "assistant_message": "The track itself typically adds about 6 inches of lateral projection from the wall face, and you need at least another 6 inches of working clearance for the roof overhang and to access hardware, so a minimum of 12 inches (1 foot) between the observatory wall and any adjacent fence or structure is the practical rule. If your roof has eaves or a drip edge that extends beyond the wall, measure that overhang and add it on top of the 12-inch minimum.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "Okay, I'm trying to figure out the total footprint I need to reserve in my backyard for this whole project. If I go with the minimum 8×8 interior, what's the combined ground footprint — including the pier foundation hole, the building itself, and the roof track extension — that I need to plan around?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t8",
+        "t9",
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t8",
+    "t9"
+  ],
+  "distractor_turn_ids": [
+    "t7"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer accounts for the pier foundation requiring a 12-inch diameter hole extending 48 inches below grade (from t1), noting it falls within the building footprint.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer uses the 8×8 ft (64 sq ft) minimum interior floor area (from t5) as the base building footprint.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer incorporates the roof track needing to extend at least 9 feet past the rear wall (8 ft roof travel + 1 ft safety margin, from t6), adding that length to the total ground footprint.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not factor in the G11 mount head height of 14 inches or the 46-inch pier-above-floor height (from t4/t8), as those are vertical dimensions irrelevant to ground footprint.",
+      "required": true
+    }
+  ],
+  "notes": "The three gold branches are: A (pier foundation dimensions, t1/t8 — pier depth/diameter and above-floor height), B (roll-off roof footprint and track extension, t5/t6/t9), and C (G11 mount head height, t2/t3/t4 — only t4's 14-inch head height feeds the query indirectly via t8). The distractor branch D (t7, floor slab vs. gravel drainage) is plausible but contributes nothing to footprint calculations.\n\nReference answer: Starting with the minimum 8×8 ft interior, the building itself occupies an 8×8 ft ground footprint (64 sq ft). The pier foundation hole is 12 inches in diameter and dug 48 inches deep, but it sits inside that footprint, so it adds no extra ground area. The roll-off roof track must extend at least 9 feet past the rear wall (8 ft of roof travel plus 1 ft of safety margin beyond the roof's end), so you need to reserve an additional 9-foot-deep strip behind the building along its full 8-foot width. The total ground area to plan around is therefore approximately 8 ft wide by 17 ft long (8 ft building + 9 ft track run), or roughly 136 square feet, plus the 12-inch lateral track clearance of at least 12 inches on the track side if a fence is nearby.",
+  "evidence_note": null,
+  "premise": "a hobbyist building a backyard observatory"
+}

@@ -1,0 +1,451 @@
+{
+  "scenario_id": "long_noisy_side_thread_007",
+  "family": "long_noisy_side_thread",
+  "label": "NOISE",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're finalizing details for our running club's charity 10k. The race is on September 14th, 2025, starting at Riverside Park's main pavilion at 8:00 AM, and all proceeds go to the Maplewood Children's Hospital fund. We're expecting around 200 registered runners.",
+      "assistant_message": "That sounds like a well-organized event! With 200 runners starting from Riverside Park's main pavilion on September 14th, you'll want to make sure your timing and registration systems are set up well in advance. Charity races for causes like the Maplewood Children's Hospital fund tend to attract strong community support, which could push your numbers even higher on race day.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Right, and we've locked in the registration fee at $35 per adult and $15 for anyone under 18. We're capping total registration at 250 runners to stay within our permit limits.",
+      "assistant_message": "Those price points are reasonable and competitive for a local charity 10k. With a hard cap of 250 runners — $35 for adults and $15 for under-18s — you have a clear ceiling for your revenue projections and logistics planning. Just make sure your permit documentation explicitly states the 250-runner maximum so you're covered on race day.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "My roommate just got a new sourdough starter and wants to bake bread this weekend. How long does it typically take before a new starter is ready to use?",
+      "assistant_message": "A new sourdough starter generally takes about 5 to 7 days of regular feedings before it's strong enough to leaven bread reliably. You'll know it's ready when it reliably doubles in size within 4 to 8 hours of a feeding and has a pleasantly tangy, yeasty smell. The exact timeline can vary depending on the ambient temperature — a warmer kitchen around 75–78°F speeds things up considerably.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "She's keeping it on the counter at about 70°F. Should she feed it with all-purpose flour or is whole wheat better for getting it going?",
+      "assistant_message": "At 70°F the starter will be a little slower, so she might be looking at closer to 7 days rather than 5. Whole wheat flour is excellent for getting a new starter going because it contains more wild yeast and bacteria naturally present in the bran. A common approach is to use whole wheat for the first few days to establish activity, then transition to all-purpose flour once the starter is reliably bubbling.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "What ratio of flour to water should she use for the feedings?",
+      "assistant_message": "A 1:1:1 ratio by weight is the most common starting point — equal parts existing starter, fresh flour, and water, so for example 50g of each. This creates a starter with 100% hydration, which is a good all-purpose consistency for most bread recipes. Once the starter is established, she can adjust the ratio to suit specific recipes or her preferred feeding schedule.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "She's thinking of making a classic country loaf. What internal temperature should the bread reach to know it's fully baked?",
+      "assistant_message": "A classic country sourdough loaf is fully baked when the internal temperature reaches 205 to 210°F, measured with an instant-read thermometer inserted into the center. Going by temperature is much more reliable than tapping the bottom and listening for a hollow sound, though that old trick still works in a pinch. She should let the loaf cool on a wire rack for at least one hour before slicing, since the crumb continues to set as it cools.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "What kind of Dutch oven size works best for that style of loaf?",
+      "assistant_message": "A 5-quart or 5.5-quart round Dutch oven is the sweet spot for a standard country loaf made with 500g of flour. That size gives the dough enough room to expand without spreading too flat, and the lid traps steam effectively during the first 20 minutes of baking to develop a good crust. A 4-quart pot can work for smaller loaves, but it tends to feel cramped and can restrict oven spring.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "She doesn't have a Dutch oven — could she use a cast iron skillet with a stainless steel mixing bowl as a lid instead?",
+      "assistant_message": "Yes, that's actually a well-known workaround and it works quite well. She should preheat both the skillet and the bowl in the oven before loading the dough, just as she would with a Dutch oven. The key is making sure the bowl is large enough to cover the dough with at least an inch of clearance on all sides, and she should check that her stainless steel bowl is rated oven-safe to at least 450°F.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "What oven temperature should she bake at and for how long?",
+      "assistant_message": "She should preheat the oven to 500°F and bake the loaf covered for the first 20 minutes to maximize oven spring and crust formation. Then she removes the lid and reduces the temperature to 450°F for another 20 to 25 minutes until the crust is a deep mahogany brown and the internal temperature hits that 205–210°F target. Total bake time is typically 40 to 45 minutes for a standard 500g-flour loaf.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "Is it worth scoring the dough before baking, and what tool should she use?",
+      "assistant_message": "Scoring is definitely worth it — it controls where the bread expands and prevents random blowouts on the sides or bottom. A lame, which is a thin curved blade on a handle, is the ideal tool and costs only about $10 to $15. If she doesn't have one, a sharp serrated bread knife or even a clean box cutter blade can work, but the key is moving quickly and decisively at a 30- to 45-degree angle to the surface.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "How deep should the scores be?",
+      "assistant_message": "Scores should be about 1/4 to 1/2 inch deep — roughly half a centimeter to just over one centimeter. Too shallow and the scores seal back up before the bread has a chance to open; too deep and the structure can collapse. A single confident slash straight down the center of the loaf, or a curved ear cut at a low angle, are both classic approaches that work well for a first country loaf.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "She's also curious about bulk fermentation — how does she know when that phase is done?",
+      "assistant_message": "Bulk fermentation is complete when the dough has increased in volume by 50 to 75 percent and feels airy and domed rather than dense and flat. At 75°F it typically takes 4 to 5 hours, but at her room temperature of around 70°F she should expect closer to 5 to 6 hours. Another reliable sign is that the dough jiggles like jello when she shakes the container — that wobble indicates good gluten development and gas production.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "What's the difference between stretch-and-fold and coil fold during bulk fermentation?",
+      "assistant_message": "Stretch-and-fold involves grabbing one side of the dough, stretching it upward until it resists, then folding it over to the opposite side — you rotate the container and repeat four times per set. Coil fold involves reaching under the dough from both sides, lifting the entire mass off the container floor, and letting the ends fold underneath — it's gentler and builds more strength without deflating the dough. Most bakers do 3 to 4 sets of either technique in the first two hours of bulk, then leave the dough alone to ferment.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "Should she do the final proof in the fridge overnight or at room temperature?",
+      "assistant_message": "An overnight cold proof in the fridge at around 38–40°F is the more forgiving and generally superior option for a beginner. It slows fermentation dramatically, giving her a much wider window of time to bake the loaf the next morning, and the cold dough is significantly easier to score cleanly. Room temperature final proofing works but requires more precise timing — typically only 2 to 4 hours — and it's easy to over-proof if she gets distracted.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "How should she shape the dough before putting it in the fridge?",
+      "assistant_message": "She should pre-shape the dough into a loose round first, let it rest uncovered on the counter for 20 to 30 minutes — this is called the bench rest — then do a final tight shaping. For a round boule, she tucks the dough under itself while rotating it against the counter to build surface tension, then places it seam-side up into a well-floured banneton or a bowl lined with a floured kitchen towel. The surface tension from tight shaping is what holds the loaf's structure during the cold proof and oven spring.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "What flour should she use to dust the banneton so the dough doesn't stick?",
+      "assistant_message": "Rice flour is by far the best choice for dusting a banneton because it doesn't absorb moisture from the dough the way wheat flour does, so it stays powdery and releases the dough cleanly every time. Many bakers use a 50/50 mix of rice flour and all-purpose flour for a bit of extra insurance. She should dust the banneton generously and work the flour into the grooves with her fingers before placing the dough inside.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "My roommate also wants to know if she can freeze the loaf after baking to keep it fresh longer.",
+      "assistant_message": "Yes, sourdough freezes exceptionally well — better than most commercial breads because of its dense crumb and lower moisture content. She should let the loaf cool completely, ideally for 2 full hours, before slicing it and wrapping individual slices or the whole loaf tightly in plastic wrap followed by a layer of aluminum foil or a freezer bag. Frozen sourdough keeps well for up to 3 months, and she can refresh slices directly in a toaster from frozen or warm the whole loaf in a 350°F oven for about 15 to 20 minutes.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "Does she need to do anything special to maintain the starter long-term if she's not baking every week?",
+      "assistant_message": "If she's not baking weekly, the easiest approach is to store the starter in the fridge and feed it once a week. She should take it out of the fridge, discard all but about 50g, feed it with 50g flour and 50g water, let it sit at room temperature for 2 to 4 hours until it shows some activity, then put it back in the fridge. If she ever needs to revive a neglected starter, two or three daily feedings at room temperature will usually bring it back to full strength.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "What's the hooch that sometimes forms on top of a starter, and is it dangerous?",
+      "assistant_message": "Hooch is a grayish or dark liquid layer that separates and pools on top of the starter when it's hungry and has exhausted its food supply — it's essentially a dilute alcohol produced by the yeast. It's not dangerous at all; it's just a sign that the starter needs feeding. She can either pour it off or stir it back in before feeding — stirring it in will make the starter taste slightly more sour, while discarding it keeps the flavor milder.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "Can she use the discard from feedings for anything, or is it just waste?",
+      "assistant_message": "Sourdough discard is very useful and not waste at all — it adds a subtle tangy flavor to all kinds of quick recipes that don't rely on it for leavening. Popular uses include sourdough pancakes, waffles, crackers, pizza dough, banana bread, and even pasta. She can store discard in a separate jar in the fridge for up to two weeks and add to it with each feeding until she has enough to use in a recipe.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "Are sourdough pancakes made with discard noticeably different from regular pancakes?",
+      "assistant_message": "They have a mild tanginess that regular pancakes lack, which many people find more interesting and complex in flavor. The texture also tends to be slightly chewier and more substantial because of the fermented flour, though adding a small amount of baking soda to the batter neutralizes some acid and gives them a fluffier lift. A simple ratio is about 240g of discard, one egg, a tablespoon of butter, a teaspoon of sugar, half a teaspoon of salt, and a quarter teaspoon of baking soda — that makes about 8 medium pancakes.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "Does the age or sourness of the discard change how the pancakes taste?",
+      "assistant_message": "Yes, noticeably — older discard that has been sitting in the fridge for a week or more will be more acidic and produce tangier, more assertively flavored pancakes. Fresh discard used within a day or two gives a milder, more subtly sour result that's closer to buttermilk pancakes. For most people, discard that's 3 to 5 days old hits a nice sweet spot between good flavor complexity and approachability.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "What kind of pan works best for cooking sourdough pancakes — cast iron or nonstick?",
+      "assistant_message": "Both work well, but they behave differently. Cast iron retains heat very evenly and gives pancakes a slightly crispier edge, but it requires thorough preheating for at least 5 minutes over medium heat and a light coat of butter or oil to prevent sticking. Nonstick pans are more forgiving and easier to control for beginners, though they don't produce quite the same golden crust. If she already has a well-seasoned cast iron skillet from the bread baking setup, it doubles nicely as a pancake pan.",
+      "gold_parents": [
+        "t22"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "How do you know when to flip a pancake — is it purely by timing or are there visual cues?",
+      "assistant_message": "Visual cues are far more reliable than timing because pan temperature varies so much. The classic cue is to wait until bubbles form across the entire surface of the pancake and the edges look matte rather than shiny and wet — at that point the bottom is set and the flip won't deflate the pancake. On a properly preheated pan at medium heat, this usually takes about 2 to 3 minutes, but she should trust her eyes over the clock.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "My roommate is also thinking about making sourdough crackers — is the process very different from bread?",
+      "assistant_message": "Sourdough crackers are actually much simpler than bread because there's no proofing or shaping involved — they're essentially just a flat baked dough. A basic recipe uses about 200g of discard, 30g of melted butter or olive oil, half a teaspoon of salt, and any seasonings she likes such as rosemary, sesame seeds, or everything bagel seasoning. She rolls the dough as thin as possible on a parchment-lined sheet, scores it into cracker-sized squares, and bakes at 350°F for 20 to 25 minutes until crisp and golden.",
+      "gold_parents": [
+        "t24"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "How thin does the dough need to be for crackers to come out crispy rather than chewy?",
+      "assistant_message": "She should aim for about 1/16 of an inch thick, which is roughly 1.5 millimeters — thin enough that you can almost see your hand through it when you hold the parchment up to the light. A rolling pin with thickness guide rings set to the thinnest setting works perfectly for this. If the crackers come out chewy, they either weren't rolled thin enough or needed a few more minutes in the oven — she can always return them to the oven for 3 to 5 more minutes if they're not crisp when cooled.",
+      "gold_parents": [
+        "t25"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "Can she add cheese to the crackers?",
+      "assistant_message": "Absolutely — finely grated hard cheeses like Parmesan, aged cheddar, or Gruyère work best because they have low moisture content and don't make the dough soggy. She can work about 30 to 40g of grated cheese directly into the dough before rolling, or sprinkle it on top after rolling and press it in lightly with the rolling pin. Cheese-topped crackers may need to be watched carefully in the last 5 minutes of baking because the cheese can go from golden to burnt quickly.",
+      "gold_parents": [
+        "t26"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "How long do homemade sourdough crackers stay fresh, and what's the best way to store them?",
+      "assistant_message": "Properly baked and fully cooled sourdough crackers stay crisp for about 1 to 2 weeks when stored in an airtight container at room temperature. The biggest enemy of cracker crispness is humidity, so she should avoid storing them near the stove or in a warm kitchen cabinet. If they soften over time, she can re-crisp them by spreading them on a baking sheet and heating them in a 300°F oven for 5 to 8 minutes.",
+      "gold_parents": [
+        "t27"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "Is sourdough pizza dough made with discard any good, or is it better to use a fresh active starter?",
+      "assistant_message": "Discard pizza dough is genuinely excellent and arguably more practical than using active starter because the pizza crust doesn't need the starter for leavening — it's typically thin and crackery rather than puffy. The discard contributes flavor complexity and a slight chew without making the dough overly sour if it's relatively fresh. A good ratio is about 150g of discard mixed with 300g of bread flour, 190g of water, 7g of salt, and 2g of instant yeast to handle the rise, then cold-fermented in the fridge for 24 to 72 hours for best flavor.",
+      "gold_parents": [
+        "t28"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t30",
+      "turn_index": 29,
+      "user_message": "What temperature should a home oven be set to for the best pizza crust?",
+      "assistant_message": "As high as the home oven will go — for most ovens that's 500 to 550°F — and she should preheat it for at least 45 minutes to an hour with a baking steel or pizza stone inside. A baking steel heats up faster and transfers heat more aggressively than a stone, producing a crispier bottom in a shorter time. If she doesn't have either, an inverted heavy baking sheet preheated in the oven is a decent substitute, though the crust won't be quite as crisp.",
+      "gold_parents": [
+        "t29"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t31",
+      "turn_index": 30,
+      "user_message": "How long does a pizza typically bake at 500°F on a steel?",
+      "assistant_message": "On a fully preheated baking steel at 500°F, a thin-crust pizza typically takes 6 to 8 minutes to bake completely. She should watch for the crust edges to puff and char slightly, the cheese to bubble and develop brown spots, and the bottom to be firm and golden when she lifts a corner with a spatula. If the oven has a broiler, switching it on for the final 1 to 2 minutes can replicate the top-down heat of a wood-fired oven and blister the cheese beautifully.",
+      "gold_parents": [
+        "t30"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t32",
+      "turn_index": 31,
+      "user_message": "Can sourdough discard also be used in banana bread?",
+      "assistant_message": "Yes, and it's one of the best uses for discard because the bananas' sweetness balances the starter's acidity really nicely. She can substitute about 120g of discard for an equivalent portion of the flour and some of the liquid in her standard banana bread recipe, reducing the flour by about 60g and skipping any added milk. The result has a slightly denser, moister crumb than regular banana bread and a very subtle tang that makes the banana flavor pop.",
+      "gold_parents": [
+        "t31"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t33",
+      "turn_index": 32,
+      "user_message": "Does the baking temperature or time change when she adds discard to banana bread?",
+      "assistant_message": "Not significantly — standard banana bread bakes at 350°F for 55 to 65 minutes in a 9x5 inch loaf pan, and adding discard doesn't change those parameters much. The internal temperature test applies here too: the loaf is done when a toothpick inserted in the center comes out clean or when the center reads 200 to 205°F on an instant-read thermometer. The discard can make the batter look slightly wetter, which sometimes worries bakers into overbaking, so using the thermometer is especially helpful.",
+      "gold_parents": [
+        "t32"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t34",
+      "turn_index": 33,
+      "user_message": "Can she add chocolate chips and walnuts to the sourdough banana bread without messing up the structure?",
+      "assistant_message": "Absolutely — both are classic add-ins and won't affect the structure meaningfully as long as she doesn't go overboard. A good guideline is no more than 150g of total mix-ins per standard loaf, so she could do 100g of chocolate chips and 50g of roughly chopped walnuts, or split them 75g and 75g. Tossing the mix-ins in a tablespoon of flour before folding them into the batter helps prevent them from sinking to the bottom during baking.",
+      "gold_parents": [
+        "t33"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t35",
+      "turn_index": 34,
+      "user_message": "What's the maximum revenue we could collect from registration fees if we sell out completely?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t7",
+    "t8",
+    "t9",
+    "t10",
+    "t11",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t20",
+    "t21",
+    "t22",
+    "t23",
+    "t24",
+    "t25",
+    "t26",
+    "t27",
+    "t28",
+    "t29",
+    "t30",
+    "t31",
+    "t32",
+    "t33",
+    "t34"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer identifies the registration cap as 250 runners total.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer uses the adult registration fee of $35 and the under-18 fee of $15 in its reasoning or calculation.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer correctly states that maximum revenue is $8,750 if all 250 registrants are adults (or acknowledges the maximum is bounded between $3,750 and $8,750 depending on age mix, with $8,750 as the absolute ceiling).",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not reference any baking temperature, dough ratio, flour type, or other sourdough/bread detail from the distractor thread.",
+      "required": true
+    }
+  ],
+  "notes": "t1 establishes the event details and t2 locks in the two fee tiers ($35 adult, $15 under-18) and the 250-runner cap — these are the only facts the query needs. Turns t3 through t34 form a coherent sourdough baking thread that is entirely irrelevant to the revenue calculation and serve as the distractor.\n\nReference answer: The registration cap is 250 runners. If every single spot were filled by adult runners paying the $35 fee, the maximum possible revenue would be 250 × $35 = $8,750. In practice, any under-18 registrants paying $15 would reduce that total, so $8,750 is the absolute ceiling assuming a complete sellout with all adults.",
+  "evidence_note": null,
+  "premise": "a running club organizing a charity 10k"
+}

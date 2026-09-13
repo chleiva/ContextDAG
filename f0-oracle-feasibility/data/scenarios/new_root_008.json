@@ -1,0 +1,102 @@
+{
+  "scenario_id": "new_root_008",
+  "family": "new_root",
+  "label": "NEW_ROOT",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're locking in our shooting schedule for a two-day short film shoot next month. We have six cast members and a crew of eight, and we need to figure out how to structure our call times.",
+      "assistant_message": "For a low-budget short with 14 people total, staggered call times are your best friend. A common approach is to bring crew in 90 minutes before the first talent call so the set is fully prepped — lights, camera, sound — before any actors arrive. This keeps your paid actor hours lean and your crew from feeling rushed.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Our lead actor, Marcus, is only available from 10 AM to 6 PM on both days due to a prior work commitment. How do we build around that?",
+      "assistant_message": "With Marcus locked to a 10 AM–6 PM window, you effectively have an 8-hour shooting day for any scene he's in. Under SAG-AFTRA's Short Film Agreement, a performer's workday cannot exceed 12 hours from call to dismissal, so you're well within limits. Schedule all of Marcus's scenes back-to-back across the two days and use any early morning or late evening slots for scenes with your supporting cast who have more flexible availability.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "We're shooting at two locations — a diner on Day 1 and a rooftop on Day 2. The diner owner said we can only have the space from 7 AM to 3 PM. Does that create a problem?",
+      "assistant_message": "Yes, that's a real constraint: a 7 AM–3 PM diner window gives you only 8 hours, but Marcus doesn't arrive until 10 AM, leaving just 5 hours of overlap for any scenes that need both the diner location and your lead. You'd want to front-load all diner scenes that don't feature Marcus in the 7–10 AM block and shoot his diner scenes in the compressed 10 AM–3 PM window. Make sure you have a detailed shot list ordered by setup complexity so you're not burning that overlap time on lengthy lighting reconfigurations.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "Our DP estimates each lighting setup at the diner will take about 45 minutes. We have four distinct setups planned for that location. Is that feasible?",
+      "assistant_message": "Four setups at 45 minutes each totals 3 hours just for lighting changes, which leaves only 5 hours of actual shooting time in the 7 AM–3 PM window — or just 2 hours if you wait for Marcus. To stay on schedule, consider pre-rigging two of the setups the night before if the diner owner allows a brief access window, which could cut your Day 1 lighting time nearly in half. Alternatively, your DP could design two of the setups to share a base rig with minor adjustments, trimming each of those changeovers to around 20 minutes.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "The diner owner actually said we can have a one-hour pre-rig window the evening before, starting at 9 PM. That helps, right?",
+      "assistant_message": "Absolutely — a 9 PM to 10 PM pre-rig window the night before lets you fully build your most complex setup so it's camera-ready at 7 AM. If your DP prioritizes the widest master shot rig during that hour, you can potentially shoot your first setup immediately when the crew arrives, saving that 45-minute block for use elsewhere in the day. That single pre-rig hour effectively buys you back enough time to comfortably cover Marcus's scenes in the 10 AM–3 PM overlap window.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What's the standard turnaround time between a crew member's dismissal and their next call time that most low-budget film productions follow?",
+      "assistant_message": null,
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [],
+  "distractor_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states a specific minimum turnaround time in hours (the standard is 12 hours for crew on most low-budget productions).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer identifies that this turnaround standard comes from or is consistent with industry guild/union practice (e.g., IATSE or general industry norm), not an arbitrary figure.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not incorporate the diner's 7 AM–3 PM location window or the 45-minute lighting setup duration from the prior conversation as part of the turnaround calculation.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer addresses crew turnaround specifically, not actor/performer turnaround (which can differ).",
+      "required": false
+    }
+  ],
+  "notes": "The query is a standalone general-knowledge question about industry turnaround standards; none of the prior turns (t1–t5) contain the answer. The traps are t3's 7 AM–3 PM diner window and t4's 45-minute setup figures, which could be spuriously imported into a turnaround-time calculation.\n\nReference answer: The standard minimum turnaround time between a crew member's wrap and their next call is 12 hours, a norm widely observed across the film industry and codified in IATSE collective bargaining agreements. Many low-budget productions voluntarily follow this same 12-hour rule even when not bound by union contracts, both for legal liability reasons and to maintain crew safety and performance. Violating this turnaround — sometimes called a 'forced call' — typically requires a penalty payment on union shoots, and on non-union shoots it risks crew fatigue and mistakes on set.",
+  "evidence_note": null,
+  "premise": "a film crew scheduling a low-budget short shoot"
+}

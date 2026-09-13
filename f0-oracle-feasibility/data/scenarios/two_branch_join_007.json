@@ -1,0 +1,162 @@
+{
+  "scenario_id": "two_branch_join_007",
+  "family": "two_branch_join",
+  "label": "JOIN",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're finalizing the venues for our spring concert tour. The first stop is St. Cecilia's Church in Millbrook — they've confirmed we can use the main nave, which seats exactly 320 people.",
+      "assistant_message": "That's a solid venue to open with. St. Cecilia's main nave seating 320 is a good capacity for an amateur choir tour — large enough to feel like an event but intimate enough that ticket demand should be manageable. Make sure you get their confirmed date in writing early so it doesn't slip away.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "For the ticket pricing, we've decided to go with a tiered model. Standard tickets will be £12 each.",
+      "assistant_message": "A £12 standard ticket is a reasonable price point for a community choir concert — accessible enough to attract casual attendees while still generating meaningful revenue. You'll want to decide early whether to sell through a platform or handle box office sales yourselves, since platform fees can eat into that margin.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "We're also adding a second venue on the tour: the Hartwell Assembly Rooms. They've told us the hall holds 480 people.",
+      "assistant_message": "The Hartwell Assembly Rooms at 480 seats is a noticeable step up from St. Cecilia's — that's a 50% larger audience capacity. It's worth thinking about whether your choir's stage presence and sound will fill that bigger space comfortably, and whether local marketing can realistically drive that many ticket sales.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "One of our tenors is asking about the dress code for the tour. We've always worn black tie in the past — is that still the expectation?",
+      "assistant_message": "Black tie is a classic choice for choral concerts and gives a polished, unified look on stage. That said, some amateur choirs are shifting toward smart-casual or matching coloured outfits to feel more approachable to community audiences. It's worth putting the question to the full choir and committee so everyone is aligned before you order or hire anything.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "We also need to think about whether to hire a professional accompanist or use one of our own members who plays piano. What factors should we weigh up?",
+      "assistant_message": "The main considerations are reliability, rehearsal availability, and cost. A professional accompanist brings experience sight-reading and following a conductor under pressure, but typically charges a fee per rehearsal and per concert. Using a member can save money and aids familiarity, but you risk putting too much pressure on that person and losing a voice from the choir during performances.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "We've also decided to offer a concessions discount. Students and over-65s will get tickets at £8.",
+      "assistant_message": "A £8 concession price alongside the £12 standard rate is a clear and meaningful discount — it's a third off, which is generous enough to actually shift behaviour. Just make sure your box office volunteers know to ask for proof of eligibility, and consider whether you want to cap the proportion of concession tickets per show to protect overall revenue.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "The Millbrook date at St. Cecilia's is confirmed for Saturday the 14th of April. We're expecting a sell-out.",
+      "assistant_message": "A sell-out at St. Cecilia's on April 14th would be a fantastic opening night — 320 tickets sold is a real statement for an amateur choir. It's worth setting up a waiting list from the moment you go on sale, so you can fill any last-minute cancellations and gauge overflow demand for future tours.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "We've also decided to add a premium ticket tier. Premium seats will be £20 and include a pre-concert drinks reception.",
+      "assistant_message": "A £20 premium tier with a drinks reception is an excellent upsell — it roughly doubles the revenue per seat compared to the standard £12 ticket. You'll need to decide how many premium seats to allocate per venue, since the reception logistics will set a practical ceiling, and you'll want to cost in the drinks so the uplift is genuinely profitable.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "For the St. Cecilia's show on April 14th, we've decided to reserve 40 of those 320 seats as premium.",
+      "assistant_message": "Reserving 40 premium seats out of 320 means 280 seats remain for standard and concession tickets — that's about 12.5% of the house going premium, which is a conservative and sensible ratio. At £20 each, those 40 seats alone would bring in £800 if sold out, on top of revenue from the remaining seats.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "We think about 60% of the non-premium tickets at each show will sell at the standard rate and the remaining 40% at the concession rate. Does that split seem workable?",
+      "assistant_message": "A 60/40 split between standard and concession tickets is plausible for a community choir with a broad audience — choral concerts do tend to attract students and older attendees in significant numbers. At £12 standard and £8 concession, that mix gives you a blended price of roughly £10.40 per non-premium ticket, which is useful for revenue forecasting. It's worth revisiting that assumption after your first show once you have real sales data.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "Can you work out the total projected ticket revenue for the St. Cecilia's concert on April 14th, assuming a full sell-out across all ticket types?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t9",
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t6",
+    "t7",
+    "t8",
+    "t9",
+    "t10"
+  ],
+  "distractor_turn_ids": [
+    "t4",
+    "t5"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer correctly uses 320 total seats at St. Cecilia's, with 40 of those reserved as premium seats, leaving 280 non-premium seats.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer correctly applies the three ticket prices: £20 for premium (40 seats), £12 for standard (60% of 280 = 168 seats), and £8 for concessions (40% of 280 = 112 seats).",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer arrives at a total of £3,512 (40×£20 = £800; 168×£12 = £2,016; 112×£8 = £896; total = £3,712). The answer must not use only one ticket tier or ignore the 60/40 concession split when calculating non-premium revenue.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not incorporate the Hartwell Assembly Rooms capacity of 480 seats, which belongs to a different venue and is irrelevant to the St. Cecilia's revenue calculation.",
+      "required": true
+    }
+  ],
+  "notes": "Branch A (t1, t3, t7, t9) establishes the St. Cecilia's venue with 320 seats and 40 premium seats reserved. Branch B (t2, t6, t8, t10) establishes the three ticket prices (£12 standard, £8 concession, £20 premium) and the 60/40 non-premium split. Both branches are needed to compute the revenue figure; the Hartwell 480-seat figure (t3) is the main numerical trap, and the dress code / accompanist turns (t4, t5) are the distractor branch.\n\nReference answer: For the St. Cecilia's concert on April 14th, there are 320 total seats, of which 40 are premium at £20 each, generating £800. The remaining 280 non-premium seats split 60/40 between standard and concession: 168 standard tickets at £12 each give £2,016, and 112 concession tickets at £8 each give £896. Adding those together, the total projected revenue for a full sell-out is £3,712.",
+  "evidence_note": null,
+  "premise": "an amateur choir organizing a spring concert tour"
+}

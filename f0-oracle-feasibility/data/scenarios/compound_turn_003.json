@@ -1,0 +1,117 @@
+{
+  "scenario_id": "compound_turn_003",
+  "family": "compound_turn",
+  "label": "COMPOUND",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm putting together a 65% keyboard build and trying to decide on switches. I'm leaning toward Gateron Oil King linears — have you seen good availability on those lately?",
+      "assistant_message": "Gateron Oil Kings have been pretty reliably in stock through major vendors like NovelKeys and Cannonkeys for the past several months. They come factory lubed with Gateron's proprietary oil lube and have a 35g actuation force with a 55g bottom-out, which makes them a popular choice for smooth linears. Batch pricing usually runs around $0.55–$0.65 per switch when buying in quantities of 90 or more.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "That actuation force sounds about right for me. I'm building on a Tofu65 aluminum case — do you think the Oil Kings would pair well with that weight and material?",
+      "assistant_message": "The Tofu65's aluminum construction gives it a fairly solid, dense sound profile, and Oil Kings tend to complement that well because their smooth travel minimizes the scratchiness that can get amplified in harder cases. The case weighs roughly 1.2 kg without PCB or plate, so it dampens a lot of high-frequency ping. Many builders pair Oil Kings with a brass or POM plate in the Tofu65 specifically to tune the sound toward a deeper thock.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "Good to know on the plate material — I'll probably go brass. Also, I need to order some SMD LEDs for underglow on the same PCB; what spec should I be looking at for a standard 65% build?",
+      "assistant_message": "For the brass plate, keep in mind it adds noticeable weight and gives a higher-pitched, clackier sound compared to POM, so it's worth deciding which sound signature you prefer before committing. For SMD underglow LEDs on a standard 65% keyboard PCB, you'll typically want 3528 package reverse-mount SMD LEDs rated at 3.0–3.4V forward voltage and 20mA forward current; WS2812B-style addressable LEDs in the 5050 package are the other common option if your PCB controller supports PWM per-LED control, running at 5V and up to 60mA per LED at full white. Most 65% boards use between 10 and 14 underglow LEDs depending on layout, and you can source them from LCSC for roughly $0.03–$0.08 per unit in quantities of 100.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "I went ahead and ordered the brass plate. Now I'm second-guessing my foam situation — should I add case foam, PCB foam, or both for the Tofu65?",
+      "assistant_message": "With a brass plate in the Tofu65, you'll already have a relatively bright and clacky sound, so adding PE foam between the PCB and plate is the most impactful single mod you can do — it softens the bottom-out sound noticeably. Case foam sitting at the bottom of the aluminum shell helps reduce hollowness and echo, which is a common complaint with the Tofu65's deeper cavity. Many builders do both, but if you're on a budget, prioritize PE foam first and evaluate before adding case foam.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "Does the PE foam mod affect the typing feel noticeably, or is it mostly just a sound change?",
+      "assistant_message": "PE foam does subtly affect typing feel — it adds a very slight mushiness to the bottom-out because the foam compresses slightly under each keystroke, which some typists love and others find reduces the crispness of the switch. The effect is much more pronounced on sound than on feel, and most people report that the trade-off is worth it for the dampened, marbly sound it produces. If you're sensitive to bottom-out feel, you can try half-coverage PE foam, cutting it to only cover the areas between switches rather than the full PCB surface.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "I'll probably do full coverage PE foam then. Do I need to do anything special when soldering the Oil Kings to account for the foam being there?",
+      "assistant_message": "No, you solder the switches to the PCB before installing the PE foam — the foam sits between the soldered PCB and the plate after the fact, so it doesn't interfere with the soldering process at all. Just make sure your solder joints are clean and flat on the underside of the PCB, since the foam needs to sit flush against it. Standard 63/37 or 60/40 rosin-core solder at around 320–350°C works well for the Kailh hot-swap sockets if your Tofu65 PCB uses them, or directly on switch pins otherwise.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "If I go with the addressable option for underglow, how much current do I need to budget per LED at full brightness, and roughly how many would I need for a 65% board?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t3"
+  ],
+  "distractor_turn_ids": [
+    "t1",
+    "t2",
+    "t4",
+    "t5",
+    "t6"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that WS2812B-style addressable LEDs draw up to 60mA per LED at full white brightness.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that a standard 65% board typically uses between 10 and 14 underglow LEDs.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer states that WS2812B addressable LEDs run at 5V.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not reference the Tofu65 case weight (approximately 1.2 kg), brass plate sound characteristics, or any other detail from the switch/plate/foam discussion as relevant to the LED current budget question.",
+      "required": true
+    }
+  ],
+  "notes": "The key facts the query needs (60mA per WS2812B at full white, 5V operating voltage, 10–14 LEDs for a 65% board) all come from the compound turn t3. Turns t1, t2, t4, t5, and t6 are all about switches, plate material, and foam mods — plausible distractors that share no relevant details with the LED current question.\n\nReference answer: For WS2812B addressable LEDs in the 5050 package, you need to budget up to 60mA per LED at full white brightness, and they run at 5V, so your controller's power rail needs to support that load. A standard 65% board typically uses between 10 and 14 underglow LEDs, meaning worst-case full-white draw across all LEDs could reach 840mA, so it's worth checking your PCB's power trace rating and USB current budget before running them all at maximum brightness.",
+  "evidence_note": "Query depends only on the B half of the compound turn t3. Its ancestor closure {t3,t2,t1} includes A turns that are conversationally upstream of t3 but not needed for the B question; evidence is deliberately just {t3}. This is the granularity cost the family is designed to expose.",
+  "premise": "an indie hardware maker sourcing parts for a mechanical keyboard"
+}

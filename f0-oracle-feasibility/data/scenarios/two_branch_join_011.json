@@ -1,0 +1,138 @@
+{
+  "scenario_id": "two_branch_join_011",
+  "family": "two_branch_join",
+  "label": "JOIN",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm designing a semester-long ecology project for my high school juniors and want to focus on a local watershed. I'm thinking of having students collect macroinvertebrate samples to assess water quality. How many sampling sites should they use to get statistically meaningful results?",
+      "assistant_message": "For a high school watershed study, a minimum of six sampling sites is generally recommended to allow meaningful comparisons—ideally two upstream reference sites, two mid-stream sites, and two downstream sites near potential stressors. This paired design lets students detect upstream-to-downstream changes while controlling for natural variability. With six sites sampled monthly over a 16-week semester, students will have enough data points to run basic statistical comparisons without being overwhelmed.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "I also need to figure out the grading breakdown for the class. Should the project count as a larger portion of their grade than tests?",
+      "assistant_message": "Many project-based ecology teachers weight the semester project at around 40% of the final grade, with unit tests collectively accounting for 30%, lab reports 20%, and participation 10%. This weighting signals to students that sustained fieldwork and analysis matter more than single-exam performance. You can always adjust the percentages to fit your school's grading policy.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "What about late penalties? I want something fair but that still holds students accountable.",
+      "assistant_message": "A common and defensible policy is a 10% deduction per school day late, capped at 50% of the assignment's total points, after which the student still receives some credit for completing the work. You might also build in one no-questions-asked 48-hour extension per semester that students must request before the deadline. This balances accountability with the reality that field projects sometimes face weather or scheduling delays.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "I want students to present their findings at the end of the semester. What presentation format works best for data-heavy ecology research?",
+      "assistant_message": "A poster symposium modeled on professional scientific conferences works extremely well for data-heavy ecology projects at the high school level. Each student or group creates a 36-by-48-inch research poster and stands with it for a 30-minute gallery session, fielding questions from classmates, teachers, and invited guests. This format forces students to distill their findings visually and practice spontaneous scientific communication rather than reading from slides.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "How should I score the posters so the rubric is clear and objective?",
+      "assistant_message": "A four-category rubric works well: Data Presentation (30 points), Scientific Accuracy (25 points), Visual Design (20 points), and Oral Defense during the gallery session (25 points), for a total of 100 points. Each category should have three performance descriptors—exemplary, proficient, and developing—with specific, observable criteria such as 'all graphs include labeled axes and units' for the exemplary Data Presentation tier. Sharing this rubric with students at the project's start gives them a concrete target throughout the semester.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "For the macroinvertebrate sampling, what specific protocol should students follow so their data is comparable across all six sites?",
+      "assistant_message": "Students should use the EPA's Rapid Bioassessment Protocol V (RBP V), which specifies a 500-micrometer mesh kick-net, a standardized 1-square-meter sampling area, and a 30-second active kick-and-sweep motion at each site. All organisms collected are preserved in 70% ethanol and identified to family level using Merritt and Cummins' 'An Introduction to the Aquatic Insects of North America' as the reference key. Using a fixed protocol ensures that data from all six sites are directly comparable and that the study meets the methodological standards expected in citizen-science water-quality monitoring.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "Should I also require students to keep a lab notebook throughout the semester, or is the poster enough documentation?",
+      "assistant_message": "A lab notebook is strongly worth requiring—it documents the process rather than just the final product and is easy to assess with a simple dated-entry check. You could require a minimum of two substantive entries per field day, including raw data tables, observational notes, and a brief reflection on sources of error. Collecting notebooks at the midpoint and end of semester also gives you an early-warning system for students who are falling behind before the poster deadline.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "How should students visually display the macroinvertebrate data on their posters so the water-quality story is clear?",
+      "assistant_message": "The most effective display is a biotic index bar chart showing the Hilsenhoff Biotic Index (HBI) score for each of the six sampling sites arranged left to right from upstream to downstream, with a horizontal reference line at HBI = 4.51 marking the boundary between 'good' and 'fairly good' water quality. Alongside this, a stacked bar chart showing the relative abundance of pollution-sensitive orders (Ephemeroptera, Plecoptera, and Trichoptera—the EPT taxa) versus tolerant taxa at each site gives a complementary visual narrative. Together these two charts let a viewer immediately see both the numeric index trend and the biological community shift across the watershed.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "When students build their posters, how should they structure the data display section to show the water-quality results across all their sampling sites, and what scoring criteria will evaluators use to judge that section?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t6",
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t4",
+    "t5",
+    "t6",
+    "t8"
+  ],
+  "distractor_turn_ids": [
+    "t2",
+    "t3",
+    "t7"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer specifies that students sampled six sites and that the data display should show all six sites arranged upstream to downstream, referencing the HBI score and/or EPT taxa charts described in t8.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that the Data Presentation category of the rubric is worth 30 points out of 100, as established in t5.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not reference the late-penalty policy (10% per day, capped at 50%) or the grading weight breakdown (40% project, 30% tests, etc.) from the distractor turns, as those are irrelevant to poster data display and scoring.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer correctly identifies HBI = 4.51 as the threshold between 'good' and 'fairly good' water quality that should be marked on the chart, as stated in t8.",
+      "required": true
+    }
+  ],
+  "notes": "The key evidence is split across branch A (six sampling sites, RBP V protocol — t1/t6) and branch B (poster rubric with 30-point Data Presentation category — t4/t5; HBI chart with 4.51 threshold and EPT display — t8). Branch C turns (grading weight, late policy, lab notebooks) are plausible classroom concerns but contribute nothing to answering the query about poster data display and scoring.\n\nReference answer: For the data display section, students should present a bar chart of the Hilsenhoff Biotic Index score for each of their six sampling sites arranged left to right from upstream to downstream, with a horizontal reference line at HBI = 4.51 marking the boundary between 'good' and 'fairly good' water quality; a companion stacked bar chart showing EPT versus tolerant taxa at each site adds a complementary biological narrative. Together these two charts visually communicate the water-quality gradient across the watershed. On the poster rubric, the Data Presentation category carries 30 out of 100 total points, so evaluators will score this section on criteria such as whether all graphs include labeled axes and units, awarding full marks only at the exemplary level.",
+  "evidence_note": null,
+  "premise": "a teacher designing a semester-long ecology project"
+}

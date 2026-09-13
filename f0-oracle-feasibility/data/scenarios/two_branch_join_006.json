@@ -1,0 +1,138 @@
+{
+  "scenario_id": "two_branch_join_006",
+  "family": "two_branch_join",
+  "label": "JOIN",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're switching our dental office from Dentrix to a new platform. We've decided to go with Curve Dental, and the migration is scheduled for March 15th. How much lead time do we typically need to prepare staff?",
+      "assistant_message": "For a platform migration of that scale, most dental practices find that four to six weeks of lead time is ideal for staff preparation. That window gives you time for hands-on training sessions, workflow walkthroughs, and a buffer to address questions before go-live. Since your migration is March 15th, you'd want to begin formal staff training no later than February 1st. Starting earlier is always safer, especially for front-desk staff who handle scheduling daily.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Curve Dental charges per-provider, right? How does their pricing usually work?",
+      "assistant_message": "Yes, Curve Dental uses a per-provider subscription model, meaning you pay a monthly fee for each licensed provider on the account. Their standard tier, Curve Hero, is currently priced at $299 per provider per month. Additional modules like their analytics add-on or enhanced patient communication tools carry separate fees on top of that base rate. It's worth confirming exact pricing directly with their sales team, as promotional rates can vary.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "We have three dentists and two hygienists. Would all five count as providers under that model?",
+      "assistant_message": "Under Curve Dental's standard definition, hygienists are counted as providers just like dentists when they have their own patient records and treatment entries in the system. So yes, all five of your staff members would typically count as billable providers. At $299 per provider per month, your base monthly cost would come to $1,495 before any add-ons. Some practices negotiate a volume discount at five or more providers, so that's worth asking about during contract review.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "We also need to plan the actual data migration from Dentrix. Is there anything specific about how Curve handles Dentrix data?",
+      "assistant_message": "Curve Dental has a dedicated data migration team that handles Dentrix conversions specifically, which is one of the more common transitions they manage. They use a proprietary import tool that maps Dentrix patient records, treatment histories, and perio charting into Curve's format. Importantly, they require that you submit your Dentrix data export package at least 21 days before your go-live date so their team has time to validate and test the import. Missing that 21-day submission window is the most common reason migrations get pushed back.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "Our waiting room TV has been broken for two weeks. Would a 55-inch or 65-inch display be better for a room that's about 18 feet deep?",
+      "assistant_message": "For a viewing distance of roughly 18 feet, a 65-inch display is generally the better choice for comfortable readability. The standard recommendation is about 1.5 to 2 times the screen diagonal as a minimum viewing distance, so a 65-inch screen hits that range well at 18 feet. A 55-inch screen would be on the small side and patients seated farther back might find text or images harder to read. Mounting it at eye level or slightly above, around 48 to 54 inches to the center, also helps with comfort.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "We're thinking of running a patient education loop on it. What software do people usually use for that in dental offices?",
+      "assistant_message": "Digital signage platforms like Yodeck, ScreenCloud, or Dental Intel's patient education suite are popular choices in dental offices for exactly that purpose. Yodeck in particular is widely used because it runs on a standard Raspberry Pi device and costs around $8 per screen per month. Many practices also use vendor-provided content from companies like Caesy or Sesame Communications, which supply pre-made dental education videos. The choice usually comes down to whether you want fully managed content or prefer to customize your own playlist.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "Is there a contract length we'd be locked into with Curve Dental?",
+      "assistant_message": "Curve Dental's standard agreement is a 12-month contract with auto-renewal unless you provide written cancellation notice at least 60 days before the renewal date. They do offer a month-to-month option, but it comes at a premium—typically around 15 to 20 percent more per provider per month than the annual rate. Most practices opt for the annual contract to keep costs predictable. Early termination before the 12-month term is up generally incurs a fee equal to the remaining months' balance.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "What happens if we need to add a provider mid-contract, like if we hire a new associate dentist in the summer?",
+      "assistant_message": "Adding a provider mid-contract is straightforward with Curve Dental—you simply contact your account manager and the new provider is activated within one business day. The additional provider is billed at the same per-provider rate as your existing contract, so if you're on the annual plan at $299 per provider per month, the new associate would be added at that same rate. The charge is prorated from the activation date through the end of your current contract term. There is no setup fee for mid-contract provider additions under the standard agreement.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "Given everything we've sorted out, what's the latest date we can submit our Dentrix data export to Curve, and what will our monthly bill look like once we're fully up and running with all five providers?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t4",
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t7",
+    "t8"
+  ],
+  "distractor_turn_ids": [
+    "t5",
+    "t6"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states the data export must be submitted at least 21 days before the March 15th go-live date, giving a latest submission date of February 22nd.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states the monthly base cost for five providers is $1,495 (5 providers × $299 per provider per month).",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not mention the waiting room TV size (65-inch) or digital signage software (e.g., Yodeck) as relevant to the cost or migration deadline.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer does not give a submission deadline earlier than February 22nd (i.e., it does not incorrectly use the February 1st staff training start date as the data deadline).",
+      "required": true
+    }
+  ],
+  "notes": "t4 holds the critical Branch A fact (21-day data submission window before March 15th go-live = February 22nd deadline); t3 and t8 together establish Branch B facts (5 providers at $299/month = $1,495/month). t5 and t6 are the distractor branch about the waiting room TV and digital signage software, which are completely irrelevant to the query about the submission deadline and monthly cost.\n\nReference answer: The latest date to submit the Dentrix data export to Curve Dental is February 22nd, since Curve requires the package at least 21 days before the March 15th go-live date. Once the migration is complete and all five providers—three dentists and two hygienists—are active, the base monthly subscription will be $1,495, calculated at $299 per provider per month under Curve Hero's standard pricing. That figure covers the base plan only and does not include any optional add-on modules. If a new associate is added later in the year, they would be billed at the same $299 rate, prorated from their activation date.",
+  "evidence_note": null,
+  "premise": "a dentist's office replacing its appointment software"
+}

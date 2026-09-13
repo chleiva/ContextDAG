@@ -1,0 +1,104 @@
+{
+  "scenario_id": "continuation_007",
+  "family": "continuation",
+  "label": "CONTINUE",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're mapping out our live-ops event calendar for the next quarter. The game is called Nova Rift, and we want to anchor everything around a major seasonal event in mid-October. Can you help us structure this?",
+      "assistant_message": "Absolutely. For Nova Rift, I'd suggest anchoring your Q4 calendar around a flagship event launching October 14th — that gives you a Tuesday launch, which historically sees the highest daily active user spikes for live-service games. You can then build smaller filler events in the weeks before and after to maintain engagement between the big moments.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Good. The flagship event is called Void Harvest. We're planning it to run for exactly 21 days. What kind of progression system would work well for that length?",
+      "assistant_message": "A 21-day event like Void Harvest is well-suited to a tiered points-based battle pass structure. I'd recommend setting the completion threshold at 10,500 points total — that works out to exactly 500 points per day, which is achievable in about 30 minutes of play and doesn't feel punishing for players who miss a day or two. You can gate cosmetic rewards at every 1,500-point milestone to keep players logging in consistently throughout the event.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "We like the milestone idea. The design team wants the grand prize at the final milestone to be a legendary ship skin called the Obsidian Wraith. What milestone number would that land on?",
+      "assistant_message": "With a 10,500-point cap and milestones every 1,500 points, you get exactly 7 milestones in total. The Obsidian Wraith legendary ship skin would therefore sit at milestone 7, unlocked at the full 10,500-point threshold. That placement reinforces it as a true completion reward rather than something casual players stumble into.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "Perfect. Now, we also want a bonus multiplier weekend partway through the event. When would you place it?",
+      "assistant_message": "Given that Void Harvest starts October 14th and runs 21 days, I'd place the bonus multiplier weekend on October 25th and 26th — that's the second weekend of the event, right at the midpoint around day 11 and 12. Positioning it there re-engages players who have fallen behind and gives everyone a realistic shot at catching up before the final week. I'd set the multiplier at 2x points for all activities during those two days.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "We've decided the 2x multiplier weekend will apply only to PvP matches, not PvE. The event ends on November 3rd, right?",
+      "assistant_message": "That's correct — October 14th plus 21 days lands on November 4th, not November 3rd, so you'll want to update any marketing materials to reflect a November 4th end date. Restricting the 2x multiplier to PvP matches only is a solid design choice; it drives players into the PvP modes that typically see lower participation mid-event and creates a natural competitive surge around the midpoint.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "If a player starts the event on day one and earns exactly the daily minimum every single day with no multiplier weekend, what's the last day they can unlock the Obsidian Wraith, and will they hit the required points in time?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5"
+  ],
+  "distractor_turn_ids": [],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer identifies November 4th as the event end date (not November 3rd), based on October 14th start plus 21 days.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states the Obsidian Wraith requires exactly 10,500 points (milestone 7) to unlock.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer confirms that earning 500 points per day for 21 days yields exactly 10,500 points, meaning the player unlocks the Obsidian Wraith on the final day, November 4th.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not state that the player fails to reach 10,500 points or that the Obsidian Wraith is unattainable at the daily minimum rate.",
+      "required": true
+    }
+  ],
+  "notes": "The key facts the query depends on are: the 500 points/day minimum (t2), the 10,500-point threshold for the Obsidian Wraith at milestone 7 (t2 and t3), and the corrected November 4th end date (t5). The 2x PvP-only multiplier detail in t5 is a trap — it is explicitly excluded from the scenario in the query, which specifies no multiplier weekend.\n\nReference answer: A player earning exactly the daily minimum of 500 points every day for all 21 days of Void Harvest accumulates exactly 10,500 points by the end of the event. That is precisely the threshold for milestone 7 and the Obsidian Wraith legendary ship skin, so they will unlock it — but only on the very last day of the event, November 4th. They have no margin for missed days at this rate, but they do finish in time.",
+  "evidence_note": null,
+  "premise": "a game studio planning a live-ops event calendar"
+}

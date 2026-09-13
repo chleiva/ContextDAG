@@ -1,0 +1,128 @@
+{
+  "scenario_id": "continuation_009",
+  "family": "continuation",
+  "label": "CONTINUE",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're seeing a big drop-off during onboarding and I want to dig into where exactly we're losing people. Can you help me set up a funnel analysis?",
+      "assistant_message": "Absolutely. To start, you'll want to define the exact steps in your onboarding funnel so you can measure completion at each stage. Based on typical mobile onboarding flows, the five standard steps are: app open, account creation, profile setup, permissions grant, and first core action. Once you instrument those events, you can calculate step-by-step conversion rates and pinpoint the biggest drop-off point.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "We pulled the data last Tuesday and the numbers are pretty bad. Account creation completes at 82%, but profile setup is where things crater.",
+      "assistant_message": "That 82% account-creation rate is actually solid — industry average for that step hovers around 75–80%, so you're above the benchmark there. The profile setup step is a notorious choke point because it typically asks for the most information in one go. What's your current completion rate for profile setup, and how many fields are you requiring at that step?",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "Profile setup is completing at only 43%. We're requiring 7 fields: full name, username, date of birth, phone number, profile photo, bio, and preferred language.",
+      "assistant_message": "A 43% completion rate on profile setup with 7 required fields is a significant problem — research from the Baymard Institute suggests that each additional required field beyond 3 drops form completion by roughly 10 percentage points. That means trimming to just 3 required fields could theoretically recover close to 40 percentage points of that drop-off. I'd strongly recommend making photo, bio, and preferred language optional and deferring them to a post-onboarding nudge.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "That makes sense. Our PM, Dara Chen, wants to run an A/B test before we commit to removing fields. What sample size should we be targeting?",
+      "assistant_message": "For a test like this, you'd typically want to power it at 80% with a significance threshold of p < 0.05 and assume a minimum detectable effect of 5 percentage points. Given your current profile-setup completion rate of 43%, that works out to roughly 1,200 users per variant — so 2,400 total across control and treatment. If your daily active installs support that volume, you should be able to reach statistical significance within two weeks.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "We get about 300 new installs per day, so that timeline should work. Dara also wants to know which analytics platform we should use to track this. We're currently on Mixpanel but debating switching to Amplitude.",
+      "assistant_message": "Both platforms can handle funnel analysis and A/B test tracking well, but they differ in a key way relevant to your decision. Amplitude's Pathfinder feature lets you visualize unplanned user paths between steps, which is useful for discovering unexpected drop-off routes that a predefined funnel would miss. Mixpanel's funnel reports are faster to configure if you already have your events instrumented, and since you're already on Mixpanel, switching mid-experiment would risk losing historical continuity on the exact events you need for the test baseline.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "Good point on continuity. We kicked off the A/B test on June 3rd. The treatment group sees only 3 required fields — name, username, and date of birth — while control keeps all 7.",
+      "assistant_message": "That's a clean test design with a well-isolated variable. Starting June 3rd and targeting 2,400 total users at 300 installs per day, you should hit your sample size around June 11th — eight days in — assuming roughly even 50/50 traffic split between variants. Make sure Mixpanel's funnel window is set to capture the full session from install to first core action so you don't lose users who complete onboarding across multiple sessions.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "The test wrapped and the results are in. The treatment group — 3 required fields — completed profile setup at 71%, compared to 44% for the control group with all 7 fields.",
+      "assistant_message": "That's a 27 percentage point lift, which is both statistically meaningful and practically significant given your 43% baseline before the test started. The control group's 44% is consistent with your pre-test measurement of 43%, which validates that the test was running cleanly. With a lift that large, Dara should have strong grounds to ship the 3-field version as the default — you've moved profile setup completion from 43% to 71%, a relative improvement of about 65%.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "Dara is writing up the results for the exec team and needs the exact numbers. What were the profile setup completion rates for each variant, and how does the treatment compare to where we started before the test?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t7"
+  ],
+  "distractor_turn_ids": [],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states the treatment group (3 required fields) completion rate was 71%.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states the control group (7 required fields) completion rate was 44%.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer states the pre-test baseline profile setup completion rate was 43% (established in t3, confirmed in t7).",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not confuse the pre-test baseline (43%) with the control group result (44%) as if they are the same figure being compared to the treatment.",
+      "required": true
+    }
+  ],
+  "notes": "The critical facts are spread across t3 (43% pre-test baseline), t7 (71% treatment, 44% control). The main trap is conflating the pre-test 43% baseline from t3 with the control group's 44% result from t7 — they are close but distinct figures serving different roles in the executive summary.\n\nReference answer: In the A/B test, the treatment group — shown only 3 required fields (name, username, and date of birth) — completed profile setup at 71%, while the control group with all 7 required fields completed it at 44%. Before the test, the pre-test baseline for profile setup completion was 43%, which aligns closely with the control result and confirms the test ran cleanly. The treatment represents a 27 percentage point lift over the control and a roughly 65% relative improvement over the 43% pre-test baseline.",
+  "evidence_note": null,
+  "premise": "a mobile app team fixing onboarding drop-off"
+}

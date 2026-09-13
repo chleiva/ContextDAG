@@ -1,0 +1,139 @@
+{
+  "scenario_id": "resume_008",
+  "family": "resume",
+  "label": "RESUME",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm building a magic system for my fantasy novel where mages draw power from a finite internal reservoir called 'Aether.' I want the reservoir to have a hard numerical cap so readers can track it. Each mage starts with exactly 100 Aether points at full capacity.",
+      "assistant_message": "That's a clean, trackable foundation — 100 points as a universal ceiling gives readers an intuitive baseline. You might consider whether all mages share that same cap or whether specialization, bloodline, or training can push it higher over the course of the story. Keeping it fixed at 100 for now makes early-game balancing much simpler.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Good point. Let's say the cap stays at 100 for everyone, but casting spells costs different amounts. I want a basic fireball to cost 12 Aether points and a healing spell to cost 8 points. Does that ratio feel balanced?",
+      "assistant_message": "The ratio works well — fireball at 12 and healing at 8 means offense costs 50% more than basic healing, which creates an interesting tension between combat and survival decisions. With a 100-point pool, a mage can throw roughly 8 fireballs before running dry, or about 12 healing spells, which gives you clear dramatic stakes. You could use those numbers as anchors when pricing more exotic spells later.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "I like that. Now I need a rule for how Aether recovers. I'm thinking it regenerates passively at 5 points per hour, but a mage can also meditate to recover 20 points in 10 minutes. Does that feel right mechanically?",
+      "assistant_message": "Those two recovery rates create a satisfying tactical choice: passive regeneration at 5 points per hour is slow enough to matter in a long dungeon sequence, while meditation at 20 points per 10 minutes is powerful but requires the mage to be stationary and vulnerable. Full passive recovery from zero would take 20 hours, which is essentially an overnight rest, so that lines up with a natural story rhythm. The meditation rate is 24 times faster than passive regen, which makes it feel genuinely worth the risk.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "I also need to figure out the world's political structure. The story is set in a kingdom called Valdenmoor, and I want three noble houses vying for the throne. Can you help me name them with distinct heraldic identities?",
+      "assistant_message": "Here are three distinct houses for Valdenmoor: House Carenthal, whose sigil is a silver wolf on a field of deep crimson, representing cunning and old blood; House Ossivane, bearing a golden tower on black, symbolizing wealth built on iron mercantile control; and House Drael, marked by twin blue serpents on white, evoking ancient sorcerous lineage and diplomatic duplicity. Each house's visual identity can reinforce their political personality — Carenthal as military aggressors, Ossivane as economic manipulators, and Drael as scheming court mages.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "I love those. Let's say House Drael has held the throne for the past 200 years through a hereditary compact signed in the year 743 of the Valdenmoor Calendar. What kind of political crisis could shatter that compact now?",
+      "assistant_message": "The most natural fracture point would be a succession crisis: if the current Drael monarch, say King Eravel III, dies without a clear heir, the compact's language about 'direct bloodline succession' becomes legally ambiguous. House Carenthal could argue that a distant cousin once removed doesn't satisfy the compact's terms, while Ossivane might fund a pretender entirely to destabilize the throne and renegotiate trade privileges. The 200-year-old document likely has archaic clauses no one has needed to interpret before, which gives you rich room for legal and political drama.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "That's perfect. Let's say King Eravel III dies at the age of 67 after a 34-year reign, and his only child, Princess Seraveth, is considered illegitimate by House Carenthal because her mother was a foreign-born commoner. How would Ossivane exploit that?",
+      "assistant_message": "Ossivane would likely move fast — within days of Eravel's death, they'd present the Royal Compact's Clause 7 (the 'pure lineage' provision, if you establish one) to the High Tribunal, formally questioning Seraveth's eligibility. Simultaneously, they'd offer Carenthal a secret trade agreement: Carenthal gets military support for their claimant, and Ossivane gets monopoly rights over the Valdenmoor eastern ports for 50 years. Seraveth's best counter-move would be to secure the loyalty of the city garrison before the Tribunal rules, giving her a fait accompli on the ground.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "I want Seraveth to have a hidden ace: she's secretly married a minor lord, Lord Fenwick Tal, who has a tenuous but documented claim through a female-line descent from the original Drael founders. How strong would that actually make her position?",
+      "assistant_message": "It makes her position genuinely viable but still contested — female-line descent was typically considered inferior in most medieval succession frameworks, so Carenthal's lawyers could argue it fails the compact's standards, but it's far harder to dismiss entirely than Seraveth's own commoner-mother problem. The marriage to Fenwick Tal essentially launders her claim: she rules, he provides the bloodline pedigree, and together they form a composite claim that neither house can easily invalidate without also undermining the compact's legitimacy as a whole. The key weakness is that the marriage is secret, so Ossivane will have agents trying to expose or discredit it before it can be registered with the Tribunal.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "What if Ossivane succeeds in exposing the marriage, but Fenwick Tal is killed before he can testify? Does Seraveth lose everything?",
+      "assistant_message": "Not necessarily — marriage records in a medieval-style kingdom would typically be recorded by a religious officiant, so if the ceremony was performed by a recognized cleric of the realm, the church record alone could stand as legal proof without Fenwick's testimony. Seraveth would need to produce that cleric and the parish register before Ossivane can have either destroyed or discredited. If she also carries documentary proof of Fenwick's descent — a genealogical charter sealed by House Drael's own archivists — that document survives his death and could be her strongest single piece of evidence at the Tribunal.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "If my protagonist mage starts a major battle at full Aether and casts four fireballs and three healing spells, then meditates once before the second wave hits, exactly how many Aether points does she have when the second wave begins?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3"
+  ],
+  "distractor_turn_ids": [
+    "t4",
+    "t5",
+    "t6",
+    "t7",
+    "t8"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer correctly identifies that four fireballs cost 4 × 12 = 48 Aether points and three healing spells cost 3 × 8 = 24 Aether points, for a total expenditure of 72 points, leaving 28 points from the 100-point cap.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer correctly adds 20 Aether points for one meditation session, arriving at a final total of 48 Aether points at the start of the second wave.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not import any figures or facts from the Valdenmoor political storyline (House Carenthal, Ossivane, Drael, the 200-year compact, King Eravel's 34-year reign, etc.) into the Aether calculation.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not use the passive regeneration rate of 5 points per hour in place of the meditation recovery of 20 points, as the question specifies the mage meditates once.",
+      "required": true
+    }
+  ],
+  "notes": "The key facts are established in t1 (100-point cap), t2 (fireball = 12, healing = 8), and t3 (meditation restores 20 points). Turns t4 through t8 cover the Valdenmoor political plot and are pure distractors — none of the noble house details, reign lengths, or legal maneuvers are relevant to the arithmetic query in t9.\n\nReference answer: Starting at full capacity, the mage has 100 Aether points. Four fireballs cost 4 × 12 = 48 points and three healing spells cost 3 × 8 = 24 points, totaling 72 points spent, leaving her with 28 points. One meditation session then restores 20 points, bringing her total to 48 Aether points when the second wave begins.",
+  "evidence_note": null,
+  "premise": "writing a fantasy novel and planning its magic system"
+}

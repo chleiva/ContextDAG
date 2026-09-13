@@ -1,0 +1,104 @@
+{
+  "scenario_id": "join_then_split_004",
+  "family": "join_then_split",
+  "label": "SPLIT",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're updating our fall menu and I want to feature a butternut squash bisque as the new soup. The recipe I've landed on calls for 2.5 pounds of roasted butternut squash per gallon of finished soup, and I'm planning to price it at $9 per bowl.",
+      "assistant_message": "That's a solid foundation for a fall centerpiece dish. At 2.5 pounds of squash per gallon, you'll want to account for roughly 30–35% weight loss during roasting, so your purchasing quantity should be closer to 3.5 pounds of raw squash per gallon of finished soup. The $9 price point is competitive for a bisque, especially if you're garnishing with something like toasted pepitas or crème fraîche.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Right, I've already factored in the roasting loss. My actual purchase spec is 3.5 pounds of raw squash per gallon, and I'm targeting a batch yield of 8 gallons per prep session. So that's 28 pounds of raw squash per batch.",
+      "assistant_message": "28 pounds of raw squash per batch is a clean, workable number — easy to order in standard case quantities. Locking in 8 gallons per prep session also gives you a reliable par to scale up or down depending on projected covers. With that yield fixed, your cost-per-gallon math becomes straightforward once you have your supplier price per pound.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "We're also redesigning the dessert section. I want to add a salted caramel tart and I'm thinking the shell should be a classic pâte sablée made with 60% butter to flour ratio by weight.",
+      "assistant_message": "A 60% butter-to-flour ratio by weight will give you a very short, crumbly sablée — that's on the richer end but works beautifully with the bittersweet contrast of a salted caramel filling. Most classic pâte sablée recipes sit between 50% and 60%, so you're at the upper boundary, which means the dough will need to be kept cold and handled minimally to avoid crumbling during pressing. You might also consider blind-baking the shells at 325°F for 18 minutes to get an even, golden finish before adding the caramel.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "I'll go with exactly 60% butter to flour and blind-bake at 325°F for 18 minutes as you suggested. The tart shells will be 4-inch individual portions, and I plan to make 24 shells per baking session.",
+      "assistant_message": "24 shells per session at the 4-inch size is a practical run — most standard sheet pans can hold 12 shells each, so you'd be looking at two pans per bake. At 325°F for 18 minutes, you should get consistent color without over-browning the edges, especially important with a high-butter dough that can go from golden to dark quickly. Keeping a close eye after the 15-minute mark is a good habit.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "I'm thinking the tasting menu for the fall launch should pair the butternut squash bisque as the soup course with the salted caramel tart as the dessert course. If I set the tasting menu at $65 per person and project 40 covers on opening night, that's $2,600 in tasting menu revenue to start.",
+      "assistant_message": "A $65 tasting menu with those two dishes as anchors gives you a cohesive autumn narrative — the savory warmth of the bisque leading into the sweet-salty richness of the caramel tart is a classic progression. At 40 covers, $2,600 in projected tasting revenue is a reasonable opening-night target, and it gives you a clear benchmark to measure against actual ticket sales. Just make sure your batch quantities for both the bisque and the tart shells are scaled to cover 40 portions with some buffer, typically 10–15% overage.",
+      "gold_parents": [
+        "t2",
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "If I run three prep sessions before opening night, how many pounds of raw butternut squash do I need to order in total?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4",
+    "t5"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer correctly states 28 pounds of raw squash per prep session, as established in t2.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer correctly multiplies 28 pounds by 3 sessions to arrive at a total of 84 pounds.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not incorporate the 40-cover tasting menu figure or the $2,600 revenue projection from the joined discussion in t5.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not reference any detail about the pâte sablée tart shells (butter-to-flour ratio, bake time, or number of shells per session) from the dessert branch.",
+      "required": true
+    }
+  ],
+  "notes": "t2 holds both critical facts the query needs: 3.5 lb/gallon purchase spec and 8-gallon batch yield, giving 28 lb/session. The traps are the tasting-menu cover count (t5, branch J) and all tart-shell details (t3/t4, branch B), none of which are relevant to the squash order quantity.\n\nReference answer: With a batch yield of 8 gallons per prep session and a purchase spec of 3.5 pounds of raw butternut squash per gallon, each session requires exactly 28 pounds of raw squash. Running three prep sessions before opening night means you need to order a total of 84 pounds of raw butternut squash. It's worth adding a small buffer on top of that for any culling of substandard produce.",
+  "evidence_note": null,
+  "premise": "a restaurant redesigning its menu for a seasonal change"
+}

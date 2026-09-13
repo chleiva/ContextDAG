@@ -1,0 +1,127 @@
+{
+  "scenario_id": "semantic_decoy_003",
+  "family": "semantic_decoy",
+  "label": "DECOY",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're planning to move from Austin, Texas to Portland, Oregon with our two kids and our golden retriever, Biscuit. I've been getting quotes from full-service moving companies. Allied Van Lines came in at $8,400 for a 3-bedroom load, with a guaranteed 7-day delivery window.",
+      "assistant_message": "That's a significant move — roughly 2,100 miles door to door. Allied Van Lines is one of the larger carriers and their guaranteed delivery window is a meaningful commitment; many companies only offer an estimated range. For a 3-bedroom household on that corridor, $8,400 is toward the lower end of typical full-service pricing, so it's worth confirming exactly what's included — packing materials, appliances, and any long-carry fees can add up quickly.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "I'm also trying to figure out storage unit sizes for some furniture we'll be putting in climate-controlled storage. The facility near us offers a 10x20 unit for $185 per month, which they say fits a 2-bedroom apartment worth of stuff.",
+      "assistant_message": "A 10x20 is one of the most popular storage sizes and that capacity estimate sounds about right — it typically holds around 800 to 1,000 cubic feet of packed household goods. At $185 per month, that's a reasonable rate for climate-controlled in most mid-size metro areas. Just make sure the climate control maintains a consistent temperature range, usually between 55 and 85 degrees Fahrenheit, which matters a lot for wood furniture and electronics.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "We got a second quote from Mayflower Transit — they came in at $9,150 for the same 3-bedroom load on the Austin-to-Portland route, but they're offering a 5-day guaranteed delivery window instead of 7 days.",
+      "assistant_message": "A shorter guaranteed window is genuinely valuable when you have kids and a dog to coordinate — 5 days versus 7 days means less time in limbo, potentially in a hotel or a half-empty house. The $750 difference between Mayflower's $9,150 and Allied's $8,400 is relatively small if the tighter window saves you two nights of hotel costs. It's also worth asking both carriers what their binding estimate covers specifically regarding fuel surcharges, since diesel prices on a 2,100-mile haul can trigger added fees.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "The storage facility also has a 10x15 unit for $140 per month. I'm wondering if that might be enough.",
+      "assistant_message": "A 10x15 gives you roughly 600 to 750 cubic feet of usable space, which is typically adequate for a one-bedroom apartment or a portion of a two-bedroom. If you're storing furniture from multiple rooms — sofas, bed frames, dressers — you'd likely find the 10x15 too tight and end up stacking things awkwardly. The $45 monthly savings over the 10x20 could cost you more in damaged items or a second unit down the line.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "The facility manager mentioned they also have a 10x30 unit for $260 per month if we end up needing more space.",
+      "assistant_message": "A 10x30 is essentially a large garage-sized space — around 1,200 to 1,500 cubic feet — which is often overkill unless you're storing a full 3- or 4-bedroom house worth of furniture plus outdoor equipment or vehicles. At $260 per month, the jump from the 10x20 at $185 is $75 extra, and you'd want to be confident you'll actually use that extra 400 square feet. For most people in a temporary moving situation, the 10x20 is the sweet spot between cost and capacity.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "They said we'd need to sign a minimum 3-month contract for any of the climate-controlled units. Does that seem standard?",
+      "assistant_message": "A 3-month minimum is on the longer end — many facilities use month-to-month leases or a 1-month minimum, though some do require 2 to 3 months for climate-controlled units specifically because of the higher overhead. If your move timeline is uncertain, it's worth negotiating or shopping around, since a competing facility might offer the same climate-controlled rates on a month-to-month basis. Read the early-termination clause carefully too, because some facilities charge a fee equal to one full month's rent if you leave before the contract period ends.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "I also called North American Van Lines and they quoted $8,750 for the Austin-to-Portland 3-bedroom move with a 6-day guaranteed delivery window. So now I have three quotes.",
+      "assistant_message": "You're in a solid position with three competing quotes: Allied at $8,400 with a 7-day window, North American at $8,750 with a 6-day window, and Mayflower at $9,150 with a 5-day window. The pattern is clear — faster guaranteed delivery costs more, and the premium is roughly $375 per day of improvement. For a move with two kids and a dog, I'd lean toward weighting the delivery window heavily, since Biscuit and the kids will make extended hotel stays much more stressful and expensive than the price difference between carriers.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "Given the three quotes we have, which carrier gives us the fastest guaranteed delivery window and what's their price?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t3",
+    "t7"
+  ],
+  "distractor_turn_ids": [
+    "t2",
+    "t4",
+    "t5",
+    "t6"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer identifies Mayflower Transit as the carrier with the fastest guaranteed delivery window.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states the fastest guaranteed delivery window is 5 days.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer states Mayflower Transit's quoted price is $9,150.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not cite a delivery window of 6 days or a price of $8,750 (which are North American Van Lines' values, not Mayflower's).",
+      "required": true
+    }
+  ],
+  "notes": "Turns t1, t3, and t7 hold all the facts needed to answer the query (carrier names, prices, and delivery windows). Turns t2, t4, t5, and t6 discuss storage unit sizes and pricing using similar comparative/numerical vocabulary (monthly rates, unit dimensions, capacity figures), creating a lexical trap where a retrieval system might surface storage pricing instead of moving quotes.\n\nReference answer: Among the three quotes, Mayflower Transit offers the fastest guaranteed delivery window at 5 days, compared to North American Van Lines at 6 days and Allied Van Lines at 7 days. Mayflower's price for the Austin-to-Portland 3-bedroom move is $9,150, making it the most expensive of the three but the quickest guaranteed option.",
+  "evidence_note": null,
+  "premise": "planning a cross-country house move with two kids and a dog"
+}

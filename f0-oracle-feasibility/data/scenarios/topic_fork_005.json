@@ -1,0 +1,129 @@
+{
+  "scenario_id": "topic_fork_005",
+  "family": "topic_fork",
+  "label": "FORK",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm renovating a 1920s kitchen and I have a hard budget cap of $8,000 for everything — demo, materials, and labor. The kitchen is about 120 square feet with original plaster walls and a single 15-amp circuit feeding the whole room.",
+      "assistant_message": "That's a tight but workable budget for a 1920s kitchen of that size. The biggest cost risks in houses from that era are lead paint remediation — required if any surface tests positive and the home was built before 1978 — and knob-and-tube wiring, which most jurisdictions require you to replace or at minimum isolate before adding new circuits. Getting a $200–$300 electrical inspection up front will tell you exactly what you're dealing with and can save you from a mid-project budget blowout.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "The inspector found knob-and-tube throughout the kitchen. My electrician quoted $1,850 to replace it and upgrade to a 20-amp dedicated circuit for the refrigerator and a second 20-amp circuit for countertop appliances, so two new circuits total.",
+      "assistant_message": "That $1,850 quote is reasonable — the national average for rewiring a single room and adding two 20-amp circuits typically runs $1,500 to $2,500 depending on panel access and local permit fees. Make sure the quote includes the permit and final inspection, because a 1920s house almost certainly needs the work signed off by the building department before drywall goes up. With that spend locked in, you're looking at roughly $6,150 remaining for everything else.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "What exactly counts as a 20-amp circuit versus a 15-amp circuit, and do my appliances actually need the 20-amp rating?",
+      "assistant_message": "A 20-amp circuit uses 12-gauge wire (vs. 14-gauge for 15-amp), a 20-amp breaker, and receptacles rated for 20 amps — you can identify them by the T-shaped neutral slot. The NEC (National Electrical Code) Section 210.52(B) requires at least two 20-amp small-appliance branch circuits for kitchen countertop receptacles in any new or substantially renovated kitchen. A standard refrigerator draws about 6–8 amps running but can spike to 15 amps on compressor start-up, so a dedicated 20-amp circuit gives you that headroom.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "My refrigerator is a 2021 Whirlpool WRT318FZDW — is that one of the models that actually needs the dedicated circuit, or can it share?",
+      "assistant_message": "The Whirlpool WRT318FZDW has a rated running current of 6.5 amps at 115V, and its spec sheet recommends — though does not strictly require — a dedicated 15- or 20-amp circuit. However, NEC 210.52(B)(1) prohibits countertop small-appliance circuits from serving a refrigerator unless it is specifically listed for that circuit; the cleanest code-compliant solution is the dedicated 20-amp circuit your electrician already quoted. Sharing that circuit with countertop loads risks nuisance tripping and could fail inspection in most jurisdictions.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "I'm also trying to decide on cabinet style. I'm torn between shaker-style painted MDF cabinets and original-style beadboard inset cabinets that would be more period-appropriate for a 1920s house.",
+      "assistant_message": "Inset beadboard cabinets are historically accurate for a 1920s kitchen and can look stunning, but they cost significantly more because the door fitting is labor-intensive — expect to pay 25–40% more per linear foot than comparable overlay shaker cabinets. Shaker-style painted MDF from a semi-custom line like IKEA SEKTION or Hampton Bay can run $150–$250 per linear foot installed, while solid-wood inset beadboard from a custom shop often starts at $350–$500 per linear foot installed. Given your $6,150 remaining after electrical, the style choice will heavily determine how much you have left for countertops and flooring.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "If I go with the dedicated 20-amp circuit for the refrigerator as quoted, what does the actual outlet placement need to look like to pass inspection?",
+      "assistant_message": "The NEC requires the dedicated refrigerator receptacle to be a grounded 3-prong 20-amp outlet (NEMA 5-20R configuration) located within 6 feet of the appliance's intended position, and it must be on its own circuit with no other outlets tied to it. The Whirlpool WRT318FZDW has its power cord exiting from the lower rear, so the receptacle is typically installed 6–12 inches above the floor behind the unit or inside the cabinet space, per the appliance's installation guide. Your electrician will also need to label the breaker in the panel and include the circuit on the as-built diagram submitted with the permit, which is standard for the final inspection sign-off your $1,850 quote should cover.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "For the countertops, I've been looking at butcher block as a period-appropriate option. What thickness is standard and what's a realistic cost per square foot installed?",
+      "assistant_message": "Standard butcher block countertop thickness for residential kitchens is 1.5 inches (sometimes listed as 1-1/2\"), though 2-inch and 3-inch slabs exist for heavier-use surfaces. Installed cost from a supplier like Lumber Liquidators or IKEA's KARLBY line runs roughly $30–$60 per square foot for maple or birch, while walnut or teak butcher block can reach $80–$120 per square foot installed. For a 120-square-foot kitchen you'd typically have 25–40 square feet of countertop, so budget $750–$2,400 depending on wood species and edge profile.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "Given everything about the refrigerator circuit, can I legally install a standard 15-amp outlet instead of a 20-amp outlet for the fridge to save a little money, and would the Whirlpool still run safely on it?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t6"
+  ],
+  "distractor_turn_ids": [
+    "t5",
+    "t7"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer references that the electrician's quote specifies a 20-amp dedicated circuit for the refrigerator (from t2, the fork-point detail).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer addresses NEC 210.52(B)(1) or the code requirement that prohibits sharing the refrigerator circuit with countertop loads, as stated in t4.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer correctly states that the Whirlpool WRT318FZDW draws 6.5 amps running (from t4), which is within a 15-amp circuit's capacity, but notes the start-up spike of up to 15 amps (from t3) as a safety/code concern.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not reference cabinet style choices (shaker vs. beadboard inset) or countertop material (butcher block), as those details come from the distractor turns t5 and t7.",
+      "required": true
+    }
+  ],
+  "notes": "The key evidence turns are t2 (fork point: the $1,850 quote for two 20-amp circuits including a dedicated fridge circuit), t3 (20-amp vs 15-amp technical differences and NEC 210.52(B)), t4 (WRT318FZDW's 6.5A running draw and the dedicated-circuit recommendation), and t6 (NEMA 5-20R placement requirements). Turns t5 and t7 (cabinet style and butcher block countertops) are the distractors — plausible renovation content but entirely irrelevant to the circuit/outlet legality question.\n\nReference answer: Technically the Whirlpool WRT318FZDW only draws 6.5 amps running, which is within a 15-amp circuit's capacity, but its compressor start-up can spike to 15 amps — dangerously close to the 15-amp breaker threshold. More importantly, your electrician's quote already specifies a 20-amp dedicated circuit, and NEC 210.52(B)(1) effectively requires that the refrigerator be on its own dedicated circuit separate from countertop small-appliance circuits; swapping in a 15-amp outlet on a 20-amp circuit is also a code violation since the receptacle rating must match or exceed the circuit breaker rating. Staying with the 20-amp NEMA 5-20R outlet as quoted is the only code-compliant path and the cost difference between a 15-amp and 20-amp receptacle is only a few dollars, so the savings would be negligible.",
+  "evidence_note": null,
+  "premise": "renovating a 1920s kitchen on a fixed budget"
+}

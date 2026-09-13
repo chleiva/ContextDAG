@@ -1,0 +1,101 @@
+{
+  "scenario_id": "ambiguous_reference_003",
+  "family": "ambiguous_reference",
+  "label": "AMBIGUOUS",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I've been talking to a local insulation contractor called FrostShield Solutions about upgrading the attic insulation in my duplex. They specialize in spray foam and quoted me a job for both units.",
+      "assistant_message": "FrostShield Solutions sounds like a solid choice for attic spray foam work. To give you a clearer picture of the upgrade's value, it would help to know details like the quoted R-value they're targeting, the square footage they'd be covering, and the total cost they came in at. Do you have those figures from their quote?",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Yes — they quoted covering 1,400 square feet of attic floor across both units, bringing it up to R-60, and the total installed cost is $8,200. They said they can start no earlier than March 15, 2025, because that's when their spray foam rig comes out of winter storage.",
+      "assistant_message": "Those are very concrete figures to work with. An R-60 attic assembly is well above the typical code minimum of R-38 for most climate zones, so you'd be getting meaningful performance headroom. The March 15, 2025 start date is worth noting for your planning — if you need the work done before then, FrostShield Solutions simply can't accommodate it. Make sure your lease renewal timelines and any winter heating bills factor into that constraint.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "I also got a quote from a company called GreenLayer Insulation for the same duplex. They focus on blown-in cellulose rather than spray foam.",
+      "assistant_message": "GreenLayer Insulation is a well-regarded approach — blown-in cellulose typically has a recycled content of around 80–85% and performs very well for air sealing when dense-packed. It's worth comparing their quoted R-value and cost per square foot directly against the spray foam option, since the two materials behave quite differently in terms of moisture management and long-term settling.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "The city also just notified me that the duplex needs a new backflow preventer on the main water line — they're requiring it under a new municipal ordinance that took effect January 1, 2025.",
+      "assistant_message": "That's a separate compliance item you'll want to handle promptly. Backflow preventer installations for residential properties typically run between $300 and $700 for parts and labor, depending on the pipe diameter and local permit fees. Check whether the ordinance specifies a deadline for compliance, as some municipalities give property owners a 90-day window from the notice date before issuing fines.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "GreenLayer came in at $5,900 for 1,400 square feet to R-49, and they said they can start any time — their earliest available slot is actually February 3, 2025.",
+      "assistant_message": "So GreenLayer is about $2,300 cheaper but lands at R-49 versus the R-60 FrostShield quoted, and their February 3 availability gives you roughly six weeks of lead time before the competing offer even becomes possible. The cost-per-R-value trade-off is real: you're paying more with FrostShield for a higher thermal resistance ceiling, but the delay means more heating season passes before the upgrade is in place. It's worth modeling the energy savings over one winter to see if the performance gap justifies the price and timing difference.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "If I want to move forward with the insulation upgrade before February, can they actually do it in time?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4",
+    "t5"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer correctly resolves 'they' to FrostShield Solutions (not GreenLayer Insulation).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that FrostShield Solutions cannot start until March 15, 2025, which is after February.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer concludes that FrostShield Solutions cannot complete (or even begin) the work before February.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not attribute the February 3, 2025 availability to FrostShield Solutions — that date belongs to GreenLayer Insulation.",
+      "required": true
+    }
+  ],
+  "notes": "t2 holds the critical fact (FrostShield's March 15, 2025 start constraint); t5 is the primary trap, introducing GreenLayer's February 3 availability, which matches the query's 'before February' framing and could mislead a resolver that ignores branch structure.\n\nReference answer: No — FrostShield Solutions cannot do the work before February. Their earliest possible start date is March 15, 2025, because that is when their spray foam rig comes out of winter storage, as established in their quote. If you need insulation installed before February, FrostShield is not an option under any circumstances.",
+  "evidence_note": null,
+  "premise": "a landlord deciding on energy-efficiency upgrades for a duplex"
+}

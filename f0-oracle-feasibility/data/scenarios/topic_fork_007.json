@@ -1,0 +1,129 @@
+{
+  "scenario_id": "topic_fork_007",
+  "family": "topic_fork",
+  "label": "FORK",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're kicking off our migration of nightly batch jobs to Snowflake next Monday. We have 47 jobs currently running on our legacy Redshift cluster, all scheduled between 11 PM and 5 AM EST, and we need zero downtime during the cutover.",
+      "assistant_message": "That's a solid migration window to work with. For a zero-downtime cutover of 47 jobs across a six-hour nightly window, a common approach is to run both Redshift and Snowflake pipelines in parallel for at least two weeks, comparing row counts and checksums before flipping the scheduler. You'll want to decide early whether you're moving job orchestration to a new tool at the same time or keeping your existing scheduler pointed at a new target.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "We decided to use Apache Airflow 2.7.3 for orchestration, replacing our old cron-based setup. Each migrated DAG will use the SnowflakeOperator from the apache-airflow-providers-snowflake package, version 5.3.0.",
+      "assistant_message": "Apache Airflow 2.7.3 paired with apache-airflow-providers-snowflake 5.3.0 is a well-tested combination for this kind of migration. One thing to be aware of is that SnowflakeOperator in that provider version defaults to using the Snowflake Connector for Python under the hood, so your connection strings in Airflow's connection UI need to include the warehouse, role, and schema fields explicitly or queries will fall back to the user's default settings. Make sure your Airflow metadata database is on PostgreSQL 13 or higher, since 2.7.x dropped support for older Postgres versions.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "We're running into a question about the SnowflakeOperator specifically — what's the right way to handle connection retries if a job fails mid-run?",
+      "assistant_message": "With apache-airflow-providers-snowflake 5.3.0, the SnowflakeOperator inherits Airflow's standard retry mechanism, so you set retries and retry_delay directly on the DAG or task definition. A common production pattern is to set retries=3 with a retry_delay of datetime.timedelta(minutes=5), which gives Snowflake time to recover from transient session errors before the next attempt. You should also set retry_exponential_backoff=True on tasks that hit Snowflake's warehouse auto-suspend, since a flat 5-minute delay can still land during a cold-start window.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "How should we handle the cost allocation side? We have three business units sharing the Snowflake account and the finance team wants per-team billing breakdowns.",
+      "assistant_message": "Snowflake's resource monitors and virtual warehouse tagging are the standard tools for per-team cost allocation. You'd typically create one virtual warehouse per business unit — for example, TEAM_A_WH, TEAM_B_WH, and TEAM_C_WH — and attach a resource monitor to each with a monthly credit quota and an alert threshold, say a notification at 80% and a hard suspend at 100%. Snowflake's ACCOUNT_USAGE.WAREHOUSE_METERING_HISTORY view then lets finance pull exact credit consumption per warehouse with a simple SQL query.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "Does the retry logic behave differently if the SnowflakeOperator is inside a TaskGroup versus a top-level task?",
+      "assistant_message": "In Airflow 2.7.3, retry settings on a TaskGroup do not cascade down to individual tasks inside it — each task must have its own retries and retry_delay parameters set explicitly, or it inherits from the DAG-level defaults, not from the group. So if you define retries=3 at the DAG level in your default_args dictionary, every SnowflakeOperator task that doesn't override it will use that value regardless of whether it sits inside a TaskGroup or not. This is a common gotcha when teams migrate from older Airflow versions where they assumed group-level settings propagated.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What about Snowflake's Time Travel feature — should we enable it for the tables these jobs write to?",
+      "assistant_message": "Time Travel is worth enabling for tables that are written by nightly batch jobs, especially during the migration period when you might need to roll back a bad load. Snowflake's default Time Travel retention is 1 day for standard tables, but you can extend it up to 90 days for Enterprise edition accounts by setting DATA_RETENTION_TIME_IN_DAYS at the table or schema level. Keep in mind that Time Travel storage counts against your Snowflake storage bill, so a 90-day retention on a table that receives hundreds of gigabytes nightly can add up quickly.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "If a SnowflakeOperator task exhausts all its retries, does Airflow mark the whole DAG run as failed immediately or does it wait for other tasks to finish?",
+      "assistant_message": "When a task exhausts all retries in Airflow 2.7.3, it enters the 'failed' state, and Airflow's scheduler then evaluates downstream dependencies — any task with trigger_rule='all_success' (the default) that depends on the failed task will be marked 'upstream_failed' and skipped rather than run. The DAG run itself is marked as failed once all tasks have reached a terminal state, so parallel branches that don't depend on the failed task will continue running to completion before the overall run status is finalized. If you want the DAG to halt immediately on any failure, you need to set on_failure_callback at the DAG level to programmatically trigger a dag.clear() or use the 'fail fast' pattern with a short-circuit operator.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "Given everything we've set up with our Airflow and Snowflake operator version, if one of our nightly batch DAGs has a SnowflakeOperator task inside a TaskGroup and that task fails, what retry behavior should we expect and what happens to the DAG run once retries are exhausted?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t5",
+    "t7"
+  ],
+  "distractor_turn_ids": [
+    "t4",
+    "t6"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that the setup uses apache-airflow-providers-snowflake version 5.3.0 with Airflow 2.7.3 (the fork-point detail from t2).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that retry settings on a TaskGroup do NOT cascade to tasks inside it in Airflow 2.7.3 — tasks use DAG-level default_args or their own explicit settings (from t5).",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer states that once retries are exhausted the task enters 'failed' state, downstream tasks with trigger_rule='all_success' are marked 'upstream_failed', and the DAG run is marked failed only after all tasks reach a terminal state (from t7).",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not reference per-team virtual warehouse cost allocation, resource monitors, or Snowflake Time Travel retention periods, as those details come from the distractor turns t4 and t6.",
+      "required": true
+    }
+  ],
+  "notes": "The key evidence lives in t2 (Airflow 2.7.3 + provider version 5.3.0 as the fork point), t3 (retry parameters on SnowflakeOperator), t5 (TaskGroup retry non-cascading behavior), and t7 (DAG run failure semantics). Turns t4 and t6 are the traps — they discuss cost allocation and Time Travel, which are plausible migration concerns but completely irrelevant to the retry/failure-propagation query.\n\nReference answer: With Airflow 2.7.3 and apache-airflow-providers-snowflake 5.3.0, a SnowflakeOperator task inside a TaskGroup does not inherit retry settings from the group itself — it uses either its own explicitly set retries and retry_delay values or the DAG-level defaults from default_args. So if you set retries=3 at the DAG level and the task doesn't override it, it will attempt three retries before failing. Once retries are exhausted, the task enters the 'failed' state; any downstream tasks relying on it with the default trigger_rule='all_success' are marked 'upstream_failed' and skipped, while parallel independent tasks continue to completion. The DAG run itself is only marked failed after all tasks reach a terminal state.",
+  "evidence_note": null,
+  "premise": "a data team migrating nightly batch jobs to a new warehouse"
+}

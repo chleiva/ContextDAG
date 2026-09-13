@@ -1,0 +1,103 @@
+{
+  "scenario_id": "knowledge_update_008",
+  "family": "knowledge_update",
+  "label": "UPDATE",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm looking into adding insulation to my duplex and I got a quote from a contractor. He said the current attic insulation is rated at R-19 and that's what we'd be upgrading from.",
+      "assistant_message": "R-19 is a relatively modest level of attic insulation — the U.S. Department of Energy typically recommends R-49 to R-60 for attics in most climate zones. Starting from R-19 means you have significant room for improvement, and the upgrade could meaningfully reduce heating and cooling costs for both units.",
+      "gold_parents": [],
+      "stale": true,
+      "superseded_by": "t5"
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Right, so if we're starting at R-19, how much additional insulation would we need to reach the R-49 minimum recommendation?",
+      "assistant_message": "To get from R-19 to R-49, you'd need to add R-30 worth of insulation on top of what's already there. For blown-in fiberglass, that's roughly 9 to 10 inches of additional material, and for blown-in cellulose it's closer to 8 inches. Either way, the incremental cost per square foot tends to be lower than the initial installation, so the economics are usually favorable.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "The duplex was built in 1987 and I've been told I need to check whether it has aluminum wiring before doing any renovations. Is that a serious concern?",
+      "assistant_message": "Yes, aluminum wiring was commonly used in residential construction between roughly 1965 and 1973, so a 1987 build is less likely to have it, but it's still worth confirming with an electrician. If aluminum wiring is present, connections at outlets and switches can loosen and oxidize over time, creating a fire hazard. An electrician can inspect the panel and outlets and, if needed, install CO/ALR-rated devices or apply an anti-oxidant compound at each connection point.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "The inspector also flagged that the duplex has a flat roof section over the rear addition. Does flat roof construction change how I should handle drainage or maintenance?",
+      "assistant_message": "Flat roofs require positive drainage to prevent ponding water, which is defined by most building codes as any standing water remaining more than 48 hours after rainfall. You'll want to confirm the roof has a minimum slope of at least 1/4 inch per foot directing water toward drains or scuppers. Regular inspection of those drains — ideally twice a year and after major storms — is essential because blockages are the leading cause of flat-roof leaks and structural damage.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "Actually, I looked at the contractor's written report again and the existing insulation is R-11, not R-19. I must have misread it earlier.",
+      "assistant_message": "Thanks for the correction — R-11 is notably lower than R-19, so the gap to reach the recommended R-49 is even larger than we discussed. I'll work from R-11 as the correct baseline going forward.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "So how much R-value do I actually need to add to hit that R-49 target?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t5"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that the existing insulation is R-11 (the corrected VALUE_2) as the starting point.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer calculates the additional R-value needed as R-38 (i.e., 49 minus 11).",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not state that R-30 of additional insulation is needed, which would follow from the stale VALUE_1 of R-19.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer references the DOE recommended target of R-49 as the goal.",
+      "required": false
+    }
+  ],
+  "notes": "t1 introduces the stale value R-19 and t5 corrects it to R-11; the trap is using R-19 to calculate R-30 additional needed instead of the correct R-38. Turns t3 and t4 (aluminum wiring and flat roof) are genuine distractors with no bearing on the insulation calculation.\n\nReference answer: Starting from the corrected baseline of R-11, you would need to add R-38 of insulation to reach the DOE-recommended minimum of R-49. In practical terms, blown-in cellulose at roughly R-3.7 per inch would require about 10 to 11 inches of added material, while blown-in fiberglass at around R-2.9 per inch would need closer to 13 inches. The gap is substantially larger than the earlier estimate based on R-19, so you should expect higher material and labor costs than initially discussed.",
+  "evidence_note": null,
+  "premise": "a landlord deciding on energy-efficiency upgrades for a duplex"
+}

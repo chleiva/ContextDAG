@@ -1,0 +1,102 @@
+{
+  "scenario_id": "new_root_005",
+  "family": "new_root",
+  "label": "NEW_ROOT",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're putting together our application for the Riverside Municipal Community Garden Grant and need to nail down our plot layout. We have a 0.4-acre lot at the corner of Elm and 5th, and we're planning 40 raised beds.",
+      "assistant_message": "That sounds like a well-sized project for a community garden. With 0.4 acres, you have roughly 17,424 square feet to work with, which gives you comfortable spacing if each raised bed is the standard 4×8 feet (32 square feet each), totaling 1,280 square feet of actual growing surface. You'll want to leave at least 3-foot-wide pathways between beds to meet ADA accessibility guidelines, which many municipal grants require as a condition of funding.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Good point on the ADA pathways. We're also planning to install a 500-gallon rainwater harvesting tank to reduce our municipal water dependency. Does that kind of infrastructure typically strengthen a grant application?",
+      "assistant_message": "Yes, water conservation infrastructure is a strong asset in municipal grant applications, particularly under programs that score applicants on environmental sustainability metrics. A 500-gallon tank collecting from a 1,000-square-foot roof catchment area can yield roughly 600 gallons from a single inch of rainfall, assuming an 0.9 collection efficiency coefficient. Many reviewers look favorably on this because it demonstrates long-term operational planning and reduces the garden's ongoing cost burden on the city.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "We also want to dedicate 8 of the 40 beds specifically to a food-donation program for the Riverside Food Pantry. Would calling that out explicitly in the application help our scoring?",
+      "assistant_message": "Explicitly naming the Riverside Food Pantry partnership and committing 20 percent of your beds—8 of 40—to food donation is a concrete, verifiable commitment that reviewers can score against community-benefit criteria. Many municipal grant rubrics, including common frameworks modeled on the USDA Community Food Projects guidelines, award bonus points for documented partnerships with named food-security organizations. Make sure you attach a letter of intent or MOU from the pantry to substantiate the claim, since unverified partnerships are often discounted during review.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "We have a draft MOU ready. Our lead organizer, Maria Chen, has 12 years of urban agriculture experience and managed the Oakdale Community Farm from 2011 to 2019. Should we feature her credentials prominently?",
+      "assistant_message": "Absolutely—applicant capacity is one of the most heavily weighted sections in most municipal grant reviews, often accounting for 25 to 30 percent of the total score. Maria's eight-year tenure at Oakdale Community Farm from 2011 to 2019 is exactly the kind of sustained, verifiable track record reviewers want to see. Include her full CV as an appendix and reference specific outcomes from Oakdale, such as annual yield figures or number of member households served, to make the credential concrete rather than merely biographical.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "Great. We're budgeting $18,500 for the first-year build-out, covering soil, lumber for the beds, the rainwater tank, and a tool shed. Does that figure seem reasonable to justify in the budget narrative?",
+      "assistant_message": "An $18,500 first-year build-out for 40 raised beds with supporting infrastructure is reasonable and defensible. Breaking it down, pressure-treated or cedar lumber for 40 beds at roughly $120 to $150 per bed runs $4,800 to $6,000; quality raised-bed soil mix at about $50 per cubic yard and 2 cubic yards per bed adds another $4,000; a 500-gallon polyethylene rainwater tank typically costs $800 to $1,200 installed; and a basic tool shed runs $2,500 to $4,000 depending on size. Itemizing those figures explicitly in your budget narrative, with vendor quotes as attachments, will demonstrate fiscal responsibility and reduce the chance of a reviewer questioning the totals.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What is the standard legal definition of a 'community garden' used in most U.S. municipal zoning codes?",
+      "assistant_message": null,
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [],
+  "distractor_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer provides a standard or widely-used legal/zoning definition of 'community garden' as it appears in U.S. municipal codes, typically referencing shared or collective cultivation of plants on a parcel by a group of individuals.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer addresses that community garden definitions in zoning codes generally distinguish the use from commercial agriculture or private residential gardening.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not incorporate the specific plot size of 0.4 acres or the 40-bed count from the Riverside garden as part of the definition.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer is self-contained and answerable from general knowledge about U.S. zoning law, without requiring any details from the prior conversation.",
+      "required": true
+    }
+  ],
+  "notes": "The query (t6) is a standalone general-knowledge question about zoning law definitions and has no dependency on the Riverside garden specifics discussed in t1–t5. The traps are the 0.4-acre lot size, the 40-bed count, and the $18,500 budget from t1–t5, none of which are relevant to the legal definition question.\n\nReference answer: In most U.S. municipal zoning codes, a 'community garden' is defined as a parcel of land gardened collectively by a group of individuals or households, typically under a shared management structure, where the primary purpose is non-commercial cultivation of fruits, vegetables, flowers, or ornamental plants. The definition commonly distinguishes community gardens from both commercial agricultural operations and private residential gardens by emphasizing communal access and shared stewardship. Some codes further specify that the land must be accessible to community members beyond a single household, and a few jurisdictions add requirements around organizational governance, such as a managing nonprofit or neighborhood association.",
+  "evidence_note": null,
+  "premise": "a community garden applying for a municipal grant"
+}

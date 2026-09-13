@@ -1,0 +1,129 @@
+{
+  "scenario_id": "compound_turn_010",
+  "family": "compound_turn",
+  "label": "COMPOUND",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "Our sailing club is finally moving forward with replacing the main dock. We're looking at a 120-foot fixed pier with six boat slips, and the site is on a tidal estuary in Connecticut. Where do we even start with the permitting process?",
+      "assistant_message": "For a fixed pier on a tidal estuary in Connecticut, you'll need to coordinate permits from at least three agencies: the Connecticut DEEP (Department of Energy and Environmental Protection), the U.S. Army Corps of Engineers under Section 404/Section 10 of the Rivers and Harbors Act, and the local inland wetlands commission. The DEEP's Structures, Dredging, and Fill permit is typically the longest-lead item, often taking 6 to 12 months for a structure of this size. I'd recommend filing all applications concurrently to avoid stacking those timelines.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "That timeline is a bit daunting. Is the Army Corps permit a separate application, or does it piggyback on the state process somehow?",
+      "assistant_message": "In Connecticut, the state and federal reviews run in parallel but are separate applications. However, Connecticut participates in a Joint Application process coordinated through the DEEP, so you submit one unified packet that gets routed to both the state and the Army Corps New England District office in Concord, New Hampshire. For a 120-foot fixed pier with six slips, your project will likely fall under a full Individual Permit from the Corps rather than a Nationwide Permit, since Nationwide Permit 4 and related dock permits generally cap at structures affecting fewer than one-half acre of waters, and a project this size on a tidal estuary may exceed that threshold depending on the footprint.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "Got it. We'll plan for the full Individual Permit route. We also need to get liability insurance sorted out before construction starts — what kind of coverage does a small sailing club typically need for a dock replacement project, and are there specific policy types we should ask brokers about?",
+      "assistant_message": "For the Individual Permit, expect the Corps to require a public notice comment period of 30 days, and the overall review clock for a full Individual Permit averages 120 days from the date the application is deemed complete, though complex estuarine projects often run longer. Make sure your joint application includes detailed engineering drawings stamped by a licensed PE, since incomplete submissions are the most common cause of delays. Regarding insurance for the dock replacement project, a small sailing club in this situation typically needs three distinct policy types: a Builder's Risk policy covering the dock structure itself during construction (usually written at 100 percent of the completed replacement cost value, so price it against your contractor's bid), a Commercial General Liability policy with a minimum $1 million per-occurrence limit and a $2 million aggregate, and a Marine General Liability endorsement or standalone policy that specifically covers watercraft and dock operations since standard CGL policies often exclude marine exposures. You should also ask your broker about a Pollution Liability rider, because dock construction involving treated lumber or bottom disturbance can trigger environmental claims that a plain CGL will not cover.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "On the permit drawings — does the Corps have a specific format requirement, or can our engineer use whatever CAD standard they prefer?",
+      "assistant_message": "The Corps doesn't mandate a single CAD standard, but the New England District's guidance document (ER 1110-1-8156) specifies that permit drawings must include plan views, cross-sections, and an overall location map at a scale no smaller than 1:2400, and all sheets must be 11-by-17 inches or 24-by-36 inches. Coordinates should be provided in NAD83 and elevations referenced to NAVD88, not to a local benchmark. Your engineer should also include a separate sheet showing the ordinary high water mark and mean high water line, since those are the jurisdictional boundaries the reviewer will check first.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "We're planning to use composite decking rather than pressure-treated wood. Does that affect the environmental review at all?",
+      "assistant_message": "Yes, material choice can meaningfully affect both the state and federal review. Composite decking eliminates concerns about leaching of copper azole or chromated copper arsenate from treated lumber, which DEEP reviewers flag as a water quality issue under Connecticut's Section 401 Water Quality Certification process. The Army Corps also references EPA's 2007 guidance on aquatic toxicity of treated wood preservatives, and switching to composite material removes that line of inquiry entirely. Some districts have informally noted faster review times for projects using non-treated materials, though there's no formal expedited track.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What about the pile driving itself — are there noise or vibration thresholds we need to worry about for the estuarine habitat?",
+      "assistant_message": "Pile driving in tidal estuaries in Connecticut typically triggers a review under the federal Essential Fish Habitat consultation requirement, since Long Island Sound and its tributaries are designated EFH for species including winter flounder and Atlantic bluefish under the Magnuson-Stevens Act. The National Marine Fisheries Service uses a peak pressure threshold of 206 dB re 1 µPa for injury to fish, and if your contractor uses impact hammers rather than vibratory installation, you may need an underwater noise monitoring plan as a permit condition. Scheduling pile driving outside the March 1 through June 30 window is commonly required by DEEP to protect spawning activity, so that constraint should go into your construction contract.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "Our contractor mentioned they might use a vibratory hammer to avoid some of those noise thresholds. Is that a reliable workaround?",
+      "assistant_message": "Vibratory hammers do produce significantly lower peak pressure levels than impact hammers — typically in the 160 to 170 dB re 1 µPa range versus the 180 to 210 dB range for impact — so they often fall below NMFS injury thresholds for fish. However, DEEP and the Corps may still condition the permit to require a soft-start procedure even with vibratory equipment, and some reviewers require a qualified biological monitor on site during all pile installation. The tradeoff is that vibratory installation is less reliable in dense glacial till, which is common in Connecticut estuaries, so your geotechnical report will determine whether it's actually feasible at your specific site.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "Can you remind me what the per-occurrence and aggregate minimums were for the general liability coverage you mentioned, and is the marine endorsement something that gets added to the CGL or is it a separate policy?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t3"
+  ],
+  "distractor_turn_ids": [
+    "t1",
+    "t2",
+    "t4",
+    "t5",
+    "t6",
+    "t7"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states the Commercial General Liability minimum per-occurrence limit is $1 million.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states the CGL aggregate minimum is $2 million.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer clarifies that the Marine General Liability coverage can be structured either as an endorsement added to the CGL or as a standalone policy.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not import details about pile driving noise thresholds, the 206 dB NMFS limit, or the March–June scheduling restriction, as those are from topic A distractor turns and are irrelevant to the insurance question.",
+      "required": true
+    }
+  ],
+  "notes": "The facts the query needs are in t3 (the compound turn), specifically the insurance policy specifics given in the second half of the assistant's reply. Turns t4 through t7 are all on-premise distractor turns about permitting, drawing standards, materials, and pile driving that must not be imported into the answer.\n\nReference answer: The Commercial General Liability policy should carry a minimum of $1 million per occurrence and $2 million in aggregate. The Marine General Liability coverage can be structured either as an endorsement added to the CGL policy or as a completely separate standalone policy, depending on what your broker can arrange. The key reason to treat it separately or add the endorsement is that standard CGL policies typically exclude marine exposures such as watercraft and dock operations, so without it you'd have a gap in coverage.",
+  "evidence_note": "Query depends only on the B half of the compound turn t3. Its ancestor closure {t3,t2,t1} includes A turns that are conversationally upstream of t3 but not needed for the B question; evidence is deliberately just {t3}. This is the granularity cost the family is designed to expose.",
+  "premise": "a sailing club replacing its aging dock"
+}

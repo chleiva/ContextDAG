@@ -1,0 +1,127 @@
+{
+  "scenario_id": "resume_003",
+  "family": "resume",
+  "label": "RESUME",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm trying to figure out the right ceiling height for my home studio. I shoot mostly portrait and headshot work, and I want to be able to use a 7-foot parabolic umbrella overhead as a key light.",
+      "assistant_message": "For a 7-foot parabolic umbrella used overhead, you generally need the light stand to position the umbrella's center at least 10 to 11 feet off the ground to get a proper downward angle without clipping the ceiling. That means your ceiling should be a minimum of 12 feet to give you safe clearance for the stand hardware and any boom arm extension above the umbrella.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "My current spare room has a 10-foot ceiling. Is that workable, or should I look at a different space?",
+      "assistant_message": "A 10-foot ceiling is tight but workable only if you switch to a smaller modifier — a 7-foot para is essentially off the table at that height. The practical ceiling for that room is a 5-foot octabox or a 60-inch parabolic umbrella, which needs the center positioned roughly 8 feet high, leaving you about 18 to 24 inches of clearance. If you want to stay with the 7-foot para, you'd need to find a space with at least 12 feet of ceiling clearance.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "What kind of flooring actually holds up best under rolling equipment like light stands and heavy cases?",
+      "assistant_message": "Luxury vinyl plank (LVP) is widely considered the best balance of durability and practicality for a working studio floor. It resists the denting that hardwood suffers from stand feet, cleans easily when you spill anything, and a commercial-grade product rated AC4 or AC5 handles rolling loads without delaminating.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "How thick should the LVP be? I've seen everything from 4mm to 8mm at the hardware store.",
+      "assistant_message": "For a studio with heavy rolling equipment, you want at least 6mm total thickness with a wear layer of 12 mil or thicker. The 4mm products are designed for light residential foot traffic and will show indentations from stand feet within months. An 8mm plank with a 20-mil wear layer is the sweet spot — it's rigid enough to prevent flex over subfloor imperfections and rated for commercial use.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "Does the underlayment matter if I'm going with 8mm LVP?",
+      "assistant_message": "Yes, underlayment still matters significantly. Many 8mm LVP products come with a pre-attached 1mm foam underlayment, but for a studio you should add a separate 2mm cork underlayment underneath, which brings total cushion to about 3mm and dampens the hollow sound that bare LVP produces when equipment rolls across it. Avoid anything thicker than 3mm total underlayment, because excess flex can stress the locking joints and void most manufacturer warranties.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "I was also thinking about painting the floor with a seamless gray. Is that a realistic option instead of LVP?",
+      "assistant_message": "A painted concrete floor with a two-part epoxy coating is absolutely a professional option used in many commercial studios. You'd want a 100-percent solids epoxy at 4 to 6 mils dry film thickness, followed by a polyurethane topcoat for scratch resistance — brands like Rust-Oleum EpoxyShield Professional or Sherwin-Williams ArmorSeal are standard choices. The downside is that concrete transmits cold and sound more than LVP, so you'd want radiant heat or thick anti-fatigue mats at standing positions.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "Would a mid-gray floor tone affect my exposure readings in a meaningful way?",
+      "assistant_message": "Yes, floor color has a measurable but manageable effect. A mid-gray floor — roughly 18-percent reflectance, similar to a photographic gray card — will bounce a small amount of fill light upward onto your subject's chin and under-eye area, which most portrait photographers actually find flattering. A white floor can add as much as 1/3 to 2/3 of a stop of fill from below, which can be enough to visibly reduce shadow depth on a Rembrandt or split-lighting setup, so metering carefully with a gray floor is the more predictable choice.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "Given that my spare room has a 10-foot ceiling, can I still make the 7-foot parabolic umbrella work in there somehow?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t7"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that a 7-foot parabolic umbrella requires at least 12 feet of ceiling clearance, making the 10-foot ceiling insufficient for it.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer identifies the 60-inch (5-foot) parabolic umbrella or 5-foot octabox as the recommended alternative modifier for a 10-foot ceiling.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer references the 8-foot positioning height needed for the smaller modifier and/or the 18-to-24-inch clearance figure from t2.",
+      "required": false
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not import any facts about LVP flooring thickness, underlayment depth, epoxy coatings, or floor reflectance from the B-branch turns.",
+      "required": true
+    }
+  ],
+  "notes": "t1 and t2 hold all the facts the query needs: the 12-foot minimum for the 7-foot para, the 10-foot ceiling constraint, and the 60-inch/5-foot modifier as the stated alternative. Turns t3 through t7 form the flooring distractor branch and contain no information relevant to the ceiling/modifier question; the main trap is importing the 18-percent reflectance or epoxy figures into the answer.\n\nReference answer: With a 10-foot ceiling, the 7-foot parabolic umbrella is not workable — it needs at least 12 feet of clearance to position the umbrella's center at the required 10 to 11 feet with safe overhead room. There is no practical workaround that makes the 7-foot para fit in that space. Your best alternative is to use a 5-foot octabox or a 60-inch parabolic umbrella, which only needs its center at about 8 feet high, leaving you 18 to 24 inches of clearance in your 10-foot room. If the 7-foot para is essential to your work, you would need to find a space with at least 12 feet of ceiling height.",
+  "evidence_note": null,
+  "premise": "a freelance photographer setting up a home studio"
+}

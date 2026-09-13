@@ -1,0 +1,116 @@
+{
+  "scenario_id": "join_then_split_006",
+  "family": "join_then_split",
+  "label": "SPLIT",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're seeing a huge drop-off on step 3 of our onboarding flow — the permissions screen. Our analytics show 67% of users who reach that screen abandon the app entirely. The screen was introduced in version 2.4.1, released on March 8, 2024.",
+      "assistant_message": "A 67% abandonment rate on a permissions screen is severe and almost certainly fixable. The core problem is usually that users hit a friction wall before they've understood the app's value — they see a scary permissions dialog with no context explaining why those permissions matter. Since this was introduced in version 2.4.1, you have a clean before/after dataset you can mine to quantify exactly how much that release hurt retention.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Right, and we dug into it more. Before 2.4.1 the step 3 completion rate was 91%. The permissions screen asks for camera, microphone, and location all at once in a single modal.",
+      "assistant_message": "Asking for camera, microphone, and location simultaneously in one modal is a well-documented anti-pattern — it triggers what UX researchers call 'permission shock.' Your drop from 91% completion to 33% completion is a 58-percentage-point loss directly attributable to that design. The standard fix is to split the requests into just-in-time prompts: ask for each permission only at the moment the user tries to use the feature that needs it, so the request feels logical rather than invasive.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "We're also reworking the paywall. It currently appears after step 5 and offers a 7-day free trial at $9.99/month after that.",
+      "assistant_message": "A paywall at step 5 with a 7-day trial is a fairly standard placement, though the timing relative to perceived value matters a lot. At $9.99/month you're in the mid-tier range for mobile subscriptions, which means the trial window needs to be long enough for users to hit at least two or three 'aha moments' before they're asked to commit. Seven days can work, but only if your core value loop is short enough to demonstrate within the first couple of sessions.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "We tested a 14-day trial and conversion actually dropped from 18% to 12%. So we're sticking with 7 days and $9.99.",
+      "assistant_message": "That's a counterintuitive but well-documented result — longer trials often reduce urgency and lead to users forgetting to cancel rather than actively choosing to subscribe. Your 18% conversion on a 7-day trial at $9.99/month is actually a solid baseline; many apps in the productivity and lifestyle categories benchmark around 10–15%, so you're above average there. Keeping the 7-day trial is the right call given your own data.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "We're now thinking the paywall restructure and the permissions fix should ship together in version 2.5.0 so users get a smoother end-to-end onboarding experience in one release.",
+      "assistant_message": "Shipping both changes together in 2.5.0 makes sense from a user-experience coherence standpoint, but it does create an attribution problem — if onboarding metrics improve, you won't immediately know how much credit belongs to the permissions redesign versus the paywall adjustment. One mitigation is to run an A/B test within 2.5.0 where the permissions fix is held constant across all variants but the paywall position or copy varies, so you isolate the paywall variable. That way you protect the cleanliness of your permissions data while still iterating on monetization.",
+      "gold_parents": [
+        "t2",
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "That makes sense. We're also considering adding a social proof element near the paywall — something like displaying the total user count, which just crossed 500,000 registered accounts.",
+      "assistant_message": "Half a million registered accounts is a credible and impressive social proof signal, especially for a paywall context where users are weighing risk. Displaying it as '500,000+ people already using [App Name]' near the trial CTA can meaningfully reduce hesitation. Keep in mind that 'registered accounts' and 'active users' can mean very different things to savvy users, so if your active user count is also strong, that number might actually be more persuasive — but either way, 500,000 is a milestone worth leveraging in the 2.5.0 release.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "If we split the permissions into just-in-time prompts, what completion rate should we realistically aim to recover to on step 3?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4",
+    "t5",
+    "t6"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer references the pre-2.4.1 step 3 completion rate of 91% as the recovery target or benchmark.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer acknowledges that the current (post-2.4.1) step 3 completion rate is approximately 33% (derived from the 67% abandonment rate stated in t1).",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not mention the 7-day trial, $9.99/month pricing, 18% conversion rate, or any other paywall-specific figures from the B branch.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not reference the 500,000 registered accounts figure introduced in the join discussion.",
+      "required": true
+    }
+  ],
+  "notes": "t1 and t2 hold all the facts the query needs (67% abandonment → ~33% completion, and the pre-2.4.1 baseline of 91%). t3/t4 (paywall pricing and conversion data) and t5/t6 (combined 2.5.0 ship plan and 500k accounts) are the traps — none of those figures should appear in a correct answer to the step-3 recovery question.\n\nReference answer: Your clearest target is the 91% completion rate you had on step 3 before version 2.4.1 introduced the all-at-once permissions modal. Getting back to that level is realistic because the drop — from 91% to roughly 33% — is almost entirely a design-induced problem rather than a product-market fit problem. Just-in-time permission prompts typically recover most of that loss, so aiming for 85–91% completion on step 3 is a reasonable and evidence-backed goal. If you land anywhere in the high 80s you'll have substantially closed the gap that 2.4.1 opened.",
+  "evidence_note": null,
+  "premise": "a mobile app team fixing onboarding drop-off"
+}

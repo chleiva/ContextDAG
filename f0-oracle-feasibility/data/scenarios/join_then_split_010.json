@@ -1,0 +1,111 @@
+{
+  "scenario_id": "join_then_split_010",
+  "family": "join_then_split",
+  "label": "SPLIT",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're finalizing the route for our charity 10k on September 14th and need to confirm the start time. We're thinking 8:00 AM at Riverside Park's main gate on Elm Street.",
+      "assistant_message": "An 8:00 AM start at Riverside Park's main gate on Elm Street sounds like a solid choice for a September 14th race. Early morning starts help runners avoid peak heat and tend to draw better turnout for charity events. Just make sure you've confirmed the park permit window covers setup time before 8:00 AM.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "We confirmed the permit — it covers 6:00 AM through 1:00 PM on race day. The course itself runs exactly 10.0 kilometers, ending back at the main gate, and we're capping registration at 350 runners.",
+      "assistant_message": "A 6:00 AM to 1:00 PM permit window gives you two full hours of setup before the gun goes off, which is comfortable for a 350-person event. A point-to-point loop finishing back at the main gate also simplifies logistics since your start and finish infrastructure can share the same location. With that cap, you'll want to open registration soon if you haven't already to give yourself time to manage waitlists.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "We also need to sort out the post-race refreshments. A local bakery called Sugarmill has offered to donate 400 assorted muffins and cookies.",
+      "assistant_message": "A donation from Sugarmill is a generous offer and 400 items should cover your runners plus volunteers with some buffer. It's worth confirming what assortment they plan — a mix of muffins and cookies works well for post-race recovery since runners appreciate both savory and sweet options. Make sure to arrange a delivery or pickup time that lands close to the finish window so everything stays fresh.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "They'll deliver by 10:00 AM and the assortment will be 250 muffins and 150 cookies. We'll set up the refreshment table near the park's picnic shelter, which is about 30 meters from the finish line.",
+      "assistant_message": "A 10:00 AM delivery from Sugarmill works well assuming your lead runners finish around 45 to 50 minutes after the 8:00 AM start, giving you a comfortable buffer before the refreshment table needs to be fully stocked. The picnic shelter location 30 meters from the finish line is practical — close enough for finishers to walk straight over, but far enough not to crowd the finish chute. Keeping the 250 muffins and 150 cookies separated by type will also speed up the line.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "We're thinking of setting up a combined finish-line and refreshment zone so runners flow directly from crossing the line to getting their food. Would a single 10-meter wide corridor work for both?",
+      "assistant_message": "A 10-meter wide corridor can work for a combined finish-and-refreshment flow, but you'd want to think carefully about pace separation — fast finishers tend to stop abruptly while slower runners are still pushing through. A staggered layout where the refreshment table begins about 5 meters past the timing mat usually prevents bottlenecks. With 350 runners and the Sugarmill table 30 meters from the finish, you have enough linear space to make that stagger comfortable.",
+      "gold_parents": [
+        "t2",
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "That makes sense. We're also thinking of putting up a 4-meter wide inflatable arch over the corridor entrance to mark the transition from the finish chute into the refreshment zone.",
+      "assistant_message": "A 4-meter inflatable arch is a great visual cue to signal to runners that they've cleared the finish chute and can slow down for refreshments. Just verify the arch rental includes ground anchoring hardware suitable for a grass surface, since park ground can be soft in the morning. Positioning it right at the 5-meter stagger point you choose will reinforce the flow direction you're designing for.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "If every registered spot is filled and all runners finish within the permit window, how many runners is that and when does the permit expire?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4",
+    "t5",
+    "t6"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states the runner cap is exactly 350 runners.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states the permit expires at 1:00 PM.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not mention the Sugarmill delivery, the 400 refreshment items, or any detail about the refreshment arrangement.",
+      "required": true
+    }
+  ],
+  "notes": "t2 holds the two facts the query needs: the 350-runner cap and the 1:00 PM permit end time. t3 and t4 (Sugarmill refreshments) are the branch-B distractors, and t5/t6 (corridor width, inflatable arch) are join distractors — none of these are relevant to answering the query.\n\nReference answer: If every registered spot is filled, that means 350 runners on the course. The park permit runs from 6:00 AM through 1:00 PM on September 14th, so the permit expires at 1:00 PM. As long as all 350 runners finish before 1:00 PM, the event stays within the permitted window.",
+  "evidence_note": null,
+  "premise": "a running club organizing a charity 10k"
+}

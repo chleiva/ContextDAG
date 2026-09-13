@@ -1,0 +1,139 @@
+{
+  "scenario_id": "knowledge_update_012",
+  "family": "knowledge_update",
+  "label": "UPDATE",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "Hey, I'm sourcing Gateron Yellow switches for my next keyboard run. I've been quoted $0.28 per switch from my usual supplier, and I'm planning to build 60 units of a 65% board with 68 keys each. Can you help me figure out total switch cost?",
+      "assistant_message": "Sure! At $0.28 per switch and 68 keys per board across 60 units, you're looking at 60 × 68 = 4,080 switches total. That puts your total switch cost at 4,080 × $0.28 = $1,142.40 before any bulk discounts or shipping.",
+      "gold_parents": [],
+      "stale": true,
+      "superseded_by": "t8"
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Good. I usually order a 10% overage on switches to account for testing and defects, so I should factor that in. What does the total look like with that buffer?",
+      "assistant_message": "With a 10% overage, you'd need 4,080 × 1.10 = 4,488 switches in total. At $0.28 each, that brings your procurement cost to 4,488 × $0.28 = $1,256.64. It's a reasonable buffer for a production run of this size, especially for linear switches where stem tolerance can vary batch to batch.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "What PCB thickness is typically recommended for a 65% hot-swap build? I've seen both 1.2mm and 1.6mm mentioned.",
+      "assistant_message": "For hot-swap builds, 1.6mm is the more common recommendation because the added rigidity reduces stress on the hot-swap sockets, particularly Kailh or Mill-Max variants that rely on a tight friction fit. 1.2mm PCBs are sometimes used for flex-cut designs where deliberate board flex is part of the typing feel, but the thinner material can cause socket fatigue over repeated switch swaps. Most production-oriented 65% layouts stick with 1.6mm for reliability.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "What about plate material? I'm deciding between aluminum and polycarbonate for the top plate.",
+      "assistant_message": "Aluminum plates give a stiffer, crisper typing feel and are easier to source in bulk at consistent tolerances, typically around 1.5mm thickness for a standard plate. Polycarbonate plates flex more, softening the bottom-out feel and reducing noise, but they can warp under high temperatures during shipping if not packaged carefully. For an indie production run where consistency matters, aluminum is generally the safer choice unless your design specifically targets a softer sound profile.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "I'm also considering whether to include a gasket mount or go with a top mount. Does gasket mount significantly increase the BOM cost?",
+      "assistant_message": "Gasket mounting typically adds cost through the silicone or poron gasket strips themselves, plus the modified top and bottom case geometry that requires more precise CNC tolerances. In practice, for an aluminum case, gasket mounting can add roughly $8–$15 per unit to your case manufacturing cost compared to a straightforward top mount, depending on your CNC vendor and gasket material. It's a meaningful premium for an indie run, though many enthusiasts consider it worth it for the improved typing feel.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What USB connector should I spec on the PCB? I want something durable for repeated cable swaps.",
+      "assistant_message": "USB Type-C is the current standard recommendation for durability and user expectation, specifically connectors rated for at least 10,000 insertion cycles, such as those from JST or Amphenol. You'll want a through-hole or reinforced SMD footprint rather than a basic SMD pad-only mount, since the latter tends to delaminate from the PCB after heavy use. Most reputable PCB fabs targeting the keyboard market default to a reinforced USB-C footprint now, so it's worth confirming that spec explicitly in your Gerber notes.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "Should I use QMK or ZMK firmware for a wired-only 65% board?",
+      "assistant_message": "For a wired-only build, QMK is the more practical choice given its massive community support, extensive documentation, and compatibility with virtually every common microcontroller used in keyboard PCBs, including the ATmega32U4 and RP2040. ZMK is purpose-built for wireless and while it technically supports wired operation, its feature set and community resources are optimized for Bluetooth use cases. Unless you anticipate adding wireless capability later, QMK will give you faster development time and easier long-term maintenance.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "Actually, I need to correct the switch price I mentioned earlier — my supplier just sent a revised quote and it's $0.35 per switch, not $0.28. The quantity is all the same.",
+      "assistant_message": "Got it, thanks for the correction. The price per switch is $0.35, not $0.28, and all the quantities remain unchanged: 60 units, 68 keys each, with a 10% overage buffer bringing the total to 4,488 switches. I'll use $0.35 going forward for any cost calculations.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "With the corrected price, what's the total I should budget for switches including the overage buffer?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t8"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t7"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer uses $0.35 as the per-switch price (the corrected VALUE_2 from t8).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer must not use $0.28 as the per-switch price (the original VALUE_1 from t1, which was explicitly corrected).",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer calculates total switch count as 4,488 (60 units × 68 keys × 1.10 overage, established in t2 and confirmed in t8).",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer arrives at a total budget of $1,570.80 (4,488 switches × $0.35).",
+      "required": true
+    }
+  ],
+  "notes": "t1 introduces VALUE_1 ($0.28/switch) and t8 corrects it to VALUE_2 ($0.35/switch); the query at t9 requires VALUE_2 to produce the correct total of $1,570.80. Using VALUE_1 instead yields $1,256.64, which is the trap answer established in t2.\n\nReference answer: With the corrected price of $0.35 per switch, and the previously established total of 4,488 switches (60 units × 68 keys × 1.10 overage buffer), your total switch budget comes to 4,488 × $0.35 = $1,570.80. That's an increase of $314.16 over the original estimate based on the old $0.28 quote. You should plan for approximately $1,571 in your BOM for switches alone.",
+  "evidence_note": null,
+  "premise": "an indie hardware maker sourcing parts for a mechanical keyboard"
+}

@@ -1,0 +1,115 @@
+{
+  "scenario_id": "semantic_decoy_004",
+  "family": "semantic_decoy",
+  "label": "DECOY",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm launching a podcast about local history called 'Cobblestone Chronicles.' I'm planning to release episodes every two weeks and want to keep each one around 35 minutes. Does that format sound sustainable?",
+      "assistant_message": "A biweekly release schedule with 35-minute episodes is actually a very manageable format for an independent podcast, especially for a research-heavy topic like local history. Many successful history podcasts in that niche, like 'Revolutions' by Mike Duncan, run in similar length ranges and have maintained consistent output for years. The key is batching your research and recording sessions so you're always a few episodes ahead of your release date. Starting with a backlog of at least three completed episodes before your launch date is a widely recommended strategy.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "I'm setting up a drip irrigation system for my vegetable garden. I'm planning to run it for 20 minutes every three days and use 1/2-inch mainline tubing. Does that setup make sense?",
+      "assistant_message": "A 20-minute cycle every three days is a reasonable starting point for most vegetable gardens, though you may need to adjust based on your soil type and local climate. Half-inch mainline tubing is the standard choice and can typically support flow rates up to about 200 gallons per hour, which is more than enough for a home garden. You'll want to make sure your emitter spacing matches your plant layout, with most vegetables doing well with emitters placed every 12 inches along the drip line. Monitoring soil moisture with an inexpensive probe during the first few weeks will help you dial in the timing more precisely.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "What pressure should I be running the system at, and do I need a pressure regulator?",
+      "assistant_message": "Most drip irrigation systems are designed to operate at 25 to 30 PSI, and since household water pressure typically comes in between 60 and 80 PSI, a pressure regulator is almost always necessary. Without one, you risk blowing apart emitters and fittings, especially the smaller 1/4-inch barbed connectors. A 25 PSI inline regulator costs around $8 to $15 and installs directly at the hose bib before your filter and mainline. Pair it with a 150-mesh filter to keep sediment from clogging your emitters, and your system should run reliably for several seasons.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "Should I use pressure-compensating emitters or standard ones for a sloped garden bed?",
+      "assistant_message": "For a sloped bed, pressure-compensating emitters are strongly recommended because they deliver a consistent flow rate, typically 0.5 or 1.0 GPH, regardless of elevation changes or pressure variation along the line. Standard emitters on a slope will over-water plants at the bottom of the run and under-water those at the top, sometimes by as much as 30 to 40 percent. The pressure-compensating models do cost more, usually around $0.40 to $0.80 per emitter compared to $0.10 to $0.20 for standard ones, but the uniform output is worth it for a productive vegetable bed. If your slope is less than about 2 feet of elevation change over the run, standard emitters with careful placement can still work acceptably.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "For Cobblestone Chronicles, I'm thinking of doing a trailer episode first and then launching with three episodes simultaneously. I've seen that called a 'power launch.' Is that actually effective?",
+      "assistant_message": "A power launch is a well-documented strategy in the podcasting world and it works particularly well for discovery-driven platforms like Apple Podcasts, where having multiple episodes available at launch can push a new show into 'New and Noteworthy' visibility. The trailer itself should be short, ideally under 3 minutes, and function as a compelling pitch for the whole show rather than a preview of a single episode. Launching with three full episodes simultaneously gives new listeners immediate binge potential, which increases total listen time and signals engagement to the algorithm. For a local history podcast, you might structure those first three episodes around a single well-known event or location in your area to establish a clear identity right away.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "I've settled on covering the history of my town of Millhaven, starting with the 1887 mill fire that destroyed the original downtown. I want episode one to be about 35 minutes and episode two to go a bit longer, maybe 50 minutes, since there's more ground to cover. Is it okay to vary episode length like that?",
+      "assistant_message": "Varying episode length is absolutely fine and many listeners actually appreciate it when the runtime matches the depth of the subject rather than being artificially padded or cut. For Cobblestone Chronicles, a 35-minute first episode about the 1887 Millhaven mill fire works well as an accessible entry point, and a 50-minute second episode gives you room to expand once listeners are already invested in the show. The important thing is that your show description and episode notes accurately reflect the runtime so listeners can plan accordingly. Podcasting platforms like Spotify and Apple Podcasts surface runtime prominently, so transparency there builds trust with your audience from the start.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "What runtime did I land on for the first episode of Cobblestone Chronicles, and how does the second episode compare to it?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t5",
+    "t6"
+  ],
+  "distractor_turn_ids": [
+    "t2",
+    "t3",
+    "t4"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that the first episode of Cobblestone Chronicles is planned to be 35 minutes long.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that the second episode is planned to be 50 minutes long, which is longer than the first.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not reference irrigation cycle times (20 minutes, 3 days) or any drip system values as if they were podcast episode runtimes.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer correctly identifies the podcast as 'Cobblestone Chronicles' and not a generic or unnamed show.",
+      "required": true
+    }
+  ],
+  "notes": "t1, t5, and t6 carry all the facts needed to answer the query (podcast name, episode runtimes of 35 and 50 minutes). t2, t3, and t4 are the semantic decoys, using timing and duration vocabulary (20-minute cycles, flow rates, pressure values) that could confuse a lexically-driven system into retrieving irrigation numbers instead of podcast runtimes.\n\nReference answer: For Cobblestone Chronicles, the first episode covering the 1887 Millhaven mill fire is planned at 35 minutes. The second episode is intended to run longer at 50 minutes, since there is more historical ground to cover on that subject. That means the second episode is 15 minutes longer than the first.",
+  "evidence_note": null,
+  "premise": "launching a podcast about local history"
+}

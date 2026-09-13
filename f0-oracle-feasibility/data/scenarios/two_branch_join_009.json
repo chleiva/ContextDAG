@@ -1,0 +1,138 @@
+{
+  "scenario_id": "two_branch_join_009",
+  "family": "two_branch_join",
+  "label": "JOIN",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're finalizing our robot's drive system. We've decided to go with a 6-wheel tank drive using four-inch diameter omni wheels on the corners and four-inch traction wheels in the center.",
+      "assistant_message": "That's a solid choice for a tank drive setup. The corner omni wheels will help with turning by reducing scrub friction, while the center traction wheels provide the grip you need for pushing matches. Just make sure your wheel spacing is symmetric so the robot tracks straight during autonomous.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "We also need to figure out the team's travel situation. We have 14 members and two mentors going to the competition, and the school van only seats 12.",
+      "assistant_message": "With 16 people total and only 12 seats in the van, you'll need to arrange additional transportation for at least 4 people. Options include a second school vehicle, parent carpools, or renting a passenger van. Make sure you get the necessary permission slips and insurance documentation sorted well in advance.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "I want to talk about the motor controllers we're using. We picked the REV Robotics SPARK MAX for all our drive motors.",
+      "assistant_message": "The SPARK MAX is a great choice — it supports both brushed and brushless motors, which gives you flexibility. It uses CAN bus or PWM for communication, and the REV Hardware Client software lets you configure parameters like current limits and idle modes directly. Make sure you're running firmware version 1.5.2 or later to get the latest bug fixes and features.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "We're running NEO brushless motors paired with those SPARK MAX controllers. What current limit should we set to protect the motors during stall?",
+      "assistant_message": "For NEO motors paired with SPARK MAX controllers, REV recommends setting a smart current limit of 40 amps per motor to protect against stall damage during pushing matches. You can configure this in the REV Hardware Client under the 'Advanced' tab, or set it programmatically using the setSmartCurrentLimit method in your robot code. Staying at or below 40 amps will keep the motor windings safe without sacrificing too much pushing force.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "We're going to gear the drive down using the AndyMark EveryBot gearbox set to a 10.71:1 reduction ratio.",
+      "assistant_message": "A 10.71:1 reduction on NEO motors will give you a good balance of speed and torque for a competitive drive system. With NEO motors spinning at a free speed of 5,880 RPM, that reduction brings your wheel speed to roughly 549 RPM at the output shaft. With four-inch wheels, that translates to a theoretical free speed of about 11.5 feet per second, which is competitive for most regional events.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "Actually we recalculated and we're switching the gearbox to a 12.75:1 reduction instead to get more torque for pushing. Does that change our speed estimate significantly?",
+      "assistant_message": "Yes, switching to 12.75:1 noticeably changes your numbers. At 12.75:1 with NEO free speed of 5,880 RPM, your output shaft speed drops to about 461 RPM, and with four-inch wheels that gives a theoretical free speed of roughly 9.7 feet per second. You're trading about 1.8 feet per second of top speed for meaningfully more torque, which is a reasonable trade if pushing defense is a priority at your regional.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "For the travel logistics, do we need the school's insurance certificate to reserve a rental van?",
+      "assistant_message": "Yes, most rental companies require a certificate of insurance when a school organization is renting a vehicle for an official trip. You'll typically need to contact your school's business office or district risk management department to obtain that certificate. Give them at least two weeks' notice since processing can take time, and confirm whether the rental company needs to be listed as an additional insured on the policy.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "We realized we need to set the idle mode on the SPARK MAX controllers too. We want the robot to hold its position on a ramp at the end of a match — which idle mode should we use?",
+      "assistant_message": "For holding position on a ramp, you should set the SPARK MAX idle mode to Brake mode rather than Coast mode. In Brake mode, the controller shorts the motor leads together when no signal is applied, creating electromagnetic braking that resists back-driving. You can set this using setIdleMode(CANSparkMax.IdleMode.kBrake) in your robot code, or toggle it in the REV Hardware Client under the motor configuration panel.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "Given everything we've locked in about our drive system, if a match ends while we're on the ramp and the motors stall briefly trying to hold position, are our motors protected and will the robot actually stay put?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t6",
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t8"
+  ],
+  "distractor_turn_ids": [
+    "t2",
+    "t7"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that the smart current limit of 40 amps per motor (set on the SPARK MAX) protects the NEO motors during stall.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that Brake mode on the SPARK MAX will hold the robot's position on the ramp by resisting back-driving.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not reference the 10.71:1 reduction ratio as the final chosen gear ratio; the team switched to 12.75:1.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer correctly identifies both protections working together: the 40-amp current limit for motor protection AND Brake idle mode for position holding.",
+      "required": true
+    }
+  ],
+  "notes": "t6 holds the final gear ratio decision (12.75:1, overriding the 10.71:1 from t5) from branch A; t4 and t8 together from branch B establish the 40-amp current limit and Brake idle mode respectively. The distractor branch (t2, t7) covers travel logistics and is entirely irrelevant to the query about motor protection and ramp holding.\n\nReference answer: Yes, your motors are protected and the robot should stay on the ramp. The 40-amp smart current limit configured on each SPARK MAX will prevent the NEO motors from drawing damaging current during a stall, keeping the windings safe even if the robot is fighting to hold its position. Meanwhile, setting the SPARK MAX idle mode to Brake mode means that when the match ends and no drive signal is sent, the controllers will short the motor leads and create electromagnetic braking that actively resists the robot sliding back down the ramp. Together, the 40-amp stall protection and Brake idle mode address both concerns.",
+  "evidence_note": null,
+  "premise": "a high-school robotics team preparing for a regional competition"
+}

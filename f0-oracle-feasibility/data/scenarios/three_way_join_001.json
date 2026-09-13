@@ -1,0 +1,149 @@
+{
+  "scenario_id": "three_way_join_001",
+  "family": "three_way_join",
+  "label": "JOIN",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're trying to decide between Hartwell Academy and Greystone High for our daughter. Can you tell me about Hartwell's sixth-form entry requirements?",
+      "assistant_message": "Hartwell Academy requires a minimum of 5 GCSEs at grade 5 or above for sixth-form entry, including grade 6 in any subject the student wishes to study at A-level. They also require a grade 5 in both English Language and Mathematics regardless of the subjects chosen. It's a fairly standard set of requirements for a selective sixth form.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "What about the sports facilities at Greystone High?",
+      "assistant_message": "Greystone High has a well-regarded sports program centred around its main facility, the Greystone Sports Complex, which opened in 2019. The complex includes a 25-metre indoor swimming pool, two full-size 3G artificial pitches, and a sports hall with six badminton courts. It's one of the more comprehensively equipped secondary school facilities in the region.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "How does Hartwell Academy handle the school day? We have an early commute to manage.",
+      "assistant_message": "Hartwell Academy runs a six-period day, with the school day starting at 8:30 AM and finishing at 3:20 PM. There is a 50-minute lunch break at 12:30 PM and two 15-minute breaks in the morning and afternoon. Registration begins at 8:20 AM, so students are expected on site before the official start time.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "And what about Greystone High's school day timing?",
+      "assistant_message": "Greystone High starts later than many local schools, with the school day beginning at 9:00 AM and ending at 3:45 PM. This is based on a five-period day, with each lesson running for 60 minutes. Registration is at 8:55 AM, so there's a little more flexibility in the morning compared to schools with earlier starts.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "Does Greystone High have a swimming team that competes externally?",
+      "assistant_message": "Yes, Greystone High fields a competitive swimming team that participates in the County Schools Swimming League. The team competes at regional level and won the Under-16 County Championship in both 2022 and 2023. The school's head of PE, Mr. Darren Okafor, coaches the squad personally.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "Does Hartwell also have sixth-form requirements around attendance or behaviour records?",
+      "assistant_message": "Yes, Hartwell Academy adds a non-academic condition: applicants from other schools must provide a reference confirming fewer than 8 unauthorised absences in Year 10 and Year 11 combined. Internal students are assessed on the same threshold but via their own pastoral records. Any fixed-term exclusion in Years 10 or 11 automatically triggers a review panel before an offer can be made.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "What is the annual fee for using Greystone's Sports Complex for community members outside the school?",
+      "assistant_message": "For community members, Greystone Sports Complex offers an annual membership at £480 per adult per year, or £320 for students and concessions. The complex is open to the public on weekday evenings after 6:00 PM and throughout the weekend from 8:00 AM to 8:00 PM. Booking for lane swimming must be made at least 24 hours in advance through the school's online portal.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "If our daughter takes the bus, which school would she get to first given that the bus arrives at both areas around 8:40 AM?",
+      "assistant_message": "If the bus arrives at 8:40 AM, Greystone High would be the more comfortable option for that timing, since registration there isn't until 8:55 AM — giving her 15 minutes of buffer. At Hartwell Academy, registration begins at 8:20 AM, which means a bus arriving at 8:40 AM would already be 20 minutes late for registration. She would miss registration entirely and would need a late pass to enter.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "We noticed both schools have a parent-teacher association. Does the PTA at either school run fundraising events in autumn?",
+      "assistant_message": "Both schools do have active PTAs. Hartwell Academy's PTA holds an annual Autumn Fair in October, which last year raised £4,200 for new library resources. Greystone High's PTA organises a sponsored walk each November, with proceeds going toward extracurricular equipment. Both are well-attended and welcome new families to get involved from the start.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "Our daughter has 6 GCSEs all at grade 5, including a grade 5 in English and Maths, but she had 10 unauthorised absences across Years 10 and 11 and no exclusions. She wants to do A-levels but also swim competitively, and the bus gets her to both schools at 8:40 AM. Which school is actually viable for her?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t6",
+        "t7",
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t7",
+    "t8"
+  ],
+  "distractor_turn_ids": [
+    "t9"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer identifies that Hartwell Academy's sixth-form attendance requirement is fewer than 8 unauthorised absences in Years 10 and 11 combined, and that the daughter's 10 unauthorised absences disqualify her from a standard offer at Hartwell.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer identifies that Greystone High's registration is at 8:55 AM, making a bus arrival at 8:40 AM viable, whereas Hartwell's registration at 8:20 AM means the 8:40 AM bus makes her late.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer identifies that Greystone High has a competitive swimming team that participates in the County Schools Swimming League, supporting the daughter's goal of competitive swimming.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not cite PTA fundraising amounts or activities (e.g., the £4,200 raised by Hartwell's Autumn Fair or Greystone's sponsored walk) as a factor in the school choice recommendation.",
+      "required": true
+    }
+  ],
+  "notes": "The three gold evidence turns are t6 (Hartwell's attendance threshold of fewer than 8 unauthorised absences), t8 (registration times making Hartwell inaccessible by the 8:40 AM bus), and t5 (Greystone's competitive swimming team). The distractor is t9 (PTA fundraising details), which is plausible school context but irrelevant to viability.\n\nReference answer: Greystone High is the only viable option for your daughter. Hartwell Academy requires fewer than 8 unauthorised absences in Years 10 and 11 combined for sixth-form entry, and her 10 unauthorised absences would prevent her from receiving a standard offer there. On top of that, Hartwell's registration starts at 8:20 AM, so the 8:40 AM bus would already make her late every day, whereas Greystone's registration is at 8:55 AM, giving her a comfortable 15-minute buffer. Greystone also has a competitive swimming team that competes in the County Schools Swimming League, which aligns well with her goal of swimming competitively.",
+  "evidence_note": null,
+  "premise": "a family choosing between two secondary schools"
+}

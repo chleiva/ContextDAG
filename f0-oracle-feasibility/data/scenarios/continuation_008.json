@@ -1,0 +1,116 @@
+{
+  "scenario_id": "continuation_008",
+  "family": "continuation",
+  "label": "CONTINUE",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're planning a 10-day trip to Japan for four friends and trying to figure out the best time to go. Any suggestions on timing?",
+      "assistant_message": "Late March to early April is one of the most popular windows because of cherry blossom season, which typically peaks in Tokyo around March 25 to April 5 depending on the year. That said, it also means higher crowds and hotel prices—accommodation costs can run 30–40% above the off-season average during peak bloom. If your group is flexible, the second week of April often has lingering blossoms with noticeably thinner crowds.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "We're okay with some crowds. What kind of transportation pass should we get for getting around the country?",
+      "assistant_message": "The JR Pass is the standard choice for tourists doing a multi-city itinerary. As of 2024, the 14-day ordinary (non-Green) JR Pass costs ¥50,000 per person, and the 7-day version costs ¥50,000 as well—wait, to be precise: the 7-day pass is ¥50,000 and the 14-day pass is ¥80,000 per person. Since your trip is 10 days, the 14-day pass gives you the most coverage and is generally the better value if you plan to ride the Shinkansen between multiple cities.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "That makes sense. We're definitely planning to hit Tokyo, Kyoto, and Osaka at minimum. How should we split the nights between cities?",
+      "assistant_message": "A common split for a 10-day trip with those three cities is 4 nights in Tokyo, 4 nights in Kyoto, and 2 nights in Osaka, which gives you enough time to cover the major sights without feeling rushed. Kyoto has over 1,600 Buddhist temples and 400 Shinto shrines, so four nights there is really the minimum to scratch the surface. You could also use Kyoto as a base for a day trip to Nara, which is only about 45 minutes away by the Kintetsu Nara Line.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "Great idea on Nara. What about accommodation—should we do hotels or something like a ryokan?",
+      "assistant_message": "Mixing both is a popular approach—staying in a standard hotel in Tokyo and Osaka while booking a ryokan for at least one or two nights in Kyoto gives you a more authentic experience. A mid-range ryokan in Kyoto typically costs between ¥15,000 and ¥30,000 per person per night, and that usually includes both dinner and breakfast (called 'two-meal service' or nishoku-tsuki). For four people, budgeting around ¥20,000 per person per night for the ryokan nights is a reasonable middle-ground estimate.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "We're thinking two ryokan nights in Kyoto then. What are some must-see spots in Kyoto we should prioritize?",
+      "assistant_message": "Fushimi Inari Taisha is an absolute must—it's the famous shrine with thousands of vermilion torii gates, and the full hike to the summit of Mount Inari takes about 2 to 3 hours. Arashiyama is another key area, home to the Bamboo Grove and the Tenryu-ji garden, which was designated a UNESCO World Heritage Site in 1994. For the temples, Kinkaku-ji (the Golden Pavilion) and Ginkaku-ji (the Silver Pavilion) are iconic, and the Philosopher's Path that connects them is especially beautiful during cherry blossom season.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "We'll definitely do Fushimi Inari. Now for the overall budget, can you help us estimate a daily per-person spend for the trip?",
+      "assistant_message": "A reasonable mid-range daily budget per person in Japan is approximately ¥15,000–¥20,000, covering meals, local transport within cities, and entrance fees—this excludes the JR Pass and accommodation. Meals at sit-down restaurants average around ¥1,000–¥1,500 for lunch and ¥2,000–¥3,500 for dinner, while many temples and shrines charge between ¥500 and ¥1,000 entry. So for the full 10-day trip, excluding the 14-day JR Pass cost of ¥80,000 and accommodation, each person should budget roughly ¥150,000–¥200,000 for day-to-day spending.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "If we add up the JR Pass plus the two ryokan nights in Kyoto at the mid-range estimate, what's the transportation and special accommodation cost per person?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5",
+    "t6"
+  ],
+  "distractor_turn_ids": [],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states the 14-day JR Pass costs ¥80,000 per person (established in t2).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer uses ¥20,000 per person per night as the mid-range ryokan estimate (established in t4), giving ¥40,000 for two nights.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer arrives at a total of ¥120,000 per person (¥80,000 JR Pass + ¥40,000 for two ryokan nights).",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not use the 7-day JR Pass price of ¥50,000 instead of the 14-day price of ¥80,000, since the trip is 10 days and the 14-day pass was recommended in t2.",
+      "required": true
+    }
+  ],
+  "notes": "The key facts are the 14-day JR Pass price (¥80,000) from t2 and the mid-range ryokan nightly cost (¥20,000/person) from t4; the trap is using the 7-day pass price (¥50,000) from t2 instead, which would be wrong since a 10-day trip requires the 14-day pass.\n\nReference answer: Based on what we discussed, the 14-day JR Pass costs ¥80,000 per person, which is the right option for a 10-day trip. For the two ryokan nights in Kyoto, the mid-range estimate was ¥20,000 per person per night, totaling ¥40,000. Adding those together, each person should expect to spend approximately ¥120,000 just on the JR Pass and the ryokan accommodation.",
+  "evidence_note": null,
+  "premise": "organizing a 10-day trip to Japan for four friends"
+}

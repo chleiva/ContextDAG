@@ -1,0 +1,102 @@
+{
+  "scenario_id": "new_root_007",
+  "family": "new_root",
+  "label": "NEW_ROOT",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're overhauling our menu for the fall season and want to lead with a signature soup. What are the most popular fall soup bases right now?",
+      "assistant_message": "Butternut squash and roasted tomato bisques are performing very strongly in fall menus across the U.S. right now, with butternut squash appearing on roughly 34% of seasonal menus tracked by Datassential's 2023 MenuTrends report. Bone broth-based soups are also surging, partly driven by the wellness dining trend that picked up significant momentum in 2022 and has held since. French onion remains a perennial anchor, especially for mid-range casual dining, because its food cost typically runs between 18% and 22% of menu price.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "We're leaning toward the butternut squash bisque. What garnishes make it feel more upscale without blowing the plate cost?",
+      "assistant_message": "A small quenelle of crème fraîche, toasted pepitas, and a drizzle of brown-butter sage oil can each add perceived luxury at a combined garnish cost of roughly $0.40–$0.65 per bowl. Microgreens from a local farm are another strong option; many farms sell 2-oz clamshells wholesale for about $1.20, which is enough for eight to ten portions. Avoid truffle oil as a default upscale signal—it has been widely identified by critics since around 2015 as a shortcut that sophisticated diners now find off-putting.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "Good point on the truffle oil. What bowl size and pricing do you recommend for positioning it as a starter?",
+      "assistant_message": "An 8-oz portion is the industry standard for a starter soup, keeping the diner hungry for subsequent courses while still feeling generous. At a food cost target of 28–30%, and assuming a total ingredient cost of about $1.80 per 8-oz serving with garnishes, you'd price the bowl between $6.00 and $6.50 to hit that margin. The National Restaurant Association's 2023 operator survey found that guests in casual-upscale settings accept starter soup prices up to $9.00 before perceived value drops sharply, so there's room to go slightly higher if your market supports it.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "We also want a fall salad. What ingredients are peaking in October that would work well together?",
+      "assistant_message": "October is peak season for Honeycrisp and Fuji apples, roasted beets, radicchio, and Bosc pears across most of the continental U.S. Honeycrisp apples in particular have become a menu staple—Datassential reported a 47% menu penetration increase for Honeycrisp specifically between 2018 and 2023. Pairing roasted golden beets with candied walnuts, Honeycrisp slices, and a sherry vinaigrette over arugula hits multiple textural and flavor contrasts that test well with guests in the 30–55 age demographic.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "That salad sounds great. Should we include a cheese component, and if so, which variety works best?",
+      "assistant_message": "A cheese component significantly boosts perceived value and satiation, and Gorgonzola dolce is the most complementary choice for that flavor profile—its mild, creamy sweetness balances the acidity of sherry vinaigrette and the bitterness of arugula without overpowering the fruit. Alternatively, aged Manchego shaved thin adds a nutty, firm contrast and typically costs $0.20–$0.30 less per portion than Gorgonzola dolce at wholesale. The James Beard Foundation's flavor-pairing guidance specifically highlights blue cheese and apple as a classic autumn pairing that has maintained menu relevance for over two decades.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What is the standard food safety temperature range that cooked soups must be held at during service to comply with FDA Food Code guidelines?",
+      "assistant_message": null,
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [],
+  "distractor_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that the FDA Food Code requires hot foods (including soups) to be held at or above 135°F (57°C) during service.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer identifies the temperature danger zone as between 41°F (5°C) and 135°F (57°C) per FDA Food Code.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not reference the butternut squash bisque food cost of $1.80 per serving or the 28–30% food cost target discussed earlier, as those are irrelevant to the food safety temperature question.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer correctly attributes the holding temperature standard to the FDA Food Code (not a different regulatory body such as USDA or a state-specific code).",
+      "required": false
+    }
+  ],
+  "notes": "The query (t6) is a standalone food safety question answerable from general FDA Food Code knowledge; it has no dependency on any prior turn. Turns t1–t5 are all distractors covering soup garnishes, pricing, salad ingredients, and cheese pairings—none of which contain or hint at holding temperature requirements. The main trap is importing the food cost or pricing figures from t3 into the answer.\n\nReference answer: According to the FDA Food Code, cooked soups must be held at a minimum of 135°F (57°C) during service to be considered safe for consumption. The temperature danger zone defined by the FDA Food Code runs from 41°F (5°C) to 135°F (57°C), the range in which bacteria multiply most rapidly. Soups that drop below 135°F must be rapidly reheated to 165°F (74°C) within two hours before being returned to service.",
+  "evidence_note": null,
+  "premise": "a restaurant redesigning its menu for a seasonal change"
+}

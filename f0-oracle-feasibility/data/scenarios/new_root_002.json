@@ -1,0 +1,102 @@
+{
+  "scenario_id": "new_root_002",
+  "family": "new_root",
+  "label": "NEW_ROOT",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're planning our summer reading program at Maplewood City Library and want to set reading minute goals for kids. What are typical benchmarks used by public libraries?",
+      "assistant_message": "Many public libraries use the Collaborative Summer Library Program (CSLP) framework, which recommends that children aged 6–12 log between 1,000 and 2,000 reading minutes over an 8-week summer program. Some larger systems, like Chicago Public Library's 'Summer Learning Challenge,' have historically set a flat goal of 1,500 minutes for the elementary age group. The idea is to target roughly 25 minutes of reading per day, which research from the National Summer Learning Association links to preventing the 'summer slide' in literacy.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "We're thinking of using a digital tracking platform. What are some options libraries commonly use?",
+      "assistant_message": "Beanstack is probably the most widely adopted platform, used by over 2,000 library systems in North America as of 2023; it charges libraries a licensing fee that scales with the size of the community served, starting around $500 per year for small branches. READsquared is another strong competitor, offering built-in prize management and reporting dashboards, and it has been used by systems including Calgary Public Library. Some libraries still use the CSLP's own Wandoo Reader platform, which is included with CSLP membership dues—approximately $175–$475 annually depending on the state.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "How should we structure the prize tiers to keep kids motivated throughout the full eight weeks?",
+      "assistant_message": "A common approach is to award small incentives at three milestone checkpoints—for example, at 500, 1,000, and 1,500 minutes—with a completion prize for hitting the full goal. The Columbus Metropolitan Library uses a model where milestone rewards are low-cost items like bookmarks or coupons, while the completion prize is a certificate and entry into a grand-prize raffle. Research published in the Journal of Youth Services in Libraries (2019) found that intermediate rewards at roughly one-third and two-thirds of the way through a program increased completion rates by about 22 percent compared to a single end-of-program prize.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "What about teen programming? Should the structure be different for ages 13–18?",
+      "assistant_message": "Yes, most library systems differentiate the teen track significantly. Instead of minute-based logging, many programs for teens use an activity-based model—teens earn points for writing reviews, attending events, or completing reading challenges, not just raw time spent reading. The Brooklyn Public Library's 'Teen Summer Challenge,' for instance, awards 10 points per book finished, 5 points per review written, and 15 points for attending a library program, with 100 points needed to claim the completion prize. This approach reflects survey data from YALSA (the Young Adult Library Services Association) showing that teens respond better to varied engagement rather than linear minute-counting.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "We want to do a kickoff event to launch the program. What have other libraries done successfully?",
+      "assistant_message": "A very effective format is an outdoor 'reading carnival' held on the first Saturday of the program, combining free registration with activity booths. The Denver Public Library ran a kickoff in June 2022 that drew over 1,200 attendees by partnering with local food trucks and inviting a children's book author for a free reading and signing. Key elements that drive attendance include a free giveaway for same-day registrants—Denver gave out a branded tote bag and a paperback book—and social media promotion starting at least three weeks in advance across Instagram and Facebook, which Denver's team credited for a 40 percent increase in first-day registrations compared to 2019.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What is the standard ADA requirement for the minimum number of accessible parking spaces a public library must provide if its total parking lot has 75 spaces?",
+      "assistant_message": null,
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [],
+  "distractor_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that for a parking lot of 75 spaces, the ADA requires a minimum of 3 accessible parking spaces (per the 2010 ADA Standards for Accessible Design, Table 208.2: 51–75 spaces requires 3 accessible spaces).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer correctly identifies that at least 1 of those accessible spaces must be a van-accessible space.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not incorporate any detail from the summer reading program discussion (such as the 1,500-minute reading goal, Beanstack pricing, or Denver Public Library's kickoff attendance figures) as if it were relevant to the ADA parking question.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer references the 2010 ADA Standards for Accessible Design (or ADA Title II requirements) as the governing standard for public facilities including libraries.",
+      "required": false
+    }
+  ],
+  "notes": "The query (t6) is a fully self-contained ADA regulatory question answerable from general knowledge alone; it has zero dependency on t1–t5. Turns t1–t5 cover summer reading program logistics (minute goals, platforms, prizes, teen tracks, kickoff events) and are pure distractors—the trap would be importing any library-specific detail from those turns into the ADA answer.\n\nReference answer: Under the 2010 ADA Standards for Accessible Design (Table 208.2), a parking lot with 51 to 75 total spaces must provide a minimum of 3 accessible parking spaces. At least 1 of those 3 spaces must be designated van-accessible, meaning it requires a wider access aisle (typically 96 inches) and adequate vertical clearance. Because a public library is a government facility covered by ADA Title II, it must comply with these standards in any parking facility it operates.",
+  "evidence_note": null,
+  "premise": "a city library planning a summer reading program"
+}

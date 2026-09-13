@@ -1,0 +1,105 @@
+{
+  "scenario_id": "topic_fork_001",
+  "family": "topic_fork",
+  "label": "FORK",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm deep in playtesting my new card game, Thornfield. Each player starts with a 40-card deck, 20 life points, and draws 5 cards per turn. Win condition is reducing the opponent to 0 life or decking them out.",
+      "assistant_message": "That's a solid foundation for a card game. The 40-card deck size is close to Magic: The Gathering's standard 60-card minimum but tighter, which means consistency will be high and players will see key cards more reliably. The 20-life threshold paired with a 5-card draw creates a fairly brisk game pace — you'll want to make sure your damage curve doesn't end games on turn 3 or 4 before decisions become meaningful.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Right, so I've settled on three card types: Units, Spells, and Relics. Units attack and block, Spells are one-use effects, and Relics are persistent enchantments. Each Relic has a Resonance value between 1 and 5 that stacks additively when you control multiple Relics — once your total Resonance hits 10, you trigger a Resonance Cascade, which deals 5 damage to the opponent immediately.",
+      "assistant_message": "The Resonance Cascade mechanic is elegant because it rewards building around Relics without making the payoff feel arbitrary. Stacking to 10 from values of 1–5 means a player needs at least two Relics and realistically three or more in most cases, which prevents a one-card win condition. The flat 5 damage on trigger is clean and predictable, though you'll want to watch whether that's too punishing early or too weak late depending on how fast damage from Units accumulates.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "I'm worried about Relic balance specifically. If a Relic has Resonance 5 — the max — two of them instantly fire the Cascade. How do I keep high-Resonance Relics from being auto-includes?",
+      "assistant_message": "The standard lever is cost asymmetry: make Resonance 5 Relics significantly more expensive to play than their stat lines justify, so players pay a tempo penalty for the Cascade setup. You could also cap the number of Relics allowed in a deck — many games use a 3-copy rule per card, but for high-Resonance Relics specifically, a 2-copy limit would halve the probability of drawing both in early game. A third option is adding a 'Shatter' condition where Relics are destroyed after triggering the Cascade, forcing players to rebuild the engine rather than repeat it.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "I'm also rethinking the mana system. Right now players gain 1 mana crystal per turn up to a maximum of 8, same as Hearthstone. I'm wondering if I should switch to a land-based system instead.",
+      "assistant_message": "The auto-ramp crystal system and the land-based system sit at opposite ends of the variance spectrum. Hearthstone's automatic 1-per-turn ramp means every player hits 8 mana on turn 8 without fail, which makes balancing high-cost cards straightforward but can feel deterministic. Land-based systems like Magic's introduce meaningful decisions and deck-building tension around mana density, but they also produce mana-screw and mana-flood, which many modern designers actively try to eliminate. Given that Thornfield uses a 40-card deck for high consistency, a hybrid approach — say, a fixed ramp track plus 2 optional 'Wellspring' cards per deck that accelerate it — might preserve agency without the variance penalty.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "I like the 2-copy deck limit idea for Resonance 5 Relics. But I also want to introduce a specific Relic called Emberveil Crown that has Resonance 4 and costs 3 mana. Should it be subject to the same 2-copy limit?",
+      "assistant_message": "Emberveil Crown at Resonance 4 for 3 mana sits in a tricky spot. Two copies contribute 8 total Resonance, meaning a player needs only 2 more Resonance from any other Relic to fire the Cascade — that's achievable with even a single Resonance 2 Relic, making a three-Relic Cascade package very consistent. I'd recommend applying the 2-copy limit to any Relic with Resonance 3 or higher, which would include Emberveil Crown, rather than reserving the restriction for only Resonance 5 cards.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "If a player runs two copies of Emberveil Crown alongside one Resonance 2 Relic and triggers a Resonance Cascade, how much total damage have they dealt with the Cascade, and is that enough to win from full health?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t5"
+  ],
+  "distractor_turn_ids": [
+    "t4"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that the Resonance Cascade deals exactly 5 damage (established in t2).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer confirms the total Resonance is 10 (4+4+2) which meets the Cascade threshold of 10 (established in t2 and t5).",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer correctly compares the 5 Cascade damage against the opponent's starting 20 life points (established in t1), concluding 5 damage alone is not enough to win from full health.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not reference the mana crystal system, the 8-mana cap, or the land-based system discussion from t4, as those are irrelevant to the Cascade damage question.",
+      "required": true
+    }
+  ],
+  "notes": "The key facts come from t2 (Cascade threshold of 10 and 5 damage on trigger, opponent's starting life from t1) and t5 (Emberveil Crown's Resonance 4 cost). The distractor in t4 about the mana crystal system and Hearthstone comparison is the trap — it is plausible design discussion but contributes nothing to answering the Cascade damage question.\n\nReference answer: Two copies of Emberveil Crown contribute 8 total Resonance (4+4), and the Resonance 2 Relic brings the stack to exactly 10, which triggers a Resonance Cascade. The Cascade deals 5 damage to the opponent immediately, as established in the card type rules. Since opponents start at 20 life points, 5 damage from the Cascade alone leaves them at 15 and is not sufficient to win from full health on its own.",
+  "evidence_note": null,
+  "premise": "a board-game designer balancing a new card game"
+}

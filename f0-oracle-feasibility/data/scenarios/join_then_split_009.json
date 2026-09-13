@@ -1,0 +1,116 @@
+{
+  "scenario_id": "join_then_split_009",
+  "family": "join_then_split",
+  "label": "SPLIT",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm building a magic system for my fantasy novel where casting any spell costs the user a precise number of 'vitae points' drawn from their life force. A basic fireball costs exactly 12 vitae points, and a mage starts with a maximum pool of 200 vitae points at level 1.",
+      "assistant_message": "That's a compelling foundation — tying magic directly to life force creates immediate dramatic stakes. The numbers you've chosen work well: 12 vitae per fireball means a starting mage can cast roughly 16 fireballs before hitting zero, which feels dangerous but not cripplingly restrictive. You might also decide whether the pool scales with leveling up or stays fixed to keep the system tense throughout the story.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Let's say the pool grows by exactly 25 vitae points each time a mage levels up, and the recovery rate is 5 vitae points per hour of rest.",
+      "assistant_message": "Locking in those numbers gives you a clean, trackable economy: a level 3 mage would have 250 vitae points, and fully recovering from zero would take 50 hours of rest at that level — about two full days, which is a meaningful vulnerability. The slow recovery rate ensures your mages can't just sleep off a big battle overnight and return at full strength, which should raise the cost of every major magical confrontation in your plot.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "I'm also working out the political factions in the same world. The dominant faction is called the Aurean Compact, and it controls all trade routes east of the Greyveil Mountains.",
+      "assistant_message": "The Aurean Compact sounds like a powerful and potentially antagonistic force — controlling trade routes gives them economic leverage that can threaten even magically gifted characters. Placing them east of the Greyveil Mountains also implies there's a western region that operates outside their influence, which could serve as a refuge or a source of rival power in your story.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "Right, and the Compact has a standing army of exactly 40,000 soldiers, with 12 licensed war-mages embedded in its command structure.",
+      "assistant_message": "Having only 12 war-mages in a 40,000-strong army makes magic feel rare and elite, which reinforces the idea that vitae-based casting is a precious resource rather than a common tool of war. Those 12 individuals would likely be treated as strategic assets, kept back from ordinary skirmishes and deployed only in decisive engagements, which gives you rich material for political tension within the Compact's command.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "I want the Aurean Compact's 12 war-mages to be the main antagonists my protagonist clashes with. How should their vitae pools and the Compact's resources interact — like, could the Compact manufacture vitae-restoring supplies to keep those mages battle-ready?",
+      "assistant_message": "That's a great way to fuse the two systems — the Compact's vast trade network could give it exclusive access to rare alchemical ingredients needed for vitae tonics, creating an asymmetry where enemy mages recover far faster than independent casters. You could establish that a standard Compact-issued vitae tonic restores 40 points instantly, making the 12 war-mages dangerous in prolonged campaigns where your protagonist can't afford the same resupply. This also gives your protagonist a concrete mission goal: disrupt the Compact's supply lines to neutralize the mages' recovery advantage.",
+      "gold_parents": [
+        "t2",
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "Could the Compact also use its 40,000 soldiers to protect tonic shipments, making it nearly impossible for the protagonist to intercept them alone?",
+      "assistant_message": "Absolutely — pairing the tonic shipments with military escorts turns every interdiction attempt into a tactically overwhelming scenario for a solo protagonist. You could designate special 'Vitae Caravans' guarded by a minimum of 500 soldiers each and at least one embedded war-mage, making the full army's scale feel present even in small-scale encounters. This forces your protagonist to build alliances or find clever magical solutions rather than relying on brute force, which is great for plot momentum.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "If my protagonist starts at level 1 and needs to cast fireballs until completely exhausted, how many can they fire off, and how many hours of rest will it take to fully recover afterward?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4",
+    "t5",
+    "t6"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states the protagonist can cast exactly 16 fireballs (200 vitae ÷ 12 vitae per fireball = 16, with 8 vitae remaining, or floors to 16 full casts).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer uses the recovery rate of 5 vitae points per hour to calculate full recovery time as 40 hours (200 ÷ 5 = 40 hours) after complete exhaustion.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not incorporate the vitae tonic's 40-point restoration value from the joined J discussion, as that detail is irrelevant to a level-1 protagonist's base recovery.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not reference the Aurean Compact's army size (40,000 soldiers) or the 12 war-mages, as those are B/J details unrelated to the query.",
+      "required": true
+    }
+  ],
+  "notes": "The facts needed for the query (200 vitae starting pool, 12 vitae per fireball, 5 vitae/hour recovery) are all established in t1 and t2. The distractors are the Aurean Compact's army/mage numbers (t3, t4) and the vitae tonic's 40-point restoration value introduced in t5, which a model might incorrectly import into the recovery calculation.\n\nReference answer: A level-1 protagonist has a vitae pool of 200 points and each fireball costs 12 vitae, so they can cast exactly 16 fireballs (using 192 vitae) before the remaining 8 points are insufficient for another cast — or 16 full fireballs if we treat the pool as fully spent at that point. At a recovery rate of 5 vitae points per hour of rest, fully restoring all 200 vitae from zero would take exactly 40 hours — just under two full days. That recovery window represents a serious vulnerability after any major magical engagement.",
+  "evidence_note": null,
+  "premise": "writing a fantasy novel and planning its magic system"
+}

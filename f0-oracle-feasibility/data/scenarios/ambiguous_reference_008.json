@@ -1,0 +1,101 @@
+{
+  "scenario_id": "ambiguous_reference_008",
+  "family": "ambiguous_reference",
+  "label": "AMBIGUOUS",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're putting together our grant application for the Maplewood Community Garden and need to figure out our composting setup. We've been in touch with GreenCycle Solutions — they're a local composting vendor — about supplying a tumbler bin system.",
+      "assistant_message": "GreenCycle Solutions is a solid choice for community garden composting setups. To strengthen your grant application, it would help to nail down their pricing, capacity specs, and any installation requirements they have so you can include accurate figures in your budget narrative.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Right, I talked to their sales rep yesterday. They said the 200-gallon dual-tumbler unit runs $1,340 installed, but they require a minimum 6-foot concrete pad poured before they'll schedule delivery, and their earliest available installation date is March 14, 2025.",
+      "assistant_message": "Good, those are exactly the specifics you need in the application. The $1,340 installed price should go into your equipment line item, and you'll want to flag the concrete pad as a site-prep cost — that may need its own budget line depending on the grant's expense categories. The March 14, 2025 installation date also gives you a clear project timeline milestone to reference in the narrative.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "We're also looking at raised bed suppliers. Timber & Roots Co. reached out to us — they do custom cedar raised beds and have worked with a few other community gardens in the county.",
+      "assistant_message": "Timber & Roots Co. has a good reputation for durable cedar construction, which holds up well in outdoor garden settings. It would be worth asking them for a quote that specifies board thickness and whether their beds are rated for food-safe applications, since some grants require that documentation.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "Does the municipal grant require us to have liability insurance in place before we submit, or can we get it after approval?",
+      "assistant_message": "Most municipal community garden grants require proof of liability insurance at the time of application, not just after approval, so you'll want to check the specific program guidelines carefully. Typically a certificate of insurance naming the city as an additional insured is required, and coverage of at least $1 million per occurrence is a common threshold. I'd recommend calling the grants office directly to confirm their exact requirement before you finalize your submission packet.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "Timber & Roots Co. sent over their catalog. They offer 4×8 foot beds in two depths — 10 inches for $215 each and 18 inches for $290 each — and they require orders of at least 5 units to deliver to our zip code.",
+      "assistant_message": "Those are reasonable prices for custom cedar, and the 18-inch depth is worth considering for root vegetables if your garden plan includes them. The 5-unit minimum delivery requirement is something to factor into your order quantity and budget — ordering exactly 5 of the 18-inch beds, for example, would come to $1,450 before any applicable taxes.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What's the earliest we could have them on-site and ready to use?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4",
+    "t5"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer identifies GreenCycle Solutions as the vendor being asked about, not Timber & Roots Co.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that March 14, 2025 is the earliest available installation date for GreenCycle Solutions.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer mentions that a 6-foot concrete pad must be poured before GreenCycle Solutions will schedule delivery, as a prerequisite affecting the on-site readiness date.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not treat the question as referring to Timber & Roots Co. or provide a delivery timeline based on Timber & Roots Co.'s details.",
+      "required": true
+    }
+  ],
+  "notes": "t2 holds the critical facts (March 14, 2025 installation date and the concrete pad prerequisite) for GreenCycle Solutions (ENTITY_1). t5 is the trap: it describes Timber & Roots Co. (ENTITY_2), a vendor of the same general kind, whose delivery timeline details could mistakenly be used to answer the pronoun-based query in t6.\n\nReference answer: Based on what GreenCycle Solutions told you, the earliest the composting unit could be on-site and installed is March 14, 2025. However, that date is contingent on having the required 6-foot concrete pad already poured before they'll schedule delivery, so the actual ready-to-use date depends on when that site prep can be completed. If the pad isn't in place well before mid-March, the installation date could slip further.",
+  "evidence_note": null,
+  "premise": "a community garden applying for a municipal grant"
+}

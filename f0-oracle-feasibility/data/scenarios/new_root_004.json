@@ -1,0 +1,114 @@
+{
+  "scenario_id": "new_root_004",
+  "family": "new_root",
+  "label": "NEW_ROOT",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're building out our live-ops event calendar for the next quarter and want to start with a big seasonal event in October. What are some structural best practices for a month-long Halloween event in a mobile RPG?",
+      "assistant_message": "A month-long Halloween event typically works best when divided into two or three distinct phases so players have fresh content to return to rather than burning through everything on day one. A common structure is a two-week story chapter followed by a one-week challenge sprint and a final three-day boss rush, giving you natural re-engagement hooks around October 15 and October 22. You should also plan a limited currency, like a 'Soul Coin,' that is only earnable during the event so the economy stays contained and doesn't bleed into your standard progression. Tying the final boss rush to a community milestone—where collective damage unlocks a shared cosmetic reward—adds a social layer that boosts daily active users in the closing days.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "We like the Soul Coin idea. How should we set the earn rate so players feel rewarded without making the premium shop feel pointless?",
+      "assistant_message": "A well-tested ratio is to let free-play earn roughly 60–70% of the currency needed to claim the event's marquee reward, so a player who logs in daily for all 30 days can reach it without spending. If your marquee item costs 1,200 Soul Coins, a daily free cap of around 28 coins puts a dedicated free player at 840 coins, leaving a natural 360-coin gap that the premium shop can fill at roughly $4.99 for a bundle of 400 coins. This 'almost there' gap is sometimes called the 'completion nudge' in monetization design and has shown conversion lifts of 12–18% in published post-mortems from studios like Jam City. Make sure your lowest-tier paid bundle covers the gap exactly so the purchase decision feels satisfying rather than arbitrary.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "That conversion range is really helpful. What about the challenge sprint phase—what kinds of daily missions keep engagement without causing burnout?",
+      "assistant_message": "Daily missions during a challenge sprint should follow a three-tier structure: one trivially easy task completable in under two minutes, one moderate task taking roughly 15 minutes, and one stretch goal that rewards players who engage deeply for 30–45 minutes. Research published in the 2022 GDC session 'Designing for Habit, Not Addiction' by Kongregate's live-ops team found that three-tier daily systems produced 23% higher day-14 retention compared to single flat-mission designs. You should also rotate mission categories—combat, crafting, social—on a fixed weekly cadence so no single playstyle feels excluded for more than two consecutive days. Avoid time-gating the stretch goal behind a paywall; that specific pattern was cited in a 2023 Apple App Store guideline update as a friction point that increases refund requests.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "Got it. How should we handle the community milestone mechanic for the final boss rush so it actually feels meaningful and not like a hollow checkbox?",
+      "assistant_message": "The key is making the milestone tracker visible and granular—show a global damage counter that updates every 15 minutes rather than once a day, so individual contributions feel perceptible. Supercell's Clash of Clans used a similar 'Clan Games' point aggregator in its December 2017 update, and they reported in a 2018 developer blog post that near-real-time counters increased average session length by 11% compared to daily-snapshot trackers. Set the community threshold at roughly 80% of what your active player base would naturally generate in three days, so success feels earned but not trivially guaranteed. If the threshold is missed, still grant a consolation cosmetic at 60% completion so late joiners don't feel their participation was wasted.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "We're also thinking about a Thanksgiving event in November right after Halloween wraps. How long of a gap do we need between events to avoid player fatigue?",
+      "assistant_message": "Industry convention, backed by data from Sensor Tower's 2022 mobile gaming report, suggests a minimum five-to-seven day 'breathing gap' between major live-ops events to allow players to clear backlogs and prevent the 'always-on' fatigue that spikes uninstall rates. If your Halloween event ends October 31, launching Thanksgiving content on November 7 at the earliest gives you the minimum buffer, though November 10 is a safer target that also aligns with post-weekend engagement peaks typically seen on Mondays and Tuesdays. Use the gap period to run a lightweight 'catch-up week' where players can spend any leftover Soul Coins on a rotating discount shop, which also serves as a soft currency sink. Zynga's FarmVille 3 team publicly noted in a 2021 GDC talk that inter-event discount windows reduced Soul Coin-equivalent hoarding by 34% ahead of the next event launch.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "The catch-up week discount shop is a great idea. What discount depth should we use to make it feel valuable without devaluing the event items permanently?",
+      "assistant_message": "A 30–40% discount on non-marquee event cosmetics is the standard range; it feels generous to players while keeping marquee items at full perceived value since those should not enter the discount rotation at all. Kabam's Marvel Contest of Champions used a 35% discount window in its 'Glory Store' rotations starting in 2019, and community sentiment tracked by third-party site ContestChampions.io showed approval ratings of 78% for that discount tier versus 52% for a 20% tier tested in 2018. Time-limit the window to exactly seven days and display a countdown timer prominently, as urgency is the mechanism that prevents players from waiting for a deeper future discount. If you later run a year-anniversary sale, keep Halloween catch-up items out of that sale entirely to preserve the seasonal scarcity signal.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "What are the legal requirements a mobile game studio in the United States must follow when running a sweepstakes as part of a live event, specifically around the 'no purchase necessary' rule?",
+      "assistant_message": null,
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [],
+  "distractor_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5",
+    "t6"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer must state that US sweepstakes law requires an alternative free method of entry (the 'no purchase necessary' rule) so that purchasing does not confer an advantage or be required to participate.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer must identify that sweepstakes (unlike lotteries) are legal without a gambling license because they require no consideration (or provide a free entry alternative), and must not conflate sweepstakes with contests of skill or lotteries.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must mention at least one specific disclosure requirement, such as the official rules stating odds of winning, the prize description, or the sponsor's name and address.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not import Soul Coin earn rates, discount percentages, or any other event-economy detail from the prior conversation, as those are irrelevant to sweepstakes legal requirements.",
+      "required": true
+    }
+  ],
+  "notes": "Turns t1–t6 are all distractors covering Halloween event structure, Soul Coin earn rates, daily missions, community milestones, inter-event gaps, and discount shop depth; none of this is relevant to US sweepstakes law. The query (t7) is a self-contained legal question answerable from general knowledge, and the main trap in the checklist (c4) is importing Soul Coin or discount-percentage details into a legal answer.\n\nReference answer: In the United States, a sweepstakes must include a 'no purchase necessary' alternative entry method—typically a mail-in or online free entry—so that buying something is never required to win and confers no advantage, which is what legally distinguishes a sweepstakes from an illegal lottery. The three elements of an illegal lottery are prize, chance, and consideration; removing consideration (the purchase requirement) keeps the promotion lawful without needing a gambling license. Official rules must be posted and must disclose the sponsor's full legal name and address, all prize descriptions and approximate retail values, the odds of winning, the entry deadline, and any geographic eligibility restrictions. Some states, notably New York and Florida, impose additional registration and bonding requirements for sweepstakes with prize pools exceeding $5,000, so studios should verify state-specific filings before launch.",
+  "evidence_note": null,
+  "premise": "a game studio planning a live-ops event calendar"
+}

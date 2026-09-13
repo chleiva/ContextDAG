@@ -1,0 +1,367 @@
+{
+  "scenario_id": "constraint_retention_008",
+  "family": "constraint_retention",
+  "label": "CONSTRAINT",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We have a hard rule for our payments API: every single API response—success or error—must include a top-level field called `request_id` that is a UUID v4 string. No exceptions, not even for 4xx or 5xx errors.",
+      "assistant_message": "Understood and noted precisely: every API response, regardless of HTTP status code, must include a top-level `request_id` field containing a UUID v4 string. This applies to all responses including 400 Bad Request, 401 Unauthorized, 500 Internal Server Error, and every other status. I'll keep that constraint in mind throughout our design work.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Right. We're planning to use this `request_id` for end-to-end tracing—clients will log it and support can look it up in our observability platform. So it really is non-negotiable.",
+      "assistant_message": "That makes the constraint even clearer: the `request_id` UUID v4 field is the primary correlation handle between client logs and your observability backend, so omitting it from any response would break the support and tracing workflow entirely. I'll treat it as an immutable requirement for every response shape we define going forward.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "What HTTP method and path would you recommend for initiating a new payment?",
+      "assistant_message": "The standard approach is `POST /payments`, since you're creating a new payment resource. Using POST here aligns with REST conventions where the server assigns the resource identifier, and it naturally returns a 201 Created with a Location header pointing to the new payment resource, such as `/payments/{payment_id}`.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "Should the payment amount be represented as an integer in minor currency units or as a decimal string?",
+      "assistant_message": "Integer minor currency units is strongly preferred—for example, 1099 to represent $10.99 USD. This avoids floating-point precision issues entirely and is the approach used by Stripe, Adyen, and most major payment processors. You should also require a separate `currency` field containing an ISO 4217 three-letter code alongside the amount.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "How should we handle idempotency for payment creation?",
+      "assistant_message": "Require clients to send an `Idempotency-Key` header with each POST request, and store the key alongside the resulting payment record. If the same key is received again within a 24-hour window, return the original response rather than creating a duplicate payment. This is the pattern Stripe has used since 2015 and it protects against network retries causing double charges.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What's the right way to model payment status transitions in the API?",
+      "assistant_message": "Define an explicit finite set of statuses—for example: `pending`, `processing`, `succeeded`, `failed`, and `cancelled`—and document the valid transitions between them. Expose the current status on the payment resource and consider providing a `GET /payments/{payment_id}/status` endpoint for lightweight polling. Clients should not be able to set status directly; only internal processing should drive transitions.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "We want to support webhooks for async payment events. Any recommendations on the payload structure?",
+      "assistant_message": "Use a consistent envelope with at least `event_id`, `event_type`, `created_at`, and a `data` object containing the full payment resource snapshot. Versioning the event schema—e.g., `event_type: payment.succeeded.v1`—lets you evolve payloads without breaking existing subscribers. Always sign the payload with an HMAC-SHA256 signature in a header like `X-Signature-256` so consumers can verify authenticity.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "How should we version the API itself?",
+      "assistant_message": "URL path versioning—`/v1/payments`—is the most operationally straightforward approach and is what Stripe, Twilio, and PayPal all use for their payment APIs. Alternatively, a `Payments-Version` header allows a single URL namespace but adds routing complexity. I'd recommend path versioning for a payments product because the version is visible in logs, load-balancer rules, and API gateway configs without any header inspection.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "What authentication mechanism makes the most sense here?",
+      "assistant_message": "Bearer tokens using short-lived JWTs for user-facing calls, combined with API keys for server-to-server integration, covers most payments use cases. API keys should be scoped—e.g., a key can be restricted to read-only or to specific payment methods—and must be transmitted only over TLS. Store only a hashed version of the key server-side, never the plaintext, following the same principle as password storage.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "Should we expose a list endpoint for payments, and if so how should pagination work?",
+      "assistant_message": "Yes, `GET /payments` should be exposed and cursor-based pagination is the right choice for a payments list. Use an opaque `cursor` parameter rather than page/offset, because offset pagination becomes inconsistent when new payments are inserted during traversal. Return a `next_cursor` in the response envelope and let clients pass it back as the `cursor` query parameter on the next request.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "How granular should our rate limiting be?",
+      "assistant_message": "Rate limit at the API key or merchant account level, not just by IP, since legitimate clients may share IPs through proxies. A common starting point for payments APIs is 100 requests per second per API key for write operations and 300 per second for reads. Return a 429 Too Many Requests with `Retry-After` and `X-RateLimit-Remaining` headers so clients can back off gracefully.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "What should the refund endpoint look like?",
+      "assistant_message": "Model refunds as a sub-resource: `POST /payments/{payment_id}/refunds`. This keeps the refund clearly associated with its originating payment and allows `GET /payments/{payment_id}/refunds` to list all refunds for a payment. The request body should accept an optional `amount` field in minor currency units so partial refunds are supported, and the response should return the new refund resource with its own unique `refund_id`.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "How should we handle PCI compliance concerns in the API design itself?",
+      "assistant_message": "The primary design principle is to never let raw card data touch your servers—use a JavaScript tokenization library or a hosted fields iframe so card numbers are posted directly to your card vault or a processor like Stripe or Braintree. Your API should only ever receive and transmit payment method tokens, not PANs. This keeps you out of PCI DSS SAQ D scope and limits you to the much lighter SAQ A-EP or SAQ A.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "What fields are essential on the payment resource itself?",
+      "assistant_message": "At minimum: `payment_id` (your internal UUID), `amount` (integer, minor units), `currency` (ISO 4217), `status`, `payment_method_token`, `created_at` (ISO 8601 with timezone), `updated_at`, and `metadata` (a free-form key-value object for merchant use). You may also want `description`, `statement_descriptor`, and `customer_id` if you maintain customer objects. Keep the shape stable across versions and use the `metadata` field as a safety valve for merchant-specific data.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "Should we support batch payment creation?",
+      "assistant_message": "For most payments products, a batch endpoint adds significant complexity—error handling, partial failure semantics, and idempotency all become harder. A better pattern is to let clients parallelize individual `POST /payments` calls, which keeps each operation atomic and independently retryable. If batch is a hard business requirement, model it as `POST /payment-batches` returning a batch resource, and process individual payments asynchronously with webhook notifications per payment.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "How should we structure error responses?",
+      "assistant_message": "Use a consistent error envelope with `error.code` (a machine-readable string like `card_declined`), `error.message` (a human-readable explanation), and optionally `error.param` when the error relates to a specific request field. Align your error codes to a documented taxonomy so clients can write reliable switch statements against them. HTTP status codes should be semantically correct—422 Unprocessable Entity for validation failures, 402 Payment Required for card declines, 503 for downstream processor outages.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "What's the best way to handle currency conversion if we support multi-currency?",
+      "assistant_message": "Treat currency conversion as a separate, explicit operation rather than implicit behavior. Accept the payment in the presentment currency the customer sees, but also record the settlement currency and exchange rate applied at the time of authorization. Expose these as distinct fields—`presentment_currency`, `settlement_currency`, and `exchange_rate`—so merchants can reconcile accurately. Never silently convert; always surface the rate used.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "How should we design the endpoint for capturing an authorized payment?",
+      "assistant_message": "Use `POST /payments/{payment_id}/captures` to model capture as an action sub-resource, keeping it distinct from the payment itself. The request body can optionally include an `amount` for partial captures, defaulting to the full authorized amount if omitted. Return a capture resource with its own `capture_id`, timestamp, and the updated payment status, which should transition from `authorized` to `processing` or `succeeded`.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "What TLS version requirements should we enforce?",
+      "assistant_message": "Require TLS 1.2 as the absolute minimum and prefer TLS 1.3, which is what PCI DSS v4.0 mandates—it explicitly prohibits TLS 1.0 and 1.1 as of March 2022. Configure your load balancer or API gateway to reject connections on those older versions with a TCP-level handshake failure rather than an HTTP error. Also enforce strong cipher suites and enable HSTS with a `max-age` of at least 31536000 seconds.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "Should payment disputes or chargebacks be modeled in the API?",
+      "assistant_message": "Yes, expose them as `GET /disputes` and `GET /disputes/{dispute_id}`, plus `POST /disputes/{dispute_id}/evidence` for submitting rebuttal documents. Disputes are typically initiated by the card network or issuer, so there's no `POST /disputes` from the merchant side. Webhook events like `dispute.created` and `dispute.won` keep merchants informed asynchronously, which is more practical than polling given the long timelines involved—disputes can take 60 to 120 days to resolve.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "How do we handle soft deletes versus hard deletes for payment records?",
+      "assistant_message": "Hard deletes should never be used for payment records due to audit and regulatory requirements—financial records typically must be retained for 7 years under regulations like the Bank Secrecy Act. Use soft deletes with a `cancelled_at` timestamp or a `status: cancelled` transition instead. Even cancelled payments should remain fully retrievable via `GET /payments/{payment_id}` so that audit trails remain intact.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "What's the recommended approach for API key rotation?",
+      "assistant_message": "Support overlapping validity so a merchant can generate a new key while the old one remains active for a configurable grace period—typically 24 to 72 hours. This avoids hard cutover downtime. Provide a `POST /api-keys` endpoint to create new keys, a `DELETE /api-keys/{key_id}` to revoke them, and always surface the key's `created_at` and `last_used_at` timestamps so merchants can verify rotation succeeded before revoking the old key.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "Should we include HATEOAS links in our payment responses?",
+      "assistant_message": "For a payments API, lightweight HATEOAS—including a `_links` object with the most actionable next steps—is useful without going full REST Level 3. For example, a payment in `authorized` status could include links to its `capture` and `cancel` actions, while a `succeeded` payment links to `refunds`. Full HATEOAS is rarely implemented correctly and adds response payload overhead, so a curated set of contextual action links strikes the right balance.",
+      "gold_parents": [
+        "t22"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "How should we expose a merchant's balance or payout information?",
+      "assistant_message": "Model balances as `GET /balance` returning the current available and pending amounts per currency, and payouts as `GET /payouts` with `POST /payouts` to trigger a manual payout if you support that. The balance resource should include `available` and `pending` broken down by currency using ISO 4217 codes and integer minor units. Payout schedules—daily, weekly, manual—should be a merchant account setting rather than something expressed per API call.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "What logging should the API do for compliance purposes?",
+      "assistant_message": "Log every inbound request and outbound response with timestamp, HTTP method, path, response status, latency, and the correlation identifier. Never log raw card data, full account numbers, or CVVs—mask PANs to show only the last four digits. Retain logs for a minimum of 12 months online and 24 months in cold storage, which satisfies PCI DSS Requirement 10.7. Access to payment logs should be role-restricted and every access event itself should be audit-logged.",
+      "gold_parents": [
+        "t24"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "Should we support GraphQL in addition to REST for querying payment data?",
+      "assistant_message": "A GraphQL layer on top of the REST API can be valuable for analytics and reporting use cases where clients want flexible field selection, but it should be read-only and sit behind the same authentication as the REST API. Write operations—creating payments, capturing, refunding—should remain on the REST endpoints to keep mutation semantics clear and idempotency keys straightforward. Exposing a GraphQL endpoint at `/graphql` while keeping `/v1/payments` for writes is a pragmatic hybrid.",
+      "gold_parents": [
+        "t25"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "How should we document the API?",
+      "assistant_message": "Maintain an OpenAPI 3.1 spec as the source of truth, checked into the same repository as the implementation and validated in CI on every pull request. Generate interactive docs from it using Redoc or Stoplight, and publish them at a stable URL like `docs.yourpayments.com`. Include realistic request and response examples for every endpoint, especially for error cases, since payment API consumers almost always need to test error handling paths before going live.",
+      "gold_parents": [
+        "t26"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "We're writing the spec for the 422 response that comes back when a payment request fails field validation. What fields does that response body need to include?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t7",
+    "t8",
+    "t9",
+    "t10",
+    "t11",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t20",
+    "t21",
+    "t22",
+    "t23",
+    "t24",
+    "t25",
+    "t26",
+    "t27"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer includes `request_id` as a required top-level field in the 422 response body, containing a UUID v4 string.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer applies the rule to this error response specifically—confirming that `request_id` is required even for 4xx error responses, not just success responses.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not omit `request_id` from the 422 error response shape (the naive violation would be designing an error body with only `error.code`, `error.message`, and `error.param` fields without `request_id`).",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer may reference the error envelope fields (`error.code`, `error.message`, `error.param`) established in the distractor turns, but must not treat those as a complete response shape without the `request_id` field.",
+      "required": false
+    }
+  ],
+  "notes": "t1 and t2 hold the binding rule (every response including errors must have a top-level `request_id` UUID v4). t16 is the primary trap: it defines the error envelope fields (`error.code`, `error.message`, `error.param`) and a naive answer would list only those fields without adding `request_id`, violating the t1 constraint.\n\nReference answer: The 422 response body must include a top-level `request_id` field containing a UUID v4 string, because every API response without exception—including all 4xx errors—requires it for end-to-end tracing. Alongside `request_id`, the body should contain an `error` object with at minimum `error.code` (a machine-readable string such as `invalid_param`), `error.message` (a human-readable explanation), and `error.param` naming the specific field that failed validation. Omitting `request_id` from the error response would violate the hard constraint established for the API and break the client-side correlation and support lookup workflow.",
+  "evidence_note": null,
+  "premise": "designing a REST API for a payments product"
+}

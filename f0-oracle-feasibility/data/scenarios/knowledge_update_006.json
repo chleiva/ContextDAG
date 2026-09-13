@@ -1,0 +1,139 @@
+{
+  "scenario_id": "knowledge_update_006",
+  "family": "knowledge_update",
+  "label": "UPDATE",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're setting up online ordering for our farm cooperative and I wanted to confirm the weekly CSA box price we agreed on — it's $45 per box for the standard share.",
+      "assistant_message": "Got it, $45 per box for the standard weekly CSA share. I'll use that as the base price when we build out the product listings and any related calculations for your online store.",
+      "gold_parents": [],
+      "stale": true,
+      "superseded_by": "t8"
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Right, and we're planning to offer a 10% loyalty discount for members who prepay for a full 12-week season upfront.",
+      "assistant_message": "That works out to a discounted price of $40.50 per box for members who prepay the full 12-week season, since 10% off $45 is $4.50 per box. Over the full season, those members would pay $486 instead of $540, which is a solid incentive to encourage upfront commitment. I can set that up as an automatic discount code or a separate product tier in the ordering system — whichever you prefer.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "What delivery zones can we realistically support? Our farm is in Millbrook and we're thinking of covering a 30-mile radius.",
+      "assistant_message": "A 30-mile radius from Millbrook is very workable for a weekly delivery route, though you'll want to factor in road time rather than straight-line distance. I'd suggest mapping out two or three distinct delivery day zones — for example, north and east on Tuesdays, south and west on Thursdays — so your driver isn't crisscrossing the whole area in one day. You'll also want to set a minimum order count per zone to make sure each route is economically viable.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "We have one driver and a refrigerated van that holds about 80 boxes. How should we handle overflow if demand exceeds that?",
+      "assistant_message": "With an 80-box capacity per run, you'd want to cap each delivery day's orders at 80 and use a waitlist feature for overflow signups. Once the waitlist hits a meaningful threshold — say, 20 or more customers in a zone — that's a clear signal to add a second run or a second driver for that day. Building the waitlist directly into the online ordering flow means you capture that demand data automatically rather than relying on phone calls or emails.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "We also need to figure out the order cutoff time. We were thinking noon on Sundays for Tuesday deliveries.",
+      "assistant_message": "A Sunday noon cutoff for Tuesday deliveries gives you roughly 36 to 40 hours of lead time, which is generally enough for harvest, packing, and route planning. Just make sure your ordering platform sends an automated reminder email on Saturday evening so customers don't miss the window. You may also want a hard lock on edits — not just new orders — after that cutoff so your pack list stays stable.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "Can the platform handle substitution preferences, like if a member is allergic to eggplant and wants a swap?",
+      "assistant_message": "Most CSA-focused platforms like Farmigo or Local Line allow customers to flag dislikes or allergens during signup, and some let you configure automatic substitution rules for specific items. You'd typically set up a substitution pool — for example, swap eggplant for an equal-weight quantity of zucchini or peppers — and the system applies it when building that member's box. It's worth testing the substitution logic before your first delivery week to make sure the pack list outputs correctly.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "We want to add a farm store section too, for one-off purchases like eggs, honey, and jam. Should that be a separate checkout or the same cart?",
+      "assistant_message": "Keeping it as a single unified cart is almost always better for the customer experience — members can add a dozen eggs or a jar of honey alongside their CSA box without going through two separate checkouts. The main thing to configure carefully is inventory tracking for those add-on items, since unlike the CSA boxes they won't have predictable weekly quantities. You'll want to set conservative stock limits and enable out-of-stock notifications so you're not overselling items like honey that you may only have a fixed supply of.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "Actually, I need to correct the CSA box price — it's $52, not $45. We finalized that at last week's co-op meeting and I had the old draft number in my head.",
+      "assistant_message": "No problem, I've updated the base price to $52 per box for the standard weekly CSA share — the $45 figure is now out of date. That changes all the downstream calculations, so let me know when you're ready to revisit anything we worked out using the old number.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "What would the total seasonal cost be for a member who takes the 10% prepay discount over the full 12 weeks?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t8"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t7"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer uses $52 as the base price per box (the corrected value from t8), not $45.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer applies a 10% discount to $52, yielding a discounted per-box price of $46.80.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer multiplies the discounted per-box price by 12 weeks, arriving at a total seasonal cost of $561.60.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not use $45 as the base price (the stale value from t1), which would incorrectly produce a total of $486.",
+      "required": true
+    }
+  ],
+  "notes": "t1 introduces the stale price of $45 and t2 builds loyalty-discount math on it; t8 corrects the price to $52, making all t1/t2 calculations wrong. Turns t3 through t7 are the distractor branch covering delivery zones, van capacity, order cutoffs, substitutions, and the farm store — none of which affect the seasonal price query in t9.\n\nReference answer: With the corrected base price of $52 per box, a 10% prepay discount saves a member $5.20 per box, bringing the per-box cost down to $46.80. Over a full 12-week season, that member would pay $561.60 in total. This compares to the full undiscounted seasonal price of $624, so the prepay discount saves them $62.40 overall.",
+  "evidence_note": null,
+  "premise": "a farm cooperative setting up online ordering"
+}

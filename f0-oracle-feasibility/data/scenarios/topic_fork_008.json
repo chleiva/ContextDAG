@@ -1,0 +1,141 @@
+{
+  "scenario_id": "topic_fork_008",
+  "family": "topic_fork",
+  "label": "FORK",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm building a REST API for a payments product and trying to nail down the core endpoint structure. We need to handle payment initiation, status polling, and refunds at minimum.",
+      "assistant_message": "For a payments API those three capabilities map cleanly to three resource types: POST /v1/payments to initiate, GET /v1/payments/{payment_id} for status polling, and POST /v1/payments/{payment_id}/refunds for refund creation. Using a nested refunds resource keeps the parent payment ID in the URL, which makes audit logging straightforward. I'd recommend returning a 202 Accepted on payment initiation rather than 200, since the actual processing is asynchronous in most payment rails.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "That makes sense. For authentication we're planning to use API keys passed as Bearer tokens in the Authorization header, and we want to scope them so a key can be restricted to read-only or write access. We're also going to issue separate keys for sandbox versus production environments.",
+      "assistant_message": "A clean way to implement that scoping is to embed the permission level and environment directly in the key prefix — for example, keys starting with pk_live_ for production write-access, pk_live_ro_ for production read-only, pk_test_ for sandbox write, and pk_test_ro_ for sandbox read-only. Your middleware can then parse the prefix on every request before hitting the database, failing fast with a 403 if the key's scope doesn't cover the requested operation. Stripe uses exactly this prefix convention, and it also makes it immediately obvious in logs and support tickets which key type was in use.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "I want to dig into the error handling for authentication failures specifically. What HTTP status codes and error body shapes should we use when a key is invalid versus when it's valid but lacks the right scope?",
+      "assistant_message": "The industry-standard split is 401 Unauthorized for an unrecognized or malformed key — meaning authentication itself failed — and 403 Forbidden when the key is valid and recognized but lacks the required scope for that operation. Your error body should be consistent JSON: include a string field called \"error\" with a machine-readable code like \"invalid_api_key\" or \"insufficient_scope\", a human-readable \"message\" field, and a \"request_id\" for traceability. Returning a 403 with code \"insufficient_scope\" also lets client developers distinguish \"I sent the wrong key\" from \"I need to generate a key with write permissions\", which dramatically reduces support tickets.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "Should the 403 response body expose which specific scope was required, or is that a security risk?",
+      "assistant_message": "It's generally safe and actively helpful to expose the required scope in the 403 body, because the attacker already knows what endpoint they're hitting and can infer the scope anyway. A recommended pattern is to include a \"required_scope\" field in the error object — for example, {\"error\": \"insufficient_scope\", \"required_scope\": \"payments:write\", \"message\": \"This key only has payments:read access.\", \"request_id\": \"req_abc123\"}. OAuth 2.0 RFC 6750 section 3.1 actually mandates including the required scope in the WWW-Authenticate header for bearer token errors, so following that precedent keeps you aligned with existing standards. The real security boundary is never leaking which valid key IDs exist, not hiding scope names.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "What should our pagination strategy look like for listing payments? We might have merchants with hundreds of thousands of transactions.",
+      "assistant_message": "Cursor-based pagination is strongly preferred over offset pagination at that scale because offset queries require the database to count and skip rows, which degrades to full-table scans on large datasets. You'd add a cursor query parameter — typically an opaque base64-encoded string encoding the last seen payment_id and created_at timestamp — and return a next_cursor field in the response envelope alongside the data array. A page size of 100 records is a common default with a maximum cap of 500, and you should enforce that cap server-side rather than trusting the client's limit parameter.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "How should we handle the case where a client sends a request with a pk_test_ key to a production endpoint, or vice versa? That seems like a common mistake.",
+      "assistant_message": "That environment mismatch should return a 403 with a distinct error code, specifically something like \"environment_mismatch\", separate from the general \"insufficient_scope\" code so clients can handle it programmatically. The message should be explicit: \"This key is a sandbox key (pk_test_) and cannot be used against the live API at api.payments.example.com; use api.sandbox.payments.example.com instead.\" Hosting sandbox and production on distinct base URLs — rather than a path prefix — is the safest approach because it makes it structurally impossible for a single HTTP client base URL misconfiguration to accidentally hit the wrong environment. Logging these mismatches server-side is also valuable since a spike in environment_mismatch errors often signals a misconfigured deployment.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "What about rate limiting? We need to protect the API from abuse without throttling legitimate high-volume merchants.",
+      "assistant_message": "A tiered rate limiting model works well here: apply a default limit of 1,000 requests per minute per API key at the platform level, but allow merchants to be promoted to a higher tier — say 10,000 requests per minute — through an account-level configuration flag. Return a 429 Too Many Requests response when the limit is exceeded, and always include the Retry-After header set to the number of seconds until the window resets so clients can back off intelligently. You should also return X-RateLimit-Limit, X-RateLimit-Remaining, and X-RateLimit-Reset headers on every response so well-behaved clients can self-throttle before hitting the hard limit.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "For the refund endpoint specifically, should we make it idempotent? A merchant might retry a refund request if they don't get a response.",
+      "assistant_message": "Yes, the refund endpoint must be idempotent, and the standard mechanism is an Idempotency-Key header that the client generates — typically a UUID v4 — and includes with the request. Your server stores a hash of the idempotency key alongside the resulting response for at least 24 hours, and any duplicate request with the same key within that window returns the cached response with a 200 rather than creating a second refund. If a second request arrives with the same idempotency key but a different request body, you should return a 422 Unprocessable Entity with an error code of \"idempotency_key_reuse\" to signal the conflict. This is the same pattern Stripe documents in their API reference under \"Idempotent Requests\".",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "If a merchant's frontend accidentally hardcodes their production write key and fires it at the sandbox base URL, what HTTP status and error body should they get back, and how does the key prefix tell the server what's wrong?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t6"
+  ],
+  "distractor_turn_ids": [
+    "t5",
+    "t7",
+    "t8"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer identifies that the key prefix pk_live_ (or pk_live_ro_) signals a production key, which allows the sandbox server to detect the environment mismatch by parsing the prefix.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states the response should be HTTP 403 (not 401 or any other status code) for this environment mismatch scenario.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer includes the error code \"environment_mismatch\" as the machine-readable code in the error body.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not mention rate limiting details such as the 1,000 requests per minute default limit or the 429 status code, which come from the distractor turns and are irrelevant to this authentication/environment scenario.",
+      "required": true
+    }
+  ],
+  "notes": "The key facts the query needs live in t2 (the pk_live_/pk_test_ prefix convention that lets the server identify the environment from the key itself), t3 (401 vs 403 distinction), t4 (error body shape with machine-readable codes), and t6 (the environment_mismatch error code and the distinct base URL strategy). Turns t5, t7, and t8 are the traps: they cover pagination, rate limiting, and idempotency — all plausible payments API topics but entirely irrelevant to the authentication/environment-mismatch question.\n\nReference answer: Because the key starts with pk_live_, the sandbox server can parse that prefix immediately and recognize it as a production-environment key being used against the wrong base URL. The server should return a 403 Forbidden with an error body containing the code \"environment_mismatch\" — distinct from \"insufficient_scope\" — along with a message like \"This key is a sandbox key and cannot be used against the live API\" (or the inverse, directing the client to the correct sandbox URL). The 403 is appropriate rather than 401 because the key itself is valid and recognized; the problem is an environmental policy violation, not an authentication failure.",
+  "evidence_note": null,
+  "premise": "designing a REST API for a payments product"
+}

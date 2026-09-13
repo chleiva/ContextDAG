@@ -1,0 +1,115 @@
+{
+  "scenario_id": "resume_006",
+  "family": "resume",
+  "label": "RESUME",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm starting a 16-week marathon training plan and I want to build my long runs properly. What's the standard rule for how much to increase weekly mileage?",
+      "assistant_message": "The widely accepted guideline is the 10% rule: you should increase your total weekly mileage by no more than 10% from one week to the next. So if you're running 20 miles this week, you'd cap next week at 22 miles. This limit applies to your long run distance as well, not just total volume. Most coaches trace this rule back to its popularization by Hal Higdon and Runner's World in the early 1990s, though it has been part of running lore even longer.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "That makes sense. I'm currently running about 15 miles per week. What should my long run be as a fraction of that weekly total?",
+      "assistant_message": "A standard recommendation is that your long run should account for no more than 30% of your total weekly mileage, though some plans allow up to 35% for lower-mileage runners. At 15 miles per week, that puts your long run at roughly 4.5 to 5.25 miles right now. As your base grows over the 16 weeks, the long run typically peaks at 20 miles — the classic marathon long-run cap used by plans like Hal Higdon's Novice 1 — about two to three weeks before race day.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "Got it. And when in the plan should I schedule a cutback week to let my body recover?",
+      "assistant_message": "Most 16-week plans build for three weeks and then drop mileage by roughly 20–25% on the fourth week — that's called a cutback or recovery week. So your pattern would look like: build, build, build, cut, then start the next build cycle. The final taper typically begins at week 13 of a 16-week plan, reducing mileage significantly over weeks 13, 14, and 15 before the race on week 16. Hal Higdon's Novice 1 plan explicitly uses this every-fourth-week cutback structure.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "What should I be eating the morning of a long run? I've been skipping breakfast and feeling awful by mile 8.",
+      "assistant_message": "Eating 1.5 to 2 hours before a long run is generally recommended so your body has time to digest without feeling heavy. A good pre-run meal is moderate in carbohydrates and low in fat and fiber — something like a banana with peanut butter on white toast, or oatmeal with a little honey. Aim for roughly 200–300 calories for runs under 2 hours. Skipping food entirely before runs longer than 90 minutes is a common reason runners hit the wall early, since glycogen stores are already partially depleted after an overnight fast.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "What about fueling during the run itself? Should I be taking gels?",
+      "assistant_message": "For runs lasting longer than 75–90 minutes, taking on carbohydrates mid-run is strongly recommended to prevent glycogen depletion. Energy gels are a popular option — most contain 20–25 grams of carbohydrates per packet, and the standard advice is to take one every 45 minutes after the first 45 minutes of running. Brands like GU Energy and Maurten are common choices; Maurten gels are notable for using a hydrogel technology that some runners find easier on the stomach. Always practice with gels on training runs rather than debuting them on race day.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "Does the type of water bottle or hydration vest I carry matter for a 20-mile training run?",
+      "assistant_message": "For a 20-mile training run, most runners find a hydration vest more practical than a handheld bottle because it distributes weight across your shoulders and can carry 1.5 to 2 liters of fluid plus pockets for gels and a phone. Popular options include the Salomon Active Skin 8, which holds 1.5 liters and weighs about 200 grams empty, and the Nathan VaporAiress 2, designed specifically for women. If you prefer handhelds, an 18-ounce soft flask like the Ultimate Direction FK is manageable, but you'd likely need to plan your route around water fountains. Fit matters most — try a vest on before buying, as a bouncing vest causes chafing over 20 miles.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "So if I'm at 15 miles per week right now and following the 10% rule, roughly what week of the plan would I realistically hit that 20-mile long run peak?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3"
+  ],
+  "distractor_turn_ids": [
+    "t4",
+    "t5",
+    "t6"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer uses the 10% weekly mileage increase rule (established in t1) to project growth from the current 15 miles per week.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer identifies week 12 or 13 (consistent with the taper starting at week 13 of a 16-week plan, established in t3) as the approximate point when the 20-mile long run is reached.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer acknowledges cutback weeks (every 4th week reducing mileage ~20–25%, established in t3) as a factor that slows the progression timeline.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not import information about hydration vests, gel brands, or pre-run meal calorie counts from the B-branch turns (t4–t6).",
+      "required": true
+    }
+  ],
+  "notes": "t1, t2, and t3 hold all the facts the query needs (10% rule, current 15 mpw baseline, 20-mile long-run peak, every-4th-week cutback, taper at week 13). Turns t4–t6 cover pre-run nutrition and gear — plausible marathon topics but completely irrelevant to the mileage-progression calculation the query asks about, making them effective distractors.\n\nReference answer: Starting at 15 miles per week and applying the 10% rule, your weekly mileage grows to roughly 20 miles total around week 10 or 11 of the plan — but your long run is capped at about 30% of weekly volume, so it lags behind that. With every-fourth-week cutback weeks slowing the climb, your long run would realistically peak at 20 miles around week 12, which aligns with the taper starting at week 13 in a standard 16-week plan. That gives you a two-to-three week taper before race day on week 16, exactly as Hal Higdon's Novice 1 structure prescribes.",
+  "evidence_note": null,
+  "premise": "training for a first marathon in 16 weeks"
+}

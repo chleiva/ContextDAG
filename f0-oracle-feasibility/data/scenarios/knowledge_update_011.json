@@ -1,0 +1,110 @@
+{
+  "scenario_id": "knowledge_update_011",
+  "family": "knowledge_update",
+  "label": "UPDATE",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm training for my first marathon in 16 weeks and my long run this weekend is scheduled for 14 miles. Can you help me figure out my target pace for that run?",
+      "assistant_message": "Absolutely! For a long training run, you generally want to run at a conversational, easy pace — typically 60 to 90 seconds per mile slower than your goal marathon pace. If you let me know your target marathon finish time, I can give you a more precise long-run pace range to aim for on that 14-mile effort.",
+      "gold_parents": [],
+      "stale": true,
+      "superseded_by": "t6"
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "My goal marathon time is 4 hours 30 minutes. So what pace per mile should I be running for the 14-mile long run?",
+      "assistant_message": "A 4:30 marathon works out to roughly a 10:18 per mile race pace. For your 14-mile long run, you'd want to stay in the range of 11:18 to 11:48 per mile — that's 60 to 90 seconds slower than race pace. Running in that zone keeps the effort aerobic and promotes endurance adaptation without digging too deep into your recovery reserves.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "What should I be eating the night before a long run like that?",
+      "assistant_message": "The classic pre-long-run dinner is a carbohydrate-focused meal that's easy to digest — something like pasta, rice, or a baked potato with a modest portion of lean protein. You want to avoid high-fiber vegetables, heavy sauces, or anything unfamiliar that might cause GI distress the next morning. Aim to eat about 2 to 3 hours before you go to sleep so digestion isn't competing with your rest.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "What about hydration the day before — how much water should I be drinking?",
+      "assistant_message": "A solid guideline is to target about half an ounce to one ounce of water per pound of body weight on the day before a long run. For a 160-pound runner, that's roughly 80 to 160 ounces, or 10 to 20 cups throughout the day. A practical check is to make sure your urine is pale yellow — not clear and not dark — by the evening before your run.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "Should I take any electrolytes during the 14-mile run itself?",
+      "assistant_message": "Yes, for anything over 60 to 75 minutes you'll want to replace sodium and other electrolytes lost through sweat, not just water. A common approach is to take an electrolyte product — a gel with sodium, a sports drink, or salt tabs — roughly every 45 to 60 minutes once you're past the one-hour mark. Look for products that deliver at least 200 to 300 mg of sodium per serving to meaningfully offset sweat losses on a run that length.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "Actually, I need to correct myself — my goal marathon time is 4 hours 00 minutes, not 4:30. I misread my training plan earlier.",
+      "assistant_message": "No problem, that's an important correction! A 4:00 marathon translates to a race pace of approximately 9:09 per mile, which is noticeably faster than the 10:18 we were working with before. All the long-run pace guidance should now be based on that 9:09 figure rather than the earlier number.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "So what's the correct long-run pace range I should be targeting for the 14-mile run?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t6"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4",
+    "t5"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer bases the long-run pace on a goal marathon time of 4:00 (race pace ~9:09 per mile), as corrected in t6.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer gives a long-run pace range that is 60 to 90 seconds per mile slower than 9:09/mile, i.e., approximately 10:09 to 10:39 per mile.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not use the stale goal time of 4:30 or the corresponding race pace of 10:18 per mile as the basis for the long-run pace calculation.",
+      "required": true
+    }
+  ],
+  "notes": "t1 and t2 establish the stale VALUE_1 (4:30 goal / 10:18 race pace); t6 corrects it to VALUE_2 (4:00 goal / 9:09 race pace). t3, t4, and t5 are the distractor branch covering nutrition and hydration, which are irrelevant to the pace query. A model that fails to update from t6 and uses the 10:18 pace from t2 will produce a wrong answer (11:18–11:48 range).\n\nReference answer: With a corrected goal time of 4:00 for the marathon, your race pace is approximately 9:09 per mile. For your 14-mile long run, you should target a pace of roughly 10:09 to 10:39 per mile — that is, 60 to 90 seconds slower than your race pace. Staying in that range keeps the run aerobic and supports endurance development without excessive fatigue.",
+  "evidence_note": null,
+  "premise": "training for a first marathon in 16 weeks"
+}

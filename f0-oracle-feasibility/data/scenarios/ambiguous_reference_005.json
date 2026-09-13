@@ -1,0 +1,125 @@
+{
+  "scenario_id": "ambiguous_reference_005",
+  "family": "ambiguous_reference",
+  "label": "AMBIGUOUS",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I've been looking at telescope pier suppliers for my backyard observatory build. I found a company called SkyAnchor Fabrications out of Tucson — they make a model called the PA-7 steel pier that's 48 inches tall and rated for mounts up to 75 lbs. Have you heard of them?",
+      "assistant_message": "SkyAnchor Fabrications is a well-regarded small manufacturer in the amateur astronomy community, particularly known for their machined steel piers. The PA-7 is their mid-range model — 48 inches of usable height, 3/8-inch wall thickness on the main tube, and that 75 lb load rating makes it compatible with most mid-size equatorial mounts like the iOptron CEM70 or Sky-Watcher EQ6-R.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Do they have a long lead time? I'm hoping to pour the foundation in early April.",
+      "assistant_message": "According to SkyAnchor Fabrications' current ordering page, the PA-7 has a stated lead time of 14 weeks from order confirmation. That means if you want the pier in hand for an early April foundation pour, you would need to place your order no later than the first week of January. They do offer an expedited option that cuts lead time to 6 weeks for an additional $185 fee.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "I also looked at a pier from a guy named Marcus Delray who runs a one-man shop called IronSky Custom Piers in Bozeman, Montana. He builds a 42-inch model called the Meridian-3 out of Schedule 40 DOM tubing.",
+      "assistant_message": "Marcus Delray's IronSky Custom Piers has a strong reputation in the amateur community for hand-finished welds and custom anodizing options. The Meridian-3 at 42 inches is a bit shorter than some competitors, but the Schedule 40 DOM tubing gives it excellent rigidity — it's a popular choice for people running heavier refractors where vibration damping matters more than raw load capacity.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "What's the load rating on the Meridian-3?",
+      "assistant_message": "Marcus rates the Meridian-3 at 60 lbs for the mount head, which is a bit conservative compared to some similarly sized piers. He publishes a safety factor of 3:1 in his spec sheet, meaning the structure itself is engineered to handle up to 180 lbs before any deformation, but the 60 lb figure is what he warranties for tracking accuracy under normal use.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "I need to figure out roofing for the observatory too. I'm thinking a roll-off roof design using corrugated polycarbonate panels. Is 8mm twin-wall the right thickness?",
+      "assistant_message": "8mm twin-wall polycarbonate is a solid choice for a roll-off observatory roof — it balances light weight with enough structural rigidity to resist moderate snow loads, typically rated around 15 lbs per square foot depending on the brand. For a backyard observatory you'll want to make sure the panels are UV-coated on both sides, since single-sided UV protection will degrade the inner surface over time from reflected heat.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What kind of track system works best for rolling the roof off? I'm looking at either aluminum extrusion rails or steel angle iron.",
+      "assistant_message": "Steel angle iron is the more common choice for permanent observatories because it resists the lateral flex that aluminum extrusion can develop over time under repeated thermal cycling. A standard setup uses 2-inch by 2-inch by 1/4-inch steel angle iron with V-groove wheels, which gives you smooth rolling and self-centering behavior without needing a complex alignment jig every season.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "Does Marcus Delray do any customization on the Meridian-3's height?",
+      "assistant_message": "Yes, Marcus offers custom height cuts on the Meridian-3 in 2-inch increments, ranging from 36 inches up to 54 inches, all at the same base price of $620. Beyond 54 inches he charges a $40 per-inch upcharge and requires a thicker wall tube for structural reasons. He also offers a laser-cut top plate option with custom bolt circle patterns for an additional $95, which is handy if you're using a non-standard mount.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "If I want to meet that early April foundation date, what's the absolute latest I can place the order with them?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t7"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer resolves 'them' to SkyAnchor Fabrications (ENTITY_1), not IronSky Custom Piers / Marcus Delray (ENTITY_2).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states the latest order date is the first week of January, derived from the 14-week standard lead time on the PA-7.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not base the deadline on IronSky Custom Piers or any lead time associated with Marcus Delray or the Meridian-3.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer may optionally mention the 6-week expedited option ($185 fee) as an alternative that relaxes the deadline, which is also specific to SkyAnchor Fabrications.",
+      "required": false
+    }
+  ],
+  "notes": "The critical facts live in t1 and t2 (SkyAnchor Fabrications, PA-7, 14-week lead time, first-week-of-January deadline, 6-week expedited option). The traps are t3, t4, and t7, which describe IronSky Custom Piers / the Meridian-3 — a pier of the same category whose details (60 lb rating, custom heights, $620 price) are entirely irrelevant to the deadline question but whose pronoun 'them' could plausibly be misread as referring to Marcus Delray's shop.\n\nReference answer: The 'them' in your question refers to SkyAnchor Fabrications, and their PA-7 has a standard lead time of 14 weeks from order confirmation. To have the pier ready for an early April foundation pour, you would need to place your order no later than the first week of January. If that window has already passed, SkyAnchor does offer an expedited 6-week turnaround for an extra $185, which would push your ordering deadline to around mid-February.",
+  "evidence_note": null,
+  "premise": "a hobbyist building a backyard observatory"
+}

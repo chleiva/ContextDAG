@@ -1,0 +1,331 @@
+{
+  "scenario_id": "constraint_retention_006",
+  "family": "constraint_retention",
+  "label": "CONSTRAINT",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm renovating my 1920s kitchen and I need to set a hard rule for myself: I will not spend more than $8,500 total on this project, no exceptions.",
+      "assistant_message": "Understood — your absolute ceiling for the entire kitchen renovation is $8,500, with no exceptions. I'll keep that hard limit in mind for every recommendation I make throughout our conversation.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Right. I've already signed a contract with a plumber for $1,200 to re-route the sink drain, so that's a committed cost. How should I think about allocating what's left?",
+      "assistant_message": "With $1,200 already committed to plumbing, you have $7,300 remaining within your $8,500 cap. A common rule of thumb for kitchen renovations is to allocate roughly 40% of the remaining budget to cabinets, 20% to appliances, 20% to countertops, and hold the last 20% as a contingency for surprises — in your case that would be about $2,920 for cabinets, $1,460 each for appliances and countertops, and $1,460 in reserve.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "The kitchen has the original 1920s plaster walls. What's the best way to prep them before painting?",
+      "assistant_message": "Original plaster from that era is often a three-coat system — scratch coat, brown coat, and finish coat — and it can be quite brittle by now. Before painting, you should fill any cracks with a setting-type joint compound like Durabond 90, prime with a PVA primer to seal the porous surface, and then apply your topcoat. Skipping the PVA primer on old plaster almost always leads to uneven sheen and poor adhesion.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "The floor is the original fir wood — it's in decent shape but very dull. Can I refinish it myself?",
+      "assistant_message": "Fir is a softwood and scratches more easily than oak, so you need to be cautious with drum sander grit — start no coarser than 60-grit or you risk gouging it. After sanding, a water-based polyurethane like Bona Traffic HD gives good durability and dries faster than oil-based products, letting you recoat in about three hours. Plan for at least three coats to build up enough film thickness on soft fir.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "There's a built-in pantry cabinet that looks original to the house. How do I tell if it's worth keeping versus replacing?",
+      "assistant_message": "Check whether the cabinet is face-frame construction with mortise-and-tenon or hand-cut dovetail joinery, which is a strong indicator of quality period craftsmanship worth preserving. Also look for old-growth fir or chestnut wood, both common in 1920s built-ins, because that tight-grained old-growth lumber is denser and more durable than anything available today. If the carcass is solid and square, stripping and repainting is almost always better value than replacing.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What kind of hardware would be period-appropriate for that pantry cabinet?",
+      "assistant_message": "For a 1920s kitchen, bin pulls and cup pulls in nickel or porcelain are historically accurate — the Craftsman and early Colonial Revival styles that dominated that decade both used those forms. Companies like Rejuvenation and House of Antique Hardware sell reproduction pieces that replicate the exact profiles used between 1910 and 1930. Avoid anything with a brushed stainless or matte black finish, as those aesthetics postdate the era by decades.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "The kitchen only has one window and it faces north, so it's pretty dark. Any lighting ideas that would suit the era?",
+      "assistant_message": "Schoolhouse globe pendants with a white milk-glass shade are strongly associated with 1920s domestic interiors and are still widely reproduced. For task lighting under cabinets, you can run low-profile LED strips behind a wood valance to keep the fixture hidden and maintain the period look. Adding a dimmer compatible with LED loads — look for ones rated for trailing-edge dimming — lets you tune the mood without visible flicker.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "I found some original subway tile behind the range. Can I match it if some pieces are cracked?",
+      "assistant_message": "True 1920s subway tile is typically 3 inches by 6 inches with a slightly irregular, hand-dipped glaze that gives it a soft variation in sheen — modern machine-made tiles are noticeably flatter. Fireclay Tile and Mercury Mosaics both produce handmade subway tiles that replicate that variation well. If only a few tiles are cracked, an architectural salvage yard is your best first stop, since you may find original stock from demolished buildings of the same era.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "What about the ceiling? It has a pressed-tin ceiling that's painted over many times. Is it worth restoring?",
+      "assistant_message": "Pressed-tin ceilings from the 1920s are genuinely valuable period features and are very difficult to replicate convincingly, so restoration is almost always worth the effort. You can strip paint with a citrus-based stripper applied under plastic sheeting, which softens the layers without the harsh fumes of methylene chloride products. Once stripped and primed with an oil-based primer to prevent rust, they take paint beautifully and become a real focal point.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "The existing countertop is white ceramic tile with dark grout — very dated. What were common countertop materials in 1920s kitchens?",
+      "assistant_message": "The most historically common countertop materials in 1920s American kitchens were white or cream ceramic tile, zinc, and — in higher-end homes — Monel metal, which was an early nickel-copper alloy. Butcher block was also used but more often as a secondary work surface near the range. If period accuracy matters, a honed white Carrara marble slab is slightly anachronistic for a modest 1920s kitchen but was used in wealthier homes of that decade.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "I'm thinking about a farmhouse sink. Would that fit the 1920s aesthetic?",
+      "assistant_message": "An apron-front farmhouse sink in fireclay white is actually very period-appropriate — that style was standard in working kitchens from roughly 1900 through the 1940s before the double-bowl stainless undermount took over. Brands like Rohl and Kohler make reproductions in fireclay that closely match the deep, single-basin form of the originals. Make sure your base cabinet can support the weight, as fireclay sinks can exceed 100 pounds.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "Speaking of cabinets, I was thinking about open shelving on one wall. Is that era-appropriate?",
+      "assistant_message": "Open shelving was common in 1920s kitchens, typically as plate rails mounted near the ceiling or as open shelves in a Hoosier-style cabinet arrangement. If you go that route, use thick shelving stock — at least 1-inch nominal lumber, which is actually ¾ inch finished — because thinner shelves look cheap and will sag under the weight of dishware. Painting them in a period color like Benjamin Moore's Dove White or a warm cream keeps the look cohesive.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "What paint colors were typical in 1920s kitchens?",
+      "assistant_message": "Kitchens of the 1920s were heavily influenced by the sanitary movement, so white and pale cream dominated, with accents in soft sage green, pale yellow, or robin's-egg blue appearing by the late 1920s. The Sherwin-Williams Preservation Palette and Farrow & Ball's archive colors both include historically documented shades from that era. A warm white like Sherwin-Williams Antique White SW 6119 or Benjamin Moore White Dove OC-17 reads as period-correct without being stark.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "The kitchen has a radiator along one wall that takes up space. Can I enclose it somehow?",
+      "assistant_message": "Radiator enclosures were extremely common in pre-war homes and you can build a simple cabinet-style cover from MDF or solid wood with a slatted or perforated front panel to allow heat circulation. The key engineering constraint is to leave at least 3 inches of clearance above the radiator and at least 2 inches on each side so convective airflow isn't choked, which can reduce heating efficiency noticeably. Painting the enclosure to match the cabinets makes it look intentional rather than like an afterthought.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "Is there a way to add more storage without doing full custom cabinetry?",
+      "assistant_message": "Semi-custom cabinets from suppliers like CliqStudios or Lily Ann Cabinets can be ordered in standard sizes that work well in pre-war kitchens, which often have non-standard ceiling heights, by stacking a shorter upper box on top of a standard one. A Hoosier-style freestanding cabinet is another excellent period option and can be found at antique markets for a few hundred dollars, adding significant storage without any installation. Pot rails mounted on the wall and magnetic knife strips are small additions that also free up drawer and cabinet space.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "What should I know about the electrical situation in a 1920s kitchen?",
+      "assistant_message": "Homes from the 1920s were commonly wired with knob-and-tube wiring, which uses individual hot and neutral conductors separated by ceramic knobs and tubes — it has no ground wire and can be a fire hazard if it has been modified or buried under insulation. Most jurisdictions require that knob-and-tube circuits serving kitchens be replaced before a permit is issued for a kitchen renovation, because modern appliances draw far more current than the original 15-amp circuits were designed for. Budget for a licensed electrician to at minimum add a 20-amp dedicated circuit for the refrigerator, one for the microwave or range hood, and one for countertop outlets.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "What about lead paint — should I be testing for it before I start stripping anything?",
+      "assistant_message": "Yes, testing is essential before any sanding or stripping in a pre-1978 home, and a 1920s house almost certainly has lead paint somewhere. 3M LeadCheck swabs are an EPA-recognized test method and cost about $10 for a two-pack — a positive result turns red within 30 seconds. If you get a positive, you're legally required in most states to follow EPA RRP (Renovation, Repair and Painting) protocols, which means using plastic sheeting, HEPA vacuums, and in some cases hiring a certified renovator.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "I'm also wondering about the original cast-iron range — it's still there. Is it usable or just decorative?",
+      "assistant_message": "A 1920s cast-iron range can absolutely be restored to functional use if the firebox and grates are intact, but you'd need a certified gas technician or an antique stove restoration specialist to inspect and refit the gas valves, since the original valves and fittings don't meet current safety standards. Companies like Antique Appliances and Good Time Stove in Hatfield, Massachusetts specialize in exactly this kind of restoration. A fully restored antique range can cost $2,000–$4,000, but it's a genuine period showpiece.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "I've been reading about using salvaged materials to save money. Where's the best place to find salvage for a project like this?",
+      "assistant_message": "The best starting points are local architectural salvage dealers — organizations like the Building Material Reuse Association maintain a directory of member dealers across the US and Canada. Habitat for Humanity ReStores are excellent for doors, hardware, and sometimes cabinets at very low prices. For more specialized items like period tile, tin ceiling panels, or vintage fixtures, online markets like Craigslist, Facebook Marketplace, and eBay often have sellers liquidating demolition lots, sometimes at a fraction of retail cost.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "How do I handle the gap between the old cabinets and the ceiling? It's about 14 inches and looks awkward.",
+      "assistant_message": "That soffit gap is very common in pre-war kitchens and you have two main options: build a closed soffit box to fill it flush with the cabinet tops, or add a second stacked cabinet to close most of the gap. A third option that was historically used is to install a plate rail or display shelf across that span, which turns dead space into useful storage and looks intentional. If you go the soffit route, use the space inside to run any new electrical conduit or ductwork you might need.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "What's the best way to deal with an old, inefficient window over the sink — replace it or restore it?",
+      "assistant_message": "Original wood double-hung windows from the 1920s are often made from old-growth fir or pine that is far more rot-resistant than modern lumber, so restoration is frequently the better long-term choice if the sashes aren't rotted through. Weatherstripping with V-strip bronze weatherstripping and glazing with modern putty can bring a single-pane wood window to a surprisingly respectable thermal performance. If replacement is necessary, Marvin and Pella both make wood windows with profiles that replicate the narrow sightlines of original pre-war windows better than most vinyl options.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "I found a crack in the plaster above the window that runs about 18 inches. Is that structural?",
+      "assistant_message": "A horizontal or diagonal crack above a window opening can indicate that the lintel — the structural header spanning the window — is deflecting or that the wood framing has shifted over a century of settlement. The most reliable way to assess it is to open the plaster carefully and visually inspect the lintel; if it's a single piece of dimensional lumber, sagging, or split, it needs sistering or replacement. If the crack is a simple hairline with no step offset and has been stable for years, it's almost certainly a plaster shrinkage crack and can be repaired with setting compound and fiberglass mesh tape.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "I'm considering adding a small kitchen island. What dimensions work well in a narrow pre-war kitchen?",
+      "assistant_message": "In a narrow kitchen, the standard recommendation is to maintain at least 42 inches of clearance on each working side of the island, and 48 inches if two people will cook simultaneously — anything less and the space feels impassable when cabinet doors are open. For a tight footprint, a 24-inch-deep by 36-inch-wide island gives useful counter space without dominating the room. Using an antique worktable or a butcher block topped cart on locking casters keeps the island movable and period-appropriate.",
+      "gold_parents": [
+        "t22"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "What appliance brands make models that look vintage but have modern features?",
+      "assistant_message": "Big Chill and Elmira Stove Works are the two most recognized brands making retro-styled kitchen appliances with modern internals — both offer refrigerators, ranges, and dishwashers in period color palettes including cream, mint green, and robin's egg blue. SMEG is a European brand with a similar retro aesthetic and is widely available in the US, though it skews more toward a 1950s look than 1920s. Prices run higher than standard appliances, typically 20–40% more, so factor that into your appliance allocation.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "I found a contractor who can do the full cabinet installation — materials and labor — for $6,400. Can I say yes?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t7",
+    "t8",
+    "t9",
+    "t10",
+    "t11",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t20",
+    "t21",
+    "t22",
+    "t23",
+    "t24"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer correctly identifies that the $8,500 total project cap is the binding constraint.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer correctly adds the committed plumbing cost of $1,200 to the proposed cabinet cost of $6,400, yielding $7,600, and confirms this is within the $8,500 limit.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer notes that accepting the $6,400 cabinet bid leaves only $900 for all remaining work (appliances, countertops, contingency, etc.), flagging the practical risk even though it technically fits under the cap.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not approve the bid without accounting for the $1,200 already committed to plumbing, as ignoring that cost would incorrectly suggest $2,100 remains rather than $900.",
+      "required": true
+    }
+  ],
+  "notes": "t1 and t2 hold the critical facts: the $8,500 hard cap and the $1,200 committed plumbing cost. The 22 B-branch distractor turns cover plaster, flooring, hardware, lighting, tile, paint, electrical, lead paint, salvage, and appliances — none of which restates the budget rule or the plumbing commitment, creating the retention challenge.\n\nReference answer: The $8,500 hard cap is your binding limit. You've already committed $1,200 to the plumber, and adding the $6,400 cabinet bid brings your total to $7,600 — which technically stays under the $8,500 ceiling. However, that leaves only $900 for appliances, countertops, lighting, and any contingency, which is almost certainly not enough to complete the kitchen. You can say yes to the contractor only if you're confident everything else can be sourced for $900 or less; otherwise you need to negotiate the cabinet price down or reduce scope to protect the remaining budget.",
+  "evidence_note": null,
+  "premise": "renovating a 1920s kitchen on a fixed budget"
+}

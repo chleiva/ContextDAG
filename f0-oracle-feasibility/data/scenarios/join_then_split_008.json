@@ -1,0 +1,116 @@
+{
+  "scenario_id": "join_then_split_008",
+  "family": "join_then_split",
+  "label": "SPLIT",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm building a semester-long ecology project for my 10th-grade class and I want to focus on local bird population monitoring. I'm thinking students will use point-count surveys—standing at a fixed spot for exactly 5 minutes and recording every bird seen or heard within a 25-meter radius.",
+      "assistant_message": "Point-count surveys are a well-validated method for this age group and fit nicely into a semester timeline. The 5-minute duration and 25-meter fixed-radius you described align with the standard protocol used by the North American Breeding Bird Survey, which has employed those parameters since its 1966 launch. Students can run repeated counts at the same stations to build a longitudinal dataset across the semester.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Great. I want each student to visit their assigned station at least 8 times over the 16-week semester, always within the first 4 hours after local sunrise to control for bird activity patterns.",
+      "assistant_message": "That schedule—8 visits per station over 16 weeks—gives students a visit every two weeks on average, which is enough to detect seasonal shifts in species composition. Restricting surveys to the first 4 hours after local sunrise is the correct window; research published in the Journal of Field Ornithology (2003, vol. 64) confirms that detection rates drop significantly outside that window due to reduced song activity. Pairing that constraint with a consistent 5-minute count duration will make the students' datasets genuinely comparable across stations.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "I also need to set up a grading rubric for the field journal students will keep. I'm thinking of using a 100-point total, broken into data accuracy (40 points), written reflection (35 points), and sketch quality (25 points).",
+      "assistant_message": "That breakdown is reasonable and covers both quantitative and qualitative dimensions of fieldwork. Weighting data accuracy at 40 points sends a clear message that scientific rigor is the priority, while the 35-point reflection component encourages metacognitive thinking about what students observe. The 25-point sketch allocation is generous enough to reward careful illustration without overshadowing the empirical record.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "I've decided that for the written reflection section, a score of 28 out of 35 or above will count as 'proficient' for the school's portfolio assessment requirement.",
+      "assistant_message": "Setting 28 out of 35 as the proficiency threshold works out to exactly 80%, which is a common benchmark for portfolio standards and should satisfy most district review committees. Students who score between 28 and 35 will have a reflection entry suitable for inclusion in their academic portfolio, giving the ecology project a cross-disciplinary documentation function. You may want to share that specific cutoff in the rubric handout so students know the target from day one.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "I want to tie the field journal rubric directly to the point-count data collection so students are graded as one integrated assignment rather than two separate ones. If a student's data accuracy score is below 30 out of 40, their reflection score gets capped at 20 out of 35 regardless of writing quality.",
+      "assistant_message": "That interdependency creates a strong incentive for rigorous data collection before students even sit down to write. The cap mechanic—reflection capped at 20 out of 35 when data accuracy falls below 30 out of 40—means a student cannot coast on eloquent writing while producing sloppy field records. You'll want to document this rule explicitly in the rubric so it survives any grade appeals, and it may be worth flagging it to parents at the semester kickoff night.",
+      "gold_parents": [
+        "t2",
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "Right, and I'm thinking that a student who hits the data accuracy cap situation but still turns in all 8 required visits will get a 'completion credit' worth 5 bonus points added to their total journal score. Does that seem fair?",
+      "assistant_message": "A 5-point completion credit for fulfilling all 8 visits even under the cap is a reasonable way to reward persistence and attendance without undermining the accuracy incentive. It means a capped student's maximum journal total would be 20 (capped reflection) + 40 (full data accuracy, hypothetically) + 25 (sketch) + 5 (bonus) = 90, which still distinguishes them from a fully proficient student. Just make sure the bonus is framed as an attendance-and-effort recognition rather than a content grade, to keep your grading defensible.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "What are the key survey parameters students need to follow each time they go out to their station?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4",
+    "t5",
+    "t6"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states the count duration is exactly 5 minutes per station visit.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states the fixed radius is 25 meters.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer states surveys must be conducted within the first 4 hours after local sunrise.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not mention the 28-out-of-35 proficiency threshold, the reflection cap rule, or the 5-point completion bonus, as those are journal-grading details irrelevant to field survey parameters.",
+      "required": true
+    }
+  ],
+  "notes": "Turns t1 and t2 hold all the facts the query needs (5-minute duration, 25-meter radius, 4-hour post-sunrise window, 8 visits). Turns t3–t6 introduce the journal rubric scoring details (40/35/25 split, 28/35 proficiency cutoff, the data-accuracy cap, and the 5-point bonus) that are plausible distractors but must not appear in the answer.\n\nReference answer: Each time students visit their assigned station, they should stand at the fixed point and record every bird seen or heard within a 25-meter radius for exactly 5 minutes. Surveys must take place within the first 4 hours after local sunrise, since detection rates drop significantly outside that window due to reduced bird song activity. Over the 16-week semester, each student completes this protocol at their station a minimum of 8 times, roughly once every two weeks.",
+  "evidence_note": null,
+  "premise": "a teacher designing a semester-long ecology project"
+}

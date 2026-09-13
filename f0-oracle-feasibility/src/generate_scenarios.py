@@ -301,7 +301,7 @@ def build_knowledge_update(rng: random.Random) -> ScenarioPlan:
 
 def build_ambiguous_reference(rng: random.Random) -> ScenarioPlan:
     a_n, b_n = 2, rng.randint(2, 3)
-    c_n = rng.randint(0, 2)
+    c_n = rng.randint(1, 2)   # >=1 so the scenario always has >= 6 turns
     dA = ["Branch A turn 1: introduce ENTITY_1 (a specific person, team, vendor, venue or object) with a distinctive name and specifics.",
           "Branch A turn 2: continue about ENTITY_1; settle a specific detail (a constraint, availability, requirement)."]
     dB = [f"Branch B turn {i + 1}: {'introduce a DIFFERENT entity ENTITY_2 of the same kind (so a pronoun could refer to either)' if i == 0 else 'continue about ENTITY_2'} with its own distinct specifics." for i in range(b_n)]

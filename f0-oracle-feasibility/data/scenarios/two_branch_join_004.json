@@ -1,0 +1,126 @@
+{
+  "scenario_id": "two_branch_join_004",
+  "family": "two_branch_join",
+  "label": "JOIN",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're finalizing the structure for our summer live-ops event called Solar Surge. It runs from July 14 to August 11, which is exactly four weeks. How should we think about pacing the reward tiers?",
+      "assistant_message": "For a four-week event like Solar Surge, a common approach is to divide rewards into weekly milestone tiers so players feel consistent progress rather than a single end-gate grind. You could set four distinct tiers that unlock at the end of each seven-day period, with the final tier—the prestige reward—only accessible to players who hit all four weekly gates. This keeps engagement high across the full July 14 to August 11 window rather than spiking at launch and collapsing in week three.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "That makes sense. What point threshold should we use for each weekly tier if the maximum earnable points per day is 500?",
+      "assistant_message": "With a 500-point daily cap, players can earn at most 3,500 points in a seven-day week. A reasonable tier structure would set the weekly gates at 1,500 points for Tier 1, 2,500 for Tier 2, 3,000 for Tier 3, and 3,400 for Tier 4, making the top tier challenging but achievable for dedicated players. This ensures roughly 69% of the weekly cap is needed for the hardest gate, rewarding consistent play without requiring perfection every single day.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "We also need to nail down the premium currency conversion rate for Solar Surge. Players will be able to spend Solaris Coins to buy event boosters. What's a fair conversion rate?",
+      "assistant_message": "For live-ops events with a dedicated premium currency like Solaris Coins, a widely used benchmark is to price boosters so that a single booster costs 200 Solaris Coins and grants a flat bonus of 150 points on top of whatever the player earns in that session. This keeps the booster meaningful without making free-to-play progression feel hopeless. You should also consider capping booster purchases at five per week per account to prevent heavy spenders from trivializing the tier gates entirely.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "Five per week sounds reasonable. What's the maximum point bonus a player could gain from boosters in a single week under that cap?",
+      "assistant_message": "If each booster grants 150 bonus points and a player is capped at five booster purchases per week, the maximum booster-derived bonus in any single week is 750 points. That means a fully boosted player could theoretically earn up to 4,250 points in a week—3,500 from normal play plus 750 from boosters. This is an important number to keep in mind when setting tier thresholds, since it defines the real ceiling for premium players.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "We want to add a bonus challenge on the final day of the event. Should that day's point cap still be 500, or should we raise it?",
+      "assistant_message": "Raising the final-day cap is a great way to create a memorable climax for Solar Surge. A common design choice is to double the daily cap for the last day only, setting it at 1,000 points on August 11 instead of the standard 500. This gives players who are just short of Tier 4's 3,400-point gate a real shot at finishing strong, and it generates a natural social moment as the community rallies for the finale.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "Our localization team asked whether the in-game event banners need to be translated into Thai for the Southeast Asia server launch. What's the typical turnaround for banner localization?",
+      "assistant_message": "For a live-ops event banner—typically a handful of short strings plus a key visual tagline—professional game localization studios generally quote a two-to-three business day turnaround for a single language like Thai, assuming the source copy is locked. If your Southeast Asia launch is on a tight schedule, submitting final copy at least five business days before the banner goes live gives you a comfortable buffer for revision rounds. Make sure your localization kit includes font licensing for Thai script, since many default game UI fonts don't cover the full Thai Unicode block.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "If a player uses the maximum boosters every week for all four weeks of Solar Surge, what's the total booster bonus they accumulate over the whole event?",
+      "assistant_message": "With a maximum of 750 booster-bonus points per week and the event running for exactly four weeks, a player who maxes out booster purchases every week accumulates a total booster bonus of 3,000 points over the full Solar Surge event. Combined with the standard four-week point ceiling of 14,000 points from normal play, a fully boosted player could reach a grand total of 17,000 points across the event. That's the absolute ceiling you should use when stress-testing whether your tier gates are properly balanced against premium spending.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "Given the final-day cap change and the total booster bonus ceiling, what is the absolute maximum number of points a single player can earn across the entire Solar Surge event?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t5",
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5",
+    "t7"
+  ],
+  "distractor_turn_ids": [
+    "t6"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer correctly incorporates the final-day cap of 1,000 points on August 11 (instead of the standard 500), adding an extra 500 points to the normal-play total (from t5).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer correctly uses the total booster bonus of 3,000 points over four weeks (5 boosters × 150 points × 4 weeks) as established in t7.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer arrives at a grand total of 17,500 points: 14,500 from normal play (13 days × 500 + 1 day × 1,000) plus 3,000 from boosters.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not use 17,000 points as the final total, which is the figure from t7 that does not yet account for the final-day cap increase introduced in t5.",
+      "required": true
+    }
+  ],
+  "notes": "t5 holds the final-day cap increase to 1,000 points (branch A), and t7 holds the four-week total booster bonus of 3,000 points (branch B); together they are required for the correct answer of 17,500. t6 (banner localization turnaround) is the distractor and contributes nothing to the calculation. A reader with only branch B would use 17,000 points and miss the extra 500 from the final-day change.\n\nReference answer: The absolute maximum requires combining two separate decisions. For normal play, the event runs 28 days but the final day (August 11) has a raised cap of 1,000 points instead of 500, so normal-play earnings total 27 × 500 + 1 × 1,000 = 14,500 points. Adding the maximum booster bonus of 3,000 points (five boosters per week at 150 points each, across four weeks) brings the grand ceiling to 17,500 points for a single player over the full Solar Surge event.",
+  "evidence_note": null,
+  "premise": "a game studio planning a live-ops event calendar"
+}

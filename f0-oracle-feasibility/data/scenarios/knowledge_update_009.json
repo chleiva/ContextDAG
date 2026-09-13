@@ -1,0 +1,103 @@
+{
+  "scenario_id": "knowledge_update_009",
+  "family": "knowledge_update",
+  "label": "UPDATE",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm building the magic system for my fantasy novel. I've decided that casting any spell costs the mage exactly 12 vitality points, regardless of the spell's power level.",
+      "assistant_message": "That's a clean, flat-cost model — it makes bookkeeping simple and puts the drama on resource management rather than spell selection. With every spell costing exactly 12 vitality points, a mage's total vitality pool becomes the central strategic constraint, and readers can easily track how many more casts a character has left before they're depleted.",
+      "gold_parents": [],
+      "stale": true,
+      "superseded_by": "t5"
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Right, and I'm thinking the average mage starts with a pool of 120 vitality points, so they can cast exactly 10 spells before they're exhausted.",
+      "assistant_message": "Ten casts per mage is a tight, meaningful budget — it forces your characters to make real tactical decisions rather than spamming magic carelessly. At 12 points per spell and a 120-point pool, you also get a satisfying round number that readers can track intuitively. You could even use that limit as a plot device, counting down the casts during a climactic battle to build tension.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "I also need to figure out the naming conventions for the three main factions in the novel. I'm thinking the northern faction should be called the Ashen Covenant.",
+      "assistant_message": "The Ashen Covenant is a strong name — it carries connotations of burned-out loyalty and ancient oaths, which could hint at a dark or tragic history for that group. The word 'Ashen' in particular evokes both destruction and something cold and enduring, which might suit a northern, possibly harsh-climate faction very well.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "For the southern faction I'm leaning toward the Gilded Meridian, since they control the trade routes and are more merchant-focused.",
+      "assistant_message": "The Gilded Meridian works beautifully for a mercantile southern power — 'Gilded' signals wealth and perhaps a veneer of respectability over something more ruthless, while 'Meridian' evokes the sun at its peak and the idea of being at the center of all things. The contrast with the Ashen Covenant is sharp and memorable, which will help readers keep the two factions distinct from the first time they're introduced.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "Actually, I need to correct myself on the vitality cost — it's 8 points per spell, not 12. I had written down the wrong number from my notes.",
+      "assistant_message": "Got it, the correction is noted — each spell costs 8 vitality points, not 12. That changes the math across the whole system, so I'll work from 8 going forward.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "So with the standard 120-point pool, how many spells can an average mage cast before exhaustion, and how does that affect the tension in a combat scene?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t5"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that an average mage can cast exactly 15 spells (120 divided by 8) before exhaustion.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer uses the corrected vitality cost of 8 points per spell in its calculation.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not state that a mage can cast 10 spells (the figure derived from the stale VALUE_1 of 12 points per spell).",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer addresses how the 15-spell limit creates or shapes tension in a combat scene.",
+      "required": false
+    }
+  ],
+  "notes": "t5 holds the corrected VALUE_2 (8 points per spell) that supersedes t1's VALUE_1 (12 points per spell); t2 establishes the 120-point pool used in the query. The trap is using VALUE_1 (12 pts) to get 10 spells instead of the correct 15 spells from VALUE_2 (8 pts). t3 and t4 are faction-naming distractors irrelevant to the vitality calculation.\n\nReference answer: With each spell costing 8 vitality points and a standard pool of 120 points, an average mage can cast exactly 15 spells before reaching exhaustion. That's a notably more generous budget than 10, which shifts the tension in combat: rather than running dry after a handful of exchanges, a mage can sustain a prolonged fight, but the reader still knows the ceiling is fixed. The drama comes from watching the count approach 15, especially if the character is forced to burn multiple spells in quick succession to survive, spending in minutes what was meant to last a whole encounter.",
+  "evidence_note": null,
+  "premise": "writing a fantasy novel and planning its magic system"
+}

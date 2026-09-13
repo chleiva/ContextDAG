@@ -1,0 +1,101 @@
+{
+  "scenario_id": "ambiguous_reference_001",
+  "family": "ambiguous_reference",
+  "label": "AMBIGUOUS",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm designing a semester-long ecology project and I want to take my students to Ridgeline Nature Reserve for field sampling. Can you help me think through the logistics?",
+      "assistant_message": "Ridgeline Nature Reserve sounds like a great choice for a field ecology project. To help you plan, it would be useful to know a few things: the reserve's group booking policies, any permit requirements, and whether they have on-site equipment like sampling nets or water quality kits available for educational groups.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "I called them this morning. Ridgeline requires all school groups to submit a formal Educational Use Permit application at least 30 days before the visit, and groups are capped at 24 students maximum per booking.",
+      "assistant_message": "That's really important to note — the 30-day advance permit application deadline means you'll need to plan well ahead of your scheduled field day. The 24-student cap is also a hard constraint; if your class exceeds that number, you'd need to split into two separate booking slots on different dates. Make sure both of those details are on your project timeline from the start.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "I'm also considering Saltmarsh Creek Wetlands as an alternative site. Do you know much about wetland sampling for high schoolers?",
+      "assistant_message": "Saltmarsh Creek Wetlands would offer a really different ecological context — estuarine and brackish-water species versus the upland or freshwater communities you'd find at a reserve like Ridgeline. For high schoolers, wetland macroinvertebrate sampling is a popular and accessible method, often using kick-nets and Surber samplers to assess biodiversity. The site tends to be especially good for projects focusing on nutrient cycling or the effects of tidal fluctuation on species distribution.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "Saltmarsh Creek has a visitor center that rents equipment, right? I think they also do guided educator sessions.",
+      "assistant_message": "Yes, Saltmarsh Creek's visitor center does rent basic field equipment — kick-nets, pH meters, and salinity probes — to school groups for a flat fee of $45 per session. They also offer a two-hour guided educator orientation on the third Saturday of each month, which is designed to help teachers understand the site's ecology before bringing students. Booking for those orientations fills up fast, so early registration is recommended.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "I also need to figure out how to grade the project. I'm thinking of using a rubric with separate scores for field data collection, lab analysis, and the final written report.",
+      "assistant_message": "That three-part rubric structure is well-suited to a project like this because it assesses students at each stage of the scientific process rather than only the final product. You might consider weighting field data collection at around 30%, lab analysis at 30%, and the written report at 40%, though you could adjust based on how much class time each phase occupies. Including a peer-review component for the written report is another option that builds scientific communication skills.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "How far in advance do I need to submit the permit paperwork if I want to take my class there in early April?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4",
+    "t5"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer correctly resolves 'there' to Ridgeline Nature Reserve (not Saltmarsh Creek Wetlands) based on the branch-A conversation thread.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that the permit application must be submitted at least 30 days before the visit.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not refer to Saltmarsh Creek Wetlands' policies or fees (e.g., the $45 equipment rental or monthly educator orientation) as the relevant requirement.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer gives a concrete earliest submission date consistent with a 30-day lead time before early April (i.e., no later than early March, approximately March 1–5).",
+      "required": false
+    }
+  ],
+  "notes": "Turns t1 and t2 (branch A) hold the critical fact: Ridgeline requires a 30-day advance permit. The query's pronoun 'there' depends on branch A context. Turns t3 and t4 (branch B) introduce Saltmarsh Creek Wetlands as a same-category distractor with its own unrelated logistics ($45 rental fee, monthly orientations), tempting a resolver to conflate the two sites.\n\nReference answer: Since you're planning a visit to Ridgeline Nature Reserve, you need to submit the formal Educational Use Permit application at least 30 days before your field day. For an early April visit — say, April 4 — that means your paperwork should be in by approximately March 5 at the latest. It would be wise to aim even earlier to give yourself a buffer in case the reserve requests any revisions to the application.",
+  "evidence_note": null,
+  "premise": "a teacher designing a semester-long ecology project"
+}

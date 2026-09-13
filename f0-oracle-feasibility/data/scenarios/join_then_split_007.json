@@ -1,0 +1,111 @@
+{
+  "scenario_id": "join_then_split_007",
+  "family": "join_then_split",
+  "label": "SPLIT",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm training for my first marathon in 16 weeks and I want to figure out my weekly mileage progression. I'm currently running about 20 miles per week comfortably.",
+      "assistant_message": "A 16-week plan starting at 20 miles per week is a solid foundation for a first marathon. A common and well-supported approach is to follow the 10 percent rule, increasing your weekly mileage by no more than 10 percent each week, with a cutback week every fourth week where you drop volume by about 20 percent to allow recovery. This would take your base from 20 miles up toward a peak of roughly 38–40 miles around week 12 before you begin tapering the final three weeks.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "That sounds manageable. What should my longest long run be during the whole plan?",
+      "assistant_message": "For a first marathon, most coaches and plans — including Hal Higdon's Novice 1, which is one of the most widely used beginner programs — cap the longest long run at 20 miles, completed about three weeks before race day. The reasoning is that 20 miles provides enough stimulus to prepare your body for the distance without the recovery cost of running the full 26.2 in training. You'd typically reach that 20-mile long run in week 13, then taper with long runs of 12 miles and 8 miles in weeks 14 and 15 respectively.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "I also need to pick out running shoes for this training block. I've been told I overpronate — what kind of shoe should I be looking for?",
+      "assistant_message": "For overpronation, you generally want a stability or motion-control shoe rather than a neutral shoe. Stability shoes include features like a medial post — a denser foam wedge on the inner midsole — that resists inward rolling; well-regarded options include the Brooks Adrenaline GTS 23 and the ASICS Gel-Kayano 30. If your overpronation is severe, a motion-control shoe like the New Balance 860v13 offers even firmer support structures, though most moderate overpronators do fine in a standard stability category.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "I think moderate overpronation fits me. Should I go up a half size from my normal shoe size?",
+      "assistant_message": "Yes, going up a half size — or even a full size — is standard advice for running shoes, particularly for marathon training. Your feet swell during long runs, and you want roughly a thumb's width of space between your longest toe and the front of the shoe to prevent black toenails and blisters over high mileage. Most specialty running stores like Fleet Feet do a gait analysis and fit you while you're standing and after a short treadmill run, which is the most reliable way to confirm the right size.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "Now I'm thinking about how to break in the stability shoes during the training plan. How many miles should I put on them before I use them for the 20-mile long run?",
+      "assistant_message": "Most shoe manufacturers and running coaches recommend accumulating at least 30 to 50 miles in a new pair of running shoes before using them for a key workout or long run. For a stability shoe like the Adrenaline GTS 23, the medial post and structured midsole can feel stiff initially, so spreading those break-in miles across three to four weeks of easy runs and shorter mid-week runs is ideal. That means if your 20-mile long run is in week 13, you'd want to start wearing the new shoes no later than week 9 or 10 to be safe.",
+      "gold_parents": [
+        "t2",
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "Good point. Should I rotate two pairs of stability shoes or is one pair enough for the whole 16 weeks?",
+      "assistant_message": "Rotating two pairs is actually beneficial if your budget allows it, because foam midsoles need 24 to 48 hours to fully decompress and rebound after a run. Studies published in the Scandinavian Journal of Medicine and Science in Sports have shown that runners who rotate two or more pairs of shoes have a roughly 39 percent lower injury risk than those who use a single pair. For a 16-week block peaking around 38–40 miles per week, one pair will likely accumulate 300–350 miles by race day, which is near the typical 300–500 mile lifespan of a stability shoe, so a second pair also serves as a natural backup as the first pair wears down.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "How many weeks out from race day should I do that 20-mile long run?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4",
+    "t5",
+    "t6"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that the 20-mile long run should be done 3 weeks before race day (i.e., in week 13 of a 16-week plan).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer references the 20-mile distance as the longest long run cap, consistent with plans like Hal Higdon's Novice 1.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not incorporate shoe break-in mileage figures (30–50 miles) or shoe rotation injury-risk statistics (39 percent) as justification for the timing of the long run.",
+      "required": true
+    }
+  ],
+  "notes": "The facts needed for the query (20-mile peak long run, 3 weeks out, week 13 timing) are established in t2. Turns t3–t6 covering shoe type, sizing, break-in mileage, and rotation are the traps; the shoe break-in timeline in t5 (referencing week 13) is the most dangerous distractor because it mentions the same week number in a completely different context.\n\nReference answer: The 20-mile long run should be completed 3 weeks before race day — in week 13 of a 16-week plan. This is the approach recommended by programs like Hal Higdon's Novice 1, which caps the longest training run at 20 miles to provide sufficient preparation without the excessive recovery demands of running the full marathon distance in training. After that peak long run, the taper proceeds with long runs of 12 miles and 8 miles in weeks 14 and 15 respectively.",
+  "evidence_note": null,
+  "premise": "training for a first marathon in 16 weeks"
+}

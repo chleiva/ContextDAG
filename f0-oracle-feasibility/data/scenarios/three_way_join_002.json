@@ -1,0 +1,149 @@
+{
+  "scenario_id": "three_way_join_002",
+  "family": "three_way_join",
+  "label": "JOIN",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I've been looking at the lease costs for the Maplewood district location. The landlord is asking $4,200 per month for a 900-square-foot space on Elm Street.",
+      "assistant_message": "That's a fairly specific ask for that neighborhood. At $4,200 per month, you'd be looking at $50,400 annually just in base rent before utilities, insurance, or build-out costs, so it's worth benchmarking against your current location's overhead to see how it compares.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Our head baker said she can only supervise one location herself. Hiring a qualified pastry supervisor for a second site would cost around $52,000 per year in salary.",
+      "assistant_message": "That's a significant fixed labor cost to factor in. A pastry supervisor at $52,000 annually means you'd need the second location to generate enough margin above that salary—plus all other costs—before it contributes anything to overall profit.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "I pulled our current financials. The original bakery on Hartwell Avenue nets $118,000 per year after all expenses.",
+      "assistant_message": "That's a solid baseline to work from. A net of $118,000 at your existing location gives you a clear benchmark for what a second site would need to achieve to be worth the added complexity and risk of expansion.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "I've been thinking about updating our logo. The designer we used last time charges $850 for a full brand refresh package.",
+      "assistant_message": "That's a reasonable rate for a full brand refresh from an established designer. It might be worth timing any rebrand with a bigger announcement if you do decide to expand, though the decision can be made independently of your growth plans.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "On top of the supervisor salary, we'd also need a part-time counter staff of about two people at the second location. That comes to roughly $28,000 per year combined.",
+      "assistant_message": "So total staffing costs for the second location would be approximately $80,000 per year when you add the $52,000 supervisor salary to the $28,000 for counter staff. That's a substantial labor line before you even account for rent, ingredients, or equipment.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "The landlord also mentioned the Elm Street lease requires a 3-year minimum commitment with no early exit clause.",
+      "assistant_message": "A 3-year minimum with no exit clause is a meaningful risk factor. Combined with the $4,200 monthly rent, that locks you into at least $151,200 in rent obligations over the lease term regardless of how the second location performs.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "I should mention that figure of $118,000 net is after we already paid ourselves a $45,000 owner's draw this year.",
+      "assistant_message": "That's an important clarification—it means the bakery's true gross profit before owner compensation is $163,000 annually. So the $118,000 net already reflects your personal income from the business, which matters a lot when projecting how a second location would affect your take-home pay.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "The designer said the $850 package includes three logo concepts and two rounds of revisions. Does that sound standard?",
+      "assistant_message": "Yes, three initial concepts plus two revision rounds is fairly typical for a mid-range brand refresh package. Some designers offer fewer concepts at that price point, so it's actually a decent scope of work for $850.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "She also said the turnaround is four weeks from the deposit. Would we need to budget anything extra for file formats or printing templates?",
+      "assistant_message": "Four weeks is a reasonable turnaround for that scope. You may want to ask specifically whether the deliverables include print-ready vector files and social media variants, as those are sometimes charged separately; budgeting an extra $100 to $200 for an expanded file package is common.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "Given everything we've discussed about the second location, would the Elm Street site actually improve our overall financial position, and how long before we'd realistically break even on the expansion?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t6",
+        "t5",
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t5",
+    "t6",
+    "t7"
+  ],
+  "distractor_turn_ids": [
+    "t4",
+    "t8",
+    "t9"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer uses the Elm Street rent of $4,200/month ($50,400/year) and the 3-year minimum lease commitment of $151,200 total rent obligation when assessing the cost or break-even of the second location.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer accounts for total second-location staffing costs of approximately $80,000/year ($52,000 supervisor + $28,000 counter staff).",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer references the original bakery's true gross profit of $163,000/year (the $118,000 net plus the $45,000 owner's draw) as the financial baseline for comparison.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not incorporate the $850 logo/brand refresh cost as a factor in the break-even or financial position analysis.",
+      "required": true
+    }
+  ],
+  "notes": "The three gold evidence facts are: (A) $4,200/month rent with a 3-year no-exit lease from t1/t6; (B) $80,000 total annual staffing cost ($52,000 + $28,000) from t2/t5; (C) $163,000 true gross profit ($118,000 net + $45,000 owner's draw) from t3/t7. The trap is branch D (logo refresh at $850), which is plausible bakery spending but entirely irrelevant to the expansion break-even calculation.\n\nReference answer: The Elm Street location would cost at least $130,400 per year in fixed overhead—$50,400 in rent plus $80,000 in staffing—before ingredients, utilities, or other expenses. Your original bakery generates $163,000 in gross profit (the $118,000 net plus your $45,000 owner's draw), so the second site would need to clear roughly $130,400 in annual costs just to break even, meaning it must produce profit margins comparable to your current location to justify the investment. With the 3-year no-exit lease locking in $151,200 in rent alone, you'd have very limited ability to cut losses if the new site underperforms. Realistically, break-even on the expansion could take two to three years assuming the second location ramps up to match your current store's performance.",
+  "evidence_note": null,
+  "premise": "a small bakery deciding whether to open a second location"
+}

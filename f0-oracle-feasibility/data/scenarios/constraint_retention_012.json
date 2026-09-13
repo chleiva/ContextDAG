@@ -1,0 +1,307 @@
+{
+  "scenario_id": "constraint_retention_012",
+  "family": "constraint_retention",
+  "label": "CONSTRAINT",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "Before we get into the software options, I need you to keep one hard rule in mind for this whole project: we cannot go live with any new appointment system until we have at least 90 days of patient data successfully migrated and verified from our old system, DentalPro 4.2.",
+      "assistant_message": "Understood — I'll keep that constraint front and center throughout our discussion. The rule is: no go-live on any new appointment system until a minimum of 90 days of patient data has been successfully migrated and verified from DentalPro 4.2. I won't recommend any launch timeline or configuration that would violate that requirement.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Right. Our IT consultant estimated the migration and verification process will take about 3 weeks once we start it, so we need to plan the migration start date carefully relative to our target launch.",
+      "assistant_message": "That's an important planning detail. If the migration and verification work takes roughly 3 weeks, you'd need to kick off that process at least 3 weeks before your intended go-live date, but the go-live itself still cannot happen until the full 90 days of data from DentalPro 4.2 has been migrated and confirmed — the 3-week technical window is separate from the 90-day data coverage requirement. So in practice, you'd want to have 90 days' worth of records ready to migrate before you even start the 3-week process.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "What patient-facing features should we prioritize when evaluating the new software vendors?",
+      "assistant_message": "For a dental practice, the most impactful patient-facing features are typically online self-scheduling, automated appointment reminders via SMS and email, and a patient portal where people can fill out intake forms before arriving. Two-way texting for quick confirmations has also become a strong differentiator among newer platforms. I'd recommend making those four capabilities your minimum checklist when reviewing vendor demos.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "How do most of these platforms handle insurance verification? That's a big time sink for our front desk right now.",
+      "assistant_message": "Many modern dental scheduling platforms include real-time eligibility verification that connects directly to insurance clearinghouses like Availity or Change Healthcare, pulling benefit summaries automatically when an appointment is booked or the day before a visit. Some vendors, like Weave and Dentrix Ascend, bundle this into their base subscription, while others charge per-verification fees that can add up quickly for a busy practice. I'd ask each vendor for their per-transaction cost and monthly cap so you can do an apples-to-apples comparison.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "We have three providers — two dentists and one hygienist — and each has a different schedule template. Can most platforms handle that?",
+      "assistant_message": "Yes, virtually all mid-tier and enterprise dental scheduling platforms support per-provider schedule templates with different working hours, appointment types, and block-off times. You'll want to confirm that the system allows asymmetric lunch breaks and can handle the hygienist's recurring recall blocks separately from the dentists' procedure columns. During demos, ask them to show you the template editor with at least three distinct provider configurations live.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "Our office uses a color-coded appointment block system right now — different colors for new patients, recalls, emergencies, and so on. Is that standard in these platforms?",
+      "assistant_message": "Color-coded appointment types are essentially universal in dental scheduling software, and most platforms let you customize both the color and the default duration for each type. Where they differ is in how many distinct categories you can create — some systems cap you at around 12 custom types, while others are unlimited. Make sure to ask whether the color scheme is per-provider or office-wide, since your team may have preferences there.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "What about HIPAA compliance? Do we need to do anything special on our end when switching platforms?",
+      "assistant_message": "Any software vendor handling protected health information must sign a Business Associate Agreement with you before you share any patient data, so obtaining a signed BAA is a non-negotiable first step with every shortlisted vendor. Beyond that, you should verify that data is encrypted in transit and at rest, and review your own internal access-control policies to make sure staff permissions are re-configured correctly in the new system from day one. Your practice's HIPAA Security Officer — or your IT consultant if you don't have a dedicated officer — should sign off on the vendor's security documentation before you finalize any contract.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "We've been getting a lot of last-minute cancellations. Can scheduling software actually help with that?",
+      "assistant_message": "Yes, automated reminder sequences are one of the clearest ROI drivers in dental scheduling software. Practices that implement a three-touch reminder sequence — typically an email at 72 hours, an SMS at 48 hours, and a final SMS or call at 24 hours — commonly report a 20–35% reduction in no-shows and last-minute cancellations. Some platforms also include an automated waitlist feature that immediately texts the next patient on a cancellation list when a slot opens, which helps fill gaps the same day.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "How long does staff training usually take for a new dental scheduling system?",
+      "assistant_message": "For front-desk staff who are already comfortable with the old software, most vendors quote 8 to 16 hours of structured training to reach basic proficiency on a new platform. Full confidence with advanced features like reporting, template editing, and insurance integration typically takes another two to four weeks of daily use. I'd recommend scheduling at least two dedicated half-day training sessions before go-live and budgeting for a vendor support representative to be on-call for the first full week of live operation.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "Is there a way to let patients join a cancellation waitlist themselves, or does the front desk have to manage that manually?",
+      "assistant_message": "Several platforms now offer patient-managed waitlists where patients can opt in through the online portal or a post-booking confirmation email, rank their preferred time slots, and receive automatic notifications when a matching opening appears. Platforms like Nexhealth and Open Dental's newer cloud modules support this natively. If self-managed waitlists are important to you, I'd make it an explicit demo requirement rather than assuming it's included, because some vendors still require staff to manually work the waitlist even in otherwise modern systems.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "What kind of reporting should we expect from a good scheduling platform?",
+      "assistant_message": "A solid dental scheduling platform should give you at minimum: daily and weekly production reports, provider utilization rates, no-show and cancellation rates by appointment type, and unfilled chair-time summaries. More advanced platforms like Dentrix Ascend or Carestream Dental include trend dashboards that let you compare performance month-over-month without exporting to a spreadsheet. If your dentists want to review KPIs independently, check whether the platform supports role-based report access so providers can view their own stats without seeing billing details.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "We're also thinking about adding a second hygienist in about six months. Would adding a new provider mid-subscription typically cost extra?",
+      "assistant_message": "Most dental scheduling platforms price on a per-provider or per-location basis, so adding a second hygienist would almost certainly increase your monthly fee. Common models charge anywhere from $30 to $75 per additional provider per month depending on the platform tier. When you're reviewing contracts, ask specifically for the per-provider add-on rate and whether it's locked in or subject to the vendor's standard annual price increases.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "Can the software send recall reminders automatically — like a six-month checkup reminder to patients who haven't rescheduled?",
+      "assistant_message": "Automated recall outreach is a core feature in most dental-specific platforms and is one of the areas where dental software tends to outperform generic medical schedulers. You can typically configure the system to send a reminder at a set interval after the patient's last hygiene visit — commonly 5.5 months — with follow-up messages if they haven't booked within two weeks. Platforms like Solutionreach and RevenueWell specialize heavily in this kind of patient reactivation and offer more granular segmentation than all-in-one tools.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "What's the typical contract length for these platforms? Are we locked in for a long time?",
+      "assistant_message": "Contract terms vary widely: some vendors like Weave offer month-to-month options, while others such as Dentrix Ascend typically require a one-year minimum commitment, and some enterprise-level systems push for two or three-year agreements. Implementation and training fees are often waived or discounted in exchange for a longer commitment, so there's a real trade-off. I'd strongly recommend having a healthcare IT attorney review any contract over 12 months before signing, especially to check the data-portability and termination clauses.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "Does the software integrate with digital X-ray systems? We use Dexis.",
+      "assistant_message": "Dexis is one of the more widely supported imaging systems, so you're in a good position — platforms like Dentrix, Eaglesoft, and Open Dental all have documented integrations with Dexis that allow X-rays to be linked directly to the patient record and appointment. The key thing to verify is whether the integration is bidirectional and whether it requires a separate middleware connector, since some setups need a local bridge application that must be maintained through software updates. Ask the vendor for the specific Dexis integration version they've tested against, because compatibility can lag when either system releases a major update.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "We only have one front-desk computer dedicated to scheduling right now. Is that going to be a problem?",
+      "assistant_message": "For a three-provider practice, one dedicated scheduling workstation can work operationally, but it creates a single point of failure — if that machine has a problem, scheduling stops entirely. Most cloud-based platforms allow you to access the scheduler from any browser, so a backup tablet or a second workstation logged into the same system is an inexpensive safety net worth considering. I'd also confirm with your IT consultant that your current internet connection has enough bandwidth to support real-time cloud scheduling reliably, especially during peak check-in periods.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "Our patients skew older — a lot of them aren't comfortable with apps or online portals. How do we handle that?",
+      "assistant_message": "That's a common concern in established dental practices, and the good news is that every reputable platform still supports traditional phone-based scheduling alongside its digital features. The key is choosing a system where the phone workflow is just as streamlined as the online one — look for features like quick patient lookup by phone number, one-click appointment creation from a call screen, and clear on-screen prompts so staff can move efficiently even on calls. You might also consider a platform that offers automated voice call reminders as an alternative to SMS for patients who prefer it.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "Is there anything we should do to prepare our patient database before the migration even starts?",
+      "assistant_message": "Data cleanup before migration is one of the highest-leverage things you can do and is often underestimated. I'd recommend running a deduplication pass on your patient records in DentalPro 4.2 to merge any duplicate profiles, auditing contact information for completeness — especially email addresses and cell phone numbers that the new system will need for reminders — and archiving or flagging inactive patients who haven't been seen in over five years. Cleaner source data means fewer errors during migration and a more accurate verification process once the transfer is complete.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "How do we handle appointments that are already scheduled in the old system for dates after the go-live? Do those transfer over automatically?",
+      "assistant_message": "Future appointments are typically included in the data migration scope, but you should explicitly confirm this with your vendor and get it in writing, because some migration packages default to only transferring historical records up to the migration date. The safest approach is to have the vendor migrate all future appointments as part of the initial data transfer and then run a reconciliation report comparing the count of future appointments in DentalPro 4.2 against what landed in the new system. Any discrepancies should be resolved before go-live so patients don't receive conflicting communications.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "What happens to our data if we decide to switch vendors again in the future?",
+      "assistant_message": "Data portability is a critical clause to negotiate before signing any contract. You should ensure the contract explicitly states that you own your data, that it can be exported in a standard format such as CSV or HL7 upon request, and that the vendor must provide a complete export within a defined timeframe — typically 30 days — after contract termination. Some vendors charge an exit fee for data exports, so if you see that clause, push back or at least understand the cost before committing. Building this protection in upfront saves significant headaches if you ever need to switch again.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "Should we run the old and new systems in parallel for a while, or do a hard cutover?",
+      "assistant_message": "A parallel run — typically two to four weeks where both systems are kept updated simultaneously — reduces risk because you always have a fallback, but it roughly doubles your front desk's workload during that window, which can cause errors and burnout. A hard cutover with a well-tested migration and a solid rollback plan is often the cleaner choice for smaller practices that can't sustain the parallel overhead. The most important safeguard for a hard cutover is having a tested, documented rollback procedure so that if a critical issue appears in the first 48 hours, you can revert to DentalPro 4.2 without data loss.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "What's a reasonable total budget to plan for when switching scheduling software, including setup and training?",
+      "assistant_message": "For a three-provider practice, a realistic all-in first-year budget typically falls between $8,000 and $18,000 depending on the platform and your negotiating leverage. That range usually covers licensing fees, one-time implementation and data migration services, staff training, and the first year of support. The widest cost variation tends to come from implementation fees, which can range from a few hundred dollars for self-guided cloud setups to several thousand for platforms that assign a dedicated onboarding specialist — so get itemized quotes rather than bundled totals.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "We've found a platform we really like and our IT consultant says the migration and verification work will be done by March 15th. Can we set March 15th as our go-live date?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t7",
+    "t8",
+    "t9",
+    "t10",
+    "t11",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t20",
+    "t21",
+    "t22"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that March 15th cannot be the go-live date because the 90-day data migration and verification requirement from DentalPro 4.2 has not been met simply by completing the technical migration work.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer correctly identifies the specific rule: go-live requires at least 90 days of patient data successfully migrated and verified from DentalPro 4.2, not just completion of the IT migration process.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not treat the IT consultant's 3-week migration/verification completion on March 15th as sufficient on its own to authorize a go-live on that date.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not incorporate any detail from the Branch B distractor turns (such as budget figures, contract lengths, or training hours) as a basis for the go-live decision.",
+      "required": false
+    }
+  ],
+  "notes": "t1 and t2 hold the critical rule (90-day data migration requirement from DentalPro 4.2) and the clarifying detail (3-week technical migration window is distinct from the 90-day data coverage). t3 through t22 are the traps — they cover plausible dental-software topics but none of them touch the go-live data requirement, and a naive answer to t23 would simply approve March 15th because the IT work is done.\n\nReference answer: No, March 15th cannot be your go-live date based on the constraint established at the start of this project. The rule requires that at least 90 days of patient data from DentalPro 4.2 be successfully migrated and verified before any new system goes live — completing the technical migration and verification work is a separate condition from satisfying that 90-day data coverage requirement. The IT consultant finishing the migration process by March 15th means the transfer work is done, but you still need to confirm that the data set actually covers a full 90-day window from DentalPro 4.2. Your go-live date should only be set after verifying that both conditions — the 90-day data coverage and the completed technical verification — are fully satisfied.",
+  "evidence_note": null,
+  "premise": "a dentist's office replacing its appointment software"
+}

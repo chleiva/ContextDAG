@@ -1,0 +1,115 @@
+{
+  "scenario_id": "resume_007",
+  "family": "resume",
+  "label": "RESUME",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm planning to build a small backyard observatory and I want to use a dome rather than a roll-off roof. I'm thinking a 10-foot diameter fiberglass dome — does that size make sense for a mid-size Newtonian reflector?",
+      "assistant_message": "A 10-foot (roughly 3-meter) dome is a solid choice for a mid-size Newtonian in the 8- to 12-inch aperture range. The general rule of thumb is that the dome opening should be at least twice the telescope's tube diameter, and a 10-foot dome gives you plenty of clearance for tubes up to about 14 inches across. Manufacturers like Exploradome and Sirius Observatories both offer 10-foot fiberglass shells that weigh in the 200–250 lb range for the dome cap alone, so your pier and base structure need to handle that load.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "I'll be mounting a 10-inch f/4.7 Newtonian on a Losmandy G-11 equatorial mount. What kind of pier height should I be planning for so I can actually use the scope comfortably?",
+      "assistant_message": "For a 10-inch f/4.7 Newtonian on a G-11, the optical tube is about 48 inches long, and when pointed near the zenith the eyepiece end drops to within a foot or two of the mount head. A common guideline is to set the top of the pier so that the declination axis sits at roughly your standing elbow height — typically 44 to 48 inches above the observatory floor for an average adult. That usually means a steel or concrete pier in the 36- to 40-inch range above finished floor level, since the G-11 mount head itself adds about 8 inches before you reach the optical axis.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "That makes sense. I've read that the dome slit needs to be wide enough to avoid vignetting. What's the minimum slit width I should spec for this setup?",
+      "assistant_message": "For a 10-inch Newtonian, the minimum slit width to avoid vignetting is calculated from the fully baffled light cone plus a margin for polar alignment drift. The accepted formula is to take the telescope's aperture and add twice the focuser-to-dome-center offset; for a 10-inch scope mounted near the center of a 10-foot dome, that offset is roughly 18 inches, giving a minimum slit width of about 46 inches — but most builders round up to 48 inches (4 feet) to allow for the mount's pointing range. Sirius Observatories, for example, specifies a 48-inch slit on their 10-foot HDome model specifically to accommodate telescopes in this aperture class.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "I need to figure out the electrical situation for the observatory. Can I run a standard 120V 15-amp circuit out there, or do I need something heavier for dew heaters and a mount drive?",
+      "assistant_message": "A 15-amp, 120V circuit is usually enough for a modest setup, but it can get tight once you stack dew heaters, a mount controller, a laptop, and maybe a red LED work light. A typical dew heater system for a 10-inch scope and finder can draw 3–5 amps on its own, and the G-11's Gemini 2 controller pulls about 2 amps at 12V DC through its wall-wart adapter. Most experienced builders recommend running a 20-amp circuit with a small sub-panel inside the observatory so you have at least two separate 15-amp branch circuits to distribute the load.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "What gauge wire should I use for a 50-foot run from the main panel to the observatory sub-panel?",
+      "assistant_message": "For a 50-foot run feeding a 20-amp sub-panel, you'll want 10 AWG copper wire to keep voltage drop under the NEC-recommended 3% threshold. Using 12 AWG over that distance with a 20-amp load would push voltage drop to around 4–5%, which can cause erratic behavior in sensitive electronics like motor controllers. You should run the wire in conduit — either PVC Schedule 40 buried at least 18 inches deep per NEC Article 352, or rigid metal conduit at 6 inches — and include a ground wire back to the main panel's grounding electrode system.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "Should I put a surge protector or a UPS inside the observatory?",
+      "assistant_message": "A UPS is the better choice if your budget allows, because it handles both surge protection and brief power outages that could cause a GoTo mount to lose its alignment. A unit like the APC Back-UPS 600VA (model BE600M1) provides around 10–15 minutes of runtime for a typical observatory load of 150–200 watts, which is enough time to safely park the mount and close the dome. Make sure whatever you choose is rated for the continuous load — add up the wattage of every device you'll plug in and stay below 80% of the UPS's rated VA capacity.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "What minimum slit width should I actually spec on the dome order form, and why is that the right number for my specific scope?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3"
+  ],
+  "distractor_turn_ids": [
+    "t4",
+    "t5",
+    "t6"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states the minimum slit width is 48 inches (or 4 feet), not merely 46 inches.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer explains that the 48-inch figure accounts for the 10-inch aperture plus twice the ~18-inch focuser-to-dome-center offset (yielding 46 inches) rounded up to 48 inches for pointing range.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer references the Sirius Observatories 10-foot HDome as a real-world example that specifies a 48-inch slit for this aperture class.",
+      "required": false
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not mention wire gauge, UPS capacity, sub-panel amperage, or any other electrical detail from the B-branch turns.",
+      "required": true
+    }
+  ],
+  "notes": "The facts the query needs (46-inch calculated minimum, 48-inch practical spec, Sirius HDome reference) are all established in t3. Turns t4–t6 cover electrical wiring and power protection, which are plausible observatory concerns but entirely irrelevant to the slit-width question; a model that imports amperage, wire gauge, or UPS figures into the answer has incorrectly cross-contaminated branches.\n\nReference answer: For your 10-inch Newtonian mounted near the center of a 10-foot dome, the minimum slit width to avoid vignetting is derived by taking the telescope's aperture and adding twice the focuser-to-dome-center offset of roughly 18 inches, which gives 46 inches. In practice, builders round that up to 48 inches — 4 feet — to accommodate the full pointing range of the G-11 mount. Sirius Observatories specifies exactly that 48-inch slit width on their 10-foot HDome model for telescopes in this aperture class, so 48 inches is the figure you should put on the order form.",
+  "evidence_note": null,
+  "premise": "a hobbyist building a backyard observatory"
+}

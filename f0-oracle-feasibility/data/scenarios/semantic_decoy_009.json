@@ -1,0 +1,127 @@
+{
+  "scenario_id": "semantic_decoy_009",
+  "family": "semantic_decoy",
+  "label": "DECOY",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're migrating our nightly batch jobs to Snowflake and I want to confirm the schedule we landed on for the inventory reconciliation job. Can you recap what we decided?",
+      "assistant_message": "Sure. The inventory reconciliation job is scheduled to run at 02:15 UTC every night, using a dedicated Snowflake warehouse named BATCH_WH_INVENTORY sized at X-Large. It targets the PROD_DB.INVENTORY schema and has a maximum runtime cap of 90 minutes before it triggers an alert to the on-call channel.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "What's the connection pool configuration we settled on for the new application database cluster?",
+      "assistant_message": "For the application database cluster we landed on a maximum pool size of 50 connections per node, with a minimum idle of 10 and a connection timeout of 30 seconds. The cluster is running PostgreSQL 15.3 across three nodes labeled app-db-01, app-db-02, and app-db-03, and the pool is managed by PgBouncer 1.21 in transaction mode.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "And what Snowflake role and service account are we using to execute the inventory reconciliation job?",
+      "assistant_message": "The job runs under the service account SVC_BATCH_INV, which is granted the custom Snowflake role BATCH_INVENTORY_ROLE. That role has USAGE on the BATCH_WH_INVENTORY warehouse, SELECT and INSERT privileges on PROD_DB.INVENTORY, and OPERATE on the warehouse so it can resize if needed. The credentials are rotated every 90 days and stored in HashiCorp Vault under the path secret/snowflake/batch/inventory.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "What happens if the inventory reconciliation job fails mid-run? Is there a retry policy?",
+      "assistant_message": "Yes, the retry policy allows up to 3 automatic retries with a 10-minute backoff between each attempt. If all three retries are exhausted, the job posts a PagerDuty alert with severity P2 and sends an email to data-ops@company.com. A full restart is used rather than a checkpoint resume, so the job always begins from the top of the reconciliation logic, and any partial writes are rolled back via the BEGIN/COMMIT transaction wrapper before the retry fires.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "How do we handle failover if one of the application database nodes goes down?",
+      "assistant_message": "The cluster uses Patroni 3.0.2 for automatic failover, with a leader election timeout of 15 seconds. If app-db-01 loses its leader lease, Patroni promotes whichever replica has the highest replication lag score, typically app-db-02. PgBouncer is configured to point at a virtual IP managed by Keepalived, so the application layer reconnects transparently within about 20 seconds of the failover event.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What monitoring is in place for the application database cluster specifically?",
+      "assistant_message": "We have a Prometheus exporter running on each node scraping metrics every 15 seconds, with dashboards in Grafana under the workspace named AppDB-Prod. Alerts fire when replication lag exceeds 500 milliseconds or when connection pool utilization crosses 80 percent of the 50-connection maximum. The alerting rules live in the prometheus-rules repo under rules/postgres/app_cluster.yml and route to the #db-alerts Slack channel.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "Is there a maintenance window defined for the application database cluster?",
+      "assistant_message": "Yes, the maintenance window for the application database cluster is every Sunday from 04:00 to 06:00 UTC. During that window, PgBouncer is set to pause mode so in-flight transactions drain cleanly before any patching or replica rebuilds begin. The window was formally documented in the runbook at confluence.company.com/pages/appdb-maintenance on March 14, 2024.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "If the inventory reconciliation job hits all its retry attempts and still hasn't completed, what's the alerting severity and who gets notified?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t3",
+    "t4"
+  ],
+  "distractor_turn_ids": [
+    "t2",
+    "t5",
+    "t6",
+    "t7"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that the alerting severity is P2 (PagerDuty severity P2).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that the notification email goes to data-ops@company.com.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer states that all 3 retries must be exhausted before the alert fires.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not reference the #db-alerts Slack channel or any PostgreSQL/application database cluster alerting details (those belong to branch B, not the inventory reconciliation job).",
+      "required": true
+    }
+  ],
+  "notes": "Turns t1, t3, and t4 hold all the facts needed to answer the query about the inventory reconciliation job's retry and alerting behavior. Turns t5, t6, and t7 are the traps: they use nearly identical vocabulary (alerting, timeouts, notifications, monitoring) but describe the application database cluster, whose alert channel (#db-alerts), severity thresholds, and contacts are completely different and must not appear in the answer.\n\nReference answer: Once all three automatic retries are exhausted, the inventory reconciliation job triggers a PagerDuty alert at severity P2 and simultaneously sends an email notification to data-ops@company.com. No further automatic recovery is attempted at that point; the on-call engineer receiving the PagerDuty page is expected to investigate and manually re-trigger the job after resolving the underlying issue.",
+  "evidence_note": null,
+  "premise": "a data team migrating nightly batch jobs to a new warehouse"
+}

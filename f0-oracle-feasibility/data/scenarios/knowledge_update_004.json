@@ -1,0 +1,115 @@
+{
+  "scenario_id": "knowledge_update_004",
+  "family": "knowledge_update",
+  "label": "UPDATE",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm planning my backyard observatory build and I've budgeted $1,200 for the primary telescope — a 10-inch Dobsonian reflector. Does that seem like a realistic figure for a decent mid-range scope?",
+      "assistant_message": "A $1,200 budget for a 10-inch Dobsonian is actually quite reasonable and puts you in solid mid-range territory. At that price point you can expect a well-collimated parabolic primary mirror, a sturdy alt-azimuth rocker box, and good enough focuser quality to handle eyepiece swaps without much slop. Brands like Apertura and Zhumell both offer 10-inch Dobsonians in roughly that range, so you have competitive options to compare.",
+      "gold_parents": [],
+      "stale": true,
+      "superseded_by": "t6"
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Good to know. With that $1,200 scope as the anchor of my budget, I'm trying to figure out how much I should set aside for eyepieces and a Telrad finder as accessories on top of it.",
+      "assistant_message": "A sensible rule of thumb is to spend roughly 20–25% of your telescope's cost on initial eyepiece and accessory upgrades, which on a $1,200 scope works out to about $240–$300. For a starter eyepiece kit, a quality 2-inch wide-field eyepiece around 35mm (like the Apertura SWA) runs about $80, and a mid-range 9mm planetary eyepiece adds another $60–$80. A Telrad finder itself is inexpensive at around $45, so you could fully kit out the scope for roughly $250–$300 and still have excellent views.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "What kind of concrete pad thickness do I need for the observatory floor to keep the telescope pier stable?",
+      "assistant_message": "For a backyard observatory pier, most builders recommend a concrete pad that is at least 12 inches (30 cm) thick and extends below the local frost line to prevent heaving through freeze-thaw cycles. The pier foundation should also be isolated from the observatory floor slab itself so that footsteps and vibrations in the building don't transfer to the telescope. In many parts of the continental US the frost line sits between 12 and 48 inches deep depending on latitude, so you'd want to check your local building code for the exact depth requirement.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "The observatory roof is going to be a 6-foot diameter dome. What's the minimum wall height I need so I can actually stand up and use the telescope comfortably inside?",
+      "assistant_message": "For a 6-foot diameter dome, most amateur builders find that a wall height of at least 5 feet (roughly 1.5 meters) is necessary to give comfortable standing room once you account for the dome's curvature eating into usable headspace. The shutter opening on a 6-foot dome typically spans about 18–24 inches wide, so you also want your wall height to position that opening high enough that low-altitude objects aren't blocked by the dome ring. Many designs land on a wall height between 5 and 5.5 feet as a practical sweet spot for a single observer.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "I live in a suburban area with moderate light pollution — Bortle 6 skies. Is a 10-inch aperture still worthwhile, or am I wasting it under those conditions?",
+      "assistant_message": "A 10-inch aperture is absolutely still worthwhile under Bortle 6 skies, though you'll notice the light pollution most on low-surface-brightness targets like large emission nebulae and faint galaxies. Where the aperture really pays off under suburban skies is on high-contrast objects: globular clusters, planetary nebulae, double stars, and the planets themselves are largely unaffected by sky glow and will look stunning in a 10-inch. A narrowband or OIII filter can also help you recover significant detail on nebulae even from a Bortle 6 site, so the aperture is far from wasted.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "Actually, I need to correct myself — the scope I'm actually buying is $1,800, not $1,200. I misread the model number and had the wrong price in mind the whole time.",
+      "assistant_message": "Thanks for the correction — that's an important difference and it changes the numbers we were working with. So the actual telescope budget is $1,800, not $1,200, and we should use that figure going forward for any calculations tied to the scope's cost.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "So using that 20–25% accessory guideline you mentioned, what's the dollar range I should actually be budgeting for eyepieces and the Telrad?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t6"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4",
+    "t5"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer calculates the accessory budget using the corrected telescope price of $1,800 (not $1,200).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer applies the 20–25% guideline established in t2, yielding a range of $360–$450.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not use $1,200 as the telescope price or derive a $240–$300 accessory range from it.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer gives a specific dollar range (both a low and high end) rather than a vague or single-figure estimate.",
+      "required": true
+    }
+  ],
+  "notes": "t1 introduces VALUE_1 ($1,200) and t2 builds the 20–25% rule on top of it; t6 corrects the price to VALUE_2 ($1,800). The trap is using the $1,200 figure from t1/t2 rather than the corrected $1,800 from t6. Turns t3–t5 are genuine distractors about concrete pad depth, dome wall height, and light pollution, none of which affect the accessory budget calculation.\n\nReference answer: With the corrected telescope price of $1,800, the 20–25% accessory guideline discussed earlier puts your eyepiece and Telrad budget at roughly $360–$450. The lower end of that range ($360) is 20% of $1,800, and the upper end ($450) is 25%. That's a meaningful step up from the earlier estimate and gives you more room to invest in a higher-quality wide-field eyepiece or an additional planetary eyepiece alongside the Telrad.",
+  "evidence_note": null,
+  "premise": "a hobbyist building a backyard observatory"
+}

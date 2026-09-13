@@ -1,0 +1,117 @@
+{
+  "scenario_id": "topic_fork_006",
+  "family": "topic_fork",
+  "label": "FORK",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're running a 40-acre Cabernet Sauvignon block in Paso Robles and need to upgrade our irrigation before the August harvest. Right now we're on a 20-year-old fixed-schedule drip system with 0.5 GPH emitters spaced 18 inches apart on every vine row.",
+      "assistant_message": "For a 40-acre block at that age, the biggest gains usually come from moving to soil-moisture-based scheduling rather than fixed timers. Replacing those 0.5 GPH emitters with pressure-compensating 1.0 GPH emitters and adding a central controller that reads tensiometer data can cut water use by 25–30% while maintaining berry size targets heading into harvest.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "We were leaning toward the Irrometer Watermark 200SS sensors at 12-inch and 24-inch depths. Our agronomist said we'd want to trigger irrigation when the 12-inch reading hits 50 centibars and stop when it drops back to 15 centibars.",
+      "assistant_message": "The Watermark 200SS is a solid choice for Cabernet in well-drained Paso Robles soils — it's accurate from 0 to 200 centibars and has a 20-year field lifespan according to Irrometer's published specs. The 50-centibar trigger and 15-centibar cutoff your agronomist recommended align with UC Cooperative Extension guidelines for deficit irrigation during the berry-sizing window, which targets mild stress to concentrate sugars without shrinking berry weight more than 8%. Pairing the 12-inch sensor with a 24-inch sensor lets you catch deep percolation losses before they become a problem.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "How many Watermark sensors would we actually need to instrument the 40-acre block properly?",
+      "assistant_message": "Irrometer's own installation guide recommends one sensor station — meaning one paired set of shallow and deep sensors — per 5 to 10 acres in a uniform block, so for 40 acres you'd want a minimum of 4 stations and ideally 8 if you have any soil variability. Each station uses two Watermark 200SS sensors (one at 12 inches, one at 24 inches), so the full 8-station deployment means 16 sensors total.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "What data logger or controller is compatible with the Watermark 200SS for automated scheduling?",
+      "assistant_message": "The Irrometer WDMS (Watermark Data Management System) logger is the manufacturer's native option and reads up to 16 Watermark sensors simultaneously via a 2-wire interface, which would cover your full 8-station deployment exactly. Alternatively, the Campbell Scientific CR300 datalogger supports Watermark 200SS sensors through a standard resistive bridge measurement and can trigger irrigation valves directly via its relay outputs. Both systems can log readings at 15-minute intervals and export data in CSV format for integration with farm management software.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "If we go with the WDMS logger, what's the typical installation cost for a setup like ours?",
+      "assistant_message": "For a 16-sensor, 8-station deployment using the Irrometer WDMS, installers in California's Central Coast typically quote $180–$220 per sensor station installed, which covers the sensors, cable, and labor, putting your 8-station total at roughly $1,440–$1,760 for the field sensors. The WDMS base logger unit itself retails at approximately $650, and licensed installers usually charge $300–$500 for logger programming and commissioning, bringing the full system cost to around $2,390–$2,910 before any irrigation controller integration work.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "We're also trying to decide between harvesting at 24 Brix versus waiting for 26 Brix. What does the timing difference usually look like in Paso Robles?",
+      "assistant_message": "In Paso Robles, Cabernet Sauvignon typically accumulates roughly 0.3 to 0.5 Brix per day during the final ripening push in late August and early September when daytime highs are in the mid-90s Fahrenheit. Moving from 24 to 26 Brix therefore usually means an additional 4 to 7 days on the vine, though a heat spike can compress that to 2 days and a cool marine layer can stretch it past 10. Most growers in the Westside AVA target 25–25.5 Brix as a compromise to preserve acidity above 0.60% tartaric while still achieving phenolic ripeness.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "If we fully instrument the block with the 8-station WDMS setup and run it at the centibar thresholds our agronomist specified, what's the all-in cost estimate and how does the sensor count break down?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5"
+  ],
+  "distractor_turn_ids": [
+    "t6"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that 8 sensor stations require 16 Watermark 200SS sensors total (2 sensors per station at 12-inch and 24-inch depths).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer references the 50-centibar trigger and 15-centibar cutoff thresholds from the fork-point turn (t2) as the agronomist-specified thresholds being used.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer gives a total system cost in the range of approximately $2,390–$2,910, consistent with the itemized costs in t5 ($1,440–$1,760 for sensors, ~$650 for the WDMS logger, and $300–$500 for programming).",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not mention Brix targets, harvest timing, or sugar accumulation rates, which are details from the distractor turn t6.",
+      "required": true
+    }
+  ],
+  "notes": "The fork-point detail needed by the query is the 50/15-centibar threshold pair from t2; the sensor-count and cost facts come from t3, t4, and t5. The distractor (t6) introduces Brix accumulation and harvest-timing figures that are plausible but entirely irrelevant to the cost and sensor-count question.\n\nReference answer: For the full 8-station deployment, you need 16 Watermark 200SS sensors in total — two per station, one at 12 inches and one at 24 inches — and the system runs on the 50-centibar irrigation trigger and 15-centibar shutoff your agronomist specified. The 8 sensor stations installed will run approximately $1,440–$1,760, the WDMS logger retails around $650, and programming and commissioning adds another $300–$500, putting the all-in cost at roughly $2,390–$2,910 before any irrigation valve integration work.",
+  "evidence_note": null,
+  "premise": "a vineyard choosing irrigation upgrades before harvest"
+}

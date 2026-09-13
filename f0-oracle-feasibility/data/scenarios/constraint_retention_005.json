@@ -1,0 +1,307 @@
+{
+  "scenario_id": "constraint_retention_005",
+  "family": "constraint_retention",
+  "label": "CONSTRAINT",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "Before we go any further with the migration plan, I need to lock in a hard constraint: no nightly batch job may write to the new warehouse between 02:00 and 04:00 UTC, because that's when the storage optimizer runs its compaction pass and concurrent writes corrupt the delta logs.",
+      "assistant_message": "Understood and noted as a hard constraint: no batch job writes to the new warehouse during the 02:00–04:00 UTC window, due to the storage optimizer's compaction pass causing delta log corruption. I'll treat that two-hour blackout as an inviolable scheduling boundary for every job we migrate.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Right. So any job that currently finishes around 03:00 UTC on the old system will need its start time shifted — either pulled earlier so it completes before 02:00, or pushed later so it starts after 04:00.",
+      "assistant_message": "Exactly. For jobs that finish around 03:00 UTC we have two options: advance the start time enough that the entire run completes before 02:00 UTC, or delay the start so the job doesn't begin until after 04:00 UTC. We'll need to look at each job's average runtime to decide which option is feasible without violating downstream SLAs.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "Can you help me figure out the right compute tier for the new warehouse? We're looking at the Snowflake X-Large vs. 2X-Large for the initial rollout.",
+      "assistant_message": "For an initial rollout, the choice between X-Large and 2X-Large usually comes down to your peak concurrent query load and the size of your largest batch transforms. X-Large gives you 16 nodes and is typically sufficient for up to around 50 concurrent queries, while 2X-Large doubles that to 32 nodes and is better suited if you're running heavy multi-terabyte joins during the same window. I'd recommend profiling your three or four most resource-intensive jobs on the old system first to get a baseline before committing to the tier.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "We pulled the profiles. The heaviest job, orders_aggregation, peaks at about 180 GB of intermediate spill to disk on the old system. Does that change the recommendation?",
+      "assistant_message": "180 GB of spill is significant and suggests the job is memory-constrained on whatever it's running on today. On Snowflake, spill to local disk happens when a query exceeds the per-node memory, so moving to 2X-Large — with its larger per-node memory allocation — would likely eliminate most of that spill and cut runtime considerably. I'd lean toward 2X-Large as your starting tier specifically because of that orders_aggregation profile.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "Good to know. What about data transfer costs getting the historical data into Snowflake? We have roughly 12 TB sitting in S3 us-east-1 and the new warehouse is also in us-east-1.",
+      "assistant_message": "Good news there: data transfer between S3 and Snowflake within the same AWS region — us-east-1 to us-east-1 — is free from AWS's perspective, so you won't incur S3 egress charges. Snowflake does charge for the compute used during the COPY INTO load, but the storage transfer itself costs nothing. Staging your 12 TB in an S3 bucket in the same region as your Snowflake account is the right call.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "We also need to decide on a file format for the staged data. The team is split between Parquet and ORC.",
+      "assistant_message": "Snowflake has native support for both, but Parquet is generally the better choice for Snowflake migrations because its columnar encoding aligns well with Snowflake's internal micro-partition format and the COPY INTO command handles Parquet schema inference more reliably. ORC is perfectly functional but was optimized for Hive/HDFS ecosystems, so you may hit edge cases with complex nested types. Unless your upstream systems are already producing ORC and re-encoding is expensive, I'd go with Parquet.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "Makes sense. We're also evaluating whether to use Snowflake's built-in scheduling via Tasks or keep using our existing Airflow 2.6 DAGs to orchestrate the migrated jobs.",
+      "assistant_message": "Keeping Airflow 2.6 is usually the safer choice if your team already has mature DAGs with complex dependencies, retries, and alerting baked in, because you'd be throwing away a lot of operational maturity by switching to Tasks. Snowflake Tasks are elegant for simple chains but lack some of the branching and sensor capabilities Airflow provides out of the box. The Snowflake provider package for Airflow 2.6 is well-maintained and lets you trigger Snowflake jobs from your existing DAGs without rearchitecting anything.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "We're leaning toward keeping Airflow. One concern is secret management — right now credentials are stored in Airflow's built-in metadata database, and we want to move to HashiCorp Vault. Is that straightforward with Airflow 2.6?",
+      "assistant_message": "Airflow 2.6 has a first-class secrets backend interface, and the HashiCorp Vault backend is one of the officially supported providers via the apache-airflow-providers-hashicorp package. You configure it by setting the secrets_backend in airflow.cfg to airflow.providers.hashicorp.secrets.vault.VaultBackend and pointing it at your Vault address and mount path. The main operational step is migrating your existing connection and variable records out of the metadata DB and into Vault, which you can do incrementally without downtime.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "Perfect. Another thing — we need to set up column-level security on the new warehouse. Specifically, the `customer_pii` table has SSN and credit card columns that only the compliance team's role should be able to read in plaintext.",
+      "assistant_message": "Snowflake's Dynamic Data Masking is the right tool for that use case. You create a masking policy that returns the plaintext value when the current role is COMPLIANCE_TEAM and returns a masked or nulled value for all other roles, then attach that policy to the SSN and credit card columns on the customer_pii table. This is enforced at query time so even if someone with a lower-privileged role runs SELECT *, they'll only see the masked output without any application-layer changes.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "Great. We also want to make sure we have query audit logging enabled so we can track who accessed those sensitive columns.",
+      "assistant_message": "Snowflake's ACCESS_HISTORY view in the ACCOUNT_USAGE schema gives you exactly that — it records every query, the user and role that ran it, and which columns were projected in the output, including masked ones. You'll want to make sure your Snowflake account has the Enterprise tier or above, because ACCESS_HISTORY is not available on the Standard tier. Retention in ACCOUNT_USAGE is 365 days, but I'd recommend also shipping the logs to your SIEM for longer-term retention if your compliance requirements exceed that.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "We're on Business Critical tier actually, so that's covered. How should we handle schema evolution? Some of our source tables add new columns fairly frequently.",
+      "assistant_message": "The cleanest pattern for frequent schema evolution in Snowflake is to use VARIANT columns for the semi-structured payload alongside a set of typed columns for the fields you know are stable, so new upstream fields land in the VARIANT without breaking downstream queries. Alternatively, if your source emits Avro or Parquet with an Avro schema registry, you can use Snowflake's schema detection feature with INFER_SCHEMA to automatically pick up new columns during COPY INTO. The right choice depends on whether your consumers query the evolving fields directly or whether they're mostly archival.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "Most consumers do query the evolving fields directly, so VARIANT probably isn't ideal. We'll look at INFER_SCHEMA. What about table clustering — should we define cluster keys on the large fact tables from day one?",
+      "assistant_message": "For large fact tables, defining cluster keys from day one is worthwhile if you have a dominant filter pattern, typically a date or timestamp column that appears in WHERE clauses on almost every query. Snowflake's automatic clustering will maintain the key over time for an ongoing credit cost, so you want to be confident the access pattern justifies it before enabling it. A pragmatic approach is to load the data without clustering first, run your real workload for two to four weeks, then use the SYSTEM$CLUSTERING_INFORMATION function to evaluate whether natural clustering is already good enough before paying for automatic reclustering.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "That makes sense. We also need a rollback plan in case the migrated jobs produce incorrect results. What's the recommended approach for validating output parity between old and new systems during the cutover period?",
+      "assistant_message": "The standard approach is a parallel-run validation: keep the old system writing its outputs to its existing tables while the new warehouse writes to shadow tables, then run a reconciliation job that does row-count checks, null-rate checks, and aggregate sum/average comparisons on key metrics for every job. For financial or order data, you'll want exact-match reconciliation on primary keys, not just aggregates, because rounding and type-casting differences can cancel out in sums. Define a tolerance threshold — many teams use zero tolerance for counts and 0.001% for floating-point aggregates — and fail the cutover automatically if any job exceeds it.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "We've decided on zero tolerance for row counts and 0.01% for numeric aggregates. Who should own the sign-off on parity for each job — the data engineering team or the business stakeholders?",
+      "assistant_message": "Best practice is a two-stage sign-off: data engineering owns the technical parity check against your defined thresholds, and business stakeholders do a spot-check sign-off on the reports or dashboards that consume each job's output. Data engineering can confirm the numbers match mechanically, but only a business user can confirm that the semantics are correct — for example, that a revenue figure is being calculated with the right business logic rather than just producing the same wrong answer as before. Formalizing both sign-offs in your migration checklist protects both teams.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "Good idea. We're also planning to use dbt for transformations in the new warehouse. Should we use dbt Core or dbt Cloud for a team of eight engineers?",
+      "assistant_message": "For a team of eight, dbt Cloud starts to pay for itself because of the hosted scheduler, the IDE, and the centralized job logging — managing dbt Core at that team size means someone has to own the orchestration plumbing, documentation hosting, and environment management, which adds up. dbt Cloud's Teams plan supports up to 8 developer seats and includes CI/CD integration with GitHub or GitLab out of the box. If your organization already has strong infrastructure-as-code practices and wants full control, dbt Core on Airflow is viable, but most eight-person teams find dbt Cloud reduces operational overhead meaningfully.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "We'll go with dbt Cloud. How should we structure our dbt project — one monorepo for all domains or separate projects per domain?",
+      "assistant_message": "For most teams migrating to a new warehouse, a single monorepo with a clear folder structure by domain — staging, intermediate, and marts layers per domain — is the right starting point because cross-domain dependencies are easy to express as ref() calls without inter-project contracts. Splitting into separate dbt projects makes sense only when domains have genuinely independent release cycles and different teams who need deployment isolation. Since you're doing a migration rather than a greenfield build, starting monorepo and splitting later if needed is much lower risk than the reverse.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "Got it. We also need to decide how to handle slowly changing dimensions. Most of our dimension tables are Type 2 SCDs. Does dbt have native support for that?",
+      "assistant_message": "dbt has the dbt-utils snapshot feature, now formalized as the snapshots block in dbt Core, which implements Type 2 SCD logic natively. You define a snapshot with a unique key and a strategy — either timestamp-based or check-based — and dbt manages the dbt_valid_from and dbt_valid_to columns automatically on each run. For your existing Type 2 dimensions, you'd backfill the historical records into the snapshot table on first load and then let dbt maintain the SCD logic going forward.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "We have about 40 dimension tables that need SCD Type 2 treatment. Is there a way to test that the snapshot logic is working correctly in CI?",
+      "assistant_message": "Yes — the standard approach is to write dbt tests that assert invariants on your snapshot tables: for example, that dbt_valid_to is always NULL for exactly one record per natural key (the current record), that no two records for the same key have overlapping validity periods, and that dbt_valid_from is always less than dbt_valid_to for closed records. You can implement these as custom generic tests in dbt or use the dbt-expectations package, which includes a suite of set-based assertions. Running these in your CI pipeline on a sample dataset catches regressions in snapshot logic before they reach production.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "We'll set that up. What's the best way to manage dbt environment configs — dev, staging, and prod — given that all three will point at the same Snowflake account but different databases?",
+      "assistant_message": "The idiomatic dbt approach is to use targets in your profiles.yml, with each target specifying a different database name — for example, ANALYTICS_DEV, ANALYTICS_STAGING, and ANALYTICS_PROD — while the warehouse, role, and schema naming conventions stay consistent. In dbt Cloud you configure these as separate environments with their own credentials and database overrides, and you promote code through environments via CI jobs rather than by manually switching targets. Using the {{ target.name }} variable inside your dbt_project.yml lets you conditionally adjust behavior, like limiting data volume in dev, without duplicating model logic.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "That's clean. We also want to set up cost monitoring so we can alert if a single dbt job consumes more than a defined credit threshold in one run.",
+      "assistant_message": "Snowflake's QUERY_HISTORY view in ACCOUNT_USAGE includes credits_used_cloud_services and you can join it to WAREHOUSE_METERING_HISTORY to attribute credit consumption to specific warehouse activity windows. A practical pattern is to tag each dbt job's warehouse session with a QUERY_TAG set via a dbt on-run-start hook, then query QUERY_HISTORY filtered by that tag after the run completes to sum credits. You can wrap that in an Airflow sensor that fires a PagerDuty or Slack alert if the sum exceeds your threshold before marking the DAG run as successful.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "We'll implement that. One more infrastructure question — should we use separate virtual warehouses for the nightly batch jobs versus the daytime BI queries, or share one warehouse with auto-scaling?",
+      "assistant_message": "Separate virtual warehouses is strongly recommended for workload isolation: batch jobs and BI queries have very different concurrency and memory profiles, and sharing a warehouse means a runaway batch job can starve interactive BI users and vice versa. Dedicated warehouses also give you clean cost attribution and let you set independent auto-suspend and auto-resume policies — for example, the batch warehouse auto-suspends at 5 minutes of inactivity while the BI warehouse might use 1 minute to minimize idle costs during the day. Resource monitors scoped per warehouse make budget enforcement straightforward as well.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "That makes sense. We're planning to name the batch warehouse BATCH_WH and the BI warehouse BI_WH. Should the dbt transformations run on BATCH_WH or get their own warehouse?",
+      "assistant_message": "dbt transformations should get their own dedicated warehouse, typically named something like TRANSFORM_WH, rather than sharing BATCH_WH. dbt runs can be highly concurrent during a full refresh and can easily saturate a warehouse, which would delay the raw ingestion jobs that BATCH_WH needs to run. A separate TRANSFORM_WH also lets you right-size it independently — dbt workloads often benefit from a larger warehouse for the initial historical backfill and then can be scaled down for incremental runs.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "We need to schedule the orders_aggregation job on the new warehouse. It takes about 90 minutes to run and needs to finish before 05:30 UTC so the finance team has their report by 06:00. What start time should we use?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t7",
+    "t8",
+    "t9",
+    "t10",
+    "t11",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t20",
+    "t21",
+    "t22"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer must respect the hard constraint that no batch job writes to the new warehouse between 02:00 and 04:00 UTC, meaning the proposed start time must not result in any part of the 90-minute run overlapping that window.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer must confirm the job can complete before the 05:30 UTC deadline given the 90-minute runtime, meaning the latest permissible start time that also clears the blackout window is 04:00 UTC.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not suggest a start time between 00:31 and 02:00 UTC if the 90-minute runtime would push the finish time into the 02:00–04:00 UTC blackout window (e.g., starting at 01:00 UTC would finish at 02:30 UTC, violating the constraint).",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not incorporate or be influenced by any detail from the distractor turns (such as the warehouse tier, dbt setup, or SCD table count) when determining the start time.",
+      "required": false
+    }
+  ],
+  "notes": "The critical facts are in t1 (the 02:00–04:00 UTC write blackout) and t2 (jobs finishing around 03:00 UTC must be shifted before 02:00 or after 04:00). The trap is the naive answer of scheduling around 03:30–04:00 without accounting for the blackout, or starting at 01:00 UTC and running into the window; t3–t22 are all plausible warehouse-migration distractors that never touch the scheduling constraint.\n\nReference answer: Given the 90-minute runtime, the job must either finish entirely before 02:00 UTC or start no earlier than 04:00 UTC to avoid writing during the 02:00–04:00 UTC compaction blackout. Starting at 04:00 UTC means the job finishes at 05:30 UTC, which exactly meets the finance team's deadline without entering the blackout window. A start time of 04:00 UTC is therefore the correct and latest safe option; any earlier start between roughly 00:31 and 03:59 UTC would either overlap the blackout window or require starting before midnight, so 04:00 UTC is the recommended start time.",
+  "evidence_note": null,
+  "premise": "a data team migrating nightly batch jobs to a new warehouse"
+}

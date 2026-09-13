@@ -1,0 +1,115 @@
+{
+  "scenario_id": "resume_010",
+  "family": "resume",
+  "label": "RESUME",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm starting a 16-week marathon training plan next Monday. I've never run more than a 5K before, so I want to make sure I'm building up my long runs correctly. What's the standard guideline for increasing weekly mileage?",
+      "assistant_message": "The most widely used rule is to increase your total weekly mileage by no more than 10 percent from one week to the next — this is commonly called the 10-percent rule and is endorsed by organizations like the Road Runners Club of America. So if your first week totals 20 miles, the following week should cap out at 22 miles. Violating this threshold is one of the leading causes of overuse injuries like shin splints and stress fractures in new runners.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "That makes sense. For the long run specifically, how long should my first one be, and how high should I build it before the race?",
+      "assistant_message": "For a first-time marathoner starting from a 5K base, most 16-week plans — including Hal Higdon's Novice 1 plan, one of the most popular beginner programs — recommend starting the long run at 6 miles in week one. You then build that long run to a peak of 20 miles, which is typically reached in week 13 or 14, leaving two to three weeks for tapering before race day. Running the full 26.2 miles in training is generally considered unnecessary and risky; 20 miles is the accepted ceiling.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "Got it. And during the taper, how much should I cut back on that long run distance?",
+      "assistant_message": "During the taper — the final two to three weeks before the marathon — the standard recommendation is to reduce your long run by roughly 20 to 25 percent each week from the 20-mile peak. Following Higdon's Novice 1 structure specifically, the long run drops to 12 miles in week 14, then 8 miles in week 15, and just a short 2 to 4 mile shakeout run in the final week before the race. The goal is to arrive at the start line rested but not deconditioned.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "I'm trying to figure out what to eat the night before a long run. I keep hearing about carb-loading — is that actually useful, or is it overhyped?",
+      "assistant_message": "Carb-loading is a legitimate strategy, but its benefits are really only significant for events lasting longer than 90 minutes, according to research published in the Journal of Sports Sciences. The classic protocol involves spending three days eating roughly 10 to 12 grams of carbohydrates per kilogram of body weight per day while reducing training intensity. For a pre-run dinner the night before, most sports dietitians simply recommend a moderate, familiar meal high in complex carbohydrates — something like pasta or rice — rather than eating to excess, which can cause GI distress.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "What about during the run itself? When should I start taking in fuel, and what kind?",
+      "assistant_message": "The general guideline is to begin fueling around the 45-minute mark and then consume 30 to 60 grams of carbohydrates per hour after that, according to recommendations from the American College of Sports Medicine. Energy gels are the most common choice because they're portable and easy to digest — brands like GU Energy and Maurten are popular, with Maurten's Gel 100 providing exactly 25 grams of carbs per packet. You should also practice fueling on your long training runs rather than trying something new on race day.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "Do I need to take anything with water, or can I wash gels down with a sports drink?",
+      "assistant_message": "You should always take gels with water, not a sports drink, because combining a gel with an electrolyte drink like Gatorade means you're consuming two concentrated carbohydrate sources simultaneously, which dramatically increases the risk of GI cramping and nausea. Water allows the gel to dilute properly and absorb efficiently. Most race courses post signs indicating which aid stations offer water versus sports drink, so it's worth memorizing the course map beforehand.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "For the taper weeks, what exactly are the long run distances I should be hitting in each of those final three weeks?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3"
+  ],
+  "distractor_turn_ids": [
+    "t4",
+    "t5",
+    "t6"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that the long run in week 14 (first taper week) is 12 miles, as established in t3.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that the long run in week 15 is 8 miles, as established in t3.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer states that the final pre-race week involves only a 2–4 mile shakeout run, as established in t3.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not mention grams of carbohydrates per hour, energy gels, Maurten, GU Energy, or any other fueling detail drawn from t5 or t6.",
+      "required": true
+    }
+  ],
+  "notes": "t2 and t3 hold all the facts the query needs (peak mileage of 20 miles and the specific taper distances of 12, 8, and 2–4 miles). Turns t4, t5, and t6 are the distractor branch covering race-day nutrition; a model that blends fueling details into the taper answer has incorrectly imported B-branch content.\n\nReference answer: In the three-week taper following the 20-mile peak, the long run distances in Higdon's Novice 1 plan drop as follows: 12 miles in week 14, 8 miles in week 15, and just a 2-to-4 mile shakeout run in the final week before the race. Each reduction represents roughly a 20–25 percent cut from the previous long run, keeping your legs fresh while maintaining fitness. The idea is to arrive at the start line rested and ready rather than carrying accumulated fatigue from heavy training.",
+  "evidence_note": null,
+  "premise": "training for a first marathon in 16 weeks"
+}

@@ -1,0 +1,116 @@
+{
+  "scenario_id": "continuation_010",
+  "family": "continuation",
+  "label": "CONTINUE",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm building a magic system for my fantasy novel and I want it to feel grounded and logical. The core idea is that magic draws from the user's own life force, so every spell shortens the caster's lifespan. Can you help me develop this?",
+      "assistant_message": "That's a compelling foundation — cost-based magic systems create natural tension and meaningful choices. Let's anchor it with a concrete rule: every spell costs the caster exactly one day of remaining lifespan per unit of magical output, and we can call that unit a 'veil.' So a simple light spell might cost one veil (one day), while something catastrophic like leveling a building could cost five hundred veils — roughly a year and four months of life.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "I love the term 'veil.' I want there to be a special class of casters who are trained from childhood to manage their veil expenditure carefully. What should I call them, and how does their training work?",
+      "assistant_message": "Call them Threadbinders — practitioners who learn to weave spells with minimal veil waste. Their training begins at age seven and lasts exactly twelve years, ending with a formal test called the Severance at age nineteen. During those twelve years, apprentices are forbidden from casting any spell that costs more than three veils, which forces them to develop efficiency before power.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "The Severance sounds dramatic. What does the test actually involve?",
+      "assistant_message": "The Severance requires the apprentice to cast a single spell costing exactly thirty veils — no more, no less — in front of a council of five senior Threadbinders. Casting fewer than thirty veils means the apprentice lacks the will to commit; casting more means they lack the control to stop. Either failure results in permanent expulsion from the order. The spell itself is traditionally the same across all candidates: a sustained barrier that must hold against a physical strike for sixty consecutive seconds.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "What happens to the Threadbinders who fail the Severance? Do they lose their magic entirely?",
+      "assistant_message": "They don't lose the ability to cast — magic is innate and can't be stripped away — but they lose access to all Threadbinder libraries and sanctuaries, and they're branded on the left wrist with a mark called the Fray. More practically, failed candidates who over-spent during the Severance often suffer immediate aging: a thirty-five-veil Severance, for example, would age the caster five extra days on the spot, sometimes visibly. Most failed Threadbinders become hedge-workers, selling minor spells in markets for coin.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "I want my protagonist to be a Threadbinder who is unusually old for her rank. She passed the Severance but has been very conservative with her magic since then. How old could she realistically be while still being a low-rank Threadbinder?",
+      "assistant_message": "Within the system, Threadbinder ranks advance partly by total veils spent in service — you can't reach the second rank, called Weft, without spending at least two thousand veils on sanctioned work after the Severance. If your protagonist has spent only around three hundred veils in the years since her Severance, she would still be a first-rank Threadbinder, called a Strand. A woman who passed her Severance at nineteen and is now forty-five would have had twenty-six years to accumulate rank, yet her conservatism keeps her a Strand — that's a telling character detail.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "Perfect. Let's say her name is Maren and she's exactly forty-five years old. She's spent 312 veils since her Severance, which means she's still a Strand. If she had to take on a mission that required her to spend enough veils to finally reach Weft rank, how many more veils would she need to spend?",
+      "assistant_message": "Since Weft rank requires a total of two thousand veils spent in sanctioned work after the Severance, and Maren has spent 312 veils so far, she would need to spend exactly 1,688 more veils to cross that threshold. At one veil per day of lifespan, that mission would cost her roughly four years and seven months of her remaining life — a steep price for a woman who has spent twenty-six years carefully hoarding every day she could.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "If Maren burns through those remaining veils as fast as possible and reaches Weft rank, what's the youngest she could have been when she first started training as a Threadbinder, and how long in total would she have been part of the order by the time she achieves Weft?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5",
+    "t6"
+  ],
+  "distractor_turn_ids": [],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer correctly states that Threadbinder training begins at age 7, so that is the youngest Maren could have started training.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer correctly calculates total time in the order as: from age 7 (start of training) to age 45 (current age) = 38 years already, plus the additional ~4 years and 7 months to spend the remaining 1,688 veils, giving roughly 42 years and 7 months total in the order.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not claim Maren started training at age 19 (which is when she completed training via the Severance, not when she started).",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer correctly uses the 1,688 remaining veils figure (2,000 required minus 312 already spent) to derive the additional time cost of approximately 4 years and 7 months.",
+      "required": true
+    }
+  ],
+  "notes": "The key facts are distributed across t2 (training starts at age 7, Severance at 19), t5 (Weft requires 2,000 post-Severance veils; Maren is 45 and a Strand), and t6 (Maren has spent 312 veils, needs 1,688 more, costing ~4 years 7 months). The trap is confusing the start of training (age 7) with the completion of training at the Severance (age 19).\n\nReference answer: Threadbinder training begins at age seven, so the youngest Maren could have started is seven years old. She is currently forty-five, meaning she has already been part of the order for thirty-eight years. To reach Weft rank she still needs 1,688 veils, which costs approximately four years and seven months of lifespan. Adding that time, she would have been in the order for roughly forty-two years and seven months by the time she achieves Weft rank.",
+  "evidence_note": null,
+  "premise": "writing a fantasy novel and planning its magic system"
+}

@@ -1,0 +1,128 @@
+{
+  "scenario_id": "continuation_004",
+  "family": "continuation",
+  "label": "CONTINUE",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're the Maplewood Community Choir and we're planning a spring concert tour for next year. We have 48 singers plus our director, Margaret Hollis. Where do we even start with the logistics?",
+      "assistant_message": "With 49 people total (48 singers plus Margaret), the first thing to nail down is your travel window and the number of performance stops. Most amateur choirs doing a spring tour aim for 3–5 venues over a long weekend, which keeps costs manageable and doesn't burn out volunteers. I'd suggest deciding on your travel dates before booking anything else, since venue availability will cascade from there.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "We've settled on May 2–5, 2025 — that's a Friday through Monday over the Memorial Day weekend, giving us four days. We're thinking three performances. How should we space them out?",
+      "assistant_message": "May 2–5 is actually the weekend before Memorial Day in 2025, which is fine — it actually avoids some of the holiday travel congestion. With three performances over four days, a workable pattern is: arrival and rehearsal on Friday May 2, performances on Saturday May 3 and Sunday May 4, then a final performance on Monday May 5 before heading home. That gives the choir a recovery night between each show and keeps Monday's performance early enough to allow a reasonable drive back.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "That schedule makes sense. We're planning to stay in the same city for the whole tour rather than moving around. What should we look for in a hotel block?",
+      "assistant_message": "For a group of 49, you'll typically need to negotiate a room block with the hotel directly rather than booking individually. Assuming double occupancy for the singers, you'd need roughly 24 rooms for singers plus at least 1 single for Margaret Hollis as director, so a minimum block of 25 rooms. Ask for an attrition clause that allows you to release up to 20% of the block without penalty no later than 30 days before arrival — that's a standard protection for amateur groups whose headcount can shift.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "Good to know about the attrition clause. We've been looking at the Harborview Inn in Carleton — they quoted us $129 per room per night. Does that seem reasonable for a group rate?",
+      "assistant_message": "A rate of $129 per room per night is quite competitive for a group block, especially in a mid-sized city like Carleton during a spring weekend. At that rate, 25 rooms over 3 nights (May 2–4, checking out May 5) would come to $9,675 total for accommodation before taxes. That's a number worth locking in quickly, because spring weekends fill up and the Harborview Inn may not hold the rate without a signed contract.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "We signed the contract with the Harborview Inn yesterday, so that's sorted. Now I'm worried about feeding everyone. What's a realistic per-person daily meal budget for a tour like this?",
+      "assistant_message": "For an amateur choir tour, a common benchmark is $45–$55 per person per day when you're covering breakfast, lunch, and dinner through a mix of group meals and per-diem allowances. Many choirs handle breakfast through the hotel (often included or very cheap), then give singers a $15 lunch per diem and organize one group dinner per day at roughly $25–$30 per head. With 49 people over 4 days, budgeting $50 per person per day puts your total food estimate at $9,800.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "We've decided to set the individual meal per diem at $50 per person per day for all four days. Now, one of our venues — St. Cecilia's Church in Carleton — has a technical requirement we weren't expecting. What kind of sound setup do choirs typically need in a church space?",
+      "assistant_message": "Churches vary widely, but for a choir of 48 singers in a mid-sized nave, you generally need a front-of-house mixing board, at least 4 condenser microphones on stands for choral blend (some directors prefer a single stereo pair), and floor monitors so the choir can hear themselves if the acoustics are live. St. Cecilia's may already have a house system, but you should confirm whether their system can handle 48 voices or whether you need to bring in a rental PA. Ask specifically about their maximum SPL rating and whether they have a resident sound engineer available for the performance dates.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "St. Cecilia's told us they have a house system but their sound engineer, David Reyes, is only available on Sunday May 4. For the Saturday May 3 performance there, we'd have to hire an outside engineer at $200 for the day. We decided to just hire the outside engineer so we can use St. Cecilia's on both days.",
+      "assistant_message": "That's a sensible call — paying $200 for an outside engineer on May 3 is far cheaper than finding a whole new venue. So your St. Cecilia's costs now include the outside engineer fee of $200 on Saturday May 3, while David Reyes covers Sunday May 4 presumably as part of the house arrangement. Make sure to get the outside engineer's name and contact in writing from St. Cecilia's, or source one yourself, at least 6 weeks before the tour so they can do a brief site visit beforehand.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "We're putting together the full tour budget now. What's the combined total for accommodation and the meal per diem for all choir members and the director across the whole tour?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t7"
+  ],
+  "distractor_turn_ids": [],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states the accommodation total is $9,675 (25 rooms × $129 × 3 nights).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states the meal per diem total is $9,800 (49 people × $50 × 4 days).",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer states the combined accommodation-plus-meals total is $19,475.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not include the $200 outside engineer fee in the accommodation-plus-meals combined total (that cost is a separate venue expense, not accommodation or per diem).",
+      "required": true
+    }
+  ],
+  "notes": "The key facts are spread across t3/t4 (25 rooms, $129/night, 3 nights → $9,675) and t5/t6/t1 (49 people, $50/day, 4 days → $9,800). The trap is t7, which introduces the $200 engineer fee — a plausible budget item a candidate might incorrectly fold into the combined total.\n\nReference answer: The accommodation block at the Harborview Inn is 25 rooms at $129 per night for 3 nights (May 2–4), totalling $9,675. The meal per diem is $50 per person per day for all 49 people (48 singers plus Margaret Hollis) over all 4 tour days, totalling $9,800. Combined, accommodation and meal per diems come to $19,475. The $200 outside engineer fee for the May 3 St. Cecilia's performance is a separate venue cost and is not part of this figure.",
+  "evidence_note": null,
+  "premise": "an amateur choir organizing a spring concert tour"
+}

@@ -1,0 +1,319 @@
+{
+  "scenario_id": "constraint_retention_004",
+  "family": "constraint_retention",
+  "label": "CONSTRAINT",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm working on our grant application for the Maplewood Community Garden. The municipal grant guidelines say: 'No single budget line item may exceed 30% of the total requested grant amount.' I want to make sure we don't accidentally violate that when we build our budget.",
+      "assistant_message": "Got it — the rule is that no single budget line item may exceed 30% of the total requested grant amount. That's a hard cap, so if you're requesting, say, $10,000 total, no individual line item can be listed above $3,000. I'll keep that constraint in mind as we work through everything.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Right. We're planning to request $15,000 total. So that means the absolute ceiling for any one line item is $4,500.",
+      "assistant_message": "Exactly — 30% of $15,000 is $4,500, so that's the maximum any single line item can be. If any expense comes in higher than that, you'd need to either split it into sub-items or reduce the total request so the math still works. Keep that $4,500 figure handy as you draft the budget.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "We also need to figure out who's going to sign the application as the official organizational representative. Does it have to be the board president, or can another officer do it?",
+      "assistant_message": "Most municipal grants accept any authorized officer — board president, treasurer, or executive director — as long as they're listed in your organization's bylaws as having signatory authority. You'll want to check the specific grant portal's signature requirements, but typically a board resolution authorizing a specific person to sign on behalf of the organization will cover you if your president is unavailable. Make sure whoever signs also provides their title and contact information on the application.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "Our treasurer, Linda Okafor, is the one who's been handling all the financial paperwork. Would it make sense for her to sign?",
+      "assistant_message": "That could work well, especially since she already has familiarity with the financial details. Just confirm that your bylaws or a current board resolution explicitly grants her signing authority for grant applications. Having her sign also signals to the reviewers that someone with direct financial oversight is accountable for the budget figures.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "We need to submit proof of our nonprofit status. We incorporated in 2019 and have our 501(c)(3) determination letter — is that sufficient?",
+      "assistant_message": "A 501(c)(3) determination letter is the standard document for proving tax-exempt nonprofit status, and it should be sufficient for most municipal grant applications. Some grantors also ask for a current IRS Form 990 to confirm you're still in good standing, so it's worth attaching your most recent one as a precaution. If your determination letter is more than a few years old, double-check whether the grant portal asks for anything dated within a specific window.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "Our most recent 990 is for fiscal year 2022. We haven't filed the 2023 one yet — should that be a problem?",
+      "assistant_message": "It depends on the grant's deadline and the municipality's requirements, but a 2022 Form 990 is generally considered recent enough for a 2024 application cycle. If the 2023 filing is overdue with the IRS, that could raise a flag, so it's worth checking your filing status. You might also include a brief note explaining the timeline if the portal allows supplemental documentation.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "The application asks for a project narrative of no more than 1,500 words. We're currently at 2,100 words — what's the best way to cut it down?",
+      "assistant_message": "Start by identifying any section that restates information already covered elsewhere in the application, such as background details that duplicate your organization description. Then look for passive constructions and wordy phrases you can tighten — phrases like 'in order to' can become 'to,' and 'due to the fact that' can become 'because.' Prioritize keeping the sections that describe measurable outcomes and community impact, since those are typically weighted most heavily by reviewers.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "Should we include letters of support from community partners, or is that overkill?",
+      "assistant_message": "Letters of support are almost never overkill for a community garden grant — they demonstrate that the project has real buy-in beyond just your own organization. Two or three strong letters from recognizable local partners, like a school, a food bank, or a neighborhood association, carry more weight than a stack of generic ones. Keep each letter to one page and ask the writers to mention a specific, concrete way they plan to engage with or benefit from the garden.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "Riverside Elementary has already agreed to write one. Their principal, Dr. Amara Solis, will sign it.",
+      "assistant_message": "That's a strong partner to have — a school principal's letter signals educational community value, which aligns well with typical municipal grant priorities around youth engagement. Ask Dr. Solis to mention something specific, like the number of students who would participate in garden programming or a planned curriculum tie-in, to make the letter more compelling. A concrete detail like '120 third- and fourth-graders will visit the garden each semester' is far more persuasive than general enthusiasm.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "We also want to include a site map of the garden. Does it need to be professionally drafted, or is a hand-drawn map okay?",
+      "assistant_message": "Most municipal grants accept a clearly labeled diagram rather than a professional architectural drawing, as long as it includes key features like plot boundaries, pathways, water access points, and any structures. A clean hand-drawn or digitally sketched map with a simple legend and approximate dimensions is usually sufficient. If your municipality has a GIS portal, you can sometimes pull a base map of the parcel and annotate it yourself, which looks polished without requiring a hired drafter.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "The garden sits on a 0.4-acre city-owned lot that we lease for $1 per year. Should we mention the lease arrangement anywhere in the application?",
+      "assistant_message": "Yes, absolutely — disclose the lease arrangement proactively, ideally in both the project narrative and as an attachment. A $1-per-year lease from the city is actually a positive detail because it shows existing municipal partnership and reduces your overhead costs, which makes your budget look more efficient. Include the lease term dates so reviewers can confirm the project has long-term site security.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "Our current lease runs through December 2027. Is that long enough to satisfy reviewers?",
+      "assistant_message": "A lease running through December 2027 gives you roughly three to four years of site security, which is typically sufficient for a one-time capital improvement grant. Reviewers generally want to see that the funded improvements won't be lost to a site change within the grant period plus at least one or two years of operation. If the grant period itself extends into 2026 or 2027, you might note that you intend to renew and describe your relationship with the city as a supporting factor.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "We're planning to install a rainwater collection system as part of the project. Are there any permitting issues we should flag?",
+      "assistant_message": "Rainwater harvesting regulations vary significantly by state and municipality — some jurisdictions require a permit for any collection tank above a certain capacity, often 500 gallons, while others have no restrictions at all. You should contact your local building department or water authority before finalizing the design and budget, and if a permit is required, mention in the application that you've identified the requirement and plan to obtain it. Showing that you've done this due diligence reassures reviewers that the project timeline is realistic.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "We were thinking of a 750-gallon above-ground tank. That sounds like it might trigger permitting in some places.",
+      "assistant_message": "At 750 gallons, you're likely above the threshold that triggers review in many jurisdictions, so it's especially important to check with your local authority before the application is finalized. If a permit is required, try to get at least a pre-application meeting or written confirmation of the process so you can cite it in your timeline. Some municipalities also have stormwater or sustainability offices that actively support rainwater harvesting projects and may be able to fast-track the review.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "How detailed does the project timeline need to be? The grant period is 18 months.",
+      "assistant_message": "For an 18-month grant, reviewers typically expect a timeline broken into at least quarterly milestones, showing when major activities like procurement, installation, and community programming will occur. You don't need week-by-week detail, but you should be specific enough that a reviewer can verify the scope is achievable — for example, 'rainwater tank installed by month 6' is more credible than 'infrastructure phase.' Including a brief note on who is responsible for each milestone also strengthens the application.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "We're hoping to host at least four community workshops during the grant period. Should those be in the timeline?",
+      "assistant_message": "Yes, include them — programming milestones like workshops demonstrate that the grant investment translates into ongoing community engagement, not just physical infrastructure. Space them across the 18 months rather than clustering them at the end, and if you already have tentative topics, name them, such as 'composting basics' or 'seed-saving workshop,' to show the programming is thought through. Noting an expected attendance target for each, even a conservative one, gives reviewers a concrete measure of impact.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "We have 47 active plot holders right now. Is that a meaningful number to include in the application?",
+      "assistant_message": "47 active plot holders is a very concrete and meaningful figure — include it prominently in both the narrative and any impact summary. It directly answers the question of whether the garden has an established user base, which matters to reviewers assessing whether the investment will benefit real people. You might also calculate a household multiplier, since each plot holder likely represents a family, giving you an estimated reach of well over 100 community members.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "We have a waiting list of 23 people who want plots. Does that help our case?",
+      "assistant_message": "A waiting list of 23 people is excellent supporting evidence — it shows unmet demand and argues directly for expansion or improvement of the garden's capacity. Frame it in the narrative as evidence that the community wants more access, and tie it to any infrastructure improvements that would allow you to add plots or increase yield. Reviewers respond well to the argument that grant funding directly translates into serving people who are currently being turned away.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "We want to add accessible raised beds as part of the project. How should we document the accessibility features?",
+      "assistant_message": "Document the raised beds with specific dimensions — ADA-compliant raised beds are typically 24 to 30 inches high and have at least 36 inches of clear pathway around them for wheelchair access. Reference ADA standards or your state's accessibility guidelines by name in the application to show you're designing to a recognized standard rather than guessing. Including a note about who will benefit, such as the number of current plot holders or waiting list members with mobility limitations if you know it, makes the case even stronger.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "We're also hoping to install a tool lending shed. Should that be a separate line item in the budget?",
+      "assistant_message": "Yes, list the tool lending shed as its own line item so reviewers can see exactly what's being funded and evaluate its cost-reasonableness independently. Break it into sub-components if helpful — structure, tools inventory, and a simple checkout system — so the total doesn't appear as one opaque number. Separate line items also make it easier for a reviewer to approve partial funding if they want to fund some elements but not others.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "We've gotten a quote of $6,200 for the tool shed structure and initial tool inventory combined. That's a significant chunk of the budget.",
+      "assistant_message": "At $6,200 it's definitely a substantial expense, so you'll want to make sure the quote is well documented — ideally with a written estimate from a contractor or supplier that you can attach to the application. Providing two or three competing quotes, if you can get them, demonstrates that you've sought fair pricing and strengthens the credibility of that figure. You might also consider whether any portion, like the tool inventory, could be sourced through donations or a community drive to reduce the grant-funded amount.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "We're also looking at hiring a part-time garden coordinator for 10 hours a week at $18 per hour for the full 18-month grant period. Can we include personnel costs like that?",
+      "assistant_message": "Personnel costs are generally allowable in municipal garden grants, especially for a coordinator role directly tied to grant activities. Make sure your narrative explains what the coordinator will actually do — managing plot assignments, running the workshops, overseeing the rainwater system maintenance — so the position reads as essential rather than administrative overhead. Calculate the full cost carefully: 10 hours per week at $18 per hour over roughly 78 weeks comes to approximately $14,040, so you'll want to confirm how that fits within your overall budget structure.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "We might also apply for a state-level horticulture grant at the same time. Do we need to disclose that to the municipal grant office?",
+      "assistant_message": "Yes, most municipal grants require you to disclose any other pending or awarded funding for the same project — this is typically asked directly on the application form under a 'other funding sources' or 'duplication of benefits' section. Failing to disclose a concurrent application can be grounds for disqualification or clawback if discovered later. Frame it positively: showing that you're pursuing multiple funding streams demonstrates organizational initiative and reduces the municipality's financial exposure if the state grant comes through.",
+      "gold_parents": [
+        "t22"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "We're putting the coordinator salary as a single line item. The full 18-month cost works out to $14,040. Is that going to be a problem for the budget?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t7",
+    "t8",
+    "t9",
+    "t10",
+    "t11",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t20",
+    "t21",
+    "t22",
+    "t23"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer correctly identifies the rule that no single line item may exceed 30% of the total requested grant amount of $15,000, making the ceiling $4,500.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer recognizes that $14,040 exceeds $4,500 and therefore violates the 30% single-line-item cap.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not approve $14,040 as a single line item or suggest it is within the allowable limit.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not confuse the $6,200 tool shed figure or any other distractor budget detail with the coordinator salary calculation.",
+      "required": false
+    }
+  ],
+  "notes": "The critical facts are in t1 (the 30% rule) and t2 (the $15,000 total, giving a $4,500 ceiling). The query in t24 introduces $14,040 as the coordinator salary and asks if it's a problem; the naive answer might say it's fine as a legitimate expense, missing that it violates the line-item cap. The $6,200 tool shed figure in t21 is a trap distractor that could confuse a model checking whether the line item is 'large.'\n\nReference answer: Yes, listing the coordinator salary as a single $14,040 line item is a problem. The grant rules state that no single budget line item may exceed 30% of the total requested grant amount, and since you're requesting $15,000, that cap is $4,500. At $14,040, the coordinator line item is more than three times the allowable maximum. You would need to split it — for example, separating it by quarter or by activity type — or reduce the total grant request significantly to bring 30% of it above $14,040, which would require requesting at least $46,800 total.",
+  "evidence_note": null,
+  "premise": "a community garden applying for a municipal grant"
+}

@@ -1,0 +1,128 @@
+{
+  "scenario_id": "continuation_001",
+  "family": "continuation",
+  "label": "CONTINUE",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm planning to launch a podcast about the history of my town, Millhaven, Ohio. Where should I even start when it comes to finding source material?",
+      "assistant_message": "A great first stop is your county historical society — most maintain physical archives with newspapers, deeds, and photographs dating back to a town's founding. Millhaven, like many Ohio towns, was platted in the early 19th century, so your county recorder's office likely holds plat maps from as far back as 1820 or 1830 that can anchor your early episodes.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "That's helpful. I actually found that Millhaven was officially incorporated on March 14, 1847. Can I build whole episodes around a single date like that?",
+      "assistant_message": "Absolutely — an incorporation date like March 14, 1847 is a perfect narrative anchor because it sits inside a web of causes and consequences you can unpack over multiple episodes. You could spend one episode on the political climate of Ohio in the 1840s that made incorporation attractive, and another on the first town council elected after that date.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "I love that idea. I've also been reading about a local figure named Elias Croft who apparently played a big role in the town's early development. Do you think focusing on one person like that is a good podcast strategy?",
+      "assistant_message": "Centering episodes on a single vivid character like Elias Croft is one of the most effective strategies in narrative history podcasting — it gives listeners a human through-line across abstract events. If Croft was involved in the incorporation era, he could carry you from the founding period all the way through whatever his last documented activity in the town was, giving you a built-in story arc.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "Right, and I found records showing Elias Croft served as Millhaven's first mayor, taking office in 1848 and serving three consecutive one-year terms. That gives me at least a few episodes worth of material.",
+      "assistant_message": "Three consecutive one-year terms means Croft was in office from 1848 through 1850, which covers a formative stretch for any newly incorporated town — infrastructure decisions, early ordinances, and the first tax levies would all fall in that window. Each term could anchor its own episode, letting you track how the town's priorities shifted year over year under his leadership.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "I also want to cover the old Millhaven Woolen Mill, which seems to have been the economic backbone of the town for decades. Any advice on researching industrial history like that?",
+      "assistant_message": "Industrial history is well-served by trade directories and state manufacturing censuses, which Ohio conducted as part of federal manufacturing schedules starting with the 1850 Census of Industry. For a mill specifically, you'd want to track ownership chains, employee counts, and output figures — those numbers tell the economic story more vividly than any narrative description alone.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "I found that the Millhaven Woolen Mill was founded in 1851 by a businessman named Cornelius Vane, and at its peak in 1879 it employed 212 workers, which was enormous for a town that size.",
+      "assistant_message": "A workforce of 212 in 1879 would have represented a substantial fraction of Millhaven's total population at that time, making the mill not just an employer but a defining social institution. Cornelius Vane's founding of the mill in 1851 also places it just one year after Elias Croft's mayoral tenure ended, which opens an interesting question about whether Croft's administration created conditions that attracted Vane to the town.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "That connection between Croft and Vane is a great angle. I also found a detail that ties them directly: Croft signed a land grant on September 3, 1850 — his last act as mayor — that gave Vane the parcel on which the mill was eventually built.",
+      "assistant_message": "That September 3, 1850 land grant is a documentary smoking gun that directly links Croft's final mayoral act to Vane's 1851 mill founding, and it gives your podcast a concrete, dateable moment of cause and effect. With that single document you can close Croft's arc and open Vane's in the same episode, showing listeners exactly how political power in 1850 shaped Millhaven's economic identity for the next three decades.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "If I structure an episode around the moment Millhaven's industrial era began, what specific event and date should I use as the turning point, and who are the two people whose stories converge there?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t7"
+  ],
+  "distractor_turn_ids": [],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer identifies September 3, 1850 as the specific date of the turning-point event.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer identifies the event as Elias Croft signing a land grant (his last act as mayor) to Cornelius Vane.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer names both Elias Croft and Cornelius Vane as the two people whose stories converge at that moment.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not cite the mill's founding date of 1851 or the peak employment figure of 212 workers as the turning-point moment itself.",
+      "required": true
+    }
+  ],
+  "notes": "The key facts the query depends on are all in t7 (the September 3, 1850 date and Croft's last mayoral act) and t4 (Croft's three terms starting 1848). The 1851 mill founding date from t6 and the 212 workers figure are plausible traps — a candidate might cite 1851 as the turning point rather than the 1850 land grant.\n\nReference answer: The turning-point event you should use is Elias Croft signing the land grant on September 3, 1850 — his final act as mayor after three consecutive one-year terms beginning in 1848. That single document directly links Croft's political legacy to Cornelius Vane's decision to found the Millhaven Woolen Mill the following year in 1851. The two converging figures are Croft and Vane, and the land grant is the dateable moment where the town's founding-era political story hands off to its industrial story.",
+  "evidence_note": null,
+  "premise": "launching a podcast about local history"
+}

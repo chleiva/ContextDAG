@@ -1,0 +1,116 @@
+{
+  "scenario_id": "join_then_split_003",
+  "family": "join_then_split",
+  "label": "SPLIT",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm planning the pier foundation for my backyard observatory. I've decided to use a 10-inch diameter Sonotube form filled with 3,000 PSI concrete, and I want to sink it 48 inches deep to get below the frost line here in central Ohio.",
+      "assistant_message": "That's a solid approach for a permanent pier. Central Ohio's frost depth is typically around 36 inches, so your 48-inch depth gives you a comfortable 12-inch safety margin below the frost line. Using 3,000 PSI concrete in a 10-inch Sonotube is a very common and well-proven method for telescope piers, and it should provide excellent vibration damping once fully cured.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "How long should I wait before mounting anything on the pier after the pour?",
+      "assistant_message": "Standard 3,000 PSI concrete reaches approximately 70% of its design strength after 7 days and its full rated strength at 28 days. For a telescope pier specifically, most builders recommend waiting the full 28-day cure before bolting down a mount, because even minor flex during the early cure can introduce micro-cracks that degrade long-term stability. If you pour in temperatures above 50°F and keep the tube moist or wrapped for the first week, you'll get the most consistent cure.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "I also need to wire the observatory for power. I'm thinking of running a 20-amp dedicated circuit out from the main panel, using 12 AWG wire in a conduit buried 18 inches underground.",
+      "assistant_message": "A 20-amp circuit on 12 AWG wire is correctly matched — 12 AWG is rated for exactly 20 amps under the NEC. For direct-buried conduit, the 2020 NEC (Article 300.5) requires a minimum burial depth of 18 inches for rigid metal conduit and intermediate metal conduit, or 24 inches for PVC conduit unless it's protected by a concrete encasement. Make sure you're using the right conduit type to meet that depth requirement, and consider pulling a ground wire alongside the circuit for your equipment.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "I was planning to use Schedule 40 PVC conduit — does that change the burial depth requirement?",
+      "assistant_message": "Yes, Schedule 40 PVC conduit falls under the PVC category in NEC Table 300.5, which requires a minimum burial depth of 24 inches for a residential branch circuit, not 18 inches. You'd either need to dig deeper to 24 inches, switch to rigid metal conduit to stay at 18 inches, or encase the PVC in concrete, which would allow you to reduce the depth to 12 inches. Most hobbyists find it easiest to just go to 24 inches with the PVC rather than switching materials.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "I'm thinking about how the pier and the electrical work interact — specifically, I want to bond the steel anchor bolts in the concrete pier to the observatory's grounding system. Does the pier rebar or hardware count as a grounding electrode under the NEC?",
+      "assistant_message": "Yes, under NEC Article 250.52(A)(3), a concrete-encased electrode — sometimes called a Ufer ground — qualifies as a grounding electrode if it contains at least 20 feet of steel reinforcing bar no smaller than 1/2 inch in diameter, or at least 20 feet of bare copper wire no smaller than 4 AWG, encased in at least 2 inches of concrete. Your 10-inch Sonotube pier is only 48 inches (4 feet) deep, so the rebar alone won't qualify as a Ufer ground due to the length requirement. You could still bond the anchor bolts to your grounding system as supplemental bonding, but you'd need a separate grounding electrode — such as a ground rod driven at least 8 feet deep — to satisfy the NEC grounding electrode requirement for the structure.",
+      "gold_parents": [
+        "t2",
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "That makes sense. Should I install the ground rod before or after I pour the pier, and is there a minimum distance the rod needs to be from the pier itself?",
+      "assistant_message": "The ground rod can be installed at any point relative to the pour, but most electricians drive it before the final backfill so the trench work is already open. NEC 250.53(A)(2) requires that if you install two ground rods, they must be spaced at least 6 feet apart, but there's no NEC-specified minimum distance between a ground rod and a concrete pier. Practically, keeping the rod at least 2 to 3 feet away from the pier avoids interference with the Sonotube formwork and makes the bonding conductor run cleaner.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "What's the earliest I could realistically set my telescope mount on the pier if I poured the concrete today?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4",
+    "t5",
+    "t6"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that full-strength cure for 3,000 PSI concrete takes 28 days, and recommends waiting the full 28 days before mounting.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer references the 70% strength milestone at 7 days as a context point (or correctly notes it is insufficient for mounting).",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not import the 24-inch PVC burial depth or any NEC conduit/grounding detail as part of the cure-time reasoning.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not reference the Ufer ground length requirement or the 8-foot ground rod depth as factors affecting when the mount can be installed.",
+      "required": true
+    }
+  ],
+  "notes": "The evidence for the query lives entirely in t1 and t2 (3,000 PSI concrete, 28-day cure, 7-day 70% milestone, temperature guidance). Turns t3–t6 cover NEC conduit burial depths, PVC Schedule 40 requirements, Ufer grounding, and ground rod spacing — all plausible observatory details that are completely irrelevant to the cure-time question and serve as traps.\n\nReference answer: The earliest realistic date to mount your telescope is 28 days after today's pour, which is when 3,000 PSI concrete reaches its full rated strength. Although the concrete hits roughly 70% of that strength after just 7 days, mounting a telescope pier before 28 days risks introducing micro-cracks from the load and vibration, which would compromise long-term stability. Keeping the Sonotube moist or wrapped during the first week — and ensuring ambient temperatures stay above 50°F — will help you get the most consistent cure and hit that 28-day target reliably.",
+  "evidence_note": null,
+  "premise": "a hobbyist building a backyard observatory"
+}

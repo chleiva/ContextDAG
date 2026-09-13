@@ -1,0 +1,101 @@
+{
+  "scenario_id": "ambiguous_reference_006",
+  "family": "ambiguous_reference",
+  "label": "AMBIGUOUS",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're applying for the Maplewood Municipal Community Garden Grant and need to track our vendor contacts. We've been working with Thornfield Nursery Supply — they're based at 402 Crestline Avenue and have been our main soil and compost provider for three seasons.",
+      "assistant_message": "Thornfield Nursery Supply at 402 Crestline Avenue sounds like a well-established partner for your grant application. Having a three-season relationship with a vendor demonstrates continuity and reliability, which grant reviewers often look favorably on. Make sure to document the total value of goods they've supplied if you can, as that strengthens the in-kind contribution section of most municipal grant forms.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Good point. I should mention that Thornfield has a minimum order requirement of $350 per delivery, and they can only deliver on Tuesdays and Thursdays between April 1 and October 31.",
+      "assistant_message": "That's an important operational constraint to note in your grant application — the $350 minimum order and the Tuesday/Thursday delivery window from April 1 through October 31 will directly affect your project timeline and budget planning. You'll want to make sure any grant-funded supply purchases are scheduled within that seasonal window to avoid logistical problems. If your grant period extends into November or beyond, you may need to identify a supplemental supplier for off-season needs.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "We're also getting bids from GreenRoots Co-op, which is a worker-owned nursery on Dunmore Street. They specialize in native plantings and offer a 15% nonprofit discount.",
+      "assistant_message": "GreenRoots Co-op sounds like a strong alternative or complementary vendor, especially if your garden has a native plant component. A 15% nonprofit discount could meaningfully reduce your projected supply costs, which is worth highlighting in the grant budget narrative. Their worker-owned cooperative structure may also align well with the community-focused values most municipal grant programs emphasize.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "Right, and GreenRoots can deliver any day of the week year-round, which gives us a lot more flexibility. They don't have a minimum order either.",
+      "assistant_message": "Year-round availability with no minimum order makes GreenRoots Co-op a very flexible option for a community garden that may have unpredictable or smaller-batch supply needs. That kind of flexibility could be especially useful during the grant's startup phase when purchase volumes are harder to predict. It's worth noting both vendors in your application to show that you've done comparative sourcing.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "Our plot coordinator, Diane Osei, is also asking whether we need to get the city's parks department to co-sign the grant application since the garden sits on city-leased land.",
+      "assistant_message": "That's a critical procedural question — many municipal grant programs do require a co-signature or formal letter of support from the parks department when the project site is on city-leased or city-owned land. You should check the specific language in the Maplewood grant guidelines under the eligibility or site control section. Reaching out to your parks department liaison as early as possible is wise, since securing institutional signatures can take several weeks.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "If we want to place a supply order in November, can we even use them?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4",
+    "t5"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer correctly resolves 'them' to Thornfield Nursery Supply (not GreenRoots Co-op), based on the branch A query dependency.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that Thornfield Nursery Supply's delivery window ends October 31, meaning a November order cannot be fulfilled by them.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not resolve 'them' to GreenRoots Co-op, which does deliver year-round including November.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer does not claim a November delivery from Thornfield is possible or that their season extends past October 31.",
+      "required": true
+    }
+  ],
+  "notes": "Turns t1 and t2 (branch A) hold the critical facts: Thornfield Nursery Supply's identity and their October 31 season cutoff. Turns t3 and t4 (branch B) are the trap — GreenRoots Co-op delivers year-round with no minimum, so a reader who confuses the pronoun 'them' with GreenRoots would incorrectly answer that a November order is fine.\n\nReference answer: Unfortunately, Thornfield Nursery Supply would not be available for a November order. Their delivery window runs only from April 1 through October 31, so any deliveries outside that seasonal range are not offered. You would need to either advance your order to late October at the latest or source from a different supplier for November needs.",
+  "evidence_note": null,
+  "premise": "a community garden applying for a municipal grant"
+}

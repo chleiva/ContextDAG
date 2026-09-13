@@ -1,0 +1,129 @@
+{
+  "scenario_id": "topic_fork_010",
+  "family": "topic_fork",
+  "label": "FORK",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're finalizing plans for Maplewood Public Library's summer reading program, which runs June 16 through August 9, 2025. We're expecting around 400 child participants between ages 6 and 12.",
+      "assistant_message": "That's a solid eight-week window to work with, and 400 participants is a healthy registration target for a program that size. To keep engagement high across that age range, many libraries segment their activities into two tiers—typically ages 6–8 and 9–12—so the reading goals and events feel appropriately challenging for each group.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "We've decided to use a point-based incentive system. Children earn 10 points per book read, and once they hit 50 points they get a bronze badge, 100 points earns a silver badge, and 150 points earns a gold badge plus entry into a grand-prize raffle.",
+      "assistant_message": "That tiered badge structure gives kids clear short-term goals while the gold-plus-raffle combo at 150 points—equivalent to 15 books—creates a compelling stretch target. One thing to watch is that 50 points, or 5 books, for the first badge should be reachable within the first two or three weeks for motivated readers, which helps with early momentum and reduces dropout before the program really gets going.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "For the grand-prize raffle at the gold level, we're thinking of giving away a $200 gift card to Owl & Page Bookstore. How should we structure the raffle entry and drawing?",
+      "assistant_message": "A clean approach is to give each child who reaches 150 points exactly one raffle ticket, keeping it a flat entry so the prize feels equally attainable once the threshold is crossed rather than favoring kids who read far beyond the goal. You could hold the drawing on the program's final day, August 9, 2025, at a closing celebration event, which gives the raffle a natural deadline and turns the last day into something kids and families look forward to attending.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "We also want to host weekly in-library events. What kinds of programming work well for the 6–12 age range over an eight-week run?",
+      "assistant_message": "A proven mix is to alternate between passive and active formats—think a craft or STEM activity one week, then a visiting author or storyteller the next, so no two consecutive weeks feel identical. For an eight-week program you might anchor weeks one and eight with high-energy kickoff and closing parties, then fill weeks two through seven with two crafts, two STEM workshops, one author visit, and one themed movie afternoon, which keeps the calendar varied without overwhelming volunteer or staff resources.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "We have a $3,500 budget for those events. Does that seem workable for eight weeks?",
+      "assistant_message": "At $3,500 across eight events, you're working with roughly $437 per event, which is tight but doable if you lean on community partnerships. Local STEM educators or university student groups will often run workshops for free or for a small stipend under $100, and many children's authors charge between $150 and $300 for a library visit, leaving meaningful room in each week's allocation for materials and light refreshments.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "We're also considering hiring a part-time program coordinator just for the summer. What hours and pay rate would be typical?",
+      "assistant_message": "For a summer reading program of this scale, a part-time coordinator typically works 15 to 20 hours per week at a rate between $18 and $24 per hour depending on your region and the candidate's experience. Over an eight-week program that comes to roughly 120 to 160 total hours, so your all-in labor cost would land somewhere between $2,160 and $3,840 before any employer taxes or benefits, which is worth factoring into your overall program budget alongside the events spend.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "For the raffle drawing on August 9th, we'd like to make it feel special. What are some ways to run the actual drawing ceremony to maximize excitement for the kids?",
+      "assistant_message": "A classic approach is to place all the raffle tickets in a clear acrylic drum so kids can see their tickets tumbling around before the draw—the visual builds anticipation in a way an opaque box simply doesn't. You could also have a local minor celebrity, like a school principal or a beloved children's librarian, do the physical draw, and consider a drumroll countdown over the PA system right before the ticket is pulled to heighten the moment. Announcing the winner's name and having them come up to receive the $200 Owl & Page gift card in front of the assembled crowd gives the whole closing celebration a satisfying, communal climax.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "If a child joins the program on the very first day and reads exactly enough books to qualify for the raffle, how many books will they have read by the time their name could be drawn?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t7"
+  ],
+  "distractor_turn_ids": [
+    "t4",
+    "t5",
+    "t6"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states the child must reach 150 points to qualify for the raffle (the gold badge threshold from t2).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer correctly calculates 15 books (150 points ÷ 10 points per book, from t2).",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer correctly identifies August 9, 2025 as the date the drawing occurs (from t3), consistent with the program's final day.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not reference the $3,500 event budget or the part-time coordinator's pay rate, as those details from t5 and t6 are irrelevant to the question.",
+      "required": true
+    }
+  ],
+  "notes": "The key facts the query needs are in t2 (10 points per book, 150-point gold/raffle threshold) and t3 (drawing held on August 9, the final day). Turns t4, t5, and t6 cover weekly events, the $3,500 event budget, and coordinator pay—all plausible program details but entirely irrelevant to computing the book count and draw date.\n\nReference answer: To qualify for the grand-prize raffle, a child needs to reach 150 points, and since each book is worth 10 points, that means reading exactly 15 books. If they join on June 16—the program's first day—and read just enough to hit the gold threshold, their name would be in the drawing with 15 books read when the raffle is held on August 9, 2025, the program's closing day.",
+  "evidence_note": null,
+  "premise": "a city library planning a summer reading program"
+}

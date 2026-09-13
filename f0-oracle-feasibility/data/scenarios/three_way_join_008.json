@@ -1,0 +1,149 @@
+{
+  "scenario_id": "three_way_join_008",
+  "family": "three_way_join",
+  "label": "JOIN",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're evaluating DentalSync Pro as our new scheduling platform. What's the per-seat monthly cost for their Professional tier?",
+      "assistant_message": "DentalSync Pro's Professional tier is priced at $42 per seat per month when billed monthly, or $34 per seat per month if you commit to an annual contract. That pricing covers up to 5 operatories and includes their automated appointment reminder system.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "How many staff members would need a login? We have front desk, hygienists, and dentists all needing access.",
+      "assistant_message": "That depends on how you define concurrent users versus named users. Most platforms count named users, meaning each person who needs their own login counts as one seat regardless of whether they're working at the same time. For a typical dental office with two dentists, three hygienists, and two front-desk staff, you'd be looking at seven named users.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "Our waiting room chairs are getting pretty worn. What's a reasonable budget for replacing the seating in a six-chair waiting room?",
+      "assistant_message": "For a professional dental waiting room, commercial-grade seating typically runs between $150 and $400 per chair, so a six-chair setup would cost roughly $900 to $2,400 for the furniture itself. You'd also want to factor in delivery and any reupholstering of existing pieces if you want to save some money.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "We currently have 2 dentists, 3 hygienists, and 2 front-desk staff. Does everyone need their own seat, or can hygienists share a login?",
+      "assistant_message": "Sharing logins is generally a bad practice for compliance and audit-trail reasons, particularly under HIPAA, which requires individual user accountability for accessing patient records. You should plan on one seat per person, which in your case means 7 seats total across your two dentists, three hygienists, and two front-desk staff.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "DentalSync Pro says there's a one-time data migration fee to import our existing patient records. Do you know what they typically charge for that?",
+      "assistant_message": "DentalSync Pro's published one-time data migration fee is $850 for practices importing from any of their supported legacy systems. If your current software is not on their supported list, the fee jumps to $1,400 for a custom migration, so it's worth confirming whether your existing platform is supported before budgeting.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "The office manager also wants to repaint the reception area. Does the color of the walls actually affect patient anxiety levels?",
+      "assistant_message": "There is actually research suggesting that soft blues and greens are associated with lower anxiety in clinical settings, while bright whites and stark grays can feel more sterile and increase tension. For a dental office specifically, muted sage greens or warm taupes tend to be popular choices for that reason.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "Our current software is Eaglesoft version 16. Is that on DentalSync Pro's supported migration list?",
+      "assistant_message": "Yes, Eaglesoft is one of DentalSync Pro's supported legacy platforms for data migration, and specifically versions 14 through 18 are listed as fully supported for the standard migration process. That means you would qualify for the standard $850 migration fee rather than the custom rate.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "Is that $850 migration fee a one-time thing, or does it recur if we do a second data import later?",
+      "assistant_message": "The $850 fee is strictly one-time and covers the initial migration of your full patient records database at the time of onboarding. Any subsequent imports, such as adding records from a practice acquisition later, would be billed as a new migration at the prevailing rate at that time.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "We'd be signing an annual contract. Does the $34 per-seat rate apply from day one, or is there a minimum commitment period before it kicks in?",
+      "assistant_message": "The $34 per-seat per-month rate applies from day one of an annual contract, with the full year billed upfront in a single invoice. There is no probationary period at the higher monthly rate; you simply pay the annual amount at signing, which works out to $408 per seat per year.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "Given everything we've discussed about our staff count, the contract pricing, and the migration situation, what would our total first-year cost be with DentalSync Pro?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t9",
+        "t8",
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t4",
+    "t5",
+    "t7",
+    "t8",
+    "t9"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t6"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer uses $34 per seat per month (the annual contract rate from branch A, t9) to calculate the subscription cost, not $42.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer uses 7 seats (2 dentists + 3 hygienists + 2 front-desk staff, established in branch C, t4) to calculate the subscription cost.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer includes the $850 one-time migration fee (from branch B, t7/t8, reflecting that Eaglesoft 16 is a supported system qualifying for the standard rate) in the first-year total.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not incorporate any costs related to waiting room furniture or wall paint (distractor branch D topics), as those are irrelevant to the software cost calculation.",
+      "required": true
+    }
+  ],
+  "notes": "The three evidence branches supply the annual per-seat rate ($34, t9), the seat count (7, t4), and the applicable migration fee ($850 standard rate because Eaglesoft 16 is supported, t7). The distractor branch about waiting room furniture and paint (t3, t6) is on-premise but contributes nothing to the cost calculation and must not appear in the answer.\n\nReference answer: With an annual contract, the per-seat rate is $34 per month, and your practice needs 7 seats for your two dentists, three hygienists, and two front-desk staff. That subscription comes to $34 × 7 × 12 = $2,856 for the year. Since you're running Eaglesoft 16, which is on DentalSync Pro's supported migration list, the one-time data migration fee is $850 at the standard rate. Your total first-year cost would therefore be $2,856 + $850 = $3,706.",
+  "evidence_note": null,
+  "premise": "a dentist's office replacing its appointment software"
+}

@@ -1,0 +1,307 @@
+{
+  "scenario_id": "constraint_retention_009",
+  "family": "constraint_retention",
+  "label": "CONSTRAINT",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I want to make sure we plan this move carefully. Our hard rule is: the moving truck cannot exceed a total loaded weight of 26,000 pounds, because that's the maximum my husband is licensed to drive without a commercial CDL.",
+      "assistant_message": "Understood — I've noted that as a firm constraint: the loaded moving truck must stay at or below 26,000 pounds total, since exceeding that would require a commercial CDL your husband doesn't have. We'll need to factor that limit into every decision about what to bring, how to pack, and what size truck to rent.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Right. We're thinking of renting a 26-foot truck, which has a GVWR of exactly 26,000 pounds on most rental fleets. That gives us zero buffer if we're near the limit.",
+      "assistant_message": "That's a critical detail — a 26-foot rental truck with a 26,000-pound GVWR means the curb weight of the empty truck (typically around 12,000–13,000 pounds for that size) already eats up roughly half your allowance, leaving you only about 13,000–14,000 pounds for your household goods, fuel, passengers, and the dog. You may want to weigh the loaded truck at a certified scale before you leave to confirm you haven't gone over, since the margin is essentially zero.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "Good point. How do we handle keeping the kids entertained during what will probably be a four-day drive?",
+      "assistant_message": "For a four-day drive with kids, a mix of screen time and offline activities tends to work best — downloadable movies and audiobooks for stretches with no signal, plus small activity kits (colored pencils, sticker books, travel games) for when screens lose their appeal. Breaking the day into segments with planned stops at interesting spots, like a roadside attraction or a park, gives kids something to look forward to and burns off energy.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "What about overnight stays? We need pet-friendly hotels for the dog.",
+      "assistant_message": "Chains like La Quinta, Motel 6, and many Kimpton properties are consistently pet-friendly and usually don't charge extra for dogs, though it's worth calling ahead to confirm weight limits since some locations cap pets at 40 or 50 pounds. Booking in advance rather than searching on the road gives you much more flexibility, especially in smaller towns where pet-friendly options are limited.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "Our dog is a 70-pound Labrador, so I'll definitely need to call ahead. What's the best way to keep him calm in the car for that many hours?",
+      "assistant_message": "A 70-pound Lab is a lot of dog for a multi-day drive, so it helps to get him used to the vehicle beforehand with short practice trips. On the road, a secured crate or a dog seatbelt harness rated for his weight keeps him safer and often calmer; you might also ask your vet about a mild anti-anxiety supplement or prescription medication if he's prone to stress.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "Our vet mentioned Trazodone as an option. I also want to make sure the kids' school records transfer properly — any advice on that process?",
+      "assistant_message": "Most public school districts will request records directly from the previous school once you enroll, but it speeds things up significantly if you bring physical copies of your kids' most recent report cards, immunization records, and any IEP or 504 documents on the first day. If your move crosses state lines, some states have slightly different immunization schedules, so it's worth checking the destination state's requirements before you arrive.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "Both kids are in elementary school, ages 7 and 9. Will they need to re-take placement tests at the new school?",
+      "assistant_message": "Placement tests aren't universal — some districts require them for math or reading groupings, while others simply slot kids into the appropriate grade and observe for the first few weeks. It's worth emailing the new school's front office before you arrive to ask about their specific intake process, so your kids aren't caught off guard.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "That's a good idea. I'm also wondering about changing our vehicle registrations and driver's licenses once we arrive — how long do we usually have?",
+      "assistant_message": "Most states require you to update your driver's license within 30 to 60 days of establishing residency, and vehicle registration timelines are similar, though some states like California are stricter and require registration within 20 days. Check the DMV website for your destination state well before you arrive so you can gather the required documents — typically your title, proof of insurance, and a residency document like a lease or utility bill.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "We're moving to Colorado, so I'll look up Colorado DMV requirements. Do we need a smog or emissions test to register the car there?",
+      "assistant_message": "Colorado requires an emissions test for vehicles registered in certain counties — primarily the Denver metro area and the Front Range, including Adams, Arapahoe, Boulder, Broomfield, Denver, Douglas, El Paso, Jefferson, Larimer, and Weld counties. If you're moving to one of those counties, you'll need to pass an emissions inspection before you can complete your registration, and the test must be done at a Colorado-certified station.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "We're moving to Jefferson County, so that applies to us. What about setting up utilities at the new house — what's the right order to do that?",
+      "assistant_message": "The general order is electricity first, since most other services depend on the property having power, followed by gas, water (if it's not automatic through the municipality), and then internet and cable. Try to schedule electricity and gas to start the day before you arrive so the house is livable immediately; internet installations often have longer lead times, sometimes a week or more, so book that as early as possible.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "Good call on internet lead times. What's the best way to handle forwarding our mail from the old address?",
+      "assistant_message": "The USPS Change of Address form can be submitted online at usps.com for a one-dollar identity verification fee, and it activates forwarding within about a week. Standard mail forwarding lasts 12 months for first-class mail, so you have time to update your address with banks, subscriptions, and government agencies, but magazines and catalogs only forward for 60 days, so update those separately.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "I always forget about the 60-day limit on magazines. Should we hire a cleaning crew for the old house after we leave?",
+      "assistant_message": "If you're renting, your lease almost certainly requires you to leave the property in a clean condition to get your security deposit back, so a professional move-out cleaning crew is usually worth the cost — they know what landlords inspect and can document their work. If you own the house and it's going up for sale, a deep clean before listing photos is also strongly recommended, as it makes a measurable difference in buyer perception.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "We're selling the house, so good to know. How early should we take the listing photos relative to the move-out date?",
+      "assistant_message": "Ideally, listing photos are taken while the house still has some furniture in it, as empty rooms photograph poorly and look smaller than furnished ones. A common approach is to schedule the photographer 2 to 3 days before the moving truck arrives, capturing the house at its most presentable while you've already decluttered and packed non-essential items.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "That makes sense. What should we do with items we can't take with us — things we want to get rid of before the move?",
+      "assistant_message": "A combination of a Facebook Marketplace or Craigslist sale, a donation run to Goodwill or Habitat for Humanity ReStores, and a single-day estate or garage sale covers most categories efficiently. For large items that don't sell, services like LoadUp or 1-800-GOT-JUNK will haul them away for a fee, which is often faster than waiting for individual buyers.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "We have a piano we're debating whether to take. It's a full upright and we've had it for 15 years.",
+      "assistant_message": "Full upright pianos typically weigh between 400 and 800 pounds depending on the model, and they're notoriously difficult to move safely without specialized equipment — most general movers won't touch them without extra liability waivers or a surcharge. If you decide to take it, you'd want to hire a dedicated piano mover for that piece specifically and budget $300 to $800 for the move depending on distance.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "The piano is a Yamaha U1, which I looked up and it weighs about 507 pounds. We're leaning toward taking it. What about packing fragile items like dishes — any best practices?",
+      "assistant_message": "The standard approach is individual wrapping with packing paper (not newspaper, which transfers ink) for each piece, then layering in a box with crumpled paper on the bottom, between layers, and on top so nothing shifts. Dish boxes — also called dish packs — have double-thick walls and are specifically sized for kitchenware; using them instead of regular boxes significantly reduces breakage.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "What about artwork? We have a few framed pieces that are sentimental but not valuable.",
+      "assistant_message": "For sentimental framed pieces, mirror boxes are the best option — they're adjustable, telescoping boxes designed specifically for framed artwork and mirrors, and they provide corner protection that regular boxes can't match. Wrap the glass with painter's tape in a grid pattern first so that if the glass cracks in transit, it stays in place rather than shattering inside the box.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "Good tip on the painter's tape. How do we handle packing clothes — is it worth buying wardrobe boxes?",
+      "assistant_message": "Wardrobe boxes are genuinely useful for clothes you'd otherwise have to fold and re-hang, particularly suits, dresses, and anything that wrinkles easily — they have a built-in hanging bar and let you transfer directly from your closet. For everyday clothes, compression bags or suitcases are more space-efficient and cheaper, so most people use a combination of both.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "We have about six wardrobe boxes' worth of hanging clothes. Should we label boxes by room or by category?",
+      "assistant_message": "Labeling by destination room is almost universally recommended by professional movers because it lets the moving crew place boxes directly in the right room without you having to direct every single piece. Writing the room name on at least two sides of each box (not just the top) means the label is visible regardless of how boxes are stacked.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "That's practical advice. What about plants — can we take them in the moving truck or should they go in the car?",
+      "assistant_message": "Most moving companies — and USDA regulations — restrict or prohibit transporting live plants across state lines, particularly into states like Colorado that have agricultural inspection stations on major entry routes. Your safest option is to transport beloved plants in your personal vehicle with climate control, and to check Colorado's Department of Agriculture website for any specific restrictions on plant species entering the state.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "I didn't know Colorado had inspection stations — good to know. How should we handle meals on the road with two kids who are picky eaters?",
+      "assistant_message": "A well-stocked cooler with familiar snacks and sandwiches reduces dependence on whatever fast food happens to be at the next exit, which is a real sanity-saver for picky eaters. For sit-down meals, chains like Panera, Chick-fil-A, and Cracker Barrel tend to have broad enough menus that even particular kids find something acceptable, and Cracker Barrel locations are strategically placed along most major interstate routes.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "Cracker Barrel is a great call — the kids love it. I also want to make sure we have an emergency kit in the car during the drive. What should it include?",
+      "assistant_message": "A solid road-trip emergency kit for a family should include jumper cables or a jump starter battery pack, a basic first aid kit, a reflective triangle or road flares, a tire inflator and sealant like Fix-a-Flat, water (at least one gallon per person), non-perishable snacks, a phone charger, and a physical map or atlas as a backup to GPS. With kids and a dog, also add a small pet first aid kit, extra leash, and a few days of any prescription medications for everyone in the family.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "We've finalized our inventory and the total weight of all our household goods, the piano, boxes, and furniture comes to about 15,200 pounds. Is renting that 26-foot truck actually safe for us to do?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t7",
+    "t8",
+    "t9",
+    "t10",
+    "t11",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t20",
+    "t21",
+    "t22"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer correctly uses the 26,000-pound GVWR as the hard maximum loaded weight the truck cannot exceed.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer accounts for the truck's empty curb weight (approximately 12,000–13,000 pounds) when evaluating whether 15,200 pounds of cargo fits within the limit.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer concludes that 15,200 pounds of cargo plus the truck's curb weight (~12,000–13,000 lbs) totals approximately 27,200–28,200 pounds, which exceeds the 26,000-pound limit and therefore is NOT safe or legal for the husband to drive.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not suggest the 26-foot truck is fine to drive as-is with 15,200 pounds of cargo, and must not confuse the cargo weight alone with the total loaded GVWR.",
+      "required": true
+    }
+  ],
+  "notes": "t1 and t2 hold the critical facts: the 26,000-lb hard limit and the 26-ft truck's ~12,000–13,000 lb curb weight. The trap in t23 is that 15,200 lbs sounds safely under 26,000 lbs if a reader naively treats it as the total weight rather than cargo only; the correct answer requires adding the curb weight from t2 to the cargo weight in t23 and checking the sum against the rule in t1.\n\nReference answer: Unfortunately, renting that 26-foot truck is not safe under your constraints. A 26-foot rental truck with a 26,000-pound GVWR has an empty curb weight of roughly 12,000 to 13,000 pounds, which means adding 15,200 pounds of household goods would put the total loaded weight somewhere between 27,200 and 28,200 pounds — well over the 26,000-pound maximum your husband can legally drive without a commercial CDL. You'd need to either reduce your load (offloading items like the 507-pound piano would help but wouldn't be enough on its own), split the load between the truck and a trailer driven by a CDL-licensed driver, or hire a professional moving company to handle transport.",
+  "evidence_note": null,
+  "premise": "planning a cross-country house move with two kids and a dog"
+}

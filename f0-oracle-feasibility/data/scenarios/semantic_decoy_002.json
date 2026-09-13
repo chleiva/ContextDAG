@@ -1,0 +1,127 @@
+{
+  "scenario_id": "semantic_decoy_002",
+  "family": "semantic_decoy",
+  "label": "DECOY",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "Let's nail down the reward structure for the Frost Siege event we're planning for December. What's a solid point-threshold model for a three-tier system?",
+      "assistant_message": "For Frost Siege, I'd recommend setting Tier 1 at 500 points, Tier 2 at 1,500 points, and Tier 3 at 4,000 points. These thresholds are spaced to reward casual players at Tier 1 while making Tier 3 a genuine stretch goal that only dedicated players hit over the event's 14-day window.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "What should we actually give out at each tier? We want Tier 3 to feel really premium.",
+      "assistant_message": "For Frost Siege, Tier 1 can award the Snowfall Banner cosmetic and 200 in-game gold coins. Tier 2 bumps up to the Glacial Armor Skin plus 600 gold coins. Tier 3 should deliver the exclusive Rimefang Mount, 1,500 gold coins, and the limited Frost Siege Title that won't be available anywhere else after the event closes on December 31st.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "How do players actually earn points during Frost Siege? I want multiple paths so it doesn't feel grindy.",
+      "assistant_message": "Players earn Frost Siege points through three main activities: completing daily Ice Fortress quests gives 75 points each, winning a Ranked Skirmish match awards 120 points, and opening a Frost Chest — purchasable or earnable — grants 50 points. There's also a one-time weekly bonus of 300 points for logging in on any Saturday during the event, capped at two weeks, so a total of 600 bonus points maximum from that source.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "What's the absolute maximum points a fully dedicated free-to-play player could accumulate over the full event?",
+      "assistant_message": "Over the 14-day Frost Siege event, a free-to-play player completing every daily Ice Fortress quest earns 75 × 14 = 1,050 points, and if they win one Ranked Skirmish per day that's 120 × 14 = 1,680 points. Adding the two Saturday login bonuses of 300 points each gives 600 more, for a grand total of 3,330 points maximum without spending. That means a dedicated free-to-play player can comfortably clear Tier 2 at 1,500 points but falls just short of the 4,000-point Tier 3 threshold.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "For the Solar Clash summer event we discussed last month, remind me what point bands we settled on for the three reward tiers.",
+      "assistant_message": "Solar Clash uses Tier 1 at 300 points, Tier 2 at 900 points, and Tier 3 at 2,500 points. The lower ceiling reflects the shorter 10-day event window and the faster daily quest cadence we designed for the summer schedule.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "And what are players getting at each Solar Clash tier?",
+      "assistant_message": "Solar Clash Tier 1 gives the Sunburst Banner and 150 gold coins, Tier 2 awards the Ember Armor Skin plus 400 gold coins, and Tier 3 delivers the exclusive Solaris Drake Mount, 1,000 gold coins, and the Solar Clash Title. The event runs June 1st through June 10th, and all rewards expire from the shop on that last day.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "What's the point-earning breakdown for Solar Clash so I can sanity-check the free-to-play ceiling?",
+      "assistant_message": "In Solar Clash, completing a daily Sun Spire quest gives 60 points, winning a Casual Arena match awards 90 points, and cracking open a Solar Chest yields 40 points. There's a one-time weekend login bonus of 200 points on the single Saturday that falls within the 10-day window, so a free-to-play player maxing daily quests and one match win per day hits 60 × 10 + 90 × 10 + 200 = 1,700 points, safely clearing Tier 2 at 900 but short of Tier 3's 2,500 threshold.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "If a free-to-play player grinds every daily quest and wins one ranked match every single day of the event, which reward tier do they actually reach and what do they unlock?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4"
+  ],
+  "distractor_turn_ids": [
+    "t5",
+    "t6",
+    "t7"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer identifies Tier 2 (1,500-point threshold) as the tier the free-to-play player reaches in Frost Siege, not Tier 3 (4,000 points).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states the Tier 2 Frost Siege rewards as the Glacial Armor Skin plus 600 gold coins.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not cite the Solar Clash Tier 2 threshold of 900 points or the Ember Armor Skin as the reward.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer references the 14-day Frost Siege event window and the maximum free-to-play total of 3,330 points as the basis for the tier conclusion.",
+      "required": true
+    }
+  ],
+  "notes": "Turns t1–t4 hold all the facts needed to answer the query (Frost Siege thresholds, rewards, and point-earning rates). Turns t5–t7 are the semantic decoy: Solar Clash uses the same vocabulary (tiers, daily quests, match wins, login bonuses, mounts, titles) but different numbers (10-day window, 300/900/2500 thresholds, Ember Armor Skin, Solaris Drake Mount), so a model relying on lexical similarity rather than branch identity would incorrectly answer using Solar Clash values.\n\nReference answer: Over the full 14-day Frost Siege event, a free-to-play player completing every daily Ice Fortress quest (75 × 14 = 1,050 points) and winning one Ranked Skirmish per day (120 × 14 = 1,680 points) plus both Saturday login bonuses (300 × 2 = 600 points) accumulates a maximum of 3,330 points. That clears the Tier 2 threshold of 1,500 points but falls short of the 4,000-point Tier 3 requirement. So the player reaches Tier 2 and unlocks the Glacial Armor Skin and 600 gold coins, but cannot earn the Rimefang Mount, the 1,500 gold coins, or the exclusive Frost Siege Title without additional spending.",
+  "evidence_note": null,
+  "premise": "a game studio planning a live-ops event calendar"
+}

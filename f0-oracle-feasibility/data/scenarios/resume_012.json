@@ -1,0 +1,151 @@
+{
+  "scenario_id": "resume_012",
+  "family": "resume",
+  "label": "RESUME",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're moving from Austin, Texas to Portland, Oregon in mid-July with our two kids (ages 6 and 9) and our golden retriever, Biscuit. I'm trying to figure out the best way to handle the driving portion — we want to do it as a road trip rather than fly. The total distance is about 1,900 miles and we're thinking of splitting it into three days.",
+      "assistant_message": "A three-day split over roughly 1,900 miles works out to about 633 miles per day, which is manageable but on the longer side when you have young kids and a dog making frequent stops necessary. A common recommendation for families with children under 10 is to cap driving at around 500 miles per day to keep everyone sane, so you might consider a four-day itinerary instead. That said, if you stick to three days, a reasonable route would take you Austin → Amarillo (Day 1, ~360 miles), Amarillo → Salt Lake City (Day 2, ~700 miles), and Salt Lake City → Portland (Day 3, ~840 miles), though the Day 2 and Day 3 legs are quite long.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "I think we'll go with four days to keep things saner. We're planning to take I-40 West to I-15 North as the main corridor. Can you suggest a four-day breakdown and flag any must-book-ahead lodging spots?",
+      "assistant_message": "A solid four-day breakdown on that corridor would be: Day 1 Austin to Albuquerque (~600 miles via I-40), Day 2 Albuquerque to Las Vegas, Nevada (~570 miles continuing on I-40 then I-15), Day 3 Las Vegas to Salt Lake City (~420 miles on I-15), and Day 4 Salt Lake City to Portland (~840 miles on I-84). The Day 4 leg is still the longest, but by that point you'll be on the home stretch. For must-book-ahead stops, Albuquerque fills up fast in mid-July because of summer tourism, so I'd recommend reserving at least 6 weeks in advance; the Marriott Albuquerque at 2101 Louisiana Blvd NE is pet-friendly with a $75 non-refundable pet fee per stay and has reliably available parking for large moving trucks.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "That's really helpful. What's the pet policy situation like for the Las Vegas overnight? We need somewhere that takes a 70-pound golden retriever — a lot of places cap at 50 pounds.",
+      "assistant_message": "For a 70-pound dog in Las Vegas on that corridor, the Residence Inn by Marriott Las Vegas Hughes Center at 370 Hughes Center Drive is a strong pick — they accept pets up to 100 pounds with a $150 non-refundable cleaning fee per stay and no nightly surcharge on top of that. It's off the Strip near I-15 so you avoid the congestion, and the extended-stay layout means you'll have more room for the kids and Biscuit to spread out. Book at least 4 weeks ahead for mid-July dates, as pet-friendly rooms at that property historically sell out by early June for summer travel.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "I need to start thinking about what to do with the kids during the actual packing week before we leave. My 9-year-old is already anxious about leaving her school and friends — do you have any advice for helping kids that age cope emotionally with a big move?",
+      "assistant_message": "At age 9, children are old enough to understand what's happening but still need concrete anchors to feel secure, so giving her some real agency helps enormously. Let her pack her own 'special box' of items that rides in the car rather than the moving truck — knowing her most important possessions are physically with her can reduce the sense of loss. Research also suggests scheduling a 'farewell tour' of meaningful local spots in the week before the move: her school classroom, a favorite park, a friend's house. This creates a sense of closure rather than abrupt ending.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "She's particularly worried about losing touch with her best friend Maya. What are realistic ways for 9-year-olds to maintain a long-distance friendship?",
+      "assistant_message": "At 9, kids do best with structured, scheduled contact rather than open-ended 'we'll call sometime' promises, because the latter rarely happens consistently. A weekly video call on a fixed day — say, every Sunday at 4 p.m. — gives both kids something to look forward to and a routine that feels reliable. You might also set them up with a shared activity they can do 'together' remotely, like simultaneously reading the same book series and discussing it on their calls; the Wings of Fire series is extremely popular with that age group and has 15 books, so it could sustain the friendship for well over a year. Sending physical letters or small packages occasionally also carries emotional weight that texts don't.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What about enrolling her in activities in Portland quickly so she builds new friendships? She's been doing recreational soccer for two years.",
+      "assistant_message": "Portland has a very active youth soccer scene through Oregon Youth Soccer Association (OYSA), and for a 9-year-old the right entry point is typically a recreational league rather than a competitive club right away, since rec leagues are more welcoming to newcomers mid-season. The Portland Youth Soccer Association (PYSA) runs fall recreational leagues with registration typically opening in late July for a September season start, so your mid-July arrival actually gives you a narrow but workable window to register her. Showing up to the first practice is often enough for kids that age to start forming connections, especially in a sport where she already has two years of experience and confidence.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "My 6-year-old is less anxious but he's very attached to his current bedroom setup — he has a specific loft bed with a slide that we're not sure will fit in whatever house we're renting. How do we handle that transition?",
+      "assistant_message": "For a 6-year-old, the bed itself is often a symbol of his whole sense of 'home,' so wherever possible, try to bring the actual loft bed rather than replacing it — even if reassembly is a hassle, the familiarity is worth it. Before signing any rental lease, measure the prospective bedroom ceiling height against the loft bed's total height; most standard loft beds with a slide require at least 9 feet of ceiling clearance for safe use, and many older Portland rental homes have 8-foot ceilings, so this is worth asking landlords explicitly. If the bed truly can't come, involve him in choosing a replacement rather than presenting it as a done deal — giving him a catalog or website to pick from restores his sense of control.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "Good point on the ceiling height. We're looking at rentals in the Sellwood-Moreland neighborhood specifically. Is that a family-friendly area?",
+      "assistant_message": "Sellwood-Moreland is consistently rated one of Portland's most family-friendly neighborhoods — it has a walkability score of around 79 out of 100, and Sellwood Park itself is a large neighborhood park with a community pool, a playground, and open fields that would be great for Biscuit as well. The local elementary school in the area is Sellwood Middle School's feeder, Duniway Elementary (now called Rieke Elementary after a 2019 renaming), which has solid parent satisfaction ratings. It's a quieter, more residential part of southeast Portland compared to neighborhoods like Alberta Arts District, which can feel busier and less kid-oriented.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "How does the rental market in Sellwood-Moreland look for a family needing at least three bedrooms?",
+      "assistant_message": "Three-bedroom rentals in Sellwood-Moreland are available but competitive — as of 2024, average rent for a three-bedroom house in that neighborhood runs approximately $2,800 to $3,400 per month, which is slightly above the Portland metro average of about $2,500 for comparable units. Inventory tends to be tightest in June and July because families try to move before the school year starts, so you're entering the market at peak competition. Using a local Portland property management company like Windermere Property Management or working with a local buyer's agent who handles rentals can give you access to listings before they hit Zillow, which matters a lot in that price range and neighborhood.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "Can you remind me what the pet fee and weight limit were for the Las Vegas hotel you suggested for Biscuit? I want to make sure I budget correctly.",
+      "assistant_message": null,
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3"
+  ],
+  "distractor_turn_ids": [
+    "t4",
+    "t5",
+    "t6",
+    "t7",
+    "t8",
+    "t9"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer identifies the hotel as Residence Inn by Marriott Las Vegas Hughes Center at 370 Hughes Center Drive.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states the pet weight limit is 100 pounds.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer states the pet fee is $150 non-refundable per stay (with no nightly surcharge).",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not mention the $75 pet fee from the Marriott Albuquerque, which applies to the Albuquerque stop, not the Las Vegas stop.",
+      "required": true
+    }
+  ],
+  "notes": "The facts the query needs are settled in t3 (Residence Inn Hughes Center, 100-lb weight limit, $150 non-refundable fee). The main trap is t2, which contains a different Marriott property (Albuquerque) with a different fee ($75), which a confused model might import into its answer.\n\nReference answer: The Las Vegas hotel recommended was the Residence Inn by Marriott Las Vegas Hughes Center at 370 Hughes Center Drive. They accept pets up to 100 pounds, which covers Biscuit at 70 pounds. The fee is a $150 non-refundable cleaning fee per stay, with no additional nightly pet surcharge on top of that. You should also plan to book at least 4 weeks ahead since pet-friendly rooms there tend to sell out by early June for mid-July travel.",
+  "evidence_note": null,
+  "premise": "planning a cross-country house move with two kids and a dog"
+}

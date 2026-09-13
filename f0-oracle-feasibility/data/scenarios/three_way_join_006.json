@@ -1,0 +1,137 @@
+{
+  "scenario_id": "three_way_join_006",
+  "family": "three_way_join",
+  "label": "JOIN",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're planning our spring concert tour and I need to figure out the venue situation. The Hartwell Community Center has offered us their main hall, which holds exactly 340 seated audience members.",
+      "assistant_message": "That's a solid mid-size venue for an amateur choir tour. A 340-seat hall gives you enough capacity to feel like a real event without the pressure of filling a much larger space, and community centers often have good acoustics for choral work.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Right, and the center told us they require the performing group to carry a minimum liability insurance policy of $1,000,000 per occurrence before they'll sign the venue contract.",
+      "assistant_message": "That's a very standard requirement for community venues — $1,000,000 per occurrence is the most common minimum you'll see. Make sure your choir's policy certificate names the Hartwell Community Center as an additional insured, which is almost always a secondary condition that comes with that requirement.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "We're also sorting out the program. Our choir has 48 singers registered for the tour.",
+      "assistant_message": "48 singers is a healthy size for a touring amateur choir — large enough for a full choral sound across all four voice parts but manageable for travel logistics. You'll want to confirm that number is stable before you book transport and accommodation.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "For transport, we got a quote from Greenway Coach Hire. Their standard touring coach seats 52 passengers.",
+      "assistant_message": "A 52-seat coach is one of the most common configurations for group travel, so Greenway's quote is in line with what you'd expect. It's worth confirming whether that 52-seat count includes the driver, as some operators list it that way and it can affect your available seats.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "We also need to bring 5 non-singing chaperones and our conductor, so they're travelling with the group too.",
+      "assistant_message": "So that brings your total travelling party to 48 singers plus 5 chaperones plus the conductor, which is 54 people in all. That's an important number to pin down before you commit to any transport or accommodation arrangements.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "Greenway also said that if we need more capacity, their next size up is a double-decker coach that seats 78 passengers, but it costs £900 per day compared to £480 per day for the standard coach.",
+      "assistant_message": "That's a significant price jump — £900 versus £480 is nearly double the daily rate for the larger vehicle. Whether the extra cost is worth it depends entirely on how many people you need to move, so getting your final headcount confirmed is the critical first step.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "Our choir director wants to add a post-concert reception. The Hartwell Center's catering manager is called Patricia Osei and she said the kitchen closes at 9 p.m. on weeknights.",
+      "assistant_message": "That's worth flagging early with Patricia so you can plan your concert schedule around it. If your performance runs long or you want a proper reception rather than a rushed one, you might need to negotiate an exception or look at bringing in an external caterer.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "Actually I should also mention that four of the chaperones are staying behind for the first night and only joining the tour from day two, so they won't be on the day-one coach.",
+      "assistant_message": "So on day one your travelling party drops to 48 singers, plus 1 chaperone who is travelling from the start, plus the conductor — that's 50 people needing seats on the first day. From day two onward you're back up to the full 54, which is the number that matters for your ongoing transport planning.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "Given all of this, can we fit everyone into the standard coach on day one, and will the Hartwell hall be big enough for the whole choir to perform there?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t2",
+        "t6",
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t8"
+  ],
+  "distractor_turn_ids": [
+    "t7"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer correctly states that the day-one travelling party is 50 people (48 singers + 1 chaperone + conductor), derived from t3, t5, and t8.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer correctly states that the standard Greenway coach seats 52 passengers (from t4), and therefore 50 people fit with 2 seats to spare on day one.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer correctly states that the Hartwell hall seats 340 audience members (from t1), which is an audience capacity figure and does not constrain the 48-singer performing choir.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not mention Patricia Osei or the 9 p.m. kitchen closing time, as those details are from the distractor branch and are irrelevant to coach capacity or hall suitability.",
+      "required": true
+    }
+  ],
+  "notes": "The three gold branches are: Branch A (t1–t2) establishing the 340-seat hall and insurance requirement; Branch B (t4–t6) establishing coach sizes and pricing; Branch C (t3, t5, t8) building up the headcount to the day-one figure of 50. The distractor (t7) introduces Patricia Osei and the 9 p.m. kitchen rule, which are plausible tour details but have no bearing on the coach-capacity or hall-suitability question.\n\nReference answer: On day one, four of the five chaperones are staying behind, so the travelling party is 48 singers plus 1 chaperone plus the conductor, totalling 50 people. The standard Greenway coach seats 52 passengers, so everyone fits with 2 seats to spare — there is no need to upgrade to the double-decker on day one. The Hartwell Community Center's 340-seat figure refers to audience capacity, not performer capacity, so all 48 choir singers can perform there without any issue from the hall's size.",
+  "evidence_note": null,
+  "premise": "an amateur choir organizing a spring concert tour"
+}

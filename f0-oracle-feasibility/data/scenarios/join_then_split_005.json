@@ -1,0 +1,99 @@
+{
+  "scenario_id": "join_then_split_005",
+  "family": "join_then_split",
+  "label": "SPLIT",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're putting together a municipal grant application for our community garden, Riverside Commons, and I want to make sure we nail the budget section. The grant program is the City of Hartwell Community Green Spaces Grant, Cycle 4, which caps awards at $18,500 and requires a 15% cash match from the applicant.",
+      "assistant_message": "Those are important parameters to lock in early. With an $18,500 maximum award and a 15% cash match requirement, Riverside Commons would need to commit at least $2,775 in cash to qualify for the full award amount. Make sure that match figure appears explicitly in your budget narrative, as reviewers for the Hartwell program typically flag applications where the match calculation isn't shown step by step.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Right. We've confirmed our cash match will be exactly $2,775, drawn from our existing Riverside Commons Community Fund account. So the total project budget we'd be presenting is $21,275.",
+      "assistant_message": "That total of $21,275 — $18,500 in grant funds plus $2,775 in matched cash — is correct and should be stated clearly on the cover page of the application. Using a named, existing account like the Riverside Commons Community Fund is a strong move, since it signals financial stability to reviewers. Keep a recent bank statement for that account ready as a supporting document, as Hartwell Cycle 4 guidelines require proof of match availability dated within 90 days of submission.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "We also need to decide on signage for the garden entrance. We're looking at a cedar post-and-panel sign, roughly 4 feet by 6 feet, and the fabricator quoted us $1,200 installed.",
+      "assistant_message": "A 4-by-6-foot cedar post-and-panel sign at $1,200 installed is a fairly standard price point for that size and material in most municipal contexts. You'll want to confirm whether the sign design needs to include the City of Hartwell logo, since many green-spaces grants require co-branding on any permanent installations funded through the program. Getting that specification in writing from the fabricator now will save revisions later.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "The fabricator is Greenline Signs & Displays, and they've confirmed in writing that the $1,200 quote is valid through March 31, 2025.",
+      "assistant_message": "Having a written quote from Greenline Signs & Displays valid through March 31, 2025 is exactly the kind of vendor documentation grant reviewers want to see attached as an exhibit. If your submission deadline falls before that date, you can include the quote directly; if it's after, you'd need a refreshed quote. File that letter with your other supporting documents so it's easy to attach when you compile the final application package.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "We're thinking the sign cost should be one of the line items we cover with the grant funds rather than the match, and we want to place the sign near the new raised beds we're also funding through this grant. Does that approach make sense for how the budget is structured?",
+      "assistant_message": "Yes, allocating the $1,200 Greenline sign cost as a grant-funded line item rather than part of your $2,775 cash match is a clean approach, since match funds are typically better used for labor or pre-existing materials you can document independently. Positioning the sign near the raised beds also makes narrative sense — it ties the two funded elements together visually and helps reviewers see the project as a cohesive site improvement. Just make sure each line item (sign, raised beds, any other elements) is individually itemized in the budget table so the total still reconciles to $21,275.",
+      "gold_parents": [
+        "t2",
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What is the minimum cash amount Riverside Commons must contribute to be eligible for the full grant award?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4",
+    "t5"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states the minimum cash match is $2,775.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer correctly identifies the match as 15% of the $18,500 maximum award (or equivalently references the $18,500 cap and 15% rate).",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not reference the Greenline Signs & Displays quote, the $1,200 sign cost, or the March 31, 2025 quote validity date, as these are signage details irrelevant to the cash match requirement.",
+      "required": true
+    }
+  ],
+  "notes": "The facts needed for the query — the 15% match rate, the $18,500 cap, and the resulting $2,775 figure — are established in t1 and confirmed in t2. The traps are the signage details from t3/t4 (Greenline Signs & Displays, $1,200, March 31 2025) and the join discussion in t5, none of which are relevant to the minimum cash match question.\n\nReference answer: To be eligible for the full award under the City of Hartwell Community Green Spaces Grant Cycle 4, Riverside Commons must contribute a minimum cash match of $2,775. This figure represents 15% of the $18,500 maximum grant award. Riverside Commons has confirmed this amount will come from the existing Riverside Commons Community Fund account, and the total project budget therefore stands at $21,275.",
+  "evidence_note": null,
+  "premise": "a community garden applying for a municipal grant"
+}

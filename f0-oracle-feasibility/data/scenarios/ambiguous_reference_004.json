@@ -1,0 +1,101 @@
+{
+  "scenario_id": "ambiguous_reference_004",
+  "family": "ambiguous_reference",
+  "label": "AMBIGUOUS",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We've been looking at a commercial kitchen space on Renfield Street for the second location. The landlord is a guy named Gus Tamboli, and he's offering us a 1,200 sq ft unit at $4,800 a month on a three-year lease.",
+      "assistant_message": "That sounds like a solid footprint for a second bakery location — 1,200 square feet is workable for a production kitchen plus a small retail counter. The $4,800 monthly rent on Renfield Street comes out to $4 per square foot, which is reasonable depending on the neighborhood's foot traffic. A three-year lease gives you stability but also locks in a commitment, so it's worth stress-testing your revenue projections before signing. Has Gus indicated any flexibility on the lease terms or a build-out allowance?",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Yeah, Gus said he'd give us a 60-day rent-free period at the start to cover the build-out, but only if we sign by March 14th.",
+      "assistant_message": "A 60-day rent-free period is a meaningful concession — that's $9,600 in deferred rent that you can redirect toward equipment or renovations. The March 14th deadline does create some urgency, so you'll want your contractor bids and financing lined up well before then. Make sure that rent-free provision is written explicitly into the lease agreement rather than relying on a verbal commitment from Gus. If you can get a signed letter of intent before the deadline, that would protect you while you finalize the details.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "There's also a space over on Caldwell Avenue we've been eyeing. It's listed by a property management company called Hartwell & Dunn, and it's 950 sq ft at $3,200 a month.",
+      "assistant_message": "Caldwell Avenue at 950 square feet and $3,200 a month works out to about $3.37 per square foot, which is slightly cheaper per square foot than the Renfield Street option. The smaller footprint could be a constraint if you're planning significant in-house production, since you'd have less room for proofing racks and large deck ovens. Hartwell & Dunn is a well-known commercial property manager, so the administrative side of the lease process would likely be straightforward. It really comes down to whether the lower cost justifies the tighter space.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "The Caldwell Avenue place is a former sandwich shop, so it already has a Type I hood and a grease trap installed, which would save us on build-out costs.",
+      "assistant_message": "That's a significant advantage — a Type I hood and a grease trap can easily run $15,000 to $25,000 to install from scratch, so inheriting those from the previous tenant is a real cost saving. You'd still want a licensed inspector to verify they meet current health code standards and are sized appropriately for bakery equipment, since a sandwich shop's ventilation needs differ from high-volume oven use. If everything checks out, the Caldwell Avenue space's lower upfront build-out cost could offset the smaller square footage. It's worth getting an HVAC contractor in there before you make a final comparison.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "Our head baker, Priya, is also worried about our current flour supplier. We've been getting inconsistent protein content in the bread flour lately, and two of our last three batches of sourdough came out noticeably dense.",
+      "assistant_message": "Inconsistent protein content in bread flour is a serious issue — bread flour typically needs to be in the 12–14% protein range, and even a half-percentage-point drop can noticeably affect gluten development and crumb structure. Two dense sourdough batches out of three is a pattern, not a fluke, so it's worth requesting a certificate of analysis from your supplier for the last few deliveries to see if the specs are actually shifting. If the supplier can't guarantee consistency, it may be time to request a trial bag from an alternative mill before committing to a large order. Priya's instincts are worth taking seriously here.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "If we go with the Renfield Street space, what's the deadline to take advantage of the rent-free period they offered?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4",
+    "t5"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer identifies the deadline as March 14th, which is the signing deadline Gus Tamboli set for the Renfield Street lease (established in t2).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer correctly resolves 'they' to the Renfield Street / Gus Tamboli space (Entity 1), not to Hartwell & Dunn / Caldwell Avenue (Entity 2).",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not cite any deadline or concession associated with the Caldwell Avenue / Hartwell & Dunn property, as no such deadline was established for that space.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer correctly notes the rent-free period is 60 days (as stated in t2), if the duration is mentioned.",
+      "required": false
+    }
+  ],
+  "notes": "t2 holds the critical facts the query needs (March 14th deadline and 60-day rent-free period tied to the Renfield Street / Gus Tamboli space). t3 and t4 introduce the Caldwell Avenue / Hartwell & Dunn space as the distractor — a pronoun in t6 referring to 'they' could superficially apply to either landlord, but only the Renfield Street branch (t1–t2) established any signing deadline.\n\nReference answer: The deadline to take advantage of the rent-free period on the Renfield Street space is March 14th — that's the date Gus Tamboli set for signing the lease in order to qualify for the 60-day rent-free build-out period. That concession is worth $9,600 in deferred rent, so it's worth making sure your financing and contractor bids are ready well before that date. Be sure the 60-day rent-free provision is written explicitly into the lease agreement.",
+  "evidence_note": null,
+  "premise": "a small bakery deciding whether to open a second location"
+}

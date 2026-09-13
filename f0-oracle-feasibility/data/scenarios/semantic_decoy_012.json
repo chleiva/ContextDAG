@@ -1,0 +1,127 @@
+{
+  "scenario_id": "semantic_decoy_012",
+  "family": "semantic_decoy",
+  "label": "DECOY",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm setting up a field study on urban bird populations in Chicago and I want to use eBird's data export for baseline comparisons. Can you tell me about the eBird database coverage for the Chicago metro area?",
+      "assistant_message": "eBird, maintained by the Cornell Lab of Ornithology, has exceptionally strong coverage for the Chicago metro area. As of the 2023 data release, the Chicago region (roughly Cook, DuPage, Lake, and Kane counties combined) has over 4.2 million observation records submitted by more than 18,000 registered observers. The dataset includes 421 confirmed species across all four seasons, with the densest checklist submissions clustering around the Chicago lakefront, Montrose Point Bird Sanctuary, and the Chicago Botanic Garden.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "I'm also trying to pick a GPS logger for tracking my field assistants' survey routes. What can you tell me about the Garmin GPSMAP 67 for that kind of use?",
+      "assistant_message": "The Garmin GPSMAP 67 is a rugged handheld GPS unit released in 2022 that supports multi-band GNSS, meaning it can use GPS, GLONASS, Galileo, and BeiDou simultaneously for improved accuracy. It has a battery life of up to 36 hours in GPS mode, a 3-inch display, and 16 GB of internal storage for map data. For field survey route logging, it records trackpoints at user-defined intervals and exports data in GPX format, which integrates cleanly with GIS platforms like QGIS and ArcGIS.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "That's helpful on the eBird side — do you know what the peak submission months are for the Chicago region, and how complete the historical records go?",
+      "assistant_message": "For the Chicago region in eBird, May is by far the peak submission month, driven by spring warbler migration through the lakefront, with an average of roughly 280,000 checklists submitted in May alone across recent years. October is the second busiest month due to fall hawk migration. Historical records in the eBird Chicago dataset extend back to 2002 when systematic digital submissions began, though observer coverage was sparse before about 2008; the database considers 2008–present to be the 'high-confidence' period with statistically reliable coverage. Species richness peaks at 310–330 species detectable in a single May week.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "Does the GPSMAP 67 have any limitations I should know about for dense urban environments specifically?",
+      "assistant_message": "In dense urban canyons, the GPSMAP 67's multi-band reception helps significantly compared to single-band units, but you can still expect positional drift of up to 3–5 meters near tall buildings. The device's SirfStar V chipset struggles with severe multipath interference when surrounded by glass-and-steel facades higher than about 30 stories. One practical workaround is enabling the 'Pedestrian' activity profile, which applies a dead-reckoning algorithm that smooths out short gaps in satellite lock. Battery performance also drops to around 28 hours in dense urban settings due to the unit working harder to maintain satellite acquisition.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "For my study design I need to know how eBird defines a 'complete checklist' — that distinction seems important for filtering the data.",
+      "assistant_message": "In eBird, a 'complete checklist' is one where the observer reports every bird species they detected during the observation period, not just target species. This is a critical filter because it allows eBird's occupancy models, particularly those underlying the Status and Trends product, to treat non-detections as true absences rather than missing data. To qualify as complete, a checklist must also record protocol type (stationary, traveling, or incidental), duration, and — for traveling counts — distance traveled. eBird's own data-quality guidelines recommend filtering to complete checklists with a duration of 5–300 minutes and a distance of 0–5 km for most analytical purposes; checklists outside those bounds are flagged as 'low-effort' and excluded from occupancy modeling by default.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What file formats does the GPSMAP 67 support for exporting track logs?",
+      "assistant_message": "The GPSMAP 67 exports track logs primarily in GPX format, which is the standard XML-based GPS exchange format compatible with virtually all GIS and mapping software. It also supports FIT files, which are Garmin's proprietary compressed format used mainly in their fitness ecosystem, and KML export is available through Garmin BaseCamp version 4.9.3 or later when you connect the device via USB. Direct export to shapefiles is not supported natively; you would need a conversion step through QGIS or a tool like GPSBabel 1.8.0 to get a shapefile from the raw GPX output.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "Is there a recommended software version of Garmin BaseCamp for managing large track log archives from multiple field seasons?",
+      "assistant_message": "For managing large multi-season track log archives from the GPSMAP 67, Garmin BaseCamp version 4.9.3 is the current stable release and handles bulk GPX imports well. However, if your archive exceeds roughly 10,000 individual trackpoints per session, many users report that BaseCamp's rendering slows noticeably; version 4.9.3 introduced a new indexed database backend that helps but doesn't fully resolve the issue. A common workflow is to use BaseCamp only for initial organization and metadata tagging, then migrate everything to QGIS 3.34 for spatial analysis, since QGIS handles large GPX datasets far more efficiently. You can also script batch conversions using GPSBabel 1.8.0 on the command line if you need to process hundreds of files at once.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "When I filter the eBird export down to complete checklists, what duration and distance cutoffs should I be applying, and how far back does reliable coverage actually go for my study area?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t3",
+    "t5"
+  ],
+  "distractor_turn_ids": [
+    "t2",
+    "t4",
+    "t6",
+    "t7"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that complete checklists should be filtered to a duration of 5–300 minutes (as specified in eBird's data-quality guidelines from t5).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that the distance cutoff for complete checklists is 0–5 km (as specified in t5).",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer identifies 2008 as the start of the 'high-confidence' period with statistically reliable coverage for the Chicago eBird dataset (as stated in t3).",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not refer to GPX format, 36-hour battery life, 3–5 meter positional drift, or any other specification belonging to the Garmin GPSMAP 67 (Branch B values) as if they were relevant to the eBird filtering question.",
+      "required": true
+    }
+  ],
+  "notes": "The evidence turns for the query are t5 (complete checklist definition, duration 5–300 min, distance 0–5 km) and t3 (reliable coverage from 2008). The semantic trap is Branch B's discussion of the Garmin GPSMAP 67, which uses identical vocabulary (coverage, records, export, distance, duration, protocol) but refers entirely to GPS hardware specifications irrelevant to the eBird filtering question.\n\nReference answer: For filtering eBird exports to complete checklists, you should apply a duration cutoff of 5 to 300 minutes and a distance cutoff of 0 to 5 km; checklists outside those bounds are flagged as low-effort and excluded from eBird's occupancy modeling by default. A complete checklist also requires that the observer report every species detected and record protocol type and, for traveling counts, distance traveled. For your Chicago study area, historical records go back to 2002, but the high-confidence period with statistically reliable observer coverage only begins in 2008, so for robust occupancy analysis you should treat 2008–present as your usable baseline window.",
+  "evidence_note": null,
+  "premise": "a PhD student planning a field study on urban bird populations"
+}

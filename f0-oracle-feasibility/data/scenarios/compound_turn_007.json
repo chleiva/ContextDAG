@@ -1,0 +1,117 @@
+{
+  "scenario_id": "compound_turn_007",
+  "family": "compound_turn",
+  "label": "COMPOUND",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm building a magic system for my fantasy novel and I want it to feel grounded and internally consistent. The core idea is that magic draws directly from the user's lifespan — every spell literally costs years off your life. A minor cantrip might cost a few hours, but something like summoning a storm could cost a decade.",
+      "assistant_message": "That's a compelling foundation — the cost mechanic immediately creates dramatic stakes because every spell is a genuine sacrifice rather than a recoverable resource. You might think about establishing a clear conversion rate, something like one hour of lifespan per unit of magical output, so readers and characters can intuitively calculate risk. It also opens rich character territory: an elderly mage who has spent most of their years might be the most knowledgeable but the most desperate, while a young mage is powerful but reckless with a resource they don't yet value.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "I like the idea of a conversion rate. Let's say one 'casting unit' costs exactly six hours of lifespan, and spells are rated from 1 to 10 units in complexity. So a rank-10 spell costs 60 hours — two and a half days of your life. Does that feel balanced for a story?",
+      "assistant_message": "That scale works well narratively because rank-10 spells feel genuinely catastrophic without being so extreme they're never used. Two and a half days of lifespan lost in a single casting would make any battle mage visibly age over the course of a war, which is a vivid physical consequence you can show on the page. You might also consider what happens at the margins — a mage who has only three days left to live could still cast one rank-10 spell and survive, but a second one would kill them, which creates precise, calculable tension.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "That's a great point about the margins. I want to add a class of 'forbidden' spells above rank 10 that cost lifespan exponentially rather than linearly — so a rank-11 spell costs not 66 hours but 6 hours times 2 to the power of 11, which would be catastrophic. Also, what real-world historical magic systems or philosophies actually influenced Tolkien's approach to magic in Middle-earth? I'm curious what he drew from.",
+      "assistant_message": "The exponential cost idea is brutal in the best way — rank 11 would cost 6 multiplied by 2048, which is 12,288 hours or roughly 512 days of lifespan in a single casting, making it essentially a death sentence for anyone but an immortal. That hard wall between linear and exponential tiers gives you a natural forbidden threshold that feels mathematically inevitable rather than arbitrary. As for Tolkien, his magic draws most heavily from Norse mythology and Old English tradition — the Istari like Gandalf closely parallel the Norse god Odin, a wandering, staff-bearing figure who conceals his true power and operates through wisdom and subtle influence rather than flashy sorcery. Tolkien was also deeply shaped by his Catholic faith, which is why magic in Middle-earth is almost never morally neutral: it is tied to the wielder's spiritual state, and the corrupting effect of the One Ring reflects the Thomistic idea that evil is fundamentally a privation or distortion of good rather than an independent force. His 1947 essay 'On Fairy-Stories' further articulates his concept of 'subcreation,' the idea that a fantasy author participates in divine creativity by building coherent secondary worlds.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "I love the exponential tier idea. I'm thinking the only beings who could safely cast rank-11 or higher spells are the Aetheri, my setting's immortal demigods who have effectively infinite lifespan. Would that track with the math?",
+      "assistant_message": "It tracks perfectly — if the Aetheri are functionally ageless, then even a 512-day cost is trivial to them the way spending a dollar is trivial to a billionaire. This also creates a natural power asymmetry that explains why mortals fear them without making mortal mages useless, since mortals still dominate the rank-1 through 10 range where most of the world's practical magic happens. You could even have a dramatic moment where a mortal mage attempts a rank-11 spell out of desperation, knowing it will kill them — the math makes that sacrifice legible and tragic rather than vague.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "What if a mortal tried to cheat the system by, say, draining lifespan from another person instead of themselves? I want to explore blood magic as a dark alternative.",
+      "assistant_message": "That's a classic dark mirror to your system and it fits the internal logic well — if lifespan is the currency, then stealing it from a victim is just a different transaction with the same exchange rate. You'd want to decide whether the transfer is one-to-one or whether there's a 'conversion loss,' meaning the blood mage needs to drain more from the victim than they'd lose themselves, which makes the practice even more predatory. This also gives you a moral economy: the blood mage isn't actually breaking the rules of magic, they're just externalizing the cost onto someone else, which is arguably worse and more interesting than simply cheating.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "I think there should be a conversion loss of exactly 50%, so to cast a rank-5 spell costing 30 hours of lifespan, a blood mage would need to drain 60 hours from a victim. Does that create interesting tactical trade-offs?",
+      "assistant_message": "A 50% conversion loss is elegant because it means blood magic is always a bad deal in pure efficiency terms — you're imposing twice the suffering you'd have endured yourself — which makes it a moral choice as much as a tactical one. Tactically, it still makes sense for a mage who is near the end of their natural life and would die from the direct cost, so it becomes a tool of the desperate and the cruel rather than a straightforward upgrade. You might also explore whether victims can resist the drain, perhaps by willingly offering their lifespan, which could make consensual sacrifice a gray-area practice distinct from predatory blood magic.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "What specific real-world sources did Tolkien pull from when shaping how magic works in Middle-earth, and what did he write that explains his philosophy behind it?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t3"
+  ],
+  "distractor_turn_ids": [
+    "t1",
+    "t2",
+    "t4",
+    "t5",
+    "t6"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer identifies Norse mythology and Old English tradition as key influences, specifically noting the parallel between the Istari (such as Gandalf) and the Norse god Odin as a wandering, staff-bearing figure who conceals his power.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer mentions Tolkien's Catholic faith and the Thomistic idea that evil is a privation or distortion of good, as reflected in the corrupting effect of the One Ring.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer references Tolkien's 1947 essay 'On Fairy-Stories' and his concept of 'subcreation' as the philosophical framework for his approach to fantasy world-building.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not import details about the lifespan magic system's conversion rates, the 50% blood magic drain ratio, or the Aetheri demigods, as those are topic A details irrelevant to the Tolkien question.",
+      "required": true
+    }
+  ],
+  "notes": "The facts the query needs (Norse/Odin parallel, Catholic/Thomistic influence, the 1947 'On Fairy-Stories' essay and subcreation concept) are all introduced in t3, the compound turn. Turns t1, t2, t4, t5, and t6 are traps containing only topic-A details about the lifespan magic system's conversion rates, blood magic ratios, and the Aetheri, none of which are relevant to the Tolkien query.\n\nReference answer: Tolkien drew primarily from Norse mythology and Old English tradition; the Istari such as Gandalf closely parallel the Norse god Odin, a wandering staff-bearer who conceals his true power and works through wisdom rather than overt sorcery. His Catholic faith was equally formative: magic in Middle-earth is morally charged rather than neutral, and the corrupting effect of the One Ring reflects the Thomistic concept that evil is a privation or distortion of good rather than an independent force. Tolkien articulated the philosophical underpinning of his approach in his 1947 essay 'On Fairy-Stories,' where he introduced the concept of 'subcreation' — the idea that a fantasy author participates in divine creativity by constructing a coherent secondary world.",
+  "evidence_note": "Query depends only on the B half of the compound turn t3. Its ancestor closure {t3,t2,t1} includes A turns that are conversationally upstream of t3 but not needed for the B question; evidence is deliberately just {t3}. This is the granularity cost the family is designed to expose.",
+  "premise": "writing a fantasy novel and planning its magic system"
+}

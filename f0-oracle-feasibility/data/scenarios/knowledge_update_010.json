@@ -1,0 +1,115 @@
+{
+  "scenario_id": "knowledge_update_010",
+  "family": "knowledge_update",
+  "label": "UPDATE",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're trying to decide between Northgate Academy and Riverside Secondary for our daughter. Northgate's annual tuition is £4,200 and I'm trying to figure out if the extracurricular budget they offer per pupil makes it worth it.",
+      "assistant_message": "That's a meaningful decision to work through. At £4,200 per year in tuition, it's important to weigh what Northgate is actually providing beyond core lessons. If you can tell me the per-pupil extracurricular budget, I can help you compare the overall value proposition against Riverside.",
+      "gold_parents": [],
+      "stale": true,
+      "superseded_by": "t6"
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Northgate allocates £350 per pupil annually for extracurriculars, which covers things like sports kits, art supplies, and club fees. So the total effective cost per year would be £4,200 tuition plus whatever we'd otherwise pay out of pocket.",
+      "assistant_message": "That's a reasonable way to frame it. With £350 per pupil covered by Northgate, families save on those incidental costs that can add up quickly across a school year. So the real question is whether the £4,200 tuition, offset by that £350 in covered extras, represents better value than what Riverside charges and provides. Do you have comparable figures for Riverside?",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "Riverside has a strong GCSE track record — last year 78% of their students achieved grade 5 or above in both English and Maths. Does that kind of attainment figure tell us much about how an individual child might do?",
+      "assistant_message": "It's a useful headline figure, but it does have limits as a predictor for any individual student. A 78% pass rate at grade 5 or above in English and Maths is above the national average, which is encouraging, but it reflects the whole cohort rather than students with your daughter's particular profile. It's worth asking the school how they support students across the ability range, not just those already on track to hit grade 5.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "Riverside's Ofsted rating was 'Good' in their last inspection, which was in March 2022. Northgate was rated 'Outstanding' in 2021. Does the age of an Ofsted report matter much?",
+      "assistant_message": "It matters quite a bit, actually. An Ofsted rating captures a school at a specific moment, and a lot can change in leadership, staffing, and culture within two or three years. Riverside's March 2022 'Good' rating is more recent than Northgate's 2021 'Outstanding,' so while Northgate's label sounds more impressive, Riverside's picture is fresher. Ideally you'd look at both schools' most recent data and arrange visits to get a current feel for each.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "Riverside also has a uniform policy that requires a specific branded blazer that costs £65 and can only be bought through the school's supplier. Is that kind of restricted purchasing arrangement normal?",
+      "assistant_message": "It's fairly common, unfortunately, though it has attracted criticism from parent groups and even some government guidance discouraging overly restrictive uniform contracts. The £65 branded blazer from a single supplier is on the pricier end, and without competition there's little pressure to keep costs down. It's worth checking whether the school offers any second-hand uniform scheme, which many schools now run to offset exactly this kind of expense.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "Actually, I need to correct myself — Northgate's tuition is £4,800 per year, not £4,200. I was looking at the wrong year's fee schedule.",
+      "assistant_message": "Thanks for catching that — it's an important correction. At £4,800 per year rather than £4,200, the tuition is £600 higher than we'd been working with, which does shift the overall cost comparison with Riverside. We should use £4,800 as the baseline going forward when thinking about Northgate's value.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "Given the extracurricular budget Northgate provides, what is the net annual cost a family would effectively be paying at Northgate?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t6"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4",
+    "t5"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer uses £4,800 as Northgate's annual tuition (the corrected VALUE_2 from t6).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer subtracts the £350 per-pupil extracurricular budget (stated in t2) from the tuition to arrive at a net figure.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer arrives at a net effective annual cost of £4,450 (£4,800 minus £350).",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not use £4,200 as Northgate's tuition (the stale VALUE_1 from t1, superseded in t6).",
+      "required": true
+    }
+  ],
+  "notes": "t6 corrects the tuition from £4,200 (t1) to £4,800, and t2 establishes the £350 extracurricular budget; the query requires both figures but only the corrected tuition. t3, t4, and t5 are the distractor branch covering GCSE attainment, Ofsted ratings, and uniform costs — none of these feed into the net cost calculation.\n\nReference answer: With Northgate's corrected annual tuition of £4,800 and their per-pupil extracurricular budget of £350 covering costs like sports kits, art supplies, and club fees, the net effective annual cost to a family would be £4,450. That £350 offsets expenses families would otherwise pay out of pocket, so £4,450 is the realistic baseline for comparing Northgate's cost against Riverside's.",
+  "evidence_note": null,
+  "premise": "a family choosing between two secondary schools"
+}

@@ -1,0 +1,104 @@
+{
+  "scenario_id": "join_then_split_001",
+  "family": "join_then_split",
+  "label": "SPLIT",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're looking at a 1,800 square foot office suite on the 4th floor of 220 Market Street. The landlord is quoting us $42 per square foot per year on a 3-year lease. Does that seem like a reasonable starting point to negotiate from?",
+      "assistant_message": "For a 3-year term at 220 Market Street, $42 per square foot annually works out to $6,300 per month, or $75,600 per year. That's within a plausible range for many mid-tier urban markets, but you should have real leverage to push that base rate down to somewhere in the $36–$38 range, especially as a new tenant signing a multi-year commitment. You might also negotiate for a few months of free rent at the start to offset your build-out costs.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "The landlord is willing to come down to $38 per square foot, and they've agreed to give us 2 months free rent at the start of the lease. We're planning to sign with a lease commencement date of September 1, 2025. Does that work as a final deal point?",
+      "assistant_message": "Yes, $38 per square foot on 1,800 square feet comes to $5,700 per month, or $68,400 annually, which is a solid improvement from the original ask. With the 2 months free rent at commencement on September 1, 2025, you effectively won't owe base rent until November 1, 2025, saving you $11,400 upfront. That's a reasonable deal to lock in, assuming the other lease terms are acceptable.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "We're also trying to figure out what to budget for office furniture. We need to outfit 8 workstations and a small conference room for 6 people. Any rough guidance on cost?",
+      "assistant_message": "For 8 workstations with desks, ergonomic chairs, and basic storage, you're typically looking at $800 to $1,500 per station, so a budget of $6,400 to $12,000 is reasonable. A 6-person conference table with chairs can run another $2,000 to $5,000 depending on quality. All in, plan for roughly $8,400 to $17,000 for a functional but not extravagant setup.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "We found a vendor called WorkNest Office Solutions that can do all 8 workstations and the conference room package for $11,200 flat, with delivery and assembly included. That sound fair?",
+      "assistant_message": "Yes, $11,200 all-in for 8 workstations plus a 6-person conference room package with delivery and assembly from WorkNest Office Solutions is competitive and sits comfortably in the middle of the typical range. Getting delivery and assembly bundled is a meaningful convenience, since coordinating that separately can easily add $500 to $1,000 in labor. It's a fair price to accept if you're satisfied with the product quality.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "If we sign the lease for September 1, 2025 and order the furniture from WorkNest at the same time, could we realistically be fully operational by October 1, 2025? WorkNest told us their lead time is 3 to 4 weeks.",
+      "assistant_message": "With a September 1 lease commencement and a 3-to-4-week lead time from WorkNest, your furniture would arrive between September 22 and September 29, leaving a few days for any IT setup or finishing touches before October 1. That timeline is tight but achievable, provided there are no delays in permitting or build-out work that the landlord is responsible for. It would be worth confirming in writing with WorkNest that they can guarantee delivery within that window once you place the order.",
+      "gold_parents": [
+        "t2",
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What will our total base rent obligation be over the full 3-year lease term, accounting for the free rent period?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4",
+    "t5"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer correctly uses the agreed rate of $38 per square foot on 1,800 square feet, yielding $5,700 per month.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer correctly calculates the total obligation over 36 months minus 2 free months (i.e., 34 paid months × $5,700 = $193,800).",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer references the 3-year (36-month) lease term and the 2 months free rent as the basis for the deduction.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not incorporate the $11,200 WorkNest furniture cost or any furniture-related figure into the rent obligation calculation.",
+      "required": true
+    }
+  ],
+  "notes": "t2 holds all the facts the query needs: $38/sqft, 1,800 sqft, 2 months free, and the 3-year term established in t1. t4 (WorkNest price) and t5 (the combined operational timeline) are the traps—a model that blends the furniture cost into the rent calculation or is distracted by the October 1 move-in detail will produce a wrong answer.\n\nReference answer: At the agreed rate of $38 per square foot on 1,800 square feet, your monthly base rent is $5,700. Over a 3-year term that would normally total $205,200 across 36 months, but with the 2 months of free rent at commencement you only pay for 34 months. That brings your total base rent obligation over the full lease to $193,800.",
+  "evidence_note": null,
+  "premise": "a startup negotiating a lease for its first office"
+}

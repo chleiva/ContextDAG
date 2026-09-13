@@ -1,0 +1,439 @@
+{
+  "scenario_id": "long_noisy_side_thread_008",
+  "family": "long_noisy_side_thread",
+  "label": "NOISE",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're finalizing the details for our running club's charity 10k. The race is scheduled for Saturday, September 13, 2025, starting at Riverside Park on Elm Street. We're expecting around 200 registered participants and want to raise money for the Maplewood Children's Hospital.",
+      "assistant_message": "That sounds like a wonderful event — a 10k through Riverside Park is a great setting, and Maplewood Children's Hospital is a cause that tends to resonate with local communities. With 200 participants, you'll want to think carefully about water station placement, timing chip logistics, and post-race area layout. What aspects of the planning are you working through right now?",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "We've decided to set the registration fee at $35 per person, and we're offering a fundraising pledge option on top of that. The cutoff for early-bird registration is August 1, 2025, when the fee goes up to $50. We want to keep 15% of gross registration revenue for club operating costs and donate the rest to the hospital.",
+      "assistant_message": "Those are clean, well-defined numbers to work with. At 200 participants paying $35 each, gross registration revenue would be $7,000, meaning $1,050 goes to club operating costs and $5,950 goes to Maplewood Children's Hospital — not counting any pledge donations on top. If a meaningful number of people register after August 1 at the $50 rate, that donation figure could climb noticeably.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "Do you know anything about sourdough starter maintenance? I've had mine going for about three weeks but it keeps developing a grayish liquid on top.",
+      "assistant_message": "That grayish liquid is called 'hooch' — it's essentially alcohol produced by the wild yeast when the starter runs out of food, and it's a sign your starter is hungry rather than spoiled. You can either pour it off or stir it back in; stirring it back will give your bread a more pronounced sour flavor. Try feeding your starter with equal weights of flour and water (a 1:1:1 ratio by weight of starter, flour, and water) once or twice a day until the hooch stops forming.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "I've been using all-purpose flour but someone told me whole wheat flour helps the starter get more active. Is that true?",
+      "assistant_message": "Yes, whole wheat flour contains more wild yeast and bacteria naturally present in the bran, which can give a sluggish starter a real boost. A common technique is to substitute about 20–25% of your regular feeding flour with whole wheat or rye flour, then return to all-purpose once the starter is reliably doubling within 4–6 hours of feeding. You don't need to switch entirely — even a small proportion of whole grain flour makes a noticeable difference in activity.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "How do I know when my starter is strong enough to actually bake with?",
+      "assistant_message": "The classic test is the float test: drop a small spoonful of starter into a glass of water, and if it floats, it has enough gas production to leaven bread. A more reliable indicator, though, is consistent doubling — your starter should reliably double in volume within 4 to 8 hours of a feeding at room temperature (around 70–75°F) for at least two or three consecutive feedings. At that point it's ready to use at peak rise, which is when it's domed on top and before it starts to collapse.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What hydration level should I aim for in my actual sourdough loaf? I've seen recipes range from 70% to 90%.",
+      "assistant_message": "For a beginner, 75% hydration is the sweet spot — the dough is workable and forgiving without being the sticky, slack mess that high-hydration doughs can be. A 90% hydration dough produces the open, airy crumb you see in artisan bakery loaves, but it requires strong technique, good gluten development through stretch-and-fold, and ideally a Dutch oven to bake in. Start at 75%, get comfortable with shaping, and then nudge the hydration up by 5% increments once you understand how the dough behaves.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "I tried baking my first loaf and the crust was good but the inside was gummy and dense. What went wrong?",
+      "assistant_message": "A gummy, dense crumb usually points to one of two problems: under-fermentation or cutting the loaf too soon after baking. If the dough didn't bulk ferment long enough — typically 4 to 6 hours at 75°F for a 20% starter inoculation — the gluten structure won't trap gas properly and the crumb stays tight. Equally important is the cool-down: you should wait at least 1 to 2 hours after pulling the loaf from the oven before slicing, because the interior is still setting up via steam redistribution during that time.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "What temperature should I bake the loaf at, and does it matter whether I use a Dutch oven?",
+      "assistant_message": "A Dutch oven makes a significant difference: baking covered at 500°F (260°C) for the first 20 minutes traps steam released by the dough, which keeps the crust extensible and allows maximum oven spring. After 20 minutes, remove the lid and reduce to 450°F (230°C) for another 20–25 minutes to develop a deep, crackly crust. Without a Dutch oven you can mimic the steam by placing a pan of boiling water on the oven's lower rack, but the results are generally less dramatic.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "My Dutch oven is only a 3.5-quart size. Is that big enough for a standard loaf?",
+      "assistant_message": "A 3.5-quart Dutch oven is on the small side for a standard 900g to 1,000g loaf — the dough can press against the sides as it springs up, which restricts the rise and can give you a mushroom-shaped loaf. A 5-quart or 5.5-quart Dutch oven is the most commonly recommended size for a single standard loaf. You can either scale your recipe down to about 700g of dough to fit the 3.5-quart, or consider a Challenger Bread Pan if you bake frequently and want more flexibility.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "I've been keeping my starter in the fridge to reduce how often I feed it. How often does it actually need to be fed when refrigerated?",
+      "assistant_message": "A refrigerated starter kept at around 38–40°F only needs to be fed once a week to stay viable. When you're ready to bake, take it out the night before, discard all but about 50g, feed it with 50g flour and 50g water, and let it come to room temperature overnight. By morning it should be active and ready to use; if it seems sluggish after one feed, give it a second feeding at room temperature before using it in your dough.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "Is there a good way to store a long-term backup of the starter in case I accidentally kill it?",
+      "assistant_message": "The most reliable backup method is drying the starter: spread a thin layer on a sheet of parchment paper and let it air-dry at room temperature for 24 to 48 hours until it's completely brittle, then crumble it into flakes and store in an airtight container or zip-lock bag. Dried starter keeps for years at room temperature and indefinitely in the freezer. To revive it, mix the flakes with equal parts water, let them hydrate for 30 minutes, then begin feeding as you would a new starter — it typically takes 2 to 4 days to become fully active again.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "I want to try adding inclusions like rosemary and olives. When in the process do I add them?",
+      "assistant_message": "Inclusions are best added during the lamination step, which happens after the first 30 minutes of bulk fermentation. Wet your work surface, stretch the dough out into a thin sheet, scatter your inclusions evenly — roughly 100g of olives and 2 tablespoons of fresh rosemary works well for a 900g loaf — then fold the dough back over itself in thirds. This distributes the inclusions evenly without tearing the gluten structure you've built up. Avoid adding them at the very beginning of bulk fermentation, as the fat in olives can inhibit gluten development.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "Does the salt percentage matter much? I've seen recipes use anywhere from 1.8% to 2.2% baker's percentage.",
+      "assistant_message": "Salt percentage matters quite a bit — it controls fermentation speed, strengthens gluten, and obviously affects flavor. At 1.8% the dough ferments slightly faster and the crumb is a touch more open, while 2.2% gives a tighter crumb and a more pronounced savory flavor that many bakers prefer. Most professional bakers land at exactly 2% as a balanced default; for a 500g flour recipe, that's exactly 10g of fine sea salt. One practical note: always add salt after the autolyse period and never in direct contact with the starter, as high salt concentrations can inhibit yeast activity.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "What's an autolyse and how long should it be?",
+      "assistant_message": "Autolyse is a rest period after you first mix flour and water together, before adding the starter and salt — the enzymes in the flour begin breaking down proteins and the flour fully hydrates, which dramatically reduces the mixing effort needed and improves the final crumb structure. A standard autolyse is 30 to 60 minutes at room temperature; longer autolysing of up to 4 hours is used for high-hydration or whole-grain doughs that need extra gluten development. Some bakers skip it entirely with lower-hydration doughs and still get good results, but for anything above 75% hydration it's worth the extra time.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "I've read about cold proofing overnight in the fridge. What's the benefit of that versus a same-day bake?",
+      "assistant_message": "Cold proofing — also called retarding — slows fermentation dramatically, typically to 8 to 16 hours in a 38°F refrigerator, and during that time the dough develops significantly more complex sour flavor compounds. The cold also firms up the dough, making it much easier to score cleanly with a lame before baking, and you can bake it directly from the fridge into a preheated Dutch oven without any bench rest. A same-day bake is faster and gives a milder flavor, which some people prefer, but most experienced home bakers favor the cold retard for both flavor and the scheduling flexibility of baking in the morning.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "How do I score the loaf properly? My last attempt the score sealed up immediately and didn't open.",
+      "assistant_message": "A score that seals instead of opening is almost always caused by one of two things: the blade angle or the dough's surface tension. You want to hold a lame or razor blade at roughly a 30 to 45-degree angle to the dough surface — not straight down — and make a single confident cut about half an inch deep in one smooth motion rather than sawing. If the dough is cold from the fridge, the surface tension is higher and the score opens more readily, which is another reason cold proofing is popular. A dusting of rice flour on the surface before scoring also reduces drag and helps the cut stay open.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "Is rice flour really better than all-purpose for dusting the banneton?",
+      "assistant_message": "Yes, rice flour is significantly better for lining a banneton because it doesn't absorb moisture the way all-purpose flour does, so it stays powdery and dry even after hours in the fridge with a wet dough. All-purpose flour can become a paste that causes the dough to stick and tear when you flip it out, ruining the shape just before baking. A 50/50 mix of rice flour and all-purpose flour is a popular compromise — it gives the non-stick properties of rice flour with a slightly more even coating. Season a new banneton by misting it lightly with water, dusting generously with rice flour, and letting it dry completely before first use.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "My banneton is made of plastic, not the traditional rattan. Does that affect anything?",
+      "assistant_message": "Plastic bannetons — usually made from polypropylene — don't breathe the way rattan does, so they don't wick away surface moisture from the dough during proofing. This means the dough's outer skin stays slightly wetter, which can make it stickier and harder to release cleanly. If you're using a plastic banneton, lining it with a well-floured linen couche cloth helps compensate for the lack of breathability. Rattan is generally preferred for cold proofing specifically because the open weave allows airflow and helps form that desirable dry skin on the dough surface.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "What's the ideal room temperature for bulk fermentation? My kitchen gets pretty warm in summer.",
+      "assistant_message": "The sweet spot for bulk fermentation is 75 to 78°F — at that range a typical dough with 20% starter inoculation will bulk ferment in about 4 to 5 hours. At your summer kitchen temperature of, say, 82 to 85°F, fermentation can happen 30 to 50 percent faster, so a dough that normally takes 5 hours might be ready in 3 to 3.5 hours. The key indicator isn't time but dough volume: you're looking for a 50 to 75 percent increase in volume with a domed top and bubbles visible on the sides of the container. In hot kitchens, using cold water in your initial mix is a reliable way to bring the dough temperature down to the target range.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "Can I use a stand mixer for the initial mixing or does sourdough need to be done by hand?",
+      "assistant_message": "You can absolutely use a stand mixer — a dough hook on speed 2 for 4 to 6 minutes after adding the starter and salt will develop the gluten efficiently and is especially helpful for stiffer doughs below 75% hydration. For high-hydration doughs above 80%, hand mixing with the stretch-and-fold method during bulk fermentation is often preferred because the dough is too slack to work well on a hook and can climb up and overwork. Many bakers use a stand mixer for the initial incorporation and then switch to hand stretch-and-folds every 30 minutes during bulk fermentation for the best of both approaches.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "How many stretch-and-fold sets should I do during bulk fermentation?",
+      "assistant_message": "Three to four sets of stretch-and-folds, each spaced 30 minutes apart, is the standard for a 75% hydration dough — that covers the first 1.5 to 2 hours of bulk fermentation, after which you let the dough rest undisturbed. Each set consists of four folds: grab one side of the dough, stretch it up until resistance is felt, then fold it over to the opposite side, rotating the bowl 90 degrees between each fold. By the third or fourth set you should notice the dough becoming noticeably stronger, smoother, and more elastic compared to the slack, shaggy texture right after mixing.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "What's the difference between a stretch-and-fold and a coil fold?",
+      "assistant_message": "A stretch-and-fold is done in the bowl by grabbing the dough from the sides and folding it over itself, while a coil fold is done by lifting the dough from underneath — sliding both hands beneath the center — and letting the two ends coil under as gravity stretches them down. Coil folds are gentler and better for very extensible, high-hydration doughs because they don't tear the developing gluten network the way aggressive stretch-and-folds can. Most bakers find coil folds easier to execute cleanly once the dough has built some strength after the first two sets of stretch-and-folds.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "Should I pre-shape the dough before the final shape? Some recipes skip it.",
+      "assistant_message": "Pre-shaping is worth doing when the dough is very extensible or when you want a tight, well-defined final shape — it creates surface tension and gives the dough a 20 to 30 minute bench rest to relax before you do the final shaping. Skipping it is fine for stiffer doughs or when the bulk fermentation has built enough strength that the dough holds its shape on the bench. If you skip pre-shaping and the dough spreads out flat on the bench rather than holding a rough round, that's a sign you should have pre-shaped — a flat, spreading dough will be harder to build tension into during final shaping.",
+      "gold_parents": [
+        "t22"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "I want to try a whole wheat loaf next. Should I adjust the hydration?",
+      "assistant_message": "Yes — whole wheat flour absorbs significantly more water than white flour because the bran particles soak up liquid, so you typically need to increase hydration by 5 to 10 percentage points compared to an equivalent white flour recipe. A loaf that uses 100% whole wheat flour often requires 80 to 85% hydration to achieve a similar dough consistency to a 75% white flour dough. Many bakers also add a 30 to 60 minute soaker — mixing the whole wheat flour with all the water before adding anything else — to fully hydrate the bran and reduce its sharpness, which can otherwise cut gluten strands and produce a denser crumb.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "Is there a meaningful flavor difference between stone-milled whole wheat and roller-milled whole wheat?",
+      "assistant_message": "Stone-milled whole wheat flour retains more of the germ oils and produces a noticeably nuttier, more complex flavor because the grinding process keeps the temperature low enough to preserve volatile aromatic compounds. Roller-milled whole wheat separates the bran and germ and then recombines them, which is more consistent but loses some of those delicate flavors; it also has a longer shelf life because less oil is exposed during milling. For everyday baking, roller-milled is perfectly fine, but if you're making a showcase whole wheat loaf, stone-milled flour from a local mill — such as Barton Springs Mill or Janie's Mill — produces a noticeably more flavorful result.",
+      "gold_parents": [
+        "t24"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "How should I store freshly baked sourdough to keep it from going stale quickly?",
+      "assistant_message": "The worst place to store sourdough is the refrigerator — cold temperatures accelerate starch retrogradation, which is the technical term for the staling process, and a loaf will go stale two to three times faster in the fridge than at room temperature. The best approach is to store the cut loaf cut-side down on a wooden cutting board at room temperature, which lets the crust breathe while protecting the crumb; it stays good for two to three days this way. For longer storage, slice the entire loaf, freeze the slices in a zip-lock bag with as much air removed as possible, and toast slices directly from frozen — they taste remarkably close to fresh.",
+      "gold_parents": [
+        "t25"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "Can you over-proof sourdough? What does that look like?",
+      "assistant_message": "Over-proofed dough is one of the most common mistakes in home sourdough baking — it happens when fermentation goes too far and the yeast exhausts the available sugars while the gluten structure weakens from enzymatic activity. Visually, an over-proofed dough will look puffy and airy but feel fragile and deflate easily when poked; the poke test on a properly proofed dough should show an indentation that springs back slowly, while an over-proofed dough either doesn't spring back at all or collapses. In the oven, an over-proofed loaf spreads sideways rather than rising upward, produces little oven spring, and often has a dense, gummy crumb despite looking well-baked on the outside.",
+      "gold_parents": [
+        "t26"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "What's the best way to revive a loaf that's gone a bit stale — is the oven trick real?",
+      "assistant_message": "The oven trick is absolutely real and works well: run the loaf under cold water to wet the crust, then place it directly on the oven rack at 350°F (175°C) for 10 to 15 minutes. The water creates steam inside the loaf as it heats, which re-gelatinizes the starch and restores a surprisingly fresh texture and crackly crust. It works best on loaves that are one to two days old — anything older than three days tends to dry out further rather than revive. Don't wrap it in foil, as that traps steam and softens the crust instead of crisping it.",
+      "gold_parents": [
+        "t27"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "I've been grinding my own flour with a Mockmill 100. Is there a specific setting you'd recommend for bread flour?",
+      "assistant_message": "The Mockmill 100 uses a dial from 1 (fine) to 10 (coarse), and for bread flour you'll generally want a setting of 2 to 3 — fine enough to produce a relatively smooth flour but not so fine that the stones heat up and damage the flour's enzymes. Many Mockmill users find that freshly milled flour at setting 3 produces excellent sourdough with a more open crumb than commercially milled whole wheat, partly because the flour is at peak enzyme activity. After milling, sifting through a 50-mesh screen removes the coarser bran particles if you want a lighter loaf while still retaining most of the nutritional benefits.",
+      "gold_parents": [
+        "t28"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t30",
+      "turn_index": 29,
+      "user_message": "Does freshly milled flour need to rest before use, or can I use it immediately?",
+      "assistant_message": "Freshly milled flour can be used immediately, and many bakers prefer it that way for maximum flavor and enzyme activity. However, flour that has been milled and rested for 24 to 72 hours at room temperature undergoes a slight natural oxidation that strengthens gluten bonds, making the dough a bit easier to handle — this is the same process that commercial mills accelerate with chemical improvers. If you're milling whole wheat or rye, the resting benefit is minimal since the bran dominates the behavior; for high-extraction or sifted flours where gluten development matters more, a 24-hour rest can make a noticeable difference in dough handling.",
+      "gold_parents": [
+        "t29"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t31",
+      "turn_index": 30,
+      "user_message": "What's the difference between high-extraction flour and whole wheat flour exactly?",
+      "assistant_message": "Whole wheat flour is milled from the entire wheat berry with nothing removed — it contains 100% of the bran, germ, and endosperm, which is why it's heavier and denser in baking. High-extraction flour, typically at 85 to 90% extraction, has had the coarsest bran particles sifted out but retains most of the germ and fine bran, giving it a cream-to-tan color and a flavor more complex than white flour but a gluten network stronger than whole wheat. It's often called 'Type 85' flour in European nomenclature and is the flour used in traditional French pain de campagne; it gives you much of the whole wheat flavor with significantly better rise and a more open crumb.",
+      "gold_parents": [
+        "t30"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t32",
+      "turn_index": 31,
+      "user_message": "Are there any good resources you'd recommend for going deeper on sourdough technique?",
+      "assistant_message": "Tartine Bread by Chad Robertson is widely considered the definitive home baker's guide and introduced the stretch-and-fold bulk fermentation method to a broad audience; the recipes use a 75–78% hydration country loaf as the foundation. For a more scientific approach, Modernist Bread at Home by Nathan Myhrvold and Francisco Migoya covers the chemistry and physics of fermentation in rigorous detail, though it's a significant investment at around $150. Online, the Full Proof Baking YouTube channel by Kristen is exceptionally thorough on technique, and the r/Sourdough subreddit has a well-maintained wiki that covers troubleshooting for almost every problem a beginner encounters.",
+      "gold_parents": [
+        "t31"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t33",
+      "turn_index": 32,
+      "user_message": "One last sourdough question — is it worth getting a proofing box to control temperature, or is it overkill for a home baker?",
+      "assistant_message": "A proofing box is genuinely useful if your kitchen temperature fluctuates significantly — more than about 5 to 8 degrees between seasons — because consistent temperature is the single biggest variable in getting repeatable fermentation times. The Brod & Taylor Folding Proofer is the most popular option at around $130 and folds flat for storage, which matters in a home kitchen. That said, many excellent home bakers get consistent results without one by using the oven with just the light on (which holds around 75 to 80°F in most ovens) or a cooler with a jar of warm water as a low-tech alternative.",
+      "gold_parents": [
+        "t32"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t34",
+      "turn_index": 33,
+      "user_message": "If all 200 participants register at the early-bird rate, how much money will the Maplewood Children's Hospital actually receive from registration fees alone?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t7",
+    "t8",
+    "t9",
+    "t10",
+    "t11",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t20",
+    "t21",
+    "t22",
+    "t23",
+    "t24",
+    "t25",
+    "t26",
+    "t27",
+    "t28",
+    "t29",
+    "t30",
+    "t31",
+    "t32",
+    "t33"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that total gross registration revenue from 200 participants at $35 each is $7,000.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that 15% of gross revenue ($1,050) is retained for club operating costs.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer states that Maplewood Children's Hospital receives $5,950 from registration fees.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not reference any dollar figures, percentages, or quantities derived from the sourdough baking discussion (e.g., flour weights, hydration percentages, equipment prices).",
+      "required": true
+    }
+  ],
+  "notes": "t1 and t2 hold all the facts the query needs: 200 participants, $35 early-bird fee, 15% operating cost retention, and Maplewood Children's Hospital as the beneficiary. Turns t3 through t33 form an extended sourdough baking side thread with many specific numbers (temperatures, hydration percentages, equipment prices) that are plausible distractors a model might incorrectly import into the answer.\n\nReference answer: If all 200 participants register at the early-bird rate of $35 per person, total gross registration revenue will be $7,000. The club retains 15% of that — $1,050 — for operating costs, leaving $5,950 to be donated to Maplewood Children's Hospital from registration fees alone. Any additional pledge donations collected on top of registration fees would increase that total further.",
+  "evidence_note": null,
+  "premise": "a running club organizing a charity 10k"
+}

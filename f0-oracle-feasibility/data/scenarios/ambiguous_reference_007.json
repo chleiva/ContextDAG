@@ -1,0 +1,101 @@
+{
+  "scenario_id": "ambiguous_reference_007",
+  "family": "ambiguous_reference",
+  "label": "AMBIGUOUS",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We've been working with Redshift Serverless for the nightly batch jobs and the vendor rep, Marcus Hale from Starburst Data, has been helping us scope the migration. He mentioned the cluster can handle up to 512 RPUs as a max capacity setting.",
+      "assistant_message": "That's a solid ceiling for nightly workloads. Starburst Data's rep support tends to be hands-on during migrations, so having Marcus Hale directly involved should help you avoid common pitfalls like misconfigured auto-suspend thresholds. 512 RPUs as a max capacity gives you a lot of headroom depending on how wide your heaviest transform jobs run.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Right, and Marcus confirmed that the base RPU setting we have to start from is 32 RPUs — we can't go lower than that under our enterprise contract tier.",
+      "assistant_message": "That 32 RPU floor is a contractual constraint worth documenting clearly, since it affects your minimum cost baseline even during idle overnight windows. Under the Redshift Serverless pricing model, you'll be billed for at least 32 RPUs worth of capacity per billing increment regardless of actual query load. Make sure your cost projections for the migration business case reflect that hard floor.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "We also have a competing proposal from Databricks. Our account team there is led by Priya Nandakumar, and she's been pushing their SQL Warehouse option pretty hard.",
+      "assistant_message": "Databricks SQL Warehouses are a strong fit for batch-heavy pipelines, especially if you're already using Delta Lake format for any of your source tables. Priya Nandakumar's team tends to lead with the photon engine benchmarks, so expect the conversation to center on query throughput comparisons.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "Priya sent over a proposal where the smallest Databricks SQL Warehouse cluster size they'd support for our SLA is an X-Large, which maps to 16 DBUs per hour.",
+      "assistant_message": "16 DBUs per hour on an X-Large is on the higher end for a starting tier, and that figure will compound quickly across a full nightly batch window of several hours. You'd want to model that against your expected job parallelism to see whether the throughput justifies the DBU spend compared to a smaller cluster with longer runtime.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "Our DBA lead wants to know if we need to update the pg_hba.conf on the legacy Postgres 13 source system before we start pulling data through the new pipeline connectors.",
+      "assistant_message": "Yes, you'll almost certainly need to add a new entry to pg_hba.conf to allow connections from whatever host or CIDR range your pipeline connector runs from, since Postgres 13 defaults to rejecting unlisted hosts. The entry type will depend on your auth method — md5 or scram-sha-256 are most common for remote connections. After editing, a pg_reload_conf() call or a service reload is required for changes to take effect without a full restart.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What's the minimum RPU count we're locked into with them under our contract?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4",
+    "t5"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer resolves 'them' to Marcus Hale / Starburst Data / Redshift Serverless (ENTITY_1 from branch A), not to Priya Nandakumar / Databricks (ENTITY_2 from branch B).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states the minimum RPU count is 32 RPUs, as established in t2.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not give 16 DBUs per hour or any Databricks-specific figure as the answer to the minimum capacity question.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not reference Priya Nandakumar or Databricks as the entity to whom the contract constraint applies.",
+      "required": true
+    }
+  ],
+  "notes": "t2 holds the critical fact (32 RPU contractual floor tied to Marcus Hale / Redshift Serverless). t4 is the trap: it introduces a superficially similar 'minimum capacity' figure (16 DBUs/hour) for Databricks/Priya Nandakumar, which the ambiguous pronoun 'them' in t6 could wrongly resolve to.\n\nReference answer: Under your enterprise contract with Starburst Data / Redshift Serverless, the minimum RPU count you're locked into is 32 RPUs — Marcus Hale confirmed that this is the contractual floor and you cannot configure the base capacity any lower than that tier. This means your cost baseline will always reflect at least 32 RPUs of capacity, even during low-activity overnight windows.",
+  "evidence_note": null,
+  "premise": "a data team migrating nightly batch jobs to a new warehouse"
+}

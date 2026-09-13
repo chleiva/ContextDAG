@@ -1,0 +1,185 @@
+{
+  "scenario_id": "three_way_join_003",
+  "family": "three_way_join",
+  "label": "JOIN",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're trying to figure out the weight limit for our robot. The rulebook says the robot must weigh no more than 125 pounds including all mechanisms, right?",
+      "assistant_message": "Yes, that's correct for your regional competition. The official rulebook specifies a maximum robot weight of 125 pounds, and that figure includes all onboard mechanisms, batteries, and any game-specific attachments. Exceeding that at inspection means you're disqualified from competing until you bring the robot into compliance.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "What motor controller are we planning to use for the drivetrain this year?",
+      "assistant_message": "The team decided to go with the REV Robotics SPARK MAX motor controller for the drivetrain this season. It supports both brushed and brushless motors and communicates over CAN bus, which gives you much finer control than PWM. It was chosen partly because the team already has four units from last year's build.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "Does the 125-pound limit apply before or after we add the bumpers?",
+      "assistant_message": "The bumpers are actually excluded from the 125-pound weight limit under the regional rulebook. Bumpers are weighed separately and must fall between 15 and 20 pounds on their own. So your robot without bumpers must be at or under 125 pounds at inspection.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "What's the current draw limit per motor controller that we need to stay under to avoid tripping the breaker?",
+      "assistant_message": "Each motor controller on the robot is protected by a 40-amp breaker in the power distribution panel. If sustained current through a single channel exceeds 40 amps, the breaker trips and that motor loses power mid-match. For brief peaks, most breakers tolerate up to about 100 amps for under one second before tripping.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "So if our robot currently weighs 118 pounds without bumpers, how much margin do we have, and can we still add a climbing hook?",
+      "assistant_message": "With a current weight of 118 pounds and a 125-pound limit excluding bumpers, you have exactly 7 pounds of margin to work with. Whether a climbing hook fits depends entirely on how heavy the hook assembly is. As long as the complete robot stays at or below 125 pounds without bumpers, you're within the rules.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "Coach wants to know what size van we need to rent to transport everything to the competition venue.",
+      "assistant_message": "For a full robotics team transport including the robot, toolboxes, spare parts bins, and team gear, a 15-passenger van typically isn't enough cargo space on its own. Most teams in similar situations rent a 10-foot cargo truck or pair a standard passenger van with a small trailer. You'll want to confirm the venue's loading dock hours before you finalize the rental.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "The SPARK MAX — what firmware version should we be running for the competition?",
+      "assistant_message": "For this season's competition, the team should be running SPARK MAX firmware version 1.6.2, which is the latest stable release from REV Robotics. Earlier versions had a known bug where the motor would stall unexpectedly under certain CAN bus load conditions. You can update the firmware using the REV Hardware Client software on any Windows laptop.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "What NEO motor are we pairing with the SPARK MAX on the drivetrain?",
+      "assistant_message": "The drivetrain is using the REV NEO 1.1 brushless motor paired with each SPARK MAX. The NEO 1.1 has a free speed of 5,880 RPM and a stall current of 105 amps at 12 volts. It replaced the original NEO in that revision primarily to fix a bearing failure issue that showed up in high-load applications.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "We also need to figure out the hotel situation — how many rooms should we book for a team of 14 students and 3 mentors?",
+      "assistant_message": "For 14 students and 3 mentors, you're looking at 17 people total. Assuming two students per room and mentors in single rooms, you'd need 7 student rooms and 3 mentor rooms, so 10 rooms minimum. Booking a block rate with the hotel as early as possible usually saves the team significant money.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "Is there a specific CAN bus ID we've assigned to the drivetrain SPARK MAX controllers?",
+      "assistant_message": "Yes, the four drivetrain SPARK MAX units have been assigned CAN IDs 1 through 4, with IDs 1 and 2 on the left side and IDs 3 and 4 on the right side. This assignment is documented in the team's wiring diagram from the January 14th build session. Any changes to those IDs need to be updated in both the hardware client and the robot code to avoid address conflicts.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "For the drive team, do we need matching shirts or full uniforms for the competition?",
+      "assistant_message": "Most regional competitions require drive team members to wear matching shirts with the team number clearly visible, but full uniforms with logos are optional unless your team has a sponsor agreement requiring them. Check the specific event's drive team dress code in the event information packet, since some venues have additional safety requirements like closed-toe shoes. Ordering shirts at least two weeks before the event is usually necessary to guarantee delivery in time.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "What happens to the NEO 1.1 if it sustains current near its stall rating — is there a thermal shutoff?",
+      "assistant_message": "The NEO 1.1 does have an internal thermal protection circuit that activates at approximately 100 degrees Celsius. When the motor core reaches that temperature, the thermal cutoff triggers and the motor stops until it cools down, typically requiring about 90 seconds of rest before it resets automatically. To avoid triggering it in a match, the team should configure the SPARK MAX current limit to no more than 60 amps for sustained operation on the drivetrain.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "Given everything about our robot and the drivetrain setup, if we're pushing hard in a match and the NEO 1.1 thermal cutoff triggers, what's the chain of events from the motor shutting down to whether we can keep competing, and does any of this affect our ability to pass inspection?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t5",
+        "t10",
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5",
+    "t7",
+    "t8",
+    "t10",
+    "t12"
+  ],
+  "distractor_turn_ids": [
+    "t6",
+    "t9",
+    "t11"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer correctly states that the robot weight limit is 125 pounds (excluding bumpers), and that the team currently has 7 pounds of margin at 118 pounds.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer correctly identifies that the NEO 1.1 thermal cutoff triggers at approximately 100 degrees Celsius and requires about 90 seconds to reset, meaning the robot can continue competing once it resets but cannot drive until then.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer correctly references the SPARK MAX firmware version 1.6.2 and/or the CAN IDs 1–4 assigned to the drivetrain controllers as part of the drivetrain configuration that would be inspected.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not mention hotel room counts, van rental size, or drive team uniform requirements as relevant to inspection or match performance.",
+      "required": true
+    }
+  ],
+  "notes": "The three gold branches are: A (t1, t3, t5) establishing the 125-lb weight limit and 7-lb margin, B (t2, t7, t10) establishing SPARK MAX firmware 1.6.2 and CAN IDs 1–4, and C (t4, t8, t12) establishing the NEO 1.1 thermal cutoff at 100°C with a 90-second reset. The distractor branch D (t6, t9, t11) covers van rental, hotel rooms, and team uniforms — all plausible competition logistics but entirely irrelevant to the query about drivetrain shutdown and inspection.\n\nReference answer: If the NEO 1.1 thermal cutoff triggers during a match, the motor stops immediately and the robot loses drivetrain power on the affected side; after approximately 90 seconds of cooling, the thermal circuit resets automatically and the robot can drive again, so the team can continue competing in that match or subsequent ones if the cutoff clears in time. The robot's current weight of 118 pounds leaves 7 pounds of margin under the 125-pound limit (bumpers excluded), so the thermal event itself has no bearing on passing the weight inspection. For the electronics inspection, the team needs to confirm the four SPARK MAX controllers are running firmware version 1.6.2 and are correctly addressed at CAN IDs 1 through 4, since incorrect firmware or ID conflicts could flag a failure. Setting a sustained current limit of no more than 60 amps on each SPARK MAX is the recommended way to prevent the thermal cutoff from triggering again in future matches.",
+  "evidence_note": null,
+  "premise": "a high-school robotics team preparing for a regional competition"
+}

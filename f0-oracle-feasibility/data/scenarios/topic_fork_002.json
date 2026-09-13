@@ -1,0 +1,117 @@
+{
+  "scenario_id": "topic_fork_002",
+  "family": "topic_fork",
+  "label": "FORK",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "Our high school robotics team is competing in the FIRST Tech Challenge regional qualifier on March 15th and we're trying to finalize our robot design. We have about three weeks left before the event and our chassis is mostly done but we're still figuring out the scoring mechanisms.",
+      "assistant_message": "Three weeks is a tight but workable timeline for FTC. In the current season, most regional qualifiers award teams points based on autonomous period performance, driver-controlled scoring, and end-game tasks, so prioritizing the highest-value mechanism first is usually the smartest move. I'd recommend locking down your highest-point mechanism by the end of week one so you have two full weeks for iteration and driver practice.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "We decided to focus on the end-game task, which in this season's game is hanging the robot from the low bar to earn 20 points or from the high bar for 30 points. We're planning to build a two-stage linear slide that extends to 18 inches to reach the high bar, and we're using REV Robotics HD Hex Motors rated at 435 RPM to drive it.",
+      "assistant_message": "Going for the high bar hang is a smart choice since the 10-point premium over the low bar is often the margin of victory at regionals. A two-stage linear slide at 18 inches with 435 RPM HD Hex Motors is a solid combination — those motors provide enough speed while still giving you reasonable torque for lifting the robot's weight. Make sure your slide is properly backed by a sturdy mounting plate, because the full robot load on a two-stage system creates significant stress at the attachment points.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "We're a little worried about whether the 435 RPM motors are actually strong enough to lift the robot. Our robot currently weighs about 28 pounds. Do you know how to think through whether those motors can handle that?",
+      "assistant_message": "The HD Hex Motor at 435 RPM has a stall torque of approximately 3.2 Newton-meters, which is the key figure for this calculation. To lift 28 pounds (about 12.7 kg) you need to overcome roughly 124.5 Newtons of force, and the mechanical advantage of your spool or pulley radius determines whether 3.2 N·m is sufficient — for example, a spool with a 1-inch (0.0254 m) radius gives you about 126 N of lift force, which is right at the edge of stall torque. Running continuously at stall will overheat and damage the motor, so you'd want to either add a second motor, increase your spool radius for more mechanical advantage, or reduce robot weight to stay comfortably below the stall limit.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "Got it. We also need to think about our autonomous routine. Right now we're planning to use the April Tag vision system to localize the robot. What cameras do teams typically use for that in FTC?",
+      "assistant_message": "The most common camera for AprilTag localization in FTC is the Logitech C920, which is widely supported by the FTC SDK's built-in vision pipeline and runs reliably at 30 frames per second at 1080p. Many teams also use the Logitech C270 as a budget option, though its lower resolution can reduce detection reliability at longer distances. The EasyOpenCV library and the official FTC SDK Vision Portal both support these cameras out of the box, which significantly reduces setup time.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "So if we went with two HD Hex Motors on the slide instead of one, would that be enough to safely lift the robot?",
+      "assistant_message": "Yes, two HD Hex Motors at 435 RPM would give you a combined stall torque of approximately 6.4 N·m, which is roughly double the single-motor figure. With a 1-inch radius spool, two motors together produce about 252 N of lift force, giving you a comfortable safety margin over the 124.5 N needed to lift your 28-pound robot. As a general rule, you want your operating load to be no more than about 50–60% of stall torque to avoid overheating, and two motors keeps you well within that range for your robot's weight.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "For the autonomous period, how many points can we score if we successfully park in the observation zone versus the ascent zone?",
+      "assistant_message": "In the current FTC season, parking in the observation zone during autonomous earns 3 points, while parking in the ascent zone earns 5 points. The 2-point difference might seem small, but in close qualifier matches where rankings are decided by cumulative ranking points, consistently choosing the higher-value park can matter over a full day of competition. Teams that can reliably complete a scoring task and then navigate to the ascent zone tend to rank notably higher than those who only park.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "If we do go with two motors and a 1-inch spool radius, what's the actual lift force we'd generate, and is that enough to go for the high bar rather than just settling for the low bar?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t5"
+  ],
+  "distractor_turn_ids": [
+    "t4",
+    "t6"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that two HD Hex Motors produce approximately 252 N of lift force with a 1-inch spool radius (from t5).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer references the robot's weight of 28 pounds / approximately 124.5 N as the load that must be overcome (from t3 and t5).",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer confirms the two-motor setup is sufficient to reach the high bar, which is worth 30 points — 10 more than the low bar's 20 points (fork-point detail from t2).",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not mention AprilTag cameras, the Logitech C920, the C270, or autonomous zone parking points, as those details come from the distractor turns t4 and t6.",
+      "required": true
+    }
+  ],
+  "notes": "The key evidence the query needs lives in t2 (high bar = 30 pts, low bar = 20 pts, 18-inch slide with 435 RPM motors), t3 (28-pound robot, 124.5 N load, 3.2 N·m stall torque per motor, 1-inch spool), and t5 (two motors = 6.4 N·m combined, ~252 N lift force, safety margin). Turns t4 and t6 are traps: they introduce AprilTag camera details and autonomous parking points that are plausible but completely irrelevant to the lift-force and bar-height query.\n\nReference answer: With two HD Hex Motors on a 1-inch radius spool, you generate approximately 252 N of lift force, which comfortably exceeds the roughly 124.5 N needed to lift your 28-pound robot. That margin also keeps you well within the recommended 50–60% of stall torque operating range, so the motors shouldn't overheat. That is more than enough to commit to the high bar hang, which earns 30 points compared to just 20 points for the low bar — so the two-motor setup is both mechanically sound and the higher-scoring choice.",
+  "evidence_note": null,
+  "premise": "a high-school robotics team preparing for a regional competition"
+}

@@ -1,0 +1,319 @@
+{
+  "scenario_id": "constraint_retention_002",
+  "family": "constraint_retention",
+  "label": "CONSTRAINT",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I've locked in a hard rule for my card game Thornfield: no player may ever hold more than 7 cards in hand at the end of their turn. This is a non-negotiable cap that applies to every player on every turn without exception.",
+      "assistant_message": "Understood — the hard hand-limit rule for Thornfield is exactly 7 cards maximum at end of turn, applies to every player on every turn, and admits no exceptions. I'll treat that as a fixed constraint going forward.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Right. So if a card effect says 'draw 3 cards,' I need to make sure the card text also instructs the player to discard down to 7 if drawing would push them over. Does that phrasing feel clean enough?",
+      "assistant_message": "Adding 'then discard down to 7' directly on the card is clean and standard practice — players see the consequence immediately without hunting through the rulebook. You might also consider the phrasing 'draw 3, then discard until your hand contains 7 cards' to make the target number explicit on the card face itself.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "How many cards should I include in the base deck? I'm thinking somewhere between 110 and 150.",
+      "assistant_message": "For a card game aimed at 2–4 players, 110–120 cards is usually enough to keep variety without overwhelming new players, while 140–150 gives more replayability if you expect experienced audiences. I'd suggest playtesting at 120 first and scaling up only if players report seeing the same cards too frequently.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "I'm also wrestling with card stock weight. My printer quoted me 280 gsm and 310 gsm options.",
+      "assistant_message": "Most hobby-grade card games use 300–310 gsm for a premium feel, and 310 gsm would align Thornfield with the upper end of that range. If budget is tight, 280 gsm is acceptable but will feel noticeably thinner in hand, which can affect perceived quality at conventions or retail demos.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "What finish should I go with — linen or smooth?",
+      "assistant_message": "Linen finish hides minor scratches and shuffles more easily, which matters a lot in a card game that will see heavy table use. Smooth finish photographs better for marketing materials, but linen is the practical choice for the actual play experience.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "I need to decide on card dimensions. Standard poker size is 63 × 88 mm, but I've seen some designers go with tarot size at 70 × 120 mm.",
+      "assistant_message": "Poker size (63 × 88 mm) is ideal if players will sleeve the cards, since sleeves and storage solutions are abundant and cheap for that format. Tarot size (70 × 120 mm) gives more real estate for artwork and text, but storage boxes and sleeves become harder for consumers to source, which can be a friction point post-sale.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "I'm trying to figure out the right number of card types. Right now I have Resource cards, Action cards, Event cards, and Structure cards — is four types too many for a first release?",
+      "assistant_message": "Four types is manageable if each type has a clearly distinct function that players learn to recognize at a glance. The risk is cognitive load during the first few plays; consider whether Event and Action cards could be collapsed into one type with a keyword distinguishing them, at least for the introductory version.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "My lead artist is asking whether the card backs should all be identical or have suit-specific backs. I like the idea of suit-specific backs but I'm worried it gives away information.",
+      "assistant_message": "Suit-specific backs do give away strategic information — opponents know you're holding an Event card, for example, which can meaningfully change their decisions. Identical backs preserve hidden information, which is almost always preferable in games with hand management as a core mechanic; you can still differentiate suits with a small icon in a corner of the card face.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "Speaking of the artist, she's asking for a style guide. What are the key things I should specify for card illustration consistency?",
+      "assistant_message": "At minimum, specify color palette (exact hex codes or Pantone references), lighting direction, level of detail in backgrounds, and whether characters should follow a consistent anatomical style guide or are treated as unique. You should also clarify whether the art bleeds to the card edge or sits within a defined border, since that affects layout templates significantly.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "I want to add a point-scoring track on the player board. Should the track go from 0 to 50 or 0 to 100?",
+      "assistant_message": "A 0–50 track typically produces shorter games (around 45–60 minutes) and is easier to read at a glance, while 0–100 allows finer scoring granularity and longer play sessions. If your target play time is under an hour, 0–50 is the cleaner choice; for a 90-minute experience, 0–100 gives you more room to reward incremental decisions.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "I'm considering adding a solo mode. Any thoughts on the best mechanism for solo play in card games?",
+      "assistant_message": "Automa systems — where a simplified deck of cards simulates an opponent's decisions — are currently the most popular and well-received solo mechanism in hobby card games. They add meaningful production cost (an extra 20–30 card Automa deck) but dramatically increase perceived value and broaden your market to solo gamers, who are a large and vocal purchasing segment.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "What's a reasonable budget for a first print run of 500 copies?",
+      "assistant_message": "For a 120-card game with a tuck box and player boards, a 500-unit print run through a mid-tier manufacturer like Longpack or Panda typically runs between $3,500 and $5,500 USD depending on component count and finish choices. Shipping from overseas factories can add another $800–$1,500 depending on freight method and current rates, so budget at least $5,500–$7,000 total to be safe.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "Should I run a Kickstarter or try to sell direct through my own website first?",
+      "assistant_message": "Kickstarter provides built-in discovery and social proof, which is especially valuable for a debut title with no established audience, but the campaign itself requires 2–3 months of preparation and marketing spend. Selling direct first lets you iterate quickly on feedback from early adopters, but you'll need to drive all traffic yourself; many first-time designers do a small direct pre-order to fund a prototype run, then launch Kickstarter once they have testimonials.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "I'm thinking about stretch goals. What kind of stretch goals resonate best with card game backers?",
+      "assistant_message": "Upgraded components — foil cards, metal coins replacing cardboard tokens, or a neoprene playmat — consistently outperform content expansions as stretch goals because backers can see the tangible quality upgrade. Exclusive promo cards also perform well, but only if they're cosmetic variants rather than mechanically superior cards, since pay-to-win perceptions kill goodwill fast.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "I want to include a quick-start reference card for new players. How much information is too much for a single reference card?",
+      "assistant_message": "A single-sided reference card should cover no more than the turn structure, a summary of each card type's function, and the two or three most commonly forgotten rules — anything beyond that and players stop reading it mid-game. If you find yourself needing both sides of a card, that's usually a signal that the game's core loop needs simplification rather than a bigger reference card.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "My playtesters keep saying the game feels long. Average session is running about 95 minutes for 3 players. What levers can I pull to bring that down?",
+      "assistant_message": "The most reliable levers are reducing the total card count in the starting deck, lowering the score threshold needed to trigger end-game, or adding a hard turn limit (e.g., the game ends after round 10 regardless of score). Analyzing where the 95 minutes is spent — setup, decision time, or end-game scoring — will tell you which lever has the highest impact for your specific design.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "I'm also getting feedback that the Resource cards feel underpowered compared to Action cards. How do I diagnose whether that's a math problem or a perception problem?",
+      "assistant_message": "Track win rates and final scores across a set of at least 20 playtests and compare them for players who drew Resource-heavy hands versus Action-heavy hands — if Resource-heavy players consistently score 15% or more below the mean, it's a math problem. If scores are comparable but players still report feeling underpowered, it's a perception problem, often solved by giving Resource cards more dramatic visual feedback (larger numbers, bolder icons) or renaming them to something that implies agency.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "I want to add a catch-up mechanism so trailing players don't feel hopeless. What are some options?",
+      "assistant_message": "Common catch-up mechanisms include giving the last-place player a bonus resource at the start of each round, reducing the cost of powerful cards for players below a score threshold, or introducing Event cards that only benefit players outside the top position. The key is making the mechanism feel like an opportunity rather than a handout — framing it as a 'Momentum' bonus rather than a 'Consolation' bonus goes a long way psychologically.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "What's the best way to handle ties at the end of the game?",
+      "assistant_message": "The clearest tiebreaker is a single, easily counted secondary metric that players accumulate naturally during play — total Resource cards spent is a common choice because it rewards efficiency without requiring extra tracking. Avoid multi-step tiebreaker chains (score, then resources, then cards remaining in deck) because they slow down end-game resolution and can feel arbitrary to the losing player.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "I need a name for the in-game currency. Right now I'm just calling it 'gold' as a placeholder. Any thoughts?",
+      "assistant_message": "A thematic currency name tied to Thornfield's setting will make the game feel more cohesive — if the setting has a rural or harvest theme, something like 'Grain' or 'Thorn' could double as both currency and flavor. Avoid names that are too close to existing popular games (no 'Coin of the Realm' if you're anywhere near a Dominion shelf comparison) to sidestep confusion in reviews and on forums.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "Should I include cardboard tokens or wooden meeples for player markers?",
+      "assistant_message": "Wooden meeples add a tactile premium feel and photograph well for social media, but they add roughly $0.30–$0.60 per unit to your manufacturing cost at a 500-copy run. Cardboard tokens are cheaper and can carry more printed information (icons, numbers), which is sometimes more useful in a resource-tracking game than a purely aesthetic wooden piece.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "My rulebook is currently 12 pages. Is that too long for this kind of game?",
+      "assistant_message": "Twelve pages is on the longer side for a card game — most successful hobby card games aim for 8 pages or fewer in the learn-to-play rulebook, with a separate reference document for edge cases. Consider whether any pages are devoted to examples that could instead be covered by a short 'how to play' video linked via QR code, which is increasingly standard and frees up page count for clarity.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "I'm thinking about adding an expansion right away. Is it better to design the expansion alongside the base game or wait until after launch?",
+      "assistant_message": "Designing an expansion simultaneously lets you intentionally leave mechanical hooks in the base game that the expansion will fill, creating a tighter overall design — but it risks overcomplicating the base game if you over-engineer those hooks. Most experienced designers recommend completing and locking the base game first, then designing the expansion with full knowledge of what the base game's weaknesses and unfulfilled design space are.",
+      "gold_parents": [
+        "t22"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "I'm designing a new 'Windfall' card that lets a player draw 5 cards all at once. What text do I need to include on the card itself to handle the situation where a player already has 4 cards in hand when they play it?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t7",
+    "t8",
+    "t9",
+    "t10",
+    "t11",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t20",
+    "t21",
+    "t22",
+    "t23"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer correctly identifies that the hand limit is exactly 7 cards (not any other number such as 5, 6, or 8).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer prescribes that the card text must instruct the player to discard down to 7 cards after drawing, because drawing 5 with 4 in hand yields 9 cards, which exceeds the 7-card limit.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not suggest the player simply keeps all 9 cards or omit any discard instruction, which would violate the hard 7-card end-of-turn cap established in t1.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not incorporate any detail from the Branch B filler turns (e.g., card stock weight, deck size, scoring track range) as if it were relevant to the hand-limit rule.",
+      "required": false
+    }
+  ],
+  "notes": "t1 and t2 hold all the facts the query requires (the exact 7-card hard cap and the established phrasing convention for discard-down instructions). t3–t23 are all on-premise distractors about production, art, funding, and game mechanics that never touch the hand-limit rule; the trap is that a naive answer to t24 might simply describe a 'draw 5' card without any discard clause, violating the constraint silently buried 22 turns earlier.\n\nReference answer: Because the hard hand limit in Thornfield is 7 cards at end of turn, a player who holds 4 cards and draws 5 would end up with 9 — two over the cap. The Windfall card text needs to include an explicit discard instruction, such as 'Draw 5 cards, then discard until you hold 7 cards.' Placing the target number (7) directly on the card ensures players don't need to consult the rulebook to resolve the effect.",
+  "evidence_note": null,
+  "premise": "a board-game designer balancing a new card game"
+}

@@ -1,0 +1,113 @@
+{
+  "scenario_id": "ambiguous_reference_002",
+  "family": "ambiguous_reference",
+  "label": "AMBIGUOUS",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're thinking of holding one of our spring concert tour stops at Harrowgate Hall in Millfield. Have you heard of it?",
+      "assistant_message": "Harrowgate Hall is a mid-sized performing arts venue located at 14 Creston Avenue in Millfield, with a seated capacity of 420 and a dedicated choral acoustic shell that can be configured for ensembles up to 60 singers. It's a popular choice for amateur and semi-professional choral groups in that region. Their main booking contact is a venue manager named Sandra Okafor, who handles all touring group inquiries directly.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "That sounds promising. Do you know if they have any booking restrictions we should be aware of?",
+      "assistant_message": "Yes — Harrowgate Hall requires all touring groups to submit a completed booking application at least 90 days before the intended performance date, and they mandate a non-refundable deposit of £350 due within 14 days of application approval. They also have a strict rule that amplified sound equipment must be pre-approved by their technical team no later than 30 days before the event. Those are the three main constraints Sandra Okafor typically flags for first-time touring groups.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "We're also looking at the Elmsworth Civic Auditorium for another stop on the tour. What can you tell me about it?",
+      "assistant_message": "Elmsworth Civic Auditorium is a larger venue on Parade Street in Elmsworth town centre, with a seating capacity of 780 and a grand pipe organ that choral groups can arrange to use for an additional hire fee. It's owned by the local council and managed by a team led by events coordinator Paul Renwick. The auditorium hosts roughly 120 events per year and has a well-regarded reputation for community and touring performances.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "Does Elmsworth have good dressing room facilities for a choir our size? We have about 45 singers.",
+      "assistant_message": "Elmsworth Civic Auditorium has three dedicated dressing rooms backstage, with the largest accommodating up to 35 people and the other two fitting around 15 each, so 45 singers would spread comfortably across all three. Each room has its own mirror stations, coat rails, and a shared adjoining shower block. Paul Renwick has mentioned that choral groups often use the two smaller rooms for section warm-ups as well.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "Our choir director wants to order new uniform scarves for the tour. Any advice on sourcing them quickly?",
+      "assistant_message": "For a fast turnaround, specialist choral suppliers like Stageworthy Apparel or Choir Direct typically offer embroidered scarves with a 3-to-4-week production window if you order 40 or more units. You'll want to confirm the exact Pantone colour code for your choir's colours before placing the order to avoid any shade mismatches. Some suppliers also offer a sample swatch service for around £5 per colour, which is worth requesting if you haven't ordered from them before.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "We're also debating whether to print physical programmes or go digital for the concerts. What do most choirs do these days?",
+      "assistant_message": "There's been a noticeable shift toward QR-code digital programmes over the last few years, primarily because printing costs for a run of 400 physical programmes can easily reach £180–£250 depending on the page count and paper stock. Many choirs now offer a hybrid approach — a small print run of around 50 physical copies for audience members who prefer them, with a digital version accessible via a QR code on a simple card at the door. That approach tends to reduce costs by 60–70% compared to a full print run while still catering to all audience preferences.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "How far in advance do we need to submit our booking application to meet their deadline?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4",
+    "t5",
+    "t6"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer resolves 'their' to Harrowgate Hall (not Elmsworth Civic Auditorium) based on the branch A context about booking restrictions.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that the required advance notice is 90 days before the intended performance date, as established in t2.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not apply Elmsworth Civic Auditorium's details or booking process to the question, as that venue's constraints were never discussed.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer may optionally mention that a non-refundable deposit of £350 is due within 14 days of application approval, as stated in t2.",
+      "required": false
+    }
+  ],
+  "notes": "Turns t1 and t2 (branch A) hold all the facts the query needs — specifically Harrowgate Hall's 90-day advance booking rule. Turns t3 and t4 are the trap: Elmsworth Civic Auditorium is a venue of the same kind introduced just after, so 'their deadline' in t7 could superficially seem to refer to it, but the query depends only on the t1–t2 branch.\n\nReference answer: The booking application for Harrowgate Hall must be submitted at least 90 days before your intended performance date. That is the lead-time requirement Sandra Okafor flags for touring groups. You should also be prepared to pay the £350 non-refundable deposit within 14 days of your application being approved, and remember to get any amplified sound equipment cleared by their technical team no later than 30 days before the event.",
+  "evidence_note": null,
+  "premise": "an amateur choir organizing a spring concert tour"
+}

@@ -1,0 +1,141 @@
+{
+  "scenario_id": "topic_fork_003",
+  "family": "topic_fork",
+  "label": "FORK",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're a 12-person SaaS startup and we've found a 2,400 sq ft office on the 4th floor of 88 Franklin Street in Boston. The asking rent is $42 per square foot per year, and the landlord wants a 3-year lease starting September 1, 2025. How should we approach the initial negotiation?",
+      "assistant_message": "At $42/sq ft on a 3-year term, you have real leverage to push for a lower base rate—comparable Class B space in that Boston submarket is currently trading closer to $38–$40/sq ft. I'd open by countering at $38/sq ft and framing the 3-year commitment as a concession you're offering in exchange for that rate reduction. You should also ask for a tenant improvement (TI) allowance upfront; $25–$35 per square foot is a reasonable target for a raw or lightly finished space in that building.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "That makes sense. The landlord has also proposed a personal guarantee from our CEO for the full 36-month lease value, which works out to $302,400. Is that standard, and how hard should we push back?",
+      "assistant_message": "A full 36-month personal guarantee on a $302,400 total obligation is aggressive but not unusual for a first-time commercial tenant with no rental history. The market standard for early-stage startups is typically a 'burn-down' guarantee—starting at 12 months of rent ($100,800 at your rate) and reducing by one month for every lease year completed without default. You could also offer a security deposit of 2–3 months' rent ($8,400–$12,600) as a partial substitute, which gives the landlord liquid collateral without exposing your CEO's personal assets for the full term.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "The burn-down guarantee sounds much better. If we do go with the 12-month starting figure of $100,800, what exactly triggers a 'default' that would let the landlord call that guarantee?",
+      "assistant_message": "Standard commercial lease default provisions typically include failure to pay rent within a 5-day grace period, abandonment of the premises, or filing for bankruptcy protection under Chapter 7 or Chapter 11 of the US Bankruptcy Code. Most landlord-friendly leases also include 'non-monetary default' clauses triggered by things like unauthorized subletting or material breach of use restrictions, with a 30-day cure period after written notice. You should negotiate to remove or narrow the non-monetary default triggers in the guarantee language itself, so the personal liability attaches only to payment defaults, not every possible lease violation.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "Got it. What about the TI allowance—the space needs new flooring, a small server room, and a glass-walled conference room. How do we structure the TI negotiation?",
+      "assistant_message": "For those three improvements, get contractor bids before you negotiate the TI number so you can anchor to real costs—glass-walled conference rooms typically run $15,000–$25,000 installed, a basic server room with dedicated cooling and a 20-amp circuit can run $8,000–$15,000, and commercial LVT flooring for 2,400 sq ft usually costs $6–$10 per sq ft installed. Present the landlord with a detailed scope of work and request a $60,000 TI allowance, structured as a landlord-managed build-out rather than a tenant reimbursement so you're not fronting capital. If they resist, propose splitting the allowance: $40,000 at lease signing and the remaining $20,000 after the first 12 months of on-time payments.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "The landlord is insisting on a 'landlord-managed build-out' clause that gives them the right to select all contractors. What risks does that create for us?",
+      "assistant_message": "The biggest risk is cost inflation—when landlords control contractor selection, they often use preferred vendors who charge 15–25% above market rates, and since it's your TI dollars being spent, the overage comes directly out of your allowance. You could end up with $60,000 committed but only $45,000 worth of actual work completed. Negotiate for a 'competitive bid' carve-out requiring the landlord to solicit at least three bids for any job over $5,000, with you retaining approval rights over the final selection, and cap the landlord's project management fee at 5% of construction costs.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "If we negotiate the guarantee down to 12 months starting at $100,800, should we also try to cap the dollar amount in the guarantee document itself, or just let the burn-down schedule control the exposure?",
+      "assistant_message": "You should absolutely include an explicit dollar cap in the guarantee document—relying solely on the burn-down schedule leaves room for disputes about what 'one month of rent' means if there are any rent escalations during the lease term. Write the cap as a specific decreasing schedule: $100,800 at signing, reducing to $67,200 after year one, and $33,600 after year two, with the guarantee expiring entirely upon the final month of the lease term. Tying the cap figures to fixed dollar amounts rather than a formula prevents the landlord from arguing that annual rent escalations—typically 3% per year in Boston leases—reset or increase the guarantee exposure.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "What happens to our TI allowance if we need to terminate the lease early? Does the landlord claw it back?",
+      "assistant_message": "Yes, most commercial leases include a TI recapture provision that requires you to repay a prorated portion of the allowance if you terminate early—on a 3-year lease with a $60,000 TI, that means roughly $20,000 per year of remaining term. Some landlords structure this as a separate 'TI note' that you sign alongside the lease, which can even accrue interest at 6–8% annually. You should negotiate to have the recapture obligation extinguish after month 24, so that if you make it two-thirds through the lease without default, the landlord absorbs the remaining TI cost as a cost of doing business.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "One more wrinkle: our CEO is also a 40% shareholder in a separate LLC that owns some equipment. Could the landlord potentially go after assets in that LLC if the personal guarantee is called?",
+      "assistant_message": "Generally no—a personal guarantee binds the individual, not entities they hold an interest in, so the LLC's assets are protected by the corporate veil as long as the LLC is properly maintained with separate finances and annual filings. However, some aggressive landlords insert 'alter ego' language into guarantee agreements that allows them to pierce the corporate veil if they can show the CEO commingled personal and LLC funds or failed to observe corporate formalities. You should have your attorney strike any alter ego or 'related entity' language from the guarantee document before signing, and make sure the LLC maintains a separate bank account and files its Massachusetts annual report on time each year.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "Given everything about how the guarantee is structured, what language should we specifically ask our attorney to include in the guarantee document to make sure the CEO's exposure is clearly bounded?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t6",
+    "t8"
+  ],
+  "distractor_turn_ids": [
+    "t4",
+    "t5",
+    "t7"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer references the explicit decreasing dollar cap schedule: $100,800 at signing, $67,200 after year one, and $33,600 after year two, derived from the 12-month starting figure established in t2 and the cap structure in t6.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer mentions limiting default triggers to payment defaults only (removing or narrowing non-monetary default clauses), as discussed in t3.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer mentions striking 'alter ego' or 'related entity' language to protect the CEO's LLC assets, as discussed in t8.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not discuss TI allowance recapture provisions, contractor selection rights, or the landlord's project management fee cap, as those details appear only in the distractor turns (t4, t5, t7) and are irrelevant to the guarantee document language.",
+      "required": true
+    }
+  ],
+  "notes": "The key evidence for the query lives in t2 (the $100,800 / 12-month starting figure), t3 (payment-only default triggers), t6 (explicit dollar cap schedule), and t8 (alter ego / LLC protection). Turns t4, t5, and t7 are the traps—they discuss TI allowance negotiation, contractor selection, and TI recapture, all plausible lease topics but entirely irrelevant to what guarantee document language the attorney should include.\n\nReference answer: The guarantee document should include an explicit decreasing dollar cap—$100,800 at signing, reducing to $67,200 after year one and $33,600 after year two—rather than relying solely on the burn-down schedule, to prevent disputes if annual rent escalations occur. The trigger language should be limited strictly to monetary payment defaults, with any non-monetary default clauses removed from the guarantee itself so the CEO's personal liability cannot be called for lease violations like unauthorized subletting. Finally, the attorney should strike any 'alter ego' or 'related entity' language that could allow the landlord to reach assets held by the CEO's separate LLC, ensuring the corporate veil remains intact as long as the LLC observes proper formalities.",
+  "evidence_note": null,
+  "premise": "a startup negotiating a lease for its first office"
+}

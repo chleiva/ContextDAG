@@ -1,0 +1,129 @@
+{
+  "scenario_id": "topic_fork_004",
+  "family": "topic_fork",
+  "label": "FORK",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We run a small bakery called Flour & Stone in Portland, Oregon, and we're seriously considering opening a second location. Our current shop on NE Alberta Street has been open since 2019 and does about $480,000 in annual revenue.",
+      "assistant_message": "That's a solid revenue base for a single bakery location, especially given that the industry average for a small independent bakery is roughly $450,000–$500,000 per year. Before expanding, it's worth benchmarking your profit margin—most healthy single-location bakeries run between 8% and 12% net margin, so knowing where Flour & Stone sits will shape how much capital you can self-fund. What's driving the timing for a second location right now?",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "We've identified a space in the Mississippi Avenue neighborhood, about 3.2 miles from our current shop. The lease is $4,200 per month for 1,100 square feet, and the landlord is requiring a personal guarantee on a 5-year lease term.",
+      "assistant_message": "A 5-year personal guarantee on a commercial lease is a significant commitment and one of the most common financial traps for small food-service operators. At $4,200 per month, your total lease obligation over the five-year term would be $252,000, and a personal guarantee means your personal assets are on the hook if the business defaults. The 3.2-mile separation between locations is actually considered a reasonable buffer in retail bakery expansion—close enough for shared logistics but far enough to avoid cannibalizing your Alberta Street customer base.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "The personal guarantee is what's scaring me most. What exactly does a personal guarantee on a commercial lease mean for my exposure?",
+      "assistant_message": "A personal guarantee on a commercial lease means that if your business entity—say, your LLC—fails to pay rent or defaults on the lease, the landlord can pursue you personally for the remaining balance. In Oregon, commercial lease personal guarantees are governed by general contract law rather than a specific statute, so the landlord's ability to collect is limited mainly by your personal assets: savings, real property, and other holdings. Some landlords will negotiate a 'burn-down' clause, which reduces the guaranteed amount after a set period—for example, after 24 months of on-time payments, the personal guarantee might drop to cover only the remaining 12 months rather than the full remaining term.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "Is there any way to limit that personal exposure before signing?",
+      "assistant_message": "Yes, there are a few concrete negotiating levers you can use. First, push for that burn-down clause—a common structure is to reduce the personal guarantee to 12 months' rent ($50,400 at your $4,200 rate) after 24 consecutive months of on-time payment. Second, you can offer a larger security deposit, often 2–3 months' rent ($8,400–$12,600), in exchange for the landlord removing or capping the personal guarantee. Third, if you have an LLC, ensure it has been operating for at least two years and can show financial statements, since some landlords will accept a corporate guarantee from a well-documented entity instead of a personal one.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "We're also trying to figure out staffing for the new location. How many employees would a typical 1,100 square foot bakery need?",
+      "assistant_message": "For a production-and-retail bakery of around 1,100 square feet, a lean opening team typically includes 1 lead baker, 1–2 production assistants, and 2–3 front-of-house staff, totaling roughly 4–6 employees. In Portland, the current minimum wage as of July 1, 2024 is $15.95 per hour for standard employers, which sets your baseline labor cost floor. Many second-location bakeries also cross-train one manager from the original location to oversee both sites during the first six months, which reduces training costs but increases that individual's hours significantly.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What about equipment? We'd need at least a deck oven for the new space.",
+      "assistant_message": "A commercial deck oven suitable for a bakery of that size—something like a Bongard Cervap 4-deck or a Revent 724—typically runs between $18,000 and $35,000 new, depending on the number of decks and steam injection capability. Used or refurbished units from restaurant equipment dealers like Central Restaurant Products or local auction houses can cut that cost to $6,000–$12,000, though you'd want a technician to inspect the heating elements and stone decks before purchase. Don't forget that installation, including gas line hookup and ventilation, can add another $2,000–$5,000 on top of the equipment cost.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "We're also thinking about whether to keep the same menu at the second location or introduce some new items exclusive to Mississippi Avenue.",
+      "assistant_message": "Exclusive menu items at a second location can create a destination draw and generate social media buzz, but they also complicate your supply chain and training requirements. A common middle-ground strategy is an 80/20 split: 80% of the menu mirrors the original location to maintain brand consistency and simplify ordering, while 20% consists of location-specific items that reflect the neighborhood's character. Several Portland bakeries, like Little T American Baker, have used neighborhood-specific specials to build a loyal local following without straining back-of-house operations.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "If we do negotiate a burn-down clause, what would our worst-case personal exposure actually be in the first two years of that Mississippi Avenue lease?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4"
+  ],
+  "distractor_turn_ids": [
+    "t5",
+    "t6",
+    "t7"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer identifies the monthly rent as $4,200 and correctly calculates the total personal exposure during the first 24 months as $100,800 (24 × $4,200), since the burn-down clause only kicks in after 24 months of on-time payment.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer references the 5-year lease term from t2 as the basis for understanding total obligation before any burn-down reduction applies.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer notes that after 24 months, the burn-down clause would reduce the personal guarantee to 12 months' rent ($50,400), as stated in t4.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not reference staffing counts, minimum wage figures, equipment costs, or menu strategy, as those details come from the distractor turns (t5, t6, t7) and are irrelevant to personal lease exposure.",
+      "required": true
+    }
+  ],
+  "notes": "The key facts the query needs live in t2 (the $4,200/month rent and 5-year personal guarantee) and t4 (the burn-down clause structure reducing exposure to 12 months after 24 months of on-time payment). Turns t5, t6, and t7 are the traps: they discuss staffing wages, deck oven costs, and menu strategy—all plausible bakery details but entirely irrelevant to calculating personal lease exposure.\n\nReference answer: In the first 24 months of the Mississippi Avenue lease, before a burn-down clause takes effect, your worst-case personal exposure is the full rent owed for that period: 24 months at $4,200 per month equals $100,800. Because the burn-down structure discussed would only reduce the guarantee after 24 consecutive on-time payments, you remain personally liable for the entire outstanding balance if the business defaults at any point during those first two years. Once you pass that 24-month threshold, the personal guarantee would shrink to cover just 12 months' rent—$50,400—rather than the full remaining term. Offering a security deposit of $8,400–$12,600 upfront is one way to negotiate down this exposure before you ever sign.",
+  "evidence_note": null,
+  "premise": "a small bakery deciding whether to open a second location"
+}

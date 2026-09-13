@@ -1,0 +1,124 @@
+{
+  "scenario_id": "compound_turn_004",
+  "family": "compound_turn",
+  "label": "COMPOUND",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm converting my spare bedroom into a photography studio and trying to figure out the best backdrop system. The room is 12 feet wide by 14 feet deep with 9-foot ceilings. What kind of backdrop stand should I be looking at?",
+      "assistant_message": "For a room that size, a crossbar-style backdrop stand system will serve you best — specifically one rated for at least a 10-foot-wide crossbar so you have room to position subjects without the stand legs creeping into frame. The Savage Universal and Neewer both make popular floor-standing kits in the $80–$150 range that fit your ceiling height with adjustable upright poles reaching 7.5 to 9.5 feet. Make sure the stand accepts 1-inch diameter paper backdrop rolls, which is the industry standard size.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Good to know. I was thinking of going with seamless paper backdrops — what width should I buy for that room?",
+      "assistant_message": "For a 12-foot-wide room, a 107-inch (roughly 9-foot) wide seamless paper roll is the standard recommendation — it's wide enough for full-length portraits and small group shots without revealing the edges. Savage and Colorama both sell 107-inch rolls in 36-foot lengths, which typically yields about 18–20 backdrop setups before the paper is too scuffed to use cleanly. You'll want to mount it high enough that you can pull down at least 6 feet of paper to create a floor sweep behind and beneath your subject.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "That makes sense, I'll probably start with a few colors. Also, what's the color temperature of a standard photography strobe, and does my camera need any special settings to sync with it properly?",
+      "assistant_message": "For seamless paper, starting with white, black, and a neutral gray like Savage's #4 Thunder Gray gives you the most versatile foundation — those three cover high-key, low-key, and evenly lit product work. On strobes: virtually all studio strobes are daylight-balanced at 5500–5600 Kelvin, so you'd set your camera's white balance to 'Daylight' or dial in a custom WB of 5500K for accurate color. For sync, your camera's maximum flash sync speed is the critical setting — most DSLRs and mirrorless cameras have a sync speed of 1/200s or 1/250s (check your manual for the exact value), and you must not exceed it or you'll get a dark band across the frame from the shutter curtain; your strobe connects either via a 3.5mm PC sync cable or a wireless radio trigger like a PocketWizard Plus X or a Godox X2T.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "I'm leaning toward starting with white and picking up the others later. How do I keep white seamless paper looking clean during a shoot?",
+      "assistant_message": "The main rule is to keep foot traffic off the floor sweep as much as possible — have subjects step onto the paper only when you're actually shooting, and lay down a separate floor covering like a cheap vinyl runner leading up to it. When the bottom section gets dirty or scuffed, simply cut it off with a utility knife and roll down a fresh section from the roll above. Keeping the room free of street shoes is the single most effective habit you can build.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "That's practical advice. What about lighting placement — where should my main light go relative to the backdrop?",
+      "assistant_message": "Your key light should be positioned roughly 45 degrees to the side of your subject and about 45 degrees above eye level — this is sometimes called the Rembrandt or Paramount position depending on exact angle — and it should be far enough from the backdrop that the subject's shadow falls below frame or is controlled separately. A general rule of thumb is to place your subject at least 6 feet in front of the backdrop so spill light from your key doesn't blow out or color-contaminate the white paper. A separate, lower-powered backlight aimed directly at the backdrop from below and behind the subject is what creates a true clean white rather than a gray.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "So I'd need at least two strobes then — one for the subject and one for the backdrop?",
+      "assistant_message": "For clean high-key white, two lights is the practical minimum, yes — one key light on the subject and one aimed at the backdrop. Many photographers add a third as a fill or rim light to separate the subject further, but two will get you publishable results in a room your size. If budget is tight, a single large softbox key light combined with a reflector on the opposite side can approximate a two-light setup while you save up for the second strobe.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "I've been looking at the Godox AD200Pro as a starting strobe. Is that a reasonable choice for an indoor studio that size?",
+      "assistant_message": "The Godox AD200Pro is a solid choice for your room — it outputs 200 watt-seconds, which is more than sufficient for a 12-by-14-foot space where your subject will typically be within 8 feet of the light. It uses the Godox 2.4GHz X wireless system, so it pairs natively with the Godox X2T triggers available for Canon, Nikon, Sony, and Fujifilm mounts. The modular head design also means you can swap between a bare bulb head and a speedlight-style head, giving you flexibility as your modifier collection grows.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "What happens if I accidentally set my shutter speed faster than the sync limit when shooting with a strobe?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t3"
+  ],
+  "distractor_turn_ids": [
+    "t1",
+    "t2",
+    "t4",
+    "t5",
+    "t6",
+    "t7"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that exceeding the sync speed causes a dark band across the frame (from the shutter curtain).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer identifies the typical maximum flash sync speed range as 1/200s or 1/250s (as stated in t3).",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not mention seamless paper backdrop colors, widths, or any detail about white/black/gray paper rolls.",
+      "required": true
+    }
+  ],
+  "notes": "The critical facts for the query (sync speed range of 1/200s–1/250s and the dark-band artifact from the shutter curtain) are established in t3, the compound turn. Turns t1, t2, t4–t7 are all about backdrop systems and lighting placement, which are genuine distractors; the answer_checklist's negative item guards against importing backdrop color or paper details into the sync-speed answer.\n\nReference answer: If you exceed your camera's maximum flash sync speed — typically 1/200s or 1/250s depending on your specific camera body — you'll see a dark band appear across part of the image. This happens because the second shutter curtain starts closing before the first has fully traveled across the sensor, so the strobe fires while part of the sensor is still blocked. The result is a frame that is only partially exposed. To avoid this, always keep your shutter speed at or below your camera's stated sync speed when shooting with studio strobes.",
+  "evidence_note": "Query depends only on the B half of the compound turn t3. Its ancestor closure {t3,t2,t1} includes A turns that are conversationally upstream of t3 but not needed for the B question; evidence is deliberately just {t3}. This is the granularity cost the family is designed to expose.",
+  "premise": "a freelance photographer setting up a home studio"
+}

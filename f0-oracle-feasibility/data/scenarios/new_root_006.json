@@ -1,0 +1,121 @@
+{
+  "scenario_id": "new_root_006",
+  "family": "new_root",
+  "label": "NEW_ROOT",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm designing a REST API for a payments product and need to decide how to handle idempotency for charge requests. What's the standard approach?",
+      "assistant_message": "The standard approach is to require clients to send a unique idempotency key as a request header, typically named Idempotency-Key, with each POST request that creates a charge. Stripe, for example, has used this pattern since 2014 and accepts any string up to 255 characters as the key value. The server stores the key alongside the result of the first request, and any subsequent request with the same key returns the cached response without re-executing the operation. Keys are usually scoped per API account and expire after a fixed window, commonly 24 hours.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "How should the server store those idempotency keys and their associated responses? I want sub-millisecond lookup times.",
+      "assistant_message": "Redis is the most common choice for idempotency key storage because it supports O(1) GET and SET operations and can enforce TTL-based expiry natively with the EXPIRE command. A typical implementation stores the key as a Redis string whose value is a JSON-serialized snapshot of the HTTP status code and response body. At Stripe's scale, they partition keys across Redis clusters using consistent hashing to keep lookup latency under 1 ms at the 99th percentile. You should also set a Redis maxmemory-policy of allkeys-lru so the cache degrades gracefully under memory pressure rather than rejecting writes.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "What HTTP status code should the API return when it detects a duplicate request that matches a stored idempotency key?",
+      "assistant_message": "The server should return the exact same status code that was returned for the original request, not a fixed code like 200 or 409. If the original charge succeeded with a 201 Created, the duplicate should also receive 201 along with the original response body. This is the behavior documented in the IETF draft draft-ietf-httpapi-idempotency-key-header-04, which was active as of 2023. Returning a different status code on replay, such as 200 instead of 201, can confuse clients that branch logic on the response code.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "We're also going to support refunds. Should refund endpoints require idempotency keys as well?",
+      "assistant_message": "Yes, refund endpoints are just as important to protect with idempotency keys because a double-refund is a direct financial loss rather than just a duplicate record. Stripe's Refunds API has required idempotency keys for POST /v1/refunds since at least API version 2020-08-27. You should treat any POST endpoint that moves money as mandatory for idempotency, while GET and DELETE endpoints are inherently idempotent by HTTP semantics and don't need the header. A practical rule is to reject POST requests that lack an Idempotency-Key header with a 400 Bad Request and an error code like missing_idempotency_key.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "How do we handle the race condition where two requests with the same idempotency key arrive at the same time before either has written a result?",
+      "assistant_message": "The safest technique is to use a distributed lock keyed on the idempotency key before processing the request, holding the lock only for the duration of the write phase. Redis's SET key value NX PX 30000 command atomically sets a lock only if the key does not exist and expires it after 30 seconds, which prevents two simultaneous requests from both proceeding. The second request, finding the lock held, should return a 409 Conflict with an error body indicating a concurrent request is in progress, per the pattern described in the IETF draft. Clients should then retry after a short backoff, typically 1 second, and the replayed response will be available once the first request completes.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What if the payload of the duplicate request doesn't match the original? For example, same idempotency key but a different amount.",
+      "assistant_message": "A mismatch between the stored request fingerprint and the new request body must be rejected with a 422 Unprocessable Entity and a clear error code such as idempotency_key_reuse. The server should hash the original request body, for instance using SHA-256, store that hash alongside the idempotency key in Redis, and compare it on every subsequent request with the same key. Stripe returns an error with the type idempotency_error and the message 'Keys can only be used for the same endpoint they were originally used for' in this scenario. Silently ignoring the mismatch and returning the cached response would be a security risk because an attacker could probe for valid keys and attempt to replay them with altered amounts.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "Should we include the idempotency key in the response headers so clients can confirm which key was applied?",
+      "assistant_message": "Yes, echoing the key back in an Idempotency-Key response header is considered good practice and aids in client-side debugging and audit logging. The IETF draft draft-ietf-httpapi-idempotency-key-header-04 recommends this echo behavior explicitly. Additionally, you can add a custom header like X-Idempotent-Replayed: true on cached responses so clients can distinguish a fresh result from a replay without inspecting the body. Braintree's API, for comparison, includes a similar Replay-Request-Id header on replayed responses to help merchants reconcile their logs.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "What PCI DSS requirement level applies to a service that stores full primary account numbers, and what is the name of the self-assessment questionnaire a small merchant would typically use for that scenario?",
+      "assistant_message": null,
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [],
+  "distractor_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t7"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer identifies PCI DSS Level 1 as the compliance level applicable to entities that store full PANs (primary account numbers).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer names SAQ D (Self-Assessment Questionnaire D) as the questionnaire applicable to merchants that store full PANs.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not reference idempotency key TTL values, Redis configuration, or any other detail from the idempotency discussion as part of the PCI DSS answer.",
+      "required": true
+    }
+  ],
+  "notes": "t8 is a brand-new question about PCI DSS compliance levels and SAQ types; it has no dependency on t1–t7, which cover idempotency key mechanics. The trap is importing Redis TTL values, status codes, or Stripe versioning details from t1–t7 into the PCI DSS answer.\n\nReference answer: Any service that stores full primary account numbers (PANs) falls under PCI DSS and, because storing PANs represents the highest data-sensitivity category, the relevant self-assessment questionnaire for a small merchant in that situation is SAQ D. SAQ D is the most comprehensive of the SAQs and applies to merchants who store cardholder data electronically. Merchants processing fewer transactions may still qualify for self-assessment rather than a full QSA audit, but they must use SAQ D specifically when full PANs are retained.",
+  "evidence_note": null,
+  "premise": "designing a REST API for a payments product"
+}

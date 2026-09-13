@@ -1,0 +1,121 @@
+{
+  "scenario_id": "new_root_001",
+  "family": "new_root",
+  "label": "NEW_ROOT",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm designing a card game called Ironveil and I'm trying to nail down the action economy. Right now each player gets 2 actions per turn, but it feels too restrictive. What do other popular card games do?",
+      "assistant_message": "Most modern card games land between 1 and 3 actions per turn, with the exact number heavily influencing pacing. Dominion, for example, starts each player with exactly 1 Action, 1 Buy, and 1 Coin per turn, then lets cards extend those resources. Hearthstone gives each player a fixed 1 attack per minion but scales mana crystals from 1 to 10 over ten turns, which creates a very different kind of tempo curve.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "I was thinking about a mana-scaling system similar to Hearthstone, but I want the ceiling to be 7 mana crystals instead of 10. Does capping it lower tend to cause problems?",
+      "assistant_message": "A lower ceiling compresses the power curve significantly, meaning late-game spells can't get as expensive and potentially as impactful as in a 10-crystal system. Magic: The Gathering's Limited formats often feel resolved around turn 6 or 7 because most relevant spells cost between 3 and 5 mana, so a 7-crystal cap actually aligns with that sweet spot. The main risk is that your most powerful cards all cluster at the 6–7 cost range and create a predictable 'spike' turn that skilled players will always play around.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "That clustering problem sounds real. I was planning to have exactly 12 cards in each player's starting deck. Is that a reasonable deck size to avoid the spike problem?",
+      "assistant_message": "Twelve cards is on the small side but not unprecedented — Star Realms ships each player a 10-card starting deck, and the tightness is intentional to speed up cycling. With 12 cards, you'll see your full deck roughly every 3 to 4 turns depending on draw rate, which means high-cost cards come around very frequently. To avoid the spike, you might consider distributing your powerful cards across the 4–7 cost band rather than stacking them at 6–7, giving each turn a different kind of threat.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "Good point. I'm also planning a faction system — three factions at launch, each with 40 unique cards. How do other games handle faction balance across that kind of card pool?",
+      "assistant_message": "Android: Netrunner launched with three Corporation factions each having roughly 35–40 cards and maintained balance through asymmetric win conditions rather than mirrored stat lines. Keyforge takes a different approach by procedurally generating unique decks, so balance is statistical rather than designed card-by-card. For a 40-card-per-faction pool, most designers recommend that each faction's average power level target the same expected win rate — typically 50% ± 5% — against a standardized 'control deck' during playtesting.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "I want one of the three factions, the Ashborne, to specialize in burn damage. I'm debating whether their direct damage spells should deal flat amounts or scaled amounts. What are the tradeoffs?",
+      "assistant_message": "Flat damage spells, like Magic's Lightning Bolt at a fixed 3 damage for 1 mana, are easy to evaluate and rarely create feel-bad moments because players know exactly what they're getting. Scaled spells, such as those that deal damage equal to the number of cards in hand, introduce variance and can swing from underwhelming to game-ending depending on game state. For a burn faction like Ashborne, a mix of both is common — flat spells for reliable chip damage and one or two signature scaled spells that reward the faction's specific strategy.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "I like that. For the Ashborne's signature scaled spell, I'm thinking it deals 1 damage for each mana crystal the opponent has spent this game. With a 7-crystal cap, that maxes out at around 28 damage over four turns. Does that feel breakable?",
+      "assistant_message": "A potential ceiling of 28 damage is extremely high — most card games set player health at 20 to 30, so that one spell could represent a near-lethal hit on its own late in the game. Magic's Fireball scales with mana paid into it, but the damage is immediate and tied to the caster's resources, not the opponent's cumulative spending, which limits abuse. You'd want to either add a hard cap to the spell's output, increase its mana cost significantly, or restrict it to once-per-game to prevent it from warping every Ashborne matchup.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "I'll cap it at 15 damage maximum and cost it at 6 mana. That feels more in line. Now I need to decide on player health totals — I was thinking 25 health. Is that a standard range?",
+      "assistant_message": "25 health is solidly within the standard range: Hearthstone uses 30, Magic: The Gathering starts at 20 in most formats, and Legends of Runeterra uses 20 as well. At 25 health with a 6-mana 15-damage spell available, a single casting would eliminate 60% of a player's total life, which is still threatening but no longer automatically game-ending. That ratio feels healthy — it makes the Ashborne spell feel powerful and decisive without being a one-card win condition.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "What is the standard recommended minimum number of playtesters for a new tabletop card game before its first public demo, and what does that process generally look like?",
+      "assistant_message": null,
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [],
+  "distractor_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t7"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer provides a specific recommended minimum number of playtesters (or a recognized range) for a new tabletop card game before a public demo.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer describes what the playtesting process generally looks like (e.g., blind testing, structured feedback rounds, or iterative rules revisions).",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not reference Ironveil's 25-health total or the 7-mana-crystal cap as factors relevant to the playtester count recommendation.",
+      "required": true
+    }
+  ],
+  "notes": "Turns t1 through t7 are all distractors covering Ironveil's specific mechanics (action economy, mana cap, deck size, faction balance, burn spells, health totals). The query t8 is a self-contained general question about playtesting practice that requires no information from those turns. The main trap in the checklist is importing Ironveil-specific numbers (25 health, 7-crystal cap) into the playtester recommendation.\n\nReference answer: Industry guidance for tabletop card games typically recommends a minimum of around 10 to 20 distinct playtesters before a first public demo, with some designers citing at least 3 to 5 separate full-session groups as a baseline. The process usually begins with internal 'developer testing' where the designer plays both sides, then moves to friendly or 'alpha' testers who know the designer, and finally to blind testing where participants receive only the rulebook with no designer present to clarify rules. Structured feedback forms and win-rate tracking across sessions help identify balance problems before the game is exposed to a wider public audience.",
+  "evidence_note": null,
+  "premise": "a board-game designer balancing a new card game"
+}

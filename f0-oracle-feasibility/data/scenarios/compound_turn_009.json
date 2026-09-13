@@ -1,0 +1,117 @@
+{
+  "scenario_id": "compound_turn_009",
+  "family": "compound_turn",
+  "label": "COMPOUND",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're starting our CRM migration next month and we need to map our legacy donor fields to the new Salesforce Nonprofit Success Pack schema. Our old system exports a flat CSV with 47 columns, including some custom fields like 'pledge_cycle_override' and 'soft_credit_flag'. How should we approach the field mapping process?",
+      "assistant_message": "A good starting point is to run a full data audit on your 47-column export before touching the destination schema. Identify which fields are populated in more than, say, 10% of records to distinguish actively used fields from historical artifacts. For NPSP specifically, the standard objects you'll be mapping into are Contact, Account (Household Account model), Opportunity, and the npe01__OppPayment__c object for pledge installments. Custom fields like 'pledge_cycle_override' will likely need a corresponding custom field on the Opportunity or npe03__Recurring_Donation__c object in NPSP, while 'soft_credit_flag' maps most cleanly to the npsp__Partial_Soft_Credit__c object introduced in NPSP version 3.x.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "That makes sense. We have about 12,000 donor records and roughly 800 of them have the soft_credit_flag set to true. What's the cleanest way to handle those 800 records during the initial data load so we don't lose the soft credit relationships?",
+      "assistant_message": "For those 800 records, you'll want to load them in two passes rather than a single import. In the first pass, load all the primary Opportunity records using Salesforce Data Loader or the NPSP Data Import Batch tool, capturing the resulting Salesforce record IDs. In the second pass, create the npsp__Partial_Soft_Credit__c records referencing both the Contact ID of the soft credit recipient and the Opportunity ID from pass one, populating the npsp__Amount__c and npsp__Role__c fields at minimum. Make sure your role values match the picklist values already configured in the destination org—common mismatches on 'Matched Donor' or 'Household Member' roles are a frequent cause of validation errors during load.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "Got it, we'll do the two-pass load. Also, our executive director wants to know whether we're required to file a Form 1099 for the data-migration consultant we're paying $3,200 for this project.",
+      "assistant_message": "For the two-pass approach, one practical tip is to run a reconciliation query after each pass comparing row counts and sum of npsp__Amount__c against your source totals before moving on. Regarding the 1099 question: yes, you are generally required to file a Form 1099-NEC for the consultant. The IRS threshold for 1099-NEC reporting is payments of $600 or more to a non-employee individual or unincorporated business during the calendar year, so your $3,200 payment clears that threshold. You must furnish the 1099-NEC to the recipient by January 31 of the following year and file it with the IRS by January 31 as well (the due date for both paper and e-file was unified to January 31 starting with tax year 2020). Note that if the consultant operates as a C-corporation or S-corporation, you would not need to file a 1099-NEC, so confirm their entity type via a W-9 before year-end.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "After the two-pass load is done, what's the best way to validate that all 12,000 donor records came across correctly?",
+      "assistant_message": "The most reliable validation strategy is a three-layer reconciliation: record count, financial totals, and relationship integrity. Start by comparing the total record count in your new Salesforce org's Contact object against the source CSV row count, then compare the sum of all Opportunity amounts in NPSP against the sum from your legacy system's export. For relationship integrity, run a SOQL query on npsp__Partial_Soft_Credit__c to confirm you have exactly 800 records and that every one has a non-null npsp__Amount__c and a valid Opportunity lookup. Any discrepancy at any layer should halt your go-live until resolved.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "We're also worried about duplicate contacts. Our old system wasn't strict about deduplication, so we suspect there could be several hundred duplicates in those 12,000 records. What tools does NPSP offer for that?",
+      "assistant_message": "NPSP itself doesn't ship with a standalone dedup engine, but Salesforce's native Duplicate Management feature (available in all editions since the Spring '15 release) works well in conjunction with it. You can configure Duplicate Rules and Matching Rules on the Contact object—the standard 'Standard Contact Duplicate Rule' uses fuzzy matching on first name, last name, and email. For a pre-migration dedup pass on your CSV before you ever load into Salesforce, tools like OpenRefine (free, open-source) or a commercial option like Dedupe.io can cluster likely duplicates using Jaro-Winkler string similarity, which handles common misspellings in donor names. Running the dedup before load is strongly preferable to cleaning up inside Salesforce after the fact.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "That's helpful. One of our data fields is 'preferred_contact_method' with values like Email, Phone, Mail, and Do Not Contact. Is there a standard NPSP field for that, or do we need to create a custom one?",
+      "assistant_message": "NPSP doesn't have a single out-of-the-box field that exactly mirrors a four-value 'preferred_contact_method' picklist. The closest standard field is the Salesforce Contact object's 'HasOptedOutOfEmail' boolean and the related 'DoNotCall' boolean, but those only cover opt-outs rather than positive preferences. For 'Do Not Contact' you can map to a combination of both booleans set to true, but for Email, Phone, and Mail preferences you'll want to create a custom picklist field—something like Contact.Preferred_Contact_Method__c—so you preserve the full fidelity of your source data. Document that mapping decision in your migration spec so future staff know why the custom field exists.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "What's the deadline for getting the W-9 from our consultant, and what happens if they turn out to be incorporated as an S-corp?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t3"
+  ],
+  "distractor_turn_ids": [
+    "t1",
+    "t2",
+    "t4",
+    "t5",
+    "t6"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that if the consultant is an S-corporation, a Form 1099-NEC is not required (i.e., corporations are exempt from 1099-NEC reporting).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer identifies the W-9 as the form used to confirm the consultant's entity type, and indicates it should be collected before year-end (or before payment) to determine filing obligations.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer correctly references the $600 IRS threshold for 1099-NEC reporting and/or the January 31 deadline for furnishing and filing the 1099-NEC.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not import details about the two-pass data load, the 800 soft-credit records, or the 12,000 donor record migration as part of the 1099/W-9 answer.",
+      "required": true
+    }
+  ],
+  "notes": "The facts the query needs (1099-NEC $600 threshold, January 31 deadlines, S-corp exemption, W-9 confirmation) all appear exclusively in t3, the compound turn. Turns t1, t2, t4, t5, and t6 are the traps—they contain plausible migration details (800 soft-credit records, 12,000 contacts, two-pass load, dedup tools, preferred_contact_method field) that are entirely irrelevant to the 1099/W-9 question.\n\nReference answer: You should collect the W-9 from your consultant before year-end—ideally before or at the time of payment—so you know their entity type before the filing deadline. If the W-9 shows they are an S-corporation, you are not required to file a Form 1099-NEC; the corporate exemption applies to both C-corporations and S-corporations. If they are an individual or unincorporated entity, the $3,200 payment exceeds the $600 IRS threshold, so you must furnish the 1099-NEC to them by January 31 and file it with the IRS by January 31 of the following year.",
+  "evidence_note": "Query depends only on the B half of the compound turn t3. Its ancestor closure {t3,t2,t1} includes A turns that are conversationally upstream of t3 but not needed for the B question; evidence is deliberately just {t3}. This is the granularity cost the family is designed to expose.",
+  "premise": "a nonprofit migrating its donor database to a new CRM"
+}

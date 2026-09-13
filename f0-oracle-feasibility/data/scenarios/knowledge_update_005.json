@@ -1,0 +1,139 @@
+{
+  "scenario_id": "knowledge_update_005",
+  "family": "knowledge_update",
+  "label": "UPDATE",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm planning a field study on urban bird populations and I've budgeted $1,200 for my acoustic recording equipment — specifically the Song Meter SM4 units. Does that sound like a reasonable allocation for two devices?",
+      "assistant_message": "At $600 per unit, $1,200 for two Song Meter SM4 recorders is a tight but plausible budget if you're buying directly from Wildlife Acoustics. Keep in mind you'll also need SD cards, batteries, and mounting hardware, which can add another $100–$150 per unit on top of that base price.",
+      "gold_parents": [],
+      "stale": true,
+      "superseded_by": "t8"
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Right, so with two SM4 units at $600 each, I'm thinking I can deploy one in a park-edge habitat and one in a dense urban core to compare dawn chorus activity. How many days of continuous recording can I realistically expect per deployment before I need to swap batteries?",
+      "assistant_message": "With the SM4 running on eight D-cell alkaline batteries and recording at a typical 16-bit, 24 kHz sample rate for six hours per day around dawn, you can expect roughly 10 to 14 days of deployment before battery levels become a concern. If you reduce your daily recording window or use lithium batteries, you can push that closer to 20 days. Planning a swap schedule every 10 days is a conservative and reliable approach for a comparative urban study.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "I also need to think about my survey transect design. For point count surveys, what's the standard radius used for detecting passerines in urban environments?",
+      "assistant_message": "The most widely used fixed-radius point count for passerines in urban settings is 50 meters, as recommended in the North American Breeding Bird Survey protocol adapted for urban use. Some studies use a 25-meter inner radius and a 25–50-meter outer annulus to separate detection distances, which helps account for the noise masking that is common near roads and buildings. Choosing the right radius depends on your specific habitat density and the species groups you're targeting.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "How long should each point count station be held? I've seen recommendations ranging from 3 minutes to 10 minutes.",
+      "assistant_message": "The standard duration recommended by the Institute for Bird Populations for stationary point counts in urban studies is 5 minutes per station, which balances detection probability against observer fatigue and time constraints. Some researchers extend to 8 minutes when targeting secretive species like rails or wrens in dense vegetation, but for a general passerine survey in an urban matrix, 5 minutes is the most defensible and widely accepted duration. Consistency across all stations is more important than the exact duration you choose.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "I'm also worried about observer bias. Should I use a single observer for all transects throughout the study, or is it okay to rotate two observers?",
+      "assistant_message": "Using a single observer throughout the study is the gold standard for minimizing inter-observer variability, since individual detection abilities for bird calls and songs can differ by as much as 20–30% between experienced ornithologists. If you must use two observers, you should conduct a calibration session where both survey the same locations simultaneously and then calculate a correction factor based on their detection overlap. The calibration should be done at the start of the field season and repeated if there is a gap of more than four weeks between sessions.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What time of day should I start the point counts to capture peak singing activity? I'll be working in a mid-latitude North American city.",
+      "assistant_message": "For passerines at mid-latitudes in North America, the optimal window is from 30 minutes before local sunrise to 4 hours after sunrise, which typically corresponds to roughly 5:00–9:00 AM in summer months. Outside this window, singing rates drop substantially and your detection probability decreases, which undermines comparability across survey days. Most standardized urban bird protocols, including those used by the Cornell Lab of Ornithology's citizen science programs, anchor the start time to civil twilight rather than a fixed clock time to account for seasonal variation.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "I need to get a permit to access one of the city parks for my study. How far in advance should I apply for a research permit from a typical urban parks department?",
+      "assistant_message": "Most urban parks departments in large North American cities require research permit applications to be submitted at least 6 to 8 weeks before the intended start date, with some larger systems like the New York City Department of Parks and Recreation requesting up to 12 weeks for studies involving equipment installation. You'll typically need to submit a project summary, proof of institutional affiliation, and a site map showing where equipment will be placed. Starting the process 10–12 weeks out gives you a comfortable buffer for back-and-forth correspondence.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "I went back and checked the Wildlife Acoustics website — the SM4 is actually $749 per unit, not $600. So my original budget estimate was off.",
+      "assistant_message": "Thanks for the correction — $749 per unit is the accurate current price for the Song Meter SM4 from Wildlife Acoustics, not $600 as we had been working with. That's a meaningful difference, so your original $1,200 budget would actually fall short of covering two units. You'd need to revise your equipment budget upward to account for that corrected figure.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "Given the correct price per unit, how much would I need to budget in total to purchase exactly two SM4 recorders, and how does that compare to my original allocation?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t8"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t7"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer uses $749 as the correct per-unit price of the Song Meter SM4 (the corrected VALUE_2 from t8).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that two SM4 units cost $1,498 in total (2 × $749).",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not use $600 as the per-unit price or $1,200 as the correct total cost for two units (VALUE_1 from t1, superseded in t8).",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer notes that the original $1,200 budget is insufficient to cover two units at the corrected price, reflecting a shortfall of $298.",
+      "required": true
+    }
+  ],
+  "notes": "t1 establishes the stale VALUE_1 ($600/unit, $1,200 total) and t8 corrects it to VALUE_2 ($749/unit); the query in t9 requires the corrected per-unit price to compute the right total. Turns t3–t7 are the distractor branch covering transect design, point count protocol, observer bias, timing, and permits — none of which bear on the equipment budget query.\n\nReference answer: At the corrected price of $749 per unit, two Song Meter SM4 recorders would cost $1,498 in total. Your original allocation of $1,200 falls $298 short of that amount, meaning you would need to increase your equipment budget by roughly 25% just to cover the two units before accounting for accessories like SD cards and batteries.",
+  "evidence_note": null,
+  "premise": "a PhD student planning a field study on urban bird populations"
+}

@@ -1,0 +1,126 @@
+{
+  "scenario_id": "two_branch_join_013",
+  "family": "two_branch_join",
+  "label": "JOIN",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We've been going back and forth on materials for the new dock. The board finally voted last Tuesday and approved pressure-treated Southern yellow pine for the decking planks.",
+      "assistant_message": "That's a solid choice for a marine environment. Southern yellow pine treated to the UC4B standard holds up well against moisture, marine borers, and heavy foot traffic, which is exactly what a club dock needs. Just make sure your supplier certifies the treatment level in writing before delivery.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "We're also trying to figure out the dock's load rating. The harbormaster says we need to meet at least 40 pounds per square foot for public-access docks in our county.",
+      "assistant_message": "That 40 psf figure is a common minimum for public or semi-public waterfront structures, so hitting that baseline is non-negotiable from a code standpoint. You'll want a licensed structural engineer to sign off on the design to confirm compliance before you pull the permit.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "The dock will be 120 feet long and 8 feet wide. Does that change how we think about the load rating?",
+      "assistant_message": "Yes, those dimensions are important because the total live load calculation scales directly with the surface area, which comes out to 960 square feet for your dock. At 40 psf, that means your structure must be engineered to handle a minimum of 38,400 pounds of distributed live load across the full deck. Longer spans between support pilings will also require heavier framing members to keep deflection within acceptable limits.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "What's the typical liability insurance requirement for a sailing club with about 200 members?",
+      "assistant_message": "For a recreational sailing club of that size, most insurers and marina landlords require a minimum of $1 million per occurrence in general liability coverage, with many now asking for $2 million aggregate. You should also look into a specific watercraft liability endorsement, since general policies sometimes exclude vessels under club management. Consulting a marine insurance broker who specializes in yacht clubs will give you the most accurate picture for your jurisdiction.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "The engineer we consulted said the pilings need to be set at 10-foot intervals to meet that load requirement given our soil conditions.",
+      "assistant_message": "Ten-foot piling intervals are fairly standard for soft or silty harbor bottoms, and they align well with the 40 psf live load requirement over an 8-foot-wide deck. That spacing means you'll need 13 piling bents along a 120-foot run, counting both end bents. Your engineer's site-specific soil bearing capacity data is what drives that number, so keep those geotechnical reports on file for the building department.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "The board also specified that every decking plank must be 2 inches thick by 6 inches wide, and they want a quarter-inch gap between planks for drainage.",
+      "assistant_message": "Those are sensible specifications for a working dock. The 2x6 nominal dimension gives you adequate stiffness between joist supports, and the quarter-inch drainage gap prevents water from pooling and accelerating decay even in treated lumber. Make sure your lumber order accounts for the actual dressed dimensions — a nominal 2x6 Southern yellow pine plank typically finishes at 1.5 inches by 5.5 inches, so your gap and load calculations should reference the actual sizes.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "The engineer also confirmed that with 10-foot piling intervals and our soil conditions, we'll need concrete-filled steel pipe pilings with a minimum 12-inch outer diameter.",
+      "assistant_message": "Concrete-filled 12-inch steel pipe pilings are a robust solution for that span and load combination, and they resist both the lateral forces from boat traffic and the uplift forces from storm surge. The concrete infill significantly increases the moment capacity at the mudline, which is typically the critical failure point in soft-bottom installations. Be sure your contractor sources pilings with the wall thickness your engineer specified, as the outer diameter alone doesn't fully define the structural capacity.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "We need to write up a one-paragraph materials and structural summary for the permit application. What are the key deck and foundation specs we should include?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t6",
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t5",
+    "t6",
+    "t7"
+  ],
+  "distractor_turn_ids": [
+    "t4"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that the decking material is pressure-treated Southern yellow pine with plank dimensions of 2 inches thick by 6 inches wide and quarter-inch drainage gaps (from branch A, t1 and t6).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that the pilings are concrete-filled steel pipe pilings with a minimum 12-inch outer diameter set at 10-foot intervals (from branch B, t5 and t7).",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer includes the 40 psf minimum live load requirement and the dock dimensions of 120 feet by 8 feet (from branch B, t2 and t3).",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not include any mention of liability insurance requirements or coverage amounts (from distractor branch C, t4), as that information is irrelevant to the materials and structural summary.",
+      "required": true
+    }
+  ],
+  "notes": "Branch A (t1, t6) supplies the decking material and plank dimensions; branch B (t2, t3, t5, t7) supplies the load rating, dock dimensions, piling spacing, and piling specification. The distractor (t4) introduces insurance figures that sound relevant to a club project but have no bearing on the permit materials summary.\n\nReference answer: The permit summary should note that the deck will be constructed from UC4B pressure-treated Southern yellow pine planks, each 2 inches thick by 6 inches wide with quarter-inch drainage gaps between planks. The dock is 120 feet long by 8 feet wide and is engineered to a minimum live load of 40 pounds per square foot, yielding a total design live load of 38,400 pounds. Foundation support consists of concrete-filled steel pipe pilings with a minimum 12-inch outer diameter, installed at 10-foot intervals along the dock's length to satisfy both the load requirements and site-specific soil bearing conditions. A licensed structural engineer has reviewed and approved these specifications.",
+  "evidence_note": null,
+  "premise": "a sailing club replacing its aging dock"
+}

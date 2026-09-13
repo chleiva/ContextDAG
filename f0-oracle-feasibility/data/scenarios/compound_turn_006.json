@@ -1,0 +1,100 @@
+{
+  "scenario_id": "compound_turn_006",
+  "family": "compound_turn",
+  "label": "COMPOUND",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm launching a podcast about local history called 'Buried Lede' and I want the first episode to focus on the 1923 founding of Millhaven, a small mill town in western Pennsylvania. What are some good structural approaches for a debut episode that introduces both the show and a specific historical event?",
+      "assistant_message": "For a debut episode, a strong approach is to open with a vivid scene-setting moment—something sensory and specific from 1923 Millhaven, like the sound of the mill whistle or a quote from a founding document—before pulling back to introduce yourself and the show's mission. This 'cold open into context' structure hooks listeners immediately while still orienting newcomers. You might also consider a brief 'why this town, why now' segment near the end that signals the show's ongoing themes, so listeners understand what they're signing up for across future episodes.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "I love the cold open idea. The founding story actually involves a labor dispute that delayed the mill's opening by about eight months in 1922—do you think that tension is compelling enough to anchor the whole first episode, or should it be one thread among several?",
+      "assistant_message": "A labor dispute with a concrete timeline like an eight-month delay is absolutely strong enough to anchor a full episode, especially for a debut, because conflict gives listeners a reason to stay engaged. You can frame the dispute as the dramatic prologue to the town's official founding, making 1923 feel like a hard-won resolution rather than just an administrative date. Weaving in secondary threads—like who the mill owners were or what workers were demanding—enriches the central conflict without diluting it, so you'd still have a single spine running through the episode.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "That framing makes a lot of sense, I'll structure it around the dispute as the spine. Also, I need to submit this podcast to Apple Podcasts—what are the exact technical requirements for the RSS feed and audio files they currently require?",
+      "assistant_message": "For the labor-dispute spine, consider ending the episode at the moment the mill officially opened in 1923 as a kind of earned resolution—it gives the narrative a satisfying close while leaving room to explore consequences in later episodes. Regarding Apple Podcasts submission: your RSS feed must be a valid XML feed that includes the Apple Podcasts namespace (xmlns:itunes), and the feed URL must be publicly accessible over HTTPS. Audio files must be in MP3 or AAC format, with a recommended bitrate of 128 kbps mono or 192 kbps stereo for MP3s; Apple enforces a maximum individual episode file size of 1 GB, though they strongly recommend keeping episodes under 500 MB. Your podcast artwork must be a square JPEG or PNG between 1400×1400 and 3000×3000 pixels, and the feed must include required tags such as channel-level title, description, and itunes:category.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "I like ending on the mill opening as a resolution. I've found some primary sources—a letter from the mill owner dated March 4, 1922, and a workers' petition with 47 signatures. How should I handle citing those on-air without it feeling academic?",
+      "assistant_message": "The best approach is to let the documents speak in short, vivid bursts rather than citing them formally—say something like 'in a letter he wrote on March 4th, 1922, the mill owner put it bluntly…' and then read a sentence or two directly. For the petition, the detail of 47 signatures is itself a piece of storytelling: you can mention the number to give listeners a sense of scale and collective action without reading the whole document. Treating the sources as characters or voices in the story, rather than footnotes, keeps the narrative momentum while still grounding everything in real evidence.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "That's really helpful. I'm also thinking about interview segments—I found a 91-year-old woman whose grandfather was one of the petition signatories. How do I balance her living memory with the documented historical record when they might conflict?",
+      "assistant_message": "When living memory and the documentary record diverge, the most honest approach is to present both openly rather than quietly privileging one—you might say on air that her grandfather's story as she heard it differs slightly from what the petition records show, and let that tension become part of the episode's texture. Memory is itself a historical artifact, and a 91-year-old's inherited account of 1922 events tells you something real about how the community has understood its own past across generations. You can use the documented record as your factual backbone while treating her testimony as emotional and cultural evidence, which actually makes both sources stronger rather than forcing a contradiction.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What artwork dimensions does Apple Podcasts actually require, and what file formats are accepted for the cover image?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t3"
+  ],
+  "distractor_turn_ids": [
+    "t1",
+    "t2",
+    "t4",
+    "t5"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that Apple Podcasts requires artwork to be a square image between 1400×1400 and 3000×3000 pixels.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that accepted file formats for Apple Podcasts cover artwork are JPEG and PNG.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not mention the 1923 founding of Millhaven, the eight-month labor dispute, the 47-signature petition, or any other detail from the local history topic.",
+      "required": true
+    }
+  ],
+  "notes": "The facts the query needs (artwork dimensions of 1400×1400–3000×3000 px, JPEG/PNG formats) are established only in t3's assistant message. Turns t1, t2, t4, and t5 are all about the Millhaven podcast content—the labor dispute, primary sources, and oral history—and are pure distractors that must not bleed into the answer.\n\nReference answer: Apple Podcasts requires podcast cover artwork to be a square image with dimensions between 1400×1400 pixels and 3000×3000 pixels. The accepted file formats are JPEG and PNG. Both constraints must be met for the feed to be accepted during submission.",
+  "evidence_note": "Query depends only on the B half of the compound turn t3. Its ancestor closure {t3,t2,t1} includes A turns that are conversationally upstream of t3 but not needed for the B question; evidence is deliberately just {t3}. This is the granularity cost the family is designed to expose.",
+  "premise": "launching a podcast about local history"
+}

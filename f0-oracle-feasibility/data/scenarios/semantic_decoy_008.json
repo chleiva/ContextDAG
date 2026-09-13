@@ -1,0 +1,139 @@
+{
+  "scenario_id": "semantic_decoy_008",
+  "family": "semantic_decoy",
+  "label": "DECOY",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're analyzing our onboarding funnel for the Luminary fitness app. Our data shows a 63% drop-off rate at the permissions screen on iOS 16.4, specifically on the step where we request HealthKit access.",
+      "assistant_message": "A 63% drop-off at the HealthKit permissions screen is quite high and suggests the request is appearing too early or without enough context. Best practice is to delay the HealthKit authorization prompt until the user has completed at least one core action — in Luminary's case, that would be logging their first workout — so they understand the value before granting access. Teams that implemented this 'value-first' trigger in similar fitness apps typically saw drop-off at that step fall to around 18–22%.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "For our restaurant reservation platform Tableaux, we're seeing a 71% drop-off rate at the account creation screen, specifically on the step where users enter their phone number for SMS verification.",
+      "assistant_message": "A 71% abandonment at SMS verification is a well-documented friction point in reservation platforms. The main culprits are users not wanting to share a phone number this early and SMS delivery delays that cause timeout errors. Tableaux could consider offering email-based verification as a fallback option, and A/B tests in the hospitality SaaS space have shown that adding a 'Why we need this' tooltip at that step can reduce drop-off to roughly 29–34%.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "We dug deeper into the Luminary funnel and found that users who do grant HealthKit access still churn at a high rate — 47% of them never return after day 3. We think it's tied to the onboarding goal-setting screen on step 4 of 7.",
+      "assistant_message": "That 47% day-3 churn among HealthKit-permissioned users is a strong signal that the goal-setting screen on step 4 is overwhelming or misaligned with user expectations. Research on fitness app retention consistently shows that offering only 2–3 pre-set goal templates rather than an open-ended input form reduces cognitive load and improves day-7 retention by roughly 30 percentage points. For Luminary specifically, you might also consider shortening the flow from 7 steps to 5 by merging the notification preferences and reminder scheduling screens, which are currently steps 5 and 6.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "For Tableaux we also see that users who do complete SMS verification still abandon at 52% before finishing profile setup — they drop off at the cuisine preference selection on step 3 of 5.",
+      "assistant_message": "A 52% abandonment at cuisine preference selection on step 3 of 5 suggests that users perceive it as mandatory gatekeeping rather than personalization. Making that screen entirely skippable with a 'Set up later' option is the most reliable quick fix — Tableaux's competitors in the OpenTable and Resy space have reported a 40% reduction in profile-setup abandonment after making preference screens optional. You could also reduce the number of cuisine categories displayed from however many you currently show down to a curated list of 8–10 to lower decision fatigue.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "Our PM wants a concrete retention target for Luminary. If we fix the HealthKit timing and shorten the flow to 5 steps, what kind of day-30 retention should we realistically aim for?",
+      "assistant_message": "For a fitness app in Luminary's category — consumer health and workout tracking — a realistic day-30 retention benchmark after fixing onboarding friction is 28–35%. Apps that combined the value-first permissions trigger with a streamlined 5-step flow, like Fitbod's 2022 onboarding overhaul, reported day-30 retention climbing from 19% to 31% within two release cycles. I'd set your internal target at 30% as a conservative but meaningful improvement over your current baseline, with a stretch goal of 34% if you also add a personalized day-1 push notification tied to the user's stated goal from step 4.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What day-30 retention should Tableaux realistically target after fixing the SMS and profile-setup issues?",
+      "assistant_message": "Restaurant reservation platforms operate on fundamentally different engagement rhythms than daily-use apps, so day-30 retention benchmarks are lower — a realistic target for Tableaux after fixing onboarding friction would be 14–19%. The reference point here is Resy's 2021 mobile relaunch, which improved day-30 retention from 9% to 16% after simplifying account creation to a single email-plus-password step and deferring all preference collection. I'd recommend Tableaux aim for 16% as a primary target, since that aligns with the upper-mid range of the hospitality booking app category.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "We're planning to A/B test the new Luminary onboarding in our v2.4.0 release. What sample size and test duration would you recommend to detect a meaningful lift?",
+      "assistant_message": "For detecting a lift from your current 63% HealthKit drop-off rate down to a target of around 22%, you'll want to power the test at 80% with a 5% significance level, which works out to approximately 1,200 users per variant — so 2,400 total across the two arms. Given Luminary's current install velocity, which you mentioned is around 800 new installs per week, you should plan for a minimum test duration of 3 weeks to reach statistical significance and capture enough day-3 retention signal. Launch the v2.4.0 A/B test on a Tuesday to avoid weekend install-rate variance, and hold it for exactly 21 days before reading results.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "We're also running an A/B test for Tableaux's onboarding in their v3.1.0 release. What sample size and test duration make sense there?",
+      "assistant_message": "For Tableaux, to detect a meaningful improvement from the 71% SMS drop-off rate down to a target of roughly 32%, you'd need approximately 900 users per variant at 80% power and a 5% significance level — 1,800 total. Reservation platforms tend to have lower weekly new-user volumes than fitness apps, so if Tableaux is acquiring around 400 new users per week, plan for a 5-week test duration to accumulate enough completions. Unlike daily-use apps, you'll also want to extend your observation window to day-60 rather than day-30 to capture meaningful repeat-booking behavior.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "Given everything we've discussed, how many total users do we need to enroll across both variants in the v2.4.0 test, and how many weeks should we run it?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t3",
+    "t5",
+    "t7"
+  ],
+  "distractor_turn_ids": [
+    "t2",
+    "t4",
+    "t6",
+    "t8"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states a total enrollment of 2,400 users (1,200 per variant) for the Luminary v2.4.0 A/B test.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states a test duration of 3 weeks (21 days) for the Luminary v2.4.0 test.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not cite 1,800 total users or a 5-week duration, which are the Tableaux v3.1.0 figures from the distractor branch.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer references the Luminary v2.4.0 release (not v3.1.0, which belongs to Tableaux).",
+      "required": true
+    }
+  ],
+  "notes": "The evidence turns for the query are t7 (which specifies 1,200 per variant / 2,400 total and a 3-week duration for Luminary v2.4.0) and t1/t3/t5 (providing the Luminary context). The semantic trap is t8, which uses nearly identical vocabulary — 'A/B test', 'sample size', 'variants', 'per week', 'test duration' — but gives the Tableaux v3.1.0 figures of 1,800 total users and 5 weeks; a model relying on lexical similarity rather than referent tracking would pull those wrong numbers.\n\nReference answer: For the Luminary v2.4.0 A/B test, you need to enroll 2,400 users in total — 1,200 per variant. Based on Luminary's install velocity of roughly 800 new users per week, the test should run for a minimum of 3 weeks (21 days) to reach statistical significance and capture meaningful day-3 retention data. Starting on a Tuesday and holding for exactly 21 days before reading results is the recommended approach.",
+  "evidence_note": null,
+  "premise": "a mobile app team fixing onboarding drop-off"
+}

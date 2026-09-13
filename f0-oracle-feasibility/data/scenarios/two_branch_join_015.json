@@ -1,0 +1,126 @@
+{
+  "scenario_id": "two_branch_join_015",
+  "family": "two_branch_join",
+  "label": "JOIN",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We've decided that charge nurses will be required to submit their shift requests no later than 72 hours before the start of each scheduling week. Is that a reasonable lead time to build the master schedule?",
+      "assistant_message": "A 72-hour submission deadline for charge nurses is workable and actually aligns with best practices for mid-sized wards. It gives the scheduling coordinator enough time to resolve conflicts and post the final schedule before the week begins. Just make sure the policy document explicitly states the exact cut-off time—for example, 72 hours before 06:00 Monday—so there's no ambiguity.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "The ward's supply room is running low on sterile gloves—size medium. Who should staff flag that to?",
+      "assistant_message": "Staff should report consumable shortages like sterile gloves directly to the ward's charge nurse, who then logs it through the materials-management portal. For urgent shortages, the charge nurse can also contact the central supply department by phone using the direct line posted inside the supply room door. Keeping a written log of each shortage report helps track recurring supply issues over time.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "For the on-call coverage rules, we've agreed that any nurse called in on a scheduled day off will receive a mandatory rest period of at least 11 consecutive hours before their next rostered shift. Has that been documented anywhere yet?",
+      "assistant_message": "That 11-consecutive-hour rest requirement after an unplanned call-in is a strong protective measure and is consistent with European Working Time Directive guidance. It should be formally written into the ward's scheduling policy under a dedicated 'On-Call and Rest Periods' section. I'd recommend having the ward manager and the HR lead co-sign that section to give it proper authority.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "There's also a question about the staff break room—the microwave has been broken for two weeks. Is there a facilities request process for that?",
+      "assistant_message": "Non-clinical equipment repairs like a broken microwave fall under general facilities maintenance, and staff can submit a request through the hospital's FM helpdesk portal using their employee ID. For items in communal staff areas, the ward clerk typically acts as the point of contact to chase up outstanding requests. If the repair hasn't been actioned within five working days, the ward manager can escalate it to the Facilities Manager directly.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "We also need to decide what happens if a nurse's post-call rest period would push their next shift start back. Should the roster just be adjusted automatically?",
+      "assistant_message": "Automatic roster adjustment is the cleanest approach and avoids placing the burden on individual nurses to negotiate their own start times. The scheduling system should flag any shift that falls within the 11-hour rest window and automatically delay it to the earliest compliant start time. The scheduling coordinator should receive an alert whenever such an adjustment is made so they can rebalance staffing levels if needed.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "One more detail: if the adjusted shift start means the nurse now overlaps with a colleague who was already assigned to that slot, who has priority—the originally rostered nurse or the returning on-call nurse?",
+      "assistant_message": "The originally rostered nurse retains priority for their assigned slot; the returning on-call nurse's adjusted shift should be slotted into the next available opening that still meets the 11-hour rest requirement. This rule prevents on-call incidents from cascading into double-staffing conflicts and protects the planned roster's integrity. The scheduling policy should state this priority rule explicitly so coordinators apply it consistently.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "What happens if a charge nurse misses the 72-hour submission deadline entirely—does their request just get dropped, or is there a late submission window?",
+      "assistant_message": "The policy should include a clearly defined late submission window: a common approach is to allow requests submitted between 48 and 72 hours before the scheduling week to be accepted but treated as lowest priority, meaning they are accommodated only if staffing gaps remain after on-time submissions are processed. Any request arriving less than 48 hours before the scheduling week starts should be rejected outright and the charge nurse directed to coordinate directly with the scheduling coordinator for exceptional circumstances. Documenting both thresholds—72 hours for standard priority and 48 hours as the hard cut-off—removes grey areas and reduces coordinator workload.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "If a charge nurse submits their shift request 50 hours before the scheduling week starts, and one of the nurses they've requested has just come off an unplanned call-in shift that ended 8 hours ago, can the charge nurse's request be approved as submitted?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t7",
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t3",
+    "t5",
+    "t6",
+    "t7"
+  ],
+  "distractor_turn_ids": [
+    "t2",
+    "t4"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer identifies that a 50-hour submission falls within the late window (between 48 and 72 hours) and is therefore accepted but treated as lowest priority, not rejected outright.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer identifies that the requested nurse cannot be rostered as submitted because only 8 hours have elapsed since their call-in shift ended, which does not satisfy the mandatory 11-consecutive-hour rest requirement.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not state that the charge nurse's request is rejected entirely; the request itself is accepted (at lowest priority) even though the specific nurse's inclusion requires adjustment.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer notes that the originally rostered nurse retains slot priority over the returning on-call nurse when an adjusted shift would cause an overlap.",
+      "required": false
+    }
+  ],
+  "notes": "t1 and t7 (branch A) establish the 72-hour deadline and the 48–72-hour late window respectively; t3 and t5 (branch B) establish the 11-hour rest rule and the automatic adjustment mechanism. t2 and t4 (branch C, glove shortage and microwave repair) are entirely irrelevant to the query and serve as distractors.\n\nReference answer: The charge nurse's request was submitted 50 hours before the scheduling week, which falls within the late window of 48–72 hours; it will be accepted but treated as lowest priority, accommodated only after on-time submissions are processed. However, the specific nurse they have requested cannot be included as submitted: that nurse's call-in shift ended only 8 hours ago, and the policy requires at least 11 consecutive hours of rest before the next rostered shift. The scheduling system should flag this conflict and delay that nurse's start time to the earliest compliant point, which is at least 3 hours later than currently requested. The charge nurse's request can therefore be partially approved, but that nurse's slot must be adjusted before the schedule is finalized.",
+  "evidence_note": null,
+  "premise": "a hospital ward rolling out a new shift-scheduling process"
+}

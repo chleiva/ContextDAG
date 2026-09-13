@@ -1,0 +1,463 @@
+{
+  "scenario_id": "long_noisy_side_thread_009",
+  "family": "long_noisy_side_thread",
+  "label": "NOISE",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm building a 65% hot-swap mechanical keyboard called the Vaultkey Rev2 and I need to source Kailh hot-swap sockets. My target build quantity is 500 units, and each board uses 67 sockets. Can you help me figure out how many sockets I need to order total?",
+      "assistant_message": "For 500 units at 67 sockets each, you need 33,500 sockets at minimum. It's standard practice to add roughly 5–10% buffer for defects and assembly losses, so ordering around 35,000–37,000 sockets would be prudent for a run this size.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Let's go with exactly 10% buffer. So the final order quantity is 36,850 sockets. I also just confirmed the supplier is Kailh's official distributor, Keebd.com, and their current price for CPG151101S11 hot-swap sockets is $0.18 USD per unit with a minimum order of 1,000 units. Does that math work out to a clean total?",
+      "assistant_message": "Yes, 36,850 units at $0.18 each comes to $6,633.00 USD total, and that's well above the 1,000-unit minimum. The CPG151101S11 is the correct part number for Kailh's MX-compatible hot-swap socket, so you're set on the spec side.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "What's the best way to handle moisture control inside a shipping container for electronics? I've heard silica gel is standard but I'm not sure how much to use.",
+      "assistant_message": "The general rule of thumb is 1 silica gel unit (roughly 28 grams) per cubic foot of container space, though this varies by climate and transit duration. For electronics, you typically want indicating silica gel — the kind that changes from blue to pink when saturated — so you can tell at a glance if humidity control has been compromised during transit.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "The container I'm using is a standard 20-foot shipping container. How many silica gel units would I need for the full volume?",
+      "assistant_message": "A standard 20-foot ISO shipping container has an internal volume of approximately 1,172 cubic feet. At 1 unit per cubic foot, you'd need around 1,172 silica gel packets, though in practice many shippers use larger 500-gram or 1-kg desiccant bags to reduce the number of individual units to manage.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "Are there regulations about using silica gel specifically for shipments going into the EU?",
+      "assistant_message": "Silica gel itself is not classified as a hazardous material under EU regulations, so there are no special import restrictions on it as a desiccant. However, if you're shipping any electronics into the EU, you'll need to comply with the RoHS Directive (2011/65/EU) and the WEEE Directive (2012/19/EU) for the actual products, separate from any packaging materials.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What does RoHS compliance actually require for a small electronics manufacturer? Do I need a third-party certification?",
+      "assistant_message": "RoHS compliance requires that your products not exceed maximum concentration values for ten restricted substances, including lead (0.1% by weight), mercury (0.1%), and cadmium (0.01%). Small manufacturers can self-declare compliance by maintaining a technical file with material declarations from component suppliers — third-party certification is not legally mandatory, though some retailers and distributors require it as a commercial condition.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "How do I actually collect those material declarations from suppliers? Is there a standard form?",
+      "assistant_message": "The IPC-1752A standard provides a widely accepted format for material declaration forms, and most large component manufacturers like Mouser, Digi-Key, and TDK already publish IPC-1752A-compliant declarations on their product pages. For smaller suppliers, you can request a completed IPC-1752A Class D form, which covers full substance disclosure at the homogeneous material level — that's the most detailed and defensible option for your technical file.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "What's the difference between IPC-1752A Class C and Class D?",
+      "assistant_message": "Class C is a substance-group declaration, meaning the supplier confirms whether certain groups of restricted substances are present or absent, without specifying exact concentrations. Class D goes further and requires full quantitative disclosure of all substances at the homogeneous material level, including their weight percentages — it's significantly more detailed and is preferred when you need to demonstrate RoHS compliance rigorously.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "If a supplier refuses to provide an IPC-1752A form, what's my fallback?",
+      "assistant_message": "Your fallback is to request a REACH/RoHS compliance statement on the supplier's own letterhead, which at minimum should confirm the product meets Directive 2011/65/EU. You can also cross-reference the component against the IEC 62474 declarable substance database, which lists substances requiring disclosure — if the component type isn't in a high-risk category there, you have some documentary support even without a formal IPC form.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "How do I store all these compliance documents once I have them? Is there a software tool people use for this?",
+      "assistant_message": "Many small manufacturers use a simple document management system like Notion, Confluence, or even a structured Google Drive folder with a master BOM spreadsheet linking each component to its declaration file. For more formal needs, purpose-built compliance platforms like Assent Compliance or Cority can ingest IPC-1752A XML files directly and flag any components that exceed RoHS thresholds automatically.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "Does Assent Compliance integrate with common ERP systems like NetSuite?",
+      "assistant_message": "Yes, Assent Compliance offers a NetSuite connector as part of its enterprise tier, which can sync supplier and component data bidirectionally. The integration uses NetSuite's SuiteScript 2.0 API, so your NetSuite admin would need developer access to configure the connector and map fields between the two systems.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "We're actually evaluating NetSuite right now. What's the typical implementation timeline for a company with around 20 employees?",
+      "assistant_message": "For a company of that size with relatively straightforward needs, a NetSuite implementation typically runs 3 to 6 months from contract signing to go-live. That timeline assumes you're using a certified NetSuite Solution Provider partner rather than doing a self-implementation, which is strongly recommended — self-implementations for first-time ERP adopters almost always run over schedule and budget.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "What should I look for when evaluating a NetSuite Solution Provider partner?",
+      "assistant_message": "Look for partners who hold NetSuite's Five-Star Partner designation, which requires a track record of successful implementations, customer satisfaction scores, and certified staff. You should also ask specifically for references from companies in your industry vertical — an integrator who primarily works with retail clients may struggle with the manufacturing or hardware-specific modules you'll need, like Advanced Manufacturing or Supply Chain Management.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "Does NetSuite's Advanced Manufacturing module support work order management for small batch production?",
+      "assistant_message": "Yes, NetSuite Advanced Manufacturing supports work orders for batches as small as a single unit, and it can handle multi-level bills of materials with phantom assemblies. For small-batch hardware production, the key feature is its work order routing capability, which lets you define discrete assembly steps and track labor and material consumption at each stage.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "What's a phantom assembly in the context of a BOM?",
+      "assistant_message": "A phantom assembly is a sub-assembly that exists in your BOM for organizational or engineering purposes but is never physically stocked as a discrete inventory item — it's exploded through directly during production planning. A common example is a cable harness that you always build inline during final assembly rather than pre-building and storing separately; the phantom lets you track its components without creating a separate stock-keeping unit for the harness itself.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "How does MRP handle phantom assemblies differently from real sub-assemblies?",
+      "assistant_message": "In most MRP systems, phantom assemblies are flagged with a low-level code that tells the planning engine to skip creating a work order or purchase order for the phantom itself and instead roll its component demand up to the parent work order. This means the system will generate demand for the phantom's raw materials directly, without ever suggesting you stock the intermediate assembly — it's transparent to the planning engine but invisible as a stocked item.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "Is that behavior configurable in NetSuite, or is it automatic once you mark something as a phantom?",
+      "assistant_message": "In NetSuite, you mark a BOM component as a phantom by setting its supply type to 'Phantom' on the assembly item record, and the MRP engine then automatically applies the roll-through logic. You can override this on a per-work-order basis if needed, but the default behavior once the flag is set is fully automatic — no additional scripting or configuration is required.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "Can NetSuite handle lot traceability for components that have a shelf life?",
+      "assistant_message": "Yes, NetSuite supports lot numbering with expiration date tracking natively in its Inventory Management module. You can set a default shelf life in days on the item record, and the system will automatically calculate the expiration date when a lot is received — it also supports FEFO (First Expired, First Out) picking rules to ensure older lots are consumed before newer ones.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "Does FEFO picking work with bin-level locations in a warehouse, or only at the location level?",
+      "assistant_message": "NetSuite's FEFO logic works at the bin level when you have the Bins feature enabled within a location, so it can direct pickers to the specific bin containing the earliest-expiring lot. This requires the Advanced Bin and Putaway Management feature, which is part of the WMS (Warehouse Management System) module — without that, FEFO operates only at the inventory location level.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "What's the licensing cost difference between the base Inventory Management module and the full WMS module in NetSuite?",
+      "assistant_message": "NetSuite doesn't publish list prices publicly, but in practice the WMS module is typically quoted as an add-on at $1,000–$2,500 USD per month depending on user count and negotiation, on top of the base platform license. For a 20-person company, most Solution Provider partners would advise piloting the base Inventory Management module first and adding WMS only if bin-level control becomes a genuine operational need.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "How does NetSuite handle multi-currency purchasing if we're buying from suppliers in Japan and Taiwan?",
+      "assistant_message": "NetSuite's Multi-Currency feature lets you set a functional currency for your company (typically USD) and assign transaction currencies to each vendor record — so a Japanese supplier would be set to JPY and a Taiwanese supplier to TWD. Exchange rates can be updated manually or automatically via a daily feed from the European Central Bank or a custom rate provider, and realized/unrealized currency gains and losses are posted automatically to the GL.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "Is there a way to lock exchange rates on a purchase order so the rate doesn't change between PO creation and invoice receipt?",
+      "assistant_message": "Yes, NetSuite allows you to set a fixed exchange rate on individual purchase order records by overriding the system rate at the transaction level — this locks the rate for that specific PO regardless of subsequent rate updates. Some companies also use forward contracts for large currency exposures and record the contracted rate manually on the PO to match their hedging position.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "What's the accounting treatment for a forward currency contract under US GAAP?",
+      "assistant_message": "Under US GAAP, forward currency contracts are classified as derivatives under ASC 815 and must be recorded at fair value on the balance sheet at each reporting date. If the contract qualifies as a cash flow hedge and hedge accounting is elected, changes in fair value are recorded in Other Comprehensive Income rather than in current earnings — otherwise, all fair value changes flow through the income statement immediately.",
+      "gold_parents": [
+        "t22"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "What documentation is required to qualify a forward contract as a cash flow hedge under ASC 815?",
+      "assistant_message": "At hedge inception, you must prepare formal hedge designation documentation that identifies the hedging instrument, the hedged item or transaction, the nature of the risk being hedged, and the method for assessing hedge effectiveness. ASC 815 also requires you to demonstrate and document hedge effectiveness both prospectively and retrospectively — under the 2017 amendments in ASU 2017-12, the retrospective quantitative test was simplified, and companies can now use the critical terms match method for highly probable hedges without running a full regression analysis.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "Does the critical terms match method work if the notional amount of the forward contract doesn't exactly match the hedged exposure?",
+      "assistant_message": "No, the critical terms match method requires that the notional amount, currency, maturity date, and underlying all align precisely between the hedging instrument and the hedged item — any mismatch disqualifies the simplified approach. In that case you'd need to fall back to a quantitative effectiveness test, most commonly a dollar-offset or regression analysis comparing changes in the fair value of the derivative to changes in the fair value of the hedged exposure.",
+      "gold_parents": [
+        "t24"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "How often does a regression analysis for hedge effectiveness need to be performed?",
+      "assistant_message": "Under ASC 815 as amended by ASU 2017-12, you must perform a prospective assessment at hedge inception and then at least quarterly thereafter for each subsequent reporting period. The regression analysis typically requires a minimum of 30 data observations to be statistically meaningful, and the R-squared value should generally be 0.80 or higher to support a conclusion of high effectiveness.",
+      "gold_parents": [
+        "t25"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "What statistical tool do most treasury teams use to run that regression — Excel, or something more specialized?",
+      "assistant_message": "Most mid-market treasury teams use Excel with its built-in LINEST function or the Data Analysis ToolPak for regression, which is sufficient for straightforward single-variable hedging relationships. Larger or more complex programs often use dedicated treasury management systems like Kyriba, FIS Integrity, or Bloomberg's MARS platform, which can automate the data pulls and generate audit-ready effectiveness reports directly.",
+      "gold_parents": [
+        "t26"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "How does Kyriba handle the data feed from Bloomberg for market rates?",
+      "assistant_message": "Kyriba connects to Bloomberg via the Bloomberg Data License API, which delivers end-of-day or intraday rate files in a structured format that Kyriba's integration layer ingests automatically. The setup requires a Bloomberg Data License subscription separate from a terminal subscription — the Data License product is specifically for server-to-server data delivery and is priced based on the data sets and update frequency you need.",
+      "gold_parents": [
+        "t27"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "Is Bloomberg Data License significantly more expensive than a standard Bloomberg Terminal subscription?",
+      "assistant_message": "A standard Bloomberg Terminal subscription runs approximately $24,000 USD per user per year, while Bloomberg Data License pricing is highly customized based on the specific data sets, fields, and delivery frequency — it can range from roughly $10,000 to several hundred thousand dollars annually. For a treasury team only needing FX rates and basic bond data, a Data License agreement is often cheaper than maintaining multiple terminal seats, but the negotiation process is complex and typically requires going through a Bloomberg sales representative.",
+      "gold_parents": [
+        "t28"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t30",
+      "turn_index": 29,
+      "user_message": "Are there open-source or free alternatives to Bloomberg for FX rate data that would be accurate enough for hedge accounting purposes?",
+      "assistant_message": "The European Central Bank publishes daily reference rates for 32 currencies freely on its website and via an XML data feed, and these rates are widely accepted by auditors for hedge accounting documentation. The Federal Reserve also publishes H.10 FX rates weekly, and for higher-frequency needs, the OANDA API offers historical mid-market rates with a free tier sufficient for many treasury applications — though you'd want to confirm acceptability with your external auditor before relying on any free source in formal hedge documentation.",
+      "gold_parents": [
+        "t29"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t31",
+      "turn_index": 30,
+      "user_message": "Does the ECB data feed require any authentication or is it a fully open endpoint?",
+      "assistant_message": "The ECB's Statistical Data Warehouse API is fully open and requires no authentication — you can query it directly with a standard HTTP GET request using their SDMX 2.1 REST API format. For example, querying the EXR data flow with the appropriate currency codes returns a structured XML or JSON response with daily reference rates, and the ECB explicitly permits commercial use of the data without a license fee.",
+      "gold_parents": [
+        "t30"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t32",
+      "turn_index": 31,
+      "user_message": "What's the SDMX key format for pulling USD to EUR rates from that ECB endpoint?",
+      "assistant_message": "The SDMX key for the ECB's exchange rate data follows the pattern EXR/D.USD.EUR.SP00.A, where D is the frequency (daily), USD is the currency, EUR is the reference currency, SP00 is the series variation (spot rate), and A is the series transformation (average). A full request URL would look like https://sdw-wsrest.ecb.europa.eu/service/data/EXR/D.USD.EUR.SP00.A with optional query parameters for startPeriod and endPeriod to filter the date range.",
+      "gold_parents": [
+        "t31"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t33",
+      "turn_index": 32,
+      "user_message": "Can that same endpoint return rates in JSON instead of XML?",
+      "assistant_message": "Yes, you can request JSON by adding the HTTP header Accept: application/json to your request, or by appending the query parameter ?format=jsondata to the URL. The ECB's SDMX REST API supports both the SDMX-JSON 1.0 format and the generic JSON format, and the response structure includes both the data series and the metadata describing the dimensions in a single payload.",
+      "gold_parents": [
+        "t32"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t34",
+      "turn_index": 33,
+      "user_message": "Is there a rate limit on the ECB SDMX API that I should be aware of for production use?",
+      "assistant_message": "The ECB does not publish an official rate limit for the SDMX REST API, but their documentation advises against high-frequency polling and recommends caching responses locally since reference rates are only updated once per business day around 16:00 CET. In practice, making more than a few hundred requests per day from a single IP has been reported to trigger temporary throttling, so the sensible approach is to pull the daily rate once after the 16:00 CET update and store it in your own database.",
+      "gold_parents": [
+        "t33"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t35",
+      "turn_index": 34,
+      "user_message": "What's the best way to handle the case where the ECB doesn't publish a rate on a given day, like a public holiday?",
+      "assistant_message": "The standard approach is to carry forward the most recent available rate — known as the 'last observation carried forward' or LOCF method — which is also what most accounting standards permit for holiday gaps in a daily rate series. In your code, you'd query the last available data point before the gap date, and it's worth noting that the ECB publishes a list of TARGET2 closing days on its website, so you can proactively skip those dates rather than handling a missing-data error at runtime.",
+      "gold_parents": [
+        "t34"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t36",
+      "turn_index": 35,
+      "user_message": "What's the total cost in USD for the Kailh CPG151101S11 sockets I need to order for the Vaultkey Rev2 run, including the buffer quantity we settled on?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t7",
+    "t8",
+    "t9",
+    "t10",
+    "t11",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t20",
+    "t21",
+    "t22",
+    "t23",
+    "t24",
+    "t25",
+    "t26",
+    "t27",
+    "t28",
+    "t29",
+    "t30",
+    "t31",
+    "t32",
+    "t33",
+    "t34",
+    "t35"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states the total order quantity is 36,850 sockets (500 units × 67 sockets × 1.10 buffer).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states the per-unit price is $0.18 USD from Keebd.com for the CPG151101S11 part.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer states the total cost is $6,633.00 USD.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not reference any ECB exchange rates, Bloomberg pricing, NetSuite licensing costs, or any other figure from the B thread.",
+      "required": true
+    }
+  ],
+  "notes": "t1 and t2 hold all the facts needed for the query (500 units, 67 sockets, 10% buffer = 36,850 units; $0.18/unit from Keebd.com; total = $6,633.00). Turns t3–t35 cover shipping desiccants, RoHS compliance, NetSuite ERP, hedge accounting, and ECB API details — all plausible for an indie hardware maker's broader concerns but entirely irrelevant to the socket cost calculation.\n\nReference answer: For the Vaultkey Rev2 run of 500 units at 67 sockets each with a 10% buffer, the total order quantity is 36,850 CPG151101S11 sockets. At the confirmed Keebd.com price of $0.18 USD per unit, the total cost comes to $6,633.00 USD. This is well above the supplier's 1,000-unit minimum order requirement.",
+  "evidence_note": null,
+  "premise": "an indie hardware maker sourcing parts for a mechanical keyboard"
+}

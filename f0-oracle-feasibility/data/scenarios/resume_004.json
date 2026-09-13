@@ -1,0 +1,103 @@
+{
+  "scenario_id": "resume_004",
+  "family": "resume",
+  "label": "RESUME",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're finalizing the loan agreements for the traveling textile exhibit and need to confirm the insurance requirements for the Andean pieces. The centerpiece is a pre-Columbian Chancay gauze textile dated to roughly 1200–1450 CE, currently valued at $340,000 by Christie's appraisal from March 2023.",
+      "assistant_message": "That's a significant piece, and insurers will likely require a facility report before approving coverage. For a textile in that value range, most fine-art carriers — AXA Art, Berkley One, and Chubb are the three most commonly used for museum loans — require a minimum wall-to-wall coverage policy with no deductible, meaning coverage begins the moment the object leaves the lending institution's premises. You'll also want to confirm that the policy explicitly covers inherent vice exclusions for aged organic materials, since pre-Columbian textiles are particularly vulnerable to humidity fluctuations during transit.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "The lending institution — the Textile Museum of Lima — has specified that the piece must travel in a climate-controlled crate maintaining 45–55% relative humidity and 65–68°F at all times, and they want a courier to accompany it on every leg. They're also requiring the borrowing venues to carry a minimum of $500,000 in fine-art insurance coverage for that single object, which is above the appraised value.",
+      "assistant_message": "That $500,000 minimum is standard practice for high-profile loans — lenders routinely set the required coverage above appraised value to account for potential appreciation and legal costs. The climate parameters they've specified, 45–55% RH and 65–68°F, align with the American Alliance of Museums' 2019 guidelines for organic archaeological materials, so those numbers will be easy to defend to your venues. The courier requirement will add logistical complexity; you'll need to budget for business-class airfare and hotel for the courier on every transit leg, as most lending agreements for objects above $200,000 stipulate business class as a contractual minimum, not merely a preference.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "We're also trying to figure out the best way to handle multilingual labeling for the exhibit. Our current visitor demographics show about 28% of attendees at the first two venues are Spanish-speaking.",
+      "assistant_message": "For a 28% Spanish-speaking audience, bilingual English-Spanish labeling on all primary object labels is strongly justified and increasingly considered a baseline accessibility standard. The American Alliance of Museums' 2022 Facing Change initiative explicitly encourages institutions to match label languages to documented community demographics, and many grant-funders, including the NEH, now ask applicants to describe their language access plan. You might consider a tiered approach: full bilingual text on the primary labels, with QR codes linking to extended Spanish-language interpretive content for visitors who want more depth.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "That makes sense. We're working with a translation firm called Lengua Viva based in Miami; they quoted us $0.18 per word for standard museum label copy and $0.26 per word for specialized technical or historical terminology. Our current draft label copy runs to about 4,200 words total.",
+      "assistant_message": "With 4,200 words at $0.18 per word for standard copy, you're looking at $756 for that tier. If roughly a third of your copy — say 1,400 words — involves specialized terminology like weaving techniques, dye processes, or archaeological provenance language, that portion at $0.26 per word would come to $364, bringing a rough blended total to around $1,120 before any revision rounds. It's worth asking Lengua Viva whether their quote includes one round of revisions, since museum labels often go through content edits after the initial translation is delivered.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "They confirmed one free revision round is included. We're also thinking about adding an audio guide in Spanish — they quoted a separate rate of $320 per finished audio minute, and we're estimating 22 minutes of total content.",
+      "assistant_message": "At $320 per finished minute for 22 minutes, the audio guide would run $7,040, which is a meaningful addition to your translation budget but very competitive for professional museum audio localization; rates in the industry typically range from $280 to $450 per finished minute depending on studio and talent. That total would bring your combined Spanish-language accessibility budget to roughly $8,160 if you go with the blended label estimate plus the full audio guide. It's worth checking whether any of your venue partners can cost-share on the audio guide, since they'll benefit from it equally.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "For the venues that will be hosting the Chancay textile, what insurance coverage amount do they each need to carry, and what are the climate control specs they'll have to meet?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4",
+    "t5"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that each hosting venue must carry a minimum of $500,000 in fine-art insurance coverage for the Chancay textile.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states the required climate parameters are 45–55% relative humidity and 65–68°F.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not mention translation costs, audio guide rates, or any figures from the Lengua Viva quote (e.g., $0.18/word, $0.26/word, $320/minute, $7,040, or $8,160).",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer should note that the $500,000 minimum exceeds the Christie's appraised value of $340,000, explaining this is standard practice.",
+      "required": false
+    }
+  ],
+  "notes": "The key evidence is in t2, which settles the $500,000 insurance minimum and the 45–55% RH / 65–68°F climate specs. Turns t3–t5 are the distractor branch covering translation and audio guide costs from Lengua Viva; a weak answer might import dollar figures or details from those turns, which the negative checklist item guards against.\n\nReference answer: Each venue hosting the Chancay textile must carry a minimum of $500,000 in fine-art insurance coverage for that single object — a figure that exceeds the Christie's appraised value of $340,000, which is standard practice to account for appreciation and legal costs. On the environmental side, every venue must maintain 45–55% relative humidity and a temperature of 65–68°F at all times, in line with the American Alliance of Museums' 2019 guidelines for organic archaeological materials. The lending institution, the Textile Museum of Lima, also requires a courier to accompany the piece on every transit leg, so venues should factor in the logistical and cost implications of that requirement as well.",
+  "evidence_note": null,
+  "premise": "a museum planning a traveling exhibit on textiles"
+}

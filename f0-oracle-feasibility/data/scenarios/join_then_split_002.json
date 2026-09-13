@@ -1,0 +1,104 @@
+{
+  "scenario_id": "join_then_split_002",
+  "family": "join_then_split",
+  "label": "SPLIT",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm designing point count surveys for my field study on urban house sparrows in Chicago. I want to make sure I'm using the standard detection radius and survey duration that ornithologists typically use for passerines in urban settings.",
+      "assistant_message": "For urban passerine point counts, the most widely adopted protocol comes from the North American Breeding Bird Survey (BBS), which uses an unlimited-radius count but records detections within a fixed 400-meter radius for analysis. Each point count station is surveyed for exactly 3 minutes, and stations must be at least 400 meters apart to avoid double-counting the same individuals. This protocol has been standard since the BBS was formalized in 1966 and remains the baseline most peer reviewers expect to see cited.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "That's helpful. I've also seen some urban bird studies use a 50-meter fixed radius instead of 400 meters — is that a recognized variant for dense city environments?",
+      "assistant_message": "Yes, the 50-meter fixed-radius point count is a well-recognized urban adaptation, most prominently codified in the eBird/Cornell Lab urban monitoring guidelines updated in 2019. The rationale is that dense vegetation, buildings, and background noise in cities degrade detection probability beyond 50 meters, making distance estimates unreliable. Each station still uses the 3-minute observation window, matching the BBS duration, so comparisons across studies remain possible. You should explicitly state in your methods whether you're using the 50-meter or 400-meter radius, as reviewers will flag the choice.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "I'm also trying to figure out the best way to record ambient noise levels at each station so I can account for detection bias. What equipment do urban ecologists typically use for that?",
+      "assistant_message": "The most commonly used instrument in peer-reviewed urban soundscape ecology is the Song Meter SM4 by Wildlife Acoustics, which records broadband audio and can simultaneously log temperature and humidity. For spot measurements of noise levels in decibels, many researchers pair it with a calibrated Class 2 sound level meter such as the Extech 407732, which measures from 35 to 130 dB and costs around $150. The SM4 retails at approximately $849 and has been the reference device in studies like Barber et al. (2010) in PLoS ONE, which established that urban background noise above 65 dB(A) significantly reduces effective detection distances for songbirds.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "Good to know. Is there a standard height at which the sound level meter should be held during the measurement?",
+      "assistant_message": "The ISO 1996-2:2017 standard for environmental noise measurement specifies that the microphone should be held at 1.2 to 1.5 meters above the ground, roughly ear height for a standing adult, and at least 3.5 meters from any reflective surface such as a wall or parked vehicle. The measurement should be taken over a minimum of 30 seconds to capture an equivalent continuous sound level (Leq). Most urban bird studies that report noise data follow this ISO specification exactly, which allows cross-study comparisons of detection-probability corrections.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "I'm thinking of combining both approaches — using the 50-meter fixed-radius point counts and recording ambient noise with the SM4 at each station. How should I structure my data sheet to link the acoustic data to each count?",
+      "assistant_message": "A practical approach is to assign each station a unique alphanumeric ID (e.g., CHI-001 through CHI-060) that appears on both the point count data sheet and the SM4 file-naming convention, so you can join tables without ambiguity. Record the Leq in dB(A) for the 3-minute count window and log it as a covariate in your detection model, which is the approach used by Francis et al. (2011) in Ecological Applications. You should also note the SM4 gain setting used — most urban deployments use 0 dB gain to avoid clipping — and record wind speed with a handheld anemometer, since wind above Beaufort scale 3 (roughly 12–19 km/h) is a standard exclusion criterion for both point counts and acoustic recordings.",
+      "gold_parents": [
+        "t2",
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "If a reviewer asks me to justify why I chose 50 meters over 400 meters as my detection radius, what's the most defensible citation I can point to?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4",
+    "t5"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer identifies the 50-meter fixed-radius variant as being codified in the eBird/Cornell Lab urban monitoring guidelines updated in 2019.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer explains that the justification for 50 meters relates to degraded detection probability beyond that distance due to dense vegetation, buildings, and background noise in urban environments.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not import the ISO 1996-2:2017 standard or sound level meter height specifications as part of the justification for the 50-meter radius choice.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not treat the SM4/acoustic recording equipment details or the Francis et al. (2011) citation as the basis for justifying the 50-meter radius.",
+      "required": true
+    }
+  ],
+  "notes": "t2 holds the key evidence needed for the query (50-meter radius, 2019 eBird/Cornell guidelines, detection-probability rationale). t3, t4, and t5 are the traps: the ISO noise measurement standard, SM4 equipment details, and the combined data-sheet/Francis et al. discussion are all plausible but entirely irrelevant to justifying the radius choice.\n\nReference answer: The most defensible citation for the 50-meter fixed-radius choice is the eBird/Cornell Lab urban monitoring guidelines, last updated in 2019, which explicitly codify the 50-meter radius as the appropriate urban adaptation for passerine point counts. The core justification is that dense vegetation, buildings, and elevated background noise in cities reduce detection probability beyond 50 meters, making distance estimates unreliable at larger radii. You can also note that the 3-minute observation window is kept consistent with the standard BBS protocol, which strengthens the argument that only the radius — not the overall methodology — was adapted to urban conditions.",
+  "evidence_note": null,
+  "premise": "a PhD student planning a field study on urban bird populations"
+}

@@ -1,0 +1,331 @@
+{
+  "scenario_id": "constraint_retention_001",
+  "family": "constraint_retention",
+  "label": "CONSTRAINT",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm setting up my home studio and I want to lock in one firm rule before anything else: I will never spend more than $800 total on artificial lighting equipment, including stands, modifiers, and any accessories. That's a hard ceiling I won't go over.",
+      "assistant_message": "Understood — your hard ceiling for all artificial lighting equipment, including stands, modifiers, and accessories, is $800 total, and you won't exceed that under any circumstances. I'll keep that constraint in mind for every lighting recommendation I make.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Right. So with that rule in mind, I'm thinking a two-point setup — a key light and a fill light — would cover most of my portrait work. Does that sound reasonable within that constraint?",
+      "assistant_message": "A two-point setup is a smart starting point and is very achievable within an $800 ceiling. A basic key-and-fill configuration using mid-range strobes or continuous LEDs typically runs $300–$600 for the heads, stands, and a softbox or umbrella modifier, which leaves you some headroom for small accessories like clamps or a reflector card.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "What kind of flooring works best for a home studio? I'm shooting on a 10×12-foot spare bedroom and the existing carpet feels wrong.",
+      "assistant_message": "For a 10×12 studio space, a smooth surface like luxury vinyl plank or painted plywood is a popular choice because it's easy to clean, looks neutral on camera, and won't add unwanted texture to product or portrait shots. Some photographers lay a single 4×8-foot sheet of Masonite over the carpet as a cheap, removable shooting surface that stores flat against the wall when not in use.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "Good idea. Should I paint the walls a specific color, or just leave them as they are?",
+      "assistant_message": "Most home studio photographers paint their walls a neutral mid-grey — 18% grey is the classic target — because it minimizes color casts and makes exposure easier to judge on a calibrated monitor. If you shoot a lot of high-key work you might prefer a bright white, but grey gives you the most flexibility across different subject types.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "I've been looking at paper backdrops. Is a 53-inch wide roll enough for headshots, or should I go wider?",
+      "assistant_message": "For tight headshots and upper-body portraits, a 53-inch (roughly 4.5-foot) roll is generally sufficient, but a 107-inch (9-foot) roll gives you much more room to avoid the edges when shooting three-quarter or full-length subjects. If your 10×12 space is the limit, a 9-foot wide roll on a crossbar stand set at about 8 feet high is the standard professional setup and fits that footprint well.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What crossbar stand system would you recommend for holding that backdrop?",
+      "assistant_message": "The Savage Universal Support System and the Westcott 13-foot collapsible backdrop stand are both reliable choices in the $80–$130 range for the full kit. The Westcott collapses to about 50 inches, which makes it easier to store in a small room when the studio isn't in use.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "How do I deal with the window in the room? There's one east-facing window about 36 inches wide.",
+      "assistant_message": "A 36-inch east-facing window is actually a nice asset for soft morning light, but it will compete with your artificial lights at unpredictable angles if you don't control it. A blackout roller blind rated at 99% light blocking — brands like Redi Shade or Chicology make them in that width for under $30 — will let you choose between natural and controlled lighting without permanently blocking the window.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "Makes sense. I'm also wondering about sound — I do occasional video work and the room echoes badly.",
+      "assistant_message": "Echo in a small hard-walled room is mostly a problem of parallel reflective surfaces, so adding mass-loaded vinyl on one wall and acoustic foam panels (2-inch wedge foam in a checkerboard pattern covering about 30% of the wall surface) is a cost-effective starting fix. Moving blankets hung on the walls during recording are an even cheaper temporary solution and can double as backdrop fabric.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "What microphone would you suggest for that kind of video work? I'm mostly doing talking-head interviews.",
+      "assistant_message": "For talking-head interviews in a treated small room, a cardioid condenser like the Rode NT1 (street price around $269) or the Audio-Technica AT2020 (around $99) mounted on a boom arm off-camera gives you clean, directional audio. If you want something that mounts directly on the camera, the Rode VideoMicro II at about $79 is a solid on-camera option for run-and-gun setups.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "I use a Sony a7 IV — does it have a 3.5mm mic input?",
+      "assistant_message": "Yes, the Sony a7 IV has a 3.5mm stereo mini-jack microphone input as well as a headphone monitoring output, so any of those microphones will connect directly without an adapter. It also supports digital audio via the Multi Interface Shoe, which is worth knowing if you ever upgrade to a Sony-native digital mic like the ECM-B10.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "For tethered shooting, what cable length is practical in a 10×12 room?",
+      "assistant_message": "In a 10×12 room, a 6-foot USB cable is usually sufficient to reach from a camera on a tripod to a laptop set on a small side table, but a 10-foot cable gives you more flexibility to reposition without yanking the laptop. For the a7 IV specifically, you'll want a USB-C cable rated for data transfer (not just charging) — look for USB 3.2 Gen 1 or higher to avoid slowdowns when pulling RAW files.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "I'm planning to use Capture One for tethering. Is there a specific version that officially supports the a7 IV?",
+      "assistant_message": "Capture One added official tethering support for the Sony a7 IV in version 22 (15.0), released in early 2022. You should be running at least Capture One 22 or any later release to get full live-view tethering; earlier versions may import files but won't give you the real-time shooting display.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "What monitor calibration tool should I buy to make sure my color editing is accurate?",
+      "assistant_message": "The X-Rite i1Display Pro Plus is widely considered the professional standard for display calibration and retails for around $249. If that's over budget, the Datacolor SpyderX Pro at about $119 is a solid mid-range option that handles wide-gamut displays and is accurate enough for most commercial photography work.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "How often should I recalibrate the monitor?",
+      "assistant_message": "A monthly calibration schedule is the standard recommendation for professional color-critical work; display hardware drifts gradually and monthly profiling keeps your output within acceptable Delta-E tolerances. If the monitor is new, calibrate weekly for the first month because new LCD panels tend to shift more noticeably during their initial burn-in period.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "I'm also thinking about a shooting table for small product photography. What size surface do I need?",
+      "assistant_message": "For small product work, a shooting table with a 24×36-inch surface is a practical minimum that fits most packaged goods, shoes, and small electronics. If you can spare the floor space, a 30×48-inch table gives you room to style props around the hero product without them falling out of frame.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "Can I use a regular folding table, or does it need to be a dedicated shooting table with a curved sweep?",
+      "assistant_message": "A regular folding table works fine as the structural base; the key feature of a dedicated shooting table is the seamless curved sweep, which eliminates the horizon line at the back edge. You can replicate that by clamping a roll of white acrylic or a large sheet of white foam board to the back of a folding table and letting it curve gently onto the surface — many professionals do exactly this.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "What's the best way to handle cable management so I don't have trip hazards during a shoot?",
+      "assistant_message": "Running power cables along the baseboard and securing them with adhesive cable clips keeps them out of the main shooting area. For cables that have to cross open floor space — like a sync cord to a strobe — a flat cable cover strip rated for foot traffic (the kind used in offices) lies flush enough that it won't catch on rolling equipment or trip a client.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "I need a rolling cart to hold my camera bags and accessories during sessions. Any suggestions?",
+      "assistant_message": "A heavy-duty wire shelving cart on 4-inch locking casters — the kind sold by brands like Seville Classics or Honey-Can-Do in the 18×48-inch configuration — is a popular studio choice because the open shelves let you see everything at a glance and the weight capacity (usually 600–800 lbs across all shelves) handles even heavy gear. Rolling it into a closet between sessions keeps your studio floor clear.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "How should I label my memory cards so I don't mix up shot and unshot cards during a busy session?",
+      "assistant_message": "A two-position card wallet works well: keep unshot cards face-up on the left side and flip them face-down when they're full, then move them to the right side after download and verification. Some photographers also put a small strip of colored washi tape on the label side of a full card as a physical flag that peels off cleanly without leaving residue.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "What's a reliable backup strategy for the files once the session is done?",
+      "assistant_message": "The 3-2-1 rule is the industry standard: keep 3 copies of every file, on 2 different media types, with 1 copy offsite. In practice for a home studio, that usually means the original on your working drive, a local backup to a NAS or external drive, and an automated cloud backup to a service like Backblaze B2 (about $7/month for unlimited storage) running in the background.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "Should I invest in a dedicated NAS for the studio, or is a direct-attached drive sufficient?",
+      "assistant_message": "For a solo freelancer working from one machine, a direct-attached USB 3.2 drive like a WD My Book or Seagate Backup Plus is sufficient and costs far less than a NAS. A NAS becomes worth the investment (typically $300–$600 for a 2-bay unit plus drives) once you need simultaneous access from multiple computers or want RAID redundancy built into the local backup layer.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "I've been wondering about insurance. Do I need a separate policy for my studio gear, or does homeowner's insurance cover it?",
+      "assistant_message": "Standard homeowner's or renter's policies typically cap coverage for business equipment used at home at $2,500 or less, and many explicitly exclude equipment used for commercial purposes. A dedicated inland marine policy or a photographer-specific plan through providers like Hill & Usher or Athos covers your gear at full replacement value for professional use and usually runs $200–$500 per year depending on the total gear value.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "Does a business license affect whether clients can legally come to my home for sessions?",
+      "assistant_message": "Zoning regulations, not the business license itself, determine whether clients can visit your home for commercial activity — a business license just registers your operation with the municipality. Most residential zones allow occasional client visits for service businesses, but some have restrictions on the number of visits per day or prohibit any signage; checking with your local zoning office before booking in-home sessions is the safest step.",
+      "gold_parents": [
+        "t22"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "What kind of release form should I have clients sign before a portrait session at my home studio?",
+      "assistant_message": "At minimum you'll want a combined model release and liability waiver — the model release grants you rights to use the images commercially, while the liability waiver limits your exposure if a client is injured on your property. Many photographers use a template from ASMP (American Society of Media Photographers) as a starting point and have a local attorney review it for state-specific language, which typically costs $150–$300 for a one-time review.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "I found a lighting kit I really like — it's a three-strobe set with two softboxes, two stands, and a carrying case, and it's priced at $749. Can I add a $79 collapsible reflector to the order?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t7",
+    "t8",
+    "t9",
+    "t10",
+    "t11",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t20",
+    "t21",
+    "t22",
+    "t23",
+    "t24"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer correctly identifies the hard ceiling of $800 for all artificial lighting equipment including accessories and applies it to the combined total.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer correctly calculates that $749 + $79 = $828, which exceeds the $800 ceiling.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not recommend purchasing both items together, as doing so would violate the stated $800 hard ceiling.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not use any detail from the B-branch distractor turns (flooring, backdrops, microphones, NAS, insurance, etc.) as a basis for the lighting budget decision.",
+      "required": false
+    }
+  ],
+  "notes": "t1 holds the exact $800 hard ceiling rule that the query in t25 silently depends on; t2 confirms the rule applies to a two-light setup context. The 22 B-branch turns (t3–t24) cover flooring, paint, backdrops, stands, windows, acoustics, microphones, tethering, calibration, product tables, cable management, carts, memory cards, backup, NAS, insurance, zoning, and releases — all plausible studio topics that never touch the lighting budget rule, serving as memory traps.\n\nReference answer: Adding the $79 reflector to the $749 kit would bring your total to $828, which exceeds your hard $800 ceiling for all artificial lighting equipment, stands, modifiers, and accessories. You would need to either skip the reflector for now, find a cheaper reflector under $51, or choose a less expensive strobe kit to stay within your limit. As a collapsible reflector uses ambient or existing light rather than being a powered light source, you might also verify whether you intended it to fall under that ceiling — but since you defined accessories as part of the cap, the $800 rule applies.",
+  "evidence_note": null,
+  "premise": "a freelance photographer setting up a home studio"
+}

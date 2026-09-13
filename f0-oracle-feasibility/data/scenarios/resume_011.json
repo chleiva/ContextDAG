@@ -1,0 +1,139 @@
+{
+  "scenario_id": "resume_011",
+  "family": "resume",
+  "label": "RESUME",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're planning a 10-day trip to Japan for four friends in mid-April and I want to figure out the JR Pass situation. Is the 14-day pass worth it over the 7-day, given our length of stay?",
+      "assistant_message": "For a 10-day trip the 14-day JR Pass is almost certainly the right call. The 7-day pass must be used on 7 consecutive days, so if your travels are spread across the full 10 days it won't cover you, whereas the 14-day pass gives you flexibility across all 14 consecutive days from first activation. As of the October 2023 price revision, the 14-day ordinary JR Pass costs 50,000 yen per person, compared to 29,650 yen for the 7-day version.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Good point on the consecutive days rule. We're definitely traveling both at the start and end of the trip, so the 14-day makes sense. Can we still buy it outside Japan, or did that change?",
+      "assistant_message": "The rules changed significantly in 2023. The JR Pass can now be purchased both overseas through authorized travel agencies and online, or inside Japan at JR ticket offices, but the in-Japan price is notably higher — 60,000 yen for the 14-day ordinary pass versus 50,000 yen if bought abroad. So buying before you depart will save each person 10,000 yen, which for four people is 40,000 yen total in savings. I'd recommend purchasing through the official JR-WEST, JR-EAST, or Japan Rail Pass websites or an authorized agent at least a few weeks before departure.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "That's a big difference. One more detail — does the pass cover the Nozomi and Mizuho Shinkansen, since we want to do Tokyo to Osaka and might want the fastest option?",
+      "assistant_message": "This is a crucial point: the JR Pass does not cover the Nozomi or Mizuho Shinkansen services at all — those are completely excluded. You can use the Hikari and Sakura Shinkansen on the Tokaido and Sanyo lines, which still get you from Tokyo (Shin-Osaka direction) at a reasonable speed, but they make more stops and run slightly slower than the Nozomi. The Tokyo to Shin-Osaka journey on the Hikari takes approximately 3 hours 20 minutes, compared to about 2 hours 22 minutes on the Nozomi. If you want the Nozomi specifically, you'd need to pay the full fare separately, which is around 13,870 yen per person one-way in unreserved standard class.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "What's the etiquette around tipping in Japan? I want to make sure we don't accidentally offend anyone.",
+      "assistant_message": "Tipping in Japan is genuinely not practiced and can actually cause embarrassment or offense rather than gratitude. In restaurants, hotels, taxis, and even ryokan, the service is considered part of the price and staff may chase you down to return money they think you left by mistake. The one partial exception is some high-end ryokan, where a tip-like gesture called 'senbetsu' can be given wrapped neatly in a special envelope called a 'pochibukuro' before the stay, though even this is optional and increasingly uncommon with foreign guests.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "Good to know. What about cash versus cards — how much yen should we each carry?",
+      "assistant_message": "Japan remains heavily cash-dependent compared to most Western countries, though acceptance of cards has improved since the 2020 Olympics push. A reasonable rule of thumb for tourists is to carry about 50,000 to 70,000 yen per person per week to cover meals at smaller restaurants, shrine entry fees, local buses, and incidentals. 7-Eleven, Japan Post, and some Lawson ATMs reliably accept foreign cards, so you can withdraw yen in-country rather than exchanging everything before you go. Notify your bank before departure to avoid fraud blocks.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "We're hoping to visit Fushimi Inari in Kyoto. Is there an entry fee and how long does the full hike take?",
+      "assistant_message": "Fushimi Inari Taisha has no entry fee — it's free to enter at any time of day or night, which is part of what makes it so popular. The full hike to the summit of Mount Inari and back covers roughly 4 kilometers and takes most visitors between 2 and 3 hours, though you can turn around at the Yotsutsuji intersection about halfway up for a shorter 1 to 1.5 hour version that still gives great views. Early morning visits, ideally before 8 a.m., are strongly recommended in April because mid-April coincides with peak tourist season and the main torii tunnel gets extremely crowded by mid-morning.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "What about the deer in Nara — can you actually feed them and where do you buy the crackers?",
+      "assistant_message": "Yes, the deer in Nara Park are classified as natural treasures and roam freely, and feeding them is actively encouraged as part of the park experience. The food is called 'shika senbei' (deer crackers) and is sold by licensed vendors stationed throughout the park, including near Todai-ji and along the main approach paths, for 200 yen per bundle of roughly 10 crackers. Be warned that the deer are quite bold — they've learned to bow to prompt tourists for food and will headbutt or nibble bags they suspect contain crackers. Keep bags zipped and hold crackers out quickly once you start feeding or you may attract a small mob.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "How far is Nara from Kyoto, and what's the easiest way to get there?",
+      "assistant_message": "Nara is very manageable as a day trip from Kyoto, sitting about 35 kilometers to the south. The fastest and most convenient option is the Kintetsu Kyoto Line from Kintetsu-Kyoto Station, which takes about 35 minutes on the Kintetsu Limited Express to Kintetsu-Nara Station for a fare of around 760 yen each way. The JR Nara Line from JR Kyoto Station also works and takes about 45 minutes on the Miyakoji Rapid service, though that route deposits you at JR Nara Station which is a bit farther from the main deer park than Kintetsu-Nara Station. Either option makes for an easy half-day or full-day excursion.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "If we decide we really want to take the Nozomi from Tokyo to Osaka instead of waiting for the Hikari, how much extra would that cost for all four of us?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3"
+  ],
+  "distractor_turn_ids": [
+    "t4",
+    "t5",
+    "t6",
+    "t7",
+    "t8"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that the Nozomi is not covered by the JR Pass and requires a separate fare payment.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer uses the figure of approximately 13,870 yen per person one-way for the Nozomi in unreserved standard class.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer calculates a total extra cost for four people of approximately 55,480 yen (4 × 13,870) one-way, or notes the per-person cost and multiplies by four.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not mention the Kintetsu Limited Express fare (760 yen) or any Nara-to-Kyoto travel details from the distractor turns.",
+      "required": true
+    }
+  ],
+  "notes": "The key facts the query needs are all in t3: Nozomi exclusion from JR Pass, the 13,870 yen per-person Nozomi fare, and the four-person group size (established in t1). The main traps are the Kintetsu fare (760 yen) and Nara distance details from t8, which are irrelevant to the Nozomi cost question.\n\nReference answer: The JR Pass does not cover the Nozomi at all, so each person would need to buy a separate ticket. At roughly 13,870 yen per person for a one-way unreserved standard-class seat, the four of you would pay approximately 55,480 yen extra one-way to take the Nozomi instead of using the Hikari with your pass. If you're making the journey in both directions, double that to around 110,960 yen total. Whether that's worth the roughly one-hour time saving compared to the Hikari (about 2 hours 22 minutes versus 3 hours 20 minutes) is up to you.",
+  "evidence_note": null,
+  "premise": "organizing a 10-day trip to Japan for four friends"
+}

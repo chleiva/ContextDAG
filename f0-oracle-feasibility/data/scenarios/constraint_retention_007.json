@@ -1,0 +1,379 @@
+{
+  "scenario_id": "constraint_retention_007",
+  "family": "constraint_retention",
+  "label": "CONSTRAINT",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I want to lock in a hard rule for my observatory build: the dome opening must be no wider than 1.2 meters at any point, because my HOA covenant specifically caps any 'aperture or opening in an accessory structure roof' at 1.2 meters. That's a firm ceiling I can't go over.",
+      "assistant_message": "Understood — I've noted that constraint precisely: the dome opening must not exceed 1.2 meters in width at any point, as required by your HOA covenant's limit on apertures or openings in accessory structure roofs. I'll make sure every recommendation I give you stays within that hard ceiling.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Right. So with that rule in mind, I'm thinking about what telescope optical tube assemblies could actually fit through a 1.2-meter opening during setup. Do I need to worry about the tube diameter or just the length?",
+      "assistant_message": "For a fixed dome with a 1.2-meter maximum opening, the critical dimension is the tube's outer diameter plus any side-mounted accessories like finder scopes or guide cameras, since those add to the effective cross-section that must clear the slot. A typical 10-inch (254 mm) Newtonian OTA with a finder attached runs about 350–380 mm wide, which is well within 1.2 meters, so tube diameter alone is rarely the binding constraint. The more practical concern is whether the telescope can slew to low-altitude targets without the OTA or counterweight bar clipping the dome shutter edge — that's a geometry problem you'd model with your mount's clearance envelope.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "What kind of concrete pad thickness do I need under the pier for a 200 lb mount and scope combo?",
+      "assistant_message": "For a combined instrument load of around 200 lbs, most builders pour a reinforced concrete pier footing at least 24 inches in diameter and 48 inches deep, going below the local frost line to prevent heave from shifting the pier. Using 3,000 psi concrete with a rebar cage — typically four vertical #4 bars tied with horizontal #3 stirrups every 12 inches — gives you a footing that will handle both the static load and the vibration from the mount's slewing motors without measurable flex.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "Should the pier be thermally isolated from the dome floor slab?",
+      "assistant_message": "Yes, the pier should be isolated from the floor slab with a 1-inch expansion gap filled with closed-cell foam backer rod, so that footsteps or vibrations transmitted through the slab don't couple into the pier and cause image shake. Many builders also pour the pier footing completely independently of the floor slab, sometimes weeks earlier, so the two concrete masses cure and settle separately.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "I'm in zone 5b — what R-value should I target for the dome walls to prevent thermal issues during imaging?",
+      "assistant_message": "Interestingly, for an observatory dome you generally want low thermal mass and minimal insulation in the walls rather than high R-value, because you want the interior to equilibrate to outside air temperature as quickly as possible — trapped heat causes dome seeing, where rising warm air blurs your images. Most serious amateur builders leave dome walls uninsulated or use thin single-skin aluminum or fiberglass panels, and instead rely on ventilation fans to flush heat out at least an hour before imaging.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What ventilation fan CFM rating would flush a 10-foot diameter dome in a reasonable pre-session cool-down?",
+      "assistant_message": "A 10-foot diameter dome has an interior volume of roughly 2,600 cubic feet if you model it as a hemisphere. Running a 400–500 CFM fan gives you about 5–6 complete air exchanges per hour, which most builders find sufficient to bring the dome within 1–2°C of ambient in 45 to 60 minutes, assuming the dome shutter and any vent louvers are open during the process.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "Is there a good weatherproof electrical standard I should wire to for the interior outlets and equipment circuits?",
+      "assistant_message": "For a backyard observatory in most US jurisdictions, NEC Article 547 (Agricultural Buildings) or Article 550 doesn't directly apply; instead you'd follow Article 210 for branch circuits and use GFCI-protected outlets rated for damp or wet locations — typically listed as NEMA 5-15R in a weatherproof in-use cover rated WR (weather resistant). Running a dedicated 20-amp circuit for the mount and imaging computer, separate from a second 20-amp circuit for dew heaters and fans, prevents voltage sag when motors start.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "How do I keep dew from forming on the primary mirror of an open-tube Newtonian?",
+      "assistant_message": "Dew on a Newtonian primary is less common than on refractor objectives because the tube itself shields the mirror from the cold sky, but it can still happen on high-humidity nights. The standard fix is a low-wattage resistive dew heater strip adhered around the mirror cell — typically 12W for an 8-inch mirror — controlled by a pulse-width modulation dew controller like a Dew Buster or Pegasus Astro unit, which keeps the mirror surface a degree or two above the dew point without introducing thermal turbulence.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "What's the best way to polar align a German equatorial mount inside a dome where I might not have a clear view of Polaris?",
+      "assistant_message": "If Polaris is obscured by the dome structure, the most reliable method is drift alignment, where you center a star near the meridian and another near the eastern or western horizon, then watch which direction the star drifts in declination over several minutes to diagnose azimuth and altitude polar axis error. Alternatively, software like PHD2's built-in Drift Alignment tool or SharpCap Pro's Polar Alignment routine (which requires only a region of sky near the pole, not Polaris itself) can guide you through corrections interactively with your guide camera.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "I'm thinking about using SharpCap Pro — what's the current subscription cost and what does it include?",
+      "assistant_message": "As of early 2025, SharpCap Pro costs £13 per year (approximately $16–17 USD at typical exchange rates) as an annual subscription layered on top of the free SharpCap base application. The Pro license unlocks the Smart Histogram, Polar Alignment tool, sequence capture, and live stacking with quality analysis, among other features — it's widely considered one of the best-value upgrades in amateur astrophotography software.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "For live stacking, how many frames do I typically need before a faint nebula starts to look decent?",
+      "assistant_message": "With a cooled dedicated astronomy camera under reasonably dark skies (Bortle 4–5), you can usually see structure in an emission nebula like the Orion Nebula emerge after 20–30 two-minute subs, which is about 40–60 minutes of integration. For fainter targets like the Horsehead or Veil Nebula, most imagers find that a minimum of 2–3 hours of total integration is needed before the signal-to-noise ratio is high enough to distinguish fine detail from background noise in a live stack.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "What camera sensor size is generally recommended for pairing with a 10-inch f/4.7 Newtonian?",
+      "assistant_message": "A 10-inch f/4.7 Newtonian has a focal length of about 1,193 mm and produces a relatively small fully-illuminated field — typically around 35–40 mm in diameter before coma becomes objectionable without a coma corrector. A Four Thirds sensor (17.3 × 13 mm, like the Sony IMX294) fits comfortably within that illuminated circle and gives you a field of view around 50 × 38 arcminutes, which frames most bright nebulae nicely; APS-C sensors can work but may show coma in the corners unless you use a quality coma corrector like the Baader MPCC Mark III.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "How do I calculate the correct back-focus distance for that coma corrector?",
+      "assistant_message": "The Baader MPCC Mark III requires a back-focus distance of exactly 55 mm from its rear surface to the camera sensor plane. You measure from the rear threaded surface of the corrector body to your camera's sensor, accounting for any filter wheel, spacers, or adapters in the train — each component's length must be measured or taken from the manufacturer's spec sheet and summed, then you add or remove M48 or T2 spacer rings to hit 55 mm as closely as possible, ideally within ±0.5 mm.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "What's a good way to measure those adapter lengths precisely without a machine shop?",
+      "assistant_message": "A digital caliper with 0.01 mm resolution, like the Mitutoyo 500-196-30 or a budget Neiko 01407A, is accurate enough for this task and costs $20–$150 depending on brand. You measure each component's length by closing the caliper jaws on the flat faces of the part, and for threaded components you measure the full length including the thread engagement depth, which you can estimate by threading the parts together and measuring the assembled stack, then subtracting the individual pieces.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "What kind of focuser should I look for on a Newtonian intended for imaging rather than visual use?",
+      "assistant_message": "For imaging, you want a low-profile, rack-and-pinion or Crayford-style focuser with a 2-inch or 3-inch drawtube diameter and a tension adjustment that prevents the camera and filter wheel from slipping under load — the GSO 2-speed Crayford or the Moonlite CHL are popular choices in the $150–$400 range. More importantly, look for a focuser with a flat, square-to-the-optical-axis drawtube and minimal tilt, since even 0.1 mm of tilt at the focal plane can cause one corner of an image to be noticeably softer than the opposite corner.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "Can I motorize a manual Crayford focuser, or do I need to buy a dedicated motorized unit?",
+      "assistant_message": "Most manual Crayford focusers from GSO, Moonlite, and similar manufacturers have a secondary fine-focus knob shaft that accepts a motor adapter directly. The ZWO EAF (Electronic Automatic Focuser) retails for around $169 and includes adapter rings for 40 mm, 50 mm, and other common shaft diameters, making it compatible with a wide range of existing focusers without requiring a full replacement.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "How does autofocus software decide when the focus is optimal — what metric does it use?",
+      "assistant_message": "Most autofocus routines in software like Sequence Generator Pro, N.I.N.A., or EKOS use the Half-Flux Diameter (HFD) or Full Width at Half Maximum (FWHM) of stars as the focus metric, plotting these values across a range of focuser positions to form a V-curve or parabola. The algorithm drives the focuser to the position that minimizes HFD or FWHM — typically measuring 10–20 unsaturated stars per frame — and the best focus point is the vertex of that curve, which the software interpolates to sub-step precision.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "N.I.N.A. sounds interesting — is it free, and what operating system does it run on?",
+      "assistant_message": "N.I.N.A. (Nighttime Imaging 'N' Astronomy) is completely free and open-source, released under the Mozilla Public License 2.0, and it runs exclusively on Windows — specifically Windows 10 version 1903 or later, or Windows 11. There is no native macOS or Linux version, though some users run it under Wine on Linux with varying success; the developers have not announced plans for a cross-platform port.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "What's a reasonable mini PC spec to run N.I.N.A. alongside PHD2 and a camera driver without lag?",
+      "assistant_message": "A mini PC with an Intel Core i5 (10th generation or newer) or AMD Ryzen 5, 16 GB of DDR4 RAM, and a 512 GB NVMe SSD handles N.I.N.A., PHD2, and ASCOM camera drivers simultaneously without perceptible lag in typical imaging sessions. USB bandwidth is often the real bottleneck with high-resolution cameras, so look for a unit with at least two USB 3.2 Gen 1 (5 Gbps) ports rather than relying solely on USB 2.0 hubs.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "How do I protect that mini PC from condensation forming on it overnight inside the dome?",
+      "assistant_message": "The safest approach is to keep the mini PC powered on continuously so its own waste heat keeps it a few degrees above ambient, preventing condensation on the circuit board — most modern mini PCs draw only 10–15 W at idle, which is negligible over a night. You can also place the unit inside a small polycarbonate enclosure with a 5W silica gel canister (the rechargeable Eva-Dry E-333 is popular) that absorbs ambient moisture, refreshed every few weeks in a warm oven.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "What's the best way to run power and data cables from the house to the dome without creating a trip hazard?",
+      "assistant_message": "The cleanest solution is to trench a conduit run — typically 1-inch Schedule 40 PVC — at least 18 inches deep (24 inches under driveways per NEC 300.5) from the house panel to a junction box inside the dome, pulling both the electrical circuits and an outdoor-rated Cat6 Ethernet cable through separate sections of conduit. At the dome entry point, use a weatherproof LB conduit body fitting to make the 90-degree turn from underground to vertical, and seal all conduit penetrations with duct seal compound to block moisture and pests.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "Should I use a surge protector inside the dome for the equipment, or is a UPS better?",
+      "assistant_message": "A UPS (uninterruptible power supply) is strictly better than a surge protector alone for an observatory because it provides both surge/spike protection and a few minutes of battery backup, which lets N.I.N.A. gracefully park the mount and close the shutter if utility power drops mid-session. A 600 VA unit like the APC Back-UPS BE600M1 is sufficient for a typical imaging rig drawing 150–200 W and gives roughly 5–8 minutes of runtime at that load, enough for a controlled shutdown sequence.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "How do I automate the dome shutter so it closes if the mount parks due to a power event?",
+      "assistant_message": "Most automated domes expose an ASCOM Dome driver that N.I.N.A. or Sequence Generator Pro can command directly; you configure a 'Safety Monitor' plugin that triggers a script to park the mount and then issue a Dome.CloseShutter() call when the UPS signals a power-loss event via its USB HID interface. Products like the Explora-Dome or NexDome include ASCOM-compatible shutter controllers out of the box, and the NexDome firmware version 3.x and later supports direct serial commands so you can also trigger closure from a simple Python script if you prefer not to use a full sequencer.",
+      "gold_parents": [
+        "t22"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "What's a reasonable target for dome rotation speed so the shutter stays aligned with a fast-moving mount?",
+      "assistant_message": "At typical imaging focal lengths, the field rotation from dome-mount misalignment becomes visible in guide corrections if the dome lags more than about 2–3 degrees behind the telescope's azimuth. A dome rotation speed of 3–5 degrees per second is generally sufficient to keep pace with a GEM slewing at its maximum speed, and most commercial motorized dome kits — including the NexDome and ScopeDome lines — rotate at approximately 3.5–4 degrees per second, which is a comfortable margin for normal tracking and meridian flips.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "How do I synchronize the dome azimuth with the telescope pointing automatically?",
+      "assistant_message": "You need three things working together: an ASCOM Dome driver for your dome controller, an ASCOM Telescope driver for your mount, and a dome-synchronization layer — either the built-in dome slave mode in N.I.N.A. or a standalone utility like the POTH (Plain Old Telescope Handbox) hub from the ASCOM Platform. The synchronization software reads the telescope's reported right ascension, declination, and your geographic coordinates, computes the corresponding dome azimuth using the parallax offset between the mount's RA axis and the dome center (which you measure once during setup), and continuously commands the dome to rotate to that azimuth as the telescope tracks.",
+      "gold_parents": [
+        "t24"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "What tools do I need to accurately measure that parallax offset between the mount center and dome center?",
+      "assistant_message": "A laser level and a steel tape measure are sufficient for most backyard setups. You mark the dome's geometric center on the floor by finding the midpoint of several diameter measurements, then measure the horizontal north-south and east-west distances from that center point to the point directly below the mount's RA axis — these two numbers, typically in millimeters, are the north and east offset values you enter into your dome driver's configuration dialog.",
+      "gold_parents": [
+        "t25"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "Is there a way to verify the offset is correct without waiting for a full imaging session?",
+      "assistant_message": "Yes — point the telescope at a bright star near the horizon in each cardinal direction (north, south, east, west) and check whether the dome shutter is correctly centered on the OTA's line of sight each time. If the shutter consistently appears offset to one side in a particular direction, you adjust the corresponding north or east offset value in the driver by the estimated angular error converted back to a linear distance; three or four iterations of this daytime or twilight test usually converges on accurate offsets.",
+      "gold_parents": [
+        "t26"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "What's the recommended grounding approach for the dome's metal frame to protect against lightning?",
+      "assistant_message": "The dome's metal frame should be bonded to a dedicated ground rod — a minimum 5/8-inch diameter, 8-foot copper-clad steel rod per NEC 250.52(A)(5) — driven within 2 feet of the dome structure and connected to the frame with a 6 AWG bare copper conductor and a listed grounding clamp. This ground rod should then be bonded back to the main electrical panel's grounding electrode system with a 6 AWG conductor to create an equipotential bond, preventing dangerous voltage differences between the dome frame and your electrical equipment during a nearby strike.",
+      "gold_parents": [
+        "t27"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "I'm looking at a 10-inch Ritchey-Chrétien OTA that has a built-in dew shield adding 180 mm to its total diameter profile. Can I use it in my dome?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t7",
+    "t8",
+    "t9",
+    "t10",
+    "t11",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t20",
+    "t21",
+    "t22",
+    "t23",
+    "t24",
+    "t25",
+    "t26",
+    "t27",
+    "t28"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer correctly identifies the HOA covenant limit of exactly 1.2 meters (1,200 mm) as the maximum dome opening width that cannot be exceeded.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer correctly addresses whether the 10-inch RC OTA's 180 mm dew-shield outer diameter profile fits within the 1.2-meter limit (it does, since 180 mm is well under 1,200 mm), and therefore concludes the OTA can be used.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not confuse the dome opening limit with the tube-clearance slewing geometry concern mentioned in t2, or incorrectly claim the 180 mm dew shield diameter violates the 1.2-meter rule.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not base its conclusion on any detail from the distractor turns (e.g., grounding, dome rotation speed, parallax offsets, or UPS specifications) rather than on the 1.2-meter HOA aperture rule from t1.",
+      "required": false
+    }
+  ],
+  "notes": "The facts the query needs are in t1 (the exact 1.2-meter HOA rule) and t2 (the note that tube diameter is not the binding constraint for such openings). The trap is that 26 turns of distractor content on unrelated observatory topics — grounding, UPS sizing, dome rotation, focusers, software, etc. — intervene before the query, and a naive answer might either forget the rule entirely or confuse it with some distractor detail.\n\nReference answer: Your HOA covenant caps the dome opening at exactly 1.2 meters (1,200 mm) at any point, and the 10-inch Ritchey-Chrétien with its dew shield has a total outer diameter profile of 180 mm — far below that 1,200 mm ceiling. The OTA itself is not the constraint to worry about; as noted when you first raised the rule, the more practical concern with a dome of that opening size is whether the telescope can slew to low-altitude targets without the OTA or counterweight bar clipping the shutter edge. So yes, you can use this OTA in your dome, but you should model its clearance envelope at low elevations to make sure the tube doesn't foul the shutter before committing to the installation.",
+  "evidence_note": null,
+  "premise": "a hobbyist building a backyard observatory"
+}

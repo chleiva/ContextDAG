@@ -1,0 +1,102 @@
+{
+  "scenario_id": "two_branch_join_008",
+  "family": "two_branch_join",
+  "label": "JOIN",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We've finally locked in the venues for our spring concert tour. We'll be performing at St. Agatha's Church in Millbrook on April 12th, the Harrington Arts Center in Dellwood on April 14th, and the Riverside Pavilion in Crestfield on April 16th.",
+      "assistant_message": "That's a lovely three-stop itinerary spread over five days! Having the performances on April 12th, 14th, and 16th gives the choir a day of rest between each venue, which is smart planning for vocal health. I'd recommend confirming load-in times and soundcheck windows with each venue at least four weeks in advance.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "For transportation, we got a quote from Greenway Coach Hire. They can provide a 42-seat coach for the full tour at a flat rate of £1,840, and that includes the driver and fuel.",
+      "assistant_message": "That's a competitive rate for three venue stops over several days. A 42-seat coach gives you plenty of room if your choir is smaller than 42 members, which is handy for storing instrument cases and luggage in the seats. Make sure to confirm whether the flat rate covers waiting time on performance days or if there's an hourly surcharge after a certain point.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "We just heard back from St. Agatha's — they require all performing groups to carry public liability insurance with a minimum cover of £5 million. I'm assuming the other venues will have similar requirements.",
+      "assistant_message": "That's a very standard requirement for church and arts venues in the UK, so yes, it's wise to assume Harrington and Riverside will ask for the same or similar. You'll want to check whether your choir's existing membership with a choral association includes PLI cover, as many do — the Association of British Choral Directors, for instance, offers affiliated groups PLI up to £10 million. If you're not already affiliated, getting a standalone policy specifically for the tour dates is usually straightforward and not too costly.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "Our musical director wants to add a post-concert reception at the Dellwood stop. She's asking whether we should hire a local catering company or just do a self-catered spread with volunteers.",
+      "assistant_message": "Both options have real merit depending on your budget and how formal you want the reception to feel. A local catering company removes the logistical burden from your volunteers but can easily add £300–£600 to your costs for a modest spread. If you go self-catered, assigning a dedicated reception coordinator among your volunteers tends to prevent the last-minute scramble that often derails these events.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "We've confirmed the choir headcount for the tour — 38 singers plus our musical director and the accompanist, so 40 people travelling in total.",
+      "assistant_message": "Perfect — 40 travellers fits comfortably within the 42-seat coach you've quoted, leaving two spare seats which can absorb any last-minute additions or be used for luggage overflow. It's worth noting that the accompanist may need to travel separately to the first venue if there's a piano pre-delivery or tuning appointment to oversee, so keep that contingency in mind.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "Can you work out whether the Greenway coach fits our group, and what the per-person transport cost will be for the tour?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t3",
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t5"
+  ],
+  "distractor_turn_ids": [
+    "t4"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer confirms the Greenway coach (42 seats) is sufficient for the group of 40 travellers, noting 2 seats to spare.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer calculates the per-person cost as £46 (£1,840 ÷ 40 people).",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not include any costs or figures related to the post-concert reception catering at Dellwood.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer uses exactly 40 as the total number of travellers (38 singers + musical director + accompanist), not any other headcount.",
+      "required": true
+    }
+  ],
+  "notes": "t3 establishes the PLI insurance requirement (a distractor for the query but evidence for other potential questions), while t2 and t5 are the true evidence branches the query joins: t2 gives the £1,840 flat rate and t5 gives the 40-person headcount needed to compute the per-person cost. t4 (catering discussion) is the distractor — plausible and on-premise but irrelevant to transport cost calculation.\n\nReference answer: The Greenway coach seats 42 people, and your total travelling party is 40 (38 singers plus the musical director and accompanist), so the coach fits your group with 2 seats to spare. The flat-rate cost from Greenway is £1,840 for the full tour, which divided across 40 travellers comes to exactly £46 per person. That's a very reasonable transport cost per head for a three-venue tour.",
+  "evidence_note": null,
+  "premise": "an amateur choir organizing a spring concert tour"
+}

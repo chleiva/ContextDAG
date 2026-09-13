@@ -1,0 +1,124 @@
+{
+  "scenario_id": "compound_turn_005",
+  "family": "compound_turn",
+  "label": "COMPOUND",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're launching the new shift-scheduling system on the medical ward next Monday. The vendor says staff need to submit their availability windows by Thursday at 5 PM, but a lot of nurses are asking whether they have to use the online portal or if paper forms are still accepted.",
+      "assistant_message": "For the rollout, the online portal is the primary submission method, but paper forms are typically kept as a fallback for the first cycle to accommodate staff who haven't completed portal training. I'd recommend confirming with your IT lead whether the paper forms feed into the same scheduling database automatically or require manual data entry, since that affects turnaround time before Monday's go-live.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "The IT lead confirmed paper forms have to be entered manually, which takes about two hours extra. We're worried that if too many staff use paper, the schedule won't be ready in time for the Monday morning handover at 7 AM.",
+      "assistant_message": "That two-hour manual entry buffer is a real risk if submissions cluster near the Thursday 5 PM deadline. A practical mitigation is to set an internal soft deadline of Wednesday at noon for paper submissions only, giving the data-entry team a full day of breathing room before the hard cutoff. You could also track the ratio of paper to portal submissions in real time and send a targeted nudge to paper-form users on Wednesday morning if the numbers look high.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "That soft deadline idea is good — we'll announce Wednesday noon for paper only. Can you also tell me what the NHS guidelines say about maximum consecutive night shifts for registered nurses, because one of our senior nurses is asking about her rights before she fills in her availability?",
+      "assistant_message": "On the paper deadline, making that distinction explicit in your announcement should reduce last-minute manual entries significantly. Regarding NHS guidelines on consecutive night shifts for registered nurses: the Working Time Regulations 1998 (as applied in the NHS), together with the NHS Terms and Conditions of Service Handbook, specify that night workers should not work more than an average of 8 hours in any 24-hour period over a 17-week reference period, and the standard guidance limits consecutive night shifts to a maximum of 4 in a row before a rest break is required. Additionally, nurses are entitled to a minimum of 11 consecutive hours of rest between shifts under Regulation 10 of the Working Time Regulations 1998, and any pattern exceeding 4 consecutive nights must be flagged to the ward manager and documented in the scheduling system.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "We sent out the announcement about the Wednesday noon paper deadline. Now we're seeing that about 30% of band 5 nurses haven't logged into the portal at all yet — is there a way to identify them quickly?",
+      "assistant_message": "Most scheduling portals log first-login timestamps against each user account, so your system administrator should be able to run a simple report filtering for accounts with a null or missing first-login date as of today. If the portal vendor is the same one handling your rollout, they can often generate that report within minutes from the admin dashboard. Once you have that list, a direct text or bleep to those specific staff members is more effective than a general ward-wide reminder.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "The admin dashboard does have that report — we pulled it and it's 14 nurses who haven't logged in. The ward manager wants to know if we should escalate to the matron at this stage.",
+      "assistant_message": "With 14 nurses still unregistered and the Thursday 5 PM deadline approaching, escalating to the matron now is reasonable, especially if any of those 14 hold specialist roles like charge nurse or IV lead whose absence from the schedule would create coverage gaps. The matron escalation also creates a documented record that the ward took proactive steps, which matters if the schedule ends up incomplete. I'd suggest giving those 14 nurses a direct contact — phone or in person — before the matron escalation, and only escalating for anyone who hasn't responded within two hours.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "Good advice — we contacted them directly and 11 logged in within the hour. The remaining 3 are on annual leave and their manager forgot to mark them as unavailable in the system. How should we handle their slots?",
+      "assistant_message": "Those three slots should be marked as confirmed unavailable by the ward manager in the portal as soon as possible, using whatever 'pre-approved absence' or 'annual leave' status code your system provides, so the scheduling algorithm doesn't treat them as open positions and create phantom gaps. If the portal requires HR authorisation to enter annual leave retroactively, the ward manager should submit that request immediately and note the expected approval time against Monday's deadline. As a contingency, identify whether any bank or agency staff are already pre-approved for your ward and could be slotted in if needed.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "The ward manager got those three marked as annual leave in the system. We're now doing a final check before the Thursday cutoff — is there a standard way to audit the completed schedule for compliance before it goes live?",
+      "assistant_message": "A standard pre-go-live compliance audit typically checks three things: that every shift has the minimum staffing ratio met (for a general medical ward, NHS England guidance suggests a minimum of one registered nurse to eight patients on a day shift), that no individual has been scheduled beyond their contracted hours without documented overtime consent, and that rest periods between shifts are recorded as compliant. Many scheduling systems have a built-in 'compliance report' or 'exception report' function that flags any of these violations automatically before the schedule is published. Running that report on Wednesday evening, before the Thursday cutoff, gives you time to resolve exceptions without a last-minute scramble.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "The senior nurse wants to know exactly how many consecutive night shifts she can be scheduled for before a rest break is required, and what the minimum rest she's entitled to between any two shifts is.",
+      "assistant_message": null,
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t3"
+  ],
+  "distractor_turn_ids": [
+    "t1",
+    "t2",
+    "t4",
+    "t5",
+    "t6",
+    "t7"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that the maximum number of consecutive night shifts before a rest break is required is 4.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that the minimum rest entitlement between shifts is 11 consecutive hours, citing Regulation 10 of the Working Time Regulations 1998.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not reference the Wednesday noon paper submission deadline or the 30%/14-nurses portal login figures, as those are Topic A details irrelevant to the night shift question.",
+      "required": true
+    }
+  ],
+  "notes": "The facts the query depends on are exclusively in t3 (the compound turn's B-part answer), which gives the 4-consecutive-nights limit, the 11-hour rest minimum citing Regulation 10, and the 8-hour night-work average. Turns t1, t2, t4–t7 are all Topic A distractors about the portal rollout and scheduling logistics; any answer that imports those details (e.g. the Wednesday noon deadline or the 14 unlogged nurses) should fail the negative checklist item.\n\nReference answer: Under NHS guidelines, the senior nurse can be scheduled for a maximum of 4 consecutive night shifts before a rest break is required; any pattern exceeding 4 consecutive nights must be flagged to the ward manager and documented in the scheduling system. She is also entitled to a minimum of 11 consecutive hours of rest between any two shifts under Regulation 10 of the Working Time Regulations 1998. Beyond that, the Working Time Regulations 1998 specify that night workers should not average more than 8 hours of work in any 24-hour period over a 17-week reference period.",
+  "evidence_note": "Query depends only on the B half of the compound turn t3. Its ancestor closure {t3,t2,t1} includes A turns that are conversationally upstream of t3 but not needed for the B question; evidence is deliberately just {t3}. This is the granularity cost the family is designed to expose.",
+  "premise": "a hospital ward rolling out a new shift-scheduling process"
+}

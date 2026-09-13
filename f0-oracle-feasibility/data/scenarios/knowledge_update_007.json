@@ -1,0 +1,127 @@
+{
+  "scenario_id": "knowledge_update_007",
+  "family": "knowledge_update",
+  "label": "UPDATE",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm renovating a 1920s kitchen and I found white subway tile at a local tile shop for $4.50 per square foot. My kitchen backsplash area is about 40 square feet, so I'm budgeting around $180 for the tile.",
+      "assistant_message": "That sounds like a solid find for a 1920s-style kitchen — white subway tile is period-appropriate and $4.50 per square foot is a reasonable price for that classic look. At 40 square feet, your $180 estimate is correct, though you'll want to add about 10% extra for cuts and breakage, which would bring your tile purchase to roughly 44 square feet, or about $198 total. Keep that buffer in mind when you finalize your budget.",
+      "gold_parents": [],
+      "stale": true,
+      "superseded_by": "t7"
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Good point on the overage. I was also thinking I'd need tile adhesive and grout — do those add significantly to the cost?",
+      "assistant_message": "For a 40-square-foot backsplash, you'd typically need one 50-pound bag of mastic adhesive, which runs about $25 to $30, and one 10-pound bag of unsanded grout (appropriate for subway tile with tight joints), which is usually $15 to $20. So you're looking at roughly $40 to $50 in additional materials on top of your tile cost. That brings your total backsplash material budget to approximately $238 to $248 before any tools or labor.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "The kitchen has the original cast iron sink — it's in decent shape but the faucet is shot. What should I know about replacing a faucet on a cast iron farmhouse sink?",
+      "assistant_message": "Cast iron farmhouse sinks from the 1920s typically have pre-drilled holes in a 4-inch center spread configuration, so you'll need to find a faucet specifically rated for that hole spacing rather than the more modern 8-inch widespread style. Make sure to check whether your sink has one, two, or three holes, since that determines whether you can use a single-handle or double-handle faucet without drilling. Also worth noting: the cast iron surface is heavy and brittle, so if you ever do need to re-drill, it requires a diamond-tipped bit and a very slow speed to avoid cracking.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "The sink has three holes in a 4-inch spread. I found a bridge faucet that fits — but what kind of supply lines should I use with a cast iron sink that old?",
+      "assistant_message": "For that setup, braided stainless steel supply lines are the best choice — they're flexible, corrosion-resistant, and won't react with older copper or galvanized pipes that are common in 1920s plumbing. You'll want lines that are at least 20 inches long to give yourself slack during installation, and make sure the connections are 3/8-inch compression fittings on the valve end and 1/2-inch IPS on the faucet end, which is standard for that era. Avoid plastic supply lines entirely, as they degrade faster and can fail at the compression fittings.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "The shutoff valves under the sink look original — they're those old oval-handle compression valves. Should I replace them before installing the new faucet?",
+      "assistant_message": "Yes, absolutely replace them — original compression shutoff valves from that era are notorious for seizing up or failing to fully close after sitting untouched for decades, and the last thing you want is an emergency with no working shutoff. The modern replacement is a 1/2-inch nominal quarter-turn ball valve, which is far more reliable and costs only about $8 to $12 per valve at any hardware store. Since you'll already have the water supply off for the faucet installation, it's the perfect time to swap them out with minimal extra effort.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "Makes sense. The original kitchen also has these wide-plank pine floors — they're rough but intact. Is it worth refinishing them or just covering them?",
+      "assistant_message": "Wide-plank pine floors from the 1920s are genuinely valuable and often irreplaceable, so refinishing is almost always worth it if the planks are structurally sound and at least 3/4 inch thick. The main caveat with pine is that it's a softwood and will show dents and scratches more readily than oak, so you'd want to use a penetrating oil finish rather than a hard polyurethane, which tends to peel on soft woods. If the boards are cupped or have significant gaps, a professional floor sander can address that before finishing, though that typically runs $2 to $4 per square foot depending on your region.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "Actually, I need to correct myself on the tile — I went back to check my notes and the price is $6.75 per square foot, not $4.50. I must have misread my notes the first time.",
+      "assistant_message": "Thanks for the correction — $6.75 per square foot is quite a bit different from $4.50, so that definitely changes the numbers. At 40 square feet (plus the 10% overage bringing you to 44 square feet), you're now looking at $297 for tile rather than the $198 we calculated earlier. That's a meaningful jump, so it's good you caught it before locking in your overall budget.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "With that corrected tile price, what's my revised total materials budget for the backsplash including the adhesive and grout?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t7"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4",
+    "t5",
+    "t6"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer uses the corrected tile price of $6.75 per square foot (from t7) to calculate tile cost.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer must not use the original tile price of $4.50 per square foot (from t1) in any calculation.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer accounts for 44 square feet of tile (40 sq ft plus 10% overage), yielding a tile cost of $297.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer adds the adhesive and grout cost range of $40–$50 (from t2) to arrive at a total backsplash materials estimate of approximately $337–$347.",
+      "required": true
+    }
+  ],
+  "notes": "t7 is the critical evidence turn that corrects the tile price from $4.50 (t1, stale) to $6.75; t2 holds the adhesive and grout costs needed to answer the query. Turns t3–t6 are the distractor chain about the sink faucet, supply lines, shutoff valves, and pine floors — all plausible kitchen renovation details but irrelevant to the tile budget calculation.\n\nReference answer: With the corrected price of $6.75 per square foot and 44 square feet of tile (including the 10% overage for cuts and breakage), the tile alone will cost $297. Adding the mastic adhesive ($25–$30) and unsanded grout ($15–$20) from the earlier estimate, your total backsplash materials budget is approximately $337 to $347. That's roughly $140 more than the original incorrect estimate, so it's a significant difference for a fixed renovation budget.",
+  "evidence_note": null,
+  "premise": "renovating a 1920s kitchen on a fixed budget"
+}

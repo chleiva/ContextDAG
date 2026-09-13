@@ -1,0 +1,127 @@
+{
+  "scenario_id": "semantic_decoy_005",
+  "family": "semantic_decoy",
+  "label": "DECOY",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're replacing the old dock at Harborview Sailing Club. The existing structure is a fixed timber dock, 120 feet long and 8 feet wide, installed in 1987. What kind of replacement makes the most sense?",
+      "assistant_message": "For a dock of that age and configuration, a floating aluminum dock system is usually the most practical replacement. The modular designs available today, such as EZ Dock's aluminum series rated for 2,500 lbs per section, allow the club to expand incrementally without a full rebuild. Given the 120-foot length, you'd likely be looking at a main walkway of 6-foot-wide sections to meet current ADA clearance requirements of 60 inches minimum.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "What's the recommended maintenance schedule for a marine diesel engine that's been in service for about the same number of years?",
+      "assistant_message": "A diesel engine with that kind of service life, say a Yanmar 4JH45 or similar 45-horsepower unit, should be on a fairly rigorous schedule. Oil and filter changes are typically recommended every 100 hours or annually, whichever comes first, using 15W-40 marine-grade oil. Injector inspection and impeller replacement are usually due every 500 hours, and a full overhaul including valve clearance checks is recommended around the 2,000-hour mark.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "What about the raw water cooling system — how often does that need attention?",
+      "assistant_message": "The raw water impeller in a Yanmar 4JH45 should be replaced every 500 hours or every two years regardless of hours, because the rubber degrades even with minimal use. The heat exchanger zincs should be inspected every 200 hours and replaced when they've lost about 50 percent of their mass. If the engine is operated in saltwater, the entire raw water circuit including the strainer basket should be flushed with fresh water after every outing to prevent accelerated corrosion.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "Is there a break-in procedure if the club installs a brand-new engine?",
+      "assistant_message": "Yes, Yanmar's factory guidelines for the 4JH45 specify a 50-hour break-in period during which you should avoid running the engine above 75 percent of rated RPM, which works out to roughly 2,850 RPM on that model. During the first 20 hours, load should be kept below 50 percent, and the initial oil change is due at exactly 25 hours rather than the standard 100-hour interval. After the break-in period is complete, the engine can be run at full rated output of 45 horsepower at 3,800 RPM.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "What permits would the sailing club need to pull for the dock replacement project?",
+      "assistant_message": "Dock replacement projects typically require permits at multiple levels. At the federal level, a U.S. Army Corps of Engineers Section 10 permit under the Rivers and Harbors Act of 1899 is required for any structure in navigable waters, and the application processing time averages 60 days for standard projects. Most coastal states also require a Coastal Zone Management consistency determination, and Harborview's county would likely require a local building permit with a site plan stamped by a licensed engineer — in many jurisdictions that means a PE with a coastal or structural endorsement.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "How do you properly winterize that diesel if the club is in a cold-weather region?",
+      "assistant_message": "For the Yanmar 4JH45 in a freezing climate, the raw water side of the cooling system must be completely drained or flushed with non-toxic antifreeze rated to at least minus 50 degrees Fahrenheit. The fuel system should be treated with a diesel stabilizer such as Star Tron at a ratio of one ounce per 16 gallons, and the tank should be filled to 95 percent capacity to minimize condensation. Cylinder fogging oil should be introduced through the air intake while the engine is shut down, and the battery should be removed and stored on a trickle charger rated at no more than 2 amps to avoid sulfation over the winter months.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "Once the club has all the permits, what's a realistic construction timeline for the new dock?",
+      "assistant_message": "For a floating aluminum dock replacing a 120-foot fixed timber structure, a realistic construction timeline runs about 14 to 18 weeks from permit issuance to final inspection. Demolition and removal of the 1987 timber dock typically takes 5 to 7 working days, assuming a standard barge-mounted excavator crew. The new dock installation itself, including setting the 8-inch diameter steel guide piles at 20-foot intervals and connecting the 6-foot-wide modular sections, usually takes 3 to 4 weeks, with the remaining time allocated to electrical rough-in, lighting, and final inspection by the Army Corps.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "How long does the teardown of the old structure take, and how far apart are the piles being set on the new installation?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t5",
+    "t7"
+  ],
+  "distractor_turn_ids": [
+    "t2",
+    "t3",
+    "t4",
+    "t6"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that demolition of the 1987 timber dock takes 5 to 7 working days.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that the new guide piles are set at 20-foot intervals.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer states that the guide piles are 8 inches in diameter.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not reference engine-related intervals (such as 500 hours, 200 hours, or 25-hour oil change) as if they were relevant to the dock teardown or pile spacing.",
+      "required": true
+    }
+  ],
+  "notes": "t7 holds all three facts needed to answer the query (5-7 day teardown, 20-foot pile spacing, 8-inch pile diameter). Turns t2 through t6 discuss a Yanmar 4JH45 diesel engine using interval and specification language (hours, diameters, schedules) that lexically resembles the dock construction discussion, making them the semantic decoys.\n\nReference answer: Demolition and removal of the existing 1987 timber dock is expected to take 5 to 7 working days using a barge-mounted excavator crew. On the new floating aluminum dock, the steel guide piles are set at 20-foot intervals along the structure. The piles themselves are 8 inches in diameter, and once they are in place the 6-foot-wide modular sections are connected between them.",
+  "evidence_note": null,
+  "premise": "a sailing club replacing its aging dock"
+}

@@ -1,0 +1,115 @@
+{
+  "scenario_id": "resume_015",
+  "family": "resume",
+  "label": "RESUME",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're looking at drip irrigation upgrades for our 40-acre Cabernet Sauvignon block before the September harvest. The current system is a 20-year-old overhead sprinkler setup and we're worried about water waste and mildew pressure.",
+      "assistant_message": "Switching from overhead sprinklers to drip irrigation is a well-proven move for Cabernet Sauvignon, especially heading into harvest. Drip systems typically reduce water use by 30–50% compared to overhead sprinklers, and because foliage stays dry, you can see powdery mildew incidence drop significantly. For a 40-acre block, you'd generally be looking at a main supply line, sub-main laterals, and emitter lines running along each vine row, with emitters spaced at 18 or 24 inches depending on your soil type.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Our soil is a Yolo clay loam. What flow rate per emitter should we be targeting, and how many emitters per vine if vines are spaced 4 feet apart in the row?",
+      "assistant_message": "For Yolo clay loam, a low flow rate is critical to prevent runoff and allow lateral water movement through the dense soil matrix — 0.5 gallons per hour (GPH) emitters are the standard recommendation for clay loam in California wine country. With vines spaced 4 feet apart in the row, the typical prescription is 2 emitters per vine, one on each side of the trunk at roughly 12 inches out, giving you 1.0 GPH delivered per vine per hour of runtime. That pairing also provides redundancy if one emitter clogs.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "Good. What daily runtime would you recommend for the weeks right before harvest to avoid stressing the vines while also not pushing too much vegetative growth?",
+      "assistant_message": "In the final three to four weeks before a September harvest, the standard practice for Cabernet Sauvignon on clay loam is a regulated deficit irrigation strategy, targeting 50% of estimated crop evapotranspiration (ETc). For the Central Valley and coastal California in August, daily ETc for grapevines typically runs about 0.20 inches per day, so you're targeting roughly 0.10 inches per day replacement. With 2 emitters at 0.5 GPH per vine and 4-foot vine spacing, a daily runtime of approximately 45 minutes achieves that deficit target while keeping the vines from shutting down photosynthesis entirely.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "We've also been getting pressure from the winery buyer about Brix levels at pick. What's the relationship between hang time and Brix accumulation in Cabernet?",
+      "assistant_message": "Brix in Cabernet Sauvignon accumulates through the conversion of malic and tartaric acids as sugars translocate into the berry during ripening, typically gaining 0.3 to 0.5 Brix per day under warm conditions after veraison. Most winemakers target a pick window between 24.5 and 26.5 Brix for a balanced Cabernet, though some high-end producers push to 28 Brix for richer, more extracted styles. Hang time beyond physiological maturity can push Brix above 30, which creates fermentation heat and alcohol management problems in the cellar.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "Our buyer wants at least 25.5 Brix. We're currently measuring 22.8 Brix as of August 10th. Does that timeline work for a September harvest?",
+      "assistant_message": "At a gain of roughly 0.3 to 0.5 Brix per day, you need to accumulate 2.7 Brix to reach 25.5 from your current 22.8. At the conservative end of 0.3 Brix per day, that's 9 days, putting you at August 19th; at 0.5 per day it's just 6 days, so August 16th. Either way you have a comfortable buffer before September, assuming no heat spikes that accelerate ripening beyond your target or a cool marine layer event that stalls it.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What's the risk if we hit a heat event above 100°F during that window?",
+      "assistant_message": "Temperatures above 100°F (38°C) for more than two consecutive days can cause berry shrivel and rapid Brix concentration through dehydration rather than true sugar accumulation, which can make the fruit appear riper than it is metabolically. This pseudo-ripeness can fool a refractometer reading but the resulting wine often shows cooked fruit characteristics and elevated pH because acid degradation accelerates sharply above 95°F. Harvest decisions during heat events should be cross-checked with titratable acidity and pH measurements, not Brix alone.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "Given the emitter spec and the soil type we settled on, how many total emitters would we need to order for the entire 40-acre block, assuming standard 4-foot in-row vine spacing and 8-foot row spacing?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3"
+  ],
+  "distractor_turn_ids": [
+    "t4",
+    "t5",
+    "t6"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer calculates approximately 5,445 rows or uses 8-foot row spacing and 4-foot vine spacing to arrive at roughly 54,450 vines (40 acres × 43,560 sq ft ÷ 32 sq ft per vine = ~54,450 vines) for the 40-acre block.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer uses 2 emitters per vine (as established in t2 for 4-foot in-row spacing on clay loam) to reach a total of approximately 108,900 emitters.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer uses the 0.5 GPH emitter rating established in t2 for Yolo clay loam soil.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not import any Brix figures (e.g., 25.5 Brix, 22.8 Brix, or 0.3–0.5 Brix/day accumulation rate) from the B-branch turns t4–t6.",
+      "required": true
+    }
+  ],
+  "notes": "The key evidence facts live in t2 (2 emitters per vine, 0.5 GPH, Yolo clay loam) and t1/t3 (40-acre block, 4-foot vine spacing); t3 also confirms 4-foot spacing. The distractor trap is the Brix accumulation data in t4–t6, which is numerically tempting but entirely irrelevant to the emitter-count query.\n\nReference answer: With 8-foot row spacing and 4-foot in-row vine spacing, each vine occupies 32 square feet, giving approximately 54,450 vines across 40 acres (40 × 43,560 ÷ 32). Using the specification settled for Yolo clay loam — 2 emitters at 0.5 GPH per vine — you would need roughly 108,900 emitters total. It's worth ordering a 5–10% overage to account for installation losses and clog replacements, bringing a practical order quantity to around 114,000 to 120,000 emitters.",
+  "evidence_note": null,
+  "premise": "a vineyard choosing irrigation upgrades before harvest"
+}

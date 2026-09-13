@@ -1,0 +1,143 @@
+{
+  "scenario_id": "two_branch_join_012",
+  "family": "two_branch_join",
+  "label": "JOIN",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm building the magic system for my fantasy novel. I want it to be based on a finite resource that users draw from. I'm thinking casters have a personal energy reserve called Anima, and each spell costs a set amount to cast.",
+      "assistant_message": "That's a solid foundation — a metered resource creates natural tension and forces strategic choices. You might define Anima as a numerical pool; a common starting point is giving trained casters a base reserve of 100 Anima points, with untrained individuals having only 20. Spells then have fixed costs deducted from that pool, and the caster is incapacitated if the pool hits zero.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "I like that. How should I tier the spells by cost? I want a clear hierarchy from minor cantrips up to the most devastating magic.",
+      "assistant_message": "A four-tier structure works well for clarity. You could set Tier 1 cantrips at 5 Anima each, Tier 2 standard spells at 15, Tier 3 advanced spells at 35, and Tier 4 catastrophic spells at 70 Anima each. That means a trained caster with 100 Anima can cast one Tier 4 spell and still have 30 points left, while a Tier 3 spell leaves them with 65 — those ratios create interesting tactical decisions.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "What should the different factions in my world be called? I want three major political powers with distinct cultural identities.",
+      "assistant_message": "Three names that evoke distinct flavors: the Valdric Compact for a mercantile, law-obsessed confederation; the Ossian Sovereignty for a militaristic empire built on ancestor worship; and the Tideborn Concordat for a coastal theocracy whose religion centers on the sea. Each name hints at governance style and culture without over-explaining, which gives readers immediate texture.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "I also need rules for how casters recover their Anima. I don't want it to just refill overnight — I want recovery to feel earned.",
+      "assistant_message": "One compelling approach is to tie recovery to deliberate ritual rather than passive rest. You could rule that a caster recovers 10 Anima per hour of uninterrupted Attunement meditation, and that this meditation requires complete physical stillness and silence. Sleeping does not restore Anima at all — only conscious Attunement does — so a caster who exhausts their pool mid-battle faces a real crisis.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "What happens if a caster tries to push past zero Anima? I want there to be a temptation to overdraw but with serious consequences.",
+      "assistant_message": "Overdrawing is a great pressure valve. You could allow casters to spend up to 30 additional points beyond zero by drawing on their own life force — call this Vital Debt. Each point of Vital Debt inflicts one point of permanent Constitution damage that can only be healed by a rare alchemical treatment, not by ordinary rest or magic. This makes overdrawing genuinely terrifying: a caster who fires off a 70-point Tier 4 spell while already at zero takes 70 points of Vital Debt and likely dies on the spot.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "Can casters do anything to speed up Attunement recovery if they're in a dangerous situation and can't stay still?",
+      "assistant_message": "Yes — you could introduce a consumable called a Resonance Shard, a crystallized fragment of ambient magical energy. Each Resonance Shard instantly restores exactly 25 Anima when crushed and inhaled, bypassing the need for meditation. However, a caster can safely use no more than 2 Resonance Shards per 24-hour period; using a third causes Shard Fever, a debilitating condition that halves the caster's maximum Anima pool for 48 hours.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "I want to add a special rule for casters who belong to a formal magical order. Should they get any advantages?",
+      "assistant_message": "A meaningful perk for order-trained casters is an expanded Anima ceiling. You could rule that casters who have completed the Order's three-year Crucible training program raise their base Anima maximum from 100 to 150 points. They also gain one free Tier 1 cantrip cast per scene that doesn't cost any Anima, representing ingrained muscle memory from years of drilling basic spells.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "For the Valdric Compact, what kind of legal system governs how disputes between member cities are resolved?",
+      "assistant_message": "The Compact would logically use a written arbitration code — call it the Valdric Codex — where disputes are submitted to a rotating panel of three Guild Arbiters drawn from neutral cities. Decisions require a two-thirds majority and are binding for ten years, after which either party may resubmit the grievance. This creates a world where legal maneuvering and forum-shopping are as important as military strength.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "My protagonist is an Order-trained caster who enters a battle with a full Anima pool and immediately uses two Resonance Shards back-to-back. After that, how many Tier 3 spells can she cast before she hits zero, and what happens to her Shard limit for the rest of the day?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t7",
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t4",
+    "t5",
+    "t6",
+    "t7"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t8"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer correctly states that an Order-trained caster has a base Anima maximum of 150 points (from t7), not 100.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer correctly states that each Resonance Shard restores exactly 25 Anima (from t6), so two shards restore 50 Anima, and since the caster starts full at 150, she still has 150 Anima after using the shards (they cannot exceed the maximum, or alternatively the shards are used when full, meaning no net gain beyond cap — the key checkable fact is 25 Anima per shard).",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer correctly states that a Tier 3 spell costs 35 Anima (from t2), so with 150 Anima she can cast 4 Tier 3 spells (140 Anima spent, 10 remaining) before a fifth would exceed her pool.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer correctly states that having already used 2 Resonance Shards, she has reached the safe daily limit and any third shard would cause Shard Fever (from t6), meaning she cannot safely use another shard for the rest of the 24-hour period.",
+      "required": true
+    },
+    {
+      "id": "c5",
+      "criterion": "The answer must not use 100 as the protagonist's Anima maximum, since her Order training raises it to 150.",
+      "required": true
+    }
+  ],
+  "notes": "t7 holds the Order-trained caster's 150-point Anima maximum (branch A), and t6 holds the 25-Anima-per-shard restoration and the 2-shard daily limit (branch B); both are required to fully answer t9. t3 and t8 discuss faction names and the Valdric legal system, which are entirely irrelevant to the Anima/shard calculation.\n\nReference answer: Because the protagonist completed the Order's Crucible training, her Anima maximum is 150 points rather than the standard 100. She begins the battle at 150 Anima; the two Resonance Shards each restore 25 Anima, but since she is already at her maximum, they provide no net increase — she still has 150 Anima. Each Tier 3 spell costs 35 Anima, so she can cast 4 Tier 3 spells (spending 140 Anima, leaving 10) before a fifth would cost more than she has remaining. Having used exactly 2 Resonance Shards, she has hit the safe daily limit; using any further shard today would be her third and would trigger Shard Fever, halving her maximum Anima to 75 for the next 48 hours.",
+  "evidence_note": null,
+  "premise": "writing a fantasy novel and planning its magic system"
+}

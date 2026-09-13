@@ -1,0 +1,139 @@
+{
+  "scenario_id": "resume_005",
+  "family": "resume",
+  "label": "RESUME",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm designing the sampling protocol for my field study on urban House Sparrows (Passer domesticus) in Chicago. I want to use point count surveys, and I'm trying to figure out the right detection radius and survey duration to use.",
+      "assistant_message": "Point count surveys are a solid choice for urban passerines. The standard protocol most widely used for North American urban bird studies is the one outlined in the USGS Breeding Bird Survey methodology, which uses a fixed-radius point count of 400 meters, but for dense urban environments many researchers scale that down to a 50-meter fixed-radius circle to reduce detection errors caused by traffic noise and building interference. Survey duration is typically set at 3 minutes or 5 minutes per point, with 5 minutes being the more common choice for capturing detectability of smaller, quieter species like House Sparrows.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "I think I'll go with the 50-meter radius. How many survey points would you recommend for a study of this scale, and is there a minimum number of repeat visits per point that's considered statistically robust?",
+      "assistant_message": "For a city-scale urban bird study, researchers commonly deploy between 30 and 60 point count stations distributed across habitat types, but a minimum of 40 stations is generally recommended to achieve adequate spatial replication across an urban gradient. For repeat visits, the widely cited standard in the occupancy modeling literature — particularly following the MacKenzie et al. 2002 framework published in Ecology — is a minimum of 3 repeat visits per station within a single breeding season to reliably estimate detection probability. Visits should be conducted during the peak singing window, which for House Sparrows in the Chicago area runs from approximately April 15 through July 15.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "What kind of permits do I need to handle and band birds in Illinois if I decide to add mist-netting to the study?",
+      "assistant_message": "To band birds in Illinois you need two separate federal permits: a Federal Bird Banding Permit issued by the USGS Bird Banding Laboratory (BBL), and because House Sparrows are an introduced species they are not protected under the Migratory Bird Treaty Act, so you technically don't need an MBTA permit specifically for them — but you will still need the BBL permit if you plan to use any standardized aluminum bands from the federal supply. At the state level, Illinois requires a Scientific Collecting Permit issued by the Illinois Department of Natural Resources (IDNR), and the application processing time is typically 60 to 90 days, so you should apply well in advance of your field season.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "What about institutional requirements? My university has an IACUC, and I wasn't sure if mist-netting songbirds falls under their oversight.",
+      "assistant_message": "Yes, mist-netting wild birds absolutely falls under IACUC oversight at most U.S. research institutions, because the animals are being captured, handled, and potentially marked, which meets the threshold for an animal use protocol under the Animal Welfare Act and PHS Policy. You'll need to submit an Animal Use Protocol (AUP) describing your capture methods, expected sample sizes, handling duration, and any potential harms, and most IACUCs require that at least one listed personnel member hold a current BBL banding permit before they will approve the protocol. Review cycles at many universities run on a 4-to-6-week schedule, so factor that into your timeline alongside the IDNR permit.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "How long can you legally hold a bird during a banding session before it has to be released?",
+      "assistant_message": "The USGS BBL guidelines recommend keeping any wild bird in a holding bag for no longer than 30 minutes from the time of extraction from the net, and total processing time including measurements, banding, and photography should ideally stay under 15 minutes per bird. Many IACUC protocols set an even stricter internal limit of 10 minutes of active handling, particularly for small passerines that are prone to capture myopathy and stress-related mortality. If a bird shows signs of distress — open-mouth breathing, unresponsiveness, or extreme lethargy — the BBL guidelines specify immediate release regardless of whether processing is complete.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What mesh size should I use for the mist nets to target House Sparrows specifically?",
+      "assistant_message": "For House Sparrows, which have a body mass typically ranging from 24 to 39 grams, the recommended mist net mesh size is 30 mm (bar mesh), which is the most common size used for small passerines in North America. Nets with a 36 mm mesh are also acceptable but have a slightly higher escape rate for very small sparrows. Standard mist nets used in North American banding operations are 12 meters long and 2.5 meters tall with four shelves, and are manufactured to those dimensions by suppliers like Avinet and Ecotone.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "Are there specific times of day I should be setting nets to maximize capture rates for House Sparrows?",
+      "assistant_message": "House Sparrows are most active and most readily captured in the first two hours after sunrise, which in Chicago during peak breeding season (May through June) means approximately 5:30 to 7:30 AM CDT. Activity drops off significantly by mid-morning as temperatures rise and the birds shift to foraging in more sheltered microhabitats. A secondary capture window exists in the late afternoon, roughly 5:00 to 7:00 PM CDT, but capture rates in that window are typically 40 to 60 percent lower than the morning window based on published urban banding studies.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "Should I close the nets during midday even if I'm on site?",
+      "assistant_message": "Yes, closing nets during midday is strongly recommended and is actually required under many IACUC protocols and BBL best-practice guidelines when ambient temperatures exceed 30°C (86°F), because heat stress in a net can kill a small bird within minutes. The standard practice is to close nets between approximately 10:00 AM and 4:00 PM during warm weather, which in Chicago's summer months is most days from late June onward. Some banders use a rule of thumb that nets must be checked every 20 to 30 minutes at minimum whenever they are open, and if continuous monitoring isn't possible the nets must be furled.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "I want to run an occupancy model on my point count data. What's the minimum number of survey stations I need and how many repeat visits per station does the standard framework require to estimate detection probability?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t7",
+    "t8"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that a minimum of 40 point count stations is recommended for the study.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that a minimum of 3 repeat visits per station is required by the MacKenzie et al. 2002 occupancy modeling framework to estimate detection probability.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer references the MacKenzie et al. 2002 paper published in Ecology as the source of the 3-visit standard.",
+      "required": false
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not import details about mist-netting, banding permits, IACUC protocols, net mesh sizes, or capture timing windows from the B-branch turns.",
+      "required": true
+    }
+  ],
+  "notes": "The facts the query needs — 40-station minimum and 3-visit minimum from MacKenzie et al. 2002 — are established in t2. Turns t3 through t8 form the distractor branch on mist-netting logistics (permits, IACUC, handling time, mesh size, capture timing, net closure) and contain no information relevant to the occupancy modeling query; the main trap is importing net-timing or permit details into the answer.\n\nReference answer: For a city-scale urban bird occupancy study, you should deploy a minimum of 40 point count stations distributed across your urban gradient. The standard for estimating detection probability comes from the MacKenzie et al. 2002 framework published in Ecology, which requires a minimum of 3 repeat visits per station within a single breeding season. For House Sparrows in the Chicago area, those visits should fall within the April 15 through July 15 peak singing window to ensure consistent detectability.",
+  "evidence_note": null,
+  "premise": "a PhD student planning a field study on urban bird populations"
+}

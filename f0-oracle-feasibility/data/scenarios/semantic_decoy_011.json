@@ -1,0 +1,115 @@
+{
+  "scenario_id": "semantic_decoy_011",
+  "family": "semantic_decoy",
+  "label": "DECOY",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm helping plan the city library's summer reading program and I want to know how the point system works for the Kids' Track, ages 6–11.",
+      "assistant_message": "For the Kids' Track (ages 6–11), participants earn 10 points for every 20 minutes of reading they log. The program runs from June 16 through August 9, 2025, giving kids about eight weeks to accumulate points.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "What are the reward tiers for that age group?",
+      "assistant_message": "The Kids' Track has three reward tiers: reaching 200 points earns a Bookworm Badge and a sticker pack; 500 points earns a reading journal and a free paperback from the library's prize shelf; and 1,000 points earns all of the above plus an invitation to the August 10th End-of-Summer Celebration party with author Marisol Vega.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "How does the point system work for the volunteer hours program the library also runs?",
+      "assistant_message": "The Volunteer Hours Program awards 25 points for every 30 minutes of service completed at a library branch. Volunteers must be at least 13 years old, and the program runs year-round with a special summer sprint from July 1 through July 31, 2025.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "Is there a cap on how many points kids can earn per day in the Kids' Track?",
+      "assistant_message": "Yes, the Kids' Track enforces a daily cap of 60 points, which corresponds to logging a maximum of 120 minutes of reading in a single day. Points above that threshold on any given day are simply not recorded, so caregivers should spread reading sessions across multiple days to maximize totals.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "Is there a daily cap on volunteer points too?",
+      "assistant_message": "The Volunteer Hours Program caps daily earnings at 100 points, equivalent to two hours of service in one day. Any service time beyond two hours in a single day does not count toward the point total, though the hours themselves are still logged for the volunteer's record.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What are the reward tiers for the volunteer program?",
+      "assistant_message": "Volunteers hit their first reward at 150 points, receiving a library tote bag; the second tier at 400 points earns a $10 gift card to the library bookstore; and the top tier at 800 points earns a certificate of commendation signed by the library director plus a feature in the library's fall newsletter.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "What's the maximum number of points a kid can rack up in a single day, and how many minutes of reading does that cap correspond to?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t4"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t5",
+    "t6"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states the daily point cap for the Kids' Track is 60 points.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that 60 points corresponds to 120 minutes (2 hours) of reading in a single day.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not cite 100 points as the daily cap (that is the Volunteer Hours Program cap, not the Kids' Track cap).",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not cite 2 hours / 120 minutes as the volunteer service cap (it should be attributed to the Kids' Track reading limit, not volunteer service).",
+      "required": false
+    }
+  ],
+  "notes": "t1, t2, and t4 hold the evidence needed to answer the query (Kids' Track point rate, reward tiers, and daily cap). t3, t5, and t6 are the distractors covering the Volunteer Hours Program, which uses the same vocabulary (points, daily cap, reward tiers) but with different numbers (25 pts/30 min, 100-point daily cap, 150/400/800 tiers); the query's phrasing about 'maximum points in a single day' closely mirrors t5's language, making it a strong lexical trap.\n\nReference answer: In the Kids' Track for ages 6–11, the daily point cap is 60 points. That cap corresponds to logging a maximum of 120 minutes of reading in a single day, since the program awards 10 points per 20 minutes of reading. Any reading beyond 120 minutes in one day does not generate additional points, so spreading sessions across multiple days is the best strategy.",
+  "evidence_note": null,
+  "premise": "a city library planning a summer reading program"
+}

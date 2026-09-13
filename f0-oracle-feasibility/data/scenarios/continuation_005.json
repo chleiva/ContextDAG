@@ -1,0 +1,116 @@
+{
+  "scenario_id": "continuation_005",
+  "family": "continuation",
+  "label": "CONTINUE",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're a nonprofit called Brightwater Foundation and we're finally moving our donor data out of Bloomerang into Salesforce Nonprofit Success Pack. We have about 4,200 donor records we need to migrate. What should we think about first?",
+      "assistant_message": "The first priority is usually a data audit before you export anything from Bloomerang. With 4,200 records you'll want to identify duplicates, incomplete addresses, and any custom fields that don't have a direct equivalent in Salesforce NPSP. Getting a clean export now saves a lot of painful cleanup after the fact.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "We pulled our export and found 312 duplicate donor records. What's the best way to handle those before we import into Salesforce?",
+      "assistant_message": "The standard approach is to deduplicate in a staging spreadsheet before the import, not inside Salesforce, because merging records post-import in NPSP is more time-consuming. You can use a tool like OpenRefine or even Excel's fuzzy-match add-in to cluster likely duplicates by name and email, then manually review the flagged pairs. Once you've resolved all 312 duplicates, your true record count will drop and your import will be cleaner from day one.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "That makes sense. We also have a field in Bloomerang called 'Engagement Score' that goes from 1 to 100. Is there a matching field in NPSP we can map it to?",
+      "assistant_message": "NPSP doesn't have a native Engagement Score field, so you'll need to create a custom Number field on the Contact object in Salesforce to hold those values. When you create it, set the field length to 3 digits with 0 decimal places so it can store the full 1–100 range without any data loss. You'll then map that custom field as the target column in your data loader template.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "Got it. We're planning to use Salesforce Data Loader for the actual import. What file format does it require?",
+      "assistant_message": "Salesforce Data Loader requires a CSV file — comma-separated values — as its input format. Each column header in the CSV must exactly match the Salesforce API field name, not the field label, so for your custom Engagement Score field the header would be whatever API name you assigned when you created it, typically something like Engagement_Score__c. Make sure your CSV is UTF-8 encoded to avoid character corruption on donor names with accents or special characters.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "We set the API name to Engagement_Score__c, good. We're targeting a go-live date of March 15, 2025. Does that give us enough runway to do a test import first?",
+      "assistant_message": "March 15, 2025 is a reasonable target if you start your test import at least three weeks before, so by February 22 at the latest. A test import into a Salesforce sandbox lets you validate field mappings, check that all 4,200 records load without errors, and confirm that the Engagement_Score__c values land correctly before you touch your production org. If issues surface in the sandbox, three weeks gives you time to correct the CSV and run a second test pass.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "We ran the sandbox test and 47 records failed due to missing required fields. It turned out the Email field is marked required in our NPSP org. How should we handle those 47 records?",
+      "assistant_message": "Since Email is marked required in your NPSP org, you have two clean options: either locate the missing email addresses before go-live and populate them in the CSV, or create a placeholder value like 'unknown@brightwaterfoundation.org' so the records load and can be updated later. The placeholder approach is common when the go-live date is firm — you flag those 47 records with a separate 'Email Pending' checkbox field so your team knows to follow up. Either way, the 47 records must be resolved before your March 15 production import or they'll fail again.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "If we use the placeholder email approach, how many total records should successfully load into production on go-live day, and what API field name will carry the engagement data for all of them?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5",
+    "t6"
+  ],
+  "distractor_turn_ids": [],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that 4,200 records should successfully load (the original count after duplicates were resolved in staging, not a different number).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states the API field name for engagement data is Engagement_Score__c.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not say 4,512 or any number larger than 4,200, and must not omit the fact that the 47 previously failing records are now included via the placeholder approach.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not cite a field name other than Engagement_Score__c for the engagement data column.",
+      "required": true
+    }
+  ],
+  "notes": "t1 establishes the 4,200 record count; t3 and t4 establish the Engagement_Score__c API name; t6 establishes the 47 failed records and the placeholder resolution — together these are the facts the query requires. The 312 duplicates in t2 are a potential trap since the 4,200 figure is the post-deduplication import count, not 4,200 minus 312.\n\nReference answer: Using the placeholder email approach resolves all 47 previously failing records, so the full 4,200 records should successfully load into production on go-live day — March 15, 2025. The engagement data for every one of those records will be stored in the custom field with the API name Engagement_Score__c, which was created as a 3-digit Number field with 0 decimal places to hold the 1–100 range from Bloomerang.",
+  "evidence_note": null,
+  "premise": "a nonprofit migrating its donor database to a new CRM"
+}

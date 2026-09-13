@@ -1,0 +1,104 @@
+{
+  "scenario_id": "continuation_006",
+  "family": "continuation",
+  "label": "CONTINUE",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're the Millbrook Valley Farm Cooperative and we're finally setting up online ordering for our members. We have 47 member farms, and we want orders to close every Wednesday at noon so we can consolidate them for Thursday delivery. Does that kind of cutoff schedule make sense?",
+      "assistant_message": "A Wednesday-noon cutoff feeding into Thursday delivery is a very practical rhythm for a farm cooperative — it gives you roughly 18–20 hours to aggregate orders, communicate with your 47 member farms, and stage the consolidated load. Many cooperatives use exactly this model. Just make sure your platform can send automated confirmation emails the moment an order is placed, so members aren't left wondering whether their submission went through before the cutoff.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "We've decided to use Farmigo as our platform. We got a quote and the setup fee is $300, and then it's $85 per month after that. Is that a reasonable price for what we're getting?",
+      "assistant_message": "A $300 setup fee with an $85 monthly subscription is quite competitive for a cooperative of your size — some platforms charge $150 or more per month for comparable feature sets. Farmigo is specifically designed for farm cooperatives and CSAs, so it handles the member-farm model, order routing, and payment collection in one place. Over a full year your total cost would be $300 plus $1,020 in monthly fees, coming to $1,320 for the first year, which works out to about $28 per member farm annually.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "Good to know. We also want to set a minimum order value so small orders don't make the logistics unworkable. What minimum would you suggest?",
+      "assistant_message": "For a cooperative with Thursday delivery and the consolidation overhead you're managing, a $25 minimum order value is a common and defensible threshold — it filters out trivial orders without being so high that it discourages regular members. You could also consider a tiered approach where the minimum is $25 for individual member pickups but waived entirely for bulk institutional orders over $500. Whatever you choose, make sure Farmigo's order settings reflect that rule so it's enforced automatically at checkout rather than manually by staff.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "We went with the $25 minimum. Now we need to figure out the payment side. We want to accept credit cards online, and someone mentioned Stripe. What's the typical transaction fee we'd be looking at?",
+      "assistant_message": "Stripe's standard rate for online card transactions is 2.9% plus $0.30 per transaction, which is the most common fee structure you'll encounter for US-based platforms. On a $25 minimum order that works out to about $1.03 in fees, leaving you $23.97. Farmigo integrates directly with Stripe, so you won't need a separate payment gateway account beyond setting up your Stripe credentials in the platform's billing settings.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "Perfect. One of our board members asked whether we should pass that transaction fee on to members or absorb it ourselves. We decided we'll absorb it, but we want to cap the total payment processing budget at $200 per month. Given our order volume, does that seem workable?",
+      "assistant_message": "With a $200 monthly cap on absorbed Stripe fees and the 2.9% + $0.30 rate, you can cover roughly 194 transactions at the $25 minimum before hitting that ceiling — in practice more, since many orders will be larger and the fixed $0.30 portion becomes proportionally smaller. If your 47 member farms each place even two orders a month that's 94 transactions, well within the $200 budget. So yes, absorbing the fee is financially workable given your cooperative's scale, and you'd only need to revisit the policy if average order frequency climbs significantly above two orders per farm per month.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "Can you walk me through what our total first-year cost would be if we stay under that processing cap every month?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5"
+  ],
+  "distractor_turn_ids": [],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states the first-year platform cost is $1,320 (the $300 setup fee plus 12 × $85 = $1,020 in monthly fees), as established in t2.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer includes the payment processing budget of up to $200 per month × 12 months = $2,400 as the maximum processing cost for the year, as established in t5.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer gives a combined first-year maximum total of $3,720 ($1,320 platform + $2,400 processing cap), derived from facts in t2 and t5.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not treat the $85 monthly fee as the only cost and ignore the $300 setup fee when calculating the first-year total.",
+      "required": true
+    }
+  ],
+  "notes": "The key facts the query needs are spread across t2 ($300 setup, $85/month, first-year total of $1,320) and t5 ($200/month processing cap). The trap is forgetting the $300 setup fee and computing only 12 × $85, or omitting the processing budget entirely.\n\nReference answer: Your first-year platform cost on Farmigo is $1,320: the one-time $300 setup fee plus 12 monthly payments of $85, totaling $1,020 in subscriptions. On top of that, you've capped your absorbed Stripe processing fees at $200 per month, which over 12 months adds up to a maximum of $2,400. That puts your total first-year ceiling at $3,720, though your actual processing spend will likely be lower since your 47 farms are expected to stay well under the ~194-transaction monthly threshold that would hit the cap.",
+  "evidence_note": null,
+  "premise": "a farm cooperative setting up online ordering"
+}

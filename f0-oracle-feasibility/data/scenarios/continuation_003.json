@@ -1,0 +1,104 @@
+{
+  "scenario_id": "continuation_003",
+  "family": "continuation",
+  "label": "CONTINUE",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're organizing a charity 10k for the Riverside Running Club and I want to nail down the registration details. What's a reasonable registration fee structure?",
+      "assistant_message": "A common approach is to offer early-bird pricing followed by a standard rate. For a club-level charity 10k, something like $25 for early-bird registration (closing 4 weeks before race day) and $35 for standard registration works well and aligns with similar community events. You might also consider a separate fee tier for students or juniors under 18, often set around $15, to keep participation broad.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "That sounds good. We've settled on May 17, 2025 as the race date. How should we handle the charity side — like, what percentage of proceeds should actually go to the charity?",
+      "assistant_message": "A widely respected benchmark for charity races is directing at least 70% of net proceeds to the beneficiary, with the remaining 30% covering operational costs like timing chips, medals, and permits. Since your race is on May 17, 2025, that puts your early-bird deadline at April 19, 2025. If Riverside Running Club wants to highlight transparency, publicly committing to exactly 70% to the charity is a strong trust signal for donors and participants.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "We've chosen Maplewood Children's Hospital as the charity beneficiary. How many participants do we realistically need to make this worthwhile for them?",
+      "assistant_message": "With your fee structure and the 70% pledge to Maplewood Children's Hospital, let's run the numbers. If you hit 200 participants at an average blended fee of $30, you'd collect $6,000 in gross registration revenue, meaning $4,200 goes to the hospital. Most community charity races consider 150 to 200 registrants a solid target for a first-year event, so aiming for 200 is ambitious but achievable for an established club like Riverside.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "Great. We also want to give out age-group awards. How should we divide the age groups for a 10k like this?",
+      "assistant_message": "Standard USA Track & Field age-group divisions work well and lend credibility to your results. A typical breakdown is: 14-and-under, 15–19, 20–29, 30–39, 40–49, 50–59, and 60-and-over, with awards for the top 3 finishers in each group for both male and female categories. Keeping to USATF conventions also makes it easier if you ever want to apply for official race sanctioning down the road.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "We decided we can only budget for top-3 awards in each age group, but we want a bigger prize for the overall winners. What's a good overall winner prize that fits a charity event?",
+      "assistant_message": "For a charity event, a modest but meaningful prize keeps the spirit right — a common choice is a $50 gift card to a local running store for the overall male and female winners. Riverside Running Club could also engrave a perpetual trophy that stays with the club and lists each year's winner, which adds prestige without recurring cost. Pairing the $50 gift card with a finisher medal and a feature in the club's newsletter tends to be very well received at community-level races.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "If we hit our 200-participant goal with everyone paying the standard fee, how much money would Maplewood Children's Hospital actually receive?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5"
+  ],
+  "distractor_turn_ids": [],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that 200 participants paying the $35 standard fee yields $7,000 in gross registration revenue.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer applies the 70% pledge to calculate that Maplewood Children's Hospital receives $4,900.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not use the $30 blended average from t3 as the basis for the calculation; the question specifies everyone pays the $35 standard fee.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer correctly identifies Maplewood Children's Hospital as the named beneficiary receiving the funds.",
+      "required": true
+    }
+  ],
+  "notes": "The key facts the query needs are the standard fee ($35, t1), the 200-participant goal (t3), and the 70% charity pledge (t2). The trap is t3's blended $30 average, which a careless answer might use instead of the $35 standard fee specified in the query.\n\nReference answer: With all 200 participants paying the $35 standard registration fee, gross revenue would be $7,000. Riverside Running Club committed to directing 70% of net proceeds to Maplewood Children's Hospital, so the hospital would receive $4,900. That's a meaningful contribution for a first-year community 10k and exceeds the $4,200 projection from the earlier blended-fee estimate.",
+  "evidence_note": null,
+  "premise": "a running club organizing a charity 10k"
+}

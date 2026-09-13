@@ -1,0 +1,127 @@
+{
+  "scenario_id": "resume_009",
+  "family": "resume",
+  "label": "RESUME",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're trying to decide between drip irrigation and micro-sprinklers for our 40-acre Pinot Noir block before the August harvest. The block runs on a gravity-fed system from a reservoir sitting about 18 feet above the vine rows. What should we be thinking about first?",
+      "assistant_message": "The most critical first factor is your available operating pressure, since gravity-fed systems at 18 feet of head deliver roughly 7.8 PSI at the emitter level. Drip systems typically require a minimum of 8–15 PSI to operate correctly, so at 7.8 PSI you are right at or just below the threshold for most drip emitters without a booster pump. Micro-sprinklers generally have a wider operating range and many models run well at 6–15 PSI, which makes them a more natural fit for your existing setup.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "That pressure issue is important. If we do go with drip, what size emitter flow rate would you recommend for Pinot Noir specifically, and does row spacing matter here?",
+      "assistant_message": "For Pinot Noir on standard 5-foot vine spacing, most viticulture irrigation guidelines recommend 0.5 GPH (gallons per hour) emitters placed at each vine, which delivers roughly 0.1 gallons per vine per hour under a typical 6-hour irrigation cycle. Row spacing does matter because wider rows—your block's standard 8-foot row spacing—means less canopy competition, so you generally do not need to upsize to 1.0 GPH emitters unless your soil is very sandy. Sticking with 0.5 GPH emitters on your layout keeps total system demand manageable and avoids over-saturating the root zone during the critical pre-harvest period.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "Good to know. What about scheduling — how many days before harvest should we stop irrigating Pinot Noir to avoid diluting the fruit?",
+      "assistant_message": "The widely cited benchmark for Pinot Noir is to cease all irrigation at least 21 days before harvest to allow the vines to experience mild water stress, which concentrates sugars and anthocyanins in the berries. Some UC Davis viticulture extension guidance pushes that cutoff to 28 days if your block's soil has high water-holding capacity, since residual moisture lingers longer in clay-loam profiles. Given that your harvest is in August, that means your final irrigation should run no later than mid-July under the 21-day rule, or early July if you apply the 28-day conservative cutoff.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "We've been getting complaints from the tasting room staff about the temperature in the barrel room during summer. It's been hitting 72°F in there and we're worried about the aging Chardonnay.",
+      "assistant_message": "That's a legitimate concern—barrel aging rooms for white wines like Chardonnay should ideally stay between 55°F and 60°F, and 72°F is well outside that range. At elevated temperatures, malolactic fermentation can restart unintentionally and the wine can age far too quickly, stripping it of the freshness that defines a good Chardonnay. You should look at either upgrading to a dedicated split-system HVAC unit rated for the room's cubic footage or improving insulation in the walls and ceiling before next summer.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "The barrel room is about 1,200 square feet with 10-foot ceilings. What size cooling unit would handle that?",
+      "assistant_message": "For a 12,000 cubic foot space held at 58°F in a warm climate, a common rule of thumb puts your cooling load at roughly 3–4 tons of refrigeration capacity, or about 36,000–48,000 BTU/hr. However, barrel rooms have high latent heat loads because barrels continuously evaporate moisture, so many winery HVAC engineers add a 20–25% buffer, bringing your practical target to around 45,000–60,000 BTU/hr. A dedicated glycol-chilled split system from a supplier like Bohn or Heatcraft in the 4-ton range would be a solid starting point for your room dimensions.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "Would a standard commercial mini-split work, or does it have to be a specialized wine room unit?",
+      "assistant_message": "Standard commercial mini-splits are not ideal for barrel rooms because they are designed to dehumidify aggressively, which would accelerate evaporative loss from barrels—the so-called 'angel's share'—and could cause barrel staves to dry and leak. Specialized wine room or cellar units from brands like CellarPro or Breezaire are engineered to maintain higher relative humidity, typically 60–75% RH, while still cooling, which protects both the barrels and the wine inside. For a 1,200-square-foot barrel room you would be looking at CellarPro's 8000VSx or an equivalent unit rated for spaces up to 2,000 cubic feet, scaled up with a second unit if needed.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "How quickly could a unit like that bring the room from 72°F down to 58°F once installed?",
+      "assistant_message": "With a properly sized unit like the CellarPro 8000VSx running at full capacity in a well-insulated 12,000-cubic-foot room, you can expect a pulldown rate of roughly 1–2°F per hour under a heavy load. That means pulling from 72°F to 58°F—a 14-degree drop—would take approximately 7–14 hours on the first full cooling cycle. Once the room stabilizes, the unit cycles on and off to maintain setpoint and the daily temperature swing typically stays within 1–2°F, which is well within acceptable aging parameters.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "If our August harvest date is August 28th, what is the absolute latest date we should run the drip system, and what flow rate should we be using at each vine?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3"
+  ],
+  "distractor_turn_ids": [
+    "t4",
+    "t5",
+    "t6",
+    "t7"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer identifies August 7th (28 days before August 28th) as the conservative cutoff date, or August 7th, OR identifies July 21st / 'no later than July 21st' as the 21-day cutoff — specifically referencing the 21-day rule giving a latest date of August 7th under the 21-day rule (28 days back from Aug 28 = July 31; 21 days back from Aug 28 = August 7th).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer specifies 0.5 GPH emitters (per vine) as the recommended drip emitter flow rate for the Pinot Noir block.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer references the 21-day and/or 28-day pre-harvest irrigation cutoff benchmarks from the evidence turns (t3) to support the date calculation.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not import any figures from the barrel room discussion (e.g., 72°F, 58°F, 4-ton cooling capacity, 12,000 cubic feet, or BTU figures) as if they were relevant to the irrigation scheduling question.",
+      "required": true
+    }
+  ],
+  "notes": "t2 holds the 0.5 GPH emitter fact and t3 holds the 21-day/28-day cutoff facts that the query in t8 requires. Turns t4–t7 discuss barrel room cooling temperatures, BTU sizing, and equipment brands, which are the trap facts the answer must not import.\n\nReference answer: With a harvest date of August 28th, applying the 21-day cutoff means the absolute latest you should run the drip system is August 7th. If you prefer the more conservative 28-day guideline recommended for high water-holding soils, the cutoff moves back to July 31st. In either case, each vine should be served by a 0.5 GPH emitter, which is the recommended flow rate for Pinot Noir on your 5-foot vine spacing and 8-foot row spacing.",
+  "evidence_note": null,
+  "premise": "a vineyard choosing irrigation upgrades before harvest"
+}

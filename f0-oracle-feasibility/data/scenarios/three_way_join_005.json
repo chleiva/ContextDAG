@@ -1,0 +1,161 @@
+{
+  "scenario_id": "three_way_join_005",
+  "family": "three_way_join",
+  "label": "JOIN",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're finalizing the age brackets for the summer reading program. Can you help us think through how to divide participants into groups?",
+      "assistant_message": "A common structure for library summer reading programs is three tiers: Early Readers (ages 4–7), Middle Readers (ages 8–12), and Teen Readers (ages 13–17). Each tier benefits from distinct prize structures and reading-log formats tailored to their developmental stage. Would you like to go with something like that, or do you need a different breakdown?",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "What's a reasonable per-book prize budget for a program like this?",
+      "assistant_message": "Many public libraries allocate around $2.50 per participant per completed reading milestone, with a cap of five milestones per participant over the summer. That puts the maximum prize spend at $12.50 per child. Bulk purchasing from vendors like Scholastic or Oriental Trading can help stretch that budget further.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "We're also trying to figure out the program duration. What do most libraries do?",
+      "assistant_message": "The most common window for a library summer reading program is eight weeks, typically running from the second week of June through the first week of August. Some urban libraries extend to ten weeks to align with longer school breaks. The American Library Association's summer programming guidelines specifically cite eight weeks as the standard benchmark.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "How many reading minutes per week should participants log to count as 'active' in the program?",
+      "assistant_message": "The standard threshold used by most public libraries is 150 minutes of reading per week to qualify as an active participant for that week. This figure comes from the Every Child Ready to Read initiative, which aligns with school-year reading homework expectations. Participants who log fewer than 150 minutes in a given week typically do not earn a milestone credit for that week.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "Should the prize budget cover just books, or other incentives too?",
+      "assistant_message": "The $2.50 per milestone figure is intended to cover all incentive types, not just books — so it can include bookmarks, coupons, small toys, or reading certificates. The key is that the total per-participant spend across all five milestones stays at or below the $12.50 cap. Libraries that exceed this cap tend to see budget overruns by mid-July, which is a common pitfall.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What's the best way to handle the library's social media presence over the summer?",
+      "assistant_message": "For a summer program, posting three to four times per week on platforms like Instagram and Facebook tends to maximize engagement without overwhelming your audience. A content calendar built around themed weeks — such as 'Ocean Week' or 'Space Week' — gives your posts visual coherence. Scheduling tools like Hootsuite or Buffer can automate posts so staff aren't scrambling during busy program days.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "Should we hire a dedicated social media coordinator just for the summer?",
+      "assistant_message": "For a three-month stretch, many libraries opt for a part-time summer communications intern rather than a full coordinator hire, which can cost significantly less — typically around $15–18 per hour for 10 hours per week. This keeps overhead low while still maintaining consistent online presence. A clear content brief handed to the intern at the start of June usually ensures quality stays on track.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "If a participant misses a week of logging, can they make it up?",
+      "assistant_message": "Most programs allow a one-week grace period, meaning a participant can submit the previous week's minutes during the current week without penalty. However, the total number of eligible milestone weeks is capped at the program's full eight-week duration — no extensions are granted beyond the official end date. So a participant who misses two or more weeks without making up the first missed week during the grace period would lose those milestone opportunities permanently.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "What platform would you recommend for scheduling those social media posts automatically?",
+      "assistant_message": "Buffer is often the top recommendation for small nonprofit or public-sector organizations because its free tier allows up to ten scheduled posts per channel, which is usually sufficient for a library's needs. Hootsuite's free tier was reduced significantly in 2023, making Buffer the more practical no-cost option now. For a summer-only campaign, paying for a premium tier is rarely justified.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "For the Teen Readers bracket specifically, is there a recommended minimum age cutoff we should enforce strictly?",
+      "assistant_message": "Yes — for Teen Readers, the recommended minimum is age 13, and libraries are advised to enforce this strictly because teen programming often involves different vendor contracts, content ratings for reading lists, and grant eligibility rules that specify the 13–17 age range. The Institute of Museum and Library Services (IMLS) grant category for youth programming, for instance, distinguishes children (under 13) from teens (13–17) as separate beneficiary groups. Mixing age groups across that boundary can jeopardize grant reporting compliance.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "If a 13-year-old joins the Teen Readers group and participates actively every week without missing any, what is the maximum total dollar value in prizes they could earn by the end of the program, and what does 'active every week' actually require of them in terms of logged minutes?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t10",
+        "t8",
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5",
+    "t8",
+    "t10"
+  ],
+  "distractor_turn_ids": [
+    "t6",
+    "t7",
+    "t9"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states the maximum prize value is $12.50 (5 milestones × $2.50 per milestone).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that 'active every week' requires logging at least 150 minutes of reading per week.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer correctly identifies that the program runs 8 weeks, meaning there are 8 weeks in which the participant must log 150+ minutes to remain active throughout.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not reference the social media budget, intern hourly rate ($15–18/hour), or Buffer/Hootsuite scheduling tools, as those are irrelevant distractor details.",
+      "required": true
+    }
+  ],
+  "notes": "t1 and t10 together establish the Teen Readers age bracket (13–17, minimum age 13 strictly enforced); t3 and t8 establish the 8-week duration and 150-minutes-per-week activity threshold; t2 and t5 establish the $2.50 per milestone / 5 milestones / $12.50 cap prize structure. t6, t7, and t9 form the distractor branch about social media and are entirely irrelevant to the prize/participation query.\n\nReference answer: A 13-year-old in the Teen Readers group (ages 13–17) who participates actively every week of the 8-week program can earn a maximum of $12.50 in prizes, since there are five milestone credits available at $2.50 each. 'Active every week' means logging at least 150 minutes of reading during each of the program's eight weeks. Since the participant misses no weeks, they are eligible for all five milestone credits and face no gap in their participation record.",
+  "evidence_note": null,
+  "premise": "a city library planning a summer reading program"
+}

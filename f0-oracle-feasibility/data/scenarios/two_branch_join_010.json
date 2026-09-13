@@ -1,0 +1,114 @@
+{
+  "scenario_id": "two_branch_join_010",
+  "family": "two_branch_join",
+  "label": "JOIN",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We've finalized the venues for our spring concert tour. We'll be performing at St. Cecilia's Hall in Edinburgh on April 19th, and the hall has a strict load-in cutoff of 2:00 PM the day of the concert.",
+      "assistant_message": "That's a great venue choice — St. Cecilia's Hall has wonderful acoustics for choral work. It's important that everyone involved with setup and equipment knows about that 2:00 PM load-in cutoff on April 19th so there are no last-minute scrambles.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "We're also trying to sort out choir robes for the tour. Our current robes are navy blue, but a few members want to switch to burgundy.",
+      "assistant_message": "A robe color change is worth thinking through carefully, since it affects the choir's visual identity and can be costly to replace all at once. If budget is a concern, you might consider a phased replacement or a compromise like adding a burgundy accent piece to the existing navy robes.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "The robe supplier we've used before is Chorister's Choice, and they require a minimum order of 20 robes with at least six weeks' lead time. Do you think we should go ahead with them?",
+      "assistant_message": "Given the six-week lead time requirement from Chorister's Choice, you'd want to place any order well before the tour begins to avoid arriving without the new robes. If your choir has at least 20 members needing new robes, meeting their minimum order shouldn't be a problem, but it's worth confirming exact numbers soon.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "Our choir has 34 singers, and we've arranged a coach to travel between cities. The coach company, Highland Coaches, says the vehicle seats exactly 38 people.",
+      "assistant_message": "A 38-seat coach for 34 singers gives you four spare seats, which is a comfortable buffer for last-minute additions or for carrying a few extra passengers like accompanists or a tour manager. It's good to have that confirmed with Highland Coaches early so the booking is locked in.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "Right, and we'll have our conductor, our accompanist, and our tour coordinator traveling with the group as well. Highland Coaches also told us they need the final confirmed passenger count no later than 14 days before departure.",
+      "assistant_message": "With the conductor, accompanist, and tour coordinator added to the 34 singers, you're looking at 37 passengers total, which still fits within the 38-seat capacity with one seat to spare. Just make sure you submit that confirmed headcount to Highland Coaches at least 14 days before the tour departs to meet their deadline.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "One more detail about St. Cecilia's Hall — the venue coordinator confirmed that parking for the coach is only available on Nicolson Street, which is a 10-minute walk from the hall entrance.",
+      "assistant_message": "A 10-minute walk from the Nicolson Street parking to the hall entrance is manageable, but it's an important logistical detail, especially when you factor in the 2:00 PM load-in cutoff. The group will need to account for that travel time when planning their arrival, and anyone carrying heavy equipment will need to budget extra time or arrange a trolley.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "Given everything we know about the Edinburgh leg, what's the latest time the coach should arrive at the Nicolson Street parking spot, and how many seats on the coach will be occupied?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t6",
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t4",
+    "t5",
+    "t6"
+  ],
+  "distractor_turn_ids": [
+    "t2",
+    "t3"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states the coach must arrive at Nicolson Street no later than 1:50 PM (10 minutes before the 2:00 PM load-in cutoff at St. Cecilia's Hall).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that 37 seats will be occupied (34 singers + conductor + accompanist + tour coordinator).",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not mention robe colors, robe supplier details, or anything about Chorister's Choice, as that information is irrelevant to the coach timing and occupancy question.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not state that all 38 seats are occupied; exactly 37 passengers are confirmed, leaving one seat spare.",
+      "required": true
+    }
+  ],
+  "notes": "t6 supplies the 10-minute walk from Nicolson Street (branch A), and t5 supplies the total of 37 passengers (branch B); together they are needed to answer both parts of the query. Turns t2 and t3 about robe colors and Chorister's Choice are the distractor branch and are irrelevant to the query.\n\nReference answer: The coach should arrive at the Nicolson Street parking spot no later than 1:50 PM on April 19th, since the parking area is a 10-minute walk from St. Cecilia's Hall and the venue's load-in cutoff is 2:00 PM. In terms of occupancy, 37 of the 38 seats will be taken: 34 singers plus the conductor, accompanist, and tour coordinator, leaving one seat spare.",
+  "evidence_note": null,
+  "premise": "an amateur choir organizing a spring concert tour"
+}

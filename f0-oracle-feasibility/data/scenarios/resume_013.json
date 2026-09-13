@@ -1,0 +1,127 @@
+{
+  "scenario_id": "resume_013",
+  "family": "resume",
+  "label": "RESUME",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm starting a 16-week marathon training plan and I want to build my long runs properly. I've heard the 10% rule is important but I'm not sure exactly how to apply it.",
+      "assistant_message": "The 10% rule is a standard guideline in distance running: you should increase your weekly mileage by no more than 10% from one week to the next. So if you run 20 miles in week one, your week two cap would be 22 miles. It's designed to reduce injury risk by giving your tendons and bones time to adapt alongside your cardiovascular fitness.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "That makes sense. Should I apply the 10% rule to my long run specifically, or to total weekly mileage?",
+      "assistant_message": "Most coaches apply the 10% rule to total weekly mileage rather than just the long run in isolation, because cumulative load is what stresses the body. For a first marathon, a common starting point is a long run of 8 miles in week one of the plan, with the longest run peaking at 20 miles in week 15, followed by a two-week taper before race day. That 20-mile peak long run is the widely accepted standard for first-time marathon training — it builds enough endurance without over-taxing recovery before the race.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "What should I actually be eating the night before a long run? I keep getting conflicting advice about carb loading.",
+      "assistant_message": "True carb loading — the kind used by elite athletes — involves a multi-day protocol of depleting glycogen and then super-compensating with very high carbohydrate intake, typically 8 to 12 grams of carbohydrate per kilogram of body weight per day for two to three days before a race. For a regular training long run, though, a simpler approach works fine: eat a moderate, familiar dinner the night before that's roughly 60 to 65 percent carbohydrates, something like pasta, rice, or potatoes with a lean protein source.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "What about the morning of the long run — how far in advance should I eat and what should I eat?",
+      "assistant_message": "Aim to eat your pre-run meal about two to three hours before you start, so your stomach has time to empty and you avoid cramping. A good target is around 1 to 4 grams of carbohydrate per kilogram of body weight, something easily digestible like oatmeal with a banana, white toast with peanut butter, or a bagel with honey. Keep fat and fiber low that morning because both slow gastric emptying and can cause GI distress mid-run.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "Should I be taking any gels or fuel during the long run itself?",
+      "assistant_message": "General guidance is to start taking on fuel for runs lasting longer than 75 to 90 minutes. A common protocol is to take 30 to 60 grams of carbohydrate per hour during the run, usually via gels, chews, or sports drinks. You should practice with whatever fuel you plan to use on race day during your training long runs — never introduce a new product on race day — and aim to take your first gel around the 45-minute mark rather than waiting until you feel depleted.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "How important is hydration during those long runs? I tend to just drink when I'm thirsty.",
+      "assistant_message": "Drinking to thirst is actually endorsed by current sports science consensus, including guidelines from the International Marathon Medical Directors Association, as preferable to scheduled drinking on a fixed interval — over-drinking can cause hyponatremia, which is dangerously low blood sodium. That said, for runs over 90 minutes in warm weather, you should also consider electrolyte replacement, not just plain water, because sweat losses of sodium can average 460 to 1,840 milligrams per liter of sweat depending on the individual. A simple test is to weigh yourself before and after a long run: each pound of body weight lost equals roughly 16 ounces of fluid deficit.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "Is there a good way to tell if I'm properly hydrated going into a run, without testing my blood or anything?",
+      "assistant_message": "The easiest field test is urine color: pale straw yellow, roughly matching the color of lemonade, indicates good hydration, while dark amber signals you need more fluid. Urine that is completely clear can actually indicate over-hydration. Many coaches recommend checking urine color first thing in the morning on long-run days and, if it's dark, drinking 16 to 24 ounces of water or an electrolyte drink in the hour before you head out.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "What's the longest long run I should do before the marathon, and which week does it fall in?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t7"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that the peak long run distance is 20 miles.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that the peak long run occurs in week 15 of the 16-week plan.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer mentions a two-week taper following the peak long run before race day.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not import any nutrition or hydration figures from the distractor turns (e.g., the 8–12 g/kg carb-loading figure, the 30–60 g/hour gel protocol, or the 460–1,840 mg sodium range).",
+      "required": true
+    }
+  ],
+  "notes": "t2 holds both critical facts the query needs: the 20-mile peak distance and the week-15 timing. Turns t3 through t7 cover pre-run nutrition and hydration — plausible marathon-training content — but contain no information relevant to the query, making them the distractor trap.\n\nReference answer: The longest long run in a standard first-marathon 16-week plan is 20 miles, and it falls in week 15. After that peak run, the plan enters a two-week taper to allow full recovery before race day. The 20-mile distance is the widely accepted standard for first-time marathoners — long enough to build the necessary endurance without compromising the recovery you need heading into the race.",
+  "evidence_note": null,
+  "premise": "training for a first marathon in 16 weeks"
+}
