@@ -1,7 +1,7 @@
 # F0 Oracle Feasibility — Results
 
 Run date: 2026-09-13
-Manifest: `f0-oracle-feasibility/manifest.yaml` at commit `ac31d02`
+Manifest: `f0-oracle-feasibility/manifest.yaml` at commit `08b3f87`
 Scenario count: 140 (by family: ambiguous_reference 8, compound_turn 10, constraint_retention 12, continuation 10, join_then_split 10, knowledge_update 12, long_noisy_side_thread 10, new_root 8, resume 15, semantic_decoy 12, three_way_join 8, topic_fork 10, two_branch_join 15)
 Models: Response A = Claude Sonnet 4.6 (`us.anthropic.claude-sonnet-4-6`), Response B = Claude Haiku 4.5 (`us.anthropic.claude-haiku-4-5-20251001-v1:0`), Judge = Claude Opus 4.6 (`us.anthropic.claude-opus-4-6-v1`), Embedding = `sentence-transformers/all-mpnet-base-v2` (local), Generator = Claude Sonnet 4.6 (`us.anthropic.claude-sonnet-4-6`)
 Provider: Amazon Bedrock (us-east-1), tokenizer for all counts: tiktoken `cl100k_base`
@@ -154,7 +154,7 @@ Context recall by family (identical for both models; selection does not depend o
 
 ## Failure cases
 
-Instances where oracle DAG context was insufficient (should be none by construction), and instances where full history scored equal or higher than oracle DAG:
+Oracle-DAG context-insufficiency cases: **0** (expected 0 by construction). Instances (scenario × model) where full history scored at or above oracle DAG while oracle DAG was below 1.0: **80** of 280, of which 44 are ties and 36 are strict full-history wins. They are spread across families (see table) rather than concentrated, consistent with judge/checklist noise; the paired bootstrap above already accounts for them.
 
 | type | scenario_id | model | note |
 |---|---|---|---|
