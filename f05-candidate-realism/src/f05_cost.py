@@ -24,6 +24,8 @@ LEDGER = ROOT / "results" / "raw" / "cost_ledger.jsonl"
 _LEDGER_SCOPE = os.environ.get("F05_LEDGER", "")
 if _LEDGER_SCOPE == "recalibration":
     LEDGER = ROOT / "results" / "raw" / "cost_ledger_recalibration.jsonl"
+elif _LEDGER_SCOPE == "check3":
+    LEDGER = ROOT / "results" / "raw" / "cost_ledger_check3.jsonl"
 
 
 class BudgetExceeded(RuntimeError):
@@ -74,6 +76,8 @@ class Ledger:
     def _budget(self) -> dict:
         if _LEDGER_SCOPE == "recalibration":
             return self.manifest["judge_recalibration"]["budget"]
+        if _LEDGER_SCOPE == "check3":
+            return self.manifest["check3"]["budget"]
         return self.manifest["budget"]
 
     def check_budget(self) -> None:
@@ -98,7 +102,7 @@ class Ledger:
 
     def report(self) -> str:
         b = self._budget()
-        lines = [f"{'Recalibration' if _LEDGER_SCOPE == 'recalibration' else 'F0.5'} spend: ${self.total:.2f} of ${b['hard_limit_usd']:.2f} hard limit (estimate ${b['estimate_usd']:.2f}, warn ${b['warn_usd']:.2f})",
+        lines = [f"{_LEDGER_SCOPE.capitalize() if _LEDGER_SCOPE else 'F0.5'} spend: ${self.total:.2f} of ${b['hard_limit_usd']:.2f} hard limit (estimate ${b['estimate_usd']:.2f}, warn ${b['warn_usd']:.2f})",
                  f"calls: {self.calls}, tokens in: {self.tokens_in:,}, out: {self.tokens_out:,}"]
         for k, v in sorted(self.by_purpose.items(), key=lambda kv: -kv[1]):
             lines.append(f"  {k:16s} ${v:7.2f}")
