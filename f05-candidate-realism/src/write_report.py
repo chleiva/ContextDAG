@@ -228,7 +228,8 @@ def main() -> None:
         A(f"- Quality is judged by {adopted.get('display')} rather than Opus 4.6; the calibration table and judge-shift table quantify the difference. Cross-vendor, and not a responder in this study.")
     else:
         A("- Quality is judged by Claude Opus 4.6, the same vendor family as two of the three responders (the self-preference concern flagged in F0 stands). The cheap cross-vendor judges were calibrated but not adopted; their verdicts on the 160-instance subsample are kept in `results/scored/calibration_scores.jsonl`.")
-        A("- A few Opus verdicts in the F0 baselines come from the `us.` profile of the same model (F0's sharding); every F0.5 verdict used the `global.` profile.")
+        routes = pd.Series([json.loads(l).get("judge_route", "global.anthropic.claude-opus-4-6-v1@us-east-1") for l in open(ROOT / "results" / "scored" / "scores.jsonl") if l.strip() and "copied_from" not in l]).value_counts()
+        A("- Opus verdicts come from the same model via different inference profiles and regions: F0's baselines via the `us.` and `global.` profiles (F0's sharding); F0.5's own verdicts mostly via the `global.` profile in us-east-1, with the last ~35 routed through the `us.` profile and us-west-2 after the global profile's daily token quota stalled the run for nine hours. Region/profile fallback is now built into the client and every record carries its route. Routes used in F0.5: " + "; ".join(f"{k} ×{v}" for k, v in routes.items()) + ".")
     A("- 145 scenarios, most with short histories; recall CIs are correspondingly wide at small k and near-degenerate at k ≥ 15.")
     A("- MiniMax M2.5's Bedrock per-token rate was not confirmed from the console; the ledger bills it at $0.60 / $2.40 per 1M (top of the handoff's range).")
     OUT.write_text("\n".join(lines) + "\n")

@@ -53,7 +53,7 @@ def judge_instance(rec: dict, scenario, judge_id: str, manifest: dict | None = N
     return {
         "key": rec["key"], "scenario_id": rec["scenario_id"], "family": rec["family"], "method": rec["method"],
         "budget": rec["budget"], "model_key": rec["model_key"], "model": rec["model"],
-        "judge_model": judge_id, "judge_model_reported": res.model_reported, "judge_prompt_variant": variant,
+        "judge_model": res.model, "judge_model_reported": res.model_reported, "judge_route": res.route, "judge_prompt_variant": variant,
         "checklist_score": score, "n_required": len(required), "n_satisfied": sum(sat),
         "all_required_satisfied": int(all(sat)), "checklist_items": data.get("checklist", []),
         "distractor_leakage": (None if leak is None else int(bool(leak))), "leakage_reason": data.get("leakage_reason", ""),

@@ -98,7 +98,7 @@ def run_one(s, mk, mid, method, k, man, f0m, pools, system_prompt, dry_run, done
             return out
     mcfg = man["models"][mk]
     res = complete(mid, ctx.prompt_text, system=system_prompt, temperature=mcfg["temperature"], max_tokens=mcfg["max_tokens"], purpose="answer", ref=key)
-    rec.update({"system_prompt": system_prompt, "prompt": ctx.prompt_text, "response": res.text, "model_reported": res.model_reported,
+    rec.update({"system_prompt": system_prompt, "prompt": ctx.prompt_text, "response": res.text, "model_reported": res.model_reported, "route": res.route,
                 "input_tokens": res.input_tokens, "output_tokens": res.output_tokens, "reasoning_chars": res.reasoning_chars,
                 "answer_latency_s": round(res.latency_s, 3), "stop_reason": res.stop_reason,
                 "usd": round(price(mid, res.input_tokens, res.output_tokens, man), 6), "ts": time.time()})

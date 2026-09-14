@@ -1,4 +1,4 @@
-1885 instances, 1848 scored by ['global.anthropic.claude-opus-4-6-v1', 'us.anthropic.claude-opus-4-6-v1'], models ['response_a', 'response_b', 'response_c']
+1885 instances, 1885 scored by ['global.anthropic.claude-opus-4-6-v1', 'us.anthropic.claude-opus-4-6-v1'], models ['response_a', 'response_b', 'response_c']
 
 == summary (adopted judge) ==
                                                 n  n_scored  context_tokens  token_reduction_pct  checklist_score  checklist_ci_low  checklist_ci_high  context_sufficiency  irrelevant_context_ratio  distractor_leakage  recall_fallback
@@ -7,22 +7,22 @@ response_a candidate_oracle@10                145       145        508.5172     
            candidate_oracle@10[recall-holds]  141       141        469.7234              68.8458           0.8942            0.8623             0.9244                  1.0                    0.0403              0.0142           0.0000
            candidate_oracle@15                145       145        472.3379              68.6724           0.8868            0.8534             0.9184                  1.0                    0.0409              0.0138           0.0069
            candidate_oracle@15[recall-holds]  144       144        469.5000              68.8606           0.8912            0.8588             0.9213                  1.0                    0.0395              0.0139           0.0000
-           candidate_oracle@5                 145       144       1048.9724              30.4274           0.8686            0.8310             0.9057                  1.0                    0.3508              0.0903           0.6621
-           candidate_oracle@5[recall-holds]    49        48        340.1020              77.4429           0.9358            0.8889             0.9740                  1.0                    0.0237              0.0000           0.0000
-           full_history                       145       145       1507.7379               0.0000           0.8563            0.8172             0.8931                  1.0                    0.5672              0.1655           0.0000
-           oracle_dag                         145       145        470.8897              68.7685           0.8828            0.8460             0.9161                  1.0                    0.0392              0.0276           0.0000
-response_b candidate_oracle@10                145       145        508.5172              66.2728           0.8495            0.8116             0.8851                  1.0                    0.0551              0.0552           0.0276
-           candidate_oracle@10[recall-holds]  141       141        469.7234              68.8458           0.8506            0.8129             0.8865                  1.0                    0.0403              0.0426           0.0000
-           candidate_oracle@15                145       145        472.3379              68.6724           0.8513            0.8134             0.8871                  1.0                    0.0409              0.0414           0.0069
-           candidate_oracle@15[recall-holds]  144       144        469.5000              68.8606           0.8502            0.8120             0.8850                  1.0                    0.0395              0.0417           0.0000
-           candidate_oracle@5                 145       144       1048.9724              30.4274           0.8514            0.8109             0.8883                  1.0                    0.3508              0.1042           0.6621
-           candidate_oracle@5[recall-holds]    49        48        340.1020              77.4429           0.8854            0.8281             0.9375                  1.0                    0.0237              0.0000           0.0000
-           full_history                       145       145       1507.7379               0.0000           0.8202            0.7771             0.8609                  1.0                    0.5672              0.1862           0.0000
-           oracle_dag                         145       145        470.8897              68.7685           0.8463            0.8103             0.8802                  1.0                    0.0392              0.0207           0.0000
-response_c candidate_oracle@15                145       135        472.3379              68.6724           0.9096            0.8796             0.9362                  1.0                    0.0409              0.0296           0.0069
-           candidate_oracle@15[recall-holds]  144       134        469.5000              68.8606           0.9108            0.8811             0.9382                  1.0                    0.0395              0.0224           0.0000
-           full_history                       145       133       1507.7379               0.0000           0.8728            0.8340             0.9085                  1.0                    0.5672              0.1504           0.0000
-           oracle_dag                         145       132        470.8897              68.7685           0.9013            0.8718             0.9290                  1.0                    0.0392              0.0227           0.0000
+           candidate_oracle@5                 145       145       1048.9724              30.4274           0.8695            0.8316             0.9057                  1.0                    0.3508              0.0897           0.6621
+           candidate_oracle@5[recall-holds]    49        49        340.1020              77.4429           0.9371            0.8929             0.9745                  1.0                    0.0237              0.0000           0.0000
+           full_history                       145       145       1507.7379               0.0000           0.8563            0.8167             0.8931                  1.0                    0.5672              0.1655           0.0000
+           oracle_dag                         145       145        470.8897              68.7685           0.8828            0.8466             0.9161                  1.0                    0.0392              0.0276           0.0000
+response_b candidate_oracle@10                145       145        508.5172              66.2728           0.8495            0.8121             0.8852                  1.0                    0.0551              0.0552           0.0276
+           candidate_oracle@10[recall-holds]  141       141        469.7234              68.8458           0.8506            0.8134             0.8859                  1.0                    0.0403              0.0426           0.0000
+           candidate_oracle@15                145       145        472.3379              68.6724           0.8513            0.8133             0.8876                  1.0                    0.0409              0.0414           0.0069
+           candidate_oracle@15[recall-holds]  144       144        469.5000              68.8606           0.8502            0.8125             0.8854                  1.0                    0.0395              0.0417           0.0000
+           candidate_oracle@5                 145       145       1048.9724              30.4274           0.8524            0.8123             0.8891                  1.0                    0.3508              0.1034           0.6621
+           candidate_oracle@5[recall-holds]    49        49        340.1020              77.4429           0.8878            0.8282             0.9405                  1.0                    0.0237              0.0000           0.0000
+           full_history                       145       145       1507.7379               0.0000           0.8202            0.7777             0.8616                  1.0                    0.5672              0.1862           0.0000
+           oracle_dag                         145       145        470.8897              68.7685           0.8463            0.8101             0.8802                  1.0                    0.0392              0.0207           0.0000
+response_c candidate_oracle@15                145       145        472.3379              68.6724           0.9084            0.8797             0.9345                  1.0                    0.0409              0.0276           0.0069
+           candidate_oracle@15[recall-holds]  144       144        469.5000              68.8606           0.9095            0.8815             0.9356                  1.0                    0.0395              0.0208           0.0000
+           full_history                       145       145       1507.7379               0.0000           0.8779            0.8420             0.9118                  1.0                    0.5672              0.1448           0.0000
+           oracle_dag                         145       145        470.8897              68.7685           0.9015            0.8731             0.9276                  1.0                    0.0392              0.0207           0.0000
 
 == pairwise (a minus b; mean diff [95% CI]) ==
 /Users/chleiva/code/ContextDAG/f05-candidate-realism/src/analyze_f05.py:153: RuntimeWarning: divide by zero encountered in divide
@@ -31,63 +31,61 @@ response_c candidate_oracle@15                145       135        472.3379     
   ratios = np.where(np.abs(dens) > 1e-9, nums / dens, np.nan)
 /Users/chleiva/code/ContextDAG/f05-candidate-realism/src/analyze_f05.py:153: RuntimeWarning: divide by zero encountered in divide
   ratios = np.where(np.abs(dens) > 1e-9, nums / dens, np.nan)
-/Users/chleiva/code/ContextDAG/f05-candidate-realism/src/analyze_f05.py:153: RuntimeWarning: invalid value encountered in divide
-  ratios = np.where(np.abs(dens) > 1e-9, nums / dens, np.nan)
      model                                 a            b          metric   n  mean_diff     ci_low   ci_high                                       families
-response_a                candidate_oracle@5   oracle_dag checklist_score 144    -0.0156    -0.0446    0.0133                                            all
-response_a                candidate_oracle@5   oracle_dag  context_tokens 145   578.0828   439.3690  734.3945                                            all
-response_a                candidate_oracle@5 full_history checklist_score 144     0.0133    -0.0058    0.0347                                            all
-response_a                candidate_oracle@5 full_history  context_tokens 145  -458.7655  -671.7933 -276.0497                                            all
-response_a  candidate_oracle@5[recall-holds] full_history checklist_score  48     0.0399    -0.0174    0.1024                                            all
-response_a                candidate_oracle@5   oracle_dag checklist_score  33    -0.0278    -0.0960    0.0328 two_branch_join,three_way_join,join_then_split
-response_a               candidate_oracle@10   oracle_dag checklist_score 145     0.0040    -0.0190    0.0287                                            all
-response_a               candidate_oracle@10   oracle_dag  context_tokens 145    37.6276     1.4483   90.4138                                            all
-response_a               candidate_oracle@10 full_history checklist_score 145     0.0305    -0.0034    0.0649                                            all
-response_a               candidate_oracle@10 full_history  context_tokens 145  -999.2207 -1225.4505 -796.5779                                            all
-response_a candidate_oracle@10[recall-holds] full_history checklist_score 141     0.0313    -0.0024    0.0668                                            all
+response_a                candidate_oracle@5   oracle_dag checklist_score 145    -0.0132    -0.0420    0.0155                                            all
+response_a                candidate_oracle@5   oracle_dag  context_tokens 145   578.0828   434.0684  735.7562                                            all
+response_a                candidate_oracle@5 full_history checklist_score 145     0.0132    -0.0052    0.0351                                            all
+response_a                candidate_oracle@5 full_history  context_tokens 145  -458.7655  -664.8348 -278.2741                                            all
+response_a  candidate_oracle@5[recall-holds] full_history checklist_score  49     0.0391    -0.0170    0.1020                                            all
+response_a                candidate_oracle@5   oracle_dag checklist_score  33    -0.0278    -0.0960    0.0278 two_branch_join,three_way_join,join_then_split
+response_a               candidate_oracle@10   oracle_dag checklist_score 145     0.0040    -0.0195    0.0287                                            all
+response_a               candidate_oracle@10   oracle_dag  context_tokens 145    37.6276     1.4483   90.6897                                            all
+response_a               candidate_oracle@10 full_history checklist_score 145     0.0305    -0.0029    0.0650                                            all
+response_a               candidate_oracle@10 full_history  context_tokens 145  -999.2207 -1220.4028 -798.5510                                            all
+response_a candidate_oracle@10[recall-holds] full_history checklist_score 141     0.0313    -0.0024    0.0674                                            all
 response_a               candidate_oracle@10   oracle_dag checklist_score  33     0.0076    -0.0379    0.0682 two_branch_join,three_way_join,join_then_split
-response_a               candidate_oracle@15   oracle_dag checklist_score 145     0.0040    -0.0190    0.0287                                            all
+response_a               candidate_oracle@15   oracle_dag checklist_score 145     0.0040    -0.0201    0.0282                                            all
 response_a               candidate_oracle@15   oracle_dag  context_tokens 145     1.4483     0.0000    4.3448                                            all
-response_a               candidate_oracle@15 full_history checklist_score 145     0.0305    -0.0029    0.0644                                            all
-response_a               candidate_oracle@15 full_history  context_tokens 145 -1035.4000 -1258.9669 -833.4455                                            all
-response_a candidate_oracle@15[recall-holds] full_history checklist_score 144     0.0307    -0.0035    0.0648                                            all
+response_a               candidate_oracle@15 full_history checklist_score 145     0.0305    -0.0034    0.0644                                            all
+response_a               candidate_oracle@15 full_history  context_tokens 145 -1035.4000 -1256.0995 -831.5128                                            all
+response_a candidate_oracle@15[recall-holds] full_history checklist_score 144     0.0307    -0.0035    0.0654                                            all
 response_a               candidate_oracle@15   oracle_dag checklist_score  33     0.0076    -0.0379    0.0682 two_branch_join,three_way_join,join_then_split
-response_a                        oracle_dag full_history checklist_score 145     0.0264    -0.0069    0.0603                                            all
-response_a                        oracle_dag full_history  context_tokens 145 -1036.8483 -1261.0160 -834.4943                                            all
-response_b                candidate_oracle@5   oracle_dag checklist_score 144     0.0044    -0.0256    0.0347                                            all
-response_b                candidate_oracle@5   oracle_dag  context_tokens 145   578.0828   436.8474  735.1397                                            all
-response_b                candidate_oracle@5 full_history checklist_score 144     0.0324     0.0023    0.0631                                            all
-response_b                candidate_oracle@5 full_history  context_tokens 145  -458.7655  -667.1014 -279.3533                                            all
-response_b  candidate_oracle@5[recall-holds] full_history checklist_score  48     0.0972     0.0087    0.1875                                            all
-response_b                candidate_oracle@5   oracle_dag checklist_score  33     0.0116    -0.0439    0.0657 two_branch_join,three_way_join,join_then_split
-response_b               candidate_oracle@10   oracle_dag checklist_score 145     0.0032    -0.0201    0.0268                                            all
-response_b               candidate_oracle@10   oracle_dag  context_tokens 145    37.6276     1.4483   90.4862                                            all
-response_b               candidate_oracle@10 full_history checklist_score 145     0.0293    -0.0121    0.0713                                            all
-response_b               candidate_oracle@10 full_history  context_tokens 145  -999.2207 -1222.5926 -798.8038                                            all
-response_b candidate_oracle@10[recall-holds] full_history checklist_score 141     0.0301    -0.0124    0.0727                                            all
-response_b               candidate_oracle@10   oracle_dag checklist_score  33     0.0040    -0.0465    0.0556 two_branch_join,three_way_join,join_then_split
-response_b               candidate_oracle@15   oracle_dag checklist_score 145     0.0049    -0.0186    0.0291                                            all
+response_a                        oracle_dag full_history checklist_score 145     0.0264    -0.0075    0.0615                                            all
+response_a                        oracle_dag full_history  context_tokens 145 -1036.8483 -1259.8074 -831.4274                                            all
+response_b                candidate_oracle@5   oracle_dag checklist_score 145     0.0061    -0.0232    0.0360                                            all
+response_b                candidate_oracle@5   oracle_dag  context_tokens 145   578.0828   433.9169  735.2017                                            all
+response_b                candidate_oracle@5 full_history checklist_score 145     0.0322     0.0029    0.0638                                            all
+response_b                candidate_oracle@5 full_history  context_tokens 145  -458.7655  -662.2972 -278.2984                                            all
+response_b  candidate_oracle@5[recall-holds] full_history checklist_score  49     0.0952     0.0085    0.1820                                            all
+response_b                candidate_oracle@5   oracle_dag checklist_score  33     0.0116    -0.0449    0.0646 two_branch_join,three_way_join,join_then_split
+response_b               candidate_oracle@10   oracle_dag checklist_score 145     0.0032    -0.0200    0.0266                                            all
+response_b               candidate_oracle@10   oracle_dag  context_tokens 145    37.6276     1.4483   90.3448                                            all
+response_b               candidate_oracle@10 full_history checklist_score 145     0.0293    -0.0126    0.0713                                            all
+response_b               candidate_oracle@10 full_history  context_tokens 145  -999.2207 -1222.3271 -799.4414                                            all
+response_b candidate_oracle@10[recall-holds] full_history checklist_score 141     0.0301    -0.0130    0.0739                                            all
+response_b               candidate_oracle@10   oracle_dag checklist_score  33     0.0040    -0.0470    0.0556 two_branch_join,three_way_join,join_then_split
+response_b               candidate_oracle@15   oracle_dag checklist_score 145     0.0049    -0.0184    0.0285                                            all
 response_b               candidate_oracle@15   oracle_dag  context_tokens 145     1.4483     0.0000    4.3448                                            all
-response_b               candidate_oracle@15 full_history checklist_score 145     0.0310    -0.0098    0.0724                                            all
-response_b               candidate_oracle@15 full_history  context_tokens 145 -1035.4000 -1259.3471 -830.7207                                            all
+response_b               candidate_oracle@15 full_history checklist_score 145     0.0310    -0.0103    0.0724                                            all
+response_b               candidate_oracle@15 full_history  context_tokens 145 -1035.4000 -1262.8212 -835.4248                                            all
 response_b candidate_oracle@15[recall-holds] full_history checklist_score 144     0.0312    -0.0098    0.0735                                            all
-response_b               candidate_oracle@15   oracle_dag checklist_score  33     0.0040    -0.0455    0.0581 two_branch_join,three_way_join,join_then_split
-response_b                        oracle_dag full_history checklist_score 145     0.0261    -0.0132    0.0663                                            all
-response_b                        oracle_dag full_history  context_tokens 145 -1036.8483 -1256.5472 -827.2972                                            all
-response_c               candidate_oracle@15   oracle_dag checklist_score 123     0.0129    -0.0115    0.0379                                            all
+response_b               candidate_oracle@15   oracle_dag checklist_score  33     0.0040    -0.0465    0.0561 two_branch_join,three_way_join,join_then_split
+response_b                        oracle_dag full_history checklist_score 145     0.0261    -0.0137    0.0663                                            all
+response_b                        oracle_dag full_history  context_tokens 145 -1036.8483 -1257.6071 -832.1076                                            all
+response_c               candidate_oracle@15   oracle_dag checklist_score 145     0.0069    -0.0172    0.0310                                            all
 response_c               candidate_oracle@15   oracle_dag  context_tokens 145     1.4483     0.0000    4.3448                                            all
-response_c               candidate_oracle@15 full_history checklist_score 124     0.0316    -0.0013    0.0665                                            all
-response_c               candidate_oracle@15 full_history  context_tokens 145 -1035.4000 -1263.6817 -829.5645                                            all
-response_c candidate_oracle@15[recall-holds] full_history checklist_score 123     0.0339     0.0007    0.0691                                            all
-response_c               candidate_oracle@15   oracle_dag checklist_score  27     0.0216    -0.0185    0.0617 two_branch_join,three_way_join,join_then_split
-response_c                        oracle_dag full_history checklist_score 122     0.0232    -0.0116    0.0601                                            all
-response_c                        oracle_dag full_history  context_tokens 145 -1036.8483 -1262.2626 -832.7576                                            all
+response_c               candidate_oracle@15 full_history checklist_score 145     0.0305     0.0017    0.0626                                            all
+response_c               candidate_oracle@15 full_history  context_tokens 145 -1035.4000 -1255.9122 -833.7424                                            all
+response_c candidate_oracle@15[recall-holds] full_history checklist_score 144     0.0324     0.0029    0.0637                                            all
+response_c               candidate_oracle@15   oracle_dag checklist_score  33     0.0000    -0.0455    0.0455 two_branch_join,three_way_join,join_then_split
+response_c                        oracle_dag full_history checklist_score 145     0.0236    -0.0069    0.0563                                            all
+response_c                        oracle_dag full_history  context_tokens 145 -1036.8483 -1256.1207 -832.9386                                            all
 
 == advantage retention (reported only) ==
      model   n  cand_minus_full_pp  dag_minus_full_pp  retention_pct  retention_ci_low  retention_ci_high  denominator_ci_spans_zero
-response_a 145               3.046              2.644        115.217          -188.841            505.735                       True
-response_b 145               3.103              2.609        118.943          -267.381            484.173                       True
-response_c 114               3.216              1.827        176.000          -713.036           1050.000                       True
+response_a 145               3.046              2.644        115.217          -180.136            500.625                       True
+response_b 145               3.103              2.609        118.943          -259.833            469.264                       True
+response_c 145               3.046              2.356        129.268          -340.875            677.778                       True
 
 == checklist by family (response_a) ==
 method_label            candidate_oracle@10  candidate_oracle@15  candidate_oracle@5  full_history  oracle_dag
@@ -99,7 +97,7 @@ continuation                          0.875                0.875               0
 join_then_split                       0.867                0.867               0.875         0.900       0.917
 knowledge_update                      1.000                1.000               1.000         1.000       1.000
 long_noisy_side_thread                0.950                0.950               0.950         0.942       0.975
-new_root                              0.958                0.958               0.952         0.802       0.917
+new_root                              0.958                0.958               0.958         0.802       0.917
 resume                                0.928                0.928               0.933         0.911       0.867
 semantic_decoy                        0.806                0.806               0.875         0.896       0.854
 three_way_join                        0.781                0.781               0.625         0.625       0.688
@@ -115,7 +113,7 @@ constraint_retention                  0.917                0.917               0
 continuation                          0.925                0.925               0.925         0.900       0.900
 join_then_split                       0.900                0.900               0.867         0.817       0.867
 knowledge_update                      0.951                0.951               0.917         0.917       0.944
-long_noisy_side_thread                0.858                0.883               0.843         0.900       0.833
+long_noisy_side_thread                0.858                0.883               0.858         0.900       0.833
 new_root                              0.844                0.844               0.844         0.354       0.875
 resume                                0.800                0.800               0.900         0.906       0.856
 semantic_decoy                        0.847                0.847               0.826         0.806       0.826
@@ -132,13 +130,13 @@ constraint_retention                  0.917         0.944       0.896
 continuation                          0.825         0.875       0.900
 join_then_split                       0.925         0.875       0.892
 knowledge_update                      0.931         0.979       0.951
-long_noisy_side_thread                0.964         0.944       0.969
-new_root                              0.917         0.821       0.952
-resume                                0.905         0.806       0.893
-semantic_decoy                        0.924         0.917       0.880
-three_way_join                        0.857         0.857       0.833
-topic_fork                            0.938         0.800       0.929
-two_branch_join                       0.946         0.955       0.950
+long_noisy_side_thread                0.950         0.950       0.975
+new_root                              0.917         0.802       0.958
+resume                                0.894         0.844       0.900
+semantic_decoy                        0.931         0.931       0.868
+three_way_join                        0.844         0.844       0.875
+topic_fork                            0.950         0.800       0.900
+two_branch_join                       0.931         0.953       0.937
 
 == context identity vs oracle_dag ==
      model        method_label   n  same_context_as_oracle_dag  fallback_rate

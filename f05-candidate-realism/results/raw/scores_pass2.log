@@ -8,3 +8,5 @@ FAILED long_noisy_side_thread_008|candidate_oracle|15|minimax.minimax-m2.5: Runt
 FAILED new_root_001|full_history|-|minimax.minimax-m2.5: RuntimeError: LLM call failed after 7 attempts: Error code: 429 - {'message': 'Too many tokens per day, please wait before trying again.'}
 FAILED new_root_001|oracle_dag|-|minimax.minimax-m2.5: RuntimeError: LLM call failed after 7 attempts: Error code: 429 - {'message': 'Too many tokens per day, please wait before trying again.'}
 FAILED resume_002|full_history|-|minimax.minimax-m2.5: RuntimeError: LLM call failed after 7 attempts: Error code: 429 - {'message': 'Too many tokens per day, please wait before trying again.'}
+FAILED resume_006|oracle_dag|-|minimax.minimax-m2.5: RuntimeError: LLM call failed after 7 attempts: Error code: 429 - {'message': 'Too many tokens per day, please wait before trying again.'}
+FAILED resume_012|full_history|-|minimax.minimax-m2.5: ValueError: no JSON found in model response

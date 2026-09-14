@@ -14,6 +14,8 @@ run:
 provider:
   name: amazon-bedrock
   region: us-east-1
+  fallback_regions: [us-east-1, us-west-2, us-east-2]   # on throttling / daily quota, calls rotate: same id in the primary region, then the alternate
+                                                        # inference profile (global.<->us.) across these regions; the route used is recorded per call
   auth_env: AWS_BEARER_TOKEN_BEDROCK
   clients:
     anthropic_ids: anthropic.AnthropicBedrock       # legacy InvokeModel client, as in F0 (Mantle 404s on this account)

@@ -54,13 +54,14 @@ class LLMResult:
     max_tokens: int
     backend: str = ""
     reasoning_chars: int = 0
+    route: str = ""        # "<model id actually used>@<region>"
 
     def to_dict(self) -> dict:
         return asdict(self)
 
 
-_anthropic: Optional[AnthropicBedrock] = None
-_converse = None
+_anthropic: dict[str, AnthropicBedrock] = {}
+_converse: dict[str, object] = {}
 _lock = threading.Lock()
 
 
@@ -69,25 +70,59 @@ def _region() -> str:
     return os.environ.get("AWS_REGION", "us-east-1")
 
 
-def anthropic_client() -> AnthropicBedrock:
-    global _anthropic
-    with _lock:
-        if _anthropic is None:
-            _anthropic = AnthropicBedrock(aws_region=_region(), max_retries=4, timeout=600)
-    return _anthropic
+def _fallback_regions() -> list[str]:
+    import yaml
+    prov = yaml.safe_load((ROOT / "manifest.yaml").read_text())["provider"]
+    regs = [prov.get("region", _region())] + list(prov.get("fallback_regions", []))
+    out: list[str] = []
+    for r in regs:
+        if r not in out:
+            out.append(r)
+    return out
 
 
-def converse_client():
-    global _converse
+def anthropic_client(region: Optional[str] = None) -> AnthropicBedrock:
+    region = region or _region()
     with _lock:
-        if _converse is None:
-            _converse = boto3.client("bedrock-runtime", region_name=_region(),
-                                     config=Config(read_timeout=600, connect_timeout=30, retries={"max_attempts": 2}))
-    return _converse
+        if region not in _anthropic:
+            _anthropic[region] = AnthropicBedrock(aws_region=region, max_retries=2, timeout=600)
+    return _anthropic[region]
+
+
+def converse_client(region: Optional[str] = None):
+    region = region or _region()
+    with _lock:
+        if region not in _converse:
+            _converse[region] = boto3.client("bedrock-runtime", region_name=region,
+                                             config=Config(read_timeout=600, connect_timeout=30, retries={"max_attempts": 2}))
+    return _converse[region]
 
 
 def is_anthropic(model: str) -> bool:
     return ".anthropic." in model or model.startswith("anthropic.")
+
+
+def _alt_profile(model: str) -> Optional[str]:
+    """global.<id> <-> us.<id>: same model, different inference-profile quota bucket."""
+    if model.startswith("global."):
+        return "us." + model[len("global."):]
+    if model.startswith("us."):
+        return "global." + model[len("us."):]
+    return None
+
+
+def routes(model: str) -> list[tuple[str, str]]:
+    """(model_id, region) pairs to try in order: the requested id in the primary region, then the
+    requested id and its alternate profile across the fallback regions. Region-bound `us.` profiles
+    are only tried in US regions; `global.` works from any region."""
+    regs = _fallback_regions()
+    out = [(model, regs[0])]
+    alt = _alt_profile(model)
+    for r in regs:
+        for m in (model, alt):
+            if m and (m, r) not in out:
+                out.append((m, r))
+    return out
 
 
 RETRYABLE = {"ThrottlingException", "TooManyRequestsException", "ServiceUnavailableException", "InternalServerException",
@@ -105,34 +140,38 @@ def complete(model: str, prompt: str, *, system: Optional[str] = None, temperatu
 
 
 def _complete_anthropic(model, prompt, *, system, temperature, max_tokens, retries, purpose, ref) -> LLMResult:
-    kwargs = dict(model=model, max_tokens=max_tokens, extra_body={"temperature": temperature},
-                  messages=[{"role": "user", "content": prompt}])
+    """Throttling (429, incl. the per-region daily token quota) rotates through routes() before
+    backing off; the id actually used is what gets ledgered and returned."""
+    base = dict(max_tokens=max_tokens, extra_body={"temperature": temperature}, messages=[{"role": "user", "content": prompt}])
     if system:
-        kwargs["system"] = system
+        base["system"] = system
+    rts = routes(model)
     last_err: Optional[Exception] = None
     for attempt in range(retries + 1):
-        t0 = time.time()
-        try:
-            with anthropic_client().messages.stream(**kwargs) as stream:
-                msg = stream.get_final_message()
-            text = "".join(b.text for b in msg.content if getattr(b, "type", "") == "text")
-            ledger().record(model, msg.usage.input_tokens, msg.usage.output_tokens, purpose, ref)
-            return LLMResult(model=model, model_reported=msg.model, text=text, input_tokens=msg.usage.input_tokens,
-                             output_tokens=msg.usage.output_tokens, latency_s=time.time() - t0, stop_reason=msg.stop_reason,
-                             system=system, prompt=prompt, temperature=temperature, max_tokens=max_tokens, backend="anthropic")
-        except RateLimitError as e:
-            last_err = e
-            time.sleep(min(120, 10 * 2 ** attempt) + random.uniform(0, 5))
-        except APIConnectionError as e:
-            last_err = e
-            time.sleep(min(60, 2 ** attempt * 3))
-        except APIStatusError as e:
-            if e.status_code >= 500:
+        for mid, region in rts:
+            t0 = time.time()
+            try:
+                with anthropic_client(region).messages.stream(model=mid, **base) as stream:
+                    msg = stream.get_final_message()
+                text = "".join(b.text for b in msg.content if getattr(b, "type", "") == "text")
+                ledger().record(mid, msg.usage.input_tokens, msg.usage.output_tokens, purpose, ref)
+                return LLMResult(model=mid, model_reported=msg.model, text=text, input_tokens=msg.usage.input_tokens,
+                                 output_tokens=msg.usage.output_tokens, latency_s=time.time() - t0, stop_reason=msg.stop_reason,
+                                 system=system, prompt=prompt, temperature=temperature, max_tokens=max_tokens,
+                                 backend="anthropic", route=f"{mid}@{region}")
+            except RateLimitError as e:
+                last_err = e                      # try the next route right away
+            except APIConnectionError as e:
                 last_err = e
-                time.sleep(min(60, 2 ** attempt * 3))
-            else:
-                raise
-    raise RuntimeError(f"LLM call failed after {retries + 1} attempts: {last_err}")
+            except APIStatusError as e:
+                if e.status_code >= 500:
+                    last_err = e
+                elif e.status_code in (403, 404):
+                    continue                      # this profile is not usable here; try the next route
+                else:
+                    raise
+        time.sleep(min(120, 10 * 2 ** attempt) + random.uniform(0, 5))
+    raise RuntimeError(f"LLM call failed after {retries + 1} attempts over {len(rts)} routes: {last_err}")
 
 
 def _complete_converse(model, prompt, *, system, temperature, max_tokens, retries, purpose, ref) -> LLMResult:
@@ -141,30 +180,33 @@ def _complete_converse(model, prompt, *, system, temperature, max_tokens, retrie
     if system:
         kwargs["system"] = [{"text": system}]
     last_err: Optional[Exception] = None
+    regs = _fallback_regions()
     for attempt in range(retries + 1):
-        t0 = time.time()
-        try:
-            r = converse_client().converse(**kwargs)
-            blocks = r["output"]["message"]["content"]
-            text = "".join(b["text"] for b in blocks if "text" in b)
-            reasoning = sum(len(json.dumps(b["reasoningContent"])) for b in blocks if "reasoningContent" in b)
-            u = r["usage"]
-            ledger().record(model, u["inputTokens"], u["outputTokens"], purpose, ref)
-            return LLMResult(model=model, model_reported=model, text=text, input_tokens=u["inputTokens"],
-                             output_tokens=u["outputTokens"], latency_s=time.time() - t0, stop_reason=r.get("stopReason"),
-                             system=system, prompt=prompt, temperature=temperature, max_tokens=max_tokens,
-                             backend="converse", reasoning_chars=reasoning)
-        except ClientError as e:
-            code = e.response.get("Error", {}).get("Code", "")
-            if code in RETRYABLE or e.response.get("ResponseMetadata", {}).get("HTTPStatusCode", 0) >= 500:
+        for region in regs:
+            t0 = time.time()
+            try:
+                r = converse_client(region).converse(**kwargs)
+                blocks = r["output"]["message"]["content"]
+                text = "".join(b["text"] for b in blocks if "text" in b)
+                reasoning = sum(len(json.dumps(b["reasoningContent"])) for b in blocks if "reasoningContent" in b)
+                u = r["usage"]
+                ledger().record(model, u["inputTokens"], u["outputTokens"], purpose, ref)
+                return LLMResult(model=model, model_reported=model, text=text, input_tokens=u["inputTokens"],
+                                 output_tokens=u["outputTokens"], latency_s=time.time() - t0, stop_reason=r.get("stopReason"),
+                                 system=system, prompt=prompt, temperature=temperature, max_tokens=max_tokens,
+                                 backend="converse", reasoning_chars=reasoning, route=f"{model}@{region}")
+            except ClientError as e:
+                code = e.response.get("Error", {}).get("Code", "")
+                if code in RETRYABLE or e.response.get("ResponseMetadata", {}).get("HTTPStatusCode", 0) >= 500:
+                    last_err = e                  # next region
+                elif code in ("ValidationException", "ResourceNotFoundException"):
+                    last_err = e; continue        # model not served in this region; next region
+                else:
+                    raise
+            except (ReadTimeoutError, EndpointConnectionError) as e:
                 last_err = e
-                time.sleep(min(120, 5 * 2 ** attempt) + random.uniform(0, 3))
-            else:
-                raise
-        except (ReadTimeoutError, EndpointConnectionError) as e:
-            last_err = e
-            time.sleep(min(60, 2 ** attempt * 3))
-    raise RuntimeError(f"converse call failed after {retries + 1} attempts: {last_err}")
+        time.sleep(min(120, 5 * 2 ** attempt) + random.uniform(0, 3))
+    raise RuntimeError(f"converse call failed after {retries + 1} attempts over {len(regs)} regions: {last_err}")
 
 
 def extract_json(text: str):
