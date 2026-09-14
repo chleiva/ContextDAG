@@ -1,0 +1,64 @@
+163 judge calls to make (477 already done)
+[20/163] mistral.mistral-large-3-675b-instruct ambiguous_reference_006|oracle_dag|-|us. score=0.75 | run $0.03
+[40/163] mistral.mistral-large-3-675b-instruct constraint_retention_005|full_history|-| score=1.00 | run $0.07
+[60/163] mistral.mistral-large-3-675b-instruct continuation_008|full_history|-|us.anthr score=1.00 | run $0.08
+[80/163] mistral.mistral-large-3-675b-instruct long_noisy_side_thread_004|full_history| score=1.00 | run $0.12
+[100/163] mistral.mistral-large-3-675b-instruct resume_014|oracle_dag|-|us.anthropic.cla score=0.33 | run $0.16
+[120/163] mistral.mistral-large-3-675b-instruct semantic_decoy_003|oracle_dag|-|us.anthr score=1.00 | run $0.19
+[140/163] mistral.mistral-large-3-675b-instruct topic_fork_005|sliding_window|1024|us.an score=0.50 | run $0.21
+[160/163] mistral.mistral-large-3-675b-instruct two_branch_join_010|oracle_tree|-|us.ant score=0.75 | run $0.23
+[163/163] mistral.mistral-large-3-675b-instruct three_way_join_008|oracle_tree|-|us.anth score=0.25 | run $0.24
+0 failures, run spend $0.239
+F0.5 spend: $1.96 of $25.00 hard limit (estimate $12.00, warn $18.00)
+calls: 918, tokens in: 1,326,179, out: 268,282
+  answer           $   0.99
+  calibration      $   0.97
+  smoke            $   0.00
+  us.anthropic.claude-sonnet-4-6                   $   0.79
+  moonshotai.kimi-k2.5                             $   0.36
+  deepseek.v3.2                                    $   0.27
+  mistral.mistral-large-3-675b-instruct            $   0.23
+  us.anthropic.claude-haiku-4-5-20251001-v1:0      $   0.20
+  us.meta.llama4-maverick-17b-instruct-v1:0        $   0.11
+  minimax.minimax-m2.5                             $   0.00
+== calibration vs Opus 4.6 (reference) ==
+                                    judge          display  n_instances  n_items  item_kappa  item_agreement  mean_abs_score_delta  p90_abs_score_delta  mean_signed_delta  leakage_kappa  leakage_agreement  ranking_spearman ranking_violations  fallback_prompt_uses  usd_total  usd_per_call  PASS
+                            deepseek.v3.2    DeepSeek V3.2          160      596      0.7724          0.9178                0.0835               0.2583            -0.0425         0.6973             0.9188               0.9               none                     0     0.2673        0.0017 False
+                     moonshotai.kimi-k2.5        Kimi K2.5          160      596      0.7788          0.9195                0.0786               0.2583            -0.0474         0.8040             0.9500               0.9               none                     0     0.3435        0.0021 False
+us.meta.llama4-maverick-17b-instruct-v1:0 Llama 4 Maverick          160      596      0.7860          0.9262                0.0752               0.2500            -0.0138         0.6869             0.9188               1.0               none                     0     0.1085        0.0007 False
+    mistral.mistral-large-3-675b-instruct  Mistral Large 3          160      596      0.6999          0.8876                0.1132               0.3333            -0.0653         0.5640             0.9062               0.9               none                     3     0.2305        0.0014 False
+
+kappa by response model:
+         display                             kappa_by_model
+   DeepSeek V3.2 {"response_a": 0.737, "response_b": 0.795}
+       Kimi K2.5  {"response_a": 0.736, "response_b": 0.81}
+Llama 4 Maverick  {"response_a": 0.77, "response_b": 0.794}
+ Mistral Large 3  {"response_a": 0.68, "response_b": 0.707}
+
+== item kappa by family ==
+judge                   deepseek.v3.2  mistral.mistral-large-3-675b-instruct  moonshotai.kimi-k2.5  us.meta.llama4-maverick-17b-instruct-v1:0
+family                                                                                                                                       
+ambiguous_reference             0.793                                  0.609                 0.784                                      0.784
+compound_turn                   0.892                                  0.816                 0.895                                      0.777
+constraint_retention            0.592                                  0.536                 0.486                                      0.726
+continuation                    0.876                                  0.776                 1.000                                      1.000
+join_then_split                 0.600                                  0.600                 0.805                                      0.660
+knowledge_update                0.929                                  0.929                 0.929                                      0.929
+long_noisy_side_thread          0.831                                  0.594                 0.730                                      0.789
+new_root                        0.613                                  0.701                 0.768                                      0.680
+resume                          0.797                                  0.497                 0.857                                      0.743
+semantic_decoy                  0.806                                  0.806                 0.730                                      0.752
+three_way_join                  0.769                                  0.824                 0.717                                      0.880
+topic_fork                      0.443                                  0.389                 0.636                                      0.374
+two_branch_join                 0.799                                  0.741                 0.730                                      0.879
+
+== method means (reference vs candidate) on the subsample ==
+judge                             deepseek.v3.2  mistral.mistral-large-3-675b-instruct  moonshotai.kimi-k2.5  us.meta.llama4-maverick-17b-instruct-v1:0    ref
+family                                                                                                                                                        
+[method] full_history                     0.846                                  0.836                 0.865                                      0.870  0.872
+[method] oracle_dag                       0.758                                  0.717                 0.750                                      0.778  0.788
+[method] oracle_tree                      0.678                                  0.688                 0.675                                      0.725  0.746
+[method] semantic_retrieval@1024          0.844                                  0.781                 0.844                                      0.878  0.878
+[method] sliding_window@1024              0.580                                  0.569                 0.546                                      0.598  0.635
+
+NO CANDIDATE PASSED the adoption bar

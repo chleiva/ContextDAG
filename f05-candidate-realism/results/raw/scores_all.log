@@ -1,0 +1,41 @@
+judge global.anthropic.claude-opus-4-6-v1: 998 instances to score (307 already scored)
+[25/998] long_noisy_side_thread_010|candidate_oracle|15|us.anthropic. score=1.00 leak=0 | run $0.55, total $4.11
+[50/998] resume_009|candidate_oracle|15|us.anthropic.claude-sonnet-4- score=1.00 leak=0 | run $1.01, total $4.56
+FAILED long_noisy_side_thread_001|candidate_oracle|15|us.anthropic.claude-sonnet-4-6: RuntimeError: LLM call failed after 7 attempts: Error code: 429 - {'message': 'Too many requests, please wait before trying again.'}
+FAILED knowledge_update_011|candidate_oracle|15|us.anthropic.claude-sonnet-4-6: RuntimeError: LLM call failed after 7 attempts: Error code: 429 - {'message': 'Too many requests, please wait before trying again.'}
+[75/998] topic_fork_007|candidate_oracle|15|us.anthropic.claude-sonne score=0.75 leak=0 | run $1.33, total $4.89
+FAILED new_root_001|candidate_oracle|15|us.anthropic.claude-sonnet-4-6: RuntimeError: LLM call failed after 7 attempts: Error code: 429 - {'message': 'Too many requests, please wait before trying again.'}
+[100/998] ambiguous_reference_004|candidate_oracle|15|us.anthropic.cla score=1.00 leak=0 | run $1.63, total $5.19
+[125/998] constraint_retention_002|candidate_oracle|15|us.anthropic.cl score=1.00 leak=0 | run $2.05, total $5.61
+[150/998] compound_turn_013|candidate_oracle|15|us.anthropic.claude-ha score=0.50 leak=0 | run $2.46, total $6.02
+[175/998] new_root_005|candidate_oracle|15|us.anthropic.claude-haiku-4 score=1.00 leak=0 | run $3.05, total $6.61
+FAILED long_noisy_side_thread_009|candidate_oracle|15|us.anthropic.claude-haiku-4-5-20251001-v1:0: ValueError: no JSON found in model response
+FAILED knowledge_update_003|candidate_oracle|15|us.anthropic.claude-haiku-4-5-20251001-v1:0: RuntimeError: LLM call failed after 7 attempts: Error code: 429 - {'message': 'Too many requests, please wait before trying again.'}
+[200/998] semantic_decoy_006|candidate_oracle|15|us.anthropic.claude-h score=0.75 leak=0 | run $3.54, total $7.10
+FAILED knowledge_update_008|candidate_oracle|15|us.anthropic.claude-haiku-4-5-20251001-v1:0: RuntimeError: LLM call failed after 7 attempts: Error code: 429 - {'message': 'Too many requests, please wait before trying again.'}
+[225/998] two_branch_join_002|candidate_oracle|15|us.anthropic.claude- score=0.33 leak=0 | run $3.88, total $7.44
+[250/998] ambiguous_reference_004|full_history|-|minimax.minimax-m2.5 score=1.00 leak=0 | run $4.21, total $7.77
+[275/998] compound_turn_003|candidate_oracle|15|minimax.minimax-m2.5 score=0.75 leak=1 | run $4.53, total $8.08
+[300/998] compound_turn_012|full_history|-|minimax.minimax-m2.5 score=0.50 leak=0 | run $4.93, total $8.49
+FAILED compound_turn_001|candidate_oracle|15|minimax.minimax-m2.5: RuntimeError: LLM call failed after 7 attempts: Error code: 429 - {'message': 'Too many requests, please wait before trying again.'}
+[325/998] constraint_retention_003|oracle_dag|-|minimax.minimax-m2.5 score=1.00 leak=0 | run $5.40, total $8.96
+FAILED compound_turn_006|full_history|-|minimax.minimax-m2.5: RuntimeError: LLM call failed after 7 attempts: Error code: 429 - {'message': 'Too many requests, please wait before trying again.'}
+[350/998] continuation_001|candidate_oracle|15|minimax.minimax-m2.5 score=1.00 leak=0 | run $6.01, total $9.57
+[375/998] continuation_009|candidate_oracle|15|minimax.minimax-m2.5 score=1.00 leak=0 | run $6.29, total $9.85
+FAILED constraint_retention_005|candidate_oracle|15|minimax.minimax-m2.5: RuntimeError: LLM call failed after 7 attempts: Error code: 429 - {'message': 'Too many requests, please wait before trying again.'}
+[400/998] join_then_split_006|oracle_dag|-|minimax.minimax-m2.5 score=1.00 leak=0 | run $6.61, total $10.17
+FAILED continuation_008|full_history|-|minimax.minimax-m2.5: RuntimeError: LLM call failed after 7 attempts: Error code: 429 - {'message': 'Too many requests, please wait before trying again.'}
+FAILED continuation_010|oracle_dag|-|minimax.minimax-m2.5: RuntimeError: LLM call failed after 7 attempts: Error code: 429 - {'message': 'Too many tokens per day, please wait before trying again.'}
+FAILED join_then_split_004|oracle_dag|-|minimax.minimax-m2.5: RuntimeError: LLM call failed after 7 attempts: Error code: 429 - {'message': 'Too many tokens per day, please wait before trying again.'}
+FAILED join_then_split_008|candidate_oracle|15|minimax.minimax-m2.5: RuntimeError: LLM call failed after 7 attempts: Error code: 429 - {'message': 'Too many tokens per day, please wait before trying again.'}
+FAILED knowledge_update_004|oracle_dag|-|minimax.minimax-m2.5: NotFoundError: Error code: 404 - {'message': 'Inference Profile ARN not found'}
+FAILED knowledge_update_003|candidate_oracle|15|minimax.minimax-m2.5: RuntimeError: LLM call failed after 7 attempts: Error code: 429 - {'message': 'Too many tokens per day, please wait before trying again.'}
+[425/998] knowledge_update_007|full_history|-|minimax.minimax-m2.5 score=1.00 leak=0 | run $6.96, total $10.52
+FAILED knowledge_update_004|candidate_oracle|15|minimax.minimax-m2.5: RuntimeError: LLM call failed after 7 attempts: Error code: 429 - {'message': 'Too many tokens per day, please wait before trying again.'}
+FAILED knowledge_update_005|candidate_oracle|15|minimax.minimax-m2.5: RuntimeError: LLM call failed after 7 attempts: Error code: 429 - {'message': 'Too many tokens per day, please wait before trying again.'}
+FAILED knowledge_update_005|oracle_dag|-|minimax.minimax-m2.5: RuntimeError: LLM call failed after 7 attempts: Error code: 429 - {'message': 'Too many tokens per day, please wait before trying again.'}
+FAILED knowledge_update_006|full_history|-|minimax.minimax-m2.5: RuntimeError: LLM call failed after 7 attempts: Error code: 429 - {'message': 'Too many tokens per day, please wait before trying again.'}
+FAILED knowledge_update_006|candidate_oracle|15|minimax.minimax-m2.5: RuntimeError: LLM call failed after 7 attempts: Error code: 429 - {'message': 'Too many tokens per day, please wait before trying again.'}
+FAILED knowledge_update_007|oracle_dag|-|minimax.minimax-m2.5: RuntimeError: LLM call failed after 7 attempts: Error code: 429 - {'message': 'Too many tokens per day, please wait before trying again.'}
+FAILED knowledge_update_008|oracle_dag|-|minimax.minimax-m2.5: RuntimeError: LLM call failed after 7 attempts: Error code: 429 - {'message': 'Too many tokens per day, please wait before trying again.'}
+FAILED knowledge_update_008|full_history|-|minimax.minimax-m2.5: RuntimeError: LLM call failed after 7 attempts: Error code: 429 - {'message': 'Too many tokens per day, please wait before trying again.'}

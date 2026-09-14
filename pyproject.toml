@@ -14,3 +14,7 @@ dependencies = [
   "pyyaml",
   "pydantic>=2",
 ]
+
+[project.optional-dependencies]
+# F0.5 candidate generator: local NER (install the model with `python -m spacy download en_core_web_sm`)
+f05 = ["spacy>=3.8", "boto3>=1.40", "scipy", "scikit-learn"]

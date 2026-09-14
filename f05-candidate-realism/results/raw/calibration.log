@@ -1,0 +1,100 @@
+sample: 160 instances, 145 scenarios
+family
+ambiguous_reference        9
+compound_turn             16
+constraint_retention      13
+continuation              11
+join_then_split           11
+knowledge_update          13
+long_noisy_side_thread    11
+new_root                   9
+resume                    17
+semantic_decoy            13
+three_way_join             9
+topic_fork                11
+two_branch_join           17
+model_key
+response_a    78
+response_b    82
+method_label
+full_history               32
+oracle_dag                 33
+oracle_tree                34
+semantic_retrieval@1024    32
+sliding_window@1024        29
+480 judge calls to make (0 already done)
+[20/480] deepseek.v3.2 compound_turn_004|full_history|-|us.anth score=0.67 | run $0.03
+[40/480] deepseek.v3.2 continuation_006|sliding_window|1024|us. score=1.00 | run $0.07
+[60/480] deepseek.v3.2 join_then_split_010|oracle_dag|-|us.anth score=1.00 | run $0.09
+[80/480] deepseek.v3.2 long_noisy_side_thread_010|oracle_dag|-| score=0.33 | run $0.15
+[100/480] deepseek.v3.2 resume_006|sliding_window|1024|us.anthro score=0.75 | run $0.19
+[120/480] deepseek.v3.2 semantic_decoy_009|oracle_dag|-|us.anthr score=1.00 | run $0.22
+[140/480] deepseek.v3.2 topic_fork_007|oracle_dag|-|us.anthropic score=0.75 | run $0.24
+[160/480] moonshotai.kimi-k2.5 ambiguous_reference_006|oracle_dag|-|us. score=1.00 | run $0.27
+[180/480] moonshotai.kimi-k2.5 compound_turn_011|oracle_dag|-|us.anthro score=0.75 | run $0.30
+[200/480] moonshotai.kimi-k2.5 continuation_003|semantic_retrieval|1024 score=1.00 | run $0.36
+[220/480] moonshotai.kimi-k2.5 continuation_010|full_history|-|us.anthr score=0.50 | run $0.39
+[240/480] moonshotai.kimi-k2.5 new_root_005|sliding_window|1024|us.anth score=0.50 | run $0.45
+[260/480] moonshotai.kimi-k2.5 resume_011|sliding_window|1024|us.anthro score=0.75 | run $0.50
+[280/480] moonshotai.kimi-k2.5 semantic_decoy_006|oracle_tree|-|us.anth score=0.75 | run $0.55
+[300/480] moonshotai.kimi-k2.5 topic_fork_008|full_history|-|us.anthrop score=1.00 | run $0.58
+FAILED ('long_noisy_side_thread_003|oracle_tree|-|us.anthropic.claude-haiku-4-5-20251001-v1:0', 'moonshotai.kimi-k2.5'): ValueError: no JSON found in model response
+[320/480] us.meta.llama4-maverick-17b-instruct-v1:0 ambiguous_reference_006|oracle_dag|-|us. score=1.00 | run $0.62
+[340/480] us.meta.llama4-maverick-17b-instruct-v1:0 compound_turn_005|sliding_window|1024|us score=1.00 | run $0.63
+[360/480] us.meta.llama4-maverick-17b-instruct-v1:0 continuation_006|sliding_window|1024|us. score=1.00 | run $0.65
+[380/480] us.meta.llama4-maverick-17b-instruct-v1:0 knowledge_update_002|sliding_window|1024 score=0.25 | run $0.66
+FAILED ('constraint_retention_012|full_history|-|us.anthropic.claude-haiku-4-5-20251001-v1:0', 'us.meta.llama4-maverick-17b-instruct-v1:0'): RuntimeError: converse call failed after 7 attempts: An error occurred (ThrottlingException) when calling the Converse operation (reached max retries: 2): Too many requests, please wait before trying again.
+[400/480] us.meta.llama4-maverick-17b-instruct-v1:0 long_noisy_side_thread_001|semantic_retr score=1.00 | run $0.68
+[420/480] us.meta.llama4-maverick-17b-instruct-v1:0 resume_001|oracle_tree|-|us.anthropic.cl score=1.00 | run $0.70
+FAILED ('continuation_008|full_history|-|us.anthropic.claude-sonnet-4-6', 'us.meta.llama4-maverick-17b-instruct-v1:0'): RuntimeError: converse call failed after 7 attempts: An error occurred (ThrottlingException) when calling the Converse operation (reached max retries: 2): Too many requests, please wait before trying again.
+[440/480] us.meta.llama4-maverick-17b-instruct-v1:0 three_way_join_006|sliding_window|1024|u score=0.75 | run $0.71
+[460/480] us.meta.llama4-maverick-17b-instruct-v1:0 two_branch_join_012|oracle_tree|-|us.ant score=0.20 | run $0.72
+[480/480] us.meta.llama4-maverick-17b-instruct-v1:0 two_branch_join_005|oracle_tree|-|us.ant score=0.67 | run $0.73
+3 failures, run spend $0.729
+F0.5 spend: $0.73 of $25.00 hard limit (estimate $12.00, warn $18.00)
+calls: 483, tokens in: 850,892, out: 153,217
+  calibration      $   0.73
+  smoke            $   0.00
+  moonshotai.kimi-k2.5                             $   0.36
+  deepseek.v3.2                                    $   0.27
+  us.meta.llama4-maverick-17b-instruct-v1:0        $   0.11
+  minimax.minimax-m2.5                             $   0.00
+== calibration vs Opus 4.6 (reference) ==
+                                    judge          display  n_instances  n_items  item_kappa  item_agreement  mean_abs_score_delta  p90_abs_score_delta  mean_signed_delta  leakage_kappa  leakage_agreement  ranking_spearman ranking_violations  fallback_prompt_uses  usd_total  usd_per_call  PASS
+                            deepseek.v3.2    DeepSeek V3.2          160      596      0.7724          0.9178                0.0835               0.2583            -0.0425         0.6973             0.9188               0.9               none                     0     0.2673        0.0017 False
+                     moonshotai.kimi-k2.5        Kimi K2.5          159      592      0.7813          0.9206                0.0776               0.2667            -0.0461         0.8038             0.9497               0.9               none                     0     0.3364        0.0021 False
+us.meta.llama4-maverick-17b-instruct-v1:0 Llama 4 Maverick          158      589      0.7896          0.9270                0.0741               0.2500            -0.0160         0.6862             0.9177               1.0               none                     0     0.1070        0.0007 False
+
+kappa by response model:
+         display                             kappa_by_model
+   DeepSeek V3.2 {"response_a": 0.737, "response_b": 0.795}
+       Kimi K2.5 {"response_a": 0.736, "response_b": 0.815}
+Llama 4 Maverick  {"response_a": 0.77, "response_b": 0.801}
+
+== item kappa by family ==
+judge                   deepseek.v3.2  moonshotai.kimi-k2.5  us.meta.llama4-maverick-17b-instruct-v1:0
+family                                                                                                
+ambiguous_reference             0.793                 0.784                                      0.784
+compound_turn                   0.892                 0.895                                      0.777
+constraint_retention            0.592                 0.486                                      0.802
+continuation                    0.876                 1.000                                      1.000
+join_then_split                 0.600                 0.805                                      0.660
+knowledge_update                0.929                 0.929                                      0.929
+long_noisy_side_thread          0.831                 0.759                                      0.789
+new_root                        0.613                 0.768                                      0.680
+resume                          0.797                 0.857                                      0.743
+semantic_decoy                  0.806                 0.730                                      0.752
+three_way_join                  0.769                 0.717                                      0.880
+topic_fork                      0.443                 0.636                                      0.374
+two_branch_join                 0.799                 0.730                                      0.879
+
+== method means (reference vs candidate) on the subsample ==
+judge                             deepseek.v3.2  moonshotai.kimi-k2.5  us.meta.llama4-maverick-17b-instruct-v1:0    ref
+family                                                                                                                 
+[method] full_history                     0.846                 0.865                                      0.861  0.875
+[method] oracle_dag                       0.758                 0.750                                      0.778  0.788
+[method] oracle_tree                      0.678                 0.680                                      0.725  0.746
+[method] semantic_retrieval@1024          0.844                 0.844                                      0.878  0.878
+[method] sliding_window@1024              0.580                 0.546                                      0.598  0.635
+
+NO CANDIDATE PASSED the adoption bar

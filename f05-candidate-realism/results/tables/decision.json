@@ -1,0 +1,21 @@
+{
+  "recall_gate": {
+    "strict_recall_at_k": 0.9931,
+    "threshold": 0.85,
+    "pass": true
+  },
+  "response_a": {
+    "verdict": "PASS",
+    "quality_diff_pp": 3.05,
+    "token_reduction_pct": 68.67,
+    "retention_pct": 115.217,
+    "reasons": []
+  },
+  "response_b": {
+    "verdict": "PASS",
+    "quality_diff_pp": 3.11,
+    "token_reduction_pct": 68.67,
+    "retention_pct": 118.943,
+    "reasons": []
+  }
+}

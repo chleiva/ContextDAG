@@ -1,0 +1,10 @@
+judge global.anthropic.claude-opus-4-6-v1: 64 instances to score (1241 already scored)
+FAILED long_noisy_side_thread_002|candidate_oracle|15|minimax.minimax-m2.5: RuntimeError: LLM call failed after 7 attempts: Error code: 429 - {'message': 'Too many tokens per day, please wait before trying again.'}
+FAILED long_noisy_side_thread_003|candidate_oracle|15|minimax.minimax-m2.5: RuntimeError: LLM call failed after 7 attempts: Error code: 429 - {'message': 'Too many tokens per day, please wait before trying again.'}
+FAILED long_noisy_side_thread_005|full_history|-|minimax.minimax-m2.5: RuntimeError: LLM call failed after 7 attempts: Error code: 429 - {'message': 'Too many tokens per day, please wait before trying again.'}
+FAILED long_noisy_side_thread_006|oracle_dag|-|minimax.minimax-m2.5: RuntimeError: LLM call failed after 7 attempts: Error code: 429 - {'message': 'Too many tokens per day, please wait before trying again.'}
+FAILED long_noisy_side_thread_008|oracle_dag|-|minimax.minimax-m2.5: RuntimeError: LLM call failed after 7 attempts: Error code: 429 - {'message': 'Too many tokens per day, please wait before trying again.'}
+FAILED long_noisy_side_thread_008|candidate_oracle|15|minimax.minimax-m2.5: RuntimeError: LLM call failed after 7 attempts: Error code: 429 - {'message': 'Too many tokens per day, please wait before trying again.'}
+FAILED new_root_001|full_history|-|minimax.minimax-m2.5: RuntimeError: LLM call failed after 7 attempts: Error code: 429 - {'message': 'Too many tokens per day, please wait before trying again.'}
+FAILED new_root_001|oracle_dag|-|minimax.minimax-m2.5: RuntimeError: LLM call failed after 7 attempts: Error code: 429 - {'message': 'Too many tokens per day, please wait before trying again.'}
+FAILED resume_002|full_history|-|minimax.minimax-m2.5: RuntimeError: LLM call failed after 7 attempts: Error code: 429 - {'message': 'Too many tokens per day, please wait before trying again.'}

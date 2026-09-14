@@ -1,0 +1,5 @@
+judge,display,n_instances,n_items,item_kappa,item_agreement,mean_abs_score_delta,p90_abs_score_delta,mean_signed_delta,leakage_kappa,leakage_agreement,ranking_spearman,ranking_violations,fallback_prompt_uses,usd_total,usd_per_call,kappa_by_model,PASS
+deepseek.v3.2,DeepSeek V3.2,160,596,0.7724,0.9178,0.0835,0.2583,-0.0425,0.6973,0.9188,0.9,none,0,0.2673,0.0017,"{""response_a"": 0.737, ""response_b"": 0.795}",False
+moonshotai.kimi-k2.5,Kimi K2.5,160,596,0.7788,0.9195,0.0786,0.2583,-0.0474,0.804,0.95,0.9,none,0,0.3435,0.0021,"{""response_a"": 0.736, ""response_b"": 0.81}",False
+us.meta.llama4-maverick-17b-instruct-v1:0,Llama 4 Maverick,160,596,0.786,0.9262,0.0752,0.25,-0.0138,0.6869,0.9188,1.0,none,0,0.1085,0.0007,"{""response_a"": 0.77, ""response_b"": 0.794}",False
+mistral.mistral-large-3-675b-instruct,Mistral Large 3,160,596,0.6999,0.8876,0.1132,0.3333,-0.0653,0.564,0.9062,0.9,none,3,0.2305,0.0014,"{""response_a"": 0.68, ""response_b"": 0.707}",False

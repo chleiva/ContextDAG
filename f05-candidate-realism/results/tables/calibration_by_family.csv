@@ -1,0 +1,73 @@
+judge,family,n_items,item_kappa,item_agreement,ref_mean,cand_mean
+deepseek.v3.2,ambiguous_reference,31,0.7929,0.9032,,
+deepseek.v3.2,compound_turn,61,0.8923,0.9508,,
+deepseek.v3.2,constraint_retention,41,0.5924,0.878,,
+deepseek.v3.2,continuation,44,0.8764,0.9773,,
+deepseek.v3.2,join_then_split,40,0.6,0.875,,
+deepseek.v3.2,knowledge_update,48,0.9286,0.9792,,
+deepseek.v3.2,long_noisy_side_thread,43,0.8309,0.9302,,
+deepseek.v3.2,new_root,29,0.6133,0.8276,,
+deepseek.v3.2,resume,63,0.797,0.9524,,
+deepseek.v3.2,semantic_decoy,50,0.8062,0.94,,
+deepseek.v3.2,three_way_join,36,0.7692,0.8889,,
+deepseek.v3.2,topic_fork,44,0.443,0.8182,,
+deepseek.v3.2,two_branch_join,66,0.7985,0.9242,,
+deepseek.v3.2,[method] semantic_retrieval@1024,32,,,0.8776,0.8438
+deepseek.v3.2,[method] full_history,32,,,0.8724,0.8464
+deepseek.v3.2,[method] oracle_dag,33,,,0.7879,0.7576
+deepseek.v3.2,[method] oracle_tree,34,,,0.7456,0.6779
+deepseek.v3.2,[method] sliding_window@1024,29,,,0.6351,0.5805
+moonshotai.kimi-k2.5,ambiguous_reference,31,0.7842,0.9032,,
+moonshotai.kimi-k2.5,compound_turn,61,0.8946,0.9508,,
+moonshotai.kimi-k2.5,constraint_retention,41,0.4859,0.8049,,
+moonshotai.kimi-k2.5,continuation,44,1.0,1.0,,
+moonshotai.kimi-k2.5,join_then_split,40,0.8049,0.95,,
+moonshotai.kimi-k2.5,knowledge_update,48,0.9286,0.9792,,
+moonshotai.kimi-k2.5,long_noisy_side_thread,43,0.7302,0.8837,,
+moonshotai.kimi-k2.5,new_root,29,0.768,0.8966,,
+moonshotai.kimi-k2.5,resume,63,0.8571,0.9683,,
+moonshotai.kimi-k2.5,semantic_decoy,50,0.7297,0.92,,
+moonshotai.kimi-k2.5,three_way_join,36,0.717,0.8611,,
+moonshotai.kimi-k2.5,topic_fork,44,0.6358,0.8864,,
+moonshotai.kimi-k2.5,two_branch_join,66,0.7298,0.8939,,
+moonshotai.kimi-k2.5,[method] semantic_retrieval@1024,32,,,0.8776,0.8438
+moonshotai.kimi-k2.5,[method] full_history,32,,,0.8724,0.8646
+moonshotai.kimi-k2.5,[method] oracle_dag,33,,,0.7879,0.75
+moonshotai.kimi-k2.5,[method] oracle_tree,34,,,0.7456,0.6745
+moonshotai.kimi-k2.5,[method] sliding_window@1024,29,,,0.6351,0.546
+us.meta.llama4-maverick-17b-instruct-v1:0,ambiguous_reference,31,0.7842,0.9032,,
+us.meta.llama4-maverick-17b-instruct-v1:0,compound_turn,61,0.7771,0.9016,,
+us.meta.llama4-maverick-17b-instruct-v1:0,constraint_retention,41,0.7261,0.9268,,
+us.meta.llama4-maverick-17b-instruct-v1:0,continuation,44,1.0,1.0,,
+us.meta.llama4-maverick-17b-instruct-v1:0,join_then_split,40,0.6596,0.9,,
+us.meta.llama4-maverick-17b-instruct-v1:0,knowledge_update,48,0.9286,0.9792,,
+us.meta.llama4-maverick-17b-instruct-v1:0,long_noisy_side_thread,43,0.7887,0.907,,
+us.meta.llama4-maverick-17b-instruct-v1:0,new_root,29,0.6796,0.8621,,
+us.meta.llama4-maverick-17b-instruct-v1:0,resume,63,0.7429,0.9524,,
+us.meta.llama4-maverick-17b-instruct-v1:0,semantic_decoy,50,0.7525,0.92,,
+us.meta.llama4-maverick-17b-instruct-v1:0,three_way_join,36,0.88,0.9444,,
+us.meta.llama4-maverick-17b-instruct-v1:0,topic_fork,44,0.374,0.8409,,
+us.meta.llama4-maverick-17b-instruct-v1:0,two_branch_join,66,0.8791,0.9545,,
+us.meta.llama4-maverick-17b-instruct-v1:0,[method] semantic_retrieval@1024,32,,,0.8776,0.8776
+us.meta.llama4-maverick-17b-instruct-v1:0,[method] full_history,32,,,0.8724,0.8698
+us.meta.llama4-maverick-17b-instruct-v1:0,[method] oracle_dag,33,,,0.7879,0.7778
+us.meta.llama4-maverick-17b-instruct-v1:0,[method] oracle_tree,34,,,0.7456,0.725
+us.meta.llama4-maverick-17b-instruct-v1:0,[method] sliding_window@1024,29,,,0.6351,0.5977
+mistral.mistral-large-3-675b-instruct,ambiguous_reference,31,0.6092,0.8065,,
+mistral.mistral-large-3-675b-instruct,compound_turn,61,0.8164,0.918,,
+mistral.mistral-large-3-675b-instruct,constraint_retention,41,0.5358,0.8537,,
+mistral.mistral-large-3-675b-instruct,continuation,44,0.7755,0.9545,,
+mistral.mistral-large-3-675b-instruct,join_then_split,40,0.6,0.875,,
+mistral.mistral-large-3-675b-instruct,knowledge_update,48,0.9286,0.9792,,
+mistral.mistral-large-3-675b-instruct,long_noisy_side_thread,43,0.5943,0.814,,
+mistral.mistral-large-3-675b-instruct,new_root,29,0.701,0.8621,,
+mistral.mistral-large-3-675b-instruct,resume,63,0.4969,0.8571,,
+mistral.mistral-large-3-675b-instruct,semantic_decoy,50,0.8062,0.94,,
+mistral.mistral-large-3-675b-instruct,three_way_join,36,0.8235,0.9167,,
+mistral.mistral-large-3-675b-instruct,topic_fork,44,0.3889,0.8182,,
+mistral.mistral-large-3-675b-instruct,two_branch_join,66,0.7407,0.8939,,
+mistral.mistral-large-3-675b-instruct,[method] semantic_retrieval@1024,32,,,0.8776,0.7812
+mistral.mistral-large-3-675b-instruct,[method] full_history,32,,,0.8724,0.8359
+mistral.mistral-large-3-675b-instruct,[method] oracle_dag,33,,,0.7879,0.7172
+mistral.mistral-large-3-675b-instruct,[method] oracle_tree,34,,,0.7456,0.6882
+mistral.mistral-large-3-675b-instruct,[method] sliding_window@1024,29,,,0.6351,0.569

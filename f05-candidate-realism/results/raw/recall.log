@@ -1,0 +1,102 @@
+== strict / fractional Candidate Recall@k ==
+               subset        k   n  strict_recall  strict_ci_low  strict_ci_high  fractional_recall  mean_pool_size  mean_pool_frac_of_history  n_cap_binds
+              all_145        3 145         0.1172         0.0690          0.1724             0.4973          3.0000                     0.3892          145
+              all_145        5 145         0.3379         0.2621          0.4138             0.7347          5.0000                     0.6487          117
+              all_145       10 145         0.9724         0.9448          0.9931             0.9920          7.3931                     0.8565           36
+              all_145       15 145         0.9931         0.9793          1.0000             0.9985          8.3241                     0.8934           34
+              all_145       20 145         0.9931         0.9793          1.0000             0.9985          8.3586                     0.8948           29
+              all_145 uncapped 145         0.9931         0.9793          1.0000             0.9985          8.3586                     0.8948            0
+       cap_binds_only        3 145         0.1172         0.0690          0.1724             0.4973          3.0000                     0.3892          145
+       cap_binds_only        5 117         0.1795         0.1111          0.2479             0.6712          5.0000                     0.5647          117
+       cap_binds_only       10  36         0.8889         0.7778          0.9722             0.9676         10.0000                     0.4221           36
+       cap_binds_only       15  34         1.0000         1.0000          1.0000             1.0000         13.9118                     0.5503           34
+       cap_binds_only       20  29         1.0000         1.0000          1.0000             1.0000         14.1034                     0.5241           29
+        excl_new_root        3 137         0.0657         0.0292          0.1095             0.4679          3.0000                     0.3818          137
+        excl_new_root        5 137         0.2993         0.2263          0.3723             0.7192          5.0000                     0.6364          113
+        excl_new_root       10 137         0.9708         0.9416          0.9927             0.9915          7.4745                     0.8481           36
+        excl_new_root       15 137         0.9927         0.9781          1.0000             0.9984          8.4599                     0.8872           34
+        excl_new_root       20 137         0.9927         0.9781          1.0000             0.9984          8.4964                     0.8887           29
+        excl_new_root uncapped 137         0.9927         0.9781          1.0000             0.9984          8.4964                     0.8887            0
+feasible_k_ge_closure        3  97         0.1753         0.1031          0.2577             0.5137          3.0000                     0.3724           97
+feasible_k_ge_closure        5 120         0.4083         0.3250          0.5000             0.7511          5.0000                     0.6490           92
+feasible_k_ge_closure       10 145         0.9724         0.9448          0.9931             0.9920          7.3931                     0.8565           36
+feasible_k_ge_closure       15 145         0.9931         0.9793          1.0000             0.9985          8.3241                     0.8934           34
+feasible_k_ge_closure       20 145         0.9931         0.9793          1.0000             0.9985          8.3586                     0.8948           29
+feasible_k_ge_closure uncapped 145         0.9931         0.9793          1.0000             0.9985          8.3586                     0.8948            0
+        long_families        3  34         0.0882         0.0000          0.2059             0.5098          3.0000                     0.1194           34
+        long_families        5  34         0.3529         0.2059          0.5294             0.7059          5.0000                     0.1989           34
+        long_families       10  34         0.9412         0.8529          1.0000             0.9755         10.0000                     0.3979           34
+        long_families       15  34         1.0000         1.0000          1.0000             1.0000         13.9118                     0.5503           34
+        long_families       20  34         1.0000         1.0000          1.0000             1.0000         14.0588                     0.5563           29
+        long_families uncapped  34         1.0000         1.0000          1.0000             1.0000         14.0588                     0.5563            0
+
+== strict recall by family ==
+k                           3      5     10     15     20  uncapped
+family                                                             
+ambiguous_reference     0.125  0.750  1.000  1.000  1.000     1.000
+compound_turn           0.000  0.400  1.000  1.000  1.000     1.000
+constraint_retention    0.000  0.333  0.917  1.000  1.000     1.000
+continuation            0.000  0.300  1.000  1.000  1.000     1.000
+join_then_split         0.400  0.400  1.000  1.000  1.000     1.000
+knowledge_update        0.000  0.000  0.917  1.000  1.000     1.000
+long_noisy_side_thread  0.300  0.800  1.000  1.000  1.000     1.000
+new_root                1.000  1.000  1.000  1.000  1.000     1.000
+resume                  0.000  0.267  1.000  1.000  1.000     1.000
+semantic_decoy          0.083  0.250  1.000  1.000  1.000     1.000
+three_way_join          0.000  0.000  0.750  0.875  0.875     0.875
+topic_fork              0.000  0.100  1.000  1.000  1.000     1.000
+two_branch_join         0.000  0.133  1.000  1.000  1.000     1.000
+
+== compound_turn by variant ==
+       variant        k  n  strict_recall  fractional_recall
+second_request        3 10            0.0           0.166667
+second_request        5 10            0.2           0.600000
+second_request       10 10            1.0           1.000000
+second_request       15 10            1.0           1.000000
+second_request       20 10            1.0           1.000000
+second_request uncapped 10            1.0           1.000000
+ first_request        3  5            0.0           0.466667
+ first_request        5  5            0.8           0.933333
+ first_request       10  5            1.0           1.000000
+ first_request       15  5            1.0           1.000000
+ first_request       20  5            1.0           1.000000
+ first_request uncapped  5            1.0           1.000000
+
+== ablation (strict recall with one source dropped) ==
+k                   3      5     10     15     20  uncapped
+dropped_source                                             
+active_branch   0.276  0.469  0.979  0.993  0.993     0.993
+entity_overlap  0.083  0.324  0.979  0.993  0.993     0.993
+inactive_heads  0.124  0.345  0.972  0.979  0.979     0.979
+recency         0.248  0.559  0.979  0.993  0.993     0.993
+semantic        0.097  0.283  0.386  0.386  0.386     0.386
+
+== source attribution over gold turns (uncapped) ==
+        source  gold_turns_found  gold_turns_found_only_by_this_source  share_of_gold_turns
+ active_branch               128                                     0               0.2607
+inactive_heads               106                                     2               0.2159
+      semantic               487                                   121               0.9919
+entity_overlap               150                                     0               0.3055
+       recency               262                                     0               0.5336
+
+== headline ==
+{
+  "primary_k": 15,
+  "strict_recall_at_primary_k_all": 0.9931,
+  "ci": [
+    0.9793,
+    1.0
+  ],
+  "fractional_recall_at_primary_k_all": 0.9985,
+  "strict_recall_at_primary_k_excl_new_root": 0.9927,
+  "strict_recall_at_primary_k_long_families": 1.0,
+  "strict_recall_at_5_all": 0.3379,
+  "strict_recall_at_5_feasible_only": 0.4083,
+  "n_feasible_at_5": 120,
+  "strict_recall_uncapped_all": 0.9931,
+  "n_cap_binds_at_primary_k": 34,
+  "gold_turns_total": 491,
+  "gold_turns_missed_by_union": 2,
+  "threshold": 0.85,
+  "passes_recall_gate": true
+}

@@ -1,0 +1,69 @@
+1305 planned, 274 already answered, 1031 to do
+-- primary: 451 instances
+[20/451] ambiguous_reference_001|oracle_dag|-|minimax.minimax-m2.5 ctx=222 fb=- | run $0.03, total $1.81
+[40/451] compound_turn_001|full_history|-|minimax.minimax-m2.5 ctx=818 fb=- | run $0.05, total $1.83
+[60/451] compound_turn_007|oracle_dag|-|minimax.minimax-m2.5 ctx=686 fb=- | run $0.09, total $1.86
+[80/451] compound_turn_014|oracle_dag|-|minimax.minimax-m2.5 ctx=661 fb=- | run $0.12, total $1.89
+[100/451] constraint_retention_006|full_history|-|minimax.minimax-m2.5 ctx=3022 fb=- | run $0.15, total $1.93
+[120/451] constraint_retention_012|candidate_oracle|15|minimax.minimax ctx=285 fb=0 | run $0.20, total $1.97
+[140/451] continuation_007|candidate_oracle|15|minimax.minimax-m2.5 ctx=606 fb=0 | run $0.23, total $2.00
+[160/451] join_then_split_004|oracle_dag|-|minimax.minimax-m2.5 ctx=289 fb=- | run $0.26, total $2.04
+[180/451] knowledge_update_001|full_history|-|minimax.minimax-m2.5 ctx=2610 fb=- | run $0.29, total $2.06
+[200/451] knowledge_update_007|full_history|-|minimax.minimax-m2.5 ctx=2492 fb=- | run $0.32, total $2.09
+[220/451] long_noisy_side_thread_001|oracle_dag|-|minimax.minimax-m2.5 ctx=375 fb=- | run $0.35, total $2.12
+[240/451] long_noisy_side_thread_008|oracle_dag|-|minimax.minimax-m2.5 ctx=303 fb=- | run $0.39, total $2.17
+[260/451] new_root_005|full_history|-|minimax.minimax-m2.5 ctx=791 fb=- | run $0.43, total $2.20
+[280/451] resume_003|candidate_oracle|15|minimax.minimax-m2.5 ctx=260 fb=0 | run $0.47, total $2.24
+[300/451] resume_010|candidate_oracle|15|minimax.minimax-m2.5 ctx=433 fb=0 | run $0.51, total $2.28
+[320/451] semantic_decoy_003|full_history|-|minimax.minimax-m2.5 ctx=1052 fb=- | run $0.53, total $2.31
+[340/451] semantic_decoy_009|full_history|-|minimax.minimax-m2.5 ctx=742 fb=- | run $0.56, total $2.33
+[360/451] three_way_join_003|candidate_oracle|15|minimax.minimax-m2.5 ctx=857 fb=0 | run $0.59, total $2.36
+[380/451] topic_fork_002|oracle_dag|-|minimax.minimax-m2.5 ctx=689 fb=- | run $0.63, total $2.40
+[400/451] topic_fork_008|candidate_oracle|15|minimax.minimax-m2.5 ctx=863 fb=0 | run $0.68, total $2.45
+[420/451] two_branch_join_004|oracle_dag|-|minimax.minimax-m2.5 ctx=818 fb=- | run $0.72, total $2.49
+[440/451] two_branch_join_010|full_history|-|minimax.minimax-m2.5 ctx=653 fb=- | run $0.75, total $2.52
+[451/451] two_branch_join_015|candidate_oracle|15|minimax.minimax-m2.5 ctx=628 fb=0 | run $0.77, total $2.55
+-- sensitivity: 580 instances
+[20/580] compound_turn_003|candidate_oracle|10|us.anthropic.claude-so ctx=510 fb=0 | run $0.77, total $2.55
+[40/580] compound_turn_012|candidate_oracle|10|us.anthropic.claude-so ctx=638 fb=0 | run $0.77, total $2.55
+[60/580] constraint_retention_009|candidate_oracle|5|us.anthropic.cla ctx=277 fb=0 | run $0.77, total $2.55
+[80/580] continuation_005|candidate_oracle|10|us.anthropic.claude-son ctx=788 fb=0 | run $0.77, total $2.55
+[100/580] join_then_split_006|candidate_oracle|10|us.anthropic.claude- ctx=299 fb=0 | run $0.77, total $2.55
+[120/580] knowledge_update_005|candidate_oracle|5|us.anthropic.claude- ctx=1693 fb=1 | run $0.77, total $2.55
+[140/580] long_noisy_side_thread_004|candidate_oracle|10|us.anthropic. ctx=376 fb=0 | run $0.77, total $2.55
+[160/580] new_root_004|candidate_oracle|10|us.anthropic.claude-sonnet- ctx=0 fb=0 | run $0.77, total $2.55
+[180/580] long_noisy_side_thread_007|candidate_oracle|5|us.anthropic.c ctx=4132 fb=1 | run $0.77, total $2.55
+[200/580] resume_015|candidate_oracle|5|us.anthropic.claude-sonnet-4-6 ctx=943 fb=1 | run $0.77, total $2.55
+[220/580] semantic_decoy_011|candidate_oracle|10|us.anthropic.claude-s ctx=258 fb=0 | run $0.77, total $2.55
+[240/580] three_way_join_008|candidate_oracle|5|us.anthropic.claude-so ctx=824 fb=1 | run $0.77, total $2.55
+[260/580] topic_fork_010|candidate_oracle|5|us.anthropic.claude-sonnet ctx=947 fb=1 | run $0.77, total $2.55
+[280/580] two_branch_join_009|candidate_oracle|5|us.anthropic.claude-s ctx=913 fb=1 | run $0.77, total $2.55
+[300/580] ambiguous_reference_006|candidate_oracle|5|us.anthropic.clau ctx=260 fb=0 | run $0.77, total $2.55
+[320/580] compound_turn_008|candidate_oracle|10|us.anthropic.claude-ha ctx=589 fb=0 | run $0.77, total $2.55
+[340/580] constraint_retention_003|candidate_oracle|5|us.anthropic.cla ctx=175 fb=0 | run $0.77, total $2.55
+[360/580] constraint_retention_011|candidate_oracle|5|us.anthropic.cla ctx=2376 fb=1 | run $0.77, total $2.55
+[380/580] continuation_010|candidate_oracle|5|us.anthropic.claude-haik ctx=860 fb=1 | run $0.77, total $2.55
+[400/580] join_then_split_010|candidate_oracle|5|us.anthropic.claude-h ctx=785 fb=1 | run $0.77, total $2.55
+[420/580] knowledge_update_011|candidate_oracle|10|us.anthropic.claude ctx=332 fb=0 | run $0.77, total $2.55
+[440/580] long_noisy_side_thread_009|candidate_oracle|10|us.anthropic. ctx=285 fb=0 | run $0.77, total $2.55
+[460/580] resume_001|candidate_oracle|10|us.anthropic.claude-haiku-4-5 ctx=442 fb=0 | run $0.77, total $2.55
+[480/580] resume_009|candidate_oracle|5|us.anthropic.claude-haiku-4-5- ctx=1147 fb=1 | run $0.77, total $2.55
+[500/580] semantic_decoy_005|candidate_oracle|10|us.anthropic.claude-h ctx=419 fb=0 | run $0.77, total $2.55
+[520/580] three_way_join_004|candidate_oracle|5|us.anthropic.claude-ha ctx=881 fb=1 | run $0.77, total $2.55
+[540/580] topic_fork_006|candidate_oracle|5|us.anthropic.claude-haiku- ctx=913 fb=1 | run $0.77, total $2.55
+[560/580] two_branch_join_005|candidate_oracle|5|us.anthropic.claude-h ctx=1091 fb=1 | run $0.77, total $2.55
+[580/580] two_branch_join_015|candidate_oracle|5|us.anthropic.claude-h ctx=839 fb=1 | run $0.77, total $2.55
+
+0 failures, run spend $0.77
+F0.5 spend: $2.55 of $25.00 hard limit (estimate $12.00, warn $18.00)
+calls: 1239, tokens in: 1,487,137, out: 436,560
+  answer           $   1.77
+  calibration      $   0.77
+  smoke            $   0.00
+  us.anthropic.claude-sonnet-4-6                   $   0.79
+  minimax.minimax-m2.5                             $   0.74
+  moonshotai.kimi-k2.5                             $   0.36
+  deepseek.v3.2                                    $   0.27
+  us.anthropic.claude-haiku-4-5-20251001-v1:0      $   0.24
+  us.meta.llama4-maverick-17b-instruct-v1:0        $   0.11
+  mistral.mistral-large-3-675b-instruct            $   0.03

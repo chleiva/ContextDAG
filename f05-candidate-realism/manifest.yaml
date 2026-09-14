@@ -1,0 +1,128 @@
+# ContextDAG F0.5 candidate-realism check: the single file this phase is reproducible from.
+# Thresholds under f05_decision_thresholds were frozen on 13 Sep 2026 (see F0.5_PLAN.md §5,
+# approved by the user) BEFORE any billed call. Do not change them after looking at results.
+
+run:
+  name: f05-candidate-realism
+  version: 1
+  created: 2026-09-13
+  seed: 20260913
+  benchmark_version: 1.1          # 145 scenarios, read from ../f0-oracle-feasibility/data/scenarios (read-only)
+  f0_dir: ../f0-oracle-feasibility
+  plan: F0.5_PLAN.md
+
+provider:
+  name: amazon-bedrock
+  region: us-east-1
+  auth_env: AWS_BEARER_TOKEN_BEDROCK
+  clients:
+    anthropic_ids: anthropic.AnthropicBedrock       # legacy InvokeModel client, as in F0 (Mantle 404s on this account)
+    other_ids: boto3 bedrock-runtime converse       # DeepSeek, Kimi, Llama, MiniMax; reasoningContent blocks are stripped from text
+
+models:
+  response_a:
+    id: us.anthropic.claude-sonnet-4-6
+    display: Claude Sonnet 4.6
+    role: strong response model (unchanged from F0)
+    temperature: 0.0
+    max_tokens: 2048
+  response_b:
+    id: us.anthropic.claude-haiku-4-5-20251001-v1:0
+    display: Claude Haiku 4.5
+    role: weaker response model (unchanged from F0)
+    temperature: 0.0
+    max_tokens: 2048
+  response_c:
+    id: minimax.minimax-m2.5
+    display: MiniMax M2.5
+    role: exploratory open-weight third arm (F0.5 plan DECISION 5, option a); reasoning model, thinking tokens billed as output
+    temperature: 0.0
+    max_tokens: 6000              # includes reasoning; visible answer is the text blocks only
+    methods: [full_history, oracle_dag, candidate_oracle]
+  judge_reference:
+    id: us.anthropic.claude-opus-4-6-v1
+    display: Claude Opus 4.6
+    role: calibration reference; ZERO new calls, F0 scores reused (also appears as global.anthropic.claude-opus-4-6-v1 in F0 records)
+  judge_candidates:              # calibrated against the reference on the subsample below; cheapest passing one is adopted
+    - id: deepseek.v3.2
+      display: DeepSeek V3.2
+    - id: moonshotai.kimi-k2.5
+      display: Kimi K2.5
+    - id: us.meta.llama4-maverick-17b-instruct-v1:0
+      display: Llama 4 Maverick
+    - id: mistral.mistral-large-3-675b-instruct     # handoff §1.3a last fallback; added after the first three failed the |Δ| bar
+      display: Mistral Large 3
+  judge_settings:
+    temperature: 0.0
+    max_tokens: 4096
+  judge:                          # decided 13 Sep 2026 after calibration (results/tables/calibration_summary.csv)
+    id: global.anthropic.claude-opus-4-6-v1
+    display: Claude Opus 4.6 (global profile)
+    calibration: >-
+      No cheap candidate passed the frozen adoption bar: DeepSeek V3.2, Kimi K2.5, Llama 4 Maverick and
+      Mistral Large 3 all clear kappa (0.70-0.79 >= 0.6) and preserve the method ranking, but their mean
+      absolute checklist-score difference to Opus 4.6 is 0.075-0.113 (> 0.05); all four are systematically
+      stricter than Opus. Per handoff 1.3.4 the bar was not lowered, so the F0 reference judge is retained.
+      F0's baselines (full_history, oracle_dag) already carry Opus verdicts, so rejudge_f0_methods is moot.
+  embedding:
+    id: sentence-transformers/all-mpnet-base-v2
+    runs: local
+  tokenizer:
+    library: tiktoken
+    encoding: cl100k_base
+
+candidate_generator:              # handoff §2.2; structure of prior turns is taken from their gold parents (assumes past routing was correct)
+  active_branch_depth: 3          # source 1: walk back from the preceding turn along primary parents
+  inactive_branch_heads: true     # source 2: every prior turn that is nobody's primary parent (except the preceding turn)
+  semantic_top_k: 10              # source 3: cosine neighbours of the query user message (all-mpnet-base-v2)
+  entity_overlap:                 # source 4: spaCy NER + regex, local, no LLM
+    spacy_model: en_core_web_sm
+    entity_labels: [PERSON, ORG, GPE, LOC, PRODUCT, EVENT, WORK_OF_ART, LAW, LANGUAGE, FAC, NORP, DATE, TIME, MONEY, QUANTITY, PERCENT, CARDINAL, ORDINAL]
+    regex: [backtick_code, double_quoted_phrase, snake_case_identifier, camel_case_identifier]
+    min_shared_items: 1
+  recency_n: 5                    # source 5: last N turns chronologically
+  ranking: [n_sources_desc, cosine_desc, recency_desc]
+  k_sweep: [3, 5, 10, 15, 20, null]   # null = uncapped union
+  primary_k: 15
+
+calibration:                      # handoff §1.3, F0.5 plan DECISION 2
+  n_instances: 160
+  methods: [full_history, sliding_window@1024, semantic_retrieval@1024, oracle_tree, oracle_dag]
+  stratify: [family_proportional, model_50_50, methods_spread]
+  reference_scores: ../f0-oracle-feasibility/results/scored/scores.jsonl
+
+candidate_oracle:
+  fallback_policy: full_history   # handoff §7.5 fail-open when the gold closure is not inside the pool
+  sensitivity_k: [5, 10]          # answered only where the context differs from k=15
+  rejudge_f0_methods: [full_history, oracle_dag]   # so every arm in the comparison shares the adopted judge
+
+f05_decision_thresholds:
+  primary_k: 15
+  min_candidate_recall_at_k: 0.85            # strict all-gold-parents-present rate at k=15, mean over all 145 scenarios (handoff §3)
+  quality_non_inferiority_margin_pp: 5       # candidate_oracle@15 within 5 pp of full_history (same judge), per response model (plan DECISION 4b)
+  min_token_reduction_pct: 40                # candidate_oracle@15 (fallbacks included) vs full_history
+  advantage_retention_reported_only: true    # (cand - full) / (dag - full) is reported, not gating
+  judge_calibration_min_kappa: 0.6
+  judge_calibration_max_score_delta: 0.05
+  judge_ranking_tie_band: 0.03               # methods whose reference means differ by < this may swap rank
+
+analysis:
+  bootstrap_resamples: 10000
+  ci_level: 0.95
+  join_families: [two_branch_join, three_way_join, join_then_split]
+  long_families: [constraint_retention, knowledge_update, long_noisy_side_thread]   # the only families where k=15 can bind
+
+pricing_usd_per_1m_tokens:        # Bedrock list prices as researched 13 Sep 2026; MiniMax rate unconfirmed, budgeted at the top of the handoff's range
+  us.anthropic.claude-sonnet-4-6: {input: 3.00, output: 15.00}
+  us.anthropic.claude-haiku-4-5-20251001-v1:0: {input: 1.00, output: 5.00}
+  us.anthropic.claude-opus-4-6-v1: {input: 5.00, output: 25.00}
+  global.anthropic.claude-opus-4-6-v1: {input: 5.00, output: 25.00}
+  deepseek.v3.2: {input: 0.62, output: 1.85}
+  moonshotai.kimi-k2.5: {input: 0.60, output: 3.00}
+  us.meta.llama4-maverick-17b-instruct-v1:0: {input: 0.24, output: 0.97}
+  minimax.minimax-m2.5: {input: 0.60, output: 2.40}
+  mistral.mistral-large-3-675b-instruct: {input: 0.50, output: 1.50}
+budget:
+  estimate_usd: 12
+  warn_usd: 18
+  hard_limit_usd: 25

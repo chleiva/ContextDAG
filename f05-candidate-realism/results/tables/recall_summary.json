@@ -1,0 +1,20 @@
+{
+  "primary_k": 15,
+  "strict_recall_at_primary_k_all": 0.9931,
+  "ci": [
+    0.9793,
+    1.0
+  ],
+  "fractional_recall_at_primary_k_all": 0.9985,
+  "strict_recall_at_primary_k_excl_new_root": 0.9927,
+  "strict_recall_at_primary_k_long_families": 1.0,
+  "strict_recall_at_5_all": 0.3379,
+  "strict_recall_at_5_feasible_only": 0.4083,
+  "n_feasible_at_5": 120,
+  "strict_recall_uncapped_all": 0.9931,
+  "n_cap_binds_at_primary_k": 34,
+  "gold_turns_total": 491,
+  "gold_turns_missed_by_union": 2,
+  "threshold": 0.85,
+  "passes_recall_gate": true
+}
