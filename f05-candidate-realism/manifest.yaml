@@ -114,6 +114,31 @@ analysis:
   join_families: [two_branch_join, three_way_join, join_then_split]
   long_families: [constraint_retention, knowledge_update, long_noisy_side_thread]   # the only families where k=15 can bind
 
+# ---- Judge recalibration extension (Judge_Recalibration_Exten.md, 14 Sep 2026) ----------------
+# Same 160 calibration instances and the same Opus 4.6 reference verdicts (no new Opus calls).
+# Bar v2 replaces mean |Δ| <= 0.05 with a per-contrast error bound; frozen before any new scoring.
+judge_recalibration:
+  ledger: results/raw/cost_ledger_recalibration.jsonl     # separate ledger; budget below
+  budget: {estimate_usd: 1.5, warn_usd: 3, hard_limit_usd: 5}
+  new_candidates:
+    - {id: openai.gpt-oss-120b-1:0, display: gpt-oss-120b (Bedrock), backend: converse, temperature: 0.0}
+    - {id: gpt-5-mini, display: GPT-5 Mini (OpenAI API), backend: openai, temperature: null}     # reasoning model; rejects temperature != 1
+    - {id: gpt-5-nano, display: GPT-5 Nano (OpenAI API), backend: openai, temperature: null}
+    - {id: gpt-5.4-mini, display: GPT-5.4 Mini (OpenAI API), backend: openai, temperature: 0.0}
+    - {id: gpt-5.4-nano, display: GPT-5.4 Nano (OpenAI API), backend: openai, temperature: 0.0}
+  judge_adoption_bar_v2:
+    item_kappa_min: 0.6
+    ranking_preserved: true
+    ranking_tie_band: 0.03
+    contrast_error_max: 0.02          # |candidate contrast - Opus contrast| on EVERY contrast below
+    contrasts: [dag_minus_full, dag_minus_tree, dag_minus_sliding, dag_minus_semantic]
+    reference_contrasts_opus:         # computed from the 160-instance sample on 14 Sep 2026 (handoff quoted -0.084 for dag_minus_full; rounding)
+      dag_minus_full: -0.085
+      dag_minus_tree: 0.042
+      dag_minus_sliding: 0.153
+      dag_minus_semantic: -0.090
+    selection: cheapest_passer
+
 pricing_usd_per_1m_tokens:        # Bedrock list prices as researched 13 Sep 2026; MiniMax rate unconfirmed, budgeted at the top of the handoff's range
   us.anthropic.claude-sonnet-4-6: {input: 3.00, output: 15.00}
   us.anthropic.claude-haiku-4-5-20251001-v1:0: {input: 1.00, output: 5.00}
@@ -124,6 +149,11 @@ pricing_usd_per_1m_tokens:        # Bedrock list prices as researched 13 Sep 202
   us.meta.llama4-maverick-17b-instruct-v1:0: {input: 0.24, output: 0.97}
   minimax.minimax-m2.5: {input: 0.60, output: 2.40}
   mistral.mistral-large-3-675b-instruct: {input: 0.50, output: 1.50}
+  openai.gpt-oss-120b-1:0: {input: 0.15, output: 0.60}      # AWS Bedrock pricing page, 14 Sep 2026
+  gpt-5-mini: {input: 0.25, output: 2.00}                   # developers.openai.com/api/docs/pricing, 14 Sep 2026 (output incl. reasoning tokens)
+  gpt-5-nano: {input: 0.05, output: 0.40}
+  gpt-5.4-mini: {input: 0.75, output: 4.50}
+  gpt-5.4-nano: {input: 0.20, output: 1.25}
 budget:
   estimate_usd: 12
   warn_usd: 18

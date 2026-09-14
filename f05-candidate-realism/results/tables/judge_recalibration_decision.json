@@ -1,0 +1,31 @@
+{
+  "bar": {
+    "item_kappa_min": 0.6,
+    "ranking_preserved": true,
+    "ranking_tie_band": 0.03,
+    "contrast_error_max": 0.02,
+    "contrasts": [
+      "dag_minus_full",
+      "dag_minus_tree",
+      "dag_minus_sliding",
+      "dag_minus_semantic"
+    ],
+    "reference_contrasts_opus": {
+      "dag_minus_full": -0.085,
+      "dag_minus_tree": 0.042,
+      "dag_minus_sliding": 0.153,
+      "dag_minus_semantic": -0.09
+    },
+    "selection": "cheapest_passer"
+  },
+  "reference_contrasts": {
+    "dag_minus_full": -0.08451704545454541,
+    "dag_minus_tree": 0.04229055258467029,
+    "dag_minus_sliding": 0.15282131661442,
+    "dag_minus_semantic": -0.08972537878787878
+  },
+  "passers": [],
+  "standing_judge": null,
+  "standing_judge_display": null,
+  "rule": "cheapest passer (usd_per_call)"
+}

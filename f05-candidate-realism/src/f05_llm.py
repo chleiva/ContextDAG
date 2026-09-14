@@ -129,14 +129,66 @@ RETRYABLE = {"ThrottlingException", "TooManyRequestsException", "ServiceUnavaila
              "ModelNotReadyException", "ModelTimeoutException", "ServiceQuotaExceededException", "RequestTimeout"}
 
 
-def complete(model: str, prompt: str, *, system: Optional[str] = None, temperature: float = 0.0,
+def is_openai_api(model: str) -> bool:
+    """OpenAI models called directly through api.openai.com (not Bedrock's `openai.` ids)."""
+    return model.startswith(("gpt-", "o1", "o3", "o4"))
+
+
+def complete(model: str, prompt: str, *, system: Optional[str] = None, temperature: Optional[float] = 0.0,
              max_tokens: int = 2048, retries: int = 6, purpose: str = "other", ref: str = "") -> LLMResult:
     ledger().check_budget()
     if is_anthropic(model):
         return _complete_anthropic(model, prompt, system=system, temperature=temperature, max_tokens=max_tokens,
                                    retries=retries, purpose=purpose, ref=ref)
+    if is_openai_api(model):
+        return _complete_openai(model, prompt, system=system, temperature=temperature, max_tokens=max_tokens,
+                                retries=retries, purpose=purpose, ref=ref)
     return _complete_converse(model, prompt, system=system, temperature=temperature, max_tokens=max_tokens,
                               retries=retries, purpose=purpose, ref=ref)
+
+
+def _complete_openai(model, prompt, *, system, temperature, max_tokens, retries, purpose, ref) -> LLMResult:
+    """OpenAI chat completions over plain HTTPS (no SDK dependency). `temperature=None` omits the
+    parameter (GPT-5 mini/nano reasoning models accept only the default). Reasoning tokens are part
+    of completion_tokens and are billed as output."""
+    import urllib.error
+    import urllib.request
+    load_env()
+    key = os.environ.get("OPENAI_API_KEY")
+    if not key:
+        raise RuntimeError("OPENAI_API_KEY not set (repo-root .env)")
+    messages = ([{"role": "system", "content": system}] if system else []) + [{"role": "user", "content": prompt}]
+    body: dict = {"model": model, "messages": messages, "max_completion_tokens": max_tokens}
+    if temperature is not None:
+        body["temperature"] = temperature
+    req = urllib.request.Request("https://api.openai.com/v1/chat/completions", data=json.dumps(body).encode(),
+                                 headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"})
+    last_err: Optional[Exception] = None
+    for attempt in range(retries + 1):
+        t0 = time.time()
+        try:
+            with urllib.request.urlopen(req, timeout=300) as resp:
+                r = json.load(resp)
+            u = r["usage"]
+            choice = r["choices"][0]
+            text = choice["message"].get("content") or ""
+            reasoning_tok = u.get("completion_tokens_details", {}).get("reasoning_tokens", 0)
+            ledger().record(model, u["prompt_tokens"], u["completion_tokens"], purpose, ref)
+            return LLMResult(model=model, model_reported=r.get("model", model), text=text, input_tokens=u["prompt_tokens"],
+                             output_tokens=u["completion_tokens"], latency_s=time.time() - t0, stop_reason=choice.get("finish_reason"),
+                             system=system, prompt=prompt, temperature=(-1.0 if temperature is None else temperature),
+                             max_tokens=max_tokens, backend="openai", reasoning_chars=int(reasoning_tok), route=f"{model}@api.openai.com")
+        except urllib.error.HTTPError as e:
+            msg = e.read().decode(errors="ignore")[:300]
+            if e.code in (429, 500, 502, 503, 504):
+                last_err = RuntimeError(f"HTTP {e.code}: {msg}")
+                time.sleep(min(120, 5 * 2 ** attempt) + random.uniform(0, 3))
+            else:
+                raise RuntimeError(f"OpenAI HTTP {e.code}: {msg}")
+        except (urllib.error.URLError, TimeoutError, OSError) as e:
+            last_err = e
+            time.sleep(min(60, 2 ** attempt * 3))
+    raise RuntimeError(f"OpenAI call failed after {retries + 1} attempts: {last_err}")
 
 
 def _complete_anthropic(model, prompt, *, system, temperature, max_tokens, retries, purpose, ref) -> LLMResult:

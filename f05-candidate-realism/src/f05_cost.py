@@ -15,8 +15,15 @@ from pathlib import Path
 
 import yaml
 
+import os
+
 ROOT = Path(__file__).resolve().parents[1]
 LEDGER = ROOT / "results" / "raw" / "cost_ledger.jsonl"
+# The judge-recalibration extension keeps its own ledger and budget (manifest: judge_recalibration).
+# Select it with F05_LEDGER=recalibration in the environment.
+_LEDGER_SCOPE = os.environ.get("F05_LEDGER", "")
+if _LEDGER_SCOPE == "recalibration":
+    LEDGER = ROOT / "results" / "raw" / "cost_ledger_recalibration.jsonl"
 
 
 class BudgetExceeded(RuntimeError):
@@ -64,8 +71,13 @@ class Ledger:
         self.tokens_in += rec["input_tokens"]
         self.tokens_out += rec["output_tokens"]
 
+    def _budget(self) -> dict:
+        if _LEDGER_SCOPE == "recalibration":
+            return self.manifest["judge_recalibration"]["budget"]
+        return self.manifest["budget"]
+
     def check_budget(self) -> None:
-        b = self.manifest["budget"]
+        b = self._budget()
         if self.total >= b["hard_limit_usd"]:
             raise BudgetExceeded(f"cumulative F0.5 spend ${self.total:.2f} has reached the hard limit ${b['hard_limit_usd']:.2f}; refusing further LLM calls")
         if self.total >= b["warn_usd"] and not self._warned:
@@ -85,8 +97,8 @@ class Ledger:
         return usd
 
     def report(self) -> str:
-        b = self.manifest["budget"]
-        lines = [f"F0.5 spend: ${self.total:.2f} of ${b['hard_limit_usd']:.2f} hard limit (estimate ${b['estimate_usd']:.2f}, warn ${b['warn_usd']:.2f})",
+        b = self._budget()
+        lines = [f"{'Recalibration' if _LEDGER_SCOPE == 'recalibration' else 'F0.5'} spend: ${self.total:.2f} of ${b['hard_limit_usd']:.2f} hard limit (estimate ${b['estimate_usd']:.2f}, warn ${b['warn_usd']:.2f})",
                  f"calls: {self.calls}, tokens in: {self.tokens_in:,}, out: {self.tokens_out:,}"]
         for k, v in sorted(self.by_purpose.items(), key=lambda kv: -kv[1]):
             lines.append(f"  {k:16s} ${v:7.2f}")

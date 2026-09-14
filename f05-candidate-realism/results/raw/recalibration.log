@@ -1,0 +1,31 @@
+800 judge calls to make (640 rows already present)
+[40/800] openai.gpt-oss-120b-1:0 continuation_005|oracle_tree|-|us.anthro score=1.00 | run $0.029
+[80/800] openai.gpt-oss-120b-1:0 long_noisy_side_thread_001|semantic_retr score=0.75 | run $0.060
+[120/800] openai.gpt-oss-120b-1:0 semantic_decoy_008|semantic_retrieval|10 score=0.50 | run $0.088
+[160/800] openai.gpt-oss-120b-1:0 two_branch_join_014|oracle_tree|-|us.ant score=0.50 | run $0.112
+[200/800] gpt-5-mini continuation_005|oracle_tree|-|us.anthro score=1.00 | run $0.205
+[240/800] gpt-5-mini long_noisy_side_thread_007|sliding_windo score=0.00 | run $0.298
+[280/800] gpt-5-mini semantic_decoy_007|full_history|-|us.ant score=0.67 | run $0.396
+[320/800] gpt-5-nano ambiguous_reference_002|oracle_tree|-|us score=0.33 | run $0.477
+FAILED ('constraint_retention_005|sliding_window|1024|us.anthropic.claude-sonnet-4-6', 'gpt-5-nano'): ValueError: no JSON found in model response
+[400/800] gpt-5-nano long_noisy_side_thread_001|semantic_retr score=0.75 | run $0.546
+FAILED ('long_noisy_side_thread_005|oracle_tree|-|us.anthropic.claude-sonnet-4-6', 'gpt-5-nano'): ValueError: no JSON found in model response
+[440/800] gpt-5-nano semantic_decoy_008|semantic_retrieval|10 score=0.50 | run $0.583
+[480/800] gpt-5.4-mini ambiguous_reference_006|oracle_dag|-|us. score=1.00 | run $0.619
+[520/800] gpt-5.4-mini continuation_004|oracle_dag|-|us.anthrop score=0.75 | run $0.712
+[560/800] gpt-5.4-mini long_noisy_side_thread_007|sliding_windo score=0.00 | run $0.814
+[600/800] gpt-5.4-mini semantic_decoy_008|semantic_retrieval|10 score=0.50 | run $0.906
+[640/800] gpt-5.4-mini two_branch_join_014|oracle_tree|-|us.ant score=0.25 | run $0.978
+[680/800] gpt-5.4-nano continuation_004|oracle_dag|-|us.anthrop score=0.75 | run $1.006
+[720/800] gpt-5.4-nano long_noisy_side_thread_009|semantic_retr score=1.00 | run $1.038
+[760/800] gpt-5.4-nano semantic_decoy_009|oracle_dag|-|us.anthr score=1.00 | run $1.066
+[800/800] gpt-5.4-nano two_branch_join_012|oracle_tree|-|us.ant score=0.00 | run $1.089
+2 failures, run spend $1.089
+Recalibration spend: $1.09 of $5.00 hard limit (estimate $1.50, warn $3.00)
+calls: 803, tokens in: 1,401,101, out: 649,648
+  recalibration    $   1.09
+  gpt-5-mini                                       $   0.37
+  gpt-5.4-mini                                     $   0.36
+  gpt-5-nano                                       $   0.14
+  openai.gpt-oss-120b-1:0                          $   0.11
+  gpt-5.4-nano                                     $   0.11
