@@ -55,7 +55,14 @@ def main() -> None:
     A("Bar applied: `judge_adoption_bar_v2` (frozen in the manifest before any new scoring): item κ ≥ "
       f"{bar['item_kappa_min']}, method ranking preserved (tie band {bar['ranking_tie_band']}), and |candidate contrast − Opus contrast| ≤ {bar['contrast_error_max']} on every one of dag−full, dag−tree, dag−sliding, dag−semantic. Cheapest passer wins.\n")
     sj = dec.get("standing_judge_display")
-    A(f"**Decision: {'standing judge = ' + sj if sj else 'no candidate passed bar v2'}.**\n")
+    full_dec_path = T / "judge_recalibration_decision_full.json"
+    fdec0 = json.loads(full_dec_path.read_text()) if full_dec_path.exists() else None
+    if fdec0 and fdec0.get("standing_judge_display"):
+        A(f"**Decision: standing judge = {fdec0['standing_judge_display']}** (passes bar v2 on the enlarged {fdec0['n_instances']:,}-instance sample; on the original 160 instances no candidate passed, see below).\n")
+    elif fdec0:
+        A(f"**Decision: no candidate passed bar v2**, on the original 160 instances or on the enlarged {fdec0['n_instances']:,}-instance sample.\n")
+    else:
+        A(f"**Decision: {'standing judge = ' + sj if sj else 'no candidate passed bar v2'}.**\n")
     A("## Reference contrasts (Opus 4.6 on the 160-instance sample)\n")
     A(md(pd.DataFrame([{k: v for k, v in dec["reference_contrasts"].items()}])))
     A("\nThe handoff quoted dag−full = −0.084 from an earlier rounding of the same data; the frozen value is the one computed here.\n")
@@ -81,10 +88,28 @@ def main() -> None:
     A("## Cost\n")
     A(f"Actual spend for this extension: **${L.total:.2f}** across {L.calls} calls ({L.tokens_in:,} input / {L.tokens_out:,} output tokens), against the handoff's under-$1 estimate and the $5 ledger hard limit. Zero new Opus calls.\n")
     A(md(pd.DataFrame([{"model": k, "usd": round(v, 3)} for k, v in sorted(L.by_model.items(), key=lambda kv: -kv[1])]), "{:.3f}"))
+    full_csv = T / "recalibration_summary_full.csv"
+    if full_csv.exists():
+        fdf = pd.read_csv(full_csv)
+        fdec = json.loads((T / "judge_recalibration_decision_full.json").read_text())
+        A("\n## Enlarged sample (decided by the user on 14 September after the 160-instance result)\n")
+        A(f"Because the 0.02 bound is below the 160-instance sample's resolution, the closest candidate was re-scored on **every** F0 instance on the five calibration methods that carries an Opus verdict: {fdec['n_instances']:,} instances (145 scenarios × 5 methods × 2 response models), the 160 included. Bar v2 unchanged; still zero new Opus calls.\n")
+        A("Opus reference contrasts on the enlarged sample: " + ", ".join(f"{k} {v:+.4f}" for k, v in fdec["reference_contrasts"].items()) + "\n")
+        A(md(fdf[cols + ["se_dag_minus_full", "se_dag_minus_tree", "se_dag_minus_sliding", "se_dag_minus_semantic", "n_contrast_errs_ci_excludes_zero"]].rename(columns={"display": "candidate", "mean_abs_score_delta_v1": "mean |Δ| (old bar, info)", "usd_per_call": "$/call", "n_contrast_errs_ci_excludes_zero": "errors with 95% CI excluding 0"})))
+        fsj = fdec.get("standing_judge_display")
+        if fsj:
+            frow = fdf[fdf.judge == fdec["standing_judge"]].iloc[0]
+            A(f"\n**Standing judge on the enlarged sample: {fsj}** (`{fdec['standing_judge']}`): κ = {frow.item_kappa:.3f}, max contrast error {frow.max_abs_contrast_err:.4f} ≤ 0.02 with standard errors ≈ {frow.mean_err_se:.3f}, ranking preserved, ${frow.usd_per_call:.4f}/call. This supersedes the 160-instance decision above.\n")
+        else:
+            frow = fdf.sort_values("max_abs_contrast_err").iloc[0]
+            A(f"\n**Still no passer on the enlarged sample.** {frow.display}: max contrast error {frow.max_abs_contrast_err:.4f} (bound 0.02) with standard errors ≈ {frow.mean_err_se:.3f}, so the miss is now resolved rather than noise. The bar is not adjusted here.\n")
     A("\n## Deferred, as instructed\n")
     A("An Opus 4.6 self test–retest floor (~40 instances, ~$3) would show how well Opus agrees with itself on this rubric; candidates are being asked to agree with a single Opus pass. Not run under the no-new-Opus policy; available as future work with explicit sign-off.\n")
     A("## What this unblocks\n")
-    if sj:
+    if fdec0 and fdec0.get("standing_judge_display"):
+        frow0 = pd.read_csv(T / "recalibration_summary_full.csv").query("judge == @fdec0['standing_judge']").iloc[0]
+        A(f"{fdec0['standing_judge_display']} is the standing judge for benchmark 1.2 and check 3 (both still separately scoped), at ≈ ${frow0.usd_per_call:.4f}/call (≈ $1 per F0.5-sized phase versus ≈ $23 for Opus). Its verdicts are not interchangeable with Opus's at the instance level (κ ≈ {frow0.item_kappa:.2f}); they are interchangeable for the four method contrasts this study reports, which is what the bar tests.\n")
+    elif sj:
         A(f"{sj} is the judge for benchmark 1.2 and check 3 (both still separately scoped). Its verdicts are not interchangeable with Opus's at the instance level (κ ≈ {row.item_kappa:.2f}); they are interchangeable for the four method contrasts this study reports, which is what the bar tests.\n")
     else:
         A("Benchmark 1.2 and check 3 still need a judge decision: either sign off on a wider contrast tolerance (with the table above as evidence) or add candidates.\n")

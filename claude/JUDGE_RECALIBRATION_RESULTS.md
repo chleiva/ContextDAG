@@ -1,12 +1,12 @@
 # Judge Recalibration Extension — Results
 
 Run date: 2026-09-14  
-Manifest: `f05-candidate-realism/manifest.yaml` (`judge_recalibration` section) at commit 880213e  
+Manifest: `f05-candidate-realism/manifest.yaml` (`judge_recalibration` section) at commit 59c7d01  
 Instances: 160 (reused from F0.5 `results/raw/calibration_sample.json`, no resampling); reference verdicts: Claude Opus 4.6, reused from F0.5 (zero new Opus calls)  
 New candidates scored: gpt-oss-120b (Bedrock) (`openai.gpt-oss-120b-1:0`, route openai.gpt-oss-120b-1:0@us-east-1, temperature 0.0); GPT-5 Mini (OpenAI API) (`gpt-5-mini`, route gpt-5-mini@api.openai.com, temperature default/1, reasoning model); GPT-5 Nano (OpenAI API) (`gpt-5-nano`, route gpt-5-nano@api.openai.com, temperature default/1, reasoning model); GPT-5.4 Mini (OpenAI API) (`gpt-5.4-mini`, route gpt-5.4-mini@api.openai.com, temperature 0.0); GPT-5.4 Nano (OpenAI API) (`gpt-5.4-nano`, route gpt-5.4-nano@api.openai.com, temperature 0.0)  
 Bar applied: `judge_adoption_bar_v2` (frozen in the manifest before any new scoring): item κ ≥ 0.6, method ranking preserved (tie band 0.03), and |candidate contrast − Opus contrast| ≤ 0.02 on every one of dag−full, dag−tree, dag−sliding, dag−semantic. Cheapest passer wins.
 
-**Decision: no candidate passed bar v2.**
+**Decision: standing judge = Llama 4 Maverick** (passes bar v2 on the enlarged 1,450-instance sample; on the original 160 instances no candidate passed, see below).
 
 ## Reference contrasts (Opus 4.6 on the 160-instance sample)
 
@@ -64,15 +64,29 @@ No candidate passed. Closest: **Llama 4 Maverick** with max contrast error 0.027
 
 ## Cost
 
-Actual spend for this extension: **$1.09** across 806 calls (1,416,761 input / 661,889 output tokens), against the handoff's under-$1 estimate and the $5 ledger hard limit. Zero new Opus calls.
+Actual spend for this extension: **$1.97** across 2096 calls (3,682,257 input / 1,000,381 output tokens), against the handoff's under-$1 estimate and the $5 ledger hard limit. Zero new Opus calls.
 
 | model | usd |
 |---|---|
+| us.meta.llama4-maverick-17b-instruct-v1:0 | 0.872 |
 | gpt-5-mini | 0.367 |
 | gpt-5.4-mini | 0.362 |
 | gpt-5-nano | 0.143 |
 | openai.gpt-oss-120b-1:0 | 0.112 |
 | gpt-5.4-nano | 0.110 |
+
+## Enlarged sample (decided by the user on 14 September after the 160-instance result)
+
+Because the 0.02 bound is below the 160-instance sample's resolution, the closest candidate was re-scored on **every** F0 instance on the five calibration methods that carries an Opus verdict: 1,450 instances (145 scenarios × 5 methods × 2 response models), the 160 included. Bar v2 unchanged; still zero new Opus calls.
+
+Opus reference contrasts on the enlarged sample: dag_minus_full +0.0263, dag_minus_tree +0.0740, dag_minus_sliding +0.2047, dag_minus_semantic +0.0234
+
+| candidate | n | item_kappa | ranking_preserved | err_dag_minus_full | err_dag_minus_tree | err_dag_minus_sliding | err_dag_minus_semantic | max_abs_contrast_err | mean |Δ| (old bar, info) | $/call | PASS_v2 | se_dag_minus_full | se_dag_minus_tree | se_dag_minus_sliding | se_dag_minus_semantic | errors with 95% CI excluding 0 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Llama 4 Maverick | 1450 | 0.7659 | True | -0.0049 | 0.0029 | -0.0170 | -0.0096 | 0.0170 | 0.0722 | 0.0007 | True | 0.0114 | 0.0119 | 0.0137 | 0.0121 | 0 |
+
+**Standing judge on the enlarged sample: Llama 4 Maverick** (`us.meta.llama4-maverick-17b-instruct-v1:0`): κ = 0.766, max contrast error 0.0170 ≤ 0.02 with standard errors ≈ 0.012, ranking preserved, $0.0007/call. This supersedes the 160-instance decision above.
+
 
 ## Deferred, as instructed
 
@@ -80,5 +94,5 @@ An Opus 4.6 self test–retest floor (~40 instances, ~$3) would show how well Op
 
 ## What this unblocks
 
-Benchmark 1.2 and check 3 still need a judge decision: either sign off on a wider contrast tolerance (with the table above as evidence) or add candidates.
+Llama 4 Maverick is the standing judge for benchmark 1.2 and check 3 (both still separately scoped), at ≈ $0.0007/call (≈ $1 per F0.5-sized phase versus ≈ $23 for Opus). Its verdicts are not interchangeable with Opus's at the instance level (κ ≈ 0.77); they are interchangeable for the four method contrasts this study reports, which is what the bar tests.
 

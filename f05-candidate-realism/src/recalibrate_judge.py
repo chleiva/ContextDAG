@@ -37,12 +37,16 @@ CONTRASTS = {"dag_minus_full": ("oracle_dag", "full_history"), "dag_minus_tree":
              "dag_minus_sliding": ("oracle_dag", "sliding_window@1024"), "dag_minus_semantic": ("oracle_dag", "semantic_retrieval@1024")}
 
 
-def run_judges(man: dict, workers: int) -> None:
+ALL_CANDIDATES = lambda man: man["models"]["judge_candidates"] + man["judge_recalibration"]["new_candidates"]  # noqa: E731
+
+
+def run_judges(man: dict, workers: int, sample_file: Path = SAMPLE, only: str | None = None) -> None:
     rc = man["judge_recalibration"]
-    keys = json.loads(SAMPLE.read_text())["keys"]
+    keys = json.loads(sample_file.read_text())["keys"]
     answers, scen = f0_answers(), {s.scenario_id: s for s in load_scenarios()}
     done = {(r["key"], r["judge_model"]) for r in _read(CAL_SCORES)}
-    todo = [(answers[k], c) for c in rc["new_candidates"] for k in keys if (k, c["id"]) not in done]
+    cands = [c for c in ALL_CANDIDATES(man) if (only is None and c in rc["new_candidates"]) or c["id"] == only]
+    todo = [(answers[k], c) for c in cands for k in keys if (k, c["id"]) not in done]
     print(f"{len(todo)} judge calls to make ({len(done)} rows already present)")
     L = ledger(); start = L.total; fails = 0
 
@@ -66,10 +70,10 @@ def run_judges(man: dict, workers: int) -> None:
     print(f"{fails} failures, run spend ${L.total - start:.3f}\n{L.report()}")
 
 
-def analyze(man: dict) -> None:
+def analyze(man: dict, sample_file: Path = SAMPLE, suffix: str = "") -> None:
     rc = man["judge_recalibration"]
     bar = rc["judge_adoption_bar_v2"]
-    keys = json.loads(SAMPLE.read_text())["keys"]
+    keys = json.loads(sample_file.read_text())["keys"]
     ref, answers = f0_scores(), f0_answers()
     scen = {s.scenario_id: s for s in load_scenarios()}
     prices = man["pricing_usd_per_1m_tokens"]
@@ -91,7 +95,7 @@ def analyze(man: dict) -> None:
     rows = []
     for jid, recs in cand.items():
         n = sum(1 for k in keys if k in recs)
-        if n == 0:
+        if n == 0 or n < 0.95 * len(keys):      # only candidates scored on (essentially) the whole sample
             continue
         a_items, b_items, deltas, usd = [], [], [], 0.0
         for k in keys:
@@ -149,9 +153,9 @@ def analyze(man: dict) -> None:
                      "fallback_prompt_uses": sum(1 for k in keys if k in recs and recs[k].get("judge_prompt_variant") == "fallback"),
                      "routes": ";".join(sorted({recs[k].get("judge_route", "") for k in keys if k in recs}))})
     df = pd.DataFrame(rows).sort_values("usd_per_call")
-    df.round(4).to_csv(TABLES / "recalibration_summary.csv", index=False)
+    df.round(4).to_csv(TABLES / f"recalibration_summary{suffix}.csv", index=False)
     mm = pd.DataFrame({"Opus 4.6 (reference)": ref_means} | {disp.get(j, j): method_means(lambda k, r=cand[j]: r[k]["checklist_score"] if k in r else None) for j in cand}).loc[order_ref]
-    mm.round(4).to_csv(TABLES / "recalibration_method_means.csv")
+    mm.round(4).to_csv(TABLES / f"recalibration_method_means{suffix}.csv")
     pd.set_option("display.width", 260); pd.set_option("display.max_columns", 40)
     print("Opus reference contrasts:", {k: round(v, 4) for k, v in ref_c.items()})
     print("\n== bar v2 ==")
@@ -161,7 +165,8 @@ def analyze(man: dict) -> None:
     out = {"bar": bar, "reference_contrasts": ref_c, "passers": passers.judge.tolist(),
            "standing_judge": (passers.iloc[0].judge if len(passers) else None),
            "standing_judge_display": (passers.iloc[0].display if len(passers) else None), "rule": "cheapest passer (usd_per_call)"}
-    (TABLES / "judge_recalibration_decision.json").write_text(json.dumps(out, indent=2, default=float))
+    out["sample_file"] = str(sample_file.name); out["n_instances"] = len(keys)
+    (TABLES / f"judge_recalibration_decision{suffix}.json").write_text(json.dumps(out, indent=2, default=float))
     print("\nSTANDING JUDGE:", out["standing_judge_display"] or "NONE PASSED", "| passers:", out["passers"])
 
 
@@ -169,9 +174,12 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--judge", action="store_true"); ap.add_argument("--analyze", action="store_true")
     ap.add_argument("--workers", type=int, default=6)
+    ap.add_argument("--sample-file", default=str(SAMPLE))
+    ap.add_argument("--only", default=None, help="judge id to score (default: all new candidates)")
+    ap.add_argument("--suffix", default="", help="suffix for output tables, e.g. _full")
     args = ap.parse_args()
     man = load_manifest()
     if args.judge:
-        run_judges(man, args.workers)
+        run_judges(man, args.workers, Path(args.sample_file), args.only)
     if args.analyze:
-        analyze(man)
+        analyze(man, Path(args.sample_file), args.suffix)

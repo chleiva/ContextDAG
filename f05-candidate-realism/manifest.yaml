@@ -138,6 +138,17 @@ judge_recalibration:
       dag_minus_sliding: 0.153
       dag_minus_semantic: -0.090
     selection: cheapest_passer
+  enlarged_sample:                  # decided by the user 14 Sep 2026 after no candidate passed on 160 instances (SE 0.03-0.05 > 0.02 bound)
+    file: results/raw/calibration_sample_full.json
+    definition: every F0 instance on the five calibration methods for response_a/b that has an Opus verdict (145 x 5 x 2 = 1450)
+    candidates: [us.meta.llama4-maverick-17b-instruct-v1:0]   # only the candidate within reach of the bound; bar v2 unchanged
+  standing_judge:                   # OUTCOME 14 Sep 2026 (claude/JUDGE_RECALIBRATION_RESULTS.md): passes bar v2 on 1,450 instances
+    id: us.meta.llama4-maverick-17b-instruct-v1:0
+    display: Llama 4 Maverick
+    item_kappa: 0.766
+    max_abs_contrast_err: 0.017
+    usd_per_call: 0.0007
+    note: use for benchmark 1.2 and check 3; no Opus / Sonnet / Haiku calls in later phases (user policy)
 
 pricing_usd_per_1m_tokens:        # Bedrock list prices as researched 13 Sep 2026; MiniMax rate unconfirmed, budgeted at the top of the handoff's range
   us.anthropic.claude-sonnet-4-6: {input: 3.00, output: 15.00}

@@ -1,0 +1,46 @@
+1290 judge calls to make (1439 rows already present)
+[40/1290] us.meta.llama4-maverick-17b-instruct-v1:0 ambiguous_reference_005|sliding_window|1 score=0.00 | run $0.021
+[80/1290] us.meta.llama4-maverick-17b-instruct-v1:0 compound_turn_002|oracle_dag|-|us.anthro score=0.50 | run $0.041
+[120/1290] us.meta.llama4-maverick-17b-instruct-v1:0 compound_turn_006|sliding_window|1024|us score=1.00 | run $0.064
+[160/1290] us.meta.llama4-maverick-17b-instruct-v1:0 compound_turn_011|oracle_tree|-|us.anthr score=0.75 | run $0.090
+[200/1290] us.meta.llama4-maverick-17b-instruct-v1:0 compound_turn_015|semantic_retrieval|102 score=0.50 | run $0.110
+FAILED ('ambiguous_reference_006|oracle_dag|-|us.anthropic.claude-haiku-4-5-20251001-v1:0', 'us.meta.llama4-maverick-17b-instruct-v1:0'): RuntimeError: converse call failed after 7 attempts over 3 regions: An error occurred (ThrottlingException) when calling the Converse operation (reached max retries: 2): Too many requests, please wait before trying
+[240/1290] us.meta.llama4-maverick-17b-instruct-v1:0 constraint_retention_005|full_history|-| score=0.67 | run $0.146
+[280/1290] us.meta.llama4-maverick-17b-instruct-v1:0 constraint_retention_009|sliding_window| score=0.50 | run $0.192
+[320/1290] us.meta.llama4-maverick-17b-instruct-v1:0 continuation_002|oracle_dag|-|us.anthrop score=0.25 | run $0.230
+[360/1290] us.meta.llama4-maverick-17b-instruct-v1:0 continuation_006|full_history|-|us.anthr score=1.00 | run $0.245
+[400/1290] us.meta.llama4-maverick-17b-instruct-v1:0 join_then_split_001|oracle_tree|-|us.ant score=1.00 | run $0.261
+[440/1290] us.meta.llama4-maverick-17b-instruct-v1:0 join_then_split_005|semantic_retrieval|1 score=1.00 | run $0.282
+[480/1290] us.meta.llama4-maverick-17b-instruct-v1:0 join_then_split_009|oracle_tree|-|us.ant score=1.00 | run $0.304
+[520/1290] us.meta.llama4-maverick-17b-instruct-v1:0 knowledge_update_004|sliding_window|1024 score=0.00 | run $0.336
+[560/1290] us.meta.llama4-maverick-17b-instruct-v1:0 knowledge_update_009|oracle_dag|-|us.ant score=1.00 | run $0.370
+[600/1290] us.meta.llama4-maverick-17b-instruct-v1:0 long_noisy_side_thread_001|oracle_tree|- score=0.75 | run $0.409
+[640/1290] us.meta.llama4-maverick-17b-instruct-v1:0 long_noisy_side_thread_006|oracle_tree|- score=1.00 | run $0.476
+[680/1290] us.meta.llama4-maverick-17b-instruct-v1:0 long_noisy_side_thread_010|sliding_windo score=0.33 | run $0.533
+[720/1290] us.meta.llama4-maverick-17b-instruct-v1:0 new_root_005|oracle_dag|-|us.anthropic.c score=1.00 | run $0.566
+[760/1290] us.meta.llama4-maverick-17b-instruct-v1:0 resume_001|sliding_window|1024|us.anthro score=1.00 | run $0.592
+[800/1290] us.meta.llama4-maverick-17b-instruct-v1:0 resume_006|oracle_dag|-|us.anthropic.cla score=1.00 | run $0.615
+[840/1290] us.meta.llama4-maverick-17b-instruct-v1:0 resume_010|oracle_tree|-|us.anthropic.cl score=1.00 | run $0.638
+[880/1290] us.meta.llama4-maverick-17b-instruct-v1:0 resume_015|oracle_dag|-|us.anthropic.cla score=0.75 | run $0.661
+[920/1290] us.meta.llama4-maverick-17b-instruct-v1:0 semantic_decoy_004|sliding_window|1024|u score=1.00 | run $0.682
+[960/1290] us.meta.llama4-maverick-17b-instruct-v1:0 semantic_decoy_009|full_history|-|us.ant score=1.00 | run $0.704
+[1000/1290] us.meta.llama4-maverick-17b-instruct-v1:0 three_way_join_001|semantic_retrieval|10 score=0.25 | run $0.725
+[1040/1290] us.meta.llama4-maverick-17b-instruct-v1:0 three_way_join_006|oracle_dag|-|us.anthr score=1.00 | run $0.746
+FAILED ('resume_014|sliding_window|1024|us.anthropic.claude-haiku-4-5-20251001-v1:0', 'us.meta.llama4-maverick-17b-instruct-v1:0'): RuntimeError: converse call failed after 7 attempts over 3 regions: An error occurred (ThrottlingException) when calling the Converse operation (reached max retries: 2): Too many requests, please wait before trying
+[1080/1290] us.meta.llama4-maverick-17b-instruct-v1:0 topic_fork_002|oracle_dag|-|us.anthropic score=0.75 | run $0.764
+[1120/1290] us.meta.llama4-maverick-17b-instruct-v1:0 topic_fork_006|full_history|-|us.anthrop score=0.75 | run $0.787
+[1160/1290] us.meta.llama4-maverick-17b-instruct-v1:0 two_branch_join_001|semantic_retrieval|1 score=1.00 | run $0.807
+[1200/1290] us.meta.llama4-maverick-17b-instruct-v1:0 two_branch_join_006|oracle_dag|-|us.anth score=1.00 | run $0.826
+[1240/1290] us.meta.llama4-maverick-17b-instruct-v1:0 two_branch_join_010|oracle_dag|-|us.anth score=1.00 | run $0.844
+[1280/1290] us.meta.llama4-maverick-17b-instruct-v1:0 two_branch_join_015|oracle_dag|-|us.anth score=1.00 | run $0.866
+[1290/1290] us.meta.llama4-maverick-17b-instruct-v1:0 two_branch_join_006|sliding_window|1024| score=0.75 | run $0.871
+2 failures, run spend $0.871
+Recalibration spend: $1.97 of $5.00 hard limit (estimate $1.50, warn $3.00)
+calls: 2094, tokens in: 3,680,067, out: 999,841
+  recalibration    $   1.97
+  us.meta.llama4-maverick-17b-instruct-v1:0        $   0.87
+  gpt-5-mini                                       $   0.37
+  gpt-5.4-mini                                     $   0.36
+  gpt-5-nano                                       $   0.14
+  openai.gpt-oss-120b-1:0                          $   0.11
+  gpt-5.4-nano                                     $   0.11
