@@ -47,7 +47,8 @@ def main() -> None:
     f0 = f0_answers()
     own = read_jsonl(F05_ANS)
     todo = [r for k, r in f0.items() if r["model_key"] in ("response_a", "response_b") and method_label(r["method"], r["budget"]) in F0_METHODS and k not in have]
-    todo += [r for r in own if r["key"] not in have and "response" in r and (r["model_key"] == "response_c" or (r["method"] == "candidate_oracle" and r["budget"] == 15))]
+    todo += [r for r in own if r["key"] not in have and "response" in r and (r["model_key"] == "response_c" or (r["method"] == "candidate_oracle" and r["budget"] == 15)
+                                                                             or (r["method"] == "semantic_retrieval" and r["budget"] == 512))]
     # copies inherit
     copies = [r for r in todo if r.get("copied_from")]
     todo = [r for r in todo if not r.get("copied_from")]

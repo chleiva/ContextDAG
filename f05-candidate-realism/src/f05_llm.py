@@ -115,6 +115,11 @@ def routes(model: str) -> list[tuple[str, str]]:
     """(model_id, region) pairs to try in order: the requested id in the primary region, then the
     requested id and its alternate profile across the fallback regions. Region-bound `us.` profiles
     are only tried in US regions; `global.` works from any region."""
+    forced = os.environ.get("F05_FORCE_ROUTE")          # "model_id@region": single route, no fallback (used for audited re-judging)
+    if forced and "@" in forced:
+        m, r = forced.split("@", 1)
+        if m == model or _alt_profile(m) == model:
+            return [(m, r)]
     regs = _fallback_regions()
     out = [(model, regs[0])]
     alt = _alt_profile(model)

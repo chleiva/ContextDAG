@@ -1,0 +1,21 @@
+reused 0 calibration verdicts; 322 to judge; 0 copies to resolve after
+[50/322] resume_006|semantic_retrieval|512|us.anthropic.claude-s score=1.00 | run $0.037
+[100/322] ambiguous_reference_004|semantic_retrieval|512|us.anthr score=1.00 | run $0.064
+[150/322] semantic_decoy_008|semantic_retrieval|512|us.anthropic. score=1.00 | run $0.104
+[200/322] constraint_retention_004|semantic_retrieval|512|minimax score=1.00 | run $0.133
+[250/322] new_root_002|semantic_retrieval|512|minimax.minimax-m2. score=0.33 | run $0.174
+[300/322] topic_fork_010|semantic_retrieval|512|minimax.minimax-m score=1.00 | run $0.205
+[322/322] two_branch_join_003|semantic_retrieval|512|minimax.mini score=1.00 | run $0.216
+0 failures, 0 copies resolved, run spend $0.216
+Check3 spend: $4.68 of $10.00 hard limit (estimate $3.20, warn $5.00)
+calls: 3944, tokens in: 6,204,535, out: 1,213,411
+  check3-judge     $   1.88
+  answer           $   1.86
+  rework-opus      $   0.62
+  summary          $   0.23
+  check3-verbosity $   0.08
+  us.meta.llama4-maverick-17b-instruct-v1:0        $   1.97
+  minimax.minimax-m2.5                             $   1.51
+  global.anthropic.claude-opus-4-6-v1              $   0.62
+  us.anthropic.claude-sonnet-4-6                   $   0.43
+  us.anthropic.claude-haiku-4-5-20251001-v1:0      $   0.14

@@ -64,7 +64,11 @@ def paired(df: pd.DataFrame, mk, a: str, b: str, judge: str, n: int, rng, margin
     sub = df if mk is None else df[df.model_key == mk]
     if families is not None:
         sub = sub[sub.family.isin(families)]
-    if pooled:   # average within scenario across models first
+    if pooled:   # average within scenario across models first, over the models that carry verdicts for BOTH arms
+        ma = set(sub[(sub.method_label == a) & sub[col].notna()].model_key)
+        mb = set(sub[(sub.method_label == b) & sub[col].notna()].model_key)
+        models = sorted(ma & mb)
+        sub = sub[sub.model_key.isin(models)]
         pa = sub[sub.method_label == a].groupby("scenario_id")[[col, "context_tokens"]].mean()
         pb = sub[sub.method_label == b].groupby("scenario_id")[[col, "context_tokens"]].mean()
     else:
@@ -83,6 +87,7 @@ def paired(df: pd.DataFrame, mk, a: str, b: str, judge: str, n: int, rng, margin
     bt = (ta - tb)[idx].mean(axis=1)
     p_ni = float(np.mean(bq <= margin))          # one-sided: H0 "a is inferior to b by more than the margin"
     return {"model": mk or "pooled", "judge": judge, "a": a, "b": b, "n": int(ok.sum()), "families": ",".join(families) if families else "all",
+            "pooled_models": (",".join(models) if pooled else ""),
             "q_diff": float(dq.mean()), "q_ci_low": float(np.percentile(bq, 2.5)), "q_ci_high": float(np.percentile(bq, 97.5)),
             "p_noninferior": p_ni, "noninferior_ci": bool(np.percentile(bq, 2.5) >= margin),
             "tok_diff": float((ta - tb).mean()), "tok_diff_ci_low": float(np.percentile(bt, 2.5)), "tok_diff_ci_high": float(np.percentile(bt, 97.5)),
@@ -111,13 +116,13 @@ def main() -> None:
     for judge in JUDGES:
         for mk in ["response_a", "response_b", "response_c"]:
             for a in [ref, "candidate_oracle@10", "candidate_oracle@5", "oracle_dag"]:
-                for b in bases + ["full_history", "sliding_window@1024", "sliding_window@2048"]:
+                for b in bases + ["full_history", "sliding_window@1024", "sliding_window@2048", "semantic_retrieval@512"]:
                     r = paired(df, mk, a, b, judge, n_boot, rng, margin)
                     if r:
                         r["confirmatory"] = bool(a == ref and b in bases and mk in c3["primary_models"] and judge == "opus"); rows.append(r)
                 # reverse direction for the FAIL arm of the criterion (is the baseline non-inferior to the reference?)
                 if a == ref:
-                    for b in bases:
+                    for b in bases + ["semantic_retrieval@512"]:
                         r = paired(df, mk, b, a, judge, n_boot, rng, margin)
                         if r:
                             r["confirmatory"] = False; r["direction"] = "baseline_vs_reference"; rows.append(r)
@@ -127,6 +132,15 @@ def main() -> None:
                 r["confirmatory"] = False; r["direction"] = "pooled"; rows.append(r)
     comp = pd.DataFrame(rows)
     comp["direction"] = comp.get("direction", pd.Series(["reference_vs_baseline"] * len(comp))).fillna("reference_vs_baseline")
+    # Regression guard (check-3 rework item 1): every pooled delta must equal the mean of its per-model
+    # components over an identical model set on both arms. This bug class is silent; it needs a test.
+    for r in comp[comp.direction == "pooled"].itertuples():
+        models = r.pooled_models.split(",")
+        per_model = comp[(comp.judge == r.judge) & (comp.a == r.a) & (comp.b == r.b) & (comp.direction == "reference_vs_baseline") & comp.model.isin(models)]
+        assert len(per_model) == len(models), f"pooled {r.judge} {r.a} vs {r.b}: missing per-model rows for {models}"
+        assert all(per_model.n == r.n), f"pooled {r.judge} {r.a} vs {r.b}: unequal scenario counts across models"
+        assert abs(per_model.q_diff.mean() - r.q_diff) < 1e-6, f"pooled {r.judge} {r.a} vs {r.b}: {r.q_diff:.6f} != mean of per-model {per_model.q_diff.mean():.6f}"
+    print("regression guard: pooled deltas equal the mean of their per-model components on identical model sets")
     # Holm over the four confirmatory comparisons per model (and the same set under the replication judge, reported separately)
     comp["p_holm"] = np.nan; comp["noninferior_holm"] = pd.Series([None] * len(comp), dtype=object)
     for judge in JUDGES:

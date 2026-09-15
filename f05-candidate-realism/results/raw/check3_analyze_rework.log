@@ -1,0 +1,63 @@
+4495 instances; opus-scored 3915, llama-scored 3915
+regression guard: pooled deltas equal the mean of their per-model components on identical model sets
+
+== confirmatory (Opus, reference vs baseline; q_diff = ref - base) ==
+     model                       b   n  q_diff  q_ci_low  q_ci_high  p_noninferior  p_holm  noninferior_ci noninferior_holm  tok_ratio  tok_ratio_ci_low  tok_ratio_ci_high
+response_a semantic_retrieval@1024 145  0.0184   -0.0132     0.0523         0.0011  0.0022            True             True     0.5288            0.4854             0.5727
+response_a semantic_retrieval@2048 145  0.0069   -0.0241     0.0402         0.0103  0.0103            True             True     0.3976            0.3518             0.4467
+response_a    rolling_summary@1024 145  0.0286   -0.0052     0.0636         0.0002  0.0006            True             True     0.4746            0.4328             0.5179
+response_a    rolling_summary@2048 145  0.0407    0.0080     0.0749         0.0000  0.0000            True             True     0.3819            0.3359             0.4330
+response_b semantic_retrieval@1024 145  0.0374   -0.0029     0.0782         0.0007  0.0028            True             True     0.5288            0.4847             0.5736
+response_b semantic_retrieval@2048 145  0.0230   -0.0167     0.0655         0.0047  0.0047            True             True     0.3976            0.3515             0.4475
+response_b    rolling_summary@1024 145  0.0293   -0.0115     0.0718         0.0023  0.0046            True             True     0.4783            0.4356             0.5234
+response_b    rolling_summary@2048 145  0.0316   -0.0086     0.0719         0.0013  0.0039            True             True     0.3826            0.3373             0.4344
+
+== same under Llama ==
+     model                       b   n  q_diff  q_ci_low  q_ci_high  noninferior_ci  tok_ratio
+response_a semantic_retrieval@1024 145  0.0023   -0.0316     0.0362           False     0.5288
+response_a semantic_retrieval@2048 145  0.0132   -0.0190     0.0466            True     0.3976
+response_a    rolling_summary@1024 145  0.0120   -0.0238     0.0486            True     0.4746
+response_a    rolling_summary@2048 145  0.0177   -0.0145     0.0520            True     0.3819
+response_b semantic_retrieval@1024 145  0.0176   -0.0206     0.0578            True     0.5288
+response_b semantic_retrieval@2048 145  0.0080   -0.0293     0.0466            True     0.3976
+response_b    rolling_summary@1024 145  0.0057   -0.0293     0.0431            True     0.4783
+response_b    rolling_summary@2048 145  0.0144   -0.0224     0.0523            True     0.3826
+
+== frontier (Opus) ==
+     model            method_label   n  context_tokens  checklist_opus  q_ci_low_opus  q_ci_high_opus  checklist_llama  context_precision  irrelevant_context_ratio  leakage_opus
+response_a     candidate_oracle@10 145        508.5172          0.8868         0.8534          0.9184              NaN             0.9382                    0.0551        0.0207
+response_a     candidate_oracle@15 145        472.3379          0.8868         0.8540          0.9184           0.8793             0.9523                    0.0409        0.0138
+response_a      candidate_oracle@5 145       1048.9724          0.8695         0.8310          0.9057              NaN             0.6386                    0.3508        0.0897
+response_a            full_history 145       1507.7379          0.8563         0.8172          0.8925           0.8649             0.4183                    0.5672        0.1655
+response_a              oracle_dag 145        470.8897          0.8828         0.8471          0.9161           0.8787             0.9540                    0.0392        0.0276
+response_a             oracle_tree 145        404.7034          0.8129         0.7684          0.8543           0.8089             0.9540                    0.0392        0.0276
+response_a    rolling_summary@1024 145        995.2000          0.8582         0.8207          0.8938           0.8674             0.3791                    0.6050        0.1517
+response_a    rolling_summary@2048 145       1236.9517          0.8461         0.8048          0.8845           0.8616             0.4007                    0.5849        0.1931
+response_a semantic_retrieval@1024 145        893.1862          0.8684         0.8287          0.9052           0.8770             0.4852                    0.4986        0.1793
+response_a semantic_retrieval@2048 145       1187.8621          0.8799         0.8431          0.9138           0.8661             0.4295                    0.5555        0.1586
+response_a     sliding_window@1024 145        884.2690          0.6852         0.6270          0.7416           0.7013             0.3791                    0.6050        0.2483
+response_a     sliding_window@2048 145       1183.5103          0.7283         0.6720          0.7823           0.7559             0.4007                    0.5849        0.2345
+response_b     candidate_oracle@10 145        508.5172          0.8495         0.8118          0.8851              NaN             0.9382                    0.0551        0.0552
+response_b     candidate_oracle@15 145        472.3379          0.8513         0.8140          0.8875           0.8505             0.9523                    0.0409        0.0414
+response_b      candidate_oracle@5 145       1048.9724          0.8524         0.8132          0.8903              NaN             0.6386                    0.3508        0.1034
+response_b            full_history 145       1507.7379          0.8202         0.7776          0.8610           0.8298             0.4183                    0.5672        0.1862
+response_b              oracle_dag 145        470.8897          0.8463         0.8099          0.8811           0.8587             0.9540                    0.0392        0.0207
+response_b             oracle_tree 145        404.7034          0.7683         0.7252          0.8114           0.7749             0.9540                    0.0392        0.0207
+response_b    rolling_summary@1024 145        987.6000          0.8220         0.7787          0.8639           0.8447             0.3791                    0.6050        0.2000
+response_b    rolling_summary@2048 145       1234.5448          0.8197         0.7761          0.8605           0.8361             0.4007                    0.5849        0.2138
+response_b semantic_retrieval@1024 145        893.1862          0.8139         0.7682          0.8564           0.8329             0.4852                    0.4986        0.1448
+response_b semantic_retrieval@2048 145       1187.8621          0.8283         0.7842          0.8690           0.8424             0.4295                    0.5555        0.1655
+response_b     sliding_window@1024 145        884.2690          0.6346         0.5748          0.6921           0.6608             0.3791                    0.6050        0.2345
+response_b     sliding_window@2048 145       1183.5103          0.6771         0.6185          0.7354           0.7154             0.4007                    0.5849        0.2621
+response_c     candidate_oracle@15 145        472.3379          0.9084         0.8791          0.9345           0.9116             0.9523                    0.0409        0.0276
+response_c            full_history 145       1507.7379          0.8779         0.8411          0.9121           0.8883             0.4183                    0.5672        0.1448
+response_c              oracle_dag 145        470.8897          0.9015         0.8731          0.9279           0.9018             0.9540                    0.0392        0.0207
+response_c    rolling_summary@1024 145       1003.1241             NaN            NaN             NaN           0.8972             0.3791                    0.6050           NaN
+response_c    rolling_summary@2048 145       1242.1310             NaN            NaN             NaN           0.9030             0.4007                    0.5849           NaN
+response_c semantic_retrieval@1024 145        893.1862             NaN            NaN             NaN           0.8772             0.4852                    0.4986           NaN
+response_c semantic_retrieval@2048 145       1187.8621             NaN            NaN             NaN           0.8840             0.4295                    0.5555           NaN
+
+== decision ==
+response_a opus: PASS (structured context retains a distinct advantage) | llama: INDETERMINATE
+response_b opus: PASS (structured context retains a distinct advantage) | llama: PASS (structured context retains a distinct advantage)
+minimax: insufficient data | llama: PASS (structured context retains a distinct advantage)

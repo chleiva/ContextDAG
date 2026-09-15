@@ -58,11 +58,14 @@ def main() -> None:
     A = []
     P = A.append
     P("# Check 3 — Retrieval/Compression Comparability: Results\n")
+    P("> **Revised 15 September 2026 (check-3 rework, `claude/CHECK3_REWORK_RESULTS.md`).** Changed in place: (1) the Opus pooled rows in §3 now average only the models that carry verdicts for both arms (Sonnet + Haiku); the previous rows let MiniMax into the reference mean but not the baselines', inflating each Opus pooled Δ by +0.0132. (2) The PASS label in the headline and §4 was renamed to state what the criterion actually tested (non-inferiority + token ratio), and §10 records that the criterion's FAIL branch was unreachable in this design. (3) The judge-agreement paragraph in §3 was rewritten. No per-model numeric table changed; the frontier table gained the `semantic_retrieval@512` sensitivity arm (Llama-judged, exploratory).\n")
     P(f"Run date: {date.today().isoformat()}  ")
     P(f"Frozen thresholds: `f05-candidate-realism/manifest.yaml` → `check3`, committed at d4204fb before any computation; this doc generated at {commit}  ")
     P("Benchmark 1.1, 145 scenarios. Primary judge: Claude Opus 4.6 verdicts already on disk (F0 + F0.5; zero new Opus calls). Replication judge: Llama 4 Maverick. Primary response models: Sonnet 4.6, Haiku 4.5; MiniMax M2.5 secondary.\n")
     verdicts = {mk: dec["primary"][mk]["verdict"] for mk in c3["primary_models"]}
-    P("**Decision (primary judge, frozen criterion): " + "; ".join(f"{disp[mk]}: {v}" for mk, v in verdicts.items()) + ".** Replication judge: " + "; ".join(f"{disp[mk]}: {dec['replication_llama'][mk]['verdict']}" for mk in c3["primary_models"]) + ".\n")
+    lab = lambda v: v.replace("PASS (structured context retains a distinct advantage)", "PASS (non-inferiority + token ratio)")  # noqa: E731
+    P("**Decision (primary judge, frozen criterion): " + "; ".join(f"{disp[mk]}: {lab(v)}" for mk, v in verdicts.items()) + ".** Replication judge: " + "; ".join(f"{disp[mk]}: {lab(dec['replication_llama'][mk]['verdict'])}" for mk in c3["primary_models"]) + ".\n")
+    P("**PASS (non-inferiority + token ratio).** `candidate_oracle@15` is non-inferior at a −0.03 margin to the best retrieval and summarisation configurations while using 38–53% of their context tokens, with context precision 0.95 vs 0.43–0.49 and distractor leakage 1–4% vs 15–19%.\n")
     P("## 0. Integrity disclosure (verbatim from the handoff)\n"); P(DISCLOSURE + "\n")
     P("Known in advance: the pooled `candidate_oracle@15 − semantic_retrieval@1024` point estimate (+0.028). Not known in advance and computed only after the thresholds were committed: every confidence interval, every p-value, the @2048 and rolling_summary comparisons, per-family results, the Llama replication, the MiniMax arm, and the token comparisons.\n")
     P("## 1. Frozen criterion\n")
@@ -82,15 +85,16 @@ def main() -> None:
     P("\n### Replication under Llama 4 Maverick (same instances, same comparisons)\n")
     ll = comp[(comp.judge == "llama") & (comp.a == ref) & comp.b.isin(bases) & (comp.direction == "reference_vs_baseline") & comp.model.isin(c3["primary_models"])].copy(); ll["model"] = ll.model.map(disp)
     P(md(ll[["model", "b", "n", "q_diff", "q_ci_low", "q_ci_high", "p_noninferior", "p_holm", "noninferior_ci", "noninferior_holm", "tok_ratio"]].rename(columns={"b": "baseline", "q_diff": "Δ checklist", "q_ci_low": "CI low", "q_ci_high": "CI high", "p_noninferior": "p (NI)", "p_holm": "p Holm", "noninferior_ci": "NI (CI)", "noninferior_holm": "NI (Holm)", "tok_ratio": "tokens ref/base"}), "{:.4f}"))
-    agree = all(dec["primary"][mk]["verdict"] == dec["replication_llama"][mk]["verdict"] for mk in c3["primary_models"])
-    P(f"\nJudge agreement on the check-3 verdict: **{'yes' if agree else 'no'}** — " + "; ".join(f"{disp[mk]}: Opus {dec['primary'][mk]['verdict'].split(' ')[0]}, Llama {dec['replication_llama'][mk]['verdict'].split(' ')[0]}" for mk in c3["primary_models"]) + ".\n")
+    _ll_raw = comp[(comp.judge == "llama") & (comp.a == ref) & comp.b.isin(bases) & (comp.direction == "reference_vs_baseline") & comp.model.isin(c3["primary_models"])]
+    n_agree = sum(1 for r in _ll_raw.itertuples() for o in comp[comp.confirmatory].itertuples() if o.model == r.model and o.b == r.b and bool(o.noninferior_ci) == bool(r.noninferior_ci))
+    P(f"\nJudge agreement: {n_agree} of eight confirmatory comparisons agree. The Sonnet INDETERMINATE under Llama rests on a single comparison — vs `semantic_retrieval@1024`, CI low −0.0316 against a −0.0300 margin, missed by 0.0016 — which passes under Holm adjustment. This is a borderline comparison falling on opposite sides of the margin, not a judge-reliability disagreement.\n")
     P("### Pooled (Sonnet + Haiku averaged within scenario first; secondary)\n")
     po = comp[(comp.direction == "pooled")].copy()
     P(md(po[["judge", "b", "n", "q_diff", "q_ci_low", "q_ci_high", "noninferior_ci", "tok_ratio"]].rename(columns={"b": "baseline", "q_diff": "Δ checklist", "q_ci_low": "CI low", "q_ci_high": "CI high", "noninferior_ci": "NI (CI)", "tok_ratio": "tokens ref/base"}), "{:.4f}"))
     P("\n## 4. Decision (applied mechanically)\n")
     for mk in c3["primary_models"]:
         d = dec["primary"][mk]
-        P(f"- **{disp[mk]}: {d['verdict']}.** Reference {d['reference_score']:.3f} at {d['reference_tokens']:.0f} tokens; best baseline `{d['best_baseline']}` {d['best_baseline_score']:.3f} at {d['best_baseline_tokens']:.0f} tokens (ratio {d['token_ratio_ref_over_best']:.2f}, need ≤ {c3['token_ratio_pass_max']} for PASS). Reference non-inferior to all four: CI {d['reference_noninferior_to_all_baselines_ci']}, Holm {d['reference_noninferior_to_all_baselines_holm']}. Best baseline non-inferior to reference: {d['best_baseline_noninferior_to_reference']}; its tokens ≤ 1.3× reference: {d['best_baseline_tokens_le_1.3x_reference']}.")
+        P(f"- **{disp[mk]}: {lab(d['verdict'])}.** Reference {d['reference_score']:.3f} at {d['reference_tokens']:.0f} tokens; best baseline `{d['best_baseline']}` {d['best_baseline_score']:.3f} at {d['best_baseline_tokens']:.0f} tokens (ratio {d['token_ratio_ref_over_best']:.2f}, need ≤ {c3['token_ratio_pass_max']} for PASS). Reference non-inferior to all four: CI {d['reference_noninferior_to_all_baselines_ci']}, Holm {d['reference_noninferior_to_all_baselines_holm']}. Best baseline non-inferior to reference: {d['best_baseline_noninferior_to_reference']}; its tokens ≤ 1.3× reference: {d['best_baseline_tokens_le_1.3x_reference']}.")
     P("\nPower note (handoff §4): with a per-scenario sd ≈ 0.21, a pooled ~2.6 pp superiority effect needs ≈ 520 scenarios at 80% power; this benchmark has 145. The PASS is a non-inferiority-plus-token-ratio result, not a powered superiority claim. Point estimates favour the reference on all eight confirmatory comparisons, and the CI excludes zero on "
       + ", ".join(f"{disp[r.model]} vs {r.b}" for r in comp[comp.confirmatory].itertuples() if r.q_ci_low > 0) + ".\n")
     P("## 5. Quality / token frontier (every method, every model; 95% cluster-bootstrap CIs on both axes)\n")
@@ -117,7 +121,7 @@ def main() -> None:
     P("\n## 7. MiniMax M2.5 arm (secondary; Llama judge for the full table, Opus where it exists)\n")
     mm = comp[(comp.model == "response_c") & (comp.direction == "reference_vs_baseline") & (comp.a == ref)].copy()
     P(md(mm[["judge", "b", "n", "q_diff", "q_ci_low", "q_ci_high", "noninferior_ci", "tok_ratio"]].rename(columns={"b": "baseline", "q_diff": "Δ checklist", "q_ci_low": "CI low", "q_ci_high": "CI high", "noninferior_ci": "NI (CI)", "tok_ratio": "tokens ref/base"}), "{:.4f}"))
-    P(f"\nMechanical criterion applied to MiniMax (not part of the frozen confirmatory set): Opus {dec['secondary_minimax']['opus']['verdict']}; Llama {dec['secondary_minimax']['llama']['verdict']}. Note: the 32 off-route Opus calls all sit in this arm (§2).\n")
+    P(f"\nMechanical criterion applied to MiniMax (not part of the frozen confirmatory set): Opus {lab(dec['secondary_minimax']['opus']['verdict'])}; Llama {lab(dec['secondary_minimax']['llama']['verdict'])}. Note: the 32 off-route Opus calls all sit in this arm (§2).\n")
     if verb:
         s = verb["summary"]
         P("### Verbosity check (handoff §3.4)\n")
@@ -136,6 +140,7 @@ def main() -> None:
     P("It settles check 3 **on benchmark 1.1**: nine-turn histories, ~1,500 full-history tokens, where `semantic_retrieval@1024` keeps about two-thirds of the conversation and had 0.99–1.0 context recall in F0. Retrieval sees nearly everything the oracle sees in this regime, so a PASS here is a lower bound on the structured-context advantage and a null would have been weak evidence of comparability. It unblocks router work (R1.1), starting with the insufficiency detector; benchmark 1.2 (30–60 turn histories) remains required before any paper claim about long multi-topic conversations.\n")
     P("## 10. Assumptions and limitations\n")
     P("- Confirmatory-with-disclosure, per §0; one pooled point estimate was known before the thresholds were frozen.")
+    P("- The frozen criterion's FAIL branch was unreachable given the arms in this design: it required a baseline non-inferior to the reference while using ≤ 1.3× its context tokens (≤ 614), and the cheapest baseline in the study uses 893 (1.89×). Only PASS and INDETERMINATE were reachable, and the PASS token condition held by construction. This check therefore establishes non-inferiority at a −0.03 margin plus a token ratio, not a superiority or a dominance result. Item 5 below adds the missing like-for-like retrieval arm as a sensitivity analysis.")
     P("- Opus 4.6 is the same vendor family as Sonnet and Haiku; the Llama replication is the cross-vendor control and is reported for every confirmatory comparison.")
     P("- `candidate_oracle@15` equals `oracle_dag` in context on 99.3% of scenarios on this benchmark, so the reference is effectively the oracle DAG re-answered; the comparison is oracle-vs-baseline in all but name.")
     P("- Non-determinism at temperature 0 (23 of 432 identical prompts gave identical answers) puts a floor of a few pp on per-family differences; per-family cells inside ±0.075 are not signal.")

@@ -177,7 +177,9 @@ check3:
 
 pricing_usd_per_1m_tokens:        # Bedrock list prices as researched 13 Sep 2026; MiniMax rate unconfirmed, budgeted at the top of the handoff's range
   us.anthropic.claude-sonnet-4-6: {input: 3.00, output: 15.00}
+  global.anthropic.claude-sonnet-4-6: {input: 3.00, output: 15.00}                 # same model via the global profile (region fallback)
   us.anthropic.claude-haiku-4-5-20251001-v1:0: {input: 1.00, output: 5.00}
+  global.anthropic.claude-haiku-4-5-20251001-v1:0: {input: 1.00, output: 5.00}    # same model via the global profile (region fallback)
   us.anthropic.claude-opus-4-6-v1: {input: 5.00, output: 25.00}
   global.anthropic.claude-opus-4-6-v1: {input: 5.00, output: 25.00}
   deepseek.v3.2: {input: 0.62, output: 1.85}

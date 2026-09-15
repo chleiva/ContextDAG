@@ -1,0 +1,23 @@
+32 off-route verdicts: [('candidate_oracle', 'response_c'), ('full_history', 'response_c'), ('oracle_dag', 'response_c')]
+Traceback (most recent call last):
+  File "/Users/chleiva/code/ContextDAG/f05-candidate-realism/src/f05_judge.py", line 35, in judge_instance
+    data = extract_json(res.text)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chleiva/code/ContextDAG/f05-candidate-realism/src/f05_llm.py", line 290, in extract_json
+    raise ValueError("no JSON found in model response")
+ValueError: no JSON found in model response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/chleiva/code/ContextDAG/f05-candidate-realism/src/check3_rejudge_offroute.py", line 68, in <module>
+    main()
+  File "/Users/chleiva/code/ContextDAG/f05-candidate-realism/src/check3_rejudge_offroute.py", line 42, in main
+    out = judge_instance(ans[r["key"]], scen[r["scenario_id"]], "global.anthropic.claude-opus-4-6-v1", man, "rework-opus")
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chleiva/code/ContextDAG/f05-candidate-realism/src/f05_judge.py", line 45, in judge_instance
+    data = extract_json(res.text)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chleiva/code/ContextDAG/f05-candidate-realism/src/f05_llm.py", line 290, in extract_json
+    raise ValueError("no JSON found in model response")
+ValueError: no JSON found in model response

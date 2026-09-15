@@ -1,0 +1,27 @@
+435 planned, 2207 already answered, 113 to do
+-- primary: 113 instances
+[20/113] continuation_007|semantic_retrieval|512|us.anthropic.claude- ctx=490 fb=- | run $0.11, total $4.83
+[40/113] resume_011|semantic_retrieval|512|us.anthropic.claude-sonnet ctx=504 fb=- | run $0.22, total $4.93
+
+*** BUDGET WARNING: cumulative F0.5 spend $5.00 has passed $5.00; hard stop at $10.00 ***
+
+[60/113] compound_turn_005|semantic_retrieval|512|us.anthropic.claude ctx=507 fb=- | run $0.32, total $5.04
+[80/113] knowledge_update_006|semantic_retrieval|512|us.anthropic.cla ctx=448 fb=- | run $0.35, total $5.07
+[100/113] semantic_decoy_012|semantic_retrieval|512|us.anthropic.claud ctx=505 fb=- | run $0.38, total $5.10
+[113/113] two_branch_join_009|semantic_retrieval|512|us.anthropic.clau ctx=472 fb=- | run $0.40, total $5.12
+
+0 failures, run spend $0.40
+Check3 spend: $5.12 of $10.00 hard limit (estimate $3.20, warn $5.00)
+calls: 4059, tokens in: 6,279,702, out: 1,238,891
+  answer           $   2.26
+  check3-judge     $   1.88
+  rework-opus      $   0.66
+  summary          $   0.23
+  check3-verbosity $   0.08
+  us.meta.llama4-maverick-17b-instruct-v1:0        $   1.97
+  minimax.minimax-m2.5                             $   1.51
+  global.anthropic.claude-opus-4-6-v1              $   0.66
+  us.anthropic.claude-sonnet-4-6                   $   0.62
+  us.anthropic.claude-haiku-4-5-20251001-v1:0      $   0.20
+  global.anthropic.claude-sonnet-4-6               $   0.12
+  global.anthropic.claude-haiku-4-5-20251001-v1:0  $   0.03

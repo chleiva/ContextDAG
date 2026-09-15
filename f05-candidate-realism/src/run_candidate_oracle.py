@@ -48,6 +48,12 @@ def _patched_complete(model, prompt, **kw):
 
 _f0_llm.complete = _patched_complete
 _cm.SUMMARY_CACHE = ROOT / "results" / "raw" / "summaries.jsonl"
+# semantic_retrieval selections: F0's precomputed cache (@1024/@2048) plus F0.5's @512 sensitivity arm
+_sem = json.loads(_cm.SEMANTIC_CACHE.read_text())
+_p512 = ROOT / "results" / "raw" / "semantic_selection_512.json"
+if _p512.exists():
+    _sem.update(json.loads(_p512.read_text()))
+_cm._semantic_cache = _sem
 
 
 def parse_methods(spec: str) -> list[tuple[str, int | None]]:

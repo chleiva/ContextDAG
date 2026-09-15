@@ -1,0 +1,22 @@
+32 off-route verdicts: [('candidate_oracle', 'response_c'), ('full_history', 'response_c'), ('oracle_dag', 'response_c')]
+{
+ "n_rejudged": 32,
+ "n_offroute": 32,
+ "not_rejudged": [],
+ "route": "global.anthropic.claude-opus-4-6-v1@us-east-1",
+ "spend_usd": 0.0404,
+ "changed_verdicts": 0,
+ "mean_abs_score_change": 0.0,
+ "minimax_cand15_vs_full_old": {
+  "n": 145,
+  "q_diff": 0.030459770114942532,
+  "ci_low": 0.0005747126436781589,
+  "ci_high": 0.06206896551724138
+ },
+ "minimax_cand15_vs_full_new": {
+  "n": 145,
+  "q_diff": 0.030459770114942532,
+  "ci_low": 0.001709770114942536,
+  "ci_high": 0.06149425287356323
+ }
+}

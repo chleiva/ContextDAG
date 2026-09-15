@@ -40,7 +40,12 @@ def price(model: str, input_tokens: int, output_tokens: int, manifest: dict | No
     m = manifest or _manifest()
     table = m["pricing_usd_per_1m_tokens"]
     if model not in table:
-        raise KeyError(f"no price for model {model!r} in manifest.yaml; add it before calling")
+        # global.<id> and us.<id> are the same model at the same list price; accept either spelling
+        alt = ("us." + model[7:]) if model.startswith("global.") else (("global." + model[3:]) if model.startswith("us.") else None)
+        if alt in table:
+            model = alt
+        else:
+            raise KeyError(f"no price for model {model!r} in manifest.yaml; add it before calling")
     p = table[model]
     return input_tokens / 1e6 * p["input"] + output_tokens / 1e6 * p["output"]
 
