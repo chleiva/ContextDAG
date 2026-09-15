@@ -1,0 +1,47 @@
+reused 1450 calibration verdicts; 1885 to judge; 0 copies to resolve after
+[50/1885] ambiguous_reference_006|rolling_summary|2048|us.anthrop score=0.75 | run $0.026
+[100/1885] compound_turn_006|sliding_window|2048|us.anthropic.clau score=1.00 | run $0.053
+[150/1885] constraint_retention_001|rolling_summary|2048|us.anthro score=1.00 | run $0.087
+[200/1885] constraint_retention_008|semantic_retrieval|2048|us.ant score=1.00 | run $0.142
+[250/1885] continuation_002|rolling_summary|2048|us.anthropic.clau score=0.25 | run $0.188
+FAILED compound_turn_003|sliding_window|2048|us.anthropic.claude-sonnet-4-6: RuntimeError: converse call failed after 7 attempts over 3 regions: An error occurred (ThrottlingException) when calling the Converse operation (reached max retries: 2): Too 
+[300/1885] continuation_009|sliding_window|2048|us.anthropic.claud score=1.00 | run $0.208
+[350/1885] join_then_split_004|rolling_summary|1024|us.anthropic.c score=1.00 | run $0.232
+[400/1885] long_noisy_side_thread_001|rolling_summary|1024|us.anth score=1.00 | run $0.262
+FAILED continuation_008|rolling_summary|1024|us.anthropic.claude-sonnet-4-6: RuntimeError: converse call failed after 7 attempts over 3 regions: An error occurred (ThrottlingException) when calling the Converse operation (reached max retries: 2): Too 
+[450/1885] long_noisy_side_thread_007|rolling_summary|2048|us.anth score=1.00 | run $0.341
+[500/1885] new_root_001|rolling_summary|1024|us.anthropic.claude-h score=0.67 | run $0.397
+[550/1885] resume_002|semantic_retrieval|2048|us.anthropic.claude- score=1.00 | run $0.429
+[600/1885] resume_007|sliding_window|2048|us.anthropic.claude-haik score=0.33 | run $0.458
+[650/1885] resume_009|rolling_summary|2048|us.anthropic.claude-son score=1.00 | run $0.487
+[700/1885] semantic_decoy_005|semantic_retrieval|2048|us.anthropic score=0.75 | run $0.513
+[750/1885] semantic_decoy_012|rolling_summary|2048|us.anthropic.cl score=0.75 | run $0.540
+[800/1885] three_way_join_006|rolling_summary|2048|us.anthropic.cl score=1.00 | run $0.567
+[850/1885] topic_fork_004|rolling_summary|1024|us.anthropic.claude score=0.50 | run $0.592
+[900/1885] two_branch_join_001|rolling_summary|1024|us.anthropic.c score=1.00 | run $0.619
+[950/1885] two_branch_join_004|rolling_summary|1024|us.anthropic.c score=1.00 | run $0.643
+[1000/1885] two_branch_join_013|semantic_retrieval|2048|us.anthropi score=1.00 | run $0.668
+[1050/1885] compound_turn_014|rolling_summary|2048|us.anthropic.cla score=1.00 | run $0.693
+[1100/1885] knowledge_update_006|sliding_window|2048|us.anthropic.c score=1.00 | run $0.734
+[1150/1885] knowledge_update_010|rolling_summary|2048|us.anthropic. score=1.00 | run $0.775
+[1200/1885] constraint_retention_001|candidate_oracle|15|us.anthrop score=1.00 | run $0.811
+[1250/1885] new_root_004|candidate_oracle|15|us.anthropic.claude-so score=1.00 | run $0.854
+[1300/1885] ambiguous_reference_002|candidate_oracle|15|us.anthropi score=0.33 | run $0.880
+[1350/1885] join_then_split_006|candidate_oracle|15|us.anthropic.cl score=0.50 | run $0.912
+[1400/1885] semantic_decoy_003|candidate_oracle|15|us.anthropic.cla score=1.00 | run $0.954
+[1450/1885] two_branch_join_009|candidate_oracle|15|us.anthropic.cl score=1.00 | run $0.980
+FAILED topic_fork_004|candidate_oracle|15|us.anthropic.claude-sonnet-4-6: RuntimeError: converse call failed after 7 attempts over 3 regions: An error occurred (ThrottlingException) when calling the Converse operation (reached max retries: 2): Too 
+[1500/1885] compound_turn_010|candidate_oracle|15|minimax.minimax-m score=1.00 | run $1.008
+[1550/1885] constraint_retention_011|candidate_oracle|15|minimax.mi score=1.00 | run $1.052
+[1600/1885] join_then_split_007|candidate_oracle|15|minimax.minimax score=1.00 | run $1.075
+[1650/1885] knowledge_update_006|candidate_oracle|15|minimax.minima score=1.00 | run $1.115
+[1700/1885] new_root_007|oracle_dag|-|minimax.minimax-m2.5 score=0.67 | run $1.175
+[1750/1885] resume_015|oracle_dag|-|minimax.minimax-m2.5 score=0.75 | run $1.204
+[1800/1885] three_way_join_006|full_history|-|minimax.minimax-m2.5 score=1.00 | run $1.230
+[1850/1885] two_branch_join_005|oracle_dag|-|minimax.minimax-m2.5 score=1.00 | run $1.256
+[1885/1885] two_branch_join_011|candidate_oracle|15|minimax.minimax score=0.50 | run $1.275
+3 failures, 0 copies resolved, run spend $1.275
+Check3 spend: $1.27 of $10.00 hard limit (estimate $3.20, warn $5.00)
+calls: 1883, tokens in: 3,308,090, out: 495,896
+  check3-judge     $   1.27
+  us.meta.llama4-maverick-17b-instruct-v1:0        $   1.27

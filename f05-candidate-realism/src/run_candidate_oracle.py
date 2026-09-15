@@ -32,6 +32,34 @@ from metrics import selection_metrics  # noqa: E402  (F0)
 ANSWERS = ROOT / "results" / "raw" / "answers.jsonl"
 F0_ANS = f0_answers()
 
+# F0's rolling_summary calls `llm.complete` from F0's Anthropic-only client and caches summaries in
+# F0's summaries.jsonl. Route those calls through F0.5's multi-backend client (so MiniMax can write its
+# own summaries and spend lands on the F0.5 ledger in force) and keep F0.5's summaries in its own cache.
+import context_methods as _cm  # noqa: E402
+import llm as _f0_llm  # noqa: E402
+import f05_llm as _f05_llm  # noqa: E402
+
+
+def _patched_complete(model, prompt, **kw):
+    if not _f05_llm.is_anthropic(model):
+        kw["max_tokens"] = max(kw.get("max_tokens", 400), 2000)     # reasoning models spend tokens before the summary text
+    return _f05_llm.complete(model, prompt, **kw)
+
+
+_f0_llm.complete = _patched_complete
+_cm.SUMMARY_CACHE = ROOT / "results" / "raw" / "summaries.jsonl"
+
+
+def parse_methods(spec: str) -> list[tuple[str, int | None]]:
+    out = []
+    for m in spec.split(","):
+        m = m.strip()
+        if not m:
+            continue
+        name, _, b = m.partition("@")
+        out.append((name, int(b) if b else None))
+    return out
+
 
 def candidate_oracle(scenario, pool_rec: dict, k: int):
     t0 = time.time()
@@ -47,13 +75,18 @@ def candidate_oracle(scenario, pool_rec: dict, k: int):
     return ctx, extra
 
 
-def plan(man: dict, scenarios, pools: dict, models: list[str]) -> list[tuple]:
+def plan(man: dict, scenarios, pools: dict, models: list[str], extra_methods: str | None = None) -> list[tuple]:
     pk = man["candidate_generator"]["primary_k"]
     sens = man["candidate_oracle"]["sensitivity_k"]
     items = []
     for mk in models:
         mid = man["models"][mk]["id"]
         methods = man["models"][mk].get("methods", ["candidate_oracle"])
+        if extra_methods:
+            for name, b in parse_methods(extra_methods):
+                for s in scenarios:
+                    items.append((s, mk, mid, name, b))
+            continue
         for s in scenarios:
             for m in methods:
                 if m == "candidate_oracle":
@@ -71,7 +104,9 @@ def run_one(s, mk, mid, method, k, man, f0m, pools, system_prompt, dry_run, done
     if method == "candidate_oracle":
         ctx, extra = candidate_oracle(s, pools[s.scenario_id], k)
     else:
-        ctx, extra = build_context(s, method, {}), {}
+        ctx, extra = build_context(s, method, {"budget": k, "model": mid}), {}
+        if ctx.summary_text is not None:
+            extra = {"summary_text": ctx.summary_text, "summarized_turn_ids": ctx.summarized_turn_ids}
     rec = {"key": key, "scenario_id": s.scenario_id, "family": s.family, "method": method, "budget": k,
            "model_key": mk, "model": mid, "selected_turn_ids": ctx.selected_turn_ids, "context_tokens": ctx.context_tokens,
            "build_latency_s": round(ctx.build_latency_s, 4), "stale_superseder_missing": ctx.stale_superseder_missing,
@@ -112,13 +147,14 @@ def main() -> None:
     ap.add_argument("--models", default="response_a,response_b,response_c")
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--max-usd", type=float, default=None)
+    ap.add_argument("--extra-methods", default=None, help="e.g. 'semantic_retrieval@1024,rolling_summary@2048': run only these for --models")
     args = ap.parse_args()
     man, f0m = load_manifest(), load_f0_manifest()
     system_prompt = f0m["response_system_prompt"]
     scenarios = load_scenarios()
     pools = {r["scenario_id"]: r for r in json.loads(POOLS.read_text())}
     done = {r["key"]: r for r in read_jsonl(ANSWERS)}
-    items = plan(man, scenarios, pools, args.models.split(","))
+    items = plan(man, scenarios, pools, args.models.split(","), args.extra_methods)
     pk = man["candidate_generator"]["primary_k"]
     # primary-k instances first so sensitivity copies can find them
     items.sort(key=lambda it: (0 if (it[3] != "candidate_oracle" or it[4] == pk) else 1))

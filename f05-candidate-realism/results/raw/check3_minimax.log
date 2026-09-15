@@ -1,0 +1,40 @@
+580 planned, 1305 already answered, 580 to do
+-- primary: 580 instances
+[20/580] compound_turn_010|semantic_retrieval|1024|minimax.minimax-m2 ctx=945 fb=- | run $0.03, total $0.21
+[40/580] constraint_retention_009|semantic_retrieval|1024|minimax.min ctx=978 fb=- | run $0.07, total $0.25
+[60/580] knowledge_update_004|semantic_retrieval|1024|minimax.minimax ctx=966 fb=- | run $0.10, total $0.28
+[80/580] new_root_003|semantic_retrieval|1024|minimax.minimax-m2.5 ctx=1013 fb=- | run $0.13, total $0.32
+[100/580] semantic_decoy_003|semantic_retrieval|1024|minimax.minimax-m ctx=924 fb=- | run $0.16, total $0.35
+[120/580] three_way_join_008|semantic_retrieval|1024|minimax.minimax-m ctx=824 fb=- | run $0.20, total $0.39
+[140/580] two_branch_join_006|semantic_retrieval|1024|minimax.minimax- ctx=883 fb=- | run $0.24, total $0.42
+[160/580] compound_turn_006|semantic_retrieval|2048|minimax.minimax-m2 ctx=953 fb=- | run $0.27, total $0.46
+[180/580] continuation_001|semantic_retrieval|2048|minimax.minimax-m2. ctx=874 fb=- | run $0.31, total $0.50
+[200/580] join_then_split_006|semantic_retrieval|2048|minimax.minimax- ctx=878 fb=- | run $0.35, total $0.53
+[220/580] long_noisy_side_thread_008|semantic_retrieval|2048|minimax.m ctx=1963 fb=- | run $0.39, total $0.58
+[240/580] resume_013|semantic_retrieval|2048|minimax.minimax-m2.5 ctx=906 fb=- | run $0.43, total $0.62
+[260/580] three_way_join_005|semantic_retrieval|2048|minimax.minimax-m ctx=967 fb=- | run $0.46, total $0.65
+[280/580] two_branch_join_001|semantic_retrieval|2048|minimax.minimax- ctx=778 fb=- | run $0.51, total $0.69
+[300/580] compound_turn_003|rolling_summary|1024|minimax.minimax-m2.5 ctx=954 fb=- | run $0.54, total $0.72
+[320/580] constraint_retention_006|rolling_summary|1024|minimax.minima ctx=1310 fb=- | run $0.58, total $0.76
+[340/580] join_then_split_003|rolling_summary|1024|minimax.minimax-m2. ctx=932 fb=- | run $0.61, total $0.80
+[360/580] long_noisy_side_thread_001|rolling_summary|1024|minimax.mini ctx=1454 fb=- | run $0.67, total $0.85
+[380/580] resume_005|rolling_summary|1024|minimax.minimax-m2.5 ctx=1092 fb=- | run $0.74, total $0.92
+[400/580] semantic_decoy_006|rolling_summary|1024|minimax.minimax-m2.5 ctx=1137 fb=- | run $0.78, total $0.97
+[420/580] two_branch_join_001|rolling_summary|1024|minimax.minimax-m2. ctx=778 fb=- | run $0.84, total $1.02
+[440/580] two_branch_join_014|rolling_summary|1024|minimax.minimax-m2. ctx=766 fb=- | run $0.87, total $1.06
+[460/580] constraint_retention_001|rolling_summary|2048|minimax.minima ctx=2200 fb=- | run $0.91, total $1.10
+[480/580] join_then_split_003|rolling_summary|2048|minimax.minimax-m2. ctx=932 fb=- | run $0.98, total $1.16
+[500/580] knowledge_update_009|rolling_summary|2048|minimax.minimax-m2 ctx=2097 fb=- | run $1.03, total $1.21
+[520/580] resume_002|rolling_summary|2048|minimax.minimax-m2.5 ctx=681 fb=- | run $1.11, total $1.30
+[540/580] semantic_decoy_008|rolling_summary|2048|minimax.minimax-m2.5 ctx=1296 fb=- | run $1.15, total $1.34
+[560/580] topic_fork_006|rolling_summary|2048|minimax.minimax-m2.5 ctx=913 fb=- | run $1.19, total $1.38
+[580/580] two_branch_join_015|rolling_summary|2048|minimax.minimax-m2. ctx=839 fb=- | run $1.23, total $1.42
+
+0 failures, run spend $1.23
+Check3 spend: $1.42 of $10.00 hard limit (estimate $3.20, warn $5.00)
+calls: 856, tokens in: 1,101,250, out: 384,738
+  answer           $   1.08
+  summary          $   0.23
+  check3-judge     $   0.11
+  minimax.minimax-m2.5                             $   1.31
+  us.meta.llama4-maverick-17b-instruct-v1:0        $   0.11

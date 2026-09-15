@@ -1,0 +1,22 @@
+reused 0 calibration verdicts; 583 to judge; 0 copies to resolve after
+[50/583] join_then_split_008|semantic_retrieval|1024|minimax.min score=1.00 | run $0.031
+[100/583] semantic_decoy_001|semantic_retrieval|1024|minimax.mini score=0.50 | run $0.073
+[150/583] ambiguous_reference_005|semantic_retrieval|2048|minimax score=0.33 | run $0.100
+[200/583] join_then_split_009|semantic_retrieval|2048|minimax.min score=0.50 | run $0.132
+[250/583] resume_006|semantic_retrieval|2048|minimax.minimax-m2.5 score=0.75 | run $0.175
+[300/583] ambiguous_reference_007|rolling_summary|1024|minimax.mi score=1.00 | run $0.201
+[350/583] knowledge_update_006|rolling_summary|1024|minimax.minim score=1.00 | run $0.234
+[400/583] resume_015|rolling_summary|1024|minimax.minimax-m2.5 score=1.00 | run $0.275
+[450/583] compound_turn_011|rolling_summary|2048|minimax.minimax- score=1.00 | run $0.301
+[500/583] knowledge_update_003|rolling_summary|2048|minimax.minim score=1.00 | run $0.337
+[550/583] three_way_join_002|rolling_summary|2048|minimax.minimax score=1.00 | run $0.375
+[583/583] two_branch_join_003|rolling_summary|2048|minimax.minima score=1.00 | run $0.393
+0 failures, 0 copies resolved, run spend $0.393
+Check3 spend: $3.06 of $10.00 hard limit (estimate $3.20, warn $5.00)
+calls: 3267, tokens in: 5,377,406, out: 1,017,669
+  check3-judge     $   1.67
+  answer           $   1.08
+  summary          $   0.23
+  check3-verbosity $   0.08
+  us.meta.llama4-maverick-17b-instruct-v1:0        $   1.75
+  minimax.minimax-m2.5                             $   1.31
