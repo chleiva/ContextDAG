@@ -1,0 +1,13 @@
+model_key,method_label,n,retractions,retraction_rate,score_retracted,score_other
+response_a,full_history,39,2,0.0513,1.0,0.9473
+response_a,oracle_dag,39,20,0.5128,0.2767,0.8895
+response_a,semantic_retrieval@1024,39,19,0.4872,0.4623,0.8375
+response_a,semantic_retrieval@matched,39,8,0.2051,0.1812,0.9403
+response_b,full_history,39,7,0.1795,0.4929,0.8734
+response_b,oracle_dag,39,11,0.2821,0.4273,0.8571
+response_b,semantic_retrieval@1024,39,12,0.3077,0.4208,0.8173
+response_b,semantic_retrieval@matched,39,9,0.2308,0.4722,0.85
+response_c,full_history,39,2,0.0513,1.0,0.9405
+response_c,oracle_dag,39,0,0.0,,0.9103
+response_c,semantic_retrieval@1024,39,2,0.0513,0.5,0.8559
+response_c,semantic_retrieval@matched,39,0,0.0,,0.9013

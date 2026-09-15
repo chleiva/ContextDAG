@@ -120,6 +120,26 @@ def main() -> None:
                                      attempts_mean=("attempts", "mean")).round(3)
     vfam.to_csv(TABLES / "validation_by_family.csv")
 
+    # retraction analysis (exploratory): answers in which the responder disowns the prior assistant turns as fabricated
+    import re
+    pat = re.compile(r"fabricat|I (?:have )?(?:been )?invent|made up|I need to (?:stop|be transparent|be honest|correct)|I (?:don't|do not) (?:actually )?have (?:any )?(?:record|information|access)|cannot verify|not a real person|I should not continue|there is no (?:record|prior)", re.I)
+    df["retraction"] = df.response.fillna("").str[:600].map(lambda t: bool(pat.search(t))).astype(int)
+    ret = df.groupby(["model_key", "method_label"]).agg(n=("key", "size"), retractions=("retraction", "sum"), retraction_rate=("retraction", "mean"),
+                                                        score_retracted=("checklist_score", lambda v: v[df.loc[v.index, "retraction"] == 1].mean()),
+                                                        score_other=("checklist_score", lambda v: v[df.loc[v.index, "retraction"] == 0].mean())).reset_index().round(4)
+    ret.to_csv(TABLES / "retractions.csv", index=False)
+    # exploratory: oracle_dag - full_history on scenarios where neither arm retracted (per model)
+    ex_rows = []
+    for mk in models:
+        sub = df[df.model_key == mk]
+        bad = set(sub[(sub.method_label.isin(["oracle_dag", "full_history"])) & (sub.retraction == 1)].scenario_id)
+        r = paired(sub[~sub.scenario_id.isin(bad)], mk, "oracle_dag", "full_history", seed, n_boot)
+        if r:
+            r["excluded_scenarios"] = len(bad); ex_rows.append(r)
+    pd.DataFrame(ex_rows).round(4).to_csv(TABLES / "comparisons_no_retraction.csv", index=False)
+    print("\n== retractions ==\n" + ret.to_string(index=False))
+    print("\n== oracle_dag - full_history excluding retraction scenarios (exploratory) ==\n" + pd.DataFrame(ex_rows).round(4).to_string(index=False))
+
     # the gate, mechanically
     prim = {mk: comp[(comp.model == mk) & (comp.a == "oracle_dag") & (comp.b == "full_history")] for mk in models}
     est = {mk: (float(prim[mk].q_diff.iloc[0]) if len(prim[mk]) else None) for mk in models}
