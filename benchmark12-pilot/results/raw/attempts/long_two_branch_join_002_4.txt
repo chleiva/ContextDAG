@@ -1,0 +1,234 @@
+```json
+{
+  "entity_registry": [
+    "Mira Okafor",
+    "Harrowfield Community Foundation",
+    "Salesforce Nonprofit Success Pack",
+    "DonorPerfect",
+    "Migration Runbook v2",
+    "Carlos Reyes",
+    "Lena Strom",
+    "DataBridge Consulting"
+  ],
+  "turns": [
+    {
+      "turn_id": "t1",
+      "user_message": "We're trying to nail down the deduplication rule for our donor records before we move to Salesforce Nonprofit Success Pack. What threshold are other orgs typically using for fuzzy-name matching?",
+      "assistant_message": "Most implementations of Salesforce Nonprofit Success Pack use a Jaro-Winkler similarity threshold of 0.85 for fuzzy-name matching on donor records. Harrowfield Community Foundation's project team, led by Mira Okafor, settled on exactly 0.85 after a pilot run against 500 test records in March 2024. Any pair scoring at or above 0.85 is flagged as a probable duplicate and routed to a manual review queue before the final import."
+    },
+    {
+      "turn_id": "t2",
+      "user_message": "What's the current status of the data-retention policy document that Carlos Reyes was supposed to finalize for the migration project?",
+      "assistant_message": "Carlos Reyes submitted a draft retention policy to Mira Okafor on April 3, 2024, covering all donor records held in DonorPerfect. The policy sets a seven-year retention window for financial transaction records and a three-year window for contact-only records with no giving history. Lena Strom from DataBridge Consulting reviewed the draft and flagged two clauses related to deceased-donor data that still need legal sign-off before the document can be finalized."
+    },
+    {
+      "turn_id": "t3",
+      "user_message": "Has anyone decided which data fields from DonorPerfect will be mapped to custom objects versus standard objects in Salesforce Nonprofit Success Pack?",
+      "assistant_message": "DataBridge Consulting delivered a field-mapping spreadsheet on April 10, 2024 that assigns 142 standard DonorPerfect fields to existing Salesforce Nonprofit Success Pack standard objects. Twelve fields—including the legacy campaign codes and the in-kind gift valuation fields—were designated for custom objects because no standard equivalent exists. Mira Okafor approved the mapping on April 14, 2024, and it is now attached as Appendix C of the Migration Runbook v2."
+    },
+    {
+      "turn_id": "t4",
+      "user_message": "How many of those 142 standard fields are actually being used by Harrowfield Community Foundation right now, and does that affect the mapping plan?",
+      "assistant_message": "DataBridge Consulting's field-usage audit found that Harrowfield Community Foundation actively populates 98 of the 142 standard fields in DonorPerfect; the remaining 44 are legacy columns that contain no data from the past five years. Carlos Reyes recommended archiving the 44 unused fields as read-only reference tables rather than migrating them into Salesforce Nonprofit Success Pack, which reduces the migration payload by roughly 31 percent. Mira Okafor accepted that recommendation on April 16, 2024, and Migration Runbook v2 was updated to reflect it."
+    },
+    {
+      "turn_id": "t5",
+      "user_message": "What's the agreed cutover window for the actual go-live date of the new CRM system?",
+      "assistant_message": "The project steering committee, which includes Mira Okafor and Carlos Reyes, approved a cutover window of July 12–13, 2024 for the Salesforce Nonprofit Success Pack go-live. During that 48-hour window, DonorPerfect will be placed in read-only mode so no new records can be entered. DataBridge Consulting will run the final ETL job on the night of July 12, targeting completion by 06:00 on July 13 before staff arrive."
+    },
+    {
+      "turn_id": "t6",
+      "user_message": "What training plan did Lena Strom put together for Harrowfield Community Foundation staff on the new CRM?",
+      "assistant_message": "Lena Strom designed a three-tier training programme covering 27 staff members at Harrowfield Community Foundation. Tier 1 consists of a two-hour orientation webinar for all staff, scheduled for June 24, 2024; Tier 2 is a four-hour hands-on workshop for the 11 fundraising staff who will use Salesforce Nonprofit Success Pack daily; Tier 3 is a one-day administrator deep-dive for Mira Okafor and two designated system admins. All materials were drafted using DataBridge Consulting's standard curriculum and are pending final review by Carlos Reyes."
+    },
+    {
+      "turn_id": "t7",
+      "user_message": "Did the team decide whether to migrate soft-credit records from DonorPerfect, and how many are we talking about?",
+      "assistant_message": "Carlos Reyes confirmed on April 18, 2024 that soft-credit records will be migrated in full. Harrowfield Community Foundation's DonorPerfect instance contains 3,847 soft-credit records spanning fiscal years 2017 through 2023. Migration Runbook v2 section 4.2 specifies that these records will be loaded into the Salesforce Nonprofit Success Pack Opportunity Contact Role object with the role value set to 'Soft Credit', and DataBridge Consulting will validate the count post-load against the source export."
+    },
+    {
+      "turn_id": "t8",
+      "user_message": "Once duplicates are flagged at that 0.85 threshold, how large is the manual review queue expected to be before import?",
+      "assistant_message": "Based on the March 2024 pilot run against 500 test records, Mira Okafor's team at Harrowfield Community Foundation projected a duplicate-flag rate of approximately 4.2 percent across the full donor file. With 18,400 active donor records in DonorPerfect, that translates to an estimated 773 records routed to the manual review queue. DataBridge Consulting has allocated three business days for Lena Strom's data-quality team to clear the queue before the final import is triggered."
+    },
+    {
+      "turn_id": "t9",
+      "user_message": "What's the status of the legal sign-off that was blocking the retention policy?",
+      "assistant_message": "Harrowfield Community Foundation's pro-bono legal counsel reviewed the two flagged clauses on April 22, 2024 and approved both with minor wording changes. Carlos Reyes incorporated the edits and reissued the retention policy document as version 1.1 on April 24, 2024. Mira Okafor countersigned the final version that same day, so the policy is now fully executed and has been appended to Migration Runbook v2 as Exhibit A."
+    },
+    {
+      "turn_id": "t10",
+      "user_message": "Has Lena Strom set a registration deadline for the June 24 orientation webinar?",
+      "assistant_message": "Lena Strom set a registration deadline of June 17, 2024—one week before the webinar—so that DataBridge Consulting can finalise the attendee list and send login credentials in advance. As of the last status update on May 2, 2024, 19 of the 27 Harrowfield Community Foundation staff members had already registered. Carlos Reyes is following up with the remaining eight staff through their department heads."
+    },
+    {
+      "turn_id": "t11",
+      "user_message": "What happens to the Tier 2 workshop if fewer than a certain number of fundraising staff register?",
+      "assistant_message": "Lena Strom's training plan specifies a minimum of six attendees for the Tier 2 workshop to proceed as a live session; if fewer register, it converts to a self-paced module with a recorded walkthrough. All 11 fundraising staff at Harrowfield Community Foundation are required to complete either the live or self-paced Tier 2 track before go-live on July 12, 2024. DataBridge Consulting will issue completion certificates that Mira Okafor can use for audit purposes."
+    },
+    {
+      "turn_id": "t12",
+      "user_message": "Is there a rollback plan if the ETL job on July 12 doesn't finish by the 06:00 deadline?",
+      "assistant_message": "Migration Runbook v2 section 7.1 defines a hard rollback trigger: if the DataBridge Consulting ETL job has not reached 95 percent completion by 04:00 on July 13, 2024, Mira Okafor is authorised to abort and revert DonorPerfect to full read-write mode. The next available cutover window after a rollback would be the weekend of July 19–20, 2024, which Carlos Reyes pre-cleared with the board. A rollback notification template is pre-written in Migration Runbook v2 and would be sent to all Harrowfield Community Foundation stakeholders within 30 minutes of the decision."
+    },
+    {
+      "turn_id": "t13",
+      "user_message": "We also need to figure out the post-migration data freeze period. How long should donor records be locked after go-live before staff can start editing in Salesforce Nonprofit Success Pack?",
+      "assistant_message": "Industry practice for CRM migrations of this size is a 72-hour post-go-live data freeze, during which only system administrators can make changes. For Harrowfield Community Foundation's migration to Salesforce Nonprofit Success Pack, DataBridge Consulting recommended a 72-hour freeze starting at 08:00 on July 13, 2024. During that window, Lena Strom's team will run reconciliation reports comparing record counts and gift totals between DonorPerfect and the new system."
+    },
+    {
+      "turn_id": "t14",
+      "user_message": "Now that the retention policy is finalised, does it affect how long we keep the old DonorPerfect records after migration?",
+      "assistant_message": "Yes—the finalised retention policy version 1.1, countersigned by Mira Okafor, requires that the DonorPerfect database remain accessible in read-only archive mode for exactly 24 months after the July 13, 2024 go-live date. Carlos Reyes confirmed with DataBridge Consulting that the hosted DonorPerfect licence will be downgraded to an archive tier on July 14, 2024, reducing the monthly cost from $620 to $95. After the 24-month archive period ends in July 2026, all data must be purged or transferred to cold storage per the seven-year financial-record rule."
+    },
+    {
+      "turn_id": "t15",
+      "user_message": "Are the 12 custom object fields going to need any special permission sets in Salesforce before go-live?",
+      "assistant_message": "DataBridge Consulting identified that all 12 custom object fields require a dedicated permission set called 'HCF Custom Gifts Access' before any Harrowfield Community Foundation user can view or edit them in Salesforce Nonprofit Success Pack. Lena Strom will assign this permission set to the 11 fundraising staff during the Tier 2 workshop on or before June 28, 2024. Carlos Reyes noted in Migration Runbook v2 section 5.3 that system admins will receive the permission set automatically via their admin profile."
+    },
+    {
+      "turn_id": "t16",
+      "user_message": "Has anyone confirmed whether the Tier 3 admin deep-dive for Mira Okafor is still on schedule?",
+      "assistant_message": "The Tier 3 administrator deep-dive is confirmed for July 1, 2024, at Harrowfield Community Foundation's offices, and will run from 09:00 to 17:00. Lena Strom will facilitate the session alongside a DataBridge Consulting Salesforce-certified trainer. The two designated system admins alongside Mira Okafor have confirmed attendance, and pre-reading materials drawn from Migration Runbook v2 were distributed on May 15, 2024."
+    },
+    {
+      "turn_id": "t17",
+      "user_message": "If the rollback is triggered and we push to July 19, does that affect the cutover window length or the ETL job parameters?",
+      "assistant_message": "Migration Runbook v2 section 7.3 states that the backup cutover window of July 19–20, 2024 uses an identical 48-hour window and the same ETL job parameters as the primary window. DataBridge Consulting would re-export the full DonorPerfect dataset on the afternoon of July 18 to capture any records entered during the intervening week. Carlos Reyes confirmed that the 04:00 hard-abort trigger and the 06:00 completion target remain unchanged for the backup window."
+    },
+    {
+      "turn_id": "t18",
+      "user_message": "For the 12 custom object fields, did DataBridge Consulting document what the source field names are in DonorPerfect?",
+      "assistant_message": "Yes—Appendix C of Migration Runbook v2 lists all 12 source field names from DonorPerfect alongside their target custom object and API name in Salesforce Nonprofit Success Pack. The 12 fields include CAMPAIGN_LEGACY_CODE, IK_GIFT_VALUE, IK_GIFT_TYPE, and nine others related to event-based giving. DataBridge Consulting completed this mapping documentation on April 25, 2024, and Mira Okafor signed off the same day after cross-checking with Carlos Reyes."
+    },
+    {
+      "turn_id": "t19",
+      "user_message": "What's the contingency if the board doesn't approve the July 19 backup window in time?",
+      "assistant_message": "Migration Runbook v2 section 7.4 includes a third cutover option of August 2–3, 2024, which Carlos Reyes pre-cleared with the Harrowfield Community Foundation board at the same meeting that approved the July dates. If that window is also missed, the project enters a formal delay protocol requiring a new board resolution and a revised project plan from DataBridge Consulting. Mira Okafor has authority to approve operational decisions within the existing windows but cannot unilaterally schedule a fourth cutover date."
+    },
+    {
+      "turn_id": "t20",
+      "user_message": "Has the date for issuing training completion certificates been set, and who receives copies?",
+      "assistant_message": "DataBridge Consulting will issue all training completion certificates within five business days of each session concluding. Lena Strom will distribute the certificates to individual staff members and send a consolidated completion roster to Mira Okafor by July 8, 2024, giving her four days to confirm full readiness before the July 12 cutover. Carlos Reyes requested that the roster also be filed in the Harrowfield Community Foundation's HR system as evidence of CRM-system proficiency."
+    },
+    {
+      "turn_id": "t21",
+      "user_message": "Who has authority to lift the 72-hour data freeze early if reconciliation finishes ahead of schedule?",
+      "assistant_message": "Only Mira Okafor, as project sponsor, can authorise an early lift of the data freeze, and she must receive written sign-off from DataBridge Consulting confirming that all reconciliation checks have passed. The reconciliation checklist, defined in Migration Runbook v2 section 6.2, requires that record counts match within 0.1 percent and that total gift amounts match to the dollar before sign-off can be granted. If those thresholds are met before the 72-hour window closes, Mira Okafor can send a release email to all staff and the freeze ends immediately upon that notification."
+    },
+    {
+      "turn_id": "t22",
+      "user_message": "What happens to the DonorPerfect archive licence if Harrowfield Community Foundation decides to terminate it before the 24 months are up?",
+      "assistant_message": "The archive-tier contract that Carlos Reyes negotiated with DonorPerfect allows early termination with 60 days' written notice and no penalty fee, provided termination occurs after at least six months on the archive tier. If terminated early, DataBridge Consulting is contractually required to deliver a full data export in CSV format to Harrowfield Community Foundation within 30 days of the termination date. Mira Okafor would need to countersign the termination notice, and the data export would then be held in cold storage per the retention policy version 1.1 rules."
+    },
+    {
+      "turn_id": "t23",
+      "user_message": "Does the 60-day notice requirement interact with the seven-year financial-record retention rule in any way?",
+      "assistant_message": "Lena Strom raised exactly this question during the April 24, 2024 policy review, and the conclusion was that the 60-day notice window must be calculated so that the final DonorPerfect archive termination date falls no earlier than July 2031—seven years from the July 2024 go-live—for financial records. Carlos Reyes documented this constraint in a footnote to Exhibit A of Migration Runbook v2 to prevent an accidental early termination. Harrowfield Community Foundation's legal counsel confirmed that cold-storage CSV files satisfy the seven-year retention requirement as long as they remain accessible and unaltered."
+    },
+    {
+      "turn_id": "t24",
+      "user_message": "Can the data freeze be extended beyond 72 hours if the reconciliation reports show discrepancies?",
+      "assistant_message": "Yes—Migration Runbook v2 section 6.3 gives Mira Okafor authority to extend the freeze in 24-hour increments, up to a maximum total freeze of 168 hours (seven days). Each 24-hour extension requires a written status update from DataBridge Consulting explaining the nature of the discrepancy and the remediation plan. If the freeze exceeds 168 hours, Harrowfield Community Foundation enters a formal incident-management process and Carlos Reyes must notify the board within four business hours."
+    },
+    {
+      "turn_id": "t25",
+      "user_message": "If the cold-storage CSV files ever need to be restored for an audit, what format and access process did the team agree on?",
+      "assistant_message": "Carlos Reyes and DataBridge Consulting agreed that cold-storage CSVs will be stored in AWS S3 Glacier under Harrowfield Community Foundation's own AWS account, with a standard retrieval time of 12 hours for a bulk restore. Access requires dual authorisation from Mira Okafor and the current finance director, and retrieval requests must be logged in the organisation's IT ticketing system. Lena Strom drafted a one-page retrieval procedure that is appended to the retention policy version 1.1 as Schedule 2."
+    },
+    {
+      "turn_id": "t26",
+      "user_message": "If the ETL job on the backup window also triggers the 04:00 abort, does the August 2 option still use the same rollback notification template?",
+      "assistant_message": "Yes—Migration Runbook v2 section 7.4 explicitly states that the same rollback notification template used for the primary and first-backup windows applies to the August 2–3, 2024 window as well. Carlos Reyes added a version-controlled field in the template so the correct window date populates automatically, avoiding manual editing errors under time pressure. DataBridge Consulting holds the master copy of the template and is responsible for sending it within 30 minutes of Mira Okafor's abort decision, regardless of which window is in use."
+    },
+    {
+      "turn_id": "t27",
+      "user_message": "With 773 records in the manual review queue, is there a specific deadline by which that queue must be cleared before the July 12 cutover can proceed?",
+      "assistant_message": "Migration Runbook v2 section 3.4 sets June 30, 2024 as the hard deadline for clearing the manual duplicate-review queue. Mira Okafor established this date to give DataBridge Consulting a full 12-day buffer between queue clearance and the July 12 cutover. If any of the estimated 773 flagged records remain unresolved after June 30, the record is automatically merged using the most recently updated version as the master, per the tie-breaking rule documented by Lena Strom in Migration Runbook v2 section 3.5."
+    },
+    {
+      "turn_id": "t28",
+      "user_message": "For the August 2 window, does DataBridge Consulting need a fresh DonorPerfect export again, or can they reuse the July 18 export?",
+      "assistant_message": "Migration Runbook v2 section 7.4 requires a fresh DonorPerfect export for the August 2–3 window, taken on the afternoon of August 1, 2024, to capture any records entered since the July 18 export. DataBridge Consulting estimated the incremental delta between the July 18 and August 1 exports at roughly 150 to 200 new or modified records based on Harrowfield Community Foundation's typical weekly data-entry volume. Carlos Reyes confirmed that Mira Okafor will freeze all non-essential data entry from August 1 at noon to minimise the delta before the export runs."
+    },
+    {
+      "turn_id": "t29",
+      "user_message": "Is there a documented process for handling the 12 custom-object fields if a data discrepancy is found during the 72-hour reconciliation window?",
+      "assistant_message": "Migration Runbook v2 section 6.4 specifies that discrepancies in custom-object fields are treated as Priority 1 issues requiring DataBridge Consulting to respond within two hours and deliver a root-cause analysis within eight hours. Because the 12 custom fields—including IK_GIFT_VALUE and CAMPAIGN_LEGACY_CODE—do not have a standard Salesforce Nonprofit Success Pack equivalent, any mismatch triggers a manual field-by-field comparison against the DonorPerfect source export. Mira Okafor and Carlos Reyes are both listed as escalation contacts for custom-object discrepancies, and either can authorise a targeted re-load of the affected records without extending the full data freeze."
+    },
+    {
+      "turn_id": "t30",
+      "user_message": "Is there a cap on how many times the data freeze can be extended before it triggers that formal incident process?",
+      "assistant_message": "Based on the 24-hour increment rule and the 168-hour maximum established in Migration Runbook v2 section 6.3, the freeze can be extended a maximum of four times after the initial 72-hour period. Mira Okafor confirmed with Carlos Reyes on May 10, 2024 that each extension request must be submitted to DataBridge Consulting no later than two hours before the current freeze window expires. Reaching the fourth extension automatically triggers the formal incident-management process and requires Harrowfield Community Foundation's board notification within four business hours."
+    },
+    {
+      "turn_id": "t31",
+      "user_message": "What's the maximum total freeze duration allowed under the August 2 backup cutover window if discrepancies are found?",
+      "assistant_message": "For the August 2–3, 2024 backup cutover window, the maximum total data freeze is identical to the primary window: 168 hours from the 08:00 start on August 3, 2024, meaning the freeze must end no later than 08:00 on August 10, 2024. Carlos Reyes noted in Migration Runbook v2 section 7.4 that this 168-hour cap applies uniformly across all three cutover windows. DataBridge Consulting would notify Mira Okafor at the 144-hour mark—24 hours before the hard cap—if reconciliation was still incomplete."
+    },
+    {
+      "turn_id": "t32",
+      "user_message": "Has a specific person been assigned to send the training completion roster to Mira Okafor, and what happens if that deadline is missed?",
+      "assistant_message": "Lena Strom is the named responsible party for compiling and sending the training completion roster to Mira Okafor by July 8, 2024. If the roster is not delivered by that date, Migration Runbook v2 section 5.5 requires Carlos Reyes to escalate to the DataBridge Consulting project director within 24 hours. A missed roster deadline does not automatically delay the July 12 cutover but triggers a risk flag that Mira Okafor must formally accept or reject before authorising go-live."
+    },
+    {
+      "turn_id": "t33",
+      "user_message": "Going back to the freeze extension process—does each extension require board notification, or only once the formal incident threshold is hit?",
+      "assistant_message": "Board notification is not required for individual 24-hour extensions; it is triggered only when the total freeze duration reaches the 168-hour cap, which is when the formal incident-management process begins. Migration Runbook v2 section 6.3 is explicit that Mira Okafor has full authority to approve the first four extensions without board involvement. Carlos Reyes confirmed on May 10, 2024 that this authority structure was reviewed and accepted by Harrowfield Community Foundation's board at its April 30, 2024 governance meeting."
+    },
+    {
+      "turn_id": "t34",
+      "user_message": "What risk flag categories does Mira Okafor use when deciding whether to accept or reject a risk before go-live?",
+      "assistant_message": "Harrowfield Community Foundation's project risk framework, referenced in Migration Runbook v2 appendix D, uses three categories: Green for risks with no impact on go-live timeline, Amber for risks requiring a mitigation plan within 48 hours, and Red for risks that block go-live until resolved. A missed training-roster deadline from Lena Strom would be classified Amber, requiring DataBridge Consulting to provide a mitigation plan—such as a spot-check completion call—within 48 hours. Mira Okafor signs off on all Amber and Red risk acceptances; Carlos Reyes handles Green flags operationally."
+    },
+    {
+      "turn_id": "t35",
+      "user_message": "Has any risk been formally classified as Red so far in the project?",
+      "assistant_message": "As of the May 15, 2024 project status meeting, no risk had been formally classified as Red for the Harrowfield Community Foundation CRM migration. Two Amber risks are currently open: the dependency on legal sign-off for the retention policy (now resolved per the April 24 countersignature by Mira Okafor) and the readiness of the 'HCF Custom Gifts Access' permission set, which DataBridge Consulting committed to completing by June 15, 2024. Carlos Reyes maintains the live risk register and updates it after each weekly project call with Lena Strom."
+    },
+    {
+      "turn_id": "t36",
+      "user_message": "Just to confirm the freeze rules one more time: what is the exact maximum number of 24-hour extensions Mira Okafor can approve on her own authority, and what triggers the board notification?",
+      "assistant_message": "Mira Okafor can approve exactly four 24-hour extensions on her own authority, covering the period from 72 hours up to 168 hours after go-live. Board notification is triggered automatically when the 168-hour total freeze threshold is reached, at which point the formal incident-management process begins and Carlos Reyes must notify the board within four business hours. This authority ceiling was ratified by the Harrowfield Community Foundation board at its April 30, 2024 governance meeting and is documented in Migration Runbook v2 section 6.3."
+    },
+    {
+      "turn_id": "t37",
+      "user_message": "Does DataBridge Consulting have any contractual obligation to provide additional support hours if the August 2 window is used instead of the primary July 12 window?",
+      "assistant_message": "Yes—DataBridge Consulting's contract with Harrowfield Community Foundation includes a clause requiring 40 additional support hours at no extra charge if the primary cutover window is missed and any backup window is used. Carlos Reyes negotiated this clause specifically because of the risk of the July 12 abort, and it applies equally to both the July 19 and August 2 backup windows. Mira Okafor must formally invoke the clause in writing within five business days of the backup window being activated."
+    },
+    {
+      "turn_id": "t38",
+      "user_message": "Given the deadline for clearing the duplicate-review queue and the maximum number of freeze extensions Mira Okafor can approve without board involvement, what is the latest date the manual review queue must be cleared, and how many total days of data freeze can she authorise on her own?",
+      "assistant_message": null
+    }
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that the manual duplicate-review queue must be cleared by June 30, 2024.",
+      "required": false,
+      "evidence_turn_ids": ["t27"]
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that Mira Okafor can approve exactly four 24-hour extensions on her own authority, giving a maximum self-authorised freeze of 168 hours (7 days) total.",
+      "required": false,
+      "evidence_turn_ids": ["t30", "t36"]
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not state that the maximum freeze duration under the August 2 backup window ends on August 10, 2024, or cite 168 hours as applying specifically to the August window; that figure is the near-miss answer from t31 and refers to the August cutover context, not to the primary go-live freeze authority question.",
+      "required": true,
+      "evidence_turn_ids": []
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer correctly combines both facts: the June 30 queue-clearance deadline (from branch A) and the four-extension / 168-hour self-authority ceiling (from branch B) without confusing them with any backup-window dates.",
+      "required": false,
+      "evidence_turn_ids": ["t27", "t36"]
+    }
+  ],
+  "reference_answer": "The manual duplicate-review queue must be cleared by June 30, 2024, which is the hard deadline established in Migration Runbook v2 section 3.4 to provide a 12-day buffer before the July 12 cutover. On the freeze-extension question, Mira Okafor can approve exactly four 24-hour extensions on her own authority, bringing the maximum self-authorised freeze to 168 hours (seven days) from the go-live start. Once the 168-hour cap is reached, the formal incident-management process is triggered and Carlos Reyes must notify the Harrowfield Community Foundation board within four business hours.",
+  "notes": "The queue-clearance deadline (June 30, 2024) comes from branch A turns t27; the freeze-extension authority ceiling (four extensions, 168 hours, no board involvement) comes from branch B turns t30 and t36. The near-miss turn t31 also mentions 168 hours but applies it to the August 2 backup cutover window ending August 10, 2024, which is a different entity/date context and must not be cited as the answer."
+}
+```

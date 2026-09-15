@@ -1,0 +1,346 @@
+I'll carefully fix all the issues:
+1. Remove all topic-switch signposting
+2. Ensure answer_checklist items span both gold branches A and B
+3. Keep distractor branches much closer to the query's subject (same entities, same kind of details about the Japan trip)
+4. No transition phrases in user messages
+
+```json
+{
+  "entity_registry": ["Marcus Webb", "Priya Nair", "Soo-Jin Cho", "Derek Lam", "Japan Trip Planner Doc", "Sakura Rail Pass"],
+  "turns": [
+    {
+      "turn_id": "t1",
+      "user_message": "I'm planning a 10-day Japan trip with Marcus Webb, Priya Nair, Soo-Jin Cho, and Derek Lam. We've been using the Japan Trip Planner Doc to track everything. Can you help me figure out the Tokyo portion — we're thinking 4 nights there starting April 14?",
+      "assistant_message": "Four nights in Tokyo starting April 14 means you'd be there April 14 through April 17, checking out on the morning of April 18. That's a solid allocation for Tokyo given the group's stated interest in both the traditional neighborhoods like Yanaka and the tech districts like Akihabara. Based on the Japan Trip Planner Doc framework, you'll want to lock in Tokyo accommodation at least 90 days before arrival, which puts your booking deadline at January 14. I'd recommend targeting a hotel in Shinjuku as the central base for the four of you."
+    },
+    {
+      "turn_id": "t2",
+      "user_message": "What's the group's current thinking on travel insurance for the trip? Marcus Webb mentioned something about a group policy.",
+      "assistant_message": "Marcus Webb looked into a group travel insurance policy through Pacific Guard Travel, which covers all four travelers — Marcus Webb, Priya Nair, Soo-Jin Cho, and Derek Lam — under a single plan at 180 USD per person for the 10-day duration. The policy includes medical evacuation up to 500,000 USD and trip cancellation coverage up to 3,000 USD per person. The group deadline to enroll under the group rate is February 1, and Marcus Webb has agreed to collect payments from the others before that date. The Japan Trip Planner Doc has a tab dedicated to insurance where everyone is tracking their payment status."
+    },
+    {
+      "turn_id": "t3",
+      "user_message": "Soo-Jin Cho was asking about luggage storage options between cities. Has anyone researched that?",
+      "assistant_message": "Soo-Jin Cho noted in the Japan Trip Planner Doc that coin lockers at major JR stations cost between 400 and 700 yen per day depending on locker size, and the large lockers that fit a full-size rolling suitcase are 700 yen. Soo-Jin Cho also found a luggage forwarding service called Yamato Transport that can ship a bag between Tokyo and Kyoto for approximately 1,500 yen per bag, with next-day delivery if dropped off before 12:00 noon. Derek Lam has two large bags and would benefit most from the forwarding service on the Tokyo-to-Kyoto leg. The group should decide by March 15 whether to use forwarding or lockers so Derek Lam can plan packing accordingly."
+    },
+    {
+      "turn_id": "t4",
+      "user_message": "Derek Lam wants to know the group's budget per person for the whole trip. Can you summarize what we've settled on?",
+      "assistant_message": "The group agreed in the Japan Trip Planner Doc to a total per-person budget of 3,500 USD for the 10 days, covering flights, accommodation, ground transport, food, and activities. Flights from Los Angeles have been estimated at 900 USD per person round-trip, which leaves 2,600 USD per person for in-country expenses. Derek Lam and Priya Nair both flagged that they want to keep daily in-country spending under 200 USD per person, which works out to 2,000 USD over 10 days and leaves a 600 USD buffer per person for shopping and unexpected costs. Marcus Webb is tracking the shared expense ledger inside the Japan Trip Planner Doc."
+    },
+    {
+      "turn_id": "t5",
+      "user_message": "Has the group decided how to handle shared expenses like taxis and group dinners?",
+      "assistant_message": "Marcus Webb proposed using Splitwise to track all shared costs, and the group agreed during a planning call on December 10. The rule they set is that any shared expense over 20 USD must be logged in Splitwise within 24 hours of payment, and Derek Lam volunteered to be the primary payer for group meals since he has a credit card with no foreign transaction fees. Priya Nair and Soo-Jin Cho will each pre-load 500 USD equivalent onto a Wise travel card to cover their shares of smaller daily costs. The Japan Trip Planner Doc links to the Splitwise group under the Finance tab."
+    },
+    {
+      "turn_id": "t6",
+      "user_message": "For the Tokyo hotel, we've been looking at the Shinjuku Granbell Hotel. What room configuration should we book for the four of us?",
+      "assistant_message": "The Shinjuku Granbell Hotel offers a twin room configuration where two twin rooms booked as adjoining would comfortably accommodate the four travelers — Marcus Webb and Derek Lam in one room, Priya Nair and Soo-Jin Cho in the other. The nightly rate for each twin room is 18,500 yen, so the total for both rooms over four nights comes to 148,000 yen, approximately 990 USD at current exchange rates. The hotel requires a non-refundable deposit of one night's total cost — 37,000 yen — at time of booking. Booking should be completed by the January 14 deadline already noted in the Japan Trip Planner Doc."
+    },
+    {
+      "turn_id": "t7",
+      "user_message": "Priya Nair is handling the SIM card research. What has she found for mobile connectivity?",
+      "assistant_message": "Priya Nair researched three options and recorded her findings in the Japan Trip Planner Doc: an IIJmio tourist SIM at 3,500 yen for 15 days with 15 GB data, a SoftBank prepaid SIM at 4,000 yen for 14 days with 20 GB data, and a pocket WiFi rental from Japan Wireless at 900 yen per day with unlimited data. Priya Nair recommended the SoftBank prepaid SIM as the best value for solo use, but noted that a single pocket WiFi device shared among Marcus Webb, Derek Lam, Soo-Jin Cho, and herself would cost 9,000 yen total for 10 days and give everyone connectivity. The group has until March 1 to pre-order the pocket WiFi device for guaranteed airport pickup. Priya Nair will place the order on behalf of the group once everyone confirms."
+    },
+    {
+      "turn_id": "t8",
+      "user_message": "What's the deadline for enrolling in the Pacific Guard Travel group policy that Marcus Webb researched?",
+      "assistant_message": "The enrollment deadline for the Pacific Guard Travel group policy is February 1, as Marcus Webb specified when he shared the policy details with the group. Each of the four travelers — Marcus Webb, Priya Nair, Soo-Jin Cho, and Derek Lam — owes Marcus Webb 180 USD, and Marcus Webb will submit the group application in one batch. If anyone misses the February 1 deadline, they would have to purchase an individual policy at the standard rate of 240 USD, which is 60 USD more than the group rate. The Japan Trip Planner Doc shows that Soo-Jin Cho has already paid her share, while Derek Lam and Priya Nair have not yet transferred funds."
+    },
+    {
+      "turn_id": "t9",
+      "user_message": "Has the group decided what happens if someone needs to cancel the trip entirely?",
+      "assistant_message": "Under the Pacific Guard Travel group policy that Marcus Webb arranged, trip cancellation is covered up to 3,000 USD per person for qualifying reasons including illness, family emergency, or job loss with documentation. The group also agreed among themselves — documented in the Japan Trip Planner Doc — that if any one of the four cancels more than 60 days before departure, the remaining three will cover that person's non-refundable hotel deposit split equally. If the cancellation is within 60 days, the canceling traveler bears their own non-refundable costs not covered by insurance. Priya Nair drafted this agreement and all four — Marcus Webb, Derek Lam, and Soo-Jin Cho — signed off on it in the Japan Trip Planner Doc on December 15."
+    },
+    {
+      "turn_id": "t10",
+      "user_message": "Is there any provision in the policy for trip interruption — like if someone gets sick mid-trip?",
+      "assistant_message": "Yes, the Pacific Guard Travel group policy includes trip interruption coverage of up to 2,500 USD per person, which would cover additional accommodation and rebooking costs if a traveler must leave Japan early due to illness or emergency. The policy also provides 24-hour emergency assistance through a hotline, and Marcus Webb has saved the number in the Japan Trip Planner Doc under the Emergency Contacts tab. Derek Lam specifically asked about coverage for pre-existing conditions, and the policy covers stable pre-existing conditions as long as the insured has been stable for 90 days prior to the policy purchase date. Priya Nair noted that anyone with a pre-existing condition should review the policy's definition of stable before the February 1 enrollment deadline."
+    },
+    {
+      "turn_id": "t11",
+      "user_message": "What did the group decide about using Splitwise for large purchases like the Shinjuku Granbell Hotel deposit?",
+      "assistant_message": "The group agreed that the Shinjuku Granbell Hotel deposit of 37,000 yen will be paid by Marcus Webb on his credit card and then logged in Splitwise as a shared expense split four ways. Each of the other three travelers — Priya Nair, Soo-Jin Cho, and Derek Lam — owes Marcus Webb 9,250 yen as their share of the deposit. The Japan Trip Planner Doc specifies that all hotel deposits and advance payments made by one person on behalf of the group must be reimbursed within 7 days of the charge. Marcus Webb set a reminder in the Japan Trip Planner Doc for the group to settle the deposit reimbursement by January 21."
+    },
+    {
+      "turn_id": "t12",
+      "user_message": "What's the policy if Marcus Webb's credit card charges a foreign transaction fee on the hotel deposit?",
+      "assistant_message": "Marcus Webb confirmed his primary travel card is a Chase Sapphire Reserve, which has no foreign transaction fees, so the 37,000 yen Shinjuku Granbell Hotel deposit will be charged at the straight conversion rate with no additional fee. The Japan Trip Planner Doc notes that for any group purchase exceeding 50,000 yen, Marcus Webb will use the Chase Sapphire Reserve to maximize travel points, which accrue at 3 points per dollar on travel. Derek Lam's no-foreign-fee card will be used as backup for group meals and day-to-day shared costs as previously agreed. Priya Nair flagged in the Japan Trip Planner Doc that the group should notify their respective banks before April 14 to avoid fraud holds."
+    },
+    {
+      "turn_id": "t13",
+      "user_message": "Let's talk about the Sakura Rail Pass. I know we need to decide which type to buy — what are the options and what has the group narrowed it down to?",
+      "assistant_message": "The Sakura Rail Pass is the group's chosen brand for the JR Pass, and the two main options are the 7-day pass at 50,000 yen per person and the 14-day pass at 80,000 yen per person. Given the 10-day trip, the group has narrowed it down to buying two consecutive 7-day passes is too expensive, so the real choice is between the 7-day pass covering only the shinkansen travel days or supplementing with individual tickets. The group's itinerary includes a shinkansen ride from Tokyo to Kyoto on April 18 and from Kyoto to Hiroshima on April 22, and Priya Nair calculated that individual shinkansen tickets for those two routes would cost about 27,000 yen per person total. The Japan Trip Planner Doc records that the group is leaning toward individual tickets rather than the Sakura Rail Pass because the math favors it by roughly 23,000 yen per person."
+    },
+    {
+      "turn_id": "t14",
+      "user_message": "How should the group handle currency exchange — should everyone bring USD cash or use cards?",
+      "assistant_message": "The Japan Trip Planner Doc recommends a hybrid approach: each traveler should bring 300 USD worth of yen in cash for the first two days and for small vendors that don't accept cards. Derek Lam researched that 7-Eleven ATMs in Japan accept foreign cards and dispense yen at competitive rates with a flat fee of around 110 yen per withdrawal, making them the best in-country ATM option. Priya Nair and Soo-Jin Cho are both bringing their Wise cards loaded with 500 USD equivalent each, as agreed earlier. Marcus Webb plans to rely primarily on his Chase Sapphire Reserve for larger purchases and withdraw yen from 7-Eleven ATMs as needed."
+    },
+    {
+      "turn_id": "t15",
+      "user_message": "Soo-Jin Cho's question about coin lockers — has the group settled on a size standard for their bags so they know which locker tier to use?",
+      "assistant_message": "Soo-Jin Cho confirmed in the Japan Trip Planner Doc that she and Priya Nair are each bringing a medium rolling suitcase that fits the 500-yen medium locker tier at most JR stations. Marcus Webb is bringing a large backpack that also fits the medium tier. Derek Lam, as noted before, has two large bags that require the 700-yen large locker, and the group has agreed Derek Lam will use the Yamato Transport forwarding service on the Tokyo-to-Kyoto leg to avoid the locker issue. For the Kyoto-to-Hiroshima leg, Soo-Jin Cho will research whether Kyoto Station has enough large lockers available, since that station gets crowded in April during cherry blossom season."
+    },
+    {
+      "turn_id": "t16",
+      "user_message": "Priya Nair said she'd look into group data plans from SoftBank. Has she narrowed that down further?",
+      "assistant_message": "Priya Nair confirmed in the Japan Trip Planner Doc that SoftBank does not offer a formal group tourist data plan, so the shared pocket WiFi from Japan Wireless remains the group's preferred option at 900 yen per day. She also checked whether the Japan Wireless pocket WiFi device supports simultaneous connections from four devices — Marcus Webb's phone, Derek Lam's phone, Soo-Jin Cho's phone, and her own — and confirmed the device supports up to 10 simultaneous connections. The device will be picked up at Narita Airport Terminal 2 on April 14, which aligns with the group's arrival terminal based on their booked flight. Priya Nair will pre-order by the March 1 deadline and charge the full 9,000 yen to the group Splitwise account."
+    },
+    {
+      "turn_id": "t17",
+      "user_message": "What if the Japan Wireless pocket WiFi device runs out of battery during a long day out?",
+      "assistant_message": "Priya Nair noted in the Japan Trip Planner Doc that the Japan Wireless pocket WiFi device has a rated battery life of 8 hours, which may not cover a full day of sightseeing for Marcus Webb, Soo-Jin Cho, Derek Lam, and herself. She recommended that one person in the group carry a portable power bank of at least 10,000 mAh capacity to recharge the device mid-day. Derek Lam already owns an Anker 20,000 mAh power bank and volunteered to carry it throughout the trip. Priya Nair updated the Japan Trip Planner Doc to note that Derek Lam is the designated device-carrier and charger-carrier for connectivity equipment."
+    },
+    {
+      "turn_id": "t18",
+      "user_message": "Is there a plan if the pocket WiFi device gets lost or stolen?",
+      "assistant_message": "The Japan Wireless rental agreement, which Priya Nair reviewed and summarized in the Japan Trip Planner Doc, requires a 15,000 yen replacement deposit that is refunded upon return of the device. If the device is lost, the group forfeits the deposit and must pay an additional 5,000 yen replacement fee, for a total loss of 20,000 yen split four ways — 5,000 yen per person. Priya Nair suggested that Marcus Webb carry the device during the Tokyo days since he's the most careful with electronics, per Soo-Jin Cho's nomination. The Japan Trip Planner Doc has a note that the group should purchase a small carabiner clip to keep the device attached to a bag strap at all times."
+    },
+    {
+      "turn_id": "t19",
+      "user_message": "For the Sakura Rail Pass decision, I recall that individual tickets were favored. Can you confirm the exact cost per person for the two shinkansen routes we've identified?",
+      "assistant_message": "The individual shinkansen ticket from Tokyo to Kyoto on the Nozomi service costs 13,910 yen per person for a reserved seat, and the ticket from Kyoto to Hiroshima on the Sakura shinkansen service costs 11,090 yen per person for a reserved seat. Together that is 25,000 yen per person for both shinkansen segments, which Priya Nair confirmed in the Japan Trip Planner Doc after checking the JR official fare tables. The 7-day Sakura Rail Pass at 50,000 yen per person would only save money if the group added at least three more shinkansen journeys, which the current itinerary does not include. The group formally decided in the Japan Trip Planner Doc on December 20 to purchase individual reserved-seat tickets rather than the Sakura Rail Pass."
+    },
+    {
+      "turn_id": "t20",
+      "user_message": "Soo-Jin Cho also asked about the Kyoto station locker situation during cherry blossom season. What did the research show?",
+      "assistant_message": "Soo-Jin Cho found that Kyoto Station's coin lockers are notoriously full by 9:00 AM during the peak cherry blossom period, which runs from approximately March 28 to April 12 based on historical averages. Since the group arrives in Kyoto on April 18, they will be just past peak bloom, and Soo-Jin Cho confirmed that locker availability is generally good after April 15 based on traveler reports in the Japan Trip Planner Doc's research annex. She also identified a paid luggage storage counter at Kyoto Station operated by Sagawa Express that guarantees space with a reservation at 800 yen per bag per day. Marcus Webb suggested the group pre-book two Sagawa Express slots for April 18 as a precaution."
+    },
+    {
+      "turn_id": "t21",
+      "user_message": "Has the group decided whether to add trip delay coverage to the Pacific Guard Travel policy?",
+      "assistant_message": "The Pacific Guard Travel group policy that Marcus Webb arranged includes a base trip delay benefit of 200 USD per person per day after a 6-hour delay, up to a maximum of 600 USD per person. Priya Nair reviewed the base policy and determined the 200 USD daily allowance is sufficient given that the group's Japan Trip Planner Doc budget already includes a 600 USD buffer per person. Derek Lam asked whether the delay coverage would apply to a missed shinkansen connection, and Marcus Webb confirmed it does not — delay coverage only applies to the originally ticketed international flight. Soo-Jin Cho noted this in the Japan Trip Planner Doc under the Insurance tab as a known gap in coverage."
+    },
+    {
+      "turn_id": "t22",
+      "user_message": "For the Shinjuku Granbell Hotel, we need to confirm the total yen cost for four nights for both rooms. Can you give me the final number?",
+      "assistant_message": "The total cost for both adjoining twin rooms at the Shinjuku Granbell Hotel over four nights is 148,000 yen, calculated as two rooms at 18,500 yen per room per night multiplied by four nights. At a reference exchange rate of 150 yen per USD, this equals approximately 987 USD for accommodation in Tokyo for all four travelers combined. The non-refundable deposit due at booking is 37,000 yen, representing one full night's cost for both rooms, as confirmed in the Japan Trip Planner Doc. Marcus Webb will place the booking before the January 14 deadline and log the deposit in Splitwise for reimbursement by January 21."
+    },
+    {
+      "turn_id": "t23",
+      "user_message": "For the shinkansen tickets, does the group need to buy reserved seats in advance, or can they buy at the station?",
+      "assistant_message": "Priya Nair confirmed in the Japan Trip Planner Doc that reserved-seat tickets on the Nozomi Tokyo-to-Kyoto service and the Sakura Kyoto-to-Hiroshima service can be purchased up to one month before travel date at JR ticket offices or online through the JR SmartEX app. However, April is peak travel season in Japan, and Priya Nair strongly recommends purchasing tickets exactly one month in advance — March 18 for the April 18 Tokyo-to-Kyoto leg and March 22 for the April 22 Kyoto-to-Hiroshima leg. The group agreed that Derek Lam will purchase all four reserved-seat tickets for each leg simultaneously to ensure the group sits together. Each ticket must be linked to a credit card for the SmartEX app, and Derek Lam will use his no-foreign-fee card."
+    },
+    {
+      "turn_id": "t24",
+      "user_message": "What's the total per-person shinkansen cost if we add a third leg — say, Hiroshima back to Tokyo for the final stretch?",
+      "assistant_message": "A Hiroshima-to-Tokyo Nozomi reserved-seat ticket costs approximately 18,380 yen per person based on the JR official fares that Priya Nair checked. Adding that to the 25,000 yen already confirmed for the Tokyo-to-Kyoto and Kyoto-to-Hiroshima legs brings the total per-person shinkansen cost to 43,380 yen. Priya Nair noted in the Japan Trip Planner Doc that at this three-leg total, the 7-day Sakura Rail Pass at 50,000 yen is still more expensive by 6,620 yen per person, so individual tickets remain the better choice. The group confirmed on December 20 that the itinerary does include a Hiroshima-to-Tokyo return leg, making the total per-person shinkansen spend 43,380 yen with individual tickets."
+    },
+    {
+      "turn_id": "t25",
+      "user_message": "For the Sagawa Express luggage storage at Kyoto Station, how many bags does the group need to store and on which date?",
+      "assistant_message": "On April 18 when the group arrives in Kyoto, Soo-Jin Cho's plan calls for storing bags while the group does a half-day walking tour of Gion before checking into the Kyoto hotel in the afternoon. The group has a total of six bags: Soo-Jin Cho's medium suitcase, Priya Nair's medium suitcase, Marcus Webb's large backpack, and Derek Lam's two large suitcases plus one daypack. At 800 yen per bag per day via Sagawa Express, storing all six bags for one day costs 4,800 yen, split four ways at 1,200 yen per person. Marcus Webb will make the Sagawa Express reservation for April 18 when he books the Shinjuku Granbell Hotel before the January 14 deadline."
+    },
+    {
+      "turn_id": "t26",
+      "user_message": "Is there a fee for changing the Splitwise group's base currency if the group wants to track in yen instead of USD?",
+      "assistant_message": "Splitwise allows free currency changes in the group settings at any time, and Marcus Webb confirmed there is no fee for switching the Japan Trip Planner Doc's linked Splitwise group from USD to JPY. The group voted during the December 10 planning call to keep the Splitwise base currency in USD for simplicity, since Priya Nair, Soo-Jin Cho, Derek Lam, and Marcus Webb all earn in USD. Splitwise will display yen amounts converted to USD using the exchange rate at the time each expense is logged. Derek Lam noted that this means exchange-rate fluctuations between now and April could cause minor discrepancies, which the group accepted as a known limitation."
+    },
+    {
+      "turn_id": "t27",
+      "user_message": "Has Soo-Jin Cho confirmed what Yamato Transport's pickup cutoff time is for the Tokyo-to-Kyoto forwarding on April 18?",
+      "assistant_message": "Soo-Jin Cho confirmed in the Japan Trip Planner Doc that Yamato Transport requires bag drop-off at a Yamato counter before 12:00 noon on the day prior to the desired delivery date. Since the group wants their bags at the Kyoto hotel on April 18, Derek Lam must drop off his two large bags at a Yamato counter in Tokyo by 12:00 noon on April 17. The nearest Yamato counter to the Shinjuku Granbell Hotel is inside the Takashimaya Times Square building, approximately a 5-minute walk away. Soo-Jin Cho added a reminder in the Japan Trip Planner Doc for Derek Lam to complete the Yamato drop-off by 11:30 AM on April 17 to allow a buffer."
+    },
+    {
+      "turn_id": "t28",
+      "user_message": "If the group switches Splitwise to yen mid-trip, would past USD entries be recalculated?",
+      "assistant_message": "Marcus Webb checked the Splitwise help documentation and confirmed that if the group switches base currency mid-trip, all previously logged USD entries are not retroactively recalculated — they remain in USD and are displayed with a currency label. New entries after the switch would be logged in yen, creating a mixed-currency group that could be confusing for Priya Nair, Soo-Jin Cho, and Derek Lam when settling up. The Japan Trip Planner Doc's Finance tab includes a note from Marcus Webb recommending against mid-trip currency switches for this reason. The group's consensus is to maintain USD throughout and do a final conversion calculation after returning home."
+    },
+    {
+      "turn_id": "t29",
+      "user_message": "Priya Nair asked whether Japan Wireless charges extra if the pocket WiFi device is returned a day late.",
+      "assistant_message": "The Japan Wireless rental terms that Priya Nair reviewed specify a late return fee of 1,500 yen per day, charged to the credit card on file. The group's return date is April 24, and the device must be dropped in a Japan Post mailbox or returned to a Japan Wireless counter by 11:59 PM on that date to avoid the late fee. Priya Nair noted in the Japan Trip Planner Doc that Marcus Webb, who is carrying the device, should mail it from the Narita Airport Japan Post counter before the group's departing flight on April 24. The pre-paid return envelope will be included in the rental package picked up on April 14."
+    },
+    {
+      "turn_id": "t30",
+      "user_message": "How should the group handle the Splitwise final settlement — should everyone pay Marcus Webb before or after the trip?",
+      "assistant_message": "The group agreed during the December 10 planning call that all pre-trip shared expenses — hotel deposits, insurance, and advance ticket purchases — will be settled in Splitwise within 7 days of each charge, as logged in the Japan Trip Planner Doc. For in-trip expenses, the group will settle the full Splitwise balance within 14 days of returning home, which means by May 8 given the April 24 return date. Marcus Webb will generate a Splitwise final summary report and share it with Priya Nair, Soo-Jin Cho, and Derek Lam by April 27. Any disputes must be raised within 48 hours of receiving the summary."
+    },
+    {
+      "turn_id": "t31",
+      "user_message": "What happens if the Japan Wireless pocket WiFi device has no signal in a rural area like near Hiroshima's Miyajima Island?",
+      "assistant_message": "Priya Nair checked Japan Wireless's coverage map and confirmed that SoftBank's network, which Japan Wireless uses, covers Miyajima Island and the Hiroshima Bay ferry route with 4G LTE service. The Japan Trip Planner Doc notes that Miyajima Island has some dead zones in the forested mountain trails above the ropeway, but the main tourist areas including Itsukushima Shrine have reliable coverage. Priya Nair recommended that Marcus Webb download offline Google Maps for the Hiroshima and Miyajima areas before April 22, and Soo-Jin Cho seconded this suggestion for the Kyoto hiking trails as well. Derek Lam offered to download a backup offline map app called Maps.me as a secondary resource."
+    },
+    {
+      "turn_id": "t32",
+      "user_message": "Has Priya Nair looked into whether the SoftBank network also covers the shinkansen route between cities?",
+      "assistant_message": "Priya Nair confirmed in the Japan Trip Planner Doc that SoftBank 4G LTE coverage is available on most of the Tokaido Shinkansen route between Tokyo and Kyoto, with only brief tunnel interruptions averaging 30 to 90 seconds each. The Sanyo Shinkansen route between Kyoto and Hiroshima has similar coverage quality, with slightly longer tunnel interruptions through the Rokko mountain section. Marcus Webb noted that the pocket WiFi device will maintain its connection and reconnect automatically after tunnel exits, so streaming and messaging should work fine for most of the journey. Soo-Jin Cho added a note in the Japan Trip Planner Doc to download any large media files before boarding the shinkansen just in case."
+    },
+    {
+      "turn_id": "t33",
+      "user_message": "What if the Japan Wireless device has a malfunction on day one and needs replacement?",
+      "assistant_message": "Priya Nair reviewed the Japan Wireless support policy and noted in the Japan Trip Planner Doc that Japan Wireless offers next-business-day replacement delivery to a hotel address for defective devices, at no additional charge. The group would need to call the Japan Wireless support line by 3:00 PM to qualify for next-day delivery, and Marcus Webb saved the support number in the Japan Trip Planner Doc Emergency Contacts tab. For the interim period of up to one day without the device, Soo-Jin Cho and Priya Nair both have SIM slots they can activate with a backup eSIM if needed, and Derek Lam's phone is also eSIM compatible. The group agreed that in a malfunction scenario, Marcus Webb will handle the replacement call while the others proceed with the day's itinerary."
+    },
+    {
+      "turn_id": "t34",
+      "user_message": "Going back to the insurance — does the Pacific Guard Travel policy cover lost electronics like the pocket WiFi device?",
+      "assistant_message": "The Pacific Guard Travel group policy that Marcus Webb arranged covers lost or stolen personal electronics up to 500 USD per item with a 50 USD deductible, as Priya Nair verified and recorded in the Japan Trip Planner Doc. The Japan Wireless pocket WiFi device's replacement cost is 20,000 yen — about 133 USD — which falls well within the 500 USD electronics coverage limit. However, Marcus Webb noted that the policy requires a police report filed within 24 hours of discovering the loss for any electronics claim, which is documented in the Japan Trip Planner Doc under the Insurance tab. Derek Lam suggested the group photograph all electronics including the pocket WiFi device before departure to facilitate any claims."
+    },
+    {
+      "turn_id": "t35",
+      "user_message": "Has the group finalized which Yamato Transport service level to use — standard or express — for Derek Lam's bags?",
+      "assistant_message": "Soo-Jin Cho confirmed in the Japan Trip Planner Doc that the group will use Yamato Transport's standard TA-Q-BIN service, not the express option, since the standard service guarantees next-day delivery when dropped off before noon and costs 1,500 yen per large bag. The express service costs 2,200 yen per bag and delivers on the same day if dropped off before 8:00 AM, which is not practical given the group's April 17 morning schedule at the Shinjuku Granbell Hotel. Derek Lam has two large bags, so standard TA-Q-BIN forwarding will cost 3,000 yen total. Marcus Webb noted in the Japan Trip Planner Doc that the 3,000 yen forwarding cost will be logged in Splitwise as Derek Lam's personal expense rather than a group shared cost."
+    },
+    {
+      "turn_id": "t36",
+      "user_message": "What are the check-in and check-out times at the Japan Wireless counter at Narita Airport on April 14?",
+      "assistant_message": "Priya Nair confirmed in the Japan Trip Planner Doc that the Japan Wireless pickup counter at Narita Airport Terminal 2 operates from 7:00 AM to 10:00 PM daily, including April 14. The group's flight arrives at Terminal 2 at 5:40 PM local time, and after customs and immigration, they expect to reach the pickup counter by approximately 7:00 PM, well within operating hours. Priya Nair noted that the pickup requires the reservation confirmation number she will print and also save on her phone, and that only one group member needs to be present to collect the device for all four travelers. She designated herself as the person to pick up the device since she placed the order."
+    },
+    {
+      "turn_id": "t37",
+      "user_message": "Is there a fee if the group needs to add another traveler to the Splitwise group after the trip has started?",
+      "assistant_message": "Marcus Webb checked and confirmed there is no fee to add a new member to a Splitwise group at any time, but the Japan Trip Planner Doc notes this scenario is not anticipated since the group is fixed at four people — Marcus Webb, Priya Nair, Soo-Jin Cho, and Derek Lam. If a fifth person were to join any portion of the trip, the group agreed they would add that person to Splitwise only for the days they are present and split relevant expenses among the active participants on those days. Derek Lam suggested this rule covers a scenario where a Tokyo-based friend of Soo-Jin Cho might join for one dinner. The Japan Trip Planner Doc records this as a standing protocol for the trip."
+    },
+    {
+      "turn_id": "t38",
+      "user_message": "For the shinkansen tickets, Derek Lam is buying on SmartEX — does he need a Japanese credit card or will his US card work?",
+      "assistant_message": "Priya Nair confirmed in the Japan Trip Planner Doc that the JR SmartEX app accepts Visa and Mastercard issued outside Japan, so Derek Lam's US-issued no-foreign-fee card will work without any issues. The app requires registration with a card number and email address at least 24 hours before purchasing tickets, and Priya Nair reminded Derek Lam to register his card by March 17 so he's ready to purchase on March 18 when the one-month advance window opens for the April 18 Tokyo-to-Kyoto leg. Tickets purchased on SmartEX are retrieved at the shinkansen gate using an IC card or credit card, not a paper ticket, which works at all major JR stations including Tokyo, Kyoto, and Hiroshima. Soo-Jin Cho and Marcus Webb both confirmed they do not need to register their own cards since Derek Lam is purchasing all four seats."
+    },
+    {
+      "turn_id": "t39",
+      "user_message": "Has the group looked into whether Narita Express or airport limousine bus is better for getting from Narita to Shinjuku on April 14?",
+      "assistant_message": "Priya Nair researched both options and logged the comparison in the Japan Trip Planner Doc. The Narita Express N'EX costs 3,070 yen per person from Narita Terminal 2 to Shinjuku Station and takes about 80 minutes, while the Airport Limousine Bus costs 3,200 yen per person and takes 90 to 120 minutes depending on traffic. For four travelers — Marcus Webb, Priya Nair, Soo-Jin Cho, and Derek Lam — the N'EX is 12,280 yen total versus 12,800 yen for the bus, a difference of 520 yen. Priya Nair recommended the N'EX for its reliability and speed, and the Japan Trip Planner Doc records the group's decision to take the N'EX on April 14 arrival."
+    },
+    {
+      "turn_id": "t40",
+      "user_message": "Soo-Jin Cho asked about the Yamato Transport drop-off location near Shinjuku — is the Takashimaya Times Square counter the only option?",
+      "assistant_message": "Soo-Jin Cho found in the Japan Trip Planner Doc research annex that in addition to the Takashimaya Times Square counter, there is a Yamato Transport convenience store drop-off point at the FamilyMart inside Shinjuku Station's East Exit, which is open 24 hours. There is also a Yamato counter at the Odakyu Halc department store connected to Shinjuku Station's West Exit, open 10:00 AM to 8:00 PM. All three locations are within a 10-minute walk of the Shinjuku Granbell Hotel. Soo-Jin Cho updated the Japan Trip Planner Doc to recommend the FamilyMart inside Shinjuku Station as the most convenient drop-off for Derek Lam on the morning of April 17."
+    },
+    {
+      "turn_id": "t41",
+      "user_message": "What's the delivery address the group should use for Yamato Transport to the Kyoto hotel?",
+      "assistant_message": "Soo-Jin Cho noted in the Japan Trip Planner Doc that the group's Kyoto accommodation is the Kyoto Tower Hotel, and the Yamato Transport delivery address should be written as Kyoto Tower Hotel, 721-1 Higashishiokojicho, Shimogyo Ward, Kyoto 600-8216, with Derek Lam's name and the check-in date of April 18 noted on the baggage tag. Yamato Transport provides trilingual baggage tags in English, Japanese, and Chinese at the drop-off counter, so Derek Lam does not need to write in Japanese. The Japan Trip Planner Doc includes a printed baggage tag template that Soo-Jin Cho prepared, which Marcus Webb will add to the group's shared Google Drive folder before April 17. The Kyoto Tower Hotel has confirmed it will accept forwarded luggage from Yamato Transport on behalf of guests."
+    },
+    {
+      "turn_id": "t42",
+      "user_message": "What's the total cost per person if we take the N'EX both ways — from Narita on arrival and back to Narita on departure?",
+      "assistant_message": "The Narita Express N'EX from Narita Terminal 2 to Shinjuku costs 3,070 yen per person on arrival, and the return journey from Shinjuku to Narita Terminal 2 on departure day also costs 3,070 yen per person. The round-trip total per person for the N'EX is therefore 6,140 yen, or approximately 41 USD at 150 yen per USD. For all four travelers — Marcus Webb, Priya Nair, Soo-Jin Cho, and Derek Lam — the total N'EX cost for both directions is 24,560 yen. Priya Nair logged this figure in the Japan Trip Planner Doc under the Transport Budget tab as the confirmed ground transfer budget for airport connections."
+    },
+    {
+      "turn_id": "t43",
+      "user_message": "Going back to the shinkansen decision — I want to confirm the total per-person cost for all three shinkansen legs we've decided on.",
+      "assistant_message": "The three confirmed shinkansen legs in the Japan Trip Planner Doc are Tokyo to Kyoto at 13,910 yen, Kyoto to Hiroshima at 11,090 yen, and Hiroshima to Tokyo at 18,380 yen, giving a total of 43,380 yen per person for all three legs on individual reserved-seat tickets. Priya Nair verified all three fares from the JR official fare tables and Derek Lam will purchase all four sets of tickets on SmartEX. The group confirmed on December 20 that individual tickets are cheaper than the Sakura Rail Pass by 6,620 yen per person. Derek Lam must register on SmartEX by March 17 and purchase the first set of tickets on March 18."
+    },
+    {
+      "turn_id": "t44",
+      "user_message": "Has anyone confirmed the check-in time at the Kyoto Tower Hotel on April 18?",
+      "assistant_message": "Soo-Jin Cho confirmed in the Japan Trip Planner Doc that the Kyoto Tower Hotel's standard check-in time is 3:00 PM, but the hotel offers early check-in from 1:00 PM for an additional fee of 3,000 yen per room. The group is arriving in Kyoto by shinkansen on the morning of April 18, so they plan to store their bags at Sagawa Express and explore Gion before the 3:00 PM check-in. Soo-Jin Cho has noted that Marcus Webb should request early check-in when making the reservation to confirm availability, though the 3,000 yen per-room fee makes it not essential if the Sagawa storage plan works. The Japan Trip Planner Doc records the Kyoto Tower Hotel confirmation number as KTH-20240418-WEBB."
+    },
+    {
+      "turn_id": "t45",
+      "user_message": "Has the Kyoto Tower Hotel confirmed how many rooms the group needs and the nightly rate?",
+      "assistant_message": "Soo-Jin Cho recorded in the Japan Trip Planner Doc that the Kyoto Tower Hotel rate is 16,000 yen per twin room per night, and the group will book two twin rooms — the same pairing as Tokyo, with Marcus Webb and Derek Lam in one room and Priya Nair and Soo-Jin Cho in the other. The group is staying four nights in Kyoto, April 18 through April 21, checking out on the morning of April 22 before the shinkansen to Hiroshima. Total Kyoto accommodation cost is 16,000 yen times two rooms times four nights, equaling 128,000 yen, or approximately 853 USD. Marcus Webb is handling the Kyoto Tower Hotel booking alongside the Shinjuku Granbell Hotel booking before the January 14 deadline."
+    },
+    {
+      "turn_id": "t46",
+      "user_message": "What's the total accommodation cost across Tokyo and Kyoto combined for the four travelers?",
+      "assistant_message": "The Shinjuku Granbell Hotel in Tokyo costs 148,000 yen for two rooms over four nights, and the Kyoto Tower Hotel costs 128,000 yen for two rooms over four nights, giving a combined accommodation total of 276,000 yen for the Tokyo and Kyoto stays. At 150 yen per USD that is approximately 1,840 USD for both cities combined, or 460 USD per person across the four travelers — Marcus Webb, Priya Nair, Soo-Jin Cho, and Derek Lam. The Japan Trip Planner Doc's Finance tab shows this is within the group's 2,600 USD per-person in-country budget. Hiroshima accommodation for the remaining two nights has not yet been booked, and Soo-Jin Cho has been assigned to research options by January 20."
+    },
+    {
+      "turn_id": "t47",
+      "user_message": "What did Priya Nair find out about whether the Japan Wireless device works on the Hiroshima tram network?",
+      "assistant_message": "Priya Nair confirmed in the Japan Trip Planner Doc that the Japan Wireless device uses SoftBank's network, which provides indoor and street-level 4G LTE coverage throughout central Hiroshima including along the Hiroshima Electric Railway tram routes. The tram network covers the route from Hiroshima Station to the Peace Memorial Museum and onward to the ferry terminal for Miyajima Island. Marcus Webb noted that the trams themselves are enclosed metal vehicles, so signal may dip briefly between stops, but Soo-Jin Cho confirmed from traveler reports that connectivity is generally stable. Derek Lam added a reminder in the Japan Trip Planner Doc to download the Hiroshima tram route map offline before April 22."
+    },
+    {
+      "turn_id": "t48",
+      "user_message": "Is there a Splitwise feature that can automatically split expenses by percentage rather than equally, in case the group wants Derek Lam to pay a larger share of some costs?",
+      "assistant_message": "Marcus Webb confirmed that Splitwise does support percentage-based splits and custom split amounts, so Derek Lam's larger personal costs like the Yamato Transport forwarding fee can be assigned entirely to him rather than split equally among all four travelers. The Japan Trip Planner Doc's Finance tab specifies that personal costs — including Derek Lam's Yamato forwarding, any single-occupancy upgrades, and individual activity tickets — are logged in Splitwise as individual expenses assigned to the incurring person. Group shared costs like accommodation, the pocket WiFi rental, and group taxis are split equally four ways. Priya Nair will review the Splitwise group setup before April 14 to make sure the split rules are configured correctly."
+    },
+    {
+      "turn_id": "t49",
+      "user_message": "Can Priya Nair return the Japan Wireless device from Hiroshima Airport instead of Narita if the group's return flight departs from there?",
+      "assistant_message": "Priya Nair checked with Japan Wireless and confirmed that the device can be returned via Japan Post from any post office or post box in Japan, not just at Narita Airport. Since the group's return flight departs from Narita on April 24, Priya Nair's original plan to return the device via the Narita Airport Japan Post counter is still the most convenient option. However, if the itinerary changes and the group departs from Hiroshima or Osaka Kansai Airport instead, Marcus Webb or Soo-Jin Cho can mail the pre-paid return envelope from any Japan Post location before the group boards. The Japan Trip Planner Doc notes that the device must be postmarked by April 24 regardless of the mailing location to avoid the 1,500 yen late fee."
+    },
+    {
+      "turn_id": "t50",
+      "user_message": "Has the group decided whether to buy trip cancellation insurance through Pacific Guard Travel or through a separate provider?",
+      "assistant_message": "The group decided to use the Pacific Guard Travel group policy exclusively, as Marcus Webb confirmed it provides the best combined value for all four travelers — Marcus Webb, Priya Nair, Soo-Jin Cho, and Derek Lam — at 180 USD per person. A separate specialist cancellation policy from InsureMyTrip quoted 95 USD per person for cancellation-only coverage, but since the Pacific Guard Travel policy bundles cancellation with medical, delay, and electronics coverage, the group determined it was not cost-effective to split coverage across two providers. Priya Nair noted in the Japan Trip Planner Doc that the total group insurance spend will be 720 USD — four people at 180 USD each — paid by the February 1 enrollment deadline. Derek Lam's payment is still outstanding as of the last Japan Trip Planner Doc update."
+    },
+    {
+      "turn_id": "t51",
+      "user_message": "To confirm: the Shinjuku Granbell Hotel total for four nights for both rooms — is that 148,000 yen inclusive of the deposit, or is the deposit on top of that?",
+      "assistant_message": "The 148,000 yen is the total accommodation cost for both rooms over four nights, and the 37,000 yen deposit is part of that total — it represents the first night's full cost for both rooms and is applied against the overall bill. So the remaining balance due at checkout is 111,000 yen after the deposit has been paid. The Japan Trip Planner Doc confirms that Marcus Webb will pay the 37,000 yen deposit by January 14 and the balance of 111,000 yen will be settled at checkout on April 18. The total of 148,000 yen — roughly 987 USD for all four travelers over four nights — is the complete Tokyo accommodation spend."
+    },
+    {
+      "turn_id": "t52",
+      "user_message": "Has the group decided how they'll handle the Pacific Guard Travel insurance documents — will Marcus Webb send everyone a copy?",
+      "assistant_message": "Marcus Webb agreed to email the Pacific Guard Travel policy document to Priya Nair, Soo-Jin Cho, and Derek Lam within 3 days of submitting the group enrollment by the February 1 deadline. Each traveler should save a digital copy on their phone and print a physical copy to carry in their travel wallet, as recommended in the Japan Trip Planner Doc's pre-departure checklist. Soo-Jin Cho suggested uploading the policy PDF to the group's shared Google Drive folder so it's accessible offline, and Marcus Webb agreed to do so. The Japan Trip Planner Doc's Emergency Contacts tab already lists the Pacific Guard Travel 24-hour claims hotline number for quick reference."
+    },
+    {
+      "turn_id": "t53",
+      "user_message": "Is there a grace period if Derek Lam pays the Pacific Guard Travel insurance premium a few days after February 1?",
+      "assistant_message": "Marcus Webb checked with Pacific Guard Travel and confirmed there is no grace period for the group enrollment deadline — if the group application is not submitted with all four payments by February 1, the group rate of 180 USD per person expires. Late-joining travelers would need to purchase individual policies at 240 USD per person, a 60 USD premium, as previously noted in the Japan Trip Planner Doc. Marcus Webb sent Derek Lam a payment reminder on January 15, and the Japan Trip Planner Doc shows Derek Lam's payment is flagged as urgent. Priya Nair suggested that if Derek Lam cannot pay in time, Marcus Webb should cover his share and Derek Lam reimburses through Splitwise within 7 days."
+    },
+    {
+      "turn_id": "t54",
+      "user_message": "Has Priya Nair confirmed that the Japan Wireless order has been placed and the confirmation number recorded?",
+      "assistant_message": "Priya Nair placed the Japan Wireless pocket WiFi order on February 15, ahead of the March 1 deadline, and the confirmation number JW-20240414-NAIR has been added to the Japan Trip Planner Doc under the Connectivity tab. The order confirms pickup at Narita Airport Terminal 2 on April 14 between 7:00 AM and 10:00 PM, and the pre-paid return envelope is included in the rental package. Priya Nair also emailed the confirmation to Marcus Webb, Soo-Jin Cho, and Derek Lam for their records. The Japan Trip Planner Doc notes that Priya Nair's Wise card was charged 9,000 yen — approximately 60 USD — for the 10-day rental, to be reimbursed through Splitwise split four ways at 2,250 yen per person."
+    },
+    {
+      "turn_id": "t55",
+      "user_message": "Has anyone confirmed whether the Kyoto Tower Hotel can accommodate early luggage drop-off before 3:00 PM check-in, besides the Sagawa Express option?",
+      "assistant_message": "Soo-Jin Cho called the Kyoto Tower Hotel directly and confirmed that the hotel offers a complimentary bell desk luggage storage service for arriving guests whose rooms are not yet ready, available from 9:00 AM onward on check-in day. This means Marcus Webb, Priya Nair, Soo-Jin Cho, and Derek Lam can leave their carry-on bags at the hotel bell desk when they arrive in Kyoto, without needing the paid Sagawa Express storage for those bags. Derek Lam's forwarded bags from Yamato Transport will be held at the bell desk separately and available by 3:00 PM. Soo-Jin Cho updated the Japan Trip Planner Doc to note that the Sagawa Express reservation for April 18 may no longer be necessary and should be cancelled to avoid the 4,800 yen fee."
+    },
+    {
+      "turn_id": "t56",
+      "user_message": "Has Marcus Webb confirmed the Splitwise group is set up correctly with all four travelers added?",
+      "assistant_message": "Marcus Webb confirmed in the Japan Trip Planner Doc that the Splitwise group named Japan April 2024 was created on December 8 and all four travelers — Marcus Webb, Priya Nair, Soo-Jin Cho, and Derek Lam — have accepted their invitations and added payment methods. The group currency is set to USD as agreed, and Marcus Webb has already logged two expenses: the Shinjuku Granbell Hotel deposit of 37,000 yen (converted to approximately 247 USD) and the Pacific Guard Travel insurance premium of 720 USD. Derek Lam's outstanding reimbursements to Marcus Webb currently total 185 USD in the Splitwise group. Priya Nair is up to date, and Soo-Jin Cho owes Marcus Webb 62 USD for her share of a pre-trip planning expense."
+    },
+    {
+      "turn_id": "t57",
+      "user_message": "Has Soo-Jin Cho finished researching Hiroshima accommodation options for the last two nights?",
+      "assistant_message": "Soo-Jin Cho submitted her Hiroshima accommodation research to the Japan Trip Planner Doc on January 18, two days before the January 20 deadline. She identified two options: the ANA Crowne Plaza Hiroshima at 20,000 yen per twin room per night, which would cost 80,000 yen total for two rooms over two nights, and the Rihga Royal Hotel Hiroshima at 17,500 yen per twin room per night, totaling 70,000 yen for two rooms over two nights. Marcus Webb reviewed both options and the group voted to book the Rihga Royal Hotel Hiroshima for the 10,000 yen savings. Derek Lam asked Soo-Jin Cho to confirm whether the Rihga Royal Hotel is walking distance from Hiroshima Station, and she confirmed it is a 12-minute walk."
+    },
+    {
+      "turn_id": "t58",
+      "user_message": "What's the plan if the Japan Wireless device fails during the Hiroshima leg and the replacement takes longer than one business day?",
+      "assistant_message": "Priya Nair updated the Japan Trip Planner Doc with a contingency plan for Hiroshima: if the Japan Wireless device fails and replacement takes longer than one day, Soo-Jin Cho and Priya Nair will activate eSIMs on their phones using Airalo's Japan eSIM at 9 USD for 3 GB valid for 30 days. Derek Lam's phone is also eSIM-compatible and he confirmed he has an Airalo account already set up. Marcus Webb's phone is an older model without eSIM capability, so Priya Nair will use her phone as a personal hotspot for Marcus Webb in a failure scenario. The Japan Trip Planner Doc notes this contingency is considered low-risk since Japan Wireless has a strong reliability record."
+    },
+    {
+      "turn_id": "t59",
+      "user_message": "Has the group confirmed total accommodation nights across all three cities and the total accommodation spend?",
+      "assistant_message": "The group's confirmed accommodation breakdown in the Japan Trip Planner Doc is four nights in Tokyo at the Shinjuku Granbell Hotel for 148,000 yen, four nights in Kyoto at the Kyoto Tower Hotel for 128,000 yen, and two nights in Hiroshima at the Rihga Royal Hotel for 70,000 yen. The total accommodation spend across all three cities is 346,000 yen, approximately 2,307 USD for all four travelers combined, or about 577 USD per person. Marcus Webb is booking the Shinjuku Granbell and Kyoto Tower properties before the January 14 deadline, and Soo-Jin Cho will book the Rihga Royal Hotel Hiroshima by January 25. Derek Lam confirmed these numbers fit within the group's per-person in-country budget of 2,600 USD."
+    },
+    {
+      "turn_id": "t60",
+      "user_message": "Has Soo-Jin Cho confirmed whether the Rihga Royal Hotel Hiroshima accepts the Yamato Transport luggage forwarding service for arriving guests?",
+      "assistant_message": "Soo-Jin Cho contacted the Rihga Royal Hotel Hiroshima and confirmed that the hotel accepts Yamato Transport TA-Q-BIN forwarded luggage, holding it at the front desk until the guest checks in on April 22. She updated the Japan Trip Planner Doc with the hotel's forwarding address: Rihga Royal Hotel Hiroshima, 6-78 Motomachi, Naka Ward, Hiroshima 730-0011, and noted that any bags forwarded from Kyoto must be labeled with the guest name and April 22 check-in date. Derek Lam will need to use Yamato Transport forwarding again for his two large bags from Kyoto to Hiroshima, dropping them off at a Kyoto Yamato counter before 12:00 noon on April 21. Soo-Jin Cho added this drop-off deadline to the Japan Trip Planner Doc's itinerary timeline."
+    },
+    {
+      "turn_id": "t61",
+      "user_message": "Given everything we've finalized, what is the total yen cost per person for the Tokyo hotel stay and all three shinkansen legs combined?",
+      "assistant_message": null
+    }
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states the Tokyo hotel (Shinjuku Granbell Hotel) total cost of 148,000 yen for all four travelers, which equals 37,000 yen per person.",
+      "required": false,
+      "evidence_turn_ids": ["t6", "t22", "t51"]
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states the total per-person shinkansen cost for all three legs is 43,380 yen (13,910 + 11,090 + 18,380 yen).",
+      "required": false,
+      "evidence_turn_ids": ["t19", "t24", "t43"]
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer correctly combines the per-person Tokyo hotel cost (37,000 yen) and per-person shinkansen cost (43,380 yen) to arrive at a total of 80,380 yen per person.",
+      "required": false,
+      "evidence_turn_ids": ["t51", "t43"]
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not state 24,560 yen or 6,140 yen per person as the transport figure, which are the N'EX airport transfer costs from the near-miss turn t42.",
+      "required": true,
+      "evidence_turn_ids": []
+    }
+  ],
+  "reference_answer": "The Tokyo hotel stay at the Shinjuku Granbell Hotel costs 148,000 yen total for both rooms over four nights, which divides to 37,000 yen per person across the four travelers. The three confirmed shinkansen legs — Tokyo to Kyoto at 13,910 yen, Kyoto to Hiroshima at 11,090 yen, and Hiroshima to Tokyo at 18,380 yen — total 43,380 yen per person on individual reserved-seat tickets. Combined, the Tokyo hotel share and all three shinkansen legs cost 80,380 yen per person.",
+  "notes": "The key facts for the query come from Branch A (t6, t22, t51: Shinjuku Granbell Hotel total 148,000 yen for four travelers = 37,000 yen per person) and Branch B (t19, t24, t43: three shinkansen legs total 43,380 yen per person). The near-miss turn t42 gives a plausible-sounding transport figure of 6,140 yen per person (N'EX round-trip) or 24,560 yen total, which a careless reader might confuse with the shinkansen total."
+}
+```

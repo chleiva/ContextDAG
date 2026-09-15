@@ -1,0 +1,145 @@
+{
+ "scenario_id": "long_resume_002",
+ "family": "resume",
+ "n_history": 48,
+ "full_history_tokens": 8509,
+ "closure_ratio": 0.08333333333333333,
+ "entity_registry": [
+  "Bright Smile Dental",
+  "DentaTrack Pro",
+  "ScheduleEase 4.2",
+  "Marcus Oyelaran",
+  "Priya Nambiar",
+  "MigrationSpec-v3"
+ ],
+ "distractor_branch_entity_hits": {
+  "D": [
+   "Bright Smile Dental",
+   "DentaTrack Pro",
+   "ScheduleEase 4.2",
+   "Marcus Oyelaran",
+   "Priya Nambiar",
+   "MigrationSpec-v3"
+  ],
+  "E": [
+   "Bright Smile Dental",
+   "DentaTrack Pro",
+   "ScheduleEase 4.2",
+   "Marcus Oyelaran",
+   "Priya Nambiar",
+   "MigrationSpec-v3"
+  ],
+  "F": [
+   "Bright Smile Dental",
+   "DentaTrack Pro",
+   "ScheduleEase 4.2",
+   "Marcus Oyelaran",
+   "Priya Nambiar",
+   "MigrationSpec-v3"
+  ],
+  "G": [
+   "Bright Smile Dental",
+   "ScheduleEase 4.2",
+   "Marcus Oyelaran",
+   "Priya Nambiar",
+   "MigrationSpec-v3"
+  ],
+  "H": [
+   "Bright Smile Dental",
+   "DentaTrack Pro",
+   "ScheduleEase 4.2",
+   "Marcus Oyelaran",
+   "Priya Nambiar",
+   "MigrationSpec-v3"
+  ]
+ },
+ "near_miss_turn_id": "t6",
+ "checklist_evidence": {
+  "c1": [
+   "t4"
+  ],
+  "c2": [
+   "t1",
+   "t4"
+  ],
+  "c3": [
+   "t4"
+  ],
+  "c4": [
+   "t3",
+   "t4"
+  ],
+  "c5": []
+ },
+ "cosine": {
+  "gold_median": 0.4486660063266754,
+  "distractor_median": 0.2816735953092575,
+  "ratio": 0.6278023994181763,
+  "pass": true
+ },
+ "cosine_per_turn": {
+  "t1": 0.3144259452819824,
+  "t2": 0.4431588053703308,
+  "t3": 0.45417320728302,
+  "t4": 0.7898320555686951,
+  "t5": 0.16260400414466858,
+  "t6": 0.35907721519470215,
+  "t7": 0.3881225287914276,
+  "t8": 0.346932053565979,
+  "t9": 0.24858275055885315,
+  "t10": 0.1966494470834732,
+  "t11": 0.48933136463165283,
+  "t12": 0.32787439227104187,
+  "t13": 0.2055283486843109,
+  "t14": 0.27867090702056885,
+  "t15": 0.3318661153316498,
+  "t16": 0.4822685718536377,
+  "t17": 0.3499009311199188,
+  "t18": 0.35309380292892456,
+  "t19": 0.3821814954280853,
+  "t20": 0.34705567359924316,
+  "t21": 0.23679795861244202,
+  "t22": 0.18605783581733704,
+  "t23": 0.15496490895748138,
+  "t24": 0.26817941665649414,
+  "t25": 0.09392085671424866,
+  "t26": 0.3376290202140808,
+  "t27": 0.17969593405723572,
+  "t28": 0.1045348048210144,
+  "t29": 0.21914784610271454,
+  "t30": 0.2720220685005188,
+  "t31": 0.25562331080436707,
+  "t32": 0.2066214382648468,
+  "t33": 0.33605724573135376,
+  "t34": 0.254546582698822,
+  "t35": 0.28467628359794617,
+  "t36": 0.36345353722572327,
+  "t37": 0.32320624589920044,
+  "t38": 0.2435230016708374,
+  "t39": 0.3493906259536743,
+  "t40": 0.2049618661403656,
+  "t41": 0.13018690049648285,
+  "t42": 0.38341259956359863,
+  "t43": 0.11040835082530975,
+  "t44": 0.3399972915649414,
+  "t45": 0.42232608795166016,
+  "t46": 0.29550474882125854,
+  "t47": 0.2512066960334778,
+  "t48": 0.4111461043357849
+ },
+ "gold_branches": [
+  "A"
+ ],
+ "distractor_branches": [
+  "D",
+  "E",
+  "F",
+  "G",
+  "H"
+ ],
+ "attempt_accepted": 1,
+ "generation_tokens": [
+  5078,
+  12088
+ ]
+}

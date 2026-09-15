@@ -1,0 +1,130 @@
+{
+ "scenario_id": "long_three_way_join_008",
+ "family": "three_way_join",
+ "n_history": 31,
+ "full_history_tokens": 5495,
+ "closure_ratio": 0.3225806451612903,
+ "entity_registry": [
+  "Jordan Reyes",
+  "Luminary Studio",
+  "Godox SL-60W",
+  "Backdrop Alley",
+  "StudioCalc Pro",
+  "Elara V-Flat"
+ ],
+ "distractor_branch_entity_hits": {
+  "D": [
+   "Jordan Reyes",
+   "Luminary Studio",
+   "Godox SL-60W",
+   "Backdrop Alley",
+   "StudioCalc Pro",
+   "Elara V-Flat"
+  ],
+  "E": [
+   "Jordan Reyes",
+   "Luminary Studio",
+   "Godox SL-60W",
+   "Backdrop Alley",
+   "Elara V-Flat"
+  ],
+  "F": [
+   "Jordan Reyes",
+   "Luminary Studio",
+   "Godox SL-60W",
+   "Backdrop Alley"
+  ],
+  "G": [
+   "Jordan Reyes",
+   "Luminary Studio",
+   "Godox SL-60W",
+   "Backdrop Alley"
+  ],
+  "H": [
+   "Jordan Reyes",
+   "Luminary Studio",
+   "Backdrop Alley"
+  ],
+  "I": [
+   "Jordan Reyes",
+   "Luminary Studio",
+   "Godox SL-60W",
+   "Backdrop Alley",
+   "StudioCalc Pro",
+   "Elara V-Flat"
+  ]
+ },
+ "near_miss_turn_id": "t11",
+ "checklist_evidence": {
+  "c1": [
+   "t1"
+  ],
+  "c2": [
+   "t18"
+  ],
+  "c3": [
+   "t25",
+   "t12",
+   "t27",
+   "t30"
+  ],
+  "c4": []
+ },
+ "cosine": {
+  "gold_median": 0.43539294600486755,
+  "distractor_median": 0.3203403949737549,
+  "ratio": 0.7357500802738627,
+  "pass": true
+ },
+ "cosine_per_turn": {
+  "t1": 0.43082869052886963,
+  "t2": 0.4521681070327759,
+  "t3": 0.3138100206851959,
+  "t4": 0.34286051988601685,
+  "t5": 0.5344291925430298,
+  "t6": 0.3410816192626953,
+  "t7": 0.07363580912351608,
+  "t8": 0.3899909555912018,
+  "t9": 0.3232625722885132,
+  "t10": 0.30685675144195557,
+  "t11": 0.3203403949737549,
+  "t12": 0.5409360527992249,
+  "t13": 0.5159378051757812,
+  "t14": 0.3127964735031128,
+  "t15": 0.2731223404407501,
+  "t16": 0.5789013504981995,
+  "t17": 0.4496982991695404,
+  "t18": 0.2743542194366455,
+  "t19": 0.31794458627700806,
+  "t20": 0.19580711424350739,
+  "t21": 0.27973172068595886,
+  "t22": 0.31781652569770813,
+  "t23": 0.15671461820602417,
+  "t24": 0.5035812258720398,
+  "t25": 0.4399572014808655,
+  "t26": 0.32621368765830994,
+  "t27": 0.3131088316440582,
+  "t28": 0.25443145632743835,
+  "t29": 0.33998775482177734,
+  "t30": 0.765896737575531,
+  "t31": 0.33639538288116455
+ },
+ "gold_branches": [
+  "A",
+  "B",
+  "C"
+ ],
+ "distractor_branches": [
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I"
+ ],
+ "attempt_accepted": 2,
+ "generation_tokens": [
+  3645,
+  8198
+ ]
+}

@@ -1,0 +1,214 @@
+I'll fix the signposting issue and ensure distractor branches stay much closer to the query's subject matter (live-ops event calendar planning) with heavy entity reuse.
+
+```json
+{
+  "entity_registry": [
+    "Nadia Ferris",
+    "Comet Studio",
+    "Starfall Royale",
+    "Live-Ops Master Calendar v2",
+    "Marcus Teel",
+    "Frost Gala"
+  ],
+  "turns": [
+    {
+      "turn_id": "t1",
+      "user_message": "We're at Comet Studio planning the Starfall Royale live-ops calendar. Can you help us nail down the scheduling window for the Frost Gala event?",
+      "assistant_message": "Based on the parameters Nadia Ferris outlined in the Live-Ops Master Calendar v2, the Frost Gala is slated to run for 14 days, beginning December 10 and ending December 23. That window was chosen to capture peak holiday engagement while avoiding direct overlap with the New Year push. Marcus Teel confirmed the December 10 start date in the last production sync."
+    },
+    {
+      "turn_id": "t2",
+      "user_message": "What's the budget allocation we settled on for the in-game store refresh that Marcus Teel proposed?",
+      "assistant_message": "Marcus Teel's store refresh proposal was approved at $180,000 total for the quarter, with $75,000 earmarked for new asset production and $105,000 for backend integration work. Nadia Ferris signed off on these figures during the Comet Studio budget review on October 3. The Live-Ops Master Calendar v2 notes that the store refresh must go live no later than November 28 to precede the Frost Gala ramp-up."
+    },
+    {
+      "turn_id": "t3",
+      "user_message": "How are we splitting the asset production spend across the different store categories?",
+      "assistant_message": "Of the $75,000 asset production budget, Comet Studio allocated $30,000 to character skins, $25,000 to weapon bundles, and $20,000 to seasonal decorative items. Marcus Teel specified that character skins should account for the highest share because Starfall Royale's conversion data shows skins drive 48% of store revenue. Nadia Ferris added a contingency note in Live-Ops Master Calendar v2 flagging that the decorative items line can be trimmed by up to $5,000 if production runs over on skins."
+    },
+    {
+      "turn_id": "t4",
+      "user_message": "For the Starfall Royale player segmentation work, what tier thresholds did we agree on?",
+      "assistant_message": "Comet Studio settled on three engagement tiers for Starfall Royale: Tier 1 covers players with 60 or more sessions in the trailing 30 days, Tier 2 covers 20 to 59 sessions, and Tier 3 covers 1 to 19 sessions. Nadia Ferris requested that the thresholds be revisited after the Frost Gala to see if holiday play patterns shift the distribution. Marcus Teel noted these numbers are consistent with the segmentation model used in the Live-Ops Master Calendar v2 appendix."
+    },
+    {
+      "turn_id": "t5",
+      "user_message": "What targeted rewards are we planning for Tier 1 players under that segmentation?",
+      "assistant_message": "Tier 1 players in Starfall Royale will receive an exclusive Legendary-grade weapon skin, a 500-gem currency bonus, and early access to new map content 48 hours before general release. Marcus Teel pushed for the early-access perk specifically because Comet Studio's retention data shows Tier 1 players have a 23% higher 30-day return rate when given exclusivity perks. Nadia Ferris approved the Legendary weapon skin as a Tier 1 reward in the Live-Ops Master Calendar v2 sign-off meeting on October 14."
+    },
+    {
+      "turn_id": "t6",
+      "user_message": "What notification strategy did we decide on for pushing event announcements to Starfall Royale players?",
+      "assistant_message": "Comet Studio agreed on a three-wave push notification strategy: an announcement blast 7 days before each event, a reminder 24 hours before launch, and a mid-event nudge at the 50% completion mark. Nadia Ferris specified that all notification copy must be approved by Marcus Teel before scheduling to ensure tone consistency with Starfall Royale's brand voice. The Live-Ops Master Calendar v2 includes a notification cadence table that maps each event to its three send dates."
+    },
+    {
+      "turn_id": "t7",
+      "user_message": "How many reward tiers did we lock in specifically for the Frost Gala, and what's the top-tier prize?",
+      "assistant_message": "The Frost Gala was locked in with five distinct reward tiers, as documented in the Live-Ops Master Calendar v2 by Nadia Ferris. The top tier, Tier 5, awards the Glacial Sovereign legendary outfit, which Marcus Teel confirmed is exclusive to this event and will not be sold in the in-game store afterward. Players must accumulate 10,000 Frost Points during the 14-day event window to reach Tier 5."
+    },
+    {
+      "turn_id": "t8",
+      "user_message": "What localization languages did we finalize for the Starfall Royale UI strings this quarter?",
+      "assistant_message": "Comet Studio finalized localization for 11 languages this quarter: English, French, German, Spanish, Brazilian Portuguese, Japanese, Korean, Simplified Chinese, Traditional Chinese, Russian, and Turkish. Marcus Teel confirmed that all 11 language packs must pass QA by November 15 to align with the store refresh deadline. Nadia Ferris flagged in the Live-Ops Master Calendar v2 that Turkish was added late and carries a $12,000 incremental cost."
+    },
+    {
+      "turn_id": "t9",
+      "user_message": "Who is the lead QA contact for the localization pass, and what's the review turnaround they committed to?",
+      "assistant_message": "The lead QA contact for localization is Priya Sandhu, who committed to a 5-business-day turnaround per language pack. Comet Studio's localization vendor, Glyphworks, is delivering strings in batches of three languages at a time to help Priya Sandhu's team stay within that window. Marcus Teel noted that any strings failing QA must be resubmitted within 48 hours to protect the November 15 hard deadline that Nadia Ferris set."
+    },
+    {
+      "turn_id": "t10",
+      "user_message": "What server infrastructure scaling plan did we settle on for peak event traffic in Starfall Royale?",
+      "assistant_message": "Comet Studio approved a plan to scale server capacity to 3.5 times the baseline load during peak live-ops events, using auto-scaling groups across three AWS regions: us-east-1, eu-west-1, and ap-northeast-1. The infrastructure team committed to a maximum spin-up time of 8 minutes per region, which Marcus Teel reviewed and accepted. Nadia Ferris noted in Live-Ops Master Calendar v2 that the Frost Gala is designated a Tier-1 traffic event, meaning the full 3.5x headroom must be pre-provisioned rather than reactive."
+    },
+    {
+      "turn_id": "t11",
+      "user_message": "For Tier 2 players, what's the rewards package we landed on?",
+      "assistant_message": "Tier 2 players in Starfall Royale will receive an Epic-grade character skin, a 200-gem currency bonus, and a 10% discount voucher for the in-game store valid for 7 days post-event. Nadia Ferris stressed that the 200-gem bonus must be delivered within 24 hours of the player crossing the Tier 2 threshold to maintain engagement momentum. Marcus Teel cross-referenced the Comet Studio reward delivery pipeline and confirmed that 24-hour fulfillment is achievable for up to 2 million concurrent reward grants."
+    },
+    {
+      "turn_id": "t12",
+      "user_message": "We need to confirm the Frost Points earning rates for Frost Gala. What did we settle on?",
+      "assistant_message": "Nadia Ferris finalized three earning rates for Frost Points in the Frost Gala: players earn 50 Frost Points per standard match completed, 120 Frost Points per ranked match won, and 200 Frost Points for completing each of the five daily Frost Challenges. Marcus Teel validated these rates against Comet Studio's engagement model and confirmed they give a median-engagement player a realistic path to Tier 3 within the 14-day window. The Live-Ops Master Calendar v2 records these rates as locked and not subject to mid-event adjustment."
+    },
+    {
+      "turn_id": "t13",
+      "user_message": "What analytics events are we instrumenting for the Starfall Royale live-ops tracking dashboard?",
+      "assistant_message": "Comet Studio is instrumenting 14 analytics events for the live-ops dashboard, including event_join, reward_tier_reached, frost_points_earned, store_item_purchased, match_completed, and daily_challenge_finished, among others. Nadia Ferris specified that all 14 events must flow into the central data warehouse within 60 seconds of occurrence to support near-real-time dashboards. Marcus Teel approved the event schema on October 19 and noted that frost_points_earned is the highest-volume event, expected to fire roughly 40 million times per day during Frost Gala."
+    },
+    {
+      "turn_id": "t14",
+      "user_message": "What data retention policy applies to those raw analytics events?",
+      "assistant_message": "Raw analytics events for Starfall Royale will be retained in hot storage for 90 days, then moved to cold archive storage for 3 years before deletion. Comet Studio's data team, overseen by Nadia Ferris, confirmed this policy complies with GDPR and the regional requirements in the markets where Starfall Royale operates. Marcus Teel requested that the frost_points_earned event stream be kept in hot storage for the full 90 days given its importance for post-event balance analysis."
+    },
+    {
+      "turn_id": "t15",
+      "user_message": "Did we finalize send-time optimization rules for those three notification waves?",
+      "assistant_message": "Comet Studio finalized send-time optimization using each player's local timezone, with the announcement blast targeting a 6 PM to 8 PM local delivery window, the 24-hour reminder targeting 10 AM to 12 PM, and the mid-event nudge targeting 7 PM to 9 PM. Nadia Ferris required that no player in Starfall Royale receive more than two notifications within any 12-hour period to avoid opt-out spikes. Marcus Teel confirmed the notification platform, PingReach, supports timezone-aware batching at the required scale of 85 million registered accounts."
+    },
+    {
+      "turn_id": "t16",
+      "user_message": "What's the fallback plan if Glyphworks misses the batch delivery deadline for any language pack?",
+      "assistant_message": "If Glyphworks misses a batch deadline, Comet Studio will ship the affected Starfall Royale language packs in English fallback mode and patch in the localized strings within 72 hours via a hotfix build. Marcus Teel negotiated a $5,000 per-language penalty clause into the Glyphworks contract for missed deadlines, which Nadia Ferris approved on October 7. The Live-Ops Master Calendar v2 flags Turkish and Traditional Chinese as the two highest-risk languages given their late addition to the scope."
+    },
+    {
+      "turn_id": "t17",
+      "user_message": "What's the opt-out rate threshold that would trigger a review of the notification strategy?",
+      "assistant_message": "Comet Studio set a 3.5% push notification opt-out rate as the trigger for an immediate strategy review, based on benchmarks Nadia Ferris pulled from Starfall Royale's previous two live-ops events. If opt-outs exceed 3.5% within the first 48 hours of any notification wave, Marcus Teel has authority to pause subsequent waves and convene an emergency review within 4 hours. The Live-Ops Master Calendar v2 notes that the highest prior opt-out rate observed was 2.1%, recorded during the Summer Surge event in July."
+    },
+    {
+      "turn_id": "t18",
+      "user_message": "Are there any constraints on how the store refresh assets get handed off to the backend integration team?",
+      "assistant_message": "Comet Studio requires all store refresh assets to be delivered to the backend integration team in a standardized asset bundle format, with each bundle no larger than 200 MB and accompanied by a metadata JSON file. Marcus Teel specified that handoffs happen in two phases: a 60% draft delivery by November 10 and a final delivery by November 20, giving the backend team 8 days before the November 28 go-live. Nadia Ferris added a sign-off gate where she personally approves the metadata JSON before each phase handoff to prevent schema mismatches."
+    },
+    {
+      "turn_id": "t19",
+      "user_message": "What's the data warehouse solution we chose for storing those analytics events long-term?",
+      "assistant_message": "Comet Studio selected Snowflake as the data warehouse for Starfall Royale analytics, with a dedicated virtual warehouse provisioned at the 4X-Large cluster size to handle peak ingest during Frost Gala. Nadia Ferris negotiated a 2-year contract with Snowflake at a committed spend of $420,000 annually, which Marcus Teel reviewed for alignment with the live-ops infrastructure budget. The 14 instrumented analytics events will land in a raw events schema before being transformed into aggregated tables every 15 minutes."
+    },
+    {
+      "turn_id": "t20",
+      "user_message": "What auto-scaling policy did we set for the database layer specifically?",
+      "assistant_message": "Comet Studio set the database layer to scale read replicas automatically when CPU utilization exceeds 70% for more than 3 consecutive minutes, adding one replica at a time up to a maximum of 12 replicas per region. Marcus Teel specified that the primary write instance must be pre-scaled to an r6g.16xlarge before Frost Gala launches to avoid promotion lag during the first-hour spike. Nadia Ferris approved a $28,000 pre-event infrastructure spend to cover the pre-scaling costs across all three AWS regions."
+    },
+    {
+      "turn_id": "t21",
+      "user_message": "Can the weapon bundle assets share the same metadata JSON schema as the character skin bundles, or do they need a separate schema?",
+      "assistant_message": "Marcus Teel confirmed that weapon bundle assets will use the same core metadata JSON schema as character skin bundles, with one additional required field, weapon_slot_type, that does not appear in the skin schema. Comet Studio's backend team validated this approach on October 22, confirming it avoids a schema fork while still capturing the weapon-specific data the store needs. Nadia Ferris noted in Live-Ops Master Calendar v2 that the shared schema must be versioned as schema_v3 and that schema_v2 will be deprecated after the November 28 store refresh launch."
+    },
+    {
+      "turn_id": "t22",
+      "user_message": "What's the read replica failover time we need to meet under the SLA?",
+      "assistant_message": "Comet Studio's SLA for Starfall Royale requires read replica failover to complete within 45 seconds of a primary replica failure being detected. Marcus Teel worked with the infrastructure team to configure automated failover using Amazon RDS Multi-AZ, which in testing achieved an average failover time of 31 seconds across 20 simulated failure scenarios. Nadia Ferris signed the SLA document on October 25, which also specifies a 99.95% monthly uptime commitment for the database layer during live-ops event windows."
+    },
+    {
+      "turn_id": "t23",
+      "user_message": "Priya Sandhu flagged a concern about the Turkish localization volume. What was the final word count estimate for the Turkish strings?",
+      "assistant_message": "The Turkish localization scope for Starfall Royale was estimated at 42,000 source words, which Glyphworks quoted at a rate of $0.14 per word, producing a translation cost of $5,880. Priya Sandhu raised the concern because the Turkish string count is 18% higher than any other language in the batch, largely due to UI label verbosity in Turkish. Marcus Teel approved the additional budget on October 29, and Nadia Ferris updated the Live-Ops Master Calendar v2 cost tracker to reflect the $5,880 line item."
+    },
+    {
+      "turn_id": "t24",
+      "user_message": "What's the gem currency bonus we decided on for Tier 3 players in the segmentation rewards?",
+      "assistant_message": "Tier 3 players in Starfall Royale will receive a 75-gem currency bonus along with a single-use 5% store discount voucher valid for 14 days. Nadia Ferris argued that even a modest reward for Tier 3 improves reactivation rates, citing a Comet Studio internal study showing a 9% lift in 7-day return visits when lapsed players receive any reward. Marcus Teel confirmed the 75-gem figure is within the economy balance thresholds reviewed in the Live-Ops Master Calendar v2 appendix."
+    },
+    {
+      "turn_id": "t25",
+      "user_message": "One more detail on Frost Gala — what's the minimum Frost Points threshold to unlock the very first reward tier, and how long does the event run again?",
+      "assistant_message": "The minimum threshold to unlock Frost Gala's Tier 1 reward is 500 Frost Points, as set by Nadia Ferris in the Live-Ops Master Calendar v2. The event runs for 14 days, from December 10 through December 23, as Marcus Teel confirmed in the production sync. A player earning 50 Frost Points per standard match would need to complete 10 standard matches to clear Tier 1, which Comet Studio's engagement model projects as achievable for roughly 78% of active Starfall Royale players."
+    },
+    {
+      "turn_id": "t26",
+      "user_message": "What query performance benchmarks did we set for the Snowflake aggregated tables?",
+      "assistant_message": "Comet Studio set a p95 query response time of under 4 seconds for all standard dashboard queries against the Snowflake aggregated tables, with a hard ceiling of 10 seconds for the most complex cross-event cohort queries. Marcus Teel specified that the aggregation jobs must complete their 15-minute refresh cycles within 8 minutes of elapsed time to leave headroom before the next cycle. Nadia Ferris tied these benchmarks to a contractual SLA review clause with Snowflake, triggered if p95 exceeds 4 seconds for more than 1% of queries in any 7-day rolling window."
+    },
+    {
+      "turn_id": "t27",
+      "user_message": "What A/B test did we design for the notification copy to measure which wave drives the most event joins?",
+      "assistant_message": "Comet Studio designed a three-cell A/B/C test for the 7-day announcement notification, splitting the Starfall Royale player base into equal thirds: Cell A receives urgency-framed copy emphasizing the Frost Gala end date, Cell B receives reward-framed copy highlighting the Glacial Sovereign outfit, and Cell C receives a control message with standard event details. Nadia Ferris set the primary metric as event_join rate within 2 hours of notification receipt, with a minimum detectable effect of 0.5 percentage points. Marcus Teel confirmed that PingReach supports the three-cell split at the 85-million-account scale without sampling."
+    },
+    {
+      "turn_id": "t28",
+      "user_message": "What's the rollback procedure if the pre-scaled r6g.16xlarge instance shows instability before Frost Gala launches?",
+      "assistant_message": "If the r6g.16xlarge primary instance shows instability within 72 hours before Frost Gala launch, Comet Studio's runbook calls for an immediate snapshot and promotion of the largest available read replica, followed by a manual scale-up to r6g.16xlarge on the new primary within 4 hours. Marcus Teel owns the rollback decision and must notify Nadia Ferris within 15 minutes of initiating it. The runbook, which is attached to the Live-Ops Master Calendar v2 as Appendix C, was last reviewed and approved by the infrastructure team on November 1."
+    },
+    {
+      "turn_id": "t29",
+      "user_message": "Is there a data sampling strategy for the Snowflake cold archive to keep query costs down during historical analysis?",
+      "assistant_message": "Comet Studio approved a 10% stratified random sample of cold archive data to be materialized as a separate Snowflake table, allowing analysts to run exploratory queries at roughly 2% of the full scan cost. Marcus Teel specified that the sample must be refreshed monthly and must preserve the distribution of Starfall Royale player tiers to avoid bias in cohort analyses. Nadia Ferris approved this approach on November 3, noting it aligns with the $420,000 annual Snowflake budget by capping ad-hoc historical query costs at an estimated $18,000 per year."
+    },
+    {
+      "turn_id": "t30",
+      "user_message": "What's the minimum points threshold a Tier 3 player needs to qualify for their rewards under the segmentation model?",
+      "assistant_message": "Under Comet Studio's segmentation model, a Tier 3 player qualifies for rewards simply by having 1 to 19 sessions in the trailing 30 days — there is no separate points threshold for the segmentation reward; session count alone determines eligibility. Nadia Ferris confirmed in the Live-Ops Master Calendar v2 that any Starfall Royale account with at least 1 session in the window automatically receives the 75-gem bonus and the 5% discount voucher. Marcus Teel noted that this low bar is intentional to maximize reactivation coverage across the broadest segment of the player base."
+    },
+    {
+      "turn_id": "t31",
+      "user_message": "What monitoring alert thresholds did we set for the auto-scaling database layer during peak events?",
+      "assistant_message": "Comet Studio configured PagerDuty alerts to fire at three escalating thresholds during Starfall Royale peak events: a Warning at 65% CPU utilization sustained for 5 minutes, a Critical at 80% CPU for 2 minutes, and an Emergency at 90% CPU for 30 seconds. Marcus Teel assigned the Warning tier to the on-call infrastructure engineer, the Critical tier to the infrastructure team lead, and the Emergency tier to himself and Nadia Ferris simultaneously. These thresholds are documented in Appendix C of the Live-Ops Master Calendar v2 alongside the rollback procedure."
+    },
+    {
+      "turn_id": "t32",
+      "user_message": "What's the process for promoting a Snowflake query to the materialized view layer if it keeps exceeding the 4-second p95 target?",
+      "assistant_message": "If a Snowflake query exceeds the 4-second p95 target for 3 consecutive days, Comet Studio's analytics team must submit a materialization request to Marcus Teel, who reviews it against the Live-Ops Master Calendar v2 infrastructure budget within 2 business days. Approved materializations are scheduled during the weekly 2 AM UTC maintenance window to avoid impacting Starfall Royale live-ops dashboards. Nadia Ferris holds final approval for any materialized view that adds more than $2,000 per month in estimated Snowflake compute costs, based on the contract terms she negotiated."
+    },
+    {
+      "turn_id": "t33",
+      "user_message": "How are we handling consent management for players who opt out of push notifications mid-event?",
+      "assistant_message": "Comet Studio implemented a real-time consent sync between Starfall Royale's in-game settings and PingReach, ensuring opt-outs are honored within 60 seconds of a player toggling the setting. Nadia Ferris required that opted-out players still receive in-game inbox versions of all notifications so they are not disadvantaged in Frost Gala progression. Marcus Teel confirmed that the in-game inbox system, separate from PingReach, operates independently and is not subject to the 3.5% opt-out review trigger documented in the Live-Ops Master Calendar v2."
+    },
+    {
+      "turn_id": "t34",
+      "user_message": "For the Frost Gala, how many Frost Points does a player need to hit Tier 5 and claim the Glacial Sovereign outfit, and what combination of daily activities gets them there most efficiently within the event window?",
+      "assistant_message": null
+    }
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that Tier 5 requires 10,000 Frost Points to reach the Glacial Sovereign outfit.",
+      "required": true,
+      "evidence_turn_ids": ["t7"]
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer correctly identifies the three Frost Points earning rates: 50 per standard match completed, 120 per ranked match won, and 200 per daily Frost Challenge completed.",
+      "required": true,
+      "evidence_turn_ids": ["t12"]
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer references the 14-day event duration (December 10 through December 23) as the window within which the 10,000 Frost Points must be earned.",
+      "required": true,
+      "evidence_turn_ids": ["t1", "t25"]
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not state that the Tier 5 or Frost Points threshold is 500 points (which is the Tier 1 minimum from t25) or confuse it with the session-based Tier 3 segmentation threshold from the near-miss turn t30.",
+      "required": true,
+      "evidence_turn_ids": []
+    }
+  ],
+  "reference_answer": "To claim the Glacial Sovereign outfit at Frost Gala Tier 5, a player needs to accumulate 10,000 Frost Points over the 14-day event running December 10 through December 23. The three earning rates are 50 Frost Points per standard match completed, 120 per ranked match won, and 200 per daily Frost Challenge completed. The most efficient path is to complete all five daily Frost Challenges each day — yielding 1,000 points per day from challenges alone — and supplement with ranked match wins at 120 points each, reaching 10,000 points well before the December 23 close. Completing all five daily challenges across all 14 days gives 14,000 Frost Points from challenges alone, easily clearing the Tier 5 threshold without needing any additional matches.",
+  "notes": "The facts the query needs are established in t1 (14-day window, Dec 10–23), t7 (5 reward tiers, Tier 5 = 10,000 Frost Points, Glacial Sovereign outfit), t12 (earning rates: 50/standard match, 120/ranked win, 200/daily challenge), and t25 (Tier 1 minimum = 500 points, 14-day duration reconfirmed). The near-miss turn is t30, which answers a superficially similar 'minimum points threshold' question but about the Tier 3 segmentation reward model (session-based, no points threshold) rather than the Frost Gala progression system."
+}
+```

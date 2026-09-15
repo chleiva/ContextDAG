@@ -1,0 +1,237 @@
+I'll carefully construct this conversation, ensuring:
+1. Answer checklist spans both gold branches A and B
+2. Distractor branches stay close to the query topic (same entities, same kinds of details about the CRM migration)
+3. Near-miss turn answers a similar question about a different entity
+
+```json
+{
+  "entity_registry": [
+    "Mira Okafor",
+    "Salesforce Nonprofit Success Pack",
+    "Bloomerang",
+    "DonorPerfect",
+    "HeartBridge Foundation",
+    "Migration Readiness Report v2"
+  ],
+  "turns": [
+    {
+      "turn_id": "t1",
+      "user_message": "We're figuring out which CRM to migrate HeartBridge Foundation's donor database into. Can you help us think through the Salesforce Nonprofit Success Pack option?",
+      "assistant_message": "The Salesforce Nonprofit Success Pack, commonly called NPSP, is purpose-built for nonprofits and supports unlimited custom fields, which matters a lot when HeartBridge Foundation has complex donor segmentation needs. The licensing cost for HeartBridge Foundation under the Power of Us program would be $0 for the first 10 user seats, with each additional seat at $36 per month. Mira Okafor, your database administrator, would need to complete at least the Salesforce Administrator certification before go-live, which typically takes 8 to 12 weeks of preparation. That certification requirement is a hard dependency that affects your migration timeline."
+    },
+    {
+      "turn_id": "t2",
+      "user_message": "What's the plan for communicating the database downtime to major donors during the migration?",
+      "assistant_message": "HeartBridge Foundation's communication plan calls for notifying all donors who gave $1,000 or more in the past 24 months, which according to the Migration Readiness Report v2 totals 347 individuals. Mira Okafor has been designated as the primary contact listed in all outbound donor communications during the cutover window. The draft notice sets the maintenance window as a 48-hour period starting Friday at 6 PM, with a follow-up confirmation email sent within 4 hours of systems coming back online. The communication template is pending legal review by October 14th."
+    },
+    {
+      "turn_id": "t3",
+      "user_message": "I need to think through data deduplication before we move records into the new CRM. What approach should we use?",
+      "assistant_message": "The Migration Readiness Report v2 flags approximately 4,200 potential duplicate donor records in HeartBridge Foundation's current database, identified using a fuzzy-match threshold of 85% on name plus postal code. Mira Okafor has recommended using a tool called Dedupe.io for the pre-migration cleanse, which carries a one-time project license cost of $1,800. The deduplication pass is scheduled to complete by November 3rd, giving a two-week buffer before the planned data freeze date of November 17th. Any records that score between 70% and 84% similarity will be routed to a manual review queue handled by two data stewards."
+    },
+    {
+      "turn_id": "t4",
+      "user_message": "How many records are in that manual review queue, and who is responsible for clearing it?",
+      "assistant_message": "Based on the Migration Readiness Report v2 projections, the manual review queue is expected to contain roughly 610 records once Dedupe.io finishes its automated pass. Mira Okafor will supervise the queue clearance, but the hands-on review work is assigned to two data stewards: Carlos Reyes and Priya Nambiar, both part-time contractors. They are budgeted for 40 combined hours at $45 per hour, totalling $1,800 for that phase. The queue must be fully cleared by November 14th to respect the November 17th data freeze."
+    },
+    {
+      "turn_id": "t5",
+      "user_message": "What's the status of the data mapping document that connects our old fields to the new CRM fields?",
+      "assistant_message": "The field mapping document, titled HeartBridge Field Map v1.3, covers 214 source fields from the legacy DonorPerfect database and maps them to their equivalents in the target system. Mira Okafor signed off on version 1.3 on September 28th, and it is currently in final review with the Salesforce Nonprofit Success Pack implementation consultant. Seventeen fields were flagged as having no direct equivalent and will require custom objects or custom fields to be created before the migration runs. The consultant's review is expected to produce a revised version 1.4 by October 18th."
+    },
+    {
+      "turn_id": "t6",
+      "user_message": "Can we talk about the parallel-run testing phase? How long do we need to run both systems at once?",
+      "assistant_message": "HeartBridge Foundation's project plan specifies a 30-day parallel run, during which gift transactions are entered into both DonorPerfect and the Salesforce Nonprofit Success Pack simultaneously. The parallel run is scheduled to begin December 1st and conclude December 31st, with a formal reconciliation report due to Mira Okafor by January 3rd. During this window, staff will log any discrepancies in a shared tracker; discrepancies above $50 in gift amounts trigger an immediate escalation. The 30-day duration was chosen because HeartBridge Foundation's fiscal month-end close falls on the last day of December, giving a clean reconciliation point."
+    },
+    {
+      "turn_id": "t7",
+      "user_message": "Once the deduplication is done, what format do the cleaned records need to be exported in for the actual import into the new system?",
+      "assistant_message": "After Dedupe.io finishes and the manual queue is cleared, the cleaned records from DonorPerfect must be exported as UTF-8 encoded CSV files with pipe delimiters rather than commas, because several donor names in HeartBridge Foundation's database contain commas as part of organizational names. The Salesforce Nonprofit Success Pack's Data Loader tool requires that date fields use the ISO 8601 format, specifically YYYY-MM-DD, and that phone numbers be stripped of all formatting characters. Mira Okafor confirmed this export specification in an email to the implementation consultant on October 2nd. A test batch of 500 records will be imported first to validate the format before the full 38,000-record load runs."
+    },
+    {
+      "turn_id": "t8",
+      "user_message": "Going back to the NPSP option — what's the minimum data migration timeline once Mira completes her certification?",
+      "assistant_message": "Once Mira Okafor holds the Salesforce Administrator certification, the implementation consultant has quoted a minimum of 14 weeks for the full migration cycle for an organization of HeartBridge Foundation's size, which has approximately 38,000 donor records. That 14-week window assumes the data is already cleaned and the HeartBridge Field Map is finalized, so it does not include the deduplication or mapping work. The 14-week clock starts on the date the signed Statement of Work is returned to the consultant, not the certification date itself. If the Statement of Work is signed within one week of certification, the earliest possible go-live under NPSP falls on the Monday following the 14-week period."
+    },
+    {
+      "turn_id": "t9",
+      "user_message": "Has a final decision been made on whether to send the donor communication as a letter or email?",
+      "assistant_message": "HeartBridge Foundation decided on October 5th to use email as the primary channel, with a printed letter sent only to the 42 donors on record who have explicitly opted out of electronic communications. The email will come from Mira Okafor's address as the named database administrator so that replies route to someone who can answer technical questions. The Migration Readiness Report v2 noted that 99.1% of HeartBridge Foundation's major donor contacts have a valid email address on file, which made the email-first decision straightforward. Print letters will be mailed via first-class USPS and must be postmarked at least five business days before the maintenance window begins."
+    },
+    {
+      "turn_id": "t10",
+      "user_message": "What acceptance criteria did we set for the parallel run reconciliation?",
+      "assistant_message": "The acceptance criteria require that the total gift revenue recorded in the Salesforce Nonprofit Success Pack match the DonorPerfect totals within 0.5% for each of the four weeks in December. Additionally, individual gift records must reconcile at a rate of 99.8% or higher — meaning no more than 76 of the 38,000 records may show any discrepancy at all. Mira Okafor has authority to grant a one-week extension to the parallel run if the 99.8% threshold is not met by December 28th. Any extension would push the formal decommission of DonorPerfect past January 3rd."
+    },
+    {
+      "turn_id": "t11",
+      "user_message": "What happens if the reconciliation fails after that extension?",
+      "assistant_message": "If the parallel run still fails the 99.8% reconciliation threshold after the one-week extension, HeartBridge Foundation's steering committee — which includes Mira Okafor and the executive director — must convene within 48 hours to decide whether to extend again or roll back to DonorPerfect as the system of record. A second extension is capped at two additional weeks, making the absolute latest reconciliation deadline January 14th. Rollback would trigger a formal post-mortem using the Migration Readiness Report v2 as the baseline document. The project budget includes a $15,000 contingency reserve specifically allocated for rollback labor costs."
+    },
+    {
+      "turn_id": "t12",
+      "user_message": "In the field mapping document, how are recurring gift schedules being handled since DonorPerfect stores them differently?",
+      "assistant_message": "In HeartBridge Field Map v1.3, recurring gift schedules from DonorPerfect are mapped to the Salesforce Nonprofit Success Pack's Recurring Donations object using a custom intermediary script written by the implementation consultant. The script translates DonorPerfect's frequency codes — W for weekly, M for monthly, Q for quarterly, A for annual — into NPSP's npe03__Installment_Period__c field values. HeartBridge Foundation has 2,340 active recurring gift schedules that must be migrated without interrupting the next scheduled charge date. Mira Okafor must validate a sample of 200 randomly selected recurring records before the full batch runs."
+    },
+    {
+      "turn_id": "t13",
+      "user_message": "We also need to figure out the data retention policy for donor records we're not migrating. What are the rules around that?",
+      "assistant_message": "HeartBridge Foundation's board approved a data retention policy on August 15th stating that donor records with zero giving activity in the past seven years — as of the migration cutover date — will not be migrated to the Salesforce Nonprofit Success Pack and must instead be archived. The archive format mandated by the policy is an encrypted AES-256 ZIP file stored on HeartBridge Foundation's internal server for a minimum of three additional years post-migration before deletion is permitted. Based on the Migration Readiness Report v2, approximately 9,100 records fall into the do-not-migrate category under the seven-year rule. The policy requires that the archive be completed and checksummed before the data freeze date of November 17th."
+    },
+    {
+      "turn_id": "t14",
+      "user_message": "Do we know the exact count of donors who will receive the printed letter versus the email?",
+      "assistant_message": "Yes — the final communication list pulled from DonorPerfect on October 6th shows 347 major donors in scope, of whom 305 will receive the email and 42 will receive the printed letter, consistent with the earlier breakdown. Mira Okafor approved the list segmentation on October 7th after confirming that no donor appears on both lists. The 42 print recipients include 11 donors whose records show a giving history of over $10,000 each, so a personal cover note signed by HeartBridge Foundation's executive director will be inserted in those 11 envelopes. Total print and postage cost is estimated at $340, which falls within the communications budget line."
+    },
+    {
+      "turn_id": "t15",
+      "user_message": "Has a test import been scheduled yet, and how many records will be in it?",
+      "assistant_message": "Yes, the test import is scheduled for November 20th, three days after the November 17th data freeze, and will use a batch of 500 records as Mira Okafor confirmed in the October 2nd email to the implementation consultant. The 500-record batch is a stratified sample: 200 individual donors, 150 organizational donors, 100 recurring gift donors, and 50 lapsed donors who gave between seven and ten years ago to test boundary conditions. The Salesforce Nonprofit Success Pack's Data Loader will process the batch in a sandboxed environment, not the production org, so no live data is affected. Results must be reviewed and signed off within 48 hours to keep the full import on schedule for November 25th."
+    },
+    {
+      "turn_id": "t16",
+      "user_message": "What's the contingency if the parallel run extension still doesn't resolve the discrepancies?",
+      "assistant_message": "If both the initial December 31st deadline and the one-week extension are exhausted without meeting the 99.8% threshold, the steering committee's January 14th absolute deadline kicks in, as established earlier. At that point, HeartBridge Foundation would draw on the $15,000 contingency reserve to fund rollback labor, and Mira Okafor would reactivate DonorPerfect as the sole system of record. The Salesforce Nonprofit Success Pack subscription would be paused rather than cancelled for up to 60 days to allow a root-cause analysis before a re-migration attempt. The Migration Readiness Report v2 would be updated with the failure findings to inform any second attempt."
+    },
+    {
+      "turn_id": "t17",
+      "user_message": "What's the version of the field mapping document the implementation consultant is currently working from?",
+      "assistant_message": "The implementation consultant is currently working from HeartBridge Field Map v1.3, signed off by Mira Okafor on September 28th. Version 1.4 is expected by October 18th and will incorporate the consultant's recommendations on the 17 unmapped fields, potentially converting some of them to custom objects in the Salesforce Nonprofit Success Pack rather than custom fields. HeartBridge Foundation has a standing rule that no version of the field map may be used for any actual data movement until it carries Mira Okafor's countersignature. Version 1.4 will be the operative document for both the November 20th test import and the full November 25th import."
+    },
+    {
+      "turn_id": "t18",
+      "user_message": "Can you confirm the full import date and the total record count that will be loaded on that day?",
+      "assistant_message": "The full import is scheduled for November 25th and will load approximately 28,900 records into the Salesforce Nonprofit Success Pack — that is the 38,000 total donor records minus the roughly 9,100 records excluded under the seven-year retention policy. Mira Okafor must be present for the entire import run, which the implementation consultant estimates will take between four and six hours depending on server response times. A pre-import checklist of 22 items, derived from the Migration Readiness Report v2, must be signed off before the Data Loader job is triggered. A full backup of the DonorPerfect database will be taken at midnight on November 24th as a rollback point."
+    },
+    {
+      "turn_id": "t19",
+      "user_message": "Has the implementation consultant given a revised version of the field map yet, and if so what changed for those 17 unmapped fields?",
+      "assistant_message": "HeartBridge Field Map v1.4 was delivered by the implementation consultant on October 17th, one day ahead of schedule. Of the 17 previously unmapped fields from DonorPerfect, 11 were resolved by creating custom fields directly on the Contact object in the Salesforce Nonprofit Success Pack, and the remaining 6 were converted into a new custom object called Heritage_Gift__c. Mira Okafor countersigned version 1.4 on October 19th, making it the operative document as planned. The Heritage_Gift__c object will store historical pledge data going back to HeartBridge Foundation's founding year of 1998."
+    },
+    {
+      "turn_id": "t20",
+      "user_message": "If the parallel run extension gets used, does that affect the DonorPerfect contract end date?",
+      "assistant_message": "HeartBridge Foundation's current DonorPerfect subscription renews annually on February 1st, so a one-week extension to January 7th or even the absolute rollback deadline of January 14th still falls well within the current contract term. Mira Okafor confirmed with DonorPerfect's account manager on October 10th that HeartBridge Foundation can cancel with 30 days' written notice at any point before the February 1st renewal without penalty. If the migration succeeds by December 31st as planned, the cancellation notice would be sent by January 2nd to avoid triggering the next annual charge of $8,400. A failed migration requiring rollback would mean retaining DonorPerfect for at least another full year at that $8,400 cost."
+    },
+    {
+      "turn_id": "t21",
+      "user_message": "Let's look at the Bloomerang option as an alternative. What are the key constraints we identified there?",
+      "assistant_message": "HeartBridge Foundation evaluated Bloomerang as an alternative CRM and found that its standard plan caps the database at 50,000 contact records, which gives HeartBridge Foundation a headroom of about 12,000 records above its current 38,000-donor database. Bloomerang's onboarding team quoted a data import timeline of no more than 6 weeks from signed contract to go-live for databases under 50,000 records. However, Bloomerang does not natively support the Heritage_Gift__c style of custom object structure, meaning HeartBridge Foundation's historical pledge data going back to 1998 would need to be handled differently. The evaluation was documented in the Migration Readiness Report v2, Section 4, as of September 30th."
+    },
+    {
+      "turn_id": "t22",
+      "user_message": "Did we decide on a final postmark deadline for the print letters?",
+      "assistant_message": "Yes — HeartBridge Foundation set the postmark deadline for the 42 printed donor letters as five business days before the maintenance window start, which with the Friday 6 PM start puts the required postmark date at the preceding Friday. Mira Okafor confirmed on October 9th that the letters will be taken to the main post office branch, not a drop box, to ensure same-day postmark. The 11 letters with the executive director's personal cover note must be ready for her signature no later than the Wednesday of that same week. Print production is handled by HeartBridge Foundation's usual vendor, QuickPrint Solutions, which has a 24-hour turnaround guarantee."
+    },
+    {
+      "turn_id": "t23",
+      "user_message": "What's the budget line for the print letters including the QuickPrint Solutions work?",
+      "assistant_message": "The total communications budget for the print letters is $340, as estimated earlier, broken down as follows: QuickPrint Solutions quoted $180 for printing and folding all 42 letters on HeartBridge Foundation letterhead, $120 for envelopes and postage at the current first-class rate, and a $40 courier fee to transport the 11 executive-director letters separately to ensure they are not mixed with the standard batch. Mira Okafor approved the QuickPrint Solutions quote on October 8th, and a purchase order has been issued. The $340 comes entirely from the communications sub-line of the migration project budget, which has a total allocation of $2,500."
+    },
+    {
+      "turn_id": "t24",
+      "user_message": "What specific limitation does Bloomerang have that would affect our historical data, and is there a workaround?",
+      "assistant_message": "Bloomerang's data model stores all gift history as flat transaction records and does not support parent-child pledge hierarchies, which means HeartBridge Foundation's multi-installment pledges — 412 of them dating back to 1998 — cannot be represented natively. The workaround identified in the Migration Readiness Report v2 is to import each pledge installment as an independent gift record and add a custom text field called Legacy_Pledge_ID to group related installments. This workaround was assessed as acceptable for reporting purposes by HeartBridge Foundation's development director, but it means pledge progress bars and fulfillment tracking would need to be managed outside Bloomerang in a separate spreadsheet. The workaround adds an estimated two weeks to the Bloomerang import timeline, pushing go-live to eight weeks from contract signing."
+    },
+    {
+      "turn_id": "t25",
+      "user_message": "Is the $340 communications budget enough if we need to send a follow-up letter after the migration completes?",
+      "assistant_message": "The $340 covers only the pre-migration notification letters; a post-migration confirmation mailing to the same 42 print recipients would be a separate expense. Mira Okafor noted in a project meeting on October 11th that a follow-up print mailing was not budgeted in the current migration project plan and would need a budget amendment approved by HeartBridge Foundation's finance committee. QuickPrint Solutions would charge approximately the same $180 printing fee for a second run of 42 letters, plus postage, putting the additional cost at roughly $300. The communications sub-line currently has $2,160 remaining after the $340 purchase order, so funds are technically available pending committee approval."
+    },
+    {
+      "turn_id": "t26",
+      "user_message": "Has version 1.4 of the field map been tested against the DonorPerfect export yet?",
+      "assistant_message": "A dry-run validation of HeartBridge Field Map v1.4 against a 1,000-record DonorPerfect export was completed on October 22nd by the implementation consultant. The validation found that 998 of the 1,000 records mapped cleanly, with 2 records failing because they contained null values in a required field that the old DonorPerfect schema allowed to be blank. Mira Okafor and the consultant agreed on October 23rd to add a default placeholder value of Unknown for that field to prevent import failures during the November 25th full load. The fix was incorporated into the export script, and a re-validation of the same 1,000 records on October 24th returned zero errors."
+    },
+    {
+      "turn_id": "t27",
+      "user_message": "So to confirm — under NPSP, what is the absolute earliest go-live date if Mira passes her certification exam on November 1st?",
+      "assistant_message": "If Mira Okafor passes the Salesforce Administrator certification on November 1st and the Statement of Work is signed within one week — by November 8th at the latest — the 14-week migration clock starts November 8th. Counting 14 weeks forward from November 8th lands on February 7th, and since the go-live is set for the Monday following the end of the 14-week period, the absolute earliest NPSP go-live date would be Monday, February 10th. This date assumes the HeartBridge Field Map is already finalized and the data is already cleaned, which are parallel-track dependencies that must be met independently. If the Statement of Work is delayed even one day past November 8th, the go-live slides to February 17th at the earliest."
+    },
+    {
+      "turn_id": "t28",
+      "user_message": "What's the status on getting version 1.4 formally approved for the November 20th test import?",
+      "assistant_message": "HeartBridge Field Map v1.4 carries Mira Okafor's countersignature dated October 19th, which under HeartBridge Foundation's standing rule makes it formally approved for data movement. The implementation consultant confirmed on October 25th that the version 1.4 export script, updated with the Unknown placeholder fix, is ready for the November 20th test import. A final pre-import checklist review is scheduled for November 18th, two days before the test, with Mira Okafor and the consultant both attending. DonorPerfect's export job is pre-scheduled to run automatically at 12:01 AM on November 17th, immediately after the data freeze takes effect."
+    },
+    {
+      "turn_id": "t29",
+      "user_message": "What does the full import checklist cover, and who has to sign each item?",
+      "assistant_message": "The 22-item pre-import checklist derived from the Migration Readiness Report v2 is divided into four sections: data quality (8 items), environment readiness (6 items), security and access (4 items), and rollback readiness (4 items). Each item in the data quality section must be signed by Mira Okafor, while the environment readiness items require the implementation consultant's signature. Security and access items are co-signed by both Mira Okafor and HeartBridge Foundation's IT director. The rollback readiness items, including confirmation that the midnight November 24th DonorPerfect backup is intact, must be signed by all three parties before the Data Loader job can be triggered."
+    },
+    {
+      "turn_id": "t30",
+      "user_message": "If we go with Bloomerang instead of NPSP, what's the maximum record count we could have in the database at go-live, and does our current data fit?",
+      "assistant_message": "Bloomerang's standard plan cap is 50,000 contact records, and HeartBridge Foundation will be importing approximately 28,900 records after applying the seven-year retention exclusion of roughly 9,100 records. So yes, the migrated dataset fits comfortably within the 50,000-record cap with about 21,100 records of headroom. However, if HeartBridge Foundation's donor base grows at its historical rate of roughly 1,800 new donors per year, the cap would be reached in approximately 11 to 12 years. Bloomerang's enterprise plan, which has no record cap, was quoted to Mira Okafor at $1,200 per month, compared to $0 for the first 10 NPSP seats under the Power of Us program."
+    },
+    {
+      "turn_id": "t31",
+      "user_message": "What's the earliest go-live date under Bloomerang if we sign the contract on November 8th?",
+      "assistant_message": "If HeartBridge Foundation signs the Bloomerang contract on November 8th, the standard 6-week onboarding timeline puts go-live on December 20th. With the two-week extension required by the pledge workaround for the 412 historical installment records, the realistic go-live date under Bloomerang would be January 3rd. Bloomerang's onboarding team confirmed to Mira Okafor that January 3rd is achievable as long as the cleaned data export from DonorPerfect is delivered to them by November 22nd. That January 3rd date is specific to Bloomerang and the November 8th contract-signing scenario."
+    },
+    {
+      "turn_id": "t32",
+      "user_message": "Is there a cap on how long the DonorPerfect subscription can be kept active in parallel with the new system during reconciliation?",
+      "assistant_message": "HeartBridge Foundation's project plan permits running DonorPerfect in parallel with the Salesforce Nonprofit Success Pack for a maximum of 60 days after go-live, after which the DonorPerfect license must either be cancelled or renewed. Mira Okafor negotiated with DonorPerfect's account manager to allow a month-to-month extension at a prorated rate of $700 per month if the parallel period needs to exceed 30 days but stay within the 60-day cap. The 60-day hard cap was set to avoid triggering the $8,400 annual renewal on February 1st. Any parallel-run period beyond 60 days would require a new contract with DonorPerfect and board approval."
+    },
+    {
+      "turn_id": "t33",
+      "user_message": "Under the Bloomerang option, who would own the data import process — our internal team or Bloomerang's onboarding staff?",
+      "assistant_message": "Under the Bloomerang onboarding model, Bloomerang's dedicated data migration specialist owns the actual import execution, meaning HeartBridge Foundation's team — including Mira Okafor — does not run the Data Loader equivalent themselves. HeartBridge Foundation's responsibilities are limited to providing a cleaned, validated CSV export from DonorPerfect and completing a mapping questionnaire that Bloomerang uses to configure the import. The Migration Readiness Report v2 notes this as an advantage for HeartBridge Foundation because it reduces the internal technical burden compared to the NPSP self-managed import. Mira Okafor would still need to validate a sample of 200 records post-import to sign off on data accuracy before go-live."
+    },
+    {
+      "turn_id": "t34",
+      "user_message": "If we keep DonorPerfect active past the 30-day mark during reconciliation, what's the total additional cost?",
+      "assistant_message": "Running DonorPerfect beyond the initial 30-day parallel window costs $700 per month at the prorated rate Mira Okafor negotiated. If HeartBridge Foundation uses the full remaining 30 days of the 60-day cap, the additional cost would be exactly $700 for that second month. Combined with the base parallel period — which is covered under the existing annual contract since it falls before the February 1st renewal — the maximum additional spend for DonorPerfect during the extended parallel run is $700. The project's $15,000 contingency reserve could absorb this cost, but Mira Okafor noted it would reduce the rollback labor buffer."
+    },
+    {
+      "turn_id": "t35",
+      "user_message": "Does the 60-day cap apply if we go with Bloomerang instead of NPSP?",
+      "assistant_message": "The 60-day parallel-run cap was written into HeartBridge Foundation's project plan specifically in the context of migrating to the Salesforce Nonprofit Success Pack, so it does not automatically apply to a Bloomerang migration scenario. Under Bloomerang, the parallel-run duration would need to be re-scoped, and Mira Okafor indicated in a project note from October 12th that Bloomerang's onboarding team typically recommends only a 14-day parallel validation period rather than 30 days, because Bloomerang handles the import and can certify data accuracy internally. The DonorPerfect contract term and February 1st renewal date remain the same regardless of which target CRM is chosen. A 14-day Bloomerang parallel run starting January 3rd would conclude January 17th, well before the February 1st DonorPerfect renewal deadline."
+    },
+    {
+      "turn_id": "t36",
+      "user_message": "Has a final decision been made on Bloomerang's suitability given the pledge data limitation?",
+      "assistant_message": "HeartBridge Foundation's steering committee met on October 20th and voted 4 to 1 to classify Bloomerang as unsuitable as the primary migration target specifically because of the pledge hierarchy limitation. The deciding factor was that 412 multi-installment pledges cannot be natively tracked in Bloomerang, and managing pledge fulfillment in a separate spreadsheet was deemed operationally unacceptable by the development director. The committee's written decision, filed in the Migration Readiness Report v2 as Addendum C, states that Bloomerang may only be reconsidered if a native pledge-tracking feature is added to the product. As of October 20th, Salesforce Nonprofit Success Pack remains the sole approved migration target for HeartBridge Foundation."
+    },
+    {
+      "turn_id": "t37",
+      "user_message": "Given that version 1.4 is approved, what's the next formal review milestone for the field map before November 25th?",
+      "assistant_message": "The next formal review milestone for HeartBridge Field Map v1.4 is the pre-import checklist sign-off meeting on November 18th, where Mira Okafor and the implementation consultant will confirm that the field map's export script produced a clean output during the November 20th test import — note that the checklist meeting happens before the test because it covers readiness, not results. After the test import on November 20th, a results-review session is scheduled for November 22nd, and if any field mapping errors are found, a version 1.5 patch would need to be issued and countersigned by Mira Okafor before the November 25th full load. If the test is clean, no further changes to the HeartBridge Field Map are permitted under the data freeze policy."
+    },
+    {
+      "turn_id": "t38",
+      "user_message": "Given everything we've decided, what is the earliest possible go-live date if Mira passes her certification on November 1st, and is Bloomerang still a viable backup option at that point?",
+      "assistant_message": null
+    }
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that the earliest NPSP go-live date is Monday, February 10th, based on Mira Okafor passing certification on November 1st, signing the Statement of Work by November 8th, and the 14-week migration clock running from November 8th.",
+      "required": false,
+      "evidence_turn_ids": ["t27"]
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that Bloomerang is not a viable backup option because HeartBridge Foundation's steering committee voted 4 to 1 on October 20th to classify it as unsuitable, specifically due to the inability to natively track the 412 multi-installment pledges.",
+      "required": false,
+      "evidence_turn_ids": ["t36"]
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not state that the earliest go-live date under Bloomerang with a November 8th contract signing is January 3rd (that is the Bloomerang-specific near-miss answer from t31, not the NPSP answer the query asks for).",
+      "required": true,
+      "evidence_turn_ids": []
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer correctly combines the NPSP go-live date (from branch A, t27) with the Bloomerang suitability ruling (from branch B, t36) to address both parts of the query.",
+      "required": false,
+      "evidence_turn_ids": ["t27", "t36"]
+    }
+  ],
+  "reference_answer": "Under the Salesforce Nonprofit Success Pack, if Mira Okafor passes her certification on November 1st and the Statement of Work is signed by November 8th, the 14-week migration clock starts on November 8th, placing the absolute earliest go-live on Monday, February 10th. Bloomerang is not a viable backup option at that point: HeartBridge Foundation's steering committee voted 4 to 1 on October 20th to classify Bloomerang as unsuitable because its data model cannot natively represent the 412 multi-installment pledges, and the committee's written decision states Bloomerang may only be reconsidered if native pledge-tracking is added to the product. Therefore, as of the decisions on record, Salesforce Nonprofit Success Pack on February 10th is the sole approved path forward.",
+  "notes": "t27 (branch A) establishes the February 10th NPSP go-live date given a November 1st certification and November 8th SOW signing; t36 (branch B) establishes the steering committee's October 20th ruling that Bloomerang is unsuitable. The near-miss turn t31 answers a superficially similar 'earliest go-live' question but for Bloomerang with a November 8th contract signing, yielding January 3rd — a plausible but incorrect answer to the final query."
+}
+```

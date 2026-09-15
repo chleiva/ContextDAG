@@ -1,0 +1,137 @@
+{
+ "scenario_id": "long_three_way_join_007",
+ "family": "three_way_join",
+ "n_history": 51,
+ "full_history_tokens": 6897,
+ "closure_ratio": 0.23529411764705882,
+ "entity_registry": [
+  "Harborview Sailing Club",
+  "Petra Voss",
+  "Dock Replacement Project Charter v2.1",
+  "Ridgeline Marine Construction",
+  "NorthShore Permitting Office",
+  "Alderman Dock System Model 7"
+ ],
+ "distractor_branch_entity_hits": {
+  "D": [
+   "Harborview Sailing Club",
+   "Petra Voss",
+   "Dock Replacement Project Charter v2.1",
+   "Ridgeline Marine Construction"
+  ],
+  "E": [
+   "Harborview Sailing Club",
+   "Petra Voss",
+   "Dock Replacement Project Charter v2.1"
+  ],
+  "F": [
+   "Harborview Sailing Club",
+   "Petra Voss",
+   "Ridgeline Marine Construction"
+  ],
+  "G": [
+   "Harborview Sailing Club",
+   "Petra Voss",
+   "Dock Replacement Project Charter v2.1",
+   "Ridgeline Marine Construction"
+  ],
+  "H": [
+   "Harborview Sailing Club",
+   "Petra Voss",
+   "Dock Replacement Project Charter v2.1",
+   "Ridgeline Marine Construction"
+  ]
+ },
+ "near_miss_turn_id": "t27",
+ "checklist_evidence": {
+  "c1": [
+   "t12",
+   "t32"
+  ],
+  "c2": [
+   "t20",
+   "t45",
+   "t51"
+  ],
+  "c3": [
+   "t40"
+  ],
+  "c4": []
+ },
+ "cosine": {
+  "gold_median": 0.4031580984592438,
+  "distractor_median": 0.3796505033969879,
+  "ratio": 0.9416913733046781,
+  "pass": true
+ },
+ "cosine_per_turn": {
+  "t1": 0.3367144465446472,
+  "t2": 0.3462370038032532,
+  "t3": 0.36687320470809937,
+  "t4": 0.24327102303504944,
+  "t5": 0.4374983608722687,
+  "t6": 0.30561962723731995,
+  "t7": 0.4941939115524292,
+  "t8": 0.32004407048225403,
+  "t9": 0.590445339679718,
+  "t10": 0.32592135667800903,
+  "t11": 0.468880295753479,
+  "t12": 0.5353286266326904,
+  "t13": 0.49881669878959656,
+  "t14": 0.2986372709274292,
+  "t15": 0.39098232984542847,
+  "t16": 0.22163952887058258,
+  "t17": 0.3659735321998596,
+  "t18": 0.483556866645813,
+  "t19": 0.4797229766845703,
+  "t20": 0.43080633878707886,
+  "t21": 0.3915926218032837,
+  "t22": 0.2758621573448181,
+  "t23": 0.5780894756317139,
+  "t24": 0.36992281675338745,
+  "t25": 0.4567455053329468,
+  "t26": 0.37123963236808777,
+  "t27": 0.3868916630744934,
+  "t28": 0.242762953042984,
+  "t29": 0.36610519886016846,
+  "t30": 0.4469286799430847,
+  "t31": 0.3796505033969879,
+  "t32": 0.3755098581314087,
+  "t33": 0.37757354974746704,
+  "t34": 0.27381467819213867,
+  "t35": 0.5157898664474487,
+  "t36": 0.43147706985473633,
+  "t37": 0.360181599855423,
+  "t38": 0.47696417570114136,
+  "t39": 0.3256998658180237,
+  "t40": 0.4619957506656647,
+  "t41": 0.40247654914855957,
+  "t42": 0.5193030834197998,
+  "t43": 0.4780789613723755,
+  "t44": 0.4052776098251343,
+  "t45": 0.35852620005607605,
+  "t46": 0.35633885860443115,
+  "t47": 0.3879607915878296,
+  "t48": 0.3774183392524719,
+  "t49": 0.3231140971183777,
+  "t50": 0.40076565742492676,
+  "t51": 0.33331090211868286
+ },
+ "gold_branches": [
+  "A",
+  "B",
+  "C"
+ ],
+ "distractor_branches": [
+  "D",
+  "E",
+  "F",
+  "G",
+  "H"
+ ],
+ "attempt_accepted": 1,
+ "generation_tokens": [
+  5189,
+  10605
+ ]
+}

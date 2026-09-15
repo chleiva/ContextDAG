@@ -1,0 +1,605 @@
+{
+  "scenario_id": "long_two_branch_join_005",
+  "family": "two_branch_join",
+  "label": "JOIN",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're finalizing the rehearsal schedule for the Spring Bloom Concert Tour. How many full-group rehearsals should we plan before the first performance date?",
+      "assistant_message": "For a tour of this scale, Director Sylvia Mäkinen has recommended a minimum of eight full-group rehearsals before the opening night. The Harmonics Choir's internal policy document specifies that at least six of those must include the full programme, not just excerpts. The final two rehearsals should be dress rehearsals held at Riverside Arts Centre to allow the choir to acclimate to the main stage acoustics.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "What's the catering arrangement for the post-concert reception at Riverside Arts Centre?",
+      "assistant_message": "Tour Coordinator Bram Holloway confirmed with Riverside Arts Centre that the reception will be handled by their in-house catering team, Greenleaf Catering. The package selected covers 120 guests at £28 per head, totalling £3,360 for the evening. Director Sylvia Mäkinen approved this budget line on 14 February, and the deposit of £840 has already been paid.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "Has the merchandise order for the Spring Bloom Concert Tour been placed yet?",
+      "assistant_message": "Tour Coordinator Bram Holloway placed the merchandise order with Crestline Print on 20 February, covering 200 printed programmes, 150 tote bags, and 100 branded tumblers. The total order value came to £1,840, and Crestline Print confirmed a delivery date of 15 April to the Harmonics Choir's rehearsal hall. Director Sylvia Mäkinen reviewed and signed off the design proofs on 18 February.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "Director Mäkinen mentioned a cut-off date for confirming the final headcount for those rehearsals. What was decided?",
+      "assistant_message": "Director Sylvia Mäkinen set 1 March as the hard cut-off date for all Harmonics Choir members to confirm their availability for the full eight-rehearsal block. Any member who misses the confirmation deadline will be moved to the reserve list and may not perform on opening night. The cut-off applies to both the soprano and alto sections, which together make up 34 of the choir's 52 registered members.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "We need to sort out transport for the choir between venues on the tour. What options have been looked at?",
+      "assistant_message": "Tour Coordinator Bram Holloway obtained three quotes for coach hire covering the Spring Bloom Concert Tour's four-city itinerary. Meridian Coach Lines offered the lowest quote at £4,200 for the full tour, while Apex Travel came in at £4,750 and CityLink Express quoted £5,100. The Harmonics Choir committee is due to vote on the preferred supplier at its meeting on 5 March.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "Has there been any update on the tote bag delivery timeline from Crestline Print?",
+      "assistant_message": "Crestline Print sent Tour Coordinator Bram Holloway a revised delivery confirmation on 25 February, keeping the 15 April date for the tote bags and tumblers but flagging a possible two-day delay on the printed programmes due to a paper stock issue. Director Sylvia Mäkinen was notified and agreed that a 17 April arrival for the programmes would still be acceptable given the first performance is on 22 April. No changes to the order quantities or pricing were made.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "Has the committee reached a preliminary preference on the coach hire decision?",
+      "assistant_message": "Before the formal vote, Tour Coordinator Bram Holloway circulated a comparison sheet to the Harmonics Choir committee showing that Meridian Coach Lines has the lowest cost and also holds a five-star safety rating from the National Coach Council. Three of the five committee members indicated informally they would support Meridian Coach Lines. Director Sylvia Mäkinen has not yet declared a preference, as she wants to review the insurance terms first.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "What food options will be available for the choir during the reception, beyond the standard package?",
+      "assistant_message": "Greenleaf Catering confirmed to Tour Coordinator Bram Holloway that the £28-per-head package includes a cold buffet with three meat options and two vegetarian options. For an additional £6 per head, guests can upgrade to a hot buffet, which Riverside Arts Centre's events manager strongly recommended. Director Sylvia Mäkinen is considering the upgrade for the 40 VIP guests, which would add £240 to the catering bill.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "What is the ticket pricing structure that's been agreed for the Spring Bloom Concert Tour performances?",
+      "assistant_message": "The Harmonics Choir committee approved a three-tier pricing structure for the Spring Bloom Concert Tour: standard seats are priced at £18, premium seats at £28, and a concession rate of £12 applies to students, seniors, and registered disabled patrons. Tour Coordinator Bram Holloway confirmed these prices were locked in under Venue Contract v2.3, signed on 10 February. The pricing applies uniformly across all four tour venues.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "What is the final decision on the coach hire supplier?",
+      "assistant_message": "At the 5 March committee meeting, the Harmonics Choir voted four to one in favour of Meridian Coach Lines for the Spring Bloom Concert Tour transport. Tour Coordinator Bram Holloway signed the contract with Meridian Coach Lines on 7 March for £4,200 covering all four tour legs. A 25% deposit of £1,050 was paid on the same day.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "Has the programme content for the printed booklets been finalised?",
+      "assistant_message": "Director Sylvia Mäkinen submitted the final programme content to Tour Coordinator Bram Holloway on 2 March, consisting of 16 pages including conductor notes, song lyrics for three pieces, and sponsor acknowledgements. Crestline Print confirmed they can accommodate the 16-page layout within the original order price of £1,840. The front cover will feature a photograph of Riverside Arts Centre taken by choir member Petra Voss.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "Is there a plan for what happens if some choir members can't attend the full reception?",
+      "assistant_message": "Tour Coordinator Bram Holloway drafted a flexible attendance policy for the Harmonics Choir reception, allowing members to attend just the first hour if they need to leave early. Greenleaf Catering confirmed this would not affect the catering count, as the £28-per-head charge is based on the 120 guaranteed guests regardless of how long each stays. Director Sylvia Mäkinen approved this policy on 8 March.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "What happens if Meridian Coach Lines has a vehicle breakdown on tour?",
+      "assistant_message": "The contract Tour Coordinator Bram Holloway signed with Meridian Coach Lines includes a breakdown replacement clause: a substitute vehicle must be provided within 90 minutes or a full daily rate refund of £1,050 is issued. The Harmonics Choir committee insisted on this clause after a previous tour incident in 2022. Director Sylvia Mäkinen also requested that Meridian Coach Lines supply a named emergency contact available 24 hours a day during the Spring Bloom Concert Tour dates.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "Are there any sponsorship acknowledgements that need to go into the printed programme?",
+      "assistant_message": "Director Sylvia Mäkinen confirmed three sponsors must be acknowledged in the Harmonics Choir programme: Alderton Building Society as the headline sponsor with a half-page acknowledgement, and two secondary sponsors, Vantage Insurance and Peel Street Bakery, each receiving a quarter-page mention. Tour Coordinator Bram Holloway has already sent the sponsor logos to Crestline Print as part of the final artwork file. All three sponsors were confirmed in writing by 28 February.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "Has there been any discussion about a contingency fund for unexpected catering costs?",
+      "assistant_message": "Director Sylvia Mäkinen proposed a contingency reserve of £500 specifically for catering overruns at the Riverside Arts Centre reception, which the Harmonics Choir committee approved on 9 March. Tour Coordinator Bram Holloway will hold this reserve in the tour's operational account and can authorise spending up to £200 without a further committee vote. Any amount above £200 requires sign-off from Director Sylvia Mäkinen.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "What is the plan if Crestline Print delivers the programmes late and they aren't ready for the first night?",
+      "assistant_message": "Tour Coordinator Bram Holloway negotiated a late-delivery penalty clause with Crestline Print: if programmes arrive after 20 April, Crestline Print must provide a £200 discount on the invoice and courier an emergency run of 50 single-sheet summary programmes at no extra cost. Director Sylvia Mäkinen approved this clause as part of the revised order confirmation signed on 26 February. The Harmonics Choir has also identified a local printer, Quickset Press, as a backup supplier who can turn around 200 copies in 48 hours for approximately £320.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "If we need to use Quickset Press as the backup, what would the total cost for all 200 backup programmes be?",
+      "assistant_message": "Based on the quote Tour Coordinator Bram Holloway received, Quickset Press would charge approximately £320 for a full run of 200 backup programmes for the Harmonics Choir. That figure covers printing and basic binding but excludes any courier delivery charge, which Quickset Press estimated at an additional £25 for same-day delivery to Riverside Arts Centre. So the all-in cost for the backup print run would be approximately £345.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "What are the specific pick-up times Meridian Coach Lines has scheduled for the tour?",
+      "assistant_message": "Meridian Coach Lines provided Tour Coordinator Bram Holloway with a detailed schedule: the coach departs the Harmonics Choir's rehearsal hall at 09:00 on each travel day, with a 30-minute buffer built in before each venue call time. For the Riverside Arts Centre leg, the pick-up is at 08:30 due to the longer journey. Director Sylvia Mäkinen confirmed all choir members have been notified of these times via the tour information pack sent on 10 March.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "Has the catering deposit situation been fully resolved, or is there still an outstanding balance to manage?",
+      "assistant_message": "The initial deposit of £840 was paid to Greenleaf Catering on 14 February, leaving an outstanding balance of £2,520 from the base £3,360 package. Tour Coordinator Bram Holloway has scheduled the balance payment for 10 April, two weeks before the Riverside Arts Centre reception. If Director Sylvia Mäkinen approves the VIP hot-buffet upgrade for 40 guests, an additional £240 will be added to the final invoice, bringing the total to £3,600.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "Is there a plan for dietary requirements among the 120 reception guests?",
+      "assistant_message": "Tour Coordinator Bram Holloway sent a dietary requirements survey to all 120 confirmed reception guests on 1 March, with a response deadline of 15 March. Greenleaf Catering requires the final dietary breakdown at least three weeks before the event. As of 10 March, 87 responses had been received, with 14 guests declaring dietary requirements including 6 vegans, 5 gluten-free, and 3 nut allergies, all of which the Harmonics Choir confirmed Greenleaf Catering can accommodate within the existing package.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "Is there a plan for storing the merchandise before the first performance?",
+      "assistant_message": "Crestline Print will deliver all merchandise to the Harmonics Choir's rehearsal hall on 15 April, and Tour Coordinator Bram Holloway has arranged for it to be stored in the hall's locked equipment room until transport day. On the morning of the first performance, Meridian Coach Lines will load the merchandise into the coach's luggage bay as part of the standard departure from the rehearsal hall. Director Sylvia Mäkinen asked that a member of the choir committee, specifically treasurer Nadia Osei, supervise the loading to verify quantities.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "Has Meridian Coach Lines confirmed insurance coverage for the tour?",
+      "assistant_message": "Tour Coordinator Bram Holloway received the insurance certificate from Meridian Coach Lines on 8 March, confirming public liability coverage of £5 million per incident for the Spring Bloom Concert Tour. The policy also covers passenger luggage up to £500 per person, which Director Sylvia Mäkinen noted was sufficient for most choir members' instrument cases. The Harmonics Choir's own travel insurance policy, held with Vantage Insurance, provides supplementary coverage for any gaps.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "Has the full guest list for the reception been confirmed, and who is managing it on the night?",
+      "assistant_message": "Tour Coordinator Bram Holloway finalised the 120-person guest list on 16 March, comprising 52 choir members, 30 invited supporters and patrons, 20 sponsor representatives, and 18 press and media contacts. On the night, Riverside Arts Centre's front-of-house manager, Greta Lund, will manage the door list in coordination with Tour Coordinator Bram Holloway. Director Sylvia Mäkinen will greet the headline sponsor, Alderton Building Society, personally at the entrance.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "Has Greenleaf Catering been given the final dietary breakdown yet?",
+      "assistant_message": "Tour Coordinator Bram Holloway submitted the final dietary breakdown to Greenleaf Catering on 17 March, after the survey closed with 115 of 120 responses received. The breakdown confirmed 6 vegans, 5 gluten-free, 3 nut allergy, and 101 standard guests, with the 5 non-responders assumed standard as per the Harmonics Choir's booking terms. Greenleaf Catering acknowledged receipt and confirmed the menu can be adjusted within the existing £3,360 package at no additional cost.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "Has the VIP hot-buffet upgrade been approved yet?",
+      "assistant_message": "Director Sylvia Mäkinen formally approved the VIP hot-buffet upgrade for 40 guests on 18 March, authorising the additional £240 charge. Tour Coordinator Bram Holloway notified Greenleaf Catering the same day, bringing the revised total catering invoice to £3,600. Greenleaf Catering confirmed the upgrade is included in the 10 April balance payment, so no separate transaction is required.",
+      "gold_parents": [
+        "t24"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "Has the Meridian Coach Lines emergency contact been confirmed?",
+      "assistant_message": "Meridian Coach Lines provided Tour Coordinator Bram Holloway with the name and direct number of their 24-hour tour support manager, a person named Roland Fitch, on 9 March. Roland Fitch's number has been distributed to Director Sylvia Mäkinen and all five Harmonics Choir committee members. The Spring Bloom Concert Tour information pack sent on 10 March also includes this contact in the emergency contacts section.",
+      "gold_parents": [
+        "t22"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "Has Nadia Osei confirmed she can supervise the merchandise loading on departure day?",
+      "assistant_message": "Nadia Osei confirmed to Tour Coordinator Bram Holloway on 12 March that she will be at the Harmonics Choir rehearsal hall by 08:00 on the first departure day to oversee merchandise loading onto the Meridian Coach Lines vehicle. She will cross-check quantities against the Crestline Print delivery manifest, which lists 200 programmes, 150 tote bags, and 100 tumblers. Director Sylvia Mäkinen thanked her in the 14 March committee meeting minutes.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "Has there been any update on whether the choir's own travel insurance with Vantage Insurance covers instrument damage?",
+      "assistant_message": "Tour Coordinator Bram Holloway reviewed the Harmonics Choir's Vantage Insurance policy on 15 March and confirmed that instrument damage is covered up to £1,500 per instrument, subject to a £75 excess per claim. Director Sylvia Mäkinen circulated this information to all members who bring instruments on the Spring Bloom Concert Tour. Members with instruments valued above £1,500 were advised to arrange their own top-up cover before the tour departs.",
+      "gold_parents": [
+        "t26"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "What is the schedule for the balance payment to Greenleaf Catering, including the VIP upgrade?",
+      "assistant_message": "Tour Coordinator Bram Holloway confirmed the single balance payment of £2,760 is due on 10 April, covering the remaining £2,520 from the base package plus the £240 VIP upgrade, bringing the total catering spend to £3,600. The payment will be made by bank transfer from the Harmonics Choir's operational account. Director Sylvia Mäkinen must co-sign the transfer authorisation, as it exceeds the £2,000 single-signatory threshold.",
+      "gold_parents": [
+        "t25"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t30",
+      "turn_index": 29,
+      "user_message": "Has the Alderton Building Society been briefed on their role at the reception?",
+      "assistant_message": "Tour Coordinator Bram Holloway sent Alderton Building Society a reception briefing document on 19 March, outlining their headline sponsor status and the half-page acknowledgement in the Harmonics Choir programme. Their representative, Marcus Thorne, will be given a speaking slot of five minutes during the reception, immediately after Director Sylvia Mäkinen's welcome address. Alderton Building Society confirmed Marcus Thorne's attendance and asked for a copy of the programme proof, which was sent the same day.",
+      "gold_parents": [
+        "t27"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t31",
+      "turn_index": 30,
+      "user_message": "Has the Vantage Insurance policy been checked for any exclusions relevant to the tour?",
+      "assistant_message": "Tour Coordinator Bram Holloway identified two relevant exclusions in the Vantage Insurance policy during his 15 March review: pre-existing instrument damage is not covered, and claims must be filed within 48 hours of the incident. Director Sylvia Mäkinen asked all Harmonics Choir members to photograph their instruments before departure to establish a pre-tour condition record. The policy's 48-hour filing window was highlighted in the tour information pack as a critical deadline.",
+      "gold_parents": [
+        "t28"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t32",
+      "turn_index": 31,
+      "user_message": "Has Greta Lund at Riverside Arts Centre received the final guest list?",
+      "assistant_message": "Tour Coordinator Bram Holloway emailed the finalised 120-person guest list to Greta Lund at Riverside Arts Centre on 17 March, the same day the dietary breakdown was sent to Greenleaf Catering. Greta Lund acknowledged receipt and confirmed that Riverside Arts Centre's entrance area can comfortably accommodate the expected arrival flow. Director Sylvia Mäkinen also asked that Greta Lund reserve a small holding area near the stage for the Harmonics Choir members to gather before the reception opens to guests.",
+      "gold_parents": [
+        "t29"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t33",
+      "turn_index": 32,
+      "user_message": "Has anything changed with the Meridian Coach Lines contract since it was signed?",
+      "assistant_message": "Tour Coordinator Bram Holloway requested one amendment to the Meridian Coach Lines contract on 20 March: the addition of a second pick-up point at Westgate Station for six choir members who cannot reach the rehearsal hall by 09:00. Meridian Coach Lines agreed to add the Westgate Station stop at no extra charge, and the amended contract was countersigned on 22 March. Director Sylvia Mäkinen approved the amendment and updated the Spring Bloom Concert Tour information pack accordingly.",
+      "gold_parents": [
+        "t31"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t34",
+      "turn_index": 33,
+      "user_message": "Has there been any feedback from Alderton Building Society about the programme proof?",
+      "assistant_message": "Marcus Thorne from Alderton Building Society responded to Tour Coordinator Bram Holloway on 21 March with one requested change: the sponsor's logo should appear in full colour rather than greyscale on the programme's back cover. Director Sylvia Mäkinen approved the change, and Crestline Print was notified on 22 March that the back-cover artwork file needed to be updated. Crestline Print confirmed the revision would not delay the delivery schedule or alter the £1,840 invoice total.",
+      "gold_parents": [
+        "t30"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t35",
+      "turn_index": 34,
+      "user_message": "Has the contingency reserve for catering been formally set aside in the accounts?",
+      "assistant_message": "Tour Coordinator Bram Holloway confirmed to the Harmonics Choir committee on 20 March that the £500 catering contingency reserve has been ring-fenced in a separate line in the tour operational account. Nadia Osei, as treasurer, updated the tour budget spreadsheet to reflect this allocation. Director Sylvia Mäkinen noted that the reserve remains unspent and will be returned to general funds if not needed by the close of the Riverside Arts Centre reception.",
+      "gold_parents": [
+        "t32"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t36",
+      "turn_index": 35,
+      "user_message": "Has Nadia Osei flagged any overall budget concerns for the tour at this point?",
+      "assistant_message": "Nadia Osei presented a budget summary to the Harmonics Choir committee on 22 March showing total committed expenditure of £9,940, against a tour budget of £11,500 approved by Director Sylvia Mäkinen in January. The largest single line items are catering at £3,600, coach hire at £4,200, and merchandise at £1,840. Nadia Osei noted a remaining unallocated buffer of £1,560, which she recommended holding in reserve for the Spring Bloom Concert Tour's final weeks.",
+      "gold_parents": [
+        "t35"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t37",
+      "turn_index": 36,
+      "user_message": "Under Venue Contract v2.3, is there a minimum ticket sales guarantee the choir has to meet?",
+      "assistant_message": "Venue Contract v2.3 includes a minimum sales guarantee clause requiring the Harmonics Choir to sell at least 60% of total venue capacity across all performances combined. Tour Coordinator Bram Holloway confirmed that the four venues have a combined seating capacity of 800, meaning the choir must sell a minimum of 480 tickets in total across the tour. Failure to meet this threshold triggers a shortfall penalty payable to the venue consortium, as Director Sylvia Mäkinen noted when reviewing the contract on 10 February.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t38",
+      "turn_index": 37,
+      "user_message": "Has Crestline Print sent a revised invoice reflecting the logo colour change?",
+      "assistant_message": "Crestline Print confirmed to Tour Coordinator Bram Holloway on 24 March that the logo colour change for Alderton Building Society requires no price adjustment, so the invoice remains at £1,840. The updated artwork proof was sent to Director Sylvia Mäkinen for final sign-off on the same day. Crestline Print noted that the revised proof must be approved by 28 March to keep the 15 April delivery date for tote bags and tumblers on track.",
+      "gold_parents": [
+        "t34"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t39",
+      "turn_index": 38,
+      "user_message": "Has the balance payment to Greenleaf Catering been processed on schedule?",
+      "assistant_message": "Tour Coordinator Bram Holloway confirmed that the £2,760 balance payment to Greenleaf Catering was processed on 10 April as planned, with Director Sylvia Mäkinen co-signing the bank transfer authorisation on 9 April. Greenleaf Catering issued a receipt the same day, confirming the full £3,600 catering invoice is now settled. Nadia Osei updated the tour budget spreadsheet to reflect the cleared balance.",
+      "gold_parents": [
+        "t36"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t40",
+      "turn_index": 39,
+      "user_message": "Has there been any clarification on how the shortfall penalty is calculated if the 60% threshold isn't met?",
+      "assistant_message": "Tour Coordinator Bram Holloway reviewed the penalty clause in Venue Contract v2.3 and confirmed that the shortfall penalty is calculated at £15 per unsold ticket below the 480-ticket minimum. So if the Harmonics Choir sells only 450 tickets, the penalty would be 30 times £15, equalling £450. Director Sylvia Mäkinen stressed that the choir must track running ticket sales weekly to avoid being caught short.",
+      "gold_parents": [
+        "t37"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t41",
+      "turn_index": 40,
+      "user_message": "Has the Meridian Coach Lines amended contract been shared with all committee members?",
+      "assistant_message": "Tour Coordinator Bram Holloway distributed the amended Meridian Coach Lines contract to all five Harmonics Choir committee members by email on 23 March. Nadia Osei acknowledged receipt and filed it in the Spring Bloom Concert Tour document folder. Director Sylvia Mäkinen confirmed the Westgate Station stop time of 09:20 has also been added to the tour information pack.",
+      "gold_parents": [
+        "t39"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t42",
+      "turn_index": 41,
+      "user_message": "Has the £500 catering contingency been touched at all since it was set aside?",
+      "assistant_message": "As of 25 March, the £500 catering contingency remains fully intact in the Harmonics Choir tour operational account, according to Nadia Osei's latest budget update shared with Director Sylvia Mäkinen. Tour Coordinator Bram Holloway confirmed no catering-related unexpected costs have arisen since the reserve was ring-fenced on 20 March. Nadia Osei will report on the reserve's status again after the 10 April Greenleaf Catering balance payment clears.",
+      "gold_parents": [
+        "t41"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t43",
+      "turn_index": 42,
+      "user_message": "Is there a process for handling any last-minute guest additions to the reception list beyond the 120 confirmed?",
+      "assistant_message": "Tour Coordinator Bram Holloway agreed with Riverside Arts Centre and Greenleaf Catering that up to 10 additional walk-in guests can be accommodated at the reception, charged at the standard £28-per-head rate payable on the night by cash or card. Director Sylvia Mäkinen must approve any addition above the 120 confirmed guests, and Greta Lund will manage the walk-in queue at the entrance. The Harmonics Choir committee was notified of this policy on 26 March.",
+      "gold_parents": [
+        "t42"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t44",
+      "turn_index": 43,
+      "user_message": "Has the Vantage Insurance policy document been shared with choir members yet?",
+      "assistant_message": "Tour Coordinator Bram Holloway shared a summary of the Vantage Insurance policy with all Harmonics Choir members on 24 March, highlighting the £1,500 instrument cover limit, the £75 excess, and the 48-hour claims window. Director Sylvia Mäkinen asked members to confirm receipt by 28 March, and 47 of 52 members had done so by that deadline. The five non-responding members were followed up individually by Tour Coordinator Bram Holloway on 29 March.",
+      "gold_parents": [
+        "t33"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t45",
+      "turn_index": 44,
+      "user_message": "Has there been any issue with the five members who didn't confirm receipt of the insurance summary?",
+      "assistant_message": "Tour Coordinator Bram Holloway confirmed on 30 March that all five outstanding members had responded after his individual follow-up, bringing the total confirmation count to 52 out of 52. Director Sylvia Mäkinen noted in the committee meeting on 1 April that the Harmonics Choir is now fully briefed on the Vantage Insurance terms. No member reported any concerns about the instrument cover level or the claims process.",
+      "gold_parents": [
+        "t44"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t46",
+      "turn_index": 45,
+      "user_message": "Has the rehearsal schedule's 1 March confirmation deadline actually been enforced, and how many members confirmed in time?",
+      "assistant_message": "Director Sylvia Mäkinen confirmed that the 1 March deadline was enforced strictly, with 47 of the 52 Harmonics Choir members submitting their availability confirmation on time. The five members who missed the deadline were moved to the reserve list as planned, meaning the confirmed performing group for the Spring Bloom Concert Tour stands at exactly 47 singers. Tour Coordinator Bram Holloway updated the rehearsal register accordingly and notified the five reserve members the following day.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t47",
+      "turn_index": 46,
+      "user_message": "Has the final programme proof been approved and sent back to Crestline Print?",
+      "assistant_message": "Director Sylvia Mäkinen approved the final programme proof, including the full-colour Alderton Building Society logo, on 27 March and Tour Coordinator Bram Holloway returned it to Crestline Print the same day, one day ahead of the 28 March deadline. Crestline Print confirmed receipt and reaffirmed the 15 April delivery date for tote bags and tumblers, with programmes now also expected by 15 April following the resolution of the paper stock issue. Nadia Osei updated the Spring Bloom Concert Tour document folder with the approved proof.",
+      "gold_parents": [
+        "t38"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t48",
+      "turn_index": 47,
+      "user_message": "Given the confirmed size of the performing group and the penalty structure for not hitting the ticket sales threshold, what is the minimum number of tickets each confirmed performer would need to be responsible for selling to avoid any shortfall penalty?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t46",
+        "t40"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t4",
+    "t9",
+    "t37",
+    "t40",
+    "t46"
+  ],
+  "distractor_turn_ids": [
+    "t2",
+    "t3",
+    "t5",
+    "t6",
+    "t7",
+    "t8",
+    "t10",
+    "t11",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t20",
+    "t21",
+    "t22",
+    "t23",
+    "t24",
+    "t25",
+    "t26",
+    "t27",
+    "t28",
+    "t29",
+    "t30",
+    "t31",
+    "t32",
+    "t33",
+    "t34",
+    "t35",
+    "t36",
+    "t38",
+    "t39",
+    "t41",
+    "t42",
+    "t43",
+    "t44",
+    "t45",
+    "t47"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that the confirmed performing group is 47 singers (from the 1 March deadline enforcement result in branch A).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that the minimum total tickets required is 480, derived from the 60% of 800 combined capacity threshold in Venue Contract v2.3 (branch B).",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer correctly divides 480 by 47 and concludes that each confirmed performer must be responsible for selling at least 11 tickets (since 480 / 47 ≈ 10.21, rounding up to 11 to guarantee no shortfall).",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not state that the backup programme print run cost of £345 (or £320) is relevant to the ticket-selling calculation, as that figure comes from the near-miss distractor turn about Quickset Press.",
+      "required": true
+    }
+  ],
+  "notes": "The query requires t46 (branch A: 47 confirmed performers after the 1 March cut-off) and t40 plus t37 (branch B: 480-ticket minimum and £15-per-ticket penalty). The near-miss turn is t17, which answers a superficially similar cost question about the Quickset Press backup programme run (£345 all-in) — plausible-sounding numbers that are entirely irrelevant to the ticket-selling calculation.\n\nReference answer: The confirmed performing group for the Spring Bloom Concert Tour is 47 singers, after Director Sylvia Mäkinen enforced the 1 March deadline and moved the five late responders to the reserve list. Under Venue Contract v2.3, the Harmonics Choir must sell at least 480 tickets in total across the four venues, which represent 60% of the combined 800-seat capacity. Dividing 480 by 47 gives approximately 10.21, so each confirmed performer would need to be responsible for selling at least 11 tickets to ensure the threshold is met and no shortfall penalty is triggered.",
+  "evidence_note": null,
+  "premise": "an amateur choir organizing a spring concert tour",
+  "evidence_spans": null,
+  "benchmark_version": "1.2-pilot",
+  "length_class": "long"
+}

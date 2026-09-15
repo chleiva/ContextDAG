@@ -1,0 +1,240 @@
+{
+  "entity_registry": [
+    "Greenvalley Farm Cooperative",
+    "Maya Thornton",
+    "OrderFlow Pro",
+    "Harvest Hub Portal",
+    "Delivery Zone Charter",
+    "Luca Ferreira"
+  ],
+  "turns": [
+    {
+      "turn_id": "t1",
+      "user_message": "We're setting up the Harvest Hub Portal for Greenvalley Farm Cooperative and need to decide on the minimum order value. What do you recommend we set it at?",
+      "assistant_message": "For a cooperative of Greenvalley Farm Cooperative's scale, a minimum order value of $35 is a practical starting point that discourages very small orders without excluding regular household customers. Maya Thornton, your operations lead, confirmed in the setup meeting that the cooperative's average basket size historically runs around $52, so $35 leaves a comfortable margin. I'd recommend encoding this $35 minimum directly into the Harvest Hub Portal checkout rules so it's enforced automatically at the cart stage."
+    },
+    {
+      "turn_id": "t2",
+      "user_message": "What payment gateway options are compatible with the Harvest Hub Portal for Greenvalley Farm Cooperative?",
+      "assistant_message": "The Harvest Hub Portal currently supports three certified payment gateways: Stripe, Square, and PayPal Commerce. Greenvalley Farm Cooperative's treasurer, Luca Ferreira, reviewed all three and flagged that Square charges a flat 2.6% plus $0.10 per transaction, which is the most predictable for the cooperative's low-to-mid ticket sales. Stripe offers a nearly identical rate of 2.9% plus $0.30, which becomes slightly more expensive on orders below about $40, so given the $35 minimum order environment, Square is marginally preferable."
+    },
+    {
+      "turn_id": "t3",
+      "user_message": "Did Luca Ferreira finalize which gateway to go with, and is there a contract term involved?",
+      "assistant_message": "Yes, Luca Ferreira confirmed the selection of Square as the primary payment gateway for the Harvest Hub Portal on March 14, 2024. The agreement is month-to-month with no lock-in contract, which Greenvalley Farm Cooperative specifically requested to retain flexibility during the pilot phase. A secondary PayPal Commerce option will remain active as a fallback for customers who prefer it, adding no additional monthly fee."
+    },
+    {
+      "turn_id": "t4",
+      "user_message": "We need to figure out the staff training schedule for OrderFlow Pro. How many sessions do you think we need?",
+      "assistant_message": "Based on the feature set of OrderFlow Pro and the number of staff at Greenvalley Farm Cooperative, I'd recommend four training sessions of 90 minutes each. Maya Thornton has already indicated she can host the first session at the cooperative's main facility on April 3, 2024, covering the order intake and fulfillment dashboard. The remaining three sessions should cover inventory sync, customer communication tools, and end-of-day reporting respectively, spread across a two-week window."
+    },
+    {
+      "turn_id": "t5",
+      "user_message": "What's the best approach for handling customer refund requests through the Harvest Hub Portal?",
+      "assistant_message": "The most effective approach for Greenvalley Farm Cooperative is a tiered refund policy managed directly within the Harvest Hub Portal's admin panel. Luca Ferreira proposed a 48-hour window for customers to request a refund on perishable goods and a 7-day window for non-perishable packaged items. Refund requests above $75 should require manual approval by Maya Thornton, while those at or below $75 can be auto-approved by the system to reduce administrative overhead."
+    },
+    {
+      "turn_id": "t6",
+      "user_message": "The Delivery Zone Charter needs to specify how many delivery zones Greenvalley Farm Cooperative will serve at launch. What's a manageable number?",
+      "assistant_message": "For a cooperative launch, three delivery zones is the most operationally manageable number, allowing Greenvalley Farm Cooperative to serve its core community without overextending its driver capacity. The Delivery Zone Charter should define Zone 1 as the immediate town area within 5 miles, Zone 2 as the surrounding rural belt from 5 to 15 miles, and Zone 3 as the extended reach from 15 to 25 miles. Maya Thornton confirmed that the cooperative currently has two drivers available at launch, which is sufficient to cover all three zones on a rotating schedule."
+    },
+    {
+      "turn_id": "t7",
+      "user_message": "What's the refund approval threshold for orders placed through OrderFlow Pro's desktop version?",
+      "assistant_message": "For OrderFlow Pro's desktop version, Greenvalley Farm Cooperative set the refund auto-approval threshold at $50, meaning any refund request at or below $50 is processed automatically without manager review. Luca Ferreira specified this lower threshold for the desktop version because it handles a higher volume of smaller wholesale-adjacent orders from local businesses. Requests above $50 on the OrderFlow Pro desktop channel are routed to Maya Thornton for manual sign-off within one business day."
+    },
+    {
+      "turn_id": "t8",
+      "user_message": "Has a decision been made on which Square plan tier to use — the free plan or one of the paid tiers?",
+      "assistant_message": "Greenvalley Farm Cooperative will use Square's free plan tier, which covers all standard point-of-sale and online payment features needed for the Harvest Hub Portal integration. Luca Ferreira reviewed the Square Plus plan at $29 per month but concluded that the additional features, primarily advanced inventory reports, duplicate functionality already present in OrderFlow Pro. The free tier decision was documented in the cooperative's vendor selection log on March 14, 2024."
+    },
+    {
+      "turn_id": "t9",
+      "user_message": "We're trying to work out the cold-storage requirements for fulfillment. How much refrigerated capacity should we plan for?",
+      "assistant_message": "For Greenvalley Farm Cooperative's projected order volume at launch, a minimum of 120 cubic feet of active refrigerated storage is recommended to handle peak-week demand. Maya Thornton estimated that roughly 60% of SKUs in the Harvest Hub Portal catalog will require refrigeration, covering dairy, fresh produce, and prepared goods. I'd suggest budgeting for a 150 cubic foot unit to allow a 25% buffer above the calculated minimum, with a review point at the six-month mark."
+    },
+    {
+      "turn_id": "t10",
+      "user_message": "What kind of packaging standards should Greenvalley Farm Cooperative set for online orders?",
+      "assistant_message": "Greenvalley Farm Cooperative should adopt a three-tier packaging standard: compostable bags for dry goods, insulated liners for refrigerated items, and rigid corrugated boxes for fragile or bulk orders. Luca Ferreira sourced quotes from two suppliers, with EcoPack Solutions offering compostable bags at $0.18 each and FreshShield providing insulated liners at $0.85 each. The Delivery Zone Charter should reference these packaging standards so drivers know which handling instructions apply to each zone's order types."
+    },
+    {
+      "turn_id": "t11",
+      "user_message": "Did Maya Thornton settle on a supplier for the cold-storage unit?",
+      "assistant_message": "Yes, Maya Thornton selected CoolMaster Commercial Refrigeration as the supplier for the 150 cubic foot unit, at a purchase price of $4,200 with a five-year parts warranty. Delivery and installation at Greenvalley Farm Cooperative's main facility is scheduled for April 10, 2024, which aligns with the planned OrderFlow Pro go-live date. CoolMaster also agreed to a 90-day service response guarantee, which Luca Ferreira requested as a condition of the purchase."
+    },
+    {
+      "turn_id": "t12",
+      "user_message": "Has a date been set for the first OrderFlow Pro training session with staff?",
+      "assistant_message": "The first OrderFlow Pro training session is confirmed for April 3, 2024, at 10:00 a.m. at Greenvalley Farm Cooperative's main facility, as Maya Thornton arranged. Eight staff members have been registered, covering the fulfillment team and the two delivery drivers. The session will be led by an OrderFlow Pro certified trainer named Dana Wills, who has been contracted for all four sessions at a flat fee of $600 total."
+    },
+    {
+      "turn_id": "t13",
+      "user_message": "What topics are covered in sessions two and three of the OrderFlow Pro training?",
+      "assistant_message": "Session two, scheduled for April 8, 2024, covers inventory synchronization between OrderFlow Pro and the Harvest Hub Portal, including how to flag out-of-stock items and set reorder alerts. Session three, on April 10, 2024, focuses on the customer communication module, specifically automated order confirmation emails, delay notifications, and how Luca Ferreira's team will handle escalated customer queries. Both sessions are 90 minutes and will be held at Greenvalley Farm Cooperative's main facility with Dana Wills leading."
+    },
+    {
+      "turn_id": "t14",
+      "user_message": "Should the $35 minimum order apply to all three delivery zones, or should Zone 3 have a higher minimum given the extra distance?",
+      "assistant_message": "Zone 3 should carry a higher minimum order value of $55 to offset the additional fuel and driver time costs for deliveries between 15 and 25 miles. Zones 1 and 2 retain the $35 minimum as originally decided, keeping the cooperative accessible to its closer customers. Maya Thornton agreed this tiered minimum structure makes operational sense and asked that it be reflected explicitly in the Harvest Hub Portal's checkout logic, which can be configured by delivery postcode."
+    },
+    {
+      "turn_id": "t15",
+      "user_message": "Is there a monthly fee or transaction cap associated with the PayPal Commerce fallback option on the Harvest Hub Portal?",
+      "assistant_message": "PayPal Commerce carries no monthly fee for Greenvalley Farm Cooperative's account tier, and there is no transaction cap on the standard business account. The per-transaction rate is 3.49% plus $0.49 for standard card payments, which is higher than Square's rate, reinforcing that it functions as a fallback rather than a primary gateway. Luca Ferreira noted this rate difference in the vendor selection log alongside the Square decision on March 14, 2024."
+    },
+    {
+      "turn_id": "t16",
+      "user_message": "How should we handle the installation scheduling for the CoolMaster unit if there's a delay?",
+      "assistant_message": "If the CoolMaster installation is delayed past April 10, 2024, Greenvalley Farm Cooperative should invoke the 90-day service response clause that Luca Ferreira negotiated, which entitles the cooperative to a $150-per-day credit for each day of delay beyond the agreed installation date. Maya Thornton should be notified immediately so she can assess whether the OrderFlow Pro go-live date needs to be pushed back, since refrigerated order fulfillment is a dependency. A backup arrangement with a local hire company for a 100 cubic foot portable unit at $85 per day has been pre-approved as a contingency."
+    },
+    {
+      "turn_id": "t17",
+      "user_message": "When is session four of the OrderFlow Pro training, and what does it cover?",
+      "assistant_message": "Session four is scheduled for April 15, 2024, and covers end-of-day reporting within OrderFlow Pro, including how to reconcile daily order totals against the Harvest Hub Portal's sales dashboard. Luca Ferreira will attend this session specifically to review the financial summary exports, which feed directly into Greenvalley Farm Cooperative's accounting system. Dana Wills will also introduce the cooperative to OrderFlow Pro's monthly performance report, which auto-generates on the first of each month."
+    },
+    {
+      "turn_id": "t18",
+      "user_message": "We need to set the delivery fee structure for the Harvest Hub Portal. What should we charge per zone?",
+      "assistant_message": "A zone-based delivery fee structure makes the most sense for Greenvalley Farm Cooperative's Delivery Zone Charter. Zone 1 deliveries within 5 miles should be set at $3.50, Zone 2 deliveries from 5 to 15 miles at $6.00, and Zone 3 deliveries from 15 to 25 miles at $9.50. These figures are based on the cooperative's estimated fuel cost of $0.22 per mile and the driver time allocation Maya Thornton outlined in the logistics planning document."
+    },
+    {
+      "turn_id": "t19",
+      "user_message": "What packaging label should appear on refrigerated orders to comply with food safety requirements?",
+      "assistant_message": "Refrigerated orders from Greenvalley Farm Cooperative must carry a label stating the packing date, a use-by advisory of 48 hours from packing, and the phrase Keep Refrigerated — Perishable in a minimum 12-point font. Luca Ferreira confirmed these requirements align with the county food handling ordinance effective January 1, 2024. The label template has been submitted to the Harvest Hub Portal's print integration module so it generates automatically when a refrigerated order is packed."
+    },
+    {
+      "turn_id": "t20",
+      "user_message": "Should the delivery fee be waived for orders above a certain cart total, and if so, what threshold?",
+      "assistant_message": "Yes, a free delivery threshold is strongly recommended to incentivize larger baskets. For Greenvalley Farm Cooperative, orders totaling $80 or more should qualify for free delivery across all three zones. Luca Ferreira specifically requested that this threshold be a single flat figure rather than zone-differentiated, to keep the customer-facing policy simple and easy to communicate on the Harvest Hub Portal homepage."
+    },
+    {
+      "turn_id": "t21",
+      "user_message": "Should the 48-hour use-by advisory on refrigerated labels apply to Zone 3 orders as well, given the longer transit time?",
+      "assistant_message": "For Zone 3 orders, Greenvalley Farm Cooperative should reduce the use-by advisory to 36 hours from packing, accounting for the additional transit time to the 15-to-25-mile range. Maya Thornton flagged this during the logistics review, noting that Zone 3 deliveries can take up to 90 minutes longer than Zone 1, which meaningfully affects perishable shelf life. The Harvest Hub Portal's label generation module can be configured to detect the delivery zone and print the appropriate advisory automatically."
+    },
+    {
+      "turn_id": "t22",
+      "user_message": "Has a decision been made on whether the refund policy window will differ for Zone 3 customers?",
+      "assistant_message": "No zone-based distinction was made for the refund window; the 48-hour window for perishables and the 7-day window for non-perishables apply uniformly across all zones for Greenvalley Farm Cooperative. Luca Ferreira reviewed the idea of a shorter window for Zone 3 perishables but concluded that the operational complexity outweighed the benefit, and that the cooperative's reputation would be better served by consistent policy. Maya Thornton concurred and the decision was logged in the Harvest Hub Portal policy document on March 20, 2024."
+    },
+    {
+      "turn_id": "t23",
+      "user_message": "What happens to the CoolMaster warranty if Greenvalley Farm Cooperative relocates its main facility within the five-year term?",
+      "assistant_message": "The CoolMaster five-year parts warranty is transferable to a new location within the same county at no additional cost, provided Greenvalley Farm Cooperative gives CoolMaster 30 days' written notice before the move. If the relocation is outside the county, a $350 transfer fee applies and the warranty clock resets to three years from the relocation date. Luca Ferreira had this clause added to the purchase agreement specifically to protect the cooperative's investment if the main facility moves, which Maya Thornton flagged as a realistic possibility within the planning horizon."
+    },
+    {
+      "turn_id": "t24",
+      "user_message": "Should the auto-approval refund threshold differ for Zone 3 customers given their higher delivery fees?",
+      "assistant_message": "Greenvalley Farm Cooperative decided not to differentiate the auto-approval threshold by zone; the $75 ceiling for the Harvest Hub Portal applies uniformly regardless of delivery zone. Luca Ferreira argued that introducing zone-based thresholds would complicate both the admin panel configuration and the customer-facing refund instructions. The policy was finalized on March 20, 2024, with Maya Thornton's sign-off, ensuring a single consistent experience across all three zones."
+    },
+    {
+      "turn_id": "t25",
+      "user_message": "Has Luca Ferreira reviewed the PayPal Commerce integration documentation for the Harvest Hub Portal?",
+      "assistant_message": "Yes, Luca Ferreira completed his review of the PayPal Commerce integration documentation on March 18, 2024, and identified two configuration steps specific to Greenvalley Farm Cooperative's account: enabling the cooperative's registered charity discount code and activating the IPN webhook for order status updates. Both steps are documented in the Harvest Hub Portal's admin setup guide under Section 4.2. No issues were found that would block the integration going live alongside Square on the planned launch date."
+    },
+    {
+      "turn_id": "t26",
+      "user_message": "What's the contingency plan if the CoolMaster unit underperforms and can't maintain temperature during a heat wave?",
+      "assistant_message": "Greenvalley Farm Cooperative's contingency for a CoolMaster temperature failure during peak heat is to activate the pre-approved portable 100 cubic foot hire unit at $85 per day while CoolMaster dispatches a repair technician under the 90-day service response guarantee. Maya Thornton has a standing agreement with FrostLine Rentals for same-day delivery of the portable unit to the main facility. If the failure persists beyond 72 hours, Luca Ferreira has authority to pause all refrigerated product listings on the Harvest Hub Portal until the primary unit is restored."
+    },
+    {
+      "turn_id": "t27",
+      "user_message": "What should the Delivery Zone Charter say about the maximum number of stops per delivery run in Zone 2?",
+      "assistant_message": "The Delivery Zone Charter should cap Zone 2 runs at 8 stops per driver per shift to keep delivery windows reliable for Greenvalley Farm Cooperative customers. This figure was calculated based on an average stop time of 6 minutes and a maximum shift duration of 4 hours including drive time across the 5-to-15-mile belt. Maya Thornton approved this cap in the logistics review and noted that exceeding 8 stops in Zone 2 has historically led to late deliveries in the cooperative's previous informal delivery trials."
+    },
+    {
+      "turn_id": "t28",
+      "user_message": "Has the CoolMaster supplier confirmed the warranty paperwork has been filed with Greenvalley Farm Cooperative's legal address?",
+      "assistant_message": "CoolMaster Commercial Refrigeration confirmed on March 22, 2024, that the warranty has been registered to Greenvalley Farm Cooperative's legal address at 14 Orchard Lane, Millfield. Luca Ferreira verified the confirmation email matches the cooperative's registered business address as filed with the county. Maya Thornton has been sent a copy of the warranty certificate for the cooperative's records, and a digital copy has been uploaded to the Harvest Hub Portal's document library."
+    },
+    {
+      "turn_id": "t29",
+      "user_message": "Should there be a cap on how many free-delivery orders can be fulfilled in a single day, to avoid overwhelming the drivers?",
+      "assistant_message": "Yes, Greenvalley Farm Cooperative should set a daily cap of 40 free-delivery orders across all zones combined to protect driver capacity at launch. This figure aligns with the two available drivers each handling a maximum of 20 deliveries per shift, as Maya Thornton outlined in the logistics planning document. Once the 40-order cap is reached on a given day, the Harvest Hub Portal should automatically shift remaining orders to the next available delivery slot rather than rejecting them."
+    },
+    {
+      "turn_id": "t30",
+      "user_message": "Is there a plan to renegotiate the Square rate once Greenvalley Farm Cooperative's transaction volume grows?",
+      "assistant_message": "Luca Ferreira built a volume-based renegotiation trigger into the Square agreement: once Greenvalley Farm Cooperative processes $10,000 in monthly transactions through the Harvest Hub Portal, he will initiate a rate review with Square's business team. Square's standard discount for cooperatives at that volume tier is typically 2.4% plus $0.10, saving approximately $20 to $40 per month depending on average order size. The trigger point is expected to be reached within the first six months of operation based on Maya Thornton's demand projections."
+    },
+    {
+      "turn_id": "t31",
+      "user_message": "What is the exact warranty filing date and address on record for the CoolMaster unit?",
+      "assistant_message": "The warranty for the CoolMaster 150 cubic foot unit was filed on March 22, 2024, to 14 Orchard Lane, Millfield, which is Greenvalley Farm Cooperative's legal address of record. The warranty certificate number is CM-2024-GVC-0047, and the five-year term runs from the installation date of April 10, 2024, through April 9, 2029. Luca Ferreira confirmed these details match the purchase agreement, and Maya Thornton's copy is stored in the cooperative's shared document folder."
+    },
+    {
+      "turn_id": "t32",
+      "user_message": "Will the PayPal Commerce charity discount code affect how transactions are reported in the Harvest Hub Portal's sales dashboard?",
+      "assistant_message": "The charity discount code reduces the effective PayPal Commerce transaction fee by 0.5 percentage points, bringing it down to 2.99% plus $0.49 for Greenvalley Farm Cooperative, but it is applied at the gateway level and does not alter how sales totals appear in the Harvest Hub Portal's dashboard. Luca Ferreira confirmed the dashboard will still show the full gross transaction amount, with the fee discount reflected only in the monthly PayPal settlement report. Maya Thornton requested that the accounting team reconcile the two figures monthly to ensure accurate net revenue tracking."
+    },
+    {
+      "turn_id": "t33",
+      "user_message": "Should the Zone 3 label advisory change affect the packing workflow, or is it just a label difference?",
+      "assistant_message": "The 36-hour use-by advisory for Zone 3 in Greenvalley Farm Cooperative's packing workflow requires a separate packing queue, not just a label change, because packers must prioritize the freshest stock for those orders. Maya Thornton stipulated that Zone 3 orders should be packed no more than 2 hours before the scheduled driver departure to maximize the effective shelf life within the 36-hour window. The Harvest Hub Portal's order management screen will flag Zone 3 orders in amber starting 2.5 hours before departure to give packers adequate lead time, a configuration Luca Ferreira approved."
+    },
+    {
+      "turn_id": "t34",
+      "user_message": "The Delivery Zone Charter also needs to address delivery frequency — how many days per week should each zone be served?",
+      "assistant_message": "The Delivery Zone Charter should specify that Zone 1 is served five days per week, Monday through Friday, Zone 2 is served three days per week on Monday, Wednesday, and Friday, and Zone 3 is served two days per week on Tuesday and Friday. This schedule was designed around the two available drivers' capacity and was approved by Maya Thornton as part of the logistics review for Greenvalley Farm Cooperative. The Harvest Hub Portal's checkout flow should display only available delivery days based on the customer's detected zone, preventing orders from being placed for unserviced days."
+    },
+    {
+      "turn_id": "t35",
+      "user_message": "To confirm the full picture on minimum orders: what are the exact minimums for each zone as we've settled them?",
+      "assistant_message": "The confirmed minimum order values for Greenvalley Farm Cooperative's Harvest Hub Portal are $35 for Zone 1, $35 for Zone 2, and $55 for Zone 3. Zone 1 and Zone 2 share the original $35 minimum established at the outset, while Zone 3's $55 minimum was set to offset the higher delivery cost for the 15-to-25-mile range. Maya Thornton signed off on this tiered structure and confirmed it will be enforced by delivery postcode in the Harvest Hub Portal's checkout logic."
+    },
+    {
+      "turn_id": "t36",
+      "user_message": "Has Dana Wills confirmed availability for all four OrderFlow Pro training sessions?",
+      "assistant_message": "Dana Wills confirmed availability for all four sessions on March 25, 2024, covering April 3, April 8, April 10, and April 15, 2024. The $600 flat fee for all four sessions has been invoiced to Greenvalley Farm Cooperative and is due 14 days before the first session, meaning payment is due by March 20, 2024. Luca Ferreira approved the invoice and Maya Thornton countersigned it as the project lead for the OrderFlow Pro implementation."
+    },
+    {
+      "turn_id": "t37",
+      "user_message": "Just to be sure we have the delivery fee structure locked in — what are the exact per-zone fees and what's the free-delivery threshold?",
+      "assistant_message": "The confirmed delivery fees for Greenvalley Farm Cooperative are $3.50 for Zone 1, $6.00 for Zone 2, and $9.50 for Zone 3. Free delivery applies to any order totaling $80 or more, uniformly across all three zones as Luca Ferreira specified. The daily cap of 40 free-delivery orders across all zones is also in place, with overflow orders automatically slotted to the next available delivery day in the Harvest Hub Portal."
+    },
+    {
+      "turn_id": "t38",
+      "user_message": "Should the Zone 3 packing queue be visible to delivery drivers on the OrderFlow Pro mobile app?",
+      "assistant_message": "Yes, the Zone 3 packing queue should be visible to drivers on the OrderFlow Pro mobile app so they can coordinate pickup timing with the packing team at Greenvalley Farm Cooperative. Maya Thornton requested that the app display each Zone 3 order's amber flag status and estimated pack-completion time so drivers can plan their departure accordingly. Luca Ferreira confirmed that the OrderFlow Pro mobile app supports real-time queue visibility and that this feature will be covered in the session-three training with Dana Wills on April 10, 2024."
+    },
+    {
+      "turn_id": "t39",
+      "user_message": "Is there a makeup session planned if any staff miss one of the four OrderFlow Pro training sessions?",
+      "assistant_message": "Dana Wills agreed to record each of the four sessions for internal use by Greenvalley Farm Cooperative, with recordings made available on the cooperative's shared drive within 24 hours of each session. Staff who miss a live session are expected to complete the recording within three business days and confirm completion to Maya Thornton. Luca Ferreira also negotiated a single 45-minute remote catch-up call with Dana Wills at no extra charge, available to a maximum of three staff members who miss sessions, to be scheduled before April 22, 2024."
+    },
+    {
+      "turn_id": "t40",
+      "user_message": "We're finalizing the Harvest Hub Portal configuration and need to confirm the complete picture for Zone 3 specifically: what is the minimum order value, the delivery fee, and how many days per week will it be served?",
+      "assistant_message": null
+    }
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that the Zone 3 minimum order value is $55.",
+      "required": true,
+      "evidence_turn_ids": ["t14", "t35"]
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that the Zone 3 delivery fee is $9.50.",
+      "required": true,
+      "evidence_turn_ids": ["t18", "t37"]
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer states that Zone 3 is served two days per week, specifically on Tuesday and Friday.",
+      "required": true,
+      "evidence_turn_ids": ["t34"]
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not state that the Zone 3 minimum order is $35 (the Zone 1 and Zone 2 figure, or the near-miss threshold from t7).",
+      "required": true,
+      "evidence_turn_ids": []
+    }
+  ],
+  "reference_answer": "For Zone 3 of the Harvest Hub Portal, the minimum order value is $55, which was set higher than the $35 Zone 1 and Zone 2 minimum to offset the additional delivery cost for the 15-to-25-mile range. The delivery fee for Zone 3 is $9.50 per order, with free delivery kicking in at $80 or more regardless of zone. Zone 3 is served two days per week, on Tuesday and Friday, based on the driver capacity schedule approved by Maya Thornton in the Delivery Zone Charter.",
+  "notes": "The three facts the query requires come from Branch A (Zone 3 minimum order of $55, established in t14 and confirmed in t35), Branch B (Zone 3 delivery fee of $9.50, established in t18 and confirmed in t37), and Branch C (Zone 3 delivery frequency of two days per week on Tuesday and Friday, established in t34). The near-miss turn is t7, which answers a superficially similar question about refund thresholds using specific dollar figures ($50) that could be mistaken for a minimum-order or delivery-fee answer."
+}

@@ -1,0 +1,214 @@
+I'll fix the issues: remove topic-switch signposting from t19, ensure distractor branches stay close to the same entities/subject matter (higher cosine similarity), and keep all other rules intact.
+
+```json
+{
+  "entity_registry": [
+    "Mira Calloway",
+    "Harrowgate Historical Society",
+    "Dusty Ledger Podcast",
+    "Episode Blueprint v2",
+    "Thornfield Archive",
+    "Owen Bassett"
+  ],
+  "turns": [
+    {
+      "turn_id": "t1",
+      "user_message": "I'm planning the Dusty Ledger Podcast with the Harrowgate Historical Society and want to nail down the release schedule. How many episodes should we plan for season one, and how long should each episode run?",
+      "assistant_message": "For a local history podcast like Dusty Ledger Podcast, a first season of eight episodes is a widely used benchmark — it's long enough to build audience habit but short enough to finish production without burnout. Each episode should run between 28 and 34 minutes, which matches average podcast completion rates for history content. Mira Calloway, if she's your lead host, can use that window to cover one focused story per episode without padding. The Harrowgate Historical Society's archive depth should give you more than enough source material for that count."
+    },
+    {
+      "turn_id": "t2",
+      "user_message": "We settled on eight episodes at 30 minutes each. Now, what release cadence makes sense — weekly or biweekly?",
+      "assistant_message": "For an eight-episode season, a biweekly release cadence — one episode every two weeks — gives Mira Calloway and the Harrowgate Historical Society team time to handle last-minute fact-checking against the Thornfield Archive without rushing. That means the season spans 16 weeks from launch to finale, which is about four months. Weekly cadence risks quality slipping on episodes five through eight when production energy typically dips. Biweekly also lets word-of-mouth build between drops, which matters a lot for a locally focused show."
+    },
+    {
+      "turn_id": "t3",
+      "user_message": "What microphone setup would work best for recording Mira Calloway in the Thornfield Archive reading room?",
+      "assistant_message": "For a reverberant reading room like the one in the Thornfield Archive, a dynamic microphone such as the Shure SM7B is the standard recommendation because it rejects ambient room noise far better than a condenser. Owen Bassett, if he's handling audio production, should place the mic no more than four inches from Mira Calloway's mouth and use a pop filter to control plosives. Adding a portable acoustic panel behind the speaker can drop room reflections by roughly 6 dB in a hard-walled archive space. A portable audio interface like the Focusrite Scarlett 2i2 at 96 kHz sampling rate will give Owen clean headroom for editing."
+    },
+    {
+      "turn_id": "t4",
+      "user_message": "Owen Bassett wants to set up a consistent intro and outro music package for the Dusty Ledger Podcast. What should we think about for licensing?",
+      "assistant_message": "Owen Bassett should focus on royalty-free music licensed under Creative Commons Attribution 4.0 or a paid blanket license from a library like Musicbed or Artlist, which charges around $199 per year for podcast use. Any music used on the Dusty Ledger Podcast needs to be cleared for commercial use even if the show is free, because monetisation through ads or Patreon counts as commercial activity. The Harrowgate Historical Society should keep a signed licensing record for every track used, filed alongside the Episode Blueprint v2 document. An intro sting of 8–12 seconds and an outro of 20–25 seconds is the standard package length for a 30-minute history podcast."
+    },
+    {
+      "turn_id": "t5",
+      "user_message": "Can the intro music be something we commission from a local composer instead of a library track?",
+      "assistant_message": "Commissioning a local composer is an excellent option and aligns well with the Harrowgate Historical Society's community-focused mission. Owen Bassett should negotiate a work-for-hire agreement that explicitly assigns all master and sync rights to the Dusty Ledger Podcast, with a one-time fee typically ranging from $300 to $800 for a short theme package. The contract should specify that the Harrowgate Historical Society retains perpetual, royalty-free rights to use the theme across all distribution platforms. Mira Calloway's name should appear in the credits brief given to the composer so the musical tone matches her on-air personality and pacing."
+    },
+    {
+      "turn_id": "t6",
+      "user_message": "Should we register the commissioned theme with a performing rights organisation like ASCAP?",
+      "assistant_message": "If the composer is already an ASCAP or BMI member, they will handle registration on their end, but the Dusty Ledger Podcast should still file a cue sheet for every episode that uses the theme through whatever hosting platform Owen Bassett selects. If the composer is not affiliated, the Harrowgate Historical Society can encourage them to register, though it is not strictly required for a work-for-hire arrangement where rights are fully assigned. ASCAP membership costs $50 as a one-time application fee for the composer. Keeping a cue sheet log in the Episode Blueprint v2 document will protect the show if any rights dispute arises later."
+    },
+    {
+      "turn_id": "t7",
+      "user_message": "Mira Calloway needs a research workflow for pulling documents from the Thornfield Archive. What's a practical system for organising source material episode by episode?",
+      "assistant_message": "Mira Calloway should create a dedicated folder for each of the eight episodes, numbered 01 through 08, with subfolders for primary sources, photographs, and interview notes pulled from the Thornfield Archive. A shared spreadsheet — linked to the Episode Blueprint v2 document — should log every source with its archive call number, date accessed, and a one-sentence summary of its relevance. The Harrowgate Historical Society's archivist can flag documents as cleared for on-air quotation versus background-only use, which prevents Mira from reading restricted material on mic. Limiting each episode folder to no more than 15 primary sources keeps the research manageable within a two-week production window."
+    },
+    {
+      "turn_id": "t8",
+      "user_message": "For the show's distribution, which podcast hosting platforms should we prioritise for the Dusty Ledger Podcast?",
+      "assistant_message": "The Dusty Ledger Podcast should prioritise Spotify, Apple Podcasts, and Amazon Music as the three primary distribution targets, since together they account for roughly 78 percent of podcast listening in North America as of 2024. Owen Bassett should use a hosting aggregator like Buzzsprout or RSS.com — plans start at $12 per month — to push the RSS feed to all three simultaneously. The Harrowgate Historical Society's website should also embed the player directly so local community members who aren't regular podcast listeners can still access episodes. Submitting the show to Pocket Casts and Overcast as secondary targets will capture the more dedicated podcast listener segment."
+    },
+    {
+      "turn_id": "t9",
+      "user_message": "What metadata should Owen Bassett fill in when uploading each episode to the hosting platform?",
+      "assistant_message": "Owen Bassett should complete the episode title, a description of 150–300 words, the season and episode number, an explicit content flag set to clean, and chapter markers at every major topic shift within the episode. The show-level metadata for Dusty Ledger Podcast should include the category set to History, a 3000-by-3000-pixel cover image, and the Harrowgate Historical Society listed as the publisher. Each episode description should end with a call-to-action pointing listeners to the Thornfield Archive's public catalogue for further reading. Mira Calloway's name should appear in the author field of every episode to build host recognition across platforms."
+    },
+    {
+      "turn_id": "t10",
+      "user_message": "How should Owen Bassett handle audio normalisation and loudness standards before upload?",
+      "assistant_message": "Owen Bassett should master each Dusty Ledger Podcast episode to an integrated loudness of -16 LUFS for stereo files, which is the standard target for Spotify and Apple Podcasts. True peak levels should be kept at or below -1 dBTP to prevent clipping on compressed streaming codecs. The Harrowgate Historical Society should include these specs as a standing note in the Episode Blueprint v2 document so any guest editor can follow them consistently. A free tool like Auphonic can automate the LUFS normalisation pass and costs nothing for up to two hours of audio per month, which covers the eight-episode season if processed one at a time."
+    },
+    {
+      "turn_id": "t11",
+      "user_message": "We need a social media strategy to promote the Dusty Ledger Podcast ahead of launch. What platforms make sense?",
+      "assistant_message": "For a local history podcast like Dusty Ledger Podcast, Instagram and Facebook are the highest-priority platforms because local community groups and historical enthusiasts skew toward those networks. Mira Calloway should post a 60-second teaser clip from the Thornfield Archive research sessions on Instagram Reels in the two weeks before launch to build anticipation. The Harrowgate Historical Society's existing Facebook page, assuming it has at least a few hundred followers, should cross-promote every episode drop with a short historical image tied to that episode's topic. Owen Bassett can schedule posts in batches using a free Buffer account, which allows up to three connected social channels at no cost."
+    },
+    {
+      "turn_id": "t12",
+      "user_message": "Should Mira Calloway also maintain a separate Instagram account for the podcast rather than using her personal one?",
+      "assistant_message": "Yes, a dedicated Instagram account for the Dusty Ledger Podcast is strongly preferable to Mira Calloway's personal account because it keeps the Harrowgate Historical Society's branding consistent and makes the account transferable if the host changes in a future season. The handle should include the show name — something like @DustyLedgerPod — and the bio should mention both Mira Calloway and the Harrowgate Historical Society to leverage both audiences. Owen Bassett should be granted admin access so he can post episode clips without routing everything through Mira. A consistent visual palette using two or three colours drawn from the Thornfield Archive's sepia photograph aesthetic will make the grid look cohesive within the first eight posts."
+    },
+    {
+      "turn_id": "t13",
+      "user_message": "What kind of content should go on the Dusty Ledger Podcast Instagram between episode drops?",
+      "assistant_message": "Between episode drops, Owen Bassett should post archive image reveals from the Thornfield Archive — one photograph with a 2–3 sentence historical caption — at least twice per week to keep the account active. Mira Calloway can record 30-second vertical video clips answering listener questions submitted through the story feature, which also boosts algorithmic reach. The Harrowgate Historical Society can contribute event announcements, such as archive open days or walking tours, that tie into the podcast's themes and reinforce the community angle. Polls asking followers to vote on the topic for an upcoming bonus episode are a low-effort engagement tactic that also double as informal audience research."
+    },
+    {
+      "turn_id": "t14",
+      "user_message": "How far in advance should we start posting on Instagram before the Dusty Ledger Podcast officially launches?",
+      "assistant_message": "The Dusty Ledger Podcast Instagram account should go live six weeks before the first episode drops, giving the account enough time to accumulate at least 200–300 followers before there is anything to listen to. Owen Bassett should schedule a countdown series: three teaser posts in week one, two archive image reveals per week in weeks two through five, and a full trailer drop in week six. Mira Calloway should personally tag the Harrowgate Historical Society in the trailer post to trigger a share to their existing audience. Starting six weeks out also aligns with Apple Podcasts' recommendation to submit the show feed at least three to four weeks before launch to allow directory indexing."
+    },
+    {
+      "turn_id": "t15",
+      "user_message": "What type of microphone preamp should Owen Bassett use when recording at the Thornfield Archive on location?",
+      "assistant_message": "For location recording at the Thornfield Archive, Owen Bassett should use a portable preamp with at least 60 dB of clean gain, such as the Cloudlifter CL-1, which adds 25 dB of passive gain and pairs well with the Shure SM7B already chosen for the Dusty Ledger Podcast. The Focusrite Scarlett 2i2 interface has adequate built-in preamp headroom for condenser mics but can benefit from the Cloudlifter when using a dynamic mic in a quiet archive room. Mira Calloway's vocal level should sit around -18 dBFS on the input meter to leave enough headroom for editing. Owen should run a 30-second test recording at the start of every archive session and check it through headphones before beginning the actual episode material."
+    },
+    {
+      "turn_id": "t16",
+      "user_message": "What should the Dusty Ledger Podcast cover art look like to appeal to a local history audience?",
+      "assistant_message": "The cover art for Dusty Ledger Podcast should use a sepia or muted warm-tone colour palette to signal the historical theme immediately at thumbnail size. A central image of a handwritten ledger page or a vintage map of the Harrowgate area would communicate the local history angle without requiring any text explanation. Mira Calloway's name can appear in a smaller font beneath the show title, and the Harrowgate Historical Society logo should appear in a corner at no larger than 15 percent of the total image area. The finished file must be exactly 3000 by 3000 pixels in JPEG or PNG format, as Owen Bassett will need this for the hosting platform metadata he is managing."
+    },
+    {
+      "turn_id": "t17",
+      "user_message": "What guest interview format should Mira Calloway use for the Dusty Ledger Podcast episodes that feature local historians?",
+      "assistant_message": "Mira Calloway should use a semi-structured interview format with a prepared question list of 10–12 questions, but leave room for two or three follow-up prompts based on the guest's answers, which keeps the conversation natural within the 30-minute episode runtime. Guests should receive a one-page briefing sheet — derived from the Episode Blueprint v2 document — at least five days before recording so they can recall specific dates and names from the Thornfield Archive material. The Harrowgate Historical Society can help vet guest credentials and confirm that interviewees have direct knowledge of the historical period being covered in that episode. Recording a 5-minute warm-up conversation before pressing record helps guests relax and produces better audio quality for Owen Bassett to edit."
+    },
+    {
+      "turn_id": "t18",
+      "user_message": "How long should the Shure SM7B cable run be when Owen Bassett is recording at the Thornfield Archive?",
+      "assistant_message": "Owen Bassett should keep the XLR cable run between the Shure SM7B and the Focusrite Scarlett 2i2 to no more than 25 feet to avoid signal degradation, which is well within the practical limit of a balanced XLR cable but appropriate for a compact archive room. For the Thornfield Archive's reading room, a 15-foot cable is likely sufficient given typical room dimensions and gives Mira Calloway comfortable movement without slack on the floor. Owen should use a shielded, low-capacitance cable — brands like Mogami or Canare are standard — to minimise any interference from the archive's fluorescent lighting. The Harrowgate Historical Society should keep a spare 10-foot cable in the equipment bag as a backup in case the primary cable develops a fault on location."
+    },
+    {
+      "turn_id": "t19",
+      "user_message": "I want to lock in the Episode Blueprint v2 structure. What sections should it include for each episode?",
+      "assistant_message": "The Episode Blueprint v2 should include six core sections for each of the eight episodes: a working title and one-sentence premise, a primary source list with Thornfield Archive call numbers, a structured outline with timestamps targeting the 30-minute runtime, a guest information block with the interviewee's name and credentials, a production notes field for Owen Bassett covering mic placement and room conditions, and a sign-off field for Mira Calloway confirming the script is historically accurate. Each section should have a named owner — research sections owned by Mira Calloway, technical sections by Owen Bassett, and institutional review by the Harrowgate Historical Society. The document should be versioned with a date stamp every time it is updated so the team always knows which draft is current."
+    },
+    {
+      "turn_id": "t20",
+      "user_message": "What budget should the Harrowgate Historical Society set aside for the Dusty Ledger Podcast's first season social media advertising?",
+      "assistant_message": "For a first season of eight episodes, the Harrowgate Historical Society should budget between $400 and $600 for paid social media promotion, allocated primarily to Facebook and Instagram ads. Owen Bassett should run a $150 awareness campaign in the two weeks before launch targeting users within a 50-mile radius of Harrowgate who follow local history or heritage pages. A further $250 should be held for boosting the trailer post and the first episode drop, since those two moments have the highest conversion impact. Mira Calloway's face should appear in at least one ad creative, as host-forward ads consistently outperform logo-only creatives for podcast promotion."
+    },
+    {
+      "turn_id": "t21",
+      "user_message": "What acoustic treatment should Owen Bassett bring to the Thornfield Archive for location recording sessions?",
+      "assistant_message": "Owen Bassett should bring at least two portable moving blankets or acoustic absorption panels — each roughly 4 by 6 feet — to hang or drape around the recording position in the Thornfield Archive reading room. A foldable vocal booth shield, such as the sE Electronics Reflexion Filter, placed directly behind the Shure SM7B can reduce rear reflections by 8–10 dB without requiring any permanent installation. The Harrowgate Historical Society should confirm with the archive's facilities manager that temporary acoustic panels can be set up without adhesives or wall fixings. Mira Calloway should arrive 20 minutes before each recording session so Owen Bassett has time to set up, test, and adjust the treatment before the session begins."
+    },
+    {
+      "turn_id": "t22",
+      "user_message": "What listener engagement tactics should Mira Calloway use during the first season to grow the Dusty Ledger Podcast audience?",
+      "assistant_message": "Mira Calloway should ask a specific question at the end of each episode and direct listeners to submit answers via the Harrowgate Historical Society's website contact form, which creates a feedback loop and generates material for future episodes. A listener shout-out segment of 90 seconds at the top of episodes three through eight — reading one or two community responses from the previous episode — builds loyalty and encourages early listeners to stay engaged. Owen Bassett should track download numbers after each of the eight episodes and share a simple monthly report with the Harrowgate Historical Society board so decisions about a second season can be data-driven. Setting a public goal of 500 subscribers by the season finale gives the audience a shared milestone to rally around."
+    },
+    {
+      "turn_id": "t23",
+      "user_message": "How many weeks does the social media pre-launch window last for the Dusty Ledger Podcast Instagram account?",
+      "assistant_message": "The Dusty Ledger Podcast Instagram pre-launch window runs for six weeks before the first episode drops, as Owen Bassett and the team established when planning the platform strategy. During those six weeks the account publishes a total of approximately 13 posts: three teaser posts in week one, two archive image reveals per week across weeks two through five, and the full trailer in week six. Mira Calloway tags the Harrowgate Historical Society on the trailer post to activate their existing follower base. This six-week timeline also satisfies Apple Podcasts' recommended three-to-four-week lead time for directory submission."
+    },
+    {
+      "turn_id": "t24",
+      "user_message": "What questions should Mira Calloway include in the standard briefing sheet sent to guest historians before recording?",
+      "assistant_message": "The briefing sheet derived from the Episode Blueprint v2 should include five standard questions: the episode's central historical theme and time period, two or three specific Thornfield Archive documents the guest may be asked to comment on, the expected recording date and duration (30 minutes), the name of the audio engineer (Owen Bassett), and the intended audience description mentioning the Harrowgate Historical Society's community focus. Guests should also be asked to supply a two-sentence bio for use in the episode introduction and to flag any documents they cannot discuss publicly due to donor restrictions. Sending the sheet five days in advance, as already planned, gives guests time to review archive material and prepare anecdotes rather than relying on general memory."
+    },
+    {
+      "turn_id": "t25",
+      "user_message": "Should Owen Bassett record in 24-bit or 32-bit float when capturing audio at the Thornfield Archive?",
+      "assistant_message": "Owen Bassett should record in 32-bit float when capturing at the Thornfield Archive because it eliminates clipping at the recording stage — any transient spike from Mira Calloway's voice or unexpected ambient noise is recoverable in post-production regardless of input gain setting. The Focusrite Scarlett 2i2's third-generation models support 32-bit float output, and files can be exported from the DAW at 24-bit for the final mastered episode delivered to the hosting platform. The Harrowgate Historical Society's Episode Blueprint v2 should note 32-bit float as the required capture format so any substitute engineer follows the same standard. Storage is the only consideration: a 30-minute 32-bit float stereo file at 96 kHz runs to roughly 1.3 GB, so Owen should carry at least a 64 GB recording drive."
+    },
+    {
+      "turn_id": "t26",
+      "user_message": "How should Mira Calloway structure the narrative arc within a single 30-minute episode?",
+      "assistant_message": "Mira Calloway should open with a 2-minute hook — a vivid anecdote or a surprising fact drawn from a Thornfield Archive document — that drops the listener into the story before any context is given. Minutes two through eight should provide historical background, establishing the time period, key figures, and the Harrowgate setting. The central narrative, including any guest interview segments, should occupy minutes eight through 24, with Owen Bassett's editing ensuring clean transitions between Mira's narration and the guest audio. The final six minutes should resolve the story, connect it to present-day Harrowgate, and deliver the listener engagement question that the Harrowgate Historical Society will track through their website form."
+    },
+    {
+      "turn_id": "t27",
+      "user_message": "What cable and connector standards should Owen Bassett use for all recording equipment at the Thornfield Archive?",
+      "assistant_message": "Owen Bassett should standardise on balanced XLR connections for all microphone-to-interface runs at the Thornfield Archive, using Mogami 2549 or equivalent low-noise cable throughout. Headphone monitoring should use a standard 3.5 mm TRS to 6.35 mm TRS adapter plugged into the Focusrite Scarlett 2i2's headphone output so Mira Calloway can monitor her own level in real time. The Harrowgate Historical Society's equipment kit should include two spare XLR cables and one spare USB-C cable for the interface in case of failure during a session. All connectors should be labelled with colour-coded tape — red for mic one, blue for mic two — to prevent Owen Bassett from swapping channels during multi-mic sessions."
+    },
+    {
+      "turn_id": "t28",
+      "user_message": "How should Mira Calloway handle a guest who goes off-topic during a recorded interview?",
+      "assistant_message": "Mira Calloway should use a redirect technique: acknowledge the guest's point with a brief affirmative, then pivot with a bridging phrase such as 'That connects to something from the Thornfield Archive I wanted to ask you about,' which steers the conversation back on topic without embarrassing the guest. Owen Bassett should flag off-topic segments in real time using a light tap on the table as a non-verbal signal to Mira that the material is unlikely to be usable. The Episode Blueprint v2's outline, which the guest received five days in advance, can be referenced aloud to reset the conversation's direction. If an off-topic segment runs longer than three minutes, Mira Calloway should call a brief pause and explain to the guest which specific Harrowgate historical thread needs to be covered."
+    },
+    {
+      "turn_id": "t29",
+      "user_message": "Should Mira Calloway read from a full script or use bullet-point notes during the narration portions of each episode?",
+      "assistant_message": "Mira Calloway should use a hybrid approach: a full script for the opening hook and closing segment — where exact wording matters for tone and the listener engagement question — and detailed bullet-point notes for the middle narrative sections, which sound more natural when lightly improvised. Owen Bassett has found in similar productions that fully scripted mid-episode narration produces a reading cadence that listeners find less engaging than conversational delivery. The Episode Blueprint v2 should mark scripted sections with an S tag and bullet-note sections with a B tag so Mira can prepare differently for each. The Harrowgate Historical Society's archivist should review the scripted sections for factual accuracy at least 48 hours before recording."
+    },
+    {
+      "turn_id": "t30",
+      "user_message": "What analytics metrics should Owen Bassett track to measure the Dusty Ledger Podcast's growth across the eight-episode season?",
+      "assistant_message": "Owen Bassett should track unique downloads per episode within the first 30 days of release, total subscriber count at the end of each episode drop, average listen-through rate as a percentage of the 30-minute runtime, and the number of listener responses submitted through the Harrowgate Historical Society's website form. The hosting platform — whether Buzzsprout or RSS.com — provides the download and listen-through data automatically in the dashboard. Mira Calloway and Owen Bassett should review these metrics together after episodes two, four, and eight to make mid-season adjustments to content length or topic selection if listen-through rates fall below 65 percent. The Harrowgate Historical Society board should receive a one-page summary after the season finale to inform any second-season budget decision."
+    },
+    {
+      "turn_id": "t31",
+      "user_message": "I need to confirm the final specs for the Episode Blueprint v2. What is the total number of sections, who owns each one, and what runtime does the outline target?",
+      "assistant_message": "The Episode Blueprint v2 has six sections in total: working title and premise owned by Mira Calloway, primary source list with Thornfield Archive call numbers owned by Mira Calloway, structured outline with timestamps owned jointly by Mira Calloway and Owen Bassett, guest information block owned by Mira Calloway, production notes owned by Owen Bassett, and sign-off field owned by the Harrowgate Historical Society. The structured outline section specifically targets the 30-minute runtime, with timestamps marking each segment of the episode. Mira Calloway holds ownership of three of the six sections, Owen Bassett holds one independently, and the remaining two are shared or held by the Harrowgate Historical Society. The document is date-stamped on every update so the current version is always identifiable."
+    },
+    {
+      "turn_id": "t32",
+      "user_message": "What should the listener response rate goal be for the Dusty Ledger Podcast by the end of season one?",
+      "assistant_message": "Owen Bassett and Mira Calloway should set a realistic listener response rate goal of 2–3 percent of total downloads by the season finale, which is consistent with engagement benchmarks for niche community podcasts. If the show reaches its 500-subscriber milestone and achieves a 65 percent listen-through rate, even a 2 percent response rate would generate 10 or more submissions per episode for the Harrowgate Historical Society's website form. The shout-out segment in episodes three through eight is the primary driver of that response behaviour, so Owen Bassett should ensure those segments are mixed prominently rather than buried under music. Mira Calloway should personally reply to at least five listener responses per episode during season one to build the community relationship that distinguishes a local history podcast from a general one."
+    },
+    {
+      "turn_id": "t33",
+      "user_message": "How should the Harrowgate Historical Society handle listener data collected through the website response form?",
+      "assistant_message": "The Harrowgate Historical Society should store listener response data in a GDPR-compliant manner even if the podcast primarily serves a UK or North American audience, because following the stricter standard protects the organisation in either jurisdiction. Owen Bassett should work with the society's web administrator to add a clear consent checkbox to the response form stating that submissions may be quoted on the Dusty Ledger Podcast with the listener's first name and city. Data should be retained for no longer than 24 months after collection and held in a password-protected spreadsheet accessible only to Mira Calloway, Owen Bassett, and the society's designated data officer. No listener names or identifying details should appear in the Episode Blueprint v2 document, which is shared more broadly with guests and contributors."
+    },
+    {
+      "turn_id": "t34",
+      "user_message": "For the Episode Blueprint v2, can you confirm exactly how many sections it has, which section targets the 30-minute runtime, and how many of those sections Mira Calloway owns?",
+      "assistant_message": null
+    }
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that Episode Blueprint v2 has exactly six sections in total.",
+      "required": true,
+      "evidence_turn_ids": ["t19", "t31"]
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer identifies the structured outline with timestamps as the section that targets the 30-minute runtime.",
+      "required": true,
+      "evidence_turn_ids": ["t19", "t31"]
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer states that Mira Calloway owns three of the six sections (working title and premise, primary source list, guest information block — with the outline section jointly owned).",
+      "required": true,
+      "evidence_turn_ids": ["t19", "t31"]
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not state that the pre-launch Instagram window is six weeks or reference the six-week social media timeline as the answer to this query (that figure belongs to the t23 near-miss distractor about social media pre-launch duration).",
+      "required": true,
+      "evidence_turn_ids": []
+    }
+  ],
+  "reference_answer": "The Episode Blueprint v2 contains exactly six sections in total. The section that targets the 30-minute runtime is the structured outline with timestamps, which is jointly owned by Mira Calloway and Owen Bassett. Mira Calloway personally owns three of the six sections: the working title and premise, the primary source list with Thornfield Archive call numbers, and the guest information block. Owen Bassett independently owns the production notes section, and the Harrowgate Historical Society holds the sign-off field.",
+  "notes": "The facts the query needs are established in t19 (six sections, section names, owners) and confirmed in t31 (six sections total, 30-minute runtime target in the outline section, Mira Calloway owns three sections). The near-miss turn is t23, which answers a question about the six-week Instagram pre-launch window — a specific number that sounds similar to the section count but is entirely unrelated to the Episode Blueprint v2 query."
+}
+```

@@ -22,7 +22,7 @@ models:
     display: Claude Sonnet 4.6
     temperature_range: [0.7, 0.9]
     max_tokens: 16000
-    max_attempts: 3
+    max_attempts: 4
   response_a: {id: us.anthropic.claude-sonnet-4-6, display: Claude Sonnet 4.6, temperature: 0.0, max_tokens: 2048}
   response_b: {id: us.anthropic.claude-haiku-4-5-20251001-v1:0, display: Claude Haiku 4.5, temperature: 0.0, max_tokens: 2048}
   response_c: {id: minimax.minimax-m2.5, display: MiniMax M2.5, temperature: 0.0, max_tokens: 6000}

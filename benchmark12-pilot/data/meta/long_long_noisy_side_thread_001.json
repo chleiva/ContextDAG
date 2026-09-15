@@ -1,0 +1,144 @@
+{
+ "scenario_id": "long_long_noisy_side_thread_001",
+ "family": "long_noisy_side_thread",
+ "n_history": 43,
+ "full_history_tokens": 5982,
+ "closure_ratio": 0.09302325581395349,
+ "entity_registry": [
+  "Mira Okafor",
+  "Ward 7B",
+  "ShiftMatrix Pro",
+  "Charge Nurse Rota Policy v2",
+  "Dr. Henning Strauss",
+  "Lena Vasquez"
+ ],
+ "distractor_branch_entity_hits": {
+  "D": [
+   "Mira Okafor",
+   "Ward 7B",
+   "ShiftMatrix Pro",
+   "Charge Nurse Rota Policy v2",
+   "Dr. Henning Strauss",
+   "Lena Vasquez"
+  ],
+  "E": [
+   "Mira Okafor",
+   "Ward 7B",
+   "ShiftMatrix Pro",
+   "Charge Nurse Rota Policy v2",
+   "Dr. Henning Strauss",
+   "Lena Vasquez"
+  ],
+  "F": [
+   "Mira Okafor",
+   "Ward 7B",
+   "ShiftMatrix Pro",
+   "Charge Nurse Rota Policy v2",
+   "Dr. Henning Strauss",
+   "Lena Vasquez"
+  ],
+  "G": [
+   "Mira Okafor",
+   "Ward 7B",
+   "ShiftMatrix Pro",
+   "Charge Nurse Rota Policy v2",
+   "Dr. Henning Strauss",
+   "Lena Vasquez"
+  ],
+  "H": [
+   "Mira Okafor",
+   "Ward 7B",
+   "ShiftMatrix Pro",
+   "Charge Nurse Rota Policy v2",
+   "Dr. Henning Strauss",
+   "Lena Vasquez"
+  ],
+  "I": [
+   "Mira Okafor",
+   "Ward 7B",
+   "ShiftMatrix Pro",
+   "Dr. Henning Strauss",
+   "Lena Vasquez"
+  ]
+ },
+ "near_miss_turn_id": "t8",
+ "checklist_evidence": {
+  "c1": [
+   "t26"
+  ],
+  "c2": [
+   "t26"
+  ],
+  "c3": [
+   "t26"
+  ],
+  "c4": []
+ },
+ "cosine": {
+  "gold_median": 0.645766407251358,
+  "distractor_median": 0.45553916692733765,
+  "ratio": 0.7054240694654524,
+  "pass": true
+ },
+ "cosine_per_turn": {
+  "t1": 0.5173400044441223,
+  "t2": 0.43481260538101196,
+  "t3": 0.4658539891242981,
+  "t4": 0.36002933979034424,
+  "t5": 0.33420974016189575,
+  "t6": 0.3770139217376709,
+  "t7": 0.5503780245780945,
+  "t8": 0.3843502402305603,
+  "t9": 0.3738407492637634,
+  "t10": 0.6316222548484802,
+  "t11": 0.5171486735343933,
+  "t12": 0.34830015897750854,
+  "t13": 0.4703559875488281,
+  "t14": 0.7951953411102295,
+  "t15": 0.5381499528884888,
+  "t16": 0.45553916692733765,
+  "t17": 0.7385255098342896,
+  "t18": 0.40804916620254517,
+  "t19": 0.42727547883987427,
+  "t20": 0.4473226070404053,
+  "t21": 0.33100426197052,
+  "t22": 0.5544910430908203,
+  "t23": 0.6494366526603699,
+  "t24": 0.5436251163482666,
+  "t25": 0.4207366108894348,
+  "t26": 0.7741928100585938,
+  "t27": 0.3543122410774231,
+  "t28": 0.49130743741989136,
+  "t29": 0.5570651292800903,
+  "t30": 0.4496707320213318,
+  "t31": 0.383841872215271,
+  "t32": 0.513161838054657,
+  "t33": 0.6760705709457397,
+  "t34": 0.4568518400192261,
+  "t35": 0.42712217569351196,
+  "t36": 0.6345698237419128,
+  "t37": 0.5025686025619507,
+  "t38": 0.4560864567756653,
+  "t39": 0.3708481788635254,
+  "t40": 0.4363695979118347,
+  "t41": 0.46357303857803345,
+  "t42": 0.31309449672698975,
+  "t43": 0.5848730802536011
+ },
+ "gold_branches": [
+  "A"
+ ],
+ "distractor_branches": [
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I"
+ ],
+ "attempt_accepted": 2,
+ "generation_tokens": [
+  4841,
+  8974
+ ]
+}

@@ -1,0 +1,137 @@
+{
+ "scenario_id": "long_long_noisy_side_thread_004",
+ "family": "long_noisy_side_thread",
+ "n_history": 41,
+ "full_history_tokens": 5869,
+ "closure_ratio": 0.04878048780487805,
+ "entity_registry": [
+  "Maplewood Public Library",
+  "Director Renata Hollis",
+  "Summer Splash Reading Program",
+  "ReadTracker Pro",
+  "Coordinator Jamie Osei",
+  "Program Guide 2024"
+ ],
+ "distractor_branch_entity_hits": {
+  "D": [
+   "Maplewood Public Library",
+   "Director Renata Hollis",
+   "Summer Splash Reading Program",
+   "ReadTracker Pro",
+   "Coordinator Jamie Osei",
+   "Program Guide 2024"
+  ],
+  "E": [
+   "Maplewood Public Library",
+   "Director Renata Hollis",
+   "Summer Splash Reading Program",
+   "ReadTracker Pro",
+   "Coordinator Jamie Osei",
+   "Program Guide 2024"
+  ],
+  "F": [
+   "Maplewood Public Library",
+   "Director Renata Hollis",
+   "Summer Splash Reading Program",
+   "ReadTracker Pro",
+   "Coordinator Jamie Osei",
+   "Program Guide 2024"
+  ],
+  "G": [
+   "Maplewood Public Library",
+   "Director Renata Hollis",
+   "Summer Splash Reading Program",
+   "ReadTracker Pro",
+   "Coordinator Jamie Osei",
+   "Program Guide 2024"
+  ],
+  "H": [
+   "Maplewood Public Library",
+   "Director Renata Hollis",
+   "Summer Splash Reading Program",
+   "ReadTracker Pro",
+   "Coordinator Jamie Osei",
+   "Program Guide 2024"
+  ]
+ },
+ "near_miss_turn_id": "t12",
+ "checklist_evidence": {
+  "c1": [
+   "t1",
+   "t37"
+  ],
+  "c2": [
+   "t1",
+   "t37"
+  ],
+  "c3": [
+   "t1",
+   "t37"
+  ],
+  "c4": []
+ },
+ "cosine": {
+  "gold_median": 0.8421855568885803,
+  "distractor_median": 0.5811716914176941,
+  "ratio": 0.6900755856759273,
+  "pass": true
+ },
+ "cosine_per_turn": {
+  "t1": 0.8671597242355347,
+  "t2": 0.6615116596221924,
+  "t3": 0.5573551058769226,
+  "t4": 0.6553893089294434,
+  "t5": 0.5616567134857178,
+  "t6": 0.5142186284065247,
+  "t7": 0.48107415437698364,
+  "t8": 0.5239138603210449,
+  "t9": 0.6158091425895691,
+  "t10": 0.641816258430481,
+  "t11": 0.6091229319572449,
+  "t12": 0.646469235420227,
+  "t13": 0.6219815611839294,
+  "t14": 0.6087630391120911,
+  "t15": 0.5736461877822876,
+  "t16": 0.6292674541473389,
+  "t17": 0.29232048988342285,
+  "t18": 0.44260525703430176,
+  "t19": 0.5405466556549072,
+  "t20": 0.20444315671920776,
+  "t21": 0.5811716914176941,
+  "t22": 0.6197850704193115,
+  "t23": 0.5815762281417847,
+  "t24": 0.622073233127594,
+  "t25": 0.7024667859077454,
+  "t26": 0.7169177532196045,
+  "t27": 0.5396802425384521,
+  "t28": 0.5727367997169495,
+  "t29": 0.5155254602432251,
+  "t30": 0.5507057905197144,
+  "t31": 0.6552772521972656,
+  "t32": 0.5992810726165771,
+  "t33": 0.44698458909988403,
+  "t34": 0.6508806347846985,
+  "t35": 0.7801796197891235,
+  "t36": 0.5947045087814331,
+  "t37": 0.817211389541626,
+  "t38": 0.5771032571792603,
+  "t39": 0.46789664030075073,
+  "t40": 0.5600323677062988,
+  "t41": 0.5213311314582825
+ },
+ "gold_branches": [
+  "A"
+ ],
+ "distractor_branches": [
+  "D",
+  "E",
+  "F",
+  "G",
+  "H"
+ ],
+ "attempt_accepted": 2,
+ "generation_tokens": [
+  4677,
+  8679
+ ]
+}

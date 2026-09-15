@@ -1,0 +1,299 @@
+I'll fix the issues: remove topic-switch signposting, keep distractors much closer to the gold branch subject matter (textile exhibit logistics, shipping, conservation, venues - same entities, same kind of details), and ensure high cosine similarity between distractor and gold content.
+
+```json
+{
+  "entity_registry": [
+    "Priya Anand",
+    "Westbrook Museum of Textile Arts",
+    "Threads Across Time",
+    "Curator Liaison Agreement v2.1",
+    "Hartwell Conservation Studio",
+    "Nomad Crate Solutions"
+  ],
+  "turns": [
+    {
+      "turn_id": "t1",
+      "user_message": "We're planning the traveling exhibit 'Threads Across Time' for Westbrook Museum of Textile Arts and need to settle the venue rotation schedule. Can you help us think through the logistics?",
+      "assistant_message": "Certainly. For Threads Across Time, the standard approach for a traveling textile exhibit is to lock in a lead venue first, then sequence two to four partner venues at roughly three-month intervals. Westbrook Museum of Textile Arts would typically serve as the originating institution, which means they hold primary insurance liability for the first leg. You'll want to confirm the opening date and the number of objects in the traveling set before committing to any partner venue contracts."
+    },
+    {
+      "turn_id": "t2",
+      "user_message": "Priya Anand is our project lead. She's confirmed the opening at Westbrook on March 1, 2025, with 87 textile objects in the traveling set. What's the recommended minimum gap between venue changeovers?",
+      "assistant_message": "With 87 textile objects, Priya Anand should plan for a minimum 21-day changeover gap between venues to allow for safe deinstallation, crating, transit, and reinstallation. This figure comes from the Curator Liaison Agreement v2.1, which specifies 21 days as the floor for collections of 75 to 100 objects. Rushing below that threshold significantly increases the risk of handling damage to fragile woven pieces, particularly those with metal thread or natural dye finishes."
+    },
+    {
+      "turn_id": "t3",
+      "user_message": "The Curator Liaison Agreement v2.1 also mentions crating standards. What crating specification does it require for textiles in this size range?",
+      "assistant_message": "The Curator Liaison Agreement v2.1 specifies that all textiles in a traveling set of 75 to 100 objects must use climate-controlled crates maintaining 45–55% relative humidity and a temperature range of 65–70°F during transit. Each crate must be lined with archival-grade Ethafoam and must not exceed 200 pounds gross weight to comply with standard freight lift ratings. Nomad Crate Solutions is listed in Appendix C of the agreement as a pre-approved vendor meeting these specifications."
+    },
+    {
+      "turn_id": "t4",
+      "user_message": "Hartwell Conservation Studio has been brought on for condition reporting. How often does the agreement require condition checks during the tour?",
+      "assistant_message": "Under the Curator Liaison Agreement v2.1, Hartwell Conservation Studio must conduct a formal condition check at three specific points: immediately before the collection departs Westbrook Museum of Textile Arts, upon arrival at each partner venue, and at the conclusion of the final venue's run before objects are returned. For a tour with three partner venues, that means a minimum of seven condition reports in total. Priya Anand is designated as the approving signatory for each report before the collection is cleared to move."
+    },
+    {
+      "turn_id": "t5",
+      "user_message": "What is the maximum number of partner venues the Curator Liaison Agreement v2.1 allows for Threads Across Time given the 87-object set?",
+      "assistant_message": "The Curator Liaison Agreement v2.1 caps the number of partner venues at four for any traveling set between 75 and 100 objects, citing cumulative handling risk as the limiting factor. For Threads Across Time with its 87-object set, that means Westbrook Museum of Textile Arts can contract with no more than four partner venues beyond the originating institution. Priya Anand noted in her March 2024 planning memo that they intend to use exactly four partner venues, which places them at the agreement's maximum allowable limit."
+    },
+    {
+      "turn_id": "t6",
+      "user_message": "I need to work out the shipping insurance valuation for Threads Across Time. The total appraised value of the 87 objects is $4.2 million. How should we structure the coverage?",
+      "assistant_message": "For a traveling textile exhibit like Threads Across Time with a $4.2 million appraised value, the standard approach is wall-to-wall coverage, meaning the policy is active from the moment objects leave Westbrook Museum of Textile Arts until they are returned and accepted back into the permanent collection. Most fine arts insurers require a minimum coverage of 110% of appraised value for traveling collections, which would put the floor at $4.62 million for this set. Priya Anand should confirm with Westbrook Museum of Textile Arts's risk manager whether they carry a blanket fine arts rider or need a standalone traveling exhibition policy."
+    },
+    {
+      "turn_id": "t7",
+      "user_message": "Nomad Crate Solutions has quoted us a freight insurance add-on of $18,500 for the full tour. Is that typically included in the wall-to-wall policy or is it a separate line?",
+      "assistant_message": "The Nomad Crate Solutions freight insurance add-on is a cargo-in-transit product, which is distinct from the wall-to-wall fine arts policy and would be a separate line item in the budget. Wall-to-wall fine arts coverage from a specialist insurer like AXA Art or Chubb covers the objects themselves against damage or loss, while the Nomad Crate Solutions add-on at $18,500 covers the crates and packing materials as physical property during freight. Priya Anand should verify there is no overlap clause that would void one policy in the event of a simultaneous claim, which is a common issue when two carriers cover the same shipment."
+    },
+    {
+      "turn_id": "t8",
+      "user_message": "The risk manager at Westbrook Museum of Textile Arts says they need a certificate of insurance naming them as additional insured on the Nomad Crate Solutions policy. What's the standard timeline for getting that issued?",
+      "assistant_message": "Nomad Crate Solutions typically issues certificates of insurance naming additional insureds within five business days of a written request, provided the main policy is already bound. Westbrook Museum of Textile Arts should submit the additional insured request at least 30 days before the first shipment departs so there is buffer time if the underwriter requires any amendments to the policy language. Priya Anand should keep a copy of the certificate in the Threads Across Time master file alongside the Curator Liaison Agreement v2.1 to ensure all compliance documents are co-located."
+    },
+    {
+      "turn_id": "t9",
+      "user_message": "One of the partner venues is asking whether the $4.2 million valuation covers individual object values or is a blanket figure. Does it matter for claims purposes?",
+      "assistant_message": "It matters significantly: a blanket valuation of $4.2 million means any single-object claim is paid up to the blanket limit minus prior claims, whereas a scheduled valuation assigns a specific dollar amount to each of the 87 objects in Threads Across Time, making individual claims cleaner and faster to settle. Most fine arts insurers and the Curator Liaison Agreement v2.1 recommend scheduled valuations for traveling collections exceeding 50 objects, precisely because partner venues need to know per-object exposure when writing their own venue liability endorsements. Priya Anand should work with Hartwell Conservation Studio to confirm current replacement values for each piece before the policy is bound."
+    },
+    {
+      "turn_id": "t10",
+      "user_message": "Hartwell Conservation Studio has provided replacement values for 82 of the 87 objects. The remaining five are disputed. Can we bind the policy with incomplete schedules?",
+      "assistant_message": "Most fine arts insurers will bind a policy with an incomplete schedule provided the unscheduled objects are covered under a temporary blanket sublimit, typically set at 150% of the highest individual scheduled value in the collection. For Threads Across Time, if Hartwell Conservation Studio's highest individual valuation among the 82 objects is, say, $120,000, the five disputed pieces would each be covered up to $180,000 under the sublimit until final valuations are submitted. Priya Anand should set a hard deadline of 60 days post-binding for Hartwell Conservation Studio to deliver the remaining five valuations, as most policies lapse the sublimit after that window."
+    },
+    {
+      "turn_id": "t11",
+      "user_message": "We need to finalize the marketing plan for Threads Across Time. Priya Anand wants to know the standard lead time for producing the exhibit catalog.",
+      "assistant_message": "For a traveling textile exhibit of the scale of Threads Across Time, the standard lead time for producing a print catalog is 16 to 20 weeks from manuscript lock to delivery of finished copies. Westbrook Museum of Textile Arts should plan to have all catalog essays, object photography, and conservation notes from Hartwell Conservation Studio submitted to the designer no later than 18 weeks before the March 1, 2025 opening to hit a comfortable mid-range target. A print run of 1,500 to 2,000 copies is typical for a traveling exhibit of this profile, with roughly 400 copies reserved for partner venue retail."
+    },
+    {
+      "turn_id": "t12",
+      "user_message": "The policy broker says we need a completed Fine Arts Shipping Form for each leg of the Threads Across Time tour. How many legs are there if we use four partner venues?",
+      "assistant_message": "With Westbrook Museum of Textile Arts as the originating venue and four partner venues, Threads Across Time has five legs in total: the outbound shipment from Westbrook to partner venue one, then three inter-venue transfers, and finally the return shipment from partner venue four back to Westbrook. Priya Anand will therefore need five completed Fine Arts Shipping Forms, one per leg, each listing the Nomad Crate Solutions crate manifest, the Hartwell Conservation Studio condition report clearance, and the insured value at the time of transfer. The broker should be provided all five forms at least 14 days before each respective departure."
+    },
+    {
+      "turn_id": "t13",
+      "user_message": "The catalog designer needs the object count and a confirmed title. Are those locked in?",
+      "assistant_message": "Yes, both are confirmed: Threads Across Time is the locked exhibit title, and the traveling set contains 87 objects as established in Priya Anand's March 2024 planning memo filed with Westbrook Museum of Textile Arts. The designer should use 87 objects as the basis for the catalog's checklist pages, though Hartwell Conservation Studio may flag up to three objects as conditionally included pending final conservation review. If any of those three are withdrawn, the catalog checklist will need a corrigendum insert rather than a reprint, which is standard practice for traveling textile exhibits."
+    },
+    {
+      "turn_id": "t14",
+      "user_message": "We're also sorting out the staffing model for the tour. How many courier staff does Westbrook Museum of Textile Arts typically assign to accompany a shipment of this size?",
+      "assistant_message": "For a traveling collection of 87 objects valued at $4.2 million, Westbrook Museum of Textile Arts's standard staffing model calls for two couriers per shipment leg: one collections specialist and one conservator from Hartwell Conservation Studio. The Curator Liaison Agreement v2.1 requires that at least one courier hold current IATA Dangerous Goods awareness certification, which applies because some of the Threads Across Time textiles contain dyes classified as restricted materials for air freight. Priya Anand has budgeted 10 courier travel days per leg to cover transit, installation oversight, and condition report sign-off at each receiving venue."
+    },
+    {
+      "turn_id": "t15",
+      "user_message": "The catalog print vendor is asking about paper stock and binding. What specs does Westbrook Museum of Textile Arts usually require for exhibit catalogs?",
+      "assistant_message": "Westbrook Museum of Textile Arts's house standard for traveling exhibit catalogs calls for 100 lb. coated matte text stock for interior pages and a 100 lb. coated cover with soft-touch laminate, perfect-bound with a square spine. For Threads Across Time, Priya Anand has requested that all color photography sections use stochastic screening rather than conventional halftone to better render the fine weave textures of the textiles. The vendor should also plan for a four-color plus one Pantone spot color interior, as the exhibit identity uses a deep indigo accent that does not reproduce accurately in CMYK alone."
+    },
+    {
+      "turn_id": "t16",
+      "user_message": "Back to staffing: if a courier from Hartwell Conservation Studio is unavailable for one of the five legs, what's the contingency?",
+      "assistant_message": "The Curator Liaison Agreement v2.1 provides that if Hartwell Conservation Studio cannot supply a conservator courier for a scheduled leg of Threads Across Time, Westbrook Museum of Textile Arts may substitute a conservator from any institution on the American Alliance of Museums approved contractor list, provided that person has at least five years of experience with historic textiles. The substitute must be approved in writing by Priya Anand no less than 10 days before the shipment departs, and Hartwell Conservation Studio must provide a written briefing document covering the condition status of all 87 objects to the substitute conservator. Travel and per diem costs for the substitute are billed to the originating venue's contingency line, which Westbrook Museum of Textile Arts has set at $15,000 for the full tour."
+    },
+    {
+      "turn_id": "t17",
+      "user_message": "We need to set the exhibit installation timeline at each partner venue. What's the standard installation window for a 87-object textile exhibit?",
+      "assistant_message": "For a traveling textile exhibit of 87 objects, the standard installation window at each partner venue is 10 to 14 working days, which accounts for crate unpacking, acclimatization of objects to the gallery environment, mount fabrication adjustments, and final placement with condition report sign-off. Westbrook Museum of Textile Arts's contract template, referenced in the Curator Liaison Agreement v2.1, specifies a minimum of 12 working days for partner venues to complete installation before the public opening. Priya Anand has confirmed that all four partner venues for Threads Across Time have agreed to the 12-working-day minimum in their preliminary letters of agreement."
+    },
+    {
+      "turn_id": "t18",
+      "user_message": "For the staffing model, how are the 10 courier travel days per leg broken down in terms of activities?",
+      "assistant_message": "Priya Anand's staffing plan for Threads Across Time allocates the 10 courier travel days per leg as follows: day one for packing supervision and crate seal at the outgoing venue, days two and three for transit and freight handling, days four through eight for installation oversight and condition report completion at the receiving venue, day nine for public opening attendance, and day ten as a buffer for any remediation or documentation catch-up. Both the collections specialist from Westbrook Museum of Textile Arts and the Hartwell Conservation Studio conservator follow this same 10-day schedule on each leg. Nomad Crate Solutions is responsible for physical crate movement on days two and three, with couriers traveling separately by commercial air."
+    },
+    {
+      "turn_id": "t19",
+      "user_message": "The catalog vendor has come back with a revised timeline. They say they need the Hartwell Conservation Studio conservation notes 20 weeks before opening, not 18. Does that change anything?",
+      "assistant_message": "A 20-week lead time for Hartwell Conservation Studio's conservation notes pushes the submission deadline to approximately October 6, 2024 for the March 1, 2025 opening of Threads Across Time at Westbrook Museum of Textile Arts. Priya Anand will need to advance Hartwell Conservation Studio's internal review schedule by roughly two weeks, which may require hiring a temporary conservation technician to accelerate the condition reporting for all 87 objects. The Curator Liaison Agreement v2.1 does not specify catalog production timelines, so this adjustment is purely a project management decision rather than a contractual one."
+    },
+    {
+      "turn_id": "t20",
+      "user_message": "The vendor also wants to know the page count estimate so they can finalize the print quote. What's a reasonable page count for a catalog of this scope?",
+      "assistant_message": "For Threads Across Time with 87 objects, a reasonable catalog page count is 160 to 200 pages, comprising roughly 40 pages of scholarly essays, 87 full-page or half-page object entries with photography and conservation notes from Hartwell Conservation Studio, and the remainder for front matter, bibliography, and index. Westbrook Museum of Textile Arts has typically produced catalogs in the 176-page range for traveling exhibits of comparable scope, so that is a defensible planning figure for the vendor's quote. Priya Anand should confirm whether Nomad Crate Solutions will be acknowledged in the catalog's lender and partner pages, as vendor acknowledgments sometimes add two to four pages."
+    },
+    {
+      "turn_id": "t21",
+      "user_message": "The vendor needs a final decision on print run size. Priya Anand mentioned 1,500 to 2,000 copies earlier. What factors should determine where in that range we land?",
+      "assistant_message": "The key factors are the number of partner venues and their projected retail capacity, the size of Westbrook Museum of Textile Arts's own shop, and any institutional bulk orders from sponsors or lending organizations. With four partner venues for Threads Across Time, allocating 400 copies to Westbrook and roughly 250 copies per partner venue accounts for 1,400 copies, leaving 100 to 600 copies for press, complimentary distribution, and online sales depending on where in the range Priya Anand lands. If any of the four partner venues is a large metropolitan institution with high retail throughput, the higher end of 2,000 copies is justified; for smaller regional venues, 1,500 is the safer, lower-risk choice."
+    },
+    {
+      "turn_id": "t22",
+      "user_message": "For the installation timeline, what happens if a partner venue's gallery space isn't ready when the Threads Across Time shipment arrives?",
+      "assistant_message": "If a partner venue's gallery space is not ready upon shipment arrival, the Curator Liaison Agreement v2.1 requires that Nomad Crate Solutions crates remain sealed and climate-controlled in a holding area approved by Hartwell Conservation Studio for up to five additional working days at the partner venue's expense. Beyond five days, Westbrook Museum of Textile Arts has the right to invoke a delay penalty of $2,000 per day, charged to the partner venue, until the gallery is ready for installation to begin. Priya Anand holds the authority to waive the penalty in writing in cases of documented force majeure, but standard construction or renovation delays do not qualify for a waiver."
+    },
+    {
+      "turn_id": "t23",
+      "user_message": "What's the maximum total delay penalty a partner venue could incur under that provision?",
+      "assistant_message": "The Curator Liaison Agreement v2.1 caps the delay penalty at 20 additional working days beyond the five-day grace period, which means the maximum chargeable delay is 25 working days total and the maximum penalty is $40,000 per venue. If a venue's delay exceeds 25 working days, Westbrook Museum of Textile Arts and Priya Anand have the right to withdraw Threads Across Time from that venue entirely and reassign the slot to an alternate venue, with all costs of re-routing borne by the defaulting partner. Hartwell Conservation Studio must issue a new condition report if crates remain sealed for more than 10 days in the holding area, adding a further cost charged to the partner venue at Hartwell's standard day-rate of $1,800."
+    },
+    {
+      "turn_id": "t24",
+      "user_message": "Priya Anand wants to know the total staffing cost if all four partner venues require the full 10 courier days each. What's the budget figure?",
+      "assistant_message": "With five legs total for Threads Across Time and 10 courier days per leg, the total courier deployment is 50 person-days for the collections specialist and 50 person-days for the Hartwell Conservation Studio conservator, giving 100 courier person-days across the tour. Westbrook Museum of Textile Arts's standard all-in daily rate for courier staff, including travel, lodging, and per diem, is $850 per person per day, yielding a gross staffing cost of $85,000 for the full tour. Priya Anand's budget memo allocates $85,000 for courier staffing plus the $15,000 contingency line, for a total staffing budget envelope of $100,000."
+    },
+    {
+      "turn_id": "t25",
+      "user_message": "The insurer has asked for a summary of all five Fine Arts Shipping Forms before binding the policy. Who at Westbrook Museum of Textile Arts is responsible for compiling that package?",
+      "assistant_message": "The responsibility for compiling all five Fine Arts Shipping Forms falls to the registrar at Westbrook Museum of Textile Arts, who works under Priya Anand's oversight. The registrar must collect the completed form for each leg, attach the corresponding Nomad Crate Solutions crate manifests and the Hartwell Conservation Studio pre-departure condition report clearances, and submit the full package to the insurer at least 30 days before the first leg departs. Priya Anand countersigns the submission letter as project lead, confirming that all 87 objects are accurately listed and that valuations match the bound policy schedule."
+    },
+    {
+      "turn_id": "t26",
+      "user_message": "If a partner venue invokes force majeure and cancels after the crates have already shipped, what does the Curator Liaison Agreement v2.1 say about cost recovery?",
+      "assistant_message": "The Curator Liaison Agreement v2.1 states that in a confirmed force majeure cancellation after crates have departed Westbrook Museum of Textile Arts, the canceling partner venue is responsible for the full cost of return freight via Nomad Crate Solutions, any additional condition reporting fees from Hartwell Conservation Studio triggered by the extended transit, and a flat administrative fee of $5,000 payable to Westbrook Museum of Textile Arts. The canceling venue is not liable for the delay penalty under that scenario, but all sunk courier travel costs already incurred are non-recoverable and borne by the originating institution. Priya Anand must issue a written force majeure determination within 10 business days of the cancellation notice for the provision to apply."
+    },
+    {
+      "turn_id": "t27",
+      "user_message": "The insurer wants to know whether the wall-to-wall policy covers objects while they're in Nomad Crate Solutions's warehouse awaiting the next leg. Is warehouse storage covered?",
+      "assistant_message": "Yes, the wall-to-wall coverage for Threads Across Time extends to any temporary warehouse storage by Nomad Crate Solutions between legs, provided the storage facility meets the climate control specifications in the Curator Liaison Agreement v2.1, specifically 45–55% relative humidity and 65–70°F. Westbrook Museum of Textile Arts's insurer requires a facility inspection certificate from Nomad Crate Solutions for any warehouse used for more than 72 hours, and Priya Anand must approve the storage location in writing before the crates are transferred. If Nomad Crate Solutions uses an unapproved facility, the insurer may deny claims arising from that storage period, which is a significant contractual risk for the tour."
+    },
+    {
+      "turn_id": "t28",
+      "user_message": "What's the total staffing cost if only three partner venues are used instead of four, still with 10 courier days per leg?",
+      "assistant_message": "With three partner venues, Threads Across Time would have four legs rather than five: Westbrook to venue one, venue one to venue two, venue two to venue three, and the return to Westbrook. At 10 courier days per leg and two couriers per leg, the total is 80 courier person-days, and at Westbrook Museum of Textile Arts's all-in daily rate of $850 per person, the gross staffing cost drops to $68,000 for the full tour. Priya Anand's $15,000 contingency line would still apply, giving a total staffing envelope of $83,000 under the three-venue scenario, which is $17,000 less than the four-venue plan."
+    },
+    {
+      "turn_id": "t29",
+      "user_message": "The catalog vendor has now confirmed the 176-page count and a print run of 1,750 copies. What's a reasonable unit cost estimate at that specification?",
+      "assistant_message": "At 176 pages, four-color plus one Pantone spot color, 100 lb. coated matte text with a soft-touch laminate cover, and a run of 1,750 copies, a reasonable trade estimate for the Threads Across Time catalog is $18 to $22 per unit, putting the total print cost between $31,500 and $38,500. Westbrook Museum of Textile Arts typically budgets at the midpoint, so approximately $35,000 is a defensible line item for Priya Anand's production budget. Hartwell Conservation Studio's conservation photography fees, which are separate from print costs, have been estimated at $8,400 for the 87-object set and should be carried as a distinct line."
+    },
+    {
+      "turn_id": "t30",
+      "user_message": "Can the delay penalty provision be used against the originating venue if Westbrook Museum of Textile Arts ships late?",
+      "assistant_message": "The Curator Liaison Agreement v2.1 is asymmetric on this point: the delay penalty clause applies only to partner venues failing to have gallery space ready, not to the originating institution shipping late. However, if Westbrook Museum of Textile Arts causes a late departure that compresses a partner venue's 12-working-day installation window to fewer than 8 working days, the partner venue may request a revised opening date at no penalty, and Priya Anand must accommodate that request in writing. Nomad Crate Solutions's freight contracts do include a late-tender surcharge of $1,200 if crates are not ready for pickup within four hours of the confirmed collection window, which is a separate financial exposure for Westbrook."
+    },
+    {
+      "turn_id": "t31",
+      "user_message": "The catalog is going to include a foreword from Priya Anand. Does Westbrook Museum of Textile Arts have a standard word count for director or curator forewords?",
+      "assistant_message": "Westbrook Museum of Textile Arts's editorial guidelines specify a foreword of 600 to 800 words for traveling exhibit catalogs, which at the Threads Across Time catalog's page dimensions and font size occupies approximately two full pages. Priya Anand's foreword should situate the exhibit within the museum's collecting mission, acknowledge key lenders and the Hartwell Conservation Studio partnership, and introduce the scholarly framework of the four main catalog essays. The editorial deadline for the foreword is the same as the manuscript lock date, which has been set at 20 weeks before the March 1, 2025 opening, placing it around October 6, 2024."
+    },
+    {
+      "turn_id": "t32",
+      "user_message": "The insurer has come back saying they need proof that Nomad Crate Solutions meets the humidity and temperature specs. What documentation satisfies that requirement?",
+      "assistant_message": "The insurer will accept three forms of documentation from Nomad Crate Solutions: a current ISO 9001 certificate covering climate-controlled art freight, data logger reports from the most recent comparable shipment showing temperature and humidity within the 45–55% RH and 65–70°F bands, and a signed compliance declaration referencing the Curator Liaison Agreement v2.1 specifications. Westbrook Museum of Textile Arts's risk manager should request all three documents from Nomad Crate Solutions at least 45 days before the first Threads Across Time shipment departs. Priya Anand should store these documents alongside the Fine Arts Shipping Forms in the exhibit's master compliance file."
+    },
+    {
+      "turn_id": "t33",
+      "user_message": "If a partner venue's gallery humidity drops below the required range during the exhibit run, who is responsible under the agreement?",
+      "assistant_message": "Under the Curator Liaison Agreement v2.1, once objects from Threads Across Time are installed at a partner venue, environmental control responsibility transfers entirely to that venue, and any damage attributable to humidity falling outside the 45–55% RH range is the partner venue's liability. Hartwell Conservation Studio is contracted to conduct spot humidity checks during each partner venue run at a frequency of once per two weeks, and any readings outside the specified range must be reported to Priya Anand within 24 hours. If corrective action is not taken within 48 hours of the report, Westbrook Museum of Textile Arts may instruct Nomad Crate Solutions to mobilize for emergency retrieval of the collection at the partner venue's expense."
+    },
+    {
+      "turn_id": "t34",
+      "user_message": "The catalog designer wants to know if the Nomad Crate Solutions and Hartwell Conservation Studio logos need to appear in the catalog. What's the standard practice?",
+      "assistant_message": "Westbrook Museum of Textile Arts's standard practice for traveling exhibit catalogs is to include sponsor and partner logos on a dedicated acknowledgments page at the back of the catalog, typically the penultimate spread. Both Nomad Crate Solutions and Hartwell Conservation Studio would appear there as operational partners, with logo size governed by their contractual tier: Hartwell Conservation Studio, as the primary conservation partner named in the Curator Liaison Agreement v2.1, receives a larger logo placement than Nomad Crate Solutions as a vendor. Priya Anand must approve all logo placements before the catalog goes to press, which should be built into the design review schedule."
+    },
+    {
+      "turn_id": "t35",
+      "user_message": "The designer is also asking about the cover image. Has a lead object for Threads Across Time been selected?",
+      "assistant_message": "Priya Anand confirmed in the March 2024 planning memo that the cover image for the Threads Across Time catalog will be a detail photograph of Object 14, a 17th-century Ottoman silk kaftan, which is also the exhibit's primary promotional image. Hartwell Conservation Studio completed the conservation photography for Object 14 in January 2024, and the high-resolution file at 600 dpi is already held by Westbrook Museum of Textile Arts's digital assets manager. The designer should request the file directly from Westbrook Museum of Textile Arts and confirm color profile settings with the print vendor to ensure the deep indigo Pantone accent in the exhibit identity aligns with the kaftan's actual coloration."
+    },
+    {
+      "turn_id": "t36",
+      "user_message": "If the total staffing cost for the four-venue tour is $85,000, how does that break down between the collections specialist and the Hartwell Conservation Studio conservator?",
+      "assistant_message": "The $85,000 gross staffing cost for Threads Across Time is split evenly at $42,500 each for the collections specialist and the Hartwell Conservation Studio conservator, since both roles receive the same all-in daily rate of $850 at Westbrook Museum of Textile Arts. The collections specialist's costs are carried entirely on Westbrook Museum of Textile Arts's operating budget, while Hartwell Conservation Studio invoices their conservator's 50 person-days directly to the exhibit project account under the terms of the Curator Liaison Agreement v2.1. Priya Anand reconciles both invoices against the staffing budget at the conclusion of each tour leg to maintain accurate running totals."
+    },
+    {
+      "turn_id": "t37",
+      "user_message": "Is the Hartwell Conservation Studio conservator's daily rate fixed for the full tour or subject to annual adjustment?",
+      "assistant_message": "Under the Curator Liaison Agreement v2.1, Hartwell Conservation Studio's daily rate for courier conservator services is fixed at $850 all-in for the duration of the Threads Across Time tour, with no annual escalation clause, because the agreement was written as a project-specific contract rather than a multi-year retainer. If the tour extends beyond December 31, 2026, the rate is subject to renegotiation, but Priya Anand's current schedule has all five legs completing by September 2026, well within the fixed-rate window. Westbrook Museum of Textile Arts's finance office confirmed this interpretation in writing to Hartwell Conservation Studio in April 2024."
+    },
+    {
+      "turn_id": "t38",
+      "user_message": "At the $2,000-per-day delay penalty rate, how many delay days would it take for a partner venue to reach the $40,000 cap?",
+      "assistant_message": "At $2,000 per day, a partner venue reaches the $40,000 maximum penalty after exactly 20 chargeable delay days, which are the 20 days beyond the initial five-day grace period allowed by the Curator Liaison Agreement v2.1. In calendar terms, a venue that fails to have its gallery ready on the crate arrival date would exhaust the penalty cap after 25 total working days of delay. Priya Anand and Westbrook Museum of Textile Arts would then have the right to withdraw Threads Across Time from that venue and reassign the slot, as confirmed in the agreement's termination-for-delay provision."
+    },
+    {
+      "turn_id": "t39",
+      "user_message": "If Hartwell Conservation Studio's conservator is replaced by a substitute for one leg, does the $850 daily rate still apply to the substitute?",
+      "assistant_message": "The Curator Liaison Agreement v2.1 specifies that the $850 all-in daily rate is the maximum reimbursable rate for any courier conservator on Threads Across Time, including approved substitutes, and Westbrook Museum of Textile Arts will not reimburse amounts above that figure regardless of the substitute's own fee schedule. If the substitute's actual rate is lower than $850, Westbrook Museum of Textile Arts pays the lower amount and does not pocket the difference; it is credited back to the exhibit project account. Priya Anand must document the substitute's actual rate in the leg's staffing reconciliation report, which is submitted to Westbrook Museum of Textile Arts's finance office within 15 days of each leg's completion."
+    },
+    {
+      "turn_id": "t40",
+      "user_message": "What happens to the delay penalty funds once collected? Do they go back into the Threads Across Time project budget?",
+      "assistant_message": "Under Westbrook Museum of Textile Arts's financial policy, delay penalty receipts collected from partner venues under the Curator Liaison Agreement v2.1 are credited to the Threads Across Time project account and may be applied to offset any cost overruns in the tour's operating budget. Priya Anand has discretion to reallocate penalty funds to any project line item, including additional Hartwell Conservation Studio condition reporting fees or Nomad Crate Solutions re-routing costs triggered by the same delay. Any unspent penalty funds remaining at the close of the project are transferred to Westbrook Museum of Textile Arts's general exhibitions reserve fund, not retained by the project team."
+    },
+    {
+      "turn_id": "t41",
+      "user_message": "The insurer has approved the five Fine Arts Shipping Forms. What's the next step in the policy binding process for Threads Across Time?",
+      "assistant_message": "With the five Fine Arts Shipping Forms approved, the next step is for Westbrook Museum of Textile Arts's risk manager to submit the completed insurance application alongside the Nomad Crate Solutions climate compliance documentation and the full object schedule from Hartwell Conservation Studio to the underwriter for formal binding. The underwriter typically issues a binder within five to seven business days of receiving a complete submission, and Priya Anand should request that the binder explicitly reference the Curator Liaison Agreement v2.1 specifications so that any coverage dispute can be resolved by reference to a single governing document. Once the binder is issued, Westbrook Museum of Textile Arts should distribute certified copies to all four partner venues within 10 business days."
+    },
+    {
+      "turn_id": "t42",
+      "user_message": "The print vendor has sent a proof of the Threads Across Time catalog cover. Who needs to sign off before it goes to press?",
+      "assistant_message": "The cover proof for the Threads Across Time catalog requires sign-off from three parties before it goes to press: Priya Anand as project lead and catalog editor, the Westbrook Museum of Textile Arts communications director for brand compliance, and the digital assets manager to confirm that Object 14's color profile matches the approved 600 dpi file. Hartwell Conservation Studio does not have sign-off authority on the cover proof itself, but their conservation notes for Object 14 must be confirmed as final before the proof is approved, since any last-minute condition disclosure could require a caption amendment. The vendor requires a signed press approval form from Priya Anand within 48 hours of proof delivery to maintain the production schedule."
+    },
+    {
+      "turn_id": "t43",
+      "user_message": "For the installation timeline, does the 12-working-day minimum include the day the crates arrive, or does it start the day after?",
+      "assistant_message": "The Curator Liaison Agreement v2.1 specifies that the 12-working-day installation window for Threads Across Time begins on the first full working day after crate arrival and acceptance by the partner venue's registrar, so the arrival day itself is not counted. This means that if crates arrive on a Monday, the 12-day clock starts Tuesday, and the minimum installation period runs through the second Wednesday following arrival, assuming no public holidays intervene. Priya Anand has asked all four partner venues to build in one additional buffer day when scheduling their public openings to account for the possibility that Hartwell Conservation Studio's final condition report sign-off extends to end of day on the 12th working day."
+    },
+    {
+      "turn_id": "t44",
+      "user_message": "What's the per-object installation time implied by the 12-working-day window for 87 objects at a partner venue?",
+      "assistant_message": "Across 12 working days at 8 hours per day, the total available installation time is 96 hours, and with 87 objects in Threads Across Time that implies roughly 66 minutes per object on average, including unpacking, acclimatization check, mount adjustment, placement, and labeling. In practice, Priya Anand's installation schedule allocates the first three days to unpacking and acclimatization of all crates under Hartwell Conservation Studio supervision, then seven days for actual gallery installation, and the final two days for lighting, label review, and Hartwell Conservation Studio's final condition sign-off. Nomad Crate Solutions is responsible for removing empty crates from the gallery floor by the end of day three to clear the space for installation work."
+    },
+    {
+      "turn_id": "t45",
+      "user_message": "Priya Anand wants to confirm the contingency budget for courier staffing. Is the $15,000 figure sufficient if two substitutes are needed on the same leg?",
+      "assistant_message": "If both the collections specialist and the Hartwell Conservation Studio conservator were replaced by substitutes on the same leg of Threads Across Time, the maximum incremental cost above the standard $850 rate is zero, since the agreement caps reimbursement at $850 per person per day regardless of substitute rates. The $15,000 contingency is therefore not intended to cover rate differences but rather unanticipated additional travel days, emergency rebooking fees, or last-minute per diem escalations in high-cost cities. Priya Anand confirmed with Westbrook Museum of Textile Arts's finance office that $15,000 is adequate for these purposes based on comparable touring budgets from the museum's prior two traveling exhibits."
+    },
+    {
+      "turn_id": "t46",
+      "user_message": "The insurer wants a named contact at Nomad Crate Solutions for the policy. Who should that be?",
+      "assistant_message": "Nomad Crate Solutions has designated their Director of Fine Arts Logistics, Marcus Telle, as the named contact for all insurance-related correspondence on the Threads Across Time tour. Marcus Telle holds signing authority for the climate compliance declarations and the Fine Arts Shipping Form crate manifests, and his contact details have been provided to Westbrook Museum of Textile Arts's registrar. Priya Anand has also asked that Marcus Telle be copied on all insurer communications involving Nomad Crate Solutions so that any discrepancies between the policy terms and actual freight operations can be flagged and resolved before a shipment departs."
+    },
+    {
+      "turn_id": "t47",
+      "user_message": "If a substitute conservator courier is used and their actual daily rate is $720, how much does Westbrook Museum of Textile Arts save on that leg versus the standard budget?",
+      "assistant_message": "At $720 per day versus the $850 standard rate, the saving is $130 per person per day, and over 10 courier days for that one leg the total saving on the Hartwell Conservation Studio conservator position is $1,300. That $1,300 is credited back to the Threads Across Time project account rather than to Westbrook Museum of Textile Arts's general budget, as Priya Anand confirmed in her April 2024 budget memo. The collections specialist on the same leg continues to be billed at the standard $850 rate, so the leg's total two-person staffing cost would be $15,700 instead of the standard $17,000."
+    },
+    {
+      "turn_id": "t48",
+      "user_message": "The print vendor has confirmed the Threads Across Time catalog will be ready six weeks before the March 1, 2025 opening. Is that enough time for distribution to partner venues?",
+      "assistant_message": "Six weeks before March 1, 2025 puts catalog delivery at approximately January 18, 2025, which gives Westbrook Museum of Textile Arts's shipping team roughly four weeks to distribute the 400 copies allocated to partner venues after retaining the Westbrook stock. Priya Anand's distribution plan calls for ground freight to all four partner venues, with delivery confirmed no later than two weeks before their respective opening dates, so the January 18 delivery date is workable for the first venue but may be tight for venues opening close to March 1. Nomad Crate Solutions has offered to include catalog boxes in the final crate shipment to each partner venue at no additional freight charge, which would eliminate the separate distribution logistics entirely."
+    },
+    {
+      "turn_id": "t49",
+      "user_message": "The registrar has asked whether the five Fine Arts Shipping Forms need to be notarized or just signed by Priya Anand. What does the insurer require?",
+      "assistant_message": "The insurer for Threads Across Time requires that the Fine Arts Shipping Forms be signed by Priya Anand as project lead and countersigned by the Westbrook Museum of Textile Arts registrar, but notarization is not required for domestic shipments within the continental United States. For any international leg, however, the insurer requires notarized forms plus a certified translation if the receiving venue's country requires customs documentation in a language other than English. Since all four partner venues for Threads Across Time are domestic institutions, the standard dual-signature format without notarization is sufficient for all five legs."
+    },
+    {
+      "turn_id": "t50",
+      "user_message": "If Westbrook Museum of Textile Arts decides to add a fifth partner venue after the policy is bound, what's the process for amending the coverage?",
+      "assistant_message": "Adding a fifth partner venue after the policy is bound requires Priya Anand to submit a formal endorsement request to the insurer, including an updated Fine Arts Shipping Form for the two new legs created by the additional venue and a revised Nomad Crate Solutions crate manifest. The insurer will issue an endorsement to the existing wall-to-wall policy rather than a new policy, and the additional premium is calculated on a pro-rata basis for the added coverage period. Westbrook Museum of Textile Arts's risk manager must also notify Hartwell Conservation Studio of the additional venue so that the condition reporting schedule and courier staffing budget can be updated to reflect the two extra legs."
+    },
+    {
+      "turn_id": "t51",
+      "user_message": "Given everything we've established for Threads Across Time, what is the maximum number of partner venues allowed under the Curator Liaison Agreement v2.1 for the 87-object set, and does Priya Anand's current plan hit that limit?",
+      "assistant_message": null
+    }
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that the Curator Liaison Agreement v2.1 caps partner venues at four for a traveling set of 75–100 objects.",
+      "required": true,
+      "evidence_turn_ids": ["t5"]
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that the 87-object set of Threads Across Time falls within the 75–100 object range that triggers the four-venue cap.",
+      "required": true,
+      "evidence_turn_ids": ["t2", "t5"]
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer states that Priya Anand's current plan uses exactly four partner venues, which is at the maximum allowable limit.",
+      "required": true,
+      "evidence_turn_ids": ["t5"]
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not state that the maximum number of partner venues is three or that the total staffing cost for a three-venue tour ($68,000) is relevant to the venue cap question.",
+      "required": true,
+      "evidence_turn_ids": []
+    }
+  ],
+  "reference_answer": "Under the Curator Liaison Agreement v2.1, the maximum number of partner venues for any traveling set between 75 and 100 objects is four, with cumulative handling risk cited as the limiting factor. Threads Across Time has 87 objects, which places it squarely within that range. Priya Anand's current plan contracts exactly four partner venues, meaning the tour is at the agreement's maximum allowable limit and no additional partner venues can be added without renegotiating the agreement.",
+  "notes": "The facts needed for the query are established in t2 (87-object set), t3 (crating specs and Curator Liaison Agreement v2.1 scope), and t5 (four-venue cap and Priya Anand's plan to use exactly four venues). The near-miss turn is t28, which answers a staffing cost question about a three-venue scenario with specific dollar figures ($68,000 gross, $83,000 total) that sound like a definitive answer but address a different variable entirely."
+}
+```

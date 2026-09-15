@@ -1,0 +1,396 @@
+{
+  "scenario_id": "long_three_way_join_006",
+  "family": "three_way_join",
+  "label": "JOIN",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're scheduling the shoot for our short film with Sunrise Collective. Can you help me figure out how long Mara Voss is available on the main shoot day?",
+      "assistant_message": "Mara Voss has confirmed availability from 7:00 AM to 3:00 PM on the main shoot day, giving you an 8-hour window to work with. She has a hard out at 3:00 PM due to a prior commitment and cannot extend under any circumstances. That means any scenes requiring Mara must be wrapped no later than 2:45 PM to allow sufficient time for release paperwork to be completed. Scheduling her scenes early in the day is strongly advisable to protect against delays pushing her coverage past that cutoff.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "What's the catering budget Declan Reyes approved for the shoot day?",
+      "assistant_message": "Declan Reyes approved a catering budget of $320 for the full shoot day at Thornfield Warehouse. That figure covers breakfast and lunch for up to 12 crew and cast members combined. The $320 cap was set during the pre-production budget review and is itemized as a single line in the Sunrise Collective production budget. Any overages beyond $320 would require a separate sign-off from Sunrise Collective's production coordinator before additional food expenditures are made.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "Can we split that $320 between two vendors, one for breakfast and one for lunch?",
+      "assistant_message": "Yes, Declan Reyes confirmed the $320 can be split across two vendors as long as each invoice is submitted separately to Sunrise Collective's accounting by end of shoot day. He suggested allocating roughly $100 for breakfast and $220 for lunch given that lunch is the heavier meal requiring more food volume. Both vendors must be pre-approved and listed on Call Sheet Alpha before the shoot begins. Vendors not on that pre-approved list will not be reimbursed regardless of the amount. Declan Reyes also noted that any overage beyond the $320 total requires his written sign-off before the purchase is made.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "How many shooting hours did Sunrise Collective budget for the interior scenes at Thornfield Warehouse?",
+      "assistant_message": "Sunrise Collective budgeted exactly 6 shooting hours for all interior scenes at Thornfield Warehouse. That figure was locked in the production plan signed off by Lena Park last Tuesday and is not subject to revision without her approval. Any interior scene that runs over the 6-hour allocation must eat into the contingency buffer, which is capped at 30 additional minutes. If the contingency buffer is also exhausted, a formal change order would need to be submitted to Declan Reyes before shooting can continue.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "What equipment is Lena Park bringing for the lighting setup at Thornfield Warehouse?",
+      "assistant_message": "Lena Park is bringing two ARRI SkyPanel S60-C units, one 4x4 diffusion frame, and a portable dimmer board for the Thornfield Warehouse shoot. She confirmed the gear fits in a single cargo van and will arrive 90 minutes before call time to allow adequate setup. Declan Reyes has been notified to ensure the loading dock at Thornfield Warehouse is clear for the van's arrival. The dimmer board will be positioned at a central control point on the floor so Lena Park can make real-time adjustments during takes without interrupting the shot.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "Does Lena Park need a power drop or can she run off standard outlets at Thornfield Warehouse?",
+      "assistant_message": "Lena Park confirmed she needs one dedicated 20-amp circuit for the two SkyPanel units, as standard 15-amp outlets are insufficient to handle the combined draw without tripping breakers. Thornfield Warehouse has a 20-amp drop in the main bay, which Lena Park personally verified during the location scout last Friday. Declan Reyes documented this requirement in the location agreement so the warehouse manager is obligated to have the circuit live and accessible by call time. Lena Park also noted that her team will bring a dedicated extension run from the 20-amp drop to avoid any daisy-chaining off other circuits on the floor. No additional power infrastructure is needed beyond that single 20-amp circuit for the planned lighting setup.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "What's the parking situation for crew at Thornfield Warehouse on shoot day?",
+      "assistant_message": "Thornfield Warehouse has a private lot with 18 spaces reserved exclusively for Sunrise Collective's crew from 6:00 AM to 8:00 PM on shoot day. Declan Reyes negotiated this arrangement directly with the warehouse manager, and the terms are documented in Call Sheet Alpha. The 18 spaces are allocated on a first-come, first-served basis among crew, so department heads are encouraged to coordinate carpooling where possible. Any crew arriving after 8:00 AM may find the street spots along Meridian Ave already filled, making early arrival strongly advisable. Overflow parking has not been formally arranged, so late arrivals should plan accordingly.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "Are there any scenes that only Mara Voss can perform, and how long are they estimated to take?",
+      "assistant_message": "Yes, scenes 3, 7, and 11 are written exclusively for Mara Voss and cannot be covered by a stand-in. The combined estimated shoot time for those three scenes is 5 hours and 20 minutes, based on the breakdown Lena Park prepared. That estimate includes setup, rehearsal, and two takes per setup but does not include company moves between setups. Given Mara Voss's hard out at 3:00 PM, all three scenes must be scheduled early in the day to ensure the full 5 hours and 20 minutes are available without risk of losing her before completion.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "Is the 6-hour interior budget at Thornfield Warehouse continuous, or can it be split across morning and afternoon blocks?",
+      "assistant_message": "Lena Park confirmed the 6 hours can be split into two blocks — a morning block and an afternoon block — as long as the total active shooting time does not exceed 6 hours combined. The split is already reflected in the draft schedule attached to Call Sheet Alpha, with the morning block running before lunch and the afternoon block resuming after the meal break. Lighting resets between the two blocks count against the 30-minute contingency buffer, not against the 6-hour interior budget itself. This distinction is important because exhausting the contingency early could leave the production without a buffer for unexpected delays later in the day. Lena Park recommended keeping the morning block slightly shorter to preserve flexibility in the afternoon when natural light conditions inside the warehouse tend to shift.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "What time does Sunrise Collective's location permit for Thornfield Warehouse actually expire on shoot day?",
+      "assistant_message": "The location permit for Thornfield Warehouse expires at 6:00 PM on shoot day, as issued by the city and countersigned by Declan Reyes on behalf of Sunrise Collective. All crew and equipment must be fully off the premises by 6:00 PM sharp, or the production faces a $500 late-penalty clause written into the permit. The permit window opens at 6:30 AM, giving the crew an 11.5-hour on-site window from first access to hard out. Declan Reyes has flagged the 6:00 PM hard out to all department heads so that load-out planning accounts for the penalty risk. Any scenes requiring extended setup or teardown should be scheduled earlier in the day to avoid compressing the load-out window near the deadline.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "Has Mara Voss signed her talent release for the Sunrise Collective project?",
+      "assistant_message": "Mara Voss signed the talent release form on March 4th, and Declan Reyes countersigned on behalf of Sunrise Collective the same day. The signed document is filed under Call Sheet Alpha's supporting paperwork in the shared drive. The release covers all footage shot at Thornfield Warehouse and any additional pickup locations approved by Lena Park. Because both parties signed on the same date, the release is fully executed and no further signature steps are required before the shoot day.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "So with Mara's 8-hour availability window starting at 7 AM, and those Mara-only scenes taking 5 hours 20 minutes, how much buffer time does that leave before her hard out?",
+      "assistant_message": "With Mara Voss available from 7:00 AM to 3:00 PM that is exactly 8 hours, and the Mara-only scenes are estimated at 5 hours 20 minutes, leaving a buffer of 2 hours and 40 minutes before her 3:00 PM hard out. That buffer can absorb company moves, unexpected re-takes, or a meal break without pushing past her release time. Lena Park should flag any setup that risks eating into that buffer during the morning production meeting.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "If Lena Park needs a second 20-amp circuit for any additional lights, is that possible at Thornfield Warehouse?",
+      "assistant_message": "Thornfield Warehouse has a second 20-amp circuit in the secondary bay, but it requires the warehouse electrician to re-route a panel, which takes about 45 minutes. Declan Reyes noted that this re-route was not included in the original location agreement with Sunrise Collective, so using it would require a written amendment. Lena Park was advised to finalize her lighting plan before shoot day to avoid this delay.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "Given the 30-minute contingency on top of the 6 interior hours, what is the absolute maximum time the interior shoot at Thornfield Warehouse can run?",
+      "assistant_message": "With 6 budgeted hours plus the 30-minute contingency cap confirmed by Lena Park, the absolute maximum interior shoot time at Thornfield Warehouse is 6 hours and 30 minutes. Exceeding that would require Declan Reyes to authorize an emergency schedule revision, which Sunrise Collective's production plan does not allow on shoot day. The 6.5-hour ceiling is a hard limit written into the Call Sheet Alpha production notes.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "And if the interior shoot starts at 7 AM when Mara Voss arrives, what is the latest it can end given that 6.5-hour ceiling?",
+      "assistant_message": "If the interior shoot at Thornfield Warehouse starts at 7:00 AM and runs the full 6 hours 30 minutes allowed, it would end at 1:30 PM. That is the latest possible end time for the interior block under the ceiling Lena Park and Declan Reyes locked in Call Sheet Alpha. Any scenes scheduled after 1:30 PM would need to be exterior shots or pickups not counted against the interior budget.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "Can the catering vendors deliver directly to Thornfield Warehouse, or do they need to set up outside?",
+      "assistant_message": "Declan Reyes confirmed that both catering vendors can set up inside Thornfield Warehouse in the rear break room, which is separate from the shooting bays. The break room has two folding tables and access to a utility sink, which Sunrise Collective has permission to use under the location agreement. Vendors must present their names to the warehouse manager at the loading dock before entering, as listed on Call Sheet Alpha.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "Has Mara Voss submitted her W-9 to Sunrise Collective yet?",
+      "assistant_message": "Mara Voss submitted her W-9 to Sunrise Collective's payroll coordinator on March 6th, two days after signing the talent release. Declan Reyes confirmed receipt and the form is now on file with the production accountant. Lena Park was also copied on the confirmation email per Sunrise Collective's standard paperwork protocol. The W-9 submission completes Mara Voss's required onboarding documents, meaning payroll processing can proceed without any outstanding paperwork holds.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "What is the turnaround time required between wrap and the next day's call for crew at Thornfield Warehouse?",
+      "assistant_message": "Sunrise Collective's standard contract requires a minimum 10-hour turnaround between wrap and the next call time for all crew working at Thornfield Warehouse. Declan Reyes noted this requirement in the crew deal memos and it is also referenced explicitly in Call Sheet Alpha. If wrap runs at exactly 6:00 PM due to the permit expiry, the next day's earliest possible call time would be 4:00 AM, but if wrap is pushed to the permit deadline, the practical earliest call becomes 8:00 AM the following morning given overnight hour restrictions. Declan Reyes has advised scheduling wrap no later than 5:30 PM to give the crew a comfortable buffer and avoid any turnaround violations. Department heads should flag any risk of running long to Declan Reyes before 4:00 PM on shoot day so adjustments can be made proactively.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "Is the 10-hour turnaround rule the same for Mara Voss as for the rest of the crew?",
+      "assistant_message": "Mara Voss's talent contract with Sunrise Collective specifies the same 10-hour turnaround minimum as the crew deal memos Declan Reyes issued. Her contract was negotiated by her agent and countersigned on March 4th alongside the talent release. Lena Park flagged this to the AD so it is accounted for in the multi-day schedule draft. This means the earliest Mara Voss can be called on any subsequent shoot day is exactly 10 hours after her wrap time from the previous day.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "If Mara Voss wraps at the permit expiry time of 6 PM, what is her earliest call the next day under the turnaround rule?",
+      "assistant_message": "If Mara Voss wraps at 6:00 PM, the 10-hour turnaround puts her earliest next-day call at 4:00 AM, which is earlier than any practical call time Sunrise Collective would schedule. Declan Reyes noted in the production plan that realistically the next-day call would be set no earlier than 7:00 AM regardless. Lena Park agreed that a 7:00 AM call the following day satisfies the 10-hour rule while keeping the schedule reasonable.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "How many total crew members does the 10-hour turnaround apply to on this Sunrise Collective shoot?",
+      "assistant_message": "The 10-hour turnaround applies to all 11 contracted crew members on the Sunrise Collective shoot, as listed in the deal memos Declan Reyes distributed on March 5th. Lena Park and her two lighting assistants are included in that count of 11. The rule does not apply to day-players or PAs who are not on union or guild contracts, of which there are 3 on this shoot. Those 3 non-contracted individuals may be given shorter turnarounds at the production's discretion, though Declan Reyes has encouraged treating their rest periods consistently with the contracted crew. Department heads should flag any scheduling conflicts involving the 11 contracted crew members to Declan Reyes before finalizing the next day's call sheet.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "What happens to Lena Park's lighting equipment if the shoot runs to the 6 PM permit expiry — is there storage at Thornfield Warehouse overnight?",
+      "assistant_message": "Thornfield Warehouse does not offer overnight storage to outside productions under the current location agreement with Sunrise Collective. Lena Park arranged for a grip truck to be on standby from 5:00 PM to load out the two SkyPanel units and the dimmer board before the 6:00 PM permit expiry. Declan Reyes confirmed the truck rental is covered within the existing equipment line of the Sunrise Collective budget.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "What is the overtime rate Sunrise Collective owes crew if the shoot runs past the permit expiry at Thornfield Warehouse?",
+      "assistant_message": "Sunrise Collective's crew deal memos set overtime at 1.5 times the base day rate for any time worked beyond the permitted 6:00 PM expiry at Thornfield Warehouse, up to two additional hours. Beyond two hours of overtime, the rate escalates to double time per the agreements Declan Reyes signed. Lena Park was explicitly told that running overtime at Thornfield Warehouse also triggers the $500 late-penalty clause in the location agreement, making overruns doubly costly.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "So the permit window opens at 6:30 AM and expires at 6:00 PM — what does that mean for the total on-site time available for the shoot?",
+      "assistant_message": "The permit window from 6:30 AM to 6:00 PM gives the production exactly 11 hours and 30 minutes of on-site time at Thornfield Warehouse. That window must accommodate setup, shooting, meal breaks, and load-out before the hard 6:00 PM expiry Declan Reyes countersigned. Sunrise Collective's production plan allocates the first 30 minutes for equipment load-in and the last 30 minutes for load-out, leaving 10 hours and 30 minutes of usable on-site time.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "Has Declan Reyes confirmed whether the 18 parking spaces are available for both shoot days or just the first?",
+      "assistant_message": "Declan Reyes confirmed the 18 parking spaces at Thornfield Warehouse are reserved for both shoot days, covering the full production block for Sunrise Collective. The reservation is documented in the location agreement and referenced in Call Sheet Alpha. If a second unit is added for pickups on a third day, a new parking amendment would need to be signed by the warehouse manager.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "Are all 11 contracted crew members expected to drive themselves to Thornfield Warehouse, or is Sunrise Collective arranging a van?",
+      "assistant_message": "Sunrise Collective is arranging one 12-passenger van to transport 8 of the 11 contracted crew members from the production office to Thornfield Warehouse. The remaining 3 crew members, including Lena Park, are driving themselves because they are transporting equipment. Declan Reyes confirmed the van is booked through Meridian Rentals and the cost is already in the transportation line of the budget.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "If Lena Park's grip truck arrives at 5 PM for load-out, does that conflict with crew still using the parking lot?",
+      "assistant_message": "Declan Reyes anticipated this and reserved two of the 18 parking spaces specifically for the grip truck and Lena Park's personal vehicle during the load-out window starting at 5:00 PM. The remaining 16 spaces are sufficient for the other crew vehicles still on site at that hour, based on the expected number of crew present during load-out. Lena Park's team is expected to complete the load-out within 45 minutes, freeing those two reserved spaces well before the permit expires at 6:00 PM. This arrangement is noted in the updated Call Sheet Alpha distributed to all department heads, so no further coordination should be needed on shoot day.",
+      "gold_parents": [
+        "t22"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "With load-in taking 30 minutes and load-out taking 30 minutes from the 11.5-hour permit window, how much shooting time is theoretically available in total at Thornfield Warehouse?",
+      "assistant_message": "Subtracting the 30-minute load-in and 30-minute load-out from the 11.5-hour permit window leaves exactly 10 hours and 30 minutes of theoretically available shooting time at Thornfield Warehouse. That 10.5-hour figure is the outer envelope Declan Reyes and Sunrise Collective are working within for scheduling all scenes. Meal breaks and company moves would further reduce the actual shooting time within that envelope.",
+      "gold_parents": [
+        "t24"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "Given the overtime rules, what is the maximum total cost Sunrise Collective faces if the crew works both overtime tiers past 6 PM at Thornfield Warehouse?",
+      "assistant_message": "If all 11 contracted crew members work through both overtime tiers past 6:00 PM, Sunrise Collective faces the following: the first two hours at 1.5x rate and any additional time at 2x rate, plus the flat $500 late-penalty from the location agreement. Assuming an average base day rate of $200 for the 11 crew members, two hours of 1.5x overtime would cost $6,600, and each additional hour at 2x would add $4,400. The total exposure for a two-hour overtime run would therefore be approximately $7,100 including the $500 penalty.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t30",
+      "turn_index": 29,
+      "user_message": "Is the 10.5 hours of theoretically available shooting time at Thornfield Warehouse enough to fit all scheduled scenes, or is it tight?",
+      "assistant_message": "The 10.5 hours of available shooting time is tight but workable according to Declan Reyes's schedule breakdown. The total scene list for Thornfield Warehouse runs approximately 9 hours and 45 minutes including company moves, leaving a margin of only about 45 minutes. Sunrise Collective's production plan flags this as a high-risk day and Lena Park has been asked to pre-light as much as possible the evening before to save time.",
+      "gold_parents": [
+        "t28"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t31",
+      "turn_index": 30,
+      "user_message": "Given everything we've locked in, if the interior shoot starts when Mara Voss arrives at 7 AM, will all her required scenes finish before her hard out, and does the interior block still end before the permit expires?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t12",
+        "t30",
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t4",
+    "t8",
+    "t9",
+    "t10",
+    "t12",
+    "t14",
+    "t15",
+    "t24",
+    "t28",
+    "t30"
+  ],
+  "distractor_turn_ids": [
+    "t2",
+    "t3",
+    "t5",
+    "t6",
+    "t7",
+    "t11",
+    "t13",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t20",
+    "t21",
+    "t22",
+    "t23",
+    "t25",
+    "t26",
+    "t27",
+    "t29"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that Mara Voss's Mara-only scenes (5 hours 20 minutes) finish by 12:20 PM, which is before her 3:00 PM hard out, leaving a 2-hour 40-minute buffer (from Branch A).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that the interior shoot ending at 1:30 PM (7:00 AM start plus the 6.5-hour ceiling) is before the 6:00 PM permit expiry at Thornfield Warehouse (from Branch B).",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer states that the interior block's latest possible end time is 1:30 PM, derived from a 7:00 AM start plus the 6-hour interior budget plus the 30-minute contingency ceiling locked in Call Sheet Alpha (from Branch C).",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not use the overtime cost figures ($6,600, $4,400, or $7,100) from the near-miss turn t29 as part of the scheduling answer.",
+      "required": true
+    }
+  ],
+  "notes": "The three gold branches supply: (A) Mara Voss's 8-hour availability window and 5h20m Mara-only scene estimate (t1, t8, t12); (B) the Thornfield Warehouse permit expiry at 6:00 PM and the 10.5-hour usable shooting envelope (t10, t24, t28, t30); (C) the 6-hour interior budget plus 30-minute contingency ceiling and the resulting 1:30 PM latest end time when starting at 7:00 AM (t4, t9, t14, t15). The near-miss turn t29 asks about overtime cost exposure past 6:00 PM — a superficially similar scheduling/limit question answered with specific dollar figures that are irrelevant to the scheduling feasibility query.\n\nReference answer: Yes, all of Mara Voss's required scenes can finish well before her hard out. Starting at 7:00 AM, her 5 hours and 20 minutes of Mara-only scenes would wrap around 12:20 PM, leaving a 2-hour 40-minute buffer before her 3:00 PM hard out. The interior shoot's absolute ceiling is 6 hours 30 minutes, meaning it ends by 1:30 PM at the latest — comfortably inside the Thornfield Warehouse permit expiry of 6:00 PM. Both conditions are satisfied with time to spare.",
+  "evidence_note": null,
+  "premise": "a film crew scheduling a low-budget short shoot",
+  "evidence_spans": null,
+  "benchmark_version": "1.2-pilot",
+  "length_class": "long"
+}

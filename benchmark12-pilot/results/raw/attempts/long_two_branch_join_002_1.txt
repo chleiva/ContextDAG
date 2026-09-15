@@ -1,0 +1,223 @@
+{
+  "entity_registry": ["Mira Okafor", "Salesforce Nonprofit Success Pack", "Bloomerang", "DataClean Pro", "GreenRoots Foundation", "Carlos Mendez"],
+  "turns": [
+    {
+      "turn_id": "t1",
+      "user_message": "We're planning the field mapping for our donor migration and I need to nail down the deduplication rule. What approach should we use when two records share the same email address but have different names?",
+      "assistant_message": "For GreenRoots Foundation's migration, the team led by Mira Okafor agreed on October 3rd that any two records sharing an identical primary email address will be merged into a single record regardless of name discrepancies. The surviving record will keep the name from whichever entry has the more recent gift date, and a manual review flag will be added to all merged records for Carlos Mendez to audit within 30 days post-migration. This rule is documented in the Field Mapping Specification v1.2 and applies to all 14,800 donor records being moved into Bloomerang."
+    },
+    {
+      "turn_id": "t2",
+      "user_message": "What's the current status of our data cleanup pass in DataClean Pro before the migration goes live?",
+      "assistant_message": "As of last Tuesday, DataClean Pro has processed 9,340 of the 14,800 GreenRoots Foundation donor records, flagging 612 entries with invalid postal codes and 88 records with blank last-name fields. Mira Okafor has assigned a data steward to correct the postal code issues by November 15th, while the blank last-name records are being held for manual review. The remaining 5,460 records are queued for the next DataClean Pro batch run scheduled for this Friday."
+    },
+    {
+      "turn_id": "t3",
+      "user_message": "I need to understand the timeline for the Salesforce Nonprofit Success Pack decommission. When is our cutover date?",
+      "assistant_message": "GreenRoots Foundation has set December 1st as the hard cutover date for decommissioning Salesforce Nonprofit Success Pack and going fully live on Bloomerang. Carlos Mendez confirmed this date in the project steering committee meeting on September 28th, and it is locked in the Migration Master Plan document version 2.0. Any data still in Salesforce Nonprofit Success Pack after December 1st will be treated as stale and will not be migrated."
+    },
+    {
+      "turn_id": "t4",
+      "user_message": "Has the Migration Master Plan document been formally signed off by leadership yet?",
+      "assistant_message": "Yes, Migration Master Plan version 2.0 was formally signed off by GreenRoots Foundation's Executive Director on October 10th, giving Carlos Mendez and Mira Okafor full authority to proceed with the cutover timeline. The sign-off covers all phases through the December 1st decommission of Salesforce Nonprofit Success Pack. A PDF copy of the signed document has been archived in the shared project drive under the folder labeled CRM Migration 2024."
+    },
+    {
+      "turn_id": "t5",
+      "user_message": "We need to figure out the staff training schedule for Bloomerang. How many sessions are planned and who is leading them?",
+      "assistant_message": "GreenRoots Foundation has scheduled four Bloomerang training sessions in total, running every other Wednesday starting November 6th through November 27th. Carlos Mendez is leading sessions one and three, which cover donor record navigation and gift entry, while Mira Okafor leads sessions two and four, which cover reporting and the acknowledgment letter workflow. Each session is capped at 15 staff members, and attendance is mandatory for all 42 employees who will have Bloomerang user accounts."
+    },
+    {
+      "turn_id": "t6",
+      "user_message": "What's the plan for handling recurring donation schedules during the migration from Salesforce Nonprofit Success Pack to Bloomerang?",
+      "assistant_message": "GreenRoots Foundation has 1,203 active recurring donation schedules currently stored in Salesforce Nonprofit Success Pack, and the migration plan calls for all of them to be exported as a CSV file by November 20th. Mira Okafor determined that Bloomerang's native import tool cannot handle recurring schedule data directly, so Carlos Mendez will manually re-enter the 1,203 schedules into Bloomerang using a custom data-entry template. Each schedule will be verified against the donor's original authorization form before being marked active in the new system."
+    },
+    {
+      "turn_id": "t7",
+      "user_message": "Going back to the cutover timeline — is there a rollback plan if something goes wrong on December 1st?",
+      "assistant_message": "Yes, the Migration Master Plan version 2.0 includes a rollback window of 72 hours after the December 1st cutover, during which Salesforce Nonprofit Success Pack will remain in read-only mode so GreenRoots Foundation staff can retrieve data if needed. Carlos Mendez is the designated rollback decision-maker, and he must trigger the rollback procedure before 11:59 PM on December 4th for it to be valid. If a rollback is declared, DataClean Pro will be used to reconcile any records entered in Bloomerang during the 72-hour window against the Salesforce Nonprofit Success Pack snapshot taken at midnight on November 30th."
+    },
+    {
+      "turn_id": "t8",
+      "user_message": "For those merged records that get the manual review flag, is there a field in Bloomerang where we're storing the reason for the merge?",
+      "assistant_message": "Yes, Mira Okafor specified in Field Mapping Specification v1.2 that a custom text field called Merge_Reason will be created in Bloomerang to store a standardized reason code for each merge. The agreed reason codes are EMAIL_MATCH for email-based deduplication, MANUAL_OVERRIDE for records merged by staff judgment, and LEGACY_DUPLICATE for records that were already duplicates inside Salesforce Nonprofit Success Pack before migration. Carlos Mendez confirmed on October 7th that this field will be included in the initial Bloomerang configuration build, not added post-migration."
+    },
+    {
+      "turn_id": "t9",
+      "user_message": "Has DataClean Pro finished the second batch run on those remaining 5,460 records?",
+      "assistant_message": "The second DataClean Pro batch run completed on November 2nd and processed all 5,460 remaining GreenRoots Foundation records. It surfaced an additional 47 duplicate pairs and 203 records with mismatched phone number formats, bringing the total flagged records across both runs to 950. Mira Okafor has approved a remediation script to auto-correct the phone number format issues, which Carlos Mendez will run against the staging environment before touching the production dataset."
+    },
+    {
+      "turn_id": "t10",
+      "user_message": "Has Mira Okafor confirmed how the recurring donation CSV export will be structured?",
+      "assistant_message": "Mira Okafor finalized the CSV column structure on November 4th, specifying 18 required columns including donor ID, schedule frequency, next payment date, payment method token, and cumulative giving total. The export will pull directly from Salesforce Nonprofit Success Pack's recurring gift object using a SOQL query that Carlos Mendez wrote, and the output file will be named RecurringDonors_GRF_Export_20241120.csv. Any schedule with a lapsed payment older than 90 days will be tagged with a LAPSED flag in a 19th column rather than being excluded from the file."
+    },
+    {
+      "turn_id": "t11",
+      "user_message": "What happens to the 1,203 recurring schedules if the rollback is triggered within that 72-hour window?",
+      "assistant_message": "If Carlos Mendez triggers the rollback within the 72-hour window, any recurring schedules already entered into Bloomerang will be exported as a secondary CSV before the system is wiped back to its pre-migration state. GreenRoots Foundation's policy, documented in the Migration Master Plan version 2.0, is that no donor will miss a scheduled charge during a rollback event, so Carlos Mendez must cross-reference the secondary CSV against the Salesforce Nonprofit Success Pack snapshot to identify any schedules that fired between December 1st and the rollback trigger. Mira Okafor will send a status email to all 42 Bloomerang-licensed staff within two hours of a rollback decision being made."
+    },
+    {
+      "turn_id": "t12",
+      "user_message": "Back to training — what topics are covered in session three specifically?",
+      "assistant_message": "Session three, led by Carlos Mendez on November 20th, covers advanced gift entry in Bloomerang including split gifts, in-kind donations, and pledge payment schedules. Participants will work through a set of 12 practice scenarios built from anonymized GreenRoots Foundation donor records that DataClean Pro has already validated. Mira Okafor requested that the pledge payment scenario specifically mirror the format used in the recurring donation CSV export so staff are familiar with the data structure before go-live."
+    },
+    {
+      "turn_id": "t13",
+      "user_message": "I want to work through the post-migration acknowledgment letter process. What system will be used to generate donor acknowledgment letters in Bloomerang after cutover?",
+      "assistant_message": "After the December 1st cutover, GreenRoots Foundation will use Bloomerang's built-in acknowledgment letter engine exclusively, replacing the mail-merge workflow that was previously run out of Salesforce Nonprofit Success Pack. Mira Okafor decided on October 15th that all acknowledgment letters must be generated and sent within 48 hours of a gift being recorded in Bloomerang, regardless of gift size. The letter templates were built by Carlos Mendez and reviewed by legal counsel, with three approved templates: General Gift, Major Donor (gifts of $5,000 or more), and In-Kind Donation."
+    },
+    {
+      "turn_id": "t14",
+      "user_message": "Were the 47 new duplicate pairs from the second DataClean Pro run all email-based, or were some identified by other criteria?",
+      "assistant_message": "Of the 47 duplicate pairs found in the second DataClean Pro run, 31 were identified by matching email address, 11 were matched by a combination of first name, last name, and ZIP code, and 5 were flagged by matching phone number alone. Mira Okafor ruled on November 3rd that the 5 phone-only matches require human review before any merge action, because GreenRoots Foundation has several family accounts where multiple donors share a household phone. Carlos Mendez has been assigned to review those 5 pairs personally and document his decision in the Merge_Reason field using the MANUAL_OVERRIDE code."
+    },
+    {
+      "turn_id": "t15",
+      "user_message": "Has the rollback window policy been communicated to the full staff yet?",
+      "assistant_message": "Carlos Mendez sent a staff-wide email on November 5th summarizing the 72-hour rollback window policy and the read-only status of Salesforce Nonprofit Success Pack during that period. The email directed all 42 Bloomerang-licensed staff to refrain from entering any gift records in Bloomerang until they receive a green-light confirmation message after the December 1st cutover completes. Mira Okafor is scheduled to hold a 30-minute all-hands Q&A on November 25th to address any remaining questions about the rollback procedure and the Migration Master Plan version 2.0."
+    },
+    {
+      "turn_id": "t16",
+      "user_message": "If a recurring schedule in the CSV has the LAPSED flag, what does Carlos Mendez do with it when re-entering schedules into Bloomerang?",
+      "assistant_message": "For LAPSED-flagged schedules, Carlos Mendez will create the record in Bloomerang with a status of Paused rather than Active, and he will add a note in the donor's record indicating the original lapse date from Salesforce Nonprofit Success Pack. GreenRoots Foundation's donor relations policy requires that a staff member contact the donor within 14 days of migration to discuss reactivation before the schedule can be set to Active in Bloomerang. Mira Okafor confirmed that this 14-day contact rule applies to all lapsed schedules regardless of the original donation amount."
+    },
+    {
+      "turn_id": "t17",
+      "user_message": "For session four of the Bloomerang training, what reporting features does Mira Okafor plan to demonstrate?",
+      "assistant_message": "In session four on November 27th, Mira Okafor will demonstrate five core Bloomerang reports: the LYBUNT report, the SYBUNT report, the Retention Rate dashboard, the Acquisition Source breakdown, and the Major Donor pipeline view. She will use a sanitized copy of GreenRoots Foundation's actual donor data, already processed by DataClean Pro, as the live dataset for the demonstration. Carlos Mendez will be present as a technical resource in case staff encounter permission or configuration issues during the hands-on portion of the session."
+    },
+    {
+      "turn_id": "t18",
+      "user_message": "Is there a contingency plan if the December 1st cutover starts but doesn't complete within the maintenance window?",
+      "assistant_message": "Yes, the Migration Master Plan version 2.0 defines a four-hour maintenance window starting at midnight on December 1st, and if the Bloomerang data load has not completed by 4:00 AM, Carlos Mendez is authorized to extend the window by up to two additional hours before declaring a partial cutover failure. In a partial failure scenario, GreenRoots Foundation will revert Salesforce Nonprofit Success Pack to full read-write mode and DataClean Pro will generate a delta report showing which records successfully loaded into Bloomerang versus which did not. Mira Okafor must approve any extension decision in writing, even if it means she is contacted in the middle of the night."
+    },
+    {
+      "turn_id": "t19",
+      "user_message": "Is Mira Okafor planning to add any new Bloomerang report to the session four agenda, given the recurring donation complexity we've been discussing?",
+      "assistant_message": "Yes, Mira Okafor added a sixth demonstration item to session four on November 8th: a custom Bloomerang report called Recurring Schedule Status Overview, which she built specifically to help GreenRoots Foundation staff monitor the 1,203 migrated schedules post-cutover. The report groups schedules by status — Active, Paused, and Lapsed — and shows the next expected payment date and cumulative giving total for each donor. Carlos Mendez tested the report against the staging environment on November 9th and confirmed it pulls data correctly from the fields defined in the recurring donation CSV export column structure."
+    },
+    {
+      "turn_id": "t20",
+      "user_message": "Has anyone confirmed what the LAPSED threshold is for the recurring schedule CSV? You mentioned 90 days earlier, but I want to make sure that's the final number.",
+      "assistant_message": "The 90-day lapse threshold is confirmed as final; Carlos Mendez locked it in the RecurringDonors_GRF_Export_20241120.csv specification on November 4th, the same day Mira Okafor finalized the column structure. GreenRoots Foundation's finance team reviewed the 90-day rule and agreed it aligns with their existing write-off policy for lapsed pledges in Salesforce Nonprofit Success Pack. No further changes to the threshold are permitted without a formal change request signed by both Mira Okafor and the GreenRoots Foundation CFO."
+    },
+    {
+      "turn_id": "t21",
+      "user_message": "For the 48-hour acknowledgment letter rule, does that clock start when the gift is entered into Bloomerang or when the gift is actually processed by the payment processor?",
+      "assistant_message": "Mira Okafor clarified on October 22nd that the 48-hour clock starts at the moment the gift record is saved in Bloomerang, not when the payment processor settles the transaction. This means that even for online gifts where settlement can take one to two business days, the acknowledgment letter must go out within 48 hours of the record appearing in Bloomerang. Carlos Mendez built an automated trigger in Bloomerang's workflow engine that fires an email alert to the assigned gift officer if any gift record is approaching the 48-hour mark without a letter having been sent."
+    },
+    {
+      "turn_id": "t22",
+      "user_message": "After the DataClean Pro remediation script runs on those 203 phone number records, will there be a final validation report before the data goes into Bloomerang?",
+      "assistant_message": "Yes, DataClean Pro is configured to auto-generate a post-remediation validation report immediately after the phone number correction script completes, and that report will be emailed to both Mira Okafor and Carlos Mendez. The report will confirm the count of successfully corrected records, list any records the script could not fix due to formatting ambiguity, and flag any records where the correction changed a number that matched another donor's phone, potentially creating a new duplicate. GreenRoots Foundation's quality gate requires that the validation report show zero unfixed records before the dataset is promoted from the DataClean Pro staging area to the Bloomerang import queue."
+    },
+    {
+      "turn_id": "t23",
+      "user_message": "What's the deadline for that DataClean Pro validation report to be completed and approved so we stay on track for the December 1st cutover?",
+      "assistant_message": "The DataClean Pro validation report must be completed and approved by both Mira Okafor and Carlos Mendez no later than November 22nd, which is nine days before the December 1st cutover. This deadline was set in the Migration Master Plan version 2.0 and is considered a hard gate, meaning the Bloomerang import cannot begin until the approval is on file. If the deadline is missed, Carlos Mendez is required to escalate to GreenRoots Foundation's Executive Director within 24 hours to assess whether the December 1st date can be maintained."
+    },
+    {
+      "turn_id": "t24",
+      "user_message": "What happens to the acknowledgment letter queue if a rollback is declared during that 72-hour window? Do letters already sent need to be recalled?",
+      "assistant_message": "Mira Okafor addressed this scenario on November 1st and ruled that any acknowledgment letters already sent via Bloomerang's letter engine during the 72-hour window are considered valid and do not need to be recalled, because the gifts they acknowledge are real regardless of which system holds the record. However, the Bloomerang letter engine will be paused immediately upon rollback declaration so no additional letters are generated from a system being wiped. Carlos Mendez will manually export the log of all letters sent during the window and import that log into Salesforce Nonprofit Success Pack so the acknowledgment history is preserved in the system of record after rollback."
+    },
+    {
+      "turn_id": "t25",
+      "user_message": "Once the November 22nd deadline passes and the DataClean Pro report is approved, what's the exact sequence of steps before the data actually loads into Bloomerang?",
+      "assistant_message": "After approval of the DataClean Pro validation report, Carlos Mendez will package the cleaned dataset into three import files segmented by record type: Constituent Records, Gift History, and Soft Credits. Each file will be uploaded to Bloomerang's staging sandbox first, where Mira Okafor will run a 48-hour parallel test comparing a random sample of 500 records against the originals in Salesforce Nonprofit Success Pack. Only after Mira Okafor signs off on the parallel test results will Carlos Mendez initiate the production import, which is scheduled to begin at midnight on December 1st."
+    },
+    {
+      "turn_id": "t26",
+      "user_message": "For the November 27th session four, how many staff members are currently registered?",
+      "assistant_message": "As of November 10th, 14 staff members are registered for session four of the Bloomerang training on November 27th, which is one slot short of the 15-person cap. Carlos Mendez noted in his training tracker that three staff members who were originally on the waitlist have since confirmed they can attend session two instead, freeing up the additional capacity. Mira Okafor approved keeping session four's registration open until November 18th to allow one more person to sign up and fill the final seat."
+    },
+    {
+      "turn_id": "t27",
+      "user_message": "I want to confirm: for a record that gets merged based on the email deduplication rule, which Bloomerang reason code gets written into the Merge_Reason field?",
+      "assistant_message": "For any record merged because two entries share the same primary email address, the reason code written into the Bloomerang Merge_Reason field is EMAIL_MATCH, as established in Field Mapping Specification v1.2 and confirmed by Mira Okafor on October 3rd. This code is distinct from MANUAL_OVERRIDE, which is reserved for staff-judgment merges, and LEGACY_DUPLICATE, which covers records that were already duplicated within Salesforce Nonprofit Success Pack before migration began. Carlos Mendez confirmed on October 7th that EMAIL_MATCH will be populated automatically by the deduplication script, requiring no manual data entry for those records."
+    },
+    {
+      "turn_id": "t28",
+      "user_message": "Is there a cap on how many Bloomerang user licenses GreenRoots Foundation has purchased, and does it cover all 42 staff?",
+      "assistant_message": "GreenRoots Foundation purchased 45 Bloomerang user licenses on October 5th, which covers all 42 staff who need access plus three spare licenses reserved for future hires or contractors. Carlos Mendez holds the license administrator role in Bloomerang and is the only person authorized to assign or revoke user seats. Mira Okafor requested that the three spare licenses not be assigned until after the December 1st cutover is confirmed stable, to avoid any configuration complications during the migration window."
+    },
+    {
+      "turn_id": "t29",
+      "user_message": "Has the partial cutover failure procedure been tested in the staging environment at all?",
+      "assistant_message": "Carlos Mendez ran a simulated partial cutover failure drill in the Bloomerang staging environment on November 12th, intentionally halting the data load at the 60% mark to test the DataClean Pro delta report generation. The drill confirmed that DataClean Pro successfully identified 8,880 records as loaded and 5,920 as unloaded within 18 minutes of the halt, and the delta report was emailed to both Carlos Mendez and Mira Okafor automatically. GreenRoots Foundation's IT committee reviewed the drill results on November 14th and approved the partial failure procedure as documented in Migration Master Plan version 2.0 without any changes."
+    },
+    {
+      "turn_id": "t30",
+      "user_message": "Can you clarify whether the Major Donor acknowledgment letter template applies to cumulative annual giving of $5,000 or to a single gift of $5,000?",
+      "assistant_message": "Mira Okafor clarified on October 28th that the Major Donor acknowledgment letter template applies to a single gift of $5,000 or more, not cumulative annual giving. A donor who gives ten gifts of $500 each would receive the General Gift template for each transaction, even though their annual total reaches $5,000. Carlos Mendez embedded this rule as a conditional logic trigger in Bloomerang's acknowledgment workflow so the correct template is selected automatically based on the individual gift amount recorded in the system."
+    },
+    {
+      "turn_id": "t31",
+      "user_message": "For the training session registration, what's the cutoff date and maximum headcount for session three specifically?",
+      "assistant_message": "Session three, led by Carlos Mendez on November 20th, has a registration cutoff of November 13th and a maximum headcount of 15 participants. As of the last count on November 10th, 13 staff members had registered for that session, leaving two open slots available before the cutoff. Mira Okafor confirmed these session parameters in the training tracker spreadsheet shared with GreenRoots Foundation's HR department on November 6th."
+    },
+    {
+      "turn_id": "t32",
+      "user_message": "For the recurring schedule CSV, are any of the 1,203 schedules currently flagged as LAPSED under the 90-day rule?",
+      "assistant_message": "Based on the November 4th data pull from Salesforce Nonprofit Success Pack, 87 of the 1,203 active recurring schedules meet the 90-day lapse threshold and will carry the LAPSED flag in the RecurringDonors_GRF_Export_20241120.csv file. Mira Okafor reviewed the list of 87 lapsed donors on November 6th and confirmed that 12 of them are major donors with cumulative giving above $10,000, which she flagged for priority outreach by GreenRoots Foundation's major gifts officer. Carlos Mendez will import all 87 as Paused status in Bloomerang and add the lapse date note as specified in the LAPSED handling procedure."
+    },
+    {
+      "turn_id": "t33",
+      "user_message": "Is there a specific Bloomerang workflow rule that prevents a letter from being sent for a gift that's still in pending payment status?",
+      "assistant_message": "Yes, Carlos Mendez configured a Bloomerang workflow rule on November 3rd that suppresses the acknowledgment letter trigger for any gift record carrying a payment status of Pending. The rule checks payment status at the time the gift is saved, and if the status is Pending, it sets a 24-hour re-check timer rather than starting the 48-hour acknowledgment clock. Mira Okafor approved this configuration because GreenRoots Foundation's legal counsel advised that acknowledging a gift before payment clears could create a tax receipt liability, and this rule ensures the 48-hour clock only starts once the gift status updates to Completed."
+    },
+    {
+      "turn_id": "t34",
+      "user_message": "Of those 87 LAPSED schedules, how many have already been contacted by GreenRoots Foundation's major gifts officer as of now?",
+      "assistant_message": "As of November 11th, the major gifts officer has contacted 5 of the 12 high-value lapsed donors flagged by Mira Okafor, and two of those five have verbally agreed to reactivate their schedules after the Bloomerang migration. Carlos Mendez has updated the tracking notes in the staging environment for those two donors so their Bloomerang records can be set to Active immediately upon import rather than Paused. The remaining 75 non-major lapsed donors have not yet been contacted and will go through the standard 14-day post-migration outreach process."
+    },
+    {
+      "turn_id": "t35",
+      "user_message": "For those two donors who agreed to reactivate, will their schedules still carry the LAPSED flag in the CSV export, or will the flag be removed before the file is finalized?",
+      "assistant_message": "Carlos Mendez confirmed on November 12th that the RecurringDonors_GRF_Export_20241120.csv will retain the LAPSED flag for all 87 schedules in the export file itself, because the file is a point-in-time snapshot and changing it would compromise the audit trail. However, the two pre-approved reactivation donors will have an additional column value of REACTIVATE_APPROVED in a 20th column that Carlos Mendez added to the specification with Mira Okafor's sign-off on November 12th. This allows the import script to automatically set those two records to Active in Bloomerang while still preserving the LAPSED history in the Merge_Reason-equivalent notes field."
+    },
+    {
+      "turn_id": "t36",
+      "user_message": "I want to nail down the Pending payment status rule more precisely. After the 24-hour re-check, if the gift is still Pending, does the acknowledgment clock start anyway or does it keep waiting?",
+      "assistant_message": "Mira Okafor finalized this rule on November 10th: if a gift is still in Pending status after the first 24-hour re-check, Bloomerang will run two additional re-checks at 24-hour intervals before any action is taken, meaning the system waits up to 72 hours total before escalating. If the gift remains Pending after all three re-checks, the 48-hour acknowledgment clock does not start automatically; instead, Carlos Mendez receives an alert and must manually decide whether to trigger the letter or investigate the payment issue first. This three-re-check ceiling was added specifically because GreenRoots Foundation processes a small number of international wire transfers that can take up to 60 hours to settle."
+    },
+    {
+      "turn_id": "t37",
+      "user_message": "Has the GreenRoots Foundation Executive Director been briefed on the 45-license purchase and the three spare licenses being held in reserve?",
+      "assistant_message": "Yes, Carlos Mendez included the license breakdown in the October 15th project status report submitted to GreenRoots Foundation's Executive Director, noting the 45-seat purchase, the 42 assigned staff, and the three reserved seats. The Executive Director approved the reserve policy in writing on October 17th, specifying that any assignment of the spare licenses requires co-approval from both Carlos Mendez and Mira Okafor. This approval is logged in the CRM Migration 2024 project drive alongside the signed Migration Master Plan version 2.0."
+    },
+    {
+      "turn_id": "t38",
+      "user_message": "When a merged donor record with an EMAIL_MATCH reason code also has a gift that stays in Pending status through all three re-checks, what happens to the acknowledgment letter for that gift — does the 48-hour clock ever start automatically?",
+      "assistant_message": null
+    }
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that EMAIL_MATCH is the reason code written into the Merge_Reason field for records merged based on matching primary email address.",
+      "required": true,
+      "evidence_turn_ids": ["t1", "t8", "t27"]
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that after three re-checks (up to 72 hours total) the 48-hour acknowledgment clock does NOT start automatically if the gift remains Pending; instead Carlos Mendez receives an alert and must manually decide.",
+      "required": true,
+      "evidence_turn_ids": ["t33", "t36"]
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer correctly combines both facts: the merged record carries EMAIL_MATCH in Merge_Reason AND the acknowledgment letter clock never starts automatically for the Pending gift — both conditions apply to the same record.",
+      "required": true,
+      "evidence_turn_ids": ["t27", "t36"]
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not state that the registration cutoff for session three is November 13th or that session three has 13 registrants, as those figures belong to the session-three training sub-problem (near-miss turn t31) and are irrelevant to the query.",
+      "required": true,
+      "evidence_turn_ids": []
+    }
+  ],
+  "reference_answer": "For a merged record that was combined because two entries shared the same primary email address, the Merge_Reason field in Bloomerang is populated with the code EMAIL_MATCH, as specified in Field Mapping Specification v1.2 and confirmed by Mira Okafor on October 3rd. For the acknowledgment letter on a gift that remains in Pending status through all three 24-hour re-checks (a 72-hour total wait), the 48-hour acknowledgment clock does not start automatically. Instead, Carlos Mendez receives a manual alert and must personally decide whether to trigger the letter or investigate the payment issue first. So for this combined scenario, the EMAIL_MATCH code is written automatically into Merge_Reason, but the acknowledgment letter clock never fires on its own — human intervention by Carlos Mendez is required.",
+  "notes": "The query requires t27 (Branch A: EMAIL_MATCH is the reason code for email-based deduplication merges) and t36 (Branch B: after three 24-hour re-checks the 48-hour acknowledgment clock does not start automatically; Carlos Mendez must intervene manually). The near-miss turn t31 answers a superficially similar question about session three training registration cutoff and headcount, which a careless reader might confuse with the final query's concern about rules and cutoff conditions."
+}

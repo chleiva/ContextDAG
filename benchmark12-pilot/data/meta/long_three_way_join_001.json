@@ -1,0 +1,117 @@
+{
+ "scenario_id": "long_three_way_join_001",
+ "family": "three_way_join",
+ "n_history": 32,
+ "full_history_tokens": 4170,
+ "closure_ratio": 0.3125,
+ "entity_registry": [
+  "Priya Nair",
+  "Marcus Delgado",
+  "Thornfield Properties",
+  "Suite 4B",
+  "Meridian Ventures",
+  "Lease Draft v2.1"
+ ],
+ "distractor_branch_entity_hits": {
+  "D": [
+   "Priya Nair",
+   "Thornfield Properties",
+   "Suite 4B",
+   "Meridian Ventures"
+  ],
+  "E": [
+   "Priya Nair",
+   "Thornfield Properties",
+   "Suite 4B",
+   "Meridian Ventures",
+   "Lease Draft v2.1"
+  ],
+  "F": [
+   "Priya Nair",
+   "Thornfield Properties",
+   "Suite 4B",
+   "Meridian Ventures",
+   "Lease Draft v2.1"
+  ],
+  "G": [
+   "Priya Nair",
+   "Thornfield Properties",
+   "Suite 4B",
+   "Meridian Ventures",
+   "Lease Draft v2.1"
+  ]
+ },
+ "near_miss_turn_id": "t20",
+ "checklist_evidence": {
+  "c1": [
+   "t8"
+  ],
+  "c2": [
+   "t7",
+   "t25",
+   "t31"
+  ],
+  "c3": [
+   "t1",
+   "t12",
+   "t31"
+  ],
+  "c4": []
+ },
+ "cosine": {
+  "gold_median": 0.6570585668087006,
+  "distractor_median": 0.47601185739040375,
+  "ratio": 0.7244587947500155,
+  "pass": true
+ },
+ "cosine_per_turn": {
+  "t1": 0.6830697059631348,
+  "t2": 0.4263918399810791,
+  "t3": 0.4686397314071655,
+  "t4": 0.5166475176811218,
+  "t5": 0.6728938221931458,
+  "t6": 0.5758363008499146,
+  "t7": 0.7137817144393921,
+  "t8": 0.6883683204650879,
+  "t9": 0.6412233114242554,
+  "t10": 0.4179830551147461,
+  "t11": 0.5884086489677429,
+  "t12": 0.5091767311096191,
+  "t13": 0.4471398591995239,
+  "t14": 0.4310562014579773,
+  "t15": 0.37635427713394165,
+  "t16": 0.5837568044662476,
+  "t17": 0.4544776380062103,
+  "t18": 0.7294756770133972,
+  "t19": 0.6081833839416504,
+  "t20": 0.712796688079834,
+  "t21": 0.48338398337364197,
+  "t22": 0.589048445224762,
+  "t23": 0.4952967166900635,
+  "t24": 0.4587970972061157,
+  "t25": 0.707230806350708,
+  "t26": 0.4565891921520233,
+  "t27": 0.6312335133552551,
+  "t28": 0.6084256768226624,
+  "t29": 0.4213343560695648,
+  "t30": 0.7358224391937256,
+  "t31": 0.5363439321517944,
+  "t32": 0.4446204900741577
+ },
+ "gold_branches": [
+  "A",
+  "B",
+  "C"
+ ],
+ "distractor_branches": [
+  "D",
+  "E",
+  "F",
+  "G"
+ ],
+ "attempt_accepted": 1,
+ "generation_tokens": [
+  3626,
+  6109
+ ]
+}

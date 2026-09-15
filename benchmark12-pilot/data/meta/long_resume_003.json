@@ -1,0 +1,117 @@
+{
+ "scenario_id": "long_resume_003",
+ "family": "resume",
+ "n_history": 41,
+ "full_history_tokens": 6197,
+ "closure_ratio": 0.0975609756097561,
+ "entity_registry": [
+  "Crumb & Co.",
+  "Marta Voss",
+  "Delancey Street",
+  "Riverside Commons",
+  "Expansion Feasibility Report",
+  "Jonah Preece"
+ ],
+ "distractor_branch_entity_hits": {
+  "D": [
+   "Crumb & Co.",
+   "Marta Voss",
+   "Delancey Street",
+   "Riverside Commons",
+   "Expansion Feasibility Report",
+   "Jonah Preece"
+  ],
+  "E": [
+   "Crumb & Co.",
+   "Marta Voss",
+   "Delancey Street",
+   "Riverside Commons",
+   "Expansion Feasibility Report",
+   "Jonah Preece"
+  ],
+  "F": [
+   "Crumb & Co.",
+   "Marta Voss",
+   "Delancey Street",
+   "Riverside Commons",
+   "Expansion Feasibility Report",
+   "Jonah Preece"
+  ]
+ },
+ "near_miss_turn_id": "t33",
+ "checklist_evidence": {
+  "c1": [
+   "t4"
+  ],
+  "c2": [
+   "t3",
+   "t4"
+  ],
+  "c3": [
+   "t4"
+  ],
+  "c4": []
+ },
+ "cosine": {
+  "gold_median": 0.6317231059074402,
+  "distractor_median": 0.4188162088394165,
+  "ratio": 0.6629743394264596,
+  "pass": true
+ },
+ "cosine_per_turn": {
+  "t1": 0.6125800013542175,
+  "t2": 0.6508662104606628,
+  "t3": 0.5220762491226196,
+  "t4": 0.7292985916137695,
+  "t5": 0.2755831480026245,
+  "t6": 0.5158557891845703,
+  "t7": 0.49986177682876587,
+  "t8": 0.580685555934906,
+  "t9": 0.514129638671875,
+  "t10": 0.5954917073249817,
+  "t11": 0.31176432967185974,
+  "t12": 0.41279512643814087,
+  "t13": 0.623837947845459,
+  "t14": 0.416759192943573,
+  "t15": 0.3008540868759155,
+  "t16": 0.4530816972255707,
+  "t17": 0.36175912618637085,
+  "t18": 0.46027565002441406,
+  "t19": 0.4042261838912964,
+  "t20": 0.13981294631958008,
+  "t21": 0.5017255544662476,
+  "t22": 0.3955175280570984,
+  "t23": 0.49025049805641174,
+  "t24": 0.4188162088394165,
+  "t25": 0.46235764026641846,
+  "t26": 0.2179766595363617,
+  "t27": 0.5735809803009033,
+  "t28": 0.459560364484787,
+  "t29": 0.35482731461524963,
+  "t30": 0.3407878875732422,
+  "t31": 0.6057039499282837,
+  "t32": 0.37482166290283203,
+  "t33": 0.5067033767700195,
+  "t34": 0.26397380232810974,
+  "t35": 0.36254066228866577,
+  "t36": 0.5193287134170532,
+  "t37": 0.4130247235298157,
+  "t38": 0.2955383062362671,
+  "t39": 0.5015370845794678,
+  "t40": 0.21981018781661987,
+  "t41": 0.4625670313835144
+ },
+ "gold_branches": [
+  "A"
+ ],
+ "distractor_branches": [
+  "D",
+  "E",
+  "F"
+ ],
+ "attempt_accepted": 1,
+ "generation_tokens": [
+  4489,
+  9097
+ ]
+}

@@ -1,0 +1,97 @@
+{
+ "scenario_id": "long_new_root_008",
+ "family": "new_root",
+ "n_history": 30,
+ "full_history_tokens": 4605,
+ "closure_ratio": 0.0,
+ "entity_registry": [
+  "Redstone Ridge Vineyard",
+  "Elena Vasquez",
+  "Marco Delgado",
+  "IrriPro 4.2",
+  "Harvest Readiness Report 2024",
+  "Sector 7 Block"
+ ],
+ "distractor_branch_entity_hits": {
+  "D": [
+   "Redstone Ridge Vineyard",
+   "Elena Vasquez",
+   "Marco Delgado",
+   "IrriPro 4.2",
+   "Harvest Readiness Report 2024",
+   "Sector 7 Block"
+  ],
+  "E": [
+   "Redstone Ridge Vineyard",
+   "Elena Vasquez",
+   "Marco Delgado",
+   "IrriPro 4.2",
+   "Harvest Readiness Report 2024",
+   "Sector 7 Block"
+  ],
+  "F": [
+   "Redstone Ridge Vineyard",
+   "Elena Vasquez",
+   "Marco Delgado",
+   "IrriPro 4.2",
+   "Harvest Readiness Report 2024",
+   "Sector 7 Block"
+  ]
+ },
+ "near_miss_turn_id": "t12",
+ "checklist_evidence": {
+  "c1": [],
+  "c2": [],
+  "c3": [],
+  "c4": []
+ },
+ "cosine": {
+  "gold_median": null,
+  "distractor_median": 0.3504909574985504,
+  "ratio": null,
+  "pass": true
+ },
+ "cosine_per_turn": {
+  "t1": 0.3800397515296936,
+  "t2": 0.37411990761756897,
+  "t3": 0.5068645477294922,
+  "t4": 0.18592551350593567,
+  "t5": 0.34567052125930786,
+  "t6": 0.5724892616271973,
+  "t7": 0.17612209916114807,
+  "t8": 0.4888557195663452,
+  "t9": 0.31093984842300415,
+  "t10": 0.28672951459884644,
+  "t11": 0.40956738591194153,
+  "t12": 0.42051616311073303,
+  "t13": 0.32773250341415405,
+  "t14": 0.2959853410720825,
+  "t15": 0.31022709608078003,
+  "t16": 0.3813067078590393,
+  "t17": 0.31565725803375244,
+  "t18": 0.34852665662765503,
+  "t19": 0.16262364387512207,
+  "t20": 0.5022978782653809,
+  "t21": 0.41809654235839844,
+  "t22": 0.637189507484436,
+  "t23": 0.35111671686172485,
+  "t24": 0.3333861231803894,
+  "t25": 0.4424220323562622,
+  "t26": 0.30839022994041443,
+  "t27": 0.4745633006095886,
+  "t28": 0.349865198135376,
+  "t29": 0.4205114245414734,
+  "t30": 0.22670410573482513
+ },
+ "gold_branches": [],
+ "distractor_branches": [
+  "D",
+  "E",
+  "F"
+ ],
+ "attempt_accepted": 2,
+ "generation_tokens": [
+  3997,
+  7041
+ ]
+}

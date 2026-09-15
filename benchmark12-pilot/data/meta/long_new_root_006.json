@@ -1,0 +1,124 @@
+{
+ "scenario_id": "long_new_root_006",
+ "family": "new_root",
+ "n_history": 48,
+ "full_history_tokens": 9167,
+ "closure_ratio": 0.0,
+ "entity_registry": [
+  "Priya Nandakumar",
+  "DataVault Pro",
+  "ETL_MASTER_v2.cfg",
+  "Snowflake",
+  "Marcus Telford",
+  "NIGHTLY_BATCH_SPEC_v3.docx"
+ ],
+ "distractor_branch_entity_hits": {
+  "D": [
+   "Priya Nandakumar",
+   "DataVault Pro",
+   "ETL_MASTER_v2.cfg",
+   "Snowflake",
+   "Marcus Telford",
+   "NIGHTLY_BATCH_SPEC_v3.docx"
+  ],
+  "E": [
+   "Priya Nandakumar",
+   "DataVault Pro",
+   "ETL_MASTER_v2.cfg",
+   "Snowflake",
+   "Marcus Telford",
+   "NIGHTLY_BATCH_SPEC_v3.docx"
+  ],
+  "F": [
+   "Priya Nandakumar",
+   "DataVault Pro",
+   "ETL_MASTER_v2.cfg",
+   "Snowflake",
+   "Marcus Telford",
+   "NIGHTLY_BATCH_SPEC_v3.docx"
+  ],
+  "G": [
+   "Priya Nandakumar",
+   "DataVault Pro",
+   "ETL_MASTER_v2.cfg",
+   "Snowflake",
+   "Marcus Telford",
+   "NIGHTLY_BATCH_SPEC_v3.docx"
+  ]
+ },
+ "near_miss_turn_id": "t35",
+ "checklist_evidence": {
+  "c1": [],
+  "c2": [],
+  "c3": [],
+  "c4": []
+ },
+ "cosine": {
+  "gold_median": null,
+  "distractor_median": 0.3528570681810379,
+  "ratio": null,
+  "pass": true
+ },
+ "cosine_per_turn": {
+  "t1": 0.35438328981399536,
+  "t2": 0.5496708750724792,
+  "t3": 0.32115381956100464,
+  "t4": 0.6024737358093262,
+  "t5": 0.5133352279663086,
+  "t6": 0.27698975801467896,
+  "t7": 0.5360027551651001,
+  "t8": 0.4960317611694336,
+  "t9": 0.4812450706958771,
+  "t10": 0.2822449803352356,
+  "t11": 0.42221754789352417,
+  "t12": 0.5034071207046509,
+  "t13": 0.45173779129981995,
+  "t14": 0.199876606464386,
+  "t15": 0.5323008298873901,
+  "t16": 0.3786754608154297,
+  "t17": 0.41742485761642456,
+  "t18": 0.3452466130256653,
+  "t19": 0.12146636098623276,
+  "t20": 0.13100335001945496,
+  "t21": 0.33512696623802185,
+  "t22": 0.3385867178440094,
+  "t23": 0.1404723823070526,
+  "t24": 0.2102711796760559,
+  "t25": 0.1607106626033783,
+  "t26": 0.35386034846305847,
+  "t27": 0.3989109992980957,
+  "t28": 0.40829288959503174,
+  "t29": 0.5572428703308105,
+  "t30": 0.3856693506240845,
+  "t31": 0.3066513240337372,
+  "t32": 0.13279865682125092,
+  "t33": 0.2227775901556015,
+  "t34": 0.2790452837944031,
+  "t35": 0.47508710622787476,
+  "t36": 0.40474265813827515,
+  "t37": 0.5348103046417236,
+  "t38": 0.35185378789901733,
+  "t39": 0.32921770215034485,
+  "t40": 0.3560677170753479,
+  "t41": 0.3011516332626343,
+  "t42": 0.3129539489746094,
+  "t43": 0.27756983041763306,
+  "t44": 0.33998245000839233,
+  "t45": 0.07030024379491806,
+  "t46": 0.4006763696670532,
+  "t47": 0.5298462510108948,
+  "t48": 0.3302430510520935
+ },
+ "gold_branches": [],
+ "distractor_branches": [
+  "D",
+  "E",
+  "F",
+  "G"
+ ],
+ "attempt_accepted": 1,
+ "generation_tokens": [
+  5384,
+  12969
+ ]
+}

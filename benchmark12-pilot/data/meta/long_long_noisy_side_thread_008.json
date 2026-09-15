@@ -1,0 +1,117 @@
+{
+ "scenario_id": "long_long_noisy_side_thread_008",
+ "family": "long_noisy_side_thread",
+ "n_history": 33,
+ "full_history_tokens": 5246,
+ "closure_ratio": 0.12121212121212122,
+ "entity_registry": [
+  "Harborview Sailing Club",
+  "Coastal Dock Systems",
+  "Project Specification 2024-D",
+  "Marina Director Fiona Marsh",
+  "Structural Engineer Dale Okonkwo",
+  "Permit File HSC-447"
+ ],
+ "distractor_branch_entity_hits": {
+  "D": [
+   "Harborview Sailing Club",
+   "Coastal Dock Systems",
+   "Structural Engineer Dale Okonkwo"
+  ],
+  "E": [
+   "Harborview Sailing Club",
+   "Coastal Dock Systems",
+   "Project Specification 2024-D"
+  ],
+  "F": [
+   "Harborview Sailing Club",
+   "Coastal Dock Systems",
+   "Project Specification 2024-D"
+  ],
+  "G": [
+   "Harborview Sailing Club",
+   "Coastal Dock Systems",
+   "Project Specification 2024-D"
+  ],
+  "H": [
+   "Harborview Sailing Club",
+   "Coastal Dock Systems"
+  ],
+  "I": [
+   "Harborview Sailing Club",
+   "Coastal Dock Systems",
+   "Project Specification 2024-D"
+  ]
+ },
+ "near_miss_turn_id": "t30",
+ "checklist_evidence": {
+  "c1": [
+   "t25"
+  ],
+  "c2": [
+   "t7",
+   "t25"
+  ],
+  "c3": [
+   "t25"
+  ],
+  "c4": []
+ },
+ "cosine": {
+  "gold_median": 0.7761157155036926,
+  "distractor_median": 0.4752334952354431,
+  "ratio": 0.6123229896549904,
+  "pass": true
+ },
+ "cosine_per_turn": {
+  "t1": 0.7717710733413696,
+  "t2": 0.4065150320529938,
+  "t3": 0.44013142585754395,
+  "t4": 0.594704806804657,
+  "t5": 0.6041464805603027,
+  "t6": 0.6283318400382996,
+  "t7": 0.7804603576660156,
+  "t8": 0.4905856251716614,
+  "t9": 0.4296824336051941,
+  "t10": 0.4752334952354431,
+  "t11": 0.5528557300567627,
+  "t12": 0.5581749081611633,
+  "t13": 0.42184382677078247,
+  "t14": 0.47210684418678284,
+  "t15": 0.6342211961746216,
+  "t16": 0.5000969171524048,
+  "t17": 0.5540277361869812,
+  "t18": 0.19403791427612305,
+  "t19": 0.48569250106811523,
+  "t20": 0.4156776964664459,
+  "t21": 0.3017841577529907,
+  "t22": 0.41662877798080444,
+  "t23": 0.6066897511482239,
+  "t24": 0.5106491446495056,
+  "t25": 0.8713470697402954,
+  "t26": 0.4440169632434845,
+  "t27": 0.34936726093292236,
+  "t28": 0.3895382881164551,
+  "t29": 0.3339879810810089,
+  "t30": 0.7103912830352783,
+  "t31": 0.554556131362915,
+  "t32": 0.3376238942146301,
+  "t33": 0.5407291054725647
+ },
+ "gold_branches": [
+  "A"
+ ],
+ "distractor_branches": [
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I"
+ ],
+ "attempt_accepted": 2,
+ "generation_tokens": [
+  3967,
+  7727
+ ]
+}

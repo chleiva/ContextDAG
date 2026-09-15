@@ -1,0 +1,114 @@
+{
+ "scenario_id": "long_resume_005",
+ "family": "resume",
+ "n_history": 41,
+ "full_history_tokens": 8671,
+ "closure_ratio": 0.0975609756097561,
+ "entity_registry": [
+  "Marcus Teller",
+  "Coach Priya Nandan",
+  "Hal Higdon Novice 1 plan",
+  "Garmin Forerunner 255",
+  "Lakefront Marathon",
+  "TrainingPeaks"
+ ],
+ "distractor_branch_entity_hits": {
+  "D": [
+   "Marcus Teller",
+   "Coach Priya Nandan",
+   "Hal Higdon Novice 1 plan",
+   "Garmin Forerunner 255",
+   "Lakefront Marathon",
+   "TrainingPeaks"
+  ],
+  "E": [
+   "Marcus Teller",
+   "Coach Priya Nandan",
+   "Garmin Forerunner 255",
+   "Lakefront Marathon",
+   "TrainingPeaks"
+  ],
+  "F": [
+   "Marcus Teller",
+   "Coach Priya Nandan",
+   "Garmin Forerunner 255",
+   "Lakefront Marathon",
+   "TrainingPeaks"
+  ]
+ },
+ "near_miss_turn_id": "t35",
+ "checklist_evidence": {
+  "c1": [
+   "t4"
+  ],
+  "c2": [
+   "t4"
+  ],
+  "c3": [
+   "t4"
+  ],
+  "c4": []
+ },
+ "cosine": {
+  "gold_median": 0.555113822221756,
+  "distractor_median": 0.3937457799911499,
+  "ratio": 0.7093063876796369,
+  "pass": true
+ },
+ "cosine_per_turn": {
+  "t1": 0.5760598182678223,
+  "t2": 0.5341678261756897,
+  "t3": 0.41067248582839966,
+  "t4": 0.6843633651733398,
+  "t5": 0.41025954484939575,
+  "t6": 0.3753000795841217,
+  "t7": 0.5187823176383972,
+  "t8": 0.4536716043949127,
+  "t9": 0.3937457799911499,
+  "t10": 0.43066003918647766,
+  "t11": 0.3439320921897888,
+  "t12": 0.3600800633430481,
+  "t13": 0.26879453659057617,
+  "t14": 0.46537870168685913,
+  "t15": 0.3611688017845154,
+  "t16": 0.3252561092376709,
+  "t17": 0.3415251672267914,
+  "t18": 0.35578563809394836,
+  "t19": 0.40373289585113525,
+  "t20": 0.32513228058815,
+  "t21": 0.43368053436279297,
+  "t22": 0.4863697290420532,
+  "t23": 0.3986676335334778,
+  "t24": 0.36432546377182007,
+  "t25": 0.40940162539482117,
+  "t26": 0.4411587417125702,
+  "t27": 0.32680630683898926,
+  "t28": 0.3745840787887573,
+  "t29": 0.5669546127319336,
+  "t30": 0.3039989769458771,
+  "t31": 0.35387128591537476,
+  "t32": 0.46924078464508057,
+  "t33": 0.3949994444847107,
+  "t34": 0.5093438625335693,
+  "t35": 0.5968177318572998,
+  "t36": 0.4186558723449707,
+  "t37": 0.5768895149230957,
+  "t38": 0.37495583295822144,
+  "t39": 0.3167080283164978,
+  "t40": 0.36365827918052673,
+  "t41": 0.31021255254745483
+ },
+ "gold_branches": [
+  "A"
+ ],
+ "distractor_branches": [
+  "D",
+  "E",
+  "F"
+ ],
+ "attempt_accepted": 2,
+ "generation_tokens": [
+  4585,
+  12212
+ ]
+}

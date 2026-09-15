@@ -1,0 +1,342 @@
+I'll carefully fix all the listed issues: remove topic-switch signposting, ensure required items cite gold branches from both A and B, and make the join query depend on both branches.
+
+```json
+{
+  "entity_registry": ["Marcus Yuen", "Priya Nair", "Tomoko Hashimoto", "Devlin & Rowe Travel", "JR Pass", "Sakura Route Itinerary"],
+  "turns": [
+    {
+      "turn_id": "t1",
+      "user_message": "We're planning a 10-day Japan trip for four friends — me, Marcus Yuen, Priya Nair, and Tomoko Hashimoto — and I want to nail down the JR Pass situation first. Can you help figure out which pass type we need?",
+      "assistant_message": "For a 10-day trip covering Tokyo, Kyoto, Osaka, and Hiroshima, the 14-day JR Pass is the right choice since it covers the entire duration with room to spare. The adult 14-day Ordinary JR Pass currently costs 50,000 yen per person, so for all four travelers — Marcus Yuen, Priya Nair, Tomoko Hashimoto, and yourself — the total outlay is 200,000 yen. You should purchase the passes before departure, as the exchange order must be obtained outside Japan through an authorized reseller like Devlin & Rowe Travel."
+    },
+    {
+      "turn_id": "t2",
+      "user_message": "What's the best way to split accommodation costs among the four of us?",
+      "assistant_message": "A common approach is to book two twin rooms per night and divide costs equally among Marcus Yuen, Priya Nair, Tomoko Hashimoto, and yourself. For the nights in Tokyo, mid-range hotels in Shinjuku average around 18,000 yen per room per night, so four people in two rooms pay roughly 9,000 yen each per night. Devlin & Rowe Travel can often negotiate a group rate that brings this down by about 10 percent if you book at least 60 days in advance."
+    },
+    {
+      "turn_id": "t3",
+      "user_message": "I want to think about travel insurance for this trip. What kind of coverage should we be looking at?",
+      "assistant_message": "For a 10-day trip to Japan, a comprehensive policy covering medical emergencies up to 5,000,000 yen, trip cancellation up to the full trip cost, and baggage loss up to 200,000 yen per person is advisable. Devlin & Rowe Travel offers a group policy that covers all four travelers — including Marcus Yuen and Priya Nair — under a single plan for roughly 12,000 yen per person for the trip duration. Make sure the policy explicitly includes adventure activities if Tomoko Hashimoto's planned hiking excursions are on the itinerary."
+    },
+    {
+      "turn_id": "t4",
+      "user_message": "We need to figure out the visa situation. Do all four of us need a Japan visa?",
+      "assistant_message": "Japan has visa-free agreements with many countries, so the answer depends on each traveler's passport. Marcus Yuen and Priya Nair both hold passports from countries on Japan's visa-exemption list, allowing stays of up to 90 days without a visa. However, Devlin & Rowe Travel has flagged that one member of the group may hold a passport requiring advance visa application, which takes approximately 10 business days to process through the nearest Japanese consulate."
+    },
+    {
+      "turn_id": "t5",
+      "user_message": "Which consulate should the traveler who needs a visa apply through, and what documents are required?",
+      "assistant_message": "The application should go through the Japanese Consulate General closest to the traveler's place of residence, and Devlin & Rowe Travel has confirmed the processing time is 10 business days as noted. Required documents include a completed visa application form, a valid passport with at least six months' validity, a confirmed round-trip itinerary (the Sakura Route Itinerary document works well for this), two recent passport-sized photographs, and proof of sufficient funds such as three months of bank statements. The consulate fee is 3,000 yen equivalent in local currency, paid at submission."
+    },
+    {
+      "turn_id": "t6",
+      "user_message": "For the JR Pass, does it cover the Shinkansen between all the cities on our route, or are there exceptions?",
+      "assistant_message": "The 14-day Ordinary JR Pass covers the Nozomi and Mizuho Shinkansen services only if you use the unreserved cars; reserved seats on those trains require an additional fee not covered by the pass. For the Sakura Route Itinerary specifically, the Hikari and Kodama services between Tokyo, Kyoto, Osaka, and Hiroshima are fully covered with no surcharge, and reserved seat bookings on those trains are also included at no extra cost. Marcus Yuen confirmed during your group planning call that everyone prefers reserved seats, so the group should consistently use Hikari or Kodama rather than Nozomi."
+    },
+    {
+      "turn_id": "t7",
+      "user_message": "What's the best strategy for booking day tours and experiences in Kyoto?",
+      "assistant_message": "Kyoto's most popular experiences — such as a private tea ceremony and the Arashiyama bamboo grove guided walk — book out 4 to 6 weeks in advance during peak season. Devlin & Rowe Travel recommends securing at least three anchor experiences before finalizing the Sakura Route Itinerary, with a budget of approximately 8,000 to 15,000 yen per person per experience. Marcus Yuen has already expressed strong interest in the Nishiki Market food tour, which runs at 9,500 yen per person and requires a minimum group of four, so your group of four fits exactly."
+    },
+    {
+      "turn_id": "t8",
+      "user_message": "For the accommodation split, should we look at ryokans instead of hotels for some nights?",
+      "assistant_message": "Ryokans are a fantastic choice for at least two or three nights, particularly in Kyoto or Hakone, and they typically include dinner and breakfast in the room rate. A mid-range ryokan in Kyoto averages about 25,000 yen per person per night with two meals included, which means for all four travelers the nightly total is 100,000 yen. Priya Nair has noted a preference for at least one ryokan night, and Devlin & Rowe Travel has a partnership with a well-rated property in Gion that offers a group discount of 8 percent for four guests."
+    },
+    {
+      "turn_id": "t9",
+      "user_message": "How do we handle the ryokan booking deposit and cancellation policy?",
+      "assistant_message": "Most ryokans in Kyoto require a 30 percent deposit at the time of booking, which for the Gion property Devlin & Rowe Travel recommended would be 30,000 yen for four guests. Cancellation within 14 days of arrival typically forfeits the full deposit, while cancellations between 15 and 30 days out forfeit 50 percent. Priya Nair should be listed as the primary contact on the reservation since she initiated the ryokan preference, but all four travelers' names — including Marcus Yuen and Tomoko Hashimoto — should appear on the booking form."
+    },
+    {
+      "turn_id": "t10",
+      "user_message": "What's the total estimated accommodation cost for the whole 10-day trip if we mix hotels and one ryokan night?",
+      "assistant_message": "Using the figures already established: seven nights in twin hotel rooms at 18,000 yen per room (two rooms, so 36,000 yen per night) totals 252,000 yen, and one ryokan night at 100,000 yen for four guests brings the accommodation subtotal to 352,000 yen. That works out to 88,000 yen per person across the full trip for Marcus Yuen, Priya Nair, Tomoko Hashimoto, and yourself. Devlin & Rowe Travel can consolidate this into a single group invoice if that makes splitting easier."
+    },
+    {
+      "turn_id": "t11",
+      "user_message": "Has Devlin & Rowe Travel confirmed whether the visa applicant's passport nationality is definitely on the list requiring a visa?",
+      "assistant_message": "Yes, Devlin & Rowe Travel confirmed in writing on 14 March that the traveler in question holds a passport from a country not on Japan's short-stay visa-exemption list, making the visa application mandatory. The consulate application window opens 3 months before the intended travel date, so if the trip is in late October, the earliest submission date is late July. Marcus Yuen and Priya Nair, both holding visa-exempt passports, do not need to take any action on this front."
+    },
+    {
+      "turn_id": "t12",
+      "user_message": "Is there any fast-track or expedited processing option at the consulate?",
+      "assistant_message": "The Japanese Consulate General does not officially offer an expedited fee-based service; the standard 10-business-day processing time is fixed for tourist visas. However, Devlin & Rowe Travel advises submitting the application at least 6 weeks before travel to allow buffer time for any document queries or resubmissions. Tomoko Hashimoto flagged that the consulate in question is known to request supplementary bank statements in about 20 percent of cases, which can add 3 to 5 business days to the process."
+    },
+    {
+      "turn_id": "t13",
+      "user_message": "Let's think about the daily spending money budget. How much yen should each person budget per day for food and local transport?",
+      "assistant_message": "For a comfortable mid-range experience in Japan, budgeting 8,000 yen per person per day for meals and 2,000 yen per day for local transport (subway, buses) is a solid baseline, totaling 10,000 yen per person per day. Over 10 days, each traveler — Marcus Yuen, Priya Nair, Tomoko Hashimoto, and yourself — should carry or load onto an IC card approximately 100,000 yen for day-to-day expenses. Devlin & Rowe Travel recommends loading the IC card on arrival at Narita or Haneda rather than pre-purchasing, as airport exchange rates are competitive."
+    },
+    {
+      "turn_id": "t14",
+      "user_message": "What happens if the visa is refused — is there an appeal process?",
+      "assistant_message": "Japanese tourist visa refusals cannot be formally appealed; the traveler must reapply with additional documentation addressing the reason for refusal, which is typically stated only in broad terms. Devlin & Rowe Travel recommends that in a refusal scenario, the traveler submit a revised application with a stronger financial evidence package and a more detailed itinerary — the Sakura Route Itinerary document would serve well here. Priya Nair has offered to draft a formal letter of invitation as a fellow traveler, which consulates sometimes view favorably as supplementary context."
+    },
+    {
+      "turn_id": "t15",
+      "user_message": "For the travel insurance, does the group policy from Devlin & Rowe Travel cover pre-existing conditions?",
+      "assistant_message": "The group policy offered by Devlin & Rowe Travel covers pre-existing conditions only if they have been stable and untreated for at least 12 months prior to the policy start date. Marcus Yuen has a documented condition that he disclosed, and Devlin & Rowe Travel confirmed it qualifies as stable under their 12-month rule, so he is covered. If Tomoko Hashimoto or any other traveler has a condition that does not meet the 12-month stability threshold, an individual top-up rider is available for an additional 4,500 yen per person."
+    },
+    {
+      "turn_id": "t16",
+      "user_message": "For the Kyoto day tours, how far in advance do we need to finalize the itinerary with Devlin & Rowe Travel?",
+      "assistant_message": "Devlin & Rowe Travel requires the finalized Sakura Route Itinerary to be submitted at least 45 days before departure so they can secure bookings for the Kyoto experiences. The Nishiki Market food tour that Marcus Yuen wants requires a non-refundable deposit of 2,500 yen per person — 10,000 yen total for the group — due at the time of booking confirmation. If the itinerary is not finalized within the 45-day window, availability for the food tour cannot be guaranteed, particularly during the autumn foliage season."
+    },
+    {
+      "turn_id": "t17",
+      "user_message": "What other Kyoto experiences should we lock in early alongside the Nishiki Market tour?",
+      "assistant_message": "The two highest-demand experiences that Devlin & Rowe Travel recommends booking simultaneously are the private Fushimi Inari early-morning tour at 12,000 yen per person and the Kinkaku-ji guided visit at 7,500 yen per person, both requiring the same 45-day advance booking window. For the four travelers including Priya Nair and Tomoko Hashimoto, those two experiences alone represent an additional outlay of 78,000 yen for the group. The Sakura Route Itinerary currently has placeholder slots on Days 4 and 5 for these experiences, which should be confirmed before the deadline."
+    },
+    {
+      "turn_id": "t18",
+      "user_message": "Is there a combined package price if we book all three Kyoto experiences through Devlin & Rowe Travel at once?",
+      "assistant_message": "Yes, Devlin & Rowe Travel offers a Kyoto Trio Package that bundles the Nishiki Market food tour, the Fushimi Inari early-morning tour, and the Kinkaku-ji guided visit at a combined price of 26,000 yen per person instead of the individual total of 29,000 yen — a saving of 3,000 yen per person, or 12,000 yen for the group of four. The package requires all four travelers to book together; a solo booking is not eligible for the bundled rate. Marcus Yuen has already agreed to the Kyoto Trio Package in the group chat, pending confirmation from Tomoko Hashimoto."
+    },
+    {
+      "turn_id": "t19",
+      "user_message": "On the daily budget, does the 10,000 yen per person per day figure include entrance fees to temples and museums, or is that separate?",
+      "assistant_message": "The 10,000 yen per person per day figure covers only food and local transport; entrance fees are a separate line item. Major temple and museum admissions in Japan typically run between 500 and 1,500 yen per site, and on a 10-day trip with roughly two paid attractions per day, each traveler should add approximately 1,500 yen per day to their budget for admissions. That brings the revised daily spending estimate for each of Marcus Yuen, Priya Nair, Tomoko Hashimoto, and yourself to 11,500 yen, or 115,000 yen total per person for the trip."
+    },
+    {
+      "turn_id": "t20",
+      "user_message": "Does the travel insurance policy cover trip cancellation if one of us gets sick before departure?",
+      "assistant_message": "The Devlin & Rowe Travel group policy covers pre-departure cancellation due to illness, provided a registered medical practitioner certifies the condition no more than 48 hours before the scheduled departure. The maximum cancellation benefit is 350,000 yen per person, which covers the full anticipated trip cost for each of Marcus Yuen, Priya Nair, Tomoko Hashimoto, and yourself based on current estimates. A claim must be filed within 7 days of the cancellation event, and Devlin & Rowe Travel can assist with the paperwork as part of their concierge service."
+    },
+    {
+      "turn_id": "t21",
+      "user_message": "If we add in the entrance fees, what does the total per-person trip cost look like now?",
+      "assistant_message": "Pulling together the figures established so far: the 14-day JR Pass is 50,000 yen, accommodation comes to 88,000 yen, daily spending including entrance fees is 115,000 yen, and the Kyoto Trio Package is 26,000 yen — giving a subtotal of 279,000 yen per person. Adding the insurance premium of 12,000 yen per person, the total estimated per-person cost stands at 291,000 yen, with any visa fees (3,000 yen equivalent) applying only to the traveler who needs one. For Marcus Yuen, Priya Nair, and Tomoko Hashimoto, the Devlin & Rowe Travel invoice will reflect 291,000 yen each."
+    },
+    {
+      "turn_id": "t22",
+      "user_message": "We've been assuming the 14-day JR Pass, but is there any scenario where a 7-day pass would be sufficient for part of the group?",
+      "assistant_message": "A 7-day JR Pass costs 29,650 yen and would only be viable if a traveler uses the Shinkansen network exclusively within a single concentrated 7-day window and plans to stay put for the remaining days. For the Sakura Route Itinerary as currently structured — with Shinkansen travel on Days 1, 4, 7, and 9 — a 7-day pass activated on Day 1 would expire before the Day 9 journey, making it insufficient. Therefore, all four travelers including Marcus Yuen must purchase the 14-day pass at 50,000 yen each; there is no viable split-pass strategy for this itinerary."
+    },
+    {
+      "turn_id": "t23",
+      "user_message": "For the daily budget, does 11,500 yen per day account for tipping, or is that not a concern in Japan?",
+      "assistant_message": "Tipping is not customary in Japan and is sometimes considered rude, so the 11,500 yen per person per day figure does not need a tipping allowance. This is a meaningful saving compared to similar trips in Western countries, and it means the 115,000 yen per-person total for spending money is reliable without any buffer needed for gratuities. Priya Nair specifically asked about this during the group planning session, and Devlin & Rowe Travel confirmed that even at high-end restaurants, no tip is expected or appropriate."
+    },
+    {
+      "turn_id": "t24",
+      "user_message": "What about emergency cash — should each person carry a reserve above the 115,000 yen spending estimate?",
+      "assistant_message": "Devlin & Rowe Travel recommends carrying a 15,000 yen emergency cash reserve per person on top of daily spending money, specifically for situations where card payments are not accepted — which is still common at smaller temples, rural restaurants, and some local markets. This brings the total cash each traveler should have access to — Marcus Yuen, Priya Nair, Tomoko Hashimoto, and yourself — to 130,000 yen for spending and emergencies combined. Japan Post ATMs and 7-Eleven ATMs reliably accept foreign cards, so topping up mid-trip is straightforward if needed."
+    },
+    {
+      "turn_id": "t25",
+      "user_message": "Does the travel insurance cover lost or stolen cash, or only cards and belongings?",
+      "assistant_message": "The Devlin & Rowe Travel group policy covers cash theft up to 30,000 yen per person per incident, but does not cover cash that is simply lost or misplaced. For Marcus Yuen and Priya Nair, who plan to carry the full 130,000 yen in cash at times, this means the majority of their cash would be uninsured in a theft scenario, so use of hotel safes is strongly recommended. Tomoko Hashimoto has already noted she prefers to use IC cards and travel cards wherever possible to minimize cash exposure."
+    },
+    {
+      "turn_id": "t26",
+      "user_message": "Has the traveler needing the visa started gathering the required documents yet?",
+      "assistant_message": "As of the last update from Devlin & Rowe Travel on 20 March, the traveler has obtained the application form and two passport photos but has not yet compiled the bank statements. The bank statements need to cover the most recent three months and must be officially stamped by the issuing bank — printed online statements are not accepted by this particular consulate, per a note in the Sakura Route Itinerary planning file. Priya Nair has volunteered to help coordinate the document checklist to ensure nothing is missed before the submission deadline."
+    },
+    {
+      "turn_id": "t27",
+      "user_message": "Has the group policy claim process been tested before, or is Devlin & Rowe Travel's concierge service unproven?",
+      "assistant_message": "Devlin & Rowe Travel has facilitated three group travel insurance claims in the past two years, two of which involved Japan trips with similar policy structures. Their concierge service achieved a 100 percent claims acceptance rate in those cases, with an average payout turnaround of 22 days from submission. Marcus Yuen specifically vetted this track record before the group agreed to use Devlin & Rowe Travel, citing a previous bad experience with a different travel agency on a Southeast Asia trip."
+    },
+    {
+      "turn_id": "t28",
+      "user_message": "What is the absolute deadline for the visa applicant to submit their application given the 10-business-day processing time?",
+      "assistant_message": "If the trip departs on 25 October, counting back 10 business days plus the recommended 6-week buffer gives a latest comfortable submission date of 9 September. Devlin & Rowe Travel has flagged 9 September as the hard internal deadline in the Sakura Route Itinerary planning file, noting that any submission after that date risks non-delivery of the visa before departure. The 20-percent probability of a supplementary document request, which Tomoko Hashimoto flagged earlier, makes submitting by late August the safest strategy."
+    },
+    {
+      "turn_id": "t29",
+      "user_message": "For the Kyoto Trio Package, is the 45-day advance booking deadline before or after the visa deadline?",
+      "assistant_message": "With a 25 October departure, the 45-day advance booking deadline for the Kyoto Trio Package falls on 10 September — just one day after Devlin & Rowe Travel's internal visa submission deadline of 9 September. This tight clustering means the group should plan to handle both tasks in the same week to avoid administrative overlap, and Priya Nair has been designated as the point of contact for both. Marcus Yuen suggested setting a joint action date of 6 September to give a small buffer on both deadlines simultaneously."
+    },
+    {
+      "turn_id": "t30",
+      "user_message": "If the visa is refused and the traveler can't come, does the Kyoto Trio Package deposit get refunded?",
+      "assistant_message": "The Kyoto Trio Package from Devlin & Rowe Travel is non-refundable for the non-refundable deposit component (the 10,000 yen Nishiki Market portion), but the Fushimi Inari and Kinkaku-ji components are refundable with 30 days' notice. In a visa refusal scenario, the remaining three travelers — Marcus Yuen, Priya Nair, and Tomoko Hashimoto — would still meet the minimum group size of four only if a replacement traveler is found, as the package requires exactly four participants. Devlin & Rowe Travel has noted this risk in the Sakura Route Itinerary planning file and recommends naming a backup traveler."
+    },
+    {
+      "turn_id": "t31",
+      "user_message": "Is there a backup traveler we should consider adding to the Sakura Route Itinerary as a contingency?",
+      "assistant_message": "Devlin & Rowe Travel recommends identifying a named contingency traveler by the same 45-day booking deadline so that any package requiring a group of four remains valid. Marcus Yuen has suggested a colleague named Raj Fernandez as a potential backup, who has expressed interest in joining if a spot opens. Adding Raj Fernandez to the Sakura Route Itinerary as a conditional fifth participant would also allow the group to negotiate a slight per-person discount on room rates, as some hotels offer better pricing for groups of five."
+    },
+    {
+      "turn_id": "t32",
+      "user_message": "Would adding Raj Fernandez change the Devlin & Rowe Travel group insurance pricing?",
+      "assistant_message": "Adding a fifth traveler would change the policy from a four-person group plan to a five-person group plan, which Devlin & Rowe Travel prices at 11,000 yen per person — actually 1,000 yen cheaper per person than the four-person rate of 12,000 yen due to volume pricing. For the original four travelers, this would represent a saving of 4,000 yen on insurance alone if Raj Fernandez joins. Tomoko Hashimoto has asked Devlin & Rowe Travel to hold the five-person rate provisionally until a decision is made by 1 September."
+    },
+    {
+      "turn_id": "t33",
+      "user_message": "What experiences in Osaka should we add to the Sakura Route Itinerary, and do any require the same advance booking?",
+      "assistant_message": "In Osaka, the Dotonbori street food evening walk at 8,000 yen per person and the Osaka Castle guided tour at 6,500 yen per person are both highly recommended and require at least 21 days' advance booking through Devlin & Rowe Travel. For four travelers including Priya Nair and Marcus Yuen, these two experiences total 58,000 yen and could be added to the Sakura Route Itinerary on Day 6 and Day 7 respectively. Unlike the Kyoto Trio Package, these Osaka experiences are individually refundable up to 14 days before the visit, giving more flexibility."
+    },
+    {
+      "turn_id": "t34",
+      "user_message": "What is the total estimated accommodation cost per person if Raj Fernandez joins and we can get three rooms instead of two?",
+      "assistant_message": "With five travelers including Raj Fernandez, the group would book three rooms per night rather than two, and some hotels offer a triple-room rate of about 20,000 yen per room. Seven hotel nights at three rooms (60,000 yen per night) plus one ryokan night priced at 25,000 yen per person for five guests (125,000 yen) gives a total accommodation cost of 545,000 yen, or 109,000 yen per person — actually higher per head than the four-person split. Priya Nair has noted this to Marcus Yuen as a reason to keep the group at four unless Raj Fernandez's inclusion unlocks other savings that offset the higher accommodation cost."
+    },
+    {
+      "turn_id": "t35",
+      "user_message": "Has the travel insurance policy been finalized and signed, or is it still provisional?",
+      "assistant_message": "As of 22 March, the policy is still provisional pending Tomoko Hashimoto's confirmation on whether she needs the adventure-activities rider for her hiking plans. Devlin & Rowe Travel has given the group until 1 April to finalize the policy details, after which the quoted premium of 12,000 yen per person will expire and a new quote will be required. Marcus Yuen and Priya Nair have already signed their sections of the group policy application form."
+    },
+    {
+      "turn_id": "t36",
+      "user_message": "If Tomoko Hashimoto adds the adventure rider, how much does that change the total insurance cost for the group?",
+      "assistant_message": "The adventure-activities rider costs an additional 4,500 yen per person as noted earlier, but it only needs to be added for Tomoko Hashimoto since she is the only one planning hiking. The group policy allows individual riders to be added for specific members without repricing the whole policy, so only Tomoko Hashimoto's premium increases to 16,500 yen, while Marcus Yuen and Priya Nair remain at 12,000 yen each. The total insurance cost for the four-person group with Tomoko Hashimoto's rider would be 52,500 yen instead of 48,000 yen."
+    },
+    {
+      "turn_id": "t37",
+      "user_message": "Is there any way to get proof of the visa application submission in time to satisfy any travel insurance requirements?",
+      "assistant_message": "The Japanese Consulate General issues a formal acknowledgment receipt on the day of submission, and Devlin & Rowe Travel accepts this receipt as proof of application for insurance documentation purposes. The receipt is stamped with the submission date and a reference number, and a copy should be uploaded to the Sakura Route Itinerary planning file for the group's records. Priya Nair has been designated to maintain the shared document folder, so the traveler needing the visa should send her a scan of the receipt on the same day as submission."
+    },
+    {
+      "turn_id": "t38",
+      "user_message": "Can you confirm the exact per-person cash amount each traveler should budget for the entire trip, including the emergency reserve?",
+      "assistant_message": "The total cash budget per person is 130,000 yen, comprising 115,000 yen for daily spending and entrance fees over 10 days plus a 15,000 yen emergency reserve as recommended by Devlin & Rowe Travel. This figure applies equally to Marcus Yuen, Priya Nair, Tomoko Hashimoto, and yourself, and does not include pre-paid items like the JR Pass, accommodation, or the Kyoto Trio Package. For the group of four, the total cash to be collectively carried or accessible at ATMs is 520,000 yen."
+    },
+    {
+      "turn_id": "t39",
+      "user_message": "If Raj Fernandez joins, what does the updated total trip cost per person look like?",
+      "assistant_message": "With five travelers and the revised insurance rate of 11,000 yen per person, the per-person cost breakdown becomes: JR Pass 50,000 yen, accommodation 109,000 yen, daily spending including entrance fees 115,000 yen, Kyoto Trio Package 26,000 yen, and insurance 11,000 yen — totaling 311,000 yen per person (excluding the emergency cash reserve). This is 20,000 yen more per person than the four-person estimate of 291,000 yen, primarily driven by the higher per-person accommodation cost with three rooms. Priya Nair has recommended a final decision on Raj Fernandez's inclusion by 25 August so all bookings can be adjusted simultaneously."
+    },
+    {
+      "turn_id": "t40",
+      "user_message": "What is the maximum total the group insurance payout could reach if all four original travelers needed to cancel?",
+      "assistant_message": "With each of the four original travelers covered up to 350,000 yen for trip cancellation, the maximum total group payout is 1,400,000 yen. This figure is based on the policy Devlin & Rowe Travel finalized for Marcus Yuen, Priya Nair, Tomoko Hashimoto, and yourself at the 12,000 yen per-person premium. It would only be reached in a scenario where all four travelers had a certified medical reason to cancel simultaneously, which Devlin & Rowe Travel considers extremely unlikely but contractually covered."
+    },
+    {
+      "turn_id": "t41",
+      "user_message": "Does the insurance policy renew automatically if the trip is rescheduled to a later date?",
+      "assistant_message": "The Devlin & Rowe Travel group policy does not renew automatically; a reschedule requires a new policy to be issued with updated travel dates and a recalculated premium based on the revised trip cost at that time. If the trip is rescheduled within 60 days of the original departure, Devlin & Rowe Travel will apply a 50 percent credit from the original premium toward the new policy — so each traveler's 12,000 yen premium would provide a 6,000 yen credit. Marcus Yuen has confirmed the group's preference to treat the original policy dates as firm and avoid a reschedule scenario."
+    },
+    {
+      "turn_id": "t42",
+      "user_message": "If Raj Fernandez joins as a fifth traveler, what would be the total cash amount the full group of five needs to carry collectively?",
+      "assistant_message": "With five travelers each carrying 130,000 yen in cash (115,000 yen daily spending plus the 15,000 yen emergency reserve), the total collective cash for the group of five including Raj Fernandez would be 650,000 yen. This is calculated straightforwardly as five times the per-person figure of 130,000 yen established for Marcus Yuen, Priya Nair, Tomoko Hashimoto, and yourself. Devlin & Rowe Travel recommends distributing this across multiple IC cards and two or three designated cash holders to reduce risk."
+    },
+    {
+      "turn_id": "t43",
+      "user_message": "What is the total cash the original four travelers need to have on hand collectively for the trip?",
+      "assistant_message": "The four original travelers — Marcus Yuen, Priya Nair, Tomoko Hashimoto, and yourself — need a combined total of 520,000 yen in accessible cash, based on the confirmed per-person figure of 130,000 yen each. This covers 115,000 yen per person for daily spending and entrance fees over the 10 days, plus the 15,000 yen emergency reserve per person. Devlin & Rowe Travel has confirmed this figure is separate from all pre-paid trip components and represents only the cash each traveler needs to manage personally during the trip."
+    },
+    {
+      "turn_id": "t44",
+      "user_message": "Does the insurance policy cover emergency medical evacuation, and is there a cap on that coverage?",
+      "assistant_message": "Yes, the Devlin & Rowe Travel group policy includes emergency medical evacuation coverage capped at 10,000,000 yen per person, which is well above the typical cost of an air ambulance repatriation from Japan to most home countries. The evacuation benefit is separate from the 5,000,000 yen medical treatment cap and activates only when a treating physician certifies that local facilities are insufficient. Priya Nair confirmed during the policy review that all four group members — including Marcus Yuen and Tomoko Hashimoto — are listed as covered individuals for evacuation purposes."
+    },
+    {
+      "turn_id": "t45",
+      "user_message": "Is the evacuation coverage the same if Tomoko Hashimoto's hiking incident happens in a remote area?",
+      "assistant_message": "The evacuation coverage applies regardless of location within Japan, including remote hiking areas, as long as the adventure-activities rider has been added to Tomoko Hashimoto's policy section. Without the rider, a hiking-related incident would be classified as an excluded activity and the 10,000,000 yen evacuation benefit would not apply to her. Devlin & Rowe Travel has flagged this specifically in the Sakura Route Itinerary notes as a reason to finalize Tomoko Hashimoto's rider decision before the 1 April policy deadline."
+    },
+    {
+      "turn_id": "t46",
+      "user_message": "If the adventure rider is added for Tomoko Hashimoto and the policy is finalized at 52,500 yen total, what is the per-person average insurance cost across the group?",
+      "assistant_message": "With three members paying 12,000 yen each — Marcus Yuen, Priya Nair, and yourself — and Tomoko Hashimoto paying 16,500 yen with the adventure rider, the total is 52,500 yen for four people, giving an average of 13,125 yen per person. This is a modest 1,125 yen increase over the base rate of 12,000 yen per person and Devlin & Rowe Travel considers it negligible relative to the added protection for Tomoko Hashimoto's hiking plans. The Sakura Route Itinerary planning file has been updated to reflect 52,500 yen as the confirmed insurance line item."
+    },
+    {
+      "turn_id": "t47",
+      "user_message": "For the Osaka experiences, does the 21-day advance booking window overlap with any other deadlines we've discussed?",
+      "assistant_message": "With a 25 October departure and Day 6 being 30 October, the 21-day advance booking deadline for the Dotonbori and Osaka Castle experiences falls on 9 October. This is approximately four weeks after the 10 September Kyoto Trio Package deadline, so there is no conflict — the Osaka bookings can be handled in a separate administrative step. Devlin & Rowe Travel recommends confirming Marcus Yuen and Priya Nair's attendance is locked in before making the Osaka bookings, since those experiences allow individual refunds but the booking fee structure favors groups of four."
+    },
+    {
+      "turn_id": "t48",
+      "user_message": "Can you summarize the key visa-related deadlines for the traveler who needs one?",
+      "assistant_message": "The key dates for the visa applicant are: bank statements must be obtained by mid-August to allow time for official stamping; the recommended submission date is late August to account for the 20 percent supplementary document request probability; the hard internal deadline set by Devlin & Rowe Travel in the Sakura Route Itinerary file is 9 September; and the consulate acknowledgment receipt should be scanned and sent to Priya Nair on the day of submission. The 10-business-day processing window means a 9 September submission targets a decision by approximately 23 September, leaving about a month before the 25 October departure."
+    },
+    {
+      "turn_id": "t49",
+      "user_message": "Has Devlin & Rowe Travel indicated whether the Osaka Castle guided tour requires the same non-refundable deposit structure as the Kyoto Trio Package?",
+      "assistant_message": "No, the Osaka Castle guided tour uses a fully refundable deposit of 25 percent — 1,625 yen per person, or 6,500 yen for the group of four — which is returned in full if cancelled with at least 14 days' notice. This is more flexible than the Kyoto Trio Package structure, and Devlin & Rowe Travel confirmed this distinction in writing to Marcus Yuen on 18 March. The Dotonbori street food walk has a similar fully refundable deposit structure with the same 14-day cancellation threshold."
+    },
+    {
+      "turn_id": "t50",
+      "user_message": "Does the five-person scenario change the Osaka experience pricing at all?",
+      "assistant_message": "Adding Raj Fernandez as a fifth traveler would increase the Osaka experience costs proportionally: the Dotonbori walk at 8,000 yen per person and the Osaka Castle tour at 6,500 yen per person would total 72,500 yen for five participants versus 58,000 yen for four. Devlin & Rowe Travel has confirmed that neither experience offers a group discount for five compared to four, so the per-person cost remains identical. Marcus Yuen has noted this in the shared planning document as a neutral factor in the Raj Fernandez decision."
+    },
+    {
+      "turn_id": "t51",
+      "user_message": "Just to lock this in — what is the confirmed per-person cost of the JR Pass for our trip, and is there any scenario where it changes?",
+      "assistant_message": "The confirmed per-person cost of the 14-day Ordinary JR Pass is 50,000 yen, and this is fixed regardless of how many travelers purchase it — there is no group discount on JR Passes. As established, all four travelers including Marcus Yuen must purchase the 14-day version because the Sakura Route Itinerary includes Shinkansen travel on Day 9, which falls outside the coverage window of a 7-day pass. The only scenario that would change this cost is a JR price revision announced by the operator, but no such revision is expected before the October travel dates."
+    },
+    {
+      "turn_id": "t52",
+      "user_message": "What happens to the per-person Osaka experience cost if only three of the original four travelers attend the Osaka days?",
+      "assistant_message": "If only three travelers attend the Osaka experiences, the per-person cost remains the same since the Dotonbori walk and Osaka Castle tour are individually priced at 8,000 yen and 6,500 yen respectively — there's no group discount that would be lost with a smaller group. The total group cost would simply drop to 43,500 yen for three participants compared to 58,000 yen for four. Devlin & Rowe Travel has noted that the refundable deposit for the absent traveler would be returned within 10 business days of the cancellation notice, provided the 14-day threshold is met."
+    },
+    {
+      "turn_id": "t53",
+      "user_message": "Are there any Hiroshima-specific experiences that need to be booked in advance through Devlin & Rowe Travel?",
+      "assistant_message": "The Hiroshima Peace Memorial Museum guided tour at 5,500 yen per person and the Miyajima Island day trip at 11,000 yen per person are both bookable through Devlin & Rowe Travel with a 14-day advance booking window — less restrictive than the Kyoto experiences. For four travelers including Priya Nair and Marcus Yuen, these two Hiroshima experiences total 66,000 yen and are slotted into Days 8 and 9 of the Sakura Route Itinerary. Both use fully refundable deposits of 20 percent, consistent with Devlin & Rowe Travel's policy for Hiroshima bookings."
+    },
+    {
+      "turn_id": "t54",
+      "user_message": "Does the Miyajima Island day trip get affected if Marcus Yuen misses Day 9 for any reason?",
+      "assistant_message": "The Miyajima Island day trip is individually priced and fully refundable with 14 days' notice, so if Marcus Yuen is unable to attend Day 9, his 11,000 yen deposit component can be claimed back without affecting the other three travelers' bookings. Devlin & Rowe Travel processes individual refunds within the group booking separately, meaning Priya Nair, Tomoko Hashimoto, and yourself can proceed with the trip as planned. The Sakura Route Itinerary notes that Day 9 also features the final Shinkansen leg back toward Tokyo, which is covered by the 14-day JR Pass for all travelers."
+    },
+    {
+      "turn_id": "t55",
+      "user_message": "Is the emergency evacuation coverage under the Devlin & Rowe Travel policy valid during the Miyajima Island day trip, since it involves a ferry?",
+      "assistant_message": "Yes, the 10,000,000 yen emergency evacuation coverage under the Devlin & Rowe Travel group policy applies during ferry transport to Miyajima Island, as maritime transit within Japan is explicitly included in the policy's geographic scope. The policy document specifies that all transport modes used as part of the insured itinerary — including ferries listed in the Sakura Route Itinerary — are covered. Tomoko Hashimoto's adventure-activities rider does not affect the ferry coverage, which applies equally to all four travelers including Marcus Yuen and Priya Nair."
+    },
+    {
+      "turn_id": "t56",
+      "user_message": "Has the consulate confirmed in writing that the application form version submitted will be accepted, or could there be a form version issue?",
+      "assistant_message": "Devlin & Rowe Travel checked with the consulate on 21 March and confirmed that the current application form version — Form VJA-2024/B — is the accepted version and will remain current through at least December 2024. An older version, Form VJA-2023/A, is no longer accepted as of 1 March and any application using it would be rejected at the counter. Priya Nair has downloaded the correct Form VJA-2024/B and placed it in the shared Sakura Route Itinerary planning folder for the visa applicant to use."
+    },
+    {
+      "turn_id": "t57",
+      "user_message": "Does the Devlin & Rowe Travel group policy have a maximum aggregate payout for the entire group, separate from the per-person limits?",
+      "assistant_message": "The group policy has an aggregate cap of 4,000,000 yen for all claims across all insured travelers combined, which is lower than the sum of all individual caps (which would be 1,400,000 yen for cancellation alone plus other benefits). In practice, this aggregate cap only becomes relevant if multiple large claims are filed simultaneously, and Devlin & Rowe Travel considers it unlikely to be a binding constraint for a four-person leisure trip. Marcus Yuen has acknowledged this cap in the policy review notes and considers the coverage adequate given the nature of the trip."
+    },
+    {
+      "turn_id": "t58",
+      "user_message": "For the Hiroshima experiences, is there a combined package deal similar to the Kyoto Trio Package?",
+      "assistant_message": "Devlin & Rowe Travel does not currently offer a bundled Hiroshima package equivalent to the Kyoto Trio Package, so the Peace Memorial Museum tour and the Miyajima Island day trip must be booked and priced separately. The total for both at individual rates is 16,500 yen per person, or 66,000 yen for four travelers including Priya Nair and Marcus Yuen, with no available bundle discount. Devlin & Rowe Travel's representative mentioned that a Hiroshima bundle may be introduced for the 2025 season, but it is not available for the October 2024 trip in the Sakura Route Itinerary."
+    },
+    {
+      "turn_id": "t59",
+      "user_message": "If Tomoko Hashimoto decides not to add the adventure rider after all, does the policy premium drop back to the flat 12,000 yen per person?",
+      "assistant_message": "Yes, if Tomoko Hashimoto opts out of the adventure-activities rider, all four travelers revert to the standard 12,000 yen per person premium, for a group total of 48,000 yen. The decision must be communicated to Devlin & Rowe Travel before the 1 April policy finalization deadline; after that point the rider cannot be removed without issuing an entirely new policy. Marcus Yuen has asked Tomoko Hashimoto to confirm her hiking plans by 28 March so the group can finalize the insurance line item in the Sakura Route Itinerary budget."
+    },
+    {
+      "turn_id": "t60",
+      "user_message": "What is the total group insurance cost if Tomoko Hashimoto keeps the rider and all four original travelers are on the policy?",
+      "assistant_message": "With Tomoko Hashimoto's adventure rider at 16,500 yen and the other three travelers — Marcus Yuen, Priya Nair, and yourself — at 12,000 yen each, the confirmed total group insurance cost is 52,500 yen as established in the Sakura Route Itinerary planning file. This is the figure Devlin & Rowe Travel will invoice if no changes are made before the 1 April deadline. The per-person average works out to 13,125 yen, which Devlin & Rowe Travel notes is still highly competitive for a 10-day international group policy with medical evacuation coverage."
+    },
+    {
+      "turn_id": "t61",
+      "user_message": "Given the JR Pass cost per person and the total cash each of the four of us needs to carry, what is the combined per-person outlay just for those two items?",
+      "assistant_message": null
+    }
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that the JR Pass cost per person is 50,000 yen (confirmed in branch A).",
+      "required": false,
+      "evidence_turn_ids": ["t1", "t51"]
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that the total cash per person (spending plus emergency reserve) is 130,000 yen (confirmed in branch B).",
+      "required": false,
+      "evidence_turn_ids": ["t38", "t43"]
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer correctly combines the two figures to give a per-person total of 180,000 yen for the JR Pass plus cash.",
+      "required": true,
+      "evidence_turn_ids": ["t51", "t43"]
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not state 650,000 yen as the relevant total cash figure; that figure applies to the five-person group including Raj Fernandez (near-miss t42), not the original four travelers.",
+      "required": true,
+      "evidence_turn_ids": []
+    }
+  ],
+  "reference_answer": "The 14-day Ordinary JR Pass costs 50,000 yen per person, as confirmed for all four travelers on the Sakura Route Itinerary. Each of the four travelers also needs 130,000 yen in accessible cash, covering 115,000 yen for daily spending and entrance fees plus a 15,000 yen emergency reserve. Combined, each person's outlay for just these two items is 180,000 yen.",
+  "notes": "The JR Pass per-person cost (50,000 yen) is established in branch A turns t1, t6, t22, and t51. The per-person cash total (130,000 yen) is established in branch B turns t24, t38, and t43. The near-miss turn t42 answers a superficially similar question about the five-person group total (650,000 yen), which would be a wrong answer to the final query."
+}
+```

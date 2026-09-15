@@ -1,0 +1,335 @@
+I'll fix the signposting issues, ensure distractor branches stay closer to the query's subject (same entities, same kind of details about sourcing parts), and maintain proper entity reuse throughout.
+
+```json
+{
+  "entity_registry": [
+    "Mira Voss",
+    "Tactile Forge",
+    "Kailh BOX Navy",
+    "Durock L7 stabilizer",
+    "Supplier Quotation Sheet v3",
+    "WS Aurora pad",
+    "Liang Chen"
+  ],
+  "turns": [
+    {
+      "turn_id": "t1",
+      "user_message": "I'm Mira Voss working on the Tactile Forge 65% keyboard project. We're trying to nail down the switch order — we've settled on Kailh BOX Navy switches. Can you help me figure out the minimum order quantity and unit price from the main supplier?",
+      "assistant_message": "For Kailh BOX Navy switches, the standard minimum order quantity from Kailh's authorized distributor KBDfans wholesale is 100 units at $0.55 per switch. If Tactile Forge places an order of 500 or more units, the unit price drops to $0.48 per switch, and orders of 1,000 or more unlock a further reduced rate of $0.42 per switch. These prices were last confirmed in the Supplier Quotation Sheet v3 dated March 14, 2024, which Mira Voss received directly from the KBDfans wholesale account manager."
+    },
+    {
+      "turn_id": "t2",
+      "user_message": "What foam options are we looking at for the WS Aurora pad compatibility with the Tactile Forge build? I want to check if PE foam thickness affects the sound profile significantly.",
+      "assistant_message": "For the WS Aurora pad used in the Tactile Forge 65% build, PE foam thickness options commonly tested are 0.3 mm and 0.5 mm. The 0.5 mm PE foam produces a noticeably more muted, poppy sound signature, while the 0.3 mm version retains more of the natural resonance from the aluminum plate. Liang Chen ran sound tests on both configurations in February 2024 and documented that the 0.5 mm option reduced high-frequency ping by approximately 40% compared to bare plate. The Supplier Quotation Sheet v3 includes a line item for bulk PE foam sheets at $0.08 per sheet in quantities of 200 or more."
+    },
+    {
+      "turn_id": "t3",
+      "user_message": "We need to sort out the PCB sourcing for the Tactile Forge 65% build. Who is our contact at the PCB manufacturer and what lead time are we working with?",
+      "assistant_message": "The PCB manufacturer Tactile Forge is working with is Elecrow, and the primary contact there is a sales representative named Jenny Wu. Liang Chen negotiated a lead time of 18 business days for a prototype batch of 10 PCBs, with production batches of 50 or more dropping to 14 business days. The unit cost per PCB for the production batch is $12.40, as recorded in the Supplier Quotation Sheet v3. Elecrow confirmed these terms via email on March 22, 2024."
+    },
+    {
+      "turn_id": "t4",
+      "user_message": "For the WS Aurora pad, does the 0.5 mm PE foam interfere with the switch mounting on the PCB when using Kailh BOX Navy switches?",
+      "assistant_message": "The 0.5 mm PE foam used with the WS Aurora pad does not interfere with Kailh BOX Navy switch mounting because the BOX Navy housing sits 1.2 mm above the PCB surface at its lowest contact point, leaving ample clearance. Liang Chen verified this during the February 2024 sound test session by test-fitting 20 Kailh BOX Navy units through the foam layer without any seating issues. The foam holes are pre-punched at 14.1 mm diameter, which accommodates the BOX Navy's 14.0 mm housing footprint with a 0.1 mm tolerance. The Supplier Quotation Sheet v3 notes that WS Aurora pad ships pre-punched for MX-compatible switches including the BOX series."
+    },
+    {
+      "turn_id": "t5",
+      "user_message": "What's the status on the aluminum case sourcing for the Tactile Forge 65%? I need to know the anodizing color options and whether Mira Voss has approved the finish spec.",
+      "assistant_message": "The aluminum case for the Tactile Forge 65% is being sourced from Anodize Pro in Shenzhen, with three color options under consideration: matte black (RAL 9005), space gray (custom mix code AP-SG-07), and navy blue (AP-NB-12). Mira Voss approved the space gray finish spec on March 18, 2024, noting it as the primary colorway for the group buy. The per-unit anodizing cost is $4.20 for orders of 100 or more cases, and Anodize Pro requires a minimum of 50 units per color run. The Supplier Quotation Sheet v3 includes this pricing alongside a 10-day lead time for anodizing after machining is complete."
+    },
+    {
+      "turn_id": "t6",
+      "user_message": "I need to work through the Durock L7 stabilizer sourcing. What quantity are we planning to order and what's the per-unit cost listed in the Supplier Quotation Sheet v3?",
+      "assistant_message": "According to the Supplier Quotation Sheet v3, Tactile Forge is planning to order 200 sets of Durock L7 stabilizers for the initial production run of the 65% keyboard. The per-unit cost is $3.80 per set at that quantity, sourced directly through Durock's official wholesale channel. Liang Chen flagged in a March 20, 2024 internal note that ordering 300 sets would bring the price down to $3.50 per set, saving $90 total on the stabilizer line item. The stabilizer sets include 2u and 6.25u bars, which are compatible with the Tactile Forge 65% PCB layout."
+    },
+    {
+      "turn_id": "t7",
+      "user_message": "Going back to the WS Aurora pad — does it come in a version compatible with the 65% layout specifically, or do we need to cut it down from a larger sheet?",
+      "assistant_message": "The WS Aurora pad is available in a dedicated 65% layout size measuring 320 mm × 110 mm, which is a direct fit for the Tactile Forge 65% case internal dimensions. There is no need to cut it down from a larger sheet; the 65%-specific version is listed as SKU WSA-65-BLK in the Supplier Quotation Sheet v3. Liang Chen confirmed with the WS supplier on March 25, 2024 that the SKU WSA-65-BLK ships with pre-punched switch holes at 14.1 mm diameter and has a 7-day lead time. The unit price for WSA-65-BLK is $1.20 per pad at quantities of 100 or more."
+    },
+    {
+      "turn_id": "t8",
+      "user_message": "What keycap set has Tactile Forge committed to for the group buy, and who is the keycap manufacturer contact?",
+      "assistant_message": "Tactile Forge has committed to a PBT doubleshot keycap set manufactured by Keyreative, with the set designated as the TF-Origin colorway featuring a dark gray base and amber legends. The manufacturer contact at Keyreative is sales manager David Ng, who Mira Voss has been corresponding with since February 2024. The per-unit keycap set cost is $18.50 at the group buy quantity of 300 sets, as recorded in the Supplier Quotation Sheet v3. Keyreative quoted a production lead time of 75 days from payment confirmation."
+    },
+    {
+      "turn_id": "t9",
+      "user_message": "For the Durock L7 stabilizer order, has Liang Chen confirmed whether we're going with 200 or 300 sets, and has a PO been issued?",
+      "assistant_message": "Liang Chen confirmed on March 28, 2024 that Tactile Forge will proceed with the 300-set order of Durock L7 stabilizers to take advantage of the $3.50 per-set price point, bringing the total stabilizer cost to $1,050. A purchase order, PO-2024-003, was issued to Durock's wholesale channel on March 29, 2024, with an expected delivery window of 12 business days. The Supplier Quotation Sheet v3 was updated to reflect the 300-set quantity and revised total. Mira Voss signed off on PO-2024-003 the same day it was issued."
+    },
+    {
+      "turn_id": "t10",
+      "user_message": "What's the plate material decision for the Tactile Forge 65%? I know there were a few options being evaluated.",
+      "assistant_message": "Tactile Forge evaluated three plate materials for the 65% build: aluminum at 1.5 mm, polycarbonate at 1.5 mm, and FR4 at 1.6 mm. Mira Voss and Liang Chen reviewed sound and flex test results in late February 2024 and selected the polycarbonate plate as the primary offering, citing its flex-forward feel and compatibility with the WS Aurora pad sound profile. The polycarbonate plate is being sourced from PCBWay at a unit cost of $6.80 per plate for a batch of 150 units. The Supplier Quotation Sheet v3 includes a line for aluminum plates as an optional add-on at $8.10 per unit for buyers who prefer a stiffer typing feel."
+    },
+    {
+      "turn_id": "t11",
+      "user_message": "For the WS Aurora pad order, has the quantity been locked in and is there a PO in the system yet?",
+      "assistant_message": "The WS Aurora pad order quantity has been locked at 150 units of SKU WSA-65-BLK, which covers the planned 120-unit production run with 30 units of buffer stock. Liang Chen submitted PO-2024-005 to the WS supplier on April 1, 2024, referencing the pricing of $1.20 per pad from the Supplier Quotation Sheet v3, for a total pad cost of $180. The PO confirms the 7-day lead time and requests delivery to Tactile Forge's fulfillment warehouse by April 10, 2024. Mira Voss reviewed and approved PO-2024-005 on the same day it was submitted."
+    },
+    {
+      "turn_id": "t12",
+      "user_message": "Has the polycarbonate plate order been placed with PCBWay yet, and what finish is specified?",
+      "assistant_message": "The polycarbonate plate order has been placed with PCBWay under PO-2024-004, issued by Liang Chen on March 30, 2024, for 150 units at $6.80 each, totaling $1,020. The finish specified is natural clear polycarbonate with no additional coating, allowing the plate's translucency to complement LED underglow in the Tactile Forge 65% build. PCBWay acknowledged the order on March 31, 2024, with a confirmed production lead time of 10 business days. The Supplier Quotation Sheet v3 notes that a frosted finish is available as an alternative at no additional cost if Mira Voss decides to revise before production begins."
+    },
+    {
+      "turn_id": "t13",
+      "user_message": "For the Elecrow PCB order, has the prototype batch been shipped and has Jenny Wu provided a tracking number?",
+      "assistant_message": "Jenny Wu confirmed on March 26, 2024 that the prototype batch of 10 PCBs for the Tactile Forge 65% was completed and shipped via DHL Express with tracking number 1234567890. The shipment was dispatched from Elecrow's Shenzhen facility and Liang Chen received delivery confirmation on April 2, 2024, which was within the 18-business-day lead time negotiated earlier. Initial visual inspection by Liang Chen found no defects in the 10 prototype units, and functional testing was scheduled for April 5, 2024. Mira Voss requested that testing results be logged against the Supplier Quotation Sheet v3 project file for traceability."
+    },
+    {
+      "turn_id": "t14",
+      "user_message": "Has Keyreative sent a sample of the TF-Origin keycap set for Mira Voss to review before production approval?",
+      "assistant_message": "David Ng at Keyreative shipped a sample set of the TF-Origin keycaps on April 3, 2024, via SF Express with an estimated delivery of 5 business days to Tactile Forge's address. The sample includes the full alphanumeric block plus modifier keys in PBT doubleshot with the dark gray base and amber legends as specified. Mira Voss is scheduled to review the sample upon arrival and provide approval or revision feedback to David Ng by April 15, 2024. If approved, Keyreative will begin the 75-day production run immediately, targeting delivery before the group buy shipping window outlined in the Supplier Quotation Sheet v3."
+    },
+    {
+      "turn_id": "t15",
+      "user_message": "Has Elecrow confirmed whether the production batch of 50 PCBs can be started once Liang Chen completes functional testing on the prototypes?",
+      "assistant_message": "Jenny Wu confirmed via email on April 4, 2024 that Elecrow can begin the production batch of 50 PCBs for the Tactile Forge 65% immediately upon receipt of Liang Chen's functional test sign-off, without requiring a new quotation. The production batch is locked at $12.40 per PCB as stated in the Supplier Quotation Sheet v3, totaling $620 for 50 units. Elecrow will apply the 14-business-day lead time for the production batch starting from the day the go-ahead is received. Liang Chen is expected to complete functional testing by April 7, 2024, which would put production completion around April 25, 2024."
+    },
+    {
+      "turn_id": "t16",
+      "user_message": "David Ng mentioned a possible price increase on the TF-Origin keycap set if the order quantity changes. What's the revised pricing if we drop to 250 sets instead of 300?",
+      "assistant_message": "David Ng quoted a revised unit price of $20.00 per keycap set if the Tactile Forge order drops to 250 sets, compared to the $18.50 per-set price at 300 units. This represents a $1.50 per-unit increase, bringing the total keycap cost to $5,000 for 250 sets versus $5,550 for 300 sets at the higher per-unit rate. Mira Voss noted in an April 5, 2024 message to Liang Chen that the 300-set quantity should be maintained to preserve the $18.50 rate and keep the project within budget. The Supplier Quotation Sheet v3 will be updated to reflect this as a firm commitment at 300 sets."
+    },
+    {
+      "turn_id": "t17",
+      "user_message": "Has the decision been made on whether to offer the aluminum plate as an add-on during the Tactile Forge group buy checkout?",
+      "assistant_message": "Mira Voss confirmed on April 6, 2024 that the aluminum plate will be offered as an optional add-on during the Tactile Forge 65% group buy checkout at a retail price of $14.00, which covers the $8.10 sourcing cost from PCBWay plus margin. Liang Chen updated the group buy product page draft to include the aluminum plate as a selectable add-on alongside the standard polycarbonate plate. The Supplier Quotation Sheet v3 was annotated to indicate that aluminum plate orders will be fulfilled only if a minimum of 30 add-on units are selected during the group buy. Orders below 30 units for the aluminum plate will be refunded and only the polycarbonate option fulfilled."
+    },
+    {
+      "turn_id": "t18",
+      "user_message": "For the Durock L7 stabilizer order under PO-2024-003, when is the expected delivery and has the tracking been shared?",
+      "assistant_message": "PO-2024-003 was superseded by the revised 300-set order, so the active purchase order is now PO-2024-003R, which Liang Chen reissued on March 29, 2024 to reflect the updated quantity. Durock's wholesale channel provided a tracking number via 4PX logistics on April 2, 2024, with an estimated delivery to Tactile Forge's warehouse of April 15, 2024. This falls within the 12-business-day window from the PO issue date as recorded in the Supplier Quotation Sheet v3. Mira Voss confirmed receipt acknowledgment and asked Liang Chen to inspect all 300 sets upon arrival for wire pre-alignment quality."
+    },
+    {
+      "turn_id": "t19",
+      "user_message": "Has Keyreative confirmed the exact legend font for the TF-Origin keycap set, or is that still pending Mira Voss's approval on the sample?",
+      "assistant_message": "David Ng confirmed on April 3, 2024 that the TF-Origin keycap set uses Keyreative's proprietary font designated KR-Sans-04, which features slightly rounded terminals on the legends for a modern look. The font was pre-approved by Mira Voss in a February 28, 2024 design review, so the sample being shipped is already in the final font configuration. Any legend revision would require a new mold adjustment costing $320 and a 15-day delay, which Liang Chen noted should be avoided given the group buy timeline. The Supplier Quotation Sheet v3 references the font spec as KR-Sans-04 under the keycap line item."
+    },
+    {
+      "turn_id": "t20",
+      "user_message": "What's the status of the anodizing order for the Tactile Forge 65% aluminum case in the space gray colorway?",
+      "assistant_message": "Anodize Pro received the machined aluminum case blanks from the CNC supplier on April 4, 2024, and confirmed that anodizing in space gray finish AP-SG-07 will begin on April 8, 2024. The batch covers 120 units at $4.20 per unit, totaling $504 for the anodizing step, consistent with the Supplier Quotation Sheet v3 pricing. Liang Chen confirmed that a 5-unit quality sample will be pulled from the batch for Mira Voss to inspect before the remaining 115 units are released from the anodizing facility. Anodize Pro quoted a completion date of April 18, 2024 for the full 120-unit run."
+    },
+    {
+      "turn_id": "t21",
+      "user_message": "What's the minimum order quantity and unit price for the Durock L7 stabilizers from the wholesale channel?",
+      "assistant_message": "The minimum order quantity for Durock L7 stabilizers from the wholesale channel is 100 sets, priced at $4.20 per set at that minimum threshold. At 200 sets the price drops to $3.80 per set, and at 300 sets it further reduces to $3.50 per set, which is the quantity Tactile Forge committed to under PO-2024-003R. These figures are all documented in the Supplier Quotation Sheet v3 that Liang Chen and Mira Voss reviewed in March 2024."
+    },
+    {
+      "turn_id": "t22",
+      "user_message": "Has PCBWay confirmed the delivery date for the polycarbonate plate batch under PO-2024-004?",
+      "assistant_message": "PCBWay confirmed on April 9, 2024 that the 150-unit polycarbonate plate batch under PO-2024-004 will be completed and shipped by April 14, 2024, well within the 10-business-day lead time from the March 30 order date. Shipping will be via DHL Express, and Liang Chen is expecting delivery to the Tactile Forge warehouse by April 17, 2024. The plates will be inspected for dimensional accuracy against the 65% layout spec, particularly the switch cutout tolerances. Mira Voss asked Liang Chen to cross-check the plate cutout positions against the Elecrow PCB layout before the production batch is approved."
+    },
+    {
+      "turn_id": "t23",
+      "user_message": "Has the Durock L7 stabilizer shipment under PO-2024-003R arrived and passed Liang Chen's inspection?",
+      "assistant_message": "The Durock L7 stabilizer shipment arrived at Tactile Forge's warehouse on April 14, 2024, one day ahead of the estimated April 15 delivery. Liang Chen inspected all 300 sets and found that 297 sets passed quality checks for wire pre-alignment and housing tolerances, with 3 sets flagged for slightly loose wire seating. Mira Voss approved proceeding with the 297 passing sets and requested a replacement claim for the 3 defective sets through Durock's wholesale channel, referencing PO-2024-003R. The Supplier Quotation Sheet v3 project file was updated to note the 99% pass rate on the stabilizer inspection."
+    },
+    {
+      "turn_id": "t24",
+      "user_message": "Has Mira Voss reviewed the 5-unit anodizing quality sample from Anodize Pro?",
+      "assistant_message": "Mira Voss received the 5-unit space gray anodizing sample from Anodize Pro on April 12, 2024, and completed her review on April 13. She approved 4 of the 5 units as meeting the AP-SG-07 finish spec, flagging the fifth for a minor inconsistency in surface texture near one edge. Anodize Pro was notified of the single rejection and confirmed that the issue was a one-off caused by a jig contact point, which has been corrected for the remaining 115 units. Liang Chen updated the Supplier Quotation Sheet v3 to reflect approval of the anodizing run with a note on the jig correction."
+    },
+    {
+      "turn_id": "t25",
+      "user_message": "Has Elecrow started the production PCB batch after Liang Chen's functional testing sign-off?",
+      "assistant_message": "Liang Chen completed functional testing on all 10 prototype PCBs on April 7, 2024, confirming all units passed with no electrical faults, and sent the sign-off to Jenny Wu at Elecrow the same day. Elecrow officially started the production batch of 50 PCBs on April 8, 2024, targeting completion by April 25, 2024 per the 14-business-day lead time. The total production batch cost of $620 was invoiced by Elecrow and approved by Mira Voss on April 8, 2024. Jenny Wu confirmed that the batch is using the same Gerber files submitted for the prototype, with no layout changes required."
+    },
+    {
+      "turn_id": "t26",
+      "user_message": "For the Kailh BOX Navy switch order, what quantity is Tactile Forge planning to order, and which price tier would that hit?",
+      "assistant_message": "Tactile Forge is planning to order 1,200 Kailh BOX Navy switches for the initial production run of the 65% keyboard, which clears the 1,000-unit threshold and qualifies for the lowest tier price of $0.42 per switch as documented in the Supplier Quotation Sheet v3. At 1,200 units the total switch cost comes to $504. Liang Chen proposed this quantity to cover the 120-unit keyboard build at 10 switches per board, with a buffer of 0 spare switches — Mira Voss asked him to revise upward to include a 10% spare buffer, which would bring the order to 1,320 switches."
+    },
+    {
+      "turn_id": "t27",
+      "user_message": "Has Durock responded to the replacement claim for the 3 defective stabilizer sets from PO-2024-003R?",
+      "assistant_message": "Durock's wholesale channel responded to the replacement claim on April 16, 2024, confirming they will ship 3 replacement Durock L7 stabilizer sets at no charge, referencing the defect documentation Liang Chen submitted with photos of the loose wire seating. The replacement shipment was dispatched on April 17, 2024, via 4PX with an estimated delivery of April 22, 2024. Mira Voss noted that the Supplier Quotation Sheet v3 should reflect the final received quantity as 300 sets once the replacements arrive. The warranty resolution was completed within Durock's stated 5-business-day claim processing window."
+    },
+    {
+      "turn_id": "t28",
+      "user_message": "Has the WS Aurora pad shipment under PO-2024-005 arrived at the Tactile Forge warehouse?",
+      "assistant_message": "The WS Aurora pad shipment under PO-2024-005 arrived on April 9, 2024, one day ahead of the April 10 target delivery date. Liang Chen confirmed all 150 units of SKU WSA-65-BLK were received in good condition, with pre-punched switch holes intact and no foam delamination. Mira Voss approved the inventory as ready for assembly and asked Liang Chen to store the pads in the climate-controlled section of the warehouse to prevent humidity-related degradation. The Supplier Quotation Sheet v3 was updated to show the WS Aurora pad line item as fully received."
+    },
+    {
+      "turn_id": "t29",
+      "user_message": "What did Mira Voss decide about the frosted polycarbonate plate finish — is the order still locked to clear?",
+      "assistant_message": "Mira Voss confirmed on April 10, 2024 that the polycarbonate plate order under PO-2024-004 will remain in natural clear finish and the frosted option will not be pursued for the initial production run. She noted that the clear finish better showcases LED underglow and aligns with the Tactile Forge 65% aesthetic direction. Liang Chen informed PCBWay of this decision to ensure no last-minute finish changes are applied before the April 14 ship date. The Supplier Quotation Sheet v3 has the clear finish locked as final, with a note that frosted may be revisited for a future colorway run."
+    },
+    {
+      "turn_id": "t30",
+      "user_message": "Has the aluminum plate add-on threshold of 30 units been reached during the Tactile Forge group buy interest check?",
+      "assistant_message": "As of April 15, 2024, the interest check for the aluminum plate add-on had received 44 confirmed selections from group buy participants, exceeding the 30-unit minimum threshold set in the Supplier Quotation Sheet v3. Liang Chen reported this to Mira Voss, who approved placing a provisional aluminum plate order with PCBWay for 50 units to account for potential additional sign-ups before the group buy closes. The 50-unit order at $8.10 per plate totals $405 for the aluminum plate line. Mira Voss asked Liang Chen to finalize the aluminum plate PO no later than April 20, 2024."
+    },
+    {
+      "turn_id": "t31",
+      "user_message": "Has Mira Voss signed off on the revised Kailh BOX Navy switch order quantity with the 10% spare buffer Liang Chen was asked to calculate?",
+      "assistant_message": "Mira Voss signed off on the revised Kailh BOX Navy switch order quantity of 1,320 units on April 8, 2024, confirming that the 10% spare buffer of 120 switches is sufficient for the production run. At 1,320 units the order still falls in the 1,000-or-more tier, so the unit price remains $0.42 per switch as per the Supplier Quotation Sheet v3, bringing the total switch cost to $554.40. Liang Chen was instructed to issue a purchase order to KBDfans wholesale no later than April 12, 2024. The order is designated PO-2024-006 in the Tactile Forge procurement log."
+    },
+    {
+      "turn_id": "t32",
+      "user_message": "Has the replacement shipment of the 3 Durock L7 stabilizer sets arrived at the Tactile Forge warehouse?",
+      "assistant_message": "The 3 replacement Durock L7 stabilizer sets arrived on April 21, 2024, one day ahead of the April 22 estimate. Liang Chen inspected all 3 and confirmed they passed the wire pre-alignment and housing tolerance checks, bringing the total usable stabilizer inventory to 300 sets as planned. Mira Voss asked Liang Chen to update the Supplier Quotation Sheet v3 to reflect full receipt and close out the replacement claim. The completed stabilizer inventory is now stored alongside the WS Aurora pad stock in the climate-controlled section of the warehouse."
+    },
+    {
+      "turn_id": "t33",
+      "user_message": "Has Elecrow's production PCB batch completed and shipped yet?",
+      "assistant_message": "Jenny Wu at Elecrow confirmed on April 24, 2024 that the production batch of 50 PCBs for the Tactile Forge 65% completed fabrication on schedule and was handed to DHL Express for shipment the same day. The tracking number provided by Jenny Wu is 9876543210, and Liang Chen is expecting delivery by April 28, 2024. Mira Voss requested that Liang Chen perform a continuity test on a sample of at least 10 units from the batch upon receipt. The Supplier Quotation Sheet v3 project file will be updated to mark the PCB line item as fully received once delivery is confirmed."
+    },
+    {
+      "turn_id": "t34",
+      "user_message": "Has the WS Aurora pad inventory been allocated per keyboard unit in the Tactile Forge assembly plan?",
+      "assistant_message": "Liang Chen completed the assembly allocation on April 11, 2024, assigning one WSA-65-BLK pad per keyboard unit across the 120-unit production run, with the remaining 30 pads held as spare inventory. The allocation is logged in the Tactile Forge assembly plan document, which references SKU WSA-65-BLK and the $1.20 unit cost from the Supplier Quotation Sheet v3. Mira Voss reviewed the allocation on April 12, 2024 and approved it without changes. The 30-unit spare buffer exceeds the 25-unit minimum spare threshold Mira Voss set for all major components."
+    },
+    {
+      "turn_id": "t35",
+      "user_message": "Has Liang Chen confirmed the per-keyboard component cost breakdown including the WS Aurora pad?",
+      "assistant_message": "Liang Chen submitted the per-keyboard component cost breakdown to Mira Voss on April 13, 2024, listing the WS Aurora pad at $1.20, the Durock L7 stabilizer set at $3.50, the polycarbonate plate at $6.80, the PCB at $12.40, and the aluminum case with anodizing at an effective $4.20 per unit. The switch cost per board was listed as pending finalization of the Kailh BOX Navy PO. Mira Voss asked Liang Chen to add the keycap set cost of $18.50 from the Supplier Quotation Sheet v3 and resubmit the full breakdown. The partial component total excluding switches and keycaps was $28.10 per unit."
+    },
+    {
+      "turn_id": "t36",
+      "user_message": "Has the per-keyboard cost breakdown been updated with the Kailh BOX Navy switch cost and the keycap set cost?",
+      "assistant_message": "Liang Chen resubmitted the updated per-keyboard cost breakdown to Mira Voss on April 14, 2024, adding the Kailh BOX Navy switch cost at $0.42 per switch times 10 switches per board equaling $4.20 per keyboard, and the TF-Origin keycap set at $18.50 per set from the Supplier Quotation Sheet v3. The full per-unit component cost came to $50.80, which Mira Voss approved as within the target COGS ceiling of $55.00 for the Tactile Forge 65%. Liang Chen noted that the $4.20 difference between the COGS ceiling and the actual cost provides a margin buffer for shipping and packaging materials. Mira Voss confirmed the breakdown is final pending no supplier price changes."
+    },
+    {
+      "turn_id": "t37",
+      "user_message": "Has Liang Chen finalized and submitted PO-2024-006 for the Kailh BOX Navy switches to KBDfans wholesale?",
+      "assistant_message": "Liang Chen submitted PO-2024-006 to KBDfans wholesale on April 11, 2024, one day ahead of the April 12 deadline Mira Voss set. The PO covers 1,320 Kailh BOX Navy switches at $0.42 per unit, totaling $554.40, consistent with the Supplier Quotation Sheet v3 pricing. KBDfans wholesale acknowledged the order on April 12, 2024, and confirmed a lead time of 8 business days for this quantity. The expected delivery date for the Kailh BOX Navy switches is April 23, 2024."
+    },
+    {
+      "turn_id": "t38",
+      "user_message": "Has the production PCB batch from Elecrow arrived and has Liang Chen completed the continuity testing?",
+      "assistant_message": "The production batch of 50 PCBs arrived at the Tactile Forge warehouse on April 27, 2024, one day ahead of the April 28 estimate. Liang Chen completed continuity testing on 10 units on April 28, 2024, and all 10 passed without faults, consistent with the prototype results. Mira Voss approved the full batch for use in production assembly based on the 10-unit sample test results. The Supplier Quotation Sheet v3 project file was updated by Liang Chen to mark the PCB line item as fully received and quality-approved."
+    },
+    {
+      "turn_id": "t39",
+      "user_message": "Has the Kailh BOX Navy switch shipment under PO-2024-006 arrived and what was the result of the incoming inspection?",
+      "assistant_message": "The Kailh BOX Navy switch shipment under PO-2024-006 arrived on April 22, 2024, one day ahead of the April 23 estimated delivery. Liang Chen inspected a sample of 50 switches from the 1,320-unit shipment and confirmed all 50 passed actuation force testing at the rated 60 gf with no misfires or scratchy travel. Mira Voss approved the full shipment for production use on April 22, 2024, and asked Liang Chen to log the lot number KBN-2024-L04 in the Supplier Quotation Sheet v3 for traceability. The full 1,320-unit inventory is now staged in the Tactile Forge assembly area."
+    },
+    {
+      "turn_id": "t40",
+      "user_message": "Has Liang Chen issued the aluminum plate add-on PO to PCBWay before Mira Voss's April 20 deadline?",
+      "assistant_message": "Liang Chen issued PO-2024-007 to PCBWay for 50 aluminum plate add-on units on April 19, 2024, meeting the April 20 deadline Mira Voss set. The PO is valued at $405, covering 50 units at $8.10 per plate as listed in the Supplier Quotation Sheet v3. PCBWay acknowledged the order on April 20, 2024, with a 10-business-day lead time placing estimated completion at May 2, 2024. Mira Voss confirmed that the aluminum plate add-on retail price of $14.00 remains as set, and Liang Chen updated the group buy product page accordingly."
+    },
+    {
+      "turn_id": "t41",
+      "user_message": "Has the full component inventory for the Tactile Forge 65% production run been reconciled against the Supplier Quotation Sheet v3?",
+      "assistant_message": "Liang Chen completed the inventory reconciliation on April 28, 2024, confirming that all major components for the Tactile Forge 65% are received and quality-approved: 150 WS Aurora pads, 300 Durock L7 stabilizer sets, 150 polycarbonate plates, 50 PCBs, 120 anodized cases, and 1,320 Kailh BOX Navy switches. The Supplier Quotation Sheet v3 was marked as fully reconciled with no outstanding line items except the TF-Origin keycap sets from Keyreative, which are still in production. Mira Voss approved the reconciliation report and confirmed that assembly can begin on non-keycap components. The only open procurement item is the Keyreative keycap delivery expected approximately 75 days from the April 8 production start."
+    },
+    {
+      "turn_id": "t42",
+      "user_message": "Has Mira Voss confirmed the assembly start date for the Tactile Forge 65% given that keycaps are still pending?",
+      "assistant_message": "Mira Voss confirmed on April 29, 2024 that partial assembly will begin on May 1, 2024, covering PCB soldering with Kailh BOX Navy switches, stabilizer installation with Durock L7 sets, and plate and WS Aurora pad fitting. Liang Chen will lead the assembly team and has scheduled a two-day assembly window on May 1 and May 2, 2024. Full keyboard completion and packaging will be held until the TF-Origin keycap sets arrive from Keyreative, which is targeted around July 1, 2024 based on the 75-day lead time from April 8. The Supplier Quotation Sheet v3 timeline section was updated to reflect the phased assembly plan."
+    },
+    {
+      "turn_id": "t43",
+      "user_message": "Has Anodize Pro completed the full 120-unit anodizing run and shipped the cases to the Tactile Forge warehouse?",
+      "assistant_message": "Anodize Pro completed the full 120-unit space gray AP-SG-07 anodizing run on April 18, 2024 as scheduled, and shipped the cases via SF Express on April 19, 2024. Liang Chen received delivery of all 120 anodized cases on April 22, 2024, and conducted a visual inspection finding 118 units meeting the finish spec and 2 units with minor edge blemishes. Mira Voss approved the 118 passing units for production and requested that Anodize Pro rework the 2 blemished cases under warranty. The Supplier Quotation Sheet v3 was updated to reflect 118 approved cases in inventory with 2 units pending rework."
+    },
+    {
+      "turn_id": "t44",
+      "user_message": "Has PCBWay shipped the aluminum plate add-on batch under PO-2024-007 and is it on track for the May 2 completion date?",
+      "assistant_message": "PCBWay confirmed on May 1, 2024 that the aluminum plate batch under PO-2024-007 was completed on April 30, 2024, one day ahead of the May 2 target. The batch of 50 aluminum plates was shipped via DHL Express on May 1, 2024, with an estimated delivery to Tactile Forge's warehouse of May 4, 2024. Liang Chen noted that early delivery will allow him to inspect the aluminum plates alongside the polycarbonate batch inspection results before the group buy closes. Mira Voss confirmed that the Supplier Quotation Sheet v3 aluminum plate add-on line item will be closed upon receipt and inspection."
+    },
+    {
+      "turn_id": "t45",
+      "user_message": "Has Anodize Pro provided a timeline for the rework of the 2 blemished cases?",
+      "assistant_message": "Anodize Pro confirmed on April 23, 2024 that the 2 blemished cases would be reworked and returned within 5 business days, targeting April 30, 2024 for completion. Liang Chen arranged for the 2 units to be collected by Anodize Pro's courier on April 24, 2024. Mira Voss noted that the rework is covered under Anodize Pro's standard warranty and no additional cost will be incurred beyond the original $4.20 per-unit anodizing fee already paid. The Supplier Quotation Sheet v3 notes the rework as a warranty action under the aluminum case line item."
+    },
+    {
+      "turn_id": "t46",
+      "user_message": "Has the assembly team completed the PCB soldering and stabilizer installation for the first batch of Tactile Forge 65% units?",
+      "assistant_message": "Liang Chen's assembly team completed PCB soldering with Kailh BOX Navy switches and Durock L7 stabilizer installation across 50 units on May 1, 2024, the first assembly day. The remaining 68 units requiring PCB work were scheduled for May 2, but Liang Chen reported that the team finished 70 of those on May 2, completing a total of 120 PCB and stabilizer assemblies by end of day. Mira Voss reviewed 10 random units from the batch and found all 10 passed her tactile feel and stabilizer rattle checks. The assembled sub-units are staged for plate and WS Aurora pad fitting, which Liang Chen scheduled for May 5, 2024."
+    },
+    {
+      "turn_id": "t47",
+      "user_message": "Has the Elecrow PCB batch quality held up after the full 50-unit functional test was completed?",
+      "assistant_message": "Liang Chen completed full 50-unit functional testing of the Elecrow PCBs on April 30, 2024, with 49 units passing all continuity and switch matrix tests. One unit showed an intermittent fault on row 3 of the switch matrix and was quarantined for further diagnosis. Mira Voss approved the 49 passing units for the assembly run and asked Liang Chen to document the faulty unit and send it back to Jenny Wu at Elecrow for root cause analysis. The Supplier Quotation Sheet v3 was updated to reflect 49 production-ready PCBs, with 1 unit under warranty investigation."
+    },
+    {
+      "turn_id": "t48",
+      "user_message": "Has the plate and WS Aurora pad fitting been completed on the assembled Tactile Forge 65% sub-units?",
+      "assistant_message": "Liang Chen's team completed plate and WS Aurora pad fitting on all 120 sub-units on May 5, 2024 as scheduled, with each unit receiving one WSA-65-BLK pad and one clear polycarbonate plate. Post-fitting inspection confirmed that the 0.5 mm PE foam layer in the WS Aurora pad seated correctly against the PCB in all 120 units with no lifting or misalignment. Mira Voss conducted a sound test on 5 randomly selected units and confirmed the expected poppy, muted profile consistent with Liang Chen's February 2024 test results. The sub-units are now complete pending keycap installation and final case assembly."
+    },
+    {
+      "turn_id": "t49",
+      "user_message": "Has the rework of the 2 blemished anodized cases from Anodize Pro been completed and returned?",
+      "assistant_message": "Anodize Pro returned the 2 reworked anodized cases on April 30, 2024, meeting the April 30 target. Liang Chen inspected both and confirmed that the surface texture inconsistency had been corrected, with both cases now meeting the AP-SG-07 space gray finish spec. Mira Voss approved both reworked cases for production use, bringing the total approved case inventory to 120 units. The Supplier Quotation Sheet v3 warranty action note for the aluminum case line item was closed by Liang Chen on May 1, 2024."
+    },
+    {
+      "turn_id": "t50",
+      "user_message": "Has the aluminum plate add-on batch under PO-2024-007 arrived and passed inspection?",
+      "assistant_message": "The aluminum plate add-on batch arrived at the Tactile Forge warehouse on May 4, 2024 as estimated. Liang Chen inspected all 50 units and confirmed they passed dimensional accuracy checks, with switch cutouts within tolerance for the 65% layout. Mira Voss signed off on the aluminum plate inventory on May 5, 2024, and the Supplier Quotation Sheet v3 aluminum plate add-on line item was officially closed. The 50 aluminum plates are stored separately from the main polycarbonate plate stock and are reserved for group buy add-on fulfillment."
+    },
+    {
+      "turn_id": "t51",
+      "user_message": "What is the total quantity of Durock L7 stabilizer sets in the Tactile Forge warehouse now that the replacement sets have arrived?",
+      "assistant_message": "With the 3 replacement sets received on April 21, 2024, the total Durock L7 stabilizer inventory in the Tactile Forge warehouse stands at 300 sets, all quality-approved. Of these, 120 sets have been allocated to the production run per the assembly plan, leaving 180 sets as spare inventory. Liang Chen confirmed this count in the April 28 reconciliation against the Supplier Quotation Sheet v3. Mira Voss noted that the 180-unit spare buffer is well above the 25-unit minimum spare threshold she set for major components."
+    },
+    {
+      "turn_id": "t52",
+      "user_message": "Has the assembly team started case fitting for the Tactile Forge 65% sub-units?",
+      "assistant_message": "Liang Chen's assembly team began case fitting on May 6, 2024, installing the anodized aluminum cases onto the completed sub-units comprising the PCB, Kailh BOX Navy switches, Durock L7 stabilizers, polycarbonate plate, and WS Aurora pad. The team completed 60 units on May 6 and the remaining 60 on May 7, finishing the full 120-unit case assembly. Mira Voss inspected 8 units from the completed batch and approved all 8 for fit, finish, and case gap consistency. The 120 cased units are now staged for final keycap installation once the TF-Origin keycap sets arrive from Keyreative."
+    },
+    {
+      "turn_id": "t53",
+      "user_message": "Has Keyreative provided any update on the TF-Origin keycap set production timeline?",
+      "assistant_message": "David Ng at Keyreative sent a production update on May 10, 2024 confirming that the TF-Origin keycap molds were finalized on May 5 and injection molding began May 6, putting the production run on track for completion around July 1, 2024 as originally estimated. Liang Chen shared the update with Mira Voss, who confirmed that the July 1 target aligns with the group buy shipping window. The 300-set order at $18.50 per set from the Supplier Quotation Sheet v3 remains unchanged. David Ng noted that a final color accuracy check on a production sample will be sent to Mira Voss around June 15, 2024."
+    },
+    {
+      "turn_id": "t54",
+      "user_message": "Has Mira Voss set a final retail price for the Tactile Forge 65% keyboard and communicated it to the group buy participants?",
+      "assistant_message": "Mira Voss announced the final retail price of $189 per unit for the Tactile Forge 65% keyboard on May 8, 2024, communicated via the group buy interest check page and the Tactile Forge mailing list. This price covers the $50.80 per-unit COGS plus margin for shipping, packaging, platform fees, and profit. Liang Chen confirmed the pricing is consistent with the cost model based on the Supplier Quotation Sheet v3. The keycap set is included in the $189 price, and the aluminum plate add-on is available separately at $14.00 as previously decided."
+    },
+    {
+      "turn_id": "t55",
+      "user_message": "Has the Durock L7 stabilizer allocation been updated in the assembly plan now that 120 sets have been installed?",
+      "assistant_message": "Liang Chen updated the assembly plan on May 7, 2024 to reflect that 120 Durock L7 stabilizer sets have been installed across the 120 production units, with the remaining 180 sets logged as spare inventory in the Tactile Forge warehouse. The Supplier Quotation Sheet v3 project file was updated to show the stabilizer line item as fully consumed for production, with the spare quantity noted. Mira Voss reviewed the updated assembly plan on May 8, 2024 and confirmed the spare inventory level is adequate for any post-sale warranty replacements. No additional stabilizer orders are planned at this time."
+    },
+    {
+      "turn_id": "t56",
+      "user_message": "Has Liang Chen submitted a final procurement summary to Mira Voss covering all POs issued for the Tactile Forge 65% project?",
+      "assistant_message": "Liang Chen submitted the final procurement summary to Mira Voss on May 9, 2024, covering all seven POs: PO-2024-003R for Durock L7 stabilizers, PO-2024-004 for polycarbonate plates, PO-2024-005 for WS Aurora pads, PO-2024-006 for Kailh BOX Navy switches, PO-2024-007 for aluminum plate add-ons, and two others for the PCB and case. The summary references the Supplier Quotation Sheet v3 as the master pricing document and confirms total component spend of approximately $4,213 excluding keycaps. Mira Voss approved the summary on May 10, 2024 and noted it as the baseline for the Tactile Forge 65% project cost audit. The only open PO remains the Keyreative keycap order pending July 2024 delivery."
+    },
+    {
+      "turn_id": "t57",
+      "user_message": "Has Jenny Wu at Elecrow completed the root cause analysis on the faulty PCB unit from the production batch?",
+      "assistant_message": "Jenny Wu sent Elecrow's root cause analysis report on May 8, 2024, identifying the fault on the row 3 switch matrix as a solder bridge on a via near the microcontroller footprint, caused by a paste printing misalignment during that specific unit's reflow cycle. Elecrow confirmed this was an isolated incident and not a systemic issue, supporting the 49-unit clean pass rate. A replacement PCB was shipped to Tactile Forge on May 9, 2024, free of charge, bringing the total usable PCB inventory to 50 units. Liang Chen updated the Supplier Quotation Sheet v3 to close the warranty action and reflect 50 production-ready PCBs."
+    },
+    {
+      "turn_id": "t58",
+      "user_message": "Now that the Kailh BOX Navy switch order is fully received and we have the final per-unit pricing locked in, what is the total cost of the switch order and what price tier did we end up in?",
+      "assistant_message": null
+    }
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that the Kailh BOX Navy switch order quantity is 1,320 units.",
+      "required": true,
+      "evidence_turn_ids": ["t26", "t31", "t39"]
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that the unit price is $0.42 per switch (the 1,000-or-more tier).",
+      "required": true,
+      "evidence_turn_ids": ["t1", "t26", "t31"]
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer states that the total cost of the switch order is $554.40.",
+      "required": true,
+      "evidence_turn_ids": ["t31", "t37"]
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not state that the Durock L7 stabilizer minimum order quantity is 100 sets at $4.20 per set or otherwise use the Durock L7 near-miss pricing as the answer.",
+      "required": true,
+      "evidence_turn_ids": []
+    }
+  ],
+  "reference_answer": "The Kailh BOX Navy switch order under PO-2024-006 was placed for 1,320 units, which falls in the 1,000-or-more price tier at $0.42 per switch as documented in the Supplier Quotation Sheet v3. The total cost of the switch order is 1,320 × $0.42 = $554.40. This quantity covers the 120-unit production run at 10 switches per board plus a 10% spare buffer of 120 switches, and the full shipment was received and approved by Mira Voss on April 22, 2024.",
+  "notes": "The key facts for the query come from gold turns t1 (price tiers), t26 (1,200 base quantity and $0.42 tier), t31 (revised to 1,320 units, total $554.40, PO-2024-006), and t39 (shipment received). The near-miss turn is t21, which answers a question about Durock L7 stabilizer MOQ and pricing ($4.20/set at 100 units minimum) — superficially similar to a pricing/MOQ question but about a completely different component."
+}
+```

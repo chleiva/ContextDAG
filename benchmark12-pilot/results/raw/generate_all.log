@@ -1,0 +1,48 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+  long_two_branch_join_003: exists, skipping
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 14673.13it/s]
+  wrote long_two_branch_join_004: 31 turns, 4231 tok, closure 0.30, cos ratio 0.78, attempt 1, 109s
+  wrote long_two_branch_join_005: 48 turns, 5269 tok, closure 0.13, cos ratio 0.72, attempt 1, 122s
+  wrote long_two_branch_join_002: 38 turns, 6445 tok, closure 0.24, cos ratio 0.89, attempt 2, 266s
+  wrote long_two_branch_join_001: 61 turns, 7514 tok, closure 0.17, cos ratio 0.63, attempt 2, 369s
+  wrote long_two_branch_join_007: 59 turns, 6847 tok, closure 0.10, cos ratio 0.65, attempt 1, 153s
+  wrote long_three_way_join_001: 33 turns, 4170 tok, closure 0.31, cos ratio 0.72, attempt 1, 99s
+  wrote long_two_branch_join_008: 44 turns, 5633 tok, closure 0.21, cos ratio 0.66, attempt 2, 257s
+  wrote long_two_branch_join_006: 52 turns, 6976 tok, closure 0.16, cos ratio 0.84, attempt 3, 466s
+  wrote long_three_way_join_003: 56 turns, 6744 tok, closure 0.22, cos ratio 0.7, attempt 1, 151s
+  wrote long_three_way_join_004: 40 turns, 4898 tok, closure 0.26, cos ratio 0.63, attempt 1, 110s
+  wrote long_three_way_join_002: 55 turns, 9469 tok, closure 0.19, cos ratio 0.62, attempt 2, 394s
+  wrote long_three_way_join_007: 52 turns, 6897 tok, closure 0.24, cos ratio 0.94, attempt 1, 160s
+  wrote long_three_way_join_006: 31 turns, 4034 tok, closure 0.37, cos ratio 0.69, attempt 3, 307s
+  long_resume_001: exists, skipping
+  wrote long_three_way_join_005: 53 turns, 8443 tok, closure 0.23, cos ratio 0.65, attempt 3, 518s
+  wrote long_resume_002: 49 turns, 8509 tok, closure 0.08, cos ratio 0.63, attempt 1, 188s
+  wrote long_three_way_join_008: 32 turns, 5495 tok, closure 0.32, cos ratio 0.74, attempt 2, 244s
+  wrote long_resume_003: 42 turns, 6197 tok, closure 0.10, cos ratio 0.66, attempt 1, 140s
+  wrote long_resume_004: 59 turns, 8444 tok, closure 0.10, cos ratio 0.76, attempt 1, 197s
+  wrote long_resume_005: 42 turns, 8671 tok, closure 0.10, cos ratio 0.71, attempt 2, 352s
+  wrote long_resume_006: 49 turns, 6414 tok, closure 0.12, cos ratio 0.9, attempt 2, 285s
+  wrote long_resume_007: 59 turns, 10151 tok, closure 0.10, cos ratio 0.76, attempt 2, 432s
+  wrote long_long_noisy_side_thread_001: 44 turns, 5982 tok, closure 0.09, cos ratio 0.71, attempt 2, 254s
+  wrote long_resume_008: 51 turns, 8212 tok, closure 0.10, cos ratio 0.88, attempt 3, 489s
+  wrote long_long_noisy_side_thread_004: 42 turns, 5869 tok, closure 0.05, cos ratio 0.69, attempt 2, 241s
+  wrote long_long_noisy_side_thread_003: 34 turns, 4931 tok, closure 0.12, cos ratio 0.66, attempt 4, 458s
+  wrote long_long_noisy_side_thread_002: 48 turns, 8440 tok, closure 0.06, cos ratio 0.65, attempt 3, 504s
+  wrote long_long_noisy_side_thread_007: 53 turns, 7624 tok, closure 0.08, cos ratio 0.71, attempt 2, 372s
+FAILED ('long_noisy_side_thread', 5): RuntimeError: long_long_noisy_side_thread_005: rejected after 4 attempts: t18.user_message contains topic-switch signposting: ['Going back to']; t22.user_message contains topic-switch signposting: ['separately']; distractor branch F shares only [] named entities with the gold branch; it must mention at least 2 of
+FAILED ('long_noisy_side_thread', 6): RuntimeError: long_long_noisy_side_thread_006: rejected after 4 attempts: cosine gate failed: median distractor cosine 0.37 vs gold median 0.75 (ratio 0.50 < 0.6); distractor branches must stay much closer to the query's subject (same entities, same kind of details)
+  wrote long_new_root_001: 39 turns, 6468 tok, closure 0.00, cos ratio None, attempt 1, 146s
+  wrote long_new_root_002: 33 turns, 4850 tok, closure 0.00, cos ratio None, attempt 1, 123s
+  wrote long_new_root_003: 40 turns, 5349 tok, closure 0.00, cos ratio None, attempt 1, 123s
+FAILED ('long_noisy_side_thread', 8): RuntimeError: long_long_noisy_side_thread_008: rejected after 4 attempts: t16.user_message contains topic-switch signposting: ['Going back to']; cosine gate failed: median distractor cosine 0.25 vs gold median 0.69 (ratio 0.37 < 0.6); distractor branches must stay much closer to the query's subject (same entities
+  wrote long_new_root_004: 48 turns, 7534 tok, closure 0.00, cos ratio None, attempt 1, 172s
+  wrote long_new_root_006: 49 turns, 9167 tok, closure 0.00, cos ratio None, attempt 1, 203s
+  wrote long_new_root_005: 49 turns, 7218 tok, closure 0.00, cos ratio None, attempt 2, 331s
+  wrote long_new_root_007: 46 turns, 8555 tok, closure 0.00, cos ratio None, attempt 1, 195s
+  wrote long_new_root_008: 31 turns, 4605 tok, closure 0.00, cos ratio None, attempt 2, 206s
+3 failures, run spend $11.75
+F0.5 spend: $18.16 of $50.00 hard limit (estimate $20.00, warn $35.00)
+calls: 147, tokens in: 573,843, out: 1,095,734
+  generation       $  17.89
+  generation-repair $   0.26
+  us.anthropic.claude-sonnet-4-6                   $  18.16

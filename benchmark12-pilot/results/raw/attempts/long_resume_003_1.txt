@@ -1,0 +1,252 @@
+```json
+{
+  "entity_registry": [
+    "Crumb & Co.",
+    "Marta Voss",
+    "Delancey Street",
+    "Riverside Commons",
+    "Expansion Feasibility Report",
+    "Jonah Preece"
+  ],
+  "turns": [
+    {
+      "turn_id": "t1",
+      "user_message": "We're working on whether Crumb & Co. should open a second location. Marta Voss put together some revenue projections for the Riverside Commons site — can you help us think through the financials?",
+      "assistant_message": "Absolutely. For the Riverside Commons site, Marta Voss's projections in the Expansion Feasibility Report estimate first-year gross revenue of $480,000, based on an average of 340 customer transactions per day at an average ticket of $6.80. That compares to the existing Delancey Street location, which logged $510,000 in gross revenue last fiscal year. The gap reflects a conservative 8-month ramp-up period before Riverside Commons reaches full operating capacity."
+    },
+    {
+      "turn_id": "t2",
+      "user_message": "What does the Expansion Feasibility Report say about the build-out cost and how Crumb & Co. plans to finance it?",
+      "assistant_message": "The Expansion Feasibility Report puts the total build-out cost for the Riverside Commons site at $215,000, covering leasehold improvements, equipment, and initial inventory. Marta Voss identified a financing split of 60% small-business loan and 40% owner equity, meaning Crumb & Co. would need to inject $86,000 in cash up front. The report notes that Jonah Preece, the company's accountant, confirmed the existing Delancey Street cash reserves stand at $104,000, which is sufficient to cover the equity portion."
+    },
+    {
+      "turn_id": "t3",
+      "user_message": "What annual operating costs did Marta Voss project for Riverside Commons once it's fully running?",
+      "assistant_message": "Once at full operation, Marta Voss projected total annual operating costs for Riverside Commons at $392,000, broken down as $168,000 in labor, $134,000 in cost of goods sold, $54,000 in rent, and $36,000 in utilities and miscellaneous overhead. That puts the projected operating income in year one at $88,000 against the $480,000 revenue figure. Jonah Preece reviewed these figures and flagged that the labor estimate assumes two full-time bakers plus four part-time counter staff."
+    },
+    {
+      "turn_id": "t4",
+      "user_message": "Did the Expansion Feasibility Report set a payback period or a minimum return threshold for the project to be considered viable?",
+      "assistant_message": "Yes — the Expansion Feasibility Report specifies a payback period target of 30 months from opening day, and sets a minimum annual return on investment threshold of 12% for the Riverside Commons project to be deemed viable. Marta Voss calculated that at the projected $88,000 operating income and $215,000 build-out cost, the simple ROI comes to approximately 40.9%, well above the 12% threshold. The report also states that if revenue falls 20% below projection, the payback period extends to 44 months, which Crumb & Co.'s owners agreed is still within an acceptable risk range."
+    },
+    {
+      "turn_id": "t5",
+      "user_message": "I need to think through staffing for the second location. How many people are currently working at Delancey Street and what are the wage rates?",
+      "assistant_message": "The Delancey Street location currently employs 11 people in total: 3 full-time bakers at $22 per hour, 5 part-time counter staff at $15 per hour, 2 full-time shift supervisors at $19 per hour, and 1 general manager — Marta Voss herself — who draws a $58,000 annual salary. Total annualized wage expenditure at Delancey Street is approximately $267,000 including employer payroll taxes. Jonah Preece prepared a staffing cost summary as an appendix to the Expansion Feasibility Report."
+    },
+    {
+      "turn_id": "t6",
+      "user_message": "What's the lease situation for Riverside Commons? I want to understand the key terms before we commit.",
+      "assistant_message": "The proposed lease for the Riverside Commons space is a 7-year term with a base rent of $4,500 per month for the first three years, escalating to $4,950 per month in years four through seven. The landlord, Greenfield Property Group, is offering three months of free rent as a tenant-improvement concession during the build-out phase. Jonah Preece noted in a memo to Marta Voss dated March 14 that the lease includes a co-tenancy clause tied to the anchor grocery store, which represents a minor risk if that store vacates."
+    },
+    {
+      "turn_id": "t7",
+      "user_message": "If Crumb & Co. opens Riverside Commons, does Marta Voss plan to hire a separate manager or promote from within Delancey Street?",
+      "assistant_message": "Marta Voss's plan, documented in the staffing annex of the Expansion Feasibility Report, is to promote from within: specifically, shift supervisor Delia Huang at Delancey Street has been identified as the top internal candidate for the Riverside Commons general manager role, at a proposed salary of $52,000 annually. Promoting Delia Huang would create a vacancy at Delancey Street that Marta Voss intends to fill by elevating one of the three existing full-time bakers to a supervisory track. Jonah Preece confirmed that the $52,000 salary for the new manager role is already embedded in the $168,000 labor projection for Riverside Commons."
+    },
+    {
+      "turn_id": "t8",
+      "user_message": "Has Crumb & Co. checked whether the Riverside Commons space meets health department and zoning requirements for a bakery?",
+      "assistant_message": "Yes — Marta Voss engaged a local permit consultant, Rosa Telles of Telles Compliance LLC, in February to conduct a pre-application review. Rosa Telles confirmed the Riverside Commons unit is zoned C-2 Commercial, which permits food manufacturing and retail without a special-use variance. The space will need a Type II hood ventilation system installed at an estimated cost of $18,000, which is already included in the $215,000 build-out budget that Jonah Preece reviewed."
+    },
+    {
+      "turn_id": "t9",
+      "user_message": "What is the square footage of the Riverside Commons unit, and how does it compare to Delancey Street?",
+      "assistant_message": "The Riverside Commons unit is 2,200 square feet, with roughly 1,400 square feet of production and back-of-house space and 800 square feet of customer-facing retail area. The Delancey Street location is slightly larger at 2,550 square feet total, though its production area is only 1,200 square feet because more of the original layout was allocated to seating. Marta Voss noted in the Expansion Feasibility Report that the larger production footprint at Riverside Commons is actually an advantage, allowing for wholesale batch production that Delancey Street cannot currently accommodate."
+    },
+    {
+      "turn_id": "t10",
+      "user_message": "What marketing budget is Crumb & Co. planning for the Riverside Commons launch, and who is leading that effort?",
+      "assistant_message": "Marta Voss allocated a $14,000 launch marketing budget for Riverside Commons in the Expansion Feasibility Report, covering social media advertising, a grand-opening event, and local print placements. The campaign will be led by freelance marketer Soren Bell, who previously ran the Delancey Street rebranding in 2022 for a fee of $8,500. Jonah Preece confirmed that the $14,000 is treated as a one-time pre-opening expense and is not included in the $392,000 annual operating cost figure."
+    },
+    {
+      "turn_id": "t11",
+      "user_message": "Going back to the lease — is there a personal guarantee requirement, and did Crumb & Co. negotiate any cap on it?",
+      "assistant_message": "Greenfield Property Group initially required a full personal guarantee from Marta Voss covering the entire 7-year lease obligation, which at $4,500 per month would have been a $378,000 exposure. After two rounds of negotiation, the guarantee was capped at 18 months of base rent, or $81,000, which Marta Voss and Jonah Preece agreed was acceptable given the Delancey Street cash position. The revised guarantee language is included in Lease Rider B, initialed by Marta Voss on April 2."
+    },
+    {
+      "turn_id": "t12",
+      "user_message": "Has Soren Bell submitted a detailed marketing plan yet, or is it still in draft?",
+      "assistant_message": "Soren Bell submitted a full marketing plan to Marta Voss on April 10, outlining a 90-day pre-opening campaign and a 30-day post-opening push. The plan allocates $6,200 to paid social media ads targeting a 5-mile radius around Riverside Commons, $4,300 to the grand-opening event including product sampling and a local radio spot, and $3,500 to print inserts in the Riverside Commons shopping center's tenant newsletter. Jonah Preece has reviewed the budget breakdown and confirmed it stays within the $14,000 cap."
+    },
+    {
+      "turn_id": "t13",
+      "user_message": "Has Crumb & Co. figured out scheduling for the Riverside Commons build-out, and when is the target opening date?",
+      "assistant_message": "The build-out is scheduled to begin June 3, with a 14-week construction timeline managed by contractor Harlan Build Group, putting substantial completion around September 8. Marta Voss set a soft-opening target of September 15 and a grand opening — coordinated with Soren Bell's launch campaign — for October 1. Jonah Preece noted that the three-month rent-free concession from Greenfield Property Group runs from June 1 through August 31, meaning the first rent payment of $4,500 falls due September 1, just before the soft opening."
+    },
+    {
+      "turn_id": "t14",
+      "user_message": "Does Soren Bell's plan include any strategy for retaining customers after the grand-opening buzz dies down?",
+      "assistant_message": "Yes — Soren Bell's plan includes a loyalty program called the Crumb & Co. Card, launching on opening day, which gives customers one stamp per $5 spent and a free item after ten stamps. The plan projects 600 active card holders within the first 60 days at Riverside Commons, based on benchmarks from comparable bakery openings Soren Bell cited in the plan's appendix. Marta Voss approved the loyalty program on April 12, and Jonah Preece estimated the redemption cost at roughly $2,100 annually once the program matures, which is within the miscellaneous overhead line of the $36,000 figure."
+    },
+    {
+      "turn_id": "t15",
+      "user_message": "What happens if Harlan Build Group runs over schedule? Is there a penalty clause in the construction contract?",
+      "assistant_message": "The contract with Harlan Build Group includes a liquidated damages clause of $500 per calendar day for any delay beyond the September 8 substantial completion date, up to a maximum of $15,000. Marta Voss insisted on this clause after consulting with Jonah Preece, who calculated that each week of delay costs Crumb & Co. approximately $9,200 in lost revenue based on the Expansion Feasibility Report's daily transaction projections. The contract also includes a 10% contingency allowance of $21,500 held in escrow, which Harlan Build Group can draw on only for documented scope changes approved in writing by Marta Voss."
+    },
+    {
+      "turn_id": "t16",
+      "user_message": "Does the Riverside Commons lease allow Crumb & Co. to sublease part of the space or add signage on the exterior of the building?",
+      "assistant_message": "The lease with Greenfield Property Group prohibits subleasing any portion of the Riverside Commons unit without prior written landlord consent, which cannot be unreasonably withheld per the clause Marta Voss negotiated in Lease Rider B. For exterior signage, Crumb & Co. is entitled to one primary fascia sign not exceeding 24 square feet and one window graphic not exceeding 15 square feet, per the Riverside Commons tenant signage standards document. Jonah Preece budgeted $3,800 for exterior signage fabrication and installation, included in the $215,000 build-out total."
+    },
+    {
+      "turn_id": "t17",
+      "user_message": "Has Delia Huang formally accepted the Riverside Commons general manager offer, or is that still being negotiated?",
+      "assistant_message": "Delia Huang verbally accepted the offer on April 5 after a meeting with Marta Voss, and a written offer letter was sent April 7 with a response deadline of April 21. The letter confirms the $52,000 annual salary, a $1,500 relocation allowance since Delia Huang will need to commute to Riverside Commons rather than Delancey Street, and a 90-day performance review with a potential $2,500 bonus. As of the last update from Marta Voss, Delia Huang had signed and returned the letter on April 18, three days before the deadline."
+    },
+    {
+      "turn_id": "t18",
+      "user_message": "Has Soren Bell started any pre-opening social media activity for Riverside Commons, or does everything wait until closer to October?",
+      "assistant_message": "Soren Bell's plan calls for a teaser phase beginning August 1, roughly six weeks before the October 1 grand opening, using a dedicated Riverside Commons Instagram account that Marta Voss approved. The teaser phase targets 1,200 followers before opening day and will feature behind-the-scenes build-out content, staff introductions including Delia Huang, and sneak previews of two new menu items exclusive to Riverside Commons. Jonah Preece confirmed the August 1 start date is consistent with the $6,200 social media budget being drawn down over a 10-week window."
+    },
+    {
+      "turn_id": "t19",
+      "user_message": "Did Greenfield Property Group agree to any tenant-improvement allowance on top of the free rent period?",
+      "assistant_message": "Greenfield Property Group offered a tenant-improvement allowance of $25,000 in addition to the three months of free rent, payable as a reimbursement against documented build-out invoices submitted within 120 days of lease commencement. Marta Voss and Jonah Preece agreed to treat the $25,000 TI allowance as a direct reduction to the net build-out cost, effectively bringing Crumb & Co.'s out-of-pocket construction expense from $215,000 down to $190,000. This also slightly improves the ROI calculation Marta Voss presented in the Expansion Feasibility Report, though the report's headline figures have not yet been formally revised."
+    },
+    {
+      "turn_id": "t20",
+      "user_message": "Now that Delia Huang has signed, who at Delancey Street is being promoted to fill the shift supervisor vacancy she's leaving?",
+      "assistant_message": "Marta Voss identified full-time baker Tomás Reyes as the internal candidate to step into the shift supervisor role at Delancey Street, pending a formal performance review scheduled for May 2. If promoted, Tomás Reyes would move from the $22-per-hour baker rate to the $19-per-hour supervisor rate — a slight hourly decrease, but with guaranteed 40-hour weeks versus the variable hours he currently works. Jonah Preece noted in a staffing cost memo that the net effect on Delancey Street's payroll is a reduction of approximately $1,800 annually because Tomás Reyes's current variable hours average only 32 per week."
+    },
+    {
+      "turn_id": "t21",
+      "user_message": "Has Crumb & Co. looked at whether the Riverside Commons landlord requires proof of insurance before the build-out starts?",
+      "assistant_message": "Yes — Greenfield Property Group requires Crumb & Co. to provide a certificate of insurance showing general liability coverage of at least $2,000,000 per occurrence and $4,000,000 aggregate before Harlan Build Group can take possession of the space on June 3. Marta Voss contacted the bakery's existing insurer, Bridgepoint Mutual, and confirmed that adding the Riverside Commons location to the policy costs an additional $3,100 annually. Jonah Preece has included the $3,100 premium increase in the $36,000 utilities and miscellaneous overhead line for Riverside Commons."
+    },
+    {
+      "turn_id": "t22",
+      "user_message": "Did Soren Bell include any plan for handling negative reviews or a PR crisis during the launch period?",
+      "assistant_message": "Soren Bell's marketing plan includes a one-page crisis communications protocol specifying that any review with two stars or fewer on Google or Yelp must receive a personal response from Delia Huang within 24 hours using an approved template. The protocol also designates Marta Voss as the sole spokesperson for any media inquiry during the first 90 days of Riverside Commons operation. Jonah Preece was not involved in drafting this section, though Marta Voss noted in her April 12 approval memo that she wants a legal review of the response templates before August 1."
+    },
+    {
+      "turn_id": "t23",
+      "user_message": "Has Crumb & Co. confirmed what hours Riverside Commons will operate, and will they match Delancey Street?",
+      "assistant_message": "Marta Voss confirmed in a planning memo dated April 20 that Riverside Commons will operate Tuesday through Sunday, 7 a.m. to 6 p.m., which is one hour shorter in the evening than Delancey Street's current 7 a.m. to 7 p.m. schedule. The decision to close at 6 p.m. was based on foot-traffic data from Greenfield Property Group showing that the Riverside Commons shopping center sees a sharp drop in visitors after 5:30 p.m. Delia Huang will set the daily staff schedule, and Jonah Preece confirmed the reduced hours are already reflected in the labor cost assumptions in the Expansion Feasibility Report."
+    },
+    {
+      "turn_id": "t24",
+      "user_message": "Will Riverside Commons offer the same full menu as Delancey Street, or will there be differences?",
+      "assistant_message": "Marta Voss decided that Riverside Commons will carry 85% of the Delancey Street core menu, with six items dropped due to lower margin or production complexity, and two new items added exclusively to Riverside Commons. The two exclusive items — a brown-butter financier and a savory herb scone — were developed by head baker Priya Nair specifically for the larger Riverside Commons production space and are expected to carry a 68% gross margin each. Jonah Preece estimated the two new items could contribute roughly $18,000 in incremental annual revenue once the product line matures, which is not yet included in the Expansion Feasibility Report's $480,000 projection."
+    },
+    {
+      "turn_id": "t25",
+      "user_message": "Has Soren Bell done any competitive analysis of other bakeries near Riverside Commons?",
+      "assistant_message": "Soren Bell's marketing plan includes a competitive landscape section identifying three nearby competitors within a 1.5-mile radius of Riverside Commons: a franchise café at 0.4 miles, a specialty patisserie at 0.9 miles, and a grocery-store bakery inside the same shopping center. Soren Bell rated Crumb & Co.'s differentiation as strong on artisan quality and moderate on price competitiveness, noting the franchise café's average ticket is $5.20 versus the $6.80 projected for Riverside Commons. Marta Voss reviewed the analysis and noted in her April 12 memo that the specialty patisserie is the most direct threat and that Delia Huang should monitor its pricing quarterly."
+    },
+    {
+      "turn_id": "t26",
+      "user_message": "Has there been any discussion about whether Tomás Reyes is actually ready for a supervisory role, or is Marta Voss taking a risk?",
+      "assistant_message": "Marta Voss's April 5 internal note describes Tomás Reyes as having consistently strong performance reviews over three years at Delancey Street, with no disciplinary incidents and high marks for reliability. Jonah Preece noted that the risk is relatively contained because Delia Huang will remain available for a two-week overlap period — working both Delancey Street and Riverside Commons — to ensure a smooth handoff before fully transitioning to the new site. The main concern Marta Voss flagged is that Tomás Reyes has no prior supervisory experience, so she plans to enroll him in a $900 food-service management course through the local community college before the transition."
+    },
+    {
+      "turn_id": "t27",
+      "user_message": "Can Crumb & Co. use the Riverside Commons space for any catering or wholesale operations, or is it limited to retail under the lease?",
+      "assistant_message": "The Riverside Commons lease with Greenfield Property Group explicitly permits catering preparation and wholesale production as permitted uses alongside retail, which was a key negotiating point Marta Voss insisted on. This aligns with the Expansion Feasibility Report's note that the larger production space at Riverside Commons — 1,400 square feet versus 1,200 at Delancey Street — was specifically chosen to enable a wholesale channel. Jonah Preece projected that a modest wholesale operation, if launched in year two, could add $35,000 to $50,000 in annual revenue without requiring additional lease amendments."
+    },
+    {
+      "turn_id": "t28",
+      "user_message": "Did Soren Bell's plan budget for any influencer outreach or partnerships with other Riverside Commons tenants?",
+      "assistant_message": "Soren Bell allocated $800 of the $6,200 social media budget specifically for micro-influencer outreach, targeting three to five local food bloggers with followings between 5,000 and 20,000 in the Riverside Commons trade area. The plan also proposes a cross-promotion arrangement with neighboring tenant Bloom & Stem Florists, where Crumb & Co. boxes would carry a Bloom & Stem coupon insert and vice versa, at no cost to either party. Marta Voss approved the Bloom & Stem partnership on April 15, and Delia Huang is designated as the ongoing liaison once Riverside Commons opens."
+    },
+    {
+      "turn_id": "t29",
+      "user_message": "Has Crumb & Co. decided whether Tomás Reyes will do his community college course before or after the June 3 build-out start?",
+      "assistant_message": "Marta Voss enrolled Tomás Reyes in the community college's May 12 session of the food-service management course, which runs four Saturdays and concludes May 31 — just three days before the June 3 build-out start date. Jonah Preece confirmed the $900 tuition will be expensed under the Delancey Street training budget rather than the Riverside Commons build-out cost. This means Tomás Reyes will have his certificate in hand before Delia Huang begins splitting her time between the two locations."
+    },
+    {
+      "turn_id": "t30",
+      "user_message": "Has Soren Bell confirmed the local radio spot mentioned in the grand-opening plan, and which station is it on?",
+      "assistant_message": "Soren Bell confirmed a 30-second spot on WKRV 98.3 FM, a local station with an average morning-drive audience of 42,000 listeners in the Riverside Commons trade area, to run the week of September 29 through October 5. The spot cost is $1,100, included within the $4,300 grand-opening event budget line, and Marta Voss recorded a 15-second voiceover that Soren Bell will use as the closing tag. Delia Huang's name and title are mentioned in the spot as the Riverside Commons location manager, giving her early name recognition in the neighborhood."
+    },
+    {
+      "turn_id": "t31",
+      "user_message": "What is Crumb & Co.'s contingency plan if the Riverside Commons build-out goes over the $215,000 budget?",
+      "assistant_message": "The primary contingency is the $21,500 escrow held under the Harlan Build Group contract, which can cover documented scope changes up to that amount before Crumb & Co. needs to contribute additional funds. Beyond that, Jonah Preece identified a $30,000 line of credit attached to the Delancey Street operating account that Marta Voss could draw on as a secondary buffer, though this would reduce the cash cushion she currently holds. Marta Voss stated in an April 20 planning memo that any cost overrun exceeding $51,500 combined would trigger a formal re-evaluation of the project timeline in consultation with Jonah Preece."
+    },
+    {
+      "turn_id": "t32",
+      "user_message": "Has Greenfield Property Group set a deadline for Crumb & Co. to execute the lease, or is the deal still open-ended?",
+      "assistant_message": "Greenfield Property Group issued a lease execution deadline of May 9, confirmed in a letter to Marta Voss dated April 22. If Crumb & Co. does not execute by May 9, Greenfield has the right to offer the space to the next prospective tenant, though the letter notes there is no other active prospect at this time. Jonah Preece advised Marta Voss on April 23 that all financial conditions precedent — confirmed loan approval and proof of the $86,000 equity injection — must be in hand before signing, and he estimated those could be ready by May 5."
+    },
+    {
+      "turn_id": "t33",
+      "user_message": "What is the projected ROI for the Delancey Street location based on its current revenue and costs?",
+      "assistant_message": "Based on the figures in the Expansion Feasibility Report, the Delancey Street location generated $510,000 in gross revenue last fiscal year against total operating costs of $441,000 — including $267,000 in wages, $118,000 in cost of goods sold, and $56,000 in rent and overhead — yielding an operating income of $69,000. The original build-out investment for Delancey Street was $185,000 according to Crumb & Co.'s founding documents, so the simple ROI on that investment is approximately 37.3%. Marta Voss cited this figure in the Expansion Feasibility Report as a benchmark when evaluating the Riverside Commons opportunity."
+    },
+    {
+      "turn_id": "t34",
+      "user_message": "What happens to the $25,000 tenant-improvement allowance if Crumb & Co. doesn't submit invoices within the 120-day window?",
+      "assistant_message": "Per the lease with Greenfield Property Group, any portion of the $25,000 tenant-improvement allowance not claimed within 120 days of lease commencement is forfeited and cannot be applied to future rent credits or carried forward. Jonah Preece flagged this as a hard deadline in his April 23 memo to Marta Voss, recommending that Harlan Build Group submit progress invoices in tranches rather than waiting for substantial completion to claim the full allowance at once. Marta Voss confirmed she will instruct Harlan Build Group to submit the first invoice batch by August 15 to stay well within the window, assuming a June 1 lease commencement."
+    },
+    {
+      "turn_id": "t35",
+      "user_message": "Has Soren Bell finalized the two new exclusive menu items in his marketing materials, or is he waiting on Priya Nair to confirm the recipes?",
+      "assistant_message": "Soren Bell is holding placeholder copy for the two exclusive Riverside Commons items — the brown-butter financier and the savory herb scone — pending final recipe sign-off from Priya Nair, which Marta Voss expects by May 20. Soren Bell indicated in an April 25 email to Marta Voss that he needs the finalized names, descriptions, and pricing no later than July 15 to incorporate them into the pre-opening social media teaser content launching August 1. Jonah Preece noted that the pricing for both items, once set by Marta Voss and Priya Nair, will need to be validated against the 68% gross margin assumption already embedded in the Expansion Feasibility Report."
+    },
+    {
+      "turn_id": "t36",
+      "user_message": "Has the loan application for the 60% financing portion of the Riverside Commons build-out been submitted yet?",
+      "assistant_message": "Marta Voss submitted the small-business loan application to First Meridian Bank on April 18, requesting $129,000 — 60% of the $215,000 build-out cost — at a proposed 7.4% fixed rate over 7 years. Jonah Preece prepared the supporting financial package, including three years of Delancey Street tax returns, the Expansion Feasibility Report, and a personal financial statement from Marta Voss. First Meridian Bank's loan officer, Dana Chu, confirmed receipt on April 19 and indicated a decision is expected within 15 business days, putting the approval date around May 9 — the same day as the Greenfield Property Group lease deadline."
+    },
+    {
+      "turn_id": "t37",
+      "user_message": "If the lease is signed by May 9, what is the exact sequence of payments Crumb & Co. needs to make before the build-out starts?",
+      "assistant_message": "Jonah Preece outlined a three-step payment sequence in his April 23 memo: first, a security deposit of two months' rent — $9,000 — due at lease signing on May 9; second, the $86,000 equity injection into a dedicated Riverside Commons project account by May 23, two weeks before Harlan Build Group's mobilization; and third, an initial contractor mobilization payment of $43,000 — 20% of the $215,000 build-out contract — due to Harlan Build Group on June 3. Marta Voss confirmed that the Delancey Street cash reserve of $104,000 is sufficient to cover the security deposit and the equity injection without drawing on the $30,000 line of credit."
+    },
+    {
+      "turn_id": "t38",
+      "user_message": "Has Crumb & Co. identified a backup contractor in case Harlan Build Group runs into serious problems during the build-out?",
+      "assistant_message": "Marta Voss identified Kellner Construction as a backup contractor, having received a preliminary bid of $228,000 from them — $13,000 higher than Harlan Build Group's winning bid — during the original tender process. Jonah Preece noted in his April 23 memo that switching to Kellner Construction mid-project would likely add 3 to 4 weeks to the build-out timeline in addition to the cost premium, potentially pushing the soft opening past September 15. Marta Voss decided the Kellner option is a last resort and that the $15,000 liquidated damages clause in the Harlan Build Group contract is the primary protection against delays."
+    },
+    {
+      "turn_id": "t39",
+      "user_message": "Has the Riverside Commons signage design been approved yet, or is that still pending?",
+      "assistant_message": "Marta Voss submitted the signage design to Greenfield Property Group for landlord approval on April 24, using the same visual identity that Soren Bell developed during the 2022 Delancey Street rebranding. Greenfield Property Group has a 15-business-day review window per the lease, meaning approval or requested revisions are due by May 15. Jonah Preece confirmed the $3,800 signage fabrication budget is on hold pending that approval, and the fabrication vendor, Apex Signs, has been asked to hold the June 10 production slot."
+    },
+    {
+      "turn_id": "t40",
+      "user_message": "Has First Meridian Bank asked for any additional documentation since receiving the loan application?",
+      "assistant_message": "Dana Chu at First Meridian Bank sent a request for additional information on April 25, asking for a current accounts-receivable aging report for Crumb & Co. and a written explanation of the $30,000 line of credit on the Delancey Street account. Jonah Preece responded to both items on April 28: the accounts-receivable report showed zero past-due balances, and he clarified that the line of credit is an unused emergency facility, not an outstanding obligation. Dana Chu acknowledged receipt on April 29 and confirmed the May 9 decision timeline remains on track."
+    },
+    {
+      "turn_id": "t41",
+      "user_message": "If First Meridian Bank approves the loan, how long before funds are actually available for the June 3 build-out start?",
+      "assistant_message": "Dana Chu indicated to Marta Voss that, following a May 9 approval, loan closing would take approximately 10 business days, putting fund disbursement around May 23 — which coincidentally matches the date Jonah Preece set for the $86,000 equity injection deadline. The loan proceeds of $129,000 would be disbursed into the dedicated Riverside Commons project account alongside the equity funds, giving Crumb & Co. the full $215,000 build-out budget assembled and available well before the June 3 Harlan Build Group mobilization date. Marta Voss confirmed in an April 30 note that this timeline gives her a 10-day buffer before the contractor's first draw is due."
+    },
+    {
+      "turn_id": "t42",
+      "user_message": "Given everything in the Expansion Feasibility Report, does the Riverside Commons project clear the viability threshold Crumb & Co. set, and what are the key numbers that determine that?",
+      "assistant_message": null
+    }
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states the minimum annual ROI threshold set in the Expansion Feasibility Report is 12%.",
+      "required": true,
+      "evidence_turn_ids": ["t4"]
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states the projected ROI for Riverside Commons is approximately 40.9% (based on $88,000 operating income and $215,000 build-out cost).",
+      "required": true,
+      "evidence_turn_ids": ["t3", "t4"]
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer states the payback period target is 30 months, and that at projected figures the project meets that target (or notes the 44-month downside scenario if revenue falls 20%).",
+      "required": true,
+      "evidence_turn_ids": ["t4"]
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not use the Delancey Street ROI figure of 37.3% as the Riverside Commons ROI or viability answer.",
+      "required": true,
+      "evidence_turn_ids": []
+    }
+  ],
+  "reference_answer": "Yes, the Riverside Commons project clears the viability threshold. The Expansion Feasibility Report set a minimum annual ROI of 12% and a payback period target of 30 months. At the projected $88,000 operating income against the $215,000 build-out cost, the simple ROI comes to approximately 40.9% — well above the 12% floor. Even in the downside scenario where revenue falls 20% below projection, the payback period extends only to 44 months, which Crumb & Co.'s owners agreed remains within an acceptable risk range.",
+  "notes": "The key facts the query needs are all in t4 (the 12% ROI threshold, 30-month payback target, 40.9% projected ROI, and 44-month downside payback), supported by the operating cost and revenue figures established in t3. The near-miss turn is t33, which answers a superficially similar ROI question but for the Delancey Street location (37.3%), not Riverside Commons."
+}
+```

@@ -1,0 +1,329 @@
+{
+  "entity_registry": ["Priya Nandan", "KeyForge Studio", "Stellarboard 65", "Gateron Oil King", "BOM-Rev4", "TinkerKeys Forum"],
+  "turns": [
+    {
+      "turn_id": "t1",
+      "user_message": "I'm working on the Stellarboard 65 build and need to nail down the switch specs. What's the actuation force and travel distance for the Gateron Oil King?",
+      "assistant_message": "The Gateron Oil King is a linear switch with an actuation force of 55 gf and a total travel distance of 4.0 mm, with a pre-travel of 2.0 mm to actuation. These specs are consistent across the batch KeyForge Studio ordered in March 2024. Priya Nandan confirmed these numbers match the datasheet attached to BOM-Rev4."
+    },
+    {
+      "turn_id": "t2",
+      "user_message": "What's the current status on the aluminum top case vendor for Stellarboard 65?",
+      "assistant_message": "KeyForge Studio has been in talks with two vendors: Shenzhen Anodize Pro and Taipei CNC Works. Taipei CNC Works submitted a quote of $18.40 per unit for the top case at a minimum order of 200 units, while Shenzhen Anodize Pro quoted $15.75 per unit at 300 units minimum. Priya Nandan flagged on TinkerKeys Forum that the Taipei CNC Works lead time is 6 weeks versus 9 weeks for Shenzhen Anodize Pro. The current lean is toward Taipei CNC Works to hit the Q3 shipping deadline."
+    },
+    {
+      "turn_id": "t3",
+      "user_message": "Has anyone sorted out the PCB revision for the Stellarboard 65 yet?",
+      "assistant_message": "The PCB is currently at revision 1.3, which fixed the USB-C footprint misalignment found in revision 1.2. KeyForge Studio sent revision 1.3 files to JLCPCB on April 2, 2024, with a 10-day turnaround expected. Priya Nandan noted in the BOM-Rev4 document that revision 1.3 also adds ESD protection diodes on the data lines."
+    },
+    {
+      "turn_id": "t4",
+      "user_message": "Has Taipei CNC Works confirmed they can do the 6.25u spacebar cutout on the bottom weight piece?",
+      "assistant_message": "Taipei CNC Works confirmed via email on April 5, 2024 that their CNC tolerances support the 6.25u spacebar cutout to within 0.05 mm. They also noted the bottom weight piece requires a separate anodizing step, adding $1.20 per unit to the quote. Priya Nandan updated the KeyForge Studio vendor tracker to reflect this revised total of $19.60 per unit for the bottom weight from Taipei CNC Works."
+    },
+    {
+      "turn_id": "t5",
+      "user_message": "What foam layers is KeyForge Studio planning to use inside the Stellarboard 65 case?",
+      "assistant_message": "KeyForge Studio's current plan calls for three foam layers: a 1.5 mm PE foam between the PCB and plate, a 0.5 mm poron layer on the PCB bottom, and a 3 mm case foam cut to the interior dimensions. Priya Nandan sourced the poron from Taobao seller FoamKing at roughly $0.80 per sheet, with 500 sheets ordered. The PE foam and case foam specs are documented in BOM-Rev4 under the dampening materials section."
+    },
+    {
+      "turn_id": "t6",
+      "user_message": "What's the plan for the keycap set bundled with the Stellarboard 65 group buy?",
+      "assistant_message": "KeyForge Studio is partnering with ePBT to produce a custom Cherry-profile keycap set called ePBT Obsidian for the Stellarboard 65 group buy. The base kit is priced at $89 and includes 145 keys covering ANSI and ISO layouts. Priya Nandan posted the colorway renders on TinkerKeys Forum on March 28, 2024, and the set is scheduled to enter production in June 2024."
+    },
+    {
+      "turn_id": "t7",
+      "user_message": "Did Taipei CNC Works say anything about the brass weight finishing options?",
+      "assistant_message": "Taipei CNC Works offered two finishing options for the brass weight: raw brushed brass and PVD gold coating. The PVD gold coating adds $3.50 per unit and has a minimum order of 150 units, while raw brushed brass has no additional cost. KeyForge Studio's internal poll on TinkerKeys Forum showed 62% of respondents preferred PVD gold, so Priya Nandan marked that as the default option in the vendor tracker."
+    },
+    {
+      "turn_id": "t8",
+      "user_message": "What shipping method is KeyForge Studio planning for fulfillment of the Stellarboard 65 group buy?",
+      "assistant_message": "KeyForge Studio is planning to use two shipping tiers: standard airmail at $18 flat rate and DHL Express at $38 flat rate, both handled through their fulfillment partner ShipStation. Priya Nandan negotiated a bulk rate with DHL that brings the studio's cost to $27 per package for Express, leaving a $11 buffer per unit. The shipping options and rates were announced on TinkerKeys Forum on April 10, 2024."
+    },
+    {
+      "turn_id": "t9",
+      "user_message": "Has the ePBT Obsidian base kit legend style been finalized?",
+      "assistant_message": "Yes, the ePBT Obsidian base kit will use dye-sublimated legends in a modified Baskerville font that ePBT calls their Type-B style. The legend color is a warm off-white, Pantone 9183 C, on charcoal keycaps. Priya Nandan confirmed the legend files were approved by ePBT's design team on April 8, 2024, and are now locked in BOM-Rev4 as a reference attachment."
+    },
+    {
+      "turn_id": "t10",
+      "user_message": "What's the plate material decision for the Stellarboard 65?",
+      "assistant_message": "KeyForge Studio settled on FR4 as the primary plate material for the Stellarboard 65, with an optional polycarbonate plate available as an add-on. The FR4 plate is 1.5 mm thick and sourced from the same JLCPCB order as the PCB to reduce shipping costs. Priya Nandan noted in BOM-Rev4 that the polycarbonate plate will be quoted separately from a local Singapore vendor called ClearCut Plastics."
+    },
+    {
+      "turn_id": "t11",
+      "user_message": "What's the timeline for getting the brass weight samples from Taipei CNC Works?",
+      "assistant_message": "Taipei CNC Works quoted a 3-week lead time for the brass weight samples, meaning KeyForge Studio expects them by approximately April 26, 2024. Priya Nandan requested two samples: one in raw brushed brass and one with PVD gold coating for side-by-side comparison. If the samples pass inspection, the production order will be placed immediately, targeting a July 2024 delivery to the KeyForge Studio warehouse."
+    },
+    {
+      "turn_id": "t12",
+      "user_message": "Has ClearCut Plastics given a quote for the polycarbonate plate yet?",
+      "assistant_message": "ClearCut Plastics submitted a quote of $7.20 per polycarbonate plate at a minimum order of 100 units, with a 2-week lead time. KeyForge Studio is comparing this against a secondary quote from a Shenzhen vendor called PolyPro Parts, which came in at $5.90 per unit but with a 5-week lead time. Priya Nandan indicated on TinkerKeys Forum that a decision would be made by April 20, 2024, factoring in the Stellarboard 65 production schedule."
+    },
+    {
+      "turn_id": "t13",
+      "user_message": "Any updates on the PCB revision 1.3 prototype results from JLCPCB?",
+      "assistant_message": "JLCPCB delivered the revision 1.3 prototypes on April 12, 2024, five days ahead of schedule. KeyForge Studio's engineer ran continuity and USB enumeration tests on all 10 prototype boards, and 9 out of 10 passed without issues. Priya Nandan flagged one board with a cold solder joint on the USB-C receptacle as a manufacturing defect, not a design flaw, and confirmed revision 1.3 is approved for production."
+    },
+    {
+      "turn_id": "t14",
+      "user_message": "Has ShipStation confirmed the bulk rate for the DHL Express tier?",
+      "assistant_message": "ShipStation confirmed the $27 per package bulk rate for DHL Express on April 11, 2024, locked in for orders shipped before December 31, 2024. The rate applies to packages up to 2 kg, which covers the Stellarboard 65 full kit including switches and keycaps. Priya Nandan updated the KeyForge Studio fulfillment spreadsheet to reflect this rate and noted a surcharge of $4.50 applies for packages to remote areas as defined by DHL's zone map."
+    },
+    {
+      "turn_id": "t15",
+      "user_message": "Was there any issue with the ESD protection diodes on revision 1.3?",
+      "assistant_message": "The ESD protection diodes on revision 1.3 are PRTR5V0U2X parts from Nexperia, rated for 5 V clamping. During testing Priya Nandan verified that the diodes passed IEC 61000-4-2 level 4 testing at 8 kV contact discharge with no failures across all 9 passing boards. The BOM-Rev4 document lists the PRTR5V0U2X at $0.08 per unit from LCSC, with 500 units ordered to cover production and spares."
+    },
+    {
+      "turn_id": "t16",
+      "user_message": "Is the remote area DHL surcharge included in the $38 flat rate KeyForge Studio is charging customers?",
+      "assistant_message": "No, the $4.50 remote area surcharge is not included in the $38 flat rate; KeyForge Studio will absorb it as an operational cost rather than passing it to customers. Priya Nandan made this call after reviewing the TinkerKeys Forum community feedback, which strongly opposed surprise surcharges at checkout. The estimated exposure is roughly $200 total based on 44 remote-area orders in the interest check survey."
+    },
+    {
+      "turn_id": "t17",
+      "user_message": "What did PolyPro Parts say about their polycarbonate plate lead time — is there any flexibility?",
+      "assistant_message": "PolyPro Parts said the 5-week lead time is firm due to their CNC queue backlog, but they offered to expedite for an additional $0.80 per unit, bringing it to 3 weeks. That would make the total cost $6.70 per unit from PolyPro Parts versus $7.20 from ClearCut Plastics. Priya Nandan is leaning toward PolyPro Parts with the expedite fee, saving KeyForge Studio roughly $50 on a 100-unit order, and plans to finalize this in the BOM-Rev4 update."
+    },
+    {
+      "turn_id": "t18",
+      "user_message": "Is the ePBT Obsidian novelty kit confirmed, or is that still up in the air?",
+      "assistant_message": "The novelty kit for ePBT Obsidian is confirmed and will include 20 keys featuring custom artwork designed by illustrator Hana Mori. The novelty kit is priced separately at $35 and requires a minimum of 150 units sold to enter production. Priya Nandan announced on TinkerKeys Forum on April 9, 2024 that 210 interest check responses already indicated intent to purchase the novelty kit, clearing the minimum."
+    },
+    {
+      "turn_id": "t19",
+      "user_message": "Has the remote-area list been finalized so KeyForge Studio knows exactly which orders trigger that DHL surcharge?",
+      "assistant_message": "Priya Nandan pulled DHL's official remote area postal code list and cross-referenced it against the 312 interest check sign-ups on TinkerKeys Forum. The final count came to 44 affected orders across 7 countries, with the highest concentrations in rural Australia and parts of Brazil. KeyForge Studio has set aside $198 in the project budget to cover the surcharges, documented in the fulfillment section of BOM-Rev4."
+    },
+    {
+      "turn_id": "t20",
+      "user_message": "Has KeyForge Studio decided between ClearCut Plastics and PolyPro Parts yet?",
+      "assistant_message": "Priya Nandan confirmed on April 19, 2024 that KeyForge Studio will go with PolyPro Parts at the expedited rate of $6.70 per unit for the polycarbonate plate. The order for 150 units was placed the same day to build in a 50-unit buffer above the 100-unit minimum. ClearCut Plastics was thanked for their quote and noted as a backup vendor in the BOM-Rev4 vendor list."
+    },
+    {
+      "turn_id": "t21",
+      "user_message": "What's the actuation force for the polycarbonate plate add-on — wait, I mean what force does it take to flex the PC plate noticeably under typing?",
+      "assistant_message": "Based on KeyForge Studio's internal flex tests on the 1.5 mm polycarbonate plate from PolyPro Parts, noticeable flex begins at approximately 120 gf applied at the plate center with all switches installed. Priya Nandan documented this in a test note dated April 21, 2024, comparing it to the FR4 plate which required 340 gf before measurable deflection. The PC plate deflection was measured at 0.3 mm under 120 gf, which users on TinkerKeys Forum described as a pleasant typing feel in the prototype review thread."
+    },
+    {
+      "turn_id": "t22",
+      "user_message": "Now that PolyPro Parts is confirmed, what's the revised total BOM cost per unit for the polycarbonate plate option?",
+      "assistant_message": "With PolyPro Parts at $6.70 per polycarbonate plate, the add-on kit cost to KeyForge Studio is $6.70 for the plate plus $2.10 for the extra foam cut and $0.50 for the packaging insert, totaling $9.30 per unit. KeyForge Studio is selling the PC plate add-on for $19, yielding a margin of $9.70 per unit. Priya Nandan recorded this in BOM-Rev4 and noted it slightly exceeds the 45% margin target set for all Stellarboard 65 add-ons."
+    },
+    {
+      "turn_id": "t23",
+      "user_message": "Has ePBT confirmed the June 2024 production start for the Obsidian keycap set?",
+      "assistant_message": "ePBT confirmed in writing on April 15, 2024 that production for the Obsidian base kit and novelty kit will begin June 3, 2024. The estimated production run is 8 weeks, putting delivery to KeyForge Studio's fulfillment warehouse at approximately August 2024. Priya Nandan noted on TinkerKeys Forum that this timeline aligns with the Stellarboard 65 case and PCB delivery window, allowing for a combined fulfillment wave."
+    },
+    {
+      "turn_id": "t24",
+      "user_message": "What's the packaging plan for the Stellarboard 65 full kit — is it a single box or separate boxes for the board and keycaps?",
+      "assistant_message": "KeyForge Studio decided on a single outer shipping box measuring 420 mm × 320 mm × 120 mm, with the keyboard in its own inner retail box and the keycap tray nested alongside it. The inner retail box for the Stellarboard 65 board kit is 380 mm × 290 mm × 90 mm and features a magnetic closure lid. Priya Nandan confirmed with ShipStation that this combined package weighs approximately 1.85 kg with switches included, staying under the 2 kg DHL bulk rate threshold."
+    },
+    {
+      "turn_id": "t25",
+      "user_message": "Did the PRTR5V0U2X diodes from LCSC ship on time for the production order?",
+      "assistant_message": "LCSC shipped the 500 PRTR5V0U2X units on April 14, 2024, and they arrived at KeyForge Studio's assembly partner on April 18, 2024. The shipment was accompanied by a certificate of conformance, which Priya Nandan filed alongside BOM-Rev4 for the production quality record. All 500 units passed incoming inspection with no rejects, and the assembly partner confirmed they are ready for the PCB production run."
+    },
+    {
+      "turn_id": "t26",
+      "user_message": "Going back to the Gateron Oil King specs — I need to double-check the bottom-out force. What is it?",
+      "assistant_message": "The Gateron Oil King has a bottom-out force of 70 gf, measured at the full 4.0 mm travel. This is noted in the datasheet that Priya Nandan attached to BOM-Rev4 as a reference document. KeyForge Studio's sample testing of 10 switches from the March 2024 batch confirmed an average bottom-out force of 70.2 gf with a standard deviation of 0.8 gf, well within Gateron's stated tolerance."
+    },
+    {
+      "turn_id": "t27",
+      "user_message": "Has ePBT provided a final unit count for how many base kits they're producing?",
+      "assistant_message": "ePBT confirmed a production run of 1,200 base kits and 350 novelty kits based on the group buy order numbers submitted by Priya Nandan on April 20, 2024. An additional 5% overage of 60 base kits and 18 novelty kits will be produced to cover quality rejects and extras for KeyForge Studio's retail inventory. The total invoice from ePBT for the full run is $112,350, which Priya Nandan approved and recorded in BOM-Rev4."
+    },
+    {
+      "turn_id": "t28",
+      "user_message": "Has Taipei CNC Works given any update on the anodizing color options for the top case?",
+      "assistant_message": "Taipei CNC Works provided a swatch deck of 12 anodizing colors to KeyForge Studio on April 16, 2024. Priya Nandan narrowed the options to four for the Stellarboard 65: midnight black, space grey, navy blue, and a limited sage green. The sage green requires a minimum of 50 units per color, which KeyForge Studio can meet based on TinkerKeys Forum color preference polling showing 68 respondents selecting sage green."
+    },
+    {
+      "turn_id": "t29",
+      "user_message": "What are the inner dimensions of the retail box for the Stellarboard 65 — does it accommodate the brass weight separately?",
+      "assistant_message": "The inner retail box is 380 mm × 290 mm × 90 mm with a foam insert that has a dedicated 360 mm × 130 mm × 20 mm cutout for the brass weight tray at the bottom. Priya Nandan confirmed with the packaging supplier, BoxCraft Shanghai, that the foam insert can be die-cut to accommodate both the brass weight and the keyboard assembly without movement during shipping. BoxCraft Shanghai quoted $1.40 per retail box including the foam insert, which Priya Nandan recorded in BOM-Rev4."
+    },
+    {
+      "turn_id": "t30",
+      "user_message": "Has ClearCut Plastics been formally notified they didn't get the plate order?",
+      "assistant_message": "Priya Nandan sent ClearCut Plastics a formal rejection notice on April 22, 2024, thanking them for their quote and citing timeline requirements as the deciding factor. ClearCut Plastics responded professionally and asked to be kept in mind for future KeyForge Studio projects. They are currently listed as a tier-2 backup vendor in BOM-Rev4 for any polycarbonate components on future boards."
+    },
+    {
+      "turn_id": "t31",
+      "user_message": "Still on the Gateron Oil King — what's the stem material and does that affect lubing recommendations?",
+      "assistant_message": "The Gateron Oil King stem is made from a proprietary nylon blend that Gateron calls POM-N, which is slightly softer than standard POM and already factory-lubed with Gateron's G-lube. Priya Nandan noted in BOM-Rev4 that re-lubing is optional but if desired, a thin application of Krytox 205g0 on the stem legs only is recommended, avoiding the factory lube on the rails. Applying lube to the rails risks washing out the G-lube and increasing stem wobble, which was confirmed in KeyForge Studio's internal switch testing."
+    },
+    {
+      "turn_id": "t32",
+      "user_message": "What's the total cost of the ePBT Obsidian production run including the overage units?",
+      "assistant_message": "The total ePBT Obsidian invoice of $112,350 covers 1,260 base kits and 368 novelty kits including the 5% overage. Breaking it down, each base kit costs KeyForge Studio approximately $82.40 and each novelty kit approximately $24.70 at those volumes. Priya Nandan flagged in BOM-Rev4 that the 60 extra base kits will be listed on TinkerKeys Forum as an extras sale at full retail price of $89, potentially recovering $5,340 in additional revenue."
+    },
+    {
+      "turn_id": "t33",
+      "user_message": "Has the assembly partner confirmed they have enough PRTR5V0U2X stock to start the PCB run?",
+      "assistant_message": "The assembly partner, PCBAssemble Shenzhen, confirmed on April 19, 2024 that all components for the PCB production run are staged and ready, including the 500 PRTR5V0U2X units from LCSC. PCBAssemble Shenzhen's production slot for the Stellarboard 65 PCBs is scheduled for the week of April 29, 2024, with a 7-day run time producing 350 boards. Priya Nandan verified the component count against BOM-Rev4 and signed off on the production authorization."
+    },
+    {
+      "turn_id": "t34",
+      "user_message": "Has KeyForge Studio finalized which anodizing colors will be offered at the group buy launch?",
+      "assistant_message": "Priya Nandan announced on TinkerKeys Forum on April 23, 2024 that the Stellarboard 65 group buy will launch with three standard colors: midnight black, space grey, and navy blue. Sage green will be offered as a limited colorway capped at 75 units, slightly above the 50-unit minimum Taipei CNC Works requires. A final color confirmation email was sent to Taipei CNC Works the same day to lock in the anodizing specifications for all four options."
+    },
+    {
+      "turn_id": "t35",
+      "user_message": "What's the per-unit anodizing cost for each of those four colors from Taipei CNC Works?",
+      "assistant_message": "Taipei CNC Works quoted a flat anodizing cost of $2.80 per unit for midnight black, space grey, and navy blue, and $3.40 per unit for sage green due to the specialized dye process. These costs are included in the $18.40 base price per unit from Taipei CNC Works that KeyForge Studio accepted. Priya Nandan broke out the anodizing line items in BOM-Rev4 to ensure the sage green color's premium is tracked separately for margin analysis."
+    },
+    {
+      "turn_id": "t36",
+      "user_message": "Does the sage green premium change the retail price for that colorway?",
+      "assistant_message": "Yes, Priya Nandan decided to price the sage green Stellarboard 65 at $15 more than the standard colors to reflect the $0.60 per unit additional anodizing cost plus a small premium for exclusivity. Standard colors are priced at $185 for the base kit without switches, so sage green will be $200. The pricing was posted on TinkerKeys Forum on April 24, 2024 and received positive responses from the 68 interested buyers."
+    },
+    {
+      "turn_id": "t37",
+      "user_message": "Has ePBT confirmed the Pantone 9183 C legend color will reproduce accurately on the charcoal base?",
+      "assistant_message": "ePBT sent physical color chip samples to KeyForge Studio on April 18, 2024, and Priya Nandan confirmed the Pantone 9183 C off-white reproduces accurately on the charcoal PBT base material. The dye-sublimation process achieves a Delta E of less than 2.0 relative to the Pantone standard, which is within ePBT's quality threshold of Delta E 3.0. This approval was logged in BOM-Rev4 and ePBT is cleared to proceed with the full production run."
+    },
+    {
+      "turn_id": "t38",
+      "user_message": "Has PCBAssemble Shenzhen started the production run for the revision 1.3 PCBs yet?",
+      "assistant_message": "PCBAssemble Shenzhen began the production run on April 29, 2024 as scheduled, and Priya Nandan received a production start confirmation the same morning. The run is on track to complete 350 boards by May 6, 2024, after which a 48-hour quality inspection period will follow before shipment. KeyForge Studio requested that 20 boards be pulled for in-house testing before the remaining 330 are shipped to the assembly warehouse."
+    },
+    {
+      "turn_id": "t39",
+      "user_message": "One more detail on the Gateron Oil King — what's the spring spec, specifically the spring weight and type?",
+      "assistant_message": "The Gateron Oil King uses a single-stage coil spring rated at 55 gf, which is consistent with the actuation force since the spring is designed so that actuation occurs at peak spring load. The spring is a standard round-wire coil, not a progressive or two-stage type, with a free length of approximately 14 mm and a compressed length of 10 mm at bottom-out. Priya Nandan confirmed these spring details are documented in BOM-Rev4 under the switch specifications section, sourced directly from Gateron's component datasheet."
+    },
+    {
+      "turn_id": "t40",
+      "user_message": "Has PolyPro Parts shipped the polycarbonate plate order yet?",
+      "assistant_message": "PolyPro Parts confirmed dispatch of the 150 polycarbonate plates on April 25, 2024, with a tracking number provided to Priya Nandan via email. The shipment is traveling by air freight and is expected to arrive at KeyForge Studio's Singapore warehouse by May 3, 2024. The invoice for $1,005 (150 units at $6.70) was paid by KeyForge Studio on the same day as dispatch confirmation."
+    },
+    {
+      "turn_id": "t41",
+      "user_message": "Has KeyForge Studio set the official group buy launch date for the Stellarboard 65?",
+      "assistant_message": "Priya Nandan announced on TinkerKeys Forum on April 26, 2024 that the Stellarboard 65 group buy will launch on June 1, 2024 and run for 30 days, closing on July 1, 2024. The launch is timed to coincide with the arrival of production samples from Taipei CNC Works, which will be photographed for the sales page. KeyForge Studio's target for the group buy is 400 units across all colorways based on the interest check numbers."
+    },
+    {
+      "turn_id": "t42",
+      "user_message": "What's the plan if the group buy exceeds 400 units — is there a hard cap?",
+      "assistant_message": "Priya Nandan confirmed there is a hard cap of 500 units total across all colorways for the Stellarboard 65 group buy, with sage green individually capped at 75 units. If the cap is reached before the July 1, 2024 close date, the buy will end early and a waitlist will open on TinkerKeys Forum. Taipei CNC Works has been verbally informed of the 500-unit ceiling and confirmed they can accommodate that volume within the existing lead time."
+    },
+    {
+      "turn_id": "t43",
+      "user_message": "Has the foam supplier FoamKing shipped the poron sheets for the Stellarboard 65?",
+      "assistant_message": "FoamKing shipped the 500 poron sheets on April 20, 2024, and they cleared customs into Singapore on April 27, 2024. Priya Nandan inspected a sample of 20 sheets upon arrival and confirmed thickness uniformity within 0.03 mm of the 0.5 mm spec. The full batch is now stored at KeyForge Studio's warehouse and logged in BOM-Rev4 as received inventory."
+    },
+    {
+      "turn_id": "t44",
+      "user_message": "Has the polycarbonate plate shipment from PolyPro Parts arrived at the Singapore warehouse?",
+      "assistant_message": "The 150 polycarbonate plates from PolyPro Parts arrived at KeyForge Studio's Singapore warehouse on May 2, 2024, one day ahead of the expected May 3 date. Priya Nandan conducted a spot check of 15 plates and confirmed all measured 1.5 mm thickness and had clean switch cutouts within the 0.05 mm tolerance. The plates are now inventoried and tagged in BOM-Rev4 as ready for kitting."
+    },
+    {
+      "turn_id": "t45",
+      "user_message": "Has BoxCraft Shanghai confirmed the retail box production schedule?",
+      "assistant_message": "BoxCraft Shanghai confirmed on April 28, 2024 that they will produce 550 retail boxes to cover the 500-unit hard cap plus a 50-unit buffer. Production is scheduled to start May 10, 2024 with completion by May 24, 2024, allowing shipment to KeyForge Studio's warehouse by June 5, 2024. Priya Nandan noted this is slightly after the June 1 group buy launch but still well ahead of the fulfillment window, which won't begin until August 2024."
+    },
+    {
+      "turn_id": "t46",
+      "user_message": "Has the PE foam for the plate layer been ordered yet — I only see the poron in BOM-Rev4?",
+      "assistant_message": "Priya Nandan placed the PE foam order with FoamKing on April 29, 2024, separate from the earlier poron order, for 500 sheets of 1.5 mm PE foam cut to 360 mm × 130 mm. The cost is $0.45 per sheet, totaling $225 for the batch. FoamKing confirmed a 10-day lead time, putting expected delivery at May 9, 2024, which Priya Nandan added as a line item in BOM-Rev4 under dampening materials."
+    },
+    {
+      "turn_id": "t47",
+      "user_message": "Are there any outstanding component shortages that could delay the PCB production run?",
+      "assistant_message": "PCBAssemble Shenzhen flagged a potential shortage of the hot-swap socket used on the Stellarboard 65 PCB, the Kailh CPG151101S11 socket, on April 30, 2024. Their current stock covers only 280 of the 350 boards, meaning 70 boards' worth of sockets are on back-order from a secondary supplier. Priya Nandan is tracking this against BOM-Rev4 and expects the back-order sockets to arrive by May 8, 2024, which should not delay the overall production completion."
+    },
+    {
+      "turn_id": "t48",
+      "user_message": "Has the case foam been ordered too, or is that still pending?",
+      "assistant_message": "The case foam order is still pending as of May 1, 2024; Priya Nandan is waiting for final interior dimension confirmation from Taipei CNC Works before cutting the case foam to size. The case foam will be a 3 mm EVA foam sourced from FoamKing at $0.60 per sheet, with 500 sheets planned. Once Taipei CNC Works provides the confirmed interior dimensions, expected by May 5, 2024, the order will be placed the same day."
+    },
+    {
+      "turn_id": "t49",
+      "user_message": "Has KeyForge Studio finalized the retail pricing for the Stellarboard 65 base kit including switches?",
+      "assistant_message": "Priya Nandan confirmed on May 2, 2024 that the Stellarboard 65 base kit with Gateron Oil King switches will be priced at $229 for standard colors and $244 for sage green. The switch-only add-on for buyers who want extra Gateron Oil Kings is priced at $0.65 per switch, sold in packs of 10 for $6.50. These prices were posted on TinkerKeys Forum and reflect KeyForge Studio's target 42% margin on the full kit after all BOM-Rev4 component costs."
+    },
+    {
+      "turn_id": "t50",
+      "user_message": "Has Taipei CNC Works given any indication they might miss the July 2024 delivery window for the cases?",
+      "assistant_message": "Taipei CNC Works sent an update on May 3, 2024 stating they are on track for the July 2024 delivery window, with production scheduled to begin June 10, 2024. The 6-week production lead time puts delivery to KeyForge Studio's Singapore warehouse at approximately July 22, 2024. Priya Nandan noted on TinkerKeys Forum that this gives a comfortable 2-week buffer before the August fulfillment wave begins."
+    },
+    {
+      "turn_id": "t51",
+      "user_message": "Has ePBT sent a revised invoice reflecting the exact unit counts for Obsidian?",
+      "assistant_message": "ePBT sent a revised invoice on May 1, 2024 confirming 1,260 base kits at $82.40 each and 368 novelty kits at $24.70 each, totaling $112,350.40 after rounding. Priya Nandan cross-referenced this against BOM-Rev4 and confirmed the figures match the April 20 order submission. Payment terms are 50% deposit due May 5, 2024 and 50% on delivery, so KeyForge Studio transferred $56,175.20 to ePBT on May 4, 2024."
+    },
+    {
+      "turn_id": "t52",
+      "user_message": "Has FoamKing confirmed the PE foam delivery for May 9?",
+      "assistant_message": "FoamKing confirmed on May 3, 2024 that the PE foam order will ship May 7, 2024 with an expected arrival at KeyForge Studio's Singapore warehouse by May 9, 2024. Priya Nandan requested tracking information and FoamKing provided a DHL air freight tracking number the same day. The PE foam shipment is tagged in BOM-Rev4 as in-transit and will be logged as received upon arrival."
+    },
+    {
+      "turn_id": "t53",
+      "user_message": "Has the case foam order been placed now that Taipei CNC Works confirmed the interior dimensions?",
+      "assistant_message": "Taipei CNC Works confirmed the interior case dimensions on May 5, 2024 as 360 mm × 130 mm × 35 mm, and Priya Nandan placed the case foam order with FoamKing immediately, ordering 500 sheets of 3 mm EVA foam at $0.60 each for a total of $300. FoamKing quoted a 10-day lead time, putting delivery at May 15, 2024. The order is now recorded in BOM-Rev4 as placed, with the confirmed dimensions logged alongside the foam specifications."
+    },
+    {
+      "turn_id": "t54",
+      "user_message": "Has BoxCraft Shanghai started production on the retail boxes yet?",
+      "assistant_message": "BoxCraft Shanghai confirmed production started on May 10, 2024 as scheduled, and sent Priya Nandan a photo of the first assembled prototype box for approval. The prototype dimensions measured 420 mm × 320 mm × 120 mm as specified, and the magnetic closure on the inner retail box functioned correctly. Priya Nandan approved the prototype on May 11, 2024 and BoxCraft Shanghai proceeded with the full 550-unit production run."
+    },
+    {
+      "turn_id": "t55",
+      "user_message": "Has the ePBT Obsidian deposit been confirmed received by ePBT?",
+      "assistant_message": "ePBT confirmed receipt of the $56,175.20 deposit on May 5, 2024, and sent Priya Nandan a payment acknowledgment with their production reference number ePBT-2024-0312. ePBT noted that the June 3, 2024 production start date is confirmed and that they will send weekly production updates to KeyForge Studio. The payment confirmation is filed alongside BOM-Rev4 as a financial record for the Stellarboard 65 project."
+    },
+    {
+      "turn_id": "t56",
+      "user_message": "Has the PE foam from FoamKing arrived at the warehouse?",
+      "assistant_message": "The PE foam shipment arrived at KeyForge Studio's Singapore warehouse on May 9, 2024 as expected. Priya Nandan logged the receipt in BOM-Rev4 and confirmed all 500 sheets measured 1.5 mm thickness within tolerance. The PE foam is now stored alongside the poron sheets and polycarbonate plates, with all three dampening material components for the Stellarboard 65 now fully in stock."
+    },
+    {
+      "turn_id": "t57",
+      "user_message": "Has PCBAssemble Shenzhen resolved the Kailh hot-swap socket shortage yet?",
+      "assistant_message": "PCBAssemble Shenzhen confirmed on May 7, 2024 that the back-ordered Kailh CPG151101S11 sockets arrived from the secondary supplier, covering the remaining 70 boards' worth of sockets. All 350 PCBs are now fully kitted and the production run is expected to complete on schedule by May 13, 2024. Priya Nandan updated BOM-Rev4 to reflect the secondary supplier's name, SZSocket Supply, and their unit cost of $0.11 per socket, $0.02 more than the primary supplier."
+    },
+    {
+      "turn_id": "t58",
+      "user_message": "For the Stellarboard 65 switch spec sheet I'm putting together — can you confirm the Gateron Oil King's actuation force, bottom-out force, total travel, and spring type all in one place?",
+      "assistant_message": null
+    }
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states the Gateron Oil King actuation force is 55 gf.",
+      "required": true,
+      "evidence_turn_ids": ["t1"]
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states the Gateron Oil King bottom-out force is 70 gf.",
+      "required": true,
+      "evidence_turn_ids": ["t26"]
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer states the Gateron Oil King total travel distance is 4.0 mm.",
+      "required": true,
+      "evidence_turn_ids": ["t1"]
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer states the spring is a single-stage coil spring (not progressive or two-stage).",
+      "required": true,
+      "evidence_turn_ids": ["t39"]
+    },
+    {
+      "id": "c5",
+      "criterion": "The answer must not state that the actuation force or flex threshold is 120 gf (the near-miss polycarbonate plate flex force from t21).",
+      "required": true,
+      "evidence_turn_ids": []
+    }
+  ],
+  "reference_answer": "The Gateron Oil King has an actuation force of 55 gf and a bottom-out force of 70 gf, with a total travel distance of 4.0 mm and a pre-travel of 2.0 mm to actuation. The spring is a single-stage round-wire coil spring, not a progressive or two-stage type, with a free length of approximately 14 mm. These specifications are documented in BOM-Rev4 and were confirmed by KeyForge Studio's internal switch testing of the March 2024 batch.",
+  "notes": "The facts the query needs are spread across t1 (actuation force 55 gf, total travel 4.0 mm, pre-travel 2.0 mm), t26 (bottom-out force 70 gf), and t39 (single-stage coil spring, free length 14 mm, compressed length 10 mm). The near-miss turn is t21, which discusses a 120 gf flex threshold for the polycarbonate plate — a plausible-sounding force figure that a careless reader might confuse for a switch actuation or spring spec."
+}

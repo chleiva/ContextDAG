@@ -1,0 +1,131 @@
+{
+ "scenario_id": "long_resume_001",
+ "family": "resume",
+ "n_history": 34,
+ "full_history_tokens": 7668,
+ "closure_ratio": 0.17647058823529413,
+ "entity_registry": [
+  "Maplewood Oral History Collective",
+  "Dana Reyes",
+  "The Founding Furrows",
+  "Hector Bloom",
+  "Riverside Archive",
+  "Episode Planning Sheet v2"
+ ],
+ "distractor_branch_entity_hits": {
+  "D": [
+   "Maplewood Oral History Collective",
+   "Dana Reyes",
+   "The Founding Furrows",
+   "Hector Bloom",
+   "Riverside Archive",
+   "Episode Planning Sheet v2"
+  ],
+  "E": [
+   "Maplewood Oral History Collective",
+   "Dana Reyes",
+   "The Founding Furrows",
+   "Hector Bloom",
+   "Riverside Archive"
+  ],
+  "F": [
+   "Maplewood Oral History Collective",
+   "Dana Reyes",
+   "The Founding Furrows",
+   "Hector Bloom",
+   "Riverside Archive"
+  ],
+  "G": [
+   "Maplewood Oral History Collective",
+   "Dana Reyes",
+   "The Founding Furrows",
+   "Hector Bloom",
+   "Riverside Archive",
+   "Episode Planning Sheet v2"
+  ],
+  "H": [
+   "Maplewood Oral History Collective",
+   "Dana Reyes",
+   "The Founding Furrows",
+   "Hector Bloom",
+   "Riverside Archive"
+  ],
+  "I": [
+   "Dana Reyes",
+   "The Founding Furrows",
+   "Hector Bloom",
+   "Episode Planning Sheet v2"
+  ]
+ },
+ "near_miss_turn_id": "t28",
+ "checklist_evidence": {
+  "c1": [
+   "t6"
+  ],
+  "c2": [
+   "t6"
+  ],
+  "c3": [
+   "t6"
+  ],
+  "c4": []
+ },
+ "cosine": {
+  "gold_median": 0.3640478253364563,
+  "distractor_median": 0.4387427121400833,
+  "ratio": 1.2051787748892424,
+  "pass": true
+ },
+ "cosine_per_turn": {
+  "t1": 0.3665381073951721,
+  "t2": 0.44242724776268005,
+  "t3": 0.18978556990623474,
+  "t4": 0.34208837151527405,
+  "t5": 0.3615575432777405,
+  "t6": 0.7022669315338135,
+  "t7": 0.5000741481781006,
+  "t8": 0.45258504152297974,
+  "t9": 0.4287961721420288,
+  "t10": 0.5771716237068176,
+  "t11": 0.22161853313446045,
+  "t12": 0.5912182331085205,
+  "t13": 0.4303509294986725,
+  "t14": 0.4794306457042694,
+  "t15": 0.5027421116828918,
+  "t16": 0.3497590720653534,
+  "t17": 0.4573795795440674,
+  "t18": 0.44713449478149414,
+  "t19": 0.41264766454696655,
+  "t20": 0.5691826939582825,
+  "t21": 0.5029910802841187,
+  "t22": 0.4740641117095947,
+  "t23": 0.22029834985733032,
+  "t24": 0.40506747364997864,
+  "t25": 0.18947523832321167,
+  "t26": 0.40543150901794434,
+  "t27": 0.49923110008239746,
+  "t28": 0.40027159452438354,
+  "t29": 0.622993528842926,
+  "t30": 0.23427976667881012,
+  "t31": 0.2971813380718231,
+  "t32": 0.22219780087471008,
+  "t33": 0.4634113609790802,
+  "t34": 0.13102371990680695
+ },
+ "gold_branches": [
+  "A"
+ ],
+ "distractor_branches": [
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I"
+ ],
+ "attempt_accepted": 2,
+ "generation_tokens": [
+  3873,
+  10716
+ ]
+}

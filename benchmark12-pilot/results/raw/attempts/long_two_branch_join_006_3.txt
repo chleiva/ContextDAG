@@ -1,0 +1,305 @@
+I need to create a conversation where distractor branches stay very close to the same topic (onboarding drop-off) and reuse the same entities, so they're topically similar to the gold branches but don't answer the query.
+
+Let me design the branches carefully:
+- **Branch A**: Specific onboarding screen step where users drop off + the exact step number/name decision
+- **Branch B**: The target drop-off rate threshold / success metric decided for the fix
+- **Branch D**: Distractor - push notification timing for onboarding reminders (same project, same entities)
+- **Branch E**: Distractor - onboarding tutorial video length/content decisions (same project, same entities)
+- **Branch F**: Distractor - permission request screen placement in onboarding flow (same project, same entities)
+
+The query will combine: the specific screen/step from A + the metric threshold from B.
+
+```json
+{
+  "entity_registry": ["Priya Nair", "OnboardFlow v2.4", "DropSight dashboard", "Lena Castillo", "Step 3 – Profile Setup", "Marcus Teo"],
+  "turns": [
+    {
+      "turn_id": "t1",
+      "user_message": "We've been analyzing the onboarding funnel in DropSight dashboard and I want to nail down where the biggest drop-off happens. What did the data show?",
+      "assistant_message": "According to the DropSight dashboard analysis Priya Nair ran on March 14th, the single largest drop-off in the OnboardFlow v2.4 funnel occurs at Step 3 – Profile Setup, where 54% of new users abandon the app. The preceding steps, Step 1 – Welcome Screen and Step 2 – Permissions, retain over 85% of users each. Priya flagged Step 3 – Profile Setup as the primary intervention target in her written summary dated March 15th."
+    },
+    {
+      "turn_id": "t2",
+      "user_message": "What's the current placement of the camera permission request in the onboarding flow?",
+      "assistant_message": "Right now in OnboardFlow v2.4, the camera permission request appears at Step 2 – Permissions, which is the second screen users see after the Welcome Screen. Lena Castillo noted in the March 10th design review that placing it this early creates friction before users understand the app's value. The DropSight dashboard shows a 12% abandonment spike specifically at the camera prompt within that step."
+    },
+    {
+      "turn_id": "t3",
+      "user_message": "Has the team considered moving the camera permission request later in the flow?",
+      "assistant_message": "Yes, Lena Castillo proposed in ticket UX-204 on March 11th to defer the camera permission request until after Step 3 – Profile Setup is complete, placing it at what would become Step 4. Marcus Teo ran a quick simulation using DropSight dashboard historical data and estimated that deferral could recover roughly 8 percentage points of users at Step 2. The change is currently pending a final sign-off from Priya Nair before it's scheduled into the OnboardFlow v2.4 sprint."
+    },
+    {
+      "turn_id": "t4",
+      "user_message": "What success metric has the team agreed on for measuring whether the onboarding fix actually worked?",
+      "assistant_message": "The team, led by Marcus Teo, agreed in the March 16th planning meeting that the primary success metric is the Day-7 onboarding completion rate — the percentage of users who finish all onboarding steps within seven days of install. The baseline in OnboardFlow v2.4 currently sits at 38%, as tracked in the DropSight dashboard. Marcus Teo documented the agreed target and baseline in the project brief filed under OB-2024-Q1."
+    },
+    {
+      "turn_id": "t5",
+      "user_message": "What's the current schedule for sending onboarding reminder push notifications?",
+      "assistant_message": "Under the current OnboardFlow v2.4 configuration, onboarding reminder push notifications are sent at 24 hours, 48 hours, and 72 hours after install if a user hasn't completed onboarding. Lena Castillo flagged in the March 12th standup that the 24-hour reminder has a 9% open rate, while the 72-hour reminder drops to just 3% open rate according to DropSight dashboard. Marcus Teo suggested the 72-hour notification may be doing more harm than good by prompting users to uninstall."
+    },
+    {
+      "turn_id": "t6",
+      "user_message": "How long is the onboarding tutorial video that plays during the Welcome Screen?",
+      "assistant_message": "The tutorial video currently embedded in the OnboardFlow v2.4 Welcome Screen runs for 47 seconds, produced by Lena Castillo's design team in February. Priya Nair noted in the DropSight dashboard session report from March 8th that 61% of users skip the video before the 15-second mark. The video's completion rate is only 19%, which Priya Nair identified as a potential contributor to users arriving at Step 3 – Profile Setup without adequate context."
+    },
+    {
+      "turn_id": "t7",
+      "user_message": "Has anyone proposed a shorter version of that video?",
+      "assistant_message": "Yes, Marcus Teo proposed cutting the tutorial video to 20 seconds in ticket UX-198, submitted March 13th, arguing that a tighter version focusing only on the core value proposition would lift completion above 50%. Lena Castillo agreed in principle but requested a minimum of 25 seconds to preserve the brand animation segment. The DropSight dashboard data Priya Nair pulled shows that users who do complete the current 47-second video convert through Step 3 – Profile Setup at a 71% rate, compared to 46% for skippers."
+    },
+    {
+      "turn_id": "t8",
+      "user_message": "Was there any decision on where exactly in the flow to put the deferred camera permission screen?",
+      "assistant_message": "Lena Castillo confirmed in ticket UX-204 update on March 17th that the deferred camera permission screen will be inserted as the new Step 4, immediately after Step 3 – Profile Setup is confirmed as saved. The rationale is that by that point users have invested enough effort that permission acceptance rates are expected to rise from the current 68% to approximately 81%, based on benchmarks Marcus Teo sourced from the DropSight dashboard industry comparison report. Priya Nair approved this placement in the same ticket thread."
+    },
+    {
+      "turn_id": "t9",
+      "user_message": "What's the rollout plan for the deferred permission screen change?",
+      "assistant_message": "The rollout plan, documented by Priya Nair in the OB-2024-Q1 project brief, calls for a 10% canary release of OnboardFlow v2.4 with the deferred permission screen starting April 1st. If the DropSight dashboard shows no regression in Day-3 retention after five days, the release will expand to 50% of new installs on April 6th, and then to 100% on April 10th. Lena Castillo is responsible for monitoring the canary cohort and flagging any anomalies to Marcus Teo."
+    },
+    {
+      "turn_id": "t10",
+      "user_message": "What did the A/B test on the 25-second versus 47-second video show so far?",
+      "assistant_message": "Priya Nair launched the A/B test on March 18th, splitting new installs 50/50 between the 47-second control and a 25-second variant that Lena Castillo's team produced. After five days, the DropSight dashboard shows the 25-second variant has a 48% video completion rate versus 19% for the control. However, Marcus Teo cautioned that the sample size is only 1,200 users per arm and the test needs to reach at least 5,000 per arm before any decision is made."
+    },
+    {
+      "turn_id": "t11",
+      "user_message": "Has the team decided what to do about the 72-hour push notification?",
+      "assistant_message": "Marcus Teo proposed in the March 19th sprint planning to remove the 72-hour push notification entirely and replace it with a single 36-hour reminder for users who've completed Step 1 but not Step 3 – Profile Setup. Priya Nair agreed but asked that the DropSight dashboard be configured to track uninstall events within 2 hours of notification receipt to verify Marcus Teo's concern about the 72-hour message driving uninstalls. Lena Castillo is updating the notification copy for the 36-hour replacement, targeting a friendlier tone."
+    },
+    {
+      "turn_id": "t12",
+      "user_message": "Is there a minimum sample size Priya set for the video A/B test before declaring a winner?",
+      "assistant_message": "Yes, Priya Nair specified in the test plan filed March 18th that a minimum of 5,000 users per arm is required, along with a statistical significance threshold of p < 0.05. The secondary metric is the Step 3 – Profile Setup completion rate for each arm, which Priya Nair wants to see improve by at least 5 percentage points over the control. Marcus Teo added a guardrail metric: Day-1 retention must not drop below 72% in either arm, and if it does, the test pauses automatically via the DropSight dashboard alert system."
+    },
+    {
+      "turn_id": "t13",
+      "user_message": "What's the new notification copy Lena is drafting for the 36-hour reminder?",
+      "assistant_message": "Lena Castillo shared a draft in Slack on March 20th: the proposed message reads, \"Your profile is almost ready — finish in under 2 minutes and unlock all features.\" Marcus Teo reviewed it and asked for a version that also includes the user's first name as a personalization token, which Lena Castillo confirmed the OnboardFlow v2.4 notification system supports. Priya Nair will do a final review of the copy before it goes into the April 1st canary build."
+    },
+    {
+      "turn_id": "t14",
+      "user_message": "Has the team benchmarked what a good open rate looks like for that 36-hour notification?",
+      "assistant_message": "Marcus Teo pulled industry benchmarks from a March 2024 Mobile Growth Association report, which Priya Nair referenced in the OB-2024-Q1 project brief: the median open rate for onboarding reminder notifications in the productivity app category is 14%, and top-quartile apps achieve 22%. The current OnboardFlow v2.4 24-hour notification sits at 9%, so Marcus Teo set an internal target of reaching 15% open rate for the new 36-hour message. Lena Castillo believes the personalization token will be key to hitting that number."
+    },
+    {
+      "turn_id": "t15",
+      "user_message": "Will the 36-hour notification test run alongside the video A/B test or separately?",
+      "assistant_message": "Priya Nair decided in the March 21st sync that the two tests will run sequentially, not simultaneously, to avoid confounding variables in the DropSight dashboard data. The video A/B test runs first and must reach its 5,000-user-per-arm threshold before the 36-hour notification test begins. Marcus Teo estimated the video test would conclude around April 5th based on current install velocity, meaning the notification test would start no earlier than April 7th per Lena Castillo's revised schedule."
+    },
+    {
+      "turn_id": "t16",
+      "user_message": "What happened when Priya ran the video A/B test past 3,000 users per arm — did any trends change?",
+      "assistant_message": "Priya Nair posted an interim read on March 24th once each arm hit 3,000 users: the 25-second video's completion rate held at 47%, nearly unchanged from the early 48% read. The Step 3 – Profile Setup completion rate for the 25-second arm was 52% versus 44% for the 47-second control, a gap that Priya Nair noted was already statistically significant at p = 0.03. Marcus Teo flagged to Lena Castillo that if this holds at 5,000 users, the decision to ship the shorter video looks very strong."
+    },
+    {
+      "turn_id": "t17",
+      "user_message": "Has Lena finalized the 25-second video content yet?",
+      "assistant_message": "Lena Castillo confirmed on March 22nd that the 25-second video is locked for the A/B test but may need one more revision pass for the production release version. The current test asset trims the original 47-second video by removing the extended feature showcase segment and keeping only the core value proposition and brand animation, per Marcus Teo's ticket UX-198 requirements. Priya Nair approved the test asset on March 22nd and noted in DropSight dashboard annotations that it went live at 14:00 UTC."
+    },
+    {
+      "turn_id": "t18",
+      "user_message": "What specific completion rate target did the team set for the Day-7 onboarding metric?",
+      "assistant_message": "In the March 16th planning meeting documented by Marcus Teo, the team set a target of 55% Day-7 onboarding completion rate, up from the 38% baseline in OnboardFlow v2.4. This 17-percentage-point lift was deemed ambitious but achievable based on the combined impact of the Step 3 – Profile Setup fix and other planned changes. Priya Nair noted in OB-2024-Q1 that hitting 55% by the end of Q2 2024 would be considered a full success for the onboarding project."
+    },
+    {
+      "turn_id": "t19",
+      "user_message": "Is there a fallback plan if the 25-second video underperforms at the 5,000-user mark?",
+      "assistant_message": "Priya Nair outlined a fallback in the March 18th test plan: if the 25-second video does not improve Step 3 – Profile Setup completion by at least 5 percentage points over the control, the team will test a completely skippable video with an explicit \"Skip\" button, rather than the current auto-play with no obvious skip. Lena Castillo estimated that producing the skippable variant would take three days. Marcus Teo added that the DropSight dashboard would flag the fallback trigger automatically once the 5,000-user threshold is crossed."
+    },
+    {
+      "turn_id": "t20",
+      "user_message": "What's the current Day-1 retention figure for OnboardFlow v2.4 users?",
+      "assistant_message": "According to the DropSight dashboard cohort report pulled by Priya Nair on March 14th, Day-1 retention for OnboardFlow v2.4 stands at 74%, which is just above Marcus Teo's guardrail threshold of 72%. Lena Castillo noted that users who complete the 47-second video have a Day-1 retention of 81%, while those who skip it sit at 69%. This gap reinforced the team's hypothesis that improving video engagement would meaningfully lift both onboarding completion and early retention."
+    },
+    {
+      "turn_id": "t21",
+      "user_message": "Did Marcus finalize which uninstall event window to track for the 72-hour notification concern?",
+      "assistant_message": "Marcus Teo confirmed on March 22nd that the DropSight dashboard alert will track uninstall events within a 90-minute window of notification receipt, slightly tighter than Priya Nair's original 2-hour suggestion, to reduce noise from unrelated uninstalls. The baseline uninstall rate within 90 minutes of the current 72-hour notification is 4.2%, which Marcus Teo described as notably high compared to the 1.1% rate seen after the 24-hour notification. Lena Castillo will use this 4.2% figure as the benchmark to beat with the new 36-hour message."
+    },
+    {
+      "turn_id": "t22",
+      "user_message": "Is the 55% Day-7 completion target a hard deadline or is there flexibility?",
+      "assistant_message": "Marcus Teo clarified in the March 23rd team sync that the 55% target is a hard commitment to the product leadership team, tied to the Q2 2024 OKR cycle that closes June 30th. If the DropSight dashboard shows the team is tracking below 50% by May 15th, Priya Nair has authority to pull in additional engineering resources from the adjacent Growth team. Lena Castillo noted that the 55% figure was also shared with the CEO, making it a highly visible goal for the entire mobile team."
+    },
+    {
+      "turn_id": "t23",
+      "user_message": "Going back to the drop-off analysis — did Priya identify any specific field in the Profile Setup step that causes the most exits?",
+      "assistant_message": "Yes, Priya Nair's DropSight dashboard session recordings from March 14th showed that the \"Date of Birth\" field in Step 3 – Profile Setup is where 31% of abandoning users stop interacting, making it the single most problematic field. Users who reach the Date of Birth field but don't complete it spend an average of 22 seconds on it before closing the app. Priya Nair hypothesized in her March 15th summary that the field feels unexpectedly personal at that stage of onboarding."
+    },
+    {
+      "turn_id": "t24",
+      "user_message": "Has the canary release plan for the deferred permission screen been updated since Priya approved it?",
+      "assistant_message": "Lena Castillo updated the canary release plan on March 25th to include a new prerequisite: the DropSight dashboard must show zero crash-rate regression in the canary cohort for at least 48 consecutive hours before the 50% expansion on April 6th. Marcus Teo also added a requirement that the canary cohort's Day-3 retention must be within 2 percentage points of the current OnboardFlow v2.4 baseline before expansion. Priya Nair acknowledged the updated plan in the OB-2024-Q1 project brief on March 26th."
+    },
+    {
+      "turn_id": "t25",
+      "user_message": "What's the expected permission acceptance rate after the deferral, and how was that 81% estimate validated?",
+      "assistant_message": "Marcus Teo validated the 81% estimate by cross-referencing two data sources: the DropSight dashboard industry benchmarks showing that apps deferring permission requests past a profile completion step average 79–83% acceptance, and an internal cohort of power users in OnboardFlow v2.4 who voluntarily navigated to camera settings post-onboarding, showing an 80% enablement rate. Lena Castillo added a 1-percentage-point conservative adjustment, settling on 81% as the working target. Priya Nair noted this estimate carries a ±4% confidence interval based on the benchmark sample sizes."
+    },
+    {
+      "turn_id": "t26",
+      "user_message": "Was there any decision on whether to make the Date of Birth field optional in the Profile Setup step?",
+      "assistant_message": "Yes, Priya Nair made a final decision on March 28th to make the Date of Birth field optional in Step 3 – Profile Setup, removing it from the list of required fields. The decision was logged in ticket UX-211, where Priya Nair specified that users who skip Date of Birth will see a soft prompt to fill it in later from their account settings. Marcus Teo estimated in the same ticket that making the field optional could recover up to 18 percentage points of the 54% drop-off at Step 3 – Profile Setup, based on the DropSight dashboard exit data."
+    },
+    {
+      "turn_id": "t27",
+      "user_message": "Has the team set a minimum open rate threshold to declare the 36-hour notification a success?",
+      "assistant_message": "Marcus Teo formalized the success threshold in the notification test plan on March 26th: the 36-hour notification must achieve a minimum open rate of 15% and drive at least a 3-percentage-point improvement in Step 3 – Profile Setup completion among notified users compared to the unnotified control group. Priya Nair added a secondary condition in OB-2024-Q1 that the post-notification uninstall rate within 90 minutes must stay below 2%, down from the current 4.2% baseline. Lena Castillo acknowledged both thresholds in the March 27th design review."
+    },
+    {
+      "turn_id": "t28",
+      "user_message": "Is there a minimum lift required at Step 3 for the overall onboarding fix to count as validated?",
+      "assistant_message": "Marcus Teo specified in the OB-2024-Q1 project brief that the combined interventions must lift the Step 3 – Profile Setup completion rate by at least 15 percentage points from its current 46% baseline to validate the fix. This would bring Step 3 completion to at least 61%, which Marcus Teo calculated is the minimum needed to achieve the 55% Day-7 onboarding completion target. Priya Nair agreed to this 15-point lift as the go/no-go criterion for declaring the onboarding fix successful."
+    },
+    {
+      "turn_id": "t29",
+      "user_message": "Did the video A/B test reach 5,000 users per arm?",
+      "assistant_message": "Priya Nair confirmed on April 3rd that both arms of the video A/B test crossed the 5,000-user threshold. The final results showed the 25-second video achieving a 51% Step 3 – Profile Setup completion rate versus 44% for the 47-second control, a 7-percentage-point improvement that exceeded the 5-point minimum Priya Nair set. Marcus Teo and Lena Castillo jointly recommended shipping the 25-second video in the next OnboardFlow v2.4 update, and Priya Nair approved the decision the same day."
+    },
+    {
+      "turn_id": "t30",
+      "user_message": "So what's the final agreed target completion rate the team needs to hit at Step 3 to confirm the fix is working?",
+      "assistant_message": "The final agreed target is a Step 3 – Profile Setup completion rate of at least 61%, representing the 15-percentage-point lift above the 46% baseline that Marcus Teo specified as the go/no-go threshold in OB-2024-Q1. Priya Nair confirmed this figure in the March 28th decision log as the binding validation criterion for the entire onboarding fix effort. Reaching 61% at Step 3 is what the team considers the minimum evidence that the Day-7 completion rate will reach the 55% target."
+    },
+    {
+      "turn_id": "t31",
+      "user_message": "Has the production version of the 25-second video been finalized for the April release?",
+      "assistant_message": "Lena Castillo delivered the final production version of the 25-second video on April 4th, incorporating a minor color-grade adjustment requested by Marcus Teo to better match the OnboardFlow v2.4 brand palette. Priya Nair signed off on the asset in the OB-2024-Q1 project brief update filed April 4th, clearing it for inclusion in the April 10th full rollout. The DropSight dashboard annotation for the production video upload was timestamped 11:30 UTC on April 4th."
+    },
+    {
+      "turn_id": "t32",
+      "user_message": "What's the plan if the 36-hour notification doesn't hit the 15% open rate target?",
+      "assistant_message": "Marcus Teo outlined a contingency in the notification test plan: if the 36-hour notification falls below 15% open rate after reaching 3,000 notified users, Lena Castillo will produce two alternative copy variants within 48 hours for a three-way test. Priya Nair specified that the three-way test will use the DropSight dashboard's multi-arm bandit configuration to accelerate learning. The fallback variants will test urgency-based messaging versus benefit-focused messaging, as Marcus Teo identified these as the two highest-performing frameworks in the Mobile Growth Association benchmarks."
+    },
+    {
+      "turn_id": "t33",
+      "user_message": "Is there a crash-rate baseline established for the canary cohort comparison?",
+      "assistant_message": "Lena Castillo pulled the crash-rate baseline from the DropSight dashboard on March 28th: the current OnboardFlow v2.4 production build has a crash rate of 0.8% per session during the onboarding flow. Marcus Teo set the canary cohort's acceptable ceiling at 1.2% per session, a 50% relative tolerance above baseline, to account for the smaller sample size in the canary group. Priya Nair documented this threshold in the OB-2024-Q1 project brief alongside the April 1st canary launch date."
+    },
+    {
+      "turn_id": "t34",
+      "user_message": "Has the team reviewed Day-1 retention data from the 25-second video arm specifically?",
+      "assistant_message": "Priya Nair pulled Day-1 retention for the 25-second video arm on April 4th from the DropSight dashboard: it came in at 77%, three percentage points above the 74% baseline for OnboardFlow v2.4. Marcus Teo noted this comfortably clears the 72% guardrail he set for the test. Lena Castillo flagged that the improvement likely reflects better Step 3 – Profile Setup completion in that arm, since users who complete profile setup have historically shown stronger Day-1 retention."
+    },
+    {
+      "turn_id": "t35",
+      "user_message": "Does the 77% Day-1 retention in the 25-second arm meet the threshold Priya set for the test guardrail?",
+      "assistant_message": "Yes, 77% comfortably exceeds Marcus Teo's guardrail of 72% Day-1 retention, so the test passed all guardrail conditions. Priya Nair noted in the April 4th test closure report that both the primary metric (Step 3 – Profile Setup completion at 51% vs. 44%) and the guardrail metric (Day-1 retention at 77% vs. 74%) favored the 25-second video. Lena Castillo updated the DropSight dashboard test record to status \"Complete – Ship\" on April 4th at 15:00 UTC."
+    },
+    {
+      "turn_id": "t36",
+      "user_message": "What's the current status of the notification copy review — has Priya signed off yet?",
+      "assistant_message": "Priya Nair completed her review of the 36-hour notification copy on March 31st and approved the personalized variant Lena Castillo drafted, with one change: the phrase \"unlock all features\" was replaced with \"complete your setup\" to avoid implying a paywall. Marcus Teo confirmed the updated copy was pushed to the OnboardFlow v2.4 notification system staging environment on April 1st. The DropSight dashboard is configured to begin capturing open-rate data from the first day of the notification test, which is scheduled to start April 7th per Lena Castillo's revised timeline."
+    },
+    {
+      "turn_id": "t37",
+      "user_message": "What sample size is needed for the three-way notification test fallback if it gets triggered?",
+      "assistant_message": "Marcus Teo specified in the contingency plan that the three-way notification test requires a minimum of 2,000 notified users per arm, for a total of 6,000 users, to achieve 80% statistical power at p < 0.05 for a 3-percentage-point difference in open rates. Priya Nair approved this sample size in the OB-2024-Q1 project brief on March 26th. Lena Castillo noted that at current install velocity, reaching 6,000 notified users across three arms would take approximately 9 days."
+    },
+    {
+      "turn_id": "t38",
+      "user_message": "Has the team modeled how the 36-hour notification interacts with the Step 3 fix — could they compound each other?",
+      "assistant_message": "Marcus Teo built a simple compounding model in the March 26th analysis shared with Priya Nair: if the Step 3 – Profile Setup fix (optional Date of Birth field) lifts completion by 18 points and the 36-hour notification drives an additional 3-point lift among users who dropped off, the combined effect could push Day-7 completion to roughly 57%, slightly above the 55% target. Lena Castillo cautioned that the model assumes independence between the two interventions, which the DropSight dashboard data can't yet confirm. Priya Nair treated the 57% figure as an optimistic scenario, not a commitment."
+    },
+    {
+      "turn_id": "t39",
+      "user_message": "What completion rate did the 47-second video arm hit at Step 3 in the final A/B test results?",
+      "assistant_message": "The 47-second video control arm finished with a Step 3 – Profile Setup completion rate of 44% at the 5,000-user threshold, as recorded by Priya Nair in the April 3rd test closure report on the DropSight dashboard. This 44% figure is essentially unchanged from the 46% baseline, within the margin of error Marcus Teo expected given natural cohort variation. Lena Castillo noted that this confirms the control arm was a valid representation of the existing OnboardFlow v2.4 baseline behavior."
+    },
+    {
+      "turn_id": "t40",
+      "user_message": "If the 36-hour notification test starts April 7th, when would the three-way fallback test finish at current install velocity?",
+      "assistant_message": "Marcus Teo estimated on April 4th that if the primary 36-hour notification test triggers the fallback by April 10th, the three-way test would need until approximately April 19th to accumulate 2,000 notified users per arm at current install velocity of roughly 670 new installs per day. Priya Nair noted this would still leave time before the May 15th check-in date she set for the DropSight dashboard tracking. Lena Castillo flagged that any delay in the notification test pushes the overall Q2 OKR timeline tighter but doesn't yet threaten the June 30th deadline."
+    },
+    {
+      "turn_id": "t41",
+      "user_message": "Has the April 10th full rollout date for the canary been confirmed?",
+      "assistant_message": "Lena Castillo confirmed on April 5th that the April 10th full rollout is on track, contingent on the canary cohort's DropSight dashboard metrics remaining within bounds through April 9th. Marcus Teo set a final go/no-go decision meeting for April 9th at 10:00 UTC with Priya Nair as the decision-maker. If any of the three canary thresholds — crash rate below 1.2%, Day-3 retention within 2 points of baseline, and zero critical bugs — are breached, the rollout will be delayed by one week to April 17th."
+    },
+    {
+      "turn_id": "t42",
+      "user_message": "What's the current install velocity the team is using for all these timeline estimates?",
+      "assistant_message": "Marcus Teo confirmed in the April 4th analysis that the team is using a baseline of 670 new installs per day, derived from a 30-day rolling average in the DropSight dashboard as of April 3rd. Priya Nair noted this is 12% higher than the January average of 598 installs per day, which she attributed partly to a paid acquisition campaign Lena Castillo's growth counterpart ran in March. The 670 figure is used as the planning assumption for all test duration estimates in the OB-2024-Q1 project brief."
+    },
+    {
+      "turn_id": "t43",
+      "user_message": "Has the April 7th notification test start date been locked in, or could it slip?",
+      "assistant_message": "Marcus Teo confirmed on April 5th that April 7th is locked as the notification test start date, with the OnboardFlow v2.4 staging environment already validated by Lena Castillo's QA pass on April 4th. Priya Nair noted in the OB-2024-Q1 project brief that any slip past April 9th would require a formal re-plan given the May 15th DropSight dashboard check-in. The only remaining risk Marcus Teo identified is a potential App Store review delay for the build containing the notification changes, which Lena Castillo submitted on April 5th."
+    },
+    {
+      "turn_id": "t44",
+      "user_message": "What happens to the canary cohort data if the April 10th rollout is delayed to April 17th?",
+      "assistant_message": "Lena Castillo clarified on April 5th that the canary cohort data would continue to accumulate through the delay period and would be included in the DropSight dashboard analysis for the full rollout decision. Marcus Teo noted that a one-week extension would actually increase the canary sample from roughly 670 users to approximately 1,340 users, giving Priya Nair higher confidence in the Day-3 retention and crash-rate readings. The extended canary data would be reviewed in a revised go/no-go meeting that Priya Nair would schedule for April 16th."
+    },
+    {
+      "turn_id": "t45",
+      "user_message": "Has Priya set any conditions for escalating the onboarding fix to the CEO before the June 30th deadline?",
+      "assistant_message": "Priya Nair documented two escalation triggers in OB-2024-Q1: first, if the DropSight dashboard shows Day-7 completion tracking below 45% after all interventions are live by May 15th, she will request an emergency sprint with Marcus Teo and additional engineering resources. Second, if the Step 3 – Profile Setup completion rate has not reached at least 55% by May 1st, Priya Nair will brief the CEO with a revised forecast. Lena Castillo is responsible for preparing the CEO briefing deck if either trigger is hit."
+    },
+    {
+      "turn_id": "t46",
+      "user_message": "What's the plan if the App Store review delays the April 10th canary expansion?",
+      "assistant_message": "Lena Castillo outlined the contingency on April 5th: if App Store review is not complete by April 9th, the 50% canary expansion will be delayed but the existing 10% canary cohort will continue running to gather more data for Priya Nair's review. Marcus Teo noted that App Store reviews for OnboardFlow v2.4 updates have averaged 38 hours in 2024, making a rejection-free approval by April 8th highly probable. The DropSight dashboard will flag the build version automatically once the new version is live in the App Store."
+    },
+    {
+      "turn_id": "t47",
+      "user_message": "Has Lena confirmed the QA scope for the notification test build?",
+      "assistant_message": "Lena Castillo confirmed on April 4th that the QA scope for the notification test build covers five test cases: correct deep-link routing from the notification to Step 3 – Profile Setup, personalization token rendering for 10 edge-case name formats, notification delivery within a 5-minute window of the 36-hour trigger, correct suppression for users who complete onboarding before the trigger fires, and DropSight dashboard event logging for open and dismiss actions. Marcus Teo reviewed the test cases and added a sixth: verifying that users who uninstall within 90 minutes of notification receipt are correctly flagged in the Priya Nair–configured uninstall alert."
+    },
+    {
+      "turn_id": "t48",
+      "user_message": "What's the suppression logic for users who complete onboarding before the 36-hour trigger fires?",
+      "assistant_message": "Marcus Teo specified in ticket UX-219 on April 2nd that the suppression logic checks the user's onboarding completion status in real time at the moment the notification is queued for delivery, not at the time the 36-hour timer is set. This means a user who completes Step 3 – Profile Setup at hour 35 will have the notification suppressed even though the timer had already started. Lena Castillo confirmed this logic is implemented in the OnboardFlow v2.4 notification service and was validated in the April 4th QA pass that Priya Nair reviewed."
+    },
+    {
+      "turn_id": "t49",
+      "user_message": "Is there a maximum number of notifications a user can receive during the onboarding window?",
+      "assistant_message": "Marcus Teo set a hard cap of two notifications per user during the onboarding window in ticket UX-219, replacing the previous three-notification schedule in OnboardFlow v2.4. The new schedule is a 24-hour notification for users who haven't started Step 3 – Profile Setup at all, and the 36-hour notification for users who started but didn't complete it. Priya Nair approved this cap in the OB-2024-Q1 project brief update on April 2nd, and Lena Castillo confirmed the DropSight dashboard is configured to track each notification type separately."
+    },
+    {
+      "turn_id": "t50",
+      "user_message": "Has the team decided what to do with users who don't open either notification during the onboarding window?",
+      "assistant_message": "Priya Nair decided on April 3rd that users who don't open either notification within the onboarding window will be entered into a re-engagement email sequence managed outside the OnboardFlow v2.4 notification system. Marcus Teo noted that this email sequence is owned by the CRM team, not the mobile team, and Lena Castillo is the liaison to coordinate handoff criteria. The DropSight dashboard will export a daily CSV of users meeting the handoff criteria — defined as no onboarding completion and no notification open within 48 hours of install — to the CRM team's intake queue."
+    },
+    {
+      "turn_id": "t51",
+      "user_message": "Has the April 7th notification test confirmed it's tracking toward the 15% open rate target after the first day?",
+      "assistant_message": "Priya Nair checked the DropSight dashboard on April 8th after the first full day of the notification test: the 36-hour notification was showing a 16.2% open rate across 312 delivered notifications, ahead of the 15% target Marcus Teo set. Lena Castillo noted the sample is too small to be conclusive but described the early signal as encouraging. Marcus Teo reminded the team that the test needs at least 3,000 notified users before any go/no-go decision on the copy, per the plan Priya Nair approved."
+    },
+    {
+      "turn_id": "t52",
+      "user_message": "Given the drop-off analysis and the validation criteria the team agreed on, what specific step is being fixed and what completion rate does it need to reach for the fix to be considered successful?",
+      "assistant_message": null
+    }
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer identifies Step 3 – Profile Setup as the specific onboarding step being fixed.",
+      "required": true,
+      "evidence_turn_ids": ["t1", "t26"]
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that the required completion rate for Step 3 – Profile Setup is at least 61% for the fix to be validated.",
+      "required": true,
+      "evidence_turn_ids": ["t28", "t30"]
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer explains or implies that 61% represents a 15-percentage-point lift from the 46% baseline completion rate at Step 3.",
+      "required": true,
+      "evidence_turn_ids": ["t28", "t30"]
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not state that the target Step 3 completion rate is 44%, which is the control arm result from the video A/B test (the near-miss answer in t39).",
+      "required": true,
+      "evidence_turn_ids": []
+    }
+  ],
+  "reference_answer": "The specific step being fixed is Step 3 – Profile Setup, which was identified as the point where 54% of new users abandon the app. The fix is considered successful when Step 3 – Profile Setup reaches a completion rate of at least 61%, which represents the 15-percentage-point lift above the current 46% baseline that Marcus Teo specified as the go/no-go threshold in OB-2024-Q1. Priya Nair confirmed this 61% figure as the binding validation criterion for the entire onboarding fix effort.",
+  "notes": "The key facts come from Branch A (t1, t23, t26: Step 3 – Profile Setup is the drop-off point, the Date of Birth field is the worst offender, and making it optional is the fix) and Branch B (t4, t18, t28, t30: the Day-7 completion target is 55%, and the Step 3 go/no-go threshold is 61% completion, a 15-point lift from 46%). The near-miss turn is t39, which confidently reports the 47-second video control arm's Step 3 completion rate of 44% — a number that sounds like it could be the baseline or target but is actually just the A/B test control result."
+}

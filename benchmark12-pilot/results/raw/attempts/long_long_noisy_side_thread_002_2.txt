@@ -1,0 +1,284 @@
+I'll carefully fix all the issues: remove topic-switch signposting, ensure checklist items only cite gold turns (t1, t8, t9), keep distractors close to the same subject matter (telescope/observatory details), and avoid any transition phrases.
+
+```json
+{
+  "entity_registry": [
+    "Marcus Holt",
+    "Ridgeline Observatory",
+    "Celestron EdgeHD 11",
+    "SkyWatcher EQ6-R Pro",
+    "Site Survey Log v2",
+    "Petra Vance"
+  ],
+  "turns": [
+    {
+      "turn_id": "t1",
+      "user_message": "I'm setting up Ridgeline Observatory in my backyard and I need to nail down the polar alignment procedure for the SkyWatcher EQ6-R Pro. What's the standard drift-alignment method and how long does each step typically take?",
+      "assistant_message": "Drift alignment on the SkyWatcher EQ6-R Pro involves two phases: first you center a star near the meridian and on the celestial equator, then watch for north-south drift over roughly 5 minutes to correct azimuth; second you center a star near the eastern horizon at the same declination and watch drift for another 5 minutes to correct altitude. Each correction-and-recheck cycle adds about 3 minutes, and most practitioners run two full cycles per axis, so the total procedure for a good polar alignment typically takes 25 to 35 minutes under steady seeing. Marcus Holt documented this procedure in the Site Survey Log v2 after testing it at Ridgeline Observatory on the night of March 4, 2024, achieving a polar alignment error of under 30 arcseconds."
+    },
+    {
+      "turn_id": "t2",
+      "user_message": "What focal length and focal ratio does the Celestron EdgeHD 11 have, and does it need a field flattener for imaging?",
+      "assistant_message": "The Celestron EdgeHD 11 has a focal length of 2800 mm at its native f/10 focal ratio. For imaging, Celestron recommends their 0.7x reducer-flattener, which brings the focal length down to 1960 mm at f/7, and it eliminates the field curvature that would otherwise cause stars to bloat toward the edges of a full-frame sensor. Marcus Holt ordered the reducer-flattener for Ridgeline Observatory in February 2024 after Petra Vance noted coma in test images taken at native focal length."
+    },
+    {
+      "turn_id": "t3",
+      "user_message": "I want to build a pier for the SkyWatcher EQ6-R Pro inside the observatory. What diameter and depth of concrete footing is typically recommended?",
+      "assistant_message": "For a mount in the EQ6-R Pro class, which weighs about 17 kg without the optical tube, a concrete footing of at least 300 mm diameter and 600 mm depth is standard practice to isolate the pier from ground vibration. Marcus Holt specified a 350 mm diameter, 750 mm deep footing for Ridgeline Observatory, using 25 MPa concrete poured into a Sonotube form on January 15, 2024. Petra Vance cross-referenced this spec in the Site Survey Log v2 against local frost-depth data, confirming the 750 mm depth clears the 680 mm frost line for their region."
+    },
+    {
+      "turn_id": "t4",
+      "user_message": "What steel pier tube dimensions did Marcus Holt settle on to sit on that footing?",
+      "assistant_message": "Marcus Holt chose a 150 mm outer-diameter, 6 mm wall-thickness steel tube, 900 mm tall, for the pier at Ridgeline Observatory. That height places the EQ6-R Pro saddle at 1350 mm above the observatory floor when the mount head is included, which Petra Vance confirmed is comfortable for a seated observer at an eyepiece. The tube was sourced from a local steel supplier on January 22, 2024, and hot-dip galvanized to prevent rust inside the dome's humid environment."
+    },
+    {
+      "turn_id": "t5",
+      "user_message": "How was the pier tube anchored to the concrete footing at Ridgeline Observatory?",
+      "assistant_message": "The 150 mm steel pier tube was anchored using a 20 mm thick steel base plate, 400 mm square, welded to the tube's bottom end, with four M16 anchor bolts cast into the concrete footing at a 300 mm bolt-circle diameter. Marcus Holt torqued the anchor nuts to 120 Nm on February 3, 2024, after the footing had cured for 19 days. Petra Vance recorded the final pier wobble test in Site Survey Log v2, showing less than 0.1 mm deflection at the saddle under a 5 kg lateral load."
+    },
+    {
+      "turn_id": "t6",
+      "user_message": "What dome diameter did Marcus Holt decide on for Ridgeline Observatory, and what was the main constraint?",
+      "assistant_message": "Marcus Holt settled on a 2.2 m interior dome diameter for Ridgeline Observatory, the primary constraint being the 2.4 m wide backyard patio slab that the structure had to sit on. Petra Vance modeled the shutter opening angle required for the Celestron EdgeHD 11 at low altitudes and confirmed that a 2.2 m dome gives a minimum 15-degree horizon clearance with the shutter fully open. The dome was ordered from Astrohaven in early December 2023 and delivered on January 8, 2024."
+    },
+    {
+      "turn_id": "t7",
+      "user_message": "What power distribution setup is planned for Ridgeline Observatory, specifically how many 12 V outlets and what total current capacity?",
+      "assistant_message": "The power plan for Ridgeline Observatory calls for eight 12 V DC outlets fed by a 30 A regulated power supply, giving a total capacity of 360 W at 12 V. Marcus Holt specified that the SkyWatcher EQ6-R Pro draws up to 5 A at slew speed, the Celestron EdgeHD 11 focuser draws 1 A, and dew heaters across three surfaces draw a combined 8 A, leaving comfortable headroom. Petra Vance drafted the wiring diagram in February 2024 and included it as Appendix C of the Site Survey Log v2."
+    },
+    {
+      "turn_id": "t8",
+      "user_message": "After completing drift alignment on the EQ6-R Pro, what polar alignment error threshold should I aim for before starting a long imaging session, and why does that number matter?",
+      "assistant_message": "For long unguided exposures on the SkyWatcher EQ6-R Pro, Marcus Holt established a threshold of 5 arcseconds or better of residual polar alignment error for Ridgeline Observatory, because at that level a 5-minute unguided sub-frame shows star trailing of less than 1 pixel on a typical APS-C sensor with the Celestron EdgeHD 11 at 1960 mm focal length. The 30-arcsecond result achievable with basic drift alignment is adequate only for guided imaging; for unguided work the Site Survey Log v2 recommends using SharpCap's polar alignment routine after drift alignment to refine to the 5-arcsecond target. Exceeding the 5-arcsecond threshold causes field rotation that stacking software cannot fully correct, degrading faint-nebula detail in final images."
+    },
+    {
+      "turn_id": "t9",
+      "user_message": "What is the maximum single-exposure length Marcus Holt documented as acceptable once the 5-arcsecond polar alignment target is met, and what sky condition was assumed?",
+      "assistant_message": "Marcus Holt documented a maximum unguided single-exposure length of 4 minutes for the SkyWatcher EQ6-R Pro at Ridgeline Observatory once polar alignment is within 5 arcseconds, assuming a Bortle 5 sky and seeing of 2 arcseconds or better. Beyond 4 minutes, periodic error in the EQ6-R Pro's worm gear—measured at ±8 arcseconds peak-to-peak at Ridgeline—begins to accumulate drift that exceeds the 1-pixel trailing threshold even with good polar alignment. The Site Survey Log v2 notes that enabling PEC playback on the EQ6-R Pro extends the safe unguided limit to 6 minutes under those same Bortle 5, 2-arcsecond seeing conditions."
+    },
+    {
+      "turn_id": "t10",
+      "user_message": "What software is Marcus Holt using to control the Celestron EdgeHD 11 focuser remotely from inside the house?",
+      "assistant_message": "Marcus Holt chose Sequence Generator Pro paired with an ASCOM-compatible Pegasus Astro Focus Cube 2 to control the Celestron EdgeHD 11 focuser remotely at Ridgeline Observatory. The Focus Cube 2 was configured with a step size of 3.5 microns and a backlash compensation of 200 steps inward, values Petra Vance derived from a focus run on March 10, 2024. Sequence Generator Pro connects to the mount and focuser over a local Wi-Fi bridge, eliminating the need for Marcus Holt to enter the dome during a session."
+    },
+    {
+      "turn_id": "t11",
+      "user_message": "What reducer-flattener back-focus distance is required for the Celestron EdgeHD 11 with the 0.7x reducer, and how precisely does it need to be set?",
+      "assistant_message": "The Celestron 0.7x reducer-flattener for the EdgeHD 11 requires a back-focus distance of exactly 146.05 mm from the rear surface of the reducer to the camera sensor, with a tolerance of plus or minus 0.5 mm. Petra Vance shimmed the camera train at Ridgeline Observatory using precision spacer rings to achieve 146.1 mm, which is within tolerance. Marcus Holt recorded this measurement in the Site Survey Log v2 on March 12, 2024, noting that a 1 mm error in back-focus produces visible field curvature on a full-frame sensor."
+    },
+    {
+      "turn_id": "t12",
+      "user_message": "What is the slew speed setting Marcus Holt uses on the EQ6-R Pro and why was that specific value chosen?",
+      "assistant_message": "Marcus Holt set the SkyWatcher EQ6-R Pro maximum slew speed to 800x sidereal at Ridgeline Observatory, down from the factory default of 1000x. Petra Vance found during commissioning that 1000x slew caused the mount to occasionally lose steps when the Celestron EdgeHD 11 optical tube assembly was at high declination due to imbalance torque, while 800x eliminated that problem entirely. The 800x setting is recorded in the mount's hand controller memory and flagged in the Site Survey Log v2 as a mandatory configuration item before any imaging session."
+    },
+    {
+      "turn_id": "t13",
+      "user_message": "What gauge wire did Petra Vance specify for the 12 V runs to the dew heaters at Ridgeline Observatory?",
+      "assistant_message": "Petra Vance specified 16 AWG stranded copper wire for all 12 V dew heater runs at Ridgeline Observatory, based on the 8 A combined dew heater load and a maximum 0.5 V drop across the longest 4-metre run. The wiring is routed through flexible conduit zip-tied to the pier and dome ring, with Anderson Powerpole connectors at each heater termination. Marcus Holt completed the dew heater wiring installation on February 28, 2024, and verified each circuit with a clamp meter before closing the conduit."
+    },
+    {
+      "turn_id": "t14",
+      "user_message": "What guiding camera and guide scope combination did Marcus Holt select for Ridgeline Observatory, and what guide scale does that give?",
+      "assistant_message": "Marcus Holt selected a ZWO ASI 290MM Mini guiding camera paired with a 60 mm f/4.5 guide scope, giving a focal length of 270 mm for guiding at Ridgeline Observatory. With the ASI 290MM Mini's 2.9-micron pixels, that combination yields a guide scale of approximately 2.2 arcseconds per pixel. Petra Vance confirmed in the Site Survey Log v2 that this scale is well matched to the typical 2-arcsecond seeing at Ridgeline, allowing PHD2 to detect sub-pixel star centroid shifts reliably."
+    },
+    {
+      "turn_id": "t15",
+      "user_message": "What total current load did Petra Vance calculate for the full Ridgeline Observatory setup drawing from the 30 A supply?",
+      "assistant_message": "Petra Vance calculated a peak simultaneous current draw of 22.5 A for the full Ridgeline Observatory setup: 5 A for the SkyWatcher EQ6-R Pro at slew, 1 A for the Celestron EdgeHD 11 focuser, 8 A for dew heaters, 3 A for the imaging camera cooling, 2 A for the guide camera and guide scope focuser combined, 1.5 A for the computer and Wi-Fi bridge, and 2 A margin for accessories. That leaves 7.5 A of headroom against the 30 A supply rating, which Marcus Holt considered acceptable. The calculation is tabulated in Appendix C of the Site Survey Log v2, dated February 20, 2024."
+    },
+    {
+      "turn_id": "t16",
+      "user_message": "What shutter opening width in degrees did the Astrohaven dome provide for the Celestron EdgeHD 11 at 15 degrees altitude?",
+      "assistant_message": "The Astrohaven 2.2 m dome at Ridgeline Observatory provides a shutter opening of 110 degrees of arc when fully open, which gives a clear aperture of 600 mm at the dome's inner surface. Petra Vance calculated that the Celestron EdgeHD 11 optical tube, 356 mm in aperture and 700 mm long, clears the shutter walls with 80 mm of margin on each side when pointed at 15 degrees altitude. Marcus Holt recorded this clearance measurement in the Site Survey Log v2 on January 25, 2024, confirming the dome selection was adequate for low-altitude planetary work."
+    },
+    {
+      "turn_id": "t17",
+      "user_message": "What is the maximum unguided exposure length for the Celestron EdgeHD 11 at native f/10 focal length under the same Bortle 5 conditions?",
+      "assistant_message": "At native f/10 with a focal length of 2800 mm on the SkyWatcher EQ6-R Pro, the maximum safe unguided single exposure at Ridgeline Observatory under Bortle 5, 2-arcsecond seeing is 90 seconds, not 4 minutes. At 2800 mm, the same ±8 arcseconds of periodic error translates to roughly 2.5 pixels of trailing on an APS-C sensor, so exposures beyond 90 seconds produce clearly elongated stars. Petra Vance documented this 90-second limit specifically for the native f/10 configuration in the Site Survey Log v2 on March 18, 2024."
+    },
+    {
+      "turn_id": "t18",
+      "user_message": "What sensor did Marcus Holt choose as the main imaging camera for the Celestron EdgeHD 11 at Ridgeline Observatory?",
+      "assistant_message": "Marcus Holt chose a ZWO ASI 2600MM Pro as the main imaging camera for the Celestron EdgeHD 11 at Ridgeline Observatory, featuring a 26-megapixel APS-C format back-illuminated CMOS sensor with 3.76-micron pixels. At the reduced 1960 mm focal length with the 0.7x reducer-flattener, that gives an image scale of 0.396 arcseconds per pixel. Petra Vance confirmed in the Site Survey Log v2 that this scale slightly oversamples the typical 2-arcsecond seeing at Ridgeline but provides fine detail for narrowband nebula work."
+    },
+    {
+      "turn_id": "t19",
+      "user_message": "What cooling temperature setpoint does Marcus Holt use for the ASI 2600MM Pro during summer imaging nights?",
+      "assistant_message": "Marcus Holt sets the ZWO ASI 2600MM Pro cooling setpoint to minus 10 degrees Celsius on summer nights at Ridgeline Observatory, typically achieving a 25 to 30 degree delta below ambient. Petra Vance measured dark current at that setpoint as 0.0015 electrons per pixel per second, which is negligible for the 4-minute sub-frames used with the SkyWatcher EQ6-R Pro. The minus 10 degree setpoint is logged as the standard operating temperature in the Site Survey Log v2."
+    },
+    {
+      "turn_id": "t20",
+      "user_message": "What PHD2 calibration step size did Petra Vance recommend for the guide setup at Ridgeline Observatory?",
+      "assistant_message": "Petra Vance recommended a PHD2 calibration step size of 1500 milliseconds for the 60 mm guide scope and ZWO ASI 290MM Mini combination at Ridgeline Observatory, producing roughly 5 arcseconds of movement per calibration step at the 2.2 arcseconds-per-pixel guide scale. She derived this from the PHD2 calculator using the SkyWatcher EQ6-R Pro's guide rate of 0.5x sidereal, which Marcus Holt had set as the default. The 1500 ms step size is noted in the Site Survey Log v2 alongside the PHD2 profile export file name EQ6R_Ridgeline_v3.phd."
+    },
+    {
+      "turn_id": "t21",
+      "user_message": "What gain setting does Marcus Holt use on the ASI 2600MM Pro for narrowband imaging?",
+      "assistant_message": "Marcus Holt uses a gain of 100 on the ZWO ASI 2600MM Pro for narrowband imaging at Ridgeline Observatory, which places the sensor at unity gain and gives a dynamic range of approximately 12.6 stops. Petra Vance tested gains from 0 to 300 during commissioning and found gain 100 balanced read noise at 1.5 electrons against well depth of 50,000 electrons, ideal for faint emission nebulae with the Celestron EdgeHD 11. This setting is recorded in the Site Survey Log v2 as the standard narrowband configuration."
+    },
+    {
+      "turn_id": "t22",
+      "user_message": "What anchor bolt specification was used for the dome base ring at Ridgeline Observatory?",
+      "assistant_message": "The Astrohaven dome base ring at Ridgeline Observatory was anchored to the patio slab using twelve M12 stainless steel wedge anchors, 100 mm embedment depth, spaced at 30-degree intervals around the 2.2 m ring. Marcus Holt drilled the anchor holes on January 10, 2024, two days after the dome delivery, using a hammer drill with a 14 mm carbide bit to allow for the wedge anchor's 12 mm shank. Petra Vance torqued each anchor to 45 Nm as specified by the Astrohaven installation manual and recorded the torque values in the Site Survey Log v2."
+    },
+    {
+      "turn_id": "t23",
+      "user_message": "Was any sealant applied between the dome base ring and the concrete patio slab at Ridgeline Observatory?",
+      "assistant_message": "Yes, Petra Vance applied a continuous bead of Sikaflex 221 polyurethane sealant around the inside and outside perimeter of the Astrohaven dome base ring after torquing the anchors. The sealant was applied on January 11, 2024, and allowed to cure for 48 hours before Marcus Holt moved any equipment inside. This prevents water infiltration under the base ring during rain, which was a concern given the patio slab's slight 1-degree inward slope noted in the Site Survey Log v2."
+    },
+    {
+      "turn_id": "t24",
+      "user_message": "What dome rotation mechanism does the Astrohaven dome use, and did Marcus Holt add any lubrication during installation?",
+      "assistant_message": "The Astrohaven 2.2 m dome uses a polyethylene wheel-on-track rotation system, with six nylon wheels riding on a circular aluminum track that is part of the base ring. Marcus Holt applied a light coat of Teflon-based dry lubricant to the aluminum track on January 12, 2024, after noticing slight stick-slip during the first manual rotation test at Ridgeline Observatory. Petra Vance noted in the Site Survey Log v2 that the dome rotates smoothly through 360 degrees with a push force of under 5 N after lubrication."
+    },
+    {
+      "turn_id": "t25",
+      "user_message": "What is the voltage drop measured on the longest 12 V run at Ridgeline Observatory under full dew heater load?",
+      "assistant_message": "Under the full 8 A dew heater load, Petra Vance measured a voltage drop of 0.42 V on the longest 4-metre 16 AWG run at Ridgeline Observatory, which is within the 0.5 V budget she had specified. Marcus Holt verified this on February 28, 2024, using a calibrated Fluke 117 multimeter at the Anderson Powerpole connector at the heater end. The measured 0.42 V drop corresponds to a terminal voltage of 11.58 V at the heater, which Petra Vance confirmed is sufficient for the heaters to reach their rated 8 A output."
+    },
+    {
+      "turn_id": "t26",
+      "user_message": "What dew heater controller is used at Ridgeline Observatory, and how many independently controlled channels does it have?",
+      "assistant_message": "Ridgeline Observatory uses a Pegasus Astro Ultimate Power Box v2 to control the dew heaters, which provides three independently PWM-controlled dew heater channels rated at 5 A each. Marcus Holt assigned channel 1 to the Celestron EdgeHD 11 corrector plate heater, channel 2 to the finder scope objective, and channel 3 to the guide scope objective. Petra Vance configured automatic dew control in the Pegasus software using a temperature and humidity sensor mounted inside the Astrohaven dome, with the threshold set to activate heaters when relative humidity exceeds 75 percent."
+    },
+    {
+      "turn_id": "t27",
+      "user_message": "What temperature sensor model did Petra Vance select for the humidity-triggered dew control at Ridgeline Observatory?",
+      "assistant_message": "Petra Vance selected a Sensirion SHT31-D digital temperature and humidity sensor for the automatic dew control system at Ridgeline Observatory, integrated with the Pegasus Astro Ultimate Power Box v2 via its onboard sensor port. The SHT31-D has a humidity accuracy of plus or minus 2 percent RH and a temperature accuracy of plus or minus 0.3 degrees Celsius, which Petra Vance deemed sufficient for dew-point calculations. Marcus Holt mounted the sensor on the interior dome wall 300 mm above the Celestron EdgeHD 11 corrector plate on March 1, 2024."
+    },
+    {
+      "turn_id": "t28",
+      "user_message": "What total guiding RMS error has Marcus Holt achieved with the PHD2 setup at Ridgeline Observatory so far?",
+      "assistant_message": "Marcus Holt achieved a total guiding RMS error of 0.62 arcseconds on the best nights at Ridgeline Observatory using the ZWO ASI 290MM Mini and 60 mm guide scope with PHD2 profile EQ6R_Ridgeline_v3.phd. Petra Vance analyzed six nights of PHD2 logs from March 2024 and found the median total RMS was 0.78 arcseconds, with the worst night at 1.1 arcseconds due to wind gusts. The SkyWatcher EQ6-R Pro's periodic error correction was enabled on all logged nights, contributing to keeping RA RMS below 0.5 arcseconds on calm nights."
+    },
+    {
+      "turn_id": "t29",
+      "user_message": "What is the shutter drive mechanism on the Astrohaven dome at Ridgeline Observatory, and is it motorized?",
+      "assistant_message": "The Astrohaven 2.2 m dome at Ridgeline Observatory uses a clamshell shutter design driven by two 12 V linear actuators, one on each shutter panel, which are controlled by a dedicated Astrohaven controller board. Marcus Holt wired the controller board to the Pegasus Astro Ultimate Power Box v2 so the shutter can be opened and closed remotely from inside the house via the Pegasus software. Petra Vance tested the full open-to-close cycle time as 18 seconds on January 15, 2024, and recorded this in the Site Survey Log v2."
+    },
+    {
+      "turn_id": "t30",
+      "user_message": "What current does each Astrohaven linear actuator draw during shutter operation at Ridgeline Observatory?",
+      "assistant_message": "Each Astrohaven linear actuator at Ridgeline Observatory draws a peak of 3 A at 12 V during shutter movement, for a combined 6 A when both panels open or close simultaneously. Petra Vance included this 6 A transient load in her power budget calculations, noting it is short-duration and does not affect steady-state current draw. Marcus Holt added a 10 A fuse on the shutter actuator circuit as specified in the Astrohaven installation manual, documented in Appendix C of the Site Survey Log v2."
+    },
+    {
+      "turn_id": "t31",
+      "user_message": "What minimum guide exposure time does Petra Vance recommend for the ZWO ASI 290MM Mini at Ridgeline Observatory to avoid overexposing bright guide stars?",
+      "assistant_message": "Petra Vance recommends a minimum guide exposure time of 1.0 second for the ZWO ASI 290MM Mini at Ridgeline Observatory to avoid saturation on stars brighter than magnitude 6 in the 60 mm guide scope. For typical guide stars between magnitude 7 and 9, she found 2.0-second exposures give a signal-to-noise ratio of at least 20, which PHD2 requires for reliable centroiding. Marcus Holt set 2.0 seconds as the default guide exposure in the PHD2 profile EQ6R_Ridgeline_v3.phd, with a note in the Site Survey Log v2 to drop to 1.0 second if a bright star is the only guide candidate."
+    },
+    {
+      "turn_id": "t32",
+      "user_message": "What filter wheel did Marcus Holt select for narrowband imaging with the ASI 2600MM Pro at Ridgeline Observatory?",
+      "assistant_message": "Marcus Holt selected a ZWO EFW 7-position 36 mm filter wheel for narrowband imaging with the ZWO ASI 2600MM Pro at Ridgeline Observatory, loaded with Antlia 3 nm narrowband filters in Ha, OIII, and SII plus an L filter and three empty slots. The filter wheel is controlled through Sequence Generator Pro via ASCOM, and Petra Vance confirmed the filter offsets in the focuser: Ha requires 0 steps, OIII requires plus 12 steps, and SII requires plus 8 steps relative to the reference focus position. These offsets are stored in the Sequence Generator Pro equipment profile named Ridgeline_EdgeHD11_2600MM.sgp."
+    },
+    {
+      "turn_id": "t33",
+      "user_message": "What is the filter wheel offset for the L filter in the Sequence Generator Pro profile at Ridgeline Observatory?",
+      "assistant_message": "The L filter focus offset in the Sequence Generator Pro profile Ridgeline_EdgeHD11_2600MM.sgp is minus 5 steps relative to the Ha reference position, as calibrated by Petra Vance during a focus run on March 14, 2024. Marcus Holt verified this offset by running an autofocus sequence with the Celestron EdgeHD 11 on a bright star at magnitude 4.5, confirming the L filter achieves a V-curve minimum within 3 steps of the stored offset. The offset values are also listed in the Site Survey Log v2 for manual entry if the SGP profile is ever reset."
+    },
+    {
+      "turn_id": "t34",
+      "user_message": "What is the maximum safe ambient temperature for running the ASI 2600MM Pro at the minus 10 degree setpoint at Ridgeline Observatory?",
+      "assistant_message": "The ZWO ASI 2600MM Pro can maintain the minus 10 degree Celsius setpoint at Ridgeline Observatory up to an ambient temperature of approximately 25 degrees Celsius before the TEC reaches 100 percent duty cycle, based on ZWO's rated 35-degree delta from ambient. Petra Vance noted in the Site Survey Log v2 that summer nights at Ridgeline rarely exceed 22 degrees Celsius, giving at least 3 degrees of thermal headroom. Marcus Holt set an alert in the Pegasus Astro Ultimate Power Box v2 software to warn him if dome interior temperature exceeds 24 degrees Celsius during a session."
+    },
+    {
+      "turn_id": "t35",
+      "user_message": "What flat-field panel did Marcus Holt install at Ridgeline Observatory for calibrating the ASI 2600MM Pro with narrowband filters?",
+      "assistant_message": "Marcus Holt installed an Alnitak Flip-Flat 14-inch flat-field panel on the Celestron EdgeHD 11 at Ridgeline Observatory, which fits the 356 mm aperture with an adapter ring Petra Vance sourced from a 3D printing service on March 5, 2024. The Flip-Flat is controlled via a USB serial port through Sequence Generator Pro, and it closes automatically at the start of each flat sequence. Petra Vance determined that 12 flats per filter at a panel brightness setting of 128 out of 255 yields a mean ADU of 32,000 on the ASI 2600MM Pro at gain 100, which is within the linear range of the sensor."
+    },
+    {
+      "turn_id": "t36",
+      "user_message": "What is the rotation angle of the Astrohaven dome that Marcus Holt uses as the park position at Ridgeline Observatory?",
+      "assistant_message": "Marcus Holt defined the dome park position as 180 degrees (due south) at Ridgeline Observatory, which places the shutter seam facing away from the prevailing northwest wind. Petra Vance confirmed that this orientation also aligns the dome's ventilation gap with the south wall of the backyard, maximizing airflow for thermal equilibration before a session. The park position is stored in the Astrohaven controller board's non-volatile memory and is also noted in the Site Survey Log v2 as the mandatory shutdown orientation."
+    },
+    {
+      "turn_id": "t37",
+      "user_message": "What dither settings does Marcus Holt use in Sequence Generator Pro for the Ridgeline Observatory imaging sessions?",
+      "assistant_message": "Marcus Holt configured dithering in Sequence Generator Pro to dither every 3 frames by 10 pixels in a random direction, which at the 0.396 arcseconds-per-pixel scale of the ZWO ASI 2600MM Pro and Celestron EdgeHD 11 corresponds to roughly 4 arcseconds of dither displacement. Petra Vance set the PHD2 dither settle parameters to a threshold of 0.5 arcseconds and a settle time of 10 seconds to ensure the SkyWatcher EQ6-R Pro has stabilized before the next exposure begins. These settings are saved in the Sequence Generator Pro profile Ridgeline_EdgeHD11_2600MM.sgp."
+    },
+    {
+      "turn_id": "t38",
+      "user_message": "What is the total weight of the imaging train on the Celestron EdgeHD 11 at Ridgeline Observatory, including camera, filter wheel, and reducer?",
+      "assistant_message": "The imaging train on the Celestron EdgeHD 11 at Ridgeline Observatory consists of the 0.7x reducer-flattener at 350 g, the ZWO EFW 7-position filter wheel at 320 g, the ZWO ASI 2600MM Pro at 700 g, and the Pegasus Focus Cube 2 at 170 g, for a total of 1540 g. Marcus Holt balanced the SkyWatcher EQ6-R Pro with this load using a 1.2 kg counterweight offset of 85 mm from the standard balance point. Petra Vance recorded the final balance configuration in the Site Survey Log v2 on March 8, 2024, noting the east-heavy slight imbalance of 150 g deliberately introduced to reduce RA gear backlash."
+    },
+    {
+      "turn_id": "t39",
+      "user_message": "What is the overall dome wall thickness of the Astrohaven unit installed at Ridgeline Observatory?",
+      "assistant_message": "The Astrohaven 2.2 m dome at Ridgeline Observatory has a fiberglass shell wall thickness of 4.5 mm, which is the standard production specification for that model. Marcus Holt measured the wall thickness at three points using a digital caliper on January 9, 2024, finding values of 4.4 mm, 4.5 mm, and 4.6 mm, all within Astrohaven's stated tolerance of plus or minus 0.2 mm. Petra Vance noted in the Site Survey Log v2 that the 4.5 mm wall provides adequate UV resistance and structural stiffness for the backyard environment at Ridgeline Observatory."
+    },
+    {
+      "turn_id": "t40",
+      "user_message": "What weatherproofing was applied to the Astrohaven dome exterior at Ridgeline Observatory?",
+      "assistant_message": "Marcus Holt applied two coats of Krylon UV-resistant white spray paint to the exterior of the Astrohaven dome at Ridgeline Observatory on January 18, 2024, to supplement the factory gel coat and reduce solar heat gain. Petra Vance measured dome interior temperature before and after painting on a sunny afternoon and found a 4-degree Celsius reduction in peak interior temperature with the white coating. The Site Survey Log v2 recommends recoating every two years, with the next application due January 2026."
+    },
+    {
+      "turn_id": "t41",
+      "user_message": "What autofocus method does Sequence Generator Pro use for the Celestron EdgeHD 11 at Ridgeline Observatory, and how many data points are in the V-curve?",
+      "assistant_message": "Sequence Generator Pro uses the V-curve autofocus method for the Celestron EdgeHD 11 at Ridgeline Observatory, sampling 9 data points across a total focuser travel range of 400 steps centered on the last known focus position. Marcus Holt set the step size for autofocus to 50 steps, which Petra Vance verified produces a well-resolved V-curve minimum with no flat bottom ambiguity at the Pegasus Focus Cube 2's 3.5-micron step size. The autofocus trigger is set to run every 1-degree Celsius change in temperature, as logged in the Sequence Generator Pro profile Ridgeline_EdgeHD11_2600MM.sgp."
+    },
+    {
+      "turn_id": "t42",
+      "user_message": "What is the dome's thermal equilibration time that Petra Vance measured at Ridgeline Observatory before imaging begins?",
+      "assistant_message": "Petra Vance measured a thermal equilibration time of 45 minutes for the Astrohaven dome at Ridgeline Observatory, defined as the time for the dome interior temperature to come within 0.5 degrees Celsius of ambient after opening the shutter and dome park vent. She conducted this measurement on three nights in March 2024 with ambient temperatures between 8 and 14 degrees Celsius, finding consistent results of 43 to 47 minutes. Marcus Holt therefore sets the dome to open 45 minutes before the planned imaging start time, a procedure noted in the Site Survey Log v2 as the standard pre-session routine."
+    },
+    {
+      "turn_id": "t43",
+      "user_message": "What mount model did Marcus Holt consider before choosing the SkyWatcher EQ6-R Pro, and why was it rejected?",
+      "assistant_message": "Marcus Holt initially considered the iOptron CEM60 as the mount for Ridgeline Observatory before selecting the SkyWatcher EQ6-R Pro. The CEM60 was rejected because its center-of-gravity design placed the Celestron EdgeHD 11 optical tube too close to the pier head, creating a risk of collision with the Astrohaven dome wall at declinations above 75 degrees north, as Petra Vance modeled using a 3D CAD sketch in February 2024. The EQ6-R Pro's German equatorial geometry gave 120 mm more clearance at the same declinations, which was the deciding factor recorded in the Site Survey Log v2."
+    },
+    {
+      "turn_id": "t44",
+      "user_message": "What is the total weight capacity of the SkyWatcher EQ6-R Pro and how much of that capacity is used by the Celestron EdgeHD 11 imaging setup at Ridgeline Observatory?",
+      "assistant_message": "The SkyWatcher EQ6-R Pro has a rated payload capacity of 20 kg for imaging use at Ridgeline Observatory. The Celestron EdgeHD 11 optical tube assembly weighs 12.5 kg, and with the 1540 g imaging train Marcus Holt assembled, the total payload is 14.04 kg, leaving 5.96 kg of headroom against the 20 kg limit. Petra Vance noted in the Site Survey Log v2 that operating at 70 percent of rated capacity is considered best practice for preserving periodic error performance, and 14.04 kg represents exactly 70.2 percent of the 20 kg limit."
+    },
+    {
+      "turn_id": "t45",
+      "user_message": "What USB hub is used inside the Ridgeline Observatory dome to connect all the devices, and how is it powered?",
+      "assistant_message": "Ridgeline Observatory uses a Pegasus Astro Pocket Powerbox Advance as the USB hub inside the dome, providing four powered USB 3.0 ports and two USB 2.0 ports. It is powered directly from the 12 V supply via the Pegasus Astro Ultimate Power Box v2, drawing 0.5 A at idle and up to 2 A when all ports are active. Marcus Holt mounted it on the SkyWatcher EQ6-R Pro saddle plate using a custom 3D-printed bracket that Petra Vance designed on March 6, 2024, keeping all cables short and balanced around the mount's center of gravity."
+    },
+    {
+      "turn_id": "t46",
+      "user_message": "What is the height of the Astrohaven dome above the patio slab at Ridgeline Observatory, and how does that compare to the original design spec?",
+      "assistant_message": "The installed Astrohaven 2.2 m dome at Ridgeline Observatory sits at a total height of 1.85 m above the patio slab, measured to the dome apex with the shutter closed. The original design spec in the Site Survey Log v2 called for a maximum height of 1.9 m to comply with the local residential accessory structure ordinance, so the actual height of 1.85 m provides 50 mm of compliance margin. Marcus Holt submitted the height measurement to the local building department on January 20, 2024, and received written confirmation from Petra Vance's neighbor liaison contact that no further permits were required."
+    },
+    {
+      "turn_id": "t47",
+      "user_message": "What is the internal usable floor diameter inside the Astrohaven dome at Ridgeline Observatory after the pier and base ring are installed?",
+      "assistant_message": "After the 150 mm steel pier and the Astrohaven base ring occupy their space, the usable floor diameter inside the dome at Ridgeline Observatory is approximately 1.95 m, leaving a 0.9 m clear path around the pier for Marcus Holt to access the equipment. Petra Vance verified this clearance by walking a full circle inside the dome on January 16, 2024, confirming there is sufficient room to handle the Celestron EdgeHD 11 optical tube during installation. The 1.95 m usable diameter is noted in the Site Survey Log v2 as adequate for single-person operation but too tight for two people working simultaneously."
+    },
+    {
+      "turn_id": "t48",
+      "user_message": "Given the polar alignment and periodic error specs documented for the EQ6-R Pro at Ridgeline Observatory, what is the longest unguided single exposure I can take with PEC enabled, and what sky conditions does that assume?",
+      "assistant_message": null
+    }
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that the maximum unguided single-exposure length with PEC enabled is 6 minutes.",
+      "required": true,
+      "evidence_turn_ids": ["t9"]
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that the assumed sky condition is Bortle 5 and seeing of 2 arcseconds or better.",
+      "required": true,
+      "evidence_turn_ids": ["t9"]
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer states that without PEC the safe unguided limit is 4 minutes under those same conditions.",
+      "required": true,
+      "evidence_turn_ids": ["t9"]
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not state 90 seconds as the maximum unguided exposure length (that figure applies to the native f/10 configuration documented in the near-miss turn t17, not to the PEC-enabled case).",
+      "required": true,
+      "evidence_turn_ids": []
+    }
+  ],
+  "reference_answer": "With PEC playback enabled on the SkyWatcher EQ6-R Pro at Ridgeline Observatory, the maximum safe unguided single-exposure length is 6 minutes. This assumes a Bortle 5 sky and seeing of 2 arcseconds or better, the same conditions under which the 4-minute no-PEC limit was established. The 6-minute figure is documented in the Site Survey Log v2 by Marcus Holt, who measured the mount's periodic error at ±8 arcseconds peak-to-peak and determined that PEC playback suppresses trailing below the 1-pixel threshold out to 6 minutes at the 1960 mm reduced focal length.",
+  "notes": "The facts needed for the query are established in t1 (drift alignment baseline), t8 (5-arcsecond polar alignment threshold and the 1-pixel trailing criterion), and t9 (4-minute no-PEC limit, 6-minute PEC-enabled limit, Bortle 5 / 2-arcsecond seeing assumption, ±8 arcseconds periodic error). The near-miss turn is t17, which confidently gives 90 seconds as the unguided limit for the same mount but at the native f/10 focal length of 2800 mm, a plausible-sounding but incorrect answer to the query."
+}
+```

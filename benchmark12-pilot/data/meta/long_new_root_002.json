@@ -1,0 +1,93 @@
+{
+ "scenario_id": "long_new_root_002",
+ "family": "new_root",
+ "n_history": 32,
+ "full_history_tokens": 4850,
+ "closure_ratio": 0.0,
+ "entity_registry": [
+  "Harvest & Hearth",
+  "Chef Dominique Ferrara",
+  "Menu Revision Draft v2",
+  "Priya Nambiar",
+  "Solstice Supplier Co.",
+  "Marcus Weld"
+ ],
+ "distractor_branch_entity_hits": {
+  "D": [
+   "Harvest & Hearth",
+   "Chef Dominique Ferrara",
+   "Menu Revision Draft v2",
+   "Marcus Weld"
+  ],
+  "E": [
+   "Harvest & Hearth",
+   "Chef Dominique Ferrara",
+   "Menu Revision Draft v2",
+   "Marcus Weld"
+  ],
+  "F": [
+   "Harvest & Hearth",
+   "Chef Dominique Ferrara",
+   "Menu Revision Draft v2",
+   "Marcus Weld"
+  ]
+ },
+ "near_miss_turn_id": "t5",
+ "checklist_evidence": {
+  "c1": [],
+  "c2": [],
+  "c3": [],
+  "c4": []
+ },
+ "cosine": {
+  "gold_median": null,
+  "distractor_median": 0.3235589414834976,
+  "ratio": null,
+  "pass": true
+ },
+ "cosine_per_turn": {
+  "t1": 0.4964815676212311,
+  "t2": 0.46649569272994995,
+  "t3": 0.30663442611694336,
+  "t4": 0.4324468970298767,
+  "t5": 0.3153941035270691,
+  "t6": 0.41487735509872437,
+  "t7": 0.36713284254074097,
+  "t8": 0.1817479431629181,
+  "t9": 0.39711377024650574,
+  "t10": 0.2452758252620697,
+  "t11": 0.39025449752807617,
+  "t12": 0.2545446753501892,
+  "t13": 0.2871399521827698,
+  "t14": 0.3619549870491028,
+  "t15": 0.37929365038871765,
+  "t16": 0.11726124584674835,
+  "t17": 0.2961196005344391,
+  "t18": 0.42699533700942993,
+  "t19": 0.26427555084228516,
+  "t20": 0.29068905115127563,
+  "t21": 0.3190609812736511,
+  "t22": 0.29378238320350647,
+  "t23": 0.14356252551078796,
+  "t24": 0.32391852140426636,
+  "t25": 0.1289101541042328,
+  "t26": 0.5027183890342712,
+  "t27": 0.4781655967235565,
+  "t28": 0.15666908025741577,
+  "t29": 0.46997740864753723,
+  "t30": 0.34333252906799316,
+  "t31": 0.3231993615627289,
+  "t32": 0.3373602628707886
+ },
+ "gold_branches": [],
+ "distractor_branches": [
+  "D",
+  "E",
+  "F"
+ ],
+ "attempt_accepted": 1,
+ "generation_tokens": [
+  4016,
+  7291
+ ]
+}

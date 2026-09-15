@@ -1,0 +1,616 @@
+{
+  "scenario_id": "long_resume_006",
+  "family": "resume",
+  "label": "RESUME",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're designing the CardFlow API for Nexus Payments and need to define how charge requests are structured. What should the top-level request body fields look like for a POST /charges endpoint?",
+      "assistant_message": "For the POST /charges endpoint in the CardFlow API, the top-level request body should include amount, currency, payment_method_id, idempotency_key, and merchant_reference. Priya Nair confirmed in the kickoff doc that all monetary amounts must be expressed as integers in the smallest currency unit, so 1000 means $10.00 USD. The idempotency_key field is mandatory and must be a UUID v4 to allow safe retries without double-charging.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "What HTTP status codes should the endpoint return for successful and failed charges?",
+      "assistant_message": "A successful charge creation must return HTTP 201 Created with the full charge object in the response body, as agreed with Marcus Feld during the TxnSpec v2 review on March 4. A synchronous decline, such as insufficient funds, must return HTTP 402 Payment Required with an error object containing a decline_code field. Any validation error on the request body, for example a missing currency field, must return HTTP 422 Unprocessable Entity.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "What fields must the charge response object include when a charge succeeds?",
+      "assistant_message": "Per TxnSpec v2 section 4.1, the charge response object must include id, object, amount, currency, status, created_at, payment_method_id, and merchant_reference. The id field must follow the format ch_ followed by 24 alphanumeric characters, for example ch_A1B2C3D4E5F6G7H8I9J0K1L2. The created_at timestamp must be in ISO 8601 format with UTC timezone, specifically the pattern YYYY-MM-DDTHH:MM:SSZ.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "What values are valid for the status field in that response object?",
+      "assistant_message": "Priya Nair documented in TxnSpec v2 section 4.2 that the status field accepts exactly four values: pending, succeeded, failed, and refunded. A newly created charge that has been authorized but not yet captured returns succeeded if it is a direct charge, or pending if it requires a separate capture step. The Settlement Service sets status to refunded only after a full or partial refund has been processed and confirmed.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "How should partial refunds be represented in the charge object, and is there a cap on how many refunds can be attached to a single charge?",
+      "assistant_message": "Partial refunds are represented in the charge object through a nested refunds array, where each entry contains refund_id, amount, reason, and created_at, as specified by Marcus Feld in TxnSpec v2 section 5.3. The Settlement Service enforces a hard cap of 10 refunds per charge; any attempt to issue an 11th refund on the same charge must return HTTP 409 Conflict with error code refund_limit_exceeded. The sum of all refund amounts must not exceed the original charge amount, and the CardFlow API must validate this before forwarding to the Settlement Service.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What is the maximum allowed value for the amount field in a single charge, and what happens if it is exceeded?",
+      "assistant_message": "The CardFlow API enforces a maximum charge amount of 99999999 in the smallest currency unit, which equals $999,999.99 for USD, as set by Nexus Payments policy in TxnSpec v2 section 2.1. If the submitted amount exceeds this ceiling, the endpoint must immediately return HTTP 422 Unprocessable Entity with error code amount_exceeds_maximum before any authorization attempt is made. Priya Nair specifically required that this validation happen at the API gateway layer, not inside the Settlement Service, to avoid unnecessary load on downstream systems.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "For the webhook delivery system in the CardFlow API, how should failed webhook attempts be retried?",
+      "assistant_message": "Nexus Payments decided that the CardFlow API webhook system will use exponential backoff with an initial retry delay of 30 seconds, doubling on each subsequent failure. Marcus Feld set a maximum of 8 retry attempts before a webhook is marked as permanently failed and moved to a dead-letter queue. After all retries are exhausted, Priya Nair requires that a webhook.delivery_failed event be emitted to the internal monitoring pipeline so the on-call team can investigate.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "How should the CardFlow API handle API versioning so merchants can migrate gradually?",
+      "assistant_message": "Nexus Payments decided to use date-based versioning passed via an API-Version request header, with the initial production version set to 2024-06-01. Marcus Feld specified that each version must be supported for a minimum of 18 months before deprecation, giving merchants like those integrated through the CardFlow API enough runway to migrate. Priya Nair also mandated that a Nexus-Deprecation-Date response header be returned on every response once a version enters its deprecation window.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "What authentication mechanism did the team settle on for the CardFlow API?",
+      "assistant_message": "Nexus Payments chose Bearer token authentication using short-lived JWTs issued by an internal identity service, with a token lifetime of 15 minutes. Marcus Feld required that every JWT include the merchant_id claim so the CardFlow API can enforce per-merchant rate limits without an extra database lookup. Priya Nair added that refresh tokens must be rotated on every use and stored with a 90-day absolute expiry, after which merchants must re-authenticate through the full OAuth 2.0 flow.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "We need to define the rate limiting strategy for the CardFlow API. What did the team agree on?",
+      "assistant_message": "Nexus Payments agreed on a tiered rate limit model: standard merchants are capped at 500 requests per minute, while enterprise merchants approved by Priya Nair can have custom limits up to 5000 requests per minute. Marcus Feld specified that rate limit metadata must be returned in every response via three headers: X-RateLimit-Limit, X-RateLimit-Remaining, and X-RateLimit-Reset. When a merchant exceeds their limit, the CardFlow API must return HTTP 429 Too Many Requests with a Retry-After header indicating the number of seconds until the window resets.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "Should the webhook system sign its payloads so merchants can verify authenticity?",
+      "assistant_message": "Yes, Nexus Payments requires that every webhook payload be signed using HMAC-SHA256, with the signature included in a Nexus-Signature header on each delivery. Each merchant's signing secret is a 32-byte random value generated at onboarding time and stored encrypted in the CardFlow API secrets vault. Marcus Feld specified that the signature must be computed over the raw request body bytes concatenated with the Unix timestamp from the Nexus-Timestamp header to prevent replay attacks.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "For the rate limiting system, how should the CardFlow API respond when an enterprise merchant's custom limit is being reviewed and not yet set?",
+      "assistant_message": "Priya Nair ruled that any merchant whose custom limit application is under review by Nexus Payments must temporarily fall back to the standard 500 requests-per-minute cap until the review is complete. The CardFlow API must also include a X-RateLimit-Status: review_pending header in all responses to that merchant during this period. Marcus Feld added that the maximum review period before a decision must be made is 5 business days, and if no decision is logged after that, the system automatically grants the requested limit up to a ceiling of 2000 requests per minute.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "What happens if a merchant's rate limit is upgraded mid-window — does the new limit take effect immediately or at the next window?",
+      "assistant_message": "Marcus Feld decided that rate limit upgrades take effect immediately at the moment the new configuration is pushed to the CardFlow API gateway, not at the start of the next window. Priya Nair required that when this happens, the X-RateLimit-Limit header must reflect the new ceiling starting with the very next response. Downgrades, however, take effect only at the start of the next full 60-second window to avoid penalizing merchants who made requests in good faith under the old limit.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "For API versioning, what happens if a merchant sends a request with an unsupported or malformed API-Version header?",
+      "assistant_message": "Nexus Payments decided that a malformed API-Version header, such as one that does not match the YYYY-MM-DD format, must cause the CardFlow API to return HTTP 400 Bad Request with error code invalid_api_version. If the header contains a validly formatted date that does not correspond to any known version, the API must return HTTP 400 with error code unknown_api_version. Priya Nair also specified that if the API-Version header is omitted entirely, the API must default to the oldest supported version rather than the latest, to prevent accidental breakage for merchants who forgot to set it.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "Can merchants query their current rate limit status without making a real API call that counts against the limit?",
+      "assistant_message": "Marcus Feld approved adding a dedicated GET /rate-limit endpoint to the CardFlow API that returns the merchant's current limit, remaining requests, and reset timestamp without consuming any quota. Priya Nair required that this endpoint itself be exempt from rate limiting and also exempt from API versioning constraints, meaning it must respond identically regardless of the API-Version header sent. Nexus Payments security review confirmed this endpoint must still require valid Bearer token authentication so it cannot be abused for enumeration.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "What should the CardFlow API's pagination model look like for list endpoints like GET /charges?",
+      "assistant_message": "Nexus Payments adopted cursor-based pagination for all list endpoints in the CardFlow API, using an opaque cursor string rather than numeric offsets. Marcus Feld set the default page size at 25 items and the maximum at 100 items; requests specifying a limit above 100 must receive HTTP 422 with error code limit_out_of_range. Priya Nair required that the response envelope always include has_more, next_cursor, and total_count fields, where total_count reflects the count at the moment the first page was fetched and is not recalculated on subsequent pages.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "If a merchant sends an API-Version header for a version that has been deprecated but is still within its 18-month support window, how should the CardFlow API respond?",
+      "assistant_message": "The CardFlow API must serve the request normally using the deprecated version's contract, since the 18-month support window guarantees continued operation, as stated in Nexus Payments version policy. It must additionally include the Nexus-Deprecation-Date response header with the exact date the version will stop being served, formatted as YYYY-MM-DD. Marcus Feld added that a Nexus-Sunset-Url header pointing to the migration guide on the Nexus Payments developer portal must also be included starting from the first day of the deprecation window.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "For GET /charges, should merchants be able to filter by status and date range in the same request, and are there any restrictions?",
+      "assistant_message": "Priya Nair confirmed that merchants may combine status and date range filters in a single GET /charges request using query parameters status, created_after, and created_before. The CardFlow API must validate that created_before is not earlier than created_after and must return HTTP 422 with error code invalid_date_range if this constraint is violated. Marcus Feld also imposed a hard restriction that date ranges may not span more than 366 days in a single request; longer ranges require merchants to issue multiple paginated requests.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "What should the CardFlow API return if a merchant requests API version 2024-06-01 but that version is past its sunset date and no longer supported?",
+      "assistant_message": "Once a version has passed its sunset date, the CardFlow API must return HTTP 400 Bad Request with error code version_sunset, regardless of whether the request would otherwise be valid, as decided by Nexus Payments in the deprecation policy doc. The response body must include a message field explaining that the version was retired, plus a suggested_version field naming the oldest currently supported version. Priya Nair required that this response also include the Nexus-Sunset-Url header so the merchant can immediately find the migration guide without contacting support.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "Can the API-Version header be passed as a query parameter instead, in case a merchant's HTTP client cannot set custom headers?",
+      "assistant_message": "Marcus Feld explicitly rejected accepting the API version as a query parameter, citing caching and logging complexity where version information embedded in the URL can leak into access logs and CDN cache keys. Priya Nair agreed and documented that the API-Version header is the only supported mechanism in the Nexus Payments versioning policy. As a fallback for clients that truly cannot set headers, the team approved a one-time migration grace period ending December 31, 2024, during which a query parameter _api_version will be accepted but will log a deprecation warning on every request.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "Is there a burst allowance on top of the per-minute rate limit, and if so what are the parameters?",
+      "assistant_message": "Nexus Payments approved a token-bucket burst allowance where each merchant accumulates 1 burst token per second up to a maximum burst capacity of 50 tokens, regardless of their per-minute limit tier. Marcus Feld specified that burst tokens are consumed before the per-minute quota, so a merchant with a 500 per-minute limit could handle a sudden spike of up to 550 requests in the first second if their bucket is full. Priya Nair required that the X-RateLimit-Burst-Remaining header be added to every response to expose the current burst token count to merchants.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "For the webhook system, what event types does the CardFlow API support, and where are they documented?",
+      "assistant_message": "Nexus Payments defined six initial webhook event types for the CardFlow API: charge.succeeded, charge.failed, charge.refunded, charge.pending, webhook.delivery_failed, and payment_method.updated. Marcus Feld documented all six in the CardFlow API integration guide, section 7, published on April 10. Priya Nair noted that additional event types must go through a formal RFC process with a two-week review window before they can be added to the integration guide.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "Does the API-Version header apply to webhook payloads as well, or only to REST responses?",
+      "assistant_message": "Priya Nair decided that webhook payload schemas are versioned independently from the REST API using a separate webhook_version field embedded in every payload envelope rather than a header. The initial webhook schema version is 1.0 and Nexus Payments guarantees additive-only changes within a major version, meaning new fields may appear but no fields will be removed or renamed without bumping to version 2.0. Marcus Feld specified that merchants must register their preferred webhook schema version at endpoint registration time, and the CardFlow API will deliver payloads in that version until the merchant explicitly upgrades.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "Can a single merchant register multiple webhook endpoints, and is there a limit?",
+      "assistant_message": "Nexus Payments allows each merchant to register up to 5 webhook endpoints in the CardFlow API, with each endpoint subscribing to any combination of the six supported event types. Marcus Feld specified that at least one endpoint must be registered before a merchant can go live, and the onboarding checklist in the CardFlow API integration guide section 3 enforces this. If a merchant tries to register a sixth endpoint, the API must return HTTP 409 Conflict with error code webhook_endpoint_limit_reached.",
+      "gold_parents": [
+        "t22"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "How long does the CardFlow API retain webhook delivery logs, and can merchants retrieve them via API?",
+      "assistant_message": "Nexus Payments retains webhook delivery logs for 30 days, after which they are purged from the CardFlow API's operational database and archived to cold storage for 12 months. Priya Nair approved a GET /webhook-deliveries endpoint that returns delivery records within the 30-day hot window, with the same cursor-based pagination model used on GET /charges. Marcus Feld confirmed that archived records beyond 30 days are not accessible via API and must be requested through a support ticket process, with a typical turnaround of 3 business days.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "Should webhook delivery logs include the full request and response body, or just metadata?",
+      "assistant_message": "Marcus Feld decided that webhook delivery logs in the CardFlow API must store the full outbound payload, the HTTP status code returned by the merchant's endpoint, and the response latency in milliseconds. The response body from the merchant's server must not be stored to avoid accidentally persisting sensitive data that a poorly configured merchant endpoint might return. Priya Nair required that the stored payload be encrypted at rest using AES-256 and that access to the GET /webhook-deliveries endpoint be scoped to a dedicated webhook:read permission in the JWT.",
+      "gold_parents": [
+        "t25"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "How should the GET /charges list endpoint handle sorting — is there a default sort order?",
+      "assistant_message": "Nexus Payments set the default sort order for GET /charges to descending by created_at, meaning the most recent charges appear first, as documented in TxnSpec v2 section 6.2. Marcus Feld allowed an optional sort_by query parameter accepting only created_at or amount as values; any other value must return HTTP 422 with error code invalid_sort_field. Priya Nair required that the sort order itself always be descending and that ascending order not be exposed in version 2024-06-01, though it may be added in a future version.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "When a new webhook endpoint is registered, does the CardFlow API send a verification challenge?",
+      "assistant_message": "Yes, Nexus Payments requires a verification challenge flow when a merchant registers a new webhook endpoint in the CardFlow API. The API sends a POST request to the provided URL containing a challenge field with a random 32-character alphanumeric string, and the merchant's endpoint must echo back that exact string in a JSON response body within 5 seconds. Marcus Feld specified that if the challenge fails or times out, the endpoint is stored in a pending_verification state and no live events are delivered to it until verification succeeds; Priya Nair capped the maximum number of re-verification attempts at 3 per 24-hour period.",
+      "gold_parents": [
+        "t26"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "Are there any restrictions on the URLs that merchants can register as webhook endpoints?",
+      "assistant_message": "Nexus Payments requires that all webhook endpoint URLs use HTTPS with a valid TLS certificate trusted by the Mozilla root store; HTTP endpoints are rejected at registration time with error code insecure_endpoint_url. Marcus Feld added that localhost, private IP ranges such as 10.0.0.0/8 and 192.168.0.0/16, and link-local addresses are also blocked to prevent server-side request forgery attacks. Priya Nair specified that the CardFlow API must validate the URL at registration by attempting the verification challenge flow, so any URL that fails DNS resolution or TLS handshake will be rejected before it is persisted.",
+      "gold_parents": [
+        "t24"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t30",
+      "turn_index": 29,
+      "user_message": "For the GET /charges pagination, how should the cursor be constructed to ensure it remains stable if a new charge is inserted while a merchant is paginating?",
+      "assistant_message": "Priya Nair specified that the cursor must encode a keyset of the created_at timestamp and the charge id of the last record on the current page, allowing the next page query to use a WHERE clause like created_at < X OR (created_at = X AND id < Y). This keyset approach means newly inserted charges do not shift older records out of position, giving a stable view for the duration of a paginated read. Marcus Feld required that the cursor be base64url-encoded and treated as opaque by the client, with the CardFlow API returning HTTP 400 with error code invalid_cursor if a merchant attempts to decode and modify it.",
+      "gold_parents": [
+        "t27"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t31",
+      "turn_index": 30,
+      "user_message": "How should the CardFlow API handle requests where the X-RateLimit-Reset time has already passed but the merchant's quota has not yet been refreshed due to a clock skew on the server?",
+      "assistant_message": "Marcus Feld ruled that the CardFlow API must use a centralized Redis cluster as the authoritative clock for all rate limit window calculations, eliminating per-instance clock skew as a factor. Priya Nair added a 2-second grace buffer: if the Redis window reset timestamp has passed by 2 seconds or less at the time of the request, the API must treat the window as already reset and serve the request against a fresh quota. Any clock discrepancy larger than 2 seconds triggers an alert to the Nexus Payments on-call rotation because it indicates a Redis synchronization issue rather than normal jitter.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t32",
+      "turn_index": 31,
+      "user_message": "Is there a maximum payload size for GET /charges responses, and how should the API handle it if a page would exceed that size?",
+      "assistant_message": "Nexus Payments set a maximum response payload size of 5 MB for any single GET /charges page in the CardFlow API. Priya Nair specified that if the requested page size would produce a response exceeding 5 MB, the API must silently truncate the result set to the largest number of complete charge objects that fit within the limit and set has_more to true with a valid next_cursor. Marcus Feld required that a X-Nexus-Truncated: true header be included in the response whenever silent truncation occurs so merchants can detect and reduce their page size if needed.",
+      "gold_parents": [
+        "t30"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t33",
+      "turn_index": 32,
+      "user_message": "What should happen if the burst token bucket is fully depleted and the per-minute quota is also exhausted at the same time?",
+      "assistant_message": "Marcus Feld confirmed that when both the burst bucket and the per-minute quota are simultaneously exhausted, the CardFlow API must return HTTP 429 Too Many Requests with a Retry-After header indicating the number of seconds until the per-minute window resets, not the burst refill time. Priya Nair required that the response body include a rate_limit_type field set to combined_exhaustion to distinguish this scenario from a quota-only or burst-only rejection. The X-RateLimit-Burst-Remaining header must be set to 0 and X-RateLimit-Remaining must also be set to 0 in this response.",
+      "gold_parents": [
+        "t31"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t34",
+      "turn_index": 33,
+      "user_message": "Is there a timeout enforced on the webhook delivery attempt itself, and what happens if the merchant's server is slow to respond?",
+      "assistant_message": "Nexus Payments enforces a 10-second connection and response timeout on each webhook delivery attempt in the CardFlow API. If the merchant's endpoint does not respond within 10 seconds, Marcus Feld specified that the attempt is treated as a failure and the exponential backoff retry schedule begins immediately. Priya Nair added that three consecutive timeout failures within a 1-hour window automatically pauses delivery to that endpoint and sends a charge.webhook_endpoint_paused event to any other active endpoints registered by the same merchant.",
+      "gold_parents": [
+        "t29"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t35",
+      "turn_index": 34,
+      "user_message": "What is the maximum page size limit for the GET /webhook-deliveries endpoint?",
+      "assistant_message": "The GET /webhook-deliveries endpoint in the CardFlow API follows the same pagination model as other list endpoints, with a maximum page size of 100 items per page, as Marcus Feld confirmed during the pagination design review. The default page size for GET /webhook-deliveries is 25 items, identical to GET /charges. Priya Nair noted that requests specifying a limit above 100 must receive HTTP 422 with error code limit_out_of_range, consistent with the global pagination policy set for the CardFlow API.",
+      "gold_parents": [
+        "t32"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t36",
+      "turn_index": 35,
+      "user_message": "Can webhook endpoint registrations be updated after creation, such as changing the URL or subscribed event types?",
+      "assistant_message": "Nexus Payments supports updating webhook endpoints via PATCH /webhook-endpoints/{endpoint_id}, allowing merchants to change the subscribed event types in place without triggering re-verification. However, changing the URL field requires a full re-verification challenge flow as specified by Marcus Feld, because the new URL must be confirmed as owned by the merchant. Priya Nair required that during a URL update, the old URL continues to receive events until the new URL passes verification, ensuring no gap in delivery.",
+      "gold_parents": [
+        "t34"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t37",
+      "turn_index": 36,
+      "user_message": "How does the rate limiting system differentiate between merchant-level and IP-level limits to protect against shared-IP abuse?",
+      "assistant_message": "Nexus Payments applies rate limits at the merchant_id level as the primary control, since every authenticated request carries a merchant_id in the JWT as specified by Marcus Feld. A secondary IP-level limit of 1000 requests per minute is applied across all unauthenticated or pre-authentication requests to the CardFlow API to block credential-stuffing attempts. Priya Nair added that if a single IP address is observed making authenticated requests across more than 10 distinct merchant accounts within a 5-minute window, an automatic fraud signal is generated and routed to the Nexus Payments risk team.",
+      "gold_parents": [
+        "t33"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t38",
+      "turn_index": 37,
+      "user_message": "If a webhook endpoint is paused due to consecutive timeouts, what is the process for a merchant to resume it?",
+      "assistant_message": "A merchant can resume a paused webhook endpoint by sending a POST /webhook-endpoints/{endpoint_id}/resume request, which triggers a new verification challenge to confirm the endpoint is responsive before delivery resumes. Marcus Feld set a minimum 15-minute cooldown between pause and resume attempts to prevent merchants from rapidly cycling a flapping endpoint. Priya Nair specified that if an endpoint is paused and resumed more than 3 times within a 7-day period, Nexus Payments support is automatically notified and the endpoint is flagged for manual review.",
+      "gold_parents": [
+        "t36"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t39",
+      "turn_index": 38,
+      "user_message": "Should the CardFlow API support conditional requests using ETag headers for individual charge objects?",
+      "assistant_message": "Nexus Payments decided to support ETags on GET /charges/{charge_id} responses, where the ETag value is a SHA-256 hash of the charge object's JSON serialization at the time of the response. Marcus Feld specified that clients may send If-None-Match with a previously received ETag, and if the charge has not changed, the API must return HTTP 304 Not Modified with no body. Priya Nair noted that ETags are not supported on list responses from GET /charges because the cost of computing a stable hash across a paginated result set outweighs the caching benefit.",
+      "gold_parents": [
+        "t28"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t40",
+      "turn_index": 39,
+      "user_message": "What should the CardFlow API do if a webhook delivery logs query via GET /webhook-deliveries is made for an endpoint_id that belongs to a different merchant than the authenticated one?",
+      "assistant_message": "Marcus Feld specified that the CardFlow API must return HTTP 404 Not Found rather than HTTP 403 Forbidden when a merchant queries a webhook delivery log for an endpoint_id they do not own, to avoid confirming the existence of other merchants' resources. Priya Nair added that this same 404 behavior must be applied consistently across all resource-scoped endpoints in the CardFlow API, not just webhook deliveries. Nexus Payments security policy requires that this cross-tenant isolation be covered by automated integration tests in the CI pipeline before any release.",
+      "gold_parents": [
+        "t38"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t41",
+      "turn_index": 40,
+      "user_message": "Does the ETag mechanism also apply to charge list responses when a cursor is provided?",
+      "assistant_message": "Priya Nair confirmed that ETags are explicitly not supported on any GET /charges list responses, including those with a cursor parameter, as the cost-benefit analysis documented in the CardFlow API design notes does not justify the implementation complexity. Marcus Feld reinforced that the 304 Not Modified optimization is available only on individual resource endpoints such as GET /charges/{charge_id} and GET /webhook-endpoints/{endpoint_id}. Any future extension of ETag support to list endpoints would require a new TxnSpec version and a formal Nexus Payments architecture review.",
+      "gold_parents": [
+        "t39"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t42",
+      "turn_index": 41,
+      "user_message": "For the burst token bucket, does unused quota carry over between the per-minute windows, or does the bucket reset independently?",
+      "assistant_message": "Marcus Feld clarified that the burst token bucket operates on a continuous refill model completely independent of the per-minute window reset, accumulating 1 token per second up to the 50-token cap at all times. This means a merchant who makes no requests for 50 seconds will have a full burst bucket regardless of where they are in their per-minute window cycle. Priya Nair confirmed for Nexus Payments that this independence is intentional: the burst bucket handles short spikes while the per-minute quota handles sustained throughput, and the two mechanisms must not interfere with each other.",
+      "gold_parents": [
+        "t37"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t43",
+      "turn_index": 42,
+      "user_message": "Are there any limits on how many event types a single webhook endpoint can subscribe to simultaneously?",
+      "assistant_message": "Nexus Payments does not impose a separate limit on the number of event types a single webhook endpoint can subscribe to; an endpoint may subscribe to all six current event types simultaneously. Marcus Feld noted that this decision was made to simplify merchant integration, since requiring separate endpoints per event type would push many merchants toward their 5-endpoint cap unnecessarily. Priya Nair added that future event types added through the RFC process will automatically be opt-in, meaning existing endpoints will not receive new event types unless the merchant explicitly updates their subscriptions.",
+      "gold_parents": [
+        "t40"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t44",
+      "turn_index": 43,
+      "user_message": "What HTTP method and path does the CardFlow API use to delete a webhook endpoint, and is a deleted endpoint recoverable?",
+      "assistant_message": "The CardFlow API uses DELETE /webhook-endpoints/{endpoint_id} to remove a webhook endpoint, returning HTTP 204 No Content on success as specified by Marcus Feld in the integration guide section 7. Deleted endpoints are not immediately purged; Nexus Payments retains the endpoint record and its associated delivery logs for 30 days in a soft-deleted state, consistent with the overall log retention policy. Priya Nair ruled that soft-deleted endpoints cannot be restored via API and that recovery within the 30-day window requires a support ticket, after which the endpoint is permanently purged along with its logs.",
+      "gold_parents": [
+        "t35"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t45",
+      "turn_index": 44,
+      "user_message": "Can a merchant retrieve a list of all their registered webhook endpoints, and what fields are returned per endpoint?",
+      "assistant_message": "Nexus Payments provides a GET /webhook-endpoints list endpoint that returns all active, non-deleted endpoints for the authenticated merchant in the CardFlow API. Each endpoint object in the response includes endpoint_id, url, status, subscribed_events, webhook_version, created_at, and last_delivery_at, as documented by Marcus Feld in section 7 of the integration guide. Priya Nair specified that the signing secret must never be returned in this list response or any other read operation; it is only shown once at creation time and must be regenerated if lost.",
+      "gold_parents": [
+        "t44"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t46",
+      "turn_index": 45,
+      "user_message": "Is there a way for merchants to test their webhook endpoint without triggering a real charge event?",
+      "assistant_message": "Nexus Payments approved a POST /webhook-endpoints/{endpoint_id}/test action that sends a synthetic charge.succeeded event with a clearly marked test: true field in the payload envelope to the specified endpoint. Marcus Feld specified that test deliveries do not count toward the 8-retry limit and are not stored in the webhook delivery logs to avoid polluting audit trails. Priya Nair added that the test action is rate-limited separately at 10 calls per hour per endpoint to prevent merchants from using it as a load-testing tool against their own infrastructure.",
+      "gold_parents": [
+        "t45"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t47",
+      "turn_index": 46,
+      "user_message": "Can merchants define custom per-event-type rate limits, or is the rate limit always applied globally across all request types?",
+      "assistant_message": "Nexus Payments applies rate limits globally across all request types for a given merchant_id; there is no support for per-event-type or per-endpoint rate limits in the current design, as confirmed by Marcus Feld. Priya Nair noted that this was a deliberate simplification for the initial launch of the CardFlow API and that per-operation limits may be introduced in a future TxnSpec version following merchant feedback. Until then, merchants who need differentiated limits for different workloads must provision separate merchant accounts, each with its own quota.",
+      "gold_parents": [
+        "t42"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t48",
+      "turn_index": 47,
+      "user_message": "Should the CardFlow API return the full charge object in the ETag-enabled GET /charges/{charge_id} response, or a summary?",
+      "assistant_message": "Marcus Feld confirmed that GET /charges/{charge_id} always returns the full charge object as defined in TxnSpec v2 section 4.1, regardless of whether the client uses ETags or not. Priya Nair explicitly rejected a summary-only mode for individual charge retrieval, arguing that partial objects would create ambiguity for merchants trying to reconcile payment states against the Settlement Service. The ETag support is purely a conditional-fetch optimization and does not alter the response schema in any way.",
+      "gold_parents": [
+        "t41"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t49",
+      "turn_index": 48,
+      "user_message": "If a merchant submits a POST /charges request with an amount of 100000000, what exactly should the CardFlow API return?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5",
+    "t6"
+  ],
+  "distractor_turn_ids": [
+    "t7",
+    "t8",
+    "t9",
+    "t10",
+    "t11",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t20",
+    "t21",
+    "t22",
+    "t23",
+    "t24",
+    "t25",
+    "t26",
+    "t27",
+    "t28",
+    "t29",
+    "t30",
+    "t31",
+    "t32",
+    "t33",
+    "t34",
+    "t35",
+    "t36",
+    "t37",
+    "t38",
+    "t39",
+    "t40",
+    "t41",
+    "t42",
+    "t43",
+    "t44",
+    "t45",
+    "t46",
+    "t47",
+    "t48"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that the request must return HTTP 422 Unprocessable Entity.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that the error code returned must be amount_exceeds_maximum.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer states that the maximum allowed amount is 99999999 (i.e., the submitted value of 100000000 exceeds this ceiling).",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not state that the maximum page size is 100 items (that is the answer to the near-miss question about GET /webhook-deliveries in t35, not the answer to the charge amount question).",
+      "required": true
+    }
+  ],
+  "notes": "The facts needed to answer the query are all contained in t6 (the maximum amount of 99999999, the HTTP 422 response, and the error code amount_exceeds_maximum). The near-miss turn is t35, which asks about the maximum page size for GET /webhook-deliveries and returns the number 100, which a careless reader might confuse with a limit relevant to the charge amount question.\n\nReference answer: A submitted amount of 100000000 exceeds the CardFlow API's maximum allowed charge amount of 99999999 smallest currency units, as set in TxnSpec v2 section 2.1. The endpoint must immediately return HTTP 422 Unprocessable Entity with error code amount_exceeds_maximum. This validation happens at the API gateway layer before any authorization attempt is forwarded to the Settlement Service.",
+  "evidence_note": null,
+  "premise": "designing a REST API for a payments product",
+  "evidence_spans": null,
+  "benchmark_version": "1.2-pilot",
+  "length_class": "long"
+}

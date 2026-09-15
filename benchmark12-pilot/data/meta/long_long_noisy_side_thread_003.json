@@ -1,0 +1,127 @@
+{
+ "scenario_id": "long_long_noisy_side_thread_003",
+ "family": "long_noisy_side_thread",
+ "n_history": 33,
+ "full_history_tokens": 4931,
+ "closure_ratio": 0.12121212121212122,
+ "entity_registry": [
+  "Mira Okafor",
+  "Harrowfield Historical Society",
+  "Founders & Frontiers podcast",
+  "Episode Production Guide v2",
+  "Dale Hutchins",
+  "Cedarvale Archive"
+ ],
+ "distractor_branch_entity_hits": {
+  "D": [
+   "Mira Okafor",
+   "Harrowfield Historical Society",
+   "Dale Hutchins"
+  ],
+  "E": [
+   "Mira Okafor",
+   "Harrowfield Historical Society",
+   "Dale Hutchins",
+   "Cedarvale Archive"
+  ],
+  "F": [
+   "Mira Okafor",
+   "Harrowfield Historical Society",
+   "Dale Hutchins",
+   "Cedarvale Archive"
+  ],
+  "G": [
+   "Mira Okafor",
+   "Harrowfield Historical Society",
+   "Dale Hutchins"
+  ],
+  "H": [
+   "Mira Okafor",
+   "Harrowfield Historical Society",
+   "Dale Hutchins",
+   "Cedarvale Archive"
+  ],
+  "I": [
+   "Mira Okafor",
+   "Harrowfield Historical Society",
+   "Dale Hutchins",
+   "Cedarvale Archive"
+  ]
+ },
+ "near_miss_turn_id": "t23",
+ "checklist_evidence": {
+  "c1": [
+   "t2",
+   "t19",
+   "t31"
+  ],
+  "c2": [
+   "t1",
+   "t31"
+  ],
+  "c3": [
+   "t1",
+   "t2",
+   "t19",
+   "t31"
+  ],
+  "c4": []
+ },
+ "cosine": {
+  "gold_median": 0.580488920211792,
+  "distractor_median": 0.38165047764778137,
+  "ratio": 0.6574638453194521,
+  "pass": true
+ },
+ "cosine_per_turn": {
+  "t1": 0.5845769643783569,
+  "t2": 0.5944362878799438,
+  "t3": 0.5348160266876221,
+  "t4": 0.3400088846683502,
+  "t5": 0.1299085021018982,
+  "t6": 0.1419844627380371,
+  "t7": 0.2445584535598755,
+  "t8": 0.4235056936740875,
+  "t9": 0.40232378244400024,
+  "t10": 0.10757579654455185,
+  "t11": 0.4735219478607178,
+  "t12": 0.2885593771934509,
+  "t13": 0.17216899991035461,
+  "t14": 0.6000782251358032,
+  "t15": 0.38961368799209595,
+  "t16": 0.33839118480682373,
+  "t17": 0.41351017355918884,
+  "t18": 0.2856743633747101,
+  "t19": 0.4874196946620941,
+  "t20": 0.46132034063339233,
+  "t21": 0.4533018469810486,
+  "t22": 0.3921744227409363,
+  "t23": 0.395294725894928,
+  "t24": 0.40861058235168457,
+  "t25": 0.1296829730272293,
+  "t26": 0.17820680141448975,
+  "t27": 0.4274888038635254,
+  "t28": 0.36670076847076416,
+  "t29": 0.38165047764778137,
+  "t30": 0.42321574687957764,
+  "t31": 0.576400876045227,
+  "t32": 0.26196175813674927,
+  "t33": 0.1667676866054535
+ },
+ "gold_branches": [
+  "A"
+ ],
+ "distractor_branches": [
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I"
+ ],
+ "attempt_accepted": 4,
+ "generation_tokens": [
+  3991,
+  7381
+ ]
+}

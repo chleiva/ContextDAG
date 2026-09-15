@@ -1,0 +1,190 @@
+```json
+{
+  "entity_registry": ["Mira Okafor", "Jordan Okafor", "Cedarview Lake Lodge", "Magnolia Catering Co.", "Lakeside Vows Planner v2", "Silver Birch Tent Rentals"],
+  "turns": [
+    {
+      "turn_id": "t1",
+      "user_message": "We've confirmed the ceremony will be held on the main dock at Cedarview Lake Lodge on June 14th. How many guests can the dock area realistically hold for a seated ceremony?",
+      "assistant_message": "The main dock at Cedarview Lake Lodge has a certified standing capacity of 160 and a seated ceremony capacity of 120 guests, based on the venue's own layout documentation. The venue coordinator, whose contact is listed in Lakeside Vows Planner v2, confirmed that 120 seats can be arranged in a herringbone pattern with a 6-foot center aisle. Any seated count above 120 would require extending onto the adjacent lawn area, which triggers a separate permit fee of $350."
+    },
+    {
+      "turn_id": "t2",
+      "user_message": "We need to figure out the rehearsal dinner. We're thinking of using the Cedar Room at Cedarview Lake Lodge for about 40 people.",
+      "assistant_message": "The Cedar Room at Cedarview Lake Lodge seats a maximum of 50 guests for a plated dinner and 40 comfortably with a buffet station along the east wall. Mira Okafor noted in the venue inquiry that the Cedar Room rental fee is $800 for a four-hour block on a Friday evening. The room comes with basic AV equipment and a built-in bar, but outside catering must be pre-approved by the lodge."
+    },
+    {
+      "turn_id": "t3",
+      "user_message": "For the reception dinner, we've decided to go with Magnolia Catering Co. What's their standard per-head pricing for a plated three-course dinner?",
+      "assistant_message": "Magnolia Catering Co. charges $85 per head for their standard three-course plated dinner package, which includes appetizer, entrée, and dessert with non-alcoholic beverage service. This rate is locked in for events booked at least six months in advance, and Jordan Okafor confirmed the booking date qualifies for that pricing tier. The quote from Magnolia Catering Co. also notes a mandatory 20% service charge added on top of the per-head rate, bringing the effective per-person cost to $102 before any upgrades."
+    },
+    {
+      "turn_id": "t4",
+      "user_message": "We're trying to sort out the floral arrangements. Mira wants tall centerpieces for the reception tables. How many reception tables are we working with?",
+      "assistant_message": "Based on the seating plan Mira Okafor drafted in Lakeside Vows Planner v2, the reception will use 14 round tables of 8 guests each, plus one head table seating 8, for a total of 15 tables. The florist, Petal & Stem Studio, quoted tall centerpieces at $220 per table, meaning the total floral spend for centerpieces alone would be $3,300. Mira Okafor flagged that the head table may use a different low-garland arrangement rather than a tall centerpiece, which could reduce that line item slightly."
+    },
+    {
+      "turn_id": "t5",
+      "user_message": "We need to think about the tent situation in case of rain. We contacted Silver Birch Tent Rentals — what sizes do they offer for an event our size?",
+      "assistant_message": "Silver Birch Tent Rentals offers three sizes suitable for Cedarview Lake Lodge events: a 40x60 frame tent accommodating up to 100 seated guests, a 40x80 tent for up to 140 seated guests, and a 60x80 clearspan tent for up to 220 seated guests. For a 120-guest wedding, Jordan Okafor noted that the 40x80 tent is the recommended option, priced at $2,400 for a weekend rental including setup and teardown. The 60x80 clearspan is available for $4,100 but is generally reserved for events expecting over 160 guests."
+    },
+    {
+      "turn_id": "t6",
+      "user_message": "Does Magnolia Catering Co. have a minimum guest count for their plated dinner package?",
+      "assistant_message": "Yes, Magnolia Catering Co. requires a minimum of 80 guests to activate the three-course plated dinner package at the $85 per-head rate. For events with fewer than 80 guests, the per-head price increases to $98, but that threshold is not a concern for a 120-guest event. The contract with Magnolia Catering Co. also stipulates a final guest count must be submitted no later than 14 days before the event date."
+    },
+    {
+      "turn_id": "t7",
+      "user_message": "We're also thinking about the wedding cake. Mira wants a four-tier cake with fresh flowers. Do most vendors near Cedarview Lake Lodge deliver and set up on-site?",
+      "assistant_message": "Most bakeries that regularly service Cedarview Lake Lodge do offer delivery and setup, including Whisk & Bloom Bakery, which is the preferred vendor listed in Lakeside Vows Planner v2. Whisk & Bloom charges a flat $150 delivery and setup fee for locations within 30 miles, and Cedarview Lake Lodge falls within that radius. Jordan Okafor confirmed that the lodge requires all cake deliveries to arrive at least two hours before the reception begins to allow for proper display setup."
+    },
+    {
+      "turn_id": "t8",
+      "user_message": "We want to add a cocktail hour on the lakeside patio right after the ceremony. Is that area included in the Cedarview Lake Lodge main booking fee?",
+      "assistant_message": "The lakeside patio at Cedarview Lake Lodge is included in the full-venue booking package, which covers the main dock, the patio, and the Grand Hall reception room for a flat venue fee of $6,500. However, the patio has its own capacity limit of 130 guests for a standing cocktail-style setup, so 120 guests fits comfortably within that limit. The venue contract specifies that the patio may be used for up to three hours as part of the standard booking without additional charge."
+    },
+    {
+      "turn_id": "t9",
+      "user_message": "Has Whisk & Bloom confirmed they can do fresh flowers on a four-tier cake for a June wedding?",
+      "assistant_message": "Whisk & Bloom Bakery confirmed via email to Jordan Okafor that fresh flowers are available for June bookings, provided the flowers are supplied by the couple's florist rather than sourced by the bakery itself. The four-tier cake with fresh flower placement is priced starting at $950 for up to 120 servings, with fondant finish, and $1,080 for buttercream. Whisk & Bloom requires a 50% deposit, which is $475 for the fondant option, at the time of booking."
+    },
+    {
+      "turn_id": "t10",
+      "user_message": "Silver Birch Tent Rentals — do they also provide flooring, or is that a separate rental?",
+      "assistant_message": "Silver Birch Tent Rentals offers modular hardwood flooring as a separate add-on, priced at $1.75 per square foot installed. For the 40x80 tent that Jordan Okafor identified as the right size for 120 guests, full flooring would cover 3,200 square feet at a total cost of $5,600. They also offer a partial-floor option covering just the dance floor area, typically a 20x20 section, for a flat rate of $700."
+    },
+    {
+      "turn_id": "t11",
+      "user_message": "For the floral budget, Mira is asking whether Petal & Stem Studio also handles ceremony arch decorations at Cedarview Lake Lodge.",
+      "assistant_message": "Petal & Stem Studio confirmed they have worked at Cedarview Lake Lodge several times and are familiar with the main dock ceremony space. Their arch decoration package starts at $650 for a standard floral arch and goes up to $1,200 for a fully draped garden-style arch with greenery and blooms. Mira Okafor expressed preference for the garden-style arch, which would bring the ceremony floral line item to $1,200 before any add-ons."
+    },
+    {
+      "turn_id": "t12",
+      "user_message": "For the rehearsal dinner, does Magnolia Catering Co. also cater smaller events, or should we look elsewhere for the Cedar Room dinner?",
+      "assistant_message": "Magnolia Catering Co. does cater smaller events, but their minimum booking for off-menu private events is 30 guests, so a 40-person rehearsal dinner qualifies. Their rehearsal dinner package for groups of 30 to 50 guests is priced at $65 per head for a two-course family-style meal, separate from the main wedding contract. Mira Okafor noted that combining the rehearsal dinner and wedding reception under one Magnolia Catering Co. contract may unlock a 5% multi-event discount."
+    },
+    {
+      "turn_id": "t13",
+      "user_message": "We need to confirm whether Magnolia Catering Co.'s quote includes setup and breakdown labor at Cedarview Lake Lodge.",
+      "assistant_message": "Magnolia Catering Co.'s standard quote for the three-course plated dinner at $85 per head does not include setup and breakdown labor; that is billed as a flat fee of $600 for events held at Cedarview Lake Lodge. The $600 labor fee covers a team of six staff members for a maximum of eight hours, which Jordan Okafor confirmed is sufficient for a 120-guest seated dinner. If the event runs beyond eight hours, an overtime rate of $75 per hour per staff member applies."
+    },
+    {
+      "turn_id": "t14",
+      "user_message": "What would the total floral cost be if Mira goes with the standard arch package instead of the garden-style one?",
+      "assistant_message": "If Mira Okafor selects the standard floral arch at $650 instead of the garden-style arch, and combines that with the 15 tall centerpieces at $220 each from Petal & Stem Studio, the total floral cost would be $3,950. That figure covers the ceremony arch and all reception table centerpieces but excludes any bouquets, boutonnieres, or additional floral accents. The garden-style arch option, by contrast, would bring the combined ceremony and reception floral total to $4,500."
+    },
+    {
+      "turn_id": "t15",
+      "user_message": "Does Petal & Stem Studio require a deposit to hold the date, and when is it due?",
+      "assistant_message": "Petal & Stem Studio requires a 30% non-refundable deposit to hold the event date, due within 14 days of signing the floral contract. For the garden-style arch plus 15 centerpieces totaling $4,500, that deposit would be $1,350. Jordan Okafor was advised to submit the deposit by March 1st to secure the June 14th date, as Petal & Stem Studio books out quickly for summer Saturdays."
+    },
+    {
+      "turn_id": "t16",
+      "user_message": "Can Petal & Stem Studio also provide floral accents for the lakeside patio cocktail hour, like small bud vases for the standing tables?",
+      "assistant_message": "Petal & Stem Studio confirmed they can supply bud vases for the cocktail hour at Cedarview Lake Lodge's lakeside patio. They quoted $35 per bud vase arrangement, and for a typical cocktail hour with 10 to 12 high-top standing tables, that would add $350 to $420 to the floral contract. Mira Okafor indicated she wants 10 high-top tables for the cocktail hour, which would fix that line item at $350."
+    },
+    {
+      "turn_id": "t17",
+      "user_message": "If we add those 10 bud vases, what does the full Petal & Stem Studio contract total come to now?",
+      "assistant_message": "With the garden-style arch at $1,200, 15 tall centerpieces at $3,300, and 10 cocktail-hour bud vases at $350, the full Petal & Stem Studio contract for Mira Okafor and Jordan Okafor's wedding comes to $4,850. The 30% deposit on that revised total would be $1,455, due by March 1st as previously noted. Petal & Stem Studio will issue an updated contract reflecting the bud vase addition within three business days of verbal confirmation."
+    },
+    {
+      "turn_id": "t18",
+      "user_message": "Going back to the rehearsal dinner logistics — what time would the Cedar Room need to be vacated on Friday night?",
+      "assistant_message": "The Cedar Room at Cedarview Lake Lodge must be vacated by 11:00 PM on Friday evenings under the standard rental agreement. The four-hour block Mira Okafor inquired about would ideally run from 6:00 PM to 10:00 PM, leaving a one-hour buffer before the mandatory vacate time. Any extension beyond 10:00 PM is subject to availability and incurs an additional $200 per hour surcharge."
+    },
+    {
+      "turn_id": "t19",
+      "user_message": "For the ceremony on the main dock, we want to add a string quartet. Is there a noise ordinance or sound restriction at Cedarview Lake Lodge we need to know about?",
+      "assistant_message": "Cedarview Lake Lodge enforces a sound level limit of 85 decibels measured at the property boundary, per the county ordinance that applies to all lakeside venues in the district. The venue coordinator confirmed that an unamplified string quartet typically measures 70 to 75 decibels at 30 feet, well within the limit for the main dock ceremony. However, any amplified sound, including microphones for vows, must use the lodge's in-house sound system, which is included in the $6,500 full-venue booking fee."
+    },
+    {
+      "turn_id": "t20",
+      "user_message": "Has Silver Birch Tent Rentals given us a deadline to confirm the tent rental for the June date?",
+      "assistant_message": "Silver Birch Tent Rentals requires a signed rental agreement and 25% deposit no later than 90 days before the event date to guarantee availability of the 40x80 tent. For the June 14th wedding, that confirmation deadline falls on March 16th. Jordan Okafor was told that if the deposit is not received by March 16th, the tent allocation cannot be guaranteed and the couple would be placed on a waitlist."
+    },
+    {
+      "turn_id": "t21",
+      "user_message": "Can Magnolia Catering Co. handle both the rehearsal dinner and the wedding reception under one contract, and will that 5% discount apply automatically?",
+      "assistant_message": "Magnolia Catering Co. confirmed they can consolidate both the rehearsal dinner and the wedding reception under a single multi-event contract for Mira Okafor and Jordan Okafor. The 5% multi-event discount applies automatically when both events are booked simultaneously and the total contract value exceeds $10,000. With the reception alone at $102 per head for 120 guests ($12,240) plus the rehearsal dinner at $65 per head for 40 guests ($2,600), the combined pre-discount total is $14,840, and the 5% discount would save $742."
+    },
+    {
+      "turn_id": "t22",
+      "user_message": "Has Whisk & Bloom confirmed a specific delivery time window for the cake on June 14th?",
+      "assistant_message": "Whisk & Bloom Bakery confirmed a delivery window of 1:00 PM to 2:00 PM on June 14th for the wedding cake at Cedarview Lake Lodge, which satisfies the lodge's requirement of arriving at least two hours before the reception. Jordan Okafor approved that window and noted the reception is scheduled to begin at 5:00 PM, giving the bakery team ample setup time. Whisk & Bloom will send a confirmation call the morning of the event to verify the delivery is on schedule."
+    },
+    {
+      "turn_id": "t23",
+      "user_message": "For the tent, if we add the partial dance floor from Silver Birch Tent Rentals, what's the combined rental cost?",
+      "assistant_message": "Adding the partial 20x20 dance floor at $700 to the 40x80 tent rental at $2,400 brings the combined Silver Birch Tent Rentals cost to $3,100 for the weekend. That figure includes delivery, setup, and teardown for both the tent and the dance floor section. Jordan Okafor noted this option keeps costs significantly lower than the full hardwood flooring at $5,600 while still giving guests a defined dance area."
+    },
+    {
+      "turn_id": "t24",
+      "user_message": "Is there a cancellation policy we should know about for the Silver Birch Tent Rentals contract?",
+      "assistant_message": "Silver Birch Tent Rentals' cancellation policy allows a full refund of the deposit if cancellation is made more than 60 days before the event, and a 50% refund if cancelled between 30 and 60 days out. Cancellations within 30 days of the event forfeit the entire deposit and trigger a 25% cancellation fee on the remaining balance. Mira Okafor was advised to review this policy in the context of the venue's own weather contingency plan at Cedarview Lake Lodge."
+    },
+    {
+      "turn_id": "t25",
+      "user_message": "We want to bring in a live band for the reception. Does the Grand Hall at Cedarview Lake Lodge have a stage, or do we need to rent one?",
+      "assistant_message": "The Grand Hall at Cedarview Lake Lodge has a permanent raised stage measuring 16 feet wide by 12 feet deep, which is included in the $6,500 full-venue booking fee and requires no separate rental. The venue coordinator confirmed the stage has dedicated power outlets rated for up to 30 amps, sufficient for a standard five-piece band setup. Bands larger than seven members may need to request a power upgrade from the lodge at a cost of $150 for a temporary 50-amp panel installation."
+    },
+    {
+      "turn_id": "t26",
+      "user_message": "For the cake, Mira is now leaning toward the buttercream finish instead of fondant. Does that change the deposit amount with Whisk & Bloom?",
+      "assistant_message": "Switching to the buttercream finish raises the cake price from $950 to $1,080 for up to 120 servings, as previously quoted by Whisk & Bloom Bakery. The 50% deposit would therefore increase from $475 to $540, a difference of $65. Jordan Okafor confirmed this is acceptable and asked Whisk & Bloom to update the invoice to reflect the buttercream selection before the deposit is submitted."
+    },
+    {
+      "turn_id": "t27",
+      "user_message": "We need to nail down the final food cost. Does Magnolia Catering Co.'s $600 labor fee change if we add a late-night snack station after dinner?",
+      "assistant_message": "Magnolia Catering Co. confirmed that adding a late-night snack station requires a separate staffing supplement of $200 on top of the base $600 labor fee, bringing total labor to $800 for the event at Cedarview Lake Lodge. The snack station itself is priced as an add-on at $18 per head, so for 120 guests that adds $2,160 to the food cost. The combined per-event food and labor total with the snack station becomes: 120 guests at $85 per head ($10,200) plus the 20% service charge ($2,040) plus $800 labor plus $2,160 snack station, totaling $15,200."
+    },
+    {
+      "turn_id": "t28",
+      "user_message": "What happens if it rains and we need to move the cocktail hour inside — does Silver Birch Tent Rentals have any indoor setup option?",
+      "assistant_message": "Silver Birch Tent Rentals does not provide indoor setup services; their products are exclusively for outdoor use. However, Jordan Okafor confirmed with Cedarview Lake Lodge that the Grand Hall foyer, which is approximately 1,200 square feet, can serve as an indoor cocktail hour space for up to 120 standing guests at no additional venue charge. The foyer option would require Mira Okafor to notify the venue coordinator at least 48 hours in advance to arrange furniture placement."
+    },
+    {
+      "turn_id": "t29",
+      "user_message": "Has Whisk & Bloom confirmed whether the buttercream cake will hold up in outdoor June heat if the cocktail hour runs long?",
+      "assistant_message": "Whisk & Bloom Bakery advised that buttercream is stable in temperatures up to 75 degrees Fahrenheit but may begin to soften above that threshold. For a June 14th event at Cedarview Lake Lodge, they recommend keeping the cake indoors in the Grand Hall until it is time to cut, rather than displaying it on the lakeside patio during the cocktail hour. Jordan Okafor agreed to that arrangement and confirmed the cake table will be set up inside the Grand Hall from the time of delivery."
+    },
+    {
+      "turn_id": "t30",
+      "user_message": "We've decided to book the live band. Their rider requires a green room with a private bathroom. Does Cedarview Lake Lodge have that available, and is there an extra fee?",
+      "assistant_message": "Cedarview Lake Lodge has one designated green room adjacent to the Grand Hall stage, equipped with a private bathroom, a small refrigerator, and seating for up to eight people. Use of the green room is available as an add-on to the full-venue booking at a flat fee of $250 for the event day. The venue coordinator confirmed to Jordan Okafor that the green room must be vacated and returned to its original condition by midnight, consistent with the lodge's standard event end time."
+    },
+    {
+      "turn_id": "t31",
+      "user_message": "We're trying to calculate the total we'll owe Cedarview Lake Lodge and Magnolia Catering Co. combined for the main wedding day. Can you give us that number?",
+      "assistant_message": null
+    }
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer includes the Cedarview Lake Lodge total of $6,750, calculated as the $6,500 full-venue booking fee plus the $250 green room add-on established in Branch A (t25 and t30).",
+      "required": false,
+      "evidence_turn_ids": ["t8", "t25", "t30"]
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer includes the Magnolia Catering Co. total of $15,200, calculated as 120 guests × $85 ($10,200) plus 20% service charge ($2,040) plus $800 labor plus $2,160 late-night snack station, as established in Branch B (t3, t6, t13, t27).",
+      "required": false,
+      "evidence_turn_ids": ["t3", "t6", "t13", "t27"]
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer gives a combined total of $21,950 (Cedarview Lake Lodge $6,750 plus Magnolia Catering Co. $15,200), requiring facts from both Branch A and Branch B.",
+      "required": false,
+      "evidence_turn_ids": ["t8", "t25", "t30", "t3", "t6", "t13", "t27"]
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not use $14,840 or $742 (the multi-event discount figures from the rehearsal-dinner distractor in t21) as part of the Magnolia Catering Co. wedding-day total.",
+      "required": true,
+      "evidence_turn_ids": []
+    }
+  ],
+  "reference_answer": "For Cedarview Lake Lodge, the main wedding day cost is $6,500 for the full-venue booking (main dock, lakeside patio, and Grand Hall) plus the $250 green room add-on for the band, totaling $6,750. For Magnolia Catering Co., the wedding-day food cost is 120 guests at $85 per head ($10,200) plus the mandatory 20% service charge ($2,040), the $800 labor fee (which includes the late-night snack station supplement), and the $2,160 snack station add-on, totaling $15,200. Combined, Cedarview Lake Lodge and Magnolia Catering Co. will be owed $21,950 for the main wedding day.",
+  "notes": "The query requires the Cedarview Lake Lodge venue total built across Branch A turns t1, t8, t25, and t30 (full-venue fee $6,500 plus green room $250) and the Magnolia Catering Co. total built across Branch B turns t3, t6, t13, and t27 (per-head rate, service charge, labor, and snack station). The near-miss turn t14 answers a similar 'total floral cost' question with specific dollar figures ($3,950 or $4,500) that could be mistaken for a cost-summary answer but are entirely unrelated to the venue and catering totals the query requires."
+}
+```

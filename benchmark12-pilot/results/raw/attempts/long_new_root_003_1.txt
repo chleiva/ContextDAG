@@ -1,0 +1,242 @@
+```json
+{
+  "entity_registry": [
+    "Nova Keyboards",
+    "Prism75",
+    "Lena Hartwell",
+    "Dietrich Mfg",
+    "SwitchSpec v2.1",
+    "Marco Fens"
+  ],
+  "turns": [
+    {
+      "turn_id": "t1",
+      "user_message": "Lena, I need to figure out the plate material situation for the Prism75. We talked about brass versus aluminum but I don't think we landed on anything.",
+      "assistant_message": "Lena Hartwell reviewed both options last week and sent her notes to Marco Fens on March 4th. Brass came in at $18.40 per unit from Dietrich Mfg, while aluminum was quoted at $9.75 per unit from the same supplier. Given that Nova Keyboards is targeting a sub-$180 retail price, she recommended going with the 1.5 mm aluminum plate to keep the build cost in range."
+    },
+    {
+      "turn_id": "t2",
+      "user_message": "I want to get a handle on the PCB revision timeline for the Prism75. What's the current status?",
+      "assistant_message": "Marco Fens submitted the revised Gerber files for Prism75 PCB revision 3 to the fab on February 28th, targeting a 10-day turnaround from the vendor in Shenzhen. Lena Hartwell flagged two trace-width errors in revision 2 that caused the RGB underglow to flicker at voltages above 4.8V, and both were corrected in the new files per SwitchSpec v2.1 requirements. The first batch of 15 prototype boards is expected back at Nova Keyboards by March 10th for bench testing."
+    },
+    {
+      "turn_id": "t3",
+      "user_message": "When the rev 3 boards come back, what's the test protocol Lena set up?",
+      "assistant_message": "Lena Hartwell drafted a 12-step bench test protocol that begins with a 3.3V and 5V power rail verification before any switches are soldered. Steps 4 through 7 cover the per-key scan matrix using a shorting jig Marco Fens had machined at Dietrich Mfg, confirming all 82 key positions register correctly. The final three steps stress-test the USB-C port at 500 mA draw for 30 minutes and confirm that the RGB underglow holds stable color output across all 16.7 million values without the flickering seen in revision 2."
+    },
+    {
+      "turn_id": "t4",
+      "user_message": "Did Dietrich Mfg give us a firm price on the aluminum plates yet?",
+      "assistant_message": "Dietrich Mfg confirmed the firm unit price of $9.75 for the 1.5 mm 6063-T5 aluminum plate in an email to Marco Fens on March 6th, with a minimum order quantity of 200 units. That quote is valid for 60 days and includes laser-cut tolerances of plus or minus 0.05 mm, which meets the Prism75 spec. Lena Hartwell has already signed off on the quote and asked Marco Fens to issue a purchase order by March 15th to keep the production schedule intact."
+    },
+    {
+      "turn_id": "t5",
+      "user_message": "I need to sort out the foam dampening layers for the Prism75. We were looking at PE foam versus IXPE, right?",
+      "assistant_message": "Lena Hartwell ran a listening test on March 2nd comparing 0.3 mm PE foam and 0.15 mm IXPE foam inserted between the PCB and the plate on a Prism75 prototype. The PE foam reduced the high-frequency ping by about 40 percent but added 18 grams to the overall build weight, pushing the assembled board to 1.31 kg. Lena's notes, shared with Marco Fens the same day, recommended the 0.15 mm IXPE as the production choice because it kept weight at 1.13 kg while still cutting ping by roughly 28 percent."
+    },
+    {
+      "turn_id": "t6",
+      "user_message": "Has a supplier been locked in for the IXPE foam yet?",
+      "assistant_message": "Marco Fens contacted three suppliers and received firm quotes by March 7th: FoamPro Industries quoted $0.42 per sheet, Shenzhen Cellux quoted $0.31 per sheet, and a domestic option called Midwest Foam Supply quoted $0.67 per sheet. Lena Hartwell reviewed the quotes against Nova Keyboards' quality threshold and eliminated Midwest Foam Supply due to a minimum thickness variance of plus or minus 0.04 mm, which exceeds the tolerance in SwitchSpec v2.1. The current recommendation is to go with Shenzhen Cellux at $0.31 per sheet for an initial order of 500 sheets."
+    },
+    {
+      "turn_id": "t7",
+      "user_message": "What's the plan if the rev 3 PCBs fail the USB-C stress test?",
+      "assistant_message": "Lena Hartwell outlined a contingency in her test protocol: if more than two boards out of the 15 fail the 500 mA draw test, the entire batch is quarantined and Marco Fens contacts the fab within 24 hours to request root-cause analysis. A revision 4 spin would be triggered, with an estimated two-week delay added to the Prism75 schedule. Dietrich Mfg has been informally notified that a plate order might slip from March 15th to March 29th in that scenario."
+    },
+    {
+      "turn_id": "t8",
+      "user_message": "How many rev 3 boards are earmarked for internal use versus external beta testers?",
+      "assistant_message": "Of the 15 prototype boards coming back from the Shenzhen fab, Lena Hartwell has allocated 6 for internal bench testing at Nova Keyboards under her direct supervision. Marco Fens will receive 2 boards for firmware development work tied to SwitchSpec v2.1 compliance. The remaining 7 boards are reserved for the external beta group, which currently has 7 confirmed testers who signed NDAs with Nova Keyboards on February 20th."
+    },
+    {
+      "turn_id": "t9",
+      "user_message": "Did Shenzhen Cellux provide any certifications for the IXPE material?",
+      "assistant_message": "Shenzhen Cellux sent Marco Fens a material safety data sheet and an RoHS compliance certificate dated January 15th of this year, both of which Lena Hartwell reviewed and filed in the Prism75 project folder. The IXPE material is certified to ASTM D1056 grade 2A2 for closed-cell foam, which meets the mechanical requirements Lena specified. Lena noted in her March 7th review memo to Nova Keyboards' operations team that no further third-party testing is required before production use."
+    },
+    {
+      "turn_id": "t10",
+      "user_message": "What's the per-unit cost impact of choosing Shenzhen Cellux for the IXPE?",
+      "assistant_message": "Each Prism75 unit uses one sheet of IXPE cut to 320 mm by 115 mm, and Shenzhen Cellux's sheet size of 500 mm by 400 mm allows exactly four Prism75 cuts with minimal waste. At $0.31 per sheet, the effective per-unit foam cost rounds to $0.08, which Lena Hartwell confirmed fits comfortably within the $2.50 internal dampening budget line. Marco Fens updated the Prism75 bill of materials on March 8th to reflect this figure."
+    },
+    {
+      "turn_id": "t11",
+      "user_message": "Is there a surface finish decision for the aluminum plate yet?",
+      "assistant_message": "Lena Hartwell specified a Type II anodize in a mid-gray shade, RAL 7037, for the Prism75 aluminum plate at a meeting with Marco Fens on March 5th. Dietrich Mfg confirmed they can perform the anodizing in-house at an added cost of $1.20 per unit, bringing the finished plate cost to $10.95 per unit. That figure was entered into the Prism75 cost tracker by Marco Fens on March 6th, the same day the base plate quote was confirmed."
+    },
+    {
+      "turn_id": "t12",
+      "user_message": "How does the $10.95 plate cost sit against the overall target BOM for the Prism75?",
+      "assistant_message": "Marco Fens shared the current Prism75 bill of materials with Lena Hartwell on March 8th, showing a target total BOM of $68.00 per unit for a 500-unit run. The plate at $10.95 represents roughly 16 percent of that budget, which Lena flagged as slightly high but acceptable given the quality requirement from SwitchSpec v2.1. The largest remaining cost pressure is the aluminum case top, currently quoted at $22.30 per unit from Dietrich Mfg, which Lena wants to renegotiate before the purchase order is placed."
+    },
+    {
+      "turn_id": "t13",
+      "user_message": "Has anyone pushed back on Dietrich Mfg about the case top price?",
+      "assistant_message": "Marco Fens sent a formal counter-proposal to Dietrich Mfg on March 9th, requesting a unit price of $19.50 for the aluminum case top based on a 600-unit order instead of 500. Dietrich Mfg's sales rep, a contact named Rolf Bauer, responded the same day indicating they could meet $20.10 at 600 units but could not go lower without a 1,000-unit commitment. Lena Hartwell reviewed the response and told Marco Fens that Nova Keyboards should accept $20.10 at 600 units, which would bring the BOM down to approximately $65.85 per unit."
+    },
+    {
+      "turn_id": "t14",
+      "user_message": "So if we go to 600 units, does that change anything else in the cost model?",
+      "assistant_message": "Lena Hartwell recalculated the full Prism75 BOM at 600 units on March 9th and found that the PCB unit cost also drops from $7.40 to $6.90 due to the fab's volume pricing tier kicking in at 550 units. The IXPE foam from Shenzhen Cellux stays at $0.08 per unit regardless of volume at this scale, and Dietrich Mfg confirmed the plate price of $10.95 holds at 600 units. The revised total BOM at 600 units is $64.18, giving Nova Keyboards a gross margin of approximately 64 percent at the $179 retail price Marco Fens set."
+    },
+    {
+      "turn_id": "t15",
+      "user_message": "What happens to the Shenzhen Cellux order if we decide to increase to 600 units?",
+      "assistant_message": "At 600 units, Nova Keyboards would need 150 sheets of IXPE from Shenzhen Cellux rather than the original 125 sheets calculated for 500 units. Marco Fens confirmed with Shenzhen Cellux on March 8th that their minimum order quantity is 100 sheets, so 150 falls well within normal order parameters with no surcharge. Lena Hartwell noted in her March 9th BOM update that the total foam order cost at 600 units would be $46.50, essentially negligible against the total production cost."
+    },
+    {
+      "turn_id": "t16",
+      "user_message": "Has the firmware side caught up with the rev 3 PCB changes? I know Marco was working on that.",
+      "assistant_message": "Marco Fens pushed firmware build 0.9.4 to the Nova Keyboards internal repository on March 7th, incorporating the corrected RGB underglow timing parameters that correspond to the trace-width fixes in the rev 3 PCB. The build targets QMK 0.23.1 and passes all 14 automated unit tests Lena Hartwell wrote for SwitchSpec v2.1 compliance. Marco flagged one remaining issue: the per-key LED brightness calibration routine takes 2.3 seconds on startup, which is 0.8 seconds longer than the 1.5-second maximum specified in SwitchSpec v2.1."
+    },
+    {
+      "turn_id": "t17",
+      "user_message": "Can the startup calibration time be brought under 1.5 seconds without changing the hardware?",
+      "assistant_message": "Marco Fens identified the bottleneck as a blocking I2C read loop that queries each of the 82 LED drivers sequentially, and proposed switching to a batched DMA transfer that should cut the routine to approximately 0.9 seconds. Lena Hartwell approved the approach on March 8th, noting it would require changes to three files in the QMK driver layer but no schematic modifications. Marco estimated the firmware fix would be ready for testing by March 12th, in time for the rev 3 boards to arrive from the Shenzhen fab."
+    },
+    {
+      "turn_id": "t18",
+      "user_message": "I want to revisit the case top negotiation. Did Lena actually sign off on the $20.10 price from Dietrich Mfg?",
+      "assistant_message": "Lena Hartwell gave verbal approval to Marco Fens on March 9th to accept Dietrich Mfg's offer of $20.10 per unit for the aluminum case top at 600 units, but she has not yet signed the formal purchase authorization document. Marco Fens prepared the purchase authorization on March 10th and sent it to Lena for signature, with a deadline of March 13th so Dietrich Mfg can slot the job into their April machining schedule. If the signature is not received by March 13th, Rolf Bauer at Dietrich Mfg indicated the price would need to be renegotiated."
+    },
+    {
+      "turn_id": "t19",
+      "user_message": "Has the DMA firmware fix actually been tested yet on any hardware?",
+      "assistant_message": "Marco Fens tested the DMA-based calibration routine on a rev 2 PCB on March 11th as a proxy, since the rev 3 boards have not yet arrived from the Shenzhen fab. The startup time measured 0.94 seconds on the rev 2 board, just under the 1.5-second SwitchSpec v2.1 limit, and all 82 LED positions responded correctly. Lena Hartwell asked Marco to rerun the test on at least three of the 15 rev 3 boards before marking the firmware task closed in the Prism75 project tracker."
+    },
+    {
+      "turn_id": "t20",
+      "user_message": "At 600 units, do we have enough buffer in the BOM if Dietrich Mfg raises prices again?",
+      "assistant_message": "Lena Hartwell built a 5 percent cost contingency into the Prism75 BOM, which at the $64.18 base cost amounts to $3.21 per unit of buffer. A further 3 percent increase from Dietrich Mfg on just the case top would add $0.60 per unit, well within that buffer. Marco Fens noted in the March 9th BOM update that if total component costs exceed $67.50 per unit, Nova Keyboards would need to either raise the retail price above $179 or reduce the run size back to 500 units."
+    },
+    {
+      "turn_id": "t21",
+      "user_message": "Is build 0.9.4 the version that will ship to the external beta testers?",
+      "assistant_message": "No, Marco Fens told Lena Hartwell on March 11th that the beta testers will receive firmware build 0.9.5, which will incorporate both the DMA calibration fix and a keymap correction for the Prism75's right-side macro column that was reported as a bug by two internal testers. Build 0.9.5 is targeted for completion by March 14th, giving a three-day window before the 7 external beta testers are scheduled to receive their boards. Lena approved this plan and updated the Prism75 project tracker milestone accordingly."
+    },
+    {
+      "turn_id": "t22",
+      "user_message": "I want to double-check: at 600 units, what's the confirmed total BOM assuming Dietrich Mfg holds at $20.10 for the case top?",
+      "assistant_message": "Lena Hartwell's March 9th BOM revision confirms the 600-unit total at $64.18 per unit, broken down as follows in major lines: case top $20.10, aluminum plate $10.95, PCB $6.90, switches (budgeted separately at $18.00 for 87-piece set), IXPE foam $0.08, and miscellaneous hardware $8.15. That totals $64.18, yielding a 64.2 percent gross margin at the $179 retail price. Marco Fens noted this is the version of the BOM submitted to Nova Keyboards' finance team on March 10th for approval."
+    },
+    {
+      "turn_id": "t23",
+      "user_message": "What keymap issue is being fixed for the macro column in build 0.9.5?",
+      "assistant_message": "Two internal testers found that the three-key right-side macro column on the Prism75 was registering key positions 80, 81, and 82 in reverse order due to an off-by-one error in the QMK matrix definition file. Marco Fens traced the bug to a row-column assignment that was copied from an earlier 65-percent layout template and not updated for the Prism75's 82-key matrix. The fix inverts the three assignments in the matrix configuration file, and Lena Hartwell confirmed the corrected behavior in a bench test on March 11th using a rev 2 board."
+    },
+    {
+      "turn_id": "t24",
+      "user_message": "Has the $20.10 purchase authorization actually been signed by Lena yet?",
+      "assistant_message": "As of March 11th, Lena Hartwell had not yet signed the purchase authorization for the Dietrich Mfg case top order at $20.10 per unit. Marco Fens sent a follow-up reminder to Lena on March 11th noting the March 13th deadline set by Rolf Bauer at Dietrich Mfg. Lena responded that she would sign by the end of business on March 12th once she confirmed the 600-unit production run was approved by Nova Keyboards' finance team."
+    },
+    {
+      "turn_id": "t25",
+      "user_message": "Once 0.9.5 ships to beta testers, what feedback turnaround is expected before the production firmware is locked?",
+      "assistant_message": "Lena Hartwell set a two-week beta feedback window, meaning all tester reports are due back to Marco Fens by April 1st. Marco will compile the reports and triage any firmware issues within three days, targeting a production firmware lock of April 4th. Lena specified in the Prism75 project plan that only P1 bugs — defined as complete key non-registration or device non-enumeration — can delay the April 4th lock date."
+    },
+    {
+      "turn_id": "t26",
+      "user_message": "Did finance sign off on the 600-unit run yet?",
+      "assistant_message": "Nova Keyboards' finance team approved the 600-unit Prism75 production run on March 12th, citing the $64.18 BOM and the 64.2 percent gross margin as satisfactory against the company's 60 percent minimum threshold. Lena Hartwell received the approval email at 10:47 AM and forwarded it to Marco Fens immediately. With finance approval in hand, Lena signed the Dietrich Mfg purchase authorization for the case top at $20.10 per unit the same afternoon, meeting Rolf Bauer's March 13th deadline."
+    },
+    {
+      "turn_id": "t27",
+      "user_message": "If a P1 bug is found during beta, what's the process for pushing a hotfix to testers?",
+      "assistant_message": "Marco Fens documented the hotfix process in a one-page procedure filed in the Prism75 project folder on March 8th. A P1 bug triggers an emergency build within 48 hours, which must pass the same 14 automated unit tests from SwitchSpec v2.1 that the main release builds go through. Lena Hartwell must personally review and approve the hotfix build before Marco distributes the updated firmware hex file directly to affected beta testers via the Nova Keyboards beta portal."
+    },
+    {
+      "turn_id": "t28",
+      "user_message": "Now that the case top PO is signed, when does Dietrich Mfg start machining?",
+      "assistant_message": "Rolf Bauer at Dietrich Mfg confirmed on March 12th that the Prism75 case top job is slotted into their CNC schedule starting April 7th, with a 14-business-day run time for all 600 units. That puts the expected completion at April 25th, and Dietrich Mfg quoted a 3-day shipping window to Nova Keyboards' warehouse. Lena Hartwell updated the Prism75 master schedule to reflect an April 28th expected receipt date for the case tops."
+    },
+    {
+      "turn_id": "t29",
+      "user_message": "What's the April 4th firmware lock contingent on, besides no P1 bugs?",
+      "assistant_message": "Lena Hartwell listed two additional conditions in the Prism75 project plan: first, that all 7 external beta testers must have submitted at least a brief confirmation report, even if they found no issues; second, that the rev 3 PCB bench test results from the 6 internal boards must be fully documented and signed off by Lena herself. Marco Fens is responsible for chasing any non-responsive beta testers and must escalate to Lena if fewer than 5 reports are received by March 28th, one week before the lock date."
+    },
+    {
+      "turn_id": "t30",
+      "user_message": "Is there a lead time concern for the aluminum plates from Dietrich Mfg given the April 7th machining start for the case tops?",
+      "assistant_message": "Lena Hartwell flagged this exact concern in a March 12th note to Marco Fens: Dietrich Mfg can only run one large aluminum job at a time on their primary CNC machine, so the plate order and the case top order cannot overlap. Marco Fens contacted Rolf Bauer on March 12th and confirmed that the 600-unit aluminum plate run is scheduled to start March 25th and finish April 4th, two days before the case top job begins. That gives Dietrich Mfg a 3-day buffer between jobs and puts the plate delivery at Nova Keyboards around April 7th."
+    },
+    {
+      "turn_id": "t31",
+      "user_message": "What's the current beta portal setup for distributing the firmware to testers?",
+      "assistant_message": "Marco Fens set up the Nova Keyboards beta portal as a password-protected subdirectory on the company's existing web server, with individual login credentials issued to each of the 7 external beta testers on March 10th. The portal hosts the firmware hex file, a one-page flashing guide Lena Hartwell wrote, and a structured feedback form with fields for QMK version, OS, and bug severity rating. Each tester received an onboarding email from Marco on March 10th with their credentials and a reminder that feedback is due by April 1st."
+    },
+    {
+      "turn_id": "t32",
+      "user_message": "Has the flashing guide been reviewed for accuracy against build 0.9.5?",
+      "assistant_message": "Lena Hartwell wrote the flashing guide against build 0.9.4 and noted on March 11th that it would need a one-line update to reflect the new startup calibration behavior introduced in 0.9.5. Marco Fens committed to updating the guide and re-uploading it to the Nova Keyboards beta portal no later than March 14th, the day before boards ship to testers. The guide is four pages long, covering DFU mode entry, QMK Toolbox 0.3.2 setup, hex file flashing, and a five-step post-flash verification checklist."
+    },
+    {
+      "turn_id": "t33",
+      "user_message": "Is QMK Toolbox 0.3.2 the right version for the rev 3 PCB's microcontroller?",
+      "assistant_message": "Marco Fens verified on March 9th that the Prism75 rev 3 PCB uses an STM32F411 microcontroller running in DFU mode, and QMK Toolbox 0.3.2 fully supports STM32 DFU targets as of its December 2023 release. Lena Hartwell cross-referenced this against the SwitchSpec v2.1 toolchain requirements, which mandate QMK Toolbox 0.3.0 or later for any STM32-based Prism75 build. No alternative flashing tool is supported under the beta program, per the Lena-authored flashing guide."
+    },
+    {
+      "turn_id": "t34",
+      "user_message": "What if a beta tester is on Linux and QMK Toolbox doesn't work for them?",
+      "assistant_message": "Marco Fens added a Linux-specific appendix to the flashing guide on March 12th, describing the dfu-util 0.11 command-line method as the approved fallback for Linux users. The command is a single-line dfu-util call specifying the STM32F411 VID/PID pair 0483:df11 and the Prism75 0.9.5 hex file path, which Lena Hartwell reviewed and confirmed is correct for the rev 3 PCB. Two of the 7 beta testers indicated Linux as their primary OS on their NDA forms, so the appendix is expected to be relevant for them."
+    },
+    {
+      "turn_id": "t35",
+      "user_message": "When are the plates expected to actually arrive at the warehouse, and does that line up with the case tops?",
+      "assistant_message": "Based on Dietrich Mfg's schedule confirmed by Rolf Bauer on March 12th, the 600 aluminum plates are expected to complete machining and anodizing by April 4th and ship that day, arriving at Nova Keyboards' warehouse around April 7th. The case tops are scheduled to arrive around April 28th, meaning there will be a 21-day gap where plates are on-hand but case tops are not yet received. Lena Hartwell noted this is acceptable since PCB assembly and plate mounting can proceed independently of the case top, shortening final assembly time once the case tops arrive."
+    },
+    {
+      "turn_id": "t36",
+      "user_message": "Just to confirm: what's the dfu-util version and VID/PID pair specified in the flashing guide for the rev 2 PCB?",
+      "assistant_message": "The flashing guide as originally written by Lena Hartwell for the rev 2 PCB specified dfu-util 0.10 and the VID/PID pair 0483:df10, which corresponded to the earlier STM32F303 microcontroller used in that revision. Marco Fens confirmed those values are documented in the archived version of the guide filed in the Prism75 project folder under the rev 2 section. Those values are not valid for the rev 3 PCB, which uses a different microcontroller and a different product ID, as updated in the March 12th Linux appendix."
+    },
+    {
+      "turn_id": "t37",
+      "user_message": "Have all 7 beta testers confirmed they actually received their login credentials for the portal?",
+      "assistant_message": "As of March 12th, 6 of the 7 beta testers had replied to Marco Fens' onboarding email confirming receipt of their credentials and successful login to the Nova Keyboards beta portal. The seventh tester, whose NDA was signed February 20th along with the others, had not responded, and Marco sent a follow-up email on March 12th with a 48-hour reply deadline. Lena Hartwell told Marco that if no response is received by March 14th, the tester's slot should be offered to the first person on the waitlist."
+    },
+    {
+      "turn_id": "t38",
+      "user_message": "Is there a waitlist and how many people are on it?",
+      "assistant_message": "Marco Fens maintains a waitlist of 12 people who applied for the Prism75 external beta program but were not selected in the initial round, all of whom signed expressions of interest with Nova Keyboards in January. Lena Hartwell's selection criteria prioritized testers with documented experience with 75-percent layout keyboards and at least one prior group-buy participation, which is why the 7 primary testers were chosen over the 12 on the waitlist. If a spot opens, Marco is authorized by Lena to extend an offer to the first waitlisted person ranked by those same criteria."
+    },
+    {
+      "turn_id": "t39",
+      "user_message": "Did the seventh tester end up responding in time?",
+      "assistant_message": "Marco Fens received a reply from the seventh tester on March 13th, within the 48-hour window, confirming successful portal login and expressing readiness to test. Lena Hartwell was notified and the tester's status was updated to active in the Prism75 project tracker, meaning all 7 external beta slots are now filled. Marco noted that boards are still on track to ship to testers on March 15th as planned, and the April 1st feedback deadline remains in effect for all seven."
+    },
+    {
+      "turn_id": "t40",
+      "user_message": "What gauge and material is standard for the PCB mounting screws on a 75-percent tray-mount keyboard like the Prism75, and what torque spec should I be using during assembly?",
+      "assistant_message": null
+    }
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer identifies M2 screws (or equivalent small-gauge metric hardware standard for PCB mounting in compact keyboards) as the appropriate gauge for a 75-percent tray-mount keyboard PCB.",
+      "required": true,
+      "evidence_turn_ids": []
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer specifies stainless steel or equivalent corrosion-resistant material as the standard screw material for PCB mounting hardware in this application.",
+      "required": true,
+      "evidence_turn_ids": []
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer provides a torque specification in the range of 0.10–0.25 N·m (or approximately 1–2.5 kgf·cm) as the assembly torque for M2 PCB mounting screws in a compact keyboard tray mount.",
+      "required": true,
+      "evidence_turn_ids": []
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not use dfu-util 0.10 or VID/PID pair 0483:df10 (the rev 2 PCB flashing values from t36) as any part of its response, since those values are specific to a different sub-problem and are not relevant to PCB mounting screw specifications.",
+      "required": true,
+      "evidence_turn_ids": []
+    }
+  ],
+  "reference_answer": "For a 75-percent tray-mount keyboard like the Prism75, M2 machine screws in stainless steel are the standard choice for PCB mounting, typically at lengths of 3 mm to 5 mm depending on standoff height. The recommended assembly torque for M2 screws in this context is approximately 0.15 to 0.20 N·m, which is sufficient to seat the PCB firmly without risking thread stripping in the aluminum tray. Using a calibrated torque screwdriver or a hand-tightening approach with a quarter-turn past finger-tight is common practice in keyboard assembly.",
+  "notes": "Turn t40 is a brand-new self-contained query about general hardware knowledge (PCB mounting screw gauge, material, and torque spec) with no dependency on any prior turn; it is answerable from general mechanical/keyboard-assembly knowledge alone. Turn t36 is the near-miss: it asks about the dfu-util version and VID/PID for what sounds like a related flashing/hardware spec question, but it is specifically about the rev 2 PCB values (0.10, 0483:df10), which are wrong for the rev 3 board and entirely unrelated to screw specifications."
+}
+```

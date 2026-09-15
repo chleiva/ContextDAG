@@ -1,0 +1,190 @@
+```json
+{
+  "entity_registry": ["Mira Okafor", "Jordan Hess", "Cedarview Lakeside Venue", "Bella Fiore Florals", "Chef Renata Souza", "The Lakeview Reception Contract"],
+  "turns": [
+    {
+      "turn_id": "t1",
+      "user_message": "We're planning our wedding at Cedarview Lakeside Venue for 120 guests and need to lock in the catering headcount deadline. When does the venue require a final guest count?",
+      "assistant_message": "Cedarview Lakeside Venue requires the final confirmed guest count no later than 21 days before the event date, as stated in Section 4 of The Lakeview Reception Contract. For your 120-guest event, that means the count must be submitted to Jordan Hess, the venue coordinator, by that cutoff. Any count submitted after that date locks in at the original estimate and cannot be reduced for billing purposes. Mira Okafor, the venue's catering liaison, has confirmed this policy applies to all Saturday bookings."
+    },
+    {
+      "turn_id": "t2",
+      "user_message": "We need to figure out the floral budget. Bella Fiore Florals gave us a quote — can you help us track the numbers?",
+      "assistant_message": "Bella Fiore Florals quoted a base package of $4,800 for ceremony and reception florals covering 12 centerpieces at $180 each, a bridal bouquet at $320, and four bridesmaid bouquets at $95 each. Jordan Hess noted that Cedarview Lakeside Venue has a standing relationship with Bella Fiore and can coordinate direct delivery to the lakeside pavilion at no extra charge. The quote is valid through 60 days from the issue date of March 10, 2025, expiring May 9, 2025. A 30% deposit of $1,440 is required to hold the date."
+    },
+    {
+      "turn_id": "t3",
+      "user_message": "Chef Renata Souza sent over the per-person catering costs. What are we looking at for the plated dinner service?",
+      "assistant_message": "Chef Renata Souza's proposal sets the plated dinner service at $95 per adult guest, which covers a three-course meal including appetizer, entrée, and dessert. Non-alcoholic beverage service is bundled into that rate, so there are no hidden add-ons for coffee, tea, or sparkling water. For the children's meal option, the rate drops to $45 per child guest, and Chef Renata Souza confirmed that up to 10 children's plates can be accommodated within the standard kitchen setup at Cedarview Lakeside Venue. The proposal is tied to the final headcount submitted to Mira Okafor."
+    },
+    {
+      "turn_id": "t4",
+      "user_message": "What are the parking arrangements at Cedarview Lakeside Venue for a 120-guest event?",
+      "assistant_message": "Cedarview Lakeside Venue has a primary lot with 80 dedicated spaces and a secondary overflow lot 0.3 miles away with capacity for an additional 60 vehicles, giving a combined total of 140 spaces. Jordan Hess confirmed that a complimentary shuttle runs between the overflow lot and the main pavilion every 15 minutes from 90 minutes before the ceremony start time through one hour after the reception ends. The shuttle contract is handled directly with Lakeside Transit Co. and is listed as an optional add-on in The Lakeview Reception Contract at $350 flat for the evening. Mira Okafor recommends booking the shuttle if the guest count exceeds 100 to avoid congestion at the main lot entrance."
+    },
+    {
+      "turn_id": "t5",
+      "user_message": "We're thinking about a photo booth rental for the reception. What options have we looked at so far?",
+      "assistant_message": "The couple reviewed two vendors: SnapLake Photo Co., which quoted $850 for four hours with unlimited prints and a digital gallery, and MirrorMagic Booths, which quoted $1,100 for the same duration but includes a custom branded backdrop and video messaging feature. Jordan Hess confirmed that Cedarview Lakeside Venue allows photo booth setups in the east wing foyer, which has a 12-by-14-foot clear footprint available. Mira Okafor noted that power outlets in the foyer support up to 20 amps, which is sufficient for either vendor's equipment. The couple has not yet signed a contract with either vendor."
+    },
+    {
+      "turn_id": "t6",
+      "user_message": "Are there any minimum spend requirements tied to that per-person catering rate from Chef Renata Souza?",
+      "assistant_message": "Chef Renata Souza's proposal includes a minimum food-and-beverage spend of $9,500 for Saturday evening events at Cedarview Lakeside Venue, which is specified in the catering addendum attached to The Lakeview Reception Contract. At the $95 per adult rate, this minimum is met once the confirmed adult headcount reaches 101 guests. If the adult count falls below 101, the shortfall is billed at the full per-person rate to reach the $9,500 floor regardless of actual attendance. Mira Okafor handles all billing adjustments and issues the final invoice within 48 hours of the event."
+    },
+    {
+      "turn_id": "t7",
+      "user_message": "We need to think through the rehearsal dinner. What venue options near Cedarview Lakeside Venue have we been considering?",
+      "assistant_message": "The couple has narrowed the rehearsal dinner to two options: The Dock House, a waterfront restaurant 1.2 miles from Cedarview Lakeside Venue that can seat up to 50 guests in its private dining room at $65 per person inclusive, and Pineview Grille, located 2.4 miles away with a private patio for up to 40 guests at $55 per person. Jordan Hess mentioned that The Dock House has hosted several post-rehearsal parties for Cedarview Lakeside Venue couples and is familiar with the typical timeline. Mira Okafor noted that Pineview Grille offers a complimentary welcome cocktail hour if the party exceeds 30 guests. The couple is leaning toward The Dock House given the closer proximity and larger capacity."
+    },
+    {
+      "turn_id": "t8",
+      "user_message": "What happens if we need to add guests after the 21-day cutoff at Cedarview Lakeside Venue?",
+      "assistant_message": "Under The Lakeview Reception Contract, additions after the 21-day cutoff are permitted only if Cedarview Lakeside Venue's kitchen and seating capacity allows, and each added guest is charged at a 15% premium over the standard per-person rate. Jordan Hess clarified that the venue's hard seating cap for the lakeside pavilion is 150 guests, so additions are feasible up to that ceiling. Any late additions must be requested in writing to Mira Okafor at least 72 hours before the event date; requests after that window cannot be guaranteed. The premium charge is applied automatically to the final invoice without requiring a contract amendment."
+    },
+    {
+      "turn_id": "t9",
+      "user_message": "Has The Dock House confirmed availability for the rehearsal dinner date?",
+      "assistant_message": "The Dock House confirmed availability for the Friday evening rehearsal dinner and is holding a tentative reservation for up to 50 guests under Mira Okafor's referral contact until a $500 deposit is received. The private dining room at The Dock House requires a food-and-beverage minimum of $2,800 for Friday evenings, which is comfortably met at 43 or more guests at the $65 per-person rate. Jordan Hess suggested confirming the headcount with The Dock House no later than two weeks before the rehearsal date to allow for menu customization. The couple has until April 18, 2025, to pay the deposit before the hold is released."
+    },
+    {
+      "turn_id": "t10",
+      "user_message": "For the photo booth, does SnapLake Photo Co. require a deposit and what's the cancellation policy?",
+      "assistant_message": "SnapLake Photo Co. requires a 25% deposit of $212.50 at contract signing to secure the date, with the remaining $637.50 due no later than 14 days before the event. Their cancellation policy provides a full refund of the deposit if cancelled more than 60 days out, a 50% refund between 30 and 60 days, and no refund within 30 days of the event. Jordan Hess noted that Cedarview Lakeside Venue has worked with SnapLake Photo Co. on at least six prior weddings and has never had a setup issue. Mira Okafor confirmed that SnapLake Photo Co. is on the venue's approved vendor list, which streamlines the load-in process."
+    },
+    {
+      "turn_id": "t11",
+      "user_message": "How many parking spaces does the overflow lot actually hold, and is it lit at night?",
+      "assistant_message": "The overflow lot at Cedarview Lakeside Venue holds exactly 60 vehicles in marked spaces, with an additional 8 unmarked spaces along the perimeter that attendants can manage during peak arrival times, bringing the practical maximum to 68 vehicles. Jordan Hess confirmed the lot is equipped with six LED pole lights that activate automatically at dusk and provide full illumination through midnight. Mira Okafor noted that the lot surface is compacted gravel, so guests in formal footwear are advised to use the shuttle rather than walk. The shuttle drop-off point at the main pavilion is covered and directly adjacent to the entrance, making it a comfortable option even in light rain."
+    },
+    {
+      "turn_id": "t12",
+      "user_message": "What's the current total floral estimate if we add a floral arch for the ceremony?",
+      "assistant_message": "Bella Fiore Florals quoted the floral arch as a standalone add-on at $1,200, bringing the revised total estimate to $6,000 when combined with the original $4,800 base package. The arch is a 10-foot circular design using white garden roses, eucalyptus, and seasonal greenery, and it is included in the direct delivery arrangement Jordan Hess coordinated with Cedarview Lakeside Venue. The updated deposit required to hold both the base package and the arch is $1,800, which is 30% of the new total. Mira Okafor confirmed that the lakeside ceremony lawn has a level surface suitable for the arch's ground stakes without any venue modification fee."
+    },
+    {
+      "turn_id": "t13",
+      "user_message": "We're planning on 108 adult guests and 12 children. Can you confirm what the total catering cost would be under Chef Renata Souza's proposal?",
+      "assistant_message": "With 108 adult guests at $95 per person, the adult catering subtotal comes to $10,260. The 12 children's meals at $45 each add $540, bringing the combined food total to $10,800 before any service charges. Chef Renata Souza's proposal includes a 20% service charge applied to the food total, which adds $2,160, making the pre-tax grand total $12,960. Since $10,800 exceeds the $9,500 minimum spend threshold, no shortfall surcharge applies, and Mira Okafor will issue the invoice based on the final headcount submitted by the 21-day deadline."
+    },
+    {
+      "turn_id": "t14",
+      "user_message": "If we go with MirrorMagic Booths instead, what would the total cost be for the photo booth at the reception?",
+      "assistant_message": "MirrorMagic Booths' package for four hours at the reception totals $1,100, which includes the custom branded backdrop, unlimited prints, a digital gallery, and the video messaging feature. They require a 50% deposit of $550 at signing, with the balance of $550 due 10 days before the event. Mira Okafor confirmed that MirrorMagic Booths is also on Cedarview Lakeside Venue's approved vendor list, so load-in coordination would be equally smooth. Jordan Hess noted that MirrorMagic Booths requires a dedicated 15-amp circuit, which the east wing foyer can supply without issue."
+    },
+    {
+      "turn_id": "t15",
+      "user_message": "Is there a difference in the print quality between SnapLake Photo Co. and MirrorMagic Booths?",
+      "assistant_message": "SnapLake Photo Co. uses a dye-sublimation printer producing 4-by-6-inch prints at 300 dpi, with an average print time of 12 seconds per strip. MirrorMagic Booths uses the same dye-sublimation technology but outputs 5-by-7-inch prints at 300 dpi, with a slightly longer print time of 18 seconds per strip. Jordan Hess noted that past Cedarview Lakeside Venue couples have praised both vendors equally for print quality, with the main differentiator being the larger print size from MirrorMagic Booths. Mira Okafor added that both vendors provide digital copies via a QR-code gallery link shared with guests in real time."
+    },
+    {
+      "turn_id": "t16",
+      "user_message": "Can either photo booth vendor handle outdoor placement near the lake if we decide to move it outside?",
+      "assistant_message": "SnapLake Photo Co. can operate outdoors in temperatures between 50°F and 90°F and requires a 10-by-10-foot level surface, but their equipment is not weatherproofed and must be under a tent or canopy if there is any chance of rain. MirrorMagic Booths offers a weather-resistant enclosure as an upgrade for an additional $150, making it rated for light rain and temperatures down to 45°F. Jordan Hess confirmed that Cedarview Lakeside Venue has a 12-by-12-foot event tent available for rental at $200 for the evening, which could shelter either vendor's setup near the lake. Mira Okafor noted that the outdoor power hookup near the lakeside lawn is a 20-amp circuit, compatible with both vendors' requirements."
+    },
+    {
+      "turn_id": "t17",
+      "user_message": "Given all of this, which photo booth vendor should we go with if we want outdoor placement with weather protection at the lowest total cost?",
+      "assistant_message": "For outdoor placement with weather protection, the lowest total cost option is SnapLake Photo Co. combined with the Cedarview Lakeside Venue tent rental: $850 for SnapLake Photo Co. plus $200 for the tent equals $1,050 total. MirrorMagic Booths with their weather-resistant enclosure upgrade comes to $1,250, which is $200 more than the SnapLake Photo Co. plus tent combination. Jordan Hess confirmed that the tent can be reserved alongside the venue booking with no additional administrative fee. Mira Okafor noted that booking SnapLake Photo Co. through the venue's preferred vendor coordination saves approximately one hour of setup time on the wedding day."
+    },
+    {
+      "turn_id": "t18",
+      "user_message": "We need to revisit the floral arch — has Bella Fiore Florals confirmed the flower varieties are available for our date?",
+      "assistant_message": "Bella Fiore Florals confirmed that white garden roses, eucalyptus, and seasonal greenery are all available for the wedding date, as their primary supplier guarantees availability 90 days in advance for orders of this size. The florist did note that if the wedding falls between late August and early October, white garden roses may need to be substituted with white spray roses at no additional cost, and the visual result would be nearly identical. Jordan Hess has the confirmed date on file and has already shared it with Bella Fiore Florals to lock in the availability window. Mira Okafor will coordinate the floral delivery time with the Bella Fiore Florals driver to ensure setup is complete two hours before the ceremony."
+    },
+    {
+      "turn_id": "t19",
+      "user_message": "We want to understand the late-addition premium more precisely. If we add 5 guests after the 21-day cutoff, what would those 5 guests cost per person under the contract?",
+      "assistant_message": "Under The Lakeview Reception Contract, the late-addition premium is 15% above the standard per-person catering rate charged by Chef Renata Souza. The standard adult rate is $95 per person, so the 15% premium adds $14.25, bringing the late-addition rate to $109.25 per adult guest. For 5 late-added adult guests, the total additional charge would be $546.25 before the 20% service charge. With the service charge applied, the full cost for those 5 guests comes to $655.50, and Jordan Hess confirmed this amount is added directly to the final invoice issued by Mira Okafor."
+    },
+    {
+      "turn_id": "t20",
+      "user_message": "Has MirrorMagic Booths provided a contract we can review, or is it still just a quote?",
+      "assistant_message": "MirrorMagic Booths provided a formal contract draft on March 22, 2025, which is currently under review. The contract specifies the four-hour rental window, the custom backdrop design approval deadline of 30 days before the event, and the 50% deposit structure already quoted. Jordan Hess reviewed the load-in clause and confirmed it is compatible with Cedarview Lakeside Venue's vendor access rules, which require all vendors to arrive no earlier than four hours before the event start time. Mira Okafor noted that the contract's force majeure clause covers venue-imposed cancellations, which would trigger a full deposit refund."
+    },
+    {
+      "turn_id": "t21",
+      "user_message": "What's the revised floral total if we also add a floral runner down the reception tables?",
+      "assistant_message": "Bella Fiore Florals quoted the reception table floral runner at $85 per table for a greenery-and-white-rose runner approximately 6 feet long. Assuming 12 reception tables, the runner addition totals $1,020, bringing the revised floral grand total to $7,020: the original $4,800 base, plus the $1,200 arch, plus the $1,020 for runners. The updated 30% deposit would be $2,106. Jordan Hess confirmed that Cedarview Lakeside Venue's reception tables are each 8 feet long, so a 6-foot runner leaves 1 foot of clearance on each end, which Mira Okafor described as the standard aesthetic preference for lakeside receptions."
+    },
+    {
+      "turn_id": "t22",
+      "user_message": "Has The Dock House sent over a sample menu for the rehearsal dinner?",
+      "assistant_message": "The Dock House sent a sample three-course menu on March 25, 2025, featuring a choice of clam chowder or house salad as the first course, entrée options of pan-seared salmon, grilled chicken, or a vegetarian risotto, and a shared dessert board as the final course. The per-person rate of $65 covers all three courses and non-alcoholic beverages, with a bar package available for an additional $28 per person covering beer, wine, and a signature cocktail. Jordan Hess reviewed the menu and noted it aligns well with the rehearsal dinner's relaxed atmosphere. Mira Okafor confirmed that The Dock House can accommodate two dietary restriction cards per table at no additional charge."
+    },
+    {
+      "turn_id": "t23",
+      "user_message": "What's the deadline for approving the custom backdrop design with MirrorMagic Booths?",
+      "assistant_message": "The MirrorMagic Booths contract specifies that the custom backdrop design must be approved by the couple no later than 30 days before the event date. The design process begins with a digital mockup delivered within five business days of contract signing, and up to three revision rounds are included at no additional cost. Jordan Hess confirmed that the backdrop approval timeline does not conflict with any Cedarview Lakeside Venue preparation milestones. Mira Okafor noted that if the couple misses the 30-day approval deadline, MirrorMagic Booths defaults to a standard white linen backdrop at the same contract price."
+    },
+    {
+      "turn_id": "t24",
+      "user_message": "What if we want a fourth revision round on the backdrop design — is there a fee?",
+      "assistant_message": "MirrorMagic Booths charges $75 per additional revision round beyond the three included in the contract, so a fourth revision would add $75 to the total. If the couple requires a fifth revision, that would bring the total additional revision cost to $150. Jordan Hess suggested that the couple compile all feedback into a single consolidated list before submitting each revision to avoid unnecessary rounds. Mira Okafor noted that based on her experience with past Cedarview Lakeside Venue weddings, most couples complete their backdrop design within two rounds when they use a clear reference image."
+    },
+    {
+      "turn_id": "t25",
+      "user_message": "Can you confirm the exact late-addition cutoff time — is it 72 hours before the event start or 72 hours before some other milestone?",
+      "assistant_message": "The Lakeview Reception Contract specifies that late guest additions must be submitted in writing to Mira Okafor no later than 72 hours before the scheduled ceremony start time, not 72 hours before any other milestone such as the rehearsal or venue setup. Jordan Hess clarified that the ceremony start time is the binding reference point, so if the ceremony begins at 5:00 PM on a Saturday, the late-addition request window closes at 5:00 PM on the preceding Wednesday. Requests received after that Wednesday 5:00 PM cutoff cannot be processed and will not appear on the final invoice. This policy is documented in Section 7 of The Lakeview Reception Contract and was last updated in the January 2025 contract revision."
+    },
+    {
+      "turn_id": "t26",
+      "user_message": "For the rehearsal dinner, if we add the bar package at The Dock House, what's the new per-person total and overall minimum spend?",
+      "assistant_message": "Adding the $28 per-person bar package to The Dock House's $65 per-person dinner rate brings the new per-person total to $93. For 50 guests, the total event cost would be $4,650, well above the $2,800 food-and-beverage minimum for Friday evenings. Jordan Hess noted that the bar package covers a three-hour service window aligned with the standard rehearsal dinner duration, and any extension beyond three hours is available at $10 per person per additional hour. Mira Okafor confirmed that The Dock House's liquor license covers service until 11:00 PM, which comfortably accommodates a typical rehearsal dinner schedule."
+    },
+    {
+      "turn_id": "t27",
+      "user_message": "Just to be sure, does the 20% service charge from Chef Renata Souza apply to the children's meals as well, or only to adult plates?",
+      "assistant_message": "Chef Renata Souza's proposal applies the 20% service charge to the combined food total, which includes both adult and children's plates, so there is no distinction between plate types for the purposes of the service charge. At the confirmed headcount of 108 adults and 12 children, the food subtotal is $10,800, and the 20% service charge of $2,160 applies to that entire amount. The service charge is not negotiable and is specified as a fixed line item in the catering addendum attached to The Lakeview Reception Contract. Mira Okafor confirmed that the service charge is distributed entirely among the kitchen and service staff and does not include a gratuity for the event coordinator."
+    },
+    {
+      "turn_id": "t28",
+      "user_message": "Has MirrorMagic Booths confirmed they can deliver and set up within the four-hour vendor access window at Cedarview Lakeside Venue?",
+      "assistant_message": "MirrorMagic Booths confirmed in writing on March 28, 2025, that their standard setup requires 90 minutes, which fits comfortably within the four-hour vendor access window at Cedarview Lakeside Venue. Their crew arrives with two technicians and a branded transport case, and teardown takes approximately 45 minutes after the rental period ends. Jordan Hess updated the venue's vendor schedule to include MirrorMagic Booths in the load-in queue, tentatively scheduled for the second arrival slot. Mira Okafor noted that the east wing foyer will be cleared by the venue staff one hour before vendor access begins to ensure no conflicts with the morning setup crew."
+    },
+    {
+      "turn_id": "t29",
+      "user_message": "What's the per-person cost at The Dock House if we keep the bar package but reduce the rehearsal dinner guest count to 40?",
+      "assistant_message": "The per-person total remains $93 with the bar package included regardless of headcount, since The Dock House prices are per person rather than tiered by group size. For 40 guests, the total event cost would be $3,720, which still exceeds the $2,800 Friday evening food-and-beverage minimum. Jordan Hess noted that at 40 guests, the private dining room at The Dock House would have comfortable spacing with no need to use the adjacent overflow seating area. Mira Okafor confirmed that the complimentary welcome cocktail hour offered by Pineview Grille for groups over 30 guests is not available at The Dock House, so the bar package remains the best value for groups of that size."
+    },
+    {
+      "turn_id": "t30",
+      "user_message": "So to confirm: the 21-day guest count deadline and the 72-hour late-addition cutoff are two separate deadlines, and both are measured from the ceremony start time?",
+      "assistant_message": "The two deadlines are indeed separate and serve different purposes under The Lakeview Reception Contract. The 21-day deadline requires the couple to submit the final confirmed guest count to Jordan Hess 21 days before the ceremony start date, locking in the base headcount for billing; this is the primary planning deadline. The 72-hour cutoff is a secondary window that allows limited additions after the 21-day deadline has passed, provided the request is submitted in writing to Mira Okafor no later than 72 hours before the ceremony start time. Both deadlines reference the ceremony start time as their anchor point, and missing the 21-day deadline means the original submitted count becomes the billing floor regardless of actual attendance."
+    },
+    {
+      "turn_id": "t31",
+      "user_message": "Given everything we've settled on with Chef Renata Souza's proposal and the venue contract, what is the total catering bill we should expect for our 120 guests, and what is the absolute latest we can submit the final headcount to avoid any penalties?",
+      "assistant_message": null
+    }
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states the total catering cost is $12,960 (before tax), derived from $10,260 for 108 adults at $95 each, $540 for 12 children at $45 each, and a 20% service charge of $2,160 on the $10,800 food subtotal.",
+      "required": false,
+      "evidence_turn_ids": ["t3", "t6", "t13", "t27"]
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states the final headcount must be submitted to Jordan Hess or Mira Okafor no later than 21 days before the ceremony date, as specified in The Lakeview Reception Contract.",
+      "required": false,
+      "evidence_turn_ids": ["t1", "t30"]
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer correctly identifies that the 20% service charge applies to both adult and children's plates (the full $10,800 food subtotal), contributing $2,160 to the total.",
+      "required": false,
+      "evidence_turn_ids": ["t13", "t27"]
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not state that the total catering cost is $1,100 or reference MirrorMagic Booths' photo booth price as the cost figure, which is the near-miss answer from t14.",
+      "required": true,
+      "evidence_turn_ids": []
+    }
+  ],
+  "reference_answer": "Based on Chef Renata Souza's proposal, the total catering bill for 108 adult guests at $95 each and 12 children at $45 each comes to $10,800 in food costs, and the 20% service charge applies to the full combined total, adding $2,160 for a grand total of $12,960 before tax. Since the $10,800 food total exceeds the $9,500 minimum spend threshold, no shortfall surcharge applies. The absolute latest the final headcount can be submitted without penalty is 21 days before the ceremony date, as specified in The Lakeview Reception Contract and confirmed by Jordan Hess; after that deadline the submitted count locks in as the billing floor.",
+  "notes": "The catering cost calculation draws on t3 (per-person rates), t6 (minimum spend and service charge rules), t13 (confirmed headcount and arithmetic), and t27 (service charge applies to full food total including children's plates); the 21-day headcount deadline is established in t1 and confirmed in t30. The near-miss turn is t14, which answers a similarly phrased cost question but about MirrorMagic Booths' photo booth ($1,100 total), a figure a careless reader might confuse with a catering answer."
+}
+```

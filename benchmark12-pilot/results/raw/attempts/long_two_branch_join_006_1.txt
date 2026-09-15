@@ -1,0 +1,302 @@
+```json
+{
+  "entity_registry": [
+    "Priya Nair",
+    "Marcus Delgado",
+    "Sunflower",
+    "ScreenFlow v2.4",
+    "Onboarding Revamp PRD",
+    "Lena Kovač"
+  ],
+  "turns": [
+    {
+      "turn_id": "t1",
+      "user_message": "We're analyzing where users drop off during onboarding in Sunflower. What did the funnel audit say about the permission-request screen?",
+      "assistant_message": "According to the funnel audit completed by Priya Nair on March 14, the permission-request screen causes a 41% drop-off, the single largest exit point in the entire Sunflower onboarding flow. The audit found that users who see the notification permission prompt on the very first screen abandon at nearly double the rate of those who see it deferred to step 4. Priya Nair's recommendation, now logged in the Onboarding Revamp PRD, is to move the permission request to after the user completes their first meaningful action in the app."
+    },
+    {
+      "turn_id": "t2",
+      "user_message": "What's the current status of the localization pass for the onboarding strings?",
+      "assistant_message": "Marcus Delgado confirmed on March 18 that 11 of the 14 target locales have completed translation review for the Sunflower onboarding strings. The three remaining locales are Brazilian Portuguese, Traditional Chinese, and Polish, with Polish being the blocker because the vendor hasn't returned the final sign-off. Marcus Delgado set a hard deadline of March 28 for all locale approvals so that ScreenFlow v2.4 can ship with full localization coverage."
+    },
+    {
+      "turn_id": "t3",
+      "user_message": "Which specific strings are still flagged in the Polish translation?",
+      "assistant_message": "The Polish translator flagged four strings: the welcome headline, the biometric-consent explanation, the data-usage disclosure, and the skip-for-now button label. Marcus Delgado noted in the Onboarding Revamp PRD comments that the biometric-consent string is the most sensitive because Polish consumer law requires specific phrasing around data processing consent. Lena Kovač from legal is reviewing the suggested Polish phrasing and is expected to clear it by March 25."
+    },
+    {
+      "turn_id": "t4",
+      "user_message": "For the new progress-indicator design in Sunflower onboarding, what did the UX team decide about the step count?",
+      "assistant_message": "Lena Kovač's UX research session on March 10 concluded that displaying more than 5 steps in the progress indicator significantly increases perceived effort and correlates with a 28% higher abandonment rate in the Sunflower prototype tests. Based on that finding, the team decided the onboarding flow must be capped at exactly 5 visible steps in the progress indicator. This decision was formally recorded in the Onboarding Revamp PRD under the UX constraints section."
+    },
+    {
+      "turn_id": "t5",
+      "user_message": "What's the plan for A/B testing the new onboarding copy variants?",
+      "assistant_message": "Priya Nair outlined an A/B test in the Onboarding Revamp PRD that will run two copy variants against the current control for 21 days starting April 1. Variant A uses a benefit-led headline on the welcome screen, while Variant B uses a social-proof headline citing that over 2 million people use Sunflower. Marcus Delgado will instrument both variants in ScreenFlow v2.4 and the primary metric is 7-day retention, with a secondary metric of step-3 completion rate."
+    },
+    {
+      "turn_id": "t6",
+      "user_message": "Has the team settled on a crash-reporting threshold for the onboarding screens in ScreenFlow v2.4?",
+      "assistant_message": "Yes, Marcus Delgado set the crash-free session threshold for onboarding screens in ScreenFlow v2.4 at 99.5%, which is stricter than the 99.1% threshold applied to the rest of the app. Any release candidate that falls below 99.5% on onboarding screens will be automatically blocked from promotion to production by the CI pipeline. This rule was added to the Onboarding Revamp PRD's release criteria section after a crash spike on the avatar-upload screen in the previous version."
+    },
+    {
+      "turn_id": "t7",
+      "user_message": "What monitoring tool will enforce that threshold automatically?",
+      "assistant_message": "The team chose Firebase Crashlytics as the monitoring integration, with a custom quality gate wired into the Sunflower CI pipeline managed by Marcus Delgado. The gate polls Crashlytics every 30 minutes during a 48-hour soak period after each build is promoted to the beta channel. If the crash-free rate for onboarding screens drops below 99.5% at any poll, the gate posts a blocking comment on the relevant pull request and pages Priya Nair via PagerDuty."
+    },
+    {
+      "turn_id": "t8",
+      "user_message": "Has Lena Kovač signed off on the legal text for the data-usage disclosure in any locale yet?",
+      "assistant_message": "Lena Kovač has signed off on 10 of the 11 completed locales, with German being the last one she cleared on March 20. The outstanding Polish data-usage disclosure is still in her queue, as noted in the Onboarding Revamp PRD comment thread. Marcus Delgado confirmed that no locale's strings will be merged into the ScreenFlow v2.4 release branch until Lena Kovač provides written sign-off in the PRD."
+    },
+    {
+      "turn_id": "t9",
+      "user_message": "What happens if the Polish sign-off misses the March 28 deadline?",
+      "assistant_message": "If Polish sign-off is not received by March 28, Marcus Delgado will ship ScreenFlow v2.4 without Polish localization and list it as a known gap in the release notes. Priya Nair agreed to this contingency during the March 19 stand-up, and the Onboarding Revamp PRD has been updated to reflect that Polish will be added in a 2.4.1 patch no later than April 11. Lena Kovač must still provide sign-off before the 2.4.1 patch branch is cut, regardless of timing."
+    },
+    {
+      "turn_id": "t10",
+      "user_message": "What's the current crash-free rate on onboarding screens in the latest beta build?",
+      "assistant_message": "The latest beta build, build 2.4.0-beta.7, is sitting at 99.6% crash-free on onboarding screens as of Marcus Delgado's report on March 21. That puts it just above the 99.5% threshold required by the Onboarding Revamp PRD release criteria. Priya Nair flagged that the avatar-upload screen is responsible for 60% of the remaining crashes and asked the team to prioritize a fix before the next beta cut."
+    },
+    {
+      "turn_id": "t11",
+      "user_message": "What copy variant is currently winning in the A/B test pre-analysis?",
+      "assistant_message": "The A/B test hasn't launched yet since it's scheduled to start April 1, but Priya Nair ran a pre-analysis using historical Sunflower data and predicted Variant B, the social-proof headline, would outperform Variant A by roughly 4 percentage points on step-3 completion. Marcus Delgado built both variants into ScreenFlow v2.4 and confirmed instrumentation is complete as of March 21. The Onboarding Revamp PRD specifies that a minimum of 10,000 sessions per variant is required before any significance call can be made."
+    },
+    {
+      "turn_id": "t12",
+      "user_message": "What significance level is required to declare a winner in that A/B test?",
+      "assistant_message": "The Onboarding Revamp PRD specifies a 95% confidence level as the minimum to declare a winner, which Priya Nair aligned with the company's standard experimentation policy. If neither variant reaches 95% confidence after 21 days, the test will be extended by one additional week before a forced decision is made. Lena Kovač from legal also requested that any winning variant be reviewed for compliance before it is rolled out to 100% of Sunflower users."
+    },
+    {
+      "turn_id": "t13",
+      "user_message": "Has the team decided what happens to users who installed Sunflower before the new onboarding launches?",
+      "assistant_message": "Yes, Marcus Delgado confirmed in the Onboarding Revamp PRD that existing users who have already completed onboarding will not be re-shown the new flow. Users who installed Sunflower but never completed onboarding, defined as not reaching step 3, will be re-entered into the new flow starting with ScreenFlow v2.4. Priya Nair estimated this re-entry cohort at approximately 87,000 users based on the March 14 funnel audit data."
+    },
+    {
+      "turn_id": "t14",
+      "user_message": "What's the re-entry trigger exactly — is it based on app version or account state?",
+      "assistant_message": "The re-entry is based on account state, specifically a server-side flag called onboarding_complete set to false in the Sunflower user profile. Marcus Delgado chose account state over app version because it handles users who reinstall the app or switch devices without losing their progress. The Onboarding Revamp PRD notes that this flag was backfilled for all accounts created before January 1 using a migration script Priya Nair reviewed on March 15."
+    },
+    {
+      "turn_id": "t15",
+      "user_message": "What if a user clears app data — does the onboarding_complete flag reset?",
+      "assistant_message": "No, because the onboarding_complete flag lives server-side in the Sunflower user profile rather than in local storage, clearing app data does not reset it. Marcus Delgado confirmed this architecture decision in the Onboarding Revamp PRD on March 16 specifically to prevent re-showing onboarding to users who had already completed it. The only way the flag resets is through a deliberate account-level action, such as the user requesting a full account reset via Lena Kovač's support escalation workflow."
+    },
+    {
+      "turn_id": "t16",
+      "user_message": "What session minimum did Priya Nair set for the A/B test before interim results can be shared with stakeholders?",
+      "assistant_message": "Priya Nair set a minimum of 5,000 sessions per variant before any interim results can be shared with stakeholders outside the immediate Sunflower product team. This is half the 10,000-session threshold required for a significance call, and it's intended to prevent premature decisions based on early data. The Onboarding Revamp PRD notes that Marcus Delgado will send an automated interim report to Priya Nair every Monday morning until the test concludes."
+    },
+    {
+      "turn_id": "t17",
+      "user_message": "Who outside the product team is on the stakeholder distribution list for those interim reports?",
+      "assistant_message": "According to the Onboarding Revamp PRD, the external stakeholder list includes the VP of Growth, the Head of Marketing, and Lena Kovač representing the legal team. Marcus Delgado will CC the Customer Success lead as well, since onboarding completion directly affects the support ticket volume that team handles. Priya Nair specified that reports must include the per-variant funnel breakdown, not just top-line completion rates, to give stakeholders enough context."
+    },
+    {
+      "turn_id": "t18",
+      "user_message": "The progress indicator needs to fit within a specific vertical space budget on the screen. What constraint did the design system set for that?",
+      "assistant_message": "The Sunflower design system specifies that the progress indicator component must not exceed 48 dp in height on any supported screen size, as documented in the design system changelog updated by Lena Kovač on March 12. This 48 dp ceiling was derived from the minimum tap-target guidelines and the need to keep the indicator fully visible above the fold on the smallest supported device, which is a 5-inch screen at 360x640 dp. The Onboarding Revamp PRD references this constraint explicitly and notes that ScreenFlow v2.4 must pass an automated layout test verifying the 48 dp limit before release."
+    },
+    {
+      "turn_id": "t19",
+      "user_message": "What's the fallback plan if the automated layout test fails on a specific device in the test matrix?",
+      "assistant_message": "If the layout test fails on any device in the matrix, Marcus Delgado's CI pipeline will flag the specific device model and block the build from advancing to the beta channel. Priya Nair and the design lead have 24 hours to either approve a device-specific override or request a hotfix before the build is abandoned. The Onboarding Revamp PRD lists 12 devices in the mandatory test matrix, with the Sunflower reference device being a Pixel 6 running Android 13."
+    },
+    {
+      "turn_id": "t20",
+      "user_message": "Has the design lead approved the current progress indicator implementation for all 12 devices?",
+      "assistant_message": "As of March 22, the design lead approved the implementation for 10 of the 12 devices in the Sunflower test matrix. The two failing devices are a Samsung Galaxy A13 and a Motorola Moto G Power 2022, both of which have non-standard system font scaling that pushes the step labels outside the 48 dp boundary. Marcus Delgado opened a hotfix ticket on March 22 and Priya Nair marked it as a release blocker in the Onboarding Revamp PRD."
+    },
+    {
+      "turn_id": "t21",
+      "user_message": "Is the 87,000-user re-entry cohort going to be migrated all at once or in batches?",
+      "assistant_message": "Marcus Delgado's migration plan, approved in the Onboarding Revamp PRD on March 17, calls for a staged rollout in three batches: 10% on launch day, 40% on day 3, and the remaining 50% on day 7. This batching strategy was chosen to avoid a support spike, since Priya Nair estimated that even a 2% re-entry confusion rate would generate roughly 1,740 support tickets if all 87,000 users were migrated simultaneously. Lena Kovač's team prepared a dedicated FAQ page to be published before the first batch goes live."
+    },
+    {
+      "turn_id": "t22",
+      "user_message": "Has the team finalized how many total screens the new onboarding flow will have, including any optional steps?",
+      "assistant_message": "Yes, the team finalized the flow at 5 mandatory screens plus 2 optional personalization screens that users can skip, for a total of 7 screens in the complete path. The 5 mandatory screens are what populate the progress indicator, consistent with the cap established in the Onboarding Revamp PRD. Lena Kovač confirmed on March 17 that the 2 optional screens do not require additional legal disclosures since they collect only preference data, not personal data."
+    },
+    {
+      "turn_id": "t23",
+      "user_message": "Going back to the permission-request screen issue — has the team decided which specific action should trigger the deferred prompt?",
+      "assistant_message": "Yes, Priya Nair finalized this in the Onboarding Revamp PRD update on March 19: the notification permission prompt will be triggered immediately after the user saves their first goal in the Sunflower app, which is step 4 of the mandatory onboarding flow. The rationale is that by step 4 the user has invested enough effort that the value proposition of notifications is self-evident. Internal testing showed this placement reduced the permission-screen drop-off from 41% down to 17% in a prototype study with 200 participants."
+    },
+    {
+      "turn_id": "t24",
+      "user_message": "Has the March 28 Polish deadline been communicated to the vendor formally?",
+      "assistant_message": "Marcus Delgado sent a formal written notice to the translation vendor on March 19, referencing the Onboarding Revamp PRD timeline and specifying March 28 at 17:00 CET as the hard cutoff. The vendor acknowledged receipt and committed to delivering the Polish strings by March 26 to allow a two-day buffer for Lena Kovač's legal review. A penalty clause in the vendor contract applies if the March 28 deadline is missed, resulting in a 15% fee reduction on the invoice."
+    },
+    {
+      "turn_id": "t25",
+      "user_message": "What's the fee reduction in absolute terms based on the contract value?",
+      "assistant_message": "The total localization contract for the Sunflower onboarding strings is valued at €18,400, so the 15% penalty would amount to €2,760 if the Polish deadline is missed. Marcus Delgado confirmed this figure in an email to Priya Nair on March 20 and noted it has been logged in the project budget tracker. Lena Kovač reviewed the contract clause and confirmed it is enforceable under the terms signed in January."
+    },
+    {
+      "turn_id": "t26",
+      "user_message": "What's the exact drop-off rate the team is targeting to reach on the permission-request screen after the change ships?",
+      "assistant_message": "Priya Nair set a target of 15% or below as the post-launch drop-off rate on the permission-request screen, documented in the Onboarding Revamp PRD success metrics section on March 19. This target was chosen because the prototype study showed 17% with the deferred placement, and the team believes a further 2-point improvement is achievable with refined copy. The target will be measured over the first 30 days after ScreenFlow v2.4 reaches 100% rollout, using the same funnel methodology from the March 14 audit."
+    },
+    {
+      "turn_id": "t27",
+      "user_message": "What's the rollback plan if the re-entry migration causes an unexpected support spike?",
+      "assistant_message": "Marcus Delgado documented a rollback plan in the Onboarding Revamp PRD that allows the migration to be paused between batches if the support ticket volume exceeds 500 tickets per hour for two consecutive hours. In that scenario, the onboarding_complete flag for the next batch would be temporarily set to true server-side, preventing those users from being re-entered until the spike subsides. Priya Nair has authority to trigger the pause unilaterally, and Lena Kovač's FAQ page would be updated with a status message within 30 minutes of any pause decision."
+    },
+    {
+      "turn_id": "t28",
+      "user_message": "The progress indicator height constraint — does that 48 dp limit apply to both Android and iOS, or just one platform?",
+      "assistant_message": "The 48 dp limit applies specifically to Android; the iOS equivalent constraint is 44 pt, which maps to approximately the same physical size on standard-density screens, as noted in the Sunflower design system documentation updated by Lena Kovač on March 12. Both constraints are enforced by separate automated layout tests in the ScreenFlow v2.4 CI pipeline managed by Marcus Delgado. The Onboarding Revamp PRD explicitly calls out that both platforms must pass their respective tests before any release candidate is considered shippable."
+    },
+    {
+      "turn_id": "t29",
+      "user_message": "Has the hotfix for the Samsung Galaxy A13 and Moto G Power been merged yet?",
+      "assistant_message": "Marcus Delgado merged the hotfix on March 23, and the automated layout tests for both devices passed on the first run after the merge. The fix involved capping the system font scale at 1.3x within the progress indicator component specifically, which Priya Nair approved as an acceptable accessibility trade-off given that the component is purely informational. The Onboarding Revamp PRD release-blocker ticket was closed by Priya Nair on March 23 at 14:45."
+    },
+    {
+      "turn_id": "t30",
+      "user_message": "Is there a minimum screen width below which the 5-step progress indicator layout breaks, even within the 48 dp height budget?",
+      "assistant_message": "Yes, Lena Kovač's design system documentation specifies that the 5-step progress indicator requires a minimum screen width of 320 dp to render without label truncation. Any device narrower than 320 dp must fall back to a dot-only indicator that omits the step labels entirely, as decided in the Onboarding Revamp PRD on March 17. Marcus Delgado confirmed that no device in the current Sunflower supported-device matrix falls below 320 dp, so the fallback is a precautionary rule rather than an active concern."
+    },
+    {
+      "turn_id": "t31",
+      "user_message": "Has the vendor confirmed the Polish strings are on track for the March 26 early delivery?",
+      "assistant_message": "The vendor sent an interim delivery of 3 of the 4 flagged Polish strings on March 22, and Marcus Delgado confirmed they are in review with Lena Kovač. The biometric-consent string is still outstanding and the vendor committed to delivering it by March 25 as originally agreed. Priya Nair noted in the Onboarding Revamp PRD that the project is currently on track and the March 28 hard deadline is not at risk."
+    },
+    {
+      "turn_id": "t32",
+      "user_message": "When exactly does the first batch of re-entry users go live after ScreenFlow v2.4 launches?",
+      "assistant_message": "The first 10% batch goes live at the same moment ScreenFlow v2.4 is promoted to the production channel, which Marcus Delgado has scheduled for April 4 at 10:00 UTC. Priya Nair chose a Tuesday morning UTC launch to maximize the monitoring team's coverage during the initial soak period. The Onboarding Revamp PRD notes that the April 4 date is contingent on the release candidate passing all CI gates by April 2 end of day."
+    },
+    {
+      "turn_id": "t33",
+      "user_message": "What's the vendor's track record on the other 10 locales — were any of them late?",
+      "assistant_message": "According to Marcus Delgado's vendor report shared with Priya Nair on March 20, all 10 completed locales were delivered on or before their scheduled dates, with Brazilian Portuguese arriving two days early on March 16. The vendor has a 100% on-time delivery rate across the Sunflower onboarding project so far. Lena Kovač reviewed all 10 completed locale packages and found only minor formatting issues that were corrected within 24 hours of her feedback."
+    },
+    {
+      "turn_id": "t34",
+      "user_message": "Has the 95% confidence threshold for the A/B test been reviewed against any power analysis?",
+      "assistant_message": "Priya Nair ran a power analysis in February using historical Sunflower onboarding data and determined that 10,000 sessions per variant provides 80% statistical power to detect a 3-percentage-point difference in step-3 completion at 95% confidence. This is why the session minimum and the confidence threshold were set together as a package in the Onboarding Revamp PRD. Marcus Delgado confirmed the instrumentation captures session starts and step completions with less than 0.1% event loss based on ScreenFlow v2.4 logging tests."
+    },
+    {
+      "turn_id": "t35",
+      "user_message": "What's the minimum detectable effect the power analysis was designed around?",
+      "assistant_message": "The minimum detectable effect was set at 3 percentage points on step-3 completion rate, as Priya Nair documented in the Onboarding Revamp PRD's experimentation annex. The baseline step-3 completion rate from the March 14 funnel audit is 54%, so the test is powered to detect a shift to either 51% or 57%. Lena Kovač noted that a 3-point improvement would translate to approximately 6,200 additional users completing onboarding per month at current Sunflower acquisition volumes."
+    },
+    {
+      "turn_id": "t36",
+      "user_message": "What's the current monthly acquisition volume Lena Kovač used for that estimate?",
+      "assistant_message": "Lena Kovač used a monthly new-install figure of 207,000 for Sunflower, which is the trailing 3-month average as of February and was pulled from the analytics dashboard by Marcus Delgado on March 15. At a 54% step-3 completion rate that means roughly 111,780 users complete step 3 each month, and a 3-point lift would bring that to about 117,980, a net gain of approximately 6,200 as stated. Priya Nair confirmed this figure is consistent with the projections in the Onboarding Revamp PRD business case."
+    },
+    {
+      "turn_id": "t37",
+      "user_message": "Have the batch 2 and batch 3 re-entry dates been locked in relative to the April 4 launch?",
+      "assistant_message": "Yes, Marcus Delgado locked the dates in the Onboarding Revamp PRD: batch 2 at 40% goes live on April 7 at 10:00 UTC, and batch 3 at the remaining 50% goes live on April 11 at 10:00 UTC. Both dates assume no rollback pause is triggered during the preceding batch. Priya Nair confirmed that the April 11 batch 3 date conveniently aligns with the planned 2.4.1 Polish patch window, simplifying the release coordination."
+    },
+    {
+      "turn_id": "t38",
+      "user_message": "What's the support ticket threshold that would trigger an investigation even without a full pause?",
+      "assistant_message": "Marcus Delgado defined a yellow-alert threshold of 200 tickets per hour in the Onboarding Revamp PRD, which triggers an investigation and a 15-minute status call with Priya Nair but does not pause the migration. The full pause threshold remains at 500 tickets per hour sustained for two consecutive hours. Lena Kovač's support FAQ page is published proactively before each batch to reduce ticket volume, and Priya Nair estimated the FAQ should deflect roughly 35% of potential tickets based on historical Sunflower support data."
+    },
+    {
+      "turn_id": "t39",
+      "user_message": "What drop-off rate is the team targeting for the avatar-upload screen specifically after the crash fix ships?",
+      "assistant_message": "Priya Nair set a target drop-off rate of 8% or below for the avatar-upload screen after the crash fix is deployed in ScreenFlow v2.4, down from the current measured rate of 13% in the beta builds. The avatar-upload screen is step 3 of the mandatory flow, and this 8% target was documented in the Onboarding Revamp PRD success metrics section alongside the other per-screen targets. Marcus Delgado confirmed the crash fix merged on March 23 addresses the primary cause, which was a memory allocation failure on low-RAM devices."
+    },
+    {
+      "turn_id": "t40",
+      "user_message": "Is the 500-ticket-per-hour pause threshold calculated per batch or across all active users?",
+      "assistant_message": "Marcus Delgado clarified in the Onboarding Revamp PRD that the 500-ticket-per-hour threshold is calculated across all active Sunflower users, not just the re-entry cohort, to account for any systemic issues that the migration might expose. This means a broader app-wide spike would also trigger the pause even if the re-entry cohort itself is not the direct cause. Priya Nair agreed this is the safer interpretation and noted that Lena Kovač's support team has been briefed to tag re-entry-related tickets with a specific label for easier filtering."
+    },
+    {
+      "turn_id": "t41",
+      "user_message": "Has Lena Kovač's legal review of the biometric-consent Polish string been completed?",
+      "assistant_message": "Lena Kovač completed her review of the Polish biometric-consent string on March 25 and approved it with one minor wording change, replacing a direct translation of 'biometric data' with the legally preferred Polish term 'dane biometryczne' in a specific grammatical case. Marcus Delgado merged the approved string into the ScreenFlow v2.4 release branch the same day. Priya Nair updated the Onboarding Revamp PRD to reflect that all 14 locales are now cleared for release."
+    },
+    {
+      "turn_id": "t42",
+      "user_message": "Has the CI gate been validated end-to-end with a deliberate bad build to confirm it actually blocks promotion?",
+      "assistant_message": "Marcus Delgado ran a validation test on March 18 by deliberately injecting a null-pointer exception into the onboarding avatar-upload screen of a test build. The CI gate correctly detected a crash-free rate of 97.2% on onboarding screens during the 48-hour soak, posted a blocking comment on the pull request, and paged Priya Nair via PagerDuty within 6 minutes of the threshold breach. The Onboarding Revamp PRD records this validation as passed, and Lena Kovač countersigned the test report as part of the release-readiness checklist."
+    },
+    {
+      "turn_id": "t43",
+      "user_message": "What's the plan for users who reach the A/B test but have already seen the old onboarding in a previous install?",
+      "assistant_message": "Priya Nair documented in the Onboarding Revamp PRD that users with onboarding_complete set to true are excluded from the A/B test entirely, so prior exposure to the old flow cannot contaminate the results. Only users entering onboarding for the first time under ScreenFlow v2.4 are eligible for assignment to Variant A or Variant B. Marcus Delgado confirmed the experiment assignment logic checks the onboarding_complete flag server-side before any variant is served, and Lena Kovač verified this exclusion logic does not raise any GDPR profiling concerns."
+    },
+    {
+      "turn_id": "t44",
+      "user_message": "Now that all 14 locales are cleared, what's the final step before the Polish strings can be merged into the main release branch?",
+      "assistant_message": "The final step is a QA smoke test on the Polish build specifically, which Marcus Delgado scheduled for March 26 using the Sunflower staging environment. The smoke test covers string rendering, character encoding, and the biometric-consent screen layout to ensure the approved Polish phrasing fits within the UI containers. Priya Nair confirmed that if the March 26 smoke test passes, the Polish strings will be merged into the ScreenFlow v2.4 release branch by end of day March 26, well ahead of the March 28 hard deadline."
+    },
+    {
+      "turn_id": "t45",
+      "user_message": "Has the batch 1 support FAQ been drafted and reviewed yet?",
+      "assistant_message": "Lena Kovač drafted the batch 1 FAQ on March 21 and it covers the top 8 anticipated questions about the new onboarding flow, including why returning users are being asked to complete steps again. Priya Nair reviewed and approved the FAQ on March 23, and Marcus Delgado integrated the FAQ link into the in-app help widget that appears on the first re-entry screen. The FAQ will be published to the Sunflower help center on April 3, one day before the batch 1 launch."
+    },
+    {
+      "turn_id": "t46",
+      "user_message": "Did the March 26 Polish smoke test pass?",
+      "assistant_message": "Marcus Delgado confirmed the Polish smoke test passed all checks on March 26 at 14:20 CET, with no rendering issues found on any of the 12 test devices. The Polish strings were merged into the ScreenFlow v2.4 release branch at 16:45 CET the same day, as Priya Nair had planned. Lena Kovač received a merge confirmation email and closed her Polish review ticket in the project tracker, marking all localization work for this release as complete."
+    },
+    {
+      "turn_id": "t47",
+      "user_message": "With localization complete, has a release candidate been cut for ScreenFlow v2.4?",
+      "assistant_message": "Marcus Delgado cut release candidate RC1 for ScreenFlow v2.4 on March 27 at 09:00 UTC, immediately after the Polish merge was confirmed clean. The RC1 build entered the 48-hour CI soak period, with the crash-free monitoring gate active on all onboarding screens. Priya Nair announced the RC1 cut to the broader Sunflower team in the project Slack channel and noted that the April 4 production launch date remains on track."
+    },
+    {
+      "turn_id": "t48",
+      "user_message": "What was the crash-free rate on onboarding screens for RC1 after the full 48-hour soak?",
+      "assistant_message": "RC1 completed its 48-hour soak with a 99.7% crash-free rate on onboarding screens, comfortably above the 99.5% threshold set in the Onboarding Revamp PRD. Marcus Delgado posted the soak results on March 29 and the CI gate automatically promoted RC1 to the release-approved channel. Priya Nair confirmed to Lena Kovač and the broader team that no further release blockers remain and the April 4 launch is confirmed."
+    },
+    {
+      "turn_id": "t49",
+      "user_message": "Has the App Store and Play Store submission been initiated for ScreenFlow v2.4?",
+      "assistant_message": "Marcus Delgado submitted the iOS build to App Store Review on March 29 at 15:00 UTC and the Android build to the Play Store on the same day at 16:30 UTC. Priya Nair flagged that App Store Review can take up to 3 business days, so the submission was timed to ensure approval before the April 4 launch window. Lena Kovač confirmed that the App Store and Play Store metadata, including the updated privacy nutrition labels, were reviewed and approved by legal before submission."
+    },
+    {
+      "turn_id": "t50",
+      "user_message": "Has App Store Review come back yet, and is the April 4 date still safe?",
+      "assistant_message": "App Store Review approved the ScreenFlow v2.4 iOS build on April 1 at 11:22 UTC, within 2 business days of submission, and the Play Store approved the Android build on March 31. Marcus Delgado confirmed both approvals to Priya Nair and set the staged rollout to begin at 10:00 UTC on April 4 as planned. Lena Kovač sent a final go-live confirmation to the VP of Growth, the Head of Marketing, and the Customer Success lead on April 1 afternoon."
+    },
+    {
+      "turn_id": "t51",
+      "user_message": "What experiment assignment ratio is being used for the A/B test — is it an even 50/50 split?",
+      "assistant_message": "Yes, Priya Nair specified a 50/50 split between Variant A and Variant B in the Onboarding Revamp PRD, with no holdout control group since the current onboarding is being deprecated entirely with ScreenFlow v2.4. Marcus Delgado implemented the assignment using a hash of the user ID modulo 2 to ensure deterministic and reproducible variant assignment. Lena Kovač verified that this assignment method does not constitute automated profiling under GDPR because it is purely randomized and not based on any personal characteristics."
+    },
+    {
+      "turn_id": "t52",
+      "user_message": "Given what we decided about where the permission prompt should appear and the screen-width minimum for the progress indicator, will the permission screen placement satisfy the progress indicator layout requirements at that step?",
+      "assistant_message": null
+    }
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that the notification permission prompt is placed at step 4 of the mandatory onboarding flow (after the user saves their first goal).",
+      "required": true,
+      "evidence_turn_ids": ["t23"]
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that the mandatory onboarding flow has exactly 5 steps shown in the progress indicator, and that step 4 is within that 5-step cap.",
+      "required": true,
+      "evidence_turn_ids": ["t4", "t22"]
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer states that the 5-step progress indicator requires a minimum screen width of 320 dp, and confirms that no device in the Sunflower supported-device matrix falls below 320 dp, so the layout requirement is satisfied at step 4.",
+      "required": true,
+      "evidence_turn_ids": ["t30"]
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not state that the permission-screen drop-off target is 8% (that is the avatar-upload screen target from the near-miss turn t39, not the permission-request screen target).",
+      "required": true,
+      "evidence_turn_ids": []
+    }
+  ],
+  "reference_answer": "The notification permission prompt was moved to step 4 of the mandatory onboarding flow, triggered after the user saves their first goal, as decided by Priya Nair and documented in the Onboarding Revamp PRD on March 19. The progress indicator displays exactly 5 mandatory steps, so step 4 is well within the visible indicator. The 5-step progress indicator requires a minimum screen width of 320 dp to render without truncation, and no device in the Sunflower supported-device matrix falls below that threshold, meaning the permission screen placement at step 4 fully satisfies the progress indicator layout requirements.",
+  "notes": "The query requires combining the Branch A fact from t23 and t26 (permission prompt deferred to step 4, with a 15% drop-off target) with the Branch B facts from t4, t22, and t30 (5-step progress indicator cap and the 320 dp minimum width constraint). The near-miss turn t39 gives a specific 8% drop-off target for the avatar-upload screen, which sounds like the permission-screen target a careless reader might substitute."
+}
+```

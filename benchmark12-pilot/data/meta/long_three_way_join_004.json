@@ -1,0 +1,127 @@
+{
+ "scenario_id": "long_three_way_join_004",
+ "family": "three_way_join",
+ "n_history": 39,
+ "full_history_tokens": 4898,
+ "closure_ratio": 0.2564102564102564,
+ "entity_registry": [
+  "Greenvalley Farm Cooperative",
+  "Maya Thornton",
+  "OrderFlow Pro",
+  "Harvest Hub Portal",
+  "Delivery Zone Charter",
+  "Luca Ferreira"
+ ],
+ "distractor_branch_entity_hits": {
+  "D": [
+   "Greenvalley Farm Cooperative",
+   "Maya Thornton",
+   "Harvest Hub Portal",
+   "Luca Ferreira"
+  ],
+  "E": [
+   "Greenvalley Farm Cooperative",
+   "Maya Thornton",
+   "Harvest Hub Portal",
+   "Luca Ferreira"
+  ],
+  "F": [
+   "Greenvalley Farm Cooperative",
+   "Maya Thornton",
+   "Harvest Hub Portal",
+   "Luca Ferreira"
+  ],
+  "G": [
+   "Greenvalley Farm Cooperative",
+   "Maya Thornton",
+   "Harvest Hub Portal",
+   "Delivery Zone Charter",
+   "Luca Ferreira"
+  ],
+  "H": [
+   "Greenvalley Farm Cooperative",
+   "Maya Thornton",
+   "Harvest Hub Portal",
+   "Luca Ferreira"
+  ]
+ },
+ "near_miss_turn_id": "t7",
+ "checklist_evidence": {
+  "c1": [
+   "t14",
+   "t35"
+  ],
+  "c2": [
+   "t18",
+   "t37"
+  ],
+  "c3": [
+   "t34"
+  ],
+  "c4": []
+ },
+ "cosine": {
+  "gold_median": 0.6262826919555664,
+  "distractor_median": 0.3950771689414978,
+  "ratio": 0.630828815830548,
+  "pass": true
+ },
+ "cosine_per_turn": {
+  "t1": 0.6301888227462769,
+  "t2": 0.4716852903366089,
+  "t3": 0.5346985459327698,
+  "t4": 0.3432144224643707,
+  "t5": 0.5111361742019653,
+  "t6": 0.5893759727478027,
+  "t7": 0.25323182344436646,
+  "t8": 0.44830405712127686,
+  "t9": 0.5429519414901733,
+  "t10": 0.34831953048706055,
+  "t11": 0.3478587567806244,
+  "t12": 0.3382208049297333,
+  "t13": 0.4292483329772949,
+  "t14": 0.7776197791099548,
+  "t15": 0.432698130607605,
+  "t16": 0.34537866711616516,
+  "t17": 0.3950771689414978,
+  "t18": 0.7489279508590698,
+  "t19": 0.3481334149837494,
+  "t20": 0.6193497776985168,
+  "t21": 0.5766186714172363,
+  "t22": 0.5059937238693237,
+  "t23": 0.19838249683380127,
+  "t24": 0.604945182800293,
+  "t25": 0.46873146295547485,
+  "t26": 0.2705313265323639,
+  "t27": 0.5130202174186707,
+  "t28": 0.28637415170669556,
+  "t29": 0.561454713344574,
+  "t30": 0.305222749710083,
+  "t31": 0.24597881734371185,
+  "t32": 0.4146273732185364,
+  "t33": 0.5428423881530762,
+  "t34": 0.7214518785476685,
+  "t35": 0.7621463537216187,
+  "t36": 0.34886813163757324,
+  "t37": 0.622376561164856,
+  "t38": 0.46115636825561523,
+  "t39": 0.23079711198806763
+ },
+ "gold_branches": [
+  "A",
+  "B",
+  "C"
+ ],
+ "distractor_branches": [
+  "D",
+  "E",
+  "F",
+  "G",
+  "H"
+ ],
+ "attempt_accepted": 1,
+ "generation_tokens": [
+  4237,
+  7414
+ ]
+}

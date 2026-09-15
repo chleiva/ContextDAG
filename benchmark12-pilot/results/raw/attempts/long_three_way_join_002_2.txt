@@ -1,0 +1,326 @@
+I'll carefully fix all the issues: remove topic-switch signposting, ensure distractor branches stay very close to the query's subject matter (energy-efficiency upgrades for the same duplex), and use consistent entities throughout.
+
+```json
+{
+  "entity_registry": [
+    "Maplewood Duplex",
+    "Carol Reyes",
+    "EnerSave Pro",
+    "Thornton HVAC",
+    "GreenLease Program",
+    "Unit A",
+    "Unit B"
+  ],
+  "turns": [
+    {
+      "turn_id": "t1",
+      "user_message": "I'm working on energy-efficiency upgrades for the Maplewood Duplex and want to nail down the attic insulation situation. What R-value should I be targeting for the attic in a climate zone 5 property?",
+      "assistant_message": "For climate zone 5, the Department of Energy recommends attic insulation at R-49 to R-60 for existing homes. The Maplewood Duplex, if it currently has R-19 batts (a common older standard), would need a significant upgrade to meet that target. Reaching R-49 typically requires adding blown-in cellulose or fiberglass on top of existing batts to make up the difference of roughly 30 R-units. Carol Reyes, your energy auditor, noted in her preliminary assessment that the attic currently sits at R-19, so the gap to the recommended R-49 is confirmed."
+    },
+    {
+      "turn_id": "t2",
+      "user_message": "The GreenLease Program paperwork for the Maplewood Duplex asks about window replacement. What are the typical U-factor requirements for that program?",
+      "assistant_message": "The GreenLease Program requires replacement windows to have a U-factor of 0.30 or lower for properties in climate zone 5, which applies to the Maplewood Duplex. Carol Reyes flagged this in her audit notes, pointing out that the current double-pane windows in Unit A test at a U-factor of 0.42, which does not meet the GreenLease threshold. Replacing those windows with ENERGY STAR-certified units rated at U-0.27 would satisfy the requirement and could reduce heating load by an estimated 8 to 12 percent. The GreenLease Program also requires documentation of the installed U-factor from the manufacturer before issuing the green certification."
+    },
+    {
+      "turn_id": "t3",
+      "user_message": "I'm trying to figure out the duct-sealing work needed at the Maplewood Duplex. What leakage rate is acceptable under standard energy codes?",
+      "assistant_message": "Most current energy codes, including IECC 2021, require that duct leakage be no more than 4 CFM25 per 100 square feet of conditioned floor area after sealing. The Maplewood Duplex was tested by Thornton HVAC last spring and showed a combined duct leakage of 18 CFM25 per 100 square feet, which is well above the 4 CFM25 target. Thornton HVAC estimated that sealing the ducts with mastic and metal tape would bring leakage down to approximately 3.5 CFM25, meeting code. Carol Reyes recommended prioritizing duct sealing before any HVAC equipment replacement because it directly affects equipment sizing."
+    },
+    {
+      "turn_id": "t4",
+      "user_message": "I need to sort out the lease renewal schedule for Unit B at the Maplewood Duplex. The current tenant's lease ends March 31 — can you help me think through the notice timeline?",
+      "assistant_message": "For a lease ending March 31 at the Maplewood Duplex, most state landlord-tenant laws require you to give at least 30 to 60 days' written notice if you intend not to renew, which means notice would need to go out by late January or early February at the latest. Carol Reyes mentioned in her property management notes that Unit B's tenant, currently on a 12-month lease, has been in place since April 1 of last year. If you plan to do major upgrades in Unit B after the lease ends, coordinating the notice date with contractor scheduling through Thornton HVAC is worth considering. Sending the notice by certified mail by February 1 would give you a comfortable buffer and comply with the standard 60-day requirement."
+    },
+    {
+      "turn_id": "t5",
+      "user_message": "What's the standard security deposit limit I can charge the new Unit B tenant after the upgrade work is done?",
+      "assistant_message": "Security deposit limits vary by state, but in most jurisdictions the maximum is one to two months' rent for residential units. For the Maplewood Duplex, if the upgraded Unit B commands a market rent of around $1,400 per month post-renovation, a two-month cap would set your maximum deposit at $2,800. Carol Reyes suggested in her property notes that keeping the deposit at one month's rent, or $1,400, tends to attract more qualified tenants in the local rental market. You should also confirm your specific state's rules, as some cap deposits at exactly one month's rent regardless of the unit's condition or upgrades."
+    },
+    {
+      "turn_id": "t6",
+      "user_message": "I want to understand the available rebates for the Maplewood Duplex upgrades. What does the EnerSave Pro program offer for heat pump installations?",
+      "assistant_message": "The EnerSave Pro program currently offers a rebate of $1,200 per qualifying heat pump unit installed in an eligible residential property, with a maximum of two units per address. For the Maplewood Duplex, that means a potential total rebate of $2,400 if both Unit A and Unit B receive qualifying heat pump installations. To qualify, the installed unit must have a minimum HSPF2 rating of 7.5 and a SEER2 rating of 15.2 or higher. Thornton HVAC confirmed that the Carrier 38MURA series they recommend meets both thresholds and would be eligible for the full EnerSave Pro rebate."
+    },
+    {
+      "turn_id": "t7",
+      "user_message": "I want to check the property tax implications of adding solar panels to the Maplewood Duplex. Does the state offer any exemption?",
+      "assistant_message": "Many states offer a property tax exemption for the added assessed value of solar installations, and in states like Minnesota and Wisconsin the exemption is 100 percent of the solar system's added value. For the Maplewood Duplex, a rooftop system sized at 8 kW would typically add around $20,000 to $24,000 in assessed value, all of which would be exempt from property tax under such a program. Carol Reyes noted in her financial planning spreadsheet for the Maplewood Duplex that this exemption could save approximately $480 per year in property taxes at a 2 percent mill rate. Thornton HVAC is not the installer for solar, so you'd need a separate quote from a certified photovoltaic contractor."
+    },
+    {
+      "turn_id": "t8",
+      "user_message": "I need to figure out the ventilation requirements for the Maplewood Duplex after air-sealing. What does ASHRAE 62.2 require for a two-unit residential building?",
+      "assistant_message": "ASHRAE 62.2-2022 requires a minimum whole-building ventilation rate of 1 CFM per 100 square feet of floor area plus 7.5 CFM per occupant for residential units. For the Maplewood Duplex, assuming Unit A is 950 square feet with two occupants and Unit B is 1,050 square feet with two occupants, Unit A needs at least 24.5 CFM and Unit B needs at least 25.5 CFM of mechanical ventilation. Carol Reyes flagged in her audit that after air-sealing both units, natural infiltration will likely drop below the minimum, making mechanical ventilation mandatory. Thornton HVAC recommended installing an Energy Recovery Ventilator in each unit to satisfy the ASHRAE 62.2 requirement without significantly increasing heating or cooling loads."
+    },
+    {
+      "turn_id": "t9",
+      "user_message": "What size solar array would actually make sense for the Maplewood Duplex given the roof space available?",
+      "assistant_message": "Based on a typical duplex roof with around 1,400 usable square feet split between two pitches, and using standard 400-watt panels at roughly 22 square feet each, you could fit approximately 28 to 32 panels on the Maplewood Duplex roof. That translates to a system capacity of 11.2 to 12.8 kW, which is larger than the 8 kW figure Carol Reyes used in her initial estimate. At average solar irradiance for a climate zone 5 location, a 12 kW system would generate roughly 13,200 kWh per year. Thornton HVAC suggested coordinating the solar installation with the heat pump upgrade to optimize the electrical panel capacity needed for both systems simultaneously."
+    },
+    {
+      "turn_id": "t10",
+      "user_message": "What would the net metering arrangement look like for the Maplewood Duplex if we install that 12 kW system?",
+      "assistant_message": "Under most state net metering rules, a 12 kW system at the Maplewood Duplex would be credited at the retail electricity rate for every kilowatt-hour exported to the grid. At a retail rate of $0.14 per kWh and annual exports estimated at around 4,000 kWh after on-site consumption, the annual net metering credit would be approximately $560. Carol Reyes included a note that the local utility, which serves the Maplewood Duplex, caps net metering credits at 120 percent of annual consumption, so the system size is well within that limit. The GreenLease Program also recognizes net-metered solar as a qualifying energy measure, which could support certification for the duplex."
+    },
+    {
+      "turn_id": "t11",
+      "user_message": "The GreenLease Program certification — does it require a specific energy audit format for the Maplewood Duplex?",
+      "assistant_message": "The GreenLease Program requires a whole-building energy audit conducted by a certified BPI Building Analyst or RESNET HERS rater, and the audit report must follow the ASHRAE Level 2 format. Carol Reyes holds a BPI Building Analyst certification, so her audit of the Maplewood Duplex already qualifies as the required credential. The audit report must include a baseline energy use index, projected savings from each recommended measure, and a signed attestation from the auditor. Thornton HVAC confirmed that they can provide the equipment efficiency data Carol Reyes needs to complete the ASHRAE Level 2 sections on mechanical systems."
+    },
+    {
+      "turn_id": "t12",
+      "user_message": "For the new Unit B tenant after the upgrades, what rental application screening criteria should I be using?",
+      "assistant_message": "Standard residential screening criteria for the Maplewood Duplex should include a minimum credit score of 620 to 650, gross monthly income of at least three times the monthly rent, and no evictions within the past five years. At a post-upgrade rent of $1,400 per month for Unit B, the income threshold would be $4,200 per month gross. Carol Reyes recommended in her property management notes that you also verify employment for at least six months of continuous history and check rental references from the two most recent landlords. Using a consistent written screening policy protects you from fair housing complaints and aligns with GreenLease Program tenant documentation requirements."
+    },
+    {
+      "turn_id": "t13",
+      "user_message": "What's the expected annual energy cost savings from switching to a heat pump system at the Maplewood Duplex? I want to understand the financial case.",
+      "assistant_message": "Based on the current natural gas furnace usage at the Maplewood Duplex, which Carol Reyes estimated at 1,150 therms per year across both units, switching to a high-efficiency heat pump system would reduce heating energy costs significantly. At a gas price of $1.10 per therm, the current annual heating bill is approximately $1,265. The Carrier 38MURA heat pump recommended by Thornton HVAC operates at an efficiency that would cost roughly $480 per year in electricity to deliver the same heating output at local rates of $0.14 per kWh, yielding a gross annual saving of about $785 per year before accounting for cooling savings."
+    },
+    {
+      "turn_id": "t14",
+      "user_message": "What's the total installed cost estimate for putting in heat pumps in both units of the Maplewood Duplex?",
+      "assistant_message": "Thornton HVAC provided a written quote for the Maplewood Duplex dated October 14, quoting $8,400 for Unit A and $8,750 for Unit B, for a combined installed cost of $17,150 before any rebates. This includes the Carrier 38MURA outdoor unit, matching air handler, refrigerant line set, and electrical work for each unit. After applying the EnerSave Pro rebate of $1,200 per unit, the net cost drops to $14,750 for both units combined. Carol Reyes confirmed that the Thornton HVAC quote covers all labor and permits, so no additional contractor costs are anticipated."
+    },
+    {
+      "turn_id": "t15",
+      "user_message": "Does the GreenLease Program have a deadline for submitting the certification application for the Maplewood Duplex?",
+      "assistant_message": "The GreenLease Program accepts applications on a rolling basis but requires that all documented upgrades be completed no more than 18 months before the application submission date. For the Maplewood Duplex, if Thornton HVAC completes the heat pump installation in November of this year, the certification application must be submitted by May of the following year at the latest to count those upgrades. Carol Reyes noted that the program's online portal requires uploading contractor invoices, the ASHRAE Level 2 audit report, and product specification sheets for all installed equipment. The GreenLease Program also charges a $150 application fee for duplex-class properties."
+    },
+    {
+      "turn_id": "t16",
+      "user_message": "How much fresh-air ventilation does the EnerSave Pro program require as a condition of the heat pump rebate at the Maplewood Duplex?",
+      "assistant_message": "The EnerSave Pro program conditions its heat pump rebate on the property meeting ASHRAE 62.2 ventilation standards at the time of installation, which for the Maplewood Duplex means each unit must have mechanical ventilation delivering at least the calculated minimum CFM values. For Unit A at 950 square feet with two occupants, that is 24.5 CFM, and for Unit B at 1,050 square feet with two occupants, that is 25.5 CFM, as Carol Reyes detailed in her audit. Thornton HVAC confirmed that the ERV units they plan to install alongside the heat pumps will deliver 30 CFM per unit, which exceeds the EnerSave Pro threshold. Failure to document the ventilation upgrade would result in disqualification from the $1,200 rebate per unit."
+    },
+    {
+      "turn_id": "t17",
+      "user_message": "What's the lead time on the ERV units Thornton HVAC is planning to install at the Maplewood Duplex?",
+      "assistant_message": "Thornton HVAC confirmed that the Renewaire EV90 ERV units they specified for the Maplewood Duplex are currently on a 6-week lead time from their regional distributor. Ordering by the end of October would allow installation in mid-December, which aligns with the heat pump installation schedule. Carol Reyes flagged that a delay past January 1 would push the ventilation compliance documentation into the next calendar year, potentially complicating the EnerSave Pro rebate claim timeline. Thornton HVAC recommended placing the order no later than October 28 to stay on schedule."
+    },
+    {
+      "turn_id": "t18",
+      "user_message": "What duct leakage rate did Thornton HVAC measure at the Maplewood Duplex after their test last spring, and is that the number that goes into the GreenLease application?",
+      "assistant_message": "Thornton HVAC's spring test recorded a combined duct leakage of 18 CFM25 per 100 square feet for the Maplewood Duplex, and that baseline figure is what gets entered into the GreenLease Program application as the pre-upgrade condition. After the proposed mastic and metal tape sealing, Thornton HVAC projected post-sealing leakage of 3.5 CFM25 per 100 square feet, which would be the post-upgrade figure entered as the improvement. Carol Reyes confirmed that both the before and after measurements must be performed by a certified HERS rater or BPI analyst and submitted with the GreenLease application. The GreenLease Program requires the post-sealing test to be conducted within 30 days of completing the sealing work."
+    },
+    {
+      "turn_id": "t19",
+      "user_message": "Has Carol Reyes confirmed the final ventilation design for both units of the Maplewood Duplex meets the EnerSave Pro documentation requirements?",
+      "assistant_message": "Carol Reyes reviewed the Thornton HVAC ventilation design on October 10 and confirmed in writing that the Renewaire EV90 units, delivering 30 CFM per unit, satisfy both the ASHRAE 62.2 minimums and the EnerSave Pro documentation checklist for the Maplewood Duplex. Her written confirmation references the EnerSave Pro Ventilation Compliance Form V-3, which requires the auditor's signature alongside the contractor's equipment specification sheet. The form must be submitted as an attachment to the rebate application within 90 days of installation. Carol Reyes noted no outstanding issues with the ventilation design as of her October 10 review."
+    },
+    {
+      "turn_id": "t20",
+      "user_message": "Does the net metering credit from the solar installation at Maplewood Duplex count as income for tax purposes?",
+      "assistant_message": "Net metering credits are generally treated as a reduction in utility expense rather than taxable income for residential and small rental property owners, according to IRS guidance applicable to properties like the Maplewood Duplex. Carol Reyes noted in her financial planning spreadsheet that the $560 annual net metering credit would offset the electricity bill rather than appear as revenue, keeping the tax treatment straightforward. However, if the Maplewood Duplex is structured under a business entity, the treatment might differ, and consulting a tax professional is advisable. The GreenLease Program does not impose any specific tax reporting requirement related to net metering credits."
+    },
+    {
+      "turn_id": "t21",
+      "user_message": "What is the simple payback period for the heat pump investment at the Maplewood Duplex after the EnerSave Pro rebate?",
+      "assistant_message": "With a net installed cost of $14,750 after the EnerSave Pro rebate and an annual energy saving of $785 from heating alone, the simple payback period for the heat pump system at the Maplewood Duplex is approximately 18.8 years based on heating savings only. However, Carol Reyes noted that heat pumps also replace the existing central air conditioning units, which Thornton HVAC estimated would need replacement within three years at a cost of about $4,200 total for both units. Adding that avoided cost reduces the effective net investment to $10,550, bringing the simple payback period down to about 13.4 years. The EnerSave Pro program's own cost-effectiveness tool, which Carol Reyes used, calculated a payback of 12.9 years when cooling savings of roughly $220 per year are also included."
+    },
+    {
+      "turn_id": "t22",
+      "user_message": "Carol Reyes mentioned the attic currently has R-19 insulation — what would it cost to bring the Maplewood Duplex attic up to R-49?",
+      "assistant_message": "Upgrading the Maplewood Duplex attic from R-19 to R-49 requires adding approximately 10 inches of blown-in cellulose over the existing batts, covering the full attic footprint of about 1,800 square feet across both units. At a typical installed cost of $0.85 per square foot per inch of cellulose, adding 10 inches would cost roughly $15,300 for the full attic area. Carol Reyes obtained a competing quote that came in at $13,800 all-in from a local insulation contractor, which she flagged as the more reliable number for budgeting. The EnerSave Pro program also offers a separate insulation rebate of $0.10 per square foot per R-unit added, which on this project would amount to $540 toward the attic insulation cost."
+    },
+    {
+      "turn_id": "t23",
+      "user_message": "What's the typical move-out inspection checklist I should use for the departing Unit B tenant at the Maplewood Duplex?",
+      "assistant_message": "A standard move-out inspection for Unit B at the Maplewood Duplex should cover wall and ceiling condition, flooring wear, window and door hardware function, appliance condition, plumbing fixtures, and cleanliness of kitchen and bathrooms. Carol Reyes recommended documenting each item with dated photographs and comparing them against the move-in inspection report signed by the tenant at the start of the lease. Any damage beyond normal wear and tear can be deducted from the security deposit, which for Unit B was set at $1,400. The inspection should be completed within 24 to 48 hours of the tenant vacating to meet most state statutory deadlines for deposit accounting."
+    },
+    {
+      "turn_id": "t24",
+      "user_message": "What post-sealing duct leakage test does Thornton HVAC plan to use to verify the work at the Maplewood Duplex meets the GreenLease standard?",
+      "assistant_message": "Thornton HVAC plans to use a duct blower door test with a Minneapolis Duct Blaster device to measure post-sealing leakage at the Maplewood Duplex, which is the standard method accepted by the GreenLease Program. The test will be conducted at 25 Pascals of pressure differential, producing the CFM25 measurement that must appear in the GreenLease application. Thornton HVAC's lead technician, who holds a BPI Building Envelope Professional certification, will perform the test and sign the results form. Carol Reyes confirmed that the signed test results, together with contractor invoices for the mastic and tape materials, fulfill the GreenLease Program's duct sealing documentation requirement."
+    },
+    {
+      "turn_id": "t25",
+      "user_message": "Is there a re-test required if the first post-sealing measurement at the Maplewood Duplex comes in above the GreenLease threshold?",
+      "assistant_message": "The GreenLease Program allows one re-test at no additional application cost if the first post-sealing measurement exceeds the 4 CFM25 per 100 square feet threshold, provided the re-test is conducted within 60 days of the initial failed test. Thornton HVAC confirmed that if the Maplewood Duplex duct system tests above threshold on the first attempt, they will apply additional mastic to any identified leakage points before the re-test at no extra charge under their installation warranty. Carol Reyes noted that the re-test must still be conducted by a certified tester and documented on the same GreenLease form as the initial test. If the re-test also fails, the GreenLease Program requires a new application and a new $150 fee."
+    },
+    {
+      "turn_id": "t26",
+      "user_message": "Can Thornton HVAC schedule the duct sealing and the post-sealing test at the Maplewood Duplex on the same day as the heat pump installation?",
+      "assistant_message": "Thornton HVAC advised against combining the duct sealing and the post-sealing test on the same day as the heat pump installation at the Maplewood Duplex, because mastic sealant requires 24 hours of cure time before a valid pressure test can be performed. Their recommended sequence is to seal the ducts on day one, return on day two to conduct the duct blower door test, and then install the heat pump equipment on day three or later. Carol Reyes agreed with this sequencing in her project coordination notes, adding that staging the work this way also reduces the risk of disturbing freshly applied mastic during equipment installation. Thornton HVAC estimated the full three-phase scope would take four to five working days total for both units of the Maplewood Duplex."
+    },
+    {
+      "turn_id": "t27",
+      "user_message": "Has Thornton HVAC given a final confirmed date for starting the ventilation and heat pump work at the Maplewood Duplex?",
+      "assistant_message": "Thornton HVAC confirmed November 4 as the start date for the full scope of work at the Maplewood Duplex, beginning with duct sealing on November 4 and 5, followed by post-sealing testing on November 6, and heat pump and ERV installation from November 7 through November 11. Carol Reyes entered these dates into the GreenLease Program's project tracking portal on October 15. The EnerSave Pro rebate application must be submitted within 90 days of the November 11 completion date, setting a deadline of February 9 of the following year. Thornton HVAC also confirmed that the Renewaire EV90 units were ordered on October 16 and are expected to arrive at their warehouse by November 1, ahead of the installation start."
+    },
+    {
+      "turn_id": "t28",
+      "user_message": "If we go ahead with the full 12 kW solar installation at the Maplewood Duplex, what's the estimated simple payback on that investment?",
+      "assistant_message": "A 12 kW solar system at the Maplewood Duplex would cost approximately $30,000 to $33,600 before incentives, based on a market rate of $2.50 to $2.80 per installed watt. After the 30 percent federal Investment Tax Credit, the net cost would be $21,000 to $23,520. At the estimated annual generation of 13,200 kWh and a blended value of $0.14 per kWh for on-site consumption plus net metering credits, the annual financial benefit is roughly $1,848. That yields a simple payback of approximately 11.4 to 12.7 years, which Carol Reyes noted is comparable to the heat pump payback and makes solar a competitive investment for the Maplewood Duplex."
+    },
+    {
+      "turn_id": "t29",
+      "user_message": "What's the net cost and payback period for the attic insulation upgrade alone at the Maplewood Duplex, using just the EnerSave Pro insulation rebate?",
+      "assistant_message": "For the attic insulation upgrade at the Maplewood Duplex, the net cost after the EnerSave Pro insulation rebate of $540 is $13,260, using Carol Reyes's preferred quote of $13,800. The annual energy savings from bringing the attic from R-19 to R-49 are estimated at $310 per year based on reduced heating and cooling loads calculated in Carol Reyes's audit. That gives a simple payback period of approximately 42.8 years for the insulation upgrade on its own, which is why Thornton HVAC and Carol Reyes both recommend bundling it with the heat pump installation to improve the overall project economics. The EnerSave Pro program does not offer an additional combined-measure bonus beyond the individual rebates."
+    },
+    {
+      "turn_id": "t30",
+      "user_message": "After the Unit B tenant moves out and the upgrades are done, what lease terms should I include to reflect the energy improvements at the Maplewood Duplex?",
+      "assistant_message": "For the upgraded Unit B at the Maplewood Duplex, Carol Reyes recommended including a green lease addendum that discloses the installed energy features, specifies tenant obligations around thermostat settings and ventilation system maintenance, and references the GreenLease Program certification. The addendum should note the heat pump system's proper operating range, typically between 65 and 78 degrees Fahrenheit, and prohibit the tenant from blocking or disabling the ERV unit. Including an energy benchmarking clause that allows you to share utility data with the GreenLease Program annually is also advisable. Thornton HVAC provided a one-page equipment summary suitable for attaching to the lease as an exhibit."
+    },
+    {
+      "turn_id": "t31",
+      "user_message": "Pulling together the heat pump financials — after all rebates and avoided AC replacement costs, what's the final net investment figure I should use for the Maplewood Duplex heat pump project?",
+      "assistant_message": "The final net investment for the Maplewood Duplex heat pump project is $10,550, calculated as the gross installed cost of $17,150 minus the EnerSave Pro rebate of $2,400 and minus the $4,200 in avoided air conditioning replacement costs that Thornton HVAC estimated would be needed within three years. Carol Reyes confirmed this $10,550 figure in her October 15 project summary memo as the correct number to use for payback and return-on-investment calculations. This figure does not include the ERV installation cost, which Thornton HVAC quoted separately at $1,800 total for both units, but Carol Reyes treated the ERVs as a ventilation compliance cost rather than part of the heat pump investment. The EnerSave Pro program's cost-effectiveness tool also uses $10,550 as the net heat pump investment when calculating the 12.9-year payback."
+    },
+    {
+      "turn_id": "t32",
+      "user_message": "What annual energy savings should I use for the attic insulation upgrade when I'm doing the full project financial analysis for the Maplewood Duplex?",
+      "assistant_message": "Carol Reyes specified in her audit that the attic insulation upgrade from R-19 to R-49 at the Maplewood Duplex will save $310 per year in combined heating and cooling energy costs, based on modeling the 1,800-square-foot attic area at the local energy prices she used throughout the audit. This $310 per year figure is the number she validated against the EnerSave Pro energy modeling tool and confirmed as the official savings estimate for the insulation measure. The insulation upgrade cost, net of the $540 EnerSave Pro rebate, is $13,260. Carol Reyes stressed that this $310 savings figure should be used independently of the heat pump savings when stacking up the total project financials, since the two measures address different energy end-uses."
+    },
+    {
+      "turn_id": "t33",
+      "user_message": "Thornton HVAC mentioned there's a possible incentive for the ERV units through EnerSave Pro — is that confirmed for the Maplewood Duplex?",
+      "assistant_message": "Thornton HVAC checked with the EnerSave Pro program administrator on October 17 and confirmed that ERV units qualify for a separate rebate of $300 per unit under the EnerSave Pro Ventilation Incentive category, provided the installed unit has a minimum sensible heat recovery efficiency of 70 percent. The Renewaire EV90 units specified for the Maplewood Duplex have a rated sensible heat recovery efficiency of 76 percent, which meets the threshold. That adds a further $600 in rebates for the two ERV units, reducing the total ERV cost from $1,800 to $1,200 for both units. Carol Reyes updated her project financial summary on October 18 to reflect this additional $600 ERV rebate."
+    },
+    {
+      "turn_id": "t34",
+      "user_message": "What happens to the solar property tax exemption at the Maplewood Duplex if I sell the property before the solar loan is paid off?",
+      "assistant_message": "In most states the solar property tax exemption transfers to the new owner automatically when the Maplewood Duplex is sold, because the exemption is tied to the property rather than the owner. Carol Reyes noted that if the solar system was financed with a loan secured against the property, the buyer's lender would need to acknowledge the outstanding balance at closing, which is standard practice in solar-financed real estate transactions. The GreenLease Program certification also transfers with the property upon sale, provided the new owner files a transfer notice with the program within 60 days of closing. Thornton HVAC is not involved in the solar financing, so any specific loan transfer questions should go to the solar lender directly."
+    },
+    {
+      "turn_id": "t35",
+      "user_message": "Going back to the EnerSave Pro heat pump rebate — is there a federal tax credit I can stack on top of it for the Maplewood Duplex?",
+      "assistant_message": "Yes, the federal Inflation Reduction Act Section 25C tax credit allows landlords to claim 30 percent of the cost of qualifying heat pump installations, up to $2,000 per year per property. For the Maplewood Duplex, 30 percent of the $17,150 gross installation cost would be $5,145, but the credit is capped at $2,000 per tax year for this category. Carol Reyes confirmed in her October 15 memo that the Carrier 38MURA units qualify for the Section 25C credit and that the EnerSave Pro rebate does not reduce the basis for calculating the federal credit, so both incentives can be claimed independently. Stacking the $2,000 federal credit on top of the $2,400 EnerSave Pro rebate brings total incentives to $4,400 against the $17,150 gross cost."
+    },
+    {
+      "turn_id": "t36",
+      "user_message": "Does the EnerSave Pro program require the ventilation work to be completed before or after the heat pump installation at the Maplewood Duplex?",
+      "assistant_message": "The EnerSave Pro program requires that ventilation compliance be demonstrated at the time of heat pump commissioning, meaning the ERV units must be installed and operational before or simultaneously with the heat pump startup, not after. Thornton HVAC confirmed this sequencing requirement in their project plan for the Maplewood Duplex, scheduling ERV installation on November 7 and heat pump commissioning on November 11, giving four days for ERV installation and testing before the final heat pump startup. Carol Reyes noted that the EnerSave Pro field inspector, if one is sent, will verify both systems are running during the single site visit. Installing the ERV units after the heat pump would require a second inspection and could delay the rebate payment by up to 12 weeks."
+    },
+    {
+      "turn_id": "t37",
+      "user_message": "Will the EnerSave Pro rebate check be made out to me as the property owner or to Thornton HVAC as the installer for the Maplewood Duplex?",
+      "assistant_message": "For the Maplewood Duplex, the EnerSave Pro rebate check is made out to the property owner of record unless a contractor assignment form is submitted, in which case it is paid directly to Thornton HVAC. Carol Reyes recommended having the rebate paid directly to Thornton HVAC and deducting it from the final invoice, which simplifies cash flow since you won't need to float the full $17,150 upfront. Thornton HVAC confirmed they accept EnerSave Pro contractor assignments and will reduce the final invoice by the $2,400 heat pump rebate and the $600 ERV rebate upon receipt of the program payment. The rebate assignment form must be signed by both the property owner and Thornton HVAC and submitted with the rebate application."
+    },
+    {
+      "turn_id": "t38",
+      "user_message": "What is the GreenLease Program's requirement for re-testing duct leakage if a property changes ownership, like if I sell the Maplewood Duplex after certification?",
+      "assistant_message": "The GreenLease Program does not require a new duct leakage test upon ownership transfer of a certified property like the Maplewood Duplex, provided the certification is less than five years old at the time of sale. The new owner simply files a transfer notice within 60 days and the existing certification, including the documented 3.5 CFM25 post-sealing result, carries forward. Carol Reyes noted that this is a significant selling point, since it avoids re-testing costs for the buyer. Thornton HVAC's signed test result documentation should be kept in the property file and provided to the new owner at closing as part of the GreenLease Program transfer package."
+    },
+    {
+      "turn_id": "t39",
+      "user_message": "Does the GreenLease Program distinguish between owner-occupied and rental units in how it applies duct leakage standards to properties like the Maplewood Duplex?",
+      "assistant_message": "The GreenLease Program applies the same 4 CFM25 per 100 square feet duct leakage standard regardless of whether the units are owner-occupied or renter-occupied, so the Maplewood Duplex's rental status does not change the technical threshold. However, the GreenLease Program does require that tenant-occupied units have a written disclosure informing tenants of the green features and any associated equipment maintenance responsibilities, which Carol Reyes included in the lease addendum template she provided. Thornton HVAC's post-sealing target of 3.5 CFM25 for the Maplewood Duplex comfortably meets the standard in either case. The GreenLease Program's rental property track does add a tenant notification requirement that owner-occupied certifications do not have."
+    },
+    {
+      "turn_id": "t40",
+      "user_message": "Has the GreenLease Program confirmed receipt of the Maplewood Duplex application materials Carol Reyes submitted?",
+      "assistant_message": "The GreenLease Program sent an automated confirmation email on October 16, the day after Carol Reyes submitted the preliminary application materials through the program's online portal. The confirmation assigned a tracking number of GLP-2024-04417 to the Maplewood Duplex application. The program's reviewer noted in a follow-up email dated October 19 that the ASHRAE Level 2 audit report and the Thornton HVAC equipment specifications were received and are under review. One outstanding item flagged by the reviewer is the signed contractor attestation from Thornton HVAC, which Carol Reyes has requested and expects to receive by October 25."
+    },
+    {
+      "turn_id": "t41",
+      "user_message": "What happens if the EnerSave Pro rebate payment is delayed past Thornton HVAC's invoice due date for the Maplewood Duplex?",
+      "assistant_message": "Thornton HVAC's contract for the Maplewood Duplex specifies a net-30 payment term from the date of project completion, with a 1.5 percent monthly late fee on unpaid balances. If the EnerSave Pro rebate is delayed, you as the property owner remain responsible for the full invoice amount within that 30-day window, since the rebate assignment reduces what you owe but does not extend the payment deadline. Carol Reyes recommended setting aside the full $17,150 in reserve and treating the rebate as a reimbursement once received, rather than relying on it to fund the initial payment. EnerSave Pro's published timeline for rebate payments is 60 to 90 days after a complete application is submitted, so timing the project completion to allow for that lag is advisable."
+    },
+    {
+      "turn_id": "t42",
+      "user_message": "Can I include the energy upgrade costs for the Maplewood Duplex as a capital improvement when calculating depreciation for tax purposes?",
+      "assistant_message": "Yes, energy upgrades such as the heat pump installation, attic insulation, and ERV units at the Maplewood Duplex generally qualify as capital improvements that are depreciated over 27.5 years for residential rental property under MACRS. Carol Reyes noted that the heat pump system, with a gross cost of $17,150, would generate an annual depreciation deduction of approximately $624 per year over the 27.5-year schedule. The attic insulation at $13,800 gross would add another $502 per year in depreciation, and the ERV units at $1,800 gross add $65 per year, for a combined annual depreciation benefit of roughly $1,191 before any bonus depreciation elections. Consulting a tax professional familiar with rental property and the GreenLease Program incentives is advisable before filing."
+    },
+    {
+      "turn_id": "t43",
+      "user_message": "Has Carol Reyes confirmed that the GreenLease application tracking number GLP-2024-04417 covers both Unit A and Unit B of the Maplewood Duplex?",
+      "assistant_message": "Carol Reyes confirmed on October 20 that tracking number GLP-2024-04417 covers the entire Maplewood Duplex as a single property application, encompassing both Unit A and Unit B under one certification. The GreenLease Program treats the duplex as one building for certification purposes, so both units are evaluated together against the program's energy and documentation standards. Thornton HVAC's equipment specifications for both units were submitted under the same tracking number, and the program's reviewer acknowledged both sets of equipment in the October 19 follow-up email. Carol Reyes noted that this single-application approach is standard for duplexes and avoids the need to pay two separate $150 application fees."
+    },
+    {
+      "turn_id": "t44",
+      "user_message": "What is the GreenLease Program's policy if the Maplewood Duplex fails to maintain its certification standards after initial approval?",
+      "assistant_message": "The GreenLease Program allows a 12-month remediation period if a certified property like the Maplewood Duplex fails a periodic re-evaluation, during which the property owner must correct the deficiencies and submit updated documentation. If the deficiencies are not corrected within 12 months, the GreenLease certification is revoked and the property must reapply and pay the $150 fee again. Carol Reyes noted that the most common cause of post-certification failure is tenant modification of HVAC settings or ERV units, which is why the lease addendum she drafted explicitly prohibits tenants from disabling ventilation equipment. Thornton HVAC recommended scheduling an annual equipment check for both units of the Maplewood Duplex to catch any issues before a GreenLease re-evaluation."
+    },
+    {
+      "turn_id": "t45",
+      "user_message": "For the upgraded Maplewood Duplex, what's a reasonable rent premium to justify charging over a comparable non-upgraded unit nearby?",
+      "assistant_message": "Research on green-certified rental properties suggests a rent premium of 3 to 7 percent is supportable for units with documented energy upgrades and a GreenLease Program certification. For the Maplewood Duplex, if the baseline comparable rent in the area is $1,300 per month for Unit A and $1,350 for Unit B, a 5 percent premium would add $65 and $67.50 respectively, bringing rents to $1,365 and $1,417.50 per month. Carol Reyes estimated in her financial summary that the combined annual rent premium of approximately $1,590 would partially offset the upgrade costs and meaningfully improve the project's overall return on investment. Thornton HVAC noted that the documented lower utility bills, averaging an estimated $300 per year per unit in savings, provide tangible value to prospective tenants that supports the premium."
+    },
+    {
+      "turn_id": "t46",
+      "user_message": "What's the depreciation schedule for the solar panels if I add them to the Maplewood Duplex as a rental property asset?",
+      "assistant_message": "Solar panels installed on a rental property like the Maplewood Duplex are classified as 5-year MACRS property under IRS rules, which allows for accelerated depreciation compared to the 27.5-year schedule for the building itself. Using the 200 percent declining balance method with a half-year convention, approximately 20 percent of the solar system's depreciable basis can be deducted in year one. For a 12 kW system at a net cost of $21,000 after the federal ITC, the year-one depreciation deduction would be roughly $4,200. Carol Reyes noted that combining the accelerated solar depreciation with the 30 percent ITC significantly improves the after-tax economics of the solar addition to the Maplewood Duplex."
+    },
+    {
+      "turn_id": "t47",
+      "user_message": "If I raise rents at the Maplewood Duplex after the upgrades, do I need to update the GreenLease Program application to reflect the new rent figures?",
+      "assistant_message": "The GreenLease Program does not require property owners to report rent changes after certification is issued, as the program focuses on physical energy performance rather than rental economics. Carol Reyes confirmed this in a direct inquiry to the GreenLease Program help desk, receiving a written response that rent levels are not part of the certification criteria for the Maplewood Duplex. However, if you apply for any income-restricted green housing incentives in the future, rent levels would become relevant to those separate programs. Thornton HVAC's equipment documentation and Carol Reyes's audit report remain the core certification documents regardless of what rents are charged."
+    },
+    {
+      "turn_id": "t48",
+      "user_message": "I want to confirm the total EnerSave Pro rebate amount available for all the upgrade measures at the Maplewood Duplex. What's the combined figure?",
+      "assistant_message": "The total EnerSave Pro rebate available for the Maplewood Duplex across all qualifying measures is $3,540. This breaks down as $2,400 for the two heat pump units at $1,200 each, $600 for the two ERV units at $300 each, and $540 for the attic insulation upgrade calculated at $0.10 per square foot per R-unit added across the 1,800-square-foot attic area. Carol Reyes compiled this total in her October 18 updated financial summary and confirmed that all three measures have been documented in the EnerSave Pro application under tracking number GLP-2024-04417. No additional EnerSave Pro rebates apply to the duct sealing work, as that measure is covered under the GreenLease Program documentation but is not a separately rebated item under EnerSave Pro."
+    },
+    {
+      "turn_id": "t49",
+      "user_message": "Does the GreenLease Program require a specific minimum R-value for wall insulation as well, or just the attic at the Maplewood Duplex?",
+      "assistant_message": "The GreenLease Program requires wall insulation to meet a minimum of R-13 for wood-frame walls in climate zone 5, which is a lower bar than the attic requirement. Carol Reyes measured the existing wall insulation at the Maplewood Duplex during her audit and found it at R-13 fiberglass batts in the exterior walls of both Unit A and Unit B, meaning the walls already meet the GreenLease standard without any additional work. Thornton HVAC confirmed that no wall insulation upgrade is needed and that only the attic insulation upgrade is required to bring the Maplewood Duplex into full GreenLease compliance on the envelope side. This simplifies the project scope and keeps the total upgrade budget focused on the attic, HVAC, and ventilation measures."
+    },
+    {
+      "turn_id": "t50",
+      "user_message": "Has the GreenLease Program reviewer asked for any additional documents beyond what Carol Reyes already submitted for the Maplewood Duplex?",
+      "assistant_message": "As of October 19, the GreenLease Program reviewer's only outstanding request for the Maplewood Duplex application GLP-2024-04417 is the signed contractor attestation from Thornton HVAC, which Carol Reyes has already requested. The reviewer confirmed that the ASHRAE Level 2 audit, the Carrier 38MURA product specification sheets, the Renewaire EV90 specification sheets, and the preliminary duct leakage baseline data are all acceptable and on file. Carol Reyes expects the Thornton HVAC attestation to arrive by October 25, at which point the application will be considered complete for preliminary review. No additional documents are anticipated unless the reviewer identifies issues during the technical review phase."
+    },
+    {
+      "turn_id": "t51",
+      "user_message": "What's the solar installation timeline if I want to have panels on the Maplewood Duplex operational before the end of the year?",
+      "assistant_message": "To have a 12 kW solar system operational at the Maplewood Duplex before December 31, a contract would need to be signed no later than early November, given typical permitting timelines of 3 to 4 weeks and installation taking 2 to 3 days once permits are approved. Carol Reyes noted in her financial planning spreadsheet that completing the solar installation before year-end would allow the federal ITC to be claimed on this year's tax return rather than next year's. The local utility serving the Maplewood Duplex typically takes 2 to 4 weeks to approve net metering interconnection after installation, so the system might be installed but not yet grid-connected by December 31. Thornton HVAC is not the solar installer, so a separate photovoltaic contractor would need to be engaged immediately to meet the year-end target."
+    },
+    {
+      "turn_id": "t52",
+      "user_message": "Is there any risk that the GreenLease Program changes its requirements before the Maplewood Duplex application is fully approved?",
+      "assistant_message": "The GreenLease Program publishes a policy freeze for applications already in the review queue, meaning any standard changes announced after the submission date of October 15 would not apply to the Maplewood Duplex application GLP-2024-04417. Carol Reyes confirmed this by reviewing the GreenLease Program's version control policy, which states that applications are evaluated under the program standards in effect on the submission date. The current version of the GreenLease standard applicable to the Maplewood Duplex is Version 4.2, published in January of this year. Thornton HVAC noted that this policy protection is one reason Carol Reyes moved quickly to submit the preliminary application before the November equipment installation."
+    },
+    {
+      "turn_id": "t53",
+      "user_message": "Has Carol Reyes estimated how the GreenLease certification will affect the Maplewood Duplex's overall appraised value?",
+      "assistant_message": "Carol Reyes cited a study in her financial summary suggesting that GreenLease-certified properties in climate zone 5 markets sell at a premium of 4 to 8 percent over comparable non-certified properties. For the Maplewood Duplex, with a current estimated value of $380,000, a 6 percent premium would add approximately $22,800 to the appraised value. Carol Reyes cautioned that local appraiser familiarity with green certifications varies and that the premium may not be fully recognized in a formal appraisal without a comparable sales analysis of other GreenLease-certified duplexes in the area. The GreenLease Program itself does not provide appraisal support, so engaging an appraiser with green building experience is recommended when the time comes."
+    },
+    {
+      "turn_id": "t54",
+      "user_message": "If I ultimately add solar to the Maplewood Duplex after the GreenLease certification is issued, does that require a re-certification?",
+      "assistant_message": "Adding solar panels to the Maplewood Duplex after the initial GreenLease certification is issued does not require a full re-certification, but it does trigger a minor amendment process under the GreenLease Program's post-certification modification policy. The amendment requires submitting the solar system specification sheet, the net metering agreement, and a brief attestation from Carol Reyes as the project's BPI auditor confirming the addition is consistent with the certified building's energy design. The amendment fee is $50, compared to the $150 full application fee, and the GreenLease Program typically processes amendments within 30 days. Thornton HVAC's name would not appear on the solar amendment since they are not the photovoltaic installer."
+    },
+    {
+      "turn_id": "t55",
+      "user_message": "Now that I have all the pieces in place, what is the total net cost for all three upgrade measures — attic insulation, heat pumps, and ERVs — after every applicable EnerSave Pro rebate, and what is the combined annual energy savings across those three measures?",
+      "assistant_message": null
+    }
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that the net investment for the heat pump project is $10,550 (gross $17,150 minus $2,400 EnerSave Pro rebate minus $4,200 avoided AC replacement), as established in branch B.",
+      "required": true,
+      "evidence_turn_ids": ["t31"]
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that the combined annual energy savings from the heat pump system is $785 per year in heating savings plus approximately $220 per year in cooling savings (totaling roughly $1,005 per year), as established in branch B.",
+      "required": true,
+      "evidence_turn_ids": ["t13", "t21"]
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer states that the total EnerSave Pro rebate across all three measures (heat pumps $2,400, ERVs $600, attic insulation $540) is $3,540, as established in branch C.",
+      "required": true,
+      "evidence_turn_ids": ["t48"]
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer states that the annual energy savings from the attic insulation upgrade is $310 per year, as established in branch A.",
+      "required": true,
+      "evidence_turn_ids": ["t32"]
+    },
+    {
+      "id": "c5",
+      "criterion": "The answer must not use the insulation-only payback figure of 42.8 years (from the near-miss turn t29) as the combined project payback or conflate the insulation-only rebate calculation with the total rebate figure.",
+      "required": true,
+      "evidence_turn_ids": []
+    }
+  ],
+  "reference_answer": "The total gross cost of all three upgrade measures is $32,750 ($17,150 for heat pumps, $13,800 for attic insulation, and $1,800 for ERVs). After the combined EnerSave Pro rebates of $3,540 ($2,400 heat pumps, $600 ERVs, $540 insulation), the net cost before accounting for the avoided AC replacement is $29,210. Subtracting the $4,200 in avoided air conditioning costs confirmed by Thornton HVAC brings the effective net investment to $25,010. The combined annual energy savings across all three measures totals approximately $1,315 per year, comprising $785 in heating savings, $220 in cooling savings, and $310 from the attic insulation upgrade, as detailed in Carol Reyes's audit and the EnerSave Pro cost-effectiveness analysis.",
+  "notes": "The three gold branches provide: branch A (t1, t22, t32) the attic insulation annual savings of $310/yr and net insulation cost; branch B (t13, t14, t21, t31) the heat pump gross cost $17,150, EnerSave Pro heat pump rebate $2,400, avoided AC cost $4,200, and net heat pump investment $10,550; branch C (t6, t35, t48) the total EnerSave Pro rebate of $3,540 across all three measures. The near-miss turn t29 answers a question about the attic insulation payback period alone (42.8 years, net cost $13,260) using similar language to the final query, which asks about all three measures combined."
+}
+```

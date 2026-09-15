@@ -1,0 +1,112 @@
+{
+ "scenario_id": "long_two_branch_join_004",
+ "family": "two_branch_join",
+ "n_history": 30,
+ "full_history_tokens": 4231,
+ "closure_ratio": 0.3,
+ "entity_registry": [
+  "Mira Calloway",
+  "Jonas Vreeland",
+  "Lakeshore Pavilion",
+  "Heronwood Catering",
+  "Sunset Cove Marina",
+  "The Vreeland-Calloway Wedding Binder"
+ ],
+ "distractor_branch_entity_hits": {
+  "D": [
+   "Mira Calloway",
+   "Jonas Vreeland",
+   "Lakeshore Pavilion",
+   "The Vreeland-Calloway Wedding Binder"
+  ],
+  "E": [
+   "Mira Calloway",
+   "Jonas Vreeland",
+   "Lakeshore Pavilion",
+   "The Vreeland-Calloway Wedding Binder"
+  ],
+  "F": [
+   "Mira Calloway",
+   "Jonas Vreeland",
+   "Lakeshore Pavilion",
+   "The Vreeland-Calloway Wedding Binder"
+  ],
+  "G": [
+   "Mira Calloway",
+   "Jonas Vreeland",
+   "Lakeshore Pavilion",
+   "Heronwood Catering",
+   "The Vreeland-Calloway Wedding Binder"
+  ]
+ },
+ "near_miss_turn_id": "t14",
+ "checklist_evidence": {
+  "c1": [
+   "t8",
+   "t30"
+  ],
+  "c2": [
+   "t6",
+   "t13",
+   "t27"
+  ],
+  "c3": [
+   "t27",
+   "t30"
+  ],
+  "c4": []
+ },
+ "cosine": {
+  "gold_median": 0.5314927101135254,
+  "distractor_median": 0.4146345555782318,
+  "ratio": 0.7801321592720755,
+  "pass": true
+ },
+ "cosine_per_turn": {
+  "t1": 0.5314927101135254,
+  "t2": 0.48431453108787537,
+  "t3": 0.6826081275939941,
+  "t4": 0.3628194034099579,
+  "t5": 0.4146345555782318,
+  "t6": 0.6947540640830994,
+  "t7": 0.5158151388168335,
+  "t8": 0.5234577059745789,
+  "t9": 0.4122571349143982,
+  "t10": 0.5516954660415649,
+  "t11": 0.4064285159111023,
+  "t12": 0.40583932399749756,
+  "t13": 0.6724759340286255,
+  "t14": 0.42361268401145935,
+  "t15": 0.49454739689826965,
+  "t16": 0.3859851360321045,
+  "t17": 0.35032886266708374,
+  "t18": 0.3597339689731598,
+  "t19": 0.4619581997394562,
+  "t20": 0.40575069189071655,
+  "t21": 0.3526037037372589,
+  "t22": 0.4493323564529419,
+  "t23": 0.4551231861114502,
+  "t24": 0.39161819219589233,
+  "t25": 0.5268429517745972,
+  "t26": 0.6206392645835876,
+  "t27": 0.7885881066322327,
+  "t28": 0.5444869995117188,
+  "t29": 0.5551052093505859,
+  "t30": 0.4905109703540802
+ },
+ "gold_branches": [
+  "A",
+  "B"
+ ],
+ "distractor_branches": [
+  "D",
+  "E",
+  "F",
+  "G"
+ ],
+ "attempt_accepted": 1,
+ "generation_tokens": [
+  3492,
+  6606
+ ]
+}

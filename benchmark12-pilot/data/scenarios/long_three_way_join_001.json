@@ -1,0 +1,422 @@
+{
+  "scenario_id": "long_three_way_join_001",
+  "family": "three_way_join",
+  "label": "JOIN",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're negotiating the lease for Suite 4B with Thornfield Properties and I need to nail down the base rent figure. What did we land on?",
+      "assistant_message": "Based on the latest round of negotiations, Thornfield Properties agreed to a base rent of $8,500 per month for Suite 4B. This was confirmed in writing by their leasing agent on March 14th after Priya Nair countered their original ask of $9,200. The $700 monthly reduction represents a meaningful cost saving for Meridian Ventures over the full lease term. The $8,500 figure is now locked in as the starting point for the formal lease document and all subsequent financial calculations.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "What's the status on getting our certificate of occupancy for Suite 4B?",
+      "assistant_message": "Thornfield Properties submitted the certificate of occupancy application to the city building department on March 10th on behalf of Meridian Ventures. The processing time is estimated at 15 business days, putting the expected issuance date around April 1st, which aligns with the planned May 1st lease start. Priya Nair has been assigned as the point of contact to follow up with the inspector if there are any delays or requests for additional documentation. Securing the certificate on schedule is critical because the lease commencement date and the security deposit due date are both tied to its issuance.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "Has Marcus Delgado finished reviewing the insurance requirements Thornfield Properties sent over?",
+      "assistant_message": "Marcus Delgado completed his review of the insurance requirements on March 12th and flagged two items for follow-up. Thornfield Properties is requiring a minimum of $2 million in general liability coverage and $500,000 in property damage coverage for the tenant. Marcus noted that Meridian Ventures' current policy only carries $1.5 million in general liability, which falls $500,000 short of Thornfield's threshold, so an upgrade will be needed before signing. He is already in contact with Halloway Insurance Group to obtain a revised quote that meets both the general liability and property damage minimums Thornfield specified.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "What's the deadline for Meridian Ventures to provide proof of the upgraded insurance to Thornfield Properties?",
+      "assistant_message": "Thornfield Properties has set April 5th as the hard deadline for Meridian Ventures to submit proof of the upgraded insurance policy. Marcus Delgado is coordinating with the broker, Halloway Insurance Group, to get the general liability limit raised from $1.5 million to $2 million. The premium increase is estimated at roughly $1,800 per year, which Priya Nair has already approved as an acceptable operating cost.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "What annual escalation rate did we agree to with Thornfield Properties for the rent on Suite 4B?",
+      "assistant_message": "Thornfield Properties and Meridian Ventures settled on an annual rent escalation rate of 3% per year for Suite 4B. Priya Nair pushed back on their initial ask of 4%, and the 3% figure was accepted by Thornfield's leasing director, Greg Albrecht, on March 16th. This rate applies starting at the beginning of the second lease year and compounds annually through the full 36-month lease term. At 3% annual escalation, the monthly base rent will rise from $8,500 to approximately $8,755 in year two and approximately $9,018 in year three.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "I need to figure out what tenant improvement allowance Thornfield Properties is offering for the Suite 4B buildout.",
+      "assistant_message": "Thornfield Properties has offered a tenant improvement allowance of $45,000 for the Suite 4B buildout, as outlined in the preliminary term sheet sent to Priya Nair on March 8th. This allowance is to be disbursed in two equal installments of $22,500 each, the first upon lease execution and the second upon completion of the buildout inspection. Marcus Delgado has flagged that the total estimated buildout cost for Meridian Ventures is $72,000, leaving a gap of $27,000 to be covered internally.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "What lease term length did we agree to with Thornfield Properties?",
+      "assistant_message": "Thornfield Properties and Meridian Ventures agreed to an initial lease term of 36 months for Suite 4B, starting May 1st. This was finalized during the March 15th call between Priya Nair and Thornfield's leasing director, Greg Albrecht. The agreement supersedes the earlier draft in Lease Draft v2.1, which had proposed a 24-month term, adding a full year to Meridian Ventures' occupancy commitment. The longer term was accepted in part because it gave Thornfield Properties greater revenue certainty, which helped Meridian Ventures secure the lower base rent of $8,500 per month.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "What is the security deposit amount that Thornfield Properties is requiring from us?",
+      "assistant_message": "Thornfield Properties is requiring a security deposit equal to two months of base rent for Suite 4B. Given the agreed base rent of $8,500 per month, that puts the deposit at $17,000 due at lease signing. Priya Nair confirmed this figure with Greg Albrecht during the March 15th call, and it is reflected in the current version of Lease Draft v2.1. The deposit will be held in a separate escrow account and is fully refundable at the end of the 36-month term provided there are no outstanding damages or unpaid rent obligations.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "Is the security deposit refundable at the end of the lease, and are there any conditions attached?",
+      "assistant_message": "Yes, the security deposit is fully refundable at the end of the 36-month term provided Suite 4B is returned in its original condition, normal wear and tear excepted. Thornfield Properties has specified that any alterations made by Meridian Ventures beyond the approved buildout plan must be reversed at the tenant's expense or deducted from the deposit. The refund is to be issued within 30 days of the lease end date, per the terms in Lease Draft v2.1.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "Has the city confirmed when the building inspector will visit for the certificate of occupancy?",
+      "assistant_message": "The city building department confirmed that the inspection for Suite 4B is scheduled for March 28th at 10 a.m. Thornfield Properties' property manager, Dana Kessler, will be on-site to provide access and accompany the inspector throughout the visit. Priya Nair has been asked to have a Meridian Ventures representative present as well to answer any questions about the planned tenant improvements. If the inspection passes without issues on March 28th, the certificate of occupancy is expected to be issued by April 1st, keeping the May 1st lease start on track.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "What is the disbursement timeline for the tenant improvement allowance once the lease is signed?",
+      "assistant_message": "The first installment of $22,500 from Thornfield Properties will be wired to Meridian Ventures within 10 business days of lease execution. The second installment of $22,500 is released only after a buildout completion inspection, which Thornfield Properties must schedule within 15 business days of receiving written notice from Priya Nair that the work is done. Marcus Delgado is tracking the contractor bids to ensure the buildout timeline aligns with these disbursement windows.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "Is there a cap on how high the rent can go over the full lease term under the escalation clause?",
+      "assistant_message": "Yes, the escalation clause in Lease Draft v2.1 includes a cumulative cap of 10% over the entire 36-month initial term, meaning the base rent cannot increase by more than 10% in total from the starting figure of $8,500. At the agreed 3% annual rate, the actual cumulative increase over three years would be approximately 9.27%, which falls just under that cap. Priya Nair insisted on this ceiling during negotiations and Thornfield Properties accepted it in the March 18th revision of Lease Draft v2.1.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "What happens if the certificate of occupancy inspection on March 28th fails?",
+      "assistant_message": "If the March 28th inspection fails, Thornfield Properties is contractually obligated to remedy any cited deficiencies within 14 calendar days and schedule a re-inspection at their own cost. If the certificate of occupancy is not issued by April 15th as a result of repeated failures, Meridian Ventures has the right to delay the May 1st lease commencement date by an equivalent number of days without penalty. Priya Nair has already requested that this contingency language be added to Lease Draft v2.1 and Thornfield Properties' counsel has agreed in principle.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "Has Halloway Insurance Group given us a revised quote for the upgraded general liability coverage?",
+      "assistant_message": "Halloway Insurance Group sent Marcus Delgado a revised quote on March 17th, putting the annual premium for $2 million in general liability coverage at $4,320, up from the current $2,520 for the $1.5 million policy. The $1,800 annual increase matches the estimate Priya Nair approved, so there are no budget surprises. Marcus has been authorized to bind the new policy as soon as the lease is executed so Meridian Ventures meets the April 5th deadline set by Thornfield Properties.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "Does the new Halloway policy also cover the property damage requirement Thornfield Properties specified?",
+      "assistant_message": "Yes, the revised Halloway Insurance Group policy includes $500,000 in property damage coverage, which exactly meets Thornfield Properties' minimum requirement. Marcus Delgado confirmed this with the Halloway account representative, Janelle Frost, on March 18th. The policy will list Thornfield Properties as an additional insured, as required by the lease terms in Lease Draft v2.1. With both the general liability and property damage requirements now satisfied, the insurance contingency that had been blocking lease execution is fully resolved.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "What parking situation comes with Suite 4B under the lease terms?",
+      "assistant_message": "The lease terms for Suite 4B include four reserved parking spaces in the building's underground garage at no additional charge to Meridian Ventures. Thornfield Properties also offers access to 10 unreserved visitor spaces on a first-come, first-served basis in the surface lot adjacent to the building. Priya Nair requested two additional reserved spaces during negotiations, but Thornfield Properties declined, citing full allocation of the garage to existing tenants.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "What if Meridian Ventures needs to cancel the upgraded Halloway policy before the lease ends?",
+      "assistant_message": "Halloway Insurance Group's policy includes a short-rate cancellation penalty of 10% of the remaining annual premium if Meridian Ventures cancels before the policy term ends. Marcus Delgado confirmed with Janelle Frost that the policy can be transferred to a new office location without penalty if Meridian Ventures relocates at the end of the 36-month lease term. Priya Nair has noted this as acceptable given the flexibility it provides at the end of the Suite 4B lease.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "Has Thornfield Properties agreed to contribute anything toward the $27,000 gap in the buildout budget?",
+      "assistant_message": "Thornfield Properties declined to increase the tenant improvement allowance beyond the $45,000 already offered, as communicated to Priya Nair in writing on March 19th. However, Marcus Delgado negotiated a deferred payment arrangement where Meridian Ventures can spread the $27,000 gap over the first 12 months of the lease at $2,250 per month, added to the base rent. This arrangement is contingent on Meridian Ventures signing the lease no later than April 10th, per Thornfield Properties' counter-proposal.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "Does the parking allocation affect any of the monthly costs we calculated for Suite 4B?",
+      "assistant_message": "The four reserved parking spaces are included in the base rent of $8,500 per month, so they carry no separate line-item cost for Meridian Ventures. If Priya Nair had succeeded in securing the two additional reserved spaces, Thornfield Properties indicated those would have been priced at $175 per space per month. The visitor spaces in the surface lot are free for all building tenants and their guests, so they also add nothing to Meridian Ventures' monthly occupancy cost.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "What is the total monthly payment Meridian Ventures will owe in the first year if we factor in the buildout gap repayment?",
+      "assistant_message": "In the first 12 months, Meridian Ventures will owe $10,750 per month to Thornfield Properties for Suite 4B: the $8,500 base rent plus the $2,250 monthly buildout gap repayment. After month 12, the payment drops back to $8,500 per month, or the 3%-escalated equivalent if the second lease year has begun. Marcus Delgado modeled this out and confirmed it fits within Meridian Ventures' approved occupancy budget of $11,500 per month.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "Can the deferred buildout payment arrangement be prepaid early without penalty?",
+      "assistant_message": "Yes, Thornfield Properties agreed that Meridian Ventures may prepay the outstanding buildout balance at any time without penalty, as confirmed by Marcus Delgado in the March 20th email exchange with Thornfield's leasing director Greg Albrecht. If Meridian Ventures prepays in full before month 6, Thornfield Properties will apply a $500 credit toward the following month's rent as a goodwill gesture. Priya Nair has flagged this as a potentially attractive option if Meridian Ventures closes its next funding round on schedule.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "Are the four reserved parking spaces guaranteed for the full 36-month lease term or can Thornfield Properties reassign them?",
+      "assistant_message": "The four reserved parking spaces are guaranteed to Meridian Ventures for the full 36-month lease term and cannot be reassigned by Thornfield Properties without written consent from Priya Nair. This protection is written into Lease Draft v2.1 in Section 9, Paragraph 2, following a specific request by Marcus Delgado during the March 16th negotiation session. If Thornfield Properties were to breach this clause, Meridian Ventures would be entitled to a rent abatement of $175 per displaced space per month until the spaces are restored.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "What happens to the Halloway policy if we exercise the option to extend the lease beyond 36 months?",
+      "assistant_message": "If Meridian Ventures exercises a lease extension for Suite 4B, Marcus Delgado confirmed with Halloway Insurance Group that the existing policy can be renewed on the same terms without a new underwriting review, provided the general liability limit remains at $2 million. Janelle Frost at Halloway indicated the renewal premium would be subject to a maximum 5% annual increase, giving Meridian Ventures cost predictability. Priya Nair has noted this as a favorable condition that supports the case for a lease extension when the time comes.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "What is the timeline for the city to issue the certificate of occupancy after the March 28th inspection?",
+      "assistant_message": "Assuming the March 28th inspection passes without deficiencies, the city building department told Thornfield Properties to expect the formal certificate of occupancy to be issued within 5 business days, putting the target date at April 4th. This gives Meridian Ventures a comfortable buffer before the May 1st lease commencement date. Priya Nair has asked Dana Kessler at Thornfield Properties to courier the original certificate to Meridian Ventures' legal counsel immediately upon receipt.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "Does the 36-month lease include any renewal option for Meridian Ventures?",
+      "assistant_message": "Yes, the lease includes one renewal option for an additional 24 months, which Meridian Ventures must exercise by giving Thornfield Properties written notice no later than 6 months before the end of the initial 36-month term. The renewal option was negotiated by Priya Nair and is documented in Section 14 of Lease Draft v2.1. The renewal term rent will be set at the then-current market rate for comparable spaces, but cannot exceed 110% of the rent in effect at the end of month 36.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "If Halloway raises premiums beyond the 5% cap at renewal, what are Meridian Ventures' options?",
+      "assistant_message": "If Halloway Insurance Group attempts to raise premiums above the 5% cap at renewal, Marcus Delgado has authority to seek competing bids from at least two other carriers without needing additional approval from Priya Nair. Thornfield Properties' lease terms require only that the coverage minimums be maintained, not that the policy be held with any specific insurer. Marcus has already identified two backup carriers, Redstone Mutual and Cascade Commercial, as potential alternatives should Halloway become uncompetitive.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "What notice period does Meridian Ventures need to give Thornfield Properties if we decide not to renew after the initial 36 months?",
+      "assistant_message": "If Meridian Ventures decides not to exercise the renewal option, Priya Nair must deliver written notice to Thornfield Properties no later than 6 months before the end of month 36, which means by November 1st of the third lease year. Failure to provide timely notice will result in the lease automatically converting to a month-to-month tenancy at 115% of the then-current rent, per Section 14 of Lease Draft v2.1. Greg Albrecht confirmed this auto-renewal penalty clause was non-negotiable from Thornfield Properties' side.",
+      "gold_parents": [
+        "t25"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "Is there a grace period before Thornfield Properties can draw on the security deposit if we miss a rent payment?",
+      "assistant_message": "Yes, Lease Draft v2.1 provides Meridian Ventures with a 5-day grace period after each monthly rent due date before Thornfield Properties can issue a formal notice of default. If a payment is still outstanding after a further 10 days following that notice, Thornfield Properties is entitled to draw on the $17,000 security deposit to cover the overdue amount. Priya Nair negotiated this 5-day grace period specifically to account for any bank processing delays on Meridian Ventures' side.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "Is there anything in the certificate of occupancy process that could delay the May 1st lease start date?",
+      "assistant_message": "The main risk is if the March 28th inspection uncovers structural or fire-code deficiencies that require remediation by Thornfield Properties before the certificate of occupancy can be issued. In that scenario, Lease Draft v2.1 allows Meridian Ventures to push the commencement date back day-for-day without any rent liability during the delay period. Priya Nair has already asked Thornfield Properties' counsel to confirm in writing that this delay provision survives any amendments to the lease before signing.",
+      "gold_parents": [
+        "t24"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t30",
+      "turn_index": 29,
+      "user_message": "Has Thornfield Properties agreed to any rent abatement period at the start of the lease to cover the buildout?",
+      "assistant_message": "Thornfield Properties offered a one-month rent abatement at the start of the lease, meaning Meridian Ventures will owe no base rent for May 2025, the first month of the 36-month term. Marcus Delgado negotiated this concession during the March 19th session with Greg Albrecht as a partial offset to the $27,000 buildout gap. The abatement applies only to base rent and not to any operating expenses or the deferred buildout repayment, which begins in month one.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t31",
+      "turn_index": 30,
+      "user_message": "If Meridian Ventures exercises the renewal option, does the 10% cumulative rent cap from the escalation clause carry over into the renewal term?",
+      "assistant_message": "No, the 10% cumulative cap applies only to the initial 36-month term and does not carry over into the 24-month renewal period. During the renewal term, rent is reset to the then-current market rate, subject only to the ceiling of 110% of the month-36 rent as specified in Section 14 of Lease Draft v2.1. Priya Nair acknowledged this reset in the March 18th negotiation notes, and it is clearly distinguished from the initial-term escalation clause in the current draft.",
+      "gold_parents": [
+        "t27"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t32",
+      "turn_index": 31,
+      "user_message": "Does the one-month rent abatement affect how the deferred buildout repayment schedule works?",
+      "assistant_message": "The deferred buildout repayment of $2,250 per month begins in month one regardless of the rent abatement, meaning Meridian Ventures will owe $2,250 in May 2025 even though the $8,500 base rent is waived. Marcus Delgado confirmed this with Greg Albrecht on March 20th to avoid any ambiguity in the payment schedule. Over the abatement month, the effective savings for Meridian Ventures is $8,500, and the full combined payment of $10,750 per month begins in June 2025.",
+      "gold_parents": [
+        "t30"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t33",
+      "turn_index": 32,
+      "user_message": "Given the agreed base rent, the lease term and renewal option structure, and the security deposit terms, what is the total amount Meridian Ventures will owe Thornfield Properties at lease signing, and what does the rent look like at the start of the renewal term?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t12",
+        "t31",
+        "t28"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t5",
+    "t7",
+    "t8",
+    "t9",
+    "t12",
+    "t25",
+    "t27",
+    "t28",
+    "t31"
+  ],
+  "distractor_turn_ids": [
+    "t2",
+    "t3",
+    "t4",
+    "t6",
+    "t10",
+    "t11",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t20",
+    "t21",
+    "t22",
+    "t23",
+    "t24",
+    "t26",
+    "t29",
+    "t30",
+    "t32"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that the security deposit due at signing is $17,000, equal to two months of the $8,500 base rent.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that the initial lease term is 36 months with one renewal option of 24 months, and that the renewal rent cannot exceed 110% of the month-36 rent.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer states that the base rent is $8,500 per month and that the 10% cumulative cap does not carry over into the renewal term, so renewal rent is reset to market rate.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not state that the total amount due at signing is $10,750 or reference the first-year monthly combined payment as the signing amount.",
+      "required": true
+    }
+  ],
+  "notes": "The three gold branches supply: Branch A (t1, t5, t12) the $8,500 base rent and 3%/10%-cap escalation clause; Branch B (t7, t25, t27, t31) the 36-month term, 24-month renewal option, and the fact that the cap does not carry into the renewal; Branch C (t8, t9, t28) the $17,000 security deposit and its conditions. The near-miss turn t20 answers a superficially similar 'total monthly payment' question with the specific figure of $10,750, which a careless reader might confuse with the signing-amount answer the query actually requires.\n\nReference answer: At lease signing, Meridian Ventures owes Thornfield Properties $17,000, which is the security deposit equal to two months of the agreed base rent of $8,500 per month. The initial lease term is 36 months starting May 1st, with one renewal option for an additional 24 months that must be exercised by written notice no later than 6 months before the end of month 36. The 10% cumulative rent escalation cap applies only to the initial term; at the start of the renewal period, rent resets to the then-current market rate, capped at 110% of whatever the rent is at the end of month 36.",
+  "evidence_note": null,
+  "premise": "a startup negotiating a lease for its first office",
+  "evidence_spans": null,
+  "benchmark_version": "1.2-pilot",
+  "length_class": "long"
+}

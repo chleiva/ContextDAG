@@ -1,0 +1,115 @@
+{
+ "scenario_id": "long_new_root_005",
+ "family": "new_root",
+ "n_history": 48,
+ "full_history_tokens": 7218,
+ "closure_ratio": 0.0,
+ "entity_registry": [
+  "Dr. Priya Nair",
+  "Marcus Feldman",
+  "Eastbridge University",
+  "UrbanAvian Survey Protocol v2.1",
+  "Riverside Commons",
+  "Site Selection Report 2024"
+ ],
+ "distractor_branch_entity_hits": {
+  "D": [
+   "Dr. Priya Nair",
+   "Marcus Feldman",
+   "Eastbridge University",
+   "UrbanAvian Survey Protocol v2.1",
+   "Riverside Commons",
+   "Site Selection Report 2024"
+  ],
+  "E": [
+   "Dr. Priya Nair",
+   "Marcus Feldman",
+   "Eastbridge University",
+   "UrbanAvian Survey Protocol v2.1",
+   "Riverside Commons",
+   "Site Selection Report 2024"
+  ],
+  "F": [
+   "Dr. Priya Nair",
+   "Marcus Feldman",
+   "Eastbridge University",
+   "UrbanAvian Survey Protocol v2.1",
+   "Riverside Commons",
+   "Site Selection Report 2024"
+  ]
+ },
+ "near_miss_turn_id": "t38",
+ "checklist_evidence": {
+  "c1": [],
+  "c2": [],
+  "c3": [],
+  "c4": []
+ },
+ "cosine": {
+  "gold_median": null,
+  "distractor_median": 0.2665111720561981,
+  "ratio": null,
+  "pass": true
+ },
+ "cosine_per_turn": {
+  "t1": 0.2581506371498108,
+  "t2": 0.47181016206741333,
+  "t3": 0.48190027475357056,
+  "t4": 0.34074658155441284,
+  "t5": 0.3258458077907562,
+  "t6": 0.26669538021087646,
+  "t7": 0.2854251265525818,
+  "t8": 0.1515040546655655,
+  "t9": 0.2980310916900635,
+  "t10": 0.33204957842826843,
+  "t11": 0.34993189573287964,
+  "t12": 0.2444935142993927,
+  "t13": 0.3184148073196411,
+  "t14": 0.20509444177150726,
+  "t15": 0.34296345710754395,
+  "t16": 0.02574404701590538,
+  "t17": -0.001173621043562889,
+  "t18": 0.4461456537246704,
+  "t19": 0.1573527753353119,
+  "t20": 0.4580894410610199,
+  "t21": 0.27047213912010193,
+  "t22": 0.09777018427848816,
+  "t23": 0.3694817125797272,
+  "t24": 0.4966157376766205,
+  "t25": 0.2663269639015198,
+  "t26": 0.13225030899047852,
+  "t27": 0.17574605345726013,
+  "t28": 0.2562335431575775,
+  "t29": 0.37282511591911316,
+  "t30": 0.3491936922073364,
+  "t31": 0.1843758225440979,
+  "t32": 0.08193030953407288,
+  "t33": 0.09080064296722412,
+  "t34": 0.13559456169605255,
+  "t35": -0.001269834116101265,
+  "t36": 0.0764261931180954,
+  "t37": 0.3316950798034668,
+  "t38": 0.008341941051185131,
+  "t39": 0.2765427231788635,
+  "t40": 0.11485481262207031,
+  "t41": 0.4577641487121582,
+  "t42": 0.3148074746131897,
+  "t43": 0.232255220413208,
+  "t44": 0.3892948031425476,
+  "t45": 0.3443295359611511,
+  "t46": 0.2007025182247162,
+  "t47": 0.1434277594089508,
+  "t48": 0.25937363505363464
+ },
+ "gold_branches": [],
+ "distractor_branches": [
+  "D",
+  "E",
+  "F"
+ ],
+ "attempt_accepted": 2,
+ "generation_tokens": [
+  5527,
+  10413
+ ]
+}

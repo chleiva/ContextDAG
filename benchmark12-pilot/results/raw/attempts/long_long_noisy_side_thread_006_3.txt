@@ -1,0 +1,338 @@
+I'll carefully fix all the listed problems:
+1. Remove all topic-switch signposting from user messages
+2. Fix checklist to only cite gold turns (t1, t26, t31, t39)
+3. Keep distractor branches very close to the same project/entities/domain
+4. Ensure high cosine similarity by keeping all branches about keyboard sourcing specifics
+
+```json
+{
+  "entity_registry": [
+    "Mira Okafor",
+    "Denselabs",
+    "Gateron G Pro 3.0",
+    "Velvet PCB Rev2",
+    "TKC Storefront",
+    "Sourcing Spec Sheet v4"
+  ],
+  "turns": [
+    {
+      "turn_id": "t1",
+      "user_message": "We're finalizing the switch order for the Velvet PCB Rev2 build. I need to lock down the per-unit cost and MOQ for Gateron G Pro 3.0 linears from our main supplier.",
+      "assistant_message": "Based on the latest quote Mira Okafor pulled from the supplier portal last Tuesday, Gateron G Pro 3.0 linears are priced at $0.38 per switch at the 2,000-unit MOQ tier. If you hit 5,000 units the price drops to $0.31 per switch, and the 10,000-unit tier brings it down to $0.27. These figures are logged in Sourcing Spec Sheet v4 under line item 7."
+    },
+    {
+      "turn_id": "t2",
+      "user_message": "What's the current lead time from our PCB fab for the Velvet PCB Rev2 bare boards?",
+      "assistant_message": "Denselabs confirmed a 21-business-day lead time for the Velvet PCB Rev2 bare boards at quantities up to 500 units. For quantities between 501 and 1,500 units the lead time extends to 28 business days. Mira Okafor noted in the project tracker that the fab requires a 30% deposit before production starts."
+    },
+    {
+      "turn_id": "t3",
+      "user_message": "I need to check on the foam dampening layer we planned to include. Which thickness did we settle on for the case foam?",
+      "assistant_message": "According to the Sourcing Spec Sheet v4, Denselabs approved a 3mm PE foam layer for the case dampening on this build. The 1.5mm option was tested but produced insufficient sound dampening in the low-frequency range. Mira Okafor signed off on the 3mm spec on March 4th."
+    },
+    {
+      "turn_id": "t4",
+      "user_message": "Has the fab given us a scrap rate estimate for the Velvet PCB Rev2 panels?",
+      "assistant_message": "Denselabs estimated a 4.5% scrap rate for the Velvet PCB Rev2 panels based on their last three comparable runs. That means for an order of 500 boards, Denselabs recommends ordering 523 panels to account for defects. This buffer recommendation is also noted in Sourcing Spec Sheet v4 under the yield section."
+    },
+    {
+      "turn_id": "t5",
+      "user_message": "For the stabilizer sourcing, what brand and spec did we land on for the Velvet PCB Rev2?",
+      "assistant_message": "The team decided on Durock V2 screw-in stabilizers, specifically the 2u and 6.25u sizes, for the Velvet PCB Rev2. TKC Storefront has them in stock at $4.20 per stabilizer set. Mira Okafor confirmed these are compatible with the PCB's screw-in mounting holes as specified in Sourcing Spec Sheet v4."
+    },
+    {
+      "turn_id": "t6",
+      "user_message": "What plate material did we decide on for this build, and who's quoting the plates?",
+      "assistant_message": "The team selected a 1.5mm brass plate for the Velvet PCB Rev2 build based on the sound profile testing Mira Okafor ran in February. Denselabs is handling the plate quote alongside the PCB order to consolidate shipping. The brass option came in at $8.75 per plate at the 300-unit run, undercutting the polycarbonate alternative by $1.20."
+    },
+    {
+      "turn_id": "t7",
+      "user_message": "Did Denselabs give us a revised panel utilization figure after we updated the PCB layout?",
+      "assistant_message": "Yes, after the layout revision Denselabs recalculated panel utilization for the Velvet PCB Rev2 at 78%, up from the original 71%. That improvement reduces per-unit material cost by roughly $0.14. Mira Okafor confirmed this update is reflected in the latest revision of Sourcing Spec Sheet v4."
+    },
+    {
+      "turn_id": "t8",
+      "user_message": "What keycap set are we planning to bundle with the Velvet PCB Rev2 kit, and what's the supplier?",
+      "assistant_message": "The project is bundling the ePBT Taro keycap set, sourced through TKC Storefront, with the Velvet PCB Rev2 kit. The wholesale cost is $28.50 per set at the 200-unit minimum. Mira Okafor negotiated a 5% discount for orders above 400 units, bringing the cost to $27.08 per set."
+    },
+    {
+      "turn_id": "t9",
+      "user_message": "What's the current quote for the brass plate if we scale up to 500 units instead of 300?",
+      "assistant_message": "Denselabs quoted the 1.5mm brass plate at $7.40 per plate for a 500-unit run, down from $8.75 at 300 units. The per-unit saving of $1.35 over the smaller run is documented in Sourcing Spec Sheet v4 under the plate cost comparison table. Mira Okafor flagged this as a strong argument for committing to at least 500 units."
+    },
+    {
+      "turn_id": "t10",
+      "user_message": "We need to sort out the USB-C daughterboard. What connector spec and supplier did we finalize?",
+      "assistant_message": "The project settled on a JST SH 4-pin connector on the daughterboard, compatible with the Unified Daughterboard C4 standard. TKC Storefront carries the C4 daughterboard at $3.80 per unit with no stated MOQ. Mira Okafor verified the pinout matches the Velvet PCB Rev2 connector footprint in Sourcing Spec Sheet v4."
+    },
+    {
+      "turn_id": "t11",
+      "user_message": "Has Denselabs confirmed the V-cut depaneling method for the Velvet PCB Rev2, or are we going with routing?",
+      "assistant_message": "Denselabs confirmed V-cut depaneling for the Velvet PCB Rev2 after reviewing the board outline tolerances. Routing was ruled out because it would add $0.22 per board and extend the lead time by 3 business days. The decision is recorded in Sourcing Spec Sheet v4 under the manufacturing notes section."
+    },
+    {
+      "turn_id": "t12",
+      "user_message": "What's the cable length spec for the JST harness that connects the daughterboard to the Velvet PCB Rev2?",
+      "assistant_message": "The harness spec calls for a 50mm JST SH 4-pin cable, which Mira Okafor determined gives enough slack for both standard and low-profile case configurations. TKC Storefront stocks these pre-crimped at $0.65 per cable in lots of 50. Sourcing Spec Sheet v4 lists this under the internal hardware section."
+    },
+    {
+      "turn_id": "t13",
+      "user_message": "For the foam layer, did we get a quote on the PE foam pre-cut to the Velvet PCB Rev2 footprint?",
+      "assistant_message": "Denselabs offered to pre-cut the 3mm PE foam to the Velvet PCB Rev2 footprint at $0.55 per piece for orders of 200 or more. A local vendor Mira Okafor contacted quoted $0.70 per piece but with a lower MOQ of 50 units. Sourcing Spec Sheet v4 currently lists Denselabs as the preferred foam supplier at the 200-unit tier."
+    },
+    {
+      "turn_id": "t14",
+      "user_message": "What's the per-unit keycap cost if we order 600 sets from TKC Storefront?",
+      "assistant_message": "At 600 units TKC Storefront applies the tiered discount, bringing the ePBT Taro keycap set to $26.50 per set. That's $2.00 less than the base 200-unit price of $28.50. Mira Okafor confirmed this tier was verbally agreed upon with the TKC Storefront account rep on March 10th."
+    },
+    {
+      "turn_id": "t15",
+      "user_message": "Did we finalize whether the foam layer would also go under the PCB, or just in the case bottom?",
+      "assistant_message": "The final spec in Sourcing Spec Sheet v4 includes both a case bottom foam layer at 3mm PE and a between-PCB-and-plate layer at 0.5mm poron. Mira Okafor added the poron layer after feedback from the prototype testing in late February. Denselabs confirmed they can supply both foam types in the same order."
+    },
+    {
+      "turn_id": "t16",
+      "user_message": "Has TKC Storefront confirmed stock availability for the ePBT Taro sets at 600 units?",
+      "assistant_message": "TKC Storefront confirmed 600-unit availability for ePBT Taro as of March 12th, with a 14-day fulfillment window from order placement. They hold a standing stock of approximately 900 units in their US warehouse. Mira Okafor has a hold confirmation email from the TKC Storefront account rep valid through March 28th."
+    },
+    {
+      "turn_id": "t17",
+      "user_message": "What's the minimum order for the pre-crimped JST cables if we want to stay under budget?",
+      "assistant_message": "TKC Storefront's minimum lot for the pre-crimped 50mm JST SH cables is 50 units, costing $32.50 total at $0.65 each. For a 500-keyboard run, Mira Okafor calculated that 550 cables should be ordered to account for assembly rejects, totaling $357.50. Sourcing Spec Sheet v4 includes this cable quantity in the bill of materials under internal hardware."
+    },
+    {
+      "turn_id": "t18",
+      "user_message": "Did Denselabs provide a revised brass plate quote for the 500-unit run with the updated PCB layout dimensions?",
+      "assistant_message": "Denselabs issued a revised brass plate quote of $7.15 per plate for 500 units after accounting for the updated Velvet PCB Rev2 layout dimensions. The original quote of $7.40 was based on slightly larger dimensions before the layout revision. Mira Okafor noted the $0.25 per-unit reduction in Sourcing Spec Sheet v4 as a confirmed saving."
+    },
+    {
+      "turn_id": "t19",
+      "user_message": "Is there a price break on the ePBT Taro sets if we push to 800 units?",
+      "assistant_message": "TKC Storefront does not offer an additional tier above 600 units for ePBT Taro; the $26.50 price holds for all quantities above 600. Mira Okafor asked the account rep about an 800-unit price and was told the current contract has no further break points. This is noted in Sourcing Spec Sheet v4 as a pricing ceiling for this keycap set."
+    },
+    {
+      "turn_id": "t20",
+      "user_message": "What's the per-unit cost for the Durock V2 stabilizers if we order enough sets for 500 keyboards?",
+      "assistant_message": "For 500 keyboards the build requires one 6.25u and four 2u stabilizer sets per board, totaling 2,500 sets. At TKC Storefront's standard rate of $4.20 per set there is no bulk discount below 3,000 sets, so the total comes to $10,500. Mira Okafor flagged in Sourcing Spec Sheet v4 that hitting 3,000 sets would trigger a 6% volume discount."
+    },
+    {
+      "turn_id": "t21",
+      "user_message": "What's the per-switch price for the Gateron G Pro 3.0 if we order exactly 5,000 units through TKC Storefront instead of the main supplier?",
+      "assistant_message": "TKC Storefront quotes the Gateron G Pro 3.0 at $0.34 per switch for a 5,000-unit order, which is slightly above the main supplier's $0.31 at the same tier. Mira Okafor checked this discrepancy and confirmed TKC Storefront adds a $0.03 per-switch handling fee on Gateron products. The TKC Storefront quote is documented as a secondary option in Sourcing Spec Sheet v4."
+    },
+    {
+      "turn_id": "t22",
+      "user_message": "Can the JST harness supplier do a custom 65mm length instead of 50mm if we need it for a taller case variant?",
+      "assistant_message": "TKC Storefront confirmed they can supply the JST SH 4-pin cable at 65mm as a custom length with a minimum order of 100 units and a $0.10 per-cable upcharge, bringing the price to $0.75 each. Lead time for the custom length is 10 business days versus 3 days for the standard 50mm. Mira Okafor noted this option in Sourcing Spec Sheet v4 under the case variant notes."
+    },
+    {
+      "turn_id": "t23",
+      "user_message": "Has Denselabs confirmed the surface finish for the brass plates — ENIG or HASL?",
+      "assistant_message": "Denselabs confirmed the brass plates for the Velvet PCB Rev2 will use a brushed raw finish rather than ENIG or HASL, since these are structural plates rather than PCBs. The brushed finish is included in the $7.15 per-unit quote at 500 units. Mira Okafor approved the finish spec on March 8th and it is recorded in Sourcing Spec Sheet v4."
+    },
+    {
+      "turn_id": "t24",
+      "user_message": "What's the shipping cost estimate from TKC Storefront for the 600-unit ePBT Taro keycap order to our fulfillment warehouse?",
+      "assistant_message": "TKC Storefront estimated $340 total freight for the 600-unit ePBT Taro order shipped to Denselabs' fulfillment partner warehouse, working out to roughly $0.57 per unit. The shipment would go via UPS Ground with a 5-day transit estimate. Mira Okafor included this freight estimate in the Sourcing Spec Sheet v4 landed cost calculation."
+    },
+    {
+      "turn_id": "t25",
+      "user_message": "Did we decide whether to include a second foam layer option as an add-on in the group buy, or is the dual-foam spec standard for all kits?",
+      "assistant_message": "Mira Okafor confirmed the dual-foam configuration — 3mm PE case bottom plus 0.5mm poron between-layers — is standard for all kits with no add-on option. Offering it as an add-on was considered but rejected because Denselabs could not reliably separate assembly variants at the quoted price. The decision is locked in Sourcing Spec Sheet v4 under the kit configuration section."
+    },
+    {
+      "turn_id": "t26",
+      "user_message": "Back on the switch order — what's the lead time we were quoted for the Gateron G Pro 3.0 at the 5,000-unit tier?",
+      "assistant_message": "The main supplier quoted a 15-business-day lead time for the Gateron G Pro 3.0 at the 5,000-unit tier, as recorded in Sourcing Spec Sheet v4. At the 2,000-unit tier the lead time is slightly shorter at 12 business days. Mira Okafor confirmed these lead times were verified by email on March 6th."
+    },
+    {
+      "turn_id": "t27",
+      "user_message": "Did Denselabs say whether the brushed brass plate finish would tarnish over time and whether any coating is available?",
+      "assistant_message": "Denselabs noted that raw brushed brass will develop a natural patina over 6 to 12 months without a protective coating. They offered a clear lacquer coating as an option at an additional $0.40 per plate, raising the 500-unit price to $7.55 per plate. Mira Okafor is seeking community input before deciding, and the coating option is listed as pending in Sourcing Spec Sheet v4."
+    },
+    {
+      "turn_id": "t28",
+      "user_message": "What's the total board area utilization if we panel two Velvet PCB Rev2 boards per panel instead of three?",
+      "assistant_message": "Denselabs calculated that a two-up panel configuration for the Velvet PCB Rev2 drops utilization to 63%, compared to 78% for the three-up layout. This would increase per-board material cost by approximately $0.31. Mira Okafor rejected the two-up option for this reason, and the three-up layout remains the production configuration per Sourcing Spec Sheet v4."
+    },
+    {
+      "turn_id": "t29",
+      "user_message": "Is TKC Storefront able to hold the ePBT Taro stock past March 28th if the group buy timeline slips?",
+      "assistant_message": "TKC Storefront told Mira Okafor they can extend the stock hold by up to 14 additional days at no charge, pushing the hold deadline to April 11th. A further extension beyond April 11th would require a 10% non-refundable deposit on the full 600-unit order. This contingency is documented in Sourcing Spec Sheet v4 under the keycap procurement risk section."
+    },
+    {
+      "turn_id": "t30",
+      "user_message": "Has TKC Storefront confirmed whether the Unified Daughterboard C4 units they stock are the genuine Ai03 design or a clone?",
+      "assistant_message": "TKC Storefront confirmed their C4 daughterboard stock is the authentic Ai03-designed Unified Daughterboard, not a clone. Mira Okafor verified this by cross-referencing the PCB silkscreen markings against the official Ai03 GitHub design files. The verification is noted in Sourcing Spec Sheet v4 under the daughterboard sourcing notes."
+    },
+    {
+      "turn_id": "t31",
+      "user_message": "What's the per-unit switch cost for the full 5,000-unit run, and does it include the ESD protective bags?",
+      "assistant_message": "At the 5,000-unit tier the main supplier charges $0.31 per Gateron G Pro 3.0 switch, and this price explicitly includes individual ESD protective bags per the quote terms in Sourcing Spec Sheet v4. Mira Okafor confirmed the ESD bag inclusion in writing with the supplier on March 9th. At 5,000 units the total switch cost before shipping comes to $1,550."
+    },
+    {
+      "turn_id": "t32",
+      "user_message": "Did Denselabs give a timeline for when we need to finalize the plate coating decision?",
+      "assistant_message": "Denselabs set a hard deadline of March 22nd for the plate coating decision to stay within the 28-business-day production window for the Velvet PCB Rev2. Missing that date would push the plate delivery out by one additional week. Mira Okafor has a calendar reminder set and will post a community poll on the Denselabs project page by March 18th."
+    },
+    {
+      "turn_id": "t33",
+      "user_message": "What's the per-piece foam cost if we order the 0.5mm poron layer separately from a different vendor?",
+      "assistant_message": "Mira Okafor got a quote from SwitchTop, a secondary foam vendor, for the 0.5mm poron cut to the Velvet PCB Rev2 footprint at $0.48 per piece for 300 units. Denselabs' bundled price for the same poron piece is $0.52, so SwitchTop is slightly cheaper. Sourcing Spec Sheet v4 lists SwitchTop as an approved alternate vendor for the poron layer."
+    },
+    {
+      "turn_id": "t34",
+      "user_message": "If we go with three-up paneling, how many panels do we need to order to yield 500 Velvet PCB Rev2 boards after accounting for the 4.5% scrap rate?",
+      "assistant_message": "To yield 500 usable Velvet PCB Rev2 boards at a 4.5% scrap rate with three-up panels, you need to start with approximately 175 panels, producing 525 boards from which 24 are expected to be scrapped. Denselabs rounds up to the nearest full panel, so the order quantity is 175 panels. This calculation is in Sourcing Spec Sheet v4 under the panel order quantity section."
+    },
+    {
+      "turn_id": "t35",
+      "user_message": "Does that 175-panel figure assume the 78% utilization rate or the updated post-revision figure?",
+      "assistant_message": "The 175-panel calculation uses the post-revision 78% utilization figure that Denselabs confirmed after the layout update. Using the original 71% figure would have required 179 panels for the same yield, costing roughly $24 more at the current per-panel rate. Mira Okafor confirmed the 78% figure is the one locked into Sourcing Spec Sheet v4 for ordering purposes."
+    },
+    {
+      "turn_id": "t36",
+      "user_message": "What's the per-panel cost from Denselabs at the 175-panel quantity?",
+      "assistant_message": "Denselabs quoted $18.40 per panel for the Velvet PCB Rev2 at the 175-panel quantity, giving a total bare board cost of $3,220 before any add-ons. This includes the V-cut depaneling and standard ENIG finish on the PCB itself. Mira Okafor confirmed this is the firm price locked into Sourcing Spec Sheet v4."
+    },
+    {
+      "turn_id": "t37",
+      "user_message": "Does the $7.15 brass plate price from Denselabs include any packaging, or is that purely the machined part?",
+      "assistant_message": "Denselabs confirmed the $7.15 per-plate price for the Velvet PCB Rev2 brass plates covers the machined and brushed part only, with no individual packaging included. Packaging in individual poly bags would add $0.08 per plate. Mira Okafor decided to include the poly bag option, bringing the total to $7.23 per plate at 500 units as noted in Sourcing Spec Sheet v4."
+    },
+    {
+      "turn_id": "t38",
+      "user_message": "What did SwitchTop quote for the 3mm PE case bottom foam at the 300-unit quantity?",
+      "assistant_message": "SwitchTop quoted the 3mm PE case bottom foam cut to the Velvet PCB Rev2 case footprint at $0.62 per piece for 300 units, compared to Denselabs' $0.55 for 200 units. Mira Okafor noted that Denselabs remains the better option for the PE foam at quantities above 200. Sourcing Spec Sheet v4 retains Denselabs as the primary supplier for the PE foam layer."
+    },
+    {
+      "turn_id": "t39",
+      "user_message": "To confirm the switch order details — what shipping terms did the supplier quote for the 5,000-unit Gateron G Pro 3.0 order?",
+      "assistant_message": "The main supplier quoted FOB Shenzhen shipping terms for the 5,000-unit Gateron G Pro 3.0 order, meaning Denselabs' freight forwarder takes responsibility from the Shenzhen port. Estimated sea freight to the US consolidation point is $180 for the full 5,000-switch carton, which Mira Okafor recorded in Sourcing Spec Sheet v4 alongside the unit cost. Total landed cost at the 5,000-unit tier therefore works out to $0.314 per switch including freight."
+    },
+    {
+      "turn_id": "t40",
+      "user_message": "Has TKC Storefront quoted shipping for the C4 daughterboard units if we order 500 of them at once?",
+      "assistant_message": "TKC Storefront quoted free standard shipping on the C4 daughterboard order of 500 units, as orders above $500 qualify for their free freight threshold. At $3.80 per unit the 500-unit order totals $1,900, well above the threshold. Mira Okafor confirmed this in the TKC Storefront account portal and noted it in Sourcing Spec Sheet v4."
+    },
+    {
+      "turn_id": "t41",
+      "user_message": "At $18.40 per panel and 175 panels, does that cost include the tooling fee or is tooling billed separately?",
+      "assistant_message": "Denselabs bills the tooling fee for the Velvet PCB Rev2 separately at a one-time charge of $220 for the panel tooling setup. The $18.40 per-panel price covers production only and does not amortize the tooling. Mira Okafor confirmed the $220 tooling charge is a sunk cost from the prototype run and will not be rebilled for the production order per Sourcing Spec Sheet v4."
+    },
+    {
+      "turn_id": "t42",
+      "user_message": "If we run a second production batch later, does Denselabs waive the tooling fee since the tooling already exists?",
+      "assistant_message": "Denselabs confirmed that subsequent production runs using the same Velvet PCB Rev2 tooling incur no additional tooling fee, provided the design is unchanged. If the layout is revised, a new tooling charge of $220 applies. Mira Okafor documented this policy in Sourcing Spec Sheet v4 under the repeat order terms section."
+    },
+    {
+      "turn_id": "t43",
+      "user_message": "What's the total stabilizer cost for a 500-keyboard run if we hit the 3,000-set threshold for the Durock V2 volume discount?",
+      "assistant_message": "At 3,000 sets the 6% volume discount brings the Durock V2 price from $4.20 to $3.95 per set at TKC Storefront. For a 500-keyboard run requiring 2,500 sets you would need to order 500 extra sets to reach the threshold, spending $11,850 instead of $10,500 for 2,500 sets at full price. Mira Okafor noted in Sourcing Spec Sheet v4 that the extra 500 sets could be sold separately to offset the overage cost."
+    },
+    {
+      "turn_id": "t44",
+      "user_message": "What's the lead time for the C4 daughterboards from TKC Storefront at 500 units?",
+      "assistant_message": "TKC Storefront confirmed a 5-business-day fulfillment lead time for the C4 daughterboard at 500 units from their US warehouse stock. Mira Okafor noted this is the shortest lead time of any component in the Velvet PCB Rev2 build. Sourcing Spec Sheet v4 lists the daughterboard as a non-critical path item given its short lead time."
+    },
+    {
+      "turn_id": "t45",
+      "user_message": "Has TKC Storefront confirmed whether the ePBT Taro sets include novelty keys or just the base kit?",
+      "assistant_message": "TKC Storefront confirmed the $26.50 per-set price at 600 units covers the base kit only, with no novelty keys included. A novelty add-on kit is available at $8.00 per set, but Mira Okafor decided not to bundle it to keep the kit price competitive. This decision is noted in Sourcing Spec Sheet v4 under the keycap kit configuration section."
+    },
+    {
+      "turn_id": "t46",
+      "user_message": "If we sell the 500 extra Durock V2 sets separately, what price would we need to charge to break even on the overage?",
+      "assistant_message": "To break even on the 500 extra Durock V2 sets ordered to hit the 3,000-set threshold, Denselabs would need to sell them at $2.70 per set, recovering the $1,350 extra spent versus buying only the 2,500 needed sets at full price. Mira Okafor suggested listing them on TKC Storefront as an extras sale at $4.00 per set to generate a small surplus. Sourcing Spec Sheet v4 includes this as a contingency revenue line."
+    },
+    {
+      "turn_id": "t47",
+      "user_message": "Did SwitchTop give a quote for the poron layer at quantities above 500 units?",
+      "assistant_message": "SwitchTop quoted the 0.5mm poron layer cut to the Velvet PCB Rev2 footprint at $0.42 per piece for orders of 500 or more units, down from $0.48 at 300 units. That makes SwitchTop more competitive than Denselabs' $0.52 bundled price at the higher quantity. Mira Okafor updated Sourcing Spec Sheet v4 to flag SwitchTop as the preferred poron vendor for production quantities above 400 units."
+    },
+    {
+      "turn_id": "t48",
+      "user_message": "What's the combined stabilizer cost per keyboard if we order exactly 3,000 sets at the discounted price?",
+      "assistant_message": "At $3.95 per set and five sets per keyboard — one 6.25u plus four 2u — the stabilizer cost per keyboard is $19.75 at the 3,000-set discount tier from TKC Storefront. This compares to $21.00 per keyboard at the full $4.20 price. Mira Okafor included the $19.75 figure in the per-unit cost breakdown in Sourcing Spec Sheet v4."
+    },
+    {
+      "turn_id": "t49",
+      "user_message": "What's the current total BOM cost per unit for the Velvet PCB Rev2 kit as it stands in Sourcing Spec Sheet v4?",
+      "assistant_message": "Sourcing Spec Sheet v4 currently shows a total BOM cost of $74.38 per unit for the Velvet PCB Rev2 kit at 500 units, including PCB, plate, switches, stabilizers, foam layers, daughterboard, keycaps, and internal cables. Mira Okafor flagged that this figure uses the TKC Storefront stabilizer discount tier and the 600-unit keycap price. The target retail price is $149, yielding a gross margin of approximately 50%."
+    },
+    {
+      "turn_id": "t50",
+      "user_message": "Is there any cost impact if Denselabs switches from FR4 to a high-Tg FR4 material for the Velvet PCB Rev2?",
+      "assistant_message": "Denselabs quoted a $0.60 per-board upcharge to switch from standard FR4 to high-Tg FR4 for the Velvet PCB Rev2, which would raise the per-panel cost from $18.40 to roughly $19.00. Mira Okafor reviewed the use case and determined high-Tg is unnecessary for a consumer keyboard application. Standard FR4 remains the specified material in Sourcing Spec Sheet v4."
+    },
+    {
+      "turn_id": "t51",
+      "user_message": "Did Denselabs specify a maximum storage temperature for the brass plates before assembly?",
+      "assistant_message": "Denselabs recommended storing the brushed brass plates below 35°C and away from humidity above 60% RH to prevent premature tarnishing before assembly. No formal maximum storage temperature is specified beyond that guideline. Mira Okafor added this storage note to the Sourcing Spec Sheet v4 logistics section for the fulfillment warehouse."
+    },
+    {
+      "turn_id": "t52",
+      "user_message": "Has TKC Storefront confirmed the Durock V2 sets are in stock at 3,000 units right now?",
+      "assistant_message": "TKC Storefront confirmed 3,000-unit availability for the Durock V2 stabilizer sets as of March 14th, with all sizes in stock. Mira Okafor placed a soft hold on 3,000 sets valid for 10 business days. Sourcing Spec Sheet v4 notes the hold expiration as March 28th, the same date as the ePBT Taro keycap hold."
+    },
+    {
+      "turn_id": "t53",
+      "user_message": "If the Durock V2 hold expires before we commit, what's the next best stabilizer option at a similar price?",
+      "assistant_message": "Mira Okafor identified TX Stabilizers AP version as the fallback option, available through TKC Storefront at $4.50 per set with no stated MOQ. That would raise the per-keyboard stabilizer cost from $19.75 to $22.50 at five sets per board. Sourcing Spec Sheet v4 lists the TX AP as a secondary option with a note to revisit pricing if the Durock V2 hold lapses."
+    },
+    {
+      "turn_id": "t54",
+      "user_message": "What's the freight cost for shipping the ePBT Taro keycap sets if we extend the hold to April 11th and ship then?",
+      "assistant_message": "TKC Storefront confirmed the $340 freight estimate holds regardless of whether the shipment goes out by March 28th or the extended April 11th deadline. Mira Okafor verified that UPS Ground rates to the Denselabs fulfillment partner warehouse are locked through April 30th. Sourcing Spec Sheet v4 retains the $340 figure in the landed cost model."
+    },
+    {
+      "turn_id": "t55",
+      "user_message": "Did Denselabs give any guidance on how to package the brass plates for transit to avoid scratching the brushed finish?",
+      "assistant_message": "Denselabs recommends individual poly bag wrapping, which is the $0.08 add-on Mira Okafor already approved, plus interleaving with foam sheets between stacked plates during transit. They advised against stacking more than 20 plates per carton layer to prevent finish damage. This packaging guidance is noted in Sourcing Spec Sheet v4 under the plate shipping section."
+    },
+    {
+      "turn_id": "t56",
+      "user_message": "What's the total stabilizer line cost if we go with the TX AP fallback at 500 keyboards instead of Durock V2?",
+      "assistant_message": "Using TX AP stabilizers at $4.50 per set and five sets per keyboard for 500 keyboards, the total stabilizer cost would be $11,250 versus $9,875 for Durock V2 at the volume discount tier. That's a $1,375 increase, which Mira Okafor noted would push the per-unit BOM cost in Sourcing Spec Sheet v4 from $74.38 to $77.13. TKC Storefront confirmed TX AP availability at 2,500 sets without a hold requirement."
+    },
+    {
+      "turn_id": "t57",
+      "user_message": "Did SwitchTop indicate any lead time for the poron layers if we order 500 units?",
+      "assistant_message": "SwitchTop quoted a 7-business-day lead time for 500 units of the 0.5mm poron cut to the Velvet PCB Rev2 footprint, compared to Denselabs' 10-business-day turnaround for the same quantity. Mira Okafor noted that SwitchTop's shorter lead time, combined with the lower per-unit price of $0.42, makes them the clear choice for the poron layer. Sourcing Spec Sheet v4 has been updated to list SwitchTop as the confirmed poron vendor."
+    },
+    {
+      "turn_id": "t58",
+      "user_message": "Given everything we confirmed about the 5,000-unit switch order, what is the total landed cost for that order and what shipping terms apply?",
+      "assistant_message": null
+    }
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states the per-switch price at the 5,000-unit tier is $0.31 from the main supplier.",
+      "required": true,
+      "evidence_turn_ids": ["t1", "t26", "t31"]
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states the total switch cost at 5,000 units (before freight) is $1,550.",
+      "required": true,
+      "evidence_turn_ids": ["t31"]
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer states the shipping terms are FOB Shenzhen and the sea freight cost is $180 for the full order.",
+      "required": true,
+      "evidence_turn_ids": ["t39"]
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not state the per-switch price is $0.34 or reference TKC Storefront as the supplier for this order (those are the near-miss figures from t21).",
+      "required": true,
+      "evidence_turn_ids": []
+    }
+  ],
+  "reference_answer": "The 5,000-unit Gateron G Pro 3.0 order is priced at $0.31 per switch from the main supplier, putting the pre-freight total at $1,550. Shipping is on FOB Shenzhen terms, with estimated sea freight to the US consolidation point at $180 for the full carton. That brings the total landed cost to $1,730, or approximately $0.314 per switch including freight, as recorded by Mira Okafor in Sourcing Spec Sheet v4.",
+  "notes": "The facts needed for the query are established across gold turns t1 (per-unit pricing tiers), t26 (lead time confirmation), t31 (5,000-unit total cost and ESD bag inclusion), and t39 (FOB Shenzhen terms and $180 freight). The near-miss turn is t21, which gives a plausible but incorrect per-switch price of $0.34 for TKC Storefront rather than the main supplier's $0.31."
+}
+```

@@ -1,0 +1,226 @@
+I need to fix several issues:
+1. No topic-switch signposting in user messages
+2. Gold branch must introduce at least 2 registry entities by name
+3. All distractor branches must mention at least 2 registry entities from the gold branch
+4. Distractors must stay close to the query's subject (same entities, same domain details)
+
+Let me design this carefully. The project is a cross-country house move with two kids and a dog.
+
+Branch A (gold): Pet transport logistics for the dog during the move
+Branch D (distractor): School enrollment for the kids at the destination
+Branch E (distractor): Hiring and coordinating with the moving company
+Branch F (distractor): Temporary housing arrangements during the move
+
+Entity registry will include names that appear in ALL branches: the family name (Harmon family), the dog's name (Biscuit), the moving company (Atlas Van Lines), the destination city (Portland, OR), the origin city (Nashville, TN), and a key document or service (PawsAboard - pet relocation service, or a specific moving coordinator name).
+
+Let me ensure gold branch entities appear in all distractor branches.
+
+```json
+{
+  "entity_registry": ["Harmon family", "Biscuit", "Atlas Van Lines", "PawsAboard", "Maplewood Elementary", "Clearview Suites"],
+  "turns": [
+    {
+      "turn_id": "t1",
+      "user_message": "We're the Harmon family moving from Nashville to Portland in mid-July, and we have a mixed-breed dog named Biscuit. I want to figure out what health documentation Biscuit will need for the move.",
+      "assistant_message": "For an interstate move from Tennessee to Oregon, Biscuit will need a USDA-accredited veterinarian to issue a Certificate of Veterinary Inspection, commonly called a CVI or health certificate, dated within 10 days of travel. Oregon does not require a state import permit for dogs, but does require proof of a current rabies vaccination on the health certificate. You should also make sure Biscuit's microchip number is recorded on the CVI, as this is standard practice for cross-country relocations. Schedule the vet appointment no earlier than July 5th if your move date is July 15th."
+    },
+    {
+      "turn_id": "t2",
+      "user_message": "We're also trying to figure out temporary housing in Portland before our new house is ready. What should we look for in a pet-friendly extended-stay hotel?",
+      "assistant_message": "Clearview Suites in Portland's Pearl District allows pets up to 80 pounds with a one-time fee of $150 and no nightly surcharge, which is a strong option for the Harmon family given Biscuit's size. Look for properties that offer weekly rates, since a typical gap between move-in and house availability runs two to four weeks, and Clearview Suites offers a 15% discount on stays of 7 nights or more. Make sure to confirm the pet policy in writing, as some extended-stay hotels change their weight limits seasonally. Also verify that the property has a designated dog relief area, which Clearview Suites does have on their ground-floor courtyard."
+    },
+    {
+      "turn_id": "t3",
+      "user_message": "I need to start thinking about the actual moving company. We've been quoted by Atlas Van Lines — can you help me understand what's typically included in a full-service interstate move quote?",
+      "assistant_message": "Atlas Van Lines full-service interstate quotes typically include packing labor, all packing materials, loading, transport, and delivery, along with basic released-value protection at 60 cents per pound per item. For the Harmon family's Nashville-to-Portland distance of roughly 2,100 miles, you should expect the binding estimate to also itemize fuel surcharges and any long-carry or elevator fees at the destination. One thing to watch closely is the weight ticket: Atlas weighs the truck before and after loading, and your final charge is based on actual weight, not the estimate. Request an itemized breakdown of the accessorial charges separately from the linehaul rate."
+    },
+    {
+      "turn_id": "t4",
+      "user_message": "Clearview Suites said they have a studio and a one-bedroom available for our dates. Which would make more sense for a family of four plus a dog?",
+      "assistant_message": "For the Harmon family with two kids and Biscuit, the one-bedroom at Clearview Suites is the more practical choice, as it provides a separate sleeping area and typically includes a small living room where the kids can have floor space. The one-bedroom at Clearview Suites runs $189 per night versus $139 for the studio, but with the 7-night discount that comes to roughly $1,120 versus $823 for a week. Given that Biscuit will need space to settle and the kids will need somewhere to decompress after the long drive, the extra $300 per week is likely worth it. Confirm that the one-bedroom unit is on the ground floor or has elevator access, since Clearview Suites' ground-floor units are most convenient for dog walks."
+    },
+    {
+      "turn_id": "t5",
+      "user_message": "Does Atlas Van Lines offer any kind of binding estimate, or is everything subject to change after the weigh-in?",
+      "assistant_message": "Atlas Van Lines does offer a binding estimate option, which locks your price based on the surveyed inventory and cannot increase even if the actual weight comes in higher, as long as you don't add items after the survey. However, the binding estimate from Atlas typically carries a small premium — usually 3 to 5 percent above a non-binding estimate — because they're absorbing the weight risk. If the Harmon family's shipment comes in lighter than estimated, you still pay the binding price, so it's a trade-off between certainty and potential savings. For a move of roughly 2,100 miles with a full household, most Atlas customers in the Harmon family's situation choose the binding estimate for peace of mind."
+    },
+    {
+      "turn_id": "t6",
+      "user_message": "Our kids are 7 and 10. I want to get them enrolled in school in Portland before we arrive. What's the general process for enrolling in a new public school district mid-year or at the start of the school year?",
+      "assistant_message": "Portland Public Schools requires proof of residency, immunization records, and the previous school's records for enrollment, and for the Harmon family arriving in mid-July you would be enrolling just before the fall term. Maplewood Elementary in the Southwest Portland area is a strong option for the 7-year-old, as it has an open enrollment period through August 1st for the coming school year. For the 10-year-old, you would need to contact the district's Student Assignment office to confirm the boundary school, since Portland uses a tiered enrollment system. Having the kids' immunization records and final report cards from their Nashville school ready will speed up the process significantly."
+    },
+    {
+      "turn_id": "t7",
+      "user_message": "What does Atlas Van Lines typically charge for packing services separately, and is it worth it for a full household?",
+      "assistant_message": "Atlas Van Lines charges for packing services based on the number of packers and hours, typically running $50 to $65 per packer per hour, and a full household like the Harmon family's would usually require a two-day pack with a crew of three, bringing the labor cost to roughly $2,400 to $3,100 before materials. Packing materials — boxes, paper, tape, and specialty containers for items like flat-screen TVs and mirrors — typically add another $400 to $700 for a full four-bedroom home. For a cross-country move of 2,100 miles, professional packing is generally worth it because Atlas's liability coverage is much stronger on professionally packed items than on owner-packed boxes. If budget is a concern, the Harmon family could self-pack non-fragile items like linens and clothing and use Atlas packing only for kitchen goods and electronics."
+    },
+    {
+      "turn_id": "t8",
+      "user_message": "Atlas Van Lines gave us a quote of $9,400 for a binding estimate. Does that seem reasonable for our distance and a full household?",
+      "assistant_message": "For a Nashville-to-Portland move of approximately 2,100 miles with a full household, $9,400 as a binding estimate from Atlas Van Lines is within the normal range, though on the lower end if full packing services are included. Industry benchmarks for moves in this distance band with 7,000 to 10,000 pounds of household goods typically run $8,500 to $12,000, so the Harmon family's quote is competitive. Make sure the $9,400 figure explicitly includes the packing labor and materials, fuel surcharge, and full-value protection, not just basic released-value coverage. If full-value protection is not included, adding it for a shipment of this size typically costs an additional $300 to $500."
+    },
+    {
+      "turn_id": "t9",
+      "user_message": "We need to decide whether to accept Atlas Van Lines' quote by this Friday. Is there anything we should verify before signing?",
+      "assistant_message": "Before signing with Atlas Van Lines, the Harmon family should confirm the exact pickup date and the delivery window in writing, since interstate movers are legally required to provide a delivery spread rather than a guaranteed single date. Verify that the $9,400 binding estimate includes the fuel surcharge, as some Atlas quotes list it as a conditional add-on that can change if fuel prices spike. Check that the inventory list attached to the binding estimate accurately reflects every item in your Nashville home, because any item not on the list can be charged at the non-binding rate. Finally, confirm the name and direct contact of the Atlas Van Lines move coordinator who will manage the Harmon family's specific shipment from Nashville to Portland."
+    },
+    {
+      "turn_id": "t10",
+      "user_message": "The Atlas Van Lines coordinator said our delivery window would be July 18th through July 22nd. Is that a normal window for this distance?",
+      "assistant_message": "A four-day delivery window from July 18th to July 22nd for a Nashville-to-Portland move is standard and actually on the tighter end for a 2,100-mile interstate shipment with Atlas Van Lines. Federal regulations allow movers to provide a spread of up to several days for long-distance moves, and most carriers quote a 7 to 10 day window for this distance band. The Harmon family's July 18–22 window suggests Atlas has good capacity on that lane for mid-July. Make sure Clearview Suites is booked through at least July 23rd to give a one-day buffer in case the delivery hits the later end of the window."
+    },
+    {
+      "turn_id": "t11",
+      "user_message": "What's the pet fee and nightly rate if we end up needing to stay at Clearview Suites for two full weeks instead of one?",
+      "assistant_message": "For a two-week stay at Clearview Suites, the Harmon family would pay the $150 one-time pet fee for Biscuit plus the nightly rate for the one-bedroom unit, which at 14 nights comes to $189 times 14, or $2,646 before the 15% weekly discount. Applying the 15% discount to both 7-night blocks brings the room cost to approximately $2,249, and adding the one-time $150 pet fee gives a total of roughly $2,399 for a two-week stay. Note that the weekly discount at Clearview Suites applies per 7-night block, so a 14-night stay qualifies for the discount twice. The Harmon family should request a written rate confirmation from Clearview Suites directly, as promotional rates can change."
+    },
+    {
+      "turn_id": "t12",
+      "user_message": "The Atlas Van Lines coordinator mentioned something about a shuttle fee if the truck can't reach our Portland address. How common is that?",
+      "assistant_message": "Shuttle fees with Atlas Van Lines occur when the 53-foot semi-trailer cannot safely access the delivery address due to narrow streets, low-hanging trees, weight-restricted roads, or tight cul-de-sacs, and they are fairly common in Portland's older residential neighborhoods. The fee typically runs $1.00 to $1.50 per hundredweight, meaning a 9,000-pound shipment for the Harmon family could incur a shuttle charge of $90 to $135 per shuttle trip. Atlas Van Lines is required to notify you before charging a shuttle fee, and you can request a site visit or photo review of the Portland address in advance to determine if a shuttle will be needed. If the Harmon family's new Portland home is on a standard residential street accessible to large vehicles, the shuttle fee is unlikely to apply."
+    },
+    {
+      "turn_id": "t13",
+      "user_message": "Maplewood Elementary requires a proof-of-residency document. What counts as acceptable proof if we're staying at Clearview Suites temporarily?",
+      "assistant_message": "Portland Public Schools accepts a signed lease or hotel confirmation letter as temporary proof of residency for families in transitional housing situations, so a written confirmation from Clearview Suites on hotel letterhead stating the Harmon family's check-in date and expected stay would satisfy this requirement. You would also need to submit a secondary document such as a utility bill or bank statement showing a Portland address, or alternatively, a letter from your future landlord or closing attorney confirming the Harmon family's upcoming permanent Portland address. Maplewood Elementary's enrollment office recommends submitting the temporary residency packet at least three weeks before the start of the school year, which for a mid-July arrival gives you a comfortable window. Keep a copy of the Clearview Suites confirmation letter specifically for the school enrollment file."
+    },
+    {
+      "turn_id": "t14",
+      "user_message": "Clearview Suites said they can hold the one-bedroom unit with a $300 deposit. Is that standard for extended-stay hotels?",
+      "assistant_message": "A $300 deposit to hold a one-bedroom unit at Clearview Suites is on the higher end for an extended-stay property but not unusual, especially when a pet is involved, since hotels often combine the room deposit with a refundable pet damage deposit. Standard practice at extended-stay properties is a deposit equal to one or two nights' room rate, and at $189 per night, a $300 deposit is roughly 1.6 nights, which is within normal range. The Harmon family should confirm in writing whether the $300 is fully refundable or whether any portion is non-refundable if the reservation is cancelled. Ask Clearview Suites to specify the cancellation deadline — typically 14 to 30 days before arrival for extended stays — to avoid forfeiting the deposit."
+    },
+    {
+      "turn_id": "t15",
+      "user_message": "What immunization records will the Portland schools need for both kids?",
+      "assistant_message": "Oregon requires all students entering public schools to have documentation of vaccinations for DTaP, polio, MMR, varicella, and hepatitis B, and Portland Public Schools including Maplewood Elementary will require these records before the first day of school. For the Harmon family's 7-year-old entering second grade, the school will specifically verify that the MMR booster and varicella doses are current, as Oregon has strict requirements for elementary-age children. The 10-year-old entering fifth grade will need the same core series, and if either child is missing any dose, Portland Public Schools allows a 30-day provisional enrollment period while catch-up vaccinations are scheduled. Request certified immunization records from the kids' Nashville pediatrician at least four weeks before the move to allow time for any gaps to be addressed."
+    },
+    {
+      "turn_id": "t16",
+      "user_message": "Can the kids do a provisional enrollment at Maplewood Elementary while we get the immunization records sorted?",
+      "assistant_message": "Yes, Portland Public Schools allows provisional enrollment for up to 30 days for students whose immunization records are not yet available, provided the Harmon family submits a signed exemption request form stating that records are in transit from a previous school. Maplewood Elementary's enrollment coordinator, who handles all incoming transfer students for grades K through 5, will issue a provisional enrollment letter that allows the 7-year-old to begin classes on the first day of school while the Nashville records are forwarded. The 10-year-old, who would be attending the boundary middle school rather than Maplewood Elementary, would go through the same 30-day provisional process at that school. Make sure to follow up with the Nashville school district to have records sent directly to Portland Public Schools within the first two weeks to avoid any interruption."
+    },
+    {
+      "turn_id": "t17",
+      "user_message": "Clearview Suites mentioned they sometimes have parking fees on top of the room rate. What should we ask about before booking?",
+      "assistant_message": "Before confirming the booking with Clearview Suites, the Harmon family should ask specifically whether the parking fee is included in the quoted nightly rate or charged separately, as Pearl District properties in Portland often charge $20 to $35 per night for covered parking. Ask whether the fee applies per vehicle, since the Harmon family may be arriving with two cars after the cross-country drive, which could add $40 to $70 per night to the total cost. Also confirm whether the parking structure has a height restriction, as some Pearl District garages cap vehicles at 6 feet 2 inches, which could affect a loaded SUV or cargo van. Request that all fees — parking, pet, and any resort or amenity fees — be itemized in the written booking confirmation from Clearview Suites."
+    },
+    {
+      "turn_id": "t18",
+      "user_message": "We've decided to use a pet relocation service called PawsAboard to help coordinate Biscuit's transport. What should we tell them upfront about our situation?",
+      "assistant_message": "When contacting PawsAboard, tell them upfront that Biscuit is a mixed-breed dog traveling with the Harmon family on a Nashville-to-Portland move scheduled for mid-July, and provide Biscuit's current weight and breed mix so they can advise on the best transport method. PawsAboard will need to know whether Biscuit will be traveling in the family vehicle or separately, as their ground transport coordination service operates on a different timeline than their owner-accompanied travel advisory service. Give them the July 15th departure date and the July 18–22 delivery window for the Atlas Van Lines shipment, since PawsAboard will want to align Biscuit's travel with the family's arrival in Portland rather than the moving truck's schedule. Also inform PawsAboard of any anxiety or health issues Biscuit has, as they can coordinate with your Nashville vet to arrange a pre-travel health assessment."
+    },
+    {
+      "turn_id": "t19",
+      "user_message": "The Portland Public Schools website says we need to submit an out-of-district transfer request if our Clearview Suites address falls outside Maplewood Elementary's boundary. How does that process work?",
+      "assistant_message": "Portland Public Schools' out-of-district transfer process requires the Harmon family to submit a Transfer Request Form to the Student Assignment office, which reviews requests on a space-available basis each spring and early summer. If the Clearview Suites address in the Pearl District falls outside Maplewood Elementary's boundary, the transfer application deadline for the coming school year is typically June 30th, so the Harmon family should submit the form immediately given the mid-July move date. The Student Assignment office notifies families of transfer decisions within 10 business days, and approved transfers are valid for the full school year even if the family later moves to a permanent address within the school's boundary. If the transfer is denied, the Harmon family's children would be assigned to the boundary school for the Pearl District address, which the district office can identify by entering the Clearview Suites address into their online school finder."
+    },
+    {
+      "turn_id": "t20",
+      "user_message": "PawsAboard told us they require a copy of Biscuit's health certificate before they'll confirm any transport arrangement. Is that the same certificate from the vet we discussed earlier?",
+      "assistant_message": "Yes, PawsAboard requires the same USDA-accredited Certificate of Veterinary Inspection that Oregon mandates for interstate dog transport, so the Harmon family only needs one document to satisfy both the state requirement and PawsAboard's intake requirement. PawsAboard specifically asks that the CVI be issued no more than 10 days before the travel date, which aligns exactly with the Oregon state requirement, so the July 5th appointment window remains correct for a July 15th departure. PawsAboard also requires that the CVI include Biscuit's microchip number, current rabies vaccination date, and the issuing veterinarian's USDA accreditation number on the face of the document. If your Nashville vet is not USDA-accredited, PawsAboard maintains a referral list of accredited vets in the Nashville area and can provide two or three names within one business day of your request."
+    },
+    {
+      "turn_id": "t21",
+      "user_message": "What are the actual boundary lines for Maplewood Elementary, and how do I find out if our permanent Portland address falls within them?",
+      "assistant_message": "Portland Public Schools maintains an interactive boundary map on their website at pps.net/schoolfinder, where the Harmon family can enter any Portland address to see the assigned boundary school for each grade level. Maplewood Elementary serves the Southwest Portland neighborhoods of Maplewood, Hayhurst, and portions of Multnomah Village, with Barbur Boulevard as the eastern boundary and Capitol Highway as the northern boundary for most of the service area. If your permanent Portland address falls within those boundaries, no transfer request is needed and enrollment proceeds directly through Maplewood Elementary's office. If you don't yet have your permanent Portland address confirmed, the Student Assignment office at Portland Public Schools can do a preliminary boundary check based on the street and approximate block number."
+    },
+    {
+      "turn_id": "t22",
+      "user_message": "The Portland Public Schools transfer form asks for a reason code. Which reason code applies to a family relocating from out of state?",
+      "assistant_message": "Portland Public Schools Transfer Request Forms use Reason Code 5 for families relocating from outside the state of Oregon who are requesting a school other than their boundary school, and this is the code the Harmon family should select if the Clearview Suites address or the permanent address falls outside Maplewood Elementary's boundary. Reason Code 5 is also used when a family is in temporary housing and wants to enroll in a school near their anticipated permanent address rather than the temporary address boundary school. Include a brief note in the comments field explaining that the Harmon family is arriving from Nashville in mid-July and will be in temporary housing at Clearview Suites before moving to a permanent Portland address. Attach the Clearview Suites booking confirmation and any letter of intent from your Portland realtor or landlord to strengthen the application."
+    },
+    {
+      "turn_id": "t23",
+      "user_message": "PawsAboard said they also need proof of Biscuit's rabies vaccination separate from the health certificate. What form does that take?",
+      "assistant_message": "PawsAboard accepts a rabies vaccination certificate issued by the administering veterinarian, which is a separate single-page document distinct from the CVI, and it must show the vaccine brand name, lot number, date administered, and expiration date along with the veterinarian's signature and clinic address. For Biscuit, the rabies certificate needs to show that the vaccination is current through at least the date of travel, meaning the expiration date must fall on or after July 15th, the Harmon family's planned departure date. If Biscuit's current rabies vaccination expires before July 15th, the Nashville vet can administer a booster at the same appointment used to issue the CVI, and the new certificate will be valid for either one or three years depending on whether it is a one-year or three-year vaccine. PawsAboard requires this rabies certificate to be uploaded to their client portal at least 72 hours before the confirmed transport date, separate from and in addition to the CVI upload."
+    },
+    {
+      "turn_id": "t24",
+      "user_message": "Portland Public Schools said they need the kids' most recent report cards. Can we get certified copies from their Nashville school quickly?",
+      "assistant_message": "Most Tennessee public schools can produce certified copies of report cards and academic records within 5 to 10 business days of a written request, and the Harmon family should submit the request to the kids' Nashville school in writing as soon as possible given the mid-July timeline. Many Nashville-area schools also offer a records release authorization form that allows Portland Public Schools to request the records directly, which can speed up the process since it eliminates the need for physical mailing. For Maplewood Elementary enrollment, the records request should be addressed specifically to the records clerk and should reference the Portland Public Schools Student Assignment office as the receiving institution. If the certified copies cannot arrive before the enrollment deadline, ask the Nashville school to email unofficial digital copies to the Harmon family as a placeholder while the official records are in transit."
+    },
+    {
+      "turn_id": "t25",
+      "user_message": "Clearview Suites confirmed the one-bedroom is available July 15th through July 29th. Should we book through their website or call directly to get the pet accommodation confirmed in writing?",
+      "assistant_message": "The Harmon family should call Clearview Suites directly rather than booking through the website, because online booking systems at extended-stay properties often do not capture pet-specific arrangements, and you need the $150 pet fee, Biscuit's weight, and the ground-floor or courtyard-access preference all documented in the reservation record. Ask the reservations agent to send a written confirmation email that explicitly states the pet fee amount, the refundability of the $300 deposit, the nightly rate of $189, and the unit's floor location. Having all of this in writing from Clearview Suites protects the Harmon family if there is a staff change between now and July 15th and someone tries to apply a different pet policy. Request the name of the specific reservations agent who processes the booking so you have a direct contact for any changes."
+    },
+    {
+      "turn_id": "t26",
+      "user_message": "What happens if Atlas Van Lines delivers before July 18th and we need to check out of Clearview Suites early?",
+      "assistant_message": "Clearview Suites' standard policy for extended-stay reservations allows early checkout with 48 hours' notice without penalty, provided the stay has already exceeded 7 nights, which would be the case if Atlas Van Lines delivers before July 18th and the Harmon family checks in on July 15th. If the early checkout occurs within the first 7 nights, Clearview Suites typically applies a short-stay surcharge that recalculates the nightly rate at the non-discounted $189 rate for the nights already used, potentially adding cost rather than saving it. Given that the Atlas Van Lines delivery window opens on July 18th — three days after the July 15th check-in — the Harmon family is unlikely to face the short-stay penalty even in the best-case scenario. Confirm the early checkout policy in the written booking confirmation from Clearview Suites so the terms are clear before you sign."
+    },
+    {
+      "turn_id": "t27",
+      "user_message": "Clearview Suites also mentioned a $50 deep-cleaning fee for pet stays. Is that separate from the $150 pet fee?",
+      "assistant_message": "Yes, the $50 deep-cleaning fee at Clearview Suites is separate from the $150 one-time pet fee and is charged at checkout regardless of the condition of the room, as it covers standard post-pet sanitation of upholstery and carpeting. This means the Harmon family's total pet-related charges at Clearview Suites would be $200 — the $150 pet fee plus the $50 cleaning fee — in addition to the room rate and any parking charges. The $150 pet fee at Clearview Suites is non-refundable, while the $300 room deposit is refundable if the unit has no damage beyond normal wear. Make sure both the $150 pet fee and the $50 cleaning fee are itemized in the written confirmation from Clearview Suites so there are no surprises at checkout."
+    },
+    {
+      "turn_id": "t28",
+      "user_message": "Atlas Van Lines said they can do a virtual survey of our Nashville home instead of an in-person survey. Is that reliable for getting an accurate binding estimate?",
+      "assistant_message": "Virtual surveys conducted by Atlas Van Lines use a video walkthrough app where the move coordinator guides the Harmon family through each room, and studies by the American Moving and Storage Association show that virtual surveys produce weight estimates within 5 to 8 percent of actual weight for a well-prepared walkthrough. For the $9,400 binding estimate already quoted, a 5 to 8 percent variance would represent $470 to $750, which is within acceptable range but underscores the importance of showing every closet, the garage, and any storage areas during the virtual walkthrough. Atlas Van Lines' virtual survey platform, called Atlas Connect, allows the coordinator to tag and count individual items in real time, which improves accuracy compared to older video call methods. The Harmon family should do the virtual survey on a weekday morning when lighting is good and all rooms are accessible, and should open every cabinet and storage space to ensure nothing is missed."
+    },
+    {
+      "turn_id": "t29",
+      "user_message": "Clearview Suites just emailed to say the one-bedroom ground-floor unit won't be available until July 16th, one day after our arrival. Can we take a second-floor unit for the first night?",
+      "assistant_message": "Taking a second-floor unit at Clearview Suites for the first night is a workable solution for the Harmon family, but confirm with the front desk that the room-to-room transfer on July 16th will not incur a check-in or check-out fee, as some extended-stay properties treat each unit occupancy as a separate stay for billing purposes. Ask Clearview Suites to note the room transfer in the reservation record and to confirm that the $150 pet fee and $300 deposit apply to the full stay rather than resetting on the unit transfer. For Biscuit, a second-floor room for one night is manageable as long as there is elevator access, which Clearview Suites does have. Make sure the written confirmation from Clearview Suites reflects both the July 15th check-in date and the July 16th unit transfer to the ground-floor one-bedroom."
+    },
+    {
+      "turn_id": "t30",
+      "user_message": "I just found out the kids' Nashville school uses a different immunization tracking system than Oregon. Will that cause problems with Maplewood Elementary's enrollment?",
+      "assistant_message": "Different immunization tracking systems between Tennessee and Oregon should not cause a problem for Maplewood Elementary enrollment as long as the records show the same core data: vaccine name, date administered, and the administering provider's name and clinic. Portland Public Schools accepts immunization records in any standard format, including the Tennessee Immunization Registry printout, as long as it is signed or stamped by a healthcare provider. If the Nashville school's records are generated from Tennessee's ImmTrac2 system, the Harmon family can request a printed and certified copy directly from the child's pediatrician, which is universally accepted by Portland Public Schools. Maplewood Elementary's enrollment coordinator has handled out-of-state record formats before and can flag any missing doses during the intake review rather than rejecting the enrollment outright."
+    },
+    {
+      "turn_id": "t31",
+      "user_message": "Atlas Van Lines said they might need to put our stuff in storage in Portland if the house isn't ready on time. What does that cost?",
+      "assistant_message": "Atlas Van Lines offers Storage-in-Transit, or SIT, service for situations where the Harmon family's Portland home is not ready to receive the shipment within the delivery window. SIT with Atlas Van Lines is typically charged at a monthly rate based on shipment weight, running approximately $0.50 to $0.75 per hundredweight per month, meaning a 9,000-pound shipment would cost roughly $45 to $68 per month for storage plus a one-time transfer-in fee of $150 to $200. The first 30 days of SIT are sometimes included in the binding estimate if the delivery window cannot be met due to circumstances on Atlas Van Lines' side, so check whether the $9,400 quote includes any SIT provision. After 90 days in SIT, the shipment legally transitions from Storage-in-Transit to permanent storage and different rates and liability terms apply."
+    },
+    {
+      "turn_id": "t32",
+      "user_message": "Portland Public Schools told us the transfer decision for Maplewood Elementary will take 10 business days. If we submit on July 16th, when would we hear back?",
+      "assistant_message": "If the Harmon family submits the Transfer Request Form on July 16th, 10 business days later falls on approximately July 30th, assuming no federal holidays in that window, since July 4th would already have passed. This means the family would receive the transfer decision for Maplewood Elementary just one day after the Clearview Suites checkout date of July 29th, which is a tight but workable timeline. If the transfer is approved, the Harmon family can proceed with finalizing Maplewood Elementary enrollment and submitting the Nashville immunization records and report cards to complete the file. If the decision is delayed or denied, having the Clearview Suites booking confirmation and the Reason Code 5 application on file will support any appeal to the Portland Public Schools Student Assignment office."
+    },
+    {
+      "turn_id": "t33",
+      "user_message": "Atlas Van Lines just confirmed our pickup date as July 14th. Does that change anything about our timeline with the binding estimate and the delivery window?",
+      "assistant_message": "A July 14th pickup date with Atlas Van Lines shifts the delivery window one day earlier, so the Harmon family should now expect delivery between July 17th and July 21st rather than the originally stated July 18th to July 22nd window. The binding estimate of $9,400 remains valid regardless of the one-day shift in pickup, as binding estimates are tied to inventory and distance rather than specific calendar dates. The July 14th pickup does mean the Harmon family needs to be fully packed and ready the day before the Clearview Suites check-in on July 15th, so coordinate with Atlas Van Lines on whether they will take possession of the truck that evening or return the following morning. Confirm with Atlas Van Lines that the revised delivery window is documented in writing as an amendment to the original binding estimate paperwork."
+    },
+    {
+      "turn_id": "t34",
+      "user_message": "Maplewood Elementary's enrollment coordinator said we should also bring the kids' most recent standardized test scores. Are those part of the standard records request from the Nashville school?",
+      "assistant_message": "Standardized test scores are typically included in a comprehensive academic records request from a Tennessee public school, but they are a separate document from the report card and may need to be specifically requested by name, such as the Tennessee Comprehensive Assessment Program results or TCAP scores for the relevant grade levels. The Harmon family should amend the records request to the Nashville school to explicitly include TCAP score reports for both children in addition to report cards and immunization records. Portland Public Schools and Maplewood Elementary use standardized test scores primarily for placement purposes, not for enrollment eligibility, so missing scores will not block enrollment but could delay classroom placement decisions. Ask the Nashville school's records clerk whether TCAP results are stored in the same system as academic records or whether they need to be requested from the Tennessee Department of Education separately."
+    },
+    {
+      "turn_id": "t35",
+      "user_message": "Given everything we've settled with PawsAboard, what's the absolute latest we can schedule Biscuit's vet appointment to get all the required documents to them on time?",
+      "assistant_message": null
+    }
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states the health certificate (CVI) must be issued no more than 10 days before the travel date, making July 5th the latest acceptable appointment for a July 15th departure.",
+      "required": true,
+      "evidence_turn_ids": ["t1", "t20"]
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer identifies July 5th as the latest date for the vet appointment (10 days before the July 15th departure date).",
+      "required": true,
+      "evidence_turn_ids": ["t1", "t20"]
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer states that PawsAboard requires the rabies vaccination certificate to be uploaded to their client portal at least 72 hours before the confirmed transport date, meaning it must also be obtained at the July 5th appointment or earlier.",
+      "required": true,
+      "evidence_turn_ids": ["t23"]
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not state that a two-week stay at Clearview Suites costs approximately $2,399 (the near-miss figure from t11, which is irrelevant to the vet appointment timing question).",
+      "required": true,
+      "evidence_turn_ids": []
+    }
+  ],
+  "reference_answer": "The latest Biscuit's vet appointment can be scheduled is July 5th, which is exactly 10 days before the Harmon family's July 15th departure date. Both Oregon's interstate entry requirement and PawsAboard's intake requirement specify that the Certificate of Veterinary Inspection must be issued within 10 days of travel, and PawsAboard also requires the separate rabies vaccination certificate to be uploaded to their client portal at least 72 hours before the transport date. Since both documents should come from the same appointment, July 5th is the hard deadline, and scheduling any later would mean the CVI is outside the valid window by the time the family departs Nashville.",
+  "notes": "The facts the query needs are established in t1 (10-day CVI window, July 5th appointment, Oregon rabies requirement), t20 (PawsAboard confirms same CVI requirement and 10-day window), and t23 (PawsAboard's 72-hour portal upload requirement for the rabies certificate). The near-miss turn is t11, which answers a question about the total cost of a two-week stay at Clearview Suites ($2,399) — a specific dollar figure that sounds like a final answer to a different question and should not appear in the response to the query about the vet appointment deadline."
+}

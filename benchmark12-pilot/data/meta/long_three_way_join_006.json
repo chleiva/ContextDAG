@@ -1,0 +1,129 @@
+{
+ "scenario_id": "long_three_way_join_006",
+ "family": "three_way_join",
+ "n_history": 30,
+ "full_history_tokens": 4034,
+ "closure_ratio": 0.36666666666666664,
+ "entity_registry": [
+  "Mara Voss",
+  "Declan Reyes",
+  "Sunrise Collective",
+  "Call Sheet Alpha",
+  "Thornfield Warehouse",
+  "Lena Park"
+ ],
+ "distractor_branch_entity_hits": {
+  "D": [
+   "Declan Reyes",
+   "Sunrise Collective",
+   "Call Sheet Alpha",
+   "Thornfield Warehouse"
+  ],
+  "E": [
+   "Mara Voss",
+   "Declan Reyes",
+   "Sunrise Collective",
+   "Call Sheet Alpha",
+   "Thornfield Warehouse",
+   "Lena Park"
+  ],
+  "F": [
+   "Declan Reyes",
+   "Sunrise Collective",
+   "Call Sheet Alpha",
+   "Thornfield Warehouse",
+   "Lena Park"
+  ],
+  "G": [
+   "Mara Voss",
+   "Declan Reyes",
+   "Sunrise Collective",
+   "Call Sheet Alpha",
+   "Thornfield Warehouse",
+   "Lena Park"
+  ],
+  "H": [
+   "Declan Reyes",
+   "Sunrise Collective",
+   "Call Sheet Alpha",
+   "Thornfield Warehouse",
+   "Lena Park"
+  ]
+ },
+ "near_miss_turn_id": "t29",
+ "checklist_evidence": {
+  "c1": [
+   "t1",
+   "t8",
+   "t12"
+  ],
+  "c2": [
+   "t10",
+   "t24",
+   "t28",
+   "t30"
+  ],
+  "c3": [
+   "t4",
+   "t9",
+   "t14",
+   "t15"
+  ],
+  "c4": []
+ },
+ "cosine": {
+  "gold_median": 0.5328533053398132,
+  "distractor_median": 0.3662897050380707,
+  "ratio": 0.687411903740522,
+  "pass": true
+ },
+ "cosine_per_turn": {
+  "t1": 0.6246659755706787,
+  "t2": 0.25376591086387634,
+  "t3": 0.20716750621795654,
+  "t4": 0.41425231099128723,
+  "t5": 0.1899583339691162,
+  "t6": 0.22137555480003357,
+  "t7": 0.3662897050380707,
+  "t8": 0.5691578388214111,
+  "t9": 0.4954085350036621,
+  "t10": 0.5355203747749329,
+  "t11": 0.3878808915615082,
+  "t12": 0.6195678114891052,
+  "t13": 0.2449183464050293,
+  "t14": 0.4806486964225769,
+  "t15": 0.6690608263015747,
+  "t16": 0.19986079633235931,
+  "t17": 0.3681928217411041,
+  "t18": 0.4920230805873871,
+  "t19": 0.5980437397956848,
+  "t20": 0.5565012693405151,
+  "t21": 0.4105610251426697,
+  "t22": 0.42106392979621887,
+  "t23": 0.3829250931739807,
+  "t24": 0.5328533053398132,
+  "t25": 0.3449551463127136,
+  "t26": 0.2567599415779114,
+  "t27": 0.49785661697387695,
+  "t28": 0.4538370668888092,
+  "t29": 0.2486172914505005,
+  "t30": 0.42561668157577515
+ },
+ "gold_branches": [
+  "A",
+  "B",
+  "C"
+ ],
+ "distractor_branches": [
+  "D",
+  "E",
+  "F",
+  "G",
+  "H"
+ ],
+ "attempt_accepted": 3,
+ "generation_tokens": [
+  3488,
+  5601
+ ]
+}

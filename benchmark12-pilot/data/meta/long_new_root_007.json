@@ -1,0 +1,113 @@
+{
+ "scenario_id": "long_new_root_007",
+ "family": "new_root",
+ "n_history": 45,
+ "full_history_tokens": 8555,
+ "closure_ratio": 0.0,
+ "entity_registry": [
+  "Marta Voss",
+  "Delancey House",
+  "Cornerstone Renovation Co.",
+  "Budget Tracker v2",
+  "Heritage Tile Supply",
+  "Aldric Fenwick"
+ ],
+ "distractor_branch_entity_hits": {
+  "D": [
+   "Marta Voss",
+   "Delancey House",
+   "Cornerstone Renovation Co.",
+   "Aldric Fenwick"
+  ],
+  "E": [
+   "Marta Voss",
+   "Delancey House",
+   "Cornerstone Renovation Co.",
+   "Aldric Fenwick"
+  ],
+  "F": [
+   "Marta Voss",
+   "Delancey House",
+   "Cornerstone Renovation Co.",
+   "Aldric Fenwick"
+  ],
+  "G": [
+   "Marta Voss",
+   "Delancey House",
+   "Cornerstone Renovation Co.",
+   "Aldric Fenwick"
+  ]
+ },
+ "near_miss_turn_id": "t10",
+ "checklist_evidence": {
+  "c1": [],
+  "c2": [],
+  "c3": [],
+  "c4": []
+ },
+ "cosine": {
+  "gold_median": null,
+  "distractor_median": 0.3217485547065735,
+  "ratio": null,
+  "pass": true
+ },
+ "cosine_per_turn": {
+  "t1": 0.4593682587146759,
+  "t2": 0.38824722170829773,
+  "t3": 0.42798227071762085,
+  "t4": 0.29686862230300903,
+  "t5": 0.5386557579040527,
+  "t6": 0.3250558376312256,
+  "t7": 0.2813800573348999,
+  "t8": 0.30281609296798706,
+  "t9": 0.3773847222328186,
+  "t10": 0.4243229031562805,
+  "t11": 0.39215680956840515,
+  "t12": 0.5183621644973755,
+  "t13": 0.4162381887435913,
+  "t14": 0.4913620054721832,
+  "t15": 0.5616711378097534,
+  "t16": 0.30138829350471497,
+  "t17": 0.28390365839004517,
+  "t18": 0.5873496532440186,
+  "t19": 0.37385550141334534,
+  "t20": 0.3339691460132599,
+  "t21": 0.11192415654659271,
+  "t22": 0.3048797845840454,
+  "t23": 0.3629431128501892,
+  "t24": 0.1471497267484665,
+  "t25": 0.2200791984796524,
+  "t26": 0.32158714532852173,
+  "t27": 0.3217485547065735,
+  "t28": 0.2333526313304901,
+  "t29": 0.26919883489608765,
+  "t30": 0.23091328144073486,
+  "t31": 0.2685788571834564,
+  "t32": 0.21769219636917114,
+  "t33": 0.3589861989021301,
+  "t34": 0.3125813603401184,
+  "t35": 0.38226744532585144,
+  "t36": 0.22177250683307648,
+  "t37": 0.24110561609268188,
+  "t38": 0.3376072943210602,
+  "t39": 0.25122833251953125,
+  "t40": 0.21860019862651825,
+  "t41": 0.22075003385543823,
+  "t42": 0.33918148279190063,
+  "t43": 0.40948769450187683,
+  "t44": 0.18171925842761993,
+  "t45": 0.3443755507469177
+ },
+ "gold_branches": [],
+ "distractor_branches": [
+  "D",
+  "E",
+  "F",
+  "G"
+ ],
+ "attempt_accepted": 1,
+ "generation_tokens": [
+  5128,
+  11802
+ ]
+}

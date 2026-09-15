@@ -1,0 +1,759 @@
+{
+  "scenario_id": "long_two_branch_join_001",
+  "family": "two_branch_join",
+  "label": "JOIN",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're planning a 10-day Japan trip with four friends — Marcus Teller, Yuki Hashimoto, Priya Nair, and Daniel Cho — and I want to nail down the flight situation first. We're flying out of Toronto. What's a realistic per-person round-trip airfare budget we should lock in?",
+      "assistant_message": "For a Toronto-to-Tokyo round trip in late October, a realistic economy fare through SkyRoute Travels runs about CAD 1,450 per person when booked 10 to 12 weeks in advance. That puts the group's total flight cost at roughly CAD 5,800 for all four travellers. I'd recommend using that CAD 1,450 figure as the hard ceiling in your Japan Trip Planner Doc so everyone knows what to reserve.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "What kind of ground transportation should the group use to get around between cities?",
+      "assistant_message": "A 14-day JR Pass is the most cost-effective option for Marcus Teller, Yuki Hashimoto, Priya Nair, and Daniel Cho given the inter-city travel they're planning. The current adult price for a 14-day JR Pass purchased through SkyRoute Travels is approximately JPY 50,000 per person, or about CAD 470 at current exchange. Booking through SkyRoute Travels also gives the group a small group discount of JPY 2,000 per pass.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "I need to sort out travel insurance for everyone. What coverage level makes sense for this trip?",
+      "assistant_message": "For a 10-day trip to Japan, a comprehensive travel insurance policy covering medical emergencies up to CAD 2,000,000, trip cancellation up to CAD 5,000 per person, and baggage loss up to CAD 1,500 is standard. SkyRoute Travels offers a group policy for four travellers — Marcus Teller, Priya Nair, Yuki Hashimoto, and Daniel Cho — at CAD 98 per person for this coverage tier. That totals CAD 392 for the group, and the policy must be purchased at least 72 hours before departure.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "We need to figure out the daily food budget per person. What should we plan for?",
+      "assistant_message": "For a mid-range dining experience in Japan, a daily food budget of JPY 4,500 per person is reasonable — that covers a convenience-store breakfast, a ramen or teishoku lunch, and a sit-down dinner. Across 10 days, that's JPY 45,000 per person, or roughly CAD 420 at current rates. Marcus Teller and Priya Nair flagged in the Japan Trip Planner Doc that they want one high-end kaiseki dinner, which would add about JPY 12,000 each on that single evening.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "Should we set aside a separate budget for snacks and street food on top of that daily amount?",
+      "assistant_message": "Yes, a separate street-food and snack allowance of JPY 1,000 per person per day is a smart addition, especially for the Osaka leg where takoyaki and kushikatsu stalls are unavoidable. Over 10 days that adds JPY 10,000 per person to the food line in the Japan Trip Planner Doc. Daniel Cho noted he'd likely spend closer to JPY 1,500 per day on snacks, so his personal food subtotal would be higher than the others.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "We've been offered a business-class upgrade option on the SkyRoute Travels flights — how much extra per person are we looking at, and has anyone in the group committed to it?",
+      "assistant_message": "The business-class upgrade through SkyRoute Travels is priced at an additional CAD 2,100 per person on top of the base economy fare. Of the four travellers, only Yuki Hashimoto has confirmed she wants to upgrade, while Marcus Teller, Priya Nair, and Daniel Cho are staying in economy. So the total flight spend becomes CAD 1,450 times three plus CAD 3,550 for Yuki, which is CAD 7,900 for the group.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "What's the best strategy for handling currency exchange for the group?",
+      "assistant_message": "The most cost-effective approach for Marcus Teller, Priya Nair, Yuki Hashimoto, and Daniel Cho is to exchange a small amount — about CAD 200 each — before departure for immediate airport expenses, then use 7-Eleven ATMs in Japan for the bulk of their yen. The 7-Eleven ATM fee is a flat JPY 220 per withdrawal, and each person should plan on no more than three withdrawals over the 10 days. SkyRoute Travels advises against airport currency kiosks, which currently charge a 4.2 percent conversion premium.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "For the JR Pass, does it cover the Narita Express from the airport into Tokyo?",
+      "assistant_message": "Yes, the 14-day JR Pass covers the Narita Express in full, so Marcus Teller, Yuki Hashimoto, Priya Nair, and Daniel Cho will have no additional cost for that airport-to-city leg. The Narita Express to Shinjuku takes about 90 minutes and departs every 30 minutes during peak hours. This is already noted as a confirmed saving in the Japan Trip Planner Doc, avoiding the JPY 3,070 per-person standard fare.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "Does the JR Pass also cover the shinkansen leg from Tokyo to Kyoto?",
+      "assistant_message": "The 14-day JR Pass covers the Tokaido Shinkansen between Tokyo and Kyoto in full, including the Hikari and Kodama services, though not the Nozomi. The standard unreserved Hikari fare on that route is JPY 13,320 per person without a pass, so all four travellers — Marcus Teller, Yuki Hashimoto, Priya Nair, and Daniel Cho — save JPY 53,280 in total on just that one leg. SkyRoute Travels recommends reserving seats on the Hikari at least two days in advance using the pass.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "What about the leg from Kyoto to Hiroshima — is that covered too?",
+      "assistant_message": "Yes, the Kyoto-to-Hiroshima Sanyo Shinkansen leg is fully covered by the 14-day JR Pass, saving each traveller JPY 5,720 on that segment. For the group of four — Priya Nair, Daniel Cho, Marcus Teller, and Yuki Hashimoto — that's a combined saving of JPY 22,880 on the Hiroshima leg alone. The Japan Trip Planner Doc now shows total shinkansen savings of JPY 76,160 across both legs for the group.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "Can we include Hiroshima street food in the food budget we set, or does that need a separate line?",
+      "assistant_message": "Hiroshima's okonomiyaki scene fits comfortably within the existing JPY 4,500 daily food budget established in the Japan Trip Planner Doc, so no separate line is needed. Priya Nair had flagged Okonomi-mura as a must-visit, and a full meal there runs about JPY 1,200, well within the daily allocation. Daniel Cho's higher snack budget of JPY 1,500 per day would also absorb any Hiroshima street-food extras without adjustment.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "Should the kaiseki dinner budget item be moved from the food line to an activities/experiences line in the planner doc?",
+      "assistant_message": "Moving the kaiseki dinner cost to an experiences line makes the daily food averages cleaner in the Japan Trip Planner Doc. The JPY 12,000 per-person kaiseki charge for Marcus Teller and Priya Nair should appear under 'Special Dining Experiences' rather than the daily food subtotal. Yuki Hashimoto and Daniel Cho, who are not participating in that dinner, would not have any entry in that line.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "Now I want to think through the accommodation side. What's the nightly rate we should budget per room in Tokyo?",
+      "assistant_message": "For a mid-range hotel in central Tokyo — think Shinjuku or Shibuya — a nightly rate of JPY 18,000 for a twin room is a reliable budget figure. Since Marcus Teller and Daniel Cho are sharing, and Yuki Hashimoto and Priya Nair are sharing, the group needs two rooms per night. That puts the Tokyo accommodation spend at JPY 36,000 per night for the group, or JPY 108,000 total for the three Tokyo nights the group has pencilled in.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "Should we add a contingency line for unexpected food expenses in the Japan Trip Planner Doc?",
+      "assistant_message": "A 10 percent contingency on the total food budget is standard practice, which would add JPY 4,500 per person across the trip — or JPY 18,000 for all four travellers combined. Marcus Teller suggested in the Japan Trip Planner Doc that this contingency be held centrally rather than distributed per person. SkyRoute Travels also recommends keeping a group emergency fund of at least JPY 20,000 separate from the food contingency.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "For the travel insurance, does the CAD 2,000,000 medical coverage include emergency evacuation?",
+      "assistant_message": "Yes, the SkyRoute Travels group policy covering Marcus Teller, Priya Nair, Yuki Hashimoto, and Daniel Cho includes emergency medical evacuation as part of the CAD 2,000,000 medical ceiling, not as a separate sub-limit. Emergency dental is covered separately at up to CAD 3,000 per person. The policy documentation explicitly lists air ambulance repatriation to Canada as a covered event with no additional premium.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "Is there a fee if someone needs to cancel their currency exchange order before departure?",
+      "assistant_message": "SkyRoute Travels charges a CAD 15 cancellation fee per person if a pre-departure currency exchange order is cancelled within 48 hours of the scheduled pickup. For Marcus Teller or Daniel Cho, who are picking up their pre-exchanged CAD 200 in yen at the SkyRoute Travels downtown office, this fee would apply if they cancel after the 48-hour window. Orders cancelled more than 48 hours in advance are refunded in full with no fee.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "What's the latest date the group can cancel the pre-departure currency exchange without a fee, given a departure on October 22?",
+      "assistant_message": "With a departure date of October 22, the free-cancellation deadline for the pre-departure currency exchange is October 20 at the same time of day as the original order. Marcus Teller placed the group order at 10:30 a.m. on the booking date, so the no-fee cancellation window closes at 10:30 a.m. on October 20. Any cancellation after that time would trigger the CAD 15 per-person fee noted in the SkyRoute Travels terms.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "If Priya Nair cancels her currency exchange after the deadline, does the CAD 15 fee come out of the group fund or does she pay it personally?",
+      "assistant_message": "The Japan Trip Planner Doc specifies that any individually incurred fees — including late currency-exchange cancellations — are the responsibility of the individual traveller, not the group fund. So if Priya Nair cancels after October 20 at 10:30 a.m., she pays the CAD 15 fee personally. Marcus Teller, as the group treasurer, confirmed this policy in writing in the Japan Trip Planner Doc on the same day SkyRoute Travels sent the booking confirmation.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "For the accommodation, what's the nightly rate we should plan for in Kyoto?",
+      "assistant_message": "A mid-range ryokan or business hotel in central Kyoto — near Gion or Kyoto Station — runs about JPY 20,000 per room per night. With two rooms needed for Marcus Teller and Daniel Cho sharing, and Yuki Hashimoto and Priya Nair sharing, the nightly group cost in Kyoto is JPY 40,000. The group has four nights in Kyoto scheduled, bringing the Kyoto accommodation subtotal to JPY 160,000.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "Does the travel insurance cover trip interruption if one of the travellers gets sick mid-trip?",
+      "assistant_message": "Yes, the SkyRoute Travels group policy includes trip interruption coverage up to CAD 3,000 per person, which would reimburse unused prepaid accommodation and transportation costs if, say, Daniel Cho or Priya Nair needed to cut the trip short due to illness. The policy requires a physician's written statement to trigger the interruption claim. Marcus Teller, as the group policy holder, would need to notify SkyRoute Travels within 24 hours of the interrupting event.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "Does the JR Pass cover the local subway lines within Kyoto, or do those require separate fare payments?",
+      "assistant_message": "The 14-day JR Pass does not cover Kyoto's municipal subway or the Keihan and Hankyu private lines, so Marcus Teller, Yuki Hashimoto, Priya Nair, and Daniel Cho will need to pay those fares separately. A single subway ride in Kyoto costs between JPY 220 and JPY 350 depending on distance. The Japan Trip Planner Doc should include a local transit budget of about JPY 1,500 per person per Kyoto day to cover these gaps.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "On the flight budget — we also need to account for checked baggage fees. What does SkyRoute Travels charge for that?",
+      "assistant_message": "SkyRoute Travels' partner carrier on the Toronto-Tokyo route charges CAD 38 per checked bag for economy passengers. Marcus Teller, Priya Nair, and Daniel Cho each plan to check one bag, adding CAD 114 total. Yuki Hashimoto is in business class, which includes one checked bag at no extra cost, so her baggage fee is zero.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "What about accommodation in Osaka — what nightly rate should we use?",
+      "assistant_message": "A solid mid-range hotel in Namba or Shinsaibashi in Osaka runs about JPY 16,000 per room per night. With two rooms for the four travellers — Marcus Teller and Daniel Cho in one, Yuki Hashimoto and Priya Nair in the other — the group's nightly Osaka cost is JPY 32,000. The group has three nights in Osaka on the itinerary, giving an Osaka accommodation subtotal of JPY 96,000.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "So what does the total accommodation cost look like across all three cities so far?",
+      "assistant_message": "Adding up the three cities: Tokyo is JPY 108,000 for three nights, Kyoto is JPY 160,000 for four nights, and Osaka is JPY 96,000 for three nights. The combined accommodation total across all 10 nights is JPY 364,000 for the group. In the Japan Trip Planner Doc, Marcus Teller has flagged that this figure does not yet include any ryokan service charges or city taxes, which typically add 5 to 8 percent.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "Has the group decided on a maximum out-of-pocket claim threshold before the insurance policy kicks in for medical expenses?",
+      "assistant_message": "The SkyRoute Travels group policy has a standard deductible of CAD 100 per person per claim for medical expenses, meaning each traveller pays the first CAD 100 of any medical bill before coverage activates. Priya Nair confirmed she is comfortable with this threshold when reviewing the policy with Marcus Teller. Yuki Hashimoto requested that the deductible amount be noted in the Japan Trip Planner Doc so everyone is prepared to have CAD 100 accessible in cash during the trip.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "Should the group budget for a special kaiseki dinner in Osaka as well, or only the Kyoto one?",
+      "assistant_message": "The current Japan Trip Planner Doc only budgets for one kaiseki dinner — the Kyoto experience at JPY 12,000 per person for Marcus Teller and Priya Nair. Adding an Osaka kaiseki would approximately double that special-dining line, since comparable Osaka kaiseki restaurants run JPY 10,000 to JPY 14,000 per person. Daniel Cho has expressed interest in the Osaka option, but no final decision has been recorded yet.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "If one traveller needs to file a medical claim, does the CAD 100 deductible apply per incident or per day?",
+      "assistant_message": "The SkyRoute Travels policy applies the CAD 100 deductible per incident, not per day, so a traveller admitted to hospital for a single illness would pay only one CAD 100 deductible regardless of how many days the treatment spans. If Marcus Teller were treated for two separate unrelated conditions on the same trip, each would carry its own CAD 100 deductible. Daniel Cho verified this interpretation directly with SkyRoute Travels' claims department before the group finalised the policy.",
+      "gold_parents": [
+        "t25"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "Is there a group discount available for the JR Pass if all four of them buy together through SkyRoute Travels?",
+      "assistant_message": "SkyRoute Travels offers a group discount of JPY 2,000 per pass when four or more passes are purchased together, reducing each 14-day adult pass from JPY 50,000 to JPY 48,000. For Marcus Teller, Yuki Hashimoto, Priya Nair, and Daniel Cho buying together, the total group pass cost is JPY 192,000 rather than JPY 200,000. The Japan Trip Planner Doc should reflect this JPY 8,000 total saving in the transportation line.",
+      "gold_parents": [
+        "t26"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "Can someone in the group cancel their currency exchange order and still use the group 7-Eleven ATM strategy instead?",
+      "assistant_message": "Yes, cancelling the pre-departure exchange order does not affect anyone's ability to use 7-Eleven ATMs in Japan. Daniel Cho is actually considering dropping his pre-departure CAD 200 exchange and relying entirely on ATM withdrawals, which would save him the slight inconvenience of carrying pre-exchanged cash on the flight. SkyRoute Travels confirmed to Marcus Teller that the group ATM strategy is independent of any pre-departure exchange order.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t30",
+      "turn_index": 29,
+      "user_message": "What's the cheapest time of day to withdraw yen from 7-Eleven ATMs to minimise fees?",
+      "assistant_message": "The JPY 220 flat fee at 7-Eleven ATMs applies at all hours with no time-of-day variation, so there is no cheaper window for Daniel Cho or Priya Nair to make withdrawals. The most cost-effective approach remains making larger, less frequent withdrawals — SkyRoute Travels recommends withdrawals of at least JPY 10,000 per transaction to keep the fee-to-withdrawal ratio below 2.2 percent. Marcus Teller has already noted this minimum-withdrawal guideline in the Japan Trip Planner Doc.",
+      "gold_parents": [
+        "t28"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t31",
+      "turn_index": 30,
+      "user_message": "Is the CAD 15 late cancellation fee for currency exchange the same for all four group members, or does it vary by order size?",
+      "assistant_message": "The CAD 15 cancellation fee is a flat per-person charge regardless of the size of the currency exchange order, confirmed by SkyRoute Travels' booking terms. So whether Marcus Teller exchanged CAD 200 or CAD 500, a late cancellation would still cost exactly CAD 15. Priya Nair and Yuki Hashimoto are each subject to the same flat fee if they cancel after the 48-hour threshold.",
+      "gold_parents": [
+        "t29"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t32",
+      "turn_index": 31,
+      "user_message": "What if the group places a combined currency exchange order — does the CAD 15 fee apply once for the whole order, or per person?",
+      "assistant_message": "SkyRoute Travels treats group currency exchange orders as individual sub-orders bundled together, so the CAD 15 cancellation fee applies per person, not per combined order. If all four travellers — Marcus Teller, Yuki Hashimoto, Priya Nair, and Daniel Cho — cancelled after the deadline, the total fee would be CAD 60. This is documented in the Japan Trip Planner Doc under the 'Currency and Payment' section.",
+      "gold_parents": [
+        "t31"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t33",
+      "turn_index": 32,
+      "user_message": "Has the group decided whether to place a combined order or individual orders?",
+      "assistant_message": "Marcus Teller decided the group would place a combined order through SkyRoute Travels to simplify logistics, since all four members are picking up at the same downtown office location. The combined order for CAD 800 total — CAD 200 per person — was submitted on September 15. Yuki Hashimoto confirmed receipt of her portion of the order confirmation email on the same day.",
+      "gold_parents": [
+        "t32"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t34",
+      "turn_index": 33,
+      "user_message": "Has anyone confirmed whether the 14-day JR Pass needs to be activated on a specific date, or can it be activated on arrival?",
+      "assistant_message": "The 14-day JR Pass purchased through SkyRoute Travels is a voucher that must be exchanged and activated at a JR ticket office in Japan — it cannot be activated before arrival. Marcus Teller plans to activate all four passes at the JR Narita Airport counter immediately on landing so coverage begins from the Narita Express ride into Tokyo. Priya Nair noted in the Japan Trip Planner Doc that activation should happen before the group boards the Narita Express to avoid paying that fare separately.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t35",
+      "turn_index": 34,
+      "user_message": "If one traveller needs to extend their stay beyond 10 days, does the travel insurance policy automatically extend as well?",
+      "assistant_message": "The SkyRoute Travels group policy does not automatically extend if a traveller lengthens their trip; an extension rider must be purchased at least 24 hours before the original policy end date. The extension costs CAD 12 per person per additional day for the same coverage tier that Marcus Teller, Priya Nair, Yuki Hashimoto, and Daniel Cho originally purchased. If the extension is not purchased in advance, the traveller is uninsured for the additional days.",
+      "gold_parents": [
+        "t27"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t36",
+      "turn_index": 35,
+      "user_message": "What's the cancellation policy on the combined currency exchange order if the departure date changes?",
+      "assistant_message": "If the departure date shifts, SkyRoute Travels allows one free reschedule of the combined currency exchange pickup date, provided the change is requested at least 72 hours before the original pickup time. Marcus Teller, as the order holder, would need to submit the reschedule request by phone or through the SkyRoute Travels online portal. A second reschedule request incurs a CAD 10 administrative fee applied to the entire combined order, not per person.",
+      "gold_parents": [
+        "t33"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t37",
+      "turn_index": 36,
+      "user_message": "Should the food contingency fund be in yen or kept in Canadian dollars until needed?",
+      "assistant_message": "SkyRoute Travels recommends keeping the food contingency in yen once the group arrives, since converting back to Canadian dollars would incur exchange fees on both ends. Marcus Teller suggested the group pool the JPY 18,000 contingency fund — JPY 4,500 per person — into a shared envelope that Daniel Cho holds as deputy treasurer. Priya Nair agreed to this arrangement in the Japan Trip Planner Doc notes.",
+      "gold_parents": [
+        "t30"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t38",
+      "turn_index": 37,
+      "user_message": "Are there any additional fees on top of the nightly accommodation rates we've budgeted — like city taxes in each city?",
+      "assistant_message": "Tokyo charges an accommodation tax of JPY 200 per person per night for rooms priced JPY 15,000 to JPY 29,999, so with four travellers over three nights that adds JPY 2,400 to the Tokyo total. Kyoto's accommodation tax is JPY 200 per person per night for rooms in that price range, adding JPY 3,200 for four people over four nights. Osaka charges JPY 200 per person per night as well, adding JPY 2,400 for four people over three nights, bringing the total city-tax addition to JPY 8,000 for the group.",
+      "gold_parents": [
+        "t24"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t39",
+      "turn_index": 38,
+      "user_message": "For the JR Pass activation, can Yuki Hashimoto activate hers at a different station than the rest of the group if she arrives on a different flight?",
+      "assistant_message": "Yes, each JR Pass voucher is activated individually, so Yuki Hashimoto can activate hers at any JR ticket office in Japan regardless of where Marcus Teller, Priya Nair, and Daniel Cho activate theirs. The only constraint is that all four passes must be activated within 30 days of the voucher issue date printed on the exchange order. SkyRoute Travels noted this flexibility in the Japan Trip Planner Doc when confirming the group voucher package.",
+      "gold_parents": [
+        "t34"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t40",
+      "turn_index": 39,
+      "user_message": "Has the group decided what the per-person deductible is for baggage loss claims under the insurance policy?",
+      "assistant_message": "The SkyRoute Travels group policy applies a CAD 50 deductible per person for baggage loss claims, separate from the CAD 100 medical deductible. Priya Nair confirmed this detail when she reviewed the full policy schedule with Marcus Teller on September 18. The Japan Trip Planner Doc records the baggage deductible as CAD 50 per person, with the maximum reimbursable baggage loss per person capped at CAD 1,500.",
+      "gold_parents": [
+        "t35"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t41",
+      "turn_index": 40,
+      "user_message": "Does the CAD 50 baggage deductible apply per bag or per incident regardless of how many bags are lost?",
+      "assistant_message": "The CAD 50 baggage deductible applies per incident, not per bag, so if Daniel Cho lost two bags on the same journey he would still pay only one CAD 50 deductible. The maximum payout would still be capped at the CAD 1,500 per-person ceiling noted in the Japan Trip Planner Doc. Yuki Hashimoto confirmed with SkyRoute Travels that a single check-in where multiple bags are lost counts as one incident.",
+      "gold_parents": [
+        "t40"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t42",
+      "turn_index": 41,
+      "user_message": "What's the total accommodation cost just for the Osaka portion of the trip, including the city tax?",
+      "assistant_message": "The Osaka accommodation total for the group is JPY 96,000 for three nights at JPY 32,000 per night, plus JPY 2,400 in city tax — four travellers at JPY 200 each per night for three nights. That gives a combined Osaka accommodation figure of JPY 98,400 for Marcus Teller, Yuki Hashimoto, Priya Nair, and Daniel Cho. This is the Osaka-only total and does not include the Tokyo or Kyoto accommodation costs recorded in the Japan Trip Planner Doc.",
+      "gold_parents": [
+        "t39"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t43",
+      "turn_index": 42,
+      "user_message": "So what is the grand total accommodation cost for all three cities combined, including the city taxes we just worked out?",
+      "assistant_message": "Adding city taxes to each city's base cost: Tokyo is JPY 108,000 plus JPY 2,400 tax, Kyoto is JPY 160,000 plus JPY 3,200 tax, and Osaka is JPY 96,000 plus JPY 2,400 tax. The total accommodation spend including all city taxes is JPY 372,000 for the group. Marcus Teller has confirmed this figure should be entered as the final accommodation line in the Japan Trip Planner Doc.",
+      "gold_parents": [
+        "t38"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t44",
+      "turn_index": 43,
+      "user_message": "Does the insurance extension rider cover pre-existing conditions if someone's stay is extended for a medical reason?",
+      "assistant_message": "The SkyRoute Travels extension rider explicitly excludes pre-existing conditions, covering only new medical events that arise during the extended period. If Priya Nair extended her stay due to a flare-up of a condition she had before the trip began, that would not be covered under the rider. Marcus Teller noted this exclusion in the Japan Trip Planner Doc as a risk item for any traveller with a known pre-existing condition.",
+      "gold_parents": [
+        "t41"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t45",
+      "turn_index": 44,
+      "user_message": "Is there any scenario where the group policy's medical coverage could be voided entirely for one traveller?",
+      "assistant_message": "Yes, the SkyRoute Travels policy includes a clause voiding coverage for any traveller who engages in unlicensed extreme sports or fails to disclose a pre-existing condition at policy purchase. Yuki Hashimoto flagged that she plans to try snowboarding at a resort near Osaka, but Marcus Teller confirmed with SkyRoute Travels that resort snowboarding is a listed covered activity, so her coverage is not at risk. The Japan Trip Planner Doc includes a note that any undisclosed conditions discovered at claim time would result in full claim denial for that individual.",
+      "gold_parents": [
+        "t44"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t46",
+      "turn_index": 45,
+      "user_message": "What happens to the group policy if one traveller withdraws from the trip entirely before departure?",
+      "assistant_message": "If one traveller withdraws before departure, the SkyRoute Travels group policy converts to individual policies for the remaining travellers at no additional premium, provided the withdrawal is notified at least 14 days before departure. Daniel Cho is the traveller most likely to face a scheduling conflict, and Marcus Teller confirmed that the 14-day notice window means the deadline for any withdrawal is October 8, given the October 22 departure. The withdrawn traveller's portion of the CAD 392 group premium — CAD 98 — would be refunded minus a CAD 20 administrative fee.",
+      "gold_parents": [
+        "t45"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t47",
+      "turn_index": 46,
+      "user_message": "Is there a daily withdrawal limit at 7-Eleven ATMs in Japan that the group should be aware of?",
+      "assistant_message": "Yes, 7-Eleven ATMs in Japan impose a per-transaction limit of JPY 50,000 and a daily limit of JPY 100,000 per card. For Marcus Teller and Daniel Cho, who plan to withdraw larger amounts for the group contingency fund, this means they may need two transactions on any given day if withdrawing more than JPY 50,000. SkyRoute Travels recommends that each traveller confirm their Canadian bank's own daily international withdrawal limit before departure, as some banks cap international withdrawals at CAD 500 per day.",
+      "gold_parents": [
+        "t36"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t48",
+      "turn_index": 47,
+      "user_message": "Is there a budget line in the Japan Trip Planner Doc for the group's souvenir and shopping spending?",
+      "assistant_message": "The Japan Trip Planner Doc currently has a placeholder shopping and souvenirs line of JPY 10,000 per person for the full trip, suggested by Priya Nair during the initial planning meeting. Marcus Teller noted this is likely conservative given the Osaka and Kyoto markets, and Daniel Cho proposed raising it to JPY 15,000 per person. No final decision has been recorded yet, so the line still shows JPY 10,000 per person pending group confirmation.",
+      "gold_parents": [
+        "t37"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t49",
+      "turn_index": 48,
+      "user_message": "Has the group set a rule about how to handle ATM withdrawal fees — does each person pay their own, or are they pooled?",
+      "assistant_message": "Marcus Teller established in the Japan Trip Planner Doc that each traveller pays their own ATM fees, since withdrawal frequency will vary by person. Yuki Hashimoto agreed to this, noting she plans only two withdrawals for the entire trip, while Daniel Cho expects to make the maximum three. At JPY 220 per transaction, Yuki Hashimoto's total ATM fee outlay would be JPY 440 versus JPY 660 for Daniel Cho, making individual payment fairer than pooling.",
+      "gold_parents": [
+        "t47"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t50",
+      "turn_index": 49,
+      "user_message": "We should double-check the JR Pass activation deadline — what was the exact number of days from the voucher issue date?",
+      "assistant_message": "The JR Pass vouchers issued through SkyRoute Travels must be exchanged and activated within 30 days of the voucher issue date printed on the document. Since the vouchers were issued on September 20, the activation deadline is October 20, which is two days before the October 22 departure — so all four travellers, including Marcus Teller and Priya Nair, must activate on arrival and cannot delay. The Japan Trip Planner Doc flags October 20 as the hard deadline with a reminder to activate immediately at Narita.",
+      "gold_parents": [
+        "t42"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t51",
+      "turn_index": 50,
+      "user_message": "To make sure we have the complete flight cost picture — what is the total group flight spend, including Yuki's upgrade and all checked baggage fees?",
+      "assistant_message": "Yuki Hashimoto's business-class ticket costs CAD 3,550 (the CAD 1,450 base plus the CAD 2,100 upgrade), and the other three — Marcus Teller, Priya Nair, and Daniel Cho — each pay CAD 1,450 in economy, totalling CAD 4,350 for those three. Each of those three also checks one bag at CAD 38, adding CAD 114 in baggage fees; Yuki's business-class fare includes baggage at no extra cost. The complete group flight total is CAD 3,550 plus CAD 4,350 plus CAD 114, which is CAD 8,014.",
+      "gold_parents": [
+        "t22"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t52",
+      "turn_index": 51,
+      "user_message": "Has SkyRoute Travels confirmed whether the JR Pass vouchers can be transferred to another person if someone drops out?",
+      "assistant_message": "SkyRoute Travels confirmed that JR Pass vouchers are non-transferable and are issued in the name of the individual traveller. If Daniel Cho dropped out, his voucher could not be reassigned to a replacement traveller or to Marcus Teller. A refund is possible only if requested more than 30 days before the activation deadline, and SkyRoute Travels charges a JPY 220 processing fee per voucher for refunds.",
+      "gold_parents": [
+        "t50"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t53",
+      "turn_index": 52,
+      "user_message": "What is the refund amount Daniel Cho would receive for his JR Pass voucher if he cancelled more than 30 days before the activation deadline?",
+      "assistant_message": "Daniel Cho's 14-day JR Pass was purchased at the group-discounted price of JPY 48,000 through SkyRoute Travels. Deducting the JPY 220 refund processing fee, he would receive JPY 47,780 back. Marcus Teller noted in the Japan Trip Planner Doc that if Daniel Cho cancelled, the remaining three travellers would no longer qualify for the group discount, and each remaining pass would revert to the full JPY 50,000 price.",
+      "gold_parents": [
+        "t52"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t54",
+      "turn_index": 53,
+      "user_message": "If the group currency exchange order is rescheduled once for free and then needs to be rescheduled again, who pays the CAD 10 admin fee — is it split or does Marcus Teller pay it?",
+      "assistant_message": "The CAD 10 second-reschedule administrative fee is charged to the order holder, which is Marcus Teller, since he submitted the combined order through SkyRoute Travels. The Japan Trip Planner Doc specifies that any fees arising from the combined order — as opposed to individual cancellations — are Marcus Teller's responsibility as group coordinator. Priya Nair and Yuki Hashimoto agreed to this arrangement when the combined order was placed on September 15.",
+      "gold_parents": [
+        "t49"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t55",
+      "turn_index": 54,
+      "user_message": "Is there a cap on how many times the SkyRoute Travels insurance policy can be extended for a single trip?",
+      "assistant_message": "The SkyRoute Travels policy allows a maximum of two extension riders per trip, meaning a traveller could add up to two additional blocks of days beyond the original 10-day coverage period. Marcus Teller confirmed this limit with SkyRoute Travels' customer service team, noting it is unlikely any of the four travellers would need more than one extension. Yuki Hashimoto requested that this two-extension cap be logged in the Japan Trip Planner Doc as a contingency-planning note.",
+      "gold_parents": [
+        "t46"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t56",
+      "turn_index": 55,
+      "user_message": "Is the souvenir budget of JPY 10,000 per person in the Japan Trip Planner Doc currently marked as confirmed or still provisional?",
+      "assistant_message": "The JPY 10,000 per-person souvenir budget is still marked as provisional in the Japan Trip Planner Doc, pending a final group vote. Priya Nair has submitted her preference to raise it to JPY 15,000, matching Daniel Cho's earlier suggestion, but Marcus Teller has not yet called a formal vote. Until confirmed, the Japan Trip Planner Doc carries a note that the shopping line may increase by JPY 20,000 in total if the higher figure is adopted.",
+      "gold_parents": [
+        "t48"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t57",
+      "turn_index": 56,
+      "user_message": "What is the total trip insurance cost for the group if all four travellers take the extension rider for one additional day?",
+      "assistant_message": "The original group policy premium is CAD 392 for all four travellers — Marcus Teller, Yuki Hashimoto, Priya Nair, and Daniel Cho — at CAD 98 per person. Adding one day of extension at CAD 12 per person per day brings each person's total to CAD 110, and the group total to CAD 440. This CAD 440 figure is what should be entered in the Japan Trip Planner Doc if the extension is confirmed for all four travellers.",
+      "gold_parents": [
+        "t55"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t58",
+      "turn_index": 57,
+      "user_message": "Is the CAD 10 second-reschedule fee for the currency exchange order refundable if SkyRoute Travels makes an error that forces the reschedule?",
+      "assistant_message": "If SkyRoute Travels causes the need for a reschedule due to their own error — for example, a system outage or incorrect pickup date entered by their staff — the CAD 10 fee is waived and refunded to Marcus Teller as the order holder. The Japan Trip Planner Doc includes a note that Marcus Teller should document any SkyRoute Travels-caused disruptions in writing to support a fee waiver claim. Priya Nair suggested keeping screenshots of all SkyRoute Travels booking confirmations as evidence.",
+      "gold_parents": [
+        "t54"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t59",
+      "turn_index": 58,
+      "user_message": "Has the group decided what to do if the travel insurance claim is denied for one traveller — is there a group emergency fund that would cover that person?",
+      "assistant_message": "The Japan Trip Planner Doc includes a group emergency fund of JPY 20,000 — separate from the food contingency — that Marcus Teller suggested specifically for situations where a claim is denied or delayed. This fund is held centrally and would be available to any of the four travellers, including Yuki Hashimoto or Daniel Cho, in a financial emergency. The fund would be replenished by equal contribution from all four members after the trip if drawn upon.",
+      "gold_parents": [
+        "t57"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t60",
+      "turn_index": 59,
+      "user_message": "If the group emergency fund is drawn upon by one traveller, does the replenishment split include the traveller who used it?",
+      "assistant_message": "Yes, the replenishment is split equally four ways including the traveller who drew from the fund, since the Japan Trip Planner Doc treats it as a group resource rather than a loan. Marcus Teller confirmed this with Priya Nair and Daniel Cho, reasoning that the fund benefits everyone equally as a safety net. Yuki Hashimoto agreed, noting that excluding the drawing traveller from repayment would create friction and the amounts involved are small enough to share.",
+      "gold_parents": [
+        "t59"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t61",
+      "turn_index": 60,
+      "user_message": "Now that we have the full flight total and the complete accommodation figure including city taxes, what is the combined cost of flights and accommodation for the entire group?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t51",
+        "t43"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t6",
+    "t13",
+    "t19",
+    "t22",
+    "t23",
+    "t24",
+    "t38",
+    "t43",
+    "t51"
+  ],
+  "distractor_turn_ids": [
+    "t2",
+    "t3",
+    "t4",
+    "t5",
+    "t7",
+    "t8",
+    "t9",
+    "t10",
+    "t11",
+    "t12",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t20",
+    "t21",
+    "t25",
+    "t26",
+    "t27",
+    "t28",
+    "t29",
+    "t30",
+    "t31",
+    "t32",
+    "t33",
+    "t34",
+    "t35",
+    "t36",
+    "t37",
+    "t39",
+    "t40",
+    "t41",
+    "t42",
+    "t44",
+    "t45",
+    "t46",
+    "t47",
+    "t48",
+    "t49",
+    "t50",
+    "t52",
+    "t53",
+    "t54",
+    "t55",
+    "t56",
+    "t57",
+    "t58",
+    "t59",
+    "t60"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states the total group flight cost is CAD 8,014 (Yuki's business-class fare of CAD 3,550, the other three economy fares totalling CAD 4,350, plus CAD 114 in baggage fees).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states the total group accommodation cost including all city taxes is JPY 372,000 (Tokyo JPY 110,400, Kyoto JPY 163,200, Osaka JPY 98,400).",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer combines both the flight total (CAD 8,014) and the accommodation total (JPY 372,000) to characterise the combined cost of flights and accommodation for the group.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not state that the total accommodation cost is JPY 98,400, which is the Osaka-only figure given in the near-miss turn t42.",
+      "required": true
+    }
+  ],
+  "notes": "Branch A (t1, t6, t22, t51) establishes the flight costs culminating in the CAD 8,014 group total. Branch B (t13, t19, t23, t24, t38, t43) establishes the accommodation costs culminating in the JPY 372,000 group total with city taxes. The near-miss turn t42 gives JPY 98,400 as the Osaka-only accommodation figure, which a careless reader might mistake for the full accommodation answer.\n\nReference answer: The total group flight cost is CAD 8,014: Yuki Hashimoto's business-class ticket is CAD 3,550, the three economy tickets for Marcus Teller, Priya Nair, and Daniel Cho total CAD 4,350, and their three checked bags add CAD 114. The total group accommodation cost across all 10 nights including city taxes is JPY 372,000: Tokyo contributes JPY 110,400, Kyoto JPY 163,200, and Osaka JPY 98,400. Combined, the group's flights and accommodation come to CAD 8,014 plus JPY 372,000.",
+  "evidence_note": null,
+  "premise": "organizing a 10-day trip to Japan for four friends",
+  "evidence_spans": null,
+  "benchmark_version": "1.2-pilot",
+  "length_class": "long"
+}

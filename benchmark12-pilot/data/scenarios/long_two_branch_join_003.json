@@ -1,0 +1,455 @@
+{
+  "scenario_id": "long_two_branch_join_003",
+  "family": "two_branch_join",
+  "label": "JOIN",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We've been analyzing the OnboardIQ drop-off data and I want to nail down where users are leaving. What does the Step Funnel Report show as the single biggest drop-off point?",
+      "assistant_message": "According to the Step Funnel Report compiled by Priya Nair last Tuesday, the single biggest drop-off point is Step 3, the permissions screen, where 54% of new users abandon the flow. That is nearly double the drop-off rate at any other step in the funnel. Priya flagged this as the primary target for Sprint 22 remediation work.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Marcus Webb asked about the push notification opt-in rate during onboarding. What is it currently sitting at?",
+      "assistant_message": "Based on the Step Funnel Report data, the push notification opt-in rate during OnboardIQ onboarding is currently 31%, which Marcus Webb noted is well below the industry benchmark of 52%. Lena Schulz flagged this in the Sprint 22 planning doc as a secondary metric to monitor. The team agreed to revisit opt-in copy as part of the broader onboarding improvement effort.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "What is the current average session length for users who complete OnboardIQ onboarding versus those who drop off?",
+      "assistant_message": "The Step Funnel Report shows that users who complete OnboardIQ onboarding have an average first-session length of 8.4 minutes, while users who drop off average only 1.9 minutes before exiting. Priya Nair highlighted this 4.4x gap as evidence that completed onboarding strongly predicts early engagement. Marcus Webb noted this data in the Sprint 22 kickoff as justification for prioritizing the onboarding fix.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "Has Lena Schulz finished the competitive audit comparing OnboardIQ's onboarding length to rival apps?",
+      "assistant_message": "Lena Schulz completed the competitive audit on March 4th and found that OnboardIQ's onboarding flow has 9 steps, compared to a competitor median of 5 steps. She documented this in a memo shared with Priya Nair and Marcus Webb. The audit recommends trimming OnboardIQ to no more than 6 steps to reach parity with the top three competitors.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "What is the opt-in rate breakdown by platform — iOS versus Android?",
+      "assistant_message": "The Step Funnel Report breaks the 31% overall push notification opt-in rate into 38% on iOS and 24% on Android during OnboardIQ onboarding. Marcus Webb believes the Android gap is partly due to the double-permission dialog that appears on Android 13 and above. Lena Schulz is investigating whether a pre-permission rationale screen would close that gap before Sprint 22 ships.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "Did Marcus Webb settle on a target opt-in rate for the Sprint 22 release?",
+      "assistant_message": "Yes, Marcus Webb set a target push notification opt-in rate of 45% for the Sprint 22 release of OnboardIQ, representing a 14-percentage-point lift from the current 31%. This target was ratified by Priya Nair in the Sprint 22 planning session on March 6th. If the team misses this target at release, a follow-up A/B test on opt-in copy is already scheduled for Sprint 23.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "I need to figure out the right fix for the permissions screen drop-off. What remediation options did the team consider for Step 3?",
+      "assistant_message": "The team evaluated three remediation options for Step 3 in OnboardIQ: replacing the full-screen permissions modal with an inline contextual prompt, adding a 'why we need this' explainer card before the request, and deferring optional permissions until after the user reaches the home screen. Priya Nair scored each option against implementation cost and projected drop-off reduction. The inline contextual prompt ranked highest on both dimensions and was shortlisted for Sprint 22 development.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "What is the current Day 1 retention rate for OnboardIQ users, and how does it compare to the target Priya Nair set?",
+      "assistant_message": "The Step Funnel Report shows the current Day 1 retention rate for OnboardIQ is 41%, while Priya Nair set a target of 60% in the Sprint 22 planning document. Marcus Webb noted that the 19-point gap is primarily driven by users who drop off at the permissions screen and never return. Lena Schulz is tracking this metric weekly as the headline KPI for the onboarding improvement initiative.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "What user research supports choosing the inline contextual prompt over the explainer card?",
+      "assistant_message": "Lena Schulz ran a five-day unmoderated usability study with 42 participants in February and found that the inline contextual prompt reduced task-completion time at Step 3 by 28% compared to the explainer card. Participants also rated the inline prompt 4.3 out of 5 for clarity, versus 3.6 for the explainer card. Priya Nair cited these findings as the decisive factor in recommending the inline prompt for Sprint 22.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "Once the team picks the inline prompt fix, what is the projected drop-off reduction at Step 3?",
+      "assistant_message": "Based on Lena Schulz's usability study benchmarks and historical A/B test data, Priya Nair projected that the inline contextual prompt would reduce Step 3 drop-off from 54% to approximately 28%, a 26-percentage-point improvement. This projection was entered into the Sprint 22 success criteria document on March 7th. Marcus Webb confirmed the projection is conservative relative to similar fixes on comparable apps.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "Has the team decided what happens to the opt-in rate target if the Android pre-permission screen is not ready in time for Sprint 22?",
+      "assistant_message": "Marcus Webb decided on March 8th that if the Android pre-permission screen misses the Sprint 22 cutoff, the overall opt-in target will be revised down to 40% rather than the 45% goal, reflecting the Android platform's lower baseline. Priya Nair documented this contingency in the Sprint 22 risk register. Lena Schulz will flag the Android readiness status at the mid-sprint checkpoint on March 15th.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "What is the Day 7 retention rate for OnboardIQ, and who owns that metric for Sprint 22?",
+      "assistant_message": "The Step Funnel Report records the current Day 7 retention rate for OnboardIQ at 22%, which Priya Nair owns as part of the Sprint 22 retention dashboard. The target for Day 7 retention after the sprint ships is 35%, representing a 13-point lift. Marcus Webb noted that Day 7 retention is expected to lag Day 1 improvements by one full release cycle.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "Has anyone looked at the onboarding completion rate broken down by acquisition channel for OnboardIQ?",
+      "assistant_message": "Lena Schulz pulled the channel breakdown from the Step Funnel Report and found that users acquired via paid social complete OnboardIQ onboarding at 34%, while organic search users complete at 51% and referral users complete at 62%. Marcus Webb noted the 28-point gap between paid social and referral as a critical insight for the Sprint 22 targeting strategy. Priya Nair recommended that the inline prompt fix be validated separately for each acquisition channel in post-launch analysis.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "What did Lena Schulz recommend about the number of onboarding steps based on the competitive audit?",
+      "assistant_message": "Lena Schulz formally recommended in her March 4th audit memo that OnboardIQ reduce its onboarding flow from 9 steps to 6 steps by eliminating the profile-photo upload step, the interests-selection carousel, and the optional tutorial overlay. She estimated this reduction would cut median onboarding time from 4.2 minutes to 2.6 minutes. Priya Nair accepted the recommendation and added the three-step reduction to the Sprint 22 backlog.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "What is the current Day 30 retention rate, and does Priya Nair have a target for it?",
+      "assistant_message": "The Step Funnel Report lists the current Day 30 retention rate for OnboardIQ at 14%, and Priya Nair has set a Sprint 22 target of 24%. Marcus Webb cautioned that Day 30 improvements will not be measurable until at least 30 days after the Sprint 22 release, so this target will be evaluated in the Sprint 24 retrospective. Lena Schulz will include Day 30 cohort tracking in the post-launch analytics dashboard.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "Has the team estimated how the step reduction will affect the Day 1 retention rate specifically?",
+      "assistant_message": "Priya Nair modeled the impact and estimated that reducing OnboardIQ from 9 to 6 steps would lift Day 1 retention from 41% to approximately 50%, assuming the permissions screen fix is also in place. Without the permissions fix, the step reduction alone is projected to yield only a 4-point lift to 45%. Marcus Webb flagged that both changes need to ship together in Sprint 22 for the 60% Day 1 retention target to be achievable.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "What is the median onboarding completion time right now, before any Sprint 22 changes ship?",
+      "assistant_message": "The Step Funnel Report records the current median onboarding completion time for OnboardIQ at 4.2 minutes for users who finish all 9 steps. Lena Schulz noted that this is 68% longer than the 2.5-minute median recorded for the top competitor in her audit. Priya Nair set a post-Sprint 22 target of 2.6 minutes, aligned with Lena's recommendation to cut to 6 steps.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "What percentage of OnboardIQ users who drop off at Step 3 ever return to complete onboarding in a later session?",
+      "assistant_message": "The Step Funnel Report shows that only 9% of users who abandon OnboardIQ at Step 3 return to complete onboarding in any subsequent session within 30 days. Priya Nair described this as a 'near-permanent loss' event, meaning Step 3 abandonment is effectively equivalent to full churn. Marcus Webb used this figure to argue for treating the permissions screen fix as the highest-priority item in Sprint 22.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "What channels are contributing the most new users to OnboardIQ right now, and does that affect how the team prioritizes the step reduction?",
+      "assistant_message": "According to the Step Funnel Report, paid social is the largest acquisition channel at 48% of new OnboardIQ users, followed by organic search at 31% and referral at 21%. Because paid social users have the lowest onboarding completion rate at 34%, Lena Schulz argued that the step reduction should be prioritized partly to close the gap for that channel. Priya Nair agreed and flagged paid social completion rate as a secondary success metric for Sprint 22.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "What is the target median onboarding time after the step reduction ships, and who signed off on it?",
+      "assistant_message": "The target median onboarding completion time after the Sprint 22 step reduction is 2.6 minutes, down from the current 4.2 minutes, as proposed by Lena Schulz and signed off by Priya Nair on March 7th. Marcus Webb added a secondary stretch target of 2.2 minutes contingent on user testing showing the tutorial overlay removal causes no confusion. The 2.6-minute figure is the official Sprint 22 success criterion for onboarding speed.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "What is the latest on the Android pre-permission screen — has Lena Schulz confirmed whether it will make the Sprint 22 cutoff?",
+      "assistant_message": "As of March 9th, Lena Schulz confirmed that the Android pre-permission screen will not make the Sprint 22 cutoff due to an unexpected API compatibility issue with Android 14. This triggers the contingency Marcus Webb documented: the overall push notification opt-in target for Sprint 22 is revised down to 40%. Priya Nair updated the Sprint 22 risk register accordingly and scheduled the Android fix for Sprint 23.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "What share of Step 3 drop-offs happen within the first 5 seconds of the permissions screen appearing?",
+      "assistant_message": "The Step Funnel Report event-level data shows that 67% of all Step 3 drop-offs in OnboardIQ occur within the first 5 seconds of the permissions screen rendering. Priya Nair interpreted this as evidence that users are making a reflexive rejection rather than reading the permission rationale. Marcus Webb used this finding to support the inline contextual prompt approach, arguing that front-loading context before the dialog appears is the only way to interrupt the reflexive exit.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "Has the team set a specific completion rate target for paid social users after the step reduction ships?",
+      "assistant_message": "Yes, Priya Nair set a post-Sprint 22 onboarding completion rate target of 50% for paid social users, up from the current 34%, as recorded in the Sprint 22 success criteria document. Lena Schulz noted that achieving this would require both the step reduction and improved copy on the value proposition screen that paid social users see first. Marcus Webb approved the 50% target on March 8th as part of the channel-level KPI framework.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "What is the return-to-complete rate for users who drop off at Step 5 compared to Step 3?",
+      "assistant_message": "The Step Funnel Report shows that users who abandon OnboardIQ at Step 5 return to complete onboarding at a rate of 19%, more than double the 9% return rate for Step 3 drop-offs. Priya Nair noted that Step 5 drop-offs are more recoverable because users have already passed the high-friction permissions screen and are closer to the payoff. Marcus Webb factored this asymmetry into the decision to focus Sprint 22 remediation exclusively on Step 3 rather than spreading effort across multiple steps.",
+      "gold_parents": [
+        "t22"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "What implementation constraints did the engineering team flag for the inline contextual prompt at Step 3?",
+      "assistant_message": "The engineering team, represented by Marcus Webb in the March 7th tech review, flagged two constraints for the inline contextual prompt: it must not add more than 200 milliseconds to Step 3 render time, and it must pass the OnboardIQ accessibility audit for WCAG 2.1 AA compliance. Priya Nair accepted both constraints as hard requirements. The team also agreed the prompt copy must be reviewed and approved by Lena Schulz before it goes into the Sprint 22 build.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "Has Lena Schulz approved the copy for the inline prompt yet?",
+      "assistant_message": "Lena Schulz approved the final inline prompt copy on March 10th after two rounds of revision. The approved copy reads 'We ask for this permission so you never miss an update that matters to you — you can change this anytime in Settings.' Priya Nair signed off on the copy the same day, clearing it for integration into the Sprint 22 build. Marcus Webb confirmed engineering received the approved copy and began implementation on March 11th.",
+      "gold_parents": [
+        "t25"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "Is there a rollback plan if the inline prompt causes an unexpected increase in Step 3 drop-off after launch?",
+      "assistant_message": "Yes, Priya Nair documented a rollback plan in the Sprint 22 release checklist: if Step 3 drop-off exceeds 54% — the current baseline — for more than 48 hours post-launch, the inline prompt will be feature-flagged off and the original modal will be restored. Marcus Webb set the monitoring window at 72 hours from first production deployment. Lena Schulz will be the on-call analyst during that window, checking the Step Funnel Report dashboard every 6 hours.",
+      "gold_parents": [
+        "t26"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "What is the exact drop-off threshold Priya Nair set as the Sprint 22 success criterion for Step 3?",
+      "assistant_message": "Priya Nair set the Sprint 22 success criterion for Step 3 drop-off at 28% or below, representing the projected outcome of the inline contextual prompt fix. This threshold is documented in the Sprint 22 success criteria document dated March 7th and requires measurement over a minimum 7-day post-launch window to account for day-of-week variation. If the 28% threshold is not met within 30 days of launch, the team will escalate to a full redesign of the permissions flow.",
+      "gold_parents": [
+        "t27"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "How did the usability study participants respond to the inline prompt in terms of permission grant rate specifically?",
+      "assistant_message": "In Lena Schulz's February usability study, participants shown the inline contextual prompt granted the requested permission at a rate of 71%, compared to 49% for participants shown the original full-screen modal. The 22-percentage-point lift was statistically significant at p less than 0.01 across the 42 participants. Priya Nair noted this as the strongest quantitative signal in the entire research corpus supporting the Sprint 22 permissions fix.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t30",
+      "turn_index": 29,
+      "user_message": "What was the permission grant rate for users shown the explainer card treatment in Lena Schulz's study?",
+      "assistant_message": "In Lena Schulz's February usability study, participants shown the explainer card treatment granted the requested permission at a rate of 58%, which sits between the original modal's 49% and the inline prompt's 71%. Priya Nair noted that while the explainer card outperformed the control, its 13-point lift was less than half the 22-point lift achieved by the inline prompt. Marcus Webb used this comparison to confirm the inline prompt as the definitive Sprint 22 choice.",
+      "gold_parents": [
+        "t24"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t31",
+      "turn_index": 30,
+      "user_message": "What is the paid social completion rate target for Sprint 23, if the Sprint 22 target of 50% is met?",
+      "assistant_message": "If the Sprint 22 paid social completion rate target of 50% is met, Priya Nair has penciled in a Sprint 23 stretch target of 58%, contingent on a copy optimization test for the value proposition screen. Lena Schulz estimated that copy optimization alone could yield a 5 to 8 percentage point lift for paid social users based on comparable tests run on OnboardIQ's sister product. Marcus Webb noted the Sprint 23 target will be formally ratified only after Sprint 22 post-launch data is reviewed.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t32",
+      "turn_index": 31,
+      "user_message": "What minimum permission grant rate did the team set as the success criterion for the inline prompt in production?",
+      "assistant_message": "The team set a minimum production permission grant rate of 65% as the Sprint 22 success criterion for the inline contextual prompt, as documented by Priya Nair in the Sprint 22 success criteria document on March 7th. This threshold was chosen conservatively below the 71% observed in Lena Schulz's usability study to account for real-world variability. Marcus Webb stipulated that the 65% threshold must be sustained over a minimum 7-day post-launch measurement window, consistent with the Step 3 drop-off criterion.",
+      "gold_parents": [
+        "t29"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t33",
+      "turn_index": 32,
+      "user_message": "Has the team looked at whether session length differs between paid social and organic users who complete onboarding?",
+      "assistant_message": "The Step Funnel Report shows that paid social users who complete OnboardIQ onboarding average a first-session length of 6.9 minutes, compared to 9.1 minutes for organic search completers. Lena Schulz flagged this 2.2-minute gap as evidence that paid social users are less intrinsically motivated and may need additional in-app prompts after onboarding to sustain engagement. Priya Nair noted this finding does not change the Sprint 22 scope but is earmarked for a post-onboarding engagement sprint later in the quarter.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t34",
+      "turn_index": 33,
+      "user_message": "Is the 65% production grant rate target tied to any specific measurement window or conditions?",
+      "assistant_message": "Yes, the 65% production permission grant rate target must be measured over a minimum 7-day post-launch window and must be calculated only on users who reach Step 3 of OnboardIQ onboarding on a fresh install, excluding re-installs and update sessions. Priya Nair added this fresh-install condition on March 9th after Marcus Webb pointed out that returning users skew the grant rate upward. Lena Schulz confirmed the analytics instrumentation is set up to apply this filter automatically in the Step Funnel Report dashboard.",
+      "gold_parents": [
+        "t32"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t35",
+      "turn_index": 34,
+      "user_message": "Does the session length gap between paid social and organic completers affect the Day 7 retention projections for Sprint 22?",
+      "assistant_message": "Priya Nair assessed the session length gap and concluded it does not materially change the Day 7 retention projection for Sprint 22, because the projection model uses onboarding completion as the primary input rather than session length. Marcus Webb agreed, noting that the 22% to 35% Day 7 retention lift is expected to hold even if paid social users have shorter first sessions. Lena Schulz will break out Day 7 retention by acquisition channel in the post-launch report to validate this assumption.",
+      "gold_parents": [
+        "t33"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t36",
+      "turn_index": 35,
+      "user_message": "Given the success criteria the team has locked in for the Sprint 22 inline prompt fix, what does the OnboardIQ team need to hit at Step 3 drop-off and at the permission grant rate for the launch to be considered a success?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t28",
+        "t34"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t7",
+    "t9",
+    "t10",
+    "t25",
+    "t26",
+    "t27",
+    "t28",
+    "t29",
+    "t32",
+    "t34"
+  ],
+  "distractor_turn_ids": [
+    "t2",
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t8",
+    "t11",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t20",
+    "t21",
+    "t22",
+    "t23",
+    "t24",
+    "t30",
+    "t31",
+    "t33",
+    "t35"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that the Step 3 drop-off success criterion is 28% or below.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that the production permission grant rate success criterion is 65% or above.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer states that both criteria must be sustained over a minimum 7-day post-launch measurement window.",
+      "required": false
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not state that the permission grant rate success criterion is 58% (the explainer card result from the near-miss turn t30).",
+      "required": true
+    }
+  ],
+  "notes": "t28 holds the Step 3 drop-off success criterion (28%) needed from Branch A; t32 and t34 hold the production permission grant rate criterion (65%) and its measurement conditions needed from Branch B. t30 is the near-miss: it answers a similar question about the explainer card's grant rate (58%) which a careless reader might mistake for the production success threshold.\n\nReference answer: For the Sprint 22 inline prompt fix to be considered a success, the OnboardIQ team must bring Step 3 drop-off down to 28% or below, as documented by Priya Nair in the Sprint 22 success criteria on March 7th. On the permission grant rate side, the inline prompt must achieve at least 65% in production, measured over a minimum 7-day post-launch window on fresh installs only. Both thresholds must hold simultaneously for the launch to count as a success; if Step 3 drop-off exceeds 54% within the first 48 hours the rollback plan activates.",
+  "evidence_note": null,
+  "premise": "a mobile app team fixing onboarding drop-off",
+  "evidence_spans": null,
+  "benchmark_version": "1.2-pilot",
+  "length_class": "long"
+}

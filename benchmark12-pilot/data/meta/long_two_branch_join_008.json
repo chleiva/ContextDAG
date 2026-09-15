@@ -1,0 +1,139 @@
+{
+ "scenario_id": "long_two_branch_join_008",
+ "family": "two_branch_join",
+ "n_history": 43,
+ "full_history_tokens": 5633,
+ "closure_ratio": 0.20930232558139536,
+ "entity_registry": [
+  "Riverdale Robotics Team",
+  "Coach Martinez",
+  "FIRST Tech Challenge",
+  "Omni-Drive Chassis",
+  "Autonomous Navigation Module",
+  "Zoe Chen",
+  "Marcus Webb",
+  "Scoring Criteria Document v2.3"
+ ],
+ "distractor_branch_entity_hits": {
+  "D": [
+   "Riverdale Robotics Team",
+   "Coach Martinez",
+   "FIRST Tech Challenge",
+   "Omni-Drive Chassis",
+   "Marcus Webb"
+  ],
+  "E": [
+   "Riverdale Robotics Team",
+   "Coach Martinez",
+   "FIRST Tech Challenge",
+   "Omni-Drive Chassis",
+   "Autonomous Navigation Module",
+   "Marcus Webb"
+  ],
+  "F": [
+   "Riverdale Robotics Team",
+   "Coach Martinez",
+   "FIRST Tech Challenge",
+   "Omni-Drive Chassis",
+   "Marcus Webb"
+  ],
+  "G": [
+   "Riverdale Robotics Team",
+   "Coach Martinez",
+   "FIRST Tech Challenge",
+   "Omni-Drive Chassis",
+   "Autonomous Navigation Module",
+   "Marcus Webb"
+  ],
+  "H": [
+   "Riverdale Robotics Team",
+   "Coach Martinez",
+   "FIRST Tech Challenge",
+   "Omni-Drive Chassis",
+   "Marcus Webb"
+  ]
+ },
+ "near_miss_turn_id": "t43",
+ "checklist_evidence": {
+  "c1": [
+   "t34",
+   "t31"
+  ],
+  "c2": [
+   "t9",
+   "t19"
+  ],
+  "c3": [
+   "t34",
+   "t19"
+  ],
+  "c4": []
+ },
+ "cosine": {
+  "gold_median": 0.23630979657173157,
+  "distractor_median": 0.15498609840869904,
+  "ratio": 0.6558598105417656,
+  "pass": true
+ },
+ "cosine_per_turn": {
+  "t1": 0.23630979657173157,
+  "t2": 0.13343197107315063,
+  "t3": 0.16156752407550812,
+  "t4": 0.09589482098817825,
+  "t5": 0.08834698051214218,
+  "t6": 0.11238615959882736,
+  "t7": 0.19180849194526672,
+  "t8": 0.16452938318252563,
+  "t9": 0.20418284833431244,
+  "t10": 0.15604916214942932,
+  "t11": 0.16663935780525208,
+  "t12": 0.1981513798236847,
+  "t13": 0.2043173909187317,
+  "t14": 0.11866587400436401,
+  "t15": 0.14840467274188995,
+  "t16": 0.10973744839429855,
+  "t17": 0.05164891481399536,
+  "t18": 0.24862375855445862,
+  "t19": 0.4456205368041992,
+  "t20": 0.1966894567012787,
+  "t21": 0.19591881334781647,
+  "t22": 0.24747686088085175,
+  "t23": 0.10549227893352509,
+  "t24": 0.24468666315078735,
+  "t25": 0.07513973861932755,
+  "t26": 0.21386587619781494,
+  "t27": 0.36905550956726074,
+  "t28": 0.16302107274532318,
+  "t29": 0.12972311675548553,
+  "t30": 0.16498427093029022,
+  "t31": 0.326337069272995,
+  "t32": 0.2286197990179062,
+  "t33": 0.040073662996292114,
+  "t34": 0.42063409090042114,
+  "t35": 0.13643363118171692,
+  "t36": 0.32607486844062805,
+  "t37": 0.1713247299194336,
+  "t38": 0.12148411571979523,
+  "t39": 0.14659428596496582,
+  "t40": 0.08733474463224411,
+  "t41": 0.04289674013853073,
+  "t42": 0.16462357342243195,
+  "t43": 0.26813870668411255
+ },
+ "gold_branches": [
+  "A",
+  "B"
+ ],
+ "distractor_branches": [
+  "D",
+  "E",
+  "F",
+  "G",
+  "H"
+ ],
+ "attempt_accepted": 2,
+ "generation_tokens": [
+  4715,
+  8386
+ ]
+}

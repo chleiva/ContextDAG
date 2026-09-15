@@ -1,0 +1,425 @@
+{
+  "scenario_id": "long_new_root_002",
+  "family": "new_root",
+  "label": "NEW_ROOT",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We need to sort out the staffing schedule for the seasonal menu launch at Harvest & Hearth. Chef Dominique Ferrara mentioned she needs at least three prep cooks on the floor for the first two weeks.",
+      "assistant_message": "For the launch period running October 7 through October 20, I'd recommend scheduling four prep cooks per shift rather than the minimum three Chef Dominique Ferrara requested, to absorb the extra volume of new dishes being plated. Marcus Weld confirmed that the front-of-house team can handle up to 90 covers per night during that window, so back-of-house needs to match that capacity. You should also factor in a one-hour overlap between the afternoon and evening prep shifts to allow for handoff briefings on the new seasonal items.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Marcus Weld said he can get two of his senior servers cross-trained on the new menu descriptions by October 5. Is that enough lead time?",
+      "assistant_message": "October 5 gives two days before the October 7 launch, which is workable but tight, especially given that Menu Revision Draft v2 introduced eight entirely new dishes that servers will need to explain confidently. I'd suggest Marcus Weld runs a 90-minute tasting session on October 4 so those two senior servers can speak from direct experience rather than just reading descriptions. Harvest & Hearth's past seasonal launches have shown that server familiarity with the food directly correlates with upsell rates, so that extra preparation time pays off.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "Priya Nambiar is handling the produce sourcing. Can you help figure out how to structure the delivery schedule with Solstice Supplier Co. for the autumn ingredients?",
+      "assistant_message": "Priya Nambiar should negotiate a twice-weekly delivery cadence with Solstice Supplier Co., specifically Tuesdays and Fridays, to keep root vegetables and squash at peak freshness without overloading cold storage. Solstice Supplier Co. has a minimum order threshold of 80 kg per delivery for their autumn line, so Priya will need to consolidate orders across all ingredient categories to hit that figure consistently. Building a two-day buffer stock for high-turnover items like butternut squash and parsnips would protect Harvest & Hearth against any single missed delivery.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "We're trying to set the new price points for the autumn menu. Chef Dominique Ferrara submitted her cost-per-plate estimates last week. Where should we start?",
+      "assistant_message": "Chef Dominique Ferrara's estimates put the average food cost per plate at $14.20 for the autumn menu, which at Harvest & Hearth's standard 30 percent food-cost target implies a menu price floor of roughly $47.30 per main course. The two highest-cost dishes, the braised short rib and the seared duck breast, come in at $19.80 and $18.40 respectively, so those should be priced at $66 and $61 to maintain margin. Priya Nambiar's sourcing negotiations with Solstice Supplier Co. could bring the duck breast cost down by up to $1.50 if she secures the volume discount tier.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "What is the minimum order threshold that Solstice Supplier Co. requires for their winter ingredient line?",
+      "assistant_message": "For Solstice Supplier Co.'s winter ingredient line, the minimum order threshold is 120 kg per delivery, which is notably higher than their autumn line requirement. Priya Nambiar flagged this figure during her preliminary negotiations, noting that it would require Harvest & Hearth to either increase storage capacity or coordinate combined orders across multiple delivery days. The winter threshold applies starting with the first delivery of the January cycle, so planning needs to begin in late November to avoid any gaps.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "For the staffing plan, should we also account for a dedicated expeditor during the first week of service?",
+      "assistant_message": "Yes, having a dedicated expeditor for the first week is strongly advisable given that Menu Revision Draft v2 added eight new dishes with unfamiliar plating requirements. Marcus Weld suggested that one of the senior floor supervisors, either Carla Briones or Teo Park, could rotate into the expeditor role on alternating nights to spread the knowledge load. Chef Dominique Ferrara has already agreed to do a 30-minute plating walkthrough with whichever expeditor is assigned before each of the first five services.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "Priya Nambiar wants to know if we should add a backup supplier in case Solstice Supplier Co. misses a delivery.",
+      "assistant_message": "Priya Nambiar is right to think about redundancy, and I'd recommend identifying one local backup supplier capable of covering at least 60 percent of Solstice Supplier Co.'s autumn line on 24-hour notice. Riverside Farms has supplied Harvest & Hearth on a spot basis before and could be formally onboarded as a secondary vendor within two weeks. The agreement should specify that Riverside Farms pricing cannot exceed Solstice Supplier Co.'s contracted rates by more than 15 percent to protect margin on the dishes Chef Dominique Ferrara has already costed.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "Should the backup supplier agreement go through Priya Nambiar or does Marcus Weld need to sign off too?",
+      "assistant_message": "Vendor agreements at Harvest & Hearth above $5,000 in projected annual spend require dual sign-off, so both Priya Nambiar and Marcus Weld would need to approve the Riverside Farms contract. Given that a full autumn season of backup orders could easily reach $8,000 to $12,000, this threshold will almost certainly be crossed. Priya Nambiar should prepare a one-page vendor summary for Marcus Weld by October 3 so he can review it before the launch week begins.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "We need to decide what to do about the appetizer tier pricing. Chef Dominique Ferrara's notes show three new starters in Menu Revision Draft v2.",
+      "assistant_message": "Chef Dominique Ferrara's three new starters in Menu Revision Draft v2 are the roasted beet salad at a food cost of $4.80, the chestnut velouté at $5.60, and the cured salmon with pickled fennel at $7.10. Applying Harvest & Hearth's 30 percent food-cost target gives suggested prices of $16, $18.70, and $23.70 respectively, though rounding to $16, $19, and $24 keeps the menu clean. Priya Nambiar's Solstice Supplier Co. deal should lock in chestnut pricing through December, which protects the velouté margin for the full autumn run.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "Should the cured salmon starter be priced closer to $22 to stay competitive with similar restaurants in the area?",
+      "assistant_message": "Pricing the cured salmon at $22 rather than $24 would compress the margin to roughly 32 percent food cost, which is above Harvest & Hearth's 30 percent target but within the acceptable band that Chef Dominique Ferrara and Priya Nambiar agreed on for premium ingredients. Competitor menus in the area show similar salmon starters ranging from $21 to $26, so $22 positions Harvest & Hearth as accessible without undercutting perceived quality. Marcus Weld noted in his last review that the salmon dish tests particularly well with the 35-to-50 demographic, which is the restaurant's highest-spending segment, so slightly lower pricing could drive volume and offset the margin dip.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "What about the dessert pricing? Chef Dominique Ferrara hasn't submitted those cost estimates yet.",
+      "assistant_message": "Chef Dominique Ferrara indicated she would have the dessert cost estimates to Priya Nambiar by September 28, covering four new desserts planned for the autumn menu. Based on past seasonal menus at Harvest & Hearth, dessert food costs typically run between $3.50 and $6.00 per plate, suggesting menu prices in the $12 to $20 range at the 30 percent target. Marcus Weld has recommended holding the dessert prices to a maximum of $16 for the autumn launch to encourage add-on orders and improve table spend per cover.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "Once we have the dessert numbers, who finalizes the full pricing sheet before it goes to print?",
+      "assistant_message": "The final pricing sheet for Harvest & Hearth goes through a three-step sign-off: Chef Dominique Ferrara approves all food cost figures, Priya Nambiar confirms that sourcing costs from Solstice Supplier Co. match the assumptions, and then Marcus Weld gives the commercial sign-off before the document is sent to the printer. The printer, Clearline Print, requires the finalized file no later than October 2 to guarantee delivery of physical menus by October 6, the day before the launch. Any changes after October 2 would incur a $150 rush-reprint fee per Clearline Print's current contract terms.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "For the delivery schedule with Solstice Supplier Co., Priya Nambiar wants to know if we can add a third weekly delivery during the first two weeks of October given the higher volume at launch.",
+      "assistant_message": "Solstice Supplier Co. can accommodate a third weekly delivery on Sundays during October 7 through October 20 at a surcharge of $45 per additional delivery run, which Priya Nambiar should weigh against the cost of holding extra buffer stock. For a two-week window that adds up to $90 in surcharges, which is marginal compared to the risk of running short on key autumn ingredients during Harvest & Hearth's highest-profile service period. I'd recommend Priya Nambiar confirm the Sunday slot by September 30 to secure availability on Solstice Supplier Co.'s driver schedule.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "For the braised short rib, can we bring the food cost down at all before the menu is finalized?",
+      "assistant_message": "The braised short rib's $19.80 food cost is driven primarily by the cut of beef and the 48-hour braise time, which increases labor allocation. Chef Dominique Ferrara identified two levers: switching from USDA Prime to USDA Choice short rib, which saves approximately $2.10 per plate, and reducing the portion from 280g to 250g, saving another $1.40. Combining both changes would bring the food cost to $16.30, allowing a menu price of $54 at the 30 percent target rather than $66, which Marcus Weld believes would significantly improve order frequency for that dish.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "For the staffing plan, Marcus Weld asked whether we should bring in a temporary sommelier for the autumn launch period.",
+      "assistant_message": "Marcus Weld's idea has merit given that Menu Revision Draft v2 pairs seven of the ten new dishes with specific wine recommendations, and none of the current floor staff hold a WSET Level 2 certification. Harvest & Hearth could hire a contract sommelier through Apex Hospitality Staffing for approximately $280 per shift, and covering the first ten service nights would cost $2,800 total. Chef Dominique Ferrara has already drafted tasting notes for each wine pairing, so the contract sommelier would only need a half-day orientation before the October 7 launch.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "Priya Nambiar is asking whether Solstice Supplier Co. can also supply the specialty mushrooms listed in Menu Revision Draft v2, or if we need a separate vendor.",
+      "assistant_message": "Solstice Supplier Co. carries three of the four specialty mushroom varieties listed in Menu Revision Draft v2, specifically maitake, trumpet royale, and hen-of-the-woods, but they do not stock black chanterelles. Priya Nambiar will need to source the black chanterelles from a specialist like Forest & Field Provisions, which supplies Harvest & Hearth on a seasonal basis and typically charges $38 per kilogram for that variety. Chef Dominique Ferrara uses black chanterelles in only one dish, the wild mushroom tart, so a small standing order of 3 kg per week from Forest & Field Provisions should be sufficient.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "We're still working through the pricing. Should the duck breast stay at $61 or should we revisit that given competitor pricing?",
+      "assistant_message": "At $61 the seared duck breast sits at the upper end of comparable dishes in the area, where the range runs from $54 to $68 based on a recent survey of eight nearby restaurants that Marcus Weld compiled. If Priya Nambiar secures the Solstice Supplier Co. volume discount on duck, bringing the food cost from $18.40 to $16.90, Chef Dominique Ferrara's revised target price would be $56, which is more competitive while still maintaining the 30 percent margin. Holding at $61 is defensible if the dish is positioned as a premium signature, but $56 to $58 would likely improve order frequency without damaging Harvest & Hearth's brand positioning.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "If we drop the duck to $57, what does that do to the overall average check?",
+      "assistant_message": "Dropping the seared duck breast from $61 to $57 reduces that dish's contribution by $4 per cover, and if Marcus Weld's projection of 35 duck orders per night holds, that's $140 less in nightly revenue. Across a 90-day autumn season with roughly 85 service nights, the cumulative revenue impact is approximately $11,900, which Priya Nambiar and Chef Dominique Ferrara both agreed is acceptable given the expected uplift in order frequency. The average check at Harvest & Hearth would dip from a projected $74 to approximately $73.20 per guest, which is within the rounding noise of normal night-to-night variation.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "Priya Nambiar wants to lock in the full autumn ingredient list with Solstice Supplier Co. by a specific date. What deadline makes sense?",
+      "assistant_message": "Given that Solstice Supplier Co. requires 10 business days to process a new seasonal contract and the first delivery needs to arrive by October 5, Priya Nambiar must submit the finalized ingredient list no later than September 20. That date also aligns with Chef Dominique Ferrara's recipe finalization deadline, so the two workstreams should sync up naturally. Harvest & Hearth's procurement policy requires Priya Nambiar to retain a signed copy of the Solstice Supplier Co. contract in the vendor file before any goods are received.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "Should the vegetarian main course be priced differently than the meat mains given the lower food cost?",
+      "assistant_message": "Chef Dominique Ferrara's autumn vegetarian main, a roasted celeriac with hazelnut cream, has a food cost of $9.40, which at the 30 percent target suggests a price of $31.30. However, Marcus Weld strongly recommends pricing it at $38 to avoid signaling that it is a lesser option and to align it closer to the $44-to-$57 range of the meat mains on the Menu Revision Draft v2 lineup. Priya Nambiar's sourcing of celeriac through Solstice Supplier Co. at $2.80 per kilogram actually makes this dish one of the highest-margin items on the menu at $38, running at roughly a 25 percent food cost.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "Has Priya Nambiar confirmed that Solstice Supplier Co. can meet the full volume requirements for the entire autumn season, not just the launch period?",
+      "assistant_message": "Priya Nambiar received written confirmation from Solstice Supplier Co. on September 15 that they can supply 100 percent of the contracted autumn volumes through December 21, with one caveat: butternut squash availability may drop by up to 20 percent in the last two weeks of November due to regional harvest conditions. To cover that gap, Priya Nambiar has pre-arranged a standing top-up order with Riverside Farms for butternut squash only, capped at 40 kg per week at a rate of $1.95 per kilogram. Chef Dominique Ferrara has been informed and confirmed that the two squash-based dishes can absorb a 15 percent portion reduction in late November without affecting the guest experience.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "For the staffing schedule, how should we handle the situation if the contract sommelier from Apex Hospitality Staffing is unavailable for a shift?",
+      "assistant_message": "Marcus Weld should designate one senior server as a wine-trained backup and have that person complete a two-hour accelerated pairing briefing with Chef Dominique Ferrara before October 7. Harvest & Hearth's service standards allow a certified backup to cover sommelier duties for up to three consecutive shifts before a replacement must be sourced. If Apex Hospitality Staffing cannot provide a substitute within 48 hours of a cancellation, Marcus Weld has the authority to authorize an emergency hire at up to $320 per shift, which is $40 above the standard contract rate.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "Priya Nambiar is asking whether the Forest & Field Provisions order for black chanterelles needs to go through the same dual sign-off process as the Solstice Supplier Co. contract.",
+      "assistant_message": "The Forest & Field Provisions order for black chanterelles at 3 kg per week at $38 per kilogram comes to $114 per week, or roughly $1,368 over the 12-week autumn season, which falls below Harvest & Hearth's $5,000 dual sign-off threshold. That means Priya Nambiar can approve this order unilaterally without requiring Marcus Weld's signature, which simplifies the procurement process considerably. She should still log the order in the vendor management system and attach the Forest & Field Provisions quote to maintain the audit trail that Chef Dominique Ferrara's kitchen records require.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "Chef Dominique Ferrara mentioned in the staffing plan that she wants a dedicated garde manger station set up before the launch. What does that involve?",
+      "assistant_message": "Setting up the garde manger station for Chef Dominique Ferrara requires repositioning the cold prep table to the northeast corner of the kitchen, installing two additional refrigerated drawers at an estimated equipment cost of $1,200, and designating one prep cook exclusively to that station during service. Marcus Weld's facilities contact, a contractor named Ben Osei, can complete the repositioning over the October 4 to 5 weekend, which keeps the kitchen fully operational for the October 7 launch. Chef Dominique Ferrara has specified that the station must maintain a consistent temperature of 4 degrees Celsius to comply with Harvest & Hearth's food safety protocols.",
+      "gold_parents": [
+        "t22"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "Priya Nambiar wants to know if there's a penalty clause if Solstice Supplier Co. misses a delivery.",
+      "assistant_message": "The current Solstice Supplier Co. contract, which Priya Nambiar negotiated in August, includes a penalty clause of $200 per missed scheduled delivery, credited against the following month's invoice. If two or more deliveries are missed within a single calendar month, the penalty escalates to $350 per missed delivery and Harvest & Hearth gains the right to terminate the contract with 7 days' written notice. Priya Nambiar confirmed that this clause applies to all delivery types including the additional Sunday runs during the October launch window.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "For the staffing schedule, should we plan for any additional kitchen staff during the December holiday period, or is the autumn staffing level sufficient?",
+      "assistant_message": "Harvest & Hearth historically sees a 40 percent cover increase during the December 15 to January 1 holiday period compared to the regular autumn service level, which means the four prep cooks per shift that Marcus Weld approved for October would be insufficient. Chef Dominique Ferrara has recommended adding two more prep cooks and a second expeditor for that window, bringing the kitchen team to six prep cooks plus an expeditor per shift. Marcus Weld should open those holiday postings through Apex Hospitality Staffing no later than November 1 to ensure adequate lead time for onboarding and the required Chef Dominique Ferrara orientation sessions.",
+      "gold_parents": [
+        "t24"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "For the pricing, should we include a prix fixe option for the autumn menu or keep it strictly à la carte?",
+      "assistant_message": "Marcus Weld has advocated for a three-course prix fixe at $65 per person, which at the current cost structure would deliver a food cost of approximately 28 percent, slightly better than the à la carte average. Chef Dominique Ferrara supports the idea but wants the prix fixe to rotate weekly rather than being fixed for the full season, so that she can respond to ingredient availability from Solstice Supplier Co. without being locked into specific dishes. Priya Nambiar noted that a rotating prix fixe also helps manage inventory more efficiently since the kitchen can prioritize whatever is at peak freshness that week.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "Priya Nambiar is asking whether Solstice Supplier Co. offers any early payment discount that Harvest & Hearth could take advantage of.",
+      "assistant_message": "Solstice Supplier Co. offers a 2 percent discount on invoices paid within 10 days of delivery, compared to their standard 30-day net terms. Based on Harvest & Hearth's projected autumn spend of approximately $34,000 with Solstice Supplier Co., taking the early payment discount consistently would save roughly $680 over the season. Priya Nambiar should confirm with Marcus Weld that the accounts payable cycle can be accelerated to 10 days for Solstice Supplier Co. invoices specifically, as the current default is 25 days.",
+      "gold_parents": [
+        "t25"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "Should we add a seasonal cocktail menu to complement Chef Dominique Ferrara's autumn dishes, and if so, who manages the pricing for that?",
+      "assistant_message": "A seasonal cocktail menu is a strong complement to the autumn food menu, and at Harvest & Hearth the beverage pricing is typically handled by Marcus Weld in consultation with the bar lead rather than going through Chef Dominique Ferrara's kitchen cost process. For a four-to-six cocktail autumn offering, target prices of $16 to $22 per drink are consistent with the restaurant's positioning and the food price tier established in Menu Revision Draft v2. Priya Nambiar should check whether Solstice Supplier Co. carries any of the specialty fruit or herb garnishes that the bar team might need, to consolidate purchasing and potentially hit higher volume discount tiers.",
+      "gold_parents": [
+        "t27"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t30",
+      "turn_index": 29,
+      "user_message": "For the pricing sign-off process, is there a formal deadline by which Chef Dominique Ferrara needs to submit the final dish list to Marcus Weld?",
+      "assistant_message": "Chef Dominique Ferrara's final dish list, including all food cost figures and any last-minute substitutions, must reach Marcus Weld by September 25, giving him five days to complete his commercial review before the October 2 printer deadline. Priya Nambiar has a parallel deadline of September 25 to submit the confirmed Solstice Supplier Co. pricing to validate that the food cost assumptions in the dish list are still accurate. If either submission is late, Marcus Weld has indicated he will escalate to the restaurant's general manager, a person named Felicia Drummond, to authorize any deadline extension.",
+      "gold_parents": [
+        "t29"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t31",
+      "turn_index": 30,
+      "user_message": "For the holiday staffing, Marcus Weld wants to know if Ben Osei can also handle any kitchen equipment maintenance during the December period.",
+      "assistant_message": "Ben Osei's contract with Harvest & Hearth covers general facilities work including equipment repositioning and minor electrical installations, but kitchen equipment maintenance falls outside his scope and requires a licensed commercial kitchen technician. Marcus Weld should engage CoolTech Services, which holds the existing maintenance contract for Harvest & Hearth's refrigeration units and ovens, to schedule a preventive maintenance visit in late November before the holiday rush. Chef Dominique Ferrara has flagged that the main convection oven has been running two degrees low, so that specific calibration issue should be prioritized in the CoolTech Services visit.",
+      "gold_parents": [
+        "t26"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t32",
+      "turn_index": 31,
+      "user_message": "Should the garde manger station setup that Chef Dominique Ferrara requested be included in the capital expenditure budget for this seasonal change, or expensed operationally?",
+      "assistant_message": "The two refrigerated drawer units at $1,200 total would typically be capitalized under Harvest & Hearth's policy, which requires assets with a useful life exceeding two years and a cost above $500 to be treated as capital expenditure. Marcus Weld confirmed that the repositioning labor cost of approximately $350, which covers Ben Osei's time over the October 4 to 5 weekend, is operational and can be expensed in the current period. Chef Dominique Ferrara should submit a brief equipment justification memo to the finance team by September 27 to initiate the capital approval process before Ben Osei begins the installation work.",
+      "gold_parents": [
+        "t31"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t33",
+      "turn_index": 32,
+      "user_message": "What general factors should a restaurant consider when deciding how many dishes to add versus retire when redesigning a menu for a seasonal change?",
+      "assistant_message": null,
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [],
+  "distractor_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t7",
+    "t8",
+    "t9",
+    "t10",
+    "t11",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t20",
+    "t21",
+    "t22",
+    "t23",
+    "t24",
+    "t25",
+    "t26",
+    "t27",
+    "t28",
+    "t29",
+    "t30",
+    "t31",
+    "t32"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer addresses the balance between adding new dishes and retiring existing ones as a key factor in seasonal menu redesign.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer mentions operational considerations such as kitchen capacity, staff training, or ingredient availability as factors influencing how many dishes to change.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer references customer or business factors such as guest familiarity, menu readability, or profitability when determining the scope of menu changes.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not cite 120 kg as a relevant threshold or reference the winter ingredient line minimum order quantity from Solstice Supplier Co., which was the near-miss answer in t5 and is irrelevant to this general question.",
+      "required": true
+    }
+  ],
+  "notes": "The query at t33 is a brand-new, general question about seasonal menu redesign principles and has no dependency on any prior turn. The near-miss turn is t5, which confidently states that Solstice Supplier Co.'s winter ingredient line minimum order threshold is 120 kg, a specific number that sounds like it could answer a sourcing-related query but is entirely irrelevant to the general menu-design question asked at t33.\n\nReference answer: When redesigning a menu for a seasonal change, a restaurant should weigh how many dishes its kitchen team can realistically learn and execute well given staff training time and station capacity. Guest familiarity is also important: retaining a core of popular items provides comfort while new seasonal dishes create excitement, so a common guideline is to change no more than 30 to 40 percent of the menu at once. Ingredient availability and supplier lead times should drive which new dishes are feasible, and each addition should be evaluated for its food cost and contribution margin to ensure the overall menu remains profitable. Finally, menu length itself matters, as a shorter, well-curated menu is easier for servers to describe and for guests to navigate than one that grows unchecked season after season.",
+  "evidence_note": null,
+  "premise": "a restaurant redesigning its menu for a seasonal change",
+  "evidence_spans": null,
+  "benchmark_version": "1.2-pilot",
+  "length_class": "long"
+}

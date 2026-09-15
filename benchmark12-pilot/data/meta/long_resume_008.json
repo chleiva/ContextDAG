@@ -1,0 +1,135 @@
+{
+ "scenario_id": "long_resume_008",
+ "family": "resume",
+ "n_history": 50,
+ "full_history_tokens": 8212,
+ "closure_ratio": 0.1,
+ "entity_registry": [
+  "Priya Anand",
+  "Westbrook Museum of Textile Arts",
+  "Threads Across Time",
+  "Curator Liaison Agreement v2.1",
+  "Hartwell Conservation Studio",
+  "Nomad Crate Solutions"
+ ],
+ "distractor_branch_entity_hits": {
+  "D": [
+   "Priya Anand",
+   "Westbrook Museum of Textile Arts",
+   "Threads Across Time",
+   "Curator Liaison Agreement v2.1",
+   "Hartwell Conservation Studio",
+   "Nomad Crate Solutions"
+  ],
+  "E": [
+   "Priya Anand",
+   "Westbrook Museum of Textile Arts",
+   "Threads Across Time",
+   "Curator Liaison Agreement v2.1",
+   "Hartwell Conservation Studio",
+   "Nomad Crate Solutions"
+  ],
+  "F": [
+   "Priya Anand",
+   "Westbrook Museum of Textile Arts",
+   "Threads Across Time",
+   "Curator Liaison Agreement v2.1",
+   "Hartwell Conservation Studio",
+   "Nomad Crate Solutions"
+  ],
+  "G": [
+   "Priya Anand",
+   "Westbrook Museum of Textile Arts",
+   "Threads Across Time",
+   "Curator Liaison Agreement v2.1",
+   "Hartwell Conservation Studio",
+   "Nomad Crate Solutions"
+  ]
+ },
+ "near_miss_turn_id": "t28",
+ "checklist_evidence": {
+  "c1": [
+   "t5"
+  ],
+  "c2": [
+   "t2",
+   "t5"
+  ],
+  "c3": [
+   "t5"
+  ],
+  "c4": []
+ },
+ "cosine": {
+  "gold_median": 0.4130426347255707,
+  "distractor_median": 0.36219966411590576,
+  "ratio": 0.876906240820768,
+  "pass": true
+ },
+ "cosine_per_turn": {
+  "t1": 0.4796592891216278,
+  "t2": 0.4130426347255707,
+  "t3": 0.3152039647102356,
+  "t4": 0.3800910711288452,
+  "t5": 0.8743919730186462,
+  "t6": 0.269436776638031,
+  "t7": 0.11783087253570557,
+  "t8": 0.23973196744918823,
+  "t9": 0.3604489862918854,
+  "t10": 0.346291184425354,
+  "t11": 0.4014405310153961,
+  "t12": 0.5031083822250366,
+  "t13": 0.40866243839263916,
+  "t14": 0.33780911564826965,
+  "t15": 0.25556498765945435,
+  "t16": 0.4039968252182007,
+  "t17": 0.4961700737476349,
+  "t18": 0.37733471393585205,
+  "t19": 0.3870571255683899,
+  "t20": 0.39952436089515686,
+  "t21": 0.44993793964385986,
+  "t22": 0.4081130623817444,
+  "t23": 0.5279132127761841,
+  "t24": 0.37644103169441223,
+  "t25": 0.21051305532455444,
+  "t26": 0.32786351442337036,
+  "t27": 0.25874367356300354,
+  "t28": 0.42468661069869995,
+  "t29": 0.38041993975639343,
+  "t30": 0.2998310327529907,
+  "t31": 0.3581012189388275,
+  "t32": 0.2220761924982071,
+  "t33": 0.36219966411590576,
+  "t34": 0.23126423358917236,
+  "t35": 0.34562626481056213,
+  "t36": 0.4027806520462036,
+  "t37": 0.44678616523742676,
+  "t38": 0.547690749168396,
+  "t39": 0.42746561765670776,
+  "t40": 0.28221917152404785,
+  "t41": 0.3426356911659241,
+  "t42": 0.2995157837867737,
+  "t43": 0.4665026366710663,
+  "t44": 0.44339311122894287,
+  "t45": 0.3827376067638397,
+  "t46": 0.2432561218738556,
+  "t47": 0.31883394718170166,
+  "t48": 0.4294595718383789,
+  "t49": 0.27560269832611084,
+  "t50": 0.32114845514297485
+ },
+ "gold_branches": [
+  "A"
+ ],
+ "distractor_branches": [
+  "D",
+  "E",
+  "F",
+  "G"
+ ],
+ "attempt_accepted": 3,
+ "generation_tokens": [
+  5307,
+  11569
+ ]
+}

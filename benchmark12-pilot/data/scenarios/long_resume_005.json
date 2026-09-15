@@ -1,0 +1,534 @@
+{
+  "scenario_id": "long_resume_005",
+  "family": "resume",
+  "label": "RESUME",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm planning to run my first marathon — the Lakefront Marathon — in exactly 16 weeks and I want to build a structured training plan. My name is Marcus Teller, I'm 34, and my current long run is 8 miles. Where should I start?",
+      "assistant_message": "Marcus, with 16 weeks and an 8-mile long run base, you're in a solid position to follow the Hal Higdon Novice 1 plan, which peaks at a 20-mile long run in week 13 before tapering. The plan prescribes four running days per week: three shorter weekday runs and one long run on the weekend. Coach Priya Nandan, who has guided several first-time marathoners at your fitness level, recommends logging all your sessions in TrainingPeaks so you can track weekly mileage progression accurately. Starting at roughly 26 miles in week one and building no more than 10 percent per week keeps injury risk manageable.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "What does the weekly mileage look like across the 16 weeks, and when does the taper begin?",
+      "assistant_message": "Under the Hal Higdon Novice 1 plan as adapted for your 16-week window, weekly mileage rises from 26 miles in week 1 to a peak of 40 miles in week 13, then drops sharply for a three-week taper. The taper begins at the start of week 14, cutting mileage to 29 miles that week, then 22 miles in week 15, and only about 10 miles including the race itself in week 16. Coach Priya Nandan specifically flagged week 8 as the first significant jump, where the long run reaches 14 miles and total weekly mileage crosses 33 miles for the first time. Keeping your easy-pace runs truly easy — around 60 to 90 seconds per mile slower than goal race pace — is essential during those high-volume weeks.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "What pace should I target for the Lakefront Marathon itself, and how does Coach Priya Nandan suggest I determine that?",
+      "assistant_message": "Coach Priya Nandan recommends basing your goal marathon pace on a recent 5K or 10K time fed into a standard race-equivalency calculator; for Marcus Teller's current fitness — a 10K of roughly 54 minutes logged on the Garmin Forerunner 255 last month — the calculator produces a marathon finish time of approximately 4 hours 45 minutes. That works out to a goal pace of 10 minutes 54 seconds per mile, which Priya rounds to an even 11:00/mile for simplicity during training. She calls this your \"A-goal\" pace and says you should do all marathon-pace workouts at exactly 11:00/mile, confirmed by the Garmin Forerunner 255's pace alert set to a 10:50–11:10 window. Long training runs should still be done 60 to 90 seconds slower, around 12:30–13:00/mile, to accumulate time on feet without excess fatigue.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "How should I structure the long run on weeks where it increases — is there a specific walk-run protocol Coach Priya Nandan wants me to use?",
+      "assistant_message": "Coach Priya Nandan prescribes a 9-to-1 run-walk protocol for all long runs exceeding 10 miles: run 9 minutes at 12:30–13:00/mile easy pace, then walk briskly for 1 minute, repeating the cycle for the full distance. She specifies that the walk breaks are non-negotiable even when Marcus feels strong, because they reduce cumulative muscle damage and keep heart rate in the aerobic zone. The Garmin Forerunner 255 should be programmed with a custom interval workout — 9:00 run, 1:00 walk — so the watch vibrates automatically at each transition. On weeks when the long run increases by 2 miles or more (weeks 5, 8, and 11 on the Hal Higdon Novice 1 plan), Priya adds a 5-minute warm-up walk at the start, making the total outing 5 minutes longer than the raw mileage time alone would suggest.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "I need to figure out what running shoes to buy before the training starts. I've been fitted at a specialty store and they recommended two options at different price points.",
+      "assistant_message": "Marcus Teller, based on your gait analysis, the two shoes the fitter recommended are the Brooks Ghost 15 at $140 and the ASICS Gel-Nimbus 25 at $160. Both are neutral daily trainers well-suited to the high mileage weeks in the Hal Higdon Novice 1 plan. Coach Priya Nandan has previously noted that first-time marathoners often underestimate shoe rotation; she advises owning two pairs and alternating them so each pair has 24 hours to decompress between runs. Given that the plan logs roughly 400 miles over 16 weeks, a single pair at that volume is pushing the upper limit of its lifespan.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "I want to understand how to use TrainingPeaks to track my fitness score — specifically the CTL, ATL, and TSB metrics.",
+      "assistant_message": "TrainingPeaks uses three key metrics: Chronic Training Load (CTL), Acute Training Load (ATL), and Training Stress Balance (TSB), which is simply CTL minus ATL. CTL represents your fitness as a 42-day rolling average of daily Training Stress Score (TSS), while ATL is a 7-day rolling average representing fatigue. For Marcus Teller starting the Lakefront Marathon build, Coach Priya Nandan's target is to grow CTL from roughly 35 at week 1 to 65 by week 13, then allow it to drift down to 55 during the taper so TSB rises from around negative 20 to positive 10 by race morning. A TSB of positive 5 to positive 15 on race day is the sweet spot Priya calls \"fresh but not stale.\"",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "What's the fueling strategy for long runs — specifically how many gels or chews and at what intervals?",
+      "assistant_message": "Coach Priya Nandan's fueling protocol for Marcus Teller's long runs calls for taking one energy gel every 45 minutes once the run exceeds 75 minutes total duration, starting the first gel at the 45-minute mark. For a 14-mile long run at 12:30/mile pace — approximately 2 hours 55 minutes — that means four gels total, at minutes 45, 90, 135, and optionally at mile 12 if energy is flagging. Priya specifies Maurten Gel 100 as the primary product because its hydrogel matrix is gentler on the stomach; Marcus should practice this exact protocol on every long run so the gut is trained before the Lakefront Marathon. Each gel should be chased with 4 to 6 ounces of water, not sports drink, to avoid osmotic overload.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "Between the Brooks Ghost 15 and the ASICS Gel-Nimbus 25, which one did Coach Priya Nandan actually recommend for the bulk of the training miles?",
+      "assistant_message": "Coach Priya Nandan recommended the Brooks Ghost 15 as the primary trainer for the bulk of the Hal Higdon Novice 1 mileage, citing its 12mm heel-to-toe drop as a better match for Marcus Teller's mild heel-strike pattern identified during the gait analysis. She suggested reserving the ASICS Gel-Nimbus 25 for the longest runs — anything 16 miles or over — because its extra cushioning in the heel helps on runs exceeding 2 hours 45 minutes. Both pairs should be broken in with at least three runs of 4 to 6 miles before appearing in a long run context. Priya noted in Marcus's TrainingPeaks training log that each shoe's mileage should be tracked separately using the gear-tracking feature.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "How many total miles should I expect to put on each pair by the time the Lakefront Marathon arrives?",
+      "assistant_message": "Based on the Hal Higdon Novice 1 plan's roughly 400 total training miles plus 26.2 race miles, Marcus Teller should expect to log approximately 280 miles on the Brooks Ghost 15 as the everyday trainer and about 145 miles on the ASICS Gel-Nimbus 25 reserved for the longest efforts. Both figures fall within the 300-to-500-mile lifespan range for these models, so neither pair should need replacing before the Lakefront Marathon. Coach Priya Nandan flagged in TrainingPeaks that Marcus should inspect the midsole compression of the Ghost 15 around the 250-mile mark, since foam compression can become noticeable before the outsole shows visible wear. If the Ghost 15 feels noticeably less cushioned by week 11, ordering a fresh pair at that point gives enough time to break it in before race day.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "For the TrainingPeaks CTL target of 65 by week 13, what TSS value should my long run generate each week to stay on track?",
+      "assistant_message": "To reach a CTL of 65 by week 13 from a starting CTL of 35, Marcus Teller needs to add roughly 2.3 CTL points per week on average, which requires a consistent daily TSS of about 65 across the plan. The weekly long run should contribute the single largest TSS block; Coach Priya Nandan's model in TrainingPeaks targets the long run generating between 150 and 220 TSS depending on the week, calculated using Marcus's threshold pace and the Garmin Forerunner 255's recorded heart rate data. For example, the 14-mile long run in week 8 at 12:30/mile with a heart rate averaging 148 bpm produces approximately 185 TSS. The three weekday runs together should contribute another 200 to 230 TSS, keeping the weekly total between 380 and 450 TSS during peak training.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "What happens in TrainingPeaks if my ATL spikes too high during a high-mileage week — is there an automatic warning?",
+      "assistant_message": "TrainingPeaks does not send an automatic email warning, but the Performance Management Chart turns the TSB number red when it drops below negative 30, which Coach Priya Nandan has set as the danger threshold for Marcus Teller's account. If ATL climbs so sharply that TSB goes below negative 30, Priya's standing instruction is to swap the next scheduled weekday run for a 30-minute easy walk, which generates roughly 20 TSS instead of the 70 to 90 TSS a 6-mile run would produce. Marcus should check the Performance Management Chart in TrainingPeaks every Sunday evening to preview the coming week's projected TSB before committing to the schedule. The Garmin Forerunner 255 syncs automatically to TrainingPeaks via Bluetooth within 5 minutes of finishing any workout, so the numbers are always current.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "Does Coach Priya Nandan have a recommendation for race-day hydration at the Lakefront Marathon aid stations specifically?",
+      "assistant_message": "Coach Priya Nandan's race-day hydration plan for Marcus Teller at the Lakefront Marathon is to drink 6 ounces of water at every aid station from mile 3 onward, which the race provides every 2 miles, for a total of 11 planned hydration stops before mile 25. At miles 13 and 20 specifically, Marcus should also take one 4-ounce cup of the on-course sports drink — the Lakefront Marathon uses Gatorade Endurance — in addition to water, to replenish electrolytes. Priya advises walking through every aid station rather than trying to drink while running, which costs about 20 seconds per stop but virtually eliminates choking and ensures adequate intake. Total planned fluid intake during the race is approximately 78 ounces, or just under 2.5 liters.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "Is 78 ounces enough given that it's a fall race and temperatures could vary quite a bit?",
+      "assistant_message": "Coach Priya Nandan built the 78-ounce baseline for a race-day temperature of 55°F, which is the historical median for the Lakefront Marathon's late-October start. If the forecast on race morning shows temperatures above 65°F, she wants Marcus Teller to add one extra 6-ounce water cup at the odd-numbered aid stations — miles 5, 9, 15, and 21 — increasing total intake to roughly 102 ounces. Below 45°F, Marcus can safely reduce to every other aid station after mile 13, dropping to about 54 ounces total. Priya logs these conditional protocols directly in the race-week notes section of Marcus's TrainingPeaks account so he can review them the morning of the race without needing to contact her.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "What about the gel timing on race day — does it change from the long-run protocol?",
+      "assistant_message": "On race day Marcus Teller follows a slightly compressed gel schedule compared to the long-run protocol, because race adrenaline and faster pace accelerate glycogen depletion. Coach Priya Nandan sets the first gel at mile 6 rather than at the 45-minute mark, then every 4 miles after that: miles 6, 10, 14, 18, and 22, for a total of five Maurten Gel 100s. The fifth gel at mile 22 is the one Priya calls the \"insurance gel\" — Marcus may not feel he needs it, but taking it prevents the late-race bonk that commonly hits between miles 20 and 23 for first-timers at the Lakefront Marathon. Each gel should still be chased with water from the next aid station, which at 2-mile intervals means the gel is always taken roughly 1 mile before the next water stop.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "Should Marcus carry any gels himself or rely entirely on the aid stations for water?",
+      "assistant_message": "Marcus Teller should carry all five Maurten Gel 100s himself in a lightweight race vest or a four-pocket running belt, since the Lakefront Marathon aid stations do not stock Maurten products — they only offer Gu Energy Gels at miles 8, 13, and 18. Coach Priya Nandan strongly discourages switching to an unfamiliar gel brand on race day because Gu's maltodextrin-to-fructose ratio differs from Maurten's hydrogel formula and can cause GI distress in runners whose stomachs have been trained on a different product. The running belt Marcus has been using in training — a Nathan SpeedDraw Plus — has four front pockets that hold exactly five standard gel packets with the top tabs folded. Priya noted in TrainingPeaks that Marcus should do at least one 16-mile long run wearing the race belt to confirm there is no chafing before the Lakefront Marathon.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "Has Coach Priya Nandan specified what Marcus should eat the night before and morning of the race?",
+      "assistant_message": "Coach Priya Nandan's pre-race nutrition protocol for Marcus Teller calls for a carbohydrate-focused dinner the night before: 2 cups of plain cooked pasta with olive oil and a small chicken breast, totaling roughly 800 calories and 130 grams of carbohydrate. On race morning, Marcus should eat 3 hours before the Lakefront Marathon's 7:00 a.m. gun time — so at 4:00 a.m. — consuming a bagel with peanut butter and a banana, approximately 600 calories and 95 grams of carbohydrate. Priya specified these exact meals in the race-week notes in TrainingPeaks because Marcus tested them successfully on his 18-mile and 20-mile long run mornings without GI issues. Coffee is permitted — up to 8 ounces — because Marcus has trained with caffeine and it won't cause unexpected GI stress.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "The shoe store mentioned a third option — the New Balance Fresh Foam X 1080v13. Should Marcus consider it given the mileage plan?",
+      "assistant_message": "The New Balance Fresh Foam X 1080v13 is priced at $165 and offers a 6mm heel-to-toe drop, which is noticeably lower than both the Brooks Ghost 15 and the ASICS Gel-Nimbus 25. Coach Priya Nandan reviewed this option for Marcus Teller and declined it because the lower drop requires Achilles and calf adaptation that typically takes 8 to 12 weeks — too long a transition window given the 16-week Hal Higdon Novice 1 timeline. Introducing it as a third rotation shoe after week 8 is theoretically possible but adds complexity without meaningful benefit for a first-time marathoner. Priya's recommendation remains the two-shoe system already logged in TrainingPeaks: Ghost 15 as the workhorse and Gel-Nimbus 25 for the longest efforts.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "Can TrainingPeaks generate a weekly TSS plan automatically, or does Coach Priya Nandan have to enter everything manually?",
+      "assistant_message": "TrainingPeaks offers a structured plan import feature that can automatically populate Marcus Teller's calendar when Coach Priya Nandan uploads a plan file in .tpx or .zwo format, assigning TSS targets to each workout based on Marcus's functional threshold pace. Priya uploaded the customized 16-week Hal Higdon Novice 1 adaptation on Marcus's account start date, so all 64 workout slots are pre-filled with distance, pace range, and estimated TSS. She still manually adjusts individual workouts after each Sunday review when the actual TSB deviates more than 5 points from the projected value. The Garmin Forerunner 255's automatic sync means the planned-versus-actual TSS comparison updates in TrainingPeaks within minutes of each completed run.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "What's the protocol if Marcus gets sick during the training block and misses several days?",
+      "assistant_message": "Coach Priya Nandan's illness protocol for Marcus Teller distinguishes between a short absence of 1 to 3 days and a longer absence of 4 to 7 days. For 1 to 3 missed days, Marcus simply resumes the plan at the next scheduled workout without attempting to make up lost mileage, accepting a slight dip in CTL on TrainingPeaks. For 4 to 7 missed days, Priya drops Marcus back one full week in the Hal Higdon Novice 1 schedule — so if he was in week 9, he restarts at week 8 — which costs one week of progression but prevents injury from returning too aggressively. If illness strikes during weeks 1 through 6, the overall Lakefront Marathon timeline is unaffected; illness in weeks 10 through 13 would prompt Priya to reassess the 4-hour-45-minute goal and potentially revise it to a 5-hour finish.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "Has Marcus made a final decision on which two shoes to buy, and has he ordered them yet?",
+      "assistant_message": "Marcus Teller confirmed the two-shoe purchase in an email to Coach Priya Nandan on the same day the gait analysis was completed: one pair of Brooks Ghost 15 in size 10.5 wide and one pair of ASICS Gel-Nimbus 25 in size 10.5 standard, ordered through Running Warehouse for a combined total of $300. Both pairs are scheduled to arrive within 3 business days, giving Marcus time to complete two or three break-in runs before the Hal Higdon Novice 1 plan officially starts. Priya reminded Marcus via TrainingPeaks messaging to log the purchase date as the shoe start date in the gear-tracking feature so mileage accumulates correctly from day one. The Ghost 15 wide fit was specifically chosen because Marcus's left foot measures a true 2E width, which the standard width Ghost 15 would compress over long training runs.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "If Marcus gets sick during weeks 10 through 13 and Priya revises the goal to 5 hours, how does that change the race-day fueling schedule?",
+      "assistant_message": "A revised 5-hour finish goal at the Lakefront Marathon changes the per-mile pace from 11:00/mile to approximately 11:27/mile, adding about 15 minutes to the total race duration. Coach Priya Nandan would keep the five-gel schedule at miles 6, 10, 14, 18, and 22 unchanged, since the gel timing is distance-based rather than time-based and still falls within the 45-minute glycogen-depletion window at the slower pace. The hydration plan would shift slightly: at a 5-hour pace Marcus crosses each 2-mile aid station about 23 minutes apart instead of 22 minutes, which Priya considers negligible — the 78-ounce baseline remains intact. The main adjustment Priya flags in TrainingPeaks is that Marcus should expect to feel the fatigue onset later, around mile 22 to 23 rather than mile 20, giving a small psychological buffer in the final miles.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "What is the break-in protocol for the Brooks Ghost 15 — how many runs and at what distances before Marcus uses it for a long run?",
+      "assistant_message": "Coach Priya Nandan's break-in protocol for the Brooks Ghost 15 calls for three runs before it appears in any long run: a 3-mile easy run on day one, a 5-mile easy run on day three, and a 6-mile moderate run on day five, totaling 14 break-in miles. After those three runs, Marcus Teller's feet should have adapted to the 12mm drop and the specific foam feel, making the shoe ready for any weekday run up to 10 miles. The shoe is cleared for long runs only after it has accumulated 20 total miles, which happens naturally by the second week of the Hal Higdon Novice 1 plan given the weekday run structure. Priya noted in Marcus's TrainingPeaks log that any hot spots or blisters appearing during break-in should be reported immediately, as they indicate a fit issue that is easier to resolve before the training block is fully underway.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "Does the ASICS Gel-Nimbus 25 need the same break-in protocol, or is it different because it's only used for the longest runs?",
+      "assistant_message": "The ASICS Gel-Nimbus 25 requires a slightly different break-in approach because Marcus Teller will wear it infrequently — only for runs of 16 miles or longer — so the feet won't naturally accumulate miles on it the way they do on the Brooks Ghost 15. Coach Priya Nandan prescribes two break-in runs for the Gel-Nimbus 25: a 4-mile easy run and then an 8-mile moderate run, totaling 12 miles before it's used in a long run context. Because the Gel-Nimbus 25 won't appear until week 7 or later in the Hal Higdon Novice 1 plan, Marcus has ample time to complete those two break-in runs in weeks 2 and 3 as easy supplemental efforts. Priya added a calendar reminder in TrainingPeaks for week 2 to prompt Marcus to wear the Gel-Nimbus 25 on that week's Tuesday run so the break-in process starts on schedule.",
+      "gold_parents": [
+        "t22"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "What is the contingency plan if Marcus experiences GI distress during the race from the Maurten gels?",
+      "assistant_message": "Coach Priya Nandan's GI contingency plan for Marcus Teller at the Lakefront Marathon allows him to drop the gel at mile 22 if he is experiencing active nausea, since glycogen stores from miles 6, 10, 14, and 18 gels plus the pre-race meal should sustain him to the finish at a 4:45 or 5:00 pace. If distress starts at mile 14 or earlier, Priya's fallback is to switch to flat Coca-Cola at aid stations — the Lakefront Marathon provides Coke from mile 18 onward — relying on its simple sugars and caffeine for the final stretch. She specifically rehearsed this scenario with Marcus in a TrainingPeaks coaching note, emphasizing that slowing by 30 to 45 seconds per mile immediately reduces GI distress in most runners by lowering gut blood-flow demand. The Garmin Forerunner 255 pace alert should be widened to an 11:00–12:00/mile window if the contingency plan is invoked.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "How does TrainingPeaks handle the taper weeks in terms of TSS — does CTL drop, and is that intentional?",
+      "assistant_message": "During the three-week taper, CTL does drop intentionally in Marcus Teller's TrainingPeaks plan — from 65 at peak week 13 down to approximately 55 by race morning — because the goal is to shed fatigue faster than fitness declines. Coach Priya Nandan programmed the taper so that ATL falls sharply, from roughly 85 in week 13 to 45 in week 14 and 30 in week 15, producing a TSB that climbs from around negative 20 at peak to positive 10 on race morning. The slight CTL loss of 10 points represents less than 2 weeks of fitness decay and is fully recoverable after the race; research Priya cited to Marcus shows that a runner's aerobic fitness can be maintained for up to 14 days on reduced volume if intensity is preserved. Marcus should complete two short 4-mile runs with 4 by 1-mile segments at goal pace during the taper to keep the neuromuscular system sharp without accumulating meaningful fatigue.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "What TSS do those two taper runs generate, and does that match what Priya has planned in TrainingPeaks?",
+      "assistant_message": "Each of the two taper runs — 4 miles total with four 1-mile repeats at 11:00/mile goal pace — generates approximately 65 TSS for Marcus Teller based on the intensity factor applied to his threshold pace in TrainingPeaks. Coach Priya Nandan scheduled both runs in week 15: one on Tuesday and one on Thursday, producing a combined 130 TSS from those two sessions. The rest of week 15's mileage consists of two 3-mile easy runs at 12:30/mile generating about 30 TSS each, for a weekly total of roughly 190 TSS — well below the 380 to 450 TSS peak weeks. This deliberate reduction ensures Marcus's TSB climbs from around negative 5 at the start of week 15 to the target positive 10 by the Lakefront Marathon start line on Sunday of week 16.",
+      "gold_parents": [
+        "t25"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "Has the Ghost 15 accumulated enough miles by week 7 that Marcus should inspect it for midsole compression before the plan's second half?",
+      "assistant_message": "By the end of week 7 of the Hal Higdon Novice 1 plan, the Brooks Ghost 15 will have accumulated approximately 140 miles, based on its role as the primary trainer for all weekday runs and shorter weekend efforts. Coach Priya Nandan set a 130-mile checkpoint reminder in Marcus Teller's TrainingPeaks gear log — which triggers automatically when the shoe's logged mileage crosses that threshold — prompting a midsole compression check. The test Priya recommends is the \"thumb press\" on the heel: if the foam rebounds in under 2 seconds, the shoe is fine; if it stays compressed for 3 or more seconds, the midsole has degraded and a replacement pair should be ordered immediately. At 140 miles, the Ghost 15 should still be well within its lifespan, but the check is a good habit to establish before the highest-mileage weeks of the plan begin.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "Can Marcus use the Garmin Forerunner 255 to track the taper run intervals automatically, or does he need to program them manually?",
+      "assistant_message": "Marcus Teller can use the Garmin Forerunner 255's structured workout feature to run the taper intervals fully automatically once Coach Priya Nandan sends the workout file from TrainingPeaks using the Send to Device function. When the file syncs via Bluetooth, the Forerunner 255 displays each interval step — warm-up, four 1-mile repeats at 10:50–11:10/mile, recovery jogs, cool-down — and vibrates with audio cues at each transition without Marcus needing to press any buttons. Priya schedules the workout send for the Sunday before week 15 so it is waiting on the watch by Monday morning. If the sync fails for any reason, Marcus can manually create the workout on the Forerunner 255 itself using the interval editor under Training, Workouts, Create New.",
+      "gold_parents": [
+        "t26"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "What recovery protocol does Priya recommend for the 48 hours after the longest long run — the 20-miler in week 13?",
+      "assistant_message": "After the 20-mile long run in week 13, Coach Priya Nandan prescribes a strict 48-hour recovery protocol for Marcus Teller: no running on day one post-run, replacing it with 20 minutes of gentle cycling or pool walking to flush metabolic waste without impact stress. On day two, Marcus may run a 3-mile easy recovery run at no faster than 13:30/mile, confirmed by the Garmin Forerunner 255's pace alert set to a ceiling of 13:30. Priya logs this recovery block in TrainingPeaks as two mandatory rest-or-active-recovery days with a combined TSS cap of 50, and she flags any deviation — such as Marcus logging a faster pace — as a coaching concern requiring a check-in call. Nutrition during these 48 hours should emphasize protein: Priya targets 0.8 grams per pound of body weight daily, which for Marcus at 168 pounds means approximately 134 grams of protein per day.",
+      "gold_parents": [
+        "t28"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t30",
+      "turn_index": 29,
+      "user_message": "Has Priya specified what Marcus should eat or drink at the aid stations if the temperature is above 65 degrees on race day?",
+      "assistant_message": "Coach Priya Nandan's hot-weather aid station protocol for Marcus Teller at the Lakefront Marathon above 65°F calls for adding one extra 6-ounce water cup at miles 5, 9, 15, and 21, exactly as she specified in the conditional hydration plan, raising total fluid intake to approximately 102 ounces. At the mile 13 and mile 20 aid stations, Marcus should still take the 4-ounce Gatorade Endurance cup in addition to the water, not instead of it, to maintain electrolyte balance. Priya also recommends pouring a half-cup of water over the head at mile 18 if the temperature exceeds 70°F, which reduces perceived exertion by approximately 1 point on the Borg scale without meaningfully affecting the fluid intake calculation. She noted in TrainingPeaks that Marcus should check the forecast on the Thursday before the Lakefront Marathon and confirm with her which hydration protocol to follow.",
+      "gold_parents": [
+        "t24"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t31",
+      "turn_index": 30,
+      "user_message": "For the taper period, does Priya adjust the TSS targets in TrainingPeaks manually each week, or are they fixed when the plan is uploaded?",
+      "assistant_message": "Coach Priya Nandan set the taper TSS targets as fixed values when she uploaded the 16-week plan to Marcus Teller's TrainingPeaks account, with week 14 capped at 290 TSS, week 15 at 190 TSS, and week 16 at 60 TSS excluding the race itself. She does, however, reserve the right to adjust them manually if Marcus's TSB on the Sunday entering week 14 is more negative than negative 25, in which case she drops week 14's cap further to 250 TSS to accelerate recovery. The Garmin Forerunner 255's automatic sync makes it easy for Priya to monitor actual versus planned TSS in real time from her coaching dashboard. Marcus should not modify the taper week workouts himself without Priya's sign-off, since even a single extra 6-mile run during the taper can shift TSB by 8 to 10 points and compromise race-day freshness.",
+      "gold_parents": [
+        "t29"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t32",
+      "turn_index": 31,
+      "user_message": "Has the ASICS Gel-Nimbus 25 completed its break-in by the time it's first needed for a long run — which week is that?",
+      "assistant_message": "The ASICS Gel-Nimbus 25 is first needed in week 7 of the Hal Higdon Novice 1 plan, when the long run reaches 16 miles and Coach Priya Nandan's protocol mandates switching to the more cushioned shoe. Marcus Teller completed the Gel-Nimbus 25's two break-in runs — 4 miles in week 2 and 8 miles in week 3 — as Priya had scheduled in TrainingPeaks, accumulating 12 break-in miles well before the week 7 debut. By the start of week 7, the shoe has also been worn casually for two additional easy 3-mile weekday runs that Priya added to the log as optional comfort miles, bringing total pre-long-run mileage to 18 miles. The Garmin Forerunner 255 gear log confirms the Gel-Nimbus 25 is at 18 miles and fully ready for the 16-mile effort.",
+      "gold_parents": [
+        "t27"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t33",
+      "turn_index": 32,
+      "user_message": "What does Marcus's TrainingPeaks dashboard show as his projected CTL on race morning, accounting for the taper?",
+      "assistant_message": "Marcus Teller's TrainingPeaks dashboard projects a CTL of 55 on the morning of the Lakefront Marathon, down from the peak of 65 in week 13 after three weeks of taper. ATL is projected at 45 entering race week, then falls to approximately 30 by race morning as the final week's low volume takes effect, producing a TSB of positive 10 — exactly Coach Priya Nandan's target of positive 5 to positive 15. The Performance Management Chart in TrainingPeaks shows the characteristic \"taper bump\" shape: CTL plateauing then gently declining while ATL drops steeply, and TSB crossing zero around day 4 of race week. Priya confirmed these projections with Marcus in a TrainingPeaks coaching message sent at the start of week 14, noting that as long as he doesn't add any unplanned workouts, the numbers will land exactly on target.",
+      "gold_parents": [
+        "t31"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t34",
+      "turn_index": 33,
+      "user_message": "What is the race-day check-in and gear setup protocol Priya has given Marcus for the Lakefront Marathon morning?",
+      "assistant_message": "Coach Priya Nandan's race-morning protocol for Marcus Teller at the Lakefront Marathon starts with a 4:00 a.m. wake-up for the pre-race meal, followed by light stretching from 5:30 to 5:45 a.m. and departure for the race venue by 6:00 a.m. to allow time for bag check, porta-potty lines, and corral entry before the 7:00 a.m. gun. Marcus should pin his race bib to the Nathan SpeedDraw Plus belt rather than his shirt to avoid chafing on a 4-to-5-hour effort, and load all five Maurten Gel 100s into the belt pockets the night before. The Garmin Forerunner 255 should be set to a custom marathon activity profile with auto-lap every 1 mile, pace alert at 10:50–11:10/mile, and heart rate alert above 165 bpm to flag cardiac drift. Priya will be trackable via the Lakefront Marathon's live athlete tracker using Marcus's bib number, which she noted in his TrainingPeaks race-day notes.",
+      "gold_parents": [
+        "t30"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t35",
+      "turn_index": 34,
+      "user_message": "What walk-run protocol does Priya recommend for the taper tune-up runs in week 15 specifically?",
+      "assistant_message": "For the week 15 taper tune-up runs, Coach Priya Nandan does not use any walk-run protocol at all — those sessions are continuous running efforts. The two 3-mile easy runs in week 15 are run at a steady 12:30/mile with no walk breaks, and the two 4-mile interval sessions use a 3-minute active recovery jog between repeats rather than a walk. Marcus Teller's legs should be sufficiently recovered by week 15 that the 9-to-1 run-walk protocol, which applies only to long runs exceeding 10 miles, is no longer needed. Priya confirmed this in TrainingPeaks: week 15 workouts are all tagged as continuous, with the interval sessions using 3-minute jog recoveries at 13:00/mile between the four 1-mile goal-pace repeats.",
+      "gold_parents": [
+        "t33"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t36",
+      "turn_index": 35,
+      "user_message": "Does the week 15 TSS of 190 already account for the race itself in week 16, or is the race TSS tracked as its own entry?",
+      "assistant_message": "The 190 TSS for week 15 covers only the four scheduled training runs — two 3-mile easy runs and two 4-mile interval sessions — and does not include the Lakefront Marathon itself, which sits in week 16 and is tracked as a separate event entry in Marcus Teller's TrainingPeaks account. Coach Priya Nandan estimated the race's TSS at approximately 280, based on Marcus's threshold pace, the projected 4-hour-45-minute finish, and average heart rate data from previous long efforts captured by the Garmin Forerunner 255. Week 16's total TSS of 60 pre-race plus 280 for the marathon gives a week 16 total of 340 TSS, which will spike ATL sharply after the race but is irrelevant to pre-race TSB since the race is the final event. Priya reminded Marcus in a TrainingPeaks note that post-marathon recovery typically requires 3 to 4 weeks before TSB returns to baseline.",
+      "gold_parents": [
+        "t35"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t37",
+      "turn_index": 36,
+      "user_message": "What does Priya recommend for the first two weeks of post-marathon recovery in terms of running volume?",
+      "assistant_message": "Coach Priya Nandan's post-Lakefront-Marathon recovery plan for Marcus Teller prescribes zero running in the first 7 days, replacing all activity with light walking — no more than 30 minutes per day — and optional pool sessions of 20 minutes on days 4 and 6. In week 2 post-race, Marcus may return to running with three sessions of no more than 3 miles each, all at an easy 13:00/mile or slower as confirmed by the Garmin Forerunner 255, for a weekly total of 9 miles and roughly 90 TSS. TrainingPeaks will show a steep CTL decline during these two weeks — from 55 at race day down to approximately 38 by the end of week 2 post-race — which Priya calls expected and healthy. She scheduled a 15-minute video check-in for day 14 post-race to assess Marcus's readiness to resume structured training.",
+      "gold_parents": [
+        "t36"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t38",
+      "turn_index": 37,
+      "user_message": "Has Priya confirmed the exact start time of the Lakefront Marathon and whether Marcus needs to register for a specific corral?",
+      "assistant_message": "Coach Priya Nandan confirmed in Marcus Teller's TrainingPeaks race-day notes that the Lakefront Marathon gun time is 7:00 a.m. with corral entry closing at 6:45 a.m. Based on Marcus's projected 4-hour-45-minute finish time, he qualifies for Corral D, which the race organizers define as estimated finishes between 4:30 and 5:00. Priya advised Marcus to submit his proof-of-time — the 10K result of 54 minutes logged on the Garmin Forerunner 255 — via the race's online portal by the registration deadline of two weeks before race day to secure the Corral D placement. Starting in the correct corral prevents the pace disruption that comes from weaving around slower runners in the first 2 miles, which can push Marcus above his 11:00/mile target and cause early glycogen burn.",
+      "gold_parents": [
+        "t34"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t39",
+      "turn_index": 38,
+      "user_message": "When does Marcus need to order a replacement pair of the Brooks Ghost 15 if the midsole compression check at 130 miles shows degradation?",
+      "assistant_message": "If the midsole compression check at the 130-mile mark — triggered around the end of week 7 — shows degradation in the Brooks Ghost 15, Marcus Teller needs to order a replacement immediately to ensure it arrives and completes a 14-mile break-in before the plan's highest-mileage weeks in weeks 10 through 13. Running Warehouse's standard shipping from the prior order took 3 business days, so ordering on the day of the failed compression check gets the new pair in hand by day 4 or 5 of week 8. Coach Priya Nandan noted in TrainingPeaks that the replacement Ghost 15 should follow the same three-run break-in protocol — 3 miles, 5 miles, 6 miles — before absorbing the full weekday training load. Delaying the order by even one week risks entering the peak mileage phase in a shoe that has lost meaningful cushioning, which Priya considers the single most preventable cause of stress fractures in marathon training.",
+      "gold_parents": [
+        "t32"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t40",
+      "turn_index": 39,
+      "user_message": "If Marcus decides to add a third shoe — a racing flat for the marathon itself — what does Coach Priya Nandan recommend and when should he start wearing it?",
+      "assistant_message": "Coach Priya Nandan recommends the Nike Vaporfly 3 as the only racing flat she would approve for Marcus Teller at the Lakefront Marathon, given its proven benefit of approximately 4 percent energy return at marathon pace. She insists that if Marcus chooses to race in the Vaporfly 3, he must purchase it no later than week 6 and complete at least four runs in it before race day: two easy 4-mile runs and two of the taper interval sessions in week 15. The Vaporfly 3's 8mm drop and carbon-fiber plate feel dramatically different from the Brooks Ghost 15, so rushing the adaptation risks calf or Achilles strain in the final weeks. Priya added a conditional note in TrainingPeaks: if Marcus has not worn the Vaporfly 3 for at least 25 miles by the start of week 14, he should default to the Brooks Ghost 15 for the race rather than risk an unfamiliar shoe on marathon morning.",
+      "gold_parents": [
+        "t39"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t41",
+      "turn_index": 40,
+      "user_message": "Has Marcus decided whether to use the Nike Vaporfly 3 for the Lakefront Marathon or stick with the Brooks Ghost 15?",
+      "assistant_message": "Marcus Teller confirmed to Coach Priya Nandan via TrainingPeaks messaging in week 5 that he would not purchase the Nike Vaporfly 3, citing the $285 price point and his preference to keep the focus on completing his first Lakefront Marathon rather than chasing a time optimization. Priya accepted the decision and updated his race-day gear note to specify the Brooks Ghost 15 as the confirmed race shoe, noting that at an 11:00/mile target pace the energy-return benefit of a carbon-plate shoe is smaller than it would be for faster runners. She added a reminder to inspect the Ghost 15 one final time at the 250-mile midsole check — which occurs around week 11 — before certifying it as the race shoe. The Garmin Forerunner 255 gear log will confirm the Ghost 15's exact mileage at that point, making the decision data-driven rather than subjective.",
+      "gold_parents": [
+        "t40"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t42",
+      "turn_index": 41,
+      "user_message": "For the long runs where the distance increases by 2 miles or more, what does the complete session look like from the very first step to the last — including the warm-up and the run-walk intervals Coach Priya Nandan prescribed?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4"
+  ],
+  "distractor_turn_ids": [
+    "t5",
+    "t6",
+    "t7",
+    "t8",
+    "t9",
+    "t10",
+    "t11",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t20",
+    "t21",
+    "t22",
+    "t23",
+    "t24",
+    "t25",
+    "t26",
+    "t27",
+    "t28",
+    "t29",
+    "t30",
+    "t31",
+    "t32",
+    "t33",
+    "t34",
+    "t35",
+    "t36",
+    "t37",
+    "t38",
+    "t39",
+    "t40",
+    "t41"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that on weeks when the long run increases by 2 miles or more (weeks 5, 8, and 11), a 5-minute warm-up walk is added at the start of the session.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that the run-walk protocol is 9 minutes of running at 12:30–13:00/mile followed by 1 minute of brisk walking, repeated for the full distance.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer states that the Garmin Forerunner 255 should be programmed with a custom interval workout of 9:00 run and 1:00 walk so the watch vibrates automatically at each transition.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not describe the week 15 taper tune-up run protocol (continuous running with 3-minute jog recoveries and no walk breaks) as if it applies to the long runs on high-increase weeks.",
+      "required": true
+    }
+  ],
+  "notes": "The facts the query needs are all in t4 (the 9-to-1 protocol, the 12:30–13:00/mile pace, the Garmin Forerunner 255 custom interval setup, and the 5-minute warm-up walk on high-increase weeks). The near-miss turn is t35, which answers a question about walk-run protocols for week 15 taper runs — superficially similar wording to the final query — but correctly describes continuous running with 3-minute jog recoveries, not the long-run 9-to-1 protocol.\n\nReference answer: On weeks when the long run increases by 2 miles or more — specifically weeks 5, 8, and 11 on the Hal Higdon Novice 1 plan — the session begins with a 5-minute brisk warm-up walk before any running starts. After that, Marcus follows the 9-to-1 run-walk protocol for the entire distance: 9 minutes of running at 12:30–13:00/mile easy pace, then 1 minute of brisk walking, cycling continuously to the end of the prescribed mileage. The Garmin Forerunner 255 should be programmed with a custom interval workout of 9:00 run and 1:00 walk so the watch vibrates automatically at each transition without Marcus needing to manage the timing manually. The walk breaks are non-negotiable even when Marcus feels strong, because Coach Priya Nandan prescribes them specifically to reduce cumulative muscle damage and keep heart rate in the aerobic zone.",
+  "evidence_note": null,
+  "premise": "training for a first marathon in 16 weeks",
+  "evidence_spans": null,
+  "benchmark_version": "1.2-pilot",
+  "length_class": "long"
+}

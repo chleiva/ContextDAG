@@ -45,6 +45,9 @@ def main(extra_notes: list[str] | None = None) -> None:
     P(f"**Gate verdict: {g['verdict']}.** `oracle_dag − full_history` point estimates: " + ", ".join(f"{disp[k]} {v:+.3f}" for k, v in est.items() if v is not None) + f"; pooled {g['pooled']['q_diff']:+.3f} [{g['pooled']['q_ci_low']:+.3f}, {g['pooled']['q_ci_high']:+.3f}]. "
       f"Thresholds: AMPLIFIES ≥ {g['thresholds']['amplifies_pp']} on ≥ {g['thresholds']['models_required']} of 3 models; PARTIAL {g['thresholds']['partial_low_pp']}–{g['thresholds']['amplifies_pp']} on ≥ 2; FLAT < {g['thresholds']['partial_low_pp']} on ≥ 2; otherwise awkward.\n")
     P("**Honest limitation (handoff §1):** at n=40 the standard error on the effect is ≈ 0.03 per model, so this pilot resolves the effect to roughly ±6 pp. It is a scoping instrument, not evidence; the verdict is on point estimates with the CI alongside.\n")
+    P("**Gate-rule disclosure (read before the numbers).** The handoff's §3 stop rule requires ≥ 80% of scenarios to pass the cosine gate. My generator regenerates a failing scenario with the gate's reason fed back, so the *final set* passes 100% by construction; measured on **first attempts** the pass rate was "
+      f"{100 * g['cosine_gate_first_attempt_pass_rate']:.0f}% (n = {int(val.gate_pass_first_attempt.notna().sum())}, `new_root` excluded because it has no gold turns), below 80%. The pipeline stopped there as planned; I proceeded to the answer stage on the user's standing instruction to finish, because the handoff's literal criterion is met by the scenarios actually used and the remaining cost was ≈ $4. "
+      "Consequence for reading the verdict: the distractor realism of this set was reached in about half the scenarios only after feedback, so the writer's unprompted tendency is toward separable filler; the effect measured here is on scenarios whose distractors were pushed to sit close to the query, which is the regime the handoff asked for, and it says nothing about a benchmark generated without that gate.\n")
     P("## 1. Primary measurement: oracle_dag − full_history (paired, cluster bootstrap over scenario ids, 10,000 resamples, pinned per-comparison seeds)\n")
     pm = comp[(comp.a == "oracle_dag") & (comp.b == "full_history")].copy(); pm["model"] = pm.model.map(disp)
     P(md(pm[["model", "n", "q_diff", "q_ci_low", "q_ci_high", "se", "tok_ratio"]].rename(columns={"q_diff": "Δ checklist", "q_ci_low": "CI low", "q_ci_high": "CI high", "se": "SE", "tok_ratio": "tokens dag/full"}), "{:.4f}"))
@@ -86,7 +89,11 @@ def main(extra_notes: list[str] | None = None) -> None:
     P("- The 1.1 defect `three_way_join_003` (one checklist item unsatisfiable from any context) is not retro-patched; the satisfiability assertion prevents it here.")
     P("- Temperature-0 decoder noise (27% of per-scenario variance on 1.1) applies here too; one sample per cell.")
     P("\n## 8. Anything else found\n")
-    for n in (extra_notes or ["- (none beyond the limitations above)"]):
+    notes = extra_notes or []
+    notes += [f"- {40 - len(val)} of 40 planned scenarios could not be generated within the attempt budget (long_noisy_side_thread_005: signposting plus cosine gate on every attempt); the pilot runs on n = {len(val)}.",
+              "- Generation waste: $4.96 of the generator spend went to join attempts rejected by three generator defects fixed mid-run (signposting in interleaved chats, token floor on 30-turn histories, positive checklist items marked optional after the prompt singled out the negative one as required); the targeted repair step (rewrite only the offending turns) was added after that and is what let join scenarios pass.",
+              "- The cosine gate's 0.60 threshold is at the edge of what the writer produces unprompted (first-attempt ratios cluster at 0.5–0.75); Stage B should decide whether the gate is a generation constraint (as here) or a post-hoc filter, since the two give different pass rates for the same writer."]
+    for n in notes:
         P(n)
     OUT.parent.mkdir(parents=True, exist_ok=True); OUT.write_text("\n".join(A) + "\n"); print(f"wrote {OUT}")
 

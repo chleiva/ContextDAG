@@ -1,0 +1,444 @@
+{
+  "scenario_id": "long_resume_001",
+  "family": "resume",
+  "label": "RESUME",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm helping Dana Reyes at the Maplewood Oral History Collective launch a local history podcast called The Founding Furrows. What format should we use for the episodes?",
+      "assistant_message": "A strong format for The Founding Furrows would be a narrative-documentary style where Dana Reyes opens each episode with a two-minute historical hook drawn from the Riverside Archive's primary sources, followed by a 20-minute deep dive with one or two guest voices such as local historians or descendants of the people being discussed. The Maplewood Oral History Collective's existing audio interviews can serve as embedded clips of 60 to 90 seconds each, giving the show an authentic archival texture that sets it apart from purely scripted history podcasts. Ending each episode with a three-minute 'what happened next' coda keeps listeners engaged and encourages return visits. This structure keeps a typical episode at roughly 28 to 32 minutes, which analytics consistently show is the sweet spot for story-driven local history shows.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "How many episodes should we plan for the first season, and how often should they release?",
+      "assistant_message": "For The Founding Furrows, a first season of eight episodes is ideal: it is substantial enough to build a loyal audience and attract a local sponsor, yet manageable for a small team like the one Dana Reyes is running at the Maplewood Oral History Collective. A biweekly release cadence, meaning one episode every two weeks, is the recommended schedule because it gives the production team time to pull source material from the Riverside Archive, conduct any needed interviews with Hector Bloom or other contributors, and complete editing without burnout. Eight episodes over sixteen weeks means the full season wraps in about four months, which is a clean, promotable arc. Dana should lock the Episode Planning Sheet v2 with all eight episode titles and target air dates before recording begins so nothing slips.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "What should the Episode Planning Sheet v2 include for each episode entry?",
+      "assistant_message": "Each entry in the Episode Planning Sheet v2 should capture seven specific fields: the episode number and working title, the target publication date, the primary historical topic and date range it covers, the name of any guest contributor such as Hector Bloom or a Riverside Archive archivist, the Riverside Archive catalog numbers for all source documents being used, the estimated runtime in minutes, and the production status coded as one of four stages: Research, Scripted, Recorded, or Published. Dana Reyes at the Maplewood Oral History Collective insisted on the catalog-number column after a near-miss in pre-production where two episodes were drafted using the same archival photograph without anyone noticing. Having a dedicated runtime estimate column also helps the team flag any episode drifting past the 32-minute ceiling set in the format agreement. The sheet should live in a shared folder accessible to all contributors so Hector Bloom and any guest historians can update their own rows directly.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "What recording setup did Dana Reyes decide on for the home studio sessions?",
+      "assistant_message": "Dana Reyes settled on a Shure SM7B dynamic microphone running into a Focusrite Scarlett 2i2 audio interface connected to a MacBook Pro, with Hindenburg Journalist Pro as the digital audio workstation for all recording and editing on The Founding Furrows. The Maplewood Oral History Collective already owned two Zoom H6 portable recorders, so those are reserved for on-location interviews at the Riverside Archive or at community events, keeping the home studio chain consistent and clean. Dana specified that all sessions must be recorded at 48 kHz and 24-bit depth, and all raw files must be backed up to the Collective's shared drive within 24 hours of recording. Hector Bloom, who handles post-production, uses the same Hindenburg project template for every episode so that levels, room tone fills, and export settings are standardized across all eight episodes of season one.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "How is Hector Bloom handling the intro music and sound design for the show?",
+      "assistant_message": "Hector Bloom commissioned an original 45-second theme for The Founding Furrows from a local composer named Suki Tanaka, who recorded it using a combination of acoustic guitar, banjo, and a field-recorded bell from the 1887 Maplewood town hall clock, giving the show a genuinely local sonic identity. The full 45-second theme plays over the cold open, but Hector also asked Suki Tanaka to deliver a 10-second sting version and a 5-second logo bump so that Dana Reyes has flexible assets for trailers, social clips, and mid-episode transitions. All three music assets are licensed exclusively to the Maplewood Oral History Collective under a flat fee of $600 with no royalty obligations, meaning they can be used across all future seasons without renegotiation. Hector stores the original uncompressed WAV files in a subfolder of the Episode Planning Sheet v2 project directory labeled 'Music Assets — Master.'",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What distribution platform did the team choose, and what are the RSS feed settings they locked in?",
+      "assistant_message": "The Maplewood Oral History Collective chose Buzzsprout as the hosting and distribution platform for The Founding Furrows, specifically the $18-per-month plan that provides unlimited storage and automatic distribution to Spotify, Apple Podcasts, Amazon Music, and iHeart Radio. Dana Reyes configured the RSS feed with the show's official title as 'The Founding Furrows,' the author field set to 'Maplewood Oral History Collective,' the category locked to 'History' under the iTunes taxonomy, and the language tag set to 'en-us.' The explicit content flag is set to 'clean,' and the episode type default is set to 'full' for all standard episodes, with 'trailer' reserved for the pre-launch promotional episode that Hector Bloom will release two weeks before episode one. The feed URL was submitted to all four major directories on March 14, 2024, and the Collective received directory approval confirmations from all four platforms within 72 hours.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "What is the budget breakdown for season one of The Founding Furrows?",
+      "assistant_message": "The Maplewood Oral History Collective drew up a detailed season-one budget for The Founding Furrows totaling $4,200. The largest line item is equipment and software at $820, which covers the Shure SM7B, the Focusrite Scarlett 2i2, and the Hindenburg Journalist Pro license that Hector Bloom uses for post-production. The Suki Tanaka music commission accounts for $600, and Dana Reyes allocated $300 for Riverside Archive access fees covering document scanning and high-resolution image licensing for eight episodes. The remaining $2,480 covers Buzzsprout hosting for twelve months at $216, guest contributor honoraria of $150 per episode totaling $1,200, transcription services at $80 per episode totaling $640, and a $424 contingency reserve. Dana Reyes presented this budget to the Collective's steering committee on February 3, 2024, and it was approved without revision.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "Has the Maplewood Oral History Collective settled on cover art for The Founding Furrows yet?",
+      "assistant_message": "Yes, Dana Reyes contracted a local graphic designer named Priya Nair to create the cover art for The Founding Furrows, and the final design was approved by the Maplewood Oral History Collective's steering committee on February 20, 2024. The artwork depicts a stylized aerial view of the original 1843 Maplewood town plat overlaid with a vintage sepia tone, pulling source reference from a hand-drawn map held in the Riverside Archive's cartography collection under catalog number RCA-1843-07. Priya Nair delivered three rounds of revisions before the final version, and the approved file is a 3000 by 3000 pixel PNG at 72 dpi, which meets Buzzsprout and Apple Podcasts specifications exactly. Hector Bloom uploaded the approved cover art to the Buzzsprout dashboard on February 22, 2024, and it is now live on all four distribution directories.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "Did Priya Nair deliver any secondary graphics for social media promotion?",
+      "assistant_message": "Priya Nair delivered a full secondary graphics package alongside the cover art, consisting of six templates sized for different platforms: a 1080 by 1080 pixel square for Instagram, a 1200 by 630 pixel horizontal card for Facebook and LinkedIn, and a 1500 by 500 pixel Twitter header, all using the same sepia-and-teal color palette as The Founding Furrows cover art. Each template has a locked background layer featuring the 1843 Maplewood plat detail and an editable text layer so that Dana Reyes or Hector Bloom can drop in episode titles and guest names without needing to return to Priya Nair for every release. The Maplewood Oral History Collective owns all files outright under a full work-for-hire agreement signed February 20, 2024, the same day the cover art was approved. Priya Nair also provided a brand style guide document specifying the two approved typefaces, Playfair Display for headlines and Source Sans Pro for body text, and the four hex color codes the show uses consistently across all assets.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "How is the Maplewood Oral History Collective planning to promote The Founding Furrows before the launch?",
+      "assistant_message": "Dana Reyes drafted a six-week pre-launch promotion plan for The Founding Furrows that begins five weeks before the episode-one release date. During weeks one and two, the Collective will post three teaser clips per week on Instagram and Facebook using the Priya Nair social media templates, each clip running 60 to 90 seconds and featuring archival audio drawn from the Riverside Archive's oral history collection. In weeks three and four, Dana Reyes and Hector Bloom will conduct a joint interview with the Maplewood Courier, the town's weekly newspaper with a circulation of 8,400, to run a half-page feature timed to coincide with the trailer episode going live on Buzzsprout. Week five focuses on community outreach: Dana Reyes will speak at the Maplewood Public Library's monthly history lecture series, distributing 200 printed bookmark-style flyers that Priya Nair designed using the show's brand assets, and Hector Bloom will coordinate a cross-promotion post with three regional history podcasts that have agreed to mention The Founding Furrows in their own feeds.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "Did Priya Nair design those flyers as part of her original contract or was it a separate agreement?",
+      "assistant_message": "The bookmark flyers were outside the scope of Priya Nair's original February 20, 2024 contract with the Maplewood Oral History Collective, which covered only the cover art and the six social media templates. Dana Reyes commissioned the flyers under a separate addendum signed on March 5, 2024, for a flat fee of $75, which included design of a two-sided 2-by-7-inch bookmark flyer and print-ready PDF export at 300 dpi. Priya Nair completed the design in a single round without revisions, delivering the print-ready file on March 8, 2024, three days before the Collective sent it to a local print shop for a run of 200 copies at a total printing cost of $48. Hector Bloom coordinated the print pickup and stored the physical flyers at the Maplewood Oral History Collective's office ahead of the library event.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "What metrics is the Collective planning to track after The Founding Furrows launches?",
+      "assistant_message": "Dana Reyes set up a metrics tracking framework for The Founding Furrows using Buzzsprout's built-in analytics dashboard supplemented by a manual tracking spreadsheet that Hector Bloom updates every Monday morning. The primary metrics are total episode downloads in the first 30 days and 90 days per episode, unique listener count per episode, listener geography broken down by city, and platform share showing what percentage of plays come from Spotify versus Apple Podcasts versus other directories. Secondary metrics include the Maplewood Oral History Collective's social media follower growth rate week over week, average episode completion rate pulled from Spotify for Podcasters, and the number of inbound emails to the show's dedicated address at foundingfurrows@maplewoodohc.org. Dana Reyes defined a season-one success threshold of 500 unique downloads per episode within 30 days of release, a benchmark she derived from comparable local history podcasts in the Riverside Archive network's community of practice.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "What was the final decision on the guest honorarium payment method for The Founding Furrows?",
+      "assistant_message": "The Maplewood Oral History Collective settled on paying guest honoraria via direct bank transfer through Zelle, with each payment of $150 issued within five business days of the episode's publication date rather than at the time of recording. Dana Reyes made this decision after consulting with the Collective's treasurer, who noted that Zelle transactions over $600 to any single recipient in a calendar year trigger a 1099-NEC obligation, and since no single guest would receive more than $150 total in season one, the threshold would not be crossed. Guests are asked to complete a one-page contributor agreement before recording, which Hector Bloom sends out using a DocuSign template stored in the Episode Planning Sheet v2 project folder. The agreement specifies the $150 honorarium amount, the Zelle payment timeline, and the Maplewood Oral History Collective's rights to use the recorded interview in any future season or compilation episode without additional compensation.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "What sponsorship outreach has Dana Reyes done for The Founding Furrows?",
+      "assistant_message": "Dana Reyes sent sponsorship inquiry letters to eleven local businesses in Maplewood during the first week of March 2024, targeting businesses with a demonstrated interest in local heritage such as the Maplewood Historical Inn, Cornerstone Hardware, and four antique dealers on Elm Street. The sponsorship deck she prepared for The Founding Furrows included projected listener numbers, the show's demographic pitch emphasizing 35-to-65-year-old homeowners with disposable income, and three sponsorship tiers: a $200 per episode presenting sponsorship with a 30-second mid-roll read by Dana Reyes, a $100 per episode supporting sponsorship with a 15-second pre-roll mention, and a $50 per season community sponsor listing in the show notes. Hector Bloom helped Dana Reyes record two sample mid-roll reads using the Shure SM7B to include as audio samples in the sponsorship deck. By March 14, 2024, the same day the Buzzsprout RSS feed was submitted to directories, two businesses had responded positively: the Maplewood Historical Inn at the $200 presenting tier and Cornerstone Hardware at the $100 supporting tier.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "What is the episode release schedule for The Founding Furrows season one, with specific dates?",
+      "assistant_message": "Hector Bloom finalized the episode release schedule for The Founding Furrows season one in the Episode Planning Sheet v2 on March 10, 2024. The pre-launch trailer releases on April 1, 2024, and the eight full episodes follow on a strict biweekly schedule: Episode 1 on April 15, Episode 2 on April 29, Episode 3 on May 13, Episode 4 on May 27, Episode 5 on June 10, Episode 6 on June 24, Episode 7 on July 8, and Episode 8 on July 22, 2024. Dana Reyes and Hector Bloom built a two-week buffer into the production pipeline, meaning each episode must be fully edited and exported before the preceding episode publishes. The Maplewood Oral History Collective's steering committee reviewed and signed off on this calendar at their March 12, 2024 meeting, and Dana Reyes sent the dates to all confirmed guest contributors so they could plan their availability accordingly.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "Which Riverside Archive collections are being used for specific episodes in the schedule?",
+      "assistant_message": "Hector Bloom cataloged the Riverside Archive source collections for each episode in the Episode Planning Sheet v2 alongside the release dates. Episode 1 draws on the RCA-1843 cartography collection and the RCA-1851 land deed registry, covering Maplewood's founding survey. Episode 2 uses the RCA-1872 mill industry oral history reels, which Dana Reyes personally digitized from deteriorating acetate. Episodes 3 and 4 both pull from the RCA-1900 to RCA-1910 immigration records and the corresponding photograph collection RCA-PHOTO-001 through RCA-PHOTO-047. Episode 5 focuses on the 1918 influenza response using the RCA-1918 public health correspondence files, a collection of 214 letters that the Maplewood Oral History Collective helped transcribe between 2019 and 2021. Episodes 6, 7, and 8 use the RCA-1940s wartime collection, which includes 38 oral history recordings gathered by the Collective's founders in 1987 and held under restricted access, meaning Dana Reyes needed a formal access waiver from the Riverside Archive director to use them in the podcast.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "How much of the $4,200 season-one budget has been spent as of the March 14 RSS submission date?",
+      "assistant_message": "As of March 14, 2024, the Maplewood Oral History Collective had spent $1,639 of the $4,200 season-one budget for The Founding Furrows, leaving $2,561 unspent. The committed expenditures to that date were the Suki Tanaka music commission at $600, the Priya Nair cover art and social media templates contract at $520, the Priya Nair bookmark flyer addendum at $75 plus $48 in printing costs, the Hindenburg Journalist Pro annual license at $99, the Buzzsprout first month at $18, and the Riverside Archive scanning and licensing deposit of $150 paid to secure access to the RCA-1843 and RCA-1872 collections. Hector Bloom noted in the budget tracking sheet that the $820 equipment line had not yet been fully drawn because the Focusrite Scarlett 2i2 and Shure SM7B were purchased in January 2024 from a prior Collective operating budget, so only the $109 balance for accessories such as a pop filter and XLR cable was charged to the season-one budget. Dana Reyes flagged the remaining $2,561 as sufficient to cover all eight guest honoraria, all eight transcription fees, and the Buzzsprout subscription through December 2024.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "Which guest contributors have been confirmed for the first four episodes of The Founding Furrows?",
+      "assistant_message": "Dana Reyes confirmed four guest contributors for the first four episodes of The Founding Furrows by March 10, 2024, all of whom have signed the DocuSign contributor agreement that Hector Bloom circulated. Episode 1 features Dr. Constance Mallory, a professor of regional history at Hartwell College, who will discuss the 1843 Maplewood founding survey using the RCA-1843 cartography materials. Episode 2 features Raymond Cho, a retired mill worker and grandson of one of the families documented in the RCA-1872 oral history reels, providing a personal descendant perspective. Episode 3 features Archivist Lena Schwartz from the Riverside Archive itself, who will walk listeners through the immigration photograph collection RCA-PHOTO-001 through RCA-PHOTO-047. Episode 4 features Dr. Constance Mallory again in a second appearance, this time discussing the broader regional immigration patterns that contextualise the Maplewood-specific records, a booking that Dana Reyes structured to reward listeners who have followed the arc from Episode 1.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "What is the total amount the Maplewood Oral History Collective expects to receive from the two confirmed sponsors in season one?",
+      "assistant_message": "With the Maplewood Historical Inn confirmed at the $200-per-episode presenting tier and Cornerstone Hardware confirmed at the $100-per-episode supporting tier, the Maplewood Oral History Collective stands to receive $300 per episode in sponsorship revenue across all eight episodes of The Founding Furrows season one, for a total of $2,400 in confirmed sponsorship income. Dana Reyes structured both agreements as per-episode payments invoiced on the publication date of each episode, so the Collective will receive $300 on each of the eight release dates from April 15 through July 22, 2024. Hector Bloom noted that this $2,400 effectively offsets 57 percent of the $4,200 season-one budget, bringing the Collective's net out-of-pocket cost for the season down to $1,800. Dana Reyes is still in discussions with three of the original eleven businesses she contacted, and any additional sponsorship income would go into a reserve fund earmarked for season-two production.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "Have the cross-promotion agreements with the three regional history podcasts been finalized?",
+      "assistant_message": "Dana Reyes finalized cross-promotion agreements with all three regional history podcasts by March 18, 2024, four days after the Buzzsprout RSS feed submission. The three partner shows are Rust Belt Chronicles, Ohio Valley Stories, and The Great Lakes Record, each of which has between 1,200 and 3,400 monthly listeners in the same 35-to-65-year-old demographic that The Founding Furrows is targeting. Each agreement is a simple reciprocal shout-out arrangement: the partner show mentions The Founding Furrows by name in one episode during the April 2024 launch window, and Dana Reyes records a 20-second reciprocal mention for each partner to use in their own feeds. Hector Bloom produced the three reciprocal audio spots using the Shure SM7B and the standard Hindenburg Journalist Pro template, exporting them as 320 kbps MP3 files and delivering them to each partner by March 20, 2024.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "What is the plan for converting The Founding Furrows episodes into written content for the Maplewood Oral History Collective's website?",
+      "assistant_message": "Dana Reyes contracted a local freelance writer named Marcus Webb to produce a 600-to-800-word companion article for each of the eight episodes of The Founding Furrows, to be published on the Maplewood Oral History Collective's website on the same day as each episode release. Marcus Webb's rate is $80 per article, matching the per-episode transcription fee and bringing the total written content cost to $640 for the season. Each article follows a template Dana Reyes drafted: an opening paragraph summarizing the episode's historical topic, a middle section expanding on two or three details not fully covered in the audio, a pull-quote from the guest contributor, and a closing paragraph linking to Riverside Archive resources where listeners can explore further. Hector Bloom sends Marcus Webb the final edited audio file and the episode transcript three days before the release date, giving Marcus a 72-hour window to draft and submit the article for Dana Reyes's review and approval before publication.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "What accessibility features is the Maplewood Oral History Collective building into The Founding Furrows?",
+      "assistant_message": "Dana Reyes committed to three accessibility features for The Founding Furrows from the first episode onward. First, full verbatim transcripts of each episode are produced by a professional transcription service at $80 per episode and posted to the Maplewood Oral History Collective's website alongside the Marcus Webb companion articles on release day. Second, Hector Bloom encodes closed-caption SRT files for every audiogram and video clip posted to social media using the Priya Nair templates, a process that adds roughly 45 minutes to his weekly social media workflow. Third, the Buzzsprout episode description for each episode includes a plain-text summary of all archival images referenced during the episode, written by Dana Reyes herself, so that listeners using screen readers on the website have access to the visual context. The Collective's steering committee specifically requested this third feature after a community member raised the issue at the February 3, 2024 budget meeting, and Dana Reyes agreed to absorb the extra writing time within her existing role rather than contracting it out.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "Which episodes in the season-one schedule have been fully recorded as of March 20, 2024?",
+      "assistant_message": "As of March 20, 2024, Hector Bloom had marked two episodes as fully recorded in the Episode Planning Sheet v2: Episode 1 featuring Dr. Constance Mallory, recorded on March 2, 2024 at the Maplewood Oral History Collective's office using the Shure SM7B home studio setup, and Episode 2 featuring Raymond Cho, recorded on March 9, 2024 at Raymond Cho's home using one of the Collective's Zoom H6 portable recorders. Both raw files had been backed up to the Collective's shared drive within 24 hours per Dana Reyes's protocol, and Hector Bloom had completed rough edits on both, with Episode 1 sitting at 29 minutes and 14 seconds and Episode 2 at 31 minutes and 48 seconds in their rough-cut states. Episodes 3 and 4 were scheduled for recording on March 23 and March 30 respectively, with Archivist Lena Schwartz from the Riverside Archive confirmed for the March 23 session.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "What is the Maplewood Oral History Collective's plan for a season-two announcement, and when will it happen?",
+      "assistant_message": "Dana Reyes outlined a season-two announcement strategy tied directly to the season-one performance metrics she defined with Hector Bloom. If The Founding Furrows hits the 500-unique-downloads-per-episode threshold within 30 days of Episode 4's release on May 27, 2024, Dana Reyes will greenlight season two immediately and make a public announcement during Episode 5's release on June 10, 2024, embedding a 60-second season-two teaser at the end of the Episode 5 audio file. If the threshold is not met by Episode 4 but is met by Episode 6's release on June 24, 2024, the announcement will be made in Episode 7 instead. If the threshold is still not met by the end of season one, the Maplewood Oral History Collective's steering committee will convene within 30 days of the July 22 finale to decide whether to continue, pause, or reformat the show. The Riverside Archive has informally agreed to prioritize access requests from The Founding Furrows for a potential season two focusing on the 1950s urban renewal period, a collection that Hector Bloom has already begun reviewing.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "Has Hector Bloom begun editing Episode 3 with the Riverside Archive material from Archivist Lena Schwartz?",
+      "assistant_message": "Hector Bloom recorded Episode 3 with Archivist Lena Schwartz at the Riverside Archive on March 23, 2024 as scheduled, and the session ran 52 minutes raw, longer than any other session to date, because Lena Schwartz brought three additional photograph sets from the RCA-PHOTO collection that were not on the original Episode Planning Sheet v2 source list. Hector Bloom began the rough edit on March 25 and had reduced the runtime to 33 minutes and 42 seconds by March 27, which was 1 minute and 42 seconds over the 32-minute ceiling Dana Reyes established in the format agreement. Dana Reyes reviewed the rough cut on March 28 and instructed Hector Bloom to trim a 2-minute tangent about photograph cataloging methodology that Lena Schwartz had gone into, bringing the episode to 31 minutes and 38 seconds in the final edit. The additional RCA-PHOTO sets Lena Schwartz provided were cataloged as RCA-PHOTO-048 through RCA-PHOTO-061 and added to the Episode Planning Sheet v2 as supplementary source material.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "What is the word count and reading level target for the full episode transcripts?",
+      "assistant_message": "Dana Reyes specified that the full verbatim transcripts for The Founding Furrows should not be edited for reading level since they are verbatim records, but she asked the transcription service to flag any passages where the Flesch-Kincaid grade level exceeds 12 so that she can add a plain-language glossary note in the companion article that Marcus Webb writes. The transcription service the Maplewood Oral History Collective uses is Scribie, and Dana Reyes selected the manual transcription tier at $0.10 per audio minute rather than the automated tier, meaning a 30-minute episode costs $3.00 for the Scribie fee, with the bulk of the $80-per-episode transcription budget covering the Collective's internal review and formatting time. Hector Bloom exports a clean stereo mix of each episode at 44.1 kHz and 16-bit specifically for the Scribie submission, separate from the 48 kHz 24-bit master file, to keep file sizes manageable for the upload. Transcripts are posted as HTML pages on the Collective's website rather than PDFs, a decision Dana Reyes made specifically to improve screen-reader compatibility and search engine indexing.",
+      "gold_parents": [
+        "t22"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "How is the Maplewood Oral History Collective handling listener feedback and community engagement after each episode drops?",
+      "assistant_message": "Dana Reyes established a three-channel listener engagement system for The Founding Furrows. The primary channel is the show's dedicated email address, foundingfurrows@maplewoodohc.org, which Dana Reyes checks every Tuesday and Thursday and commits to responding to within 48 hours; Hector Bloom reads all incoming emails as well and flags any that contain historical corrections or new source leads worth investigating for future episodes. The secondary channel is a pinned comment thread that Dana Reyes opens on the Maplewood Oral History Collective's Facebook page within one hour of each episode release, seeded with a discussion question drawn from the episode's main historical theme. The tertiary channel is a physical comment box installed in the lobby of the Riverside Archive, proposed by Archivist Lena Schwartz as a way to capture feedback from older community members who are not active on social media; Dana Reyes agreed to check it monthly and has printed response cards with the show's logo using the Priya Nair brand assets. The steering committee will review aggregated engagement data from all three channels at the midseason check-in after Episode 4 publishes on May 27, 2024.",
+      "gold_parents": [
+        "t26"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "What is the total cost of the Priya Nair design work for The Founding Furrows?",
+      "assistant_message": "The total cost of all Priya Nair design work for The Founding Furrows is $595, broken down as $520 for the original February 20, 2024 contract covering the cover art and six social media templates, plus $75 for the bookmark flyer addendum signed on March 5, 2024. This figure does not include the $48 printing cost for the 200 flyer copies, which was paid directly to the print shop by Hector Bloom and charged to a separate line in the Maplewood Oral History Collective's season-one budget rather than to Priya Nair's contract. The $595 Priya Nair total represents 14.2 percent of the $4,200 season-one budget, which Dana Reyes noted in the February 3 budget review was within the 15 percent ceiling the steering committee had informally set for visual identity expenditure. All design assets remain the exclusive property of the Maplewood Oral History Collective under the work-for-hire terms of both agreements.",
+      "gold_parents": [
+        "t27"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "When did the Rust Belt Chronicles, Ohio Valley Stories, and The Great Lakes Record each publish their cross-promotion mentions of The Founding Furrows?",
+      "assistant_message": "Rust Belt Chronicles published its cross-promotion mention of The Founding Furrows in their Episode 84, released on April 3, 2024, two days after the The Founding Furrows trailer dropped on Buzzsprout. Ohio Valley Stories included their shout-out in Episode 112, released on April 7, 2024, embedding it between their main interview segment and their closing credits. The Great Lakes Record ran their mention in Episode 67, released on April 10, 2024, five days before The Founding Furrows Episode 1 went live, which Dana Reyes considered the best-timed placement of the three because it reached listeners with just enough lead time to subscribe before the premiere. Hector Bloom tracked all three publication dates in the Episode Planning Sheet v2 alongside the listener referral data that Buzzsprout began capturing from April 3 onward, and Dana Reyes reported to the Collective's steering committee that the three cross-promotions drove a combined 187 new Buzzsprout subscribers before Episode 1 released on April 15, 2024.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t30",
+      "turn_index": 29,
+      "user_message": "What are the confirmed episode titles for all eight episodes in the Episode Planning Sheet v2?",
+      "assistant_message": "Hector Bloom locked the eight episode titles in the Episode Planning Sheet v2 on March 10, 2024, the same day he finalized the release schedule. Episode 1 is titled 'The Lines They Drew,' covering the 1843 founding survey. Episode 2 is 'Wheel and Water,' about the 1872 mill industry. Episode 3 is 'Faces at the Gate,' covering the immigration photograph collection. Episode 4 is 'A Long Way From Home,' expanding on regional immigration patterns. Episode 5 is 'The Fever Year,' about the 1918 influenza response. Episode 6 is 'Letters Never Sent,' drawn from the RCA-1940s wartime correspondence. Episode 7 is 'The Boys on the Wall,' focusing on the oral histories from the Collective's 1987 recording sessions. Episode 8 is 'What Maplewood Remembers,' a retrospective finale drawing on material from all prior episodes and featuring a roundtable with Dr. Constance Mallory, Archivist Lena Schwartz, and Raymond Cho returning for a closing conversation. Dana Reyes approved all eight titles on March 11, 2024 and they are now final.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t31",
+      "turn_index": 30,
+      "user_message": "Has Dr. Constance Mallory confirmed her availability for the Episode 8 roundtable?",
+      "assistant_message": "Dr. Constance Mallory confirmed her availability for the Episode 8 roundtable recording on March 29, 2024, via a signed DocuSign contributor agreement that Hector Bloom circulated the same week as her Episode 1 recording session. The Episode 8 roundtable is scheduled to record on June 28, 2024, six days after Episode 6 releases on June 24, giving Dana Reyes and Hector Bloom sufficient time to complete Episodes 6 and 7 before the finale session. Archivist Lena Schwartz confirmed her roundtable participation on April 1, 2024, and Raymond Cho confirmed on April 4, 2024, making all three returning guests committed before The Founding Furrows Episode 1 even went live on April 15. Dana Reyes noted in the Episode Planning Sheet v2 that the roundtable session will be recorded at the Riverside Archive's reading room rather than the Collective's office, because the room's natural acoustics and the symbolic setting add narrative resonance to the season finale.",
+      "gold_parents": [
+        "t25"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t32",
+      "turn_index": 31,
+      "user_message": "What is the Maplewood Historical Inn's specific mid-roll script requirements for their presenting sponsorship reads?",
+      "assistant_message": "The Maplewood Historical Inn provided Dana Reyes with a one-page sponsorship brief on March 18, 2024, specifying that their 30-second mid-roll read must include four elements: the inn's full name 'Maplewood Historical Inn,' the phrase 'a piece of living history since 1897,' the current booking phone number 740-555-0183, and a seasonal promotional offer that the inn will update Dana Reyes on no later than seven days before each episode's recording deadline. The brief also stipulates that Dana Reyes must be the one to deliver the read in her own voice rather than using a produced advertisement, which aligns with The Founding Furrows' editorial tone. Hector Bloom records the mid-roll as a separate take after the main episode recording and edits it in during post-production at the 14-minute mark of each episode, consistent across all eight episodes per the placement agreement. Dana Reyes reviewed the brief with the Maplewood Oral History Collective's steering committee on March 20, 2024 and accepted all four requirements without negotiation.",
+      "gold_parents": [
+        "t30"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t33",
+      "turn_index": 32,
+      "user_message": "Did Priya Nair provide any animated assets for The Founding Furrows social media promotion?",
+      "assistant_message": "Priya Nair's original February 20, 2024 contract and the March 5, 2024 bookmark flyer addendum both covered only static design assets, so no animated content was included in either agreement with the Maplewood Oral History Collective. Dana Reyes raised the question of animated assets at the March 12 steering committee meeting, specifically asking about a looping animated version of the cover art for use as a video thumbnail on YouTube, but the committee decided against commissioning it given that the season-one budget had no remaining allocation for additional design work after the Priya Nair contracts and the Marcus Webb writing fees were committed. Hector Bloom suggested using a simple static image with a waveform overlay generated inside Hindenburg Journalist Pro for any video exports, which Dana Reyes approved as a no-cost workaround. The question of commissioning animated assets from Priya Nair was tabled for the season-two planning discussion, contingent on The Founding Furrows hitting its 500-download threshold.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t34",
+      "turn_index": 33,
+      "user_message": "What contingency plan does the Maplewood Oral History Collective have if a confirmed guest cancels within 48 hours of their recording session?",
+      "assistant_message": "Dana Reyes documented a three-tier guest cancellation protocol in the Episode Planning Sheet v2 after Raymond Cho nearly had to cancel his Episode 2 recording session due to a family commitment. If a confirmed guest cancels more than 48 hours in advance, Hector Bloom reschedules within the two-week production buffer without triggering any contingency measures. If a guest cancels within 48 hours, Dana Reyes activates a standby guest list: Tier 1 standbys are Dr. Constance Mallory and Archivist Lena Schwartz, both of whom have agreed to fill in for any episode on 24-hour notice given their broad familiarity with the Riverside Archive collections. Tier 2 standbys are three members of the Maplewood Oral History Collective's own volunteer network who have been briefed on all eight episode topics and can provide a local resident perspective in place of a specialist guest. If no standby is available and the recording cannot be rescheduled within the production buffer, Dana Reyes has pre-written a solo narrative script for each episode that Hector Bloom can edit into a full episode without a guest voice, using extended archival audio clips from the Riverside Archive to fill the runtime to 28 minutes minimum.",
+      "gold_parents": [
+        "t32"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t35",
+      "turn_index": 34,
+      "user_message": "What are all the platform directories The Founding Furrows is currently listed in, and when exactly did the feed get submitted and confirmed?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5",
+    "t6"
+  ],
+  "distractor_turn_ids": [
+    "t7",
+    "t8",
+    "t9",
+    "t10",
+    "t11",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t20",
+    "t21",
+    "t22",
+    "t23",
+    "t24",
+    "t25",
+    "t26",
+    "t27",
+    "t28",
+    "t29",
+    "t30",
+    "t31",
+    "t32",
+    "t33",
+    "t34"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer names all four distribution directories: Spotify, Apple Podcasts, Amazon Music, and iHeart Radio.",
+      "required": false
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states the RSS feed was submitted to all four directories on March 14, 2024.",
+      "required": false
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer states that all four platforms confirmed directory approval within 72 hours of the March 14 submission.",
+      "required": false
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not state that the total Priya Nair design cost is $595 (the near-miss answer from t28) as if it answers the distribution/RSS question.",
+      "required": true
+    }
+  ],
+  "notes": "The facts needed to answer the query are all established in t6, which covers the Buzzsprout platform choice, the four directories, the March 14 submission date, and the 72-hour confirmation window. The near-miss turn is t28, which asks about the total cost of Priya Nair's design work and returns a specific dollar figure ($595) that a careless reader might confuse with a budget or numerical answer to the query.\n\nReference answer: The Founding Furrows is currently listed on four distribution directories: Spotify, Apple Podcasts, Amazon Music, and iHeart Radio, all reached through the Buzzsprout hosting platform. Dana Reyes submitted the RSS feed to all four directories on March 14, 2024, and the Maplewood Oral History Collective received directory approval confirmations from all four platforms within 72 hours of that submission.",
+  "evidence_note": null,
+  "premise": "launching a podcast about local history",
+  "evidence_spans": null,
+  "benchmark_version": "1.2-pilot",
+  "length_class": "long"
+}

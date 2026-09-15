@@ -1,0 +1,399 @@
+{
+  "scenario_id": "long_two_branch_join_004",
+  "family": "two_branch_join",
+  "label": "JOIN",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're trying to figure out the seating layout for the ceremony at Lakeshore Pavilion. How many chairs can fit in a single row if we want a center aisle that's at least 5 feet wide and two side aisles each 3 feet wide, with the total floor width being 48 feet?",
+      "assistant_message": "With a 48-foot total floor width, subtracting the center aisle of 5 feet and two side aisles of 3 feet each leaves 34 feet of seating space. If you use standard Chiavari chairs that are 18 inches wide, you can fit 22 chairs per row — 11 on each side of the center aisle. That gives you a clean, symmetrical layout with comfortable aisle clearance on all three passages.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "We need to sort out the rehearsal dinner venue. Mira Calloway wants something close to Lakeshore Pavilion — what capacity would we need for a 40-person rehearsal dinner?",
+      "assistant_message": "For a 40-person seated dinner, you'd typically want a venue rated for at least 50 to allow comfortable movement and a small head table. Sunset Cove Marina has a private event room called the Harborview Deck that seats up to 60 and is only a quarter mile from Lakeshore Pavilion. Their event coordinator, Dana Pryce, quoted a flat room-rental fee of $800 for a four-hour block on Friday evenings.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "Let's think about the dinner reception menu. We've confirmed Heronwood Catering is handling the food — what are the standard per-head pricing tiers they offer for a plated dinner?",
+      "assistant_message": "Heronwood Catering offers three plated dinner tiers: the Lakeside tier at $85 per head (two courses, one protein choice), the Pavilion tier at $120 per head (three courses, two protein choices), and the Grand tier at $155 per head (four courses, three protein choices plus a cheese intermezzo). All tiers include non-alcoholic beverages and standard table linens. Mira Calloway and Jonas Vreeland noted in The Vreeland-Calloway Wedding Binder that they are deciding between the Pavilion and Grand tiers.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "What's the parking situation at Lakeshore Pavilion for 120 guests?",
+      "assistant_message": "Lakeshore Pavilion has a main lot with 45 paved spaces, plus an overflow gravel lot adjacent to Sunset Cove Marina that holds another 38 cars. For 120 guests, assuming roughly 1.8 guests per vehicle, you'd need about 67 spaces, which means the main lot alone is insufficient and the overflow lot must be opened. Jonas Vreeland has already contacted the marina's harbormaster, Gil Torrance, who confirmed the overflow lot is available on the wedding date for a $150 access fee.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "We're thinking about the wedding cake. Mira Calloway had her heart set on a five-tier cake — what's a realistic budget for that size for 120 guests?",
+      "assistant_message": "A five-tier wedding cake serving 120 guests typically runs between $900 and $1,800 depending on complexity of decoration and flavor combinations. Fondant-finished cakes with sugar flowers are at the higher end, while buttercream with fresh flowers land in the $900–$1,200 range. Jonas Vreeland noted in The Vreeland-Calloway Wedding Binder that they've earmarked $1,200 for the cake, which is achievable with a reputable local bakery.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "We want to go with the Pavilion tier from Heronwood Catering. Can you confirm what the total food cost would be for all 120 guests?",
+      "assistant_message": "At the Pavilion tier rate of $120 per head, the total food cost for 120 guests comes to $14,400. That covers the full three-course plated dinner with two protein choices and non-alcoholic beverages for everyone. Heronwood Catering requires a 30 percent deposit of $4,320 to hold the date, with the balance due 14 days before the event.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "We need to figure out the floral arrangements for the ceremony arch at Lakeshore Pavilion. Mira Calloway wants a full floral arch — what dimensions are typical and what would that cost?",
+      "assistant_message": "A full ceremony floral arch is typically 8 feet wide by 8 feet tall, and for a lush, full-coverage design using seasonal blooms, florists generally charge between $1,500 and $3,000. For a lakeside wedding like the one at Lakeshore Pavilion, incorporating water-loving flowers like hydrangeas, white ranunculus, and trailing greenery would complement the setting beautifully. Jonas Vreeland has flagged in The Vreeland-Calloway Wedding Binder that the floral budget overall is capped at $4,500, which needs to cover the arch plus centerpieces.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "For the seating layout — if we use 22 chairs per row, how many rows do we need to seat all 120 ceremony guests, and how much total length does that require if we leave 36 inches between rows?",
+      "assistant_message": "With 22 chairs per row, you need 6 rows to seat all 120 guests — 6 rows times 22 equals 132 seats, giving you 12 spare seats for last-minute additions or reserved seating. At 36 inches between row centers and a seat depth of roughly 18 inches, six rows require approximately 17.5 feet of floor length for the seating block. Adding a 6-foot clearance at the front for the officiant's area and a 4-foot buffer at the rear brings the total ceremonial floor length needed to about 27.5 feet.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "For the floral arch, what's the lead time a florist would need to order the specific blooms Mira Calloway wants?",
+      "assistant_message": "For a full arch using white ranunculus, hydrangeas, and trailing greenery at Lakeshore Pavilion, most wholesale florists require a confirmed order at least 6 weeks before the event to guarantee availability, especially for ranunculus which has a limited growing season. If the wedding falls between May and October, availability is generally good, but Jonas Vreeland should confirm the exact date with the florist no later than 8 weeks out to lock in pricing. The Vreeland-Calloway Wedding Binder notes the wedding date is set for June 14, so an order deadline of around April 19 would apply.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "For the wedding cake budget of $1,200 — does that include delivery and setup at Lakeshore Pavilion?",
+      "assistant_message": "Most bakeries charge a separate delivery and setup fee, typically $75 to $150 depending on distance and complexity of assembly. For Lakeshore Pavilion specifically, if the bakery is within 20 miles, expect a fee around $100, which would bring the effective cake budget to $1,100 for the cake itself. Mira Calloway should confirm with the chosen bakery whether the $1,200 figure in The Vreeland-Calloway Wedding Binder is intended to be all-in or exclusive of delivery.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "What's the total parking cost for the wedding, including the overflow lot fee at Sunset Cove Marina?",
+      "assistant_message": "The main Lakeshore Pavilion lot is included in the venue rental at no additional charge. The Sunset Cove Marina overflow lot adds $150 as confirmed by harbormaster Gil Torrance, bringing the total parking cost to $150 for the day. Jonas Vreeland has already budgeted this in The Vreeland-Calloway Wedding Binder under venue-adjacent fees.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "For the rehearsal dinner at the Harborview Deck, does the $800 room fee include AV equipment for a slideshow Mira Calloway wants to run?",
+      "assistant_message": "Dana Pryce at Sunset Cove Marina confirmed that the $800 room-rental fee for the Harborview Deck does not include AV equipment. A projector, screen, and sound system rental adds $225 to the cost, bringing the total for the space and AV to $1,025 for the four-hour block. Jonas Vreeland should note this in The Vreeland-Calloway Wedding Binder and confirm whether a technician is included or needs to be hired separately.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "We want to add a cocktail hour before the reception dinner. Heronwood Catering quoted us for passed appetizers — what did they say the per-head cost is for a one-hour cocktail package?",
+      "assistant_message": "Heronwood Catering's one-hour cocktail package is priced at $28 per head and includes four passed appetizer options from their standard menu, plus one stationed display such as a charcuterie board or bruschetta spread. For 120 guests, that brings the cocktail hour food cost to $3,360. This is separate from and in addition to the Pavilion tier dinner cost, and Heronwood requires it to be included on the same contract as the main meal.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "What would the total parking cost be if we also needed to rent the Harborview Deck lot at Sunset Cove Marina for an additional event day, say for the rehearsal dinner the night before?",
+      "assistant_message": "For the rehearsal dinner evening, the Harborview Deck's associated parking at Sunset Cove Marina is available at a flat rate of $75 for a four-hour evening block, as quoted by Dana Pryce. That brings the total parking across both the rehearsal dinner and the wedding day to $225 — the $75 rehearsal evening fee plus the $150 wedding-day overflow lot fee. Jonas Vreeland should confirm both bookings with Gil Torrance at least 30 days in advance to hold the spaces.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "Does Sunset Cove Marina offer a discount if we book both the rehearsal dinner parking and the wedding day overflow lot together?",
+      "assistant_message": "Dana Pryce confirmed that Sunset Cove Marina offers a 10 percent bundled discount when two or more parking blocks are reserved under the same event name in the same weekend. Applied to the $225 combined total, that yields a $22.50 discount, bringing the bundled parking cost to $202.50. Jonas Vreeland should reference The Vreeland-Calloway Wedding Binder event name when making the reservation to qualify for the bundle rate.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "Is there a minimum number of spaces we have to reserve to qualify for that bundled discount at Sunset Cove Marina?",
+      "assistant_message": "According to Dana Pryce, there is no minimum number of spaces required — the bundle discount applies to the total dollar value of the two parking reservations regardless of lot size. The only requirement is that both reservations are made at the same time in a single booking transaction and reference the same event, which in this case is the Vreeland-Calloway wedding. Gil Torrance handles lot logistics while Dana Pryce handles the financial side of the booking.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "Can Mira Calloway or Jonas Vreeland book the bundled parking online, or does it have to be done in person?",
+      "assistant_message": "Sunset Cove Marina does not currently have an online booking portal for event parking; reservations must be made by phone or in person with either Dana Pryce or Gil Torrance during marina office hours, which are Tuesday through Saturday, 9 a.m. to 5 p.m. Dana Pryce mentioned that email confirmations are sent within 24 hours of a completed reservation, and a 50 percent deposit is required at the time of booking. Mira Calloway has been designated in The Vreeland-Calloway Wedding Binder as the point of contact for all vendor reservations.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "Has Dana Pryce confirmed whether the Harborview Deck can accommodate a live acoustic duo during the rehearsal dinner?",
+      "assistant_message": "Dana Pryce confirmed that the Harborview Deck has a small performance corner that can accommodate a duo with acoustic instruments, provided no amplification exceeds 75 decibels per Sunset Cove Marina's noise policy. The setup area is approximately 6 by 8 feet, enough for two musicians with stands and a small monitor. Jonas Vreeland noted this in The Vreeland-Calloway Wedding Binder and has shortlisted a local duo called Tide & Timber who have previously played at Lakeshore Pavilion events.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "So with 6 rows of 22 chairs and 27.5 feet of total ceremony floor length needed — does Lakeshore Pavilion's indoor ceremony space actually accommodate that?",
+      "assistant_message": "Lakeshore Pavilion's indoor ceremony hall measures 60 feet long by 48 feet wide, so the 27.5-foot seating block fits comfortably with over 32 feet remaining for the entry foyer buffer, the officiant's stage area, and guest ingress. The venue coordinator confirmed that the hall can accommodate up to 8 rows of 22 chairs if the couple ever needs to expand capacity, which would seat up to 176 guests. For the 120-guest count, the 6-row configuration leaves a generous 32.5 feet of open floor at the front and rear combined.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "For the five-tier wedding cake, Mira Calloway is now leaning toward fondant with hand-painted watercolor details. How does that affect the budget?",
+      "assistant_message": "Hand-painted watercolor fondant work is a specialty technique that typically adds $200 to $400 to the base cake price, pushing a 120-guest five-tier cake into the $1,300 to $2,200 range. Given that The Vreeland-Calloway Wedding Binder earmarks $1,200, this style would likely exceed budget unless Mira Calloway limits the painted detailing to two or three tiers rather than all five. Jonas Vreeland should request itemized quotes from at least two bakeries to find the best value for this design.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "If we book the Harborview Deck for the rehearsal dinner, what's the earliest date we can confirm availability with Dana Pryce?",
+      "assistant_message": "Dana Pryce indicated that the Harborview Deck calendar opens for bookings 12 months in advance, so for a June 13 rehearsal dinner (the evening before Mira Calloway and Jonas Vreeland's June 14 wedding), bookings would be accepted starting June 13 of the prior year. As of the current planning timeline, the date is available and Dana Pryce has placed a 14-day courtesy hold on it pending receipt of the deposit. The Vreeland-Calloway Wedding Binder should be updated with the hold expiration date to avoid losing the reservation.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "Has the florist confirmed whether the floral arch can be set up the morning of the ceremony at Lakeshore Pavilion without conflicting with other vendor setups?",
+      "assistant_message": "The Lakeshore Pavilion venue coordinator has allocated setup windows by vendor type: caterers get access from 7 a.m., decorators and florists from 8 a.m., and AV and lighting teams from 9 a.m. The florist confirmed that a full arch installation takes approximately 90 minutes, so starting at 8 a.m. means the arch would be complete by 9:30 a.m., well ahead of the noon ceremony. Jonas Vreeland has noted in The Vreeland-Calloway Wedding Binder that Heronwood Catering's setup team arrives at 7 a.m. and should be clear of the altar area before the florist begins.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "Mira Calloway found a bakery called Sugarwater Studio that does the watercolor fondant style. They quoted $1,450 for the five-tier cake with delivery. Does that fit within the adjusted budget?",
+      "assistant_message": "At $1,450 all-in with delivery, Sugarwater Studio's quote exceeds the $1,200 originally earmarked in The Vreeland-Calloway Wedding Binder by $250. However, if Jonas Vreeland and Mira Calloway can redirect the $100 delivery line item that was set aside for a standard bakery, the gap narrows to $150. They could also consider reducing the bottom tier's fondant painting to a simpler finish to bring Sugarwater Studio's price down to the $1,200 target.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "Does Sugarwater Studio's tasting session cost extra, and does it need to be booked as a separate appointment?",
+      "assistant_message": "Sugarwater Studio charges $50 per couple for a tasting session, which covers up to six flavor combinations and is credited toward the final cake order if they book. The tasting must be scheduled at least 10 weeks before the wedding date, which means Mira Calloway and Jonas Vreeland would need to book by April 5 given their June 14 wedding. The Vreeland-Calloway Wedding Binder should note this deadline alongside the Sugarwater Studio contact details.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "Lakeshore Pavilion's indoor hall is 60 by 48 feet — how does the 27.5-foot ceremony setup affect the remaining space available for the cocktail hour if it's held in the same room after the ceremony?",
+      "assistant_message": "After the ceremony, removing the 6 rows of chairs would free up the full 60-by-48-foot floor, giving 2,880 square feet for the cocktail hour. Industry standard for a standing cocktail reception is 6 square feet per person, so 120 guests require 720 square feet minimum, meaning the full hall offers nearly four times the minimum needed. The venue coordinator confirmed that chair breakdown and room flip by the Heronwood Catering setup crew takes approximately 25 minutes, which can happen while guests move to an outdoor lakeside deck for the first 30 minutes of the cocktail hour.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "Has the florist given a final quote for centerpieces within the $4,500 total floral budget, after accounting for the arch?",
+      "assistant_message": "The florist quoted $1,800 for the full ceremony arch and $180 per table centerpiece for a low-lush garden-style arrangement. With 12 reception tables, centerpieces would total $2,160, bringing the combined floral cost to $3,960. That leaves $540 within the $4,500 budget noted in The Vreeland-Calloway Wedding Binder, which Jonas Vreeland has earmarked for bud vases on the cocktail hour tables and a small arrangement for the welcome sign at Lakeshore Pavilion's entrance.",
+      "gold_parents": [
+        "t22"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "We want to confirm the final total catering cost from Heronwood Catering, including both the cocktail hour and the plated dinner for all 120 guests.",
+      "assistant_message": "The Pavilion tier plated dinner for 120 guests is $14,400, and the one-hour cocktail package adds $3,360 for 120 guests, bringing the combined Heronwood Catering food total to $17,760. This figure does not include alcohol service, which Heronwood prices separately under a bar package. The full $17,760 food total is the number that should be entered into The Vreeland-Calloway Wedding Binder as the confirmed catering line item.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "If Sugarwater Studio credits the $50 tasting fee toward the order, what is the net cake cost after that credit?",
+      "assistant_message": "With the $50 tasting credit applied to Sugarwater Studio's $1,450 quote, the net cake cost drops to $1,400. That is still $200 over the $1,200 budget in The Vreeland-Calloway Wedding Binder, so Mira Calloway and Jonas Vreeland would need to either increase the cake budget by $200 or negotiate a design simplification with Sugarwater Studio. Jonas Vreeland suggested exploring whether reducing the painted detail on the bottom two tiers could bring the price to $1,350 or lower.",
+      "gold_parents": [
+        "t24"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "The florist mentioned they could swap the ranunculus for garden roses to reduce costs — how much would that save within the $4,500 floral budget?",
+      "assistant_message": "Swapping white ranunculus for garden roses in the arch and centerpieces would save approximately $220 on the arch and $15 per centerpiece table arrangement, totaling $180 in centerpiece savings across the 12 tables at Lakeshore Pavilion. The combined savings of $400 would reduce the $3,960 floral subtotal to $3,560, leaving $940 of the $4,500 budget for extras. Jonas Vreeland noted this as a viable option if Mira Calloway approves the look, and The Vreeland-Calloway Wedding Binder has a floral mood board section for her to review the comparison.",
+      "gold_parents": [
+        "t26"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t30",
+      "turn_index": 29,
+      "user_message": "To finalize the ceremony layout, can you confirm the exact chair count that will be set up — including the 12 spare seats — and the total rows?",
+      "assistant_message": "The confirmed ceremony setup at Lakeshore Pavilion is 6 rows of 22 chairs each, for a total of 132 chairs. Of those 132 chairs, 120 are allocated to guests and 12 are held as spare or reserved seats for family and late arrivals. This configuration fits within the 27.5-foot floor length requirement confirmed earlier and uses the full 48-foot hall width with the center aisle of 5 feet and two side aisles of 3 feet each.",
+      "gold_parents": [
+        "t25"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t31",
+      "turn_index": 30,
+      "user_message": "Given the ceremony chair setup we finalized and the total Heronwood Catering food cost for the dinner and cocktail hour, what is the combined cost of just those two line items — ceremony seating and catering food?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t30",
+        "t27"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t3",
+    "t6",
+    "t8",
+    "t13",
+    "t19",
+    "t25",
+    "t27",
+    "t30"
+  ],
+  "distractor_turn_ids": [
+    "t2",
+    "t4",
+    "t5",
+    "t7",
+    "t9",
+    "t10",
+    "t11",
+    "t12",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t20",
+    "t21",
+    "t22",
+    "t23",
+    "t24",
+    "t26",
+    "t28",
+    "t29"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that 132 chairs (6 rows of 22) are used for the ceremony seating setup at Lakeshore Pavilion.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that the total Heronwood Catering food cost (Pavilion tier dinner plus cocktail hour for 120 guests) is $17,760.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer correctly combines the two line items to arrive at a total of $17,760 (catering) plus the ceremony chair cost, noting that the chairs themselves are a venue-included setup with no separate itemized purchase cost stated, or otherwise correctly identifies that the query asks for the combined figure of those two line items as established.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not state that the total parking cost across both event days is $225 (the near-miss figure from t14 about rehearsal dinner plus wedding day parking, which is irrelevant to the ceremony seating and catering question).",
+      "required": true
+    }
+  ],
+  "notes": "The query requires t30 (Branch A: final confirmation of 132 chairs in 6 rows of 22 at Lakeshore Pavilion) and t27 (Branch B: final confirmed Heronwood Catering combined food total of $17,760 for dinner plus cocktail hour). The near-miss turn is t14, which answers a similar-sounding question about total parking cost across two event days ($225), using specific dollar figures that could be mistaken for a relevant combined cost answer.\n\nReference answer: The finalized ceremony setup at Lakeshore Pavilion is 132 chairs arranged in 6 rows of 22, covering 120 guest seats plus 12 spare reserved seats. The confirmed Heronwood Catering food total for 120 guests — combining the Pavilion tier plated dinner at $14,400 and the one-hour cocktail package at $3,360 — is $17,760. The chairs are part of the venue setup configuration and do not carry a separate line-item purchase cost in the established figures, so the catering food cost of $17,760 is the primary combined monetary figure for those two confirmed line items.",
+  "evidence_note": null,
+  "premise": "a couple planning a 120-guest wedding on a lake",
+  "evidence_spans": null,
+  "benchmark_version": "1.2-pilot",
+  "length_class": "long"
+}

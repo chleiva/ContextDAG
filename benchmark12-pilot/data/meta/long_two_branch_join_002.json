@@ -1,0 +1,133 @@
+{
+ "scenario_id": "long_two_branch_join_002",
+ "family": "two_branch_join",
+ "n_history": 37,
+ "full_history_tokens": 6445,
+ "closure_ratio": 0.24324324324324326,
+ "entity_registry": [
+  "BrightPath Foundation",
+  "Salesforce Nonprofit Success Pack",
+  "Raiser's Edge NXT",
+  "Marcus Delgado",
+  "Priya Nair",
+  "DonorSync Pro",
+  "Migration Master Plan v2.3",
+  "Carmen Velasquez"
+ ],
+ "distractor_branch_entity_hits": {
+  "D": [
+   "BrightPath Foundation",
+   "Salesforce Nonprofit Success Pack",
+   "Raiser's Edge NXT",
+   "Marcus Delgado",
+   "Priya Nair",
+   "DonorSync Pro",
+   "Migration Master Plan v2.3",
+   "Carmen Velasquez"
+  ],
+  "E": [
+   "BrightPath Foundation",
+   "Salesforce Nonprofit Success Pack",
+   "Marcus Delgado",
+   "Priya Nair",
+   "Carmen Velasquez"
+  ],
+  "F": [
+   "BrightPath Foundation",
+   "Salesforce Nonprofit Success Pack",
+   "Raiser's Edge NXT",
+   "Marcus Delgado",
+   "Priya Nair",
+   "DonorSync Pro",
+   "Migration Master Plan v2.3",
+   "Carmen Velasquez"
+  ],
+  "G": [
+   "BrightPath Foundation",
+   "Salesforce Nonprofit Success Pack",
+   "Raiser's Edge NXT",
+   "Marcus Delgado",
+   "Priya Nair",
+   "DonorSync Pro",
+   "Migration Master Plan v2.3",
+   "Carmen Velasquez"
+  ]
+ },
+ "near_miss_turn_id": "t31",
+ "checklist_evidence": {
+  "c1": [
+   "t1",
+   "t27"
+  ],
+  "c2": [
+   "t21",
+   "t24",
+   "t36"
+  ],
+  "c3": [
+   "t21",
+   "t36"
+  ],
+  "c4": []
+ },
+ "cosine": {
+  "gold_median": 0.48577427864074707,
+  "distractor_median": 0.43294447660446167,
+  "ratio": 0.8912461932235084,
+  "pass": true
+ },
+ "cosine_per_turn": {
+  "t1": 0.48577427864074707,
+  "t2": 0.386405348777771,
+  "t3": 0.48389098048210144,
+  "t4": 0.3776881694793701,
+  "t5": 0.5487788915634155,
+  "t6": 0.4798968732357025,
+  "t7": 0.4389389753341675,
+  "t8": 0.47645968198776245,
+  "t9": 0.25041574239730835,
+  "t10": 0.4289851784706116,
+  "t11": 0.415203332901001,
+  "t12": 0.39808255434036255,
+  "t13": 0.48308658599853516,
+  "t14": 0.3898801803588867,
+  "t15": 0.2601798176765442,
+  "t16": 0.3130187392234802,
+  "t17": 0.3448852300643921,
+  "t18": 0.26114150881767273,
+  "t19": 0.470162570476532,
+  "t20": 0.3886515200138092,
+  "t21": 0.4488292336463928,
+  "t22": 0.3275122046470642,
+  "t23": 0.5290651917457581,
+  "t24": 0.4283972680568695,
+  "t25": 0.2449154406785965,
+  "t26": 0.5610476136207581,
+  "t27": 0.6301336288452148,
+  "t28": 0.4706677794456482,
+  "t29": 0.45227140188217163,
+  "t30": 0.5284653902053833,
+  "t31": 0.4703608751296997,
+  "t32": 0.5416455268859863,
+  "t33": 0.5651113390922546,
+  "t34": 0.43690377473831177,
+  "t35": 0.44630342721939087,
+  "t36": 0.563878059387207,
+  "t37": 0.5053517818450928
+ },
+ "gold_branches": [
+  "A",
+  "B"
+ ],
+ "distractor_branches": [
+  "D",
+  "E",
+  "F",
+  "G"
+ ],
+ "attempt_accepted": 2,
+ "generation_tokens": [
+  4200,
+  9465
+ ]
+}

@@ -1,0 +1,212 @@
+I'll fix all the listed problems: remove signposting from t7, ensure branch D mentions at least 2 gold entities per turn, and keep all distractor branches close to the same entities and subject matter.
+
+```json
+{
+  "entity_registry": ["Harmon family", "Biscuit", "Atlas Van Lines", "PawsAboard", "Maya Harmon", "Leo Harmon"],
+  "turns": [
+    {
+      "turn_id": "t1",
+      "user_message": "We're the Harmon family moving from Austin, Texas to Portland, Oregon in late July, and we have a 4-year-old Labrador named Biscuit. I want to figure out the safest way to transport Biscuit on this cross-country trip.",
+      "assistant_message": "For a cross-country move from Austin to Portland, the safest option for Biscuit is to have him ride in the car with the family rather than in a moving truck. The drive is roughly 2,100 miles and typically takes about 30 to 33 hours of driving time, so you'd want to plan for a two-night stop, perhaps in Sacramento or Medford. Keep Biscuit secured in a crash-tested crate or with a dog seat belt harness rated for his weight, and plan rest stops every 3 to 4 hours for water and a short walk."
+    },
+    {
+      "turn_id": "t2",
+      "user_message": "I'm also trying to figure out which moving company to hire. We got a quote from Atlas Van Lines for our 3-bedroom house contents.",
+      "assistant_message": "Atlas Van Lines is a solid full-service carrier worth serious consideration for the Harmon family's Austin-to-Portland move. Their binding estimates lock in the price regardless of actual weight, which protects you if your inventory runs heavier than expected. Make sure to ask your Atlas Van Lines coordinator about their Platinum Protection coverage, which reimburses at full replacement value rather than the standard 60 cents per pound."
+    },
+    {
+      "turn_id": "t3",
+      "user_message": "Maya and Leo are 7 and 9 years old. I need to think about keeping them entertained and managing their anxiety during the move.",
+      "assistant_message": "For Maya Harmon and Leo Harmon, the key is giving each child a sense of control and a defined role during the move. You can let Maya, at 7, pack her own small backpack of comfort items and favorite toys that travel with her in the car, and let Leo, at 9, be the official trip navigator using a paper atlas or a kid-friendly map app. Planning one fun destination stop along the route, like the Oregon Vortex near Gold Hill or a splash pad in Sacramento, gives both children something concrete to anticipate rather than dreading the transition."
+    },
+    {
+      "turn_id": "t4",
+      "user_message": "The Atlas Van Lines quote came in at $8,400 for a full-service pack and load. Does that seem reasonable for a 3-bedroom cross-country move?",
+      "assistant_message": "For a full-service pack-and-load from Austin to Portland, $8,400 from Atlas Van Lines is within the typical range, which runs roughly $7,000 to $10,500 for a 3-bedroom home at that distance. The price depends heavily on total shipment weight; a 3-bedroom house usually runs 7,500 to 9,500 pounds, and Atlas Van Lines prices at approximately $0.85 to $0.95 per pound for that corridor. Ask your Atlas Van Lines rep to break out the packing labor separately, since you could save $600 to $900 by self-packing non-fragile items like linens and books."
+    },
+    {
+      "turn_id": "t5",
+      "user_message": "What's the best strategy for helping Maya Harmon and Leo Harmon say goodbye to their friends before the move?",
+      "assistant_message": "Giving Maya Harmon and Leo Harmon structured farewell rituals makes the transition much healthier than an abrupt departure. For Leo, at 9, a small goodbye gathering at a local park two weeks before moving day lets him exchange contact information and take photos with his closest friends. Maya, at 7, responds well to a memory-book project where she and her friends each decorate a page she can keep, making the friendships feel preserved rather than lost."
+    },
+    {
+      "turn_id": "t6",
+      "user_message": "I need to figure out the budget for the whole move. We have $15,000 set aside. Can you help me track the major cost categories?",
+      "assistant_message": "With $15,000 total for the Harmon family move, you'll want to allocate across four main buckets: the moving company, travel costs, temporary housing if needed, and setup costs at the Portland end. The Atlas Van Lines quote of $8,400 would consume 56 percent of your budget right away, leaving $6,600 for everything else. Travel costs for the family car trip from Austin to Portland, including fuel, two nights of pet-friendly hotels, and meals, typically run $800 to $1,100 for a family with Biscuit in tow."
+    },
+    {
+      "turn_id": "t7",
+      "user_message": "What activities can we do in the car to help Maya Harmon and Leo Harmon feel less stressed during the long drive?",
+      "assistant_message": "Road-trip activity kits tailored to each child's age work extremely well for Maya Harmon and Leo Harmon on a 30-plus-hour drive. For Leo, audiobooks from a series he already loves, like Percy Jackson or Diary of a Wimpy Kid, can absorb two to three hours at a stretch, while a travel journal where he logs mileage and state signs gives him an ongoing project. Maya does well with a dedicated art supply bag, a pre-downloaded playlist of her favorite songs, and a simple scavenger hunt card listing things to spot along the highway through Texas, New Mexico, and Oregon."
+    },
+    {
+      "turn_id": "t8",
+      "user_message": "Should we set up a video call schedule for Leo Harmon and Maya Harmon with their Austin friends for the first few weeks in Portland?",
+      "assistant_message": "Yes, a structured video call schedule genuinely helps children like Leo Harmon and Maya Harmon maintain friendships during the adjustment period. A good rhythm is one scheduled call per week per child for the first six weeks, since daily calls can actually heighten homesickness by preventing the children from investing in their new environment. Leo, at 9, can manage a group call with two or three friends at once, while Maya, at 7, tends to do better in one-on-one calls of about 20 minutes so she isn't overwhelmed."
+    },
+    {
+      "turn_id": "t9",
+      "user_message": "What should we tell Leo Harmon and Maya Harmon about their new schools in Portland before we arrive?",
+      "assistant_message": "The most effective approach is to give Leo Harmon and Maya Harmon concrete, sensory details about their new schools rather than abstract reassurances. Request a virtual tour or photo packet from each Portland school's front office at least three weeks before move-in day, so both children can identify the cafeteria, gym, and their homeroom location before the first day. Leo, being 9, will also benefit from knowing the name of at least one teacher and one extracurricular club he can join, while Maya responds well to knowing what the playground looks like and whether there are swings."
+    },
+    {
+      "turn_id": "t10",
+      "user_message": "How do we handle the first week in Portland to make it feel like home for Maya Harmon and Leo Harmon?",
+      "assistant_message": "The first week should be deliberately low-pressure for Maya Harmon and Leo Harmon, with at least two neighborhood exploration outings that feel like adventures rather than errands. Identify the nearest park, ice cream shop, and library branch within the first 48 hours so both children have a small mental map of their new neighborhood. Let Leo Harmon pick one room decoration item for his new bedroom from a local Portland store, and give Maya Harmon the same privilege, so each child has one object they chose themselves that signals this is now their real home."
+    },
+    {
+      "turn_id": "t11",
+      "user_message": "What would Atlas Van Lines charge if we added a storage-in-transit option for 30 days while we wait for our Portland house to close?",
+      "assistant_message": "For Atlas Van Lines storage-in-transit on a 3-bedroom shipment estimated at around 8,500 pounds, the standard rate for 30 days in their Portland-area warehouse runs approximately $320 to $380 per month, billed in 30-day increments. There is also a one-time vault handling fee of roughly $150 to $200 charged when your goods are placed into storage, and a separate re-delivery fee of about $275 when Atlas Van Lines delivers from storage to your Portland address. So total storage-in-transit cost for 30 days with Atlas Van Lines would be approximately $745 to $855 all-in, not counting any additional insurance riders."
+    },
+    {
+      "turn_id": "t12",
+      "user_message": "What's a good routine to establish for Biscuit during the first week in Portland so he settles in quickly?",
+      "assistant_message": "Biscuit will adjust fastest if his daily schedule in Portland mirrors his Austin routine as closely as possible, especially feeding times and walk times. Keep Biscuit on the same morning and evening walk schedule he had in Austin, even if the new neighborhood is unfamiliar, because the predictability of the routine is more calming than the familiarity of the location. Bring his existing dog bed, water bowl, and a worn t-shirt with a familiar scent into the new Portland home on the very first day so his sleeping area smells like home from night one."
+    },
+    {
+      "turn_id": "t13",
+      "user_message": "Going back to the budget, can we break down that $6,600 remainder after the Atlas Van Lines cost more specifically?",
+      "assistant_message": "Of the $6,600 remaining after the Atlas Van Lines quote of $8,400, the Harmon family should reserve $1,000 for the car trip covering fuel at roughly $280, two nights of pet-friendly hotels at around $160 per night, and meals. Set aside $1,500 for first-week Portland setup costs like groceries, cleaning supplies, and any immediate hardware needs. That leaves $4,100 as a contingency buffer, which is prudent given that closing delays, tip for the Atlas Van Lines crew, and utility deposits can each run $200 to $500 unexpectedly."
+    },
+    {
+      "turn_id": "t14",
+      "user_message": "Is there a way to negotiate the Atlas Van Lines quote down, or are binding estimates fixed?",
+      "assistant_message": "Binding estimates from Atlas Van Lines are fixed in the sense that the final price cannot exceed the quoted amount, but you can absolutely negotiate the base number before signing. The most effective lever is the packing scope: tell your Atlas Van Lines coordinator you will self-pack all soft goods, books, and non-fragile kitchen items, which typically reduces the labor line by $500 to $800. You can also ask Atlas Van Lines to apply any current promotional discounts, such as their off-peak weekday pickup rate, which can shave another 5 to 8 percent off the total if you can schedule your Austin pickup on a Tuesday or Wednesday."
+    },
+    {
+      "turn_id": "t15",
+      "user_message": "What's a realistic contingency percentage to build into the $15,000 move budget for the Harmon family?",
+      "assistant_message": "For a cross-country move of the Harmon family's scale, a contingency of 10 to 15 percent of total planned spend is standard practice among relocation planners. Applied to the $15,000 budget, that means reserving $1,500 to $2,250 explicitly as a contingency line, separate from the Atlas Van Lines quote and travel costs. Common contingency triggers include a delayed Portland closing requiring short-term storage, an unexpected vet visit for Biscuit during transit, or last-minute packing supplies and wardrobe boxes that weren't in the original inventory."
+    },
+    {
+      "turn_id": "t16",
+      "user_message": "If we keep the Atlas Van Lines quote at $8,400 and reserve $2,000 as contingency, what's left for travel and setup?",
+      "assistant_message": "With $8,400 for Atlas Van Lines and $2,000 in contingency reserved, the Harmon family has $4,600 left from the $15,000 budget for travel and Portland setup. The Austin-to-Portland car trip for the Harmon family including Biscuit should cost roughly $1,000 as discussed, leaving $3,600 for Portland setup. That $3,600 is a comfortable setup budget and can cover utility deposits averaging $300, a first grocery run around $250, and still leave over $3,000 for any furniture or appliance needs at the new Portland address."
+    },
+    {
+      "turn_id": "t17",
+      "user_message": "Can Atlas Van Lines handle a piano? We have an upright piano that needs to move.",
+      "assistant_message": "Atlas Van Lines does handle upright pianos and treats them as a specialty item requiring a separate line item on your binding estimate. For an upright piano on a long-distance move like Austin to Portland, Atlas Van Lines typically charges an additional $300 to $600 depending on the piano's weight and whether it requires stair carries at either end. Make sure you disclose the piano to your Atlas Van Lines coordinator before the in-home survey so the crew brings the appropriate piano board and straps, and ask whether the piano is covered under the standard Platinum Protection valuation or requires a separate declared-value rider."
+    },
+    {
+      "turn_id": "t18",
+      "user_message": "We looked into a pet transport service called PawsAboard for Biscuit. They offer a monitored ground transport option. What should I ask them about before booking?",
+      "assistant_message": "Before booking PawsAboard for Biscuit, ask specifically about their vehicle climate control standards, since the Austin-to-Portland route in late July will pass through areas that can hit 105 degrees Fahrenheit in southern Oregon and northern California. Confirm that PawsAboard's ground transport vehicles maintain cabin temperatures between 65 and 75 degrees at all times and ask whether a human attendant rides with the animals throughout the journey rather than just at pickup and drop-off. Also ask PawsAboard for their maximum transit time guarantee for the Austin-to-Portland corridor, since you'll want Biscuit to arrive within 48 hours of departure to minimize stress."
+    },
+    {
+      "turn_id": "t19",
+      "user_message": "Should we put the piano cost into the contingency or treat it as a known expense in the Atlas Van Lines line?",
+      "assistant_message": "The piano should be treated as a known expense and added directly to the Atlas Van Lines line item rather than absorbed into contingency, since it is a predictable cost once disclosed during the in-home survey. Add a $450 mid-range estimate for the piano specialty charge to the Atlas Van Lines total, bringing that line from $8,400 to approximately $8,850 for the Harmon family's move. This keeps your $2,000 contingency intact for genuinely unpredictable events like a Biscuit vet visit or a Portland closing delay."
+    },
+    {
+      "turn_id": "t20",
+      "user_message": "PawsAboard quoted us $650 for Biscuit's monitored ground transport from Austin to Portland. Is that reasonable, and does it include the crate?",
+      "assistant_message": "PawsAboard's $650 quote for Biscuit's Austin-to-Portland monitored ground transport is within the typical range for that service, which generally runs $500 to $800 for a large-breed dog on a multi-day cross-country route. Confirm in writing whether the $650 includes the IATA-compliant travel crate, since PawsAboard sometimes lists crate rental as a separate $75 to $95 add-on for dogs Biscuit's size. Also verify that the PawsAboard quote covers the full door-to-door route and not just a hub-to-hub leg, because some ground pet transport services require you to drop off and pick up at regional depots rather than your actual Austin and Portland addresses."
+    },
+    {
+      "turn_id": "t21",
+      "user_message": "We're now thinking the Harmon family total move cost including the piano add-on is around $9,850 for Atlas Van Lines plus transport. Does that change the budget math significantly?",
+      "assistant_message": "With Atlas Van Lines at approximately $8,850 including the piano and PawsAboard at $650 for Biscuit, the Harmon family's two main transport lines total $9,500, leaving $5,500 from the $15,000 budget. After reserving the $2,000 contingency, that leaves $3,500 for travel and Portland setup, which is about $100 less than the $3,600 figure calculated before adding PawsAboard. The difference is small enough that the Harmon family's budget remains healthy, and you could recover it easily by self-packing more items to bring the Atlas Van Lines labor cost down."
+    },
+    {
+      "turn_id": "t22",
+      "user_message": "If we negotiate Atlas Van Lines down by $700 through self-packing, does the budget get back to a comfortable place?",
+      "assistant_message": "Yes, a $700 reduction on the Atlas Van Lines quote brings that line to $8,150, and combined with the $650 PawsAboard cost the Harmon family's transport total drops to $8,800. Against the $15,000 budget with $2,000 contingency reserved, that leaves $4,200 for travel and Portland setup, which is back above the comfortable $4,000 threshold. The Harmon family would need to pack roughly all soft goods, books, and non-fragile kitchen items themselves to achieve that $700 saving, which is a realistic weekend's work before the Atlas Van Lines crew arrives."
+    },
+    {
+      "turn_id": "t23",
+      "user_message": "PawsAboard said their transit time for Austin to Portland is 3 days, with one overnight rest stop in Redding, California where Biscuit would stay in a climate-controlled kennel facility. Does that sound acceptable for a Labrador?",
+      "assistant_message": "A 3-day PawsAboard transit with one overnight at their Redding, California kennel facility is an acceptable arrangement for a healthy 4-year-old Labrador like Biscuit. Labradors are generally adaptable and low-anxiety travelers compared to smaller or more anxious breeds, so one overnight in an unfamiliar but climate-controlled kennel environment should not cause lasting stress. To make the PawsAboard Redding stop easier on Biscuit, send along a worn t-shirt or pillowcase with your scent in his crate, and confirm with PawsAboard that their Redding facility staff will give him at least two 15-minute exercise walks during the overnight stay."
+    },
+    {
+      "turn_id": "t24",
+      "user_message": "We're also thinking about whether to tip the Atlas Van Lines crew. What's the standard?",
+      "assistant_message": "Tipping the Atlas Van Lines crew is customary and expected on long-distance moves, with the standard running $20 to $50 per crew member per day of work. For a full-service pack-and-load of a 3-bedroom home, Atlas Van Lines typically sends a crew of 3 to 4 people for one packing day and one loading day, so budget $120 to $400 total depending on crew size and your satisfaction with the work. The Harmon family should tip the Austin origin crew and the Portland delivery crew separately, since they are often different people, and hand the tip directly to each crew lead in cash at the end of their respective days."
+    },
+    {
+      "turn_id": "t25",
+      "user_message": "Does Atlas Van Lines require us to be present at both the Austin pickup and the Portland delivery?",
+      "assistant_message": "Atlas Van Lines requires an authorized adult to be present at both the origin and destination for the binding estimate to be honored and for the bill of lading to be signed. For the Harmon family, this means someone over 18 must be at the Austin address when the Atlas Van Lines crew arrives to load, and that same person or another authorized adult must be at the Portland address to accept delivery and sign the inventory checklist. If you need a trusted proxy to handle the Austin side while the Harmon family drives ahead with Biscuit, Atlas Van Lines will accept a signed power of attorney document naming that person, but request the form from your coordinator at least 10 days in advance."
+    },
+    {
+      "turn_id": "t26",
+      "user_message": "What's the latest we can change our pickup date with Atlas Van Lines without a penalty?",
+      "assistant_message": "Atlas Van Lines typically allows date changes up to 7 business days before the confirmed pickup date without any rescheduling penalty on long-distance moves. If the Harmon family needs to change within that 7-day window, Atlas Van Lines charges a rescheduling fee of $150 to $250 depending on how far the crew and truck have already been dispatched. It is worth confirming this specific window with your Atlas Van Lines coordinator in writing when you sign the binding estimate, since some regional agents apply a stricter 10-business-day policy during peak summer moving season, which late July definitely qualifies as."
+    },
+    {
+      "turn_id": "t27",
+      "user_message": "What happens if the Portland house closing is delayed and Atlas Van Lines arrives before we can take possession?",
+      "assistant_message": "If the Portland closing is delayed and the Harmon family cannot accept delivery, Atlas Van Lines will place the shipment into storage-in-transit at their Portland-area warehouse automatically, and daily storage fees begin accruing. The daily rate for Atlas Van Lines storage-in-transit in Portland typically runs $12 to $15 per day for a 3-bedroom shipment, so a one-week delay would cost roughly $84 to $105 in storage plus a re-delivery scheduling fee of approximately $275 when you are ready to receive. This scenario is exactly why the Harmon family's $2,000 contingency fund was built in, and a two-week closing delay would cost well under $500 total in Atlas Van Lines storage fees."
+    },
+    {
+      "turn_id": "t28",
+      "user_message": "What's the best way to update Biscuit's microchip registration and vet records before the move?",
+      "assistant_message": "Before the move, update Biscuit's microchip registration through the national database your Austin vet used, changing the address and phone number to your Portland contact information or a stable cell number that won't change. Request a full printed health record from Biscuit's Austin vet at least two weeks before moving day, including vaccination history, heartworm test results, and any prescription records, so you can register with a Portland vet immediately upon arrival. It is also worth asking your Austin vet to recommend a Portland-area practice, since a warm referral often gets new patients an appointment faster than a cold call, which matters if Biscuit needs anything after the PawsAboard transit."
+    },
+    {
+      "turn_id": "t29",
+      "user_message": "Can Atlas Van Lines give us a guaranteed delivery window rather than a spread of dates?",
+      "assistant_message": "Atlas Van Lines offers a guaranteed delivery option called Snapmoves for routes where their truck density is high enough, but Austin to Portland in late July may or may not qualify depending on truck availability. The standard long-distance Atlas Van Lines delivery window for that corridor is 7 to 14 business days from pickup, which means the Harmon family could be waiting up to two weeks in Portland before furniture arrives. If a guaranteed date is critical, ask your Atlas Van Lines coordinator about their Express or Priority service, which narrows delivery to a 1 to 3 day window for an additional fee typically ranging from $400 to $700 on a shipment this size."
+    },
+    {
+      "turn_id": "t30",
+      "user_message": "We want to make sure we don't go over $15,000 total. Can you give me the most current all-in estimate for the Harmon family move?",
+      "assistant_message": "Based on everything discussed, the Harmon family's current all-in estimate is $8,150 for Atlas Van Lines after the $700 self-packing discount, plus $650 for PawsAboard, plus approximately $1,000 for the car trip, plus $300 for Portland utility deposits and first-week setup essentials, totaling $10,100 in committed spend. With the $2,000 contingency reserved, total allocated funds reach $12,100, leaving $2,900 unallocated against the $15,000 budget. That $2,900 cushion is a healthy margin and should absorb tip for the Atlas Van Lines crews, any Biscuit vet costs, and minor setup purchases without touching the contingency."
+    },
+    {
+      "turn_id": "t31",
+      "user_message": "Should we get Biscuit a health certificate from the Austin vet for the PawsAboard transport?",
+      "assistant_message": "Yes, PawsAboard and most professional pet transport services require a USDA-accredited veterinarian health certificate issued within 10 days of transport for interstate ground transport, and Oregon does not require a separate state entry permit for dogs but does require the health certificate to confirm current rabies vaccination. Schedule Biscuit's health certificate appointment with your Austin vet no earlier than 10 days before PawsAboard's pickup date to ensure it remains valid for the full 3-day transit. Ask the Austin vet to include Biscuit's current weight on the certificate, since PawsAboard uses weight to confirm the correct crate size has been assigned."
+    },
+    {
+      "turn_id": "t32",
+      "user_message": "Is $10,100 in committed spend a realistic figure, or are we missing any major cost categories?",
+      "assistant_message": "The $10,100 committed spend for the Harmon family is realistic but may be missing two categories: school enrollment fees and records transfer costs for Maya Harmon and Leo Harmon, which can run $50 to $150 per child in administrative fees at some Portland public schools, and any overlap in housing costs if the Austin lease or mortgage payment and Portland mortgage overlap by even a few weeks. Also confirm whether the Atlas Van Lines binding estimate includes fuel surcharges, since some summer 2024 contracts added a 3 to 5 percent fuel surcharge that would add $245 to $420 to the $8,150 figure. Adding $300 for school costs and a conservative $350 fuel surcharge brings the realistic committed spend closer to $10,750."
+    },
+    {
+      "turn_id": "t33",
+      "user_message": "If PawsAboard picks up Biscuit in Austin on July 22nd, when should we expect him to arrive in Portland based on their 3-day transit time?",
+      "assistant_message": "With a July 22nd Austin pickup, PawsAboard's 3-day transit puts Biscuit's expected Portland arrival on July 25th, assuming no delays at the Redding, California overnight stop. PawsAboard typically delivers in the morning on the final day, so you should plan to be at the Portland address or have someone authorized to receive Biscuit by 9 a.m. on July 25th. Confirm with PawsAboard whether July 25th delivery is to your Portland home address or to a local PawsAboard depot, since their door-to-door coverage in Portland depends on whether your neighborhood falls within their standard delivery radius."
+    },
+    {
+      "turn_id": "t34",
+      "user_message": "Should we build in a buffer day between the Atlas Van Lines delivery and when we need the house fully functional for Maya Harmon and Leo Harmon to start school?",
+      "assistant_message": "Yes, the Harmon family should build in at least 3 buffer days between Atlas Van Lines furniture delivery and the first school day for Maya Harmon and Leo Harmon, since unpacking and setting up two children's bedrooms plus the kitchen realistically takes 2 full days minimum. Portland public schools typically begin in early September, so if the Atlas Van Lines delivery falls in the first week of August, the family has ample time, but if the closing delays push delivery into mid-August, the buffer tightens considerably. Prioritize setting up Maya Harmon and Leo Harmon's bedrooms and the kitchen on day one of unpacking so both children have a functioning, familiar space even if the rest of the house is still in boxes."
+    },
+    {
+      "turn_id": "t35",
+      "user_message": "Given everything we've decided about PawsAboard, what are the two most important things we need to confirm with them before we finalize the booking for Biscuit?",
+      "assistant_message": null
+    }
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer identifies that the PawsAboard quote is $650 and confirms whether the crate is included or is a separate $75-$95 add-on.",
+      "required": true,
+      "evidence_turn_ids": ["t20"]
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer addresses the 3-day transit time with an overnight stop at the Redding, California kennel facility, and confirms Biscuit needs at least two 15-minute exercise walks during that overnight stay.",
+      "required": true,
+      "evidence_turn_ids": ["t23"]
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer references confirming door-to-door coverage (Austin address to Portland address) rather than hub-to-hub depot service.",
+      "required": true,
+      "evidence_turn_ids": ["t20"]
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not state that the PawsAboard storage-in-transit cost is $745 to $855, which is the Atlas Van Lines storage-in-transit figure from the near-miss turn t11.",
+      "required": true,
+      "evidence_turn_ids": []
+    }
+  ],
+  "reference_answer": "Before finalizing the PawsAboard booking for Biscuit, the two most important things to confirm are: first, whether the $650 quote includes the IATA-compliant travel crate or whether the crate is a separate $75 to $95 add-on for a dog Biscuit's size; and second, that the service is truly door-to-door from your Austin address to your Portland address rather than a hub-to-hub arrangement requiring depot drop-off and pickup. You should also nail down the details of the Redding, California overnight stop, specifically that PawsAboard's kennel staff will give Biscuit at least two 15-minute exercise walks during that overnight, so a 4-year-old Labrador stays comfortable across the full 3-day transit.",
+  "notes": "The gold turns for the query are t18, t20, and t23, which establish the PawsAboard service, the $650 quote with the crate ambiguity, and the 3-day transit with Redding overnight details. The near-miss turn is t11, which answers a superficially similar question about storage-in-transit costs for Atlas Van Lines with specific figures ($745-$855) that have nothing to do with the PawsAboard booking confirmation question."
+}
+```

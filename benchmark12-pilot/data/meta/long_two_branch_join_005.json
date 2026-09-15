@@ -1,0 +1,121 @@
+{
+ "scenario_id": "long_two_branch_join_005",
+ "family": "two_branch_join",
+ "n_history": 47,
+ "full_history_tokens": 5269,
+ "closure_ratio": 0.1276595744680851,
+ "entity_registry": [
+  "Harmonics Choir",
+  "Director Sylvia M\u00e4kinen",
+  "Riverside Arts Centre",
+  "Tour Coordinator Bram Holloway",
+  "Spring Bloom Concert Tour",
+  "Venue Contract v2.3"
+ ],
+ "distractor_branch_entity_hits": {
+  "D": [
+   "Harmonics Choir",
+   "Director Sylvia M\u00e4kinen",
+   "Riverside Arts Centre",
+   "Tour Coordinator Bram Holloway",
+   "Spring Bloom Concert Tour"
+  ],
+  "E": [
+   "Harmonics Choir",
+   "Director Sylvia M\u00e4kinen",
+   "Riverside Arts Centre",
+   "Tour Coordinator Bram Holloway",
+   "Spring Bloom Concert Tour"
+  ],
+  "F": [
+   "Harmonics Choir",
+   "Director Sylvia M\u00e4kinen",
+   "Riverside Arts Centre",
+   "Tour Coordinator Bram Holloway",
+   "Spring Bloom Concert Tour"
+  ]
+ },
+ "near_miss_turn_id": "t17",
+ "checklist_evidence": {
+  "c1": [
+   "t46"
+  ],
+  "c2": [
+   "t37"
+  ],
+  "c3": [
+   "t37",
+   "t46"
+  ],
+  "c4": []
+ },
+ "cosine": {
+  "gold_median": 0.37593674659729004,
+  "distractor_median": 0.27178955078125,
+  "ratio": 0.7229661724779346,
+  "pass": true
+ },
+ "cosine_per_turn": {
+  "t1": 0.3487980365753174,
+  "t2": 0.28259944915771484,
+  "t3": 0.2796536684036255,
+  "t4": 0.36636272072792053,
+  "t5": 0.34246334433555603,
+  "t6": 0.18060405552387238,
+  "t7": 0.2839130163192749,
+  "t8": 0.20633754134178162,
+  "t9": 0.3782573342323303,
+  "t10": 0.3074837625026703,
+  "t11": 0.26899877190589905,
+  "t12": 0.3910982608795166,
+  "t13": 0.34347522258758545,
+  "t14": 0.2253124713897705,
+  "t15": 0.312211811542511,
+  "t16": 0.4057508111000061,
+  "t17": 0.3419644832611084,
+  "t18": 0.258495569229126,
+  "t19": 0.23792743682861328,
+  "t20": 0.20637638866901398,
+  "t21": 0.3019946813583374,
+  "t22": 0.3615431785583496,
+  "t23": 0.24587678909301758,
+  "t24": 0.15520469844341278,
+  "t25": 0.17960669100284576,
+  "t26": 0.2116318941116333,
+  "t27": 0.24948962032794952,
+  "t28": 0.33624720573425293,
+  "t29": 0.27178955078125,
+  "t30": 0.14305314421653748,
+  "t31": 0.34522974491119385,
+  "t32": 0.19877828657627106,
+  "t33": 0.26468372344970703,
+  "t34": 0.13981902599334717,
+  "t35": 0.30826038122177124,
+  "t36": 0.3346319794654846,
+  "t37": 0.694675624370575,
+  "t38": 0.08984774351119995,
+  "t39": 0.16865338385105133,
+  "t40": 0.7817838191986084,
+  "t41": 0.2538381516933441,
+  "t42": 0.2959510087966919,
+  "t43": 0.31985774636268616,
+  "t44": 0.35484951734542847,
+  "t45": 0.33448103070259094,
+  "t46": 0.37361615896224976,
+  "t47": 0.1592262089252472
+ },
+ "gold_branches": [
+  "A",
+  "B"
+ ],
+ "distractor_branches": [
+  "D",
+  "E",
+  "F"
+ ],
+ "attempt_accepted": 1,
+ "generation_tokens": [
+  5052,
+  8431
+ ]
+}

@@ -1,0 +1,286 @@
+I need to make the distractor branches much closer in content to the gold branch (branch A) so they share more vocabulary and entity overlap, while still being about different sub-problems of the same backyard observatory project.
+
+Let me design Branch A around a specific technical topic (e.g., telescope mount polar alignment and tracking rates), and make all distractors about closely related observatory sub-problems (dome clearance angles, motor specs, gear ratios, encoder resolution, slew speeds, etc.) that use the same entities and similar technical vocabulary.
+
+```json
+{
+  "entity_registry": [
+    "Marcus Velde",
+    "Stellarpath 10-inch Ritchey-Chrétien",
+    "AZ-EQ6 Pro mount",
+    "SynScan firmware v4.39.05",
+    "Backyard Observatory Build Log v2",
+    "Polaris Offset Calculator spreadsheet"
+  ],
+  "turns": [
+    {
+      "turn_id": "t1",
+      "user_message": "I'm setting up polar alignment for the AZ-EQ6 Pro mount and I want to nail down the exact polar scope reticle offset I need to use. Can you help me work through the numbers?",
+      "assistant_message": "For the AZ-EQ6 Pro mount, the polar scope reticle is calibrated so that Polaris sits on a small circle offset 41.6 arcminutes from the reticle center, which corresponds to Polaris's current angular distance from the true celestial pole. Marcus Velde documented this in the Backyard Observatory Build Log v2, noting that with SynScan firmware v4.39.05 the mount's built-in polar alignment routine uses exactly that 41.6 arcminute offset value. The Polaris Offset Calculator spreadsheet also confirms that at epoch J2024.5 the offset rounds to 41.6 arcminutes, not the older 42.3 arcminute figure sometimes cited for J2000 tables."
+    },
+    {
+      "turn_id": "t2",
+      "user_message": "What wiring gauge did Marcus Velde settle on for the dew heater strips on the Stellarpath 10-inch Ritchey-Chrétien?",
+      "assistant_message": "Marcus Velde decided on 20 AWG silicone-jacketed wire for the dew heater strips on the Stellarpath 10-inch Ritchey-Chrétien, rated for continuous 5-amp draw at 12 V. The Backyard Observatory Build Log v2 records the choice made on 14 March 2024, when he calculated a maximum heat load of 48 watts across the two corrector-plate heater strips. He sourced the wire from a local marine-supply shop to ensure flexibility in sub-zero temperatures."
+    },
+    {
+      "turn_id": "t3",
+      "user_message": "I need to figure out the slew speed limits for the AZ-EQ6 Pro mount so I don't overshoot targets. What are the maximum slew rates available?",
+      "assistant_message": "The AZ-EQ6 Pro mount offers nine slew rate steps under SynScan firmware v4.39.05, with the maximum rate set at 800x sidereal, which translates to approximately 3.34 degrees per second in both RA and Dec axes. Marcus Velde tested this in the Backyard Observatory Build Log v2 and found that at 800x the mount draws a peak of 3.8 amps on the 12 V supply, so he capped routine slews at 600x (about 2.5 degrees per second) to stay within the observatory's 3-amp continuous rating. The SynScan firmware also allows a custom speed limit to be written directly to the hand controller's EEPROM, which Velde set to 600x as the default."
+    },
+    {
+      "turn_id": "t4",
+      "user_message": "And what's the slowest guiding rate available on that same mount under that firmware?",
+      "assistant_message": "Under SynScan firmware v4.39.05, the AZ-EQ6 Pro mount's minimum autoguider pulse rate is 0.25x sidereal, meaning the correction moves at one-quarter of the normal 15 arcseconds-per-second tracking rate. Marcus Velde noted in the Backyard Observatory Build Log v2 that he tested 0.25x, 0.50x, and 1.00x guide rates and settled on 0.50x sidereal as the best balance between correction speed and oscillation suppression for the Stellarpath 10-inch Ritchey-Chrétien's 2000 mm focal length. At 0.50x the mount applies 7.5 arcseconds of correction per second of pulse, which keeps RMS guiding error below 1.2 arcseconds on a typical night."
+    },
+    {
+      "turn_id": "t5",
+      "user_message": "How many guide pulses per second can the AZ-EQ6 Pro actually process before it starts dropping commands?",
+      "assistant_message": "According to tests Marcus Velde ran and recorded in the Backyard Observatory Build Log v2, the AZ-EQ6 Pro mount under SynScan firmware v4.39.05 reliably processes up to 4 guide pulses per second per axis without dropping commands. Above 5 pulses per second the firmware's ST-4 interface begins missing roughly 12 percent of incoming pulses, which Velde confirmed by logging PHD2 output against the mount's command acknowledgment timestamps. He therefore set PHD2's maximum pulse frequency to 4 Hz when guiding the Stellarpath 10-inch Ritchey-Chrétien to stay safely within that limit."
+    },
+    {
+      "turn_id": "t6",
+      "user_message": "What dome slit width did Marcus Velde calculate for the observatory to give full sky coverage with the Stellarpath 10-inch Ritchey-Chrétien?",
+      "assistant_message": "Marcus Velde calculated a minimum dome slit width of 38 cm to provide unvignetted sky coverage for the Stellarpath 10-inch Ritchey-Chrétien across all declinations from -30° to +90°. He recorded this figure in the Backyard Observatory Build Log v2 on 2 February 2024, accounting for the telescope's 254 mm aperture plus a 63 mm margin on each side for the focuser drawtube travel at maximum extension. The AZ-EQ6 Pro mount's dovetail saddle width of 215 mm was also factored in to ensure the optical train never intersects the slit edge during meridian flips."
+    },
+    {
+      "turn_id": "t7",
+      "user_message": "What gear tooth count did Marcus Velde confirm for the RA worm wheel on the AZ-EQ6 Pro mount?",
+      "assistant_message": "Marcus Velde confirmed that the AZ-EQ6 Pro mount's RA axis uses a 144-tooth worm wheel, a figure he verified by counting teeth on a disassembled unit and cross-checking against the SynScan firmware v4.39.05 motor-steps-per-revolution parameter stored in the controller. He logged this in the Backyard Observatory Build Log v2 alongside the corresponding 144-tooth Dec worm wheel count, noting both axes are mechanically identical in that respect. The Polaris Offset Calculator spreadsheet references this 144-tooth figure when computing the periodic error correction curve for the AZ-EQ6 Pro."
+    },
+    {
+      "turn_id": "t8",
+      "user_message": "So once I have the Polaris offset set to 41.6 arcminutes, what's the procedure for rotating the reticle to the correct position angle before I do the alignment?",
+      "assistant_message": "With the 41.6 arcminute offset confirmed, the next step is to rotate the polar scope reticle so that the Polaris position circle sits at the correct hour-angle clock position before you place the star on it. SynScan firmware v4.39.05 displays a real-time clock position for Polaris on the hand controller screen, expressed as an angle from 0° to 360° reading clockwise from the top of the reticle field. Marcus Velde noted in the Backyard Observatory Build Log v2 that the reticle must be physically rotated to match this displayed angle within ±2° before attempting the three-star alignment, because errors larger than that introduce a systematic Dec drift that the Polaris Offset Calculator spreadsheet showed can reach 8 arcseconds per minute at the celestial equator."
+    },
+    {
+      "turn_id": "t9",
+      "user_message": "And what's the tolerance on the polar alignment error itself—how many arcminutes off can I be before it starts affecting long-exposure imaging with this setup?",
+      "assistant_message": "For the Stellarpath 10-inch Ritchey-Chrétien on the AZ-EQ6 Pro mount, Marcus Velde established in the Backyard Observatory Build Log v2 that polar alignment error must be kept within 3.5 arcminutes of the true pole to hold star trails below 5 pixels of drift over a 10-minute unguided exposure at the telescope's native 2000 mm focal length. Beyond 3.5 arcminutes of residual error, field rotation accumulates faster than the autoguider can compensate, and the Polaris Offset Calculator spreadsheet predicts trailing exceeding 12 pixels at the 10-minute mark. Velde therefore adopted a personal target of 2 arcminutes or better, achievable in practice by iterating the SynScan drift-alignment assistant two or three times."
+    },
+    {
+      "turn_id": "t10",
+      "user_message": "What stepper motor model is driving the RA axis on the AZ-EQ6 Pro mount in Marcus Velde's setup?",
+      "assistant_message": "The AZ-EQ6 Pro mount in Marcus Velde's observatory uses a 1.8-degree-per-step bipolar stepper motor on the RA axis, specifically a Sanyo Denki 103H7126-0440 rated at 1.0 A per phase and 0.44 N·m holding torque. He identified this by opening the drive enclosure and photographing the motor label, recording the model number in the Backyard Observatory Build Log v2 on 18 April 2024. SynScan firmware v4.39.05 drives this motor in 128-microstep mode, giving an effective step resolution of 0.01406 degrees per microstep on the RA axis before the worm-wheel reduction."
+    },
+    {
+      "turn_id": "t11",
+      "user_message": "Did Marcus Velde end up using a fused or unfused connection for those dew heater strips on the Stellarpath?",
+      "assistant_message": "Marcus Velde wired the dew heater strips on the Stellarpath 10-inch Ritchey-Chrétien through a 5-amp blade fuse in a waterproof inline holder, as documented in the Backyard Observatory Build Log v2 entry dated 20 March 2024. He chose the fused approach after a dew controller manufacturer's note warned that unfused heater circuits can sustain 9-amp fault currents if a strip develops an internal short. The fuse holder was mounted on the telescope's accessory rail using a 3D-printed bracket that Velde designed to keep the fuse accessible without removing the AZ-EQ6 Pro mount's counterweight shaft."
+    },
+    {
+      "turn_id": "t12",
+      "user_message": "What's the microstepping resolution on the Dec axis of the AZ-EQ6 Pro—is it the same 128-microstep mode as RA?",
+      "assistant_message": "Yes, the Dec axis of the AZ-EQ6 Pro mount also runs in 128-microstep mode under SynScan firmware v4.39.05, giving the same 0.01406 degrees per microstep before the worm-wheel reduction as the RA axis. Marcus Velde confirmed this symmetry in the Backyard Observatory Build Log v2 by reading both axes' step-rate registers through the SynScan serial command interface. With the 144-tooth worm wheel on the Dec axis, the final angular resolution per microstep works out to approximately 0.35 arcseconds, which Velde noted is finer than the Stellarpath 10-inch Ritchey-Chrétien's diffraction-limited resolution of about 0.46 arcseconds."
+    },
+    {
+      "turn_id": "t13",
+      "user_message": "What periodic error amplitude did Marcus Velde measure for the AZ-EQ6 Pro's RA worm gear?",
+      "assistant_message": "Marcus Velde measured the AZ-EQ6 Pro mount's RA periodic error at ±12.4 arcseconds peak-to-peak over one full 8-minute worm period, logging the result in the Backyard Observatory Build Log v2 after a 90-minute PEC training session on 5 May 2024. He used the Stellarpath 10-inch Ritchey-Chrétien with a guide camera running at 10 frames per second to capture the full worm cycle at high resolution. The Polaris Offset Calculator spreadsheet includes a tab where he plotted the raw PE curve before and after PEC playback, showing residual error reduced to ±3.1 arcseconds with PEC enabled."
+    },
+    {
+      "turn_id": "t14",
+      "user_message": "What concrete dimensions did Marcus Velde settle on for the observatory's pier height?",
+      "assistant_message": "Marcus Velde settled on a steel pier height of 91.4 cm (36 inches) from the concrete pad surface to the AZ-EQ6 Pro mount's base plate, as recorded in the Backyard Observatory Build Log v2 on 10 January 2024. At that height the Stellarpath 10-inch Ritchey-Chrétien's eyepiece end clears the dome's interior wall by 22 cm when the telescope is pointed at 15° above the southern horizon, the lowest target declination Marcus plans to image. The pier is a 10 cm diameter Schedule 40 steel pipe with a 30 cm square base plate welded at the bottom, grouted into a 45 cm deep concrete footing."
+    },
+    {
+      "turn_id": "t15",
+      "user_message": "After the PEC training, what correction playback mode did Marcus Velde enable in SynScan firmware v4.39.05?",
+      "assistant_message": "Marcus Velde enabled the PEC playback in continuous-loop mode within SynScan firmware v4.39.05, which replays the recorded 8-minute correction table repeatedly as long as tracking is active. He noted in the Backyard Observatory Build Log v2 that the firmware stores up to 200 correction points per worm cycle, and his training session produced exactly 200 evenly spaced corrections at 2.4-second intervals across the 480-second period. With playback active, the AZ-EQ6 Pro mount's unguided RA tracking on the Stellarpath 10-inch Ritchey-Chrétien held within ±3.1 arcseconds, matching the residual PE figure from the Polaris Offset Calculator spreadsheet's PE tab."
+    },
+    {
+      "turn_id": "t16",
+      "user_message": "What is the exact dome slit opening angle that Marcus Velde computed for the observatory's 2.4-metre dome diameter?",
+      "assistant_message": "Marcus Velde computed a dome slit opening angle of 22.5 degrees on each side of the slit centerline, giving a total angular slit width of 45 degrees, for the 2.4-metre diameter dome. He derived this from the 38 cm physical slit width he had previously established for the Stellarpath 10-inch Ritchey-Chrétien, applying the arc-length formula with a dome radius of 1.2 metres, as recorded in the Backyard Observatory Build Log v2 entry dated 12 February 2024. The AZ-EQ6 Pro mount's pier center is offset 8 cm south of the dome's geometric center to bias clearance toward the southern sky."
+    },
+    {
+      "turn_id": "t17",
+      "user_message": "What's the maximum slew rate that Marcus Velde actually uses in practice for the AZ-EQ6 Pro when doing quick target hops between objects?",
+      "assistant_message": "For quick target hops between objects, Marcus Velde uses 600x sidereal as his practical maximum slew rate on the AZ-EQ6 Pro mount under SynScan firmware v4.39.05, equating to approximately 2.5 degrees per second in both axes. He documented this choice in the Backyard Observatory Build Log v2, noting that 600x keeps the peak current draw at 2.8 amps on the 12 V supply, safely below the observatory's 3-amp continuous wiring limit. At 600x a full 180-degree meridian flip of the Stellarpath 10-inch Ritchey-Chrétien completes in about 72 seconds."
+    },
+    {
+      "turn_id": "t18",
+      "user_message": "What total wattage did the dew heater system draw during Marcus Velde's coldest test night with the Stellarpath running?",
+      "assistant_message": "On the coldest recorded test night, 14 January 2024 at -11°C ambient, the full dew heater system on the Stellarpath 10-inch Ritchey-Chrétien drew a total of 62 watts, as Marcus Velde logged in the Backyard Observatory Build Log v2. That figure broke down as 48 watts for the two corrector-plate strips and an additional 14 watts for the eyepiece-end heater ring he added after the initial wiring run. The AZ-EQ6 Pro mount's own electronics added another 18 watts at that temperature, bringing the total observatory power load to 80 watts on that session."
+    },
+    {
+      "turn_id": "t19",
+      "user_message": "What controller model is Marcus Velde using to regulate those dew heater strips, and what PWM frequency does it operate at?",
+      "assistant_message": "Marcus Velde is using an Astrozap AZ-720 dew controller to regulate the heater strips on the Stellarpath 10-inch Ritchey-Chrétien, operating at a PWM frequency of 488 Hz as measured with an oscilloscope on 20 March 2024 and recorded in the Backyard Observatory Build Log v2. The AZ-720 provides four independently adjustable channels, and Velde runs the two corrector-plate strips on channels 1 and 2 at 80 percent duty cycle during sub-zero sessions. He noted that at 488 Hz the PWM switching noise did not appear in the guide camera's dark frames when the AZ-EQ6 Pro mount was tracking."
+    },
+    {
+      "turn_id": "t20",
+      "user_message": "What's the total step count per RA revolution that SynScan firmware v4.39.05 uses for the AZ-EQ6 Pro, accounting for the worm gear and microstepping?",
+      "assistant_message": "SynScan firmware v4.39.05 uses a total of 9,024,000 microsteps per full 360-degree RA revolution for the AZ-EQ6 Pro mount, which Marcus Velde read directly from the mount's firmware parameter block via the serial command interface and recorded in the Backyard Observatory Build Log v2. This figure comes from the 200-step-per-revolution motor in 128-microstep mode (25,600 microsteps per motor revolution) multiplied by the 352.5:1 overall RA gear ratio including the 144-tooth worm wheel. Velde cross-checked this against the Polaris Offset Calculator spreadsheet's sidereal rate column and confirmed the values were internally consistent to within 0.002 percent."
+    },
+    {
+      "turn_id": "t21",
+      "user_message": "Did Marcus Velde also run a dew heater on the finder scope, and if so what wattage?",
+      "assistant_message": "Yes, Marcus Velde added a 7-watt dew heater band to the finder scope mounted on the Stellarpath 10-inch Ritchey-Chrétien, connected to channel 3 of the Astrozap AZ-720 controller, as noted in the Backyard Observatory Build Log v2 entry from 28 March 2024. He chose the 7-watt band because the finder's 50 mm objective is small enough that a higher-wattage heater risks thermally distorting the lens cell. The AZ-EQ6 Pro mount's accessory rail provided a convenient cable routing path to keep the heater lead clear of the counterweight shaft during slews."
+    },
+    {
+      "turn_id": "t22",
+      "user_message": "Going back to the slew rate testing—did Marcus Velde measure any backlash in the Dec axis at the 600x slew speed when reversing direction?",
+      "assistant_message": "Marcus Velde measured 18 arcseconds of Dec backlash when reversing direction after a 600x sidereal slew on the AZ-EQ6 Pro mount, recording this in the Backyard Observatory Build Log v2 on 22 April 2024. He measured it by slewing 5 degrees north at 600x, then commanding an immediate southward slew and timing the delay before the Stellarpath 10-inch Ritchey-Chrétien's reticle actually moved in the guide camera. SynScan firmware v4.39.05 allows a backlash compensation value to be entered in arcseconds, and Velde set it to 18 arcseconds on the Dec axis to pre-load the gear train before each reversal."
+    },
+    {
+      "turn_id": "t23",
+      "user_message": "What backlash value did he measure on the RA axis under the same conditions?",
+      "assistant_message": "On the RA axis of the AZ-EQ6 Pro mount, Marcus Velde measured 9 arcseconds of backlash under the same 600x sidereal slew-and-reverse test, and he entered 9 arcseconds into SynScan firmware v4.39.05's RA backlash compensation register. He noted in the Backyard Observatory Build Log v2 that the RA backlash was roughly half the Dec figure because the RA worm gear had been previously lubricated with Mobil 28 grease during a service, while the Dec gear was still on the original factory grease. The Polaris Offset Calculator spreadsheet's notes tab records both backlash values alongside the PEC data for completeness."
+    },
+    {
+      "turn_id": "t24",
+      "user_message": "After entering those backlash compensation values, what slew-to-target accuracy did Marcus Velde achieve in subsequent GoTo tests?",
+      "assistant_message": "After entering the 18-arcsecond Dec and 9-arcsecond RA backlash values into SynScan firmware v4.39.05, Marcus Velde achieved a mean GoTo accuracy of 2.8 arcminutes RMS across 20 test targets spanning the full sky, as logged in the Backyard Observatory Build Log v2 on 30 April 2024. Before compensation the mean error had been 5.1 arcminutes RMS, so the improvement was nearly a factor of two. He considered 2.8 arcminutes satisfactory for centering targets in the Stellarpath 10-inch Ritchey-Chrétien's field of view using a 30 mm eyepiece giving a 1.1-degree true field."
+    },
+    {
+      "turn_id": "t25",
+      "user_message": "Did Marcus Velde ever measure the RA periodic error after enabling PEC playback, and was it really holding at ±3.1 arcseconds?",
+      "assistant_message": "Yes, Marcus Velde performed a verification run on 12 May 2024, logging 45 minutes of unguided RA tracking on the AZ-EQ6 Pro mount with PEC playback active and confirmed the residual periodic error remained within ±3.1 arcseconds peak-to-peak across all six worm cycles captured. He recorded the verification in the Backyard Observatory Build Log v2 alongside a graph exported from PHD2 Guiding, showing the periodic signature reduced to a nearly flat trace compared to the original ±12.4 arcseconds raw PE. The Stellarpath 10-inch Ritchey-Chrétien's guide camera pixel scale of 1.04 arcseconds per pixel made the ±3.1 arcsecond residual clearly visible but acceptable for guided imaging."
+    },
+    {
+      "turn_id": "t26",
+      "user_message": "What guide camera pixel scale did Marcus Velde compute for that setup, and how did he arrive at that number?",
+      "assistant_message": "Marcus Velde computed the guide camera pixel scale as 1.04 arcseconds per pixel using the standard formula: pixel scale equals (pixel size in microns divided by focal length in mm) multiplied by 206.265. He used the guide camera's 4.65-micron pixel pitch and the Stellarpath 10-inch Ritchey-Chrétien's 2000 mm focal length, recording the calculation in the Backyard Observatory Build Log v2 on 3 May 2024. The AZ-EQ6 Pro mount's SynScan firmware v4.39.05 guide-pulse calibration routine confirmed this figure empirically by measuring the actual star displacement per 1000-millisecond pulse at sidereal rate."
+    },
+    {
+      "turn_id": "t27",
+      "user_message": "What guide camera model is Marcus Velde using, and what's the sensor size in megapixels?",
+      "assistant_message": "Marcus Velde is using a ZWO ASI120MM Mini guide camera with a 1.2-megapixel CMOS sensor (1280 × 960 pixels at 4.65-micron pitch), which he mounted on the Stellarpath 10-inch Ritchey-Chrétien's 50 mm finder scope bracket. He selected this camera because its USB 2.0 interface is fully supported by SynScan firmware v4.39.05's PHD2 integration profile, as he noted in the Backyard Observatory Build Log v2 entry from 28 April 2024. The AZ-EQ6 Pro mount's ST-4 port connects directly to the ASI120MM Mini's guide output, eliminating the need for a separate pulse-through relay box."
+    },
+    {
+      "turn_id": "t28",
+      "user_message": "What overall gear ratio did Marcus Velde calculate for the Dec axis of the AZ-EQ6 Pro, and does it match the RA axis?",
+      "assistant_message": "Marcus Velde calculated the Dec axis overall gear ratio as 352.5:1, identical to the RA axis, confirming that both axes of the AZ-EQ6 Pro mount share the same mechanical train. He derived this by multiplying the 144-tooth worm wheel reduction (144:1 at the worm stage) by the 2.448:1 spur-gear pre-reduction stage, which he measured by counting teeth on the intermediate spur gears and recorded in the Backyard Observatory Build Log v2 on 18 April 2024. SynScan firmware v4.39.05 stores identical steps-per-revolution values for both axes, which Velde verified matches the theoretical 9,024,000 microsteps-per-revolution figure from the Polaris Offset Calculator spreadsheet."
+    },
+    {
+      "turn_id": "t29",
+      "user_message": "What thickness of steel plate did Marcus Velde specify for the pier's top flange where the AZ-EQ6 Pro mount bolts on?",
+      "assistant_message": "Marcus Velde specified a 12 mm thick steel top flange for the pier, machined flat to within 0.05 mm across the 200 mm bolt-circle diameter that accepts the AZ-EQ6 Pro mount's four M10 mounting bolts. He recorded this specification in the Backyard Observatory Build Log v2 on 15 January 2024, noting that the flatness tolerance was necessary to avoid introducing a systematic polar alignment tilt that the Polaris Offset Calculator spreadsheet estimated could reach 1.8 arcminutes per 0.1 mm of flange unevenness. A local machine shop fabricated the flange to spec, and Velde confirmed flatness with a dial indicator before grouting the pier."
+    },
+    {
+      "turn_id": "t30",
+      "user_message": "What bolt torque spec did Marcus Velde use when fastening the AZ-EQ6 Pro mount to that pier flange?",
+      "assistant_message": "Marcus Velde torqued the four M10 mounting bolts to 35 N·m using a calibrated click-type torque wrench, as recorded in the Backyard Observatory Build Log v2 on 5 February 2024 when the AZ-EQ6 Pro mount was first installed on the pier. He chose 35 N·m based on the standard torque specification for M10 Grade 8.8 bolts in a steel-to-steel joint, which he cross-referenced against a fastener handbook. After torquing, he measured the polar alignment offset introduced by the installation to be less than 0.5 arcminutes, well within the Stellarpath 10-inch Ritchey-Chrétien's imaging tolerance documented in the Backyard Observatory Build Log v2."
+    },
+    {
+      "turn_id": "t31",
+      "user_message": "What's the total number of microsteps the AZ-EQ6 Pro firmware executes per sidereal second of RA tracking?",
+      "assistant_message": "At sidereal rate the AZ-EQ6 Pro mount under SynScan firmware v4.39.05 executes approximately 619.2 microsteps per sidereal second on the RA axis, which Marcus Velde computed by dividing the 9,024,000 microsteps-per-revolution figure by the 14,575.8 sidereal seconds in one sidereal day. He verified this empirically by capturing the firmware's step-clock output on an oscilloscope and counting 619 pulses per second, recording the result in the Backyard Observatory Build Log v2 on 20 April 2024. The Polaris Offset Calculator spreadsheet uses this 619.2 microsteps-per-sidereal-second value when modeling the mount's response to guide pulses of varying duration."
+    },
+    {
+      "turn_id": "t32",
+      "user_message": "What was the maximum ambient temperature Marcus Velde tested the dew heater system at, and did the heaters cycle off automatically?",
+      "assistant_message": "Marcus Velde tested the dew heater system on the Stellarpath 10-inch Ritchey-Chrétien at a maximum ambient temperature of +18°C on the night of 2 September 2024, as recorded in the Backyard Observatory Build Log v2. At that temperature the Astrozap AZ-720 controller's automatic humidity-sensing mode reduced the corrector-plate heater duty cycle from 80 percent to 35 percent, cutting power draw from 48 watts to 16.8 watts across the two strips. The AZ-EQ6 Pro mount's own electronics remained at their baseline 18-watt draw regardless of ambient temperature, giving a total observatory load of 34.8 watts on that session."
+    },
+    {
+      "turn_id": "t33",
+      "user_message": "What concrete footing depth did Marcus Velde pour for the observatory pier, and what mix ratio did he use?",
+      "assistant_message": "Marcus Velde poured a 45 cm deep concrete footing for the observatory pier using a 1:2:3 mix ratio by volume (1 part Portland cement, 2 parts sharp sand, 3 parts 20 mm aggregate), as recorded in the Backyard Observatory Build Log v2 on 8 January 2024. He calculated the 45 cm depth based on the local frost line of 30 cm plus a 15 cm bearing margin, ensuring the AZ-EQ6 Pro mount's pier would not shift during winter freeze-thaw cycles. The Polaris Offset Calculator spreadsheet's structural notes tab includes his footing load calculation showing the combined weight of the pier, mount, and Stellarpath 10-inch Ritchey-Chrétien as 87 kg total."
+    },
+    {
+      "turn_id": "t34",
+      "user_message": "After the May 2024 PEC verification, did Marcus Velde do any further tuning of the AZ-EQ6 Pro's worm gear, or was he satisfied with the ±3.1 arcsecond residual?",
+      "assistant_message": "After the May 2024 verification Marcus Velde was satisfied with the ±3.1 arcsecond residual and did not retrain the PEC table, noting in the Backyard Observatory Build Log v2 that further improvement would require a hardware adjustment of the worm mesh preload rather than a firmware solution. He did, however, update the PEC table once more on 3 August 2024 after a routine re-lubrication of the RA worm gear, which slightly shifted the phase of the periodic error signature. The Polaris Offset Calculator spreadsheet's PE tab was updated with the August data, showing the residual remained within ±3.2 arcseconds after re-training, essentially unchanged from the May result on the AZ-EQ6 Pro."
+    },
+    {
+      "turn_id": "t35",
+      "user_message": "Did Marcus Velde ever add a secondary dew heater controller as a backup, or is the Astrozap AZ-720 the only one in the system?",
+      "assistant_message": "Marcus Velde added a second Astrozap AZ-720 unit as a backup on 15 October 2024, wiring it in parallel with the primary controller but leaving it powered off unless the primary fails, as recorded in the Backyard Observatory Build Log v2. He chose an identical model rather than a different brand to ensure the same 488 Hz PWM frequency, avoiding any change in the electrical noise environment around the Stellarpath 10-inch Ritchey-Chrétien's guide camera. The backup unit is connected to the AZ-EQ6 Pro mount's accessory power port rather than the main observatory power strip, so a main-strip failure would not knock out both heater controllers simultaneously."
+    },
+    {
+      "turn_id": "t36",
+      "user_message": "Did Marcus Velde ever measure backlash at lower slew speeds, say at 200x sidereal, to see if it changed?",
+      "assistant_message": "Marcus Velde tested backlash at 200x sidereal on the AZ-EQ6 Pro mount on 5 May 2024 and found the Dec backlash dropped to 14 arcseconds and the RA backlash dropped to 6 arcseconds, compared to 18 and 9 arcseconds respectively at 600x, as recorded in the Backyard Observatory Build Log v2. He attributed the lower values to reduced inertia in the gear train at the slower slew speed, which allowed the worm to take up slack more gradually. SynScan firmware v4.39.05 uses a single fixed backlash compensation value regardless of slew speed, so Velde left his compensation settings at the 600x-measured values of 18 and 9 arcseconds to cover the worst case for the Stellarpath 10-inch Ritchey-Chrétien's GoTo performance."
+    },
+    {
+      "turn_id": "t37",
+      "user_message": "What is the spur-gear pre-reduction ratio Marcus Velde measured for the RA axis—was it really 2.448:1?",
+      "assistant_message": "Yes, Marcus Velde confirmed the spur-gear pre-reduction ratio on the RA axis of the AZ-EQ6 Pro mount as 2.448:1, derived from a 122-tooth driven gear meshing with a 49-tooth drive gear (122 ÷ 49 = 2.4898, which he rounded to 2.448 after accounting for a 3-tooth compound intermediate stage). He documented the full tooth count in the Backyard Observatory Build Log v2 on 18 April 2024 alongside photographs of the disassembled gear train. The Polaris Offset Calculator spreadsheet uses the unrounded 2.4898:1 figure in its microstep calculations to arrive at the 9,024,000 steps-per-revolution total for the Stellarpath 10-inch Ritchey-Chrétien imaging system."
+    },
+    {
+      "turn_id": "t38",
+      "user_message": "What was the total combined weight of the pier, AZ-EQ6 Pro mount, and Stellarpath 10-inch Ritchey-Chrétien that Marcus Velde used for the footing load calculation?",
+      "assistant_message": "Marcus Velde's footing load calculation used a total combined weight of 87 kg, broken down as 32 kg for the steel pier, 17 kg for the AZ-EQ6 Pro mount head, and 38 kg for the Stellarpath 10-inch Ritchey-Chrétien optical tube assembly with accessories. He recorded these figures in the Backyard Observatory Build Log v2 on 8 January 2024, noting that the 38 kg OTA weight includes the camera train, guide scope, and dew heater hardware. The Polaris Offset Calculator spreadsheet's structural tab uses the 87 kg total to confirm the 45 cm footing is adequate for a safety factor of 4.2 against soil bearing failure."
+    },
+    {
+      "turn_id": "t39",
+      "user_message": "What is the minimum altitude above the horizon that the dome slit allows for the Stellarpath 10-inch Ritchey-Chrétien, and did Marcus Velde verify it matches the 15-degree target?",
+      "assistant_message": "Marcus Velde verified that with the 38 cm slit width and 22.5-degree half-angle geometry, the dome allows the Stellarpath 10-inch Ritchey-Chrétien to observe down to 14.8 degrees above the southern horizon, which he rounded to 15 degrees for planning purposes and confirmed in the Backyard Observatory Build Log v2 on 20 February 2024. He performed the verification by manually slewing the AZ-EQ6 Pro mount to a target at Dec -28° from his 51°N latitude site and confirming the optical tube cleared the slit edge with 3 cm to spare. The Polaris Offset Calculator spreadsheet's geometry tab includes his trigonometric calculation showing the 14.8-degree result."
+    },
+    {
+      "turn_id": "t40",
+      "user_message": "What is the weight of just the AZ-EQ6 Pro mount head by itself, without counterweights or telescope?",
+      "assistant_message": "The AZ-EQ6 Pro mount head weighs 17 kg without counterweights or optical tube, a figure Marcus Velde confirmed by placing it on a calibrated postal scale and recording the result in the Backyard Observatory Build Log v2 on 5 February 2024. He needed the bare mount weight separately from the full system to calculate the pier flange stress under dynamic slewing loads, which he estimated at 2.3 times the static weight based on a 3-degree-per-second maximum acceleration. The Polaris Offset Calculator spreadsheet's structural tab uses the 17 kg mount weight alongside the 38 kg Stellarpath 10-inch Ritchey-Chrétien OTA weight in the flange bolt-load calculation."
+    },
+    {
+      "turn_id": "t41",
+      "user_message": "Did Marcus Velde record the total power draw of the entire observatory system including both dew controllers and the mount on a typical winter night?",
+      "assistant_message": "On a typical winter night at -5°C, Marcus Velde recorded a total observatory power draw of 116 watts, broken down in the Backyard Observatory Build Log v2 entry dated 20 November 2024 as follows: 48 watts for the corrector-plate heater strips, 14 watts for the eyepiece heater ring, 7 watts for the finder-scope heater, 18 watts for the AZ-EQ6 Pro mount electronics, and 29 watts for the imaging computer and camera system connected to the Stellarpath 10-inch Ritchey-Chrétien. The primary Astrozap AZ-720 controller was running at 80 percent duty cycle on channels 1 and 2, and the backup AZ-720 remained powered off, so the 116-watt figure reflects only the primary heater system."
+    },
+    {
+      "turn_id": "t42",
+      "user_message": "What is the total dome diameter Marcus Velde ended up building, and is it the 2.4-metre figure that was planned, or did it change?",
+      "assistant_message": "Marcus Velde built the observatory dome to its planned 2.4-metre interior diameter, confirming the final dimension in the Backyard Observatory Build Log v2 on 1 April 2024 after the fibreglass shell was delivered and installed. He measured the interior at four cardinal points and found it ranged from 2.39 to 2.41 metres, within the 10 mm fabrication tolerance he had specified to the manufacturer. The AZ-EQ6 Pro mount's pier offset of 8 cm south of dome center was verified at the same time using a plumb line from the dome's apex, and the Stellarpath 10-inch Ritchey-Chrétien's full slew envelope was confirmed to clear the dome walls by at least 18 cm at all orientations."
+    },
+    {
+      "turn_id": "t43",
+      "user_message": "What is the overall gear ratio Marcus Velde confirmed for the RA axis, expressed as a single decimal number?",
+      "assistant_message": "Marcus Velde confirmed the AZ-EQ6 Pro mount's RA axis overall gear ratio as 352.5:1, expressed as the decimal 352.5, in the Backyard Observatory Build Log v2 on 18 April 2024. He derived this by multiplying the 144-tooth worm wheel ratio by the 2.448:1 spur-gear pre-reduction, giving 144 × 2.448 = 352.5 exactly when using the rounded pre-reduction figure. The Polaris Offset Calculator spreadsheet uses the unrounded product of 144 × 2.4898 = 358.5 for its step calculations, so Velde noted that both figures are in use in different documents for the Stellarpath 10-inch Ritchey-Chrétien system."
+    },
+    {
+      "turn_id": "t44",
+      "user_message": "What is the dome wall clearance Marcus Velde measured at the most constrained orientation for the Stellarpath 10-inch Ritchey-Chrétien?",
+      "assistant_message": "The most constrained orientation for the Stellarpath 10-inch Ritchey-Chrétien in Marcus Velde's 2.4-metre dome occurs when the telescope is pointing due east at 20 degrees altitude during a meridian flip, where the focuser end clears the dome wall by a minimum of 18 cm. Marcus Velde measured this on 5 April 2024 with a tape measure while manually slewing the AZ-EQ6 Pro mount through the full eastern sky envelope, recording the result in the Backyard Observatory Build Log v2. He considered 18 cm adequate but noted in the Polaris Offset Calculator spreadsheet's geometry tab that a 5 cm longer counterweight shaft would reduce this to a 13 cm clearance, which he deemed still acceptable."
+    },
+    {
+      "turn_id": "t45",
+      "user_message": "After the August 2024 re-lubrication, did the PEC period change at all, or did it stay at the same 8-minute worm cycle?",
+      "assistant_message": "The PEC period remained exactly 8 minutes after the August 2024 re-lubrication of the AZ-EQ6 Pro mount's RA worm gear, as Marcus Velde confirmed by timing ten complete worm cycles on 5 August 2024 and recording an average of 480.2 seconds per cycle in the Backyard Observatory Build Log v2. The 0.2-second deviation from the nominal 480 seconds was within measurement uncertainty and did not require any change to the 200-point correction table stored in SynScan firmware v4.39.05. The Polaris Offset Calculator spreadsheet's PE tab notes that the worm period is mechanically determined by the 144-tooth wheel and motor speed and would only change if the Stellarpath 10-inch Ritchey-Chrétien system's motor supply voltage drifted significantly."
+    },
+    {
+      "turn_id": "t46",
+      "user_message": "How tall is the dome above the concrete pad, and did Marcus Velde verify the slit top edge clears the surrounding tree line?",
+      "assistant_message": "The dome's apex sits 3.1 metres above the concrete pad, giving a total structure height (pier plus mount plus dome shell) of approximately 3.9 metres at the highest point, as Marcus Velde recorded in the Backyard Observatory Build Log v2 on 1 April 2024. He confirmed the slit top edge clears the surrounding tree line by 4.2 degrees of sky angle toward the north, which is the most constrained direction on his property. The AZ-EQ6 Pro mount and Stellarpath 10-inch Ritchey-Chrétien combination cannot usefully observe targets below 20 degrees altitude in the northern sky due to a row of 8-metre conifers, a limitation Velde accepted as consistent with his primary southern-sky imaging program."
+    },
+    {
+      "turn_id": "t47",
+      "user_message": "What is the concrete pad area and thickness Marcus Velde poured for the full observatory building footprint?",
+      "assistant_message": "Marcus Velde poured a 3.6-metre by 3.6-metre concrete pad, 150 mm thick, for the observatory building footprint, with the pier footing cast as a separate integral column within the slab, as recorded in the Backyard Observatory Build Log v2 on 8 January 2024. The slab uses the same 1:2:3 Portland cement mix as the pier footing and is reinforced with a 150 mm square grid of 8 mm rebar throughout. The AZ-EQ6 Pro mount's pier is isolated from the slab by a 20 mm annular gap filled with compressible foam to prevent vibration transmission from foot traffic around the Stellarpath 10-inch Ritchey-Chrétien during imaging sessions."
+    },
+    {
+      "turn_id": "t48",
+      "user_message": "Given the polar alignment tolerance Marcus Velde established for this setup, how many arcminutes off-pole can I actually be before my 10-minute exposures start showing noticeable trailing, and what's his recommended personal target to aim for?",
+      "assistant_message": null
+    }
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that polar alignment error must be kept within 3.5 arcminutes to avoid trailing exceeding 5 pixels over a 10-minute unguided exposure.",
+      "required": true,
+      "evidence_turn_ids": ["t9"]
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that beyond 3.5 arcminutes, the Polaris Offset Calculator spreadsheet predicts trailing exceeding 12 pixels at the 10-minute mark.",
+      "required": true,
+      "evidence_turn_ids": ["t9"]
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer states that Marcus Velde's personal recommended target is 2 arcminutes or better.",
+      "required": true,
+      "evidence_turn_ids": ["t9"]
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not state that the practical slew rate limit is 600x sidereal (2.5 degrees per second), which is the near-miss answer from t17 about slew rates, not about polar alignment tolerance.",
+      "required": true,
+      "evidence_turn_ids": []
+    }
+  ],
+  "reference_answer": "Based on Marcus Velde's analysis in the Backyard Observatory Build Log v2, polar alignment error must be kept within 3.5 arcminutes of the true pole to hold star trails below 5 pixels of drift over a 10-minute unguided exposure at the Stellarpath 10-inch Ritchey-Chrétien's 2000 mm focal length. Beyond 3.5 arcminutes, the Polaris Offset Calculator spreadsheet predicts trailing exceeding 12 pixels at the 10-minute mark, at which point field rotation accumulates faster than the autoguider can compensate. Velde's own personal target is 2 arcminutes or better, achievable by iterating the SynScan drift-alignment assistant two or three times.",
+  "notes": "The facts the query needs are established in t1 (41.6 arcminute Polaris offset, SynScan firmware v4.39.05), t8 (reticle rotation procedure, ±2° tolerance, 8 arcsec/min drift consequence), and t9 (3.5 arcminute polar error tolerance for 5-pixel trailing limit, 12-pixel prediction beyond tolerance, 2 arcminute personal target). The near-miss turn is t17, which answers a similar-sounding question about the maximum practical slew rate (600x sidereal, 2.5 degrees per second) that a careless reader might confuse with the polar alignment tolerance answer."
+}
+```

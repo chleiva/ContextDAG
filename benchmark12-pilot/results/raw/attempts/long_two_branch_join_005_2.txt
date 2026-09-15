@@ -1,0 +1,275 @@
+```json
+{
+  "entity_registry": ["Mira Okafor", "Deskbound Ventures", "Clara Ndiaye", "Harlow Tower", "Lease Draft v2.1", "Section 8-B"],
+  "turns": [
+    {
+      "turn_id": "t1",
+      "user_message": "We're finalizing the rent structure for Deskbound Ventures' first office at Harlow Tower. What's the base rent per square foot the landlord is proposing?",
+      "assistant_message": "The landlord for Harlow Tower is proposing a base rent of $42 per square foot per year for the space on the 14th floor. This figure appears in Lease Draft v2.1 under the primary rent schedule. Mira Okafor, who is leading the lease negotiations for Deskbound Ventures, flagged this as the starting point for counteroffers."
+    },
+    {
+      "turn_id": "t2",
+      "user_message": "What's the status of the furniture procurement budget for the new office?",
+      "assistant_message": "Clara Ndiaye submitted a furniture procurement proposal to Mira Okafor last Tuesday with a total budget of $48,000 for the Harlow Tower space. The proposal covers 22 workstations, 4 private office setups, and a conference room package from Steelcase. Deskbound Ventures has approved the first tranche of $18,000 to cover the workstations and is holding the remainder pending lease execution."
+    },
+    {
+      "turn_id": "t3",
+      "user_message": "Has the IT infrastructure plan for the new office been drafted yet?",
+      "assistant_message": "Yes, Clara Ndiaye submitted an IT infrastructure plan to Mira Okafor on March 3rd covering the Harlow Tower office. The plan calls for a 1-gigabit fiber connection, 6 server rack units, and 40 IP phone extensions at an estimated setup cost of $31,500. Deskbound Ventures is comparing two vendors, Netcore Solutions and Bridgespan IT, before making a final selection."
+    },
+    {
+      "turn_id": "t4",
+      "user_message": "Mira mentioned there's an annual escalation clause in the draft. What does Lease Draft v2.1 say about rent increases?",
+      "assistant_message": "Lease Draft v2.1 specifies an annual rent escalation of 3.5% compounded each year starting at the beginning of year two of the lease term. This clause is contained in Section 8-B of the draft and applies to the base rent of $42 per square foot. Mira Okafor has noted she wants to negotiate this down to 2.5% or cap it at a fixed dollar amount per square foot."
+    },
+    {
+      "turn_id": "t5",
+      "user_message": "What's the plan for signage at Harlow Tower for Deskbound Ventures?",
+      "assistant_message": "Mira Okafor requested a signage proposal from the building management at Harlow Tower, which came back with two options: a lobby directory listing at $1,200 per year and an exterior blade sign at $4,800 per year. Deskbound Ventures is leaning toward the lobby directory listing only for the first year to keep costs down. Clara Ndiaye is coordinating the brand design files that would be submitted to the building's sign shop by April 15th."
+    },
+    {
+      "turn_id": "t6",
+      "user_message": "Has the IT vendor comparison been narrowed down yet?",
+      "assistant_message": "Deskbound Ventures received formal quotes from both Netcore Solutions and Bridgespan IT last week. Netcore Solutions quoted $28,900 for the full setup including cabling, hardware, and a 12-month support contract, while Bridgespan IT came in at $33,400 with a 24-month support contract. Clara Ndiaye is preparing a side-by-side cost analysis for Mira Okafor to review by end of week."
+    },
+    {
+      "turn_id": "t7",
+      "user_message": "What's the timeline for the furniture delivery to Harlow Tower?",
+      "assistant_message": "Steelcase confirmed a 6-week lead time from the date of purchase order, which means if the order is placed by April 20th the furniture would arrive by June 1st. Clara Ndiaye has flagged that the lease must be signed before Deskbound Ventures can issue a purchase order to Steelcase. Mira Okafor is tracking this dependency closely to avoid any gap between lease signing and move-in readiness."
+    },
+    {
+      "turn_id": "t8",
+      "user_message": "Has a budget line been set for the Harlow Tower lobby signage for year one?",
+      "assistant_message": "Yes, Deskbound Ventures confirmed a $1,200 allocation for the Harlow Tower lobby directory listing in the year-one operating budget. Clara Ndiaye added this line item to the startup's Q3 budget spreadsheet under facilities and branding. The exterior blade sign option at $4,800 was deferred to a year-two review pending revenue milestones."
+    },
+    {
+      "turn_id": "t9",
+      "user_message": "We need to understand the free-rent concession the landlord is offering. What's currently on the table?",
+      "assistant_message": "The landlord of Harlow Tower is offering two months of free rent at the start of the lease term as a tenant improvement concession. This offer is documented in the cover letter accompanying Lease Draft v2.1 and is contingent on Deskbound Ventures signing a lease of at least 36 months. Mira Okafor confirmed this concession applies to the full rent obligation, including any operating cost pass-throughs."
+    },
+    {
+      "turn_id": "t10",
+      "user_message": "Did Clara Ndiaye finish the IT vendor cost analysis?",
+      "assistant_message": "Clara Ndiaye delivered the vendor cost analysis to Mira Okafor on Friday, April 5th. The analysis concluded that Netcore Solutions offers a lower total cost of ownership over 24 months at $41,200 compared to Bridgespan IT's $45,800 when a second-year support renewal is factored in. Deskbound Ventures is expected to issue a letter of intent to Netcore Solutions by April 12th."
+    },
+    {
+      "turn_id": "t11",
+      "user_message": "Has a decision been made on the IT vendor?",
+      "assistant_message": "Deskbound Ventures formally selected Netcore Solutions on April 10th, and Mira Okafor countersigned the letter of intent that same day. The project kickoff for IT infrastructure at Harlow Tower is scheduled for the week of May 6th, contingent on lease execution. Netcore Solutions will mobilize a 3-person installation team and has reserved a 10-day installation window."
+    },
+    {
+      "turn_id": "t12",
+      "user_message": "Is the year-two budget for signage still under review?",
+      "assistant_message": "Yes, Deskbound Ventures has flagged the year-two signage decision as contingent on hitting $500,000 in annual recurring revenue by the end of year one. Mira Okafor noted in a team meeting on April 8th that the exterior blade sign at Harlow Tower could be justified if the company reaches that revenue threshold. Clara Ndiaye has been asked to prepare a branding ROI memo to support the decision when the time comes."
+    },
+    {
+      "turn_id": "t13",
+      "user_message": "What's the current status of the Netcore Solutions installation schedule?",
+      "assistant_message": "Netcore Solutions confirmed the May 6th kickoff date in writing on April 11th, and Clara Ndiaye has been designated as the on-site point of contact for Deskbound Ventures during the installation. The installation covers structured cabling on the 14th floor of Harlow Tower across approximately 4,200 square feet. Netcore Solutions expects to complete the work by May 17th, allowing a buffer before the anticipated June 1st furniture delivery."
+    },
+    {
+      "turn_id": "t14",
+      "user_message": "Has the Steelcase order been placed yet?",
+      "assistant_message": "The Steelcase order has not yet been placed because Deskbound Ventures is waiting for the lease to be executed before committing the $48,000 furniture budget. Clara Ndiaye has the purchase order drafted and ready to submit the same day the lease is signed. Mira Okafor confirmed on April 9th that lease execution is expected no later than April 25th, which would keep the June 1st delivery date intact."
+    },
+    {
+      "turn_id": "t15",
+      "user_message": "Has the branding ROI memo been started yet?",
+      "assistant_message": "Clara Ndiaye began drafting the branding ROI memo on April 12th and expects to have a first version to Mira Okafor by April 30th. The memo will benchmark the Harlow Tower exterior blade sign against comparable startups in the building who reported a 12% increase in walk-in inquiries after adding exterior signage. The final recommendation will include a break-even analysis based on Deskbound Ventures' current customer acquisition cost of $340 per client."
+    },
+    {
+      "turn_id": "t16",
+      "user_message": "What's the total estimated cost for the IT installation once Netcore Solutions completes the work?",
+      "assistant_message": "Netcore Solutions' final scoped estimate for the Harlow Tower installation is $28,900 as quoted, covering hardware, cabling, and the 12-month support contract. Clara Ndiaye noted that Deskbound Ventures negotiated a 5% discount on the hardware component, bringing the effective total to $27,650. Mira Okafor approved this revised figure in the April 10th budget review."
+    },
+    {
+      "turn_id": "t17",
+      "user_message": "What's the total annual cost of the Netcore Solutions support contract for Deskbound Ventures after year one?",
+      "assistant_message": "After the initial 12-month support contract expires, Netcore Solutions quoted a renewal rate of $4,800 per year for the Harlow Tower installation. This figure was included in Clara Ndiaye's vendor cost analysis and represents a flat-rate annual fee regardless of call volume. Deskbound Ventures can opt out of renewal with 30 days' written notice before the contract anniversary date."
+    },
+    {
+      "turn_id": "t18",
+      "user_message": "When does Netcore Solutions expect to submit the final completion report for the installation?",
+      "assistant_message": "Netcore Solutions indicated they will submit a final completion and sign-off report to Clara Ndiaye no later than May 20th, three days after the projected May 17th completion date. The report will document all cable runs, IP assignments, and rack configurations for the 14th floor at Harlow Tower. Mira Okafor requested that Deskbound Ventures retain a copy of the report in the company's facilities records file."
+    },
+    {
+      "turn_id": "t19",
+      "user_message": "Has the branding ROI memo been reviewed by Mira Okafor yet?",
+      "assistant_message": "Mira Okafor received the first draft of the branding ROI memo from Clara Ndiaye on April 29th, one day ahead of schedule. She returned it with three comments, primarily asking for a comparison against a second building, Meridian Plaza, where a tenant reported a 9% increase in inquiries with exterior signage. Clara Ndiaye is incorporating the Meridian Plaza data into a revised version due May 7th."
+    },
+    {
+      "turn_id": "t20",
+      "user_message": "What did the Meridian Plaza comparison show in the revised memo?",
+      "assistant_message": "The revised branding ROI memo showed that Harlow Tower's exterior blade sign produced an average 12% inquiry uplift while Meridian Plaza's comparable sign produced 9%, giving Harlow Tower a stronger case for the investment. Using Deskbound Ventures' $340 customer acquisition cost, Clara Ndiaye calculated that even a 10% inquiry increase could yield approximately $18,700 in avoided acquisition costs annually. Mira Okafor approved the revised memo on May 8th and flagged the exterior blade sign for inclusion in the year-two budget proposal."
+    },
+    {
+      "turn_id": "t21",
+      "user_message": "Has the Netcore Solutions completion report been delivered?",
+      "assistant_message": "Netcore Solutions delivered the completion report to Clara Ndiaye on May 19th, one day ahead of the May 20th deadline. The report confirmed all 40 IP phone extensions, 6 server rack units, and structured cabling across the 14th floor of Harlow Tower were installed and tested successfully. Mira Okafor countersigned the acceptance form on May 21st, releasing the final payment of $9,550 to Netcore Solutions."
+    },
+    {
+      "turn_id": "t22",
+      "user_message": "Is there a formal process for Deskbound Ventures to request changes to the Netcore Solutions support contract?",
+      "assistant_message": "Yes, the Netcore Solutions support contract includes a change-order process that requires written requests submitted to their account manager, Raj Pillai, with at least 15 business days' notice. Clara Ndiaye has Raj Pillai's contact details on file and has been designated as the primary point of contact for Deskbound Ventures on all contract matters. Mira Okafor approved this arrangement in the May 21st sign-off documentation."
+    },
+    {
+      "turn_id": "t23",
+      "user_message": "Is the exterior blade sign decision now formally in the year-two budget?",
+      "assistant_message": "Yes, following Mira Okafor's approval of the branding ROI memo, Clara Ndiaye added the $4,800 exterior blade sign at Harlow Tower as a conditional line item in the year-two budget. The condition remains tied to Deskbound Ventures achieving $500,000 in annual recurring revenue by the end of year one. The line item was reviewed and tentatively approved by the board at the May 15th meeting."
+    },
+    {
+      "turn_id": "t24",
+      "user_message": "Has the board set a formal review date to confirm whether the revenue threshold was met?",
+      "assistant_message": "The board set January 15th of year two as the formal review date to assess whether Deskbound Ventures hit the $500,000 annual recurring revenue milestone. Mira Okafor will present a revenue summary at that meeting, and Clara Ndiaye is responsible for preparing the supporting financial dashboard. If the threshold is confirmed, the Harlow Tower exterior blade sign order will be placed within 10 business days of the review."
+    },
+    {
+      "turn_id": "t25",
+      "user_message": "What happens if the revenue threshold isn't met by January 15th?",
+      "assistant_message": "If Deskbound Ventures does not reach $500,000 in annual recurring revenue by January 15th of year two, the exterior blade sign decision will be deferred to a mid-year review on July 1st. Mira Okafor noted that a partial threshold of $350,000 could still trigger a smaller signage option, such as a window decal at $800 per year. Clara Ndiaye will track the revenue figures monthly and flag any shortfall to Mira Okafor at least 60 days before the review date."
+    },
+    {
+      "turn_id": "t26",
+      "user_message": "Has Raj Pillai been briefed on the change-order process Deskbound Ventures might use in year two?",
+      "assistant_message": "Clara Ndiaye sent Raj Pillai a summary email on May 22nd outlining Deskbound Ventures' anticipated year-two IT needs, including a possible expansion of IP phone extensions from 40 to 55 if headcount grows as projected. Raj Pillai confirmed he received the briefing and noted that a 15-extension expansion would be quoted at approximately $3,200 including installation. Mira Okafor asked Clara Ndiaye to keep this quote on file for the year-two budget cycle."
+    },
+    {
+      "turn_id": "t27",
+      "user_message": "Has the window decal option been priced out formally?",
+      "assistant_message": "Harlow Tower's building management provided a formal quote for the window decal option at $800 per year, which includes installation and a single annual refresh. Clara Ndiaye documented this quote in the facilities budget file on May 25th alongside the exterior blade sign quote. Mira Okafor noted that the window decal requires no board approval and can be ordered directly under her signing authority of up to $5,000."
+    },
+    {
+      "turn_id": "t28",
+      "user_message": "Has Deskbound Ventures set a headcount target that would trigger the IT expansion quote from Raj Pillai?",
+      "assistant_message": "Yes, Mira Okafor confirmed that a headcount of 18 full-time employees would trigger the expansion from 40 to 55 IP phone extensions at Harlow Tower. Deskbound Ventures currently has 11 full-time staff and projects reaching 18 by Q3 of year two based on its hiring plan. Clara Ndiaye will notify Raj Pillai 30 days before the projected headcount milestone to initiate the formal change-order process."
+    },
+    {
+      "turn_id": "t29",
+      "user_message": "Has the window decal design been finalized for the partial-threshold scenario?",
+      "assistant_message": "Clara Ndiaye submitted a draft window decal design to Harlow Tower's building management on June 2nd, featuring the Deskbound Ventures logo and tagline in the approved brand colors. The building management reviewed it and requested a minor adjustment to the font size to comply with their signage guidelines, which Clara Ndiaye corrected and resubmitted on June 5th. Mira Okafor approved the final design on June 6th, so it is ready to order if the partial revenue threshold of $350,000 is reached."
+    },
+    {
+      "turn_id": "t30",
+      "user_message": "Is the window decal order on hold pending the January revenue review?",
+      "assistant_message": "Yes, the window decal order is on hold and will only be placed if Deskbound Ventures falls short of the $500,000 full threshold but meets the $350,000 partial threshold by January 15th. Mira Okafor confirmed this sequencing in a June 8th memo to Clara Ndiaye. If neither threshold is met, both signage options will be deferred to the July 1st mid-year review."
+    },
+    {
+      "turn_id": "t31",
+      "user_message": "When does Deskbound Ventures expect to formally issue the change-order request to Netcore Solutions if headcount reaches 18?",
+      "assistant_message": "Based on the hiring plan, Deskbound Ventures projects reaching 18 full-time employees in August of year two, meaning Clara Ndiaye would notify Raj Pillai in July of year two to initiate the change-order process. The 15-business-day notice requirement means the formal change order could be submitted by late July and the expansion completed by mid-August. Mira Okafor has flagged this timeline in the year-two facilities planning document."
+    },
+    {
+      "turn_id": "t32",
+      "user_message": "Has the exterior blade sign artwork been prepared in case the full revenue threshold is met?",
+      "assistant_message": "Clara Ndiaye prepared the exterior blade sign artwork file on June 10th using the same brand assets submitted for the window decal. The file was pre-approved by Harlow Tower's building management on June 14th, so no additional review will be required when the order is placed. Mira Okafor noted that pre-approval shaves approximately two weeks off the typical 6-week production timeline for exterior signage."
+    },
+    {
+      "turn_id": "t33",
+      "user_message": "Has the change-order cost of $3,200 for the IT expansion been formally budgeted?",
+      "assistant_message": "Yes, Clara Ndiaye included the $3,200 Netcore Solutions expansion quote as a contingent line item in the year-two IT budget submitted to Mira Okafor on June 12th. The budget notes the line item is contingent on headcount reaching 18 and will be activated automatically once that milestone is confirmed. Mira Okafor approved the year-two IT budget, including this contingent item, on June 15th."
+    },
+    {
+      "turn_id": "t34",
+      "user_message": "What is the production timeline for the exterior blade sign if the order is placed in January of year two?",
+      "assistant_message": "With pre-approval already in place, Harlow Tower's sign shop estimates a 4-week production and installation timeline instead of the standard 6 weeks. If Deskbound Ventures places the order by January 20th of year two, the exterior blade sign would be installed by approximately February 17th. Clara Ndiaye has noted this in the signage project tracker and shared the schedule with Mira Okafor."
+    },
+    {
+      "turn_id": "t35",
+      "user_message": "Has a contingency plan been set if the exterior blade sign installation is delayed past February 17th?",
+      "assistant_message": "Mira Okafor approved a contingency plan on June 20th: if the exterior blade sign is delayed past February 17th, Deskbound Ventures will activate the window decal as a temporary measure at $800 per year. Clara Ndiaye will coordinate with Harlow Tower's building management to install the window decal within 5 business days of any delay notification. The $800 cost would be absorbed within Mira Okafor's discretionary facilities budget."
+    },
+    {
+      "turn_id": "t36",
+      "user_message": "Has the window decal contingency been communicated to the board?",
+      "assistant_message": "Clara Ndiaye included a one-paragraph summary of the window decal contingency in the board update memo distributed on June 25th. The board acknowledged the plan without objection at the June 28th meeting, and Mira Okafor confirmed that no additional board approval would be needed to activate the contingency. Harlow Tower's building management has also been notified to hold the window decal installation slot open through February of year two."
+    },
+    {
+      "turn_id": "t37",
+      "user_message": "The landlord mentioned that the free-rent period might have conditions tied to the lease length. Can you clarify what Lease Draft v2.1 actually requires?",
+      "assistant_message": "Lease Draft v2.1 stipulates that the two-month free-rent concession is only available if Deskbound Ventures commits to a minimum lease term of 36 months. If the signed lease term is shorter than 36 months, the free-rent period is voided entirely and full rent is owed from day one. Mira Okafor confirmed this condition with the landlord's representative on April 3rd, and it is also referenced in the cover letter attached to Lease Draft v2.1."
+    },
+    {
+      "turn_id": "t38",
+      "user_message": "Has the exterior blade sign production slot been formally reserved with the sign shop?",
+      "assistant_message": "Harlow Tower's sign shop confirmed a tentative production slot reservation for Deskbound Ventures on June 30th, valid through January 31st of year two. Clara Ndiaye secured the reservation with a $200 refundable deposit, which Mira Okafor approved from the discretionary facilities budget. If the order is not placed by January 31st, the slot is released and the deposit is refunded."
+    },
+    {
+      "turn_id": "t39",
+      "user_message": "Has the board been updated on the sign shop deposit?",
+      "assistant_message": "Clara Ndiaye included the $200 sign shop deposit in the July 5th board expense report submitted to Mira Okafor for distribution. The board noted the deposit in the July 10th meeting minutes as a pre-approved discretionary expense under Mira Okafor's signing authority. No further board action was required for this amount."
+    },
+    {
+      "turn_id": "t40",
+      "user_message": "Does the free-rent concession apply if Deskbound Ventures negotiates the lease down to 24 months instead of 36?",
+      "assistant_message": "No, the free-rent concession would not apply under a 24-month lease term because the minimum qualifying term in Lease Draft v2.1 is 36 months. Dropping to a 24-month term would mean Deskbound Ventures owes full rent from the first day of occupancy, with no abatement period. Mira Okafor noted this trade-off explicitly in her April 3rd negotiation summary, flagging that a shorter lease term would cost the company two full months of rent at the agreed rate."
+    },
+    {
+      "turn_id": "t41",
+      "user_message": "Has the board been informed about the sign shop slot expiry date of January 31st?",
+      "assistant_message": "Yes, the January 31st expiry for the sign shop production slot was included in the July 10th board meeting minutes by Clara Ndiaye. Mira Okafor confirmed that the revenue review on January 15th gives Deskbound Ventures a 16-day window to decide and place the order before the slot expires. The board expressed no concerns about the timeline at the July 10th meeting."
+    },
+    {
+      "turn_id": "t42",
+      "user_message": "Has Mira Okafor set any internal deadline for communicating the January 15th revenue review outcome to the sign shop?",
+      "assistant_message": "Mira Okafor set an internal deadline of January 16th to notify Harlow Tower's sign shop of Deskbound Ventures' decision, giving the company one business day after the revenue review to act. Clara Ndiaye is responsible for sending the notification email and will copy Mira Okafor on all correspondence with the sign shop. This deadline was documented in the signage project tracker updated on July 12th."
+    },
+    {
+      "turn_id": "t43",
+      "user_message": "What's the consequence for Deskbound Ventures if the January 16th notification deadline is missed?",
+      "assistant_message": "If Clara Ndiaye misses the January 16th notification deadline, the sign shop's production slot will remain tentatively held until January 31st, but Deskbound Ventures risks losing the pre-approval benefit if the building management's sign committee reconvenes before the order is placed. Mira Okafor noted in the July 12th tracker update that a missed notification could add up to two weeks back onto the production timeline. A calendar reminder has been set for both Clara Ndiaye and Mira Okafor on January 15th to prevent this outcome."
+    },
+    {
+      "turn_id": "t44",
+      "user_message": "Has the formal change-order request template for Netcore Solutions been prepared?",
+      "assistant_message": "Clara Ndiaye prepared the change-order request template for Netcore Solutions on July 3rd, using the format specified in the support contract signed with Raj Pillai. The template includes fields for the scope of work, number of extensions, installation date preference, and authorized signatory from Deskbound Ventures. Mira Okafor reviewed and approved the template on July 5th, and it is stored in the company's contracts folder."
+    },
+    {
+      "turn_id": "t45",
+      "user_message": "Has Raj Pillai confirmed that the $3,200 quote for the 15-extension expansion is still valid?",
+      "assistant_message": "Raj Pillai confirmed via email on July 8th that the $3,200 quote for the 15-extension expansion at Harlow Tower remains valid through December 31st of year two. After that date, Netcore Solutions will reassess pricing based on current hardware costs. Clara Ndiaye flagged this validity window to Mira Okafor, who noted it aligns with the projected August year-two expansion timeline."
+    },
+    {
+      "turn_id": "t46",
+      "user_message": "Has Mira Okafor reached a decision on the escalation clause in Section 8-B?",
+      "assistant_message": "Yes, Mira Okafor finalized Deskbound Ventures' counteroffer on the escalation clause in Section 8-B on April 18th, proposing to cap annual rent increases at 2.5% per year rather than the landlord's proposed 3.5%. The landlord accepted this counteroffer in writing on April 22nd, and the revised escalation rate of 2.5% was incorporated into the execution version of the lease. This means the base rent of $42 per square foot will increase by no more than 2.5% in any given year."
+    },
+    {
+      "turn_id": "t47",
+      "user_message": "Has the sign shop confirmed the $200 deposit will be returned if the order is not placed by January 31st?",
+      "assistant_message": "Harlow Tower's sign shop confirmed in writing on July 2nd that the $200 deposit paid by Deskbound Ventures is fully refundable if the order is not placed by January 31st of year two. Clara Ndiaye has the refund confirmation email saved in the facilities records file alongside the original deposit receipt. Mira Okafor noted this removes any financial risk from reserving the slot early."
+    },
+    {
+      "turn_id": "t48",
+      "user_message": "Given the escalation clause that was agreed and the free-rent concession terms, what will Deskbound Ventures' effective rent obligation look like at the start of the lease and at the beginning of year two?",
+      "assistant_message": null
+    }
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that the base rent is $42 per square foot per year as established in Lease Draft v2.1.",
+      "required": false,
+      "evidence_turn_ids": ["t1"]
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that the annual escalation rate agreed for Section 8-B is 2.5% per year (not the originally proposed 3.5%), as finalized on April 22nd.",
+      "required": false,
+      "evidence_turn_ids": ["t46"]
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer states that Deskbound Ventures pays no rent during the first two months of the lease (free-rent concession) because a 36-month minimum lease term was met.",
+      "required": false,
+      "evidence_turn_ids": ["t9", "t37", "t40"]
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not state that the annual escalation rate is 3.5%, which is the landlord's original proposal that was superseded by the negotiated 2.5% rate, and must not cite the Netcore Solutions renewal rate of $4,800 per year as the rent figure.",
+      "required": true,
+      "evidence_turn_ids": []
+    }
+  ],
+  "reference_answer": "For the first two months of the lease, Deskbound Ventures owes no rent because the landlord granted a two-month free-rent concession, which applies as long as the lease term is at least 36 months. From month three onward, rent is owed at the base rate of $42 per square foot per year as set out in Lease Draft v2.1. At the start of year two, that base rent increases by 2.5% per year under the escalation clause in Section 8-B, which Mira Okafor successfully negotiated down from the landlord's original 3.5% proposal, with the revised rate accepted in writing on April 22nd.",
+  "notes": "t46 holds the key Branch A fact (2.5% agreed escalation rate in Section 8-B), and t9/t37/t40 together hold the key Branch B facts (two-month free-rent concession contingent on a 36-month minimum lease term). t17 is the near-miss: it asks about the annual cost of the Netcore Solutions support contract renewal and gives $4,800 per year, a number a careless reader might confuse with a rent-related figure."
+}
+```

@@ -1,0 +1,406 @@
+{
+  "scenario_id": "long_three_way_join_008",
+  "family": "three_way_join",
+  "label": "JOIN",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm Jordan Reyes, setting up Luminary Studio in my spare bedroom. I need to figure out the main light placement — I've decided to use the Godox SL-60W as my key light. What's the standard starting angle for a key light in a portrait setup?",
+      "assistant_message": "For a classic portrait setup with a continuous LED like the Godox SL-60W, the standard starting position is 45 degrees to the side of the subject and 45 degrees above eye level, often called the Rembrandt position. At that angle the SL-60W's 60-watt output gives you enough intensity to shoot at ISO 400, f/5.6, and 1/125 s in a small room. You can fine-tune by moving the light closer to reduce shadows or farther back to widen the coverage area. Mark that 45/45 position as your baseline for Luminary Studio's portrait work.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "I also want to track my equipment budget for Luminary Studio. I've set a total gear budget of $2,400. How should I break that down across lighting, backdrops, and grip?",
+      "assistant_message": "A common split for a home portrait studio like Luminary Studio is 50 percent on lighting, 25 percent on backdrops, and 25 percent on grip and accessories. On a $2,400 budget that gives you $1,200 for lighting including the Godox SL-60W, $600 for backdrops from suppliers like Backdrop Alley, and $600 for stands, clamps, and sandbags. This ratio keeps your most impactful gear — the lights — well-funded while leaving room for quality backdrops. You can adjust if Jordan Reyes decides to expand the lighting kit first.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "I need to plan the cable management in Luminary Studio. The room has two wall outlets on the north wall and one on the east wall. What's a safe way to route power cables for the Godox SL-60W and other lights?",
+      "assistant_message": "For Luminary Studio's north-wall outlets, run a 12-gauge extension cord rated for at least 15 amps along the baseboard to reach your Godox SL-60W stand position near the center of the room. Keep the east-wall outlet reserved for a second light or laptop running StudioCalc Pro so you don't overload a single circuit. Use cable raceways or gaffer tape to secure cords flat against the floor and walls, which prevents tripping hazards during shoots. Label each outlet's circuit breaker so Jordan Reyes can quickly cut power if needed.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "For Luminary Studio I ordered backdrop paper from Backdrop Alley. The roll is 107 inches wide. What's the minimum shooting distance I need to keep the full backdrop visible behind a seated subject?",
+      "assistant_message": "With a 107-inch-wide Backdrop Alley roll, a seated subject occupies roughly 36 inches of width, so the backdrop has about 35 inches of margin on each side. At a shooting distance of 8 feet from the subject, a 50 mm equivalent lens will capture approximately 72 inches of width at the subject plane, keeping you well inside the 107-inch roll with room to spare. To be safe, Jordan Reyes should mark a floor tape line 8 feet from the backdrop stand as the minimum camera position. This ensures the Backdrop Alley paper fills the frame without showing the edges.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "I want to use StudioCalc Pro to model the lighting ratios for Luminary Studio. The software asks for the key light output in lux at 1 meter — what is the Godox SL-60W's rated lux at 1 meter?",
+      "assistant_message": "The Godox SL-60W is rated at 4,500 lux at 1 meter when set to 100 percent power with its standard reflector attached. StudioCalc Pro will use that 4,500 lux figure as the baseline to compute your lighting ratios and exposure recommendations for Luminary Studio. If you add the optional Godox diffusion dome, the output drops to roughly 2,800 lux at 1 meter, so make sure you enter the correct value depending on your modifier choice. Jordan Reyes should save both values as presets in StudioCalc Pro so they're easy to recall.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "Looking at the Luminary Studio budget again, I found a deal on a second Godox SL-60W. If I buy two units instead of one, does that change the lighting allocation?",
+      "assistant_message": "Two Godox SL-60W units at roughly $150 each bring your lighting subtotal to $300, which is still well within the $1,200 lighting allocation we set for Luminary Studio. That leaves $900 in the lighting budget for modifiers like softboxes, a boom arm, and gels. Jordan Reyes could also use the surplus to add a small LED panel from Backdrop Alley's sister brand for hair lighting. The 50/25/25 split remains intact with money to spare in the lighting category.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "I'm planning to hang the Backdrop Alley paper using a crossbar system. The crossbar I have is 10 feet wide. How much of the 107-inch roll will overhang on each side?",
+      "assistant_message": "A 10-foot crossbar is 120 inches wide, and the Backdrop Alley roll is 107 inches wide, so the paper is actually 13 inches narrower than the crossbar. That means the paper will not overhang at all; instead, the crossbar will extend 6.5 inches beyond the paper on each side. Jordan Reyes should slide the paper clamps inward so they grip the first few inches of the roll rather than the bare bar. This keeps the Backdrop Alley paper centered and prevents it from sliding during a Luminary Studio shoot.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "I want to soundproof Luminary Studio a bit for behind-the-scenes video work. The room is 12 feet by 14 feet. What's the total wall area I need to treat?",
+      "assistant_message": "The four walls of a 12-by-14-foot room with an 8-foot ceiling give you two walls at 12 × 8 = 96 square feet each and two walls at 14 × 8 = 112 square feet each, totaling 416 square feet of wall surface for Luminary Studio. Acoustic treatment typically covers 25 to 30 percent of that surface, so Jordan Reyes needs roughly 104 to 125 square feet of panels. Standard 2-by-4-foot acoustic panels cover 8 square feet each, meaning you'd need 13 to 16 panels. Placing them at first-reflection points on the 14-foot walls near the Godox SL-60W position will have the greatest impact.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "I'm also thinking about insurance for the Luminary Studio gear. The Godox SL-60W and the Elara V-Flat together cost about $400. Does that value affect what kind of policy I need?",
+      "assistant_message": "At $400 total for the Godox SL-60W and the Elara V-Flat, Jordan Reyes falls below the $500 threshold that most inland marine riders require for scheduled equipment coverage. That means a standard homeowner's or renter's policy may cover the gear under personal property without a separate rider, though you should confirm the sub-limit for electronics with your insurer. Once Luminary Studio's gear value exceeds $1,000 — which will happen when you add more lights and the Backdrop Alley stands — a dedicated equipment floater becomes worthwhile. Keep all purchase receipts in a folder labeled Luminary Studio Inventory for claims purposes.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "For the soundproofing, I'm looking at two panel options: 2-inch thick panels at $18 each or 4-inch thick panels at $34 each. Which gives better value for Luminary Studio?",
+      "assistant_message": "For a home studio like Luminary Studio used primarily for photography with occasional video, 2-inch panels are sufficient to reduce mid- and high-frequency reflections that affect dialogue and ambient sound. At $18 each and needing 13 to 16 panels, the total cost runs $234 to $288, versus $442 to $544 for the 4-inch option. The 4-inch panels offer better bass absorption, but Jordan Reyes won't be recording bass-heavy audio, making the $200-plus savings better spent on Backdrop Alley paper rolls or Godox accessories. Go with the 2-inch panels and buy 14 units for $252 total.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "What is the total cost of the acoustic treatment panels for Luminary Studio if I go with the 2-inch option and buy 14 units?",
+      "assistant_message": "Buying 14 units of the 2-inch acoustic panels at $18 each comes to exactly $252 for Luminary Studio's soundproofing treatment. That fits comfortably within the $600 grip-and-accessories allocation from the original budget breakdown, leaving $348 for stands, clamps, and gaffer tape. Jordan Reyes should order from a supplier that ships in sets of four so the panels arrive with matching fabric colors. Factor in about $20 for mounting hardware, bringing the full soundproofing line item to roughly $272.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "In StudioCalc Pro, I need to enter a fill light value too. I'm planning to use the Elara V-Flat as a reflector instead of a second strobe. What fill ratio should I target for a natural-looking corporate headshot?",
+      "assistant_message": "For a natural corporate headshot, a 3:1 lighting ratio between key and fill is the industry standard, meaning the fill side receives one-third the light of the key side. With the Godox SL-60W delivering 4,500 lux at 1 meter as your key, you want roughly 1,500 lux on the fill side, which the Elara V-Flat can achieve by positioning it about 3 feet from the subject at a 45-degree angle opposite the key. In StudioCalc Pro, enter 1,500 lux as your fill value and select the 3:1 ratio preset to auto-generate exposure recommendations for Luminary Studio. Jordan Reyes can fine-tune by sliding the Elara V-Flat closer for a 2:1 ratio or farther for a 4:1 ratio depending on the client's preference.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "I want to create a client welcome packet for Luminary Studio shoots. What key information should it include about parking and arrival?",
+      "assistant_message": "The Luminary Studio welcome packet should include the street address, nearest cross street, and a note about the two available parking spots in the driveway that Jordan Reyes has designated for clients. Include the door code for the side entrance — currently set to 4821 — so clients can enter without ringing the bell during back-to-back sessions. Add a five-minute buffer note asking clients to arrive no earlier than their scheduled time to avoid overlapping with the previous session's breakdown. Mention that the Backdrop Alley setup will already be configured when they arrive so they can go straight to wardrobe.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "I need to decide on a booking software for Luminary Studio. I'm comparing Acuity Scheduling at $20 per month and HoneyBook at $39 per month. Which fits a solo freelancer better?",
+      "assistant_message": "For a solo freelancer like Jordan Reyes running Luminary Studio, Acuity Scheduling at $20 per month covers the core needs: calendar sync, client self-booking, and automated reminders without the overhead of HoneyBook's CRM and contract features. HoneyBook's $39 per month makes more sense once Luminary Studio is handling more than 15 sessions per month and needs integrated invoicing and project pipelines. Starting with Acuity saves $228 per year, which Jordan Reyes could put toward a second Backdrop Alley roll or Godox accessories. Upgrade to HoneyBook when monthly revenue from Luminary Studio consistently exceeds $2,000.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "I found a quote for 16 acoustic panels instead of 14. Does adding those 2 extra panels change the coverage percentage for Luminary Studio's walls?",
+      "assistant_message": "With 16 panels at 8 square feet each, you'd cover 128 square feet of Luminary Studio's 416 square feet of wall surface, which is 30.8 percent coverage. The original 14-panel plan covered 112 square feet or 26.9 percent, so the two extra panels add roughly 4 percentage points of coverage. Jordan Reyes would exceed the upper end of the recommended 25 to 30 percent treatment range, which is fine and will produce a slightly drier acoustic environment. The additional cost is $36 for two more 2-inch panels, bringing the total from $252 to $288, still within the Godox SL-60W accessories budget.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "For the Luminary Studio welcome packet, I want to include a session preparation checklist. What should clients bring for a corporate headshot session?",
+      "assistant_message": "The Luminary Studio session prep checklist should ask clients to bring two to three outfit options in solid colors or subtle patterns, avoiding bright white or neon which can cause exposure issues with the Godox SL-60W. Request that clients arrive with hair and makeup done, and note that Jordan Reyes keeps a small touch-up kit on site for minor adjustments. Ask them to bring a reference image of a headshot style they like so the Elara V-Flat and key light can be positioned to match the desired shadow pattern. Finally, remind them the session runs 45 minutes and includes a same-day preview gallery via an online link.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "I want to add a cancellation policy to the Luminary Studio welcome packet. What's a standard policy for a solo photographer?",
+      "assistant_message": "A standard policy for a solo operator like Jordan Reyes at Luminary Studio is a 48-hour cancellation window: cancellations made more than 48 hours before the session receive a full refund of any deposit, while cancellations within 48 hours forfeit 50 percent of the session fee. No-shows forfeit 100 percent of the fee, which protects Luminary Studio's revenue when the Backdrop Alley setup and Godox SL-60W have already been configured for the client. Include a one-time free reschedule option to maintain goodwill with repeat clients. State the policy clearly on page two of the welcome packet so clients acknowledge it before booking through Acuity Scheduling.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "I want to confirm the safe working distance from the backdrop for the Backdrop Alley paper. If the subject is seated 3 feet in front of the backdrop, will that cause any shadow problems?",
+      "assistant_message": "With the subject seated 3 feet in front of the Backdrop Alley paper and the Godox SL-60W key light at 45 degrees, the subject's shadow will fall at a roughly 45-degree angle and land on the backdrop approximately 3 feet to the side and 3 feet down from the subject's shoulder line. For a 107-inch-wide roll, 3 feet of lateral shadow displacement stays well within the paper width, so no shadow will spill off the edge. However, to eliminate the shadow from the backdrop entirely, Jordan Reyes should increase the subject-to-backdrop distance to at least 6 feet, which is the standard recommendation for clean, evenly lit paper backgrounds. At 6 feet separation, the shadow angle means it falls completely below the frame when shooting a head-and-shoulders crop.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "For the Luminary Studio gear insurance, I'm now adding the StudioCalc Pro annual subscription at $149 and a second Backdrop Alley stand at $85. Does that push me over the $500 threshold?",
+      "assistant_message": "The original gear value was $400 for the Godox SL-60W and Elara V-Flat combined. Adding the StudioCalc Pro subscription at $149 and the Backdrop Alley stand at $85 brings the total to $634, which does exceed the $500 inland marine rider threshold. Jordan Reyes should now contact the insurer to schedule those items, particularly the Godox SL-60W and the Backdrop Alley stand as the highest-value physical items. The StudioCalc Pro subscription is software and may be covered under a separate digital assets clause rather than the equipment floater. Request a combined quote for both the equipment floater and the software rider.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "The insurer asked for serial numbers. I have the Godox SL-60W serial on the box but not the Elara V-Flat's. Where is it typically located on a V-flat?",
+      "assistant_message": "On most Elara V-Flat units, the serial number is printed on a white label affixed to the inside hinge area where the two panels fold together, typically near the center spine. If the hinge label is worn, a secondary serial number is sometimes stamped directly into the foam core on the bottom edge of the left panel when the V-flat is standing upright. Jordan Reyes should photograph both locations and upload the images to the Luminary Studio Inventory folder alongside the purchase receipt. Send the serial number along with the Godox SL-60W serial to the insurer in the same email to keep the Luminary Studio equipment floater application complete.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "For the cable management plan, I want to add a power strip near the center of the Luminary Studio room. What amperage rating should the strip have?",
+      "assistant_message": "The Godox SL-60W draws about 70 watts at full power, which is roughly 0.6 amps at 120 volts, so two units together draw only about 1.2 amps. However, Jordan Reyes should account for a laptop running StudioCalc Pro at up to 65 watts and a monitor at 30 watts, bringing the total load to around 165 watts or 1.4 amps. A 15-amp power strip provides more than enough headroom for all Luminary Studio equipment, but choose a strip with a built-in circuit breaker and surge protection rated at least 1,080 joules. Position it centrally so the cord from the north-wall outlet runs no more than 6 feet, keeping within the 12-gauge extension cord's safe run length.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "I'm comparing two booking software plans for the next year. Acuity at $20 per month versus HoneyBook at $39 per month — what's the annual cost difference?",
+      "assistant_message": "Acuity Scheduling costs $240 per year for Luminary Studio, while HoneyBook costs $468 per year, a difference of $228 annually. Jordan Reyes could apply that $228 saving toward a Backdrop Alley seamless paper subscription or additional Godox accessories. Over two years the savings total $456, enough to cover a second lighting modifier kit. The recommendation stands to start with Acuity and reassess when Luminary Studio's monthly session count consistently hits 15 or more.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "I'm revisiting the cable routing. If I move the Godox SL-60W stand to the south wall instead of center, how long a cable run do I need from the north-wall outlet?",
+      "assistant_message": "The room is 14 feet deep, and the north-wall outlet to the south wall is the full 14-foot span. Adding slack for routing along the baseboard and up the stand brings the required cable length to approximately 18 to 20 feet. Jordan Reyes should use a 25-foot, 12-gauge extension cord to have comfortable reach without pulling taut, and run it along the east-wall baseboard to keep it out of the shooting area. Secure it with cable raceways so it doesn't interfere with the Backdrop Alley stand feet or the Elara V-Flat placement near the south wall.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "For the Luminary Studio key light setup, I want to double-check the working distance. If I place the Godox SL-60W 5 feet from the subject at 45/45, what's the lux level at that distance?",
+      "assistant_message": "Using the inverse square law from the Godox SL-60W's rated 4,500 lux at 1 meter, at 5 feet — approximately 1.52 meters — the lux drops to 4,500 divided by 1.52 squared, which equals roughly 1,946 lux at the subject. That's still a workable exposure for Luminary Studio: at ISO 400 and f/4 you'd get a shutter speed around 1/100 s, which is suitable for a seated portrait session. Jordan Reyes should enter 1,946 lux into StudioCalc Pro as the key light value when the lamp is positioned at 5 feet. Pulling the light to 4 feet raises the lux to about 2,756, giving you more flexibility to stop down for greater depth of field.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "In StudioCalc Pro, I want to model what happens if I use a softbox on the Godox SL-60W. The softbox cuts output by 1.5 stops. What lux value should I enter for the key light at 5 feet with the softbox?",
+      "assistant_message": "Starting from 1,946 lux at 5 feet without any modifier, a 1.5-stop reduction means dividing by 2 raised to the power of 1.5, which is approximately 2.83. That gives you 1,946 divided by 2.83, or roughly 688 lux at the subject plane when the Godox SL-60W is fitted with the softbox at 5 feet. Jordan Reyes should enter 688 lux as the key light value in StudioCalc Pro for the softbox configuration. At that level you'll likely need to open to f/2.8 or raise ISO to 800 to maintain a clean exposure in Luminary Studio's small room.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "If I switch from Acuity to HoneyBook after 12 months, what's the total software cost for the first two years of running Luminary Studio?",
+      "assistant_message": "Year one with Acuity Scheduling costs $240, and year two with HoneyBook costs $468, for a combined two-year software total of $708 for Luminary Studio. That's $228 less than running HoneyBook for both years at $936 total, and $228 more than running Acuity for both years at $480. Jordan Reyes gets the benefit of HoneyBook's CRM and contract tools in year two when Luminary Studio's client volume justifies the upgrade. Budget $708 as the software line item in the two-year Luminary Studio business plan.",
+      "gold_parents": [
+        "t22"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "If I add a second Godox SL-60W as a hair light at 3 feet above and behind the subject, what lux does it contribute at the subject's head level?",
+      "assistant_message": "At 3 feet — approximately 0.91 meters — the second Godox SL-60W delivers 4,500 divided by 0.91 squared, which equals roughly 5,430 lux aimed directly at the subject. However, a hair light is typically feathered and aimed slightly past the subject, so the effective contribution at the head is closer to 40 to 50 percent of that direct value, yielding approximately 2,172 to 2,715 lux at the hair position. Jordan Reyes should enter 2,400 lux as a reasonable midpoint estimate in StudioCalc Pro for the hair light channel. Combined with the softbox key at 688 lux, the hair-to-key ratio will be approximately 3.5:1, which produces a defined rim without blowing out fine hair detail in Luminary Studio portraits.",
+      "gold_parents": [
+        "t24"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "The insurer came back and said physical gear under $1,000 can be added as a rider for $12 per month. Is that worth it given the current Luminary Studio inventory value?",
+      "assistant_message": "At $634 in current gear value — the Godox SL-60W, Elara V-Flat, Backdrop Alley stand, and StudioCalc Pro subscription — a $12-per-month rider costs $144 per year. If Jordan Reyes loses or damages the Godox SL-60W alone, the $150 replacement cost nearly covers one month's premium, meaning the rider pays for itself after roughly one incident per year. Given that Luminary Studio gear will soon exceed $1,000 as more equipment is added, locking in the under-$1,000 rate now is prudent. Accept the $12-per-month rider and reassess when the inventory crosses the $1,000 threshold for a full equipment floater.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "I want to add a dedicated circuit for Luminary Studio rather than using the existing outlets. An electrician quoted $350 for a 20-amp circuit. Does the current load justify that?",
+      "assistant_message": "The current Luminary Studio load — two Godox SL-60W units, a laptop running StudioCalc Pro, and a monitor — totals roughly 230 watts or about 2 amps, far below a 15-amp circuit's safe 12-amp continuous load limit. A dedicated 20-amp circuit at $350 is not justified by present equipment but becomes worthwhile if Jordan Reyes adds a strobe pack, a tethering workstation, or a second monitor, pushing load above 10 amps. The Elara V-Flat and Backdrop Alley stands are passive and draw no power. Defer the $350 electrician quote until the total connected wattage exceeds 1,200 watts.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t30",
+      "turn_index": 29,
+      "user_message": "I want to finalize the StudioCalc Pro lighting model for a standard Luminary Studio corporate headshot session. With the softbox key at 5 feet, the Elara V-Flat fill at 3 feet, and the hair light at 3 feet, what are the three lux values I should lock in as the session preset?",
+      "assistant_message": "For the Luminary Studio corporate headshot preset in StudioCalc Pro, lock in these three values: key light at 688 lux with the Godox SL-60W softbox at 5 feet, fill light at 1,500 lux reflected from the Elara V-Flat at 3 feet opposite the key, and hair light at 2,400 lux from the second Godox SL-60W at 3 feet above and behind the subject. Save this as the preset named Luminary-Corporate-v1 in StudioCalc Pro so Jordan Reyes can recall it instantly at the start of each session. These three values produce a 3:1 key-to-fill ratio and a 3.5:1 hair-to-key ratio, giving a clean, professional look on the 107-inch Backdrop Alley paper background.",
+      "gold_parents": [
+        "t25"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t31",
+      "turn_index": 30,
+      "user_message": "The insurer now wants a replacement-cost appraisal for any item over $200. Which Luminary Studio items require an appraisal?",
+      "assistant_message": "Of the current Luminary Studio inventory, the Godox SL-60W at $150 each falls below the $200 threshold individually, so neither unit requires a separate appraisal. The Elara V-Flat, priced at approximately $250, does exceed $200 and requires a replacement-cost appraisal. The Backdrop Alley stand at $85 and the StudioCalc Pro subscription at $149 per year are both under $200 and are exempt. Jordan Reyes should obtain a written quote from Backdrop Alley or an equivalent supplier for the Elara V-Flat replacement cost and submit it to the insurer along with the serial number photograph from the hinge area.",
+      "gold_parents": [
+        "t28"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t32",
+      "turn_index": 31,
+      "user_message": "I want to set the Luminary-Corporate-v1 session preset as my default in StudioCalc Pro. Given my key light angle, the subject-to-backdrop distance needed for a shadow-free background, and the three locked lux values, what should I document as the complete default session configuration?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t27",
+        "t30",
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t4",
+    "t5",
+    "t7",
+    "t12",
+    "t18",
+    "t24",
+    "t25",
+    "t27",
+    "t30"
+  ],
+  "distractor_turn_ids": [
+    "t2",
+    "t3",
+    "t6",
+    "t8",
+    "t9",
+    "t10",
+    "t11",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t19",
+    "t20",
+    "t21",
+    "t22",
+    "t23",
+    "t26",
+    "t28",
+    "t29",
+    "t31"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states the key light (Godox SL-60W) is positioned at 45 degrees to the side and 45 degrees above eye level as the standard starting angle.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states the subject-to-backdrop distance must be at least 6 feet to eliminate the shadow from the Backdrop Alley paper background entirely.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer correctly identifies all three StudioCalc Pro lux values for the Luminary-Corporate-v1 preset: 688 lux key, 1,500 lux fill, and 2,400 lux hair light.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not state that the acoustic panel cost of $252 or $272 is part of the session configuration or lighting preset.",
+      "required": true
+    }
+  ],
+  "notes": "The three gold branches are A (key light angle: 45/45 from t1/t24/t27), B (StudioCalc Pro lux values: 688/1500/2400 from t5/t12/t25/t27/t30), and C (subject-to-backdrop distance: 6 feet minimum from t4/t7/t18). The near-miss turn is t11, which answers a cost question about acoustic panels ($252 for 14 units) using the same kind of numerical summary as the final query but about a completely different sub-problem.\n\nReference answer: The default Luminary-Corporate-v1 session configuration for Luminary Studio should document the following: the Godox SL-60W key light is placed at 45 degrees to the side and 45 degrees above eye level (the 45/45 Rembrandt position), and the subject must be positioned at least 6 feet in front of the Backdrop Alley paper to ensure the key light shadow falls completely below the frame on a head-and-shoulders crop. In StudioCalc Pro, save the Luminary-Corporate-v1 preset with three locked lux values: 688 lux for the softbox key light at 5 feet, 1,500 lux for the Elara V-Flat fill at 3 feet opposite the key, and 2,400 lux for the hair light at 3 feet above and behind the subject. These settings produce a 3:1 key-to-fill ratio and a 3.5:1 hair-to-key ratio on the 107-inch Backdrop Alley background.",
+  "evidence_note": null,
+  "premise": "a freelance photographer setting up a home studio",
+  "evidence_spans": null,
+  "benchmark_version": "1.2-pilot",
+  "length_class": "long"
+}

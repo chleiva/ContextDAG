@@ -1,0 +1,218 @@
+```json
+{
+  "entity_registry": [
+    "Millbrook Oral History Project",
+    "Cassandra Velu",
+    "The Foundry Years",
+    "Episode Style Guide v2",
+    "Harrowgate Heritage Trust",
+    "Dominic Osei"
+  ],
+  "turns": [
+    {
+      "turn_id": "t1",
+      "user_message": "I'm starting the Millbrook Oral History Project podcast and I need to figure out the right episode length. What do most successful local-history podcasts aim for?",
+      "assistant_message": "Most successful local-history podcasts target a runtime between 28 and 35 minutes per episode, which aligns with average commute listening windows. The Harrowgate Heritage Trust's own archived show ran at exactly 32 minutes per episode during its peak season in 2019 and saw its highest completion rates at that length. For the Millbrook Oral History Project, Cassandra Velu, your lead producer, noted in the project kick-off memo that 30 minutes is the anchor target. Anything beyond 40 minutes tends to see a measurable drop-off in listener retention for niche-history formats."
+    },
+    {
+      "turn_id": "t2",
+      "user_message": "Good to know. What about the intro and outro segments — how long should each of those be within that 30-minute target?",
+      "assistant_message": "Within a 30-minute episode, the standard breakdown Cassandra Velu recommended in the Episode Style Guide v2 allocates 90 seconds to the intro and 60 seconds to the outro. That leaves roughly 27 minutes and 30 seconds of main content, which is consistent with how The Foundry Years podcast structures its episodes. Dominic Osei, the audio editor on the Millbrook Oral History Project, flagged that intros longer than 2 minutes cause early drop-off, so 90 seconds is treated as a firm ceiling in the guide."
+    },
+    {
+      "turn_id": "t3",
+      "user_message": "What recording equipment did the Millbrook Oral History Project decide to use for field interviews?",
+      "assistant_message": "After evaluating three options, Cassandra Velu and Dominic Osei settled on the Zoom H6 handheld recorder as the primary field device for the Millbrook Oral History Project. The Harrowgate Heritage Trust loaned the project two Shure SM58 microphones to pair with the H6 for the first recording season. The equipment budget approved in March 2024 was $1,840, covering the recorder, microphone stands, and a set of windscreens for outdoor sessions."
+    },
+    {
+      "turn_id": "t4",
+      "user_message": "I want to think about the hosting platform for the podcast. What are the main options we're weighing?",
+      "assistant_message": "Cassandra Velu shortlisted three platforms for the Millbrook Oral History Project: Buzzsprout, Transistor, and Podbean. Buzzsprout's Starter plan costs $12 per month for up to 3 hours of new audio uploads, which fits the initial monthly release schedule of two episodes. Dominic Osei noted that Transistor's unlimited-shows feature at $19 per month would allow the project to spin off a mini-series under the Harrowgate Heritage Trust umbrella without extra cost."
+    },
+    {
+      "turn_id": "t5",
+      "user_message": "Did we land on one of those platforms or is the decision still open?",
+      "assistant_message": "The decision was finalized at the project steering meeting on April 3, 2024: the Millbrook Oral History Project will host on Transistor at the $19-per-month plan. Cassandra Velu cast the deciding vote after Dominic Osei confirmed that Transistor's analytics dashboard exports data in CSV format, which the Harrowgate Heritage Trust requires for its quarterly reporting. The contract runs for a minimum of 12 months, locking in the rate through March 2025."
+    },
+    {
+      "turn_id": "t6",
+      "user_message": "What's the RSS feed situation — does Transistor auto-submit to Apple Podcasts and Spotify?",
+      "assistant_message": "Transistor generates a single RSS feed and provides one-click submission to Apple Podcasts, Spotify, and Amazon Music directly from the dashboard. Dominic Osei completed the Apple Podcasts submission for the Millbrook Oral History Project on April 10, 2024, and the feed was approved within 48 hours. The Spotify submission followed on April 12 and was live by April 14, meaning the show was available on both major platforms before the planned launch date of May 1, 2024."
+    },
+    {
+      "turn_id": "t7",
+      "user_message": "I need to work out a guest release form for the interviewees. What key clauses should it include?",
+      "assistant_message": "A guest release form for the Millbrook Oral History Project should include a perpetual, royalty-free licence granting the project the right to distribute the recorded interview in audio and transcript form. Cassandra Velu reviewed a template from the Harrowgate Heritage Trust's legal adviser and added a clause allowing guests to request a 10-business-day review of the transcript before publication. The form also needs a data-retention clause specifying that raw audio files will be stored for no longer than five years, which aligns with the Trust's existing archive policy."
+    },
+    {
+      "turn_id": "t8",
+      "user_message": "What's the plan for episode transcripts — are we producing them for every episode?",
+      "assistant_message": "Yes, the Episode Style Guide v2 mandates full transcripts for every episode of the Millbrook Oral History Project, to be published on the show's website within 72 hours of audio release. Dominic Osei will use Descript's automated transcription service, which costs $24 per month on the Creator plan, and then spend roughly 45 minutes per episode on manual correction. Cassandra Velu set an accuracy target of 98 percent before any transcript goes live, based on benchmarks from The Foundry Years podcast's own transcript workflow."
+    },
+    {
+      "turn_id": "t9",
+      "user_message": "Who is responsible for uploading the corrected transcripts to the website, and what platform is the website on?",
+      "assistant_message": "Dominic Osei is responsible for uploading corrected transcripts to the Millbrook Oral History Project website, which is built on Squarespace using the Business plan at $23 per month. Each transcript page is set up with a standard template created by Cassandra Velu that includes the episode number, guest name, recording date, and a link back to the audio player. The Harrowgate Heritage Trust requested that all transcript pages carry a Creative Commons Attribution 4.0 licence notice, which Cassandra Velu added to the template in version 2 of the site style sheet."
+    },
+    {
+      "turn_id": "t10",
+      "user_message": "Going back to the hosting — what happens if we exceed Transistor's storage or bandwidth limits?",
+      "assistant_message": "Transistor does not impose per-episode storage caps on the $19-per-month plan; the limitation is on the number of shows, not on total audio storage or bandwidth. Dominic Osei confirmed with Transistor support on April 5, 2024, that the Millbrook Oral History Project can upload unlimited episodes at any bitrate without overage fees. However, the Harrowgate Heritage Trust's finance committee asked Cassandra Velu to document monthly bandwidth figures starting from episode 3 onward, as part of a cost-review trigger set at 50,000 downloads per month."
+    },
+    {
+      "turn_id": "t11",
+      "user_message": "What's the social media strategy for promoting each new episode?",
+      "assistant_message": "The Millbrook Oral History Project's social media plan, drafted by Cassandra Velu, calls for posts on Instagram, Facebook, and Mastodon within one hour of each episode going live. Each post will include a 60-second audiogram clip generated from the episode's most compelling 60 seconds, produced by Dominic Osei using Headliner at $19 per month. The Harrowgate Heritage Trust's existing Facebook page, which has 3,400 followers, will cross-share every episode post to extend reach without additional advertising spend."
+    },
+    {
+      "turn_id": "t12",
+      "user_message": "On the release form, should it cover photographs taken during the recording sessions as well?",
+      "assistant_message": "Yes, Cassandra Velu revised the Millbrook Oral History Project release form to include a separate photograph licence clause after the Harrowgate Heritage Trust pointed out that session photos would be used in social media audiograms and website headers. The clause grants the project a non-exclusive right to use, crop, and colour-correct any photographs taken during a session, with the guest retaining copyright. Dominic Osei noted that this clause needs to be initialled separately by the guest, distinct from the audio licence signature, to satisfy the Trust's content-rights checklist."
+    },
+    {
+      "turn_id": "t13",
+      "user_message": "Does the release form need to be witnessed or notarised, or is a simple signature sufficient?",
+      "assistant_message": "The Harrowgate Heritage Trust's legal adviser confirmed that a simple signature is sufficient for the Millbrook Oral History Project release form under applicable UK law, because the agreement does not transfer ownership of copyright, only a licence. Cassandra Velu updated the form header to read 'Licence Agreement — No Notarisation Required' to prevent guest confusion. The form must still be signed before recording begins, not after, which is a procedural rule Dominic Osei added to the Episode Style Guide v2 as item 4.3."
+    },
+    {
+      "turn_id": "t14",
+      "user_message": "What's the retention period for signed release forms, and where will they be stored?",
+      "assistant_message": "Signed release forms for the Millbrook Oral History Project will be retained for 10 years from the date of signing, stored as scanned PDFs in a password-protected folder on the Harrowgate Heritage Trust's SharePoint drive. Cassandra Velu is the designated data controller listed on the forms, and Dominic Osei will scan and upload each form within 24 hours of it being signed. Physical originals will be held in a locked filing cabinet at the Trust's office for 12 months and then securely shredded, per the Trust's document-retention policy revised in January 2024."
+    },
+    {
+      "turn_id": "t15",
+      "user_message": "For the field recording setup, how are we handling wind noise for outdoor interviews?",
+      "assistant_message": "Dominic Osei specified that every outdoor interview session for the Millbrook Oral History Project will use the Rycote Lavalier Windjammer on each Shure SM58, which reduces wind noise by approximately 20 dB according to the manufacturer's specs. Cassandra Velu added a pre-session checklist item in Episode Style Guide v2 requiring the recordist to do a 30-second ambient test before the guest begins speaking. The Harrowgate Heritage Trust's two loaned SM58s already have the Rycote mounts fitted, so no additional purchase was needed within the $1,840 equipment budget."
+    },
+    {
+      "turn_id": "t16",
+      "user_message": "For transcripts, how are we handling guests who speak a mix of English and another language?",
+      "assistant_message": "The Episode Style Guide v2 specifies that mixed-language passages in Millbrook Oral History Project transcripts are rendered in the original language with an English translation in square brackets immediately following. Cassandra Velu consulted with the Harrowgate Heritage Trust's community liaison and decided that Dominic Osei will handle translation for the six most commonly occurring languages identified in the project's community survey: Punjabi, Urdu, Polish, Gujarati, Welsh, and Somali. For any other language, the project will engage a freelance translator at a budgeted rate of £35 per hour, capped at 3 hours per episode."
+    },
+    {
+      "turn_id": "t17",
+      "user_message": "What's the plan for episode artwork and visual branding for the Millbrook Oral History Project?",
+      "assistant_message": "Cassandra Velu commissioned a local graphic designer, Priya Nandwani, to create the podcast cover art for the Millbrook Oral History Project, with a fixed fee of £400. The approved design uses a sepia-toned aerial photograph of Millbrook's 1930s foundry district as the background, with the show title in a serif typeface, Playfair Display, at 72pt. The Harrowgate Heritage Trust reviewed three concept rounds before approving the final design on March 28, 2024, and Dominic Osei confirmed the file met Transistor's 3000×3000-pixel minimum specification."
+    },
+    {
+      "turn_id": "t18",
+      "user_message": "Has the project settled on a mic technique for indoor interviews — close-mic or mid-distance?",
+      "assistant_message": "The Millbrook Oral History Project standardised on a close-mic technique for indoor interviews, with the Shure SM58 positioned 6 to 8 inches from the speaker's mouth at a 45-degree angle to reduce plosives. Dominic Osei documented this in Episode Style Guide v2 as item 3.1, citing a test session conducted on February 14, 2024, where the close-mic approach produced a signal-to-noise ratio of 58 dB compared to 41 dB at mid-distance. Cassandra Velu approved the standard after listening to blinded A/B samples, and the Harrowgate Heritage Trust's archive team confirmed it matches their own oral-history recording standards."
+    },
+    {
+      "turn_id": "t19",
+      "user_message": "Coming back to episode structure — the Episode Style Guide v2 mentions a music bed. What are the rules around that?",
+      "assistant_message": "The Episode Style Guide v2 specifies that the Millbrook Oral History Project will use a single licensed music bed throughout each episode, sourced exclusively from Epidemic Sound's Standard plan at $15 per month. The music bed plays under the intro for the full 90 seconds and fades out over 5 seconds at the 90-second mark, then re-enters under the outro for the full 60 seconds. Cassandra Velu chose a piece titled 'Copper & Grain' from Epidemic Sound's Folk Instrumental collection as the show's signature track, and Dominic Osei confirmed the track's BPM of 84 suits the contemplative tone set in The Foundry Years podcast's audio identity."
+    },
+    {
+      "turn_id": "t20",
+      "user_message": "What's the posting schedule for the Millbrook Oral History Project on social media — daily, weekly, or something else?",
+      "assistant_message": "Cassandra Velu's social media plan specifies a posting schedule of three times per week on Instagram and Facebook: Mondays for a teaser clip from the upcoming episode, Wednesdays for an archival photograph with caption, and Fridays for the episode-launch audiogram. Dominic Osei will pre-schedule all posts using Buffer's Essentials plan at $6 per month, batching content two weeks in advance. The Harrowgate Heritage Trust asked that every archival photograph post credit the Trust's archive by name, which Cassandra Velu built into the caption template."
+    },
+    {
+      "turn_id": "t21",
+      "user_message": "On the field equipment, what's the backup plan if the Zoom H6 fails during a session?",
+      "assistant_message": "The Millbrook Oral History Project's contingency plan, written by Dominic Osei into Episode Style Guide v2 item 3.5, requires every recordist to carry a fully charged iPhone running the Voice Memos app as a secondary recorder placed on the table during every session. A second backup — a Tascam DR-40X borrowed from the Harrowgate Heritage Trust's media cupboard — is available for high-priority interviews booked in advance, defined as interviews with subjects aged 80 or older or with unique archival significance. Cassandra Velu approved both tiers after the Zoom H6 failed during a test session on March 2, 2024, losing 12 minutes of audio."
+    },
+    {
+      "turn_id": "t22",
+      "user_message": "For the transcript workflow, is there a version-control system so we can track edits between Dominic's first pass and the final approved version?",
+      "assistant_message": "Dominic Osei set up a Google Docs folder within the Millbrook Oral History Project's shared drive where each transcript exists as a named document following the convention 'MOP-EP[number]-TRANSCRIPT-[YYYY-MM-DD]'. Version history is enabled by default in Google Docs, and Cassandra Velu added a comment-resolution rule requiring all editorial comments to be marked 'resolved' before the transcript is exported for web upload. The Harrowgate Heritage Trust's archive team receives a final PDF export of each approved transcript within 7 days of episode publication, stored alongside the signed release form in the SharePoint folder."
+    },
+    {
+      "turn_id": "t23",
+      "user_message": "How long is the music bed in the outro of The Foundry Years podcast?",
+      "assistant_message": "The Foundry Years podcast uses a 90-second music bed in its outro, which is notably longer than the industry standard of 30 to 60 seconds. That 90-second outro music bed was a deliberate branding choice by The Foundry Years production team to allow a full spoken credits segment to play over it. This is distinct from the Millbrook Oral History Project's own outro music specification, which Cassandra Velu set at a different duration in the Episode Style Guide v2."
+    },
+    {
+      "turn_id": "t24",
+      "user_message": "Has the cover art been adapted for social media profile images as well, or only for the podcast directory listing?",
+      "assistant_message": "Priya Nandwani delivered three additional crops of the Millbrook Oral History Project cover art alongside the main 3000×3000-pixel file: a 400×400-pixel circle-safe version for Instagram and Facebook profiles, a 1500×500-pixel banner for the Twitter/X header, and a 800×800-pixel version for the Squarespace website favicon. Cassandra Velu confirmed all three crops with the Harrowgate Heritage Trust's communications officer on April 1, 2024, and Dominic Osei uploaded the profile images to all active social channels by April 5. The total additional fee to Priya Nandwani for the extra crops was £60, bringing the design budget to £460."
+    },
+    {
+      "turn_id": "t25",
+      "user_message": "Is there a listener analytics review scheduled — how often will the team look at Transistor's data?",
+      "assistant_message": "Cassandra Velu scheduled monthly analytics reviews for the Millbrook Oral History Project on the first Tuesday of each month, using the CSV exports Dominic Osei pulls from Transistor's dashboard. The review meetings include Cassandra, Dominic, and one representative from the Harrowgate Heritage Trust, and they track four metrics: total downloads, 50-percent completion rate, new subscribers, and geographic distribution of listeners. If total monthly downloads exceed the 50,000 trigger set by the Trust's finance committee, an ad-hoc budget review is convened within 10 business days."
+    },
+    {
+      "turn_id": "t26",
+      "user_message": "For the branding, is the Playfair Display typeface used anywhere beyond the cover art?",
+      "assistant_message": "Cassandra Velu extended the Playfair Display typeface to the Squarespace website's heading styles (H1 and H2) to create visual consistency between the podcast cover art and the Millbrook Oral History Project's web presence. Priya Nandwani supplied a brand style sheet specifying Playfair Display at 36pt for H1 and 24pt for H2, with body text set in Source Sans Pro at 16pt. Dominic Osei applied these settings to the Squarespace theme on April 8, 2024, and the Harrowgate Heritage Trust's communications officer signed off on the final site appearance on April 11."
+    },
+    {
+      "turn_id": "t27",
+      "user_message": "For outdoor recordings, does the project have a protocol for noise interruptions — like traffic or construction?",
+      "assistant_message": "Episode Style Guide v2 item 3.3 instructs the recordist to pause the session and re-record any passage interrupted by noise louder than 65 dB, which Dominic Osei measured as the threshold above which post-production noise reduction cannot restore intelligibility without audible artefacts. The Millbrook Oral History Project's preferred fallback is to shift outdoor interviews to the Harrowgate Heritage Trust's ground-floor meeting room, which has a measured ambient noise floor of 28 dB. Cassandra Velu added a guest briefing note to the pre-interview information pack explaining that sessions may need to be paused or relocated, so guests are not caught off guard."
+    },
+    {
+      "turn_id": "t28",
+      "user_message": "Has Priya Nandwani been commissioned for any future design work, or was it a one-off engagement?",
+      "assistant_message": "Cassandra Velu signed a retainer agreement with Priya Nandwani for the Millbrook Oral History Project covering the first 12-episode season, at a rate of £80 per episode for any required episode-specific artwork such as guest portrait illustrations or themed title cards. The retainer is capped at £960 for the season and was approved by the Harrowgate Heritage Trust's finance committee in the March 2024 budget sign-off alongside the equipment spend. Dominic Osei will brief Priya on each episode's visual theme at least 14 days before the episode's release date to ensure turnaround time."
+    },
+    {
+      "turn_id": "t29",
+      "user_message": "Will the episode-specific artwork appear in the Transistor feed as chapter art, or only on the website?",
+      "assistant_message": "Dominic Osei confirmed that Transistor supports per-episode cover art that overrides the show's default cover art in podcast apps that render chapter images, so each episode of the Millbrook Oral History Project will display Priya Nandwani's episode-specific illustration in compatible apps such as Overcast and Pocket Casts. The default 3000×3000-pixel cover art continues to show in apps that do not support per-episode overrides, including older versions of Apple Podcasts. Cassandra Velu noted in the Episode Style Guide v2 that episode art should always include the episode number in the lower-right corner at minimum 18pt to aid navigation in app libraries."
+    },
+    {
+      "turn_id": "t30",
+      "user_message": "What's the plan for the Millbrook Oral History Project's newsletter — is that part of the social strategy?",
+      "assistant_message": "Cassandra Velu added a monthly email newsletter to the promotional plan after the Harrowgate Heritage Trust's communications officer pointed out that the Trust's existing mailing list of 1,200 subscribers could be leveraged at no cost. The newsletter will be sent on the last Friday of each month using Mailchimp's free tier, which supports up to 500 sends per month — well within the initial list size. Dominic Osei will draft each newsletter using a template Cassandra Velu built in Mailchimp, summarising the month's episodes, featuring one archival photograph, and including a listener-survey link to gather feedback on episode length and topics."
+    },
+    {
+      "turn_id": "t31",
+      "user_message": "I want to confirm the full timing breakdown one more time — the intro is 90 seconds, the outro is 60 seconds, and the music bed runs under both. Is there any segment I'm missing from the Episode Style Guide v2's structure?",
+      "assistant_message": "The Episode Style Guide v2 includes one additional structural segment: a mid-episode sponsor or partner acknowledgement slot of 30 seconds, positioned at the 15-minute mark of each episode. Cassandra Velu reserved this slot for the Harrowgate Heritage Trust's own funding acknowledgements and any future sponsorship, but it counts toward the 30-minute total runtime. So the complete breakdown is: 90-second intro with music bed, 27 minutes of main content including the 30-second acknowledgement at the midpoint, and a 60-second outro with music bed — totalling exactly 30 minutes."
+    },
+    {
+      "turn_id": "t32",
+      "user_message": "For the transcript naming convention, what happens when a single interview is split across two episodes?",
+      "assistant_message": "Dominic Osei updated the naming convention in the Millbrook Oral History Project's shared Google Docs folder to handle split interviews with a part suffix: 'MOP-EP[number]-PT1-TRANSCRIPT-[YYYY-MM-DD]' and 'MOP-EP[number+1]-PT2-TRANSCRIPT-[YYYY-MM-DD]'. Cassandra Velu added a cross-reference note at the top of each part-transcript pointing to the sibling document, so the Harrowgate Heritage Trust's archive team can locate both parts without searching. The naming update was documented in the Episode Style Guide v2 as item 5.2 following a decision made at the April 3, 2024 steering meeting."
+    },
+    {
+      "turn_id": "t33",
+      "user_message": "Has the newsletter template been tested with the Harrowgate Heritage Trust's existing mailing list, or is that still pending?",
+      "assistant_message": "Dominic Osei sent a test newsletter to a sample of 50 addresses drawn from the Harrowgate Heritage Trust's list on April 15, 2024, using Mailchimp's test-send feature. The open rate for the test was 64 percent and the click-through rate on the episode-audio link was 31 percent, both well above Mailchimp's industry benchmarks of 21 percent and 2.6 percent respectively for the arts-and-culture sector. Cassandra Velu reviewed the results on April 17 and approved the template for full deployment starting with the May 2024 issue, coinciding with the podcast's planned launch."
+    },
+    {
+      "turn_id": "t34",
+      "user_message": "Given all the timing segments in the Episode Style Guide v2, how many seconds of actual interview content does a standard 30-minute episode contain after the intro, outro, and mid-episode acknowledgement are removed?",
+      "assistant_message": null
+    }
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that the intro is 90 seconds long.",
+      "required": true,
+      "evidence_turn_ids": ["t2", "t31"]
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that the outro is 60 seconds long.",
+      "required": true,
+      "evidence_turn_ids": ["t2", "t31"]
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer states that the mid-episode acknowledgement slot is 30 seconds long, placed at the 15-minute mark.",
+      "required": true,
+      "evidence_turn_ids": ["t31"]
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer correctly calculates the remaining interview-content time as 1,620 seconds (27 minutes) after subtracting 90 + 60 + 30 = 180 seconds from 1,800 seconds, and must not state 1,710 seconds (28 minutes 30 seconds), which would be the incorrect figure derived from omitting the 30-second acknowledgement slot.",
+      "required": true,
+      "evidence_turn_ids": []
+    },
+    {
+      "id": "c5",
+      "criterion": "The answer must not state that the outro music bed is 90 seconds, which is the near-miss figure given for The Foundry Years podcast in t23.",
+      "required": true,
+      "evidence_turn_ids": []
+    }
+  ],
+  "reference_answer": "According to the Episode Style Guide v2, a standard 30-minute episode of the Millbrook Oral History Project contains three non-interview segments: a 90-second intro with music bed, a 60-second outro with music bed, and a 30-second mid-episode partner acknowledgement at the 15-minute mark. Those three segments total 180 seconds (3 minutes), leaving 1,620 seconds — exactly 27 minutes — of actual interview content. The music bed runs under both the intro and outro but does not extend into the interview content itself.",
+  "notes": "The facts the query needs come from t1 (30-minute total target), t2 (90-second intro, 60-second outro), and t31 (30-second mid-episode acknowledgement slot completing the breakdown). The near-miss in t23 gives The Foundry Years podcast's outro music bed as 90 seconds, which could mislead a careless reader into misidentifying the Millbrook Oral History Project's outro duration."
+}
+```

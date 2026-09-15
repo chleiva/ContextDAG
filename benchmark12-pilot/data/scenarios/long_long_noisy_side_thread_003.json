@@ -1,0 +1,432 @@
+{
+  "scenario_id": "long_long_noisy_side_thread_003",
+  "family": "long_noisy_side_thread",
+  "label": "NOISE",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm launching a local history podcast called Founders & Frontiers and want to figure out our episode release schedule. We're thinking weekly, but I need to understand what lead time each episode needs from recording to publish.",
+      "assistant_message": "For a weekly local history podcast like Founders & Frontiers, a realistic lead time from raw recording to publish is typically 10 to 14 days per episode. That window covers editing (roughly 4 hours per 45-minute episode), fact-checking against archival sources like the Cedarvale Archive, show notes writing, and scheduling the RSS feed upload. The Harrowfield Historical Society, if they're a production partner, usually requires 7 days' notice before any episode mentioning their collections goes live.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "That's helpful. We have Dale Hutchins as our lead editor and Mira Okafor handling research. How many episodes should we bank before the launch date?",
+      "assistant_message": "With Dale Hutchins editing and Mira Okafor on research, you should bank a minimum of 4 episodes before launch day to maintain a weekly cadence without gaps. This buffer accounts for unexpected delays such as a Cedarvale Archive access closure or a re-record if a guest cancels. Industry practice for debut podcasts is actually 3 to 6 episodes banked, and the Harrowfield Historical Society's own media guidelines recommend at least 4 finished episodes before any public announcement of a new series.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "What format should each Founders & Frontiers episode follow? I want something consistent for listeners.",
+      "assistant_message": "The Episode Production Guide v2 that Dale Hutchins drafted recommends a three-segment format: a 5-minute cold open with a historical hook, a 30-minute main interview or narrative section, and a 10-minute closing segment featuring listener questions or archival audio clips. Mira Okafor suggested adding a 2-minute sponsor acknowledgment slot between the cold open and the main segment, which would bring the total target runtime to 47 minutes. The Harrowfield Historical Society has approved this structure for episodes that draw on their collections, provided their name is read aloud in the closing credits.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "We need to decide on recording equipment for Founders & Frontiers. What microphone setup should Dale Hutchins use in the field?",
+      "assistant_message": "For field recording, Dale Hutchins should use a matched pair of Shure SM58 dynamic microphones fed into a Zoom H6 portable recorder, which gives 24-bit 96kHz capture suitable for the Cedarvale Archive's digitization standards. The Harrowfield Historical Society's studio has a fixed Rode NT1 setup for in-house interviews, so field sessions need a different kit that can match that quality in post. Budget for this rig runs about $480 for the two SM58s and $320 for the H6, totaling $800 in equipment costs.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "Does the Zoom H6 have enough inputs if we have three speakers at once?",
+      "assistant_message": "The Zoom H6 supports up to six inputs simultaneously: four combo XLR/TRS inputs on the body plus two capsule inputs at the top, so three speakers is comfortably within its range. Dale Hutchins confirmed during the Founders & Frontiers equipment review that he tested a three-guest roundtable in the Harrowfield Historical Society meeting room and got clean separation on all channels. He recommends setting each channel to -12 dB input gain as a starting point and adjusting per speaker to avoid clipping on louder voices.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What about battery life on the H6 during a long field session?",
+      "assistant_message": "The Zoom H6 runs approximately 4 hours on four AA alkaline batteries at 24-bit 96kHz, which covers a typical Founders & Frontiers field session comfortably. Dale Hutchins keeps a spare set of Energizer Ultimate Lithium AAs in the kit bag, which extend runtime to roughly 6 hours under the same settings. The Harrowfield Historical Society's outdoor site visits, like the Cedarvale Archive grounds tour recorded last spring, typically run 2.5 to 3 hours, so a single battery set is sufficient with the lithium backup as insurance.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "Mira Okafor needs access credentials for the Cedarvale Archive digital collection. How does that process work?",
+      "assistant_message": "The Cedarvale Archive digital collection access requires submitting a Research Access Form, which Mira Okafor can download from the archive's portal, along with a letter of affiliation from the Harrowfield Historical Society confirming the Founders & Frontiers project is a legitimate research endeavor. Processing takes 10 business days and costs a $75 annual researcher fee. Once approved, Mira Okafor receives login credentials granting access to roughly 14,000 digitized documents, photographs, and maps dating from 1842 to 1990.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "I need to think about the Founders & Frontiers cover art and branding. What dimensions does the main podcast artwork need to be?",
+      "assistant_message": "Apple Podcasts and Spotify both require artwork to be a square image between 1400x1400 and 3000x3000 pixels in JPEG or PNG format, with a minimum resolution of 72 DPI though 300 DPI is recommended for sharp rendering on high-resolution displays. Mira Okafor noted that the Harrowfield Historical Society's brand guidelines specify their logo must appear no smaller than 200x200 pixels if co-branded artwork is used. Dale Hutchins suggested using the Cedarvale Archive's 1887 bird's-eye-view map of the town as the background image, which is in the public domain and available at 4800x4800 pixels from the archive's digital collection.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "Should the cover art include the Founders & Frontiers title text or just the image?",
+      "assistant_message": "The title text should always appear on the cover art because at small thumbnail sizes, typically 55x55 pixels in podcast app lists, a purely visual image without text fails to identify the show at a glance. Mira Okafor reviewed six comparable local history podcasts and found that all six used title text in a contrasting color band at the bottom of the image. The Episode Production Guide v2 includes a one-page branding section that Dale Hutchins wrote specifying the show's typeface as Playfair Display at 72pt minimum for the title, with a hex color of #2C1A0E to match the sepia tone of the Cedarvale Archive map background.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "Can the Zoom H6 record a remote guest over a phone line if we need to?",
+      "assistant_message": "The Zoom H6 does not natively accept a phone or VOIP signal directly; Dale Hutchins routes remote guests through a laptop running Zencastr, then imports the remote track and syncs it in post with the locally recorded Zoom H6 file. This dual-ender workflow is documented in the Episode Production Guide v2 under Section 4, Remote Recording Protocols. The Harrowfield Historical Society used this exact approach when interviewing a guest historian in Edinburgh for a Founders & Frontiers pilot episode, achieving less than 15 milliseconds of drift after sync.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "How should Founders & Frontiers handle music licensing for the theme and any incidental music?",
+      "assistant_message": "The safest route for Founders & Frontiers is to commission an original theme from a local composer, which transfers all rights to the show, avoiding any ongoing royalty obligations. Mira Okafor identified three composers in the region; Dale Hutchins recommended budgeting $600 to $1,200 for a 90-second theme and three 15-second transitional stings. Alternatively, libraries like Musicbed or Artlist offer annual blanket licenses starting at $199 per year that cover podcast use, and the Harrowfield Historical Society already holds an Artlist blanket license that Founders & Frontiers could potentially use under the society's institutional umbrella.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "Does Mira Okafor have a login for the Cedarvale Archive yet, or is that still pending?",
+      "assistant_message": "As of the last project status update, Mira Okafor submitted her Research Access Form and the Harrowfield Historical Society affiliation letter on March 4th, so she is currently in the 10-business-day processing window. Her access should be active by March 18th at the latest, assuming no additional documentation is requested. Dale Hutchins flagged this in the Episode Production Guide v2 tracker as a dependency for Episodes 3 and 4, which draw heavily on the Cedarvale Archive's 1910 to 1925 municipal photograph collection.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "What happens if the Cedarvale Archive needs more documentation from Mira Okafor before approving her access?",
+      "assistant_message": "If the Cedarvale Archive requests additional documentation, they notify the applicant by email within 5 business days of the initial submission, giving a 10-day window to respond before the application is withdrawn and must be resubmitted with a new $75 fee. Mira Okafor should monitor the email address she used on the Research Access Form daily during the review period. Dale Hutchins suggested she proactively contact the archive's Research Coordinator, whose name is listed as Patricia Ng on the Cedarvale Archive website, to confirm receipt and ask if anything further is needed.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "If Mira Okafor's access is delayed past March 18th, which episodes of Founders & Frontiers would be affected?",
+      "assistant_message": "Episodes 3 and 4 are the directly affected episodes because they rely on the Cedarvale Archive's 1910 to 1925 photograph collection, as flagged by Dale Hutchins in the Episode Production Guide v2 tracker. Episode 5 also has a partial dependency on the archive's land registry scans from 1898, meaning a delay beyond March 25th would cascade into a third episode. The Harrowfield Historical Society has physical duplicates of some of the 1898 land registry pages, so Mira Okafor could use those as a stopgap for Episode 5 while the digital access is finalized.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "I want the cold open of each episode to really hook listeners. What are some structural techniques for the 5-minute cold open?",
+      "assistant_message": "The most effective cold open structures for a history podcast like Founders & Frontiers are the in-medias-res drop, where you begin with a dramatic moment from the story before stepping back to provide context, and the archival audio quote, where a contemporary voice or recording sets the scene immediately. Mira Okahar researched this across 12 local history podcasts and found that episodes opening with a direct archival quote retained 18 percent more listeners through the first 10 minutes compared to those starting with host narration. Dale Hutchins noted in the Episode Production Guide v2 that the cold open should never exceed 5 minutes 30 seconds or podcast platforms start flagging episodes for slow-start penalties in their recommendation algorithms.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "What color palette did Mira Okafor settle on for the Founders & Frontiers brand beyond the cover art?",
+      "assistant_message": "Mira Okafor finalized a three-color primary palette: deep walnut brown at hex #2C1A0E, parchment cream at #F5E6C8, and slate blue at #3A5068, all drawn from the tonal range of the Cedarvale Archive's 1887 bird's-eye-view map. These three colors appear consistently across the website header, episode chapter cards, and social media templates. Dale Hutchins confirmed that the Harrowfield Historical Society approved this palette on February 28th as consistent with their own heritage brand standards, provided the society's logo retains its original dark green color when co-displayed.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "What hosting platform should Founders & Frontiers use to distribute the RSS feed?",
+      "assistant_message": "Buzzsprout and Transistor are the two strongest options for Founders & Frontiers given the expected episode volume of one per week and the need for detailed analytics. Transistor costs $19 per month for unlimited shows and up to 20,000 downloads per month, while Buzzsprout's comparable plan is $18 per month for 5 hours of monthly upload. Dale Hutchins reviewed both platforms and recommended Transistor because it supports multiple shows under one account, which matters if the Harrowfield Historical Society wants to spin off additional series later without paying for separate hosting accounts.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "The 5-minute cold open structure in the Episode Production Guide v2 — does it specify who writes the cold open script, Dale Hutchins or Mira Okafor?",
+      "assistant_message": "The Episode Production Guide v2 assigns cold open scripting to Mira Okafor, since she conducts the primary archival research and is best positioned to identify the strongest hook from each episode's source material. Dale Hutchins then reviews the cold open script for audio pacing and flags any sections that would be difficult to edit cleanly, typically returning notes within 48 hours. The Harrowfield Historical Society requested and received approval rights over any cold open that uses their collections as the primary source, which must be submitted to the society's liaison at least 5 business days before recording.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "What is the specific minimum number of banked episodes the Harrowfield Historical Society's media guidelines require before a public series announcement, and does that number match general industry practice?",
+      "assistant_message": "The Harrowfield Historical Society's media guidelines specify a minimum of 4 finished, fully edited episodes banked before any public announcement of a new series that uses their name or collections. General industry practice, as cited in multiple podcasting launch guides, places the recommended range at 3 to 6 episodes, so the society's requirement of 4 sits squarely within that range and is not more restrictive than the industry norm. Mira Okafor confirmed this alignment in her project notes, and Dale Hutchins incorporated the 4-episode minimum as a hard gate in the Founders & Frontiers production timeline.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "What budget has been set aside for music licensing for Founders & Frontiers in year one?",
+      "assistant_message": "The year-one music budget for Founders & Frontiers is $1,400, which covers either a commissioned original theme at the upper end of the $600 to $1,200 range plus an Artlist blanket license, or a commission plus a buffer for additional stings. Mira Okafor allocated this figure in the project's working budget document, cross-referencing the three composer quotes Dale Hutchins gathered. The Harrowfield Historical Society confirmed they would not contribute to music costs since their existing Artlist license covers only their own institutional productions, not co-produced external shows like Founders & Frontiers.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "In the three-segment episode format from the Episode Production Guide v2, what is the specified runtime for the main interview segment?",
+      "assistant_message": "The Episode Production Guide v2 specifies 30 minutes as the target runtime for the main interview or narrative segment, which is the longest of the three segments. This figure was set by Dale Hutchins after reviewing listener drop-off data from comparable local history podcasts, which showed engagement declining sharply after 32 minutes in the main segment for shows without strong archival audio breaks. The Harrowfield Historical Society's liaison also noted that their institutional oral history interviews, many of which Mira Okafor plans to draw from for Founders & Frontiers, average 28 to 35 minutes in their raw form, making the 30-minute target a natural fit.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "What social media channels is Mira Okafor managing for the Founders & Frontiers launch?",
+      "assistant_message": "Mira Okafor is managing Instagram, Facebook, and a Substack newsletter for the Founders & Frontiers launch, with Instagram as the primary visual platform for episode art and archival image previews. She is posting three times per week on Instagram starting six weeks before launch, two times per week on Facebook, and sending the Substack newsletter bi-weekly. Dale Hutchins handles the show's YouTube channel, where he uploads audiogram clips of 90 seconds or less, and the Harrowfield Historical Society cross-promotes each episode announcement to their 4,200-follower Facebook page.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "How many Instagram followers does the Harrowfield Historical Society's account currently have, and is that enough reach to support the Founders & Frontiers launch?",
+      "assistant_message": "The Harrowfield Historical Society's Instagram account currently has 1,850 followers, which is a solid regional base but more modest than their Facebook presence of 4,200 followers. For a local history podcast launch, 1,850 Instagram followers from a credible institutional partner can generate roughly 200 to 400 first-week downloads if 15 to 20 percent of followers engage with the launch post, based on Mira Okafor's benchmarking of three similar regional podcast launches. Dale Hutchins recommended the society boost the launch announcement post with a $50 paid promotion targeting local history enthusiasts within a 50-mile radius to extend reach beyond the existing follower base.",
+      "gold_parents": [
+        "t22"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "Has a hosting platform been chosen yet, or is Transistor still just a recommendation from Dale Hutchins?",
+      "assistant_message": "Transistor has been formally selected as the Founders & Frontiers hosting platform; Mira Okafor signed up for the $19 per month plan on March 10th and imported the two completed pilot episodes to test the dashboard. The RSS feed URL has been submitted to Apple Podcasts, Spotify, and Amazon Music for directory approval, which typically takes 5 to 7 business days per platform. Dale Hutchins verified that the Harrowfield Historical Society's name and website URL appear correctly in the show metadata fields required by each directory.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "Is there a backup recording device policy if the Zoom H6 fails during a field session?",
+      "assistant_message": "Dale Hutchins established a backup recording policy in the Episode Production Guide v2 requiring that a second device, specifically a smartphone running the Ferrite Recording Studio app, be running simultaneously on any field session more than 30 minutes from the Harrowfield Historical Society's studio. The smartphone backup captures at 44.1kHz 16-bit AAC, which is sufficient for emergency use but would require additional noise reduction processing by Dale Hutchins in post. Mira Okafor carries a dedicated iPhone 14 Pro for this purpose during Cedarvale Archive site visits, keeping it charged to at least 80 percent before each outing.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "What analytics metrics will Dale Hutchins track to evaluate whether the Transistor hosting plan needs to be upgraded?",
+      "assistant_message": "Dale Hutchins will track three primary metrics on Transistor: total monthly downloads, unique listeners per episode in the first 7 days, and average listen duration as a percentage of episode length. The upgrade threshold he set is 18,000 monthly downloads, which sits just below the $19 plan's 20,000-download ceiling, giving a 2,000-download buffer before overage charges kick in. Mira Okafor will review these numbers with Dale Hutchins at the end of each month and report a summary to the Harrowfield Historical Society as part of the project's quarterly progress update.",
+      "gold_parents": [
+        "t24"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "For the closing segment of each Founders & Frontiers episode, who is responsible for curating the listener questions?",
+      "assistant_message": "The Episode Production Guide v2 assigns listener question curation to Mira Okafor, who collects submissions from the show's email inbox and the Founders & Frontiers Instagram DMs each week and selects two to three questions per episode. Dale Hutchins reviews the selected questions before recording to confirm they can be answered concisely within the 10-minute closing segment without requiring additional archival research. The Harrowfield Historical Society requested that any question touching on their specific collections be flagged to their liaison for a brief fact-check, which Mira Okafor noted adds roughly one business day to the closing segment prep time.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "What is the upgrade price for Transistor if Founders & Frontiers exceeds the 20,000-download monthly cap?",
+      "assistant_message": "Transistor's next plan tier above the $19 per month level is $49 per month, which supports up to 50,000 downloads per month and unlimited shows. Dale Hutchins flagged this in the hosting plan comparison he shared with Mira Okafor, noting that the jump from $19 to $49 represents a $360 annual increase that should be built into the year-two budget if the show gains strong traction. The Harrowfield Historical Society indicated they would consider co-funding the upgrade if Founders & Frontiers reaches 15,000 monthly downloads, treating that threshold as evidence of sufficient public engagement to justify institutional support.",
+      "gold_parents": [
+        "t26"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "At what monthly download number did Dale Hutchins set the trigger to formally request co-funding from the Harrowfield Historical Society?",
+      "assistant_message": "Dale Hutchins set the co-funding request trigger at 15,000 monthly downloads, matching the threshold the Harrowfield Historical Society itself named as evidence of sufficient public engagement. He documented this in the Founders & Frontiers production timeline as a milestone review point, at which Mira Okafor would prepare a one-page impact summary for the society's board. The 15,000-download figure was chosen because it represents 75 percent of the $19 Transistor plan's 20,000-download ceiling, giving the society board time to deliberate before an upgrade becomes operationally urgent.",
+      "gold_parents": [
+        "t28"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t30",
+      "turn_index": 29,
+      "user_message": "Has the Artlist license question been resolved — will Founders & Frontiers get to use the Harrowfield Historical Society's existing license or not?",
+      "assistant_message": "The Harrowfield Historical Society confirmed definitively that Founders & Frontiers cannot use their existing Artlist blanket license because Artlist's institutional terms restrict use to productions owned and published directly by the license holder, and Founders & Frontiers is a co-produced external show. Mira Okafor therefore allocated the full $199 Artlist annual fee within the show's $1,400 music budget, leaving $1,201 for a commissioned theme and stings. Dale Hutchins is negotiating with two of the three composers he identified, with a deadline of March 22nd to sign a commission agreement so music is ready before the first recording block.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t31",
+      "turn_index": 30,
+      "user_message": "I want to confirm the full lead-time window and the episode bank requirement one more time before we lock the production calendar. What exactly did we establish for those two numbers?",
+      "assistant_message": "The lead time from raw recording to publish is 10 to 14 days per episode, covering editing, fact-checking against sources like the Cedarvale Archive, show notes, and RSS scheduling. The minimum episode bank before launch is 4 fully finished episodes, which is the figure required by the Harrowfield Historical Society's media guidelines and confirmed by Dale Hutchins as a hard gate in the production timeline. Both numbers were agreed upon with Mira Okafor as the basis for the launch calendar, meaning the earliest possible launch date must be calculated by working backward from these two constraints.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t32",
+      "turn_index": 31,
+      "user_message": "Mira Okafor is asking whether the $199 Artlist fee should come out of the music budget or the general operating budget for Founders & Frontiers.",
+      "assistant_message": "The $199 Artlist fee should come out of the music budget, which is where Mira Okafor already allocated it when she revised the budget after the Harrowfield Historical Society declined to share their license. Keeping it in the music budget preserves the integrity of the line-item accounting Dale Hutchins set up, and it leaves the general operating budget intact for expenses like the Cedarvale Archive researcher fee and platform hosting costs. If the commissioned theme comes in at the upper end and the music budget runs short, Mira Okafor and Dale Hutchins agreed the overflow would transfer from a $200 contingency line in the general operating budget.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t33",
+      "turn_index": 32,
+      "user_message": "Is the $1,400 music budget firm, or can it be revised upward if the composer quotes come in higher than expected?",
+      "assistant_message": "The $1,400 music budget is treated as firm for now, with the $200 contingency line in the general operating budget as the only approved overflow mechanism, as Mira Okafor and Dale Hutchins agreed. If both composer quotes exceed $1,201 after subtracting the $199 Artlist fee, the Harrowfield Historical Society liaison would need to approve a formal budget amendment before any additional funds could be committed. Dale Hutchins noted that the Cedarvale Archive researcher fee of $75 is a fixed, non-negotiable cost, so any budget reallocation must account for that obligation first.",
+      "gold_parents": [
+        "t30"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t34",
+      "turn_index": 33,
+      "user_message": "If we record the first episode today and need 4 banked episodes before announcing, and each episode takes the maximum lead time to finish, what is the earliest calendar date we could publicly announce the Founders & Frontiers launch?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t31"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t2",
+    "t19",
+    "t31"
+  ],
+  "distractor_turn_ids": [
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t7",
+    "t8",
+    "t9",
+    "t10",
+    "t11",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t20",
+    "t21",
+    "t22",
+    "t23",
+    "t24",
+    "t25",
+    "t26",
+    "t27",
+    "t28",
+    "t29",
+    "t30",
+    "t32",
+    "t33"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that 4 fully finished episodes must be banked before a public announcement, as required by the Harrowfield Historical Society's media guidelines.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer uses the maximum lead time of 14 days per episode (not 10 days) to calculate the earliest possible announcement date.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer correctly calculates the total elapsed time as 4 episodes multiplied by 14 days, equaling 56 days from the first recording day, and identifies the announcement date as 56 days after today.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not cite the Harrowfield Historical Society's Instagram follower count of 1,850 or the Facebook follower count of 4,200 as relevant to the launch announcement timing calculation.",
+      "required": true
+    }
+  ],
+  "notes": "The key facts the query needs come from t1 (10-to-14-day lead time), t2 (4-episode bank minimum), t19 (explicit reconfirmation of the 4-episode minimum matching industry practice), and t31 (final reconfirmation of both numbers). The near-miss turn is t23, which asks about the Harrowfield Historical Society's Instagram follower count — a social-reach question that sounds superficially similar to a launch-readiness question but answers with the irrelevant figure of 1,850 Instagram followers rather than anything about lead time or episode bank requirements.\n\nReference answer: Starting from today as Day 1 of recording Episode 1, and using the maximum lead time of 14 days per episode established in t1 and confirmed in t31, each of the 4 required episodes takes 14 days to finish. The Harrowfield Historical Society's media guidelines require all 4 episodes to be fully finished before any public announcement, as settled in t2 and t19. Four episodes at 14 days each equals 56 days total, so the earliest possible public announcement date for Founders & Frontiers is 56 days from today.",
+  "evidence_note": null,
+  "premise": "launching a podcast about local history",
+  "evidence_spans": null,
+  "benchmark_version": "1.2-pilot",
+  "length_class": "long"
+}

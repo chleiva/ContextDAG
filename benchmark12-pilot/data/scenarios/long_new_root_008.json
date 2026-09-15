@@ -1,0 +1,401 @@
+{
+  "scenario_id": "long_new_root_008",
+  "family": "new_root",
+  "label": "NEW_ROOT",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We need to figure out the labor cost for hand-thinning the Sector 7 Block before harvest. Elena Vasquez estimated 3 workers per row but Marco Delgado thinks 2 is enough.",
+      "assistant_message": "Based on typical hand-thinning rates at Redstone Ridge Vineyard, the Sector 7 Block's 18 rows at 220 vines each would require roughly 3,960 vine passes total. At Elena Vasquez's estimate of 3 workers per row, you'd need 54 worker-days at a $180 daily rate, totaling $9,720. Marco Delgado's 2-worker figure would bring that down to $6,480, but risks incomplete thinning if cluster density exceeds the 4.2 clusters-per-shoot threshold noted in the Harvest Readiness Report 2024.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "I want to look at the canopy management schedule for Redstone Ridge Vineyard. When does Elena Vasquez want to complete the final shoot positioning?",
+      "assistant_message": "Elena Vasquez has set July 14 as the deadline for final shoot positioning across all blocks at Redstone Ridge Vineyard, leaving a 12-day buffer before the projected August 26 veraison date. The schedule in the Harvest Readiness Report 2024 allocates 6 crew members for 4 consecutive days to cover the 22 rows in the main block. Missing that July 14 date would likely require IrriPro 4.2 irrigation adjustments to compensate for increased canopy shading.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "What's the current soil moisture baseline we're working from for the irrigation upgrade decisions? I know Marco Delgado pulled some sensor readings last week.",
+      "assistant_message": "Marco Delgado recorded soil moisture readings on June 28 across five depth profiles at Redstone Ridge Vineyard, finding an average volumetric water content of 18.4% at the 30 cm depth and 22.1% at the 60 cm depth. The upper threshold for deficit irrigation in the Harvest Readiness Report 2024 is set at 24% VWC, meaning the vineyard is currently operating about 5.6 percentage points below that ceiling at the shallower depth. Elena Vasquez flagged that the Sector 7 Block showed the lowest reading at 15.9% VWC, which she considers a critical data point for any upgrade planning.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "Are those sensor depths compatible with what IrriPro 4.2 uses for its scheduling calculations?",
+      "assistant_message": "IrriPro 4.2 natively supports sensor inputs at 20 cm, 40 cm, and 60 cm depths, so the 60 cm readings Marco Delgado collected align perfectly with the software's deepest reference layer. The 30 cm readings fall between IrriPro 4.2's 20 cm and 40 cm layers, so the software will interpolate using a weighted average, which Elena Vasquez noted introduces roughly a 1.2% VWC estimation error. Redstone Ridge Vineyard's technical team confirmed this interpolation error is within the acceptable ±2% tolerance specified in the Harvest Readiness Report 2024.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "Does the interpolation error affect the deficit irrigation trigger points that IrriPro 4.2 uses?",
+      "assistant_message": "IrriPro 4.2 sets its deficit irrigation trigger at 38% of plant-available water depletion, which at Redstone Ridge Vineyard translates to a threshold of approximately 16.8% VWC at the interpolated 30 cm reference depth. Given the 1.2% interpolation error Elena Vasquez identified, the effective trigger window shifts to between 15.6% and 18.0% VWC, meaning the Sector 7 Block's reading of 15.9% is already within that trigger band. Marco Delgado recommended adding a manual override rule in IrriPro 4.2 to force irrigation events whenever any single-block reading falls below 16.0% VWC, regardless of the interpolated average.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "How long would a typical irrigation event run under those trigger conditions in IrriPro 4.2?",
+      "assistant_message": "Under the deficit trigger conditions described, IrriPro 4.2 calculates a run time of 4 hours 20 minutes per zone for drip emitters rated at 0.9 gallons per hour, which is the specification used throughout Redstone Ridge Vineyard's existing infrastructure. That run time is designed to restore soil moisture by 3.8 percentage points, bringing a depleted zone like Sector 7 Block from 15.9% back up to approximately 19.7% VWC. Elena Vasquez confirmed in the Harvest Readiness Report 2024 that post-event readings should be verified within 6 hours to ensure the target range was achieved.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "Has a final decision been made on whether to go with 2 or 3 workers per row for the Sector 7 Block thinning?",
+      "assistant_message": "Marco Delgado submitted a revised labor plan on July 2 that settled on 2.5 workers per row as a compromise, which in practice means alternating between 2-worker and 3-worker teams across the 18 rows of the Sector 7 Block. This brings the total labor cost to approximately $8,100, splitting the difference between the two earlier estimates Elena Vasquez and Marco Delgado had each proposed. The decision was logged in the Harvest Readiness Report 2024 under the labor section with a review checkpoint set for July 10 to assess progress.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "What happens if the Sector 7 Block stays below 16.0% VWC for more than 48 hours before the upgrade is installed?",
+      "assistant_message": "Prolonged VWC below 16.0% for more than 48 hours at Redstone Ridge Vineyard risks inducing mild water stress, which the Harvest Readiness Report 2024 associates with a projected berry weight reduction of 4–7% in Cabernet Sauvignon blocks. IrriPro 4.2's stress-accumulation model would log this as a 1.4 stress-degree-day event if the deficit persists through two consecutive daily cycles, triggering an automatic alert to Elena Vasquez. Marco Delgado's interim recommendation is to run a manual irrigation cycle of 2 hours at the existing emitter rate to bridge the gap until the upgrade hardware arrives.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "What's the total area of the Sector 7 Block and how does that affect the thinning timeline?",
+      "assistant_message": "The Sector 7 Block covers 4.3 acres across its 18 rows at Redstone Ridge Vineyard, with an average row length of 310 feet. At the revised 2.5-worker-per-row pace Marco Delgado approved, Elena Vasquez estimated a completion time of 3.5 days assuming 8-hour shifts and no weather delays. The Harvest Readiness Report 2024 notes that thinning must be finished no later than July 18 to allow adequate light exposure before the August 26 veraison date.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "What's the status of the trellis wire tension inspection that was supposed to happen before canopy work starts?",
+      "assistant_message": "The trellis wire tension inspection for Redstone Ridge Vineyard was completed on June 30 by a two-person crew under Marco Delgado's supervision, covering all 22 rows of the main block and the 18 rows of the Sector 7 Block. Tension readings averaged 180 Newtons across the fruiting wires, against a minimum specification of 160 Newtons set in the Harvest Readiness Report 2024, so all rows passed without requiring re-tensioning. Elena Vasquez signed off on the inspection results on July 1, clearing the canopy work to proceed on schedule.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "If the manual bridge cycle runs for 2 hours at 0.9 gallons per hour per emitter, how much total water does that deliver to the Sector 7 Block?",
+      "assistant_message": "With the Sector 7 Block's 4.3 acres containing approximately 1,290 vines spaced at 6-foot intervals and each vine served by one emitter rated at 0.9 gallons per hour, a 2-hour bridge cycle would deliver 1.8 gallons per vine. Across the full block that totals roughly 2,322 gallons, which Marco Delgado calculated would raise VWC by approximately 1.1 percentage points at the 30 cm depth. Elena Vasquez noted in her field log that this is sufficient to keep the Sector 7 Block above the 15.6% lower bound of the IrriPro 4.2 trigger window for an estimated 36 additional hours.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "What is the total water volume delivered by a full 4-hour-20-minute IrriPro 4.2 scheduled run across the Sector 7 Block?",
+      "assistant_message": "A full 4-hour-20-minute run at 0.9 gallons per hour per emitter delivers 3.9 gallons per vine across the Sector 7 Block's 1,290 vines, for a total of approximately 5,031 gallons per scheduled event. Marco Delgado confirmed this figure against the IrriPro 4.2 zone-flow report on July 3, and it matches the 3.8 percentage-point VWC recovery target Elena Vasquez specified in the Harvest Readiness Report 2024. This is the per-event volume for the Sector 7 Block specifically, not the full vineyard.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "Has Elena Vasquez approved the final shoot positioning crew size for the July 14 deadline?",
+      "assistant_message": "Elena Vasquez formally approved a crew of 6 workers on July 2, matching the allocation originally outlined in the Harvest Readiness Report 2024 for Redstone Ridge Vineyard's main 22-row block. The crew will work in two teams of 3, each assigned to 11 rows, with Marco Delgado overseeing quality checks at the row midpoints. If weather delays occur between July 10 and July 14, Elena Vasquez authorized overtime to preserve the deadline, at an additional cost of $220 per worker per day.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "Is there a contingency plan if the Sector 7 Block thinning runs past the July 18 deadline?",
+      "assistant_message": "Marco Delgado drafted a contingency in the Harvest Readiness Report 2024 that authorizes adding a fourth day of thinning with a supplemental crew of 4 workers, pushing completion to July 19 at the latest. Elena Vasquez accepted this single-day extension but noted that any delay beyond July 19 would require dropping the lowest-priority 2 rows of the Sector 7 Block entirely to protect the veraison light-exposure window. The contingency labor cost for the extra crew day is budgeted at $1,440, already reserved in Redstone Ridge Vineyard's pre-harvest operations fund.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "What canopy metrics is Elena Vasquez using to judge whether the July 14 shoot positioning was done correctly?",
+      "assistant_message": "Elena Vasquez is evaluating three metrics from the Harvest Readiness Report 2024: shoot spacing of no less than 4 inches between adjacent shoots, a maximum of 14 shoots per meter of cordon, and a leaf layer count of no more than 2 in the fruit zone at Redstone Ridge Vineyard. Measurements will be taken at 5 randomly selected vines per row by Marco Delgado's quality team within 48 hours of crew completion. Any row failing two or more of the three metrics must be reworked within 24 hours, with rework costs charged against the canopy management budget line.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "What is the per-acre labor cost for thinning the Sector 7 Block under the revised 2.5-worker plan?",
+      "assistant_message": "At the revised 2.5-worker-per-row plan with an $180 daily rate over 3.5 days, the total labor cost for the Sector 7 Block is $8,100 spread across 4.3 acres, yielding a per-acre cost of approximately $1,884. Marco Delgado noted this is about 12% higher than Redstone Ridge Vineyard's historical average of $1,680 per acre for hand-thinning, largely due to the higher cluster density in the Sector 7 Block this season. Elena Vasquez approved the overage on July 2, citing the Harvest Readiness Report 2024's yield quality targets as justification.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "Will the 6-person shoot positioning crew need any additional equipment beyond what Redstone Ridge Vineyard already has on site?",
+      "assistant_message": "Marco Delgado's equipment inventory taken on July 1 confirmed that Redstone Ridge Vineyard has 8 shoot-positioning tools and 6 clip-on shoot holders on hand, which is exactly sufficient for the 6-person crew without any additional procurement. The only item flagged as potentially short is flagging tape for marking rework rows, with only 3 rolls in stock against an estimated need of 5 rolls based on prior seasons' rework rates. Elena Vasquez authorized purchasing 4 additional rolls at $4.50 each from the local supply cooperative, for a total supplemental equipment cost of $18.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "What's the projected berry weight impact if the Sector 7 Block soil moisture is restored to 19.7% VWC before veraison?",
+      "assistant_message": "The Harvest Readiness Report 2024 projects that maintaining VWC at or above 19.7% through veraison in the Sector 7 Block supports a target berry weight of 1.8 grams per berry for the Cabernet Sauvignon vines at Redstone Ridge Vineyard. This is approximately 6% higher than the 1.7-gram baseline recorded in the 2023 season, when mid-season moisture stress was documented by Marco Delgado. Elena Vasquez noted that achieving the 1.8-gram target across the full 1,290 vines in the Sector 7 Block would add an estimated 18 kg to total block yield.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "Has the Sector 7 Block thinning been broken into daily work targets so the crew can track progress against the July 18 deadline?",
+      "assistant_message": "Marco Delgado divided the 18 rows of the Sector 7 Block into daily targets of 5 rows on day one, 5 rows on day two, 5 rows on day three, and the remaining 3 rows on day four if needed, with the primary goal being completion in 3.5 days. Elena Vasquez set a midpoint checkpoint at the end of day two, requiring at least 9 rows completed to stay on schedule for the July 18 deadline at Redstone Ridge Vineyard. If the day-two checkpoint shows fewer than 9 rows done, the contingency crew of 4 additional workers documented in the Harvest Readiness Report 2024 will be activated immediately.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "How much additional yield does the 18 kg Sector 7 Block gain translate to in terms of finished wine volume?",
+      "assistant_message": "At Redstone Ridge Vineyard's standard press yield of 155 liters per 100 kg of Cabernet Sauvignon fruit, the additional 18 kg from the Sector 7 Block would produce approximately 27.9 liters of additional wine. Marco Delgado estimated this corresponds to roughly 37 standard 750 ml bottles, which at the vineyard's current wholesale price of $28 per bottle represents about $1,036 in additional revenue. Elena Vasquez noted in the Harvest Readiness Report 2024 that this figure alone does not justify the irrigation upgrade cost but contributes meaningfully to the overall ROI calculation.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "What is the rework rate from prior seasons that Marco Delgado used to estimate the flagging tape need?",
+      "assistant_message": "Marco Delgado based the 5-roll estimate on a historical rework rate of 18% of rows across Redstone Ridge Vineyard's canopy positioning campaigns over the past three seasons, meaning roughly 4 of the 22 main-block rows typically require rework after Elena Vasquez's quality checks. Each rework row consumes approximately half a roll of flagging tape for marking individual vines, driving the 5-roll total. The Harvest Readiness Report 2024 notes that the 2023 season had an unusually high rework rate of 27%, which Marco Delgado excluded as an outlier when calculating the tape estimate.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "Does the 37-bottle yield gain from the Sector 7 Block factor into the irrigation upgrade payback period at all?",
+      "assistant_message": "Elena Vasquez included the 37-bottle gain in a broader five-year ROI model for Redstone Ridge Vineyard, where it contributes $1,036 annually to the benefit side of the ledger. Across five years that totals $5,180, which offsets a portion of the upgrade capital cost but is not the primary driver given that the full upgrade is projected to improve yield quality across all blocks, not just the Sector 7 Block. Marco Delgado noted in the Harvest Readiness Report 2024 that the aggregate five-year benefit estimate across all blocks is $47,300, making the per-block Sector 7 contribution about 11% of the total.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "If the day-two checkpoint shows only 8 rows completed instead of the required 9, how quickly can the contingency crew be mobilized?",
+      "assistant_message": "Marco Delgado's contingency protocol in the Harvest Readiness Report 2024 requires the 4-worker supplemental crew to be on-site at Redstone Ridge Vineyard within 4 hours of Elena Vasquez issuing the activation call. The crew is sourced from a labor contractor already under a standby agreement signed on June 25, guaranteeing same-day availability during the July 10–19 thinning window. Mobilization costs include a $150 call-out fee plus the standard $180 daily rate per worker, so a single contingency day totals $870.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "Has the canopy crew been briefed on Elena Vasquez's three quality metrics for the shoot positioning work?",
+      "assistant_message": "Elena Vasquez conducted a 45-minute crew briefing on July 5 at Redstone Ridge Vineyard covering all three metrics: 4-inch minimum shoot spacing, 14 shoots per meter of cordon maximum, and no more than 2 leaf layers in the fruit zone. Marco Delgado distributed laminated reference cards to each of the 6 crew members showing photo examples of passing and failing vines drawn from the Harvest Readiness Report 2024. A brief practical exercise on 10 demonstration vines confirmed all crew members could correctly classify vine status before the main work began.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "What is the total canopy management budget for Redstone Ridge Vineyard this season, and how much of it has been committed so far?",
+      "assistant_message": "The total canopy management budget for Redstone Ridge Vineyard this season is $34,500, as established in the Harvest Readiness Report 2024 at the start of the planning cycle. Committed expenditures to date include $8,100 for Sector 7 Block thinning, $6,480 for main-block shoot positioning labor, $1,440 in contingency reserve, and the $18 equipment purchase, totaling $16,038 committed. Elena Vasquez and Marco Delgado expect the remaining $18,462 to cover post-veraison leaf removal and any additional rework identified during quality checks.",
+      "gold_parents": [
+        "t24"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "What's the standby contractor's name and are there any caps on how many additional days they can provide during the thinning window?",
+      "assistant_message": "The standby contractor is Vallejo Field Crews, and their agreement with Redstone Ridge Vineyard signed on June 25 caps availability at 5 contingency days total during the July 10–19 thinning window. Marco Delgado negotiated a fixed daily rate of $180 per worker for up to 8 workers per day, with the $150 call-out fee waived after the first activation. Elena Vasquez noted in the Harvest Readiness Report 2024 margin notes that the 5-day cap is more than sufficient given that the Sector 7 Block thinning should require at most 1 contingency day.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "How does the $47,300 five-year aggregate benefit figure in the ROI model break down across the different vineyard blocks?",
+      "assistant_message": "Marco Delgado's five-year ROI model in the Harvest Readiness Report 2024 attributes $18,400 of the $47,300 total to the main 22-row block, $12,600 to the Sector 7 Block, $9,800 to the north hillside block, and $6,500 to the east-facing terrace block at Redstone Ridge Vineyard. The Sector 7 Block's $12,600 figure incorporates the $5,180 from improved berry weight plus $7,420 from reduced stress-event losses over the five-year horizon. Elena Vasquez flagged that the north hillside block estimate carries the highest uncertainty, with a ±$2,100 range depending on how the new irrigation infrastructure performs in its first two seasons.",
+      "gold_parents": [
+        "t22"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "Has Vallejo Field Crews worked with Redstone Ridge Vineyard before, or is this the first season under contract?",
+      "assistant_message": "Vallejo Field Crews has worked with Redstone Ridge Vineyard for three consecutive seasons, providing supplemental labor for both the 2022 and 2023 harvests as well as the 2023 canopy thinning campaign. Marco Delgado cited their 96% on-time mobilization rate across 14 prior call-outs as the primary reason Elena Vasquez approved renewing the standby agreement for the 2024 season. The Harvest Readiness Report 2024 includes a vendor performance summary confirming Vallejo Field Crews met all quality benchmarks in prior engagements.",
+      "gold_parents": [
+        "t25"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "What is the total projected canopy management spend if the Vallejo Field Crews contingency day is actually triggered?",
+      "assistant_message": "If the Vallejo Field Crews contingency day is triggered, the additional cost is $870, bringing the total committed canopy management spend from $16,038 to $16,908 against the $34,500 seasonal budget at Redstone Ridge Vineyard. Marco Delgado noted this still leaves $17,592 available for post-veraison work, which is $1,130 more than the minimum Elena Vasquez identified as necessary for leaf removal across all blocks. The Harvest Readiness Report 2024 treats the contingency activation as a low-risk event that does not threaten the overall budget envelope.",
+      "gold_parents": [
+        "t28"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t30",
+      "turn_index": 29,
+      "user_message": "Does Elena Vasquez have authority to approve the contingency activation unilaterally, or does it require sign-off from someone else at Redstone Ridge Vineyard?",
+      "assistant_message": "Elena Vasquez holds sole approval authority for contingency activations valued under $2,000 at Redstone Ridge Vineyard, per the standing delegation of authority documented in the Harvest Readiness Report 2024. The $870 Vallejo Field Crews activation cost falls well within that threshold, so no additional sign-off from ownership or finance is required. Marco Delgado confirmed on July 5 that Elena Vasquez has already verbally pre-authorized the activation if the day-two checkpoint on the Sector 7 Block thinning falls short.",
+      "gold_parents": [
+        "t29"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t31",
+      "turn_index": 30,
+      "user_message": "What is the typical payback period for drip irrigation upgrades at a vineyard of roughly 20 acres, and what factors most strongly influence how quickly the investment is recovered?",
+      "assistant_message": null,
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [],
+  "distractor_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t7",
+    "t8",
+    "t9",
+    "t10",
+    "t11",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t20",
+    "t21",
+    "t22",
+    "t23",
+    "t24",
+    "t25",
+    "t26",
+    "t27",
+    "t28",
+    "t29",
+    "t30"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states a typical payback period range for drip irrigation upgrades at a roughly 20-acre vineyard (e.g., approximately 3–7 years or a similarly grounded range from general industry knowledge).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer identifies water cost savings or reduced water usage as one of the primary factors influencing payback speed.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer identifies yield quality improvement or reduction of stress-related crop losses as a factor influencing payback speed.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not cite 5,031 gallons as the payback-relevant water volume or use the Sector 7 Block IrriPro 4.2 run figures from t12 as the basis for the payback period calculation.",
+      "required": true
+    }
+  ],
+  "notes": "The query (t31) is a general industry knowledge question with no dependency on any prior turn; it is answerable from general viticulture and irrigation economics knowledge alone. The near-miss turn is t12, which confidently answers a specific water-volume question about the Sector 7 Block under IrriPro 4.2 scheduling (5,031 gallons per event) — a figure that sounds quantitatively relevant but has nothing to do with the general payback-period question posed in t31.\n\nReference answer: For a vineyard of roughly 20 acres, drip irrigation upgrades typically pay back within 4 to 7 years, though the range can compress to 3 years in high water-cost regions or stretch beyond 8 years where water is inexpensive. The factors that most strongly accelerate payback are reductions in water and pumping costs, improvements in fruit quality that support higher per-bottle pricing, and decreases in stress-event crop losses that would otherwise reduce harvestable yield. Secondary factors include available government rebates or conservation incentives, the condition of the existing infrastructure being replaced, and how precisely the new system can be calibrated to the vineyard's specific soil profiles and block-level needs.",
+  "evidence_note": null,
+  "premise": "a vineyard choosing irrigation upgrades before harvest",
+  "evidence_spans": null,
+  "benchmark_version": "1.2-pilot",
+  "length_class": "long"
+}

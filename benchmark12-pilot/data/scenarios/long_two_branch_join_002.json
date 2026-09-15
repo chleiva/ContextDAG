@@ -1,0 +1,483 @@
+{
+  "scenario_id": "long_two_branch_join_002",
+  "family": "two_branch_join",
+  "label": "JOIN",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're starting the CRM migration project for BrightPath Foundation and I need to nail down the deduplication rules. What approach should we use for identifying duplicate donor records in Raiser's Edge NXT before the export?",
+      "assistant_message": "For BrightPath Foundation's migration out of Raiser's Edge NXT, the standard approach is a three-field match rule: exact match on last name plus first name initial, combined with a fuzzy match on either email address or postal ZIP code within a 5-digit tolerance. Marcus Delgado confirmed in the Migration Master Plan v2.3 that any record pair scoring above 85 on the weighted similarity index should be flagged as a probable duplicate and held for manual review. Records scoring 95 or above are auto-merged, retaining the older constituent ID as the master record. This rule set was approved on March 14 and will govern the initial export batch of 47,200 records.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "What is the current status of the staff training schedule for the new Salesforce Nonprofit Success Pack system?",
+      "assistant_message": "Priya Nair has drafted a five-session training schedule for BrightPath Foundation staff covering Salesforce Nonprofit Success Pack, with sessions running every Tuesday in April starting April 8. Each session is capped at 12 participants and focuses on a different module: constituent records, donation entry, reporting, campaign management, and system administration. Marcus Delgado approved the schedule on March 20 and confirmed that all 47 staff members must complete at least three of the five sessions before go-live. Carmen Velasquez is handling room booking and the Zoom links for the hybrid sessions.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "We need to figure out the data mapping between Raiser's Edge NXT and Salesforce Nonprofit Success Pack. Has anyone started documenting the field-level mappings yet?",
+      "assistant_message": "Carmen Velasquez started the field-mapping spreadsheet on March 10, covering 214 standard fields from Raiser's Edge NXT and their counterparts in Salesforce Nonprofit Success Pack. Of those, 178 fields have confirmed direct mappings, 29 require transformation logic, and 7 have no equivalent in the target system and will need custom objects created. Marcus Delgado noted in Migration Master Plan v2.3 that the 7 unmapped fields include the legacy \"Prospect Rating\" field and the custom \"Board Connection\" flag, both of which need Priya Nair's sign-off before the custom objects can be built. The field-mapping document is stored in the shared drive under the filename FieldMap_RENXT_to_SFNPSP_v1.4.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "How many of those 29 transformation fields involve date format conversions specifically?",
+      "assistant_message": "Of the 29 fields requiring transformation logic, 11 involve date format conversions, primarily shifting from Raiser's Edge NXT's MM/DD/YYYY format to the ISO 8601 YYYY-MM-DD format required by Salesforce Nonprofit Success Pack. Carmen Velasquez flagged that 4 of those 11 date fields also carry time-zone offsets that need to be normalized to UTC before import, which adds a second transformation step. The remaining 18 non-date transformation fields mostly involve concatenation of split name fields or currency normalization from CAD to USD for 312 Canadian donor records. Marcus Delgado assigned DonorSync Pro as the ETL tool that will handle all 29 transformations in a single pipeline run.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "What is the rollback plan if the migration to Salesforce Nonprofit Success Pack fails mid-transfer?",
+      "assistant_message": "The rollback plan documented in Migration Master Plan v2.3 specifies a two-stage recovery: first, BrightPath Foundation maintains a full read-only snapshot of the Raiser's Edge NXT database for 90 days post-migration, accessible via a dedicated credentials set held by Marcus Delgado and Priya Nair. Second, if more than 2 percent of records fail validation in Salesforce Nonprofit Success Pack during the import run, DonorSync Pro is configured to halt the transfer automatically and send an alert to Carmen Velasquez within 15 minutes. The rollback window is defined as 72 hours from the start of the go-live transfer, after which the Raiser's Edge NXT environment moves to archive-only status. A full rollback test was scheduled for April 25 using a 5,000-record sample set.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "We need to plan the communication to donors about any changes they might notice during the migration. What has been decided about donor-facing notifications?",
+      "assistant_message": "BrightPath Foundation's board approved a minimal-disclosure communication strategy on March 18, meaning donors will receive only a brief email noting that their account portal may be unavailable for up to 6 hours during a scheduled maintenance window. Priya Nair is drafting the notification email, which will be sent 72 hours before the go-live date to all 47,200 donors in the Raiser's Edge NXT database. Carmen Velasquez confirmed that donors who have opted out of email communications will receive a physical mail notice instead, and that batch is estimated at 3,400 records. The notification will not mention the switch from Raiser's Edge NXT to Salesforce Nonprofit Success Pack by name, per the board's preference.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "For those 7 unmapped fields that need custom objects, what is the build timeline Carmen Velasquez has proposed?",
+      "assistant_message": "Carmen Velasquez submitted a build timeline on March 22 proposing that all 7 custom objects in Salesforce Nonprofit Success Pack be completed by April 18, giving a two-week buffer before the scheduled go-live of May 2. Each custom object is estimated at 6 to 8 hours of developer time, putting the total at roughly 50 hours, which falls within the 60-hour contingency block Marcus Delgado reserved in the project budget. Priya Nair must sign off on the object schemas for the legacy Prospect Rating and Board Connection fields no later than April 10 so development can begin. DonorSync Pro's import pipeline will not be finalized until all 7 custom objects pass user-acceptance testing.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "In the Raiser's Edge NXT deduplication workflow, who is responsible for the manual review queue and what is the target turnaround time?",
+      "assistant_message": "Marcus Delgado assigned Priya Nair as the primary owner of the manual review queue for flagged duplicates, with Carmen Velasquez as backup reviewer during peak periods. The target turnaround is 5 business days from the date a record pair enters the queue, and any pair unresolved after 10 business days is automatically escalated to Marcus Delgado for a final decision. Migration Master Plan v2.3 sets the expected manual review volume at roughly 1,400 record pairs, based on a sample-run estimate against BrightPath Foundation's current database. The entire manual review phase must be completed before the DonorSync Pro export job is triggered.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "Has Priya Nair finalized which staff roles will be trained on the system administration module specifically?",
+      "assistant_message": "Priya Nair confirmed on March 23 that the system administration module of Salesforce Nonprofit Success Pack will be restricted to five roles: the Database Manager, the IT Lead, the Director of Development, the Deputy Director, and the Executive Assistant to the CEO. At BrightPath Foundation those five seats are currently filled by Carmen Velasquez, an external contractor named Joel Ferris, Marcus Delgado, Priya Nair herself, and a staff member named Daria Osei. The session is scheduled for April 29 and will run for 3.5 hours, longer than the standard 2-hour sessions for other modules. Participants must complete the constituent records and donation entry modules as prerequisites before attending.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "What decisions have been made about the donor portal downtime window and who approved it?",
+      "assistant_message": "BrightPath Foundation's board approved a maximum 6-hour donor portal downtime window on March 18, timed to begin at 11 PM Eastern on the go-live date to minimize donor impact. Marcus Delgado negotiated this window with the Salesforce Nonprofit Success Pack implementation partner, who initially requested 12 hours but agreed to 6 after DonorSync Pro's parallel-load capability was factored in. Carmen Velasquez is responsible for posting the maintenance notice on BrightPath Foundation's website no later than 48 hours before the window opens. The downtime window cannot be extended without board approval, per a clause in the Migration Master Plan v2.3.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "If the portal is still down after 6 hours, what is the escalation contact chain?",
+      "assistant_message": "If the donor portal exceeds the 6-hour downtime window, the escalation chain begins with Carmen Velasquez notifying the Salesforce Nonprofit Success Pack implementation partner's on-call engineer within 15 minutes of the breach. If the partner cannot restore service within a further 2 hours, Marcus Delgado must convene an emergency call with the implementation partner's project director and BrightPath Foundation's board chair. Priya Nair holds the backup credentials for the Raiser's Edge NXT read-only snapshot and can authorize a temporary redirect of the donor portal to a static maintenance page to prevent data entry errors during the extended outage. The full escalation procedure is documented in section 7.4 of Migration Master Plan v2.3.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "What is the current estimate for the total cost of the rollback test scheduled for April 25?",
+      "assistant_message": "Marcus Delgado's project budget estimates the April 25 rollback test at $4,200, covering 14 hours of DonorSync Pro engineering time at $180 per hour and $660 in Salesforce Nonprofit Success Pack sandbox environment fees. Priya Nair flagged that if the 5,000-record sample set requires a second pass due to validation errors, the cost could rise by up to $1,800, bringing the ceiling to $6,000. BrightPath Foundation has allocated a $7,500 contingency line specifically for testing activities in the Migration Master Plan v2.3 budget annex. Carmen Velasquez will issue the purchase order for the sandbox fees by April 14 to ensure environment availability.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "I want to work through the consent and data-privacy compliance requirements for the migration. What regulations apply to BrightPath Foundation's donor data?",
+      "assistant_message": "BrightPath Foundation's donor database is subject to three regulatory frameworks: PIPEDA for the 312 Canadian donors, CCPA for California-resident donors (estimated at 2,800 records), and the organization's own internal Privacy Policy version 4.1 which was last updated in January 2024. Priya Nair is the designated Privacy Officer for the migration and has confirmed that a Data Processing Impact Assessment, referred to internally as DPIA-2024-07, must be completed before any data is transferred out of Raiser's Edge NXT. The DPIA-2024-07 document requires sign-off from BrightPath Foundation's legal counsel, a firm named Hartwell & Crane LLP, before the export job can be authorized. Marcus Delgado set the DPIA submission deadline as April 5.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "Have the prerequisites for the constituent records training session been communicated to staff yet?",
+      "assistant_message": "Priya Nair sent the prerequisite communication to all BrightPath Foundation staff on March 25, specifying that the constituent records session on April 8 requires no prior Salesforce Nonprofit Success Pack experience and is open to all 47 staff members. The email included a 12-page pre-reading document titled SFNPSP_Orientation_Guide_v1.0, which Carmen Velasquez compiled from the Salesforce Nonprofit Success Pack vendor documentation. Marcus Delgado asked that all staff confirm attendance via the internal HR portal by April 1, and as of March 25 only 19 of 47 had done so. Staff who do not confirm by April 1 will be assigned to the overflow session scheduled for April 22.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "Has the developer who will build the custom objects been formally contracted yet?",
+      "assistant_message": "BrightPath Foundation signed a statement of work with an independent Salesforce developer named Tobias Renner on March 28, covering the 7 custom objects identified in the field-mapping document FieldMap_RENXT_to_SFNPSP_v1.4. The contract sets a fixed fee of $8,400, broken down as $1,200 per custom object, and includes a warranty period of 30 days post-delivery during which Tobias Renner must fix any defects at no additional charge. Marcus Delgado countersigned the statement of work and Carmen Velasquez processed the initial 25 percent deposit of $2,100 on March 29. Priya Nair will serve as the primary point of contact for Tobias Renner during the build phase.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "If the board needs to approve an extension to the downtime window, how much notice is required and who submits the request?",
+      "assistant_message": "Migration Master Plan v2.3 requires that any request to extend the donor portal downtime window beyond 6 hours be submitted to BrightPath Foundation's board at least 5 business days before the go-live date. Marcus Delgado is the designated submitter for such requests, and the request must include a written technical justification from the Salesforce Nonprofit Success Pack implementation partner and a revised risk assessment. Carmen Velasquez noted that the board meets weekly on Thursdays, so the request would need to be filed by the preceding Friday at noon to appear on the agenda. If the board cannot convene in time, the board chair holds unilateral authority to approve a one-time extension of up to 4 additional hours.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "Has Hartwell and Crane LLP been given access to DPIA-2024-07 yet, and what is their review timeline?",
+      "assistant_message": "Marcus Delgado shared DPIA-2024-07 with Hartwell & Crane LLP on April 2, three days before the April 5 deadline, via a secure document portal. The firm's assigned attorney, a partner named Sylvia Tran, confirmed receipt and estimated a 10-business-day review period, which would put the sign-off date at approximately April 16. Priya Nair flagged that if Hartwell & Crane LLP requests any amendments to the DPIA, BrightPath Foundation has a maximum of 5 business days to respond before the review clock restarts. Carmen Velasquez is tracking the review status in a shared project log updated daily.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "Has Tobias Renner started work on any of the 7 custom objects yet, and which one is first?",
+      "assistant_message": "Tobias Renner began work on the first custom object, the Prospect Rating replacement object, on April 1 following receipt of the schema sign-off from Priya Nair. He submitted a draft schema for review on April 4, and Carmen Velasquez logged it in the project tracker as pending Priya Nair's final approval before the object is built in the Salesforce Nonprofit Success Pack sandbox. The Prospect Rating object is the most complex of the 7, estimated at 8 hours of build time, while the remaining 6 objects average 6 hours each. Marcus Delgado confirmed that the April 18 completion deadline remains on track given Tobias Renner's current pace.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "Has BrightPath Foundation received any preliminary feedback from Hartwell and Crane LLP on the DPIA before the formal sign-off?",
+      "assistant_message": "Sylvia Tran from Hartwell & Crane LLP sent preliminary comments on DPIA-2024-07 on April 8, identifying two issues: the document did not adequately describe the data-minimization measures applied to the 312 Canadian donor records under PIPEDA, and the retention schedule for the Raiser's Edge NXT read-only snapshot was ambiguous. Priya Nair drafted responses to both points on April 9 and shared them with Marcus Delgado for review before sending to Hartwell & Crane LLP. BrightPath Foundation's response was filed on April 10, restarting the review clock for a further 5 business days from that date, pushing the expected sign-off to approximately April 17. Carmen Velasquez updated the project log to reflect the revised sign-off date.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "Has the board been informed about the potential need to extend the downtime window given the DPIA delay?",
+      "assistant_message": "Marcus Delgado briefed BrightPath Foundation's board chair on April 9 about the DPIA timeline shift and its potential downstream effect on the go-live date of May 2. The board chair, whose name is recorded in Migration Master Plan v2.3 as Dr. Annette Forsythe, acknowledged the risk but declined to formally adjust the go-live date until the Hartwell & Crane LLP sign-off is confirmed. Priya Nair prepared a one-page risk summary for the full board meeting on April 10, noting that if sign-off slips past April 20 the May 2 go-live becomes untenable. Carmen Velasquez was asked to model a fallback go-live scenario for May 16, which she completed on April 10.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "On the compliance side, what specific data fields are considered personally identifiable under CCPA for those 2,800 California donors?",
+      "assistant_message": "DPIA-2024-07 lists 14 fields as personally identifiable information under CCPA for BrightPath Foundation's 2,800 California-resident donors, including full name, email address, phone number, mailing address, IP address from online donation forms, and device identifiers captured through the donor portal. Priya Nair confirmed that 6 of those 14 fields must be encrypted at rest in Salesforce Nonprofit Success Pack, specifically: email address, phone number, full mailing address, date of birth, Social Security Number fragment (last 4 digits, held for 89 donors), and IP address logs. The encryption standard mandated in DPIA-2024-07 is AES-256, applied at the field level rather than the database level. Hartwell & Crane LLP's Sylvia Tran confirmed this interpretation in writing on April 3.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "Has the overflow session on April 22 been updated to reflect the same content as the April 8 constituent records session?",
+      "assistant_message": "Priya Nair confirmed on April 5 that the April 22 overflow session will use the identical slide deck and exercises as the April 8 constituent records session, with no content differences. Carmen Velasquez updated the internal HR portal on April 6 to reflect the April 22 date and opened registration for the 28 staff members who had not yet confirmed attendance for April 8. As of April 6, 14 of those 28 had registered for the overflow session, and Marcus Delgado sent a reminder to the remaining 14 on April 7. The overflow session will also be recorded by Priya Nair's team and stored on BrightPath Foundation's intranet for staff who cannot attend either date.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "What is the plan if staff attendance across both sessions still falls short of the required three-module minimum before go-live?",
+      "assistant_message": "Marcus Delgado established a remediation protocol on April 7: any BrightPath Foundation staff member who has not completed at least three Salesforce Nonprofit Success Pack modules by April 30 will be required to complete the remaining modules via self-paced online recordings before their system access credentials are issued. Priya Nair will audit completion records from the HR portal on May 1 and send a non-compliance list to department heads for follow-up. Staff in donor-facing roles who remain non-compliant after May 1 will have their Salesforce Nonprofit Success Pack access restricted to read-only until training is complete, per a policy Carmen Velasquez drafted and Marcus Delgado signed on April 7. The policy does not affect the go-live timeline itself.",
+      "gold_parents": [
+        "t22"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "I want to make sure we have the consent mechanism right. For those 6 encrypted fields in Salesforce Nonprofit Success Pack, who holds the encryption key and how is key rotation handled?",
+      "assistant_message": "DPIA-2024-07 specifies that the AES-256 encryption keys for the 6 PII fields in Salesforce Nonprofit Success Pack are held in a Salesforce Shield Platform Encryption key management service, with BrightPath Foundation designated as the key tenant. Marcus Delgado and Priya Nair are the two named Key Administrators, and both must authenticate via two-factor authentication to authorize any key rotation. Key rotation is mandated every 12 months and must be logged in DPIA-2024-07's audit annex within 48 hours of completion. Hartwell & Crane LLP's Sylvia Tran stipulated in her April 3 written confirmation that the first key rotation must occur no later than 12 months from the go-live date, and this requirement has been added to BrightPath Foundation's compliance calendar.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "Can staff who attended April 8 be exempted from attending any further sessions if they already have Salesforce experience from a previous employer?",
+      "assistant_message": "Marcus Delgado addressed this question in a memo dated April 9, ruling that prior Salesforce experience does not exempt BrightPath Foundation staff from the module attendance requirement, because the sessions cover Salesforce Nonprofit Success Pack configurations and workflows specific to BrightPath Foundation's instance. However, staff with a current Salesforce Administrator certification may substitute the system administration module attendance with a 30-minute competency assessment administered by Priya Nair. Carmen Velasquez confirmed that as of April 9 only two staff members hold a current Salesforce Administrator certification: Joel Ferris the IT Lead and a development associate named Kwame Asante. Both have been scheduled for the competency assessment on April 24.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "Has the April 25 rollback test been confirmed to proceed given the DPIA sign-off delay?",
+      "assistant_message": "Marcus Delgado confirmed on April 11 that the April 25 rollback test will proceed as planned, since it uses a synthetic 5,000-record dataset that contains no real donor PII and therefore does not require DPIA-2024-07 sign-off. Priya Nair verified that the synthetic dataset was generated by DonorSync Pro's anonymization module and reviewed by Carmen Velasquez to ensure no actual BrightPath Foundation donor records were inadvertently included. The Salesforce Nonprofit Success Pack sandbox environment fee has been paid, per Carmen Velasquez's purchase order processed on April 14. DonorSync Pro's engineering team confirmed the test environment is ready as of April 15.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "To finalize the deduplication configuration, what is the exact weighted similarity scoring formula that DonorSync Pro will use during the Raiser's Edge NXT export?",
+      "assistant_message": "DonorSync Pro's deduplication configuration for the BrightPath Foundation export uses a four-component weighted score: last name exact match carries a weight of 40 points, first name initial match carries 20 points, email address fuzzy match (Levenshtein distance of 2 or fewer) carries 30 points, and ZIP code match carries 10 points, for a maximum total of 100 points. Any record pair scoring 85 to 94 is flagged for Priya Nair's manual review queue, and any pair scoring 95 or above is auto-merged with the older constituent ID retained as master, exactly as Marcus Delgado specified in Migration Master Plan v2.3. The scoring formula was locked on April 12 and written into DonorSync Pro's job configuration file DedupeConfig_BPF_v3.json, which Carmen Velasquez version-controlled in the project repository. No changes to the formula are permitted after April 12 without a formal change-request approved by Marcus Delgado.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "What happened with the rollback test on April 25 — did it pass?",
+      "assistant_message": "The April 25 rollback test using the 5,000-record synthetic dataset completed successfully in 4 hours and 38 minutes, well within the 6-hour downtime window. DonorSync Pro processed all 5,000 records with a validation failure rate of 0.6 percent, below the 2 percent threshold that would trigger an automatic halt. Marcus Delgado signed off on the test results on April 26 and noted in the project log that the Salesforce Nonprofit Success Pack sandbox absorbed the load without performance degradation. Carmen Velasquez archived the test report as RollbackTest_20240425_Results.pdf in the Migration Master Plan v2.3 document folder.",
+      "gold_parents": [
+        "t26"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "Has Tobias Renner finished all 7 custom objects by the April 18 deadline?",
+      "assistant_message": "Tobias Renner delivered all 7 custom objects to the Salesforce Nonprofit Success Pack sandbox by April 17, one day ahead of the April 18 deadline. Priya Nair conducted user-acceptance testing on April 18 and 19, identifying 3 minor defects: two in the Prospect Rating object and one in the Board Connection flag object. Tobias Renner resolved all 3 defects on April 20 within his warranty obligations, and Carmen Velasquez recorded final acceptance in the project tracker on April 21. Marcus Delgado confirmed that DonorSync Pro's import pipeline can now be finalized with all 7 custom objects mapped and tested.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t30",
+      "turn_index": 29,
+      "user_message": "Has Hartwell and Crane LLP issued the final sign-off on DPIA-2024-07, and does it include any conditions we need to track?",
+      "assistant_message": "Hartwell & Crane LLP issued the final sign-off on DPIA-2024-07 on April 17, signed by Sylvia Tran, clearing BrightPath Foundation to proceed with the Raiser's Edge NXT data export. The sign-off includes three binding conditions: first, the AES-256 encryption for the 6 PII fields must be validated and confirmed active before any California-resident donor records are transferred; second, a data-transfer log must be maintained for 7 years post-migration; and third, the Raiser's Edge NXT read-only snapshot must be deleted no later than 90 days after go-live, consistent with the retention schedule in the DPIA. Priya Nair acknowledged all three conditions in writing to Hartwell & Crane LLP on April 18 and shared the acknowledgment with Marcus Delgado.",
+      "gold_parents": [
+        "t24"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t31",
+      "turn_index": 30,
+      "user_message": "What is the validation failure rate threshold that would trigger an automatic halt in the April 25 rollback test?",
+      "assistant_message": "In the April 25 rollback test, DonorSync Pro was configured to automatically halt the transfer if the validation failure rate exceeded 2 percent of the 5,000-record synthetic dataset, which equates to 100 records. The test actually achieved a failure rate of only 0.6 percent, or 30 records out of 5,000, so no halt was triggered. Marcus Delgado documented this threshold and the actual result in RollbackTest_20240425_Results.pdf, which Carmen Velasquez archived in the Migration Master Plan v2.3 folder. This threshold applies specifically to the synthetic test dataset and to the rollback test scenario, not to the live production transfer.",
+      "gold_parents": [
+        "t28"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t32",
+      "turn_index": 31,
+      "user_message": "Has Dr. Forsythe formally confirmed the May 2 go-live date now that the DPIA sign-off has come through?",
+      "assistant_message": "Dr. Annette Forsythe formally confirmed the May 2 go-live date at BrightPath Foundation's board meeting on April 18, following receipt of the Hartwell & Crane LLP sign-off on DPIA-2024-07. The board resolution, recorded as Resolution 2024-09, authorizes Marcus Delgado to proceed with the live Raiser's Edge NXT export and Salesforce Nonprofit Success Pack import on May 2 beginning at 11 PM Eastern. Carmen Velasquez was instructed to send the donor notification email by April 29, giving donors the required 72-hour advance notice. Priya Nair confirmed that all staff training prerequisites will be met before May 1.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t33",
+      "turn_index": 32,
+      "user_message": "Are there any outstanding compliance conditions from the DPIA sign-off that haven't been actioned yet as we approach go-live?",
+      "assistant_message": "As of April 20, two of the three Hartwell & Crane LLP conditions from the DPIA-2024-07 sign-off remain open. The AES-256 encryption for the 6 PII fields has not yet been validated as active in the production Salesforce Nonprofit Success Pack environment, only in the sandbox, and Priya Nair has scheduled this validation for April 28. The data-transfer log template has been drafted by Carmen Velasquez but has not yet been reviewed by Marcus Delgado, who must approve it before go-live. The third condition, the 90-day deletion schedule for the Raiser's Edge NXT snapshot, has been added to BrightPath Foundation's compliance calendar and requires no immediate action before go-live.",
+      "gold_parents": [
+        "t30"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t34",
+      "turn_index": 33,
+      "user_message": "Has the donor notification email been sent, and what was the delivery outcome?",
+      "assistant_message": "Carmen Velasquez sent the donor notification email to all 47,200 BrightPath Foundation donors on April 29 at 10 AM Eastern, meeting the 72-hour advance notice requirement for the May 2 go-live. The email delivery report showed a 96.3 percent successful delivery rate, with 1,742 addresses bouncing, of which 1,104 were hard bounces flagged for record cleanup in Salesforce Nonprofit Success Pack post-migration. The 3,400 donors on the no-email list received physical mail notices dispatched by Priya Nair's team on April 26, three days earlier than required, as a precaution. Marcus Delgado reviewed the delivery report on April 29 and noted no action required before go-live.",
+      "gold_parents": [
+        "t32"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t35",
+      "turn_index": 34,
+      "user_message": "Has the board chair been updated on the delivery outcome and the remaining open compliance items?",
+      "assistant_message": "Marcus Delgado sent Dr. Annette Forsythe a go-live readiness memo on April 30 summarizing the notification delivery outcome and the two open compliance items: the production AES-256 encryption validation and the data-transfer log approval. Dr. Forsythe acknowledged the memo and confirmed she is satisfied with the risk level, noting that both items are scheduled for completion before the 11 PM May 2 start time. Carmen Velasquez updated the project risk register to reflect both items as in-progress rather than open. Priya Nair completed the production encryption validation on April 28 as scheduled, closing that item, and Marcus Delgado approved the data-transfer log template on April 30, closing the second item.",
+      "gold_parents": [
+        "t34"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t36",
+      "turn_index": 35,
+      "user_message": "So all three DPIA conditions are now closed. Can you confirm the exact encryption standard and field count that was validated for the production environment?",
+      "assistant_message": "Priya Nair's April 28 validation report confirms that AES-256 encryption is active at the field level for exactly 6 fields in the production Salesforce Nonprofit Success Pack environment: email address, phone number, full mailing address, date of birth, Social Security Number fragment, and IP address logs. The validation was performed against BrightPath Foundation's production Salesforce Nonprofit Success Pack tenant, not the sandbox, and the results were logged in a validation certificate signed by both Priya Nair and Marcus Delgado. Hartwell & Crane LLP's Sylvia Tran was notified of the completed validation by Carmen Velasquez on April 29, formally closing the first binding condition from the DPIA-2024-07 sign-off. All three DPIA conditions are now closed as of April 30, and BrightPath Foundation is fully authorized to proceed with the live data transfer.",
+      "gold_parents": [
+        "t33"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t37",
+      "turn_index": 36,
+      "user_message": "Now that the rollback test passed and the go-live is confirmed, what is the plan for decommissioning the Raiser's Edge NXT environment after the 90-day snapshot period?",
+      "assistant_message": "Marcus Delgado documented the Raiser's Edge NXT decommissioning plan in a supplement to Migration Master Plan v2.3 filed on April 26. At the end of the 90-day read-only snapshot period, Carmen Velasquez will submit a decommissioning request to the Raiser's Edge NXT vendor with 30 days notice, meaning the formal notice must go out by day 60 post-migration. Priya Nair will conduct a final data-integrity check against the Salesforce Nonprofit Success Pack live environment before the snapshot is deleted, confirming that all 47,200 donor records transferred successfully. DonorSync Pro's transfer logs will be retained for 7 years in BrightPath Foundation's document management system per the second binding condition from the DPIA-2024-07 sign-off.",
+      "gold_parents": [
+        "t31"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t38",
+      "turn_index": 37,
+      "user_message": "We're finalizing the go-live checklist and I need to confirm two things together: what is the exact DonorSync Pro deduplication scoring threshold that triggers auto-merge during the live Raiser's Edge NXT export, and what encryption standard and number of fields was validated in the production Salesforce Nonprofit Success Pack environment before go-live?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t27",
+        "t36"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t8",
+    "t13",
+    "t21",
+    "t24",
+    "t27",
+    "t30",
+    "t33",
+    "t36"
+  ],
+  "distractor_turn_ids": [
+    "t2",
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t7",
+    "t9",
+    "t10",
+    "t11",
+    "t12",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t20",
+    "t22",
+    "t23",
+    "t25",
+    "t26",
+    "t28",
+    "t29",
+    "t31",
+    "t32",
+    "t34",
+    "t35",
+    "t37"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that the auto-merge threshold in DonorSync Pro's deduplication scoring is a score of 95 or above (out of 100).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that the encryption standard validated in the production Salesforce Nonprofit Success Pack environment is AES-256 applied at the field level.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer states that exactly 6 fields were validated as encrypted in the production Salesforce Nonprofit Success Pack environment.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not state that the validation failure rate threshold of 2 percent (or 100 records) is the auto-merge or deduplication threshold, as that figure applies to the rollback test halt condition, not the deduplication scoring.",
+      "required": true
+    }
+  ],
+  "notes": "t27 establishes the exact DonorSync Pro deduplication auto-merge threshold (score >= 95) and the locked configuration file; t36 establishes the production AES-256 field-level encryption validation covering exactly 6 fields. t31 is the near-miss: it confidently answers the 2-percent validation failure rate threshold for the rollback test, which sounds similar to a threshold question but is a completely different metric from the deduplication auto-merge score.\n\nReference answer: During the live Raiser's Edge NXT export, DonorSync Pro will auto-merge any record pair that scores 95 or above on the weighted similarity index, retaining the older constituent ID as the master record, as locked in DedupeConfig_BPF_v3.json on April 12. For the production Salesforce Nonprofit Success Pack environment, Priya Nair's April 28 validation report confirms that AES-256 encryption is active at the field level across exactly 6 fields: email address, phone number, full mailing address, date of birth, Social Security Number fragment, and IP address logs. Both conditions have been formally closed and BrightPath Foundation is authorized to proceed with the live transfer.",
+  "evidence_note": null,
+  "premise": "a nonprofit migrating its donor database to a new CRM",
+  "evidence_spans": null,
+  "benchmark_version": "1.2-pilot",
+  "length_class": "long"
+}

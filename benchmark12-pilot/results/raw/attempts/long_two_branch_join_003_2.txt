@@ -1,0 +1,234 @@
+I'll carefully fix all the listed problems:
+1. Remove topic-switch signposting from t10 and t25
+2. Ensure answer_checklist required items cite both gold branches
+3. Keep distractor branches much closer to the query's subject (onboarding specifics, same entities)
+4. Make distractors share more vocabulary/entities with the gold branches
+
+```json
+{
+  "entity_registry": [
+    "Priya Nair",
+    "Marcus Webb",
+    "OnboardIQ",
+    "DropWatch",
+    "Sprint 14",
+    "Lena Sorbo"
+  ],
+  "turns": [
+    {
+      "turn_id": "t1",
+      "user_message": "We've been running DropWatch on our onboarding funnel and I want to nail down where users are actually leaving. What does the data say about the permission-request screen?",
+      "assistant_message": "DropWatch logged a 54% abandonment rate specifically on the permission-request screen during the Sprint 14 measurement window, which ran from March 3 to March 17. Priya Nair flagged this as the single largest drop-off point in the entire six-step onboarding flow. The next worst screen, the profile-photo upload, only loses 21% of users by comparison, so permissions is clearly the critical bottleneck."
+    },
+    {
+      "turn_id": "t2",
+      "user_message": "Marcus Webb asked me to look at notification opt-in rates during onboarding. What's our current baseline?",
+      "assistant_message": "DropWatch data for Sprint 14 shows that only 38% of users who reach the notification opt-in card actually tap Allow, giving us a 62% soft-decline rate on that screen. Marcus Webb noted in the Sprint 14 retro that this is down from 45% in Sprint 12, so the trend is moving in the wrong direction. Priya Nair has flagged this as a secondary concern behind the permissions bottleneck but still worth addressing in the same release cycle."
+    },
+    {
+      "turn_id": "t3",
+      "user_message": "What's the status of the accessibility audit Lena Sorbo was running on the onboarding screens?",
+      "assistant_message": "Lena Sorbo completed the accessibility audit on February 28 and found 11 contrast-ratio failures across the six OnboardIQ onboarding screens, with the welcome screen and the permission-request screen being the worst offenders. She assigned severity ratings using WCAG 2.1 AA as the benchmark, and 4 of the 11 failures were rated critical. Marcus Webb approved a budget of 3 engineering days to remediate all critical items before the Sprint 14 release."
+    },
+    {
+      "turn_id": "t4",
+      "user_message": "I need to understand the server-side latency picture for the onboarding API calls. Can you summarize what we know?",
+      "assistant_message": "OnboardIQ's onboarding API averaged 1,340 milliseconds at the 95th percentile during the Sprint 14 window, which is well above the 800-millisecond target Priya Nair set in the performance charter. The account-creation endpoint was the slowest individual call at 2,100 milliseconds p95. Lena Sorbo's infrastructure review on March 10 traced the spike to an unindexed database query that was introduced in the Sprint 13 deploy."
+    },
+    {
+      "turn_id": "t5",
+      "user_message": "What did Marcus Webb decide about the notification opt-in copy? Was there a rewrite approved?",
+      "assistant_message": "Marcus Webb approved a full copy rewrite for the notification opt-in card on March 12, replacing the generic 'Allow notifications?' heading with a benefit-led line reading 'Get real-time order updates.' The revised copy was handed off to the content team the same day and is scheduled to go into OnboardIQ build 4.2.1. Priya Nair requested an A/B test running for at least two full weeks before any permanent decision is made on the new wording."
+    },
+    {
+      "turn_id": "t6",
+      "user_message": "Has anyone estimated the lift the copy rewrite might produce on the opt-in rate?",
+      "assistant_message": "Based on three comparable copy experiments in the DropWatch historical archive, Marcus Webb's team projected a 9 to 14 percentage-point lift, which would bring the opt-in rate from 38% up to roughly 47–52%. The projection assumes no other onboarding changes ship simultaneously, which Priya Nair noted is a fragile assumption given the Sprint 14 scope. If the A/B test confirms the upper bound of the range, Marcus Webb said he would escalate the result to the Q2 OKR review."
+    },
+    {
+      "turn_id": "t7",
+      "user_message": "Separately from the drop-off numbers, I want to understand what copy change Priya Nair approved for the permission-request screen. What exactly was decided?",
+      "assistant_message": "Priya Nair approved replacing the existing 'This app needs access to your camera, location, and contacts' modal with a three-panel contextual explanation that shows each permission alongside a concrete use-case illustration. The decision was recorded in the OnboardIQ product spec dated March 8. She specifically required that the new design must not request all three permissions on a single screen, meaning each permission must be requested separately and in sequence."
+    },
+    {
+      "turn_id": "t8",
+      "user_message": "What's the plan for localizing the new onboarding strings? Lena Sorbo mentioned there was a deadline.",
+      "assistant_message": "Lena Sorbo set a hard localization submission deadline of March 24 for all new onboarding strings, covering the 14 languages in OnboardIQ's current market list. The localization vendor, TransGlobe, requires a minimum of 10 business days to turn around a full string package, which is why the March 24 cutoff was chosen to hit the April 9 release date. Priya Nair signed off on the timeline and noted that any strings not submitted by March 24 would be deferred to the following sprint."
+    },
+    {
+      "turn_id": "t9",
+      "user_message": "What's the technical constraint on how the new permission screens can be sequenced? I want to make sure the engineers know the boundaries.",
+      "assistant_message": "The OnboardIQ mobile framework enforces a maximum of one native OS permission dialog per screen transition, which means back-to-back permission requests must each occupy a distinct step in the navigation stack. Marcus Webb confirmed on March 9 that the iOS implementation also requires a minimum 800-millisecond delay between sequential permission dialogs to avoid a known UIKit animation glitch. These two constraints together mean the three-permission flow will add at least two extra screens and roughly 1.6 seconds of enforced wait time to the onboarding sequence."
+    },
+    {
+      "turn_id": "t10",
+      "user_message": "DropWatch showed a 54% drop on the permission screen — do we have a breakdown by platform?",
+      "assistant_message": "Yes, DropWatch segmented the 54% overall abandonment into 61% on Android and 47% on iOS for the Sprint 14 window. Priya Nair noted that the Android figure is particularly alarming because it represents a 12-point increase from Sprint 12's 49% Android abandonment rate. The gap is likely tied to Android's more abrupt system permission dialog, which gives users less context than Apple's pre-permission explanation sheet."
+    },
+    {
+      "turn_id": "t11",
+      "user_message": "Did the notification opt-in A/B test get a sample-size estimate? I want to know if two weeks is actually enough.",
+      "assistant_message": "Marcus Webb's analyst ran a power calculation using DropWatch's historical daily-active-user figures and determined that 14 days yields approximately 28,400 exposures per variant, which is sufficient to detect a 7-percentage-point lift at 80% power and a 5% significance level. Priya Nair reviewed the calculation on March 13 and agreed that two weeks is adequate if daily active users remain above 2,000. If DAU drops below that threshold, the test would need to be extended to 21 days to maintain statistical validity."
+    },
+    {
+      "turn_id": "t12",
+      "user_message": "Has the localization vendor confirmed they can handle the volume of new strings on time?",
+      "assistant_message": "TransGlobe replied to Lena Sorbo on March 15 confirming they can process up to 400 new string tokens across 14 languages within the 10-business-day window. The current OnboardIQ string count for the new onboarding flow is 312 tokens, so the vendor is within capacity. Marcus Webb asked Lena Sorbo to build in a 48-hour buffer by treating March 22 as the internal submission deadline, even though the contractual date with TransGlobe is March 24."
+    },
+    {
+      "turn_id": "t13",
+      "user_message": "What analytics events are we planning to fire on the new onboarding screens? I want to make sure DropWatch will capture the right signals.",
+      "assistant_message": "Priya Nair's analytics spec, finalized on March 11, defines seven new event types for the redesigned onboarding flow: screen_viewed, permission_prompted, permission_granted, permission_denied, permission_deferred, onboarding_completed, and onboarding_abandoned. Each event carries a step_index property so DropWatch can reconstruct the exact drop-off point per user. Marcus Webb requested that permission_deferred be added as a distinct event rather than lumping deferrals with denials, which was a gap in the Sprint 12 instrumentation."
+    },
+    {
+      "turn_id": "t14",
+      "user_message": "What's the p95 latency target for the new onboarding API after the index fix Lena Sorbo identified?",
+      "assistant_message": "After applying the database index fix, Lena Sorbo's load-test results on March 16 projected a p95 latency of 620 milliseconds for the account-creation endpoint, comfortably under the 800-millisecond target. The overall onboarding API p95 is projected to fall from 1,340 milliseconds to approximately 710 milliseconds once the fix is deployed. Priya Nair has asked for a 72-hour post-deploy monitoring window using DropWatch's real-time latency dashboard before closing the performance ticket."
+    },
+    {
+      "turn_id": "t15",
+      "user_message": "The March 22 internal deadline for localization — does that apply to the permission screen strings too?",
+      "assistant_message": "Yes, Marcus Webb explicitly included the permission-screen strings in the March 22 internal deadline, noting that those strings are among the highest-priority items because they are user-facing legal disclosures in several European markets. Lena Sorbo confirmed that the permission-screen string package contains 47 tokens across the three permission types, which is already drafted and ready for submission. Priya Nair reviewed the draft on March 14 and approved it without changes."
+    },
+    {
+      "turn_id": "t16",
+      "user_message": "What happens to the localization timeline if TransGlobe misses the April 9 release? Is there a contingency?",
+      "assistant_message": "Lena Sorbo documented a contingency in the Sprint 14 release plan: if TransGlobe delivers late, OnboardIQ will ship the new onboarding flow in English only and push the localized strings to a hotfix release no later than April 16. Marcus Webb approved this contingency on March 15 on the condition that the hotfix is treated as a P1 release with no scope additions. Priya Nair noted that the English-only window must not exceed seven days, as the European market SLA requires localized strings within one week of a major feature launch."
+    },
+    {
+      "turn_id": "t17",
+      "user_message": "Has anyone mapped which of the seven new analytics events will be visible in DropWatch out of the box versus needing custom configuration?",
+      "assistant_message": "Priya Nair's analytics spec notes that screen_viewed, onboarding_completed, and onboarding_abandoned map directly to DropWatch's standard event schema and will appear in the default funnel dashboard without any configuration. The four permission-related events — permission_prompted, permission_granted, permission_denied, and permission_deferred — require a custom event group to be created in DropWatch by the analytics team. Marcus Webb assigned Lena Sorbo to set up the custom event group before the Sprint 14 release date so the data is ready from day one."
+    },
+    {
+      "turn_id": "t18",
+      "user_message": "What's the rollout strategy for the new onboarding flow? Are we doing a phased release?",
+      "assistant_message": "Marcus Webb approved a phased rollout starting at 10% of new installs on April 9, scaling to 50% on April 12 if the DropWatch error rate stays below 0.5%, and reaching 100% on April 16 if no blocking issues emerge. Priya Nair set a rollback trigger: if the onboarding completion rate drops more than 5 percentage points below the Sprint 14 baseline within the first 48 hours, the release team must revert immediately. Lena Sorbo owns the rollout dashboard and is responsible for sending hourly status updates to the OnboardIQ Slack channel during the first 24 hours."
+    },
+    {
+      "turn_id": "t19",
+      "user_message": "What's the expected impact of the latency fix on the overall onboarding completion rate, according to Lena Sorbo's analysis?",
+      "assistant_message": "Lena Sorbo's regression model, shared with Priya Nair on March 17, estimated that reducing p95 latency from 1,340 milliseconds to 710 milliseconds would improve the onboarding completion rate by approximately 3.2 percentage points. The model was built on DropWatch session data from the previous four sprints and controlled for device type and network quality. Marcus Webb noted that 3.2 points is a meaningful gain but smaller than the projected impact of the permission-screen redesign, so latency is a supporting fix rather than the headline improvement."
+    },
+    {
+      "turn_id": "t20",
+      "user_message": "Are there any DropWatch events that overlap between the standard schema and the custom permission group, and could that cause double-counting?",
+      "assistant_message": "Priya Nair's analytics spec explicitly addresses this: the screen_viewed event fires on every screen including permission screens, but the permission_prompted event fires only on the OS dialog trigger, so they capture different moments and there is no double-counting risk. Lena Sorbo added a deduplication rule in the DropWatch custom event group configuration to suppress any screen_viewed event that fires within 200 milliseconds of a permission_prompted event on the same session. Marcus Webb reviewed the deduplication logic on March 18 and approved it as sufficient."
+    },
+    {
+      "turn_id": "t21",
+      "user_message": "What is the current onboarding completion rate baseline we're measuring the A/B test against?",
+      "assistant_message": "DropWatch recorded a 34% end-to-end onboarding completion rate during Sprint 14, meaning only 34 out of every 100 users who open the app for the first time complete all six steps. Marcus Webb set this as the official baseline in the Sprint 14 retro document on March 18. Priya Nair's stated goal for the new onboarding flow is to lift this to at least 48% by the end of Q2, which she described as the minimum threshold to satisfy the investor KPI agreed in January."
+    },
+    {
+      "turn_id": "t22",
+      "user_message": "What's the rollout gate criterion at the 50% threshold? I want to make sure the team knows exactly what to check.",
+      "assistant_message": "Marcus Webb's rollout plan specifies two gate criteria for the move from 10% to 50%: the DropWatch error rate must be below 0.5% and the onboarding completion rate among the 10% cohort must be at or above 36%, which is 2 percentage points above the Sprint 14 baseline. Priya Nair added a third criterion on March 19: the permission_granted rate for the camera permission specifically must be above 40% in the test cohort before scaling. Lena Sorbo is responsible for pulling the gate-check report at the 48-hour mark after the April 9 launch."
+    },
+    {
+      "turn_id": "t23",
+      "user_message": "Has Lena Sorbo estimated what the completion rate would be if both the latency fix and the permission redesign ship together?",
+      "assistant_message": "Lena Sorbo's combined-impact model, reviewed by Priya Nair on March 20, projects a 9.5 to 13 percentage-point lift in the onboarding completion rate when both changes ship simultaneously, bringing the rate to a range of 43.5% to 47%. The model assumes the two effects are largely additive because they address different friction points in the funnel. Marcus Webb noted in the March 20 design review that the upper bound of 47% falls just short of Priya Nair's 48% Q2 target, so the notification opt-in copy rewrite may also need to contribute."
+    },
+    {
+      "turn_id": "t24",
+      "user_message": "What's the rollout plan if the completion rate in the 10% cohort comes in below 36%?",
+      "assistant_message": "If the 10% cohort completion rate is below 36%, Marcus Webb's rollout plan calls for a hold at 10% and an emergency review meeting within 4 hours, with Priya Nair, Lena Sorbo, and the lead iOS and Android engineers required to attend. The review team has authority to either patch and re-release within 24 hours or trigger a full rollback to the previous OnboardIQ build. DropWatch will continue collecting data during the hold period so the team has a richer dataset for the review meeting."
+    },
+    {
+      "turn_id": "t25",
+      "user_message": "The permission-request screen redesign — has Priya Nair confirmed the exact sequence in which the three permissions will be requested?",
+      "assistant_message": "Priya Nair confirmed in the OnboardIQ product spec on March 8 that the sequence will be camera first, then location, then contacts. The rationale recorded in the spec is that camera permission has the highest grant rate historically and should be requested first to build user trust before asking for the more sensitive location and contacts permissions. DropWatch data from Sprint 12 showed camera grants at 71%, location at 58%, and contacts at 43% when all three were requested together on a single screen."
+    },
+    {
+      "turn_id": "t26",
+      "user_message": "Now that permissions are split across three screens, does Priya Nair expect the individual grant rates to change?",
+      "assistant_message": "Priya Nair's projection in the March 8 spec estimates that separating the permissions will raise the camera grant rate from 71% to approximately 82%, location from 58% to 70%, and contacts from 43% to 57%. These estimates are based on a competitive benchmark analysis of five apps that made a similar transition, sourced from the DropWatch industry report published in February. She noted that the contacts permission is the highest-risk item and may require an additional explanatory tooltip if the 57% target is not met in the first two weeks."
+    },
+    {
+      "turn_id": "t27",
+      "user_message": "What is the projected combined effect on the overall permission-screen abandonment rate if all three grant rates hit their targets?",
+      "assistant_message": "If all three permissions hit Priya Nair's projected grant rates of 82%, 70%, and 57% respectively, DropWatch's funnel model predicts that the overall abandonment rate at the permission stage will fall from 54% to approximately 27%. Marcus Webb reviewed this projection on March 15 and accepted it as the official success metric for the permission-screen redesign. The 27% target is codified in Sprint 14's definition of done for the permissions feature ticket."
+    },
+    {
+      "turn_id": "t28",
+      "user_message": "Has there been a final decision on what happens if a user denies one of the three permissions mid-sequence? Does the flow continue or stop?",
+      "assistant_message": "Priya Nair made a final call on March 16: if a user denies any of the three permissions, the flow continues to the next permission screen rather than stopping, because forcing an exit was shown in DropWatch session recordings to cause full app abandonment in 78% of cases. However, if a user denies all three permissions in sequence, the flow routes them to a reduced-feature mode screen explaining what functionality they will lose, rather than completing the standard onboarding. This decision is recorded in the OnboardIQ product spec as the 'graceful degradation' policy."
+    },
+    {
+      "turn_id": "t29",
+      "user_message": "On the technical side, what does the 800-millisecond delay requirement mean for users who deny a permission and move to the next screen?",
+      "assistant_message": "Marcus Webb clarified on March 19 that the 800-millisecond enforced delay applies regardless of whether the user granted or denied the previous permission, because the UIKit animation glitch is triggered by the screen transition itself rather than the permission outcome. This means a user who denies all three permissions will experience at least 1.6 seconds of total enforced wait time across the two inter-screen transitions in addition to any normal navigation animation time. The engineering team has been asked to fill that delay with a brief animated explainer rather than a blank screen, to reduce perceived wait time."
+    },
+    {
+      "turn_id": "t30",
+      "user_message": "What was the abandonment rate on the notification opt-in card during Sprint 12, and what did Marcus Webb decide to do about it at the time?",
+      "assistant_message": "During Sprint 12, DropWatch recorded a 55% abandonment rate on the notification opt-in card, which was actually slightly better than the current Sprint 14 rate of 62%. Marcus Webb decided in the Sprint 12 retrospective to take no immediate action, classifying the notification opt-in as a low-priority item compared to the permission-screen bottleneck that Priya Nair had escalated. The Sprint 12 decision was documented in the OnboardIQ backlog as a deferred item with a revisit trigger set for when the overall completion rate dropped below 35%."
+    },
+    {
+      "turn_id": "t31",
+      "user_message": "Has the combined-impact model been updated to include the notification opt-in copy rewrite as a third variable?",
+      "assistant_message": "Lena Sorbo updated the model on March 21 to include the notification opt-in copy rewrite and projected a total lift of 12 to 16 percentage points when all three changes ship together, bringing the completion rate to a range of 46% to 50%. Priya Nair reviewed the updated model the same day and noted that the midpoint of 48% aligns exactly with the Q2 OKR target. Marcus Webb flagged that the upper and lower bounds of the three-variable model carry wider uncertainty than the two-variable version because the copy rewrite A/B test has not yet been run."
+    },
+    {
+      "turn_id": "t32",
+      "user_message": "Going back to the technical sequencing constraints — if a user denies location permission and the app must still proceed, what state does the OnboardIQ framework put the session in?",
+      "assistant_message": "Marcus Webb documented on March 19 that when a user denies location permission mid-sequence, the OnboardIQ framework sets a session flag called location_permission_state to 'denied_deferred', which persists in local storage across sessions. This flag is read at app launch to decide whether to re-prompt the user on a subsequent session, with a minimum re-prompt interval of 72 hours set in the framework configuration. The DropWatch permission_deferred event is fired at the moment the flag is written, ensuring the analytics pipeline captures the deferral even if the user closes the app immediately after."
+    },
+    {
+      "turn_id": "t33",
+      "user_message": "What's the status of the WCAG remediation items Lena Sorbo identified? Have the critical ones been fixed?",
+      "assistant_message": "As of March 20, three of the four critical WCAG 2.1 AA failures identified by Lena Sorbo have been resolved and verified by the QA team. The remaining critical failure is on the permission-request screen's contextual explanation panel, where the secondary text color still fails the 4.5:1 contrast ratio requirement. Marcus Webb approved an additional half-day of engineering time to fix it before the Sprint 14 release, and Priya Nair made it a blocker for the April 9 launch."
+    },
+    {
+      "turn_id": "t34",
+      "user_message": "What is the minimum number of additional screens the new three-permission flow adds compared to the original single-screen permission request, accounting for all the technical constraints?",
+      "assistant_message": "Marcus Webb's engineering summary on March 9 concluded that the three-permission flow adds a minimum of two additional screens compared to the original single-screen design, because each of the three permissions must occupy its own screen and the original single permission screen is replaced rather than supplemented. Combined with the 800-millisecond enforced delay between each sequential permission dialog, the flow introduces at least 1.6 seconds of mandatory wait time spread across the two inter-screen transitions. The engineering team confirmed this calculation on March 19 and it is recorded in the OnboardIQ sprint ticket SP14-088."
+    },
+    {
+      "turn_id": "t35",
+      "user_message": "Has the remaining critical WCAG failure on the permission screen been assigned to a specific engineer?",
+      "assistant_message": "Yes, Marcus Webb assigned the fix to Lena Sorbo on March 20, given her familiarity with the accessibility audit findings and the permission-screen layout. She committed to completing the color token update and submitting it for QA review by March 22, which aligns with the internal localization submission deadline. Priya Nair confirmed in the Sprint 14 standup on March 21 that the fix is on track and no further blockers have been raised."
+    },
+    {
+      "turn_id": "t36",
+      "user_message": "Given everything we've decided about how the permission flow works when a user denies a permission mid-sequence, and the technical constraints on how many screens and how much enforced wait time the new flow adds, what is the complete experience a user will go through if they deny the location permission but grant camera and contacts?",
+      "assistant_message": null
+    }
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that if a user denies location permission mid-sequence, the flow continues to the next permission screen rather than stopping (Priya Nair's March 16 graceful-degradation decision).",
+      "required": false,
+      "evidence_turn_ids": ["t28"]
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that the new three-permission flow adds a minimum of two extra screens and at least 1.6 seconds of enforced wait time compared to the original single-screen design (Marcus Webb's March 9 engineering summary, confirmed March 19).",
+      "required": false,
+      "evidence_turn_ids": ["t34", "t9"]
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer states that the permission sequence is camera first, then location, then contacts, as confirmed by Priya Nair in the March 8 OnboardIQ product spec.",
+      "required": false,
+      "evidence_turn_ids": ["t25"]
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not state that the abandonment rate on the notification opt-in card during Sprint 12 was 55% or that Marcus Webb deferred action on it at that time, as that figure and decision apply to the notification opt-in branch (t30), not the permission-screen flow.",
+      "required": true,
+      "evidence_turn_ids": []
+    },
+    {
+      "id": "c5",
+      "criterion": "The answer states that if a user denies all three permissions in sequence, the flow routes them to a reduced-feature mode screen rather than completing standard onboarding (Priya Nair's graceful-degradation policy in the March 16 OnboardIQ product spec).",
+      "required": false,
+      "evidence_turn_ids": ["t28"]
+    }
+  ],
+  "reference_answer": "A user who denies location permission but grants camera and contacts will go through the following experience. The flow starts with camera (granted), then transitions to location with an 800-millisecond enforced delay between screens; when location is denied, the OnboardIQ framework continues to the contacts screen rather than stopping, applying another 800-millisecond delay, and the user grants contacts. Because the user did not deny all three permissions, the graceful-degradation reduced-feature-mode screen is not triggered and standard onboarding completes. Across the full three-permission sequence, the user has traversed at least two extra screens compared to the original single-screen design and experienced at least 1.6 seconds of total enforced wait time.",
+  "notes": "The key facts come from two gold branches: Branch A (t28) establishes the graceful-degradation policy — flow continues on a single denial but routes to reduced-feature mode only if all three are denied — and Branch B (t34, supported by t9) establishes the two-extra-screens and 1.6-second enforced-delay constraints. The near-miss turn t30 gives a 55% abandonment figure and a Marcus Webb Sprint 12 deferral decision that apply to the notification opt-in card, not the permission-screen flow, and must not appear in the answer."
+}
+```

@@ -1,0 +1,304 @@
+I'll fix the issues: remove topic-switch signposting, ensure distractor branches stay close to the query's subject (onboarding drop-off, same entities, same kind of metrics/decisions), and maintain all structural requirements.
+
+```json
+{
+  "entity_registry": [
+    "Priya Nair",
+    "Marcus Webb",
+    "Onboard-X",
+    "DropWatch",
+    "Flowline SDK",
+    "Sprint 14 spec"
+  ],
+  "turns": [
+    {
+      "turn_id": "t1",
+      "user_message": "We've been analyzing the onboarding funnel in Onboard-X and I want to lock down the step where we lose the most users. What does the data say about step 3 specifically?",
+      "assistant_message": "DropWatch logged that step 3, the permissions consent screen, has a 54% abandonment rate among new installs in the last 30 days, making it the single largest drop-off point in the Onboard-X funnel. Priya Nair flagged this in the Sprint 14 spec as the primary remediation target. The median time users spend on that screen before leaving is 8 seconds, suggesting they are not reading the copy but still bouncing. The team agreed to treat any solution that brings that rate below 30% as a success criterion."
+    },
+    {
+      "turn_id": "t2",
+      "user_message": "What is the current crash rate for Onboard-X on Android 13 devices? I want to know if Flowline SDK is involved.",
+      "assistant_message": "DropWatch shows a crash rate of 3.2% on Android 13 for Onboard-X builds using Flowline SDK version 2.4.1, which is roughly double the 1.6% rate seen on Android 12. Marcus Webb traced the root cause to a threading conflict in Flowline SDK's background sync module that was introduced in version 2.4.0. The Sprint 14 spec includes a line item to upgrade to Flowline SDK 2.5.0, which the vendor confirmed resolves the threading issue. No crash spike is observed on iOS for the same Flowline SDK version."
+    },
+    {
+      "turn_id": "t3",
+      "user_message": "Has Priya Nair estimated how long the Flowline SDK upgrade will take to roll out?",
+      "assistant_message": "Priya Nair estimated a 6-day rollout for the Flowline SDK 2.5.0 upgrade, broken into 2 days for integration testing and 4 days for staged deployment across Onboard-X production builds. She noted that Marcus Webb must sign off on the staged rollout plan before the team can begin. The Sprint 14 spec sets a hard deadline of the end of week 3 for the upgrade to be live. If the upgrade slips past that deadline, the team will revert to Flowline SDK 2.3.9 as a temporary fallback."
+    },
+    {
+      "turn_id": "t4",
+      "user_message": "I need to understand the copy constraints for the permissions screen redesign. Is there a character limit we have to respect?",
+      "assistant_message": "Yes, the Sprint 14 spec sets a hard cap of 120 characters for the primary permissions rationale string on the consent screen in Onboard-X. Priya Nair established this limit after usability testing showed that strings longer than 120 characters caused users to scroll, which correlated with a 22-percentage-point increase in abandonment. The limit applies to each individual permission explanation, not to the total page copy. Marcus Webb confirmed this constraint is also enforced at the Flowline SDK rendering layer, so strings exceeding 120 characters will be truncated automatically."
+    },
+    {
+      "turn_id": "t5",
+      "user_message": "What is the current average session length for users who do complete onboarding in Onboard-X?",
+      "assistant_message": "DropWatch reports that users who complete the full Onboard-X onboarding flow have an average first-session length of 4 minutes and 37 seconds. Priya Nair noted in the Sprint 14 spec that this figure is 40% higher than the industry benchmark of 3 minutes 18 seconds for comparable apps. Marcus Webb attributed the longer session to the three-step tutorial that follows the consent screen, which averages 2 minutes 10 seconds on its own. The team is not targeting this metric for Sprint 14 since it is considered a positive signal."
+    },
+    {
+      "turn_id": "t6",
+      "user_message": "I want to check the localization coverage for Onboard-X. How many languages are currently supported in the onboarding flow?",
+      "assistant_message": "Onboard-X currently supports 11 languages in the onboarding flow, as catalogued in the Sprint 14 spec: English, Spanish, French, German, Portuguese, Japanese, Korean, Simplified Chinese, Italian, Dutch, and Arabic. Priya Nair noted that Arabic is the only right-to-left language and that its layout was validated by Marcus Webb last quarter. DropWatch data shows that French and German users have a 12% higher completion rate than the English baseline, which the team attributes to shorter translated strings fitting better on smaller screens. Three additional languages — Turkish, Polish, and Indonesian — are queued for Sprint 15."
+    },
+    {
+      "turn_id": "t7",
+      "user_message": "Are there any localization-related drop-offs that DropWatch has flagged for the consent screen specifically?",
+      "assistant_message": "DropWatch flagged that Korean-language users abandon the consent screen at a rate of 61%, which is 7 percentage points above the overall average of 54%. Priya Nair suspects the Korean translation of the permissions rationale string is 148 characters, which exceeds the 120-character cap and is being truncated by Flowline SDK in a visually awkward way. Marcus Webb confirmed that the truncation produces a broken sentence in Korean that likely erodes user trust. The Sprint 14 spec includes a task to re-translate the Korean string to fit within the 120-character limit before the next release."
+    },
+    {
+      "turn_id": "t8",
+      "user_message": "When Flowline SDK truncates a string, does it add an ellipsis or just cut the text hard?",
+      "assistant_message": "Flowline SDK 2.4.1 performs a hard cut with no ellipsis when a string exceeds the character limit, which is the behavior Marcus Webb confirmed causes the broken sentence in Korean. The vendor's release notes for Flowline SDK 2.5.0 state that the truncation behavior will switch to a soft cut with an appended ellipsis. Priya Nair noted in a comment on the Sprint 14 spec that even with the ellipsis fix, the team should still rewrite the Korean string to avoid truncation entirely. The Onboard-X design system will be updated to enforce string-length linting before strings reach the SDK layer."
+    },
+    {
+      "turn_id": "t9",
+      "user_message": "Is the Onboard-X design system linting rule already written or does it still need to be built?",
+      "assistant_message": "The linting rule does not yet exist; Marcus Webb assigned it to the tooling sub-team with a due date of day 5 of Sprint 14. The rule will be implemented as a pre-commit hook that checks all localization string files against the 120-character limit before they can be merged. Priya Nair requested that the hook also flag strings shorter than 20 characters, which DropWatch data shows correlate with user confusion due to insufficient context. The Sprint 14 spec marks this task as a dependency for the Korean re-translation work."
+    },
+    {
+      "turn_id": "t10",
+      "user_message": "How many total localization strings are in the Onboard-X onboarding flow right now?",
+      "assistant_message": "The Sprint 14 spec lists 214 localization strings across the entire Onboard-X onboarding flow, covering all 11 supported languages. Priya Nair's audit found that 17 of those strings currently exceed the 120-character limit in at least one language, with Korean and Arabic having the most violations at 6 and 4 strings respectively. Marcus Webb estimated that fixing all 17 overlong strings will take approximately 3 days of translator time. DropWatch will be used to A/B test the corrected strings against the originals to confirm abandonment improvements."
+    },
+    {
+      "turn_id": "t11",
+      "user_message": "What retention metric is the team tracking at the 7-day mark for users who complete onboarding?",
+      "assistant_message": "DropWatch tracks 7-day retention for Onboard-X completers, and the current rate is 38%. Marcus Webb set a Sprint 14 target of lifting that figure to 45% by reducing friction in the consent screen, on the theory that users who feel informed during onboarding are more likely to return. Priya Nair noted that the 38% baseline was measured over a 90-day cohort ending last month. The Sprint 14 spec ties the 7-day retention goal directly to the step 3 remediation work, treating them as a single initiative."
+    },
+    {
+      "turn_id": "t12",
+      "user_message": "Are there any localization strings in the onboarding flow that are shared between the consent screen and the tutorial screens?",
+      "assistant_message": "Yes, 9 of the 214 localization strings are shared between the consent screen and the tutorial screens in Onboard-X, according to the Sprint 14 spec. Priya Nair flagged this as a risk because editing a shared string to fix a consent-screen issue could inadvertently alter tutorial copy. Marcus Webb recommended forking all 9 shared strings into separate consent-specific and tutorial-specific variants before the Sprint 14 re-translation work begins. DropWatch does not currently distinguish between consent-screen and tutorial-screen impressions for shared strings, which is a measurement gap the team plans to close."
+    },
+    {
+      "turn_id": "t13",
+      "user_message": "What is the 7-day retention rate for users who drop off at step 3 and then reinstall the app?",
+      "assistant_message": "DropWatch identifies a reinstall-and-complete cohort for Onboard-X: users who dropped at step 3 and later reinstalled have a 7-day retention rate of 52%, which is 14 percentage points higher than the 38% baseline for first-time completers. Marcus Webb theorized that reinstalling users are more motivated and therefore more tolerant of friction on the consent screen. Priya Nair noted in the Sprint 14 spec that this cohort is small — roughly 4% of all completers — so it does not materially affect the overall 38% figure. The team decided not to build separate onboarding logic for reinstallers in Sprint 14."
+    },
+    {
+      "turn_id": "t14",
+      "user_message": "Has the team set a minimum sample size before calling an A/B test on the consent screen statistically significant?",
+      "assistant_message": "Yes, the Sprint 14 spec mandates a minimum of 10,000 users per variant before any A/B test on the Onboard-X consent screen can be called. Marcus Webb set this threshold based on a power analysis targeting 80% power at a 5% significance level for a minimum detectable effect of 3 percentage points. Priya Nair noted that at current install volume — approximately 2,200 new installs per day — each variant will reach 10,000 users in about 4.5 days. DropWatch is configured to automatically pause the test and alert the team once either variant hits the threshold."
+    },
+    {
+      "turn_id": "t15",
+      "user_message": "What happens if the A/B test shows no significant improvement after the sample size is reached?",
+      "assistant_message": "The Sprint 14 spec states that if the A/B test shows no statistically significant improvement in consent-screen completion after 10,000 users per variant, the team will escalate to a full redesign of the permissions flow rather than iterating on copy alone. Priya Nair outlined three fallback designs in an appendix to the Sprint 14 spec, labeled F1, F2, and F3, each representing progressively more invasive UX changes. Marcus Webb assigned himself as the decision-maker for choosing among F1, F2, and F3 if the escalation is triggered. DropWatch will continue logging all variants throughout the escalation period to preserve longitudinal data."
+    },
+    {
+      "turn_id": "t16",
+      "user_message": "How many of the 214 localization strings are on the consent screen itself versus the tutorial screens?",
+      "assistant_message": "The Sprint 14 spec breaks down the 214 Onboard-X localization strings as follows: 38 strings are on the consent screen and 176 are on the tutorial screens. Priya Nair noted that the consent screen's 38 strings include 6 that are dynamically generated based on the specific permissions being requested, making them harder to audit. Marcus Webb flagged that DropWatch cannot currently track per-string impression data for the 6 dynamic strings, which is a gap being addressed in the same Sprint 14 tooling work. The 9 shared strings mentioned earlier are counted in both totals, so the unique string count is 205."
+    },
+    {
+      "turn_id": "t17",
+      "user_message": "Is there a plan to reduce the number of dynamic strings on the consent screen to make auditing easier?",
+      "assistant_message": "Priya Nair proposed replacing the 6 dynamic consent strings with a set of 12 pre-approved static strings covering all permission combinations used by Onboard-X, which would make the full consent screen auditable. Marcus Webb approved this proposal and added it to the Sprint 14 spec as a medium-priority task, slated for the second week of the sprint. DropWatch will be updated to track impressions for each of the 12 static strings individually once they are deployed. The change is expected to reduce the audit surface from an open-ended dynamic set to a fixed catalogue of 44 total consent-screen strings."
+    },
+    {
+      "turn_id": "t18",
+      "user_message": "For the redesigned consent screen, what specific UI pattern did the team decide to use to present the permissions?",
+      "assistant_message": "The team decided to use an icon-plus-label card pattern for the redesigned consent screen in Onboard-X, where each permission is represented by a distinct icon paired with a one-line rationale label capped at 120 characters. This decision is recorded in the Sprint 14 spec and was finalized by Priya Nair after two rounds of prototype testing with 40 internal users. DropWatch data from the prototype sessions showed a 31% reduction in time-on-screen compared to the current list-only layout. Marcus Webb approved the card pattern on the condition that it passes WCAG 2.1 AA accessibility review before shipping."
+    },
+    {
+      "turn_id": "t19",
+      "user_message": "Who is responsible for conducting the WCAG 2.1 AA review of the new card pattern?",
+      "assistant_message": "The Sprint 14 spec assigns the WCAG 2.1 AA review to an external accessibility consultant, Renata Sousa, who has a 5-business-day turnaround. Marcus Webb scheduled her engagement to begin on day 8 of Sprint 14 so that the review concludes before the planned release window. Priya Nair noted that if Renata Sousa identifies critical failures, the team has a 3-day buffer in the Sprint 14 timeline to address them before the release gate. DropWatch will not be used for the accessibility review; it is strictly a quantitative funnel tool."
+    },
+    {
+      "turn_id": "t20",
+      "user_message": "Has the team decided on a fallback if the card pattern fails the accessibility review?",
+      "assistant_message": "Yes, the Sprint 14 spec designates fallback design F1 — a simplified text-only accordion layout — as the accessibility-safe alternative if the card pattern fails the WCAG 2.1 AA review. Priya Nair noted that F1 was already validated by Renata Sousa in a previous engagement for a different Onboard-X screen, so it is pre-approved. Marcus Webb estimated that switching to F1 would add 2 days to the implementation timeline but would not jeopardize the Sprint 14 release date. DropWatch prototype data for F1 showed a 19% reduction in consent-screen abandonment, compared to the 31% reduction seen for the card pattern."
+    },
+    {
+      "turn_id": "t21",
+      "user_message": "What is the current install-to-registration conversion rate for Onboard-X, and is it tracked in DropWatch?",
+      "assistant_message": "DropWatch tracks install-to-registration conversion for Onboard-X and currently reports a rate of 41% over the trailing 30 days. Marcus Webb noted that this figure includes users who abandon at step 3 and later return to complete registration, so the true first-attempt conversion rate is closer to 33%. Priya Nair set a Sprint 14 goal of raising the 30-day install-to-registration rate from 41% to 52% through the consent-screen improvements. The Sprint 14 spec treats the 52% target as a stretch goal, with 47% as the minimum acceptable outcome."
+    },
+    {
+      "turn_id": "t22",
+      "user_message": "How does the card pattern handle the case where a user denies one of the permissions on the consent screen?",
+      "assistant_message": "The Sprint 14 spec defines three tiers of permissions in Onboard-X: required, recommended, and optional. If a user denies a required permission using the card pattern, the screen displays an inline error state within that card explaining that the permission is mandatory, and the user cannot proceed until they grant it. Priya Nair specified that the inline error copy must also respect the 120-character limit and must be written in plain language at a 6th-grade reading level. Marcus Webb added a rule that if a user denies a recommended or optional permission, the app must proceed without blocking, and DropWatch will log the denial event for analysis."
+    },
+    {
+      "turn_id": "t23",
+      "user_message": "What is the exact abandonment rate at step 3 that we are trying to get below, and what was it before we started measuring with DropWatch?",
+      "assistant_message": "The current abandonment rate at step 3 is 54%, as measured by DropWatch, and the Sprint 14 spec sets the success threshold at below 30%, meaning the team needs to cut the rate by more than 24 percentage points. Before DropWatch was integrated into Onboard-X, the team relied on Firebase Analytics, which reported a step 3 abandonment rate of 49% — but Priya Nair noted that Firebase was undercounting because it did not track users who killed the app before the screen fully rendered. Marcus Webb confirmed that DropWatch's 54% figure is the authoritative baseline going forward. The 5-point discrepancy between Firebase and DropWatch was documented in the Sprint 14 spec as a measurement calibration note."
+    },
+    {
+      "turn_id": "t24",
+      "user_message": "Has the Flowline SDK 2.5.0 upgrade been tested against the new card pattern layout yet?",
+      "assistant_message": "As of the Sprint 14 spec's last update, Flowline SDK 2.5.0 has been tested against a static mock of the card pattern but not against the fully dynamic version with live permission data. Marcus Webb reported that the static mock test passed without rendering issues on both Android 13 and iOS 16. Priya Nair flagged that the dynamic version must be tested before the release gate, and she added this as a blocking task on day 6 of Sprint 14. DropWatch instrumentation for the new card pattern requires Flowline SDK 2.5.0 or higher, so the upgrade and the card pattern launch are treated as a single deployment unit."
+    },
+    {
+      "turn_id": "t25",
+      "user_message": "If the dynamic card pattern test with Flowline SDK 2.5.0 fails, what is the contingency?",
+      "assistant_message": "The Sprint 14 spec outlines a contingency where if the dynamic card pattern fails with Flowline SDK 2.5.0, the team will ship the card pattern using a pre-rendered static asset fallback rather than SDK-driven dynamic rendering. Priya Nair estimated the static asset fallback adds 1.5 days of design work to produce assets for all 11 supported languages. Marcus Webb noted that the static fallback would not support real-time permission-state updates, which is an acceptable trade-off for the Sprint 14 release. DropWatch logging would still function normally under the static fallback because the logging hooks are at the app layer, not the SDK layer."
+    },
+    {
+      "turn_id": "t26",
+      "user_message": "I want to confirm the success threshold one more time. What exact abandonment rate does step 3 need to reach for Sprint 14 to be considered a success?",
+      "assistant_message": "The Sprint 14 spec explicitly states that the step 3 abandonment rate must fall below 30% for the initiative to be declared a success, down from the current DropWatch-measured baseline of 54%. Priya Nair wrote this threshold into the spec as a non-negotiable acceptance criterion, meaning the sprint cannot be closed as successful unless DropWatch confirms the rate is under 30%. Marcus Webb added a secondary note that if the rate lands between 30% and 35%, the team will treat it as a partial success and carry the remaining gap into Sprint 15. The 30% figure was chosen because internal benchmarking showed that top-quartile apps in the same category have consent-screen abandonment rates between 22% and 29%."
+    },
+    {
+      "turn_id": "t27",
+      "user_message": "What percentage of Onboard-X users are on Android versus iOS, and does that split affect how we prioritize the consent screen fix?",
+      "assistant_message": "DropWatch shows that 63% of Onboard-X active users are on Android and 37% are on iOS over the trailing 90 days. Marcus Webb noted that the Android share makes the Flowline SDK threading fix especially urgent, since the 3.2% crash rate on Android 13 disproportionately affects the majority user base. Priya Nair confirmed in the Sprint 14 spec that the card pattern redesign is being developed mobile-first for Android, with iOS receiving the same build via a shared React Native component. The consent-screen abandonment rate of 54% is consistent across both platforms within a 2-percentage-point margin, so the fix is not platform-specific."
+    },
+    {
+      "turn_id": "t28",
+      "user_message": "For the card pattern, what is the maximum number of permission cards that can be displayed on a single screen without requiring the user to scroll?",
+      "assistant_message": "The Sprint 14 spec sets a maximum of 4 permission cards visible without scrolling on a standard 5.5-inch screen at default font size, based on usability testing conducted by Priya Nair. If Onboard-X needs to request more than 4 permissions, the card pattern will paginate them across multiple screens rather than introduce a scroll. Marcus Webb approved the pagination approach and specified that each page must include a progress indicator showing the user how many permission pages remain. DropWatch will track per-page abandonment separately so the team can identify if any specific permission triggers disproportionate drop-off."
+    },
+    {
+      "turn_id": "t29",
+      "user_message": "Has Renata Sousa reviewed any previous versions of the Onboard-X onboarding flow, or is the Sprint 14 engagement her first?",
+      "assistant_message": "Renata Sousa previously reviewed Onboard-X version 2.1 onboarding flow 8 months ago and issued a report with 11 accessibility findings, 3 of which were critical. Priya Nair confirmed that all 3 critical findings from that review were resolved before the version 2.1 release, and Marcus Webb signed off on the closure report. The Sprint 14 engagement is therefore Renata Sousa's second review of the Onboard-X onboarding flow. DropWatch was not yet integrated during the version 2.1 review, so there is no quantitative data linking the accessibility fixes to changes in abandonment rates from that period."
+    },
+    {
+      "turn_id": "t30",
+      "user_message": "The card pattern uses icons paired with labels. Has the team decided what icon set to use, and is there a rule about icon size?",
+      "assistant_message": "The Sprint 14 spec designates the Material Symbols icon set as the standard for all permission cards in the Onboard-X redesign, chosen by Priya Nair after evaluating three candidates. Each icon must be rendered at exactly 24dp with a minimum touch target of 48dp to satisfy both the design system guidelines and WCAG 2.1 AA tap-target requirements. Marcus Webb added a rule that icons must use the outlined style variant rather than the filled variant to maintain visual consistency with the rest of the Onboard-X interface. DropWatch will not track icon-level interactions, but the team will use session recording on a 5% sample of users to observe icon comprehension qualitatively."
+    },
+    {
+      "turn_id": "t31",
+      "user_message": "Has the Flowline SDK vendor confirmed that version 2.5.0 supports the Material Symbols icon set natively?",
+      "assistant_message": "The Flowline SDK 2.5.0 release notes confirm native support for Material Symbols in the outlined and filled variants, which Marcus Webb verified before approving the icon set choice. Priya Nair noted that Flowline SDK 2.4.1 required a manual font-file bundle for Material Symbols, adding approximately 340 KB to the app package size. The 2.5.0 version loads Material Symbols from the system font cache on Android 12 and above, reducing the bundle overhead to zero on those devices. On older Android versions and all iOS versions, the 340 KB bundle is still required, which Priya Nair flagged for the app-size budget review."
+    },
+    {
+      "turn_id": "t32",
+      "user_message": "What is the current app package size for Onboard-X on Android, and is there a size budget for Sprint 14?",
+      "assistant_message": "The current Onboard-X Android package size is 47.2 MB, and Marcus Webb set a Sprint 14 budget cap of 50 MB to avoid triggering Google Play's download-size warning for cellular connections. Priya Nair noted that the Flowline SDK 2.5.0 upgrade will add approximately 1.1 MB on net due to new rendering modules, bringing the projected size to 48.3 MB before the Material Symbols bundle consideration. The Sprint 14 spec includes a size-reduction task targeting 2 MB of savings from image compression and unused code removal to create headroom. DropWatch does not track app size metrics, so this monitoring falls to the CI/CD pipeline."
+    },
+    {
+      "turn_id": "t33",
+      "user_message": "Has the team identified which images or code modules are candidates for the 2 MB size reduction?",
+      "assistant_message": "Priya Nair's size audit identified three categories of savings: converting 14 PNG assets in the tutorial screens to WebP format saves an estimated 900 KB, removing two deprecated Flowline SDK adapter modules saves 650 KB, and stripping unused font weights from the app's custom typeface saves 420 KB. Together these total 1.97 MB, which Marcus Webb rounded to the 2 MB target in the Sprint 14 spec. The WebP conversion is assigned to the design team, while the SDK adapter removal and font stripping are assigned to the platform team. DropWatch confirmed that none of the 14 PNG assets appear on the consent screen, so the conversion carries no risk to the step 3 redesign."
+    },
+    {
+      "turn_id": "t34",
+      "user_message": "Is there a plan to test the card pattern with real users before the full A/B test launches?",
+      "assistant_message": "Yes, the Sprint 14 spec calls for a 3-day soft launch of the card pattern to 2% of new Onboard-X installs before the full A/B test begins. Priya Nair set the 2% threshold to gather approximately 130 real sessions per day at current install volume, which she considered sufficient to catch critical usability regressions. Marcus Webb added a requirement that DropWatch must show no increase in the error-state trigger rate during the soft launch before the full A/B test is cleared to start. If the soft launch data is clean, the full A/B test will ramp to 50% of new installs on day 4."
+    },
+    {
+      "turn_id": "t35",
+      "user_message": "What error-state trigger rate would cause the soft launch to be paused?",
+      "assistant_message": "The Sprint 14 spec defines a pause threshold of 8% error-state triggers during the soft launch, meaning if more than 8% of card-pattern sessions result in a user hitting the required-permission denial error, the launch is automatically paused. Priya Nair chose 8% based on the current baseline error rate of 5% on the existing consent screen, adding a 3-percentage-point buffer. Marcus Webb set up a DropWatch alert that fires within 15 minutes of the error rate crossing 8% during any 1-hour rolling window. The alert goes to both Priya Nair and Marcus Webb simultaneously via the team's Slack integration."
+    },
+    {
+      "turn_id": "t36",
+      "user_message": "If the soft launch is paused due to high error rates, how long does the team have to diagnose and fix the issue before the sprint timeline is jeopardized?",
+      "assistant_message": "The Sprint 14 spec allocates a 48-hour diagnosis and fix window from the moment the soft launch is paused before the sprint timeline is considered at risk. Priya Nair noted that if the fix cannot be implemented within 48 hours, Marcus Webb has authority to invoke fallback design F1 without further team review. DropWatch will continue logging all sessions during the pause window in read-only mode so that no data is lost. The Sprint 14 release gate is scheduled for day 18, and the soft launch is planned for day 11, giving 7 days of total buffer before the gate."
+    },
+    {
+      "turn_id": "t37",
+      "user_message": "What is the projected install-to-registration conversion rate if the card pattern achieves the target abandonment rate of below 30% at step 3?",
+      "assistant_message": "Marcus Webb modeled in the Sprint 14 spec that reducing step 3 abandonment from 54% to 29% would lift the install-to-registration conversion rate from the current 41% to approximately 53%, slightly above the 52% stretch goal Priya Nair set. This projection assumes no change in drop-off rates at steps 1, 2, and 4, which DropWatch data shows are stable at 8%, 11%, and 6% respectively. The model uses a linear pass-through assumption, which Marcus Webb acknowledged is a simplification but considered adequate for sprint planning. Priya Nair flagged that actual results may differ if the card pattern changes user behavior at steps 4 or 5 as a secondary effect."
+    },
+    {
+      "turn_id": "t38",
+      "user_message": "What are the drop-off rates at steps 1 and 2 currently, and has the team considered addressing those in Sprint 14?",
+      "assistant_message": "DropWatch reports step 1 abandonment at 8% and step 2 abandonment at 11% for Onboard-X, as noted in the Sprint 14 spec. Marcus Webb confirmed that neither step was selected for Sprint 14 remediation because their combined contribution to total funnel loss is far smaller than step 3's 54%. Priya Nair noted that step 2's 11% rate is slightly elevated compared to the industry benchmark of 8% for account-creation screens, and she flagged it as a candidate for Sprint 15 investigation. DropWatch is configured to send a weekly digest of step 1 and step 2 metrics to Marcus Webb so any deterioration is caught early."
+    },
+    {
+      "turn_id": "t39",
+      "user_message": "What abandonment rate did DropWatch record for the step 3 screen in the version 2.1 onboarding flow before the current redesign effort started?",
+      "assistant_message": "DropWatch was not yet integrated during the Onboard-X version 2.1 release, so there is no DropWatch-recorded abandonment rate for that version's step 3 screen. The closest available figure comes from Firebase Analytics, which logged a step 3 abandonment rate of 49% for version 2.1 over a 60-day measurement window. Priya Nair documented this 49% figure in the Sprint 14 spec as a historical reference point, noting it is not directly comparable to the current 54% DropWatch baseline due to the measurement differences Marcus Webb described. The team treats 54% as the only authoritative starting point for Sprint 14 goal-setting."
+    },
+    {
+      "turn_id": "t40",
+      "user_message": "Is there a plan to retroactively instrument version 2.1 data with DropWatch for longitudinal comparison?",
+      "assistant_message": "No retroactive instrumentation is planned for Onboard-X version 2.1 because the version is no longer in active distribution and fewer than 0.3% of the user base remains on it, according to DropWatch device-version data. Marcus Webb ruled out the retroactive work in the Sprint 14 spec on the grounds that the engineering cost outweighs the analytical benefit. Priya Nair agreed and noted that the team will instead establish a clean longitudinal baseline starting from the Sprint 14 card pattern launch. DropWatch will tag all sessions with a schema version identifier going forward so future comparisons are unambiguous."
+    },
+    {
+      "turn_id": "t41",
+      "user_message": "Has the team finalized the rollout sequence for the Flowline SDK 2.5.0 upgrade across production environments?",
+      "assistant_message": "Priya Nair finalized the rollout sequence in the Sprint 14 spec as follows: internal dogfood environment on day 1, 5% of production Android 13 users on day 3, 25% of production Android 13 users on day 4, and full production rollout on day 6 if no regressions appear. Marcus Webb added a mandatory DropWatch health check between each stage, requiring that the crash rate remain below 1% before advancing. The iOS rollout mirrors the Android sequence but starts 24 hours later to allow for platform-specific validation. Flowline SDK 2.4.1 will remain active for the non-upgraded cohort throughout the staged rollout to enable clean comparison."
+    },
+    {
+      "turn_id": "t42",
+      "user_message": "What metric will DropWatch use to define a regression during the Flowline SDK staged rollout?",
+      "assistant_message": "DropWatch will flag a regression during the Flowline SDK 2.5.0 staged rollout if the crash rate exceeds 1% in any 2-hour rolling window, as specified by Marcus Webb in the Sprint 14 spec. A secondary regression signal is a 10-percentage-point increase in consent-screen abandonment rate relative to the Flowline SDK 2.4.1 cohort, which Priya Nair added as a UX-level safety check. If either signal fires, the rollout is automatically halted and the team is notified via the same Slack integration used for the soft launch alerts. Marcus Webb retains manual override authority to resume the rollout after a root-cause analysis is documented."
+    },
+    {
+      "turn_id": "t43",
+      "user_message": "Has the team discussed what to do with DropWatch data collected during the staged rollout once the full rollout is complete?",
+      "assistant_message": "The Sprint 14 spec states that all DropWatch data collected during the staged Flowline SDK rollout will be retained in a dedicated rollout archive partition for 12 months. Priya Nair specified that the staged-rollout data must be excluded from the main Sprint 14 A/B test analysis to prevent contamination from mixed SDK versions. Marcus Webb added a data governance note requiring that any future analysis using the rollout archive must document the SDK version split explicitly. DropWatch's data export API will be used to transfer the rollout archive to the team's analytics warehouse within 48 hours of full rollout completion."
+    },
+    {
+      "turn_id": "t44",
+      "user_message": "For the app-size budget, has the team accounted for the DropWatch SDK itself in the 50 MB cap?",
+      "assistant_message": "Yes, the DropWatch SDK contributes 2.3 MB to the Onboard-X Android package, and Marcus Webb confirmed this is already included in the current 47.2 MB baseline figure. Priya Nair noted that the DropWatch SDK version in use is 4.7.2 and that upgrading to the recently released 4.8.0 would add only 0.1 MB while providing improved session-recording compression. The Sprint 14 spec includes the DropWatch 4.8.0 upgrade as a low-priority task contingent on the 2 MB size-reduction work being completed first. Marcus Webb approved the upgrade on the condition that it does not require any changes to the existing DropWatch event schema."
+    },
+    {
+      "turn_id": "t45",
+      "user_message": "What is the timeline for the full A/B test, from launch to decision, assuming the soft launch goes cleanly?",
+      "assistant_message": "Assuming a clean soft launch on day 11 of Sprint 14, the full A/B test is scheduled to launch on day 14 and run until both variants reach 10,000 users, which Priya Nair estimated will take approximately 4.5 days at current install volume. The decision point therefore falls on approximately day 18 or 19, which aligns with the Sprint 14 release gate. Marcus Webb specified that DropWatch must produce the final significance report within 4 hours of the sample threshold being reached. If the test is inconclusive — meaning the p-value is between 0.05 and 0.10 — Priya Nair will make the final ship/no-ship call based on directional data."
+    },
+    {
+      "turn_id": "t46",
+      "user_message": "What happens to the Flowline SDK 2.4.1 build once the 2.5.0 rollout is fully complete?",
+      "assistant_message": "The Sprint 14 spec states that Flowline SDK 2.4.1 will be deprecated from the Onboard-X codebase within 5 business days of the 2.5.0 full rollout completing. Marcus Webb assigned the deprecation task to the platform team and specified that all build configurations referencing 2.4.1 must be removed, not merely commented out. Priya Nair added a requirement that the Sprint 14 spec's appendix be updated with the confirmed deprecation date for audit trail purposes. DropWatch will continue to log the SDK version field in all session events, so any residual 2.4.1 sessions — for example from users who have not updated the app — can be identified and filtered."
+    },
+    {
+      "turn_id": "t47",
+      "user_message": "Is there a forced-update mechanism in Onboard-X that would push users off Flowline SDK 2.4.1 more quickly?",
+      "assistant_message": "Onboard-X does not currently have a forced-update mechanism, but Marcus Webb proposed adding one in the Sprint 14 spec as a future enhancement for Sprint 16. Priya Nair noted that a forced update would require a minimum supported version policy, which the team has not yet established. In the interim, DropWatch data shows that 87% of active Onboard-X users update to the latest build within 14 days of release, so natural update propagation is considered sufficient for the 2.5.0 transition. The remaining 13% who lag on updates are predominantly low-engagement users whose session data carries less weight in funnel analysis."
+    },
+    {
+      "turn_id": "t48",
+      "user_message": "Has Priya Nair set a date by which she expects 95% of active users to be on Flowline SDK 2.5.0?",
+      "assistant_message": "Priya Nair estimated in the Sprint 14 spec that 95% of active Onboard-X users will be on Flowline SDK 2.5.0 within 28 days of the full rollout, based on DropWatch historical update-propagation curves. Marcus Webb noted that this 28-day window means the clean longitudinal baseline for the card pattern A/B test will only be fully uncontaminated after that point. For the Sprint 14 A/B test itself, the team will filter DropWatch sessions to include only Flowline SDK 2.5.0 users to avoid SDK-version confounds. Priya Nair added a calendar reminder for day 28 post-rollout to pull a DropWatch adoption report and confirm the 95% threshold is met."
+    },
+    {
+      "turn_id": "t49",
+      "user_message": "Is the DropWatch event schema being updated for Sprint 14, or is the team using the existing schema?",
+      "assistant_message": "The Sprint 14 spec introduces three new DropWatch event types: permission_card_viewed, permission_card_denied, and permission_page_advanced, all of which are additions to the existing schema rather than modifications. Priya Nair designed the new events to be backward-compatible so that the analytics warehouse does not require a migration. Marcus Webb approved the schema additions on day 2 of Sprint 14 planning and noted that the new events will enable per-permission abandonment analysis that was not previously possible. The existing consent_screen_abandoned event will be retained alongside the new events to preserve continuity with historical DropWatch data."
+    },
+    {
+      "turn_id": "t50",
+      "user_message": "Has the team estimated how much additional DropWatch data volume the three new event types will generate per day?",
+      "assistant_message": "Priya Nair estimated that the three new DropWatch event types will generate approximately 8,800 additional events per day at current install volume, based on an average of 4 permission cards per session and 2,200 new installs daily. Marcus Webb confirmed that this volume is well within DropWatch's ingestion capacity and will not require any infrastructure scaling. The Sprint 14 spec notes that existing users who revisit the consent screen — for example after a permission denial — will also generate these events, adding an estimated 600 additional events per day from that cohort. Total projected daily event volume for the consent screen in Sprint 14 is therefore approximately 9,400 new events on top of the existing baseline."
+    },
+    {
+      "turn_id": "t51",
+      "user_message": "Will the new DropWatch events be available in the real-time dashboard, or only in batch exports?",
+      "assistant_message": "The Sprint 14 spec confirms that all three new DropWatch event types will be available in the real-time dashboard within 90 seconds of ingestion, consistent with the existing latency SLA for the Onboard-X workspace. Priya Nair requested that the permission_card_denied event be surfaced as a top-level metric widget on the team's main DropWatch dashboard alongside the existing consent_screen_abandoned widget. Marcus Webb approved this dashboard change and assigned it to the analytics team for completion before the soft launch on day 11. Batch export of the new events will also be available from day 1 of their deployment, with no additional configuration required."
+    },
+    {
+      "turn_id": "t52",
+      "user_message": "Given everything we've locked down for the consent screen redesign, what is the specific abandonment rate target we need to hit at step 3, and what is the icon-plus-label character limit that each permission card must respect?",
+      "assistant_message": null
+    }
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that the step 3 abandonment rate must fall below 30% for Sprint 14 to be declared a success.",
+      "required": true,
+      "evidence_turn_ids": ["t1", "t26"]
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that the character limit for each permission card label (the rationale string) is 120 characters.",
+      "required": true,
+      "evidence_turn_ids": ["t4", "t18", "t22"]
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer correctly combines both the below-30% abandonment target and the 120-character limit as distinct, jointly necessary requirements.",
+      "required": true,
+      "evidence_turn_ids": ["t26", "t30"]
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not state that the step 3 abandonment rate target is 49% or that the historical Firebase-measured rate is the current success threshold.",
+      "required": true,
+      "evidence_turn_ids": []
+    }
+  ],
+  "reference_answer": "The step 3 abandonment rate must fall below 30% for Sprint 14 to be declared a success, down from the current DropWatch-measured baseline of 54%. Each permission card's rationale label must respect a hard cap of 120 characters, a constraint established in the Sprint 14 spec and enforced both by design guidelines and at the Flowline SDK rendering layer. These two requirements — the sub-30% abandonment target and the 120-character copy limit — are the core acceptance criteria for the consent screen redesign.",
+  "notes": "t26 holds the key Branch A fact (step 3 abandonment must fall below 30%) and t30 holds the key Branch B fact (icon-plus-label cards with a 120-character limit per card). t39 is the near-miss: it asks about the step 3 abandonment rate for version 2.1 and gives the Firebase-measured 49% figure, which sounds like it could be the target but is actually a historical reference, not the Sprint 14 success criterion."
+}
+```

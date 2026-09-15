@@ -1,0 +1,617 @@
+{
+  "scenario_id": "long_new_root_005",
+  "family": "new_root",
+  "label": "NEW_ROOT",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I need to figure out how many field technicians we should hire for the Riverside Commons surveys. Dr. Priya Nair said we need at least two people per transect.",
+      "assistant_message": "Based on the UrbanAvian Survey Protocol v2.1, Riverside Commons has been divided into 8 transects across its 14-hectare area. With Dr. Priya Nair's requirement of at least two technicians per transect and an assumption of 4 transects surveyed simultaneously per day, you would need a minimum of 8 field technicians active at any one time. Eastbridge University's field station can accommodate up to 12 technicians in housing, so hiring 10 would give you a comfortable buffer for absences or equipment issues.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "What statistical power do we need to detect a 15% change in bird abundance at Riverside Commons? Marcus Feldman mentioned something about effect sizes.",
+      "assistant_message": "To detect a 15% change in bird abundance with 80% statistical power, you would typically need a sample size calculated from the expected baseline variance at Riverside Commons. Marcus Feldman's preliminary estimates from the Site Selection Report 2024 put the coefficient of variation for urban passerine counts at around 0.35, which means you would need roughly 60 independent survey points to achieve 80% power at α = 0.05. Dr. Priya Nair has recommended increasing that to 72 survey points as a precaution, given the heterogeneous habitat patches at Riverside Commons.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "I want to sort out the data management plan for this project. What database software should we use for storing the bird count records?",
+      "assistant_message": "Eastbridge University's research computing office recommends PostgreSQL 15 for projects requiring spatial queries, and the UrbanAvian Survey Protocol v2.1 explicitly lists it as a compatible storage backend. Marcus Feldman has already set up a schema called avian_urban_db on the university's shared server, with tables for species observations, transect metadata, and observer records. Dr. Priya Nair approved the schema on 14 March 2024, and all field technicians will be given read-write access credentials before the first survey date.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "For the Riverside Commons staffing, can we use undergraduate volunteers to fill some of those technician slots?",
+      "assistant_message": "Eastbridge University's field research guidelines require that any observer contributing data to a formal study must complete a minimum of 6 hours of species identification training and pass a practical assessment with at least 75% accuracy. Dr. Priya Nair has agreed that trained undergraduate volunteers can fill up to 4 of the 10 technician slots, provided they are paired with a graduate-level observer on each transect. Marcus Feldman will coordinate the training sessions, which are scheduled for the first two weekends of April 2024.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "The avian_urban_db schema Marcus set up — does it handle multiple survey seasons, or is it single-season only?",
+      "assistant_message": "Marcus Feldman designed the avian_urban_db schema to handle multiple survey seasons by including a survey_season integer field and a year column in the core observations table. The schema supports up to 10 distinct seasons without structural changes, which aligns with the five-year funding horizon Eastbridge University approved for the project. Dr. Priya Nair requested an additional metadata table for recording inter-season observer turnover, and Marcus added that as survey_season_observers on 18 March 2024.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "Does avian_urban_db store GPS coordinates for each individual observation point, or just transect-level locations?",
+      "assistant_message": "The avian_urban_db schema stores GPS coordinates at the individual observation level, using PostGIS geometry columns with WGS84 projection (EPSG:4326). Each row in the observations table includes a point_geom field accurate to within 3 metres, as specified by the UrbanAvian Survey Protocol v2.1. Marcus Feldman also added a transect_centroid field at the transect level for quick spatial aggregation, which Dr. Priya Nair confirmed was consistent with reporting requirements from Eastbridge University's ethics board.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "I want to revisit the power analysis. If we increase the target to detecting a 10% change instead of 15%, how does the required sample size change?",
+      "assistant_message": "Detecting a 10% change instead of 15% substantially increases the required sample size because the effect size is smaller relative to the expected variance. Using the coefficient of variation of 0.35 that Marcus Feldman reported in the Site Selection Report 2024, and maintaining 80% power at α = 0.05, the required number of independent survey points rises from 72 to approximately 160. Dr. Priya Nair has flagged this as potentially infeasible within the Riverside Commons footprint and suggested considering a stratified design to improve efficiency.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "What backup and versioning system is in place for avian_urban_db to prevent data loss?",
+      "assistant_message": "Eastbridge University's research computing office runs nightly pg_dump backups of avian_urban_db, retaining 30 days of rolling snapshots on a separate storage cluster. Marcus Feldman also configured a logical replication stream to a secondary server located in Eastbridge University's off-site data centre in Millford, updated every 6 hours. Dr. Priya Nair required that any schema changes be documented in a migration log table called db_migrations, with entries timestamped and signed by the person making the change, per the UrbanAvian Survey Protocol v2.1 data integrity section.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "For the stratified design Dr. Priya Nair mentioned, what strata would make sense at Riverside Commons?",
+      "assistant_message": "The Site Selection Report 2024 identifies four principal habitat types at Riverside Commons: riparian scrub (3.2 ha), mown grassland (4.1 ha), dense woodland (4.8 ha), and impervious hardstanding near the car parks (1.9 ha). Marcus Feldman recommends allocating survey points proportional to area, which would give roughly 19 points in riparian scrub, 25 in mown grassland, 29 in woodland, and 11 in hardstanding, totalling 84 points. Dr. Priya Nair agreed this stratification would reduce within-stratum variance enough to make the 10% detection threshold feasible.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "Can avian_urban_db store habitat-stratum labels for each observation point so we can run stratum-level queries?",
+      "assistant_message": "Yes, Marcus Feldman added a habitat_stratum varchar field to the observations table on 22 March 2024, with a CHECK constraint enforcing the four values defined in the Site Selection Report 2024: riparian_scrub, mown_grassland, dense_woodland, and hardstanding. This allows direct SQL filtering by stratum without joining to a separate lookup table. Dr. Priya Nair also requested a materialized view called stratum_summary that aggregates counts by species, stratum, and survey date, refreshed automatically each night after Eastbridge University's backup job completes.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "What access control policy governs who can modify the habitat_stratum values after initial data entry?",
+      "assistant_message": "Under the policy Dr. Priya Nair finalised on 25 March 2024, only users with the role avian_curator in avian_urban_db may UPDATE or DELETE rows in the observations table after the initial 48-hour data-entry window closes. Marcus Feldman holds the avian_curator role, as does the project data manager appointed by Eastbridge University, currently a postdoc named Dr. Selin Arslan. Any retrospective corrections must be logged in the db_migrations table with a justification note, consistent with the UrbanAvian Survey Protocol v2.1 audit trail requirements.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "Has Dr. Selin Arslan been briefed on the UrbanAvian Survey Protocol v2.1 data integrity rules yet?",
+      "assistant_message": "Dr. Selin Arslan completed a structured onboarding session with Marcus Feldman on 28 March 2024, covering all data integrity rules in the UrbanAvian Survey Protocol v2.1, including the 48-hour edit window, the db_migrations log, and the avian_curator role permissions. Eastbridge University's research computing office issued her credentials the same day. Dr. Priya Nair has scheduled a follow-up review with Dr. Selin Arslan for 10 April 2024 to confirm she is comfortable with the PostgreSQL admin interface before the first field surveys begin.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "How should we handle survey points that fall on the boundary between two strata at Riverside Commons?",
+      "assistant_message": "The UrbanAvian Survey Protocol v2.1 specifies that boundary points should be assigned to the stratum that covers the majority of a 10-metre radius circle centred on the observation point. Marcus Feldman has written a PostGIS function called assign_stratum() in avian_urban_db that performs this calculation automatically using the habitat polygon layer from the Site Selection Report 2024. Dr. Priya Nair tested the function on 12 boundary points during the pilot survey on 30 March 2024 and confirmed it produced correct assignments in all 12 cases.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "What happens if avian_urban_db's replication stream to the Millford server falls behind by more than 6 hours?",
+      "assistant_message": "If the replication lag exceeds 6 hours, an automated alert is sent to Marcus Feldman and Eastbridge University's research computing helpdesk at the address rcompute-help@eastbridge.ac.uk. The UrbanAvian Survey Protocol v2.1 data management annex requires that any lag exceeding 12 hours triggers a formal incident report filed within 24 hours. Dr. Priya Nair has designated Dr. Selin Arslan as the secondary contact for replication incidents during field survey weeks, to ensure continuity when Marcus Feldman is at Riverside Commons.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "For the Riverside Commons staffing, what happens if a trained undergraduate volunteer fails the practical assessment on the first attempt?",
+      "assistant_message": "Under the policy Dr. Priya Nair set out in the project's observer training protocol, a volunteer who scores below 75% on the first practical assessment is allowed one resit no sooner than 48 hours after receiving written feedback. Marcus Feldman will provide individual feedback within 24 hours of the assessment, identifying the specific species identification errors. If the volunteer fails the resit as well, they are not permitted to contribute count data but may assist with logistics tasks such as equipment transport at Riverside Commons, per Eastbridge University's volunteer management guidelines.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "Is the stratum_summary materialized view included in the nightly pg_dump backup, or does it need to be rebuilt after a restore?",
+      "assistant_message": "Materialized views are included in pg_dump by default, so the stratum_summary view is captured in Eastbridge University's nightly backup alongside all base tables in avian_urban_db. However, Marcus Feldman documented in the db_migrations table on 22 March 2024 that after any restore from backup, the view should be manually refreshed with REFRESH MATERIALIZED VIEW stratum_summary to ensure it reflects the exact state of the observations table at restore time. Dr. Priya Nair approved this as a mandatory step in the disaster recovery checklist, which is stored in the project's shared drive at Eastbridge University.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "What format does the disaster recovery checklist use, and where exactly is it stored?",
+      "assistant_message": "The disaster recovery checklist is a PDF document titled avian_urban_db_DR_checklist_v1.pdf, stored in the project's shared drive under the path /UrbanAvian/DataManagement/DR/ on Eastbridge University's institutional OneDrive. Marcus Feldman created it on 25 March 2024 and it lists 11 ordered steps, from verifying backup integrity to notifying Dr. Priya Nair and running the stratum_summary refresh. The document is version-controlled, and any updates must be approved by both Marcus Feldman and Dr. Priya Nair before being saved over the existing file.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "If we use 84 survey points with the stratified design, what visit frequency per point is needed to estimate seasonal abundance reliably?",
+      "assistant_message": "For reliable seasonal abundance estimates using distance sampling methods, the UrbanAvian Survey Protocol v2.1 recommends a minimum of 3 repeat visits per survey point within a single breeding season window of 8 weeks. With 84 points and 3 visits each, that is 252 point-visit events per season, which Marcus Feldman calculated would require approximately 42 field days at 6 point-visits per field-day. Dr. Priya Nair noted in the Site Selection Report 2024 that weather cancellations historically affect about 15% of planned field days in the Eastbridge area, so scheduling 50 field days provides adequate contingency.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "We've confirmed 10 technicians for Riverside Commons. What equipment does each technician need to carry per transect?",
+      "assistant_message": "The UrbanAvian Survey Protocol v2.1 specifies a standard equipment kit per observer: a calibrated laser rangefinder (accurate to ±1 m up to 100 m), a smartphone loaded with the eBird Mobile app linked to the avian_urban_db export pipeline, a paper backup datasheet, and a handheld GPS unit. Dr. Priya Nair added a requirement that each technician carry a printed copy of the Riverside Commons transect map from the Site Selection Report 2024 as a fallback if GPS fails. Marcus Feldman has ordered 12 complete kits from the Eastbridge University equipment store, with delivery expected by 5 April 2024.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "For the 50 scheduled field days, how should we distribute them across the 8-week breeding season window?",
+      "assistant_message": "Marcus Feldman proposed distributing the 50 field days as 6 to 7 days per week across the 8-week window, concentrating surveys in the first 4 weeks when detectability is highest due to peak singing activity. The UrbanAvian Survey Protocol v2.1 requires that no more than two consecutive days be surveyed at any single point to avoid pseudo-replication from observer learning effects. Dr. Priya Nair approved a schedule where the 84 survey points at Riverside Commons are split into three rotating blocks of 28 points each, with each block surveyed on alternating days.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "What happens to survey points in the mown grassland stratum if the grass is cut during the survey window?",
+      "assistant_message": "The Site Selection Report 2024 flagged mowing events as a key disturbance risk for the 25 mown grassland points at Riverside Commons. Dr. Priya Nair's protocol requires that any point surveyed within 72 hours of a mowing event be flagged with a disturbance_flag = 'mow_recent' in avian_urban_db and excluded from the primary abundance analysis. Marcus Feldman has arranged for Riverside Commons' grounds management team, coordinated through Eastbridge University's estates office, to notify the project at least 5 days before any scheduled mowing.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "How does the disturbance_flag interact with the stratum_summary materialized view — will flagged observations be excluded from the nightly refresh?",
+      "assistant_message": "The stratum_summary materialized view was written by Marcus Feldman to include only observations where disturbance_flag IS NULL, so flagged records are automatically excluded from the aggregated counts refreshed each night. Dr. Priya Nair reviewed the view definition on 1 April 2024 and confirmed this behaviour matches the analysis intent stated in the UrbanAvian Survey Protocol v2.1. A separate materialized view called stratum_summary_all, which includes flagged records, was also created for sensitivity analyses, and both views are covered by Eastbridge University's nightly pg_dump backup.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "What is the contingency plan if more than 30% of the mown grassland points are flagged in a single week?",
+      "assistant_message": "If more than 30% of the 25 mown grassland points at Riverside Commons are flagged in any single week, Dr. Priya Nair's contingency plan calls for activating 8 reserve survey points pre-identified in the Site Selection Report 2024 along the park's eastern edge. Marcus Feldman will generate the reserve-point coordinates from avian_urban_db using the assign_stratum() function and distribute updated maps to all technicians within 24 hours. Eastbridge University's ethics board was notified of this contingency in the project's ethics amendment filed on 3 April 2024 and raised no objections.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "For the 3-visit requirement per point, should all 3 visits happen at the same time of day to control for detectability variation?",
+      "assistant_message": "The UrbanAvian Survey Protocol v2.1 recommends that all point-count visits occur within the first 4 hours after sunrise to control for the strong diurnal decline in bird song activity, but does not require all 3 visits to occur at exactly the same clock time. Marcus Feldman's analysis of pilot data from Riverside Commons showed that detectability varied by less than 8% across the first 4 post-sunrise hours, which Dr. Priya Nair deemed acceptable for the study's precision targets. The schedule approved by Eastbridge University staggers start times by 30-minute blocks across the three observer teams to avoid simultaneous flushing of birds between adjacent transects.",
+      "gold_parents": [
+        "t22"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "What is the earliest acceptable sunrise offset for starting surveys, according to the protocol?",
+      "assistant_message": "The UrbanAvian Survey Protocol v2.1 sets the earliest acceptable survey start at 15 minutes after official sunrise, defined as the time published by the UK Met Office for the grid square containing Riverside Commons. Marcus Feldman entered this constraint as a validation rule in the avian_urban_db observations table, so any record with a survey_start_time earlier than sunrise plus 15 minutes is automatically flagged for review. Dr. Priya Nair stipulated that flagged early-start records must be reviewed and either confirmed or deleted by the avian_curator role within 5 business days.",
+      "gold_parents": [
+        "t24"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "How is the official sunrise time retrieved and stored for each survey date in avian_urban_db?",
+      "assistant_message": "Marcus Feldman wrote a Python script called fetch_sunrise.py that queries the Met Office DataPoint API each evening for the following day's sunrise time at the Riverside Commons grid reference (TQ 3821 8047) and inserts it into a lookup table called survey_date_metadata in avian_urban_db. The script runs as a cron job at 21:00 every day on Eastbridge University's compute cluster and logs any API failures to a file at /var/log/avian/sunrise_fetch.log. Dr. Priya Nair reviewed and approved the script on 2 April 2024, confirming it matched the UrbanAvian Survey Protocol v2.1 specification for sunrise source.",
+      "gold_parents": [
+        "t25"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "I want to look at the equipment order again. Were the 12 kits ordered from the Eastbridge University equipment store all identical, or are there different configurations for different roles?",
+      "assistant_message": "Marcus Feldman ordered two configurations: 8 standard observer kits and 4 team-leader kits, all from the Eastbridge University equipment store. The team-leader kits include everything in the standard kit plus a portable Bluetooth speaker for broadcasting standardised playback stimuli during supplementary dawn chorus surveys, as specified in Appendix C of the UrbanAvian Survey Protocol v2.1. Dr. Priya Nair assigned the 4 team-leader kits to the graduate-level observers who will each supervise a pair of undergraduate volunteers at Riverside Commons.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "Does the 15-minute post-sunrise validation rule in avian_urban_db also apply to the supplementary dawn chorus surveys using the playback speakers?",
+      "assistant_message": "No, the supplementary dawn chorus surveys are governed by a separate protocol section in the UrbanAvian Survey Protocol v2.1, which permits playback surveys to begin at official sunrise with no offset, because the method does not rely on passive detectability. Marcus Feldman created a separate observations_playback table in avian_urban_db with a different validation rule reflecting this, and the standard observations table's 15-minute rule does not apply to records inserted there. Dr. Priya Nair documented this distinction in a protocol clarification note dated 5 April 2024, shared with all observers at Eastbridge University's pre-field briefing.",
+      "gold_parents": [
+        "t26"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "How many supplementary dawn chorus survey sessions are planned for the full 8-week window at Riverside Commons?",
+      "assistant_message": "Dr. Priya Nair's schedule includes 6 supplementary dawn chorus sessions spread across the 8-week window, targeting weeks 1, 2, 4, 5, 7, and 8 to capture both early and late breeding season activity. Each session covers all 84 survey points at Riverside Commons using the 4 team-leader observers simultaneously, with the 8 standard observers assisting in passive point counts at the same time. Marcus Feldman estimated each session requires approximately 3 hours to complete, based on the pilot run conducted on 6 April 2024 at Riverside Commons.",
+      "gold_parents": [
+        "t28"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t30",
+      "turn_index": 29,
+      "user_message": "Should the 6 dawn chorus sessions be evenly spaced or front-loaded in the season?",
+      "assistant_message": "Dr. Priya Nair's rationale for placing sessions in weeks 1, 2, 4, 5, 7, and 8 is deliberately uneven: two sessions are front-loaded in consecutive weeks to capture peak song output early in the breeding season, then two in the middle and two at the end to track decline. Marcus Feldman confirmed this spacing provides sufficient temporal resolution to fit a quadratic abundance curve across the season, which the UrbanAvian Survey Protocol v2.1 identifies as the standard seasonal model for urban passerines. The Site Selection Report 2024 also noted that Riverside Commons historically shows a sharp abundance peak in weeks 2 to 3, supporting the front-loaded design.",
+      "gold_parents": [
+        "t29"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t31",
+      "turn_index": 30,
+      "user_message": "If a dawn chorus session is cancelled due to rain, is there a protocol for rescheduling within the same week?",
+      "assistant_message": "The UrbanAvian Survey Protocol v2.1 requires that a cancelled dawn chorus session be rescheduled within 5 calendar days of the original date, provided the rescheduled date still falls within the same breeding season window. Marcus Feldman built a rescheduling flag into avian_urban_db's survey_date_metadata table so that rescheduled sessions are tagged and distinguished from original sessions in all analyses. Dr. Priya Nair set a hard rule that if a session cannot be rescheduled within 5 days, it is recorded as a missed session and the seasonal model is fitted with an indicator variable for the gap, per guidance from Eastbridge University's statistical methods committee.",
+      "gold_parents": [
+        "t30"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t32",
+      "turn_index": 31,
+      "user_message": "Have all 12 equipment kits arrived from the Eastbridge University equipment store yet?",
+      "assistant_message": "Marcus Feldman confirmed via email on 6 April 2024 that all 12 kits arrived at Eastbridge University's biology department loading bay, one day ahead of the expected delivery date of 5 April 2024. Dr. Priya Nair conducted a physical inventory check on 7 April 2024 and found that one of the 4 team-leader kits was missing its Bluetooth speaker; the equipment store has been asked to dispatch a replacement by 9 April 2024. The remaining 11 kits passed inspection and have been labelled with observer names and stored in the Riverside Commons field prep room at Eastbridge University.",
+      "gold_parents": [
+        "t27"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t33",
+      "turn_index": 32,
+      "user_message": "Which graduate-level observer is assigned to the team-leader kit with the missing Bluetooth speaker?",
+      "assistant_message": "The kit with the missing speaker was assigned to Dr. Selin Arslan, who is one of the four graduate-level team leaders at Riverside Commons. Marcus Feldman noted this in the equipment log and confirmed that Dr. Selin Arslan will use the shared departmental Bluetooth speaker from Eastbridge University's biology equipment pool as a temporary substitute until the replacement arrives. Dr. Priya Nair approved this workaround on 7 April 2024, specifying that Dr. Selin Arslan must return the pooled speaker within 24 hours of the replacement being delivered.",
+      "gold_parents": [
+        "t32"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t34",
+      "turn_index": 33,
+      "user_message": "For the seasonal abundance model, what software will be used to fit the quadratic curve to the dawn chorus data?",
+      "assistant_message": "Dr. Priya Nair has specified that all seasonal abundance modelling will be done in R version 4.3.2 using the unmarked package for distance-sampling analysis and the mgcv package for fitting generalised additive models as an alternative to the quadratic curve. Marcus Feldman set up a shared R project on Eastbridge University's RStudio Server at the address rstudio.eastbridge.ac.uk/urbanavian, with scripts version-controlled in a Git repository named urbanavian-analysis. The UrbanAvian Survey Protocol v2.1 appendix D lists the exact model specification, including the random effect for observer identity and the offset for survey duration.",
+      "gold_parents": [
+        "t31"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t35",
+      "turn_index": 34,
+      "user_message": "What is the file naming convention for the R analysis scripts in the urbanavian-analysis Git repository?",
+      "assistant_message": "Marcus Feldman established a naming convention of [stage]_[content]_v[version].R, where stage is a two-digit number indicating processing order, for example 01_data_import_v1.R, 02_stratum_summary_v1.R, and 03_abundance_model_v1.R. Dr. Priya Nair required that any script used to produce results for the final report must have its version number incremented and a corresponding tag created in the Git repository at Eastbridge University's RStudio Server. The UrbanAvian Survey Protocol v2.1 specifies that all version tags must follow semantic versioning and be annotated with the analyst's name and the date of finalisation.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t36",
+      "turn_index": 35,
+      "user_message": "Has the replacement Bluetooth speaker for Dr. Selin Arslan's kit arrived yet?",
+      "assistant_message": "Marcus Feldman logged in the equipment record on 9 April 2024 that the replacement Bluetooth speaker arrived at Eastbridge University's biology department loading bay as scheduled. Dr. Priya Nair confirmed the speaker was tested and paired with the team-leader kit assigned to Dr. Selin Arslan on the same day, and the pooled departmental speaker was returned to the biology equipment pool. All 12 kits are now complete and ready for the first field survey at Riverside Commons, scheduled for 12 April 2024.",
+      "gold_parents": [
+        "t33"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t37",
+      "turn_index": 36,
+      "user_message": "What is the protocol if a rangefinder fails during a survey at Riverside Commons?",
+      "assistant_message": "The UrbanAvian Survey Protocol v2.1 specifies that if a rangefinder fails mid-survey, the observer should switch to pace-and-estimate distance recording for the remainder of that session, noting the failure time in the paper backup datasheet. Marcus Feldman has added a rangefinder_failure flag to the observations table in avian_urban_db so that pace-estimated distances can be distinguished from laser-measured ones in all analyses. Dr. Priya Nair requires that any session with more than 20% of distances recorded by pace-and-estimate be reviewed by the avian_curator role before the data are included in the seasonal model.",
+      "gold_parents": [
+        "t36"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t38",
+      "turn_index": 37,
+      "user_message": "How many R scripts are currently version-tagged in the urbanavian-analysis Git repository?",
+      "assistant_message": "As of 10 April 2024, the urbanavian-analysis Git repository on Eastbridge University's RStudio Server contains 7 version-tagged scripts: 01_data_import_v1.R, 02_stratum_summary_v1.R, 03_abundance_model_v1.R, 04_distance_sampling_v1.R, 05_seasonal_curve_v1.R, 06_sensitivity_analysis_v1.R, and 07_report_figures_v1.R. Marcus Feldman created all 7 tags on 8 April 2024 following Dr. Priya Nair's instruction that the baseline script set be locked before field surveys begin on 12 April 2024. Each tag is annotated with Marcus Feldman's name and the date, per the UrbanAvian Survey Protocol v2.1 requirement.",
+      "gold_parents": [
+        "t35"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t39",
+      "turn_index": 38,
+      "user_message": "Does the 03_abundance_model_v1.R script include the random effect for observer identity that the protocol specifies?",
+      "assistant_message": "Yes, Marcus Feldman confirmed on 9 April 2024 that 03_abundance_model_v1.R includes a random effect for observer identity implemented via the lme4 package, with observer ID drawn from the survey_season_observers table in avian_urban_db. Dr. Priya Nair reviewed the script on the same day and approved it, noting that the random effect structure matches the specification in appendix D of the UrbanAvian Survey Protocol v2.1 exactly. Eastbridge University's statistical methods committee also reviewed the model specification on 10 April 2024 and confirmed it was appropriate for the study design.",
+      "gold_parents": [
+        "t38"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t40",
+      "turn_index": 39,
+      "user_message": "For the seasonal model, how will missing sessions due to weather be handled in the R analysis?",
+      "assistant_message": "Dr. Priya Nair specified in the UrbanAvian Survey Protocol v2.1 that missed sessions are handled by including a binary indicator variable called session_missed in the model, which accounts for any systematic difference in conditions on rescheduled versus original session days. Marcus Feldman implemented this in 05_seasonal_curve_v1.R using a fixed effect for session_missed coded as 0 for completed sessions and 1 for gaps where no rescheduled session occurred within 5 days. Eastbridge University's statistical methods committee endorsed this approach on 10 April 2024, noting it is consistent with standard missing-at-random assumptions for weather-driven absences.",
+      "gold_parents": [
+        "t34"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t41",
+      "turn_index": 40,
+      "user_message": "What species are expected to be the most abundant at Riverside Commons based on the pilot survey?",
+      "assistant_message": "The pilot survey conducted on 6 April 2024 at Riverside Commons recorded the highest counts for three species: European Robin with 47 detections, Eurasian Blackbird with 39 detections, and Common Chaffinch with 28 detections across all 84 survey points. Marcus Feldman entered these pilot counts into avian_urban_db under a season labelled pilot_2024, and Dr. Priya Nair used them to calibrate the detection function parameters in the unmarked package scripts. The Site Selection Report 2024 had predicted Robin and Blackbird as dominant species based on habitat composition, so the pilot results are consistent with expectations.",
+      "gold_parents": [
+        "t39"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t42",
+      "turn_index": 41,
+      "user_message": "Should the pilot survey data from 6 April be included in the main seasonal abundance analysis or kept separate?",
+      "assistant_message": "Dr. Priya Nair decided on 8 April 2024 that the pilot data should be kept separate from the main seasonal analysis because the pilot used a slightly different point placement procedure before the final survey grid was confirmed. Marcus Feldman set the pilot_2024 records in avian_urban_db to a status of pilot_only, which excludes them from the stratum_summary and stratum_summary_all materialized views automatically. The UrbanAvian Survey Protocol v2.1 section 3.4 supports this decision, stating that calibration surveys should not be pooled with primary data unless the survey design was identical.",
+      "gold_parents": [
+        "t41"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t43",
+      "turn_index": 42,
+      "user_message": "Can the pilot data still be used to validate the detection function estimated from the main survey data?",
+      "assistant_message": "Yes, Marcus Feldman created a separate R script 08_pilot_validation_v1.R in the urbanavian-analysis repository specifically for this purpose, using the pilot detection distances to perform a goodness-of-fit test against the detection function fitted to the main survey data. Dr. Priya Nair approved the script on 9 April 2024 and stipulated that if the chi-squared goodness-of-fit p-value falls below 0.05, the detection function must be re-examined before the main analysis proceeds. Eastbridge University's statistical methods committee was informed of this validation step and noted it as good practice in their 10 April 2024 review.",
+      "gold_parents": [
+        "t42"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t44",
+      "turn_index": 43,
+      "user_message": "What is the threshold for an acceptable detection probability at 100 metres under the UrbanAvian Survey Protocol v2.1?",
+      "assistant_message": "The UrbanAvian Survey Protocol v2.1 section 4.2 specifies that the estimated detection probability at 100 metres must be at least 0.15 for the distance-sampling model to be considered valid for that species at that site. Marcus Feldman noted in the pilot analysis that European Robin had an estimated detection probability of 0.22 at 100 metres at Riverside Commons, comfortably above the threshold. Dr. Priya Nair flagged that Common Chaffinch, with a noisier detection function, will need close monitoring during the main survey to ensure it stays above 0.15.",
+      "gold_parents": [
+        "t43"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t45",
+      "turn_index": 44,
+      "user_message": "Now that all 12 kits are ready, what is the check-in procedure on the morning of the first survey day?",
+      "assistant_message": "Dr. Priya Nair set a 05:30 check-in time at the Riverside Commons field prep room on 12 April 2024, where Marcus Feldman will distribute kits, confirm GPS unit synchronisation, and verify that each observer's smartphone is connected to the eBird Mobile app linked to avian_urban_db. Each observer must sign a kit receipt form and confirm their assigned transect and start time before departing. Eastbridge University's field safety office requires that a roll-call be completed and submitted to safety@eastbridge.ac.uk by 06:00 on each survey morning.",
+      "gold_parents": [
+        "t37"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t46",
+      "turn_index": 45,
+      "user_message": "Is there a protocol for what to do if an observer does not show up at the 05:30 check-in at Riverside Commons?",
+      "assistant_message": "Marcus Feldman's logistics plan specifies that if an observer has not arrived by 05:45, the team leader for that observer's block calls their mobile number, and if there is no answer by 05:50, the block's transects are redistributed among available observers. Dr. Priya Nair requires that any redistribution be logged in avian_urban_db under the session metadata before surveys begin, so that the observer_id field correctly reflects who actually surveyed each transect. Eastbridge University's field safety office must also be notified of any no-show by 06:00 as part of the mandatory roll-call submission.",
+      "gold_parents": [
+        "t45"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t47",
+      "turn_index": 46,
+      "user_message": "For the seasonal abundance analysis, will the model be refitted after each new survey session, or only at the end of the season?",
+      "assistant_message": "Dr. Priya Nair decided that the seasonal model in 03_abundance_model_v1.R will be refitted after every third survey session, not after every session, to balance timely monitoring against computational overhead on Eastbridge University's RStudio Server. Marcus Feldman set up a scheduled R job that triggers automatically when the session count in avian_urban_db's survey_date_metadata table reaches a multiple of three, running the full model pipeline including the 05_seasonal_curve_v1.R script. Interim model outputs are saved to the /UrbanAvian/ModelOutputs/ folder on Eastbridge University's institutional OneDrive and shared with Dr. Priya Nair by automated email.",
+      "gold_parents": [
+        "t40"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t48",
+      "turn_index": 47,
+      "user_message": "What is the procedure if an observer realises mid-survey that they started at the wrong transect by mistake?",
+      "assistant_message": "The UrbanAvian Survey Protocol v2.1 section 5.1 states that if an observer discovers they are at the wrong transect after beginning counts, they must immediately cease recording, note the time and location in the paper backup datasheet, and contact Marcus Feldman by phone. Marcus Feldman will decide within 15 minutes whether the data collected so far can be salvaged by reassigning the transect ID in avian_urban_db or whether the session must be voided and rescheduled. Dr. Priya Nair requires that any voided session be flagged in the survey_date_metadata table with reason code wrong_transect and reviewed by the avian_curator role before the seasonal model is next refitted.",
+      "gold_parents": [
+        "t46"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t49",
+      "turn_index": 48,
+      "user_message": "What are the key ethical considerations I should address in the animal welfare section of the ethics application for a field study involving point-count surveys of wild urban birds?",
+      "assistant_message": null,
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [],
+  "distractor_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t7",
+    "t8",
+    "t9",
+    "t10",
+    "t11",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t20",
+    "t21",
+    "t22",
+    "t23",
+    "t24",
+    "t25",
+    "t26",
+    "t27",
+    "t28",
+    "t29",
+    "t30",
+    "t31",
+    "t32",
+    "t33",
+    "t34",
+    "t35",
+    "t36",
+    "t37",
+    "t38",
+    "t39",
+    "t40",
+    "t41",
+    "t42",
+    "t43",
+    "t44",
+    "t45",
+    "t46",
+    "t47",
+    "t48"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer identifies that point-count surveys are non-invasive (passive observation) and therefore pose minimal direct harm to individual birds.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer addresses disturbance to birds during sensitive periods such as breeding or nesting, and recommends mitigation such as limiting survey duration or avoiding nest sites.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer mentions the need to comply with relevant wildlife protection legislation (e.g. the Wildlife and Countryside Act 1981 in the UK, or equivalent national law) governing disturbance of wild birds.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not cite 7 as the number of version-tagged R scripts in the repository as if it were relevant to the ethics application question; that figure appears in t38 and is irrelevant to the query.",
+      "required": true
+    }
+  ],
+  "notes": "The query t49 is a new root with no gold-turn dependencies; it is answerable from general knowledge about research ethics for passive wildlife surveys. The near-miss turn t38 answers a question about how many R scripts are version-tagged in the urbanavian-analysis repository (7 scripts as of 10 April 2024), which superficially resembles a counting or enumeration question but is entirely unrelated to the ethics application query.\n\nReference answer: Point-count surveys of wild urban birds are passive and non-invasive, so the primary ethical concern is minimising disturbance rather than direct harm to individuals. The ethics application should demonstrate that surveys will be conducted outside the most sensitive nesting periods where possible, or that observer presence near active nests will be minimised and kept brief. The application must also confirm compliance with applicable wildlife protection law, such as the Wildlife and Countryside Act 1981 in the UK, which prohibits intentional disturbance of any wild bird at or near an active nest. If playback stimuli are used in supplementary surveys, their potential to disrupt territorial behaviour should be acknowledged and justified, with limits on duration and frequency stated explicitly.",
+  "evidence_note": null,
+  "premise": "a PhD student planning a field study on urban bird populations",
+  "evidence_spans": null,
+  "benchmark_version": "1.2-pilot",
+  "length_class": "long"
+}

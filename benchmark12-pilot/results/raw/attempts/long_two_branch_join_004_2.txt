@@ -1,0 +1,200 @@
+I'll carefully fix the issues: remove all topic-switch signposting, ensure distractor branches stay very close to the wedding project with shared entities, and keep distractor cosine similarity high relative to gold branches.
+
+```json
+{
+  "entity_registry": [
+    "Mira Okafor",
+    "Jordan Reyes",
+    "Lakeview Pavilion",
+    "Harborside Catering",
+    "The Willowmere",
+    "Elena Voss",
+    "Silver Birch Floral"
+  ],
+  "turns": [
+    {
+      "turn_id": "t1",
+      "user_message": "We're planning our 120-guest wedding at Lakeview Pavilion and trying to figure out the ceremony seating layout. We want to know how many chairs per row the venue allows on the lakeside lawn.",
+      "assistant_message": "Lakeview Pavilion permits a maximum of 12 chairs per row on the lakeside lawn ceremony area, based on their standard fire-safety and aisle-clearance rules. They require two center aisles for groups over 100 guests, which effectively splits each row into two banks of 6 chairs. The venue coordinator, Elena Voss, confirmed this configuration in writing on March 4th and noted that rows must be spaced at least 36 inches apart for accessibility compliance."
+    },
+    {
+      "turn_id": "t2",
+      "user_message": "What's the deposit schedule Harborside Catering sent over for the reception meal package?",
+      "assistant_message": "Harborside Catering's deposit schedule for the reception meal package requires a 25% deposit of the total contract value due upon signing, with a second installment of 50% due 90 days before the event date. The remaining 25% balance is due 14 days before the event. Elena Voss at Lakeview Pavilion confirmed that Harborside Catering is the venue's preferred vendor and that their contract is typically signed in tandem with the venue booking agreement."
+    },
+    {
+      "turn_id": "t3",
+      "user_message": "We need to figure out the floral arch for the ceremony. Silver Birch Floral quoted us for a lakeside arch — what width did they say the arch footprint needs to be?",
+      "assistant_message": "Silver Birch Floral specified that their standard ceremony arch has a footprint width of 8 feet, which includes the base stakes and any floral overhang on either side. Their lead designer, Mira Okafor, noted that the arch must be centered within the aisle and that at least 3 feet of clearance is required on each side of the arch for the wedding party to pass comfortably. She sent these measurements in her formal proposal dated March 7th."
+    },
+    {
+      "turn_id": "t4",
+      "user_message": "We're trying to finalize the rehearsal dinner venue. What capacity did The Willowmere give us for their private dining room?",
+      "assistant_message": "The Willowmere confirmed a maximum seated capacity of 40 guests for their private lakeside dining room, which is called the Birchwood Suite. Jordan Reyes contacted their events manager on February 28th and received written confirmation that the room can accommodate round tables of 8, for a maximum of 5 tables. The Willowmere also noted that Harborside Catering is not permitted to cater at their venue, so a separate catering arrangement would be needed."
+    },
+    {
+      "turn_id": "t5",
+      "user_message": "What did Silver Birch Floral say about the centerpiece flower count for the reception tables at Lakeview Pavilion?",
+      "assistant_message": "Silver Birch Floral's proposal from Mira Okafor specifies 24 stem arrangements per reception table centerpiece, using a mix of white garden roses, eucalyptus, and ranunculus. For a 120-guest reception at Lakeview Pavilion with 15 tables of 8, that amounts to 360 total stems across all centerpieces. Mira Okafor noted that this count can be adjusted by up to 10% without affecting the per-table price of $185."
+    },
+    {
+      "turn_id": "t6",
+      "user_message": "Mira Okafor also mentioned something about the aisle runner length — what measurement did she give for the ceremony aisle at Lakeview Pavilion?",
+      "assistant_message": "Mira Okafor specified in her March 7th proposal that the ceremony aisle runner at Lakeview Pavilion should be ordered at 50 feet in length to cover the full walk from the entrance gate to the arch position. She noted that this measurement accounts for a 5-foot overlap at the arch base and a 3-foot lead-in from the gate. The runner width she recommended is 4 feet, which fits comfortably within the 8-foot arch footprint she had already specified."
+    },
+    {
+      "turn_id": "t7",
+      "user_message": "What was the parking situation Jordan Reyes confirmed for guests at Lakeview Pavilion?",
+      "assistant_message": "Jordan Reyes confirmed with Lakeview Pavilion that the main lot holds 80 vehicles, and an overflow gravel lot adjacent to the property adds capacity for another 45 vehicles, for a total of 125 parking spaces. Elena Voss noted in an email on March 2nd that the overflow lot is available at no extra charge for events over 100 guests. Jordan Reyes also arranged a shuttle agreement with a local transport company to run loops from a nearby municipal lot for any additional overflow."
+    },
+    {
+      "turn_id": "t8",
+      "user_message": "Going back to the seating layout — how many total rows are we allowed to set up on the lakeside lawn for the ceremony?",
+      "assistant_message": "Elena Voss confirmed that Lakeview Pavilion allows a maximum of 20 rows on the lakeside lawn for the ceremony setup. With 12 chairs per row as already established, that gives a theoretical maximum of 240 chairs, well above the 120-guest requirement. She specified that the first row must begin no closer than 15 feet from the arch position to keep the focal area clear for photography."
+    },
+    {
+      "turn_id": "t9",
+      "user_message": "Did Jordan Reyes get a final answer on whether the overflow lot at Lakeview Pavilion needs any lighting added for the evening?",
+      "assistant_message": "Jordan Reyes followed up with Elena Voss on March 5th, and Elena confirmed that the overflow gravel lot has two existing pole lights but that they only illuminate roughly 60% of the lot area. Lakeview Pavilion requires that any event running past 8 PM must bring the overflow lot to full illumination, which means renting at least two additional portable light towers at an estimated cost of $150 each per night. Jordan Reyes has noted this as a line item in the wedding budget spreadsheet."
+    },
+    {
+      "turn_id": "t10",
+      "user_message": "Mira Okafor sent a revised centerpiece quote — did she change the per-table price for the reception at Lakeview Pavilion?",
+      "assistant_message": "Mira Okafor sent a revised proposal on March 10th increasing the per-table centerpiece price from $185 to $210, citing a supplier surcharge on white garden roses. For 15 reception tables at Lakeview Pavilion, the new total for centerpieces alone comes to $3,150. She offered to substitute cream-colored dahlias for the roses to hold the original $185 per-table price if Jordan Reyes and Mira Okafor confirmed the substitution by March 17th."
+    },
+    {
+      "turn_id": "t11",
+      "user_message": "What's the final headcount The Willowmere is allowing for the rehearsal dinner, and did they confirm a menu price per person?",
+      "assistant_message": "The Willowmere confirmed the Birchwood Suite for a maximum of 40 guests at the rehearsal dinner, consistent with their earlier capacity figure. Their events team quoted a prix-fixe dinner menu at $95 per person, inclusive of a three-course meal and non-alcoholic beverages. Jordan Reyes received this written confirmation on March 9th and noted that a 18% service charge would be added to the final bill, bringing the effective per-person cost to approximately $112."
+    },
+    {
+      "turn_id": "t12",
+      "user_message": "Has Harborside Catering confirmed the per-head price for the 120-guest reception dinner?",
+      "assistant_message": "Harborside Catering confirmed a per-head price of $145 for the seated three-course reception dinner, inclusive of service staff but exclusive of bar service. For 120 guests at Lakeview Pavilion, the food service subtotal comes to $17,400 before the bar package. Elena Voss reminded Jordan Reyes that Harborside Catering must submit their certificate of insurance to Lakeview Pavilion no later than 60 days before the event date."
+    },
+    {
+      "turn_id": "t13",
+      "user_message": "Mira Okafor mentioned the arch needs to be anchored differently depending on whether it's on grass or pavement — what did she say about the lakeside lawn specifically?",
+      "assistant_message": "Mira Okafor specified in a follow-up note on March 12th that on the lakeside lawn at Lakeview Pavilion the arch must be anchored with ground stakes driven at least 18 inches into the soil, due to typical wind exposure near the water. She noted that Silver Birch Floral's arch frame is rated for winds up to 25 mph with proper staking, but any forecast above that threshold would require a weighted base plate system instead, adding $75 to the setup fee. She confirmed that Elena Voss approved ground staking on the lawn without any additional venue surcharge."
+    },
+    {
+      "turn_id": "t14",
+      "user_message": "What's the total cost for the rehearsal dinner at The Willowmere if we have exactly 35 guests?",
+      "assistant_message": "For 35 guests at The Willowmere's Birchwood Suite, the prix-fixe dinner at $95 per person comes to $3,325 before the service charge. Adding the 18% service charge brings the total to approximately $3,923.50. Jordan Reyes should note that The Willowmere requires a 50% deposit of $1,961.75 to hold the Birchwood Suite reservation."
+    },
+    {
+      "turn_id": "t15",
+      "user_message": "The Willowmere also mentioned something about a room rental fee — is that included in the per-person price or separate?",
+      "assistant_message": "The Willowmere charges a separate room rental fee of $400 for the Birchwood Suite, which is not included in the $95 per-person menu price. Jordan Reyes confirmed this detail in the written quote received March 9th, meaning the true total for 35 guests would be $3,325 plus $400 room rental plus 18% service charge on the food total, coming to approximately $4,323.50. Elena Voss at Lakeview Pavilion had previously mentioned that their own venue fee structure is handled differently, so no direct comparison applies."
+    },
+    {
+      "turn_id": "t16",
+      "user_message": "Does The Willowmere allow outside dessert vendors, or do we have to use their in-house pastry team for the rehearsal dinner?",
+      "assistant_message": "The Willowmere's policy, confirmed by Jordan Reyes on March 9th, allows one outside dessert vendor provided the vendor carries liability insurance of at least $1,000,000 and submits a health department permit copy 30 days before the event. Their in-house pastry team charges $18 per person for a dessert course, which for 35 guests would add $630 to the bill. Mira Okafor at Silver Birch Floral had asked about this policy as well, since she sometimes coordinates with a bakery partner for floral cake decorations."
+    },
+    {
+      "turn_id": "t17",
+      "user_message": "If we use The Willowmere's in-house pastry team for 35 guests, what does the fully loaded rehearsal dinner bill look like?",
+      "assistant_message": "For 35 guests using The Willowmere's in-house pastry team, the breakdown is: $95 per person for the three-course menu ($3,325), plus $18 per person for dessert ($630), plus the $400 room rental, totaling $4,355 before the 18% service charge. The service charge applies to the food and beverage total of $3,955, adding $711.90, for a grand total of approximately $5,066.90. Jordan Reyes noted this figure in the wedding budget spreadsheet alongside the Harborside Catering and Lakeview Pavilion line items."
+    },
+    {
+      "turn_id": "t18",
+      "user_message": "Has Harborside Catering given any details on the bar package pricing for the reception?",
+      "assistant_message": "Harborside Catering quoted a per-person bar package at $55 for a four-hour open bar featuring beer, wine, and a signature cocktail. For 120 guests at Lakeview Pavilion, the bar package subtotal is $6,600, bringing the combined food and bar total to $24,000 before taxes and gratuity. Elena Voss confirmed that Harborside Catering holds the venue's liquor license endorsement, so no separate permit is required from Jordan Reyes or Mira Okafor's side."
+    },
+    {
+      "turn_id": "t19",
+      "user_message": "For the ceremony seating, how many rows do we actually need for 120 guests given the 12-chairs-per-row rule?",
+      "assistant_message": "With 12 chairs per row and 120 guests, exactly 10 rows are needed to seat everyone for the ceremony at Lakeview Pavilion. Elena Voss confirmed this calculation is within the venue's 20-row maximum, leaving 10 rows of unused space that can be converted to a standing overflow area if needed. She also noted that for a 10-row setup, the total seating depth from the first row to the last is approximately 33 feet, given the required 36-inch row spacing."
+    },
+    {
+      "turn_id": "t20",
+      "user_message": "Mira Okafor sent a note about boutonniere quantities — what number did she quote for the wedding party?",
+      "assistant_message": "Mira Okafor quoted 8 boutonnieres for the wedding party in her March 10th revised proposal, covering the two partners, four groomsmen, and two fathers of the couple. Each boutonniere is priced at $28, for a wedding party boutonniere subtotal of $224. She noted that Silver Birch Floral includes complimentary pinning service for up to 10 boutonnieres when the full centerpiece package at Lakeview Pavilion is booked."
+    },
+    {
+      "turn_id": "t21",
+      "user_message": "Did Harborside Catering clarify whether the $145 per-head price includes a cake-cutting fee?",
+      "assistant_message": "Harborside Catering confirmed in a follow-up email to Jordan Reyes on March 11th that the $145 per-head price does not include a cake-cutting fee, which is charged separately at $4 per person. For 120 guests at Lakeview Pavilion, the cake-cutting fee adds $480 to the catering bill. Harborside Catering also noted that if the couple opts for a dessert station instead of a tiered cake, the $4 per-person fee is waived entirely."
+    },
+    {
+      "turn_id": "t22",
+      "user_message": "Has the shuttle arrangement Jordan Reyes set up been confirmed with a price and schedule?",
+      "assistant_message": "Jordan Reyes confirmed a shuttle agreement with Clearwater Transport on March 8th for a flat rate of $600 for the evening, covering continuous loops between the municipal lot and Lakeview Pavilion from 4 PM to 11 PM. The shuttle vehicle holds 24 passengers and will run on a 20-minute loop cycle, meaning up to 3 round trips per hour are possible. Elena Voss approved the drop-off point at the Lakeview Pavilion main entrance and confirmed no additional venue fee applies for shuttle access."
+    },
+    {
+      "turn_id": "t23",
+      "user_message": "Mira Okafor mentioned a bridal bouquet design — what flowers and price did she quote for that?",
+      "assistant_message": "Mira Okafor quoted a cascading bridal bouquet featuring white garden roses, stephanotis, and trailing ivy at $320 in her March 10th proposal for the Lakeview Pavilion ceremony. She specified the bouquet will contain approximately 30 stems and will be finished with a satin ribbon wrap in ivory. Silver Birch Floral's policy requires the bouquet to be picked up no earlier than 4 hours before the ceremony start time to ensure maximum freshness."
+    },
+    {
+      "turn_id": "t24",
+      "user_message": "What's the total floral budget estimate Mira Okafor gave us across all items so far?",
+      "assistant_message": "Mira Okafor's March 10th revised proposal puts the total floral estimate at $7,094, covering the ceremony arch setup, the 50-foot aisle runner florals, all 15 reception centerpieces at the revised $210 per-table price, the bridal bouquet, 8 boutonnieres, and 4 bridesmaid bouquets at $95 each. She noted that Silver Birch Floral requires a 30% deposit of $2,128.20 to confirm the booking. Jordan Reyes has flagged this total for review against the overall wedding budget."
+    },
+    {
+      "turn_id": "t25",
+      "user_message": "We want to confirm the exact row depth for the 10-row ceremony setup — what's the total distance from the first row to the arch?",
+      "assistant_message": "Elena Voss confirmed that with 10 rows spaced 36 inches apart and the first row positioned 15 feet from the arch, the last row sits at 15 feet plus 9 additional row gaps of 36 inches each, totaling 42 feet from the arch to the back of the seating area. The full aisle length from the entrance gate to the arch, as Mira Okafor's runner measurement established, is 50 feet. Elena Voss noted that the 8-foot clearance buffer at the gate end means the first row of chairs begins exactly at the 8-foot mark from the gate."
+    },
+    {
+      "turn_id": "t26",
+      "user_message": "Has Jordan Reyes confirmed whether Clearwater Transport can add a second shuttle vehicle if needed on the wedding day?",
+      "assistant_message": "Jordan Reyes confirmed on March 13th that Clearwater Transport can add a second 24-passenger vehicle for an additional flat fee of $400 for the same 4 PM to 11 PM window. This would bring total shuttle capacity to 48 passengers per loop cycle, more than enough to handle overflow from the 125-space parking area at Lakeview Pavilion. Elena Voss noted that a second drop-off lane can be accommodated at the main entrance without any modification to the venue access plan."
+    },
+    {
+      "turn_id": "t27",
+      "user_message": "Does Silver Birch Floral have a minimum clearance requirement between the arch and the first row of chairs, given the staking setup Mira Okafor described?",
+      "assistant_message": "Mira Okafor confirmed on March 14th that Silver Birch Floral requires a minimum clearance of 6 feet between the front face of the arch and the nearest chair in the first row, to prevent guests from being struck by any stake adjustment or arch movement during the ceremony. This is separate from the 15-foot buffer Elena Voss set from the arch to the first row, meaning the Silver Birch Floral requirement is fully satisfied within the Lakeview Pavilion layout. Mira Okafor also noted that the 18-inch ground stakes will be covered with floral greenery so no tripping hazard is visible to guests."
+    },
+    {
+      "turn_id": "t28",
+      "user_message": "Has Silver Birch Floral confirmed a delivery and setup time for the floral arrangements at Lakeview Pavilion?",
+      "assistant_message": "Mira Okafor confirmed in writing on March 14th that Silver Birch Floral will arrive at Lakeview Pavilion at 9 AM on the wedding day for a ceremony start time of 3 PM, allowing 6 hours for full setup including the arch, aisle runner, and all reception centerpieces. Elena Voss approved this access window and noted that the venue gates open at 8:30 AM for vendors. Mira Okafor estimated that the arch installation alone will take approximately 90 minutes due to the ground staking process on the lakeside lawn."
+    },
+    {
+      "turn_id": "t29",
+      "user_message": "If we do add the second Clearwater Transport vehicle, does that change anything about the drop-off timing or loop schedule?",
+      "assistant_message": "Jordan Reyes confirmed with Clearwater Transport on March 13th that adding a second vehicle would stagger the loop departures by 10 minutes, so one vehicle departs the municipal lot every 10 minutes rather than every 20 minutes. This effectively doubles throughput to approximately 144 passengers per hour in one direction during peak arrival. Elena Voss confirmed that Lakeview Pavilion's entrance lane can handle simultaneous drop-offs from two vehicles without causing a bottleneck."
+    },
+    {
+      "turn_id": "t30",
+      "user_message": "Can you confirm the total number of chairs needed and the exact row count for our 120-guest ceremony at Lakeview Pavilion, accounting for all the spacing rules?",
+      "assistant_message": "For 120 guests at Lakeview Pavilion, the ceremony requires exactly 10 rows of 12 chairs each, totaling 120 chairs. The 10-row setup occupies a depth of 27 feet of seating space at 36-inch row spacing, and with the first row starting 15 feet from the arch, the back row sits 42 feet from the arch. Elena Voss confirmed this configuration is compliant with all venue fire-safety and accessibility rules and falls well within the 20-row maximum."
+    },
+    {
+      "turn_id": "t31",
+      "user_message": "Given the arch staking setup and the row positioning Elena Voss confirmed, does the 50-foot aisle runner Mira Okafor specified actually reach from the entrance gate all the way to the arch without any gap?",
+      "assistant_message": null
+    }
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer confirms the aisle runner is 50 feet long, as specified by Mira Okafor in her March 7th proposal.",
+      "required": false,
+      "evidence_turn_ids": ["t6"]
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer uses the fact that the back row of chairs sits 42 feet from the arch (established from 10 rows at 36-inch spacing with the first row 15 feet from the arch), meaning the runner must cover at least 42 feet plus the 8-foot gate lead-in to reach the arch.",
+      "required": false,
+      "evidence_turn_ids": ["t25", "t30"]
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer correctly concludes that the 50-foot runner covers the full 50-foot aisle distance (8-foot gate lead-in plus 42-foot seating depth) and reaches the arch without a gap.",
+      "required": false,
+      "evidence_turn_ids": ["t6", "t25", "t30"]
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not state that the total rehearsal dinner cost for 35 guests is approximately $3,923.50 or $4,323.50 or $5,066.90 (those are The Willowmere rehearsal dinner figures from the near-miss and distractor turns, not facts relevant to the aisle runner query).",
+      "required": true,
+      "evidence_turn_ids": []
+    }
+  ],
+  "reference_answer": "Yes, the 50-foot aisle runner Mira Okafor specified fits perfectly. The entrance gate contributes an 8-foot lead-in, and the first row of chairs starts at the 8-foot mark from the gate. With 10 rows spaced 36 inches apart and the first row 15 feet from the arch, the back row is 42 feet from the arch, placing it 50 feet from the gate end. The runner's 50-foot length therefore covers the full distance from the gate to the arch with no gap, and the 5-foot overlap at the arch base Mira Okafor noted provides additional security for the anchor point.",
+  "notes": "The query depends on t6 (Branch B: Mira Okafor's 50-foot runner length) and t30 (Branch A: confirmed 10-row layout with first row 15 feet from arch and back row 42 feet from arch), requiring both to verify the runner reaches the arch. The near-miss turn t14 asks a superficially similar 'total cost' question about The Willowmere rehearsal dinner for 35 guests, with specific dollar figures that have no bearing on the aisle runner calculation."
+}
+```

@@ -1,0 +1,530 @@
+{
+  "scenario_id": "long_long_noisy_side_thread_004",
+  "family": "long_noisy_side_thread",
+  "label": "NOISE",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're finalizing registration for the Summer Splash Reading Program at Maplewood Public Library. Can you help me work out the age-group cutoffs and participant caps for each tier?",
+      "assistant_message": "For the Summer Splash Reading Program, Director Renata Hollis has proposed three registration tiers: Ages 4–7 (Early Readers), Ages 8–12 (Middle Readers), and Ages 13–17 (Teen Readers). Coordinator Jamie Osei confirmed participant caps of 120 for Early Readers, 150 for Middle Readers, and 80 for Teen Readers, giving a total program cap of 350 registered participants. Registration opens June 2, 2024, and the Program Guide 2024 lists these caps as firm limits subject to staff-to-participant ratios.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "What prize structure has been discussed for participants who complete the reading goals in the Summer Splash Reading Program?",
+      "assistant_message": "Director Renata Hollis approved a three-tier prize structure for the Summer Splash Reading Program: participants who log 5 books receive a Maplewood Public Library bookmark set and a certificate, those who log 10 books earn a $10 bookstore gift card, and those who log 15 or more books receive a $25 gift card plus a trophy. Coordinator Jamie Osei noted that ReadTracker Pro will automatically flag accounts when thresholds are crossed so prizes can be distributed without manual review. The total prize budget allocated in the Program Guide 2024 is $4,800 for the full summer.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "Has a decision been made about which software platform will handle reading logs for the Summer Splash Reading Program?",
+      "assistant_message": "Maplewood Public Library selected ReadTracker Pro as the official reading-log platform for the Summer Splash Reading Program after a three-vendor review completed on March 15, 2024. The annual license fee is $1,200, and Coordinator Jamie Osei will serve as the primary system administrator with two backup logins assigned to reference staff. ReadTracker Pro supports parent-managed accounts for children under 10, which Director Renata Hollis identified as a key requirement in the Program Guide 2024.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "What's the staffing plan for running the Summer Splash Reading Program events at Maplewood Public Library this summer?",
+      "assistant_message": "Coordinator Jamie Osei drafted a staffing plan that assigns two full-time staff members per weekly program event, supplemented by four trained volunteers per session. Director Renata Hollis approved a volunteer recruitment target of 20 volunteers total for the Summer Splash Reading Program, with an orientation session scheduled for May 28, 2024. The Program Guide 2024 specifies that at least one certified children's librarian must be present at every Early Readers session held at Maplewood Public Library.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "I need to figure out the marketing plan for promoting the Summer Splash Reading Program. What channels and timeline has been discussed?",
+      "assistant_message": "Director Renata Hollis and Coordinator Jamie Osei agreed on a four-channel marketing plan for the Summer Splash Reading Program: social media posts beginning May 1, flyers distributed to 12 local elementary schools by May 10, a press release to the Maplewood Gazette on May 15, and an email blast to the Maplewood Public Library newsletter list of 3,400 subscribers on May 20. The Program Guide 2024 sets a marketing budget cap of $600 for printed materials and paid social boosts. ReadTracker Pro's landing page will also feature a registration link starting May 1.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "For the prize structure, has anyone confirmed how the $10 and $25 gift cards will be sourced — local vendor or national chain?",
+      "assistant_message": "Coordinator Jamie Osei confirmed at the April 3 planning meeting that all gift cards for the Summer Splash Reading Program will be purchased from Hartwell Books, a local independent bookstore two blocks from Maplewood Public Library. Director Renata Hollis supported the local vendor choice, noting it aligns with the library's community partnership goals and that Hartwell Books agreed to provide a 5 percent discount on bulk gift-card purchases over $500. The Program Guide 2024 records Hartwell Books as the sole approved vendor for prize fulfillment.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "Does the prize budget of $4,800 account for the Hartwell Books discount, or is that the pre-discount figure?",
+      "assistant_message": "According to Coordinator Jamie Osei's budget notes reviewed on April 10, the $4,800 prize budget for the Summer Splash Reading Program is the post-discount figure, already reflecting the 5 percent reduction from Hartwell Books. The pre-discount total would have been approximately $5,053, so the library saves roughly $253 through the partnership. Director Renata Hollis confirmed this in writing to the Maplewood Public Library finance office on April 12, citing the Program Guide 2024 line item for prizes.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "Has ReadTracker Pro been tested yet for the Summer Splash Reading Program, and are there any known issues with the platform?",
+      "assistant_message": "Coordinator Jamie Osei ran a pilot test of ReadTracker Pro on April 18, 2024, using 15 test accounts across all three age tiers of the Summer Splash Reading Program. Two issues were found: the parent-managed account feature showed a login timeout after 8 minutes of inactivity, and the book-search database was missing roughly 200 titles published after January 2024. ReadTracker Pro's support team committed to patching both issues by May 9, 2024, and Director Renata Hollis was notified via the Program Guide 2024 issue tracker.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "For the staffing plan, how many hours per week is each full-time staff member expected to dedicate to Summer Splash Reading Program duties?",
+      "assistant_message": "Coordinator Jamie Osei's staffing plan, approved by Director Renata Hollis on April 5, 2024, allocates 8 hours per week per full-time staff member to Summer Splash Reading Program duties during the program's 8-week run from June 10 to August 2. This includes 3 hours of event facilitation, 3 hours of ReadTracker Pro account management and prize tracking, and 2 hours of parent and patron communication. Maplewood Public Library's HR office confirmed these hours fall within existing contracts and require no overtime authorization.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "What is the overall budget for the Summer Splash Reading Program, and who approved the final figures?",
+      "assistant_message": "Director Renata Hollis presented the final Summer Splash Reading Program budget to the Maplewood Public Library board on April 22, 2024, and it was approved at $18,500 total. The budget breaks down as $4,800 for prizes, $1,200 for the ReadTracker Pro license, $600 for marketing, $7,900 for staffing and volunteer coordination, and $4,000 for programming supplies and author visits. Coordinator Jamie Osei was named budget manager, responsible for tracking expenditures against the Program Guide 2024 line items throughout the summer.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "Has a final decision been made on which schools will receive the Summer Splash Reading Program flyers, and is there a contact list?",
+      "assistant_message": "Coordinator Jamie Osei finalized the school distribution list on April 25, 2024, identifying 12 elementary schools and 3 middle schools within the Maplewood Public Library service area to receive printed flyers for the Summer Splash Reading Program. Each school was assigned a primary contact, and the list was appended to the Program Guide 2024 as Appendix C. Director Renata Hollis approved the list and authorized printing 50 flyers per school, for a total print run of 750 flyers at a cost of $187.50, within the $600 marketing budget.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "How many total registered participants did ReadTracker Pro show for the Summer Splash Reading Program pilot test on April 18?",
+      "assistant_message": "During the April 18 pilot test of ReadTracker Pro, Coordinator Jamie Osei registered exactly 15 test accounts across the three age tiers: 5 in Early Readers, 6 in Middle Readers, and 4 in Teen Readers. The pilot was not a live registration event but a controlled internal test to check system functionality for the Summer Splash Reading Program. These 15 pilot accounts are separate from the actual program caps of 120, 150, and 80 participants approved by Director Renata Hollis.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "Were any additional prize categories considered for the Summer Splash Reading Program beyond the three tiers that were approved?",
+      "assistant_message": "At the March 28 planning meeting, Director Renata Hollis raised the possibility of a fourth prize tier for participants who log 20 or more books, which would have offered a $50 gift card from Hartwell Books and a named entry in Maplewood Public Library's Summer Honor Roll. Coordinator Jamie Osei modeled the cost and found that adding a fourth tier would push the prize budget to approximately $6,200, exceeding the approved $4,800 cap, so the proposal was tabled. The Program Guide 2024 records the decision to retain three tiers only.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "Has the $18,500 total budget for the Summer Splash Reading Program been broken down further for the $7,900 staffing line?",
+      "assistant_message": "Coordinator Jamie Osei provided a staffing sub-breakdown in the April 22 budget document: $5,600 covers the proportional salary cost for two full-time staff at 8 hours per week over 8 weeks, $1,500 covers volunteer stipends and training materials for 20 volunteers, and $800 is reserved for contingency overtime at Maplewood Public Library. Director Renata Hollis confirmed these figures align with the HR office estimates and are reflected in the Program Guide 2024. The $7,900 staffing line is the single largest budget item in the approved $18,500 total.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "For the school outreach, has Maplewood Public Library confirmed whether teachers can assign Summer Splash Reading Program participation as optional summer homework?",
+      "assistant_message": "Director Renata Hollis contacted the Maplewood Unified School District office on April 29, 2024, and received confirmation that teachers may recommend the Summer Splash Reading Program as optional summer enrichment but may not assign it as graded homework under district policy 7.4.2. Coordinator Jamie Osei updated Appendix C of the Program Guide 2024 to include this caveat so school contacts would not misrepresent the program to families. The library will provide each school with a one-page FAQ sheet clarifying the voluntary nature of the program and the ReadTracker Pro sign-up process.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "Was a decision made about whether the Summer Splash Reading Program prize ceremony will be a single event or multiple events across the summer?",
+      "assistant_message": "Director Renata Hollis decided at the April 30 planning meeting that the Summer Splash Reading Program will hold three prize distribution events rather than one end-of-summer ceremony: a mid-program check-in on July 12, a second distribution on July 26, and a final celebration on August 9 at Maplewood Public Library. Coordinator Jamie Osei noted that ReadTracker Pro's reporting dashboard will generate eligibility lists 48 hours before each event so staff can prepare gift cards from Hartwell Books in advance. The Program Guide 2024 schedules all three dates as official program milestones.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "After the ReadTracker Pro patch on May 9, was there a follow-up test to confirm the login timeout and missing titles issues were fixed?",
+      "assistant_message": "Coordinator Jamie Osei conducted a follow-up test of ReadTracker Pro on May 12, 2024, confirming that the login timeout had been extended to 30 minutes of inactivity and that 198 of the 200 missing post-January 2024 titles had been added to the database. The two remaining titles were flagged as out-of-print editions that ReadTracker Pro's database vendor does not carry, and Director Renata Hollis approved a manual workaround allowing staff to add custom titles through the admin panel. Maplewood Public Library's Program Guide 2024 was updated to note the manual-entry option for patrons who cannot find a title in the system.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "Has the Maplewood Gazette confirmed it will run the press release about the Summer Splash Reading Program on May 15?",
+      "assistant_message": "The Maplewood Gazette confirmed on May 2, 2024, that it will publish the Summer Splash Reading Program press release in its May 15 print edition and simultaneously post it to the Gazette's website, which reaches approximately 11,000 unique monthly visitors. Coordinator Jamie Osei submitted the final press release text to the Gazette on May 5, and Director Renata Hollis approved the copy, which includes the ReadTracker Pro registration link and the June 2 registration open date. The Program Guide 2024 marketing checklist marks this item as completed.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "Is the $4,000 programming supplies and author visits line in the Summer Splash Reading Program budget fully allocated, or is there flexibility?",
+      "assistant_message": "Coordinator Jamie Osei's programming sub-budget, submitted May 1, 2024, allocates $2,400 of the $4,000 line to two author visits ($1,200 each), $900 to craft and activity supplies for eight weekly events, and $700 to audiovisual equipment rental for the three prize ceremonies at Maplewood Public Library. Director Renata Hollis confirmed there is no flexibility in this line since all four components have vendor commitments, and the Program Guide 2024 lists signed agreements for both author visits. The two confirmed authors are scheduled for June 22 and July 20.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "For ReadTracker Pro, what happens if a participant's account shows a disputed book log — is there an appeal process?",
+      "assistant_message": "ReadTracker Pro includes a built-in dispute flag that participants or parents can activate within 14 days of a log entry being reviewed, according to the platform's admin documentation reviewed by Coordinator Jamie Osei. When a dispute flag is raised, the case is routed to the Maplewood Public Library admin account, where a staff member reviews the entry and either approves or rejects the log within 5 business days. Director Renata Hollis approved a policy, recorded in the Program Guide 2024, that a brief written summary from the participant is required for any dispute involving a title not found in the ReadTracker Pro database.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "Has the email blast to the 3,400 library newsletter subscribers been drafted for the Summer Splash Reading Program?",
+      "assistant_message": "Coordinator Jamie Osei drafted the newsletter email blast on May 6, 2024, and Director Renata Hollis approved the final version on May 8. The email highlights the three prize tiers, the June 2 registration open date, the ReadTracker Pro sign-up link, and the three age groups of the Summer Splash Reading Program. Maplewood Public Library's communications staff scheduled the send for May 20 at 9:00 a.m., targeting the full subscriber list of 3,400 patrons.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "Has a volunteer training curriculum been developed for the Summer Splash Reading Program, and how long is the orientation on May 28?",
+      "assistant_message": "Coordinator Jamie Osei developed a three-hour volunteer orientation curriculum for the Summer Splash Reading Program, scheduled for May 28, 2024, at Maplewood Public Library from 10:00 a.m. to 1:00 p.m. The curriculum covers ReadTracker Pro account assistance for patrons, prize distribution procedures using the Hartwell Books gift cards, and child safety protocols required by the Program Guide 2024. Director Renata Hollis will deliver a 20-minute welcome address, and all 20 recruited volunteers are expected to attend; a makeup session is set for May 30 for any who cannot.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "How are the 20 volunteers for the Summer Splash Reading Program being recruited — is there a formal application?",
+      "assistant_message": "Maplewood Public Library posted a volunteer application form on its website and at the front desk on April 15, 2024, with a deadline of May 14. Coordinator Jamie Osei is reviewing applications and selecting 20 volunteers based on availability for at least 6 of the 8 program weeks, prior library or youth program experience, and a background check clearance required by Director Renata Hollis under Program Guide 2024 policy 3.2. As of May 5, 34 applications had been received, giving the library a strong candidate pool for the Summer Splash Reading Program.",
+      "gold_parents": [
+        "t22"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "Has the final email blast for the Summer Splash Reading Program been sent, and what open rate is expected?",
+      "assistant_message": "Coordinator Jamie Osei confirmed the email blast to Maplewood Public Library's 3,400 newsletter subscribers was sent on May 20 at 9:03 a.m. as scheduled. Based on the library's historical newsletter open rate of 38 percent, Director Renata Hollis projected approximately 1,292 recipients would open the email, with a click-through to the ReadTracker Pro registration page estimated at 12 percent, or about 408 patrons. The Program Guide 2024 marketing checklist was updated to mark the email blast as completed on May 20.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "Has ReadTracker Pro's admin panel been configured with the Summer Splash Reading Program's specific age tiers and prize thresholds?",
+      "assistant_message": "Coordinator Jamie Osei completed the ReadTracker Pro admin configuration on May 14, 2024, setting up the three age tiers — Early Readers (4–7), Middle Readers (8–12), and Teen Readers (13–17) — and programming the automatic prize-threshold flags at 5, 10, and 15 books. Director Renata Hollis reviewed and approved the configuration on May 15, confirming it matched the Program Guide 2024 specifications. The participant caps of 120, 150, and 80 were also entered as hard limits in ReadTracker Pro so the system will close registration for a tier automatically once its cap is reached.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "After the email blast went out, did registration numbers come in as expected for the Summer Splash Reading Program?",
+      "assistant_message": "Within 48 hours of the May 20 email blast, ReadTracker Pro showed 312 new registrations for the Summer Splash Reading Program at Maplewood Public Library, which Coordinator Jamie Osei described as ahead of projections. Early Readers had 118 registrations out of its 120-slot cap, Middle Readers had 143 out of 150, and Teen Readers had 51 out of 80 by May 22. Director Renata Hollis sent a note to the full library staff flagging that Early Readers was nearly full and that walk-in registration at the desk should be monitored carefully against the Program Guide 2024 caps.",
+      "gold_parents": [
+        "t24"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "Now that ReadTracker Pro caps are set as hard limits, what happens if a patron tries to register online for a full tier?",
+      "assistant_message": "When a tier reaches its cap in ReadTracker Pro, the system automatically displays a 'Registration Closed' message for that specific age group and offers patrons the option to join a waitlist, according to the configuration Coordinator Jamie Osei completed on May 14. Director Renata Hollis approved a waitlist policy in the Program Guide 2024 allowing up to 30 additional names per tier, with waitlisted patrons notified by email within 24 hours if a spot opens. Maplewood Public Library staff were instructed not to manually override the cap limits without written approval from Director Renata Hollis.",
+      "gold_parents": [
+        "t25"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "For the prize ceremonies, has a venue within Maplewood Public Library been confirmed for the July 12 event?",
+      "assistant_message": "Coordinator Jamie Osei booked the Maplewood Public Library's Community Room A for the July 12 prize distribution event, which holds a maximum of 120 seated guests. Director Renata Hollis approved the booking on May 5, 2024, and noted that if Summer Splash Reading Program attendance exceeds the room capacity, the adjacent Reading Garden can accommodate an overflow of 40 additional guests. The Program Guide 2024 event checklist specifies that Hartwell Books gift cards must be sorted and labeled by participant name no later than July 10.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "Has any contingency been planned in the overall $18,500 Summer Splash Reading Program budget for unexpected costs?",
+      "assistant_message": "The approved $18,500 budget for the Summer Splash Reading Program includes a $500 contingency reserve, which Director Renata Hollis insisted on adding after the April 22 board meeting. Coordinator Jamie Osei noted the reserve is held in a separate library account and can only be accessed with written authorization from Director Renata Hollis, as specified in Program Guide 2024 section 4.7. If the contingency is unused by August 9, the $500 will roll back into the Maplewood Public Library general programming fund.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t30",
+      "turn_index": 29,
+      "user_message": "Has the $500 contingency in the Summer Splash Reading Program budget been drawn on at all since the program launched?",
+      "assistant_message": "As of June 15, 2024, Coordinator Jamie Osei confirmed that no withdrawals had been made from the $500 contingency reserve for the Summer Splash Reading Program. The only near-miss was a request on June 8 for an additional $150 in craft supplies, but Director Renata Hollis approved reallocating $150 from underspent marketing funds rather than touching the contingency. The Program Guide 2024 expenditure log shows the contingency balance remains at $500 as of the most recent weekly report.",
+      "gold_parents": [
+        "t29"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t31",
+      "turn_index": 30,
+      "user_message": "Has the waitlist for any Summer Splash Reading Program tier been activated yet, and if so, how many patrons are on it?",
+      "assistant_message": "ReadTracker Pro activated the waitlist for the Early Readers tier on May 23, 2024, one day after Coordinator Jamie Osei confirmed all 120 slots were filled. As of June 10, the Early Readers waitlist had 27 names, 3 short of the 30-name maximum allowed under the policy Director Renata Hollis approved in the Program Guide 2024. The Middle Readers and Teen Readers tiers had not yet reached their caps of 150 and 80 respectively, so their waitlists had not been activated.",
+      "gold_parents": [
+        "t27"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t32",
+      "turn_index": 31,
+      "user_message": "Has the volunteer selection for the Summer Splash Reading Program been finalized after the May 14 application deadline?",
+      "assistant_message": "Coordinator Jamie Osei completed volunteer selection on May 17, 2024, choosing 20 volunteers from the 34 applicants received by the May 14 deadline for the Summer Splash Reading Program. All 20 selected volunteers cleared the background check required by Director Renata Hollis under Program Guide 2024 policy 3.2, and confirmation emails were sent through the Maplewood Public Library communications system on May 18. Four alternates were also identified in case any of the 20 selected volunteers withdraw before the May 28 orientation.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t33",
+      "turn_index": 32,
+      "user_message": "For the July 26 prize distribution event, has a venue been confirmed at Maplewood Public Library?",
+      "assistant_message": "Coordinator Jamie Osei booked Community Room A again for the July 26 prize distribution event, with the same 120-seat capacity as the July 12 event at Maplewood Public Library. Director Renata Hollis also pre-booked the Reading Garden as overflow for July 26, consistent with the arrangement documented in Program Guide 2024. Hartwell Books was notified on June 1 to prepare a second batch of gift cards for July 26 distribution, based on ReadTracker Pro's projected eligibility numbers at that point in the Summer Splash Reading Program.",
+      "gold_parents": [
+        "t28"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t34",
+      "turn_index": 33,
+      "user_message": "After the May 28 orientation, did all 20 volunteers attend, or were any alternates needed for the Summer Splash Reading Program?",
+      "assistant_message": "Coordinator Jamie Osei reported that 18 of the 20 selected volunteers attended the May 28 orientation at Maplewood Public Library, and 2 attended the makeup session on May 30, bringing the total to 20 fully trained volunteers for the Summer Splash Reading Program. No alternates were needed, and Director Renata Hollis marked the volunteer onboarding as complete in the Program Guide 2024 milestone tracker. All 20 volunteers received their ReadTracker Pro patron-assistance login credentials at the end of the orientation session.",
+      "gold_parents": [
+        "t32"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t35",
+      "turn_index": 34,
+      "user_message": "Has the Teen Readers tier of the Summer Splash Reading Program reached its cap of 80 participants yet?",
+      "assistant_message": "As of June 20, 2024, ReadTracker Pro showed 74 registered participants in the Teen Readers tier for the Summer Splash Reading Program, leaving 6 slots remaining before the 80-participant cap is reached. Coordinator Jamie Osei noted the slower fill rate compared to Early Readers, which sold out on May 23, and Director Renata Hollis approved a targeted social media push specifically for the 13–17 age group starting June 22 to coincide with the first author visit. The Program Guide 2024 cap of 80 for Teen Readers remains in effect with no plans to increase it.",
+      "gold_parents": [
+        "t34"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t36",
+      "turn_index": 35,
+      "user_message": "For the August 9 final celebration of the Summer Splash Reading Program, has a larger venue been considered since it is the closing event?",
+      "assistant_message": "Director Renata Hollis proposed using the Maplewood Public Library's Main Hall for the August 9 final celebration, which holds 300 guests — significantly larger than Community Room A's 120-seat limit. Coordinator Jamie Osei confirmed the Main Hall booking on June 5, 2024, and the Program Guide 2024 event checklist was updated to reflect the venue change for the closing ceremony. Hartwell Books was also asked to prepare the full remaining prize inventory for August 9, as the final event is expected to distribute the largest number of 15-book and 10-book achievement awards.",
+      "gold_parents": [
+        "t33"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t37",
+      "turn_index": 36,
+      "user_message": "Have the registration tiers for the Summer Splash Reading Program had any changes to participant caps or age cutoffs since they were first set?",
+      "assistant_message": "As of the May 15 configuration sign-off by Director Renata Hollis, the participant caps and age cutoffs for the Summer Splash Reading Program remain exactly as originally established: 120 for Early Readers (ages 4–7), 150 for Middle Readers (ages 8–12), and 80 for Teen Readers (ages 13–17), for a total program cap of 350. No amendments have been made to these figures in the Program Guide 2024, and Coordinator Jamie Osei confirmed on June 1 that the caps are now enforced as hard limits in ReadTracker Pro with no override permitted without written approval. The June 2 registration open date also held as planned with no postponement.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t38",
+      "turn_index": 37,
+      "user_message": "Has the Summer Splash Reading Program budget been adjusted at all now that the program is underway, given the actual registration numbers?",
+      "assistant_message": "Coordinator Jamie Osei submitted a mid-program budget review on June 18, 2024, and Director Renata Hollis confirmed the overall $18,500 Summer Splash Reading Program budget remains unchanged. The prize budget of $4,800 is tracking as expected based on ReadTracker Pro eligibility data, and the $150 craft supply shortfall resolved in early June was covered by the marketing underspend without touching the $500 contingency. Program Guide 2024 budget logs show all line items within tolerance as of the June 18 review.",
+      "gold_parents": [
+        "t30"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t39",
+      "turn_index": 38,
+      "user_message": "Has any line item in the $18,500 budget shown significant underspend that might be reallocated before the Summer Splash Reading Program ends?",
+      "assistant_message": "Coordinator Jamie Osei's June 18 budget review identified the marketing line as the only significant underspend, with $387 remaining of the $600 allocation after the $150 craft supply transfer for the Summer Splash Reading Program. Director Renata Hollis approved using up to $200 of that remaining marketing budget for the June 22 social media push targeting Teen Readers, leaving approximately $187 in the marketing line through August 9. Program Guide 2024 budget policy requires any reallocation above $300 to go back to the board, so no board action was needed for this adjustment at Maplewood Public Library.",
+      "gold_parents": [
+        "t38"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t40",
+      "turn_index": 39,
+      "user_message": "Has the overall Summer Splash Reading Program budget tracking been shared with the Maplewood Public Library board at any point since the April 22 approval?",
+      "assistant_message": "Director Renata Hollis presented a mid-program budget update to the Maplewood Public Library board at its June 24 meeting, showing total expenditures of $9,340 against the $18,500 approved budget for the Summer Splash Reading Program. Coordinator Jamie Osei prepared the report using ReadTracker Pro participation data and Program Guide 2024 expenditure logs, and the board expressed satisfaction with the program's financial management. The next budget update is scheduled for the board's August 26 meeting, which will include final Summer Splash Reading Program expenditures and an evaluation of ReadTracker Pro's performance.",
+      "gold_parents": [
+        "t39"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t41",
+      "turn_index": 40,
+      "user_message": "Has the email open rate for the May 20 blast actually matched the 38 percent projection, or has Maplewood Public Library tracked final open data?",
+      "assistant_message": "Coordinator Jamie Osei pulled final open-rate data on May 27, 2024, showing the May 20 email blast achieved a 41 percent open rate — 1,394 opens out of 3,400 recipients — slightly above the 38 percent projection Director Renata Hollis had used in planning. The click-through rate to the ReadTracker Pro registration page came in at 14 percent, or 476 patrons, also above the projected 12 percent. Program Guide 2024 marketing records were updated with these final figures, which Coordinator Jamie Osei noted contributed to the strong early registration numbers for the Summer Splash Reading Program.",
+      "gold_parents": [
+        "t26"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t42",
+      "turn_index": 41,
+      "user_message": "What is the total registration capacity across all three age tiers of the Summer Splash Reading Program, and what are the individual caps for each group?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t37"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t37"
+  ],
+  "distractor_turn_ids": [
+    "t2",
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t7",
+    "t8",
+    "t9",
+    "t10",
+    "t11",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t20",
+    "t21",
+    "t22",
+    "t23",
+    "t24",
+    "t25",
+    "t26",
+    "t27",
+    "t28",
+    "t29",
+    "t30",
+    "t31",
+    "t32",
+    "t33",
+    "t34",
+    "t35",
+    "t36",
+    "t38",
+    "t39",
+    "t40",
+    "t41"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states the total program registration cap is 350 participants.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states the Early Readers (ages 4–7) cap is 120 participants.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer states the Middle Readers (ages 8–12) cap is 150 participants and the Teen Readers (ages 13–17) cap is 80 participants.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not state that 15 participants were registered (the pilot test figure from t12, which is the near-miss answer for a different question about registration numbers).",
+      "required": true
+    }
+  ],
+  "notes": "The facts needed to answer the query are established in t1 and confirmed unchanged in t37. The near-miss turn is t12, which reports 15 pilot-test registrations in ReadTracker Pro — a plausible-sounding registration number that is actually from a controlled internal test, not the program caps.\n\nReference answer: The Summer Splash Reading Program has a total registration cap of 350 participants across three age tiers. Early Readers (ages 4–7) is capped at 120 participants, Middle Readers (ages 8–12) at 150 participants, and Teen Readers (ages 13–17) at 80 participants. These caps were set by Director Renata Hollis and Coordinator Jamie Osei, recorded in the Program Guide 2024, and entered as hard limits in ReadTracker Pro with no changes as of the May 15 configuration sign-off.",
+  "evidence_note": null,
+  "premise": "a city library planning a summer reading program",
+  "evidence_spans": null,
+  "benchmark_version": "1.2-pilot",
+  "length_class": "long"
+}

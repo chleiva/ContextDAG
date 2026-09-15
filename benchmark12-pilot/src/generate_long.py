@@ -171,13 +171,13 @@ OUTLINE (write these {n_turns} turns, in this order, with these ids):
 
 RULES
 1. Write every turn listed, in order, with the exact turn_id given. Do not add, drop, merge or reorder turns.
-2. Keep turns compact: each user message 1-3 sentences; each assistant message 2-4 sentences. Plain prose, no markdown, no bullet lists.
+2. Each user message is 1-3 sentences; each assistant message is 3-5 sentences of concrete, specific content (numbers, names, dates, decisions). Plain prose, no markdown, no bullet lists.
 3. ENTITY REGISTRY: in the first gold-branch turns (or, for new_root, the first two turns) introduce {n_entities} named entities that belong to this project - people, organisations, products, documents, places, versions - and list them in "entity_registry" as BARE NAMES exactly as they appear in the dialogue (e.g. "Mira Okafor", "Harrowfield Historical Society"; no descriptions, no parentheses). EVERY distractor branch must mention at least two registry entities by name in its turns. Distractor branches must stay inside the same project and the same domain: no unrelated topics, no small talk, no chit-chat padding; every turn advances its own sub-problem with concrete numbers, names, dates and decisions.
 4. Evidence (gold) turns carry concrete, checkable facts: exact numbers, names, dates, versions, rules. Distractor turns must be plausible and on-project but must not restate, hint at, or resolve anything the query needs.
 5. The NEAR-MISS turn ({near_miss}) must read like a sibling of the final query: the same kind of question, about a different registry entity/version/date/item, answered confidently with specific numbers that are NOT the correct answer to the final query.
-6. Topic changes happen WITHOUT announcement. BANNED in user messages (the output is rejected if any appear): "on a different note", "on a separate note", "separately", "unrelated", "switching topics", "changing the subject", "going back to", "coming back to", "back to the ...", "circling back", "one more thing", "while we're at it", "side note", "meanwhile", "different question", "new topic", and similar signposting. To change sub-problem the user simply asks the next question; to return to an earlier one the user asks a question that is only meaningful for it.
+6. The branches are INTERLEAVED, so the user moves between sub-problems many times. Every such move happens WITHOUT announcement: the user simply asks the next question, and which sub-problem it belongs to is clear from its content alone. Never write "back to", "going back", "coming back", "returning to", "getting back", "separately", "meanwhile" or any equivalent transition. BANNED in user messages (the output is rejected if any appear): "on a different note", "on a separate note", "separately", "unrelated", "switching topics", "changing the subject", "going back to", "coming back to", "back to the ...", "circling back", "one more thing", "while we're at it", "side note", "meanwhile", "different question", "new topic", and similar signposting. To change sub-problem the user simply asks the next question; to return to an earlier one the user asks a question that is only meaningful for it.
 7. The final turn is the QUERY. Write only its user_message; set its assistant_message to null. The query must be natural and must not restate the facts it depends on.
-8. answer_checklist: 3-4 items a third party could judge TRUE/FALSE from the gold turns plus a candidate answer. Each criterion names the specific fact/value it checks and lists "evidence_turn_ids": the gold turn ids where that fact is stated (empty list only for new_root or for the negative item). {checklist_guidance} Include exactly one negative item phrased "The answer must not ..." with "required": true.
+8. answer_checklist: 3-4 items a third party could judge TRUE/FALSE from the gold turns plus a candidate answer. Each criterion names the specific fact/value it checks and lists "evidence_turn_ids": the gold turn ids where that fact is stated (empty list only for new_root or for the negative item). {checklist_guidance} Every item has "required": true (there are no optional items). Include exactly one negative item phrased "The answer must not ...".
 9. reference_answer: a 2-5 sentence ideal answer using only the gold turns.
 
 Return ONLY a JSON object of this exact shape, no prose before or after:
@@ -236,23 +236,25 @@ def check_long(s: Scenario, lp: LongPlan, data: dict, cfg: dict) -> tuple[list[s
     # length
     full_tokens = sum(n_tokens(render_turn(t)) for t in s.history)
     if full_tokens < cfg["min_full_history_tokens"]:
-        errors.append(f"full history is only {full_tokens} tokens; each assistant message needs more concrete content (target ≥ {cfg['min_full_history_tokens']})")
+        shortest = sorted(s.history, key=lambda t: len(t.assistant_message or ""))[:8]
+        for t in shortest:
+            errors.append(f"{t.turn_id} is too thin (assistant {len(t.assistant_message or '')} chars); the whole history is only {full_tokens} tokens (need ≥ {cfg['min_full_history_tokens']}), so expand this turn to 4-5 concrete sentences")
     # entity registry
     reg = [_bare(x) for x in data.get("entity_registry", []) if _bare(x)]
     lo, hi = cfg["entity_registry_size"]
     if len(reg) < lo:
         errors.append(f"entity_registry has {len(reg)} entries; need {lo}-{hi}")
     gold_text = " ".join(text_of(t) for t in s.evidence_turn_ids) if s.evidence_turn_ids else " ".join(text_of(t.turn_id) for t in s.history[:2])
-    missing_in_gold = [x for x in reg if x.lower() not in gold_text]
-    if missing_in_gold:
-        errors.append(f"registry entities not mentioned in the gold turns (or first two turns for new_root): {missing_in_gold}")
+    eff = [x for x in reg if x.lower() in gold_text]          # entities the gold branch actually uses
+    if len(eff) < cfg["min_shared_entities_per_distractor_branch"]:
+        errors.append(f"only {eff} of the registry appear in the gold turns; the gold branch must introduce at least {cfg['min_shared_entities_per_distractor_branch']} registry entities by name")
     branch_hits = {}
     for b in lp.distractor_branches:
         btxt = " ".join(text_of(t.turn_id) for t in lp.plan.turns if t.branch == b)
-        hits = [x for x in reg if x.lower() in btxt]
+        hits = [x for x in eff if x.lower() in btxt]
         branch_hits[b] = hits
         if len(hits) < cfg["min_shared_entities_per_distractor_branch"]:
-            errors.append(f"distractor branch {b} mentions only {hits} from the entity registry; it must mention at least {cfg['min_shared_entities_per_distractor_branch']} by name")
+            errors.append(f"distractor branch {b} shares only {hits} named entities with the gold branch; it must mention at least {cfg['min_shared_entities_per_distractor_branch']} of {eff} by name")
     # near-miss
     nm = lp.near_miss_id
     if nm not in s.distractor_turn_ids:
@@ -262,17 +264,17 @@ def check_long(s: Scenario, lp: LongPlan, data: dict, cfg: dict) -> tuple[list[s
     closure = set(s.evidence_turn_ids)
     item_ev = {}
     for c in items:
-        ev = [str(x) for x in (c.get("evidence_turn_ids") or [])]
+        ev = [(f"t{x}" if re.fullmatch(r"\d+", str(x).strip()) else str(x).strip()) for x in (c.get("evidence_turn_ids") or [])]
         item_ev[c["id"]] = ev
         neg = str(c.get("criterion", "")).lower().startswith("the answer must not")
-        if c.get("required", True) and not neg:
+        if not neg:
             if s.family != "new_root" and not ev:
                 errors.append(f"checklist item {c['id']} cites no evidence turns; every required item must be satisfiable from the gold turns")
             bad = [t for t in ev if t not in closure]
             if bad:
                 errors.append(f"checklist item {c['id']} cites {bad}, which are not gold turns; required items must be satisfiable from the gold closure alone")
     if s.family in ("two_branch_join", "three_way_join"):
-        branches = {pb[t].branch for c in items if c.get("required", True) for t in item_ev.get(c["id"], []) if t in pb}
+        branches = {pb[t].branch for c in items for t in item_ev.get(c["id"], []) if t in pb}
         if len(branches & set(lp.gold_branches)) < 2:
             errors.append(f"required items cite gold branches {sorted(branches)} only; a join needs items whose evidence spans at least two gold branches")
     # cosine gate
@@ -299,7 +301,7 @@ def assemble(lp: LongPlan, scenario_id: str, premise: str, data: dict) -> Scenar
         turns.append(Turn(turn_id=tp.turn_id, turn_index=i, user_message=(g.get("user_message") or "").strip(),
                           assistant_message=None if tp.role == "query" else (g.get("assistant_message") or "").strip(),
                           gold_parents=list(tp.gold_parents)))
-    checklist = [ChecklistItem(id=c["id"], criterion=c["criterion"].strip(), required=bool(c.get("required", True))) for c in data.get("answer_checklist", [])]
+    checklist = [ChecklistItem(id=c["id"], criterion=c["criterion"].strip(), required=True) for c in data.get("answer_checklist", [])]
     notes = (data.get("notes") or "").strip()
     ref = (data.get("reference_answer") or "").strip()
     if ref:
@@ -323,6 +325,8 @@ def realize(lp: LongPlan, scenario_id: str, premise: str, man: dict, rng: random
         res = complete(gen["id"], p, temperature=temperature, max_tokens=gen["max_tokens"], purpose="generation", ref=scenario_id)
         log = {"scenario_id": scenario_id, "attempt": attempt, "temperature": temperature, "route": res.route,
                "input_tokens": res.input_tokens, "output_tokens": res.output_tokens, "latency_s": round(res.latency_s, 1), "stop_reason": res.stop_reason}
+        (RAW / "attempts").mkdir(parents=True, exist_ok=True)
+        (RAW / "attempts" / f"{scenario_id}_{attempt}.txt").write_text(res.text)
         try:
             data = extract_json(res.text)
             s = assemble(lp, scenario_id, premise, data)
@@ -334,11 +338,50 @@ def realize(lp: LongPlan, scenario_id: str, premise: str, man: dict, rng: random
         errs = list(v.errors) + errs
         append_jsonl(GATE_LOG, {"scenario_id": scenario_id, "attempt": attempt, **meta["cosine"], "all_errors": errs})
         log["errors"] = errs; log["warnings"] = v.warnings; append_jsonl(GEN_LOG, log)
+        # Local defects (signposting, thin turns) get a cheap targeted rewrite of just those turns,
+        # up to 2 rounds, instead of a full 9k-token regeneration.
+        for rep in range(2):
+            local = [e for e in errs if "topic-switch signposting" in e or "is too thin" in e]
+            if not errs or len(local) != len(errs):
+                break
+            data = repair(data, local, gen, scenario_id, rep + 1)
+            s = assemble(lp, scenario_id, premise, data)
+            v = validate_scenario(s); errs, meta = check_long(s, lp, data, cfg); errs = list(v.errors) + errs
+            append_jsonl(GEN_LOG, {"scenario_id": scenario_id, "attempt": attempt, "repair": rep + 1, "errors": errs})
         if not errs:
             meta["attempt_accepted"] = attempt; meta["generation_tokens"] = [res.input_tokens, res.output_tokens]
             return s, meta, log
         last = "; ".join(errs[:8])
     raise RuntimeError(f"{scenario_id}: rejected after {gen['max_attempts']} attempts: {last[:300]}")
+
+
+REPAIR_PROMPT = """Below are a few turns from a long user/assistant conversation that violate our style rules, with the rule each one breaks. Rewrite ONLY these turns so the rule is satisfied, keeping every fact, number, name and the sub-problem each turn is about. For signposting violations, remove the transition phrase entirely and make the question self-contained by naming the thing it is about (e.g. "Going back to the lease, what was the deposit?" -> "What deposit did the Draft Lease v2.1 specify?"). For thin turns, expand the assistant message to 3-5 concrete sentences. Never use any of: "back to", "going back", "coming back", "returning to", "getting back", "separately", "meanwhile", "on a different note", "one more thing", "side note", "different question", "new topic".
+
+TURNS TO FIX:
+{turns}
+
+Return ONLY a JSON object mapping turn_id to {{"user_message": "...", "assistant_message": "..."}} (assistant_message null if it was null), nothing else."""
+
+
+def repair(data: dict, errors: list[str], gen: dict, scenario_id: str, round_no: int) -> dict:
+    ids = []
+    for e in errors:
+        m = re.match(r"(t\d+)\b", e)
+        if m and m.group(1) not in ids:
+            ids.append(m.group(1))
+    by = {t["turn_id"]: t for t in data["turns"]}
+    def _rule(tid: str) -> str:
+        return next(e for e in errors if re.match(tid + r"\b", e))
+    block = "\n\n".join(f"{tid} (rule broken: {_rule(tid)})\nuser_message: {by[tid]['user_message']}\nassistant_message: {by[tid].get('assistant_message')}" for tid in ids if tid in by)
+    res = complete(gen["id"], REPAIR_PROMPT.format(turns=block), temperature=0.3, max_tokens=4000, purpose="generation-repair", ref=f"{scenario_id}|repair{round_no}")
+    fixed = extract_json(res.text)
+    for tid, t in fixed.items():
+        if tid in by and isinstance(t, dict):
+            if t.get("user_message"):
+                by[tid]["user_message"] = t["user_message"]
+            if by[tid].get("assistant_message") is not None and t.get("assistant_message"):
+                by[tid]["assistant_message"] = t["assistant_message"]
+    return data
 
 
 def generate(family: str, index: int, man: dict, used: set[str]) -> None:

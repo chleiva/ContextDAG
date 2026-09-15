@@ -1,0 +1,48 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+  long_two_branch_join_002: exists, skipping
+  long_two_branch_join_003: exists, skipping
+  long_two_branch_join_001: exists, skipping
+  long_two_branch_join_004: exists, skipping
+  long_two_branch_join_006: exists, skipping
+  long_two_branch_join_005: exists, skipping
+  long_two_branch_join_007: exists, skipping
+  long_two_branch_join_008: exists, skipping
+  long_three_way_join_001: exists, skipping
+  long_three_way_join_002: exists, skipping
+  long_three_way_join_003: exists, skipping
+  long_three_way_join_004: exists, skipping
+  long_three_way_join_005: exists, skipping
+  long_three_way_join_006: exists, skipping
+  long_resume_001: exists, skipping
+  long_resume_002: exists, skipping
+  long_three_way_join_007: exists, skipping
+  long_three_way_join_008: exists, skipping
+  long_resume_003: exists, skipping
+  long_resume_005: exists, skipping
+  long_resume_006: exists, skipping
+  long_resume_004: exists, skipping
+  long_resume_007: exists, skipping
+  long_resume_008: exists, skipping
+  long_long_noisy_side_thread_002: exists, skipping
+  long_long_noisy_side_thread_003: exists, skipping
+  long_long_noisy_side_thread_004: exists, skipping
+  long_long_noisy_side_thread_001: exists, skipping
+  long_long_noisy_side_thread_007: exists, skipping
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 9700.24it/s]
+  wrote long_long_noisy_side_thread_008: 34 turns, 5246 tok, closure 0.12, cos ratio 0.61, attempt 2, 245s
+  long_new_root_001: exists, skipping
+  long_new_root_002: exists, skipping
+  long_new_root_003: exists, skipping
+  long_new_root_004: exists, skipping
+  long_new_root_005: exists, skipping
+  long_new_root_006: exists, skipping
+  long_new_root_007: exists, skipping
+  long_new_root_008: exists, skipping
+  wrote long_long_noisy_side_thread_006: 58 turns, 6500 tok, closure 0.07, cos ratio 0.63, attempt 3, 472s
+FAILED ('long_noisy_side_thread', 5): RuntimeError: long_long_noisy_side_thread_005: rejected after 4 attempts: t13.user_message contains topic-switch signposting: ['Going back to']; cosine gate failed: median distractor cosine 0.15 vs gold median 0.41 (ratio 0.36 < 0.6); distractor branches must stay much closer to the query's subject (same entities
+1 failures, run spend $1.40
+F0.5 spend: $19.56 of $50.00 hard limit (estimate $20.00, warn $35.00)
+calls: 157, tokens in: 616,509, out: 1,180,553
+  generation       $  19.28
+  generation-repair $   0.28
+  us.anthropic.claude-sonnet-4-6                   $  19.56

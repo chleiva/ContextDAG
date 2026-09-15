@@ -1,0 +1,210 @@
+```json
+{
+  "entity_registry": ["Renata Voss", "Miles Voss", "PawsAboard", "Summit Relocation Services", "Clover Street house", "Ridgeline Neighborhood School"],
+  "turns": [
+    {
+      "turn_id": "t1",
+      "user_message": "We're moving from Portland, Oregon to Austin, Texas in mid-July with our two kids and our dog Biscuit. I want to figure out the pet transport situation first — can you help me understand what's required to bring Biscuit on this cross-country move?",
+      "assistant_message": "For an interstate move from Oregon to Texas with a dog, you'll need a current health certificate issued by a licensed veterinarian within 10 days of travel, proof of rabies vaccination dated within the past 12 months, and a valid dog license from your current county. Texas does not require a state entry permit for dogs, but the health certificate must specifically list the destination state as Texas. If you're using a pet transport service, make sure the certificate is signed and dated no earlier than July 5th if your move date is July 15th."
+    },
+    {
+      "turn_id": "t2",
+      "user_message": "I also need to sort out the moving company contract. Summit Relocation Services sent over a quote — what should I be looking for in the binding estimate?",
+      "assistant_message": "With Summit Relocation Services, a binding estimate locks in the price regardless of actual weight, so confirm the quote covers your full inventory from the Clover Street house. Check that the estimate explicitly lists any accessorial charges such as long-carry fees, stair fees, or shuttle fees, since those can add $300–$800 if not included upfront. Also verify the valuation coverage option — Summit's standard liability is $0.60 per pound per item, but you can upgrade to full replacement value for roughly 1% of the declared value of your shipment. Make sure the delivery window is stated as a specific date range, not an open-ended spread."
+    },
+    {
+      "turn_id": "t3",
+      "user_message": "I need to think about enrolling the kids in school in Austin. What do I need to know about the enrollment process there?",
+      "assistant_message": "Austin ISD requires proof of residency, immunization records, and the previous school's withdrawal form for enrollment. Your children's current school, Ridgeline Neighborhood School, should be able to issue official withdrawal records and academic transcripts within 5 business days of your request. Texas requires an up-to-date meningococcal vaccine for students entering 7th grade and above, so if either child is at that transition, get that handled before the move. Austin ISD's online enrollment portal opens for new-family registrations on July 1st, so you can submit documents as soon as you have your Austin address confirmed."
+    },
+    {
+      "turn_id": "t4",
+      "user_message": "Summit Relocation Services mentioned a fuel surcharge that wasn't in the original quote. Is that normal and how much should I expect?",
+      "assistant_message": "Fuel surcharges are common in long-distance moves and Summit Relocation Services typically applies them as a percentage of the base linehaul rate rather than a flat fee. For a Portland-to-Austin haul of approximately 2,100 miles, the surcharge is usually between 6% and 9% of the linehaul cost, which on a $4,500 base estimate would add $270–$405. Check whether your binding estimate from Summit already incorporates this or treats it as a separate line item, because binding estimates are supposed to be all-in. If the surcharge was not disclosed before signing, you have grounds to request a revised binding estimate under FMCSA regulations."
+    },
+    {
+      "turn_id": "t5",
+      "user_message": "Back on the school enrollment — Ridgeline Neighborhood School said they need two weeks notice to prepare the withdrawal packet. Does that change my timeline?",
+      "assistant_message": "Yes, that two-week lead time from Ridgeline Neighborhood School means you should submit the withdrawal request no later than July 1st if your move date is July 15th. Request that the packet include the official transcript, attendance records, and any IEP or 504 documentation if applicable, since Austin ISD will need all of those for a complete enrollment file. Ask Ridgeline to send the records directly to Austin ISD via their secure records portal as well as giving you a physical copy, which speeds up the process at the receiving end. Confirm the name and contact of the registrar at Ridgeline so you have a direct line if documents are delayed."
+    },
+    {
+      "turn_id": "t6",
+      "user_message": "I'm trying to figure out the storage situation — we need to put some furniture in storage for about two months while we get settled in Austin. What should I be looking at?",
+      "assistant_message": "For a two-month storage period in Austin, you'll want a climate-controlled unit given Texas summer temperatures regularly exceeding 100°F, which can warp wood furniture and damage electronics. A 10x15 unit, which fits the contents of roughly a two-bedroom apartment, runs between $160 and $220 per month in the Austin metro area. Check whether Summit Relocation Services offers vault storage as part of their service, since bundling can save you 10–15% compared to booking a separate facility. You'll also want to confirm the facility carries cargo liability insurance and ask whether your homeowner's policy from the Clover Street house extends coverage to stored goods during transit."
+    },
+    {
+      "turn_id": "t7",
+      "user_message": "Does Ridgeline Neighborhood School require anything special for releasing records to an out-of-state school?",
+      "assistant_message": "Ridgeline Neighborhood School follows FERPA guidelines, which means they need a signed release authorization from a parent or legal guardian before sending records to Austin ISD. The release form must specify the receiving institution by name and address, so have your Austin ISD school assignment confirmed before submitting it. Ridgeline typically processes out-of-state records requests within 10 business days, though they said two weeks to give a safe buffer. Keep a copy of the signed release form for your own records in case there's a dispute about what was authorized."
+    },
+    {
+      "turn_id": "t8",
+      "user_message": "What immunization records specifically will Austin ISD want for both kids?",
+      "assistant_message": "Austin ISD follows the Texas Department of State Health Services schedule, which requires documentation of DTaP, polio, MMR, varicella, hepatitis A, hepatitis B, and meningococcal vaccines. For a child entering kindergarten through 6th grade, all of those except meningococcal are mandatory; meningococcal becomes required at 7th grade entry. Ridgeline Neighborhood School's health office should have a complete immunization record on file that you can request alongside the academic transcript. If any vaccines are missing or expired, your pediatrician in Portland can administer them and issue a new Texas-compliant immunization form before your July 15th move."
+    },
+    {
+      "turn_id": "t9",
+      "user_message": "One of our kids has a 504 plan — how does that transfer to Austin ISD?",
+      "assistant_message": "A 504 plan does not automatically transfer; Austin ISD must conduct its own eligibility review using the documentation from Ridgeline Neighborhood School. Request that Ridgeline include the full 504 plan document, the most recent evaluation, and any progress notes in the withdrawal packet so Austin ISD has everything needed to expedite the review. Austin ISD is required to hold a 504 meeting within a reasonable timeframe, typically 30 days of enrollment, to determine whether to adopt, modify, or replace the existing plan. Contact Austin ISD's Section 504 coordinator directly as soon as you have your school assignment to get on the calendar early."
+    },
+    {
+      "turn_id": "t10",
+      "user_message": "Can Renata Voss handle the Austin ISD enrollment paperwork remotely before we actually arrive, or do we have to be there in person?",
+      "assistant_message": "Austin ISD allows Renata Voss to complete most of the enrollment paperwork online through their new-family portal, including uploading immunization records, the withdrawal packet from Ridgeline Neighborhood School, and proof of residency. However, proof of residency must show an Austin address, so you'll need at least a signed lease or purchase contract before the portal will accept the submission. One parent or guardian must appear in person at the school on or before the first day of attendance to verify identity and sign any remaining forms. If Renata submits everything online by July 20th and the family arrives by late July, the in-person step can be completed during a school orientation visit."
+    },
+    {
+      "turn_id": "t11",
+      "user_message": "Does Summit Relocation Services have a specific weight limit for the storage vault option they mentioned?",
+      "assistant_message": "Summit Relocation Services caps their vault storage units at 2,000 pounds per vault, and each vault measures 5 feet wide by 7 feet tall by 4 feet deep, giving you 140 cubic feet of usable space. If your stored items from the Clover Street house exceed 2,000 pounds, Summit will assign a second vault at the same per-vault rate of $95 per month. The weight is determined at their Portland warehouse using a certified scale before the vault is sealed, and they provide a weight ticket you should keep for insurance purposes. Customers moving from the Clover Street house area typically need 1.5 to 2 vaults for a full household partial storage scenario."
+    },
+    {
+      "turn_id": "t12",
+      "user_message": "If the 504 review in Austin takes longer than 30 days, what protections does our child have in the meantime?",
+      "assistant_message": "Under Section 504 of the Rehabilitation Act, a transferring student is entitled to comparable services while Austin ISD completes its review, meaning the school cannot simply discontinue accommodations because the formal meeting hasn't happened yet. Renata Voss should present the existing 504 plan from Ridgeline Neighborhood School to the new school's principal and 504 coordinator on the first day of attendance and request written confirmation that interim accommodations are in place. If the school refuses or delays beyond 30 days without a written explanation, Renata can file a complaint with the U.S. Department of Education's Office for Civil Rights. Document all communications with the school in writing from day one to create a clear record."
+    },
+    {
+      "turn_id": "t13",
+      "user_message": "For the storage unit, is it better to go with Summit Relocation Services' vault option or rent a separate self-storage unit in Austin?",
+      "assistant_message": "The Summit Relocation Services vault option makes sense if you want a single point of contact and don't need access to your belongings during the two months, since their vaults are sealed and stored in a Portland warehouse until delivered to Austin. A self-storage unit in Austin gives you the flexibility to retrieve items as you need them, which is useful if you're settling into a new place and realize you need things sooner than planned. Given that the Clover Street house contents will already be on a Summit truck, having them deliver directly to an Austin storage facility on the same trip could save you a second handling fee of $150–$300. Miles Voss should compare Summit's all-in vault-to-Austin-delivery quote against a local Austin facility like StorageMart or Public Storage before deciding."
+    },
+    {
+      "turn_id": "t14",
+      "user_message": "Summit Relocation Services just sent a revised contract with a new delivery window. What clauses should Miles Voss watch out for?",
+      "assistant_message": "Miles Voss should scrutinize the spread date clause, which is the range of days Summit Relocation Services may deliver; anything wider than 7 business days should be negotiated down, since a 14-day spread can leave the family without furniture for two weeks. Check for a force majeure clause that could let Summit extend the delivery window indefinitely for vague reasons like weather or traffic, and try to add a cap of 3 additional days maximum. The revised contract should also clearly state the claims filing deadline for damaged goods — Summit's standard is 9 months from delivery, but some revised contracts shorten this to 60 days, which is much harder to meet. Finally, confirm the contract still reflects the binding estimate amount and has not quietly reverted to a non-binding estimate."
+    },
+    {
+      "turn_id": "t15",
+      "user_message": "What's the typical cost for a climate-controlled 10x15 unit in Austin for two months?",
+      "assistant_message": "A climate-controlled 10x15 storage unit in Austin currently runs between $160 and $220 per month at facilities like StorageMart, CubeSmart, and Public Storage, so your two-month total would be $320–$440. Some facilities offer a first-month-free promotion for new customers, which could drop your total to $160–$220 for the two-month period. Miles Voss should book at least three weeks in advance for a July move-in date since Austin's summer demand for climate-controlled units is high and availability tightens quickly. Factor in a refundable security deposit of one month's rent, typically $160–$220, which you'll get back when you vacate."
+    },
+    {
+      "turn_id": "t16",
+      "user_message": "What insurance should we have on the storage unit contents?",
+      "assistant_message": "Your existing homeowner's or renter's policy from the Clover Street house may extend off-premises coverage to stored goods, but it's usually capped at 10% of your personal property coverage limit. If your personal property is insured for $80,000, that means only $8,000 of stored goods would be covered, which may not be enough for furniture, electronics, and other valuables. The storage facility will offer their own protection plan, typically $10–$15 per month for $2,000–$5,000 of coverage, but these plans often exclude flood and earthquake damage. Miles Voss should call your insurance agent before July 1st to confirm the off-premises limit and add a scheduled personal property rider if the standard limit is insufficient."
+    },
+    {
+      "turn_id": "t17",
+      "user_message": "Summit Relocation Services is asking us to sign a separate addendum for the long-distance haul. Is that standard?",
+      "assistant_message": "A separate long-distance addendum is standard practice for interstate movers like Summit Relocation Services and typically covers the specifics of the linehaul: the origin and destination addresses, the agreed mileage rate, and any interstate regulatory disclosures required by the FMCSA. Make sure the addendum references the original binding estimate by its document number so the two are legally linked and the addendum cannot be used to override the pricing you already agreed to. The addendum should also specify which party is responsible for obtaining the necessary permits if the truck needs to use restricted roads near the Clover Street house or the Austin delivery address. Have Miles Voss or Renata Voss sign only after confirming the addendum does not introduce any new fees not already disclosed."
+    },
+    {
+      "turn_id": "t18",
+      "user_message": "Back on the pet transport — I looked into PawsAboard as a pet transport service. What do they typically require from the vet before they'll accept a dog?",
+      "assistant_message": "PawsAboard requires a USDA-accredited veterinarian to issue the health certificate, not just any licensed vet, which is a stricter standard than the basic interstate requirement. The certificate must be issued on USDA Form 7001 and must confirm that Biscuit is free of signs of infectious disease, is fit to travel, and has a current rabies vaccination with the vaccine brand, lot number, and expiration date listed. PawsAboard also requires a copy of Biscuit's full vaccination history going back at least two years, not just the rabies record. Their intake form must be submitted at least 72 hours before the scheduled pickup date, and they will not accept same-day or next-day bookings for interstate transport."
+    },
+    {
+      "turn_id": "t19",
+      "user_message": "For the storage, can we access the Summit vault after it's been sealed?",
+      "assistant_message": "Once Summit Relocation Services seals a storage vault, access is not permitted until the vault is delivered to the destination, which is a standard policy for liability and security reasons. If you anticipate needing any items during the two-month period, Miles Voss should flag those items before the packing date so they can be loaded onto the truck in an accessible position or kept out of the vault entirely. Summit does allow a pre-seal inspection window of up to 30 minutes at their Portland warehouse before the vault doors are locked, so use that time to do a final inventory check. Any items you might need in Austin before the vault arrives should travel in your personal vehicle or be shipped separately."
+    },
+    {
+      "turn_id": "t20",
+      "user_message": "PawsAboard mentioned a crate size requirement. What are the rules there, and does Biscuit's current crate meet them?",
+      "assistant_message": "PawsAboard follows IATA Live Animal Regulations for crate sizing even for ground transport, requiring that the dog be able to stand without touching the roof, turn around naturally, and lie down in a natural position. For a dog Biscuit's size — you mentioned a medium-sized dog — the minimum crate dimensions are typically 30 inches long by 21 inches wide by 24 inches tall, which corresponds to an IATA-compliant size 300 crate. The crate must have a solid floor with no gaps, secure metal fasteners on the door (no plastic bolts), and ventilation on at least three sides. If Biscuit's current crate is a standard wire crate, it will not meet PawsAboard's requirements and you will need to purchase or rent an airline-style hard-sided crate before the booking is confirmed."
+    },
+    {
+      "turn_id": "t21",
+      "user_message": "What happens to the storage unit insurance if we decide to switch from Summit's vault to a self-storage facility in Austin?",
+      "assistant_message": "If you switch from Summit Relocation Services' vault to a self-storage facility in Austin, the coverage situation changes significantly because Summit's cargo liability ends the moment they deliver items to the storage facility. At that point, the self-storage facility's protection plan and your homeowner's policy become your only coverage options. Miles Voss should notify your insurance provider of the storage location change in writing so there is no gap in coverage between the Summit delivery and the start of the facility's protection plan. Most self-storage facilities require you to show proof of insurance or purchase their plan on the same day you sign the rental agreement, so have your policy documentation ready."
+    },
+    {
+      "turn_id": "t22",
+      "user_message": "Is there a minimum rental period for storage units in Austin, or can we do exactly two months?",
+      "assistant_message": "Most Austin self-storage facilities including StorageMart and CubeSmart rent on a month-to-month basis with no minimum commitment beyond the first month, so a two-month rental is straightforward. You'll pay for the first month upfront, and as long as you give 10 days written notice before vacating, you won't be charged for a third month. Some facilities prorate the final month if you move out early, but this varies by contract, so Miles Voss should confirm the proration policy before signing. Public Storage in the Austin metro area does not prorate and charges a full month regardless of move-out date, which is worth knowing if your timeline shifts."
+    },
+    {
+      "turn_id": "t23",
+      "user_message": "PawsAboard also said something about a health certificate expiration window that's different from the standard interstate requirement. Can you clarify?",
+      "assistant_message": "PawsAboard's own policy requires the health certificate to be issued no more than 7 days before Biscuit's scheduled pickup date, which is stricter than the standard 10-day interstate window. This means if your move date is July 15th and PawsAboard picks up Biscuit on that day, the USDA-accredited vet appointment must fall between July 8th and July 14th. If you schedule the vet appointment too early to meet the standard 10-day rule but outside PawsAboard's 7-day window, PawsAboard will reject the certificate and you will need a new appointment. Keep this 7-day window in mind when booking the USDA-accredited vet, since those appointments often have a 3–5 day lead time and availability in late July can be tight."
+    },
+    {
+      "turn_id": "t24",
+      "user_message": "What's the process for getting our deposit back from the Austin self-storage unit when we're done?",
+      "assistant_message": "To recover the security deposit from an Austin self-storage facility, Miles Voss must vacate the unit completely, leave it broom-clean, and return all keys or access cards on or before the move-out date stated in the written notice. The facility manager conducts a walk-through inspection, typically within 24 hours of move-out, and documents any damage beyond normal wear and tear. Under Texas law, the facility must return the deposit within 30 days of move-out, minus any documented deductions, along with an itemized statement if any amount is withheld. Keep photos of the unit at move-in and move-out to protect against disputed damage charges."
+    },
+    {
+      "turn_id": "t25",
+      "user_message": "We need to decide whether to have Summit Relocation Services pack everything or do a hybrid where we pack some boxes ourselves. What are the tradeoffs?",
+      "assistant_message": "If Summit Relocation Services packs your boxes, their full-value replacement coverage applies to everything they pack, but items you pack yourself are covered only at the standard $0.60 per pound liability unless you purchase additional coverage. A full-pack service for the Clover Street house would add roughly $800–$1,200 to your total cost based on Summit's standard packing rates for a 3-bedroom home. A hybrid approach — where Renata Voss or Miles Voss packs clothes, linens, and non-fragile items, and Summit packs dishes, artwork, and electronics — is the most common cost-saving strategy and can reduce packing costs by 40–50%. Just make sure Summit labels any boxes they did not pack as PBO (packed by owner) so there's no ambiguity in a damage claim."
+    },
+    {
+      "turn_id": "t26",
+      "user_message": "What's the best way to document the contents of the boxes we pack ourselves for insurance purposes?",
+      "assistant_message": "The most reliable documentation method is a room-by-room video walkthrough of the Clover Street house before packing begins, followed by a second video of each PBO box open before it's sealed, narrating the contents and their condition. For high-value items, Renata Voss should photograph them individually and note the serial number, purchase price, and approximate replacement value in a written inventory spreadsheet. Store the videos and spreadsheet in a cloud service like Google Drive or iCloud so they're accessible even if your devices are in transit. Submit the completed inventory to Summit Relocation Services before the move date so they have a record on file, and keep a copy to give your insurance provider if a claim is needed."
+    },
+    {
+      "turn_id": "t27",
+      "user_message": "Summit Relocation Services wants a 25% deposit to confirm the booking. Is that typical and when is the rest due?",
+      "assistant_message": "A 25% deposit to confirm a long-distance move booking is within the normal range for reputable movers, though some companies ask for as little as 10%. Summit Relocation Services typically collects the remaining balance on delivery day, before the truck is unloaded, which is standard FMCSA practice for binding estimates. Miles Voss should pay by credit card if possible, since credit card disputes offer consumer protection if Summit fails to deliver as contracted. Never pay the full amount upfront; if any company demands 100% payment before the move, that is a significant red flag for a fraudulent operation."
+    },
+    {
+      "turn_id": "t28",
+      "user_message": "What if Austin ISD doesn't have a school assignment ready by the time we arrive in late July?",
+      "assistant_message": "If Austin ISD has not issued a school assignment by the time Renata Voss and the family arrive in late July, the district is still obligated to enroll the children within a reasonable timeframe under the McKinney-Vento Act's protections, though that act primarily covers homeless students; for a standard new enrollment, the district has discretion on timing. Renata should contact the Austin ISD enrollment office directly and request an expedited assignment, citing the July 15th move date and the fact that documents from Ridgeline Neighborhood School were submitted in advance. Schools in Austin ISD typically begin the fall semester in mid-August, so a late-July arrival still gives a two-to-three week buffer before classes start. If the assigned school is far from your Austin address, you can request a transfer within the first 30 days of enrollment."
+    },
+    {
+      "turn_id": "t29",
+      "user_message": "Are there any red flags we should watch for in Summit Relocation Services' final invoice compared to the binding estimate?",
+      "assistant_message": "On delivery day, Miles Voss should compare the final invoice line by line against the binding estimate Summit Relocation Services provided, checking specifically for any new line items that were not in the original document. Common additions to watch for include a fuel surcharge listed as separate from the binding amount, an additional stair or elevator fee at the Austin delivery address, and an after-hours delivery surcharge if delivery occurs on a weekend or after 5 PM. Under FMCSA rules, a carrier cannot charge more than 110% of a non-binding estimate, but for a binding estimate the price should be exactly as quoted unless you requested additional services after signing. If the invoice exceeds the binding estimate by any amount, do not sign the delivery receipt until the discrepancy is resolved in writing."
+    },
+    {
+      "turn_id": "t30",
+      "user_message": "We're thinking of renting a 10x20 unit instead of a 10x15 for the storage. Does that change the cost significantly?",
+      "assistant_message": "A 10x20 climate-controlled unit in Austin typically runs $220–$290 per month, compared to $160–$220 for a 10x15, so you're looking at an additional $60–$70 per month or $120–$140 extra for your two-month rental. The 10x20 gives you 200 square feet, which is enough for a full three-bedroom household's worth of furniture, so it makes sense if the Clover Street house contents are substantial. Miles Voss should measure the largest furniture pieces — sofas, bed frames, dining tables — and do a rough cubic-footage estimate before committing to the larger unit. Some Austin facilities offer a free unit-size consultation if you provide a room-by-room inventory, which can help you avoid paying for space you don't need."
+    },
+    {
+      "turn_id": "t31",
+      "user_message": "Can Renata Voss request a specific teacher or classroom placement for the kids when enrolling in Austin ISD?",
+      "assistant_message": "Austin ISD does not guarantee teacher placement requests for new enrollees, but Renata Voss can submit a written placement preference to the principal at the assigned school, which many principals will consider if space allows. Requests are most effective when framed around the child's learning needs rather than personal preferences — for example, noting that the child's 504 plan from Ridgeline Neighborhood School recommends a structured classroom environment. The earlier the request is submitted after receiving the school assignment, the more likely it is to be accommodated, since class rosters are typically finalized two weeks before school starts in mid-August. There is no formal appeals process if the request is denied, but Renata can follow up with the assistant principal if the initial response is unsatisfactory."
+    },
+    {
+      "turn_id": "t32",
+      "user_message": "What if we need to extend the storage rental beyond two months because the Austin house isn't ready?",
+      "assistant_message": "Extending a month-to-month self-storage rental in Austin is straightforward — Miles Voss simply does not submit the move-out notice, and the rental automatically continues on the same monthly rate. However, some facilities apply a small rate increase after the promotional period ends, so confirm with the facility whether your introductory rate is locked in for extensions or reverts to the standard rate. If you're using Summit Relocation Services' vault option instead, extensions are billed at $95 per vault per month and require written notice to Summit at least 5 business days before the scheduled delivery date. Plan for a contingency of at least one extra month when budgeting, since new construction and closing delays are common in the Austin market."
+    },
+    {
+      "turn_id": "t33",
+      "user_message": "Does Austin ISD charge any fees for new student enrollment that we should budget for?",
+      "assistant_message": "Austin ISD does not charge a general enrollment fee for public school students, but there are optional fees you should budget for, including a school supply fee of $25–$50 per student, a technology fee of $20–$35 per student for device insurance, and extracurricular activity fees that vary by school. Renata Voss should also budget for school uniforms if the assigned school has a dress code, which roughly half of Austin ISD elementary schools do, at an average cost of $80–$120 per child for a basic set. Physical education uniforms are typically purchased separately through the school's PE department for around $20–$30. Request the school's fee schedule from Austin ISD's enrollment office when you receive the school assignment so there are no surprises at orientation."
+    },
+    {
+      "turn_id": "t34",
+      "user_message": "If we end up needing a second storage vault from Summit, does the insurance coverage double automatically?",
+      "assistant_message": "Summit Relocation Services' standard cargo liability of $0.60 per pound applies per vault, so a second vault does effectively double the total covered weight, but the dollar payout per pound remains the same low rate. If Miles Voss purchased full replacement value coverage on the first vault, that coverage does not automatically extend to a second vault — you must explicitly add the second vault to the coverage agreement in writing before the move date. The additional coverage premium for a second vault is typically 1% of the declared value of that vault's contents, the same rate as the first. Confirm this in writing with Summit's claims department before the Portland load date so there is no ambiguity if you need to file a claim."
+    },
+    {
+      "turn_id": "t35",
+      "user_message": "Given PawsAboard's requirements, what's the latest date we can schedule Biscuit's vet appointment and still have everything in order for a July 15th pickup?",
+      "assistant_message": null
+    }
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that PawsAboard requires the health certificate to be issued no more than 7 days before pickup (not the standard 10-day interstate window).",
+      "required": true,
+      "evidence_turn_ids": ["t23"]
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer identifies July 14th as the latest acceptable date for the vet appointment (given a July 15th pickup and a 7-day window opening July 8th).",
+      "required": true,
+      "evidence_turn_ids": ["t23"]
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer notes that PawsAboard requires a USDA-accredited veterinarian (not just any licensed vet) to issue the certificate on USDA Form 7001.",
+      "required": true,
+      "evidence_turn_ids": ["t18"]
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not state that the vault weight limit is 2,000 pounds or that the vault rate is $95 per month as the basis for the vet appointment deadline (those are Summit storage facts from the near-miss turn t11, irrelevant to the PawsAboard certificate window).",
+      "required": true,
+      "evidence_turn_ids": []
+    }
+  ],
+  "reference_answer": "PawsAboard requires the health certificate to be issued within 7 days of pickup, which is stricter than the standard 10-day interstate rule. For a July 15th pickup, the valid window opens July 8th, making July 14th the absolute latest date to schedule the vet appointment. The appointment must be with a USDA-accredited veterinarian who will issue the certificate on USDA Form 7001. Because USDA-accredited vets often book 3–5 days out, aim to schedule no later than July 10th–11th to ensure availability.",
+  "notes": "The facts the query needs come from t1 (basic interstate health certificate rules), t18 (PawsAboard's USDA-accredited vet and Form 7001 requirement), and t23 (PawsAboard's stricter 7-day certificate window and the July 8–14 date range). The near-miss turn is t11, which answers a question about Summit Relocation Services' vault weight limit (2,000 lbs, $95/month) — superficially similar phrasing about a PawsAboard/Summit requirement but answering a completely different sub-problem."
+}
+```

@@ -1,0 +1,339 @@
+I'll fix all the listed problems: remove topic-switch signposting, keep distractor branches much closer to the same entities and subject matter (warehouse migration details), and ensure high cosine similarity with the gold branch.
+
+```json
+{
+  "entity_registry": [
+    "Priya Nair",
+    "DataVault Pro",
+    "jobs_manifest_v3.yaml",
+    "Snowflake",
+    "ETL_CORE pipeline",
+    "Marcus Tello"
+  ],
+  "turns": [
+    {
+      "turn_id": "t1",
+      "user_message": "We're migrating our nightly batch jobs to Snowflake and I need to document the cutover plan for the ETL_CORE pipeline. Priya Nair is leading the migration and she wants a concrete schedule. Where should we start?",
+      "assistant_message": "The standard approach for migrating ETL_CORE pipeline to Snowflake is to begin with a parallel-run phase where both the legacy warehouse and Snowflake execute the same nightly jobs simultaneously. Priya Nair should schedule this parallel run for at least 14 calendar days to capture two full weekly cycles and verify row counts match within a 0.01% tolerance. The cutover plan should anchor on jobs_manifest_v3.yaml as the authoritative list of all batch jobs, since that document already enumerates 47 distinct nightly tasks with their dependencies and expected completion windows."
+    },
+    {
+      "turn_id": "t2",
+      "user_message": "Got it. What completion window does jobs_manifest_v3.yaml define for the ETL_CORE pipeline overall, and is there a hard SLA we need to hit?",
+      "assistant_message": "According to jobs_manifest_v3.yaml, the ETL_CORE pipeline has a defined completion window of 02:00–05:30 UTC, meaning all 47 tasks must finish by 05:30 UTC each night. The hard SLA agreed with the business is that downstream reporting tables must be fully populated by 06:00 UTC so that the London analytics team can run their morning dashboards. Any individual job within ETL_CORE that breaches the 05:30 UTC deadline triggers an automatic page to the on-call engineer, currently Marcus Tello during the migration period."
+    },
+    {
+      "turn_id": "t3",
+      "user_message": "Marcus mentioned there's a specific job in the pipeline that's been flagged as highest risk for the Snowflake migration. Which job is it and what makes it risky?",
+      "assistant_message": "The job flagged as highest risk is inventory_reconciliation_daily, task ID ETL-047, which is the last job in the ETL_CORE dependency chain and currently runs for an average of 68 minutes on the legacy warehouse. Its risk comes from the fact that it performs a full cross-join across three tables totaling 2.3 billion rows, a pattern that behaves very differently on Snowflake's columnar engine compared to the legacy row-store. Marcus Tello noted in the migration risk register that if ETL-047 runs longer than 90 minutes on Snowflake during parallel run, the team must escalate to Priya Nair immediately for a query rewrite decision."
+    },
+    {
+      "turn_id": "t4",
+      "user_message": "Has anyone tested ETL-047 on Snowflake yet, and what were the initial timing results?",
+      "assistant_message": "Yes, Marcus Tello ran a dry-run of ETL-047 on Snowflake on March 14th using a cloned production dataset from the previous night. The job completed in 41 minutes on Snowflake, compared to its 68-minute legacy average, a 40% improvement attributed to Snowflake's automatic query optimization and the use of a MEDIUM-sized virtual warehouse cluster. However, the dry-run used DataVault Pro's built-in connector, which batched the cross-join into 12 micro-partitions rather than executing it as a single scan, and Priya Nair flagged that this micro-partition count needs to be validated against the production cluster configuration before the parallel run begins."
+    },
+    {
+      "turn_id": "t5",
+      "user_message": "What cluster size and configuration did Priya settle on for the ETL_CORE pipeline in Snowflake production?",
+      "assistant_message": "Priya Nair finalized the production configuration in the migration design document dated March 21st: ETL_CORE pipeline will run on a LARGE virtual warehouse in Snowflake, with multi-cluster scaling set to a minimum of 2 and a maximum of 4 clusters. Auto-suspend is set to 5 minutes after the last query completes, and auto-resume is enabled so that DataVault Pro's scheduler can wake the warehouse without manual intervention. The LARGE size was chosen specifically because ETL-047's cross-join requires at least 128 GB of memory per node to avoid spilling to local disk, which had been causing intermittent failures in earlier X-SMALL and SMALL cluster tests."
+    },
+    {
+      "turn_id": "t6",
+      "user_message": "What's the rollback trigger that Priya defined — at what point during the parallel run do we abandon Snowflake and stay on the legacy system?",
+      "assistant_message": "Priya Nair defined the rollback trigger as follows: if on any single night during the 14-day parallel run the ETL_CORE pipeline on Snowflake fails to complete by 05:30 UTC on more than 2 occasions, the team must immediately halt the parallel run and revert all production traffic to the legacy warehouse. Additionally, if row-count discrepancies between Snowflake and legacy outputs exceed the 0.01% tolerance on 3 or more jobs in a single night, that also constitutes a rollback trigger regardless of timing. Marcus Tello is responsible for monitoring both conditions each morning and logging results in the shared migration dashboard by 07:00 UTC."
+    },
+    {
+      "turn_id": "t7",
+      "user_message": "The jobs_manifest_v3.yaml file — how is it versioned and who has merge rights to it in the repository?",
+      "assistant_message": "jobs_manifest_v3.yaml is stored in the data-platform Git repository under the configs/batch directory and follows a semantic versioning scheme where the major version increments only when jobs are added or removed from the manifest. Merge rights are restricted to three people: Priya Nair as the migration lead, Marcus Tello as the on-call pipeline engineer, and a third approver from the DataVault Pro vendor team who must co-sign any changes affecting job dependency ordering. All pull requests to jobs_manifest_v3.yaml require two approvals and a passing CI validation run that checks YAML schema integrity and dependency cycle detection before merging."
+    },
+    {
+      "turn_id": "t8",
+      "user_message": "I need to track the storage costs we're projecting for Snowflake once ETL_CORE is fully live. Priya shared some estimates — can you help me work through the storage model?",
+      "assistant_message": "Priya Nair's cost estimate, documented in the March 21st migration design document, projects that ETL_CORE pipeline's output tables will consume approximately 4.2 TB of compressed storage in Snowflake at steady state. Snowflake's on-demand storage rate for the team's chosen AWS us-east-1 region is $23 per TB per month, putting the monthly storage bill for ETL_CORE outputs at roughly $96.60 before any Time Travel or Fail-safe overhead. Marcus Tello flagged that Time Travel is configured at 7 days for all ETL_CORE tables, which adds an estimated 30% storage multiplier, bringing the realistic monthly storage cost to approximately $125.58."
+    },
+    {
+      "turn_id": "t9",
+      "user_message": "What about compute costs — how did Priya model the nightly compute spend for the LARGE warehouse running ETL_CORE?",
+      "assistant_message": "Priya Nair modeled compute cost based on the March 14th dry-run timing and the finalized LARGE warehouse configuration. With ETL_CORE running for approximately 3.5 hours nightly on a LARGE warehouse at 2 clusters minimum, the estimated consumption is 7 Snowflake credits per night at the standard rate of $3.00 per credit for the team's Enterprise tier contract, totaling $21.00 per night. Over a 30-day month that projects to $630 in compute costs for ETL_CORE alone, and Marcus Tello added a 15% buffer for re-runs and ad-hoc query activity, landing the budgeted monthly compute at $724.50."
+    },
+    {
+      "turn_id": "t10",
+      "user_message": "Is there a budget cap that's been approved for the Snowflake migration overall, and who approved it?",
+      "assistant_message": "The approved budget for the full Snowflake migration, covering both storage and compute for all pipelines including ETL_CORE, is $18,500 per month for the first six months, after which the team will renegotiate based on actual usage. This budget was approved by the Head of Data Engineering, Sonia Veracruz, on March 18th following Priya Nair's cost presentation to the infrastructure steering committee. DataVault Pro's licensing costs are handled separately under a pre-existing enterprise agreement and are not counted against the $18,500 monthly cap."
+    },
+    {
+      "turn_id": "t11",
+      "user_message": "Has Marcus done a breakdown of how the $18,500 is allocated across the different pipelines beyond ETL_CORE?",
+      "assistant_message": "Marcus Tello produced an allocation spreadsheet on March 22nd that breaks the $18,500 monthly budget into four pipeline buckets. ETL_CORE is allocated $850 total (storage plus compute), the customer_data_sync pipeline is allocated $3,200, the finance_reporting_nightly pipeline is allocated $4,100, and the remaining $10,350 is held as a shared pool for smaller jobs and unplanned re-run costs. Priya Nair reviewed the allocation and flagged that the ETL_CORE figure of $850 is tight given the 15% buffer Marcus built in, and she reserved the right to draw up to $200 from the shared pool if ETL_CORE overruns in the first month."
+    },
+    {
+      "turn_id": "t12",
+      "user_message": "The DataVault Pro connector version we're using for the migration — has the team confirmed which version is deployed and whether it's compatible with Snowflake's current driver requirements?",
+      "assistant_message": "The team is running DataVault Pro connector version 4.7.2, which was confirmed as the deployed version by Marcus Tello on March 19th after a compatibility audit. Snowflake's current JDBC driver requirement for the team's Enterprise tier is driver version 3.13.x or higher, and DataVault Pro 4.7.2 bundles driver version 3.14.1, so compatibility is confirmed. Priya Nair noted in the migration design document that upgrading beyond DataVault Pro 4.7.2 is frozen during the parallel-run phase to avoid introducing connector-level variables while ETL_CORE results are being validated."
+    },
+    {
+      "turn_id": "t13",
+      "user_message": "What's the credit consumption rate if the LARGE warehouse scales up to all 4 clusters during a peak re-run scenario?",
+      "assistant_message": "When the LARGE warehouse scales to all 4 clusters, the credit consumption rate quadruples from the 2-cluster baseline, moving from 7 credits per nightly run to approximately 14 credits for the same 3.5-hour window. At the Enterprise tier rate of $3.00 per credit that Priya Nair negotiated, a full 4-cluster peak run costs $42.00 for a single night's ETL_CORE execution. Marcus Tello built this scenario into his budget model as a worst-case monthly figure: if 4-cluster scaling triggered on 5 nights per month, the additional overage would be $105, which is within the $200 shared-pool draw that Priya reserved."
+    },
+    {
+      "turn_id": "t14",
+      "user_message": "In jobs_manifest_v3.yaml, how are job dependencies expressed — is it a DAG structure or a simple sequential list?",
+      "assistant_message": "jobs_manifest_v3.yaml uses a directed acyclic graph structure where each job entry contains a depends_on field listing zero or more upstream task IDs. The ETL_CORE pipeline's 47 jobs form a DAG with a maximum depth of 9 levels, meaning the longest dependency chain from source ingestion to ETL-047 passes through 9 sequential steps. Priya Nair required the DAG format specifically so that DataVault Pro's scheduler could parallelize independent branches, and Marcus Tello validated the graph has no cycles using the CI check that runs on every pull request to jobs_manifest_v3.yaml."
+    },
+    {
+      "turn_id": "t15",
+      "user_message": "If the 4-cluster scenario triggered every night for a full month, what would the total monthly compute bill look like for ETL_CORE?",
+      "assistant_message": "If all 4 clusters ran every night for 30 days, the nightly cost of $42.00 scales to $1,260 per month for ETL_CORE compute alone. Adding the projected $125.58 monthly storage cost that Priya Nair estimated, the worst-case all-cluster monthly total for ETL_CORE would be approximately $1,385.58. Marcus Tello flagged this scenario as highly unlikely given that the DataVault Pro scheduler is configured to scale down to 2 clusters within 10 minutes of the peak load subsiding, but it is documented as the ceiling in the budget risk register submitted to Sonia Veracruz."
+    },
+    {
+      "turn_id": "t16",
+      "user_message": "DataVault Pro 4.7.2 — does it support automatic schema drift detection for the Snowflake target tables, and has that feature been enabled?",
+      "assistant_message": "DataVault Pro 4.7.2 does include automatic schema drift detection, introduced in version 4.6.0, which monitors source table schemas at the start of each nightly run and compares them against the registered target schema in Snowflake. Marcus Tello enabled this feature for all ETL_CORE target tables on March 20th, configuring it to send an alert to Priya Nair's Slack channel if any column type change or column addition is detected before the job proceeds. The drift detection is set to blocking mode for column deletions — meaning the job halts rather than proceeding — but non-blocking for column additions, which are logged and passed through automatically."
+    },
+    {
+      "turn_id": "t17",
+      "user_message": "The on-call rotation during the parallel run — who is scheduled and what are the escalation tiers?",
+      "assistant_message": "Marcus Tello is the primary on-call engineer for the entire 14-day parallel run period, covering the 02:00–07:00 UTC window when ETL_CORE is executing and results are being validated. The first escalation tier is Priya Nair, who must be paged if any rollback trigger condition is met or if Marcus cannot resolve a blocking issue within 20 minutes. The second escalation tier is the DataVault Pro vendor support line, which operates 24/7 under the enterprise SLA and guarantees a response within 30 minutes for P1 incidents, as documented in the support contract that Sonia Veracruz countersigned on February 28th."
+    },
+    {
+      "turn_id": "t18",
+      "user_message": "Has the team defined what connector settings DataVault Pro 4.7.2 should use for the Snowflake bulk-load operations, specifically around file staging?",
+      "assistant_message": "Yes, Marcus Tello finalized the DataVault Pro 4.7.2 bulk-load configuration on March 20th, specifying that all staging files should use Snowflake's internal stage rather than an external S3 bucket, to avoid cross-cloud egress charges. Files are staged in Parquet format with Snappy compression, and the maximum file size per staged object is set to 256 MB, which DataVault Pro's documentation recommends for optimal COPY INTO performance on a LARGE warehouse. Priya Nair approved this configuration and noted that the internal stage will be automatically purged after each successful COPY INTO operation to prevent storage accumulation in the staging area."
+    },
+    {
+      "turn_id": "t19",
+      "user_message": "What's the escalation path if Marcus can't be reached during the on-call window — is there a backup on-call person defined?",
+      "assistant_message": "The backup on-call engineer for the parallel run period is Dani Osei, a senior pipeline engineer on Priya Nair's team, who takes over if Marcus Tello is unreachable for more than 15 minutes after an initial page. Dani Osei has read access to the migration dashboard and write access to the Snowflake environment sufficient to pause and resume virtual warehouses and re-trigger failed ETL_CORE jobs via the DataVault Pro interface. If both Marcus Tello and Dani Osei are unreachable, the automated fallback defined in the runbook is to suspend the Snowflake run and allow the legacy warehouse job to complete, preserving the 06:00 UTC SLA for the London analytics team."
+    },
+    {
+      "turn_id": "t20",
+      "user_message": "For the Snowflake budget, has the team set up any cost alerts or spending guardrails so that the $18,500 cap isn't silently breached?",
+      "assistant_message": "Marcus Tello configured Snowflake resource monitors on March 23rd to enforce the budget guardrails at two thresholds. The first alert fires at 75% of the monthly credit budget — which Priya Nair translated into a credit limit of 4,625 credits per month at the negotiated $3.00 rate — and sends a notification to both Priya and Sonia Veracruz. The second threshold at 95% of budget triggers an automatic warehouse suspension for all non-critical pipelines, exempting ETL_CORE from suspension to protect the 06:00 UTC SLA, and requires Sonia Veracruz's explicit approval to lift the suspension for any other pipeline."
+    },
+    {
+      "turn_id": "t21",
+      "user_message": "What's the rollback trigger for the customer_data_sync pipeline specifically — at what point do we revert that pipeline to the legacy system?",
+      "assistant_message": "The customer_data_sync pipeline has its own rollback trigger defined separately from ETL_CORE: if customer_data_sync fails to complete within its 04:45 UTC deadline on more than 1 occasion during the parallel run — note that's a stricter threshold than ETL_CORE's 2-occasion rule — the team must revert that pipeline to legacy. Additionally, if any row-count discrepancy in customer_data_sync output tables exceeds 0.005% on even a single night, that is an immediate rollback trigger because downstream CRM systems depend on exact record counts. Marcus Tello documented these stricter thresholds in the pipeline-specific runbook for customer_data_sync on March 22nd, with Priya Nair as the approving sign-off."
+    },
+    {
+      "turn_id": "t22",
+      "user_message": "Dani Osei — what access level does she have to the jobs_manifest_v3.yaml repository, and can she make emergency changes during the parallel run?",
+      "assistant_message": "Dani Osei has read access to the jobs_manifest_v3.yaml repository but does not have merge rights under the standard policy that restricts merges to Priya Nair, Marcus Tello, and the DataVault Pro vendor approver. For emergency changes during the parallel run, a break-glass procedure is documented in the runbook: Dani Osei can open a pull request and Marcus Tello or Priya Nair can merge it with a single approval rather than the usual two, provided the change is limited to disabling a single job entry by setting its enabled flag to false. Any such emergency merge must be followed by a post-incident review within 48 hours, as required by Sonia Veracruz's change management policy."
+    },
+    {
+      "turn_id": "t23",
+      "user_message": "Has Dani Osei been briefed on the DataVault Pro interface procedures for re-triggering failed jobs, and is there a runbook section covering that?",
+      "assistant_message": "Dani Osei completed a two-hour DataVault Pro 4.7.2 interface walkthrough with Marcus Tello on March 17th, specifically covering the job re-trigger workflow for failed ETL_CORE tasks. The runbook section covering re-triggers is Section 4.3, which documents the exact steps: navigate to the Pipeline Monitor view, filter by ETL_CORE, select the failed task by its ETL-ID, and use the Re-run from Checkpoint option rather than a full restart to avoid reprocessing already-completed upstream tasks. Priya Nair reviewed Section 4.3 on March 19th and added a note that re-triggers for ETL-047 specifically must be approved by her before execution due to the high compute cost of rerunning the 2.3-billion-row cross-join."
+    },
+    {
+      "turn_id": "t24",
+      "user_message": "In jobs_manifest_v3.yaml, are there any jobs marked as deprecated that are still running on the legacy system but won't be migrated to Snowflake?",
+      "assistant_message": "Yes, jobs_manifest_v3.yaml marks 6 of the 47 ETL_CORE jobs as deprecated using a status: deprecated field, meaning they will be decommissioned rather than migrated to Snowflake. These 6 deprecated jobs handle legacy flat-file ingestion from a vendor feed that was discontinued in January 2024, and Marcus Tello confirmed on March 15th that they can be safely excluded from the Snowflake parallel run without affecting any downstream reporting tables. Priya Nair documented the decommission plan for these 6 jobs in a separate ticket, scheduling their final run on the legacy warehouse for the last night of the parallel run period, after which they will be archived."
+    },
+    {
+      "turn_id": "t25",
+      "user_message": "For the schema drift detection in DataVault Pro 4.7.2, what happens to a nightly run if a blocking drift event is detected for one of the ETL_CORE jobs — does the whole pipeline halt or just that job?",
+      "assistant_message": "When a blocking drift event is detected — specifically a column deletion — DataVault Pro 4.7.2 halts only the affected job and all its downstream dependents in the ETL_CORE DAG, rather than stopping the entire pipeline. Jobs on independent DAG branches continue executing, so for example if a blocking drift halted a mid-chain job at DAG level 5, the 9-level chain below it would stop but parallel branches at levels 5 through 9 would proceed. Marcus Tello configured an automatic Slack alert to Priya Nair that fires within 2 minutes of a blocking halt, and the alert message includes the affected task ID, the detected schema change, and the count of downstream jobs that have been suspended as a result."
+    },
+    {
+      "turn_id": "t26",
+      "user_message": "Has the team set a ceiling on how many Snowflake credits ETL_CORE specifically can consume in a single month, separate from the overall $18,500 cap?",
+      "assistant_message": "Yes, Marcus Tello created a dedicated resource monitor for ETL_CORE in Snowflake on March 23rd, setting a hard credit cap of 350 credits per month for that pipeline specifically, which at the $3.00 Enterprise rate equates to $1,050. This per-pipeline cap sits above the $850 allocation in Marcus's spreadsheet to give a 23% headroom buffer before the monitor triggers a suspension. Priya Nair approved the 350-credit ceiling and noted that if ETL_CORE hits 280 credits in a month — the 80% warning threshold — Marcus Tello must file a budget variance report to Sonia Veracruz within 24 hours."
+    },
+    {
+      "turn_id": "t27",
+      "user_message": "For the 6 deprecated jobs in jobs_manifest_v3.yaml, has anyone verified that their output tables aren't referenced anywhere in the active DAG before they're decommissioned?",
+      "assistant_message": "Marcus Tello ran a dependency scan on March 16th using DataVault Pro's lineage tool, which traced all downstream references to the 6 deprecated jobs' output tables across the entire jobs_manifest_v3.yaml DAG. The scan confirmed zero active references: none of the 41 non-deprecated ETL_CORE jobs read from the deprecated jobs' output tables, and no external consumers in the reporting layer query those tables. Priya Nair signed off on the scan results on March 17th and added a note that the output tables themselves will be retained in read-only archive storage for 90 days post-decommission as a precaution, after which Marcus Tello will drop them."
+    },
+    {
+      "turn_id": "t28",
+      "user_message": "Have the 6 deprecated jobs been removed from jobs_manifest_v3.yaml already, or are they still in the file with the deprecated status flag?",
+      "assistant_message": "The 6 deprecated jobs remain in jobs_manifest_v3.yaml with their status: deprecated flags intact rather than being removed, because Priya Nair decided that physical removal should happen only after the decommission date has passed and the 90-day archive period has begun. DataVault Pro 4.7.2 reads the deprecated flag and automatically skips those jobs during scheduling, so their presence in the file has no operational impact on the current parallel run. Marcus Tello created a calendar reminder for the removal pull request, targeting July 1st as the date to open the PR that will physically delete the 6 entries, which will require the standard two-approval merge process including sign-off from the DataVault Pro vendor approver."
+    },
+    {
+      "turn_id": "t29",
+      "user_message": "For the schema drift detection, has the team tested what happens in DataVault Pro 4.7.2 when a non-blocking drift — a column addition — is detected mid-run for ETL-047 specifically?",
+      "assistant_message": "Marcus Tello ran a controlled schema drift test for ETL-047 on March 18th by adding a nullable test column to the source table in the staging environment during an active dry-run. DataVault Pro 4.7.2 detected the addition at the start of the next micro-partition batch, logged the event with a warning-level alert, and automatically extended the target Snowflake table schema to include the new column before continuing the COPY INTO operation. Priya Nair reviewed the test log and confirmed the behavior is acceptable for ETL-047, but noted that for the production parallel run, any column addition to ETL-047's source table must still be reviewed by her within 24 hours of the automated alert, even though the job won't halt."
+    },
+    {
+      "turn_id": "t30",
+      "user_message": "Is there a log retention policy for the DataVault Pro 4.7.2 job execution logs stored in Snowflake, and who set that up?",
+      "assistant_message": "Marcus Tello configured the DataVault Pro 4.7.2 execution log retention on March 20th, directing all job logs to a dedicated Snowflake schema named etl_audit with a 90-day retention period enforced by a Snowflake data retention policy. Logs older than 90 days are automatically moved to Snowflake's long-term storage tier at a reduced cost, and Priya Nair specified that logs for ETL-047 specifically must be retained for 180 days due to the job's risk classification in the migration register. The etl_audit schema is read-accessible to Dani Osei and the DataVault Pro vendor support team for troubleshooting, but write access is restricted to the DataVault Pro service account."
+    },
+    {
+      "turn_id": "t31",
+      "user_message": "Dani Osei's access to the Snowflake environment — is she able to view the ETL_CORE resource monitor metrics, or just the pipeline job statuses?",
+      "assistant_message": "Dani Osei has been granted the MONITOR privilege on the ETL_CORE-specific resource monitor in Snowflake, which allows her to view credit consumption, threshold status, and alert history without being able to modify the monitor's settings. She can also view all virtual warehouse metrics for the LARGE warehouse running ETL_CORE, including per-query credit consumption, queue depth, and auto-scaling event history. Priya Nair explicitly excluded Dani Osei from the MODIFY privilege on resource monitors, so any changes to the 350-credit cap or threshold percentages must go through Marcus Tello or Priya Nair directly, per Sonia Veracruz's access control policy."
+    },
+    {
+      "turn_id": "t32",
+      "user_message": "The ETL_CORE resource monitor — if the 350-credit hard cap is hit mid-month, what exactly happens to the warehouse and the running jobs?",
+      "assistant_message": "When the 350-credit hard cap is reached, the Snowflake resource monitor immediately suspends the ETL_CORE LARGE warehouse, which causes any currently executing queries to fail with a warehouse-suspended error. DataVault Pro 4.7.2 is configured to catch this error class and mark the affected jobs as failed rather than retrying automatically, which prevents runaway credit consumption from a retry loop. Marcus Tello must then manually unsuspend the warehouse via the Snowflake console and file the budget variance report to Sonia Veracruz before any ETL_CORE jobs can resume, a process Priya Nair estimated takes a minimum of 30 minutes end-to-end."
+    },
+    {
+      "turn_id": "t33",
+      "user_message": "For the DataVault Pro 4.7.2 execution logs in the etl_audit schema, is there a separate retention rule for schema drift events versus normal job completion logs?",
+      "assistant_message": "Yes, Marcus Tello created a separate Snowflake data retention policy for schema drift event logs within the etl_audit schema on March 20th, setting drift events to a 365-day retention period rather than the standard 90-day rule for normal completion logs. This extended retention was requested by Priya Nair so that the team has a full year of drift history available for the post-migration audit that Sonia Veracruz requires at the 12-month mark. Normal job completion log rows and drift event log rows are distinguished by a log_type column — values job_completion and schema_drift respectively — which the 365-day policy uses as its filter predicate."
+    },
+    {
+      "turn_id": "t34",
+      "user_message": "Has the runbook been reviewed and signed off by anyone outside the immediate migration team, or is it still an internal document?",
+      "assistant_message": "The ETL_CORE migration runbook was submitted for external review on March 20th and was reviewed by two parties outside the immediate team: the enterprise security team, represented by analyst Kwame Asante, and the DataVault Pro vendor's professional services lead. Kwame Asante's security review was completed on March 24th and resulted in two changes: the break-glass procedure for emergency jobs_manifest_v3.yaml merges now requires a mandatory audit log entry, and Dani Osei's Snowflake credentials must be rotated within 24 hours of any break-glass activation. The DataVault Pro vendor review was completed on March 25th with no required changes, only a recommendation to upgrade to DataVault Pro 4.8.0 after the parallel run concludes."
+    },
+    {
+      "turn_id": "t35",
+      "user_message": "The 41 active jobs in jobs_manifest_v3.yaml that are being migrated — has the team categorized them by risk level the way ETL-047 was categorized as highest risk?",
+      "assistant_message": "Marcus Tello completed a full risk classification of all 41 active ETL_CORE jobs on March 16th, categorizing them into three tiers. Tier 1 (highest risk) contains 3 jobs including ETL-047, all of which involve large cross-joins or full-table scans exceeding 500 million rows and require Priya Nair's approval before any re-run. Tier 2 (medium risk) contains 14 jobs that perform incremental loads with moderate join complexity, and Tier 3 (low risk) covers the remaining 24 jobs that are simple append-only inserts or small lookup refreshes that Dani Osei can re-trigger independently without escalation."
+    },
+    {
+      "turn_id": "t36",
+      "user_message": "For the overall Snowflake monthly budget of $18,500, what's the process for requesting a budget increase if actual usage consistently exceeds the cap after the migration goes live?",
+      "assistant_message": "Priya Nair documented the budget increase request process in the migration design document: if actual monthly Snowflake spend exceeds $18,500 for two consecutive months, she must prepare a variance analysis and present it to Sonia Veracruz and the infrastructure steering committee within 15 business days of the second overrun. The steering committee meets on the first Tuesday of each month, so the timing of the overrun determines when the increase request can be heard. Any approved increase takes effect from the first day of the following calendar month, and DataVault Pro's cost reporting module is the designated source of truth for the monthly spend figures used in the variance analysis."
+    },
+    {
+      "turn_id": "t37",
+      "user_message": "Has the DataVault Pro cost reporting module been connected to the Snowflake account yet, and is it pulling accurate figures for the current parallel run?",
+      "assistant_message": "Marcus Tello connected the DataVault Pro cost reporting module to the Snowflake account on March 22nd, configuring it to pull from the SNOWFLAKE.ACCOUNT_USAGE.WAREHOUSE_METERING_HISTORY view on a daily refresh cycle at 08:00 UTC. The module was validated against Snowflake's native billing console on March 23rd, and the figures matched to within 0.2% — the small discrepancy is due to DataVault Pro rounding credits to two decimal places while Snowflake's console shows four. Priya Nair accepted the 0.2% variance as acceptable for budget reporting purposes and confirmed the module is now the designated source of truth as specified in the migration design document."
+    },
+    {
+      "turn_id": "t38",
+      "user_message": "Kwame Asante's security review — did it cover the DataVault Pro service account's Snowflake permissions, and were any changes required there?",
+      "assistant_message": "Kwame Asante's security review explicitly covered the DataVault Pro service account and found that it had been provisioned with SYSADMIN role privileges, which he flagged as excessive for a service account that only needs to read source data, write to target tables, and manage the internal stage. His recommendation, accepted by Priya Nair on March 25th, was to replace the SYSADMIN grant with a custom role named DVP_ETL_ROLE that holds only the specific object-level privileges required for ETL_CORE operations. Marcus Tello implemented the privilege reduction and tested the new DVP_ETL_ROLE on March 26th, confirming all 41 active jobs completed successfully in the staging environment before the change was promoted to production."
+    },
+    {
+      "turn_id": "t39",
+      "user_message": "For DataVault Pro 4.7.2 schema drift detection, does the system handle data type widening — for example a column changing from INTEGER to BIGINT — as blocking or non-blocking?",
+      "assistant_message": "DataVault Pro 4.7.2 classifies data type widening, such as INTEGER to BIGINT, as non-blocking, treating it as a compatible change that can be applied to the Snowflake target schema automatically without halting the job. Marcus Tello confirmed this behavior in the March 18th drift test, where he also tested a narrowing change — BIGINT to INTEGER — which DataVault Pro correctly classified as blocking because it risks data truncation. Priya Nair noted in the migration design document that the team should proactively audit the source schemas for any pending type widening changes before the parallel run begins, to avoid mid-run automatic schema alterations on ETL-047's Snowflake target tables."
+    },
+    {
+      "turn_id": "t40",
+      "user_message": "Has the steering committee received any update on the budget model since Sonia Veracruz approved it on March 18th, given that the DataVault Pro cost module is now live?",
+      "assistant_message": "Priya Nair sent an updated budget status memo to Sonia Veracruz and the steering committee on March 27th, incorporating the first five days of parallel-run cost data from the DataVault Pro reporting module. The memo showed ETL_CORE tracking at $28.40 per day in compute costs during the parallel run — slightly above the $21.00 daily model due to additional validation queries Marcus Tello added — but still within the monthly budget envelope when annualized. Sonia Veracruz acknowledged the memo and requested a second update at the 14-day parallel-run mark, which Priya Nair has scheduled for April 8th."
+    },
+    {
+      "turn_id": "t41",
+      "user_message": "The DVP_ETL_ROLE that Marcus created — does it have permission to create new tables in Snowflake, or only write to pre-existing target tables?",
+      "assistant_message": "DVP_ETL_ROLE is granted CREATE TABLE privilege only within the etl_staging schema in Snowflake, which is used exclusively for temporary staging tables that DataVault Pro creates and drops within a single nightly run. For the production target schemas where ETL_CORE output tables live, DVP_ETL_ROLE has only INSERT, UPDATE, and TRUNCATE privileges on pre-existing tables — it cannot create new tables there. Priya Nair and Kwame Asante agreed on this scoped permission model on March 25th specifically to ensure that schema changes in production target tables can only happen through controlled migrations reviewed by Marcus Tello, not automatically through the DataVault Pro service account."
+    },
+    {
+      "turn_id": "t42",
+      "user_message": "The April 8th steering committee update Priya is preparing — will it include a revised cost projection for the full 6-month migration period, or just the parallel-run actuals?",
+      "assistant_message": "Priya Nair confirmed to Marcus Tello on March 28th that the April 8th update will include both the 14-day parallel-run actuals and a revised 6-month projection based on observed usage patterns. The revised projection will use the DataVault Pro cost reporting module's trend extrapolation feature, which Marcus configured to project forward 180 days using a 7-day rolling average of actual credit consumption. If the revised 6-month projection exceeds the original $18,500 monthly cap by more than 10%, Priya is prepared to request a formal budget amendment from Sonia Veracruz at the same April 8th meeting."
+    },
+    {
+      "turn_id": "t43",
+      "user_message": "For the etl_staging schema where DVP_ETL_ROLE can create tables, is there a quota or size limit on how much storage those temporary staging tables can consume?",
+      "assistant_message": "Marcus Tello set a Snowflake resource monitor on the etl_staging schema on March 26th that triggers an alert if temporary staging table storage exceeds 500 GB at any point during a nightly run. Priya Nair requested this limit after reviewing DataVault Pro 4.7.2's documentation, which warns that staging tables for large cross-join operations can balloon if the COPY INTO step fails partway through and leaves partial files. The alert goes to Marcus Tello and Dani Osei simultaneously, and if the 500 GB threshold is hit, the on-call engineer must manually purge the etl_staging schema and re-trigger the affected job from the last successful checkpoint per Section 4.3 of the runbook."
+    },
+    {
+      "turn_id": "t44",
+      "user_message": "Of the 41 active jobs being migrated, how many have been successfully validated in the Snowflake staging environment so far, and who is tracking that progress?",
+      "assistant_message": "As of March 26th, 33 of the 41 active ETL_CORE jobs have been validated in the Snowflake staging environment, with validation defined as matching the legacy output row counts within the 0.01% tolerance on 3 consecutive dry-run nights. Marcus Tello maintains the validation tracker in a shared spreadsheet linked from the migration design document, with each job row showing its ETL-ID, risk tier, validation status, and the date it passed. The 8 remaining unvalidated jobs are all Tier 1 or Tier 2 risk, including ETL-047, and Priya Nair has set a deadline of March 31st for completing validation on all 8 so the parallel run can start on schedule."
+    },
+    {
+      "turn_id": "t45",
+      "user_message": "For the April 8th budget update, will Sonia Veracruz also see a breakdown of the credit consumption by pipeline, not just the ETL_CORE figures?",
+      "assistant_message": "Yes, Priya Nair confirmed that the April 8th memo will include a full pipeline-by-pipeline credit breakdown sourced from the DataVault Pro cost reporting module, covering ETL_CORE, customer_data_sync, finance_reporting_nightly, and the shared pool. Marcus Tello structured the DataVault Pro module's pipeline tagging on March 22nd so that every Snowflake query is tagged with its originating pipeline name, enabling exact per-pipeline credit attribution rather than estimates. Sonia Veracruz specifically requested this granularity at the March 18th steering committee meeting so she could evaluate whether Marcus's original allocation spreadsheet — which gave ETL_CORE $850 and finance_reporting_nightly $4,100 — accurately reflected actual usage patterns."
+    },
+    {
+      "turn_id": "t46",
+      "user_message": "Has the team audited the source schemas for type widening changes before the parallel run, as Priya recommended in the migration design document?",
+      "assistant_message": "Marcus Tello completed the source schema audit on March 24th, scanning all column type definitions across the 41 active ETL_CORE jobs' source tables using a DataVault Pro 4.7.2 schema comparison report. The audit identified 7 columns across 4 tables that are candidates for INTEGER-to-BIGINT widening within the next 6 months, based on current row counts approaching the 32-bit integer ceiling of approximately 2.1 billion. Priya Nair reviewed the audit results and decided that none of the 7 columns will breach the 2.1 billion threshold during the 14-day parallel run, so no preemptive type changes are needed before the parallel run starts, but the 7 columns are flagged for monitoring in the migration dashboard."
+    },
+    {
+      "turn_id": "t47",
+      "user_message": "For those 7 flagged columns, if one of them does hit the integer ceiling during the parallel run, what's the contingency plan?",
+      "assistant_message": "Priya Nair documented the contingency in the migration design document: if any of the 7 flagged columns hits the INTEGER ceiling during the parallel run, DataVault Pro 4.7.2 will detect the resulting overflow as a blocking schema drift event and halt the affected job. Marcus Tello will then execute a pre-written ALTER TABLE statement — already reviewed by Kwame Asante and stored in the runbook as Section 5.2 — to widen the column to BIGINT in the Snowflake target table, after which the job can be re-triggered from checkpoint. The same ALTER TABLE must also be applied to the legacy warehouse table by the database administrator to keep both systems in sync during the parallel run, a step that requires sign-off from Priya Nair before execution."
+    },
+    {
+      "turn_id": "t48",
+      "user_message": "For the runbook Section 4.3 re-trigger procedure, has it been tested end-to-end in the staging environment with an actual failed job scenario?",
+      "assistant_message": "Marcus Tello and Dani Osei ran a full end-to-end test of the Section 4.3 re-trigger procedure on March 19th, deliberately failing ETL-047 in the staging environment by revoking the DataVault Pro service account's INSERT privilege mid-run to simulate a permission error. The re-trigger from checkpoint completed successfully in 23 minutes, processing only the 8 micro-partitions that had not yet been committed when the failure occurred, rather than restarting the full 2.3-billion-row cross-join. Priya Nair observed the test and signed off on Section 4.3 as validated, with one annotation added: re-triggering ETL-047 from checkpoint requires confirming that the Snowflake internal stage still contains the uncommitted Parquet files, which expire after 24 hours."
+    },
+    {
+      "turn_id": "t49",
+      "user_message": "The 8 remaining unvalidated jobs — have any of them completed validation since the March 26th status update, and is the March 31st deadline still on track?",
+      "assistant_message": "As of March 28th, 3 of the 8 remaining unvalidated jobs have passed validation, bringing the total validated count to 36 of 41. The 3 newly validated jobs were all Tier 2 risk, completing their third consecutive matching dry-run night on March 27th, and Marcus Tello updated the tracker accordingly. The 5 still-unvalidated jobs include ETL-047 and 4 other Tier 1 or Tier 2 tasks, and Priya Nair confirmed on March 28th that the March 31st deadline is still achievable provided the next two dry-run nights produce matching results, which would complete validation for the remaining 5 jobs in time."
+    },
+    {
+      "turn_id": "t50",
+      "user_message": "The 10% budget amendment threshold Priya mentioned — is that 10% above the $18,500 monthly cap, meaning a $20,350 trigger, or is it calculated differently?",
+      "assistant_message": "Priya Nair confirmed to Marcus Tello on March 28th that the 10% threshold is calculated against the approved $18,500 monthly cap, so the amendment trigger is at $20,350 per month. The calculation uses the DataVault Pro cost reporting module's monthly total, which includes both compute credits and storage costs, not compute alone. If the revised 6-month projection in the April 8th memo shows any single projected month exceeding $20,350, Priya will table the budget amendment request at that same meeting rather than waiting for an actual overrun, as Sonia Veracruz indicated she prefers proactive requests over reactive ones."
+    },
+    {
+      "turn_id": "t51",
+      "user_message": "For the Section 5.2 ALTER TABLE statements stored in the runbook, are they parameterized or written for specific table and column names?",
+      "assistant_message": "The Section 5.2 ALTER TABLE statements are written for the 7 specific flagged table-column pairs identified in Marcus Tello's March 24th audit, each statement pre-populated with the exact Snowflake fully qualified table name, column name, and target type of BIGINT. Priya Nair and Kwame Asante reviewed each of the 7 statements individually on March 25th to confirm they are syntactically correct and that the target columns are not part of any clustering key or Snowflake search optimization index that would require additional steps. A generic parameterized template is also included in Section 5.2 for any column widening scenarios not covered by the 7 pre-written statements, but using the template requires Priya Nair's explicit approval before execution."
+    },
+    {
+      "turn_id": "t52",
+      "user_message": "In jobs_manifest_v3.yaml, are the 3 Tier 1 jobs including ETL-047 clustered at the end of the DAG, or are they distributed across different dependency levels?",
+      "assistant_message": "The 3 Tier 1 jobs are distributed across different DAG levels rather than clustered at the end. ETL-047 sits at DAG level 9, the deepest level, as the final aggregation step. The second Tier 1 job, ETL-019, sits at DAG level 4 and performs a 1.2-billion-row merge operation on the customer transaction history table. The third Tier 1 job, ETL-031, sits at DAG level 6 and executes a multi-table cross-reference join across 5 tables totaling 800 million rows, and its output feeds directly into ETL-047 as a level-8 intermediate step before the final cross-join, per the dependency structure in jobs_manifest_v3.yaml."
+    },
+    {
+      "turn_id": "t53",
+      "user_message": "Has Dani Osei been given the Section 5.2 ALTER TABLE runbook section to review, given that she might need to execute it during an on-call shift?",
+      "assistant_message": "Dani Osei reviewed Section 5.2 on March 26th and confirmed familiarity with all 7 pre-written ALTER TABLE statements, but the runbook explicitly restricts her execution authority: she can prepare and stage the ALTER TABLE command but must receive real-time verbal or Slack confirmation from Priya Nair before running it in production Snowflake. This restriction applies even during on-call hours, meaning if Priya Nair is unreachable, Dani Osei must hold the ALTER TABLE and allow the affected job to remain in a failed state rather than proceeding unilaterally. Marcus Tello added a note to Section 5.2 on March 26th clarifying that the 24-hour Parquet file expiry for re-triggers gives sufficient time to reach Priya Nair before the checkpoint window closes."
+    },
+    {
+      "turn_id": "t54",
+      "user_message": "For ETL-019 at DAG level 4, has it completed validation in the Snowflake staging environment, and what were its timing results?",
+      "assistant_message": "ETL-019 completed its third consecutive successful validation dry-run on March 27th, making it one of the 3 newly validated Tier 2 jobs — though Marcus Tello later clarified in the tracker that ETL-019 was actually reclassified from Tier 1 to Tier 2 on March 16th after the 1.2-billion-row merge was rewritten to use an incremental load pattern rather than a full merge, reducing its risk profile. Its Snowflake timing came in at 34 minutes per run, compared to 51 minutes on the legacy warehouse, a 33% improvement. Priya Nair noted the ETL-019 validation as a positive signal for the remaining unvalidated Tier 1 jobs, since the incremental rewrite pattern used there could potentially be applied to ETL-031 as well."
+    },
+    {
+      "turn_id": "t55",
+      "user_message": "The DataVault Pro cost reporting module's 7-day rolling average for the revised projection — has Marcus configured it to exclude the parallel-run validation queries from the projection baseline, since those won't exist in steady-state production?",
+      "assistant_message": "Marcus Tello addressed this on March 28th by adding a query tag filter to the DataVault Pro cost reporting module that excludes all queries tagged parallel_run_validation from the 7-day rolling average used for the 6-month projection. The validation queries were accounting for approximately 18% of daily credit consumption during the parallel run, so excluding them reduces the projected steady-state daily compute figure from $28.40 to approximately $23.29 for ETL_CORE. Priya Nair confirmed this adjusted baseline is the correct input for the April 8th projection and asked Marcus to document the filtering methodology in the memo so Sonia Veracruz can audit the calculation."
+    },
+    {
+      "turn_id": "t56",
+      "user_message": "With the adjusted $23.29 daily compute figure, does the revised 6-month projection still come in under the $18,500 monthly cap, or is a budget amendment now expected?",
+      "assistant_message": "Using the $23.29 adjusted daily ETL_CORE compute figure and adding the $125.58 monthly storage estimate, ETL_CORE's steady-state monthly cost projects to approximately $824.28, well within its $850 allocation. When Marcus Tello aggregated all pipelines using their respective adjusted baselines on March 28th, the total projected monthly Snowflake spend came to $16,840, giving $1,660 of headroom against the $18,500 cap. Priya Nair told Marcus the projection is favorable enough that she does not expect to need a budget amendment at the April 8th meeting, though she will still present the full breakdown to Sonia Veracruz as planned."
+    },
+    {
+      "turn_id": "t57",
+      "user_message": "For the ETL-031 incremental rewrite that Priya suggested — has any scoping work started on that, and who would own it?",
+      "assistant_message": "Priya Nair created a scoping ticket for the ETL-031 incremental rewrite on March 28th, assigning it to Marcus Tello as the primary owner with Dani Osei as a contributor. The ticket notes that the rewrite is out of scope for the current migration parallel run and is targeted for a post-migration sprint in May, after the Snowflake cutover is complete and the team has capacity. Marcus Tello added an initial estimate of 5 engineering days for the rewrite, based on the ETL-019 incremental conversion taking 4 days, with one additional day added for ETL-031's more complex 5-table join structure documented in jobs_manifest_v3.yaml."
+    },
+    {
+      "turn_id": "t58",
+      "user_message": "For the April 8th memo, will the per-pipeline credit breakdown include the parallel-run period actuals separately from the steady-state projections, or will they be blended together?",
+      "assistant_message": "Priya Nair decided on March 28th that the April 8th memo will present the parallel-run actuals and steady-state projections in two separate sections to avoid confusion. The actuals section will cover March 25th through April 7th — the first 14 days of the parallel run — and will include all query tags including the parallel_run_validation queries that Marcus Tello excluded from the projection baseline. The projection section will use only the filtered 7-day rolling averages per pipeline, with a footnote explaining the 18% validation-query exclusion for ETL_CORE, so Sonia Veracruz can see both the full observed cost and the adjusted steady-state forecast side by side."
+    },
+    {
+      "turn_id": "t59",
+      "user_message": "If during the 14-day parallel run the ETL_CORE pipeline on Snowflake misses the 05:30 UTC deadline exactly twice, and on a third night there are row-count discrepancies on 4 jobs — does that trigger a rollback?",
+      "assistant_message": null
+    }
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer correctly states that missing the 05:30 UTC deadline on exactly 2 nights does NOT by itself trigger a rollback, because the deadline-miss rollback trigger requires more than 2 occasions (i.e., 3 or more).",
+      "required": true,
+      "evidence_turn_ids": ["t6"]
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer correctly states that row-count discrepancies exceeding 0.01% tolerance on 3 or more jobs in a single night triggers a rollback, and therefore 4 jobs with discrepancies on the third night does trigger the rollback.",
+      "required": true,
+      "evidence_turn_ids": ["t6"]
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer correctly identifies Marcus Tello as the person responsible for monitoring both rollback conditions each morning and logging results in the migration dashboard by 07:00 UTC.",
+      "required": true,
+      "evidence_turn_ids": ["t6"]
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not use the customer_data_sync rollback thresholds (1 deadline miss or 0.005% row-count discrepancy) as the answer, as those apply to a different pipeline.",
+      "required": true,
+      "evidence_turn_ids": []
+    }
+  ],
+  "reference_answer": "Two deadline misses alone do not trigger a rollback for ETL_CORE: the deadline-miss trigger requires the pipeline to fail the 05:30 UTC deadline on more than 2 occasions during the parallel run. However, the row-count discrepancy condition is met independently: if discrepancies exceed 0.01% on 3 or more jobs in a single night, that is a rollback trigger regardless of timing, and 4 jobs with discrepancies on the third night clears that threshold. So yes, a rollback is triggered — by the row-count condition on that third night. Marcus Tello is responsible for monitoring both conditions each morning and logging results in the migration dashboard by 07:00 UTC.",
+  "notes": "The facts needed to answer the query are all in t6, which defines both rollback triggers (more than 2 deadline misses, or row-count discrepancies on 3+ jobs in a single night) and names Marcus Tello as the monitor. The near-miss turn is t21, which gives the customer_data_sync pipeline's rollback thresholds (1 deadline miss, 0.005% row-count discrepancy) — plausible-sounding but wrong pipeline and wrong numbers."
+}
+```

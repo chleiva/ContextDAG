@@ -1,0 +1,145 @@
+{
+ "scenario_id": "long_long_noisy_side_thread_002",
+ "family": "long_noisy_side_thread",
+ "n_history": 47,
+ "full_history_tokens": 8440,
+ "closure_ratio": 0.06382978723404255,
+ "entity_registry": [
+  "Marcus Velde",
+  "Stellarpath 10-inch Ritchey-Chr\u00e9tien",
+  "AZ-EQ6 Pro mount",
+  "SynScan firmware v4.39.05",
+  "Backyard Observatory Build Log v2",
+  "Polaris Offset Calculator spreadsheet"
+ ],
+ "distractor_branch_entity_hits": {
+  "D": [
+   "Marcus Velde",
+   "Stellarpath 10-inch Ritchey-Chr\u00e9tien",
+   "AZ-EQ6 Pro mount",
+   "Backyard Observatory Build Log v2",
+   "Polaris Offset Calculator spreadsheet"
+  ],
+  "E": [
+   "Marcus Velde",
+   "Stellarpath 10-inch Ritchey-Chr\u00e9tien",
+   "AZ-EQ6 Pro mount",
+   "Backyard Observatory Build Log v2"
+  ],
+  "F": [
+   "Marcus Velde",
+   "Stellarpath 10-inch Ritchey-Chr\u00e9tien",
+   "AZ-EQ6 Pro mount",
+   "SynScan firmware v4.39.05",
+   "Backyard Observatory Build Log v2",
+   "Polaris Offset Calculator spreadsheet"
+  ],
+  "G": [
+   "Marcus Velde",
+   "Stellarpath 10-inch Ritchey-Chr\u00e9tien",
+   "AZ-EQ6 Pro mount",
+   "SynScan firmware v4.39.05",
+   "Backyard Observatory Build Log v2",
+   "Polaris Offset Calculator spreadsheet"
+  ],
+  "H": [
+   "Marcus Velde",
+   "Stellarpath 10-inch Ritchey-Chr\u00e9tien",
+   "AZ-EQ6 Pro mount",
+   "Backyard Observatory Build Log v2",
+   "Polaris Offset Calculator spreadsheet"
+  ],
+  "I": [
+   "Marcus Velde",
+   "Stellarpath 10-inch Ritchey-Chr\u00e9tien",
+   "AZ-EQ6 Pro mount",
+   "SynScan firmware v4.39.05",
+   "Backyard Observatory Build Log v2",
+   "Polaris Offset Calculator spreadsheet"
+  ]
+ },
+ "near_miss_turn_id": "t17",
+ "checklist_evidence": {
+  "c1": [
+   "t9"
+  ],
+  "c2": [
+   "t9"
+  ],
+  "c3": [
+   "t9"
+  ],
+  "c4": []
+ },
+ "cosine": {
+  "gold_median": 0.5844683647155762,
+  "distractor_median": 0.3788374960422516,
+  "ratio": 0.6481745102262427,
+  "pass": true
+ },
+ "cosine_per_turn": {
+  "t1": 0.5844683647155762,
+  "t2": 0.2700193524360657,
+  "t3": 0.38185256719589233,
+  "t4": 0.4452129304409027,
+  "t5": 0.4022023677825928,
+  "t6": 0.467642605304718,
+  "t7": 0.3612534999847412,
+  "t8": 0.48128974437713623,
+  "t9": 0.7421842813491821,
+  "t10": 0.18903571367263794,
+  "t11": 0.19670650362968445,
+  "t12": 0.33742815256118774,
+  "t13": 0.5048856735229492,
+  "t14": 0.3263658881187439,
+  "t15": 0.4456404149532318,
+  "t16": 0.4177342355251312,
+  "t17": 0.4773089289665222,
+  "t18": 0.2734111547470093,
+  "t19": 0.20489101111888885,
+  "t20": 0.404654860496521,
+  "t21": 0.17582103610038757,
+  "t22": 0.41524121165275574,
+  "t23": 0.46225497126579285,
+  "t24": 0.5219727158546448,
+  "t25": 0.4720759391784668,
+  "t26": 0.38145530223846436,
+  "t27": 0.20657654106616974,
+  "t28": 0.35706454515457153,
+  "t29": 0.3317060172557831,
+  "t30": 0.39235183596611023,
+  "t31": 0.4375641942024231,
+  "t32": 0.2659490704536438,
+  "t33": 0.28194600343704224,
+  "t34": 0.4038078784942627,
+  "t35": 0.0969218760728836,
+  "t36": 0.3714607059955597,
+  "t37": 0.4121973514556885,
+  "t38": 0.2797916531562805,
+  "t39": 0.5180911421775818,
+  "t40": 0.22205770015716553,
+  "t41": 0.2517699599266052,
+  "t42": 0.2639694809913635,
+  "t43": 0.37719136476516724,
+  "t44": 0.5159708261489868,
+  "t45": 0.3906204104423523,
+  "t46": 0.38048362731933594,
+  "t47": 0.163987934589386
+ },
+ "gold_branches": [
+  "A"
+ ],
+ "distractor_branches": [
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I"
+ ],
+ "attempt_accepted": 3,
+ "generation_tokens": [
+  5136,
+  12370
+ ]
+}

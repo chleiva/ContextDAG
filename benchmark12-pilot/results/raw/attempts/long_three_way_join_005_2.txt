@@ -1,0 +1,317 @@
+I need to create a conversation where distractors stay very close to the same subject matter (card game balancing) and reuse the same entities, while the gold branches establish specific facts the final query needs.
+
+Let me design the entity registry and branches carefully:
+
+**Entity Registry**: Marcus Veil (designer), Priya Nath (playtester), "Dominion Protocol" (game name), the "Siege Deck" (card set), the "Rulebook v2.3" (document), "Hollow Press" (publisher)
+
+**Gold branches**:
+- A: Hand size limit mechanics → final decision: hand limit is 7 cards
+- B: Victory point thresholds → final decision: players need 15 VP to trigger end-game
+- C: Card draw rate per turn → final decision: base draw is 3 cards per turn
+
+**Query**: How should the end-game scoring formula work given hand size, VP threshold, and draw rate together?
+
+**Distractors**: D = mana/resource cost balancing, E = card artwork/printing budget, F = tournament rules/event format
+
+Let me write all 53 turns now.
+
+```json
+{
+  "entity_registry": ["Marcus Veil", "Priya Nath", "Dominion Protocol", "Siege Deck", "Rulebook v2.3", "Hollow Press"],
+  "turns": [
+    {
+      "turn_id": "t1",
+      "user_message": "I'm working on Dominion Protocol and trying to nail down the hand size limit. Marcus Veil suggested capping it at 7 cards — does that hold up mechanically?",
+      "assistant_message": "A hand limit of 7 cards is a strong anchor for Dominion Protocol. At 7, players can hold enough options to make meaningful tactical choices each turn without the decision space becoming overwhelming. Marcus Veil's instinct aligns with playtesting data from similar card games where 6–8 cards is the sweet spot. I'd recommend locking 7 as the official hand limit in Rulebook v2.3."
+    },
+    {
+      "turn_id": "t2",
+      "user_message": "Hollow Press wants a tournament format finalized. How many rounds should a Swiss-style event run for Dominion Protocol?",
+      "assistant_message": "For Dominion Protocol at a Hollow Press sanctioned event, a Swiss-style tournament with 32 players should run 5 rounds before cutting to a top-8 single-elimination bracket. Each Swiss round should be allotted 45 minutes, giving a total Swiss runtime of roughly 3 hours 45 minutes. This format is standard for comparable card games and gives Hollow Press a clean schedule to publish. Marcus Veil has already signed off on this structure for the inaugural Dominion Protocol Open."
+    },
+    {
+      "turn_id": "t3",
+      "user_message": "I need to figure out the print budget for the Siege Deck expansion. Priya Nath said the artwork cost per card is the main variable — what's a reasonable per-card art budget?",
+      "assistant_message": "For a set like the Siege Deck, professional card art typically runs between $150 and $300 per illustration depending on complexity and artist tier. Priya Nath's estimate of roughly $200 per card is a reasonable midpoint for Hollow Press's budget tier. If the Siege Deck contains 60 unique cards, you're looking at a total art budget of approximately $12,000. That figure should be submitted to Hollow Press's production team at least 90 days before the print deadline."
+    },
+    {
+      "turn_id": "t4",
+      "user_message": "The Siege Deck has some cards with full-bleed painted backgrounds — those will cost more. How should we tier the artwork budget?",
+      "assistant_message": "A tiered approach works well for the Siege Deck's art budget. Standard illustrated cards can stay at $200 each, while full-bleed painted backgrounds should be budgeted at $350 per card. If Priya Nath's count of 12 full-bleed cards in the Siege Deck is accurate, that's $4,200 for premium art plus $9,600 for the remaining 48 standard cards, totaling $13,800. Hollow Press should approve this revised figure before Marcus Veil finalizes the card list."
+    },
+    {
+      "turn_id": "t5",
+      "user_message": "Are there any cards in the Siege Deck that might need a second artist pass because of lore accuracy issues?",
+      "assistant_message": "Based on Priya Nath's lore review notes, three cards in the Siege Deck flagged for a second artist pass are the Ironclad Warden, the Shattered Bastion, and the Veilborn Sentinel. The Veilborn Sentinel in particular conflicts with the faction design established in Rulebook v2.3, showing armor that belongs to a different faction. A second pass typically adds $80–$120 per card, so budget an additional $300 for those three corrections. Marcus Veil should sign off on the revised art briefs before sending them back to the illustrators."
+    },
+    {
+      "turn_id": "t6",
+      "user_message": "What's the timeline for getting all Siege Deck artwork finalized and sent to Hollow Press?",
+      "assistant_message": "Hollow Press requires print-ready files 60 days before the release date, so working backward from a March 15 release, all Siege Deck artwork must be delivered by January 14. First-pass illustrations should be completed by December 10 to leave room for the second artist passes that Priya Nath flagged. Marcus Veil should send final art briefs to all illustrators no later than November 1 to keep that schedule intact. Any delays beyond December 10 risk pushing the release date or incurring rush fees from Hollow Press."
+    },
+    {
+      "turn_id": "t7",
+      "user_message": "How many rounds should a Dominion Protocol event run if it uses a round-robin format instead of Swiss, with 8 players?",
+      "assistant_message": "For an 8-player round-robin event for Dominion Protocol, each player must face every other player once, which means exactly 7 rounds total. At 45 minutes per round, the full event runs 5 hours 15 minutes, which Hollow Press considers the upper limit for a single-day event. Marcus Veil recommended capping round-robin events at 8 players for exactly this reason — larger pools would exceed one day. Priya Nath's event coordination notes specify that round-robin is reserved for invitational events only, not open tournaments."
+    },
+    {
+      "turn_id": "t8",
+      "user_message": "I'm trying to balance the resource costs on action cards in Dominion Protocol. Should the base cost for a 3-power action card be 2 mana or 3 mana?",
+      "assistant_message": "For Dominion Protocol, a 3-power action card should cost 3 mana under the current cost curve established in Rulebook v2.3. The design principle Marcus Veil settled on is a 1-to-1 power-to-cost ratio for action cards as the baseline, with efficiency bonuses only for cards that have significant drawbacks or conditions. Priya Nath's playtesting sessions showed that 2-mana 3-power cards consistently dominated early turns and compressed game length by about 4 rounds on average. Keeping the base cost at 3 mana preserves the intended mid-game tension."
+    },
+    {
+      "turn_id": "t9",
+      "user_message": "What about the Siege Deck's heavy assault cards — they have 5 power. Should they cost 5 mana or get a premium cost?",
+      "assistant_message": "The Siege Deck's heavy assault cards should carry a premium cost of 6 mana for 5 power, one above the baseline ratio. Marcus Veil's design notes specify that any card with an area-of-effect component — which all five heavy assault cards in the Siege Deck have — should cost one additional mana to prevent board-wipe combos from appearing too early. Priya Nath recorded in her playtest log from October 3 that a 5-mana 5-power AoE card ended games in an average of 2.3 fewer turns than intended. The 6-mana cost restores the expected game length."
+    },
+    {
+      "turn_id": "t10",
+      "user_message": "For the Hollow Press tournament, what's the penalty structure if a player accidentally draws extra cards during a match?",
+      "assistant_message": "Hollow Press's penalty structure for Dominion Protocol sanctioned events follows a three-tier system. A first offense for accidentally drawing extra cards results in a Caution with no game loss, and the extra cards are revealed and shuffled back. A second offense in the same match escalates to a Warning, and the opponent may choose which card is shuffled back. A third offense results in a Game Loss, as codified in the Dominion Protocol tournament rules document that Marcus Veil submitted to Hollow Press on September 22. Priya Nath, serving as head judge at the inaugural event, has discretion to upgrade any penalty if intent is suspected."
+    },
+    {
+      "turn_id": "t11",
+      "user_message": "Has Priya Nath flagged any specific cards in the Siege Deck whose art budget might need to be cut to stay under the $13,800 total?",
+      "assistant_message": "Priya Nath flagged two cards as candidates for budget reduction: the Siege Commander and the Rampart Golem. Both were originally slated as full-bleed painted pieces at $350 each, but Priya Nath noted in her November 4 memo that their in-game prominence doesn't justify the premium. Downgrading both to standard illustrated art at $200 each would save $300, bringing the Siege Deck art total to $13,500. Marcus Veil agreed to this change provided the Siege Commander retains its foil treatment in the final print run."
+    },
+    {
+      "turn_id": "t12",
+      "user_message": "What foil treatment options does Hollow Press offer, and what do they cost per card?",
+      "assistant_message": "Hollow Press offers three foil treatments for Dominion Protocol cards: standard holofoil at $0.08 per card, etched foil at $0.15 per card, and full-art prismatic foil at $0.22 per card. Marcus Veil selected etched foil for the Siege Commander specifically, which adds $0.15 per copy to the print cost. For a print run of 5,000 copies of the Siege Deck, the etched foil premium on the Siege Commander card alone amounts to $750. Hollow Press requires foil specifications to be locked in alongside the final art files, so Priya Nath needs to confirm the treatment by January 14."
+    },
+    {
+      "turn_id": "t13",
+      "user_message": "For Dominion Protocol, what's the right victory point threshold to trigger the end-game phase? I've seen 12 and 15 both suggested.",
+      "assistant_message": "After reviewing Priya Nath's playtesting data across 40 sessions, 15 victory points is the correct threshold to trigger the end-game phase in Dominion Protocol. At 12 VP the game ended too abruptly, with players averaging only 11 turns before someone hit the threshold, which didn't allow the Siege Deck's late-game cards to see meaningful play. At 15 VP, games averaged 16 turns, which Marcus Veil confirmed felt right for the intended 45-to-60-minute play window. The 15 VP threshold is now recorded as the official rule in Rulebook v2.3."
+    },
+    {
+      "turn_id": "t14",
+      "user_message": "Does Hollow Press have a minimum print run requirement for expansion sets like the Siege Deck?",
+      "assistant_message": "Hollow Press requires a minimum print run of 2,500 units for any Dominion Protocol expansion set, including the Siege Deck. However, Marcus Veil's sales projections submitted on October 10 estimate demand at 5,000 units for the initial Siege Deck release, well above the minimum. Hollow Press offers a per-unit cost break at the 5,000-unit tier: $1.85 per pack versus $2.10 per pack at the 2,500-unit minimum. Priya Nath recommended committing to the 5,000-unit run to capture the lower per-unit cost and avoid a costly second print order."
+    },
+    {
+      "turn_id": "t15",
+      "user_message": "Once a player reaches 15 VP and triggers the end-game, how many final rounds does everyone else get before scoring?",
+      "assistant_message": "When a player reaches 15 VP and triggers the end-game in Dominion Protocol, every other player receives exactly 2 more full turns before final scoring begins. This two-turn buffer was specifically chosen by Marcus Veil to prevent a runaway-leader problem that Priya Nath identified in earlier playtests, where the triggering player won 78% of games under a zero-buffer rule. The two-turn rule was tested across 20 sessions and brought the triggering player's win rate down to 54%, which Priya Nath flagged as acceptably close to a fair game. This rule is documented in Rulebook v2.3 under Section 4, End-Game Procedures."
+    },
+    {
+      "turn_id": "t16",
+      "user_message": "With the hand limit set at 7, what happens if a card effect would push a player over that limit mid-turn?",
+      "assistant_message": "In Dominion Protocol, if a card effect would push a player's hand over the 7-card limit mid-turn, the player must immediately discard down to 7 before any further effects resolve. This is called an overflow discard, and the player chooses which cards to discard. Marcus Veil specified in Rulebook v2.3 that the discard happens at the moment the 8th card would enter the hand, not at end of turn, to prevent players from temporarily holding extra cards for strategic benefit. Priya Nath confirmed through playtesting that this timing rule eliminates a loophole where players could chain draw effects beyond the intended limit."
+    },
+    {
+      "turn_id": "t17",
+      "user_message": "Have we decided which Siege Deck cards get the foil treatment beyond the Siege Commander?",
+      "assistant_message": "Marcus Veil's finalized foil list for the Siege Deck includes four cards: the Siege Commander (etched foil), the Veilborn Sentinel (standard holofoil), the Ironclad Warden (standard holofoil), and the Shattered Bastion (full-art prismatic foil). Priya Nath raised a concern on November 8 that giving the Shattered Bastion the most expensive prismatic treatment might signal it as overpowered to players, but Marcus Veil overruled this for aesthetic reasons. Total foil premium across a 5,000-unit print run works out to approximately $2,150 added to the Siege Deck production cost. Hollow Press confirmed it can accommodate all four foil types on the same print sheet."
+    },
+    {
+      "turn_id": "t18",
+      "user_message": "What's the per-pack MSRP that Hollow Press is recommending for the Siege Deck?",
+      "assistant_message": "Hollow Press is recommending an MSRP of $4.99 per pack for the Siege Deck, with each pack containing 12 cards. This price point was set by Hollow Press's retail team based on competitive analysis of similar card game expansions and was communicated to Marcus Veil in a memo dated October 18. Priya Nath noted that at $4.99 per pack, a player purchasing three packs — the average to complete a competitive Siege Deck build — spends $14.97, which the retail team considers an acceptable entry cost. Hollow Press plans to offer a 10-pack booster box at $44.99, providing a slight discount for bulk buyers."
+    },
+    {
+      "turn_id": "t19",
+      "user_message": "For the Hollow Press Open, what's the entry fee and prize structure?",
+      "assistant_message": "The Hollow Press Open for Dominion Protocol has an entry fee of $25 per player, targeting a 64-player field for a prize pool of $1,600. First place receives $600, second place $350, third and fourth place $175 each, and fifth through eighth place $75 each, totaling $1,525 with $75 retained by Hollow Press for administrative costs. Marcus Veil proposed adding a $100 bonus for any player who wins using a deck built entirely from the Siege Deck, which Hollow Press approved on November 12. Priya Nath will serve as head judge and will not be eligible for prizes."
+    },
+    {
+      "turn_id": "t20",
+      "user_message": "Is there a deck registration requirement for the Hollow Press Open, and when do players need to submit their lists?",
+      "assistant_message": "Yes, the Hollow Press Open requires all 64 players to submit a registered deck list by 8:00 AM on the day of the event, one hour before the first round begins. Deck lists must include the full 40-card main deck and up to a 10-card sideboard, as specified in the Dominion Protocol tournament rules Marcus Veil submitted to Hollow Press. Priya Nath's judging team will perform random deck checks on at least 20% of submitted lists before round one. Any discrepancy between a registered list and a player's actual deck results in a Game Loss for the first round, per Hollow Press policy."
+    },
+    {
+      "turn_id": "t21",
+      "user_message": "What's the minimum print run for foil-only promotional cards that Hollow Press would produce for the Open?",
+      "assistant_message": "Hollow Press requires a minimum print run of 500 copies for any promotional foil card produced for a Dominion Protocol event. For the Hollow Press Open, Marcus Veil has requested a promo version of the Siege Commander in full-art prismatic foil, and Hollow Press confirmed 500 copies at a production cost of $1.10 per card, totaling $550. Priya Nath suggested distributing one promo to each of the top 64 finishers, which exactly matches the target tournament size. Any remaining copies after distribution become part of Hollow Press's prize support inventory for future events."
+    },
+    {
+      "turn_id": "t22",
+      "user_message": "Going back to mana costs — are there any action cards in the base Dominion Protocol set that violate the 1-to-1 power-to-cost rule we established?",
+      "assistant_message": "Priya Nath's balance audit from October 28 identified three base-set action cards that violate the 1-to-1 rule: Voidstep (2 mana, 4 power), Ember Surge (3 mana, 5 power), and Chain Collapse (4 mana, 7 power). All three were designed before Marcus Veil formalized the cost curve in Rulebook v2.3 and were grandfathered in during early development. Marcus Veil has decided Voidstep and Ember Surge will receive errata in the next Dominion Protocol rules update, increasing their costs to 4 and 5 mana respectively. Chain Collapse will remain at 4 mana for 7 power because it requires discarding 3 cards, which Marcus Veil considers a sufficient balancing condition."
+    },
+    {
+      "turn_id": "t23",
+      "user_message": "What's the tiebreaker system for the Hollow Press Open if two players finish Swiss with identical records?",
+      "assistant_message": "The Hollow Press Open uses a three-step tiebreaker system for identical Swiss records in Dominion Protocol. First, opponents' match win percentage (OMW%) is calculated; second, if still tied, game win percentage (GW%) is used; third, opponents' game win percentage (OGW%) breaks any remaining ties. Marcus Veil insisted on including OGW% as a third tiebreaker after Priya Nath pointed out that two-step systems left ties unresolved in 4% of historical tournaments. All tiebreaker calculations are performed by Hollow Press's official tournament software, which was updated to support Dominion Protocol events on November 1. In the event of a mathematical tie after all three steps, a single-game playoff is held."
+    },
+    {
+      "turn_id": "t24",
+      "user_message": "Should the errata for Voidstep and Ember Surge take effect immediately or wait for the next official Dominion Protocol rules update?",
+      "assistant_message": "Marcus Veil has decided the errata for Voidstep and Ember Surge will take effect with the release of Rulebook v2.4, scheduled for January 20. The changes will not be applied retroactively to the current Hollow Press Open, which will use Rulebook v2.3 as its legal document. Priya Nath will announce the upcoming errata at the Open so players are aware before investing in those cards. Hollow Press will publish an official errata bulletin alongside Rulebook v2.4 to ensure all sanctioned events worldwide transition simultaneously."
+    },
+    {
+      "turn_id": "t25",
+      "user_message": "Are there any Siege Deck cards that would also need errata under the new Rulebook v2.4 cost curve?",
+      "assistant_message": "Priya Nath's pre-release review of the Siege Deck against the Rulebook v2.4 cost curve identified one card requiring errata: the Rampart Golem, currently costed at 4 mana for 6 power with no drawback. Under the revised curve, it should cost 6 mana, and Marcus Veil approved that change on November 15. No other Siege Deck cards triggered the errata threshold, as the remaining cards either follow the 1-to-1 ratio or have documented drawbacks justifying their efficiency. The Rampart Golem errata will be published in the same Hollow Press bulletin as the Voidstep and Ember Surge changes."
+    },
+    {
+      "turn_id": "t26",
+      "user_message": "What's the process for players to get their physical Voidstep and Ember Surge cards updated after the errata?",
+      "assistant_message": "Hollow Press will not issue physical replacement cards for the Voidstep and Ember Surge errata; instead, players are expected to use the official errata text from Rulebook v2.4. Marcus Veil proposed a sleeve insert solution: Hollow Press will make downloadable errata reminder cards available on its website starting January 20, which players can print and slip into card sleeves alongside their original cards. Priya Nath will include a physical errata sheet in all Siege Deck packs printed after January 20 that references the Voidstep and Ember Surge changes. Any cards used in Hollow Press sanctioned events must conform to the current Rulebook version in effect on the event date."
+    },
+    {
+      "turn_id": "t27",
+      "user_message": "I want to confirm the base card draw rate for Dominion Protocol. Is it 2 cards per turn or 3?",
+      "assistant_message": "The base draw rate in Dominion Protocol is 3 cards per turn, drawn at the start of each player's turn before any actions are taken. This was settled by Marcus Veil after Priya Nath's playtesting showed that a 2-card draw rate made games feel too slow, with players frequently passing turns due to lack of options. The 3-card draw rate was tested across 30 sessions and produced consistent turn counts of 14 to 18 turns per game, which aligns with the target game length. This draw rate is recorded in Rulebook v2.3 under Section 2, Turn Structure."
+    },
+    {
+      "turn_id": "t28",
+      "user_message": "Has Hollow Press set a street date for the Siege Deck, and does it align with any major gaming conventions?",
+      "assistant_message": "Hollow Press has set March 15 as the official street date for the Siege Deck, which aligns with the opening weekend of the CardCon Regional convention in Chicago. Marcus Veil specifically requested the March 15 date so that Dominion Protocol players attending CardCon could purchase the Siege Deck and immediately enter a launch event. Priya Nath will be present at CardCon to run three Siege Deck launch tournaments on March 15 and 16. Hollow Press confirmed the street date in writing to Marcus Veil on November 5, locking in the production timeline."
+    },
+    {
+      "turn_id": "t29",
+      "user_message": "How many launch event slots will be available at CardCon for the Siege Deck release, and what's the format?",
+      "assistant_message": "Priya Nath has confirmed three Dominion Protocol launch events at CardCon, each with 32 player slots, for a total of 96 players across the weekend. All three events will use a Sealed format, where each player opens 6 packs of the Siege Deck and builds a 30-card deck from the cards they open. Marcus Veil chose Sealed format specifically for launch events to give all players equal access to the new cards regardless of prior collection. Hollow Press is providing 576 packs of the Siege Deck to CardCon for the launch events, plus an additional 200 packs for retail sale at the convention."
+    },
+    {
+      "turn_id": "t30",
+      "user_message": "Does the overflow discard rule apply differently during the end-game phase, or is it the same 7-card limit throughout?",
+      "assistant_message": "The 7-card hand limit and overflow discard rule apply identically throughout all phases of Dominion Protocol, including the end-game phase. Marcus Veil explicitly addressed this in Rulebook v2.3 after Priya Nath raised a question about whether end-game tension should allow a temporary hand size increase. The decision was to keep the rule uniform: any time a player would hold an 8th card, they discard immediately down to 7, even during the final turns of the end-game. This consistency prevents players from stockpiling cards during the two end-game turns to execute a surprise scoring combo."
+    },
+    {
+      "turn_id": "t31",
+      "user_message": "When a player draws 3 cards at the start of their turn, do they draw before or after the overflow discard check?",
+      "assistant_message": "In Dominion Protocol, the 3-card draw happens first at the start of the turn, and then the overflow discard check is applied immediately after the draw is complete. So if a player begins their turn with 6 cards and draws 3, they momentarily hold 9 cards and must discard down to 7 before taking any action. Marcus Veil clarified this sequence in Rulebook v2.3 Section 2, noting that the draw and discard are treated as a single compound step rather than two separate steps. Priya Nath confirmed through playtesting that this sequencing feels natural and has not caused any notable confusion at the table."
+    },
+    {
+      "turn_id": "t32",
+      "user_message": "Is there any card in the Siege Deck that modifies the base 7-card hand limit?",
+      "assistant_message": "Yes, one Siege Deck card modifies the hand limit: the Veilborn Sentinel, which grants its controller a temporary hand limit of 9 cards for one full turn when played. Marcus Veil designed this as the Siege Deck's signature mechanic, allowing a brief window of expanded options at the cost of a 5-mana card. Priya Nath tested the Veilborn Sentinel across 15 dedicated sessions and confirmed it does not break the balance of Dominion Protocol, as the 5-mana cost prevents it from being played in the early game. The expanded limit of 9 reverts to the standard 7 at the end of the turn it was activated, as stated in Rulebook v2.3."
+    },
+    {
+      "turn_id": "t33",
+      "user_message": "Are there any Siege Deck cards that modify the 3-card draw rate per turn?",
+      "assistant_message": "The Siege Deck includes two cards that modify the base draw rate: the Siege Commander, which lets its controller draw 2 additional cards (5 total) on the turn it enters play, and the Shattered Bastion, a permanent that increases base draw by 1 to 4 cards per turn for as long as it remains in play. Priya Nath flagged the Shattered Bastion as a potential balance concern in her November 8 memo, noting that a persistent +1 draw could accelerate deck cycling significantly. Marcus Veil accepted the risk but capped Shattered Bastion at one copy per deck in Rulebook v2.3 to limit the effect. The Siege Commander's bonus draw is a one-time entry trigger, not a persistent effect."
+    },
+    {
+      "turn_id": "t34",
+      "user_message": "What's the format for the Hollow Press Open — constructed or limited, and what's the deck size requirement?",
+      "assistant_message": "The Hollow Press Open uses a Constructed format with a minimum deck size of 40 cards and no maximum, as specified in the Dominion Protocol tournament rules Marcus Veil submitted to Hollow Press. Players may include up to 3 copies of any individual card except for cards on the Dominion Protocol restricted list, which are limited to 1 copy. Priya Nath's judging guidelines note that the 40-card minimum is strictly enforced during deck checks, and any deck found to contain fewer than 40 cards after sideboard swaps results in a Game Loss. Hollow Press confirmed this format structure on October 30 in its official event announcement."
+    },
+    {
+      "turn_id": "t35",
+      "user_message": "What cards are currently on the Dominion Protocol restricted list for the Hollow Press Open?",
+      "assistant_message": "As of Rulebook v2.3, the Dominion Protocol restricted list contains four cards: Voidstep, Chain Collapse, Ember Surge, and the Veilborn Sentinel. Voidstep and Ember Surge are restricted due to the cost-curve violations Priya Nath identified in her October 28 audit, and Chain Collapse is restricted because Marcus Veil determined its 7-power output is too swingy even with the 3-card discard cost. The Veilborn Sentinel is restricted because its 9-card hand limit interacts too powerfully with draw-acceleration effects in certain combo builds. Hollow Press will update the restricted list alongside Rulebook v2.4 in January, potentially removing Voidstep and Ember Surge after their errata takes effect."
+    },
+    {
+      "turn_id": "t36",
+      "user_message": "Will the Hollow Press Open use the Rulebook v2.3 restricted list or the updated v2.4 list?",
+      "assistant_message": "The Hollow Press Open will use the Rulebook v2.3 restricted list, since the event is scheduled before the January 20 release of Rulebook v2.4. Marcus Veil confirmed this on November 14, noting that all events occurring before January 20 must use v2.3 as the governing document. Priya Nath will post a reminder on the Dominion Protocol community forums specifying that Voidstep, Chain Collapse, Ember Surge, and the Veilborn Sentinel remain restricted to 1 copy each for the Open. Hollow Press will publish a formal event legal document on its website citing Rulebook v2.3 as the applicable version."
+    },
+    {
+      "turn_id": "t37",
+      "user_message": "Are there any mana cost adjustments planned for the Siege Deck cards specifically for Rulebook v2.4?",
+      "assistant_message": "Beyond the Rampart Golem errata already approved by Marcus Veil, Priya Nath's review identified the Ironclad Warden as a borderline case: currently costed at 3 mana for 4 power with a minor conditional effect. Marcus Veil reviewed it on November 16 and decided to leave the Ironclad Warden unchanged, reasoning that its conditional effect is restrictive enough to justify the slight efficiency edge. No other Siege Deck cards are slated for mana cost changes in Rulebook v2.4. The Rampart Golem change from 4 to 6 mana remains the only confirmed Siege Deck cost adjustment for v2.4."
+    },
+    {
+      "turn_id": "t38",
+      "user_message": "Is the Hollow Press Open allowing the Siege Deck cards, or is it a base-set-only event?",
+      "assistant_message": "The Hollow Press Open is a full Constructed event allowing cards from both the Dominion Protocol base set and the Siege Deck, provided the Siege Deck's official release date of March 15 precedes the event date. Marcus Veil confirmed on November 12 that the Open is scheduled for March 22, one week after the Siege Deck street date, making all Siege Deck cards legal. Priya Nath noted that this one-week gap gives players time to acquire and register Siege Deck cards but may disadvantage players outside major retail areas. Hollow Press addressed this by making the Siege Deck available for online preorder with guaranteed delivery by March 18."
+    },
+    {
+      "turn_id": "t39",
+      "user_message": "During those 2 final turns after the end-game triggers, can players still gain victory points, and does that affect the final score?",
+      "assistant_message": "Yes, players can still gain victory points during the 2 final turns after the end-game trigger in Dominion Protocol, and all VP gained during those turns count fully toward the final score. Marcus Veil made this explicit in Rulebook v2.3 Section 4 to prevent confusion about whether the end-game turns are purely defensive. Priya Nath's playtesting found that allowing VP gain during the final turns added a meaningful catch-up mechanic, with trailing players closing gaps of up to 4 VP in those two turns in roughly 30% of games. The player who triggered the end-game by reaching 15 VP does not take additional turns; the 2-turn buffer applies only to all other players."
+    },
+    {
+      "turn_id": "t40",
+      "user_message": "What's the maximum number of VP a player can theoretically gain in a single turn in Dominion Protocol?",
+      "assistant_message": "Based on the current card set and rules in Rulebook v2.3, the theoretical maximum VP gain in a single turn is 8 VP, achievable through a specific combo: playing the Siege Commander (grants 3 VP on entry), activating the Rampart Golem's ability (2 VP), and resolving a Chain Collapse against an opponent with 4 or more cards in hand (1 VP per card hit, capped at 3 VP by the card's text). Priya Nath documented this 8 VP ceiling in her November 10 combo analysis report submitted to Marcus Veil. No single card in the current Dominion Protocol card pool, including the Siege Deck, grants more than 3 VP in isolation. Marcus Veil confirmed the 8 VP single-turn cap is acceptable given its combo-dependency."
+    },
+    {
+      "turn_id": "t41",
+      "user_message": "Can the Siege Commander's 3-VP entry bonus be combined with the Shattered Bastion's draw boost in the same turn?",
+      "assistant_message": "Yes, the Siege Commander's 3-VP entry bonus and the Shattered Bastion's draw boost can both resolve in the same turn, as they are independent triggered effects. If Shattered Bastion is already in play when the Siege Commander enters, the Siege Commander's entry triggers its 3-VP bonus, and Shattered Bastion's +1 draw is already active, meaning the player drew 4 cards at the start of that turn instead of 3. Priya Nath confirmed in her November 10 report that this combination is intentional, not a rules interaction that needs patching. Marcus Veil noted it rewards players who build around the Siege Deck's synergy package."
+    },
+    {
+      "turn_id": "t42",
+      "user_message": "Is Chain Collapse on the restricted list because of the VP gain or because of the power output?",
+      "assistant_message": "Chain Collapse is on the Dominion Protocol restricted list primarily because of its 7-power output relative to its 4-mana cost, as Marcus Veil stated when he added it to the Rulebook v2.3 restricted list. The VP gain component — 1 VP per card hit, capped at 3 VP — was a secondary concern that Priya Nath raised in her October 28 audit, noting that in the late game it can contribute to the 8 VP single-turn combo. However, Marcus Veil's formal restriction rationale cites the power-to-cost ratio violation as the primary reason, consistent with the treatment of Voidstep and Ember Surge. The restriction limits Chain Collapse to 1 copy per deck, which Priya Nath considers sufficient to prevent consistent combo assembly."
+    },
+    {
+      "turn_id": "t43",
+      "user_message": "Just to confirm: the hand limit in Dominion Protocol is definitely 7 cards, and the overflow discard applies immediately whenever that limit would be exceeded, right?",
+      "assistant_message": "Confirmed: the hand limit in Dominion Protocol is 7 cards, as established in Rulebook v2.3, and the overflow discard applies immediately the moment a player would hold an 8th card — this applies at any point in the turn, including during the start-of-turn draw and during card effects. The only exception is the Veilborn Sentinel, which temporarily raises one player's limit to 9 cards for one turn. Marcus Veil's intent, documented in his design notes, is that 7 is the baseline that all scoring and draw mechanics are calibrated around. Priya Nath's playtesting confirmed that this immediate-discard rule is intuitive and rarely causes disputes."
+    },
+    {
+      "turn_id": "t44",
+      "user_message": "And to confirm the end-game structure: 15 VP triggers it, the triggering player stops, and everyone else gets 2 more turns before final scoring?",
+      "assistant_message": "Confirmed: in Dominion Protocol, reaching 15 VP triggers the end-game phase, the player who reaches 15 VP takes no further turns, and all other players receive exactly 2 more full turns before final scoring. Any VP gained during those 2 final turns counts in the final score, as recorded in Rulebook v2.3 Section 4. Marcus Veil set the 15 VP threshold specifically to produce games of 14 to 18 turns on average, and Priya Nath's 40 playtesting sessions validated that target. The player with the highest total VP after the 2-turn buffer wins the game."
+    },
+    {
+      "turn_id": "t45",
+      "user_message": "What happens to unsold Siege Deck inventory after the Hollow Press Open if the 5,000-unit print run exceeds demand?",
+      "assistant_message": "Hollow Press's standard policy for excess Dominion Protocol inventory is to hold unsold units in their distribution warehouse for up to 12 months before marking them down for clearance. Marcus Veil negotiated a clause in the Siege Deck printing contract that allows Hollow Press to produce a second print run if the first 5,000 units sell through within 90 days of the March 15 street date. Priya Nath's sales projections, submitted alongside Marcus Veil's on October 10, estimated a 70% sell-through rate within the first 90 days, suggesting roughly 1,500 units would remain in inventory. Hollow Press confirmed it is comfortable holding that level of stock given Dominion Protocol's growing player base."
+    },
+    {
+      "turn_id": "t46",
+      "user_message": "If a second Siege Deck print run is triggered, will it include any changes to the card list based on the Rulebook v2.4 errata?",
+      "assistant_message": "Hollow Press confirmed that any Siege Deck second print run ordered after January 20 will incorporate the Rulebook v2.4 errata text directly on the card faces, specifically the Rampart Golem's updated cost of 6 mana. Marcus Veil approved updated card template files for the Rampart Golem on November 17, which are already on file with Hollow Press for use in subsequent print runs. Priya Nath recommended adding a small version indicator — 'v2.4' — to the card border of errata'd cards so players can distinguish first-print from second-print copies. Hollow Press will make a final decision on the version indicator by December 15."
+    },
+    {
+      "turn_id": "t47",
+      "user_message": "Will first-print and second-print Rampart Golem cards both be legal in Hollow Press sanctioned events?",
+      "assistant_message": "Yes, both first-print and second-print copies of the Rampart Golem will be legal in Hollow Press sanctioned events, provided players use the current Rulebook version's errata text regardless of which print they own. Marcus Veil explicitly addressed this in a ruling posted to the Dominion Protocol official site on November 18: card legality is governed by the official errata, not the printed text on older copies. Priya Nath's judging guidelines instruct judges to reference the current Rulebook — v2.3 before January 20, v2.4 thereafter — when resolving any discrepancy between printed card text and official rules. Hollow Press will supply all event judges with printed errata reference sheets."
+    },
+    {
+      "turn_id": "t48",
+      "user_message": "What's the process if a player at the Hollow Press Open uses a first-print Rampart Golem and their opponent disputes the cost?",
+      "assistant_message": "At the Hollow Press Open, which uses Rulebook v2.3, the Rampart Golem's first-print cost of 4 mana is the legal cost, since the v2.4 errata changing it to 6 mana does not take effect until January 20. Priya Nath's judging guidelines specify that if a cost dispute arises, the head judge consults the governing Rulebook version — v2.3 for the Open — and issues a ruling accordingly. Marcus Veil confirmed on November 14 that no preemptive errata will be applied to events before January 20, so first-print and second-print Rampart Golems both cost 4 mana at the Open. Players who raise a dispute in bad faith, knowing the errata is pending, may receive a Unsporting Conduct — Minor penalty at Priya Nath's discretion."
+    },
+    {
+      "turn_id": "t49",
+      "user_message": "Are there any Siege Deck cards that generate VP based on the number of cards in hand, which could interact with the Veilborn Sentinel's expanded hand limit?",
+      "assistant_message": "Yes, the Siege Deck contains one such card: the Ironclad Warden, which generates 1 VP for every 2 cards in its controller's hand at the end of the turn it is played, rounded down. Under the standard 7-card hand limit, the Ironclad Warden can generate a maximum of 3 VP (from 7 cards, rounded down from 3.5). If the Veilborn Sentinel is active and the hand limit is temporarily 9, the Ironclad Warden can generate 4 VP instead, since 9 divided by 2 rounds down to 4. Priya Nath flagged this interaction in her November 10 combo analysis, and Marcus Veil ruled it is intentional — the Veilborn Sentinel is restricted to 1 copy precisely to limit how often this 4-VP ceiling can be reached."
+    },
+    {
+      "turn_id": "t50",
+      "user_message": "Is there a mana cost for the Ironclad Warden, and does it fit the 1-to-1 power-to-cost curve?",
+      "assistant_message": "The Ironclad Warden costs 3 mana and has a base power of 3, placing it exactly on the 1-to-1 power-to-cost curve Marcus Veil established in Rulebook v2.3. Its VP-generation ability is treated as a conditional bonus effect, not factored into the base power rating, which is why Priya Nath's October 28 audit did not flag it as a cost-curve violation. Marcus Veil noted in his design log that the Ironclad Warden's VP ability is intentionally tied to hand size to create tension between holding cards for options versus cashing them in for points. At 3 mana, it's accessible in the mid-game without being dominant in the early turns."
+    },
+    {
+      "turn_id": "t51",
+      "user_message": "Does the Ironclad Warden's VP generation count toward triggering the 15 VP end-game threshold?",
+      "assistant_message": "Yes, VP generated by the Ironclad Warden's ability counts fully toward the 15 VP end-game threshold in Dominion Protocol, as all VP from any source is tracked on the same VP counter. Priya Nath confirmed this ruling in her November 10 combo analysis, noting that the Ironclad Warden can serve as a surprise end-game trigger if a player accumulates 12 VP and then plays it with a full hand of 7 cards, generating 3 VP to hit exactly 15. Marcus Veil acknowledged this line of play in his design notes and considers it a valid strategic path rather than an exploit. The rule is consistent with Rulebook v2.3's general principle that all VP sources are equivalent."
+    },
+    {
+      "turn_id": "t52",
+      "user_message": "Has Hollow Press confirmed the exact date for the Hollow Press Open, and will the Siege Deck errata cards be distributed there?",
+      "assistant_message": "Hollow Press confirmed the Hollow Press Open date as March 22, one week after the Siege Deck street date of March 15, in a formal announcement on November 12. No errata cards will be distributed at the Open because Rulebook v2.4 does not take effect until January 20, and the Open's governing document is Rulebook v2.3. Marcus Veil clarified that the promo Siege Commander cards — 500 copies in full-art prismatic foil — are the only special cards being distributed at the Open. Priya Nath confirmed that errata reference sheets for v2.3 will be available at all judge stations, covering the current restricted list and any clarifications published before March 22."
+    },
+    {
+      "turn_id": "t53",
+      "user_message": "Given the confirmed hand limit, the VP threshold that triggers end-game, and the base draw rate per turn, how should I write the scoring summary paragraph for Rulebook v2.3 that explains how these three rules interact during the final turns of the game?",
+      "assistant_message": null
+    }
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that the hand limit is 7 cards.",
+      "required": true,
+      "evidence_turn_ids": ["t1", "t16", "t30", "t32", "t43"]
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that 15 VP triggers the end-game and all other players receive 2 more turns before final scoring.",
+      "required": true,
+      "evidence_turn_ids": ["t13", "t15", "t39", "t44"]
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer states that the base draw rate is 3 cards per turn.",
+      "required": true,
+      "evidence_turn_ids": ["t27", "t31"]
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not state that the VP threshold is 12 or that the base draw rate is 2 cards per turn.",
+      "required": true,
+      "evidence_turn_ids": []
+    }
+  ],
+  "reference_answer": "The scoring summary should explain that each turn begins with a player drawing 3 cards (subject to an immediate overflow discard if their hand would exceed the 7-card limit), and that the game's end-game phase is triggered when any player reaches 15 VP. Once 15 VP is reached, the triggering player takes no further turns, and all other players receive exactly 2 more full turns during which they continue to draw 3 cards per turn (still capped at 7 in hand) and can still gain VP that counts toward the final score. The player with the highest total VP after those 2 final turns wins.",
+  "notes": "The three gold facts are: hand limit = 7 cards (Branch A, confirmed in t1/t16/t30/t32/t43), end-game VP threshold = 15 with a 2-turn buffer (Branch C, confirmed in t13/t15/t39/t44), and base draw rate = 3 cards per turn (Branch B, confirmed in t27/t31). The near-miss turn is t7, which answers a similar 'how many rounds' question about a round-robin format with 8 players (7 rounds, 5h15m) — plausible-sounding but entirely about tournament structure, not the scoring rules the final query needs."
+}
+```
