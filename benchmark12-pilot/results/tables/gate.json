@@ -1,0 +1,77 @@
+{
+  "verdict": "FLAT",
+  "point_estimates": {
+    "response_a": -0.3748,
+    "response_b": -0.0692,
+    "response_c": -0.0333
+  },
+  "n_models_ge_5pp": 0,
+  "n_models_ge_4pp": 0,
+  "n_models_lt_4pp": 3,
+  "thresholds": {
+    "amplifies_pp": 0.05,
+    "partial_low_pp": 0.04,
+    "models_required": 2
+  },
+  "pooled": {
+    "model": "pooled",
+    "a": "oracle_dag",
+    "b": "full_history",
+    "n": 39,
+    "q_diff": -0.1591,
+    "q_ci_low": -0.2174,
+    "q_ci_high": -0.1013,
+    "se": 0.0304,
+    "tok_ratio": 0.1283,
+    "tok_ratio_ci_low": 0.0983,
+    "tok_ratio_ci_high": 0.1605,
+    "pooled_models": "response_a,response_b,response_c"
+  },
+  "per_model": {
+    "response_a": {
+      "model": "response_a",
+      "a": "oracle_dag",
+      "b": "full_history",
+      "n": 39,
+      "q_diff": -0.3748,
+      "q_ci_low": -0.5026,
+      "q_ci_high": -0.2513,
+      "se": 0.0652,
+      "tok_ratio": 0.1283,
+      "tok_ratio_ci_low": 0.0981,
+      "tok_ratio_ci_high": 0.1599,
+      "pooled_models": ""
+    },
+    "response_b": {
+      "model": "response_b",
+      "a": "oracle_dag",
+      "b": "full_history",
+      "n": 39,
+      "q_diff": -0.0692,
+      "q_ci_low": -0.1667,
+      "q_ci_high": 0.0193,
+      "se": 0.0484,
+      "tok_ratio": 0.1283,
+      "tok_ratio_ci_low": 0.0992,
+      "tok_ratio_ci_high": 0.1602,
+      "pooled_models": ""
+    },
+    "response_c": {
+      "model": "response_c",
+      "a": "oracle_dag",
+      "b": "full_history",
+      "n": 39,
+      "q_diff": -0.0333,
+      "q_ci_low": -0.0962,
+      "q_ci_high": 0.0179,
+      "se": 0.029,
+      "tok_ratio": 0.1283,
+      "tok_ratio_ci_low": 0.0983,
+      "tok_ratio_ci_high": 0.1592,
+      "pooled_models": ""
+    }
+  },
+  "cosine_gate_first_attempt_pass_rate": 0.5897435897435898,
+  "cosine_gate_final_pass_rate": 1.0,
+  "closure_ratio_median": 0.10344827586206896
+}

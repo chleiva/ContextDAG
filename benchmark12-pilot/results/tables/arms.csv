@@ -1,0 +1,13 @@
+model,arm,n,context_tokens,context_precision,irrelevant_context_ratio,context_recall,distractor_leakage,output_tokens,checklist,q_ci_low,q_ci_high,token_ratio_vs_full
+response_a,full_history,39,6662.0,0.1341,0.8612,1.0,0.1282,289.9487,0.95,0.8923,0.9949,1.0
+response_a,oracle_dag,39,854.5128,1.0,0.0,1.0,0.3333,332.1795,0.5752,0.4534,0.6987,0.1283
+response_a,semantic_retrieval@1024,39,969.6154,0.3811,0.611,0.6008,0.2051,282.4359,0.6547,0.5385,0.7692,0.1455
+response_a,semantic_retrieval@matched,39,826.3846,0.6187,0.3726,0.6068,0.1282,322.5385,0.7846,0.6769,0.8846,0.124
+response_b,full_history,39,6662.0,0.1341,0.8612,1.0,0.1538,258.0513,0.8051,0.7077,0.891,1.0
+response_b,oracle_dag,39,854.5128,1.0,0.0,1.0,0.0513,242.5385,0.7359,0.6295,0.8359,0.1283
+response_b,semantic_retrieval@1024,39,969.6154,0.3811,0.611,0.6008,0.1795,227.4872,0.6953,0.594,0.7962,0.1455
+response_b,semantic_retrieval@matched,39,826.3846,0.6187,0.3726,0.6068,0.0513,239.7692,0.7628,0.6641,0.8551,0.124
+response_c,full_history,39,6662.0,0.1341,0.8612,1.0,0.1026,584.7692,0.9436,0.9038,0.9769,1.0
+response_c,oracle_dag,39,854.5128,1.0,0.0,1.0,0.0,694.5641,0.9103,0.8462,0.9615,0.1283
+response_c,semantic_retrieval@1024,39,969.6154,0.3811,0.611,0.6008,0.0513,542.4615,0.8376,0.7543,0.9128,0.1455
+response_c,semantic_retrieval@matched,39,826.3846,0.6187,0.3726,0.6068,0.0,543.5128,0.9013,0.8449,0.9513,0.124

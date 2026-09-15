@@ -1,0 +1,36 @@
+39 scenarios; 468 instances to answer (0 done)
+[20/468] long_long_noisy_side_thread_002|semantic_retrieval@1024|-|us ctx=945 | run $0.16
+[40/468] long_long_noisy_side_thread_004|semantic_retrieval@matched|- ctx=328 | run $0.27
+[60/468] long_long_noisy_side_thread_006|semantic_retrieval@matched|- ctx=518 | run $0.36
+[80/468] long_long_noisy_side_thread_008|semantic_retrieval@1024|-|us ctx=904 | run $0.49
+[100/468] long_new_root_002|oracle_dag|-|us.anthropic.claude-haiku-4-5 ctx=0 | run $0.60
+[120/468] long_new_root_003|oracle_dag|-|minimax.minimax-m2.5 ctx=0 | run $0.72
+[140/468] long_new_root_005|semantic_retrieval@matched|-|us.anthropic. ctx=0 | run $0.87
+[160/468] long_new_root_007|oracle_dag|-|us.anthropic.claude-haiku-4-5 ctx=0 | run $1.03
+[180/468] long_new_root_008|full_history|-|minimax.minimax-m2.5 ctx=4605 | run $1.17
+[200/468] long_resume_002|full_history|-|minimax.minimax-m2.5 ctx=8509 | run $1.30
+[220/468] long_resume_004|semantic_retrieval@1024|-|us.anthropic.claud ctx=958 | run $1.46
+[240/468] long_resume_005|semantic_retrieval@matched|-|minimax.minimax ctx=840 | run $1.57
+[260/468] long_resume_007|semantic_retrieval@1024|-|us.anthropic.claud ctx=1023 | run $1.72
+[280/468] long_three_way_join_001|full_history|-|us.anthropic.claude-h ctx=4170 | run $1.85
+[300/468] long_three_way_join_002|semantic_retrieval@1024|-|minimax.mi ctx=981 | run $1.99
+[320/468] long_three_way_join_004|full_history|-|minimax.minimax-m2.5 ctx=4898 | run $2.13
+[340/468] long_three_way_join_006|oracle_dag|-|us.anthropic.claude-hai ctx=1533 | run $2.31
+[360/468] long_three_way_join_007|oracle_dag|-|minimax.minimax-m2.5 ctx=1713 | run $2.45
+[380/468] long_two_branch_join_001|semantic_retrieval@matched|-|us.ant ctx=1340 | run $2.59
+[400/468] long_two_branch_join_003|oracle_dag|-|us.anthropic.claude-ha ctx=1313 | run $2.73
+[420/468] long_two_branch_join_004|semantic_retrieval@matched|-|minima ctx=1267 | run $2.81
+[440/468] long_two_branch_join_006|semantic_retrieval@1024|-|us.anthro ctx=967 | run $2.94
+[460/468] long_two_branch_join_008|oracle_dag|-|us.anthropic.claude-ha ctx=1237 | run $3.09
+[468/468] long_two_branch_join_008|semantic_retrieval@1024|-|minimax.m ctx=1008 | run $3.11
+0 failures, run spend $3.11
+F0.5 spend: $22.67 of $50.00 hard limit (estimate $20.00, warn $35.00)
+calls: 625, tokens in: 1,872,358, out: 1,358,403
+  generation       $  19.28
+  answer           $   3.11
+  generation-repair $   0.28
+  us.anthropic.claude-sonnet-4-6                   $  21.49
+  us.anthropic.claude-haiku-4-5-20251001-v1:0      $   0.60
+  minimax.minimax-m2.5                             $   0.45
+  global.anthropic.claude-sonnet-4-6               $   0.11
+  global.anthropic.claude-haiku-4-5-20251001-v1:0  $   0.03

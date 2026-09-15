@@ -1,0 +1,15 @@
+judge us.meta.llama4-maverick-17b-instruct-v1:0: 1 to score (467 done)
+[1/1] long_resume_003|semantic_retrieval@matched|-|minimax.minimax score=1.00 | run $0.002
+0 failures, run spend $0.002
+F0.5 spend: $23.55 of $50.00 hard limit (estimate $20.00, warn $35.00)
+calls: 1093, tokens in: 4,988,710, out: 1,495,292
+  generation       $  19.28
+  answer           $   3.11
+  judge            $   0.88
+  generation-repair $   0.28
+  us.anthropic.claude-sonnet-4-6                   $  21.49
+  us.meta.llama4-maverick-17b-instruct-v1:0        $   0.88
+  us.anthropic.claude-haiku-4-5-20251001-v1:0      $   0.60
+  minimax.minimax-m2.5                             $   0.45
+  global.anthropic.claude-sonnet-4-6               $   0.11
+  global.anthropic.claude-haiku-4-5-20251001-v1:0  $   0.03

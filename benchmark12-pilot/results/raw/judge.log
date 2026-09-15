@@ -1,0 +1,27 @@
+judge us.meta.llama4-maverick-17b-instruct-v1:0: 468 to score (0 done)
+[40/468] long_long_noisy_side_thread_004|semantic_retrieval@matched|- score=1.00 | run $0.075
+[80/468] long_long_noisy_side_thread_008|oracle_dag|-|minimax.minimax score=1.00 | run $0.148
+[120/468] long_new_root_004|oracle_dag|-|us.anthropic.claude-haiku-4-5 score=1.00 | run $0.221
+[160/468] long_new_root_007|semantic_retrieval@matched|-|minimax.minim score=1.00 | run $0.320
+[200/468] long_resume_001|full_history|-|minimax.minimax-m2.5 score=1.00 | run $0.403
+[240/468] long_resume_006|semantic_retrieval@matched|-|us.anthropic.cl score=1.00 | run $0.490
+[280/468] long_three_way_join_001|oracle_dag|-|minimax.minimax-m2.5 score=1.00 | run $0.574
+[320/468] long_three_way_join_004|semantic_retrieval@matched|-|minimax score=1.00 | run $0.645
+[360/468] long_three_way_join_008|semantic_retrieval@matched|-|us.anth score=1.00 | run $0.710
+FAILED long_resume_003|semantic_retrieval@matched|-|minimax.minimax-m2.5: RuntimeError: converse call failed after 7 attempts over 3 regions: An error occurred (ThrottlingException) when calling the Converse operation (reached max retries: 2): Too 
+[400/468] long_two_branch_join_003|semantic_retrieval@matched|-|us.ant score=1.00 | run $0.770
+[440/468] long_two_branch_join_006|semantic_retrieval@matched|-|us.ant score=1.00 | run $0.828
+[468/468] long_two_branch_join_003|full_history|-|minimax.minimax-m2.5 score=1.00 | run $0.879
+1 failures, run spend $0.879
+F0.5 spend: $23.55 of $50.00 hard limit (estimate $20.00, warn $35.00)
+calls: 1092, tokens in: 4,982,203, out: 1,494,998
+  generation       $  19.28
+  answer           $   3.11
+  judge            $   0.88
+  generation-repair $   0.28
+  us.anthropic.claude-sonnet-4-6                   $  21.49
+  us.meta.llama4-maverick-17b-instruct-v1:0        $   0.88
+  us.anthropic.claude-haiku-4-5-20251001-v1:0      $   0.60
+  minimax.minimax-m2.5                             $   0.45
+  global.anthropic.claude-sonnet-4-6               $   0.11
+  global.anthropic.claude-haiku-4-5-20251001-v1:0  $   0.03
