@@ -1,0 +1,80 @@
+# Benchmark 1.2 — Stage A length pilot. The gate under benchmark12_pilot was frozen on 15 Sep 2026
+# and committed BEFORE the first billed call (handoff §5). Do not adjust after seeing the effect.
+
+run:
+  name: benchmark12-pilot
+  created: 2026-09-15
+  seed: 20260915
+  benchmark_version: 1.2-pilot          # additive to 1.1 (145 scenarios, untouched); long scenarios carry length_class: long
+  f0_dir: ../f0-oracle-feasibility
+  f05_dir: ../f05-candidate-realism
+  plan: PILOT_PLAN.md
+  handoff: ../benchmark12-stageA-handoff.md
+
+provider:
+  name: amazon-bedrock
+  region: us-east-1
+  fallback_regions: [us-east-1, us-west-2, us-east-2]
+
+models:
+  generator:                            # user chose option B (15 Sep 2026): 1.1's generator for continuity
+    id: us.anthropic.claude-sonnet-4-6
+    display: Claude Sonnet 4.6
+    temperature_range: [0.7, 0.9]
+    max_tokens: 16000
+    max_attempts: 3
+  response_a: {id: us.anthropic.claude-sonnet-4-6, display: Claude Sonnet 4.6, temperature: 0.0, max_tokens: 2048}
+  response_b: {id: us.anthropic.claude-haiku-4-5-20251001-v1:0, display: Claude Haiku 4.5, temperature: 0.0, max_tokens: 2048}
+  response_c: {id: minimax.minimax-m2.5, display: MiniMax M2.5, temperature: 0.0, max_tokens: 6000}
+  judge:
+    id: us.meta.llama4-maverick-17b-instruct-v1:0
+    display: Llama 4 Maverick
+    role: sole judge (standing judge from the recalibration); zero Opus calls in this phase
+  judge_settings: {temperature: 0.0, max_tokens: 4096}
+  embedding: {id: sentence-transformers/all-mpnet-base-v2, runs: local}
+  tokenizer: {library: tiktoken, encoding: cl100k_base}
+
+generation:                             # handoff §2, §3, §3.1
+  families: [two_branch_join, three_way_join, resume, long_noisy_side_thread, new_root]
+  per_family: 8
+  history_turns: [30, 60]               # uniform per scenario
+  min_full_history_tokens: 4000         # target 5,000-8,000
+  distractor_branches: [3, 6]
+  gold_chain_turns: [3, 6]
+  distractor_branch_turns: [3, 8]
+  entity_registry_size: [4, 6]
+  min_shared_entities_per_distractor_branch: 2
+  near_miss_required: true
+  cosine_gate: {model: all-mpnet-base-v2, distractor_median_over_gold_median_min: 0.60, stop_if_first_attempt_pass_rate_below: 0.80}
+  checklist_assertions: [satisfiability_from_closure, join_discrimination, closure_ratio_recorded]
+  closure_ratio_median_target: 0.35
+
+arms:                                   # handoff §4
+  - full_history
+  - oracle_dag
+  - semantic_retrieval@matched          # budget = that scenario's oracle_dag token count
+  - semantic_retrieval@1024
+
+benchmark12_pilot:                      # THE GATE (handoff §5), frozen
+  primary_measurement: oracle_dag minus full_history, paired checklist difference per response model, 40 long scenarios
+  statistics: cluster bootstrap over scenario ids, 10000 resamples, pinned per-comparison seeds; pooled = within-scenario average
+  verdicts:
+    AMPLIFIES: ">= 0.05 on at least two of three models -> Stage B ~130 long scenarios, pursue superiority claim"
+    PARTIAL: "0.04-0.05 on at least two of three models -> stop and report; ~200 scenarios would be needed (budget decision for the user)"
+    FLAT: "< 0.04 on two or more models -> stop; benchmark 1.2 becomes ~60-80 long scenarios for the efficiency/leakage claims"
+    awkward: "anything else (e.g. >= 0.05 on exactly one model) is reported as awkward; no interpretation"
+  thresholds: {amplifies_pp: 0.05, partial_low_pp: 0.04, models_required: 2}
+  also_report: [oracle_dag minus semantic_retrieval@matched per model, context tokens and ratios per arm, closure/history distribution, precision / irrelevant ratio / leakage per arm, cosine gate distribution]
+  standard_error_note: "n=40 -> SE ~0.032 on the effect; scoping instrument, not evidence"
+
+pricing_usd_per_1m_tokens:
+  us.anthropic.claude-sonnet-4-6: {input: 3.00, output: 15.00}
+  global.anthropic.claude-sonnet-4-6: {input: 3.00, output: 15.00}
+  us.anthropic.claude-haiku-4-5-20251001-v1:0: {input: 1.00, output: 5.00}
+  global.anthropic.claude-haiku-4-5-20251001-v1:0: {input: 1.00, output: 5.00}
+  minimax.minimax-m2.5: {input: 0.60, output: 2.40}
+  us.meta.llama4-maverick-17b-instruct-v1:0: {input: 0.24, output: 0.97}
+budget:
+  estimate_usd: 20
+  warn_usd: 35
+  hard_limit_usd: 50

@@ -25,7 +25,7 @@ from botocore.exceptions import ClientError, EndpointConnectionError, ReadTimeou
 
 from f05_cost import ledger
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(os.environ["F05_ROOT"]).resolve() if os.environ.get("F05_ROOT") else Path(__file__).resolve().parents[1]
 
 
 def load_env() -> None:

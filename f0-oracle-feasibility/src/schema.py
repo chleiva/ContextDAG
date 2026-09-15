@@ -68,6 +68,7 @@ class Scenario(BaseModel):
     # later phase measure the sub-turn granularity cost.
     evidence_spans: Optional[dict[str, str]] = None
     benchmark_version: str = "1.0"
+    length_class: Optional[str] = None      # benchmark 1.2: "long" for 30-60 turn histories; None for 1.1 scenarios
 
     # ---- helpers ----
     def turns_by_id(self) -> dict[str, Turn]:

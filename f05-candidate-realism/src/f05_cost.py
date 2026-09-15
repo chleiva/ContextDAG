@@ -17,7 +17,7 @@ import yaml
 
 import os
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(os.environ["F05_ROOT"]).resolve() if os.environ.get("F05_ROOT") else Path(__file__).resolve().parents[1]
 LEDGER = ROOT / "results" / "raw" / "cost_ledger.jsonl"
 # The judge-recalibration extension keeps its own ledger and budget (manifest: judge_recalibration).
 # Select it with F05_LEDGER=recalibration in the environment.
