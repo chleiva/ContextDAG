@@ -7,6 +7,7 @@ reached and warns once past the warning threshold.
 from __future__ import annotations
 
 import json
+import os
 import sys
 import threading
 import time
@@ -14,8 +15,6 @@ from collections import defaultdict
 from pathlib import Path
 
 import yaml
-
-import os
 
 ROOT = Path(os.environ["F05_ROOT"]).resolve() if os.environ.get("F05_ROOT") else Path(__file__).resolve().parents[1]
 LEDGER = ROOT / "results" / "raw" / "cost_ledger.jsonl"

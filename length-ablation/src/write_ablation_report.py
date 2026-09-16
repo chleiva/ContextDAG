@@ -11,10 +11,10 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import la  # noqa: E402,F401
-from la import REPO, TABLES, load_manifest  # noqa: E402
 from f05_cost import ledger  # noqa: E402
+from la import REPO, TABLES, load_manifest  # noqa: E402
 
-OUT = REPO / "claude" / "LENGTH_ABLATION_RESULTS.md"
+OUT = REPO / "docs" / "results" / "LENGTH_ABLATION_RESULTS.md"
 
 
 def md(df, fmt="{:.4f}"):

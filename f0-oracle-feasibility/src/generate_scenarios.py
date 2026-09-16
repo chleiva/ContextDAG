@@ -12,14 +12,13 @@ import json
 import random
 import sys
 import time
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from llm import ROOT, append_jsonl, complete, extract_json, load_manifest  # noqa: E402
-from schema import (ChecklistItem, Scenario, Turn, ancestors, save_scenario,  # noqa: E402
-                    validate_scenario)
+from schema import ChecklistItem, Scenario, Turn, ancestors, save_scenario, validate_scenario  # noqa: E402
 
 SCENARIO_DIR = ROOT / "data" / "scenarios"
 GEN_LOG = ROOT / "results" / "raw" / "generation.jsonl"
@@ -575,6 +574,7 @@ def main() -> None:
         return
     print(f"{len(pending)} scenarios to generate ({len(jobs) - len(pending)} already exist)", flush=True)
     from concurrent.futures import ThreadPoolExecutor, as_completed
+
     from cost import BudgetExceeded, ledger
     failed = []
     with ThreadPoolExecutor(max_workers=args.workers) as ex:

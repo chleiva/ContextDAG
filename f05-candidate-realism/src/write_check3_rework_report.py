@@ -16,7 +16,7 @@ from f0_bridge import REPO, ROOT, load_manifest  # noqa: E402
 from f05_cost import ledger  # noqa: E402
 
 C3 = ROOT / "results" / "check3"
-OUT = REPO / "claude" / "CHECK3_REWORK_RESULTS.md"
+OUT = REPO / "docs" / "results" / "CHECK3_REWORK_RESULTS.md"
 
 
 def md(df: pd.DataFrame, fmt: str = "{:.4f}") -> str:
@@ -123,7 +123,8 @@ def main() -> None:
     P("- Item 5's two pre-fixed interpretations assume a uniform outcome across models. The observed outcome is split: `@512` fails non-inferiority to the reference on all three models (so (a) is excluded), and the reference's advantage over `@512` has a CI excluding zero on Sonnet and MiniMax but not on Haiku (+0.032 [−0.009, +0.074]). Interpretation (b) was recorded with that qualification; whether Haiku's interval should count as 'materially worse' is a judgement the handoff reserves, and is left here.")
     P("- The reported variance-decomposition field previously labelled `identical_answer_pairs` counts pairs with equal *scores* (336 of 432), not identical answers (23 of 432); it is now named `identical_score_pairs`.")
     P("- In the F0.5 answer runner, `--dry-run` still triggers rolling-summary generation for models without a cached summary (it does not special-case summaries the way F0's runner did); harmless here because summaries are cached, but a dry run is not free for a new model.\n")
-    import re, glob
+    import glob
+    import re
     unledgered = sum(len(re.findall(r"no price for model", open(f).read())) for f in glob.glob(str(ROOT / "results" / "raw" / "rework_512_answers.log")))
     P("## 8. Ledger\n")
     if unledgered:

@@ -318,7 +318,7 @@ Two operational recommendations for any later phase on this account: budget wall
 | Path | What |
 |---|---|
 | `F0_RESULTS.md` | Numeric report in the handoff's template |
-| `F0_PHASE_REPORT.md` | This document |
+| `docs/results/F0_PHASE_REPORT.md` | This document |
 | `manifest.yaml` | Models, budgets, thresholds, prices, spend limits; the run is reproducible from it |
 | `data/scenarios/*.json` | 140 scenarios, CC-BY-4.0 |
 | `results/raw/answers.jsonl` | Every rendered prompt, response, token count, latency, and selection metric (17 MB) |

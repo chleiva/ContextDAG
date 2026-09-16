@@ -15,7 +15,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from context_methods import BUDGETED, METHODS, build_context, load_embedder, n_tokens  # noqa: E402
+from context_methods import BUDGETED, METHODS, build_context, n_tokens  # noqa: E402
 from cost import BudgetExceeded, ledger, price  # noqa: E402
 from llm import ROOT, append_jsonl, complete, load_manifest  # noqa: E402
 from metrics import selection_metrics  # noqa: E402

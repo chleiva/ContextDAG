@@ -17,7 +17,7 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import pilot  # noqa: E402,F401
-from pilot import META, RAW, SCORED, TABLES, load_manifest, load_scenarios, read_jsonl  # noqa: E402
+from pilot import META, RAW, SCORED, TABLES, load_manifest, read_jsonl  # noqa: E402
 
 ARMS = ["full_history", "oracle_dag", "semantic_retrieval@matched", "semantic_retrieval@1024"]
 

@@ -3,6 +3,7 @@
 Shared by calibrate_judge.py (candidate judges) and score_f05.py (adopted judge).
 """
 from __future__ import annotations
+# isort: skip_file  (the path-setting import below must precede the F0 modules it makes importable)
 
 import json
 import sys
@@ -11,9 +12,9 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from f0_bridge import load_manifest  # noqa: E402
+from context_methods import render_turn  # noqa: E402  (F0)
 from f05_cost import price  # noqa: E402
 from f05_llm import complete, extract_json  # noqa: E402
-from context_methods import render_turn  # noqa: E402  (F0)
 from score_quality import JUDGE_PROMPT  # noqa: E402  (F0; prompt text only)
 
 FALLBACK_SYSTEM = ("You are a strict evaluator. You never continue or answer the conversation you are shown; "

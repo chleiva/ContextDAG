@@ -8,10 +8,10 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import la  # noqa: E402,F401
-from la import RAW, SCENARIOS, F0_SCENARIOS, SCORED, load_manifest, read_jsonl  # noqa: E402
 from f05_cost import BudgetExceeded, ledger  # noqa: E402
 from f05_judge import judge_instance  # noqa: E402
 from f05_llm import append_jsonl  # noqa: E402
+from la import F0_SCENARIOS, RAW, SCENARIOS, SCORED, load_manifest, read_jsonl  # noqa: E402
 from schema import load_all  # noqa: E402
 
 ANSWERS = RAW / "answers.jsonl"; SCORES = SCORED / "scores.jsonl"

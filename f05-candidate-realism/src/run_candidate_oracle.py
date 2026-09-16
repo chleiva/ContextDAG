@@ -23,10 +23,10 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from candidates import POOLS  # noqa: E402
+from context_methods import _finish, build_context, n_tokens  # noqa: E402  (F0)
 from f0_bridge import ROOT, f0_answers, instance_key, load_f0_manifest, load_manifest, load_scenarios, read_jsonl  # noqa: E402
 from f05_cost import BudgetExceeded, ledger, price  # noqa: E402
 from f05_llm import append_jsonl, complete  # noqa: E402
-from context_methods import _finish, build_context, n_tokens  # noqa: E402  (F0)
 from metrics import selection_metrics  # noqa: E402  (F0)
 
 ANSWERS = ROOT / "results" / "raw" / "answers.jsonl"
@@ -36,8 +36,8 @@ F0_ANS = f0_answers()
 # F0's summaries.jsonl. Route those calls through F0.5's multi-backend client (so MiniMax can write its
 # own summaries and spend lands on the F0.5 ledger in force) and keep F0.5's summaries in its own cache.
 import context_methods as _cm  # noqa: E402
-import llm as _f0_llm  # noqa: E402
 import f05_llm as _f05_llm  # noqa: E402
+import llm as _f0_llm  # noqa: E402
 
 
 def _patched_complete(model, prompt, **kw):

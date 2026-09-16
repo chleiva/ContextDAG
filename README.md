@@ -1,48 +1,69 @@
 # ContextDAG
 
-Research framework for dependency-graph context management in multi-turn LLM conversations — routes context by what a message actually depends on, not chronology, with an oracle-first benchmark testing whether that helps versus full-history, retrieval, and compression baselines.
+[![ci](https://github.com/chleiva/ContextDAG/actions/workflows/ci.yml/badge.svg)](https://github.com/chleiva/ContextDAG/actions/workflows/ci.yml)
+[![License: Apache-2.0](https://img.shields.io/badge/code-Apache--2.0-blue.svg)](LICENSE)
+[![Data: CC-BY-4.0](https://img.shields.io/badge/data-CC--BY--4.0-green.svg)](f0-oracle-feasibility/data/LICENSE)
+[![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](pyproject.toml)
 
-> **Early-stage research.** This repository currently contains only the **F0 oracle feasibility study**, the first step in a staged evaluation plan before any automatic system is built. It is not a usable framework yet. Anyone cloning early should expect a benchmark and an offline experiment, not a library.
->
-> **F0 status: complete (13 Sep 2026, benchmark 1.1), verdict GO on both response models.** With a hand-labeled dependency graph, oracle DAG context used 69% fewer tokens than full history at equal-or-better checklist quality (+2.7 pp Sonnet 4.6, +2.6 pp Haiku 4.5; both within the pre-registered non-inferiority margin), and beat the single-parent oracle tree by +0.32 on join-family scenarios. 145 scenarios across 13 families. Full numbers, plot, comparisons and limitations: [`f0-oracle-feasibility/F0_RESULTS.md`](f0-oracle-feasibility/F0_RESULTS.md). Next step per the plan is F0.5 (candidate-realism check), not an automatic router.
+Research framework for **dependency-graph context management** in multi-turn LLM conversations: build a model's context from the branches a new message actually depends on, including joins of previously separate branches, instead of the chronological transcript. This repository holds the synthetic benchmark, six context-construction methods, a staged and pre-registered evaluation with every threshold frozen before spend, every LLM call's cost ledger, and the results.
 
-> **F0.5 status: complete (14 Sep 2026), verdict PASS on both response models.** A cheap, non-LLM candidate generator (branch heads, recency, embedding neighbours, entity overlap) puts the full gold parent set inside a 15-turn pool on 99.3% of scenarios, and an oracle restricted to that pool keeps F0's result (+3.0/+3.1 pp over full history, 68.7% fewer tokens). Caveat: the benchmark's histories are short, so k=15 rarely binds and the candidate oracle's context equals the oracle DAG's on 99% of scenarios; strict Recall@5 is only 0.34. No cheap judge passed the frozen calibration bar, so Opus 4.6 judged this phase too. Details, calibration table, recall sweep and source ablation: [`f05-candidate-realism/F0.5_RESULTS.md`](f05-candidate-realism/F0.5_RESULTS.md).
+> **Status (16 September 2026): experiments complete; the next deliverable is the paper.** The project is an oracle-first evaluation, not a usable library. There is no automatic router yet; every "DAG" result below uses the hand-labelled gold dependency graph, and the candidate-realism phase bounds what a cheap real system could reach.
 
-> **Judge recalibration (14 Sep 2026):** Llama 4 Maverick adopted as the standing judge after passing a method-contrast calibration bar against Opus 4.6 on 1,450 instances (κ 0.77, max contrast error 0.017) at ~1/25th the cost; [`claude/JUDGE_RECALIBRATION_RESULTS.md`](claude/JUDGE_RECALIBRATION_RESULTS.md). **Check 3 (15 Sep 2026): PASS for both response models** under the frozen non-inferiority-plus-token criterion on benchmark 1.1: the candidate-realistic oracle matches semantic retrieval and rolling summary on quality at 0.38–0.53× their tokens; the Llama replication agrees for Haiku and is indeterminate for Sonnet on one comparison. [`claude/CHECK3_RESULTS.md`](claude/CHECK3_RESULTS.md). **Benchmark 1.2 length pilot (16 Sep 2026): FLAT.** On 39 long scenarios (30–60 turns) the oracle DAG scored *below* full history, driven by a retraction behaviour: with a pruned context, Sonnet 4.6 (51%) and Haiku 4.5 (28%) disown the earlier assistant-stated facts as fabrications, because the synthetic writer put 80% of gold facts in assistant messages. Efficiency (0.13× tokens) and precision claims hold; the length-amplification hypothesis does not at this scale. [`claude/BENCHMARK_1.2_PILOT_RESULTS.md`](claude/BENCHMARK_1.2_PILOT_RESULTS.md). **Length ablation (16 Sep 2026, final experiment): void under its frozen validity rule.** Splicing validated distractor branches from other scenarios to 30 and 60 turns made full history *easier* (leakage fell, checklist rose), so the length effect was not isolated; two instruments have now failed to build distractors that get harder with length. Descriptive Stage 2: retrieval at the oracle's token budget loses recall as history grows. [`claude/LENGTH_ABLATION_RESULTS.md`](claude/LENGTH_ABLATION_RESULTS.md). Next deliverable: the paper draft.
+## What was found
 
-## What F0 asks
+| Phase | Question | Verdict | Where |
+|---|---|---|---|
+| **F0** oracle feasibility | Given a perfect dependency graph, does DAG context beat full history, sliding window, rolling summary, semantic retrieval, and a single-parent tree on quality vs tokens? | **GO.** 69% fewer tokens than full history at equal-or-better checklist quality (+2.7 pp Sonnet 4.6, +2.6 pp Haiku 4.5), and +0.32 over the tree on join families. 145 scenarios, 13 families. | [F0_RESULTS](docs/results/F0_RESULTS.md) |
+| **F0.5** candidate realism | Can a cheap, non-LLM candidate generator find the gold parent set, and does an oracle restricted to that pool keep the result? | **PASS.** Strict Recall@15 = 0.993; the restricted oracle keeps F0's numbers. Caveat: 1.1's histories are short, so k=15 rarely binds; Recall@5 = 0.34. | [F0.5_RESULTS](docs/results/F0.5_RESULTS.md) |
+| **Judge recalibration** | Can a cheap cross-vendor judge replace Opus 4.6 without changing conclusions? | **Llama 4 Maverick adopted** on a method-contrast bar (κ 0.77, every contrast within 0.02 of Opus on 1,450 instances) at ~1/25th the cost. | [JUDGE_RECALIBRATION_RESULTS](docs/results/JUDGE_RECALIBRATION_RESULTS.md) |
+| **Check 3** retrieval/compression comparability | Does the candidate-realistic oracle keep a distinct advantage over semantic retrieval and rolling summary? | **PASS (non-inferiority + token ratio)** on both models at 0.38–0.53× the baselines' tokens; precision 0.95 vs 0.43–0.49, leakage 1–4% vs 15–19%. Not a powered superiority claim. | [CHECK3_RESULTS](docs/results/CHECK3_RESULTS.md), [rework](docs/results/CHECK3_REWORK_RESULTS.md) |
+| **Benchmark 1.2 pilot** | Does a longer history (30–60 turns) amplify the effect? | **FLAT, and negative.** Mechanism: *retraction*. With a pruned context, Sonnet 4.6 (51%) and Haiku 4.5 (28%) disown assistant-stated facts as fabrications. Efficiency holds (0.13× tokens). | [BENCHMARK_1.2_PILOT_RESULTS](docs/results/BENCHMARK_1.2_PILOT_RESULTS.md) |
+| **Length ablation** (final) | Same question, with validated distractors spliced in and nothing else changed. | **Void under its own validity rule**: leakage fell with length, full history got easier. Two instruments failed to make distractors harder with length. | [LENGTH_ABLATION_RESULTS](docs/results/LENGTH_ABLATION_RESULTS.md) |
 
-ContextDAG's hypothesis is that representing a conversation as a dependency graph (rather than a flat transcript) lets you build model context from only the branches a new message depends on, including joins of two or more previously separate branches, while using far fewer tokens than the full history and without losing answer quality.
+The claims this supports, in order of strength, and the limitations to state, are listed in the final handoff's §10: [docs/handoffs/LENGTH_ABLATION_HANDOFF.md](docs/handoffs/LENGTH_ABLATION_HANDOFF.md). Total model spend across the project: **$124** ([docs/COSTS.md](docs/COSTS.md)).
 
-F0 tests the *ceiling* of that idea before anything automatic is built: **given a perfect, hand-labeled dependency graph, does the resulting context beat strong baselines on the quality-versus-tokens trade-off?** Six context construction methods (full history, sliding window, rolling summary, semantic retrieval, oracle single-parent tree, oracle multi-parent DAG) are run over a synthetic benchmark of ~140 annotated conversations across 13 structural families. Pre-registered thresholds in `f0-oracle-feasibility/manifest.yaml` turn the result into a mechanical GO / PIVOT / STOP.
+## How the evaluation was run
 
-Related prior work exists on both sides of this idea: multi-parent DAGs for agent trajectories, and tree- or graph-structured conversation UIs for human chat. ContextDAG does not claim graph-structured context is novel in itself; the question is whether dependency-structured context *measurably helps* on the trade-off above.
+- **Structure first.** A seeded builder decides each scenario's dependency graph, gold closure, and distractor structure in code; an LLM only writes the dialogue and the checklist. Every scenario is validated (structure, closure, banned topic-switch signposting) before admission.
+- **Six context methods** on identical prompts: `full_history`, `sliding_window@{1024,2048}`, `rolling_summary@{1024,2048}`, `semantic_retrieval@{512,1024,2048,matched}` (all-mpnet-base-v2, turn-level), `oracle_tree` (primary parents only), `oracle_dag` (full ancestor closure), plus the candidate-restricted `candidate_oracle@k`.
+- **Judging** by checklist (TRUE/FALSE per required item, plus a distractor-leakage flag) with a fixed rubric; Opus 4.6 for F0/F0.5, Llama 4 Maverick after calibration.
+- **Statistics:** paired differences per scenario, cluster bootstrap over scenario ids with 10,000 resamples and pinned per-comparison seeds, Holm adjustment on confirmatory sets, per-family intervals read against a measured noise floor (temperature-0 decoding on Bedrock is not deterministic: 27% of per-scenario variance).
+- **Pre-registration discipline:** thresholds are committed in each phase's `manifest.yaml` before the first billed call and applied mechanically; deviations, unreachable branches, and mistakes are recorded in the results documents rather than corrected silently.
+- **Cost control:** every call goes through a ledger that prices actual token usage, warns past an estimate, and refuses to start past a hard limit. Region and inference-profile fallback is built into the client; the route is recorded per call.
 
 ## Layout
 
 ```
-f0-oracle-feasibility/
-  manifest.yaml          # models, thresholds, budgets: the one file the run is reproducible from
-  data/scenarios/*.json  # the synthetic benchmark (CC-BY-4.0)
-  src/                   # schema, generation, context methods, metrics, experiment, scoring, analysis
-  results/               # raw call logs, judge scores, tables, plots
-  F0_RESULTS.md          # the report (written after the run)
+f0-oracle-feasibility/   benchmark 1.1 (145 scenarios, CC-BY-4.0), six methods, F0 run: manifest, src, data, results
+f05-candidate-realism/   candidate generator, Recall@k, judge calibration, check 3 (+ rework), shared multi-backend client
+benchmark12-pilot/       long-scenario generator with generation-time assertions, 39 long scenarios (tag 1.2-pilot)
+length-ablation/         splice construction with pre-flight, 72 spliced sets (tag length-ablation)
+docs/results/            one results document per phase          docs/handoffs/   the instructions each phase ran from
+docs/reviews/            independent critical review              docs/SESSION_STATE.md, docs/COSTS.md
+tests/                   offline integrity tests (schema, splice invariants, analysis guards, ledgers)
 ```
 
-## Setup
+Each phase directory has a `manifest.yaml` (models, prices, thresholds, budget), `src/`, and `results/` with raw answers, judge verdicts, tables, figures, and the cost ledger. See [docs/README.md](docs/README.md) for the reading order.
 
-Python 3.11+. Models are served through Amazon Bedrock.
+## Reproduce
+
+Everything reported can be re-derived from the committed raw answers and verdicts without any model call:
 
 ```
-uv venv .venv --python 3.11 && . .venv/bin/activate
-uv pip install "anthropic[bedrock]" sentence-transformers tiktoken numpy pandas matplotlib pyyaml pydantic
-cp .env.example .env   # then fill in AWS_BEARER_TOKEN_BEDROCK
+make setup              # Python 3.11 + uv; installs requirements.lock and the spaCy model
+make test               # offline integrity tests
+make analyze-f0 analyze-f05 analyze-check3 analyze-pilot analyze-ablation
+make reports            # regenerates docs/results/*.md from the tables
 ```
+
+Re-running the model calls needs Amazon Bedrock credentials in `.env` (see `.env.example`) and, for the recalibration's OpenAI candidates, an OpenAI key. Every stage is resumable and keyed by `scenario|method|budget|model`, so an interrupted run never repeats billed work. Budgets in each manifest cap spend.
 
 ## Licensing
 
-Three kinds of material, three licenses:
+- **Code**: Apache-2.0 (`LICENSE`, `NOTICE`).
+- **Benchmark data created here** (`*/data/scenarios/`): [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/). All text is synthetic; people, organisations, and figures are invented.
+- **External datasets** are never redistributed; `DATA_SOURCES.md` records what was considered and its terms.
 
-- **Code** — Apache-2.0 (`LICENSE`, `NOTICE`).
-- **Benchmark data created by this project** (the synthetic scenarios under `f0-oracle-feasibility/data/`, and eventually the full ContextDAG-Bench) — [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/). See `f0-oracle-feasibility/data/LICENSE`.
-- **External benchmark data** (NTM, TopiOCQA, LoCoMo, LongMemEval, or anything else sourced later) — never redistributed here. Download and adapter scripts only; each source's own license and terms are recorded in `DATA_SOURCES.md`.
+## Citing
+
+See [CITATION.cff](CITATION.cff). Contributions: [CONTRIBUTING.md](CONTRIBUTING.md). Security and credentials: [SECURITY.md](SECURITY.md).

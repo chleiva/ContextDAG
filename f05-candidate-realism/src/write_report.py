@@ -15,7 +15,7 @@ from f0_bridge import ROOT, load_manifest  # noqa: E402
 from f05_cost import ledger  # noqa: E402
 
 T = ROOT / "results" / "tables"
-OUT = ROOT / "F0.5_RESULTS.md"
+OUT = ROOT.parent / "docs" / "results" / "F0.5_RESULTS.md"
 
 
 def md(df: pd.DataFrame, floatfmt: str = "{:.3f}") -> str:
@@ -219,7 +219,7 @@ def main() -> None:
     A("What the source breakdown says about where to invest next:\n")
     A(f"- Embedding similarity is doing almost all the work: it proposes {100 * sem.share_of_gold_turns:.1f}% of gold turns and is the *only* source for {int(sem.gold_turns_found_only_by_this_source)} of them; dropping it collapses uncapped strict recall to {abl[(abl.dropped_source == 'semantic') & (abl.k == 'uncapped')].strict_recall.iloc[0]:.3f}. Structural sources (branch chain, inactive heads, recency) are individually redundant at k ≥ 10.")
     A(f"- Small pools are the real constraint, not discovery: strict recall goes {rec['strict_recall_at_5_all']:.2f} → {by_k[(by_k.subset == 'all_145') & (by_k.k == '10')].strict_recall.iloc[0]:.2f} → {rec['strict_recall_at_primary_k_all']:.2f} from k=5 to 10 to {pk}. The ranking (sources, then cosine) places same-branch distractors that three sources agree on above gold turns that only similarity finds; a learned or cosine-first ranker is the cheapest next improvement.")
-    A(f"- The only outright miss is `three_way_join_004` (two gold turns of a nine-turn closure never proposed): a long multi-branch join whose middle turns are neither branch heads, nor recent, nor lexically or semantically close to the query.")
+    A("- The only outright miss is `three_way_join_004` (two gold turns of a nine-turn closure never proposed): a long multi-branch join whose middle turns are neither branch heads, nor recent, nor lexically or semantically close to the query.")
     A("- Benchmark: F0.5's k=15 gate is weak on this benchmark because 111 of 145 histories fit inside the pool. A benchmark 1.2 with longer histories (30–60 turns) in the join and resume families would make Recall@k informative where a deployed system would actually be stressed.")
     A("\n## Assumptions and limitations\n")
     A("- Branch structure of *prior* turns comes from gold parents (perfect past routing). A deployed system's own routing errors would compound; F0.5 measures only the candidate step.")

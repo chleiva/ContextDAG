@@ -237,8 +237,8 @@ def build_context(scenario: Scenario, method: str, config: dict | None = None) -
 
 
 def load_embedder():
-    from sentence_transformers import SentenceTransformer
     from llm import load_manifest
+    from sentence_transformers import SentenceTransformer
     return SentenceTransformer(load_manifest()["models"]["embedding"]["id"])
 
 

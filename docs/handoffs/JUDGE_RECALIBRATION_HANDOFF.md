@@ -8,7 +8,7 @@ This is **not** a re-run of F0.5. It is a small, cheap extension of one step ins
 
 ## 0. Why this exists, and the two things it changes
 
-F0.5's judge calibration scored four cross-vendor candidates (DeepSeek V3.2, Kimi K2.5, Llama 4 Maverick, Mistral Large 3) against Claude Opus 4.6 on an 80→160-instance sample, and rejected all four on `mean |Δ| ≤ 0.05` — a per-instance absolute-score-difference bar. That rejection was correct *given that bar*, and the bar was not moved after seeing results, which was the right call at the time. But the bar itself measured the wrong quantity: `mean |Δ|` is dominated by symmetric per-item disagreement that averages out over any mean-of-145-scenarios or paired-bootstrap comparison — which is every comparison this project actually reports. The quantity that can corrupt a result is bias that differs *by method*, not raw per-instance noise. Full derivation: `F0.5_Analysis_and_Recommendations.md` §6.
+F0.5's judge calibration scored four cross-vendor candidates (DeepSeek V3.2, Kimi K2.5, Llama 4 Maverick, Mistral Large 3) against Claude Opus 4.6 on an 80→160-instance sample, and rejected all four on `mean |Δ| ≤ 0.05` — a per-instance absolute-score-difference bar. That rejection was correct *given that bar*, and the bar was not moved after seeing results, which was the right call at the time. But the bar itself measured the wrong quantity: `mean |Δ|` is dominated by symmetric per-item disagreement that averages out over any mean-of-145-scenarios or paired-bootstrap comparison — which is every comparison this project actually reports. The quantity that can corrupt a result is bias that differs *by method*, not raw per-instance noise. Full derivation: `docs/reviews/F0.5_Analysis_and_Recommendations.md` §6.
 
 Two changes, both decided 14 September 2026, both implemented here:
 
@@ -62,7 +62,7 @@ If more than one candidate passes, **prefer the cheapest per-call cost** — do 
 
 **Do not adjust this bar after seeing results.** If nothing passes, the fallback order is: widen the error tolerance only with the parent conversation's explicit sign-off (this would be a genuine bar change, not a bug fix, and needs the same scrutiny as any other pre-registered threshold change) — do not fall back to Opus by default just because it's familiar.
 
-**Deferred, not part of this extension:** an Opus 4.6 self-test-retest floor (~$3, 40 instances) was proposed in `F0.5_Analysis_and_Recommendations.md` §6 as a way to check whether Opus agrees with itself as well as candidates are being asked to agree with it. It is *not* required to apply the bar above and is being skipped for now under the "no new Opus spend" policy. Flag it as available future work in the results doc; do not run it without checking in first.
+**Deferred, not part of this extension:** an Opus 4.6 self-test-retest floor (~$3, 40 instances) was proposed in `docs/reviews/F0.5_Analysis_and_Recommendations.md` §6 as a way to check whether Opus agrees with itself as well as candidates are being asked to agree with it. It is *not* required to apply the bar above and is being skipped for now under the "no new Opus spend" policy. Flag it as available future work in the results doc; do not run it without checking in first.
 
 ---
 
@@ -100,7 +100,7 @@ Expected total spend: **under $1** (three new candidates × 160 instances at the
 
 ## 6. Report template
 
-Write results to `claude/JUDGE_RECALIBRATION_RESULTS.md` (project doc, same location as the phase results docs) with:
+Write results to `docs/results/JUDGE_RECALIBRATION_RESULTS.md` (project doc, same location as the phase results docs) with:
 
 ```markdown
 # Judge Recalibration Extension — Results
@@ -124,4 +124,4 @@ Why (cheapest passer, or — if none passed — what happened and what's next)
 Confirms the judge to use for benchmark 1.2 and check 3, both still separately scoped.
 ```
 
-Update `claude/SESSION_STATE_AND_NEXT_STEPS.md`'s judge-policy section with the outcome once this completes — that document is what the next session (or the one planning benchmark 1.2) will read first.
+Update `docs/results/SESSION_STATE_AND_NEXT_STEPS.md`'s judge-policy section with the outcome once this completes — that document is what the next session (or the one planning benchmark 1.2) will read first.

@@ -1,0 +1,23 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install (offline test subset; no model downloads)
+        run: |
+          python -m pip install --upgrade pip
+          pip install "anthropic[bedrock]>=1.5" boto3 tiktoken numpy pandas scipy scikit-learn pyyaml "pydantic>=2" pytest ruff
+      - name: Lint
+        run: ruff check . --exit-zero
+      - name: Tests (schema validation, splice invariants, analysis guards, ledgers)
+        run: python -m pytest -q

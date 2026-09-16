@@ -1,6 +1,6 @@
 # Check 3 Rework — Results
 
-Run date: 2026-09-15; generated at commit 6a9329b. Scope: the five items of the rework handoff, nothing else. `claude/CHECK3_RESULTS.md` updated in place per items 1 and 2 with a dated note at its top.
+Run date: 2026-09-15; generated at commit 6a9329b. Scope: the five items of the rework handoff, nothing else. `docs/results/CHECK3_RESULTS.md` updated in place per items 1 and 2 with a dated note at its top.
 
 ## Item 1 — Pooled-row bug
 
@@ -23,7 +23,7 @@ Acceptance: the four corrected Opus deltas match the handoff's expected values (
 
 ## Item 2 — Headline and criterion defect
 
-Applied in `claude/CHECK3_RESULTS.md` (via the report generator, so the edits persist across regeneration): headline and §4 now read **PASS (non-inferiority + token ratio)** with the prescribed sentence; §10 carries the unreachable-FAIL bullet verbatim; the §3 judge-agreement paragraph is replaced by the prescribed text (seven of eight comparisons agree; the Sonnet INDETERMINATE rests on one comparison missed by 0.0016 that passes under Holm). The mechanical verdicts are unchanged. No numeric table was altered.
+Applied in `docs/results/CHECK3_RESULTS.md` (via the report generator, so the edits persist across regeneration): headline and §4 now read **PASS (non-inferiority + token ratio)** with the prescribed sentence; §10 carries the unreachable-FAIL bullet verbatim; the §3 judge-agreement paragraph is replaced by the prescribed text (seven of eight comparisons agree; the Sonnet INDETERMINATE rests on one comparison missed by 0.0016 that passes under Holm). The mechanical verdicts are unchanged. No numeric table was altered.
 
 ## Item 3 — Variance decomposition on the 432 identical-prompt pairs
 
@@ -106,7 +106,7 @@ Recorded verbatim, since (a) is not met: `@512` is **materially worse than the r
 ## 7. Anything else found (recorded, not fixed)
 
 - **Haiku `three_way_join` +0.000 against all five baselines:** inspected. Not a saturated checklist. Haiku's per-scenario scores vary (1.00, 0.75, 0.25, 1.00, 1.00, 1.00, 1.00, 1.00) but are identical across `candidate_oracle@{5,10,15}`, `full_history`, `oracle_dag`, both `rolling_summary` and both `semantic_retrieval` budgets, and differ only for `oracle_tree` (and one `sliding_window@1024` cell). These eight histories are 8–12 turns, so every one of those contexts contains the entire gold closure, and Haiku returns the same verdict pattern regardless of packaging. `three_way_join_003` scores 0.25 under every context including the oracle: at least one of its required checklist items is not satisfiable by Haiku from any context on this benchmark, which is worth a look when benchmark 1.2 regenerates the family. Sonnet's scores vary across methods on the same scenarios.
-- `claude/CHECK3_Analysis_and_Recommendations.md`, listed as required reading, is not in the repository.
+- `docs/results/CHECK3_Analysis_and_Recommendations.md`, listed as required reading, is not in the repository.
 - Item 5's two pre-fixed interpretations assume a uniform outcome across models. The observed outcome is split: `@512` fails non-inferiority to the reference on all three models (so (a) is excluded), and the reference's advantage over `@512` has a CI excluding zero on Sonnet and MiniMax but not on Haiku (+0.032 [−0.009, +0.074]). Interpretation (b) was recorded with that qualification; whether Haiku's interval should count as 'materially worse' is a judgement the handoff reserves, and is left here.
 - The reported variance-decomposition field previously labelled `identical_answer_pairs` counts pairs with equal *scores* (336 of 432), not identical answers (23 of 432); it is now named `identical_score_pairs`.
 - In the F0.5 answer runner, `--dry-run` still triggers rolling-summary generation for models without a cached summary (it does not special-case summaries the way F0's runner did); harmless here because summaries are cached, but a dry run is not free for a new model.

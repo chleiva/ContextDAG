@@ -18,7 +18,7 @@ from f0_bridge import REPO, ROOT, load_manifest  # noqa: E402
 from f05_cost import ledger  # noqa: E402
 
 T = ROOT / "results" / "tables"
-OUT = REPO / "claude" / "JUDGE_RECALIBRATION_RESULTS.md"
+OUT = REPO / "docs" / "results" / "JUDGE_RECALIBRATION_RESULTS.md"
 
 
 def md(df: pd.DataFrame, fmt: str = "{:.4f}") -> str:

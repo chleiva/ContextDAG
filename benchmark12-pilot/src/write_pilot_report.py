@@ -11,10 +11,10 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import pilot  # noqa: E402,F401
-from pilot import RAW, REPO, ROOT, TABLES, load_manifest, read_jsonl  # noqa: E402
 from f05_cost import ledger  # noqa: E402
+from pilot import RAW, REPO, TABLES, load_manifest, read_jsonl  # noqa: E402
 
-OUT = REPO / "claude" / "BENCHMARK_1.2_PILOT_RESULTS.md"
+OUT = REPO / "docs" / "results" / "BENCHMARK_1.2_PILOT_RESULTS.md"
 
 
 def md(df: pd.DataFrame, fmt: str = "{:.3f}") -> str:

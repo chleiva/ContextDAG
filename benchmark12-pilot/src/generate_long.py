@@ -35,11 +35,11 @@ import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import pilot  # noqa: E402,F401  (sets F05_ROOT and sys.path)
-from pilot import META, RAW, ROOT, SCENARIOS, load_manifest  # noqa: E402
+from context_methods import n_tokens, render_turn  # noqa: E402
 from f05_llm import append_jsonl, complete, extract_json  # noqa: E402
 from generate_scenarios import DOMAINS, LABELS, ScenarioPlan, TurnPlan, _chain, _finalize, _interleave, render_outline  # noqa: E402
+from pilot import META, RAW, SCENARIOS, load_manifest  # noqa: E402
 from schema import ChecklistItem, Scenario, Turn, ancestors, save_scenario, validate_scenario  # noqa: E402
-from context_methods import n_tokens, render_turn  # noqa: E402
 
 GEN_LOG = RAW / "generation.jsonl"
 GATE_LOG = RAW / "cosine_gate_attempts.jsonl"
@@ -417,6 +417,7 @@ def main() -> None:
                 print(f"{f}_{i:03d}: history {lp.n_history}, gold {lp.gold_branches}, distractor branches {len(lp.distractor_branches)}, near-miss {lp.near_miss_id}, prompt ≈ {n_tokens(render_outline(lp.plan))} outline tokens")
         return
     from concurrent.futures import ThreadPoolExecutor, as_completed
+
     from f05_cost import BudgetExceeded, ledger
     used: set[str] = set()
     jobs = [(f, i) for f in fams for i in range(1, n + 1)]

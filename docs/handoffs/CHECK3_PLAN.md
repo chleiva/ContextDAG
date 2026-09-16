@@ -62,7 +62,7 @@ check3:
 5. Verbosity check (§3.4): 40 MiniMax `candidate_oracle@15` instances, answers truncated to the
    token length of Haiku's answer on the same scenario, re-judged with Llama alongside the
    untruncated originals (≈ $0.06). Report whether MiniMax's margin over Haiku survives.
-6. `claude/CHECK3_RESULTS.md` per the F0.5 template with the §0 disclosure verbatim; frontier
+6. `docs/results/CHECK3_RESULTS.md` per the F0.5 template with the §0 disclosure verbatim; frontier
    figure at `f05-candidate-realism/results/check3/frontier.png` + CSV; session notes updated.
 
 ## 4. Cost
@@ -80,5 +80,5 @@ check3:
 
 1. MiniMax's Bedrock rate: confirm from the AWS console or keep the $0.60 / $2.40 upper bound.
 2. Re-judge MiniMax's existing arms with Llama (+$0.30) for a single-judge MiniMax table (recommended).
-3. `claude/F0.5_Analysis_and_Recommendations.md` is cited as prerequisite but is not in the repo;
+3. `docs/results/F0.5_Analysis_and_Recommendations.md` is cited as prerequisite but is not in the repo;
    add it if available (non-blocking; the session notes summarise it).

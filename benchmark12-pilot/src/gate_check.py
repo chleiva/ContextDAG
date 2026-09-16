@@ -1,7 +1,9 @@
 """Handoff §3 stop rule, evaluated on FIRST attempts (the generator regenerates failures with feedback,
 so the final set passes by construction; the first-attempt rate is the honest instrument reading)."""
-import json, sys
+import json
+import sys
 from pathlib import Path
+
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import pilot  # noqa
 from pilot import META, RAW, load_manifest

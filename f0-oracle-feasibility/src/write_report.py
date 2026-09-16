@@ -139,7 +139,7 @@ ACT = average context tokens (rendered context only; excludes system prompt and 
 
 ## Pareto frontier
 
-![Pareto frontier](results/plots/pareto.png)
+![Pareto frontier](../../f0-oracle-feasibility/results/plots/pareto.png)
 
 `results/plots/pareto.png`: x = average context tokens (log), y = mean checklist score, one point per method per model.
 
@@ -201,7 +201,7 @@ Full per-instance data: `results/tables/per_instance.csv`; raw prompts/responses
 
 Per the handoff's decision procedure: GO means proceed to F0.5 (candidate-realism check), not to an automatic router. PIVOT names the specific change (tree-only, or revised dependency semantics). STOP means report the result as a finding and do not proceed. The verdicts above are the mechanical output of the thresholds, not a new judgment call.
 """
-    (ROOT / "F0_RESULTS.md").write_text(report)
+    (ROOT.parent / "docs" / "results" / "F0_RESULTS.md").write_text(report)
     print(f"wrote {ROOT / 'F0_RESULTS.md'} ({len(report):,} chars)")
 
 

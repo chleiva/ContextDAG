@@ -1,6 +1,6 @@
 # F0 Oracle Feasibility — Results
 
-Run date: 2026-09-13 (benchmark 1.1; the original 12-13 Sep 2026 run on benchmark 1.0 is described in `F0_PHASE_REPORT.md`)
+Run date: 2026-09-13 (benchmark 1.1; the original 12-13 Sep 2026 run on benchmark 1.0 is described in `docs/results/F0_PHASE_REPORT.md`)
 Manifest: `f0-oracle-feasibility/manifest.yaml` at commit `4fd32c9`
 Scenario count: 145 (by family: ambiguous_reference 8, compound_turn 15, constraint_retention 12, continuation 10, join_then_split 10, knowledge_update 12, long_noisy_side_thread 10, new_root 8, resume 15, semantic_decoy 12, three_way_join 8, topic_fork 10, two_branch_join 15)
 Models: Response A = Claude Sonnet 4.6 (`us.anthropic.claude-sonnet-4-6`), Response B = Claude Haiku 4.5 (`us.anthropic.claude-haiku-4-5-20251001-v1:0`), Judge = Claude Opus 4.6 (`us.anthropic.claude-opus-4-6-v1`), Embedding = `sentence-transformers/all-mpnet-base-v2` (local), Generator = Claude Sonnet 4.6 (`us.anthropic.claude-sonnet-4-6`)
@@ -41,7 +41,7 @@ ACT = average context tokens (rendered context only; excludes system prompt and 
 
 ## Pareto frontier
 
-![Pareto frontier](results/plots/pareto.png)
+![Pareto frontier](../../f0-oracle-feasibility/results/plots/pareto.png)
 
 `results/plots/pareto.png`: x = average context tokens (log), y = mean checklist score, one point per method per model.
 

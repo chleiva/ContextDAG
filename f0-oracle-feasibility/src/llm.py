@@ -6,13 +6,12 @@ import os
 import random
 import threading
 import time
-from dataclasses import dataclass, asdict
+from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Optional
 
 import yaml
-from anthropic import AnthropicBedrock, APIStatusError, APIConnectionError, RateLimitError
-
+from anthropic import AnthropicBedrock, APIConnectionError, APIStatusError, RateLimitError
 from cost import ledger  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]

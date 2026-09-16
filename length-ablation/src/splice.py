@@ -23,10 +23,10 @@ import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import la  # noqa: E402,F401
+from candidates import extract_items  # noqa: E402  (F0.5 spaCy + regex extractor)
+from context_methods import build_context, n_tokens, render_turn  # noqa: E402
 from la import F0_SCENARIOS, META, SCENARIOS, TABLES, load_manifest  # noqa: E402
 from schema import Scenario, Turn, ancestors, load_all, save_scenario  # noqa: E402
-from context_methods import build_context, n_tokens, render_turn  # noqa: E402
-from candidates import extract_items  # noqa: E402  (F0.5 spaCy + regex extractor)
 
 F05_CFG = None
 

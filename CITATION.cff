@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this benchmark, code, or the reported results, please cite the repository."
+title: "ContextDAG: dependency-graph context management for multi-turn LLM conversations — benchmark and staged evaluation"
+type: software
+authors:
+  - family-names: Leiva
+    given-names: Christian
+repository-code: "https://github.com/chleiva/ContextDAG"
+license: Apache-2.0
+version: 0.1.0
+date-released: 2026-09-16
+keywords:
+  - large language models
+  - conversational context
+  - context management
+  - retrieval
+  - benchmark
+abstract: >-
+  ContextDAG represents a multi-turn conversation as a dependency graph and builds model
+  context from the branches a new message depends on. This repository contains the synthetic
+  benchmark (145 annotated scenarios across 13 structural families, plus long-history
+  variants), six context-construction methods, a staged evaluation (oracle feasibility,
+  candidate realism, judge recalibration, retrieval comparability, length pilot, length
+  ablation) with pre-registered thresholds, every LLM call's cost ledger, and the results.

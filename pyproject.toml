@@ -1,20 +1,41 @@
 [project]
 name = "contextdag"
-version = "0.0.1"
-description = "F0 oracle feasibility study for dependency-graph conversation context"
+version = "0.1.0"
+description = "Dependency-graph context management for multi-turn LLM conversations: benchmark, six context methods, and a staged pre-registered evaluation"
+readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "Apache-2.0" }
+authors = [{ name = "Christian Leiva" }]
 dependencies = [
   "anthropic[bedrock]>=1.5",
-  "sentence-transformers",
+  "boto3>=1.40",
+  "sentence-transformers>=3",
   "tiktoken",
   "numpy",
   "pandas",
+  "scipy",
+  "scikit-learn",
   "matplotlib",
   "pyyaml",
   "pydantic>=2",
+  "spacy>=3.8",          # candidate generation and splicing; model: python -m spacy download en_core_web_sm
 ]
 
 [project.optional-dependencies]
-# F0.5 candidate generator: local NER (install the model with `python -m spacy download en_core_web_sm`)
-f05 = ["spacy>=3.8", "boto3>=1.40", "scipy", "scikit-learn"]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[project.urls]
+Repository = "https://github.com/chleiva/ContextDAG"
+
+[tool.ruff]
+line-length = 160
+target-version = "py311"
+extend-exclude = [".venv", "results", "data"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+ignore = ["E402", "E731", "E501", "E701", "E702", "E741", "E713"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

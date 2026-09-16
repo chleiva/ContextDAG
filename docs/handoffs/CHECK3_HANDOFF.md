@@ -2,7 +2,7 @@
 
 **Phase type:** analysis pass over existing data, not a new experimental phase.
 **Prepared:** 14 September 2026. Hand this to a fresh Claude Code session with a checkout of `github.com/chleiva/ContextDAG`.
-**Prerequisite reading for the executing session:** `claude/F0.5_Analysis_and_Recommendations.md` (especially §0 and §7), `claude/F0.5_RESULTS.md`, `claude/JUDGE_RECALIBRATION_RESULTS.md`, spec v0.4 §12.2.
+**Prerequisite reading for the executing session:** `docs/results/F0.5_Analysis_and_Recommendations.md` (especially §0 and §7), `docs/results/F0.5_RESULTS.md`, `docs/results/JUDGE_RECALIBRATION_RESULTS.md`, spec v0.4 §12.2.
 
 **Why this is not a new run.** Check 3 asks whether semantic retrieval and summarisation match the *candidate-realistic* oracle's quality/token trade-off. Both sides already exist: F0 scored `semantic_retrieval@{1024,2048}` and `rolling_summary@{1024,2048}` on all 145 scenarios for Sonnet 4.6 and Haiku 4.5; F0.5 produced `candidate_oracle@{5,10,15}`. What is missing is the comparison itself — computed correctly, with the right resampling unit, a second judge, and per-family intervals. Estimated new spend: **~$3**.
 
@@ -64,7 +64,7 @@ These are the parts most likely to be got wrong, so they are specified rather th
 
 ### 3.1 Two free verification checks — do these first
 
-Both come from `F0.5_Analysis_and_Recommendations.md` §7 and §0, both are load-bearing for claims already drafted, and both cost nothing.
+Both come from `docs/reviews/F0.5_Analysis_and_Recommendations.md` §7 and §0, both are load-bearing for claims already drafted, and both cost nothing.
 
 - **(a) Turn-order diff.** For 10 scenarios where `candidate_oracle@15` and `oracle_dag` select the same turn set, diff the *serialised* contexts byte-for-byte. If they differ only in ordering, the "near-replication" reading in the F0.5 review is an order effect, not a replication, and the `ambiguous_reference` anomaly (identical +0.041 across all three response models) is explained. Report either way.
 - **(b) Off-route judge calls.** F0.5 routed 32 of 731 Opus judge calls through a different inference profile/region after the nine-hour quota stall. Group those 32 by `(method, response model)` and report the distribution. If they cluster in one arm rather than spreading, they are a confound and that arm's verdicts need a note.
@@ -106,7 +106,7 @@ Apply §1's criterion mechanically to the confirmatory set under the primary jud
 - **If check 3 passes**: state it *conditionally*, because it will not be powered as a pooled superiority claim. With a per-scenario sd of ≈0.21, detecting a ~2.6 pp pooled effect at 80% power needs **≈520 scenarios**; you have 145. Effects around 9–10 pp are powered at n≈40, which is why the conditional results (weak model, small closure) are the ones that show up. Say what is powered and what is not.
 - **If indeterminate**: say so, and let §5 below decide what happens next.
 
-Write `claude/CHECK3_RESULTS.md` following the F0.5 results template: frozen thresholds quoted, method used, tables, decision applied mechanically, cost ledger, assumptions and limitations. Add the §0 disclosure verbatim.
+Write `docs/results/CHECK3_RESULTS.md` following the F0.5 results template: frozen thresholds quoted, method used, tables, decision applied mechanically, cost ledger, assumptions and limitations. Add the §0 disclosure verbatim.
 
 ---
 
@@ -135,7 +135,7 @@ Zero new Opus calls. If any step would exceed the hard limit, stop and report ra
 
 ## 7. Deliverables
 
-1. `claude/CHECK3_RESULTS.md`
+1. `docs/results/CHECK3_RESULTS.md`
 2. Verification notes from §3.1, in that results doc
 3. `manifest.yaml` with the frozen `check3` section, committed before any computation
 4. Updated `analyze.py` with the cluster bootstrap and per-family intervals (reusable by benchmark 1.2)

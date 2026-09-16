@@ -16,7 +16,7 @@ from f0_bridge import REPO, ROOT, load_manifest  # noqa: E402
 from f05_cost import ledger  # noqa: E402
 
 C3 = ROOT / "results" / "check3"
-OUT = REPO / "claude" / "CHECK3_RESULTS.md"
+OUT = REPO / "docs" / "results" / "CHECK3_RESULTS.md"
 DISCLOSURE = """This analysis is **confirmatory-with-disclosure, not blind pre-registration**, and must be described that way in any writeup.
 
 One point estimate is already known. Deriving it from the enlarged-sample contrasts in `JUDGE_RECALIBRATION_RESULTS.md`, pooled over Sonnet and Haiku on benchmark 1.1:
@@ -98,7 +98,7 @@ def main() -> None:
     P("\nPower note (handoff §4): with a per-scenario sd ≈ 0.21, a pooled ~2.6 pp superiority effect needs ≈ 520 scenarios at 80% power; this benchmark has 145. The PASS is a non-inferiority-plus-token-ratio result, not a powered superiority claim. Point estimates favour the reference on all eight confirmatory comparisons, and the CI excludes zero on "
       + ", ".join(f"{disp[r.model]} vs {r.b}" for r in comp[comp.confirmatory].itertuples() if r.q_ci_low > 0) + ".\n")
     P("## 5. Quality / token frontier (every method, every model; 95% cluster-bootstrap CIs on both axes)\n")
-    P("![frontier](../f05-candidate-realism/results/check3/frontier.png)\n")
+    P("![frontier](../../f05-candidate-realism/results/check3/frontier.png)\n")
     fr = fro.copy(); fr["model"] = fr.model.map(disp)
     P(md(fr[["model", "method_label", "n", "context_tokens", "tok_ci_low", "tok_ci_high", "checklist_opus", "q_ci_low_opus", "q_ci_high_opus", "checklist_llama", "context_precision", "irrelevant_context_ratio", "leakage_opus", "leakage_llama"]].rename(columns={"method_label": "method", "context_tokens": "tokens", "tok_ci_low": "tok CI low", "tok_ci_high": "tok CI high", "checklist_opus": "checklist (Opus)", "q_ci_low_opus": "CI low", "q_ci_high_opus": "CI high", "checklist_llama": "checklist (Llama)", "context_precision": "precision", "irrelevant_context_ratio": "irrelevant ratio", "leakage_opus": "leakage (Opus)", "leakage_llama": "leakage (Llama)"})))
     P("\nWhere structure separates from retrieval regardless of the quality verdict: context precision 0.95 vs 0.43–0.49 and distractor leakage ≈ 1–4% vs 15–19% (Opus) for the reference against the retrieval/summary baselines, at 0.38–0.53 of their tokens.\n")

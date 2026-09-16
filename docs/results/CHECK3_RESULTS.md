@@ -1,6 +1,6 @@
 # Check 3 — Retrieval/Compression Comparability: Results
 
-> **Revised 15 September 2026 (check-3 rework, `claude/CHECK3_REWORK_RESULTS.md`).** Changed in place: (1) the Opus pooled rows in §3 now average only the models that carry verdicts for both arms (Sonnet + Haiku); the previous rows let MiniMax into the reference mean but not the baselines', inflating each Opus pooled Δ by +0.0132. (2) The PASS label in the headline and §4 was renamed to state what the criterion actually tested (non-inferiority + token ratio), and §10 records that the criterion's FAIL branch was unreachable in this design. (3) The judge-agreement paragraph in §3 was rewritten. No per-model numeric table changed; the frontier table gained the `semantic_retrieval@512` sensitivity arm (Llama-judged, exploratory).
+> **Revised 15 September 2026 (check-3 rework, `docs/results/CHECK3_REWORK_RESULTS.md`).** Changed in place: (1) the Opus pooled rows in §3 now average only the models that carry verdicts for both arms (Sonnet + Haiku); the previous rows let MiniMax into the reference mean but not the baselines', inflating each Opus pooled Δ by +0.0132. (2) The PASS label in the headline and §4 was renamed to state what the criterion actually tested (non-inferiority + token ratio), and §10 records that the criterion's FAIL branch was unreachable in this design. (3) The judge-agreement paragraph in §3 was rewritten. No per-model numeric table changed; the frontier table gained the `semantic_retrieval@512` sensitivity arm (Llama-judged, exploratory).
 
 Run date: 2026-09-15  
 Frozen thresholds: `f05-candidate-realism/manifest.yaml` → `check3`, committed at d4204fb before any computation; this doc generated at 6a9329b  
@@ -104,7 +104,7 @@ Power note (handoff §4): with a per-scenario sd ≈ 0.21, a pooled ~2.6 pp supe
 
 ## 5. Quality / token frontier (every method, every model; 95% cluster-bootstrap CIs on both axes)
 
-![frontier](../f05-candidate-realism/results/check3/frontier.png)
+![frontier](../../f05-candidate-realism/results/check3/frontier.png)
 
 | model | method | n | tokens | tok CI low | tok CI high | checklist (Opus) | CI low | CI high | checklist (Llama) | precision | irrelevant ratio | leakage (Opus) | leakage (Llama) |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
