@@ -1,6 +1,6 @@
 # Length Ablation — Results (final experiment)
 
-Run date: 2026-09-16; generated at commit 8aa95b8; interpretation table frozen in `length-ablation/manifest.yaml` at commit 8aa95b8 before the first billed call. Spliced sets tagged `length-ablation`. Responders Sonnet 4.6 / Haiku 4.5 / MiniMax M2.5; judge Llama 4 Maverick only; zero Opus. No conversation text was written or changed in this phase.
+Run date: 2026-09-16; generated at commit a794c6b; interpretation table frozen in `length-ablation/manifest.yaml` at commit 8aa95b8 before the first billed call. Spliced sets tagged `length-ablation`. Responders Sonnet 4.6 / Haiku 4.5 / MiniMax M2.5; judge Llama 4 Maverick only; zero Opus. No conversation text was written or changed in this phase.
 
 **Primary result, `full_history(base) − full_history(60)`, paired over 40 targets:** Claude Sonnet 4.6 -0.065 [-0.158, +0.025] → CLOSED (< +2 pp or negative); Claude Haiku 4.5 -0.115 [-0.200, -0.033] → CLOSED (< +2 pp or negative); MiniMax M2.5 -0.027 [-0.102, +0.042] → CLOSED (< +2 pp or negative); pooled -0.069 [-0.131, -0.010] → CLOSED (< +2 pp or negative).
 
@@ -77,10 +77,14 @@ Retraction uses the pilot's heuristic (regex on the answer opening). The oracle 
 | +2 to +5 pp | DIRECTIONAL, under-powered at n=40 |
 | < +2 pp, or negative | CLOSED: full history does not degrade to 60 turns on this benchmark; the quality claim is closed, as a finding |
 
-- Claude Sonnet 4.6: -0.0646 [-0.1583, +0.0250] → **CLOSED (< +2 pp or negative)**
-- Claude Haiku 4.5: -0.1146 [-0.2000, -0.0333] → **CLOSED (< +2 pp or negative)**
-- MiniMax M2.5: -0.0271 [-0.1021, +0.0417] → **CLOSED (< +2 pp or negative)**
-- pooled: -0.0688 [-0.1306, -0.0097] → **CLOSED (< +2 pp or negative)**
+**Not applied.** The validity diagnostic failed (full-history leakage does not rise from base to 60), so per the handoff the run is void and the table is not read. The mechanical readings the numbers would have produced are listed for the record only, struck through in meaning if not in form:
+
+- Claude Sonnet 4.6: -0.0646 [-0.1583, +0.0250] → (void) **CLOSED (< +2 pp or negative)**
+- Claude Haiku 4.5: -0.1146 [-0.2000, -0.0333] → (void) **CLOSED (< +2 pp or negative)**
+- MiniMax M2.5: -0.0271 [-0.1021, +0.0417] → (void) **CLOSED (< +2 pp or negative)**
+- pooled: -0.0688 [-0.1306, -0.0097] → (void) **CLOSED (< +2 pp or negative)**
+
+**What the void run nevertheless shows, as observations (not claims):** full history *improves* with spliced length on all three models (checklist 0.85 → 0.92 Sonnet, 0.80 → 0.92 Haiku, 0.89 → 0.91 MiniMax from base to 60) while leakage falls (0.108 → 0.033 pooled) and full-history retraction falls to zero at 60 turns (Sonnet 7.5% → 0%). The spliced donors are validated 1.1 distractor branches from *other* scenarios; even ranked by cosine to the query and entity-disjoint from the gold closure, they read as other projects, so a 60-turn history is a visibly multi-project conversation in which the target's own thread stands out more, not less. This is the same failure mode as the pilot's generation gate, reached from the opposite direction: the pilot's writer made same-project filler too easy; splicing made cross-project filler too obviously separable. Neither instrument has produced distractors that get harder with length, which is itself the finding this phase adds: on synthetic multi-topic benchmarks, adding history does not degrade full-history answering for current models at 8k tokens, and 'long conversations hurt' cannot be assumed; it has to be constructed, and two attempts have not managed it.
 
 ## 5. Stage 2 — retrieval at matched budget by length
 
@@ -142,3 +146,5 @@ Spend: **$4.78** across 1,112 calls (4,907,607 input / 362,106 output tokens). E
 - Donor branches carry their own internal chain links but lose links to their source scenario's gold turns (those are not spliced); the text is unchanged, and `oracle_dag` never sees donor turns, so this affects nothing measured here.
 - Base-length arms are reused from F0/F0.5 (temperature-0 samples from earlier days); with 27% decoder variance per cell this is one sample either way, but a fresh base sample would be the cleaner design if this were repeated.
 - `BENCHMARK_1.2_PILOT_Analysis_and_Recommendations.md`, listed as required reading, is not in the repository.
+- Stage 2 ran before the validity verdict was applied (the pipeline gates Stage 2 on spend, not on validity). Its descriptive result stands on its own terms because it does not depend on leakage: retrieval at the oracle's token budget loses context recall as the history grows (0.96 at base → 0.82 at 30 → 0.83 at 60) and the oracle's advantage over it grows from ≈ 0 at base to +0.12 [+0.04, +0.20] pooled at 30 turns and +0.06 [−0.00, +0.13] at 60. Recorded as future work to confirm on a valid long-history instrument, not claimed here.
+- Leakage rose from base to 30 (0.108 → 0.156 pooled) before falling at 60; a 30-turn design with same-project donors may be the regime where distractors bite, if a valid instrument is ever built.
