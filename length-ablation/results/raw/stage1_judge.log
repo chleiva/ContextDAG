@@ -1,0 +1,16 @@
+216 to judge (0 done)
+[40/216] two_branch_join_008__L60|full_history|-|us.anthropic.claude- score=0.75 | run $0.071
+[80/216] three_way_join_005__L60|full_history|-|minimax.minimax-m2.5 score=1.00 | run $0.138
+[120/216] resume_005__L60|full_history|-|us.anthropic.claude-sonnet-4- score=0.67 | run $0.212
+[160/216] long_noisy_side_thread_006__L60|full_history|-|minimax.minim score=1.00 | run $0.297
+[200/216] new_root_004__L30|full_history|-|minimax.minimax-m2.5 score=1.00 | run $0.385
+[216/216] long_noisy_side_thread_003__L60|full_history|-|minimax.minim score=0.50 | run $0.417
+0 failures, run spend $0.417
+F0.5 spend: $3.17 of $15.00 hard limit (estimate $8.00, warn $10.00)
+calls: 437, tokens in: 2,975,857, out: 131,971
+  answer-stage1    $   2.75
+  judge            $   0.42
+  us.anthropic.claude-sonnet-4-6                   $   1.79
+  us.anthropic.claude-haiku-4-5-20251001-v1:0      $   0.60
+  us.meta.llama4-maverick-17b-instruct-v1:0        $   0.42
+  minimax.minimax-m2.5                             $   0.36

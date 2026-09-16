@@ -1,0 +1,14 @@
+3 to judge (549 done)
+[3/3] two_branch_join_004__L60|semantic_retrieval@matched|-|minima score=1.00 | run $0.003
+0 failures, run spend $0.003
+F0.5 spend: $4.78 of $15.00 hard limit (estimate $8.00, warn $10.00)
+calls: 1112, tokens in: 4,907,607, out: 362,106
+  answer-stage1    $   2.75
+  answer-stage2    $   1.10
+  judge            $   0.92
+  us.anthropic.claude-sonnet-4-6                   $   2.43
+  us.meta.llama4-maverick-17b-instruct-v1:0        $   0.92
+  us.anthropic.claude-haiku-4-5-20251001-v1:0      $   0.79
+  minimax.minimax-m2.5                             $   0.59
+  global.anthropic.claude-sonnet-4-6               $   0.03
+  global.anthropic.claude-haiku-4-5-20251001-v1:0  $   0.01

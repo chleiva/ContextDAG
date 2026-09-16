@@ -1,0 +1,30 @@
+stage 2: 336 planned, 336 to do
+[20/336] two_branch_join_003__L60|semantic_retrieval@matched|-|us.ant ctx=712 | run $0.07
+[40/336] two_branch_join_005|semantic_retrieval@matched|-|us.anthropi ctx=845 | run $0.13
+[60/336] two_branch_join_006__L60|semantic_retrieval@matched|-|minima ctx=753 | run $0.20
+[80/336] three_way_join_001|semantic_retrieval@matched|-|minimax.mini ctx=790 | run $0.26
+[100/336] three_way_join_004|semantic_retrieval@matched|-|us.anthropic ctx=671 | run $0.34
+[120/336] three_way_join_006__L30|semantic_retrieval@matched|-|us.anth ctx=560 | run $0.41
+[140/336] three_way_join_008__L60|semantic_retrieval@matched|-|us.anth ctx=619 | run $0.48
+[160/336] resume_002__L60|semantic_retrieval@matched|-|minimax.minimax ctx=260 | run $0.53
+[180/336] resume_005__L30|semantic_retrieval@matched|-|us.anthropic.cl ctx=347 | run $0.59
+[200/336] resume_007|semantic_retrieval@matched|-|us.anthropic.claude- ctx=542 | run $0.66
+[220/336] long_noisy_side_thread_001__L60|semantic_retrieval@matched|- ctx=375 | run $0.72
+[240/336] long_noisy_side_thread_005|semantic_retrieval@matched|-|us.a ctx=389 | run $0.78
+[260/336] long_noisy_side_thread_008|semantic_retrieval@matched|-|us.a ctx=303 | run $0.82
+[280/336] new_root_002|semantic_retrieval@matched|-|minimax.minimax-m2 ctx=0 | run $0.87
+[300/336] new_root_004__L60|semantic_retrieval@matched|-|minimax.minim ctx=0 | run $0.98
+[320/336] new_root_007__L30|semantic_retrieval@matched|-|us.anthropic. ctx=0 | run $1.04
+[336/336] new_root_006__L30|semantic_retrieval@matched|-|minimax.minim ctx=0 | run $1.10
+0 failures, run spend $1.10
+F0.5 spend: $4.27 of $15.00 hard limit (estimate $8.00, warn $10.00)
+calls: 773, tokens in: 3,172,398, out: 268,970
+  answer-stage1    $   2.75
+  answer-stage2    $   1.10
+  judge            $   0.42
+  us.anthropic.claude-sonnet-4-6                   $   2.43
+  us.anthropic.claude-haiku-4-5-20251001-v1:0      $   0.79
+  minimax.minimax-m2.5                             $   0.59
+  us.meta.llama4-maverick-17b-instruct-v1:0        $   0.42
+  global.anthropic.claude-sonnet-4-6               $   0.03
+  global.anthropic.claude-haiku-4-5-20251001-v1:0  $   0.01

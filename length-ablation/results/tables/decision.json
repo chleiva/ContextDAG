@@ -1,0 +1,82 @@
+{
+  "validity_leakage_rises_with_length_pooled": false,
+  "leakage_by_length": {
+    "response_a": {
+      "base": 0.125,
+      "30": 0.1875,
+      "60": 0.05
+    },
+    "response_b": {
+      "base": 0.075,
+      "30": 0.15625,
+      "60": 0.025
+    },
+    "response_c": {
+      "base": 0.125,
+      "30": 0.125,
+      "60": 0.025
+    },
+    "pooled": {
+      "base": 0.10833333333333334,
+      "30": 0.15625,
+      "60": 0.03333333333333333
+    }
+  },
+  "primary": {
+    "response_a": {
+      "model": "response_a",
+      "a": "full_history@base",
+      "b": "full_history@60",
+      "n": 40,
+      "q_diff": -0.0646,
+      "q_ci_low": -0.1583,
+      "q_ci_high": 0.025,
+      "se": 0.0481,
+      "tok_a": 1825.975,
+      "tok_b": 8220.325
+    },
+    "response_b": {
+      "model": "response_b",
+      "a": "full_history@base",
+      "b": "full_history@60",
+      "n": 40,
+      "q_diff": -0.1146,
+      "q_ci_low": -0.2,
+      "q_ci_high": -0.0333,
+      "se": 0.0426,
+      "tok_a": 1825.975,
+      "tok_b": 8220.325
+    },
+    "response_c": {
+      "model": "response_c",
+      "a": "full_history@base",
+      "b": "full_history@60",
+      "n": 40,
+      "q_diff": -0.0271,
+      "q_ci_low": -0.1021,
+      "q_ci_high": 0.0417,
+      "se": 0.0365,
+      "tok_a": 1825.975,
+      "tok_b": 8220.325
+    },
+    "pooled": {
+      "model": "pooled",
+      "a": "full_history@base",
+      "b": "full_history@60",
+      "n": 40,
+      "q_diff": -0.0688,
+      "q_ci_low": -0.1306,
+      "q_ci_high": -0.0097,
+      "se": 0.0315,
+      "tok_a": 1825.975,
+      "tok_b": 8220.325
+    }
+  },
+  "reading": {
+    "response_a": "CLOSED (< +2 pp or negative)",
+    "response_b": "CLOSED (< +2 pp or negative)",
+    "response_c": "CLOSED (< +2 pp or negative)",
+    "pooled": "CLOSED (< +2 pp or negative)"
+  },
+  "stage2_present": true
+}

@@ -1,0 +1,24 @@
+336 to judge (216 done)
+[40/336] two_branch_join_005|semantic_retrieval@matched|-|minimax.min score=1.00 | run $0.050
+[80/336] three_way_join_002__L30|semantic_retrieval@matched|-|us.anth score=0.25 | run $0.102
+[120/336] three_way_join_006__L60|semantic_retrieval@matched|-|minimax score=0.75 | run $0.157
+[160/336] three_way_join_008__L30|semantic_retrieval@matched|-|us.anth score=0.25 | run $0.215
+[200/336] resume_007__L60|semantic_retrieval@matched|-|us.anthropic.cl score=0.33 | run $0.274
+FAILED two_branch_join_004__L60|semantic_retrieval@matched|-|minimax.minimax-m2.5: RuntimeError: converse call failed after 7 attempts over 3 regions: An error occurred (ThrottlingException) when calling the Converse operation (reached max retries: 2): Too 
+[240/336] long_noisy_side_thread_005__L60|semantic_retrieval@matched|- score=1.00 | run $0.350
+[280/336] new_root_002__L30|semantic_retrieval@matched|-|minimax.minim score=1.00 | run $0.418
+[320/336] new_root_007__L60|semantic_retrieval@matched|-|minimax.minim score=1.00 | run $0.481
+FAILED resume_002|semantic_retrieval@matched|-|us.anthropic.claude-haiku-4-5-20251001-v1:0: RuntimeError: converse call failed after 7 attempts over 3 regions: An error occurred (ThrottlingException) when calling the Converse operation (reached max retries: 2): Too 
+FAILED resume_003|semantic_retrieval@matched|-|minimax.minimax-m2.5: RuntimeError: converse call failed after 7 attempts over 3 regions: An error occurred (ThrottlingException) when calling the Converse operation (reached max retries: 2): Too 
+3 failures, run spend $0.503
+F0.5 spend: $4.77 of $15.00 hard limit (estimate $8.00, warn $10.00)
+calls: 1109, tokens in: 4,896,492, out: 361,325
+  answer-stage1    $   2.75
+  answer-stage2    $   1.10
+  judge            $   0.92
+  us.anthropic.claude-sonnet-4-6                   $   2.43
+  us.meta.llama4-maverick-17b-instruct-v1:0        $   0.92
+  us.anthropic.claude-haiku-4-5-20251001-v1:0      $   0.79
+  minimax.minimax-m2.5                             $   0.59
+  global.anthropic.claude-sonnet-4-6               $   0.03
+  global.anthropic.claude-haiku-4-5-20251001-v1:0  $   0.01
