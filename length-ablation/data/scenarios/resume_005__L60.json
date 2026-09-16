@@ -1,0 +1,748 @@
+{
+  "scenario_id": "resume_005__L60",
+  "family": "resume",
+  "label": "RESUME",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I'm also trying to figure out the best way to record ambient noise levels at each station so I can account for detection bias. What equipment do urban ecologists typically use for that?",
+      "assistant_message": "The most commonly used instrument in peer-reviewed urban soundscape ecology is the Song Meter SM4 by Wildlife Acoustics, which records broadband audio and can simultaneously log temperature and humidity. For spot measurements of noise levels in decibels, many researchers pair it with a calibrated Class 2 sound level meter such as the Extech 407732, which measures from 35 to 130 dB and costs around $150. The SM4 retails at approximately $849 and has been the reference device in studies like Barber et al. (2010) in PLoS ONE, which established that urban background noise above 65 dB(A) significantly reduces effective detection distances for songbirds.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Good to know. Is there a standard height at which the sound level meter should be held during the measurement?",
+      "assistant_message": "The ISO 1996-2:2017 standard for environmental noise measurement specifies that the microphone should be held at 1.2 to 1.5 meters above the ground, roughly ear height for a standing adult, and at least 3.5 meters from any reflective surface such as a wall or parked vehicle. The measurement should be taken over a minimum of 30 seconds to capture an equivalent continuous sound level (Leq). Most urban bird studies that report noise data follow this ISO specification exactly, which allows cross-study comparisons of detection-probability corrections.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "We're also trying to figure out staffing for the new location. How many employees would a typical 1,100 square foot bakery need?",
+      "assistant_message": "For a production-and-retail bakery of around 1,100 square feet, a lean opening team typically includes 1 lead baker, 1–2 production assistants, and 2–3 front-of-house staff, totaling roughly 4–6 employees. In Portland, the current minimum wage as of July 1, 2024 is $15.95 per hour for standard employers, which sets your baseline labor cost floor. Many second-location bakeries also cross-train one manager from the original location to oversee both sites during the first six months, which reduces training costs but increases that individual's hours significantly.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "What about equipment? We'd need at least a deck oven for the new space.",
+      "assistant_message": "A commercial deck oven suitable for a bakery of that size—something like a Bongard Cervap 4-deck or a Revent 724—typically runs between $18,000 and $35,000 new, depending on the number of decks and steam injection capability. Used or refurbished units from restaurant equipment dealers like Central Restaurant Products or local auction houses can cut that cost to $6,000–$12,000, though you'd want a technician to inspect the heating elements and stone decks before purchase. Don't forget that installation, including gas line hookup and ventilation, can add another $2,000–$5,000 on top of the equipment cost.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "We're also thinking about whether to keep the same menu at the second location or introduce some new items exclusive to Mississippi Avenue.",
+      "assistant_message": "Exclusive menu items at a second location can create a destination draw and generate social media buzz, but they also complicate your supply chain and training requirements. A common middle-ground strategy is an 80/20 split: 80% of the menu mirrors the original location to maintain brand consistency and simplify ordering, while 20% consists of location-specific items that reflect the neighborhood's character. Several Portland bakeries, like Little T American Baker, have used neighborhood-specific specials to build a loyal local following without straining back-of-house operations.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "For our restaurant reservation platform Tableaux, we're seeing a 71% drop-off rate at the account creation screen, specifically on the step where users enter their phone number for SMS verification.",
+      "assistant_message": "A 71% abandonment at SMS verification is a well-documented friction point in reservation platforms. The main culprits are users not wanting to share a phone number this early and SMS delivery delays that cause timeout errors. Tableaux could consider offering email-based verification as a fallback option, and A/B tests in the hospitality SaaS space have shown that adding a 'Why we need this' tooltip at that step can reduce drop-off to roughly 29–34%.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "For Tableaux we also see that users who do complete SMS verification still abandon at 52% before finishing profile setup — they drop off at the cuisine preference selection on step 3 of 5.",
+      "assistant_message": "A 52% abandonment at cuisine preference selection on step 3 of 5 suggests that users perceive it as mandatory gatekeeping rather than personalization. Making that screen entirely skippable with a 'Set up later' option is the most reliable quick fix — Tableaux's competitors in the OpenTable and Resy space have reported a 40% reduction in profile-setup abandonment after making preference screens optional. You could also reduce the number of cuisine categories displayed from however many you currently show down to a curated list of 8–10 to lower decision fatigue.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "What day-30 retention should Tableaux realistically target after fixing the SMS and profile-setup issues?",
+      "assistant_message": "Restaurant reservation platforms operate on fundamentally different engagement rhythms than daily-use apps, so day-30 retention benchmarks are lower — a realistic target for Tableaux after fixing onboarding friction would be 14–19%. The reference point here is Resy's 2021 mobile relaunch, which improved day-30 retention from 9% to 16% after simplifying account creation to a single email-plus-password step and deferring all preference collection. I'd recommend Tableaux aim for 16% as a primary target, since that aligns with the upper-mid range of the hospitality booking app category.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "We're also running an A/B test for Tableaux's onboarding in their v3.1.0 release. What sample size and test duration make sense there?",
+      "assistant_message": "For Tableaux, to detect a meaningful improvement from the 71% SMS drop-off rate down to a target of roughly 32%, you'd need approximately 900 users per variant at 80% power and a 5% significance level — 1,800 total. Reservation platforms tend to have lower weekly new-user volumes than fitness apps, so if Tableaux is acquiring around 400 new users per week, plan for a 5-week test duration to accumulate enough completions. Unlike daily-use apps, you'll also want to extend your observation window to day-60 rather than day-30 to capture meaningful repeat-booking behavior.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "We also need to decide how members register on the platform. Should we require them to use their cooperative membership ID to sign up?",
+      "assistant_message": "Requiring the membership ID during registration is a solid approach because it ensures only current members can place orders without any manual vetting on your end. You'd store the ID in their profile and validate it against your membership database — or even a simple spreadsheet — before activating the account. Just make sure you have a clear process for new members who joined recently and may not have their ID yet when they try to register.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "Our membership database is in a Google Sheet right now. Is there a straightforward way to connect that to the ordering platform for ID validation?",
+      "assistant_message": "Many lightweight ordering platforms support Zapier or direct Google Sheets API integration, so when a new user submits their membership ID the system can do a lookup against your sheet in near-real time. If the ID matches a row in the sheet, registration proceeds; if not, the user gets a message to contact the cooperative administrator. It's not enterprise-grade but it's reliable enough for a cooperative of typical size.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "We have 214 active member households right now. Does that affect which platform tier we'd need?",
+      "assistant_message": "214 households is well within the limits of most entry-level cooperative or CSA platform tiers, which typically cap at 250 to 500 members. You likely won't need to pay for a higher tier until you grow past that range. It's worth confirming the exact member cap in the pricing plan you're evaluating, since some platforms count individual user accounts rather than households.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "We're looking at Farmigo and Local Line as our two main options. Do you have a sense of how they compare for something our size?",
+      "assistant_message": "Both are well-regarded for small-to-mid-size cooperatives and CSAs. Local Line tends to have a cleaner modern interface and stronger inventory management tools, while Farmigo has historically been popular with food hubs that need more customizable member-facing storefronts. At 214 households and with your pickup and delivery split, either should handle your volume — Local Line's pricing is generally more transparent upfront, which might simplify your board approval process.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "What payment processors do those platforms support? We want to accept credit cards and also ACH bank transfers.",
+      "assistant_message": "Local Line integrates natively with Stripe, which supports both credit card payments and ACH bank transfers through its platform. Farmigo has historically used Stripe as well, though their ACH support depends on which plan you're on — it's worth confirming with their sales team before committing. ACH typically has a lower processing fee (around 0.8% capped at $5 per transaction on Stripe) compared to credit cards, so offering it can meaningfully reduce your transaction costs over a year.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "We'd also like to let members pay with their cooperative credit balance — basically a prepaid account they top up. Is that a standard feature?",
+      "assistant_message": "It's offered by some platforms but not all at the base tier. In Local Line it's called a 'store credit' or 'wallet' feature and is available on their mid-tier plan. Farmigo has a similar prepaid balance function they refer to as a member account credit. You'd want to confirm whether applying store credit at checkout can be combined with a partial card payment for orders that exceed the balance, since that split-tender scenario trips up some implementations.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "For the prepaid top-up, should we set a minimum top-up amount? I'm thinking $20 minimum so members don't top up in tiny increments and create accounting headaches.",
+      "assistant_message": "A $20 minimum top-up is sensible and pretty standard — it reduces the number of small transactions you have to reconcile and keeps the per-transaction payment processing cost proportionally low. You might also consider a suggested top-up amount, like the $4.50 per-order figure we were working with earlier, to help members load enough for a few weeks of orders at a time. A clear expiration policy for unused credits, such as rolling over annually, is also worth adding to your member agreement.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "Good point on the expiration policy. What's a reasonable timeframe — one year or two years before unused credit expires?",
+      "assistant_message": "One year is the more common choice for small cooperatives because it keeps your liability ledger clean and prompts members to stay engaged with the platform. Two years is more member-friendly but means you're carrying that liability longer on your books. A practical middle ground some cooperatives use is a rolling 12-month inactivity rule — credit expires only if the member hasn't placed any order in 12 months, which avoids penalizing active members who simply haven't spent down their balance.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "We'll probably go with the 12-month inactivity rule. Should that be spelled out in the membership agreement or just in the platform's terms of service?",
+      "assistant_message": "It should appear in both, but the membership agreement is the more binding document from your cooperative's legal standpoint. Putting it there ensures members have explicitly acknowledged the policy at the time they join, which protects you if someone disputes a forfeited balance. A brief plain-language summary in the platform's checkout or account page is also helpful so members encounter the reminder in context rather than only in a document they signed once.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "Our membership agreement is currently a two-page PDF that members sign at the annual meeting. Can we move to e-signatures for new members who join online?",
+      "assistant_message": "Yes, e-signatures are legally valid for this kind of membership agreement in all U.S. states under the federal E-SIGN Act and the Uniform Electronic Transactions Act. Tools like DocuSign, HelloSign (now Dropbox Sign), or even a simple checkbox acknowledgment with a timestamped record can satisfy the requirement. A checkbox with a stored timestamp and the member's IP address is the lightest-weight option and is generally sufficient for a cooperative membership agreement that doesn't involve real estate or other high-stakes transactions.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "We'd want to store those signed agreements somewhere accessible for our board. Is there a good document management approach for a small operation like ours?",
+      "assistant_message": "A shared Google Drive folder with a consistent naming convention — something like MemberID_LastName_AgreementYear — works well for cooperatives at your scale and costs nothing beyond your existing Google Workspace subscription if you have one. For e-signed documents, DocuSign and Dropbox Sign both include cloud storage and audit trails in their base plans, so you may not need a separate system. The key is making sure at least two board members have admin access to the repository so there's no single point of failure.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "We have five board members. Should all five have admin access or just two or three?",
+      "assistant_message": "Three is a practical sweet spot — it gives you redundancy without creating confusion about who's responsible for keeping the repository organized. A common structure is the cooperative manager plus two board officers, such as the president and treasurer, holding admin rights, while the remaining board members have read-only access. That way sensitive member documents aren't editable by everyone, but multiple people can retrieve them when needed.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "That makes sense. We should also think about what happens when a board member's term ends — how do we handle revoking their access?",
+      "assistant_message": "The cleanest approach is to tie access reviews to your board transition dates, which for most cooperatives fall right after the annual meeting. On that date, the outgoing member's account should be downgraded to no-access or removed entirely, and the incoming member's account upgraded. Putting a calendar reminder in your cooperative's shared calendar 48 hours before the transition date ensures it doesn't get overlooked in the post-meeting rush.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "Our annual meeting is the second Saturday of March each year, so March 8, 2025 is the next one. I'll set that reminder for March 6.",
+      "assistant_message": "March 6 is a good lead time — it gives whoever handles admin access a full day to prepare the account changes before the meeting itself. You might also add a brief line to the meeting agenda confirming that access transitions were completed, so it's on the record. That kind of documentation is useful if questions ever come up later about when a former board member's access was revoked.",
+      "gold_parents": [
+        "t22"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "I need to figure out roofing for the observatory too. I'm thinking a roll-off roof design using corrugated polycarbonate panels. Is 8mm twin-wall the right thickness?",
+      "assistant_message": "8mm twin-wall polycarbonate is a solid choice for a roll-off observatory roof — it balances light weight with enough structural rigidity to resist moderate snow loads, typically rated around 15 lbs per square foot depending on the brand. For a backyard observatory you'll want to make sure the panels are UV-coated on both sides, since single-sided UV protection will degrade the inner surface over time from reflected heat.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "What kind of track system works best for rolling the roof off? I'm looking at either aluminum extrusion rails or steel angle iron.",
+      "assistant_message": "Steel angle iron is the more common choice for permanent observatories because it resists the lateral flex that aluminum extrusion can develop over time under repeated thermal cycling. A standard setup uses 2-inch by 2-inch by 1/4-inch steel angle iron with V-groove wheels, which gives you smooth rolling and self-centering behavior without needing a complex alignment jig every season.",
+      "gold_parents": [
+        "t24"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "I'm designing the sampling protocol for my field study on urban House Sparrows (Passer domesticus) in Chicago. I want to use point count surveys, and I'm trying to figure out the right detection radius and survey duration to use.",
+      "assistant_message": "Point count surveys are a solid choice for urban passerines. The standard protocol most widely used for North American urban bird studies is the one outlined in the USGS Breeding Bird Survey methodology, which uses a fixed-radius point count of 400 meters, but for dense urban environments many researchers scale that down to a 50-meter fixed-radius circle to reduce detection errors caused by traffic noise and building interference. Survey duration is typically set at 3 minutes or 5 minutes per point, with 5 minutes being the more common choice for capturing detectability of smaller, quieter species like House Sparrows.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "Got it. We also need to think about our autonomous routine. Right now we're planning to use the April Tag vision system to localize the robot. What cameras do teams typically use for that in FTC?",
+      "assistant_message": "The most common camera for AprilTag localization in FTC is the Logitech C920, which is widely supported by the FTC SDK's built-in vision pipeline and runs reliably at 30 frames per second at 1080p. Many teams also use the Logitech C270 as a budget option, though its lower resolution can reduce detection reliability at longer distances. The EasyOpenCV library and the official FTC SDK Vision Portal both support these cameras out of the box, which significantly reduces setup time.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "For the autonomous period, how many points can we score if we successfully park in the observation zone versus the ascent zone?",
+      "assistant_message": "In the current FTC season, parking in the observation zone during autonomous earns 3 points, while parking in the ascent zone earns 5 points. The 2-point difference might seem small, but in close qualifier matches where rankings are decided by cumulative ranking points, consistently choosing the higher-value park can matter over a full day of competition. Teams that can reliably complete a scoring task and then navigate to the ascent zone tend to rank notably higher than those who only park.",
+      "gold_parents": [
+        "t27"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "Coach wants to know what size van we need to rent to transport everything to the competition venue.",
+      "assistant_message": "For a full robotics team transport including the robot, toolboxes, spare parts bins, and team gear, a 15-passenger van typically isn't enough cargo space on its own. Most teams in similar situations rent a 10-foot cargo truck or pair a standard passenger van with a small trailer. You'll want to confirm the venue's loading dock hours before you finalize the rental.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t30",
+      "turn_index": 29,
+      "user_message": "We also need to figure out the hotel situation — how many rooms should we book for a team of 14 students and 3 mentors?",
+      "assistant_message": "For 14 students and 3 mentors, you're looking at 17 people total. Assuming two students per room and mentors in single rooms, you'd need 7 student rooms and 3 mentor rooms, so 10 rooms minimum. Booking a block rate with the hotel as early as possible usually saves the team significant money.",
+      "gold_parents": [
+        "t29"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t31",
+      "turn_index": 30,
+      "user_message": "For the drive team, do we need matching shirts or full uniforms for the competition?",
+      "assistant_message": "Most regional competitions require drive team members to wear matching shirts with the team number clearly visible, but full uniforms with logos are optional unless your team has a sponsor agreement requiring them. Check the specific event's drive team dress code in the event information packet, since some venues have additional safety requirements like closed-toe shoes. Ordering shirts at least two weeks before the event is usually necessary to guarantee delivery in time.",
+      "gold_parents": [
+        "t30"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t32",
+      "turn_index": 31,
+      "user_message": "I'm also trying to figure out storage unit sizes for some furniture we'll be putting in climate-controlled storage. The facility near us offers a 10x20 unit for $185 per month, which they say fits a 2-bedroom apartment worth of stuff.",
+      "assistant_message": "A 10x20 is one of the most popular storage sizes and that capacity estimate sounds about right — it typically holds around 800 to 1,000 cubic feet of packed household goods. At $185 per month, that's a reasonable rate for climate-controlled in most mid-size metro areas. Just make sure the climate control maintains a consistent temperature range, usually between 55 and 85 degrees Fahrenheit, which matters a lot for wood furniture and electronics.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t33",
+      "turn_index": 32,
+      "user_message": "The storage facility also has a 10x15 unit for $140 per month. I'm wondering if that might be enough.",
+      "assistant_message": "A 10x15 gives you roughly 600 to 750 cubic feet of usable space, which is typically adequate for a one-bedroom apartment or a portion of a two-bedroom. If you're storing furniture from multiple rooms — sofas, bed frames, dressers — you'd likely find the 10x15 too tight and end up stacking things awkwardly. The $45 monthly savings over the 10x20 could cost you more in damaged items or a second unit down the line.",
+      "gold_parents": [
+        "t32"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t34",
+      "turn_index": 33,
+      "user_message": "The facility manager mentioned they also have a 10x30 unit for $260 per month if we end up needing more space.",
+      "assistant_message": "A 10x30 is essentially a large garage-sized space — around 1,200 to 1,500 cubic feet — which is often overkill unless you're storing a full 3- or 4-bedroom house worth of furniture plus outdoor equipment or vehicles. At $260 per month, the jump from the 10x20 at $185 is $75 extra, and you'd want to be confident you'll actually use that extra 400 square feet. For most people in a temporary moving situation, the 10x20 is the sweet spot between cost and capacity.",
+      "gold_parents": [
+        "t33"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t35",
+      "turn_index": 34,
+      "user_message": "They said we'd need to sign a minimum 3-month contract for any of the climate-controlled units. Does that seem standard?",
+      "assistant_message": "A 3-month minimum is on the longer end — many facilities use month-to-month leases or a 1-month minimum, though some do require 2 to 3 months for climate-controlled units specifically because of the higher overhead. If your move timeline is uncertain, it's worth negotiating or shopping around, since a competing facility might offer the same climate-controlled rates on a month-to-month basis. Read the early-termination clause carefully too, because some facilities charge a fee equal to one full month's rent if you leave before the contract period ends.",
+      "gold_parents": [
+        "t34"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t36",
+      "turn_index": 35,
+      "user_message": "What kind of data recording sheet should I give the students for each sample?",
+      "assistant_message": "A good field data sheet for each sample should include columns for date, time, site ID, GPS coordinates, collector name, water temperature in Celsius, pH reading, dissolved oxygen in mg/L, and a brief visual observation note such as color or turbidity. Keeping it to one double-sided page per sampling event per site will make it easy for students to manage in the field without losing papers.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t37",
+      "turn_index": 36,
+      "user_message": "Should students use paper sheets or some kind of digital form?",
+      "assistant_message": "A hybrid approach tends to work well — have students fill out paper sheets in the field as a backup, then transfer data into a shared Google Form or spreadsheet within 24 hours of returning from the site. This protects you from data loss if a device gets wet or loses battery, and it also teaches students good data management habits.",
+      "gold_parents": [
+        "t36"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t38",
+      "turn_index": 37,
+      "user_message": "I like that. Can I set up a Google Sheet that automatically calculates averages across all groups after they enter data?",
+      "assistant_message": "Absolutely. You can create a master Google Sheet where each group has its own tab, and then add a summary tab that uses the IMPORTRANGE or direct cell-reference formulas to pull all group data together. From there, AVERAGE and AVERAGEIF functions can automatically compute site-specific and date-specific means as soon as students submit their entries.",
+      "gold_parents": [
+        "t37"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t39",
+      "turn_index": 38,
+      "user_message": "That would save me a lot of grading time. I'll also want a rubric for the final lab report — what are the most important components to grade?",
+      "assistant_message": "For an ecology field study report, the most important components to grade are typically the introduction with a clear hypothesis (about 15% of the grade), methods section with enough detail to replicate the study (15%), data presentation including well-labeled graphs and tables (25%), analysis and interpretation of trends (30%), and conclusion with reflection on sources of error (15%). Weighting the analysis and interpretation most heavily encourages students to think critically rather than just report numbers.",
+      "gold_parents": [
+        "t38"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t40",
+      "turn_index": 39,
+      "user_message": "Our waiting room chairs are getting pretty worn. What's a reasonable budget for replacing the seating in a six-chair waiting room?",
+      "assistant_message": "For a professional dental waiting room, commercial-grade seating typically runs between $150 and $400 per chair, so a six-chair setup would cost roughly $900 to $2,400 for the furniture itself. You'd also want to factor in delivery and any reupholstering of existing pieces if you want to save some money.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t41",
+      "turn_index": 40,
+      "user_message": "The office manager also wants to repaint the reception area. Does the color of the walls actually affect patient anxiety levels?",
+      "assistant_message": "There is actually research suggesting that soft blues and greens are associated with lower anxiety in clinical settings, while bright whites and stark grays can feel more sterile and increase tension. For a dental office specifically, muted sage greens or warm taupes tend to be popular choices for that reason.",
+      "gold_parents": [
+        "t40"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t42",
+      "turn_index": 41,
+      "user_message": "I think I'll go with the 50-meter radius. How many survey points would you recommend for a study of this scale, and is there a minimum number of repeat visits per point that's considered statistically robust?",
+      "assistant_message": "For a city-scale urban bird study, researchers commonly deploy between 30 and 60 point count stations distributed across habitat types, but a minimum of 40 stations is generally recommended to achieve adequate spatial replication across an urban gradient. For repeat visits, the widely cited standard in the occupancy modeling literature — particularly following the MacKenzie et al. 2002 framework published in Ecology — is a minimum of 3 repeat visits per station within a single breeding season to reliably estimate detection probability. Visits should be conducted during the peak singing window, which for House Sparrows in the Chicago area runs from approximately April 15 through July 15.",
+      "gold_parents": [
+        "t26"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t43",
+      "turn_index": 42,
+      "user_message": "I'm also trying to pick a GPS logger for tracking my field assistants' survey routes. What can you tell me about the Garmin GPSMAP 67 for that kind of use?",
+      "assistant_message": "The Garmin GPSMAP 67 is a rugged handheld GPS unit released in 2022 that supports multi-band GNSS, meaning it can use GPS, GLONASS, Galileo, and BeiDou simultaneously for improved accuracy. It has a battery life of up to 36 hours in GPS mode, a 3-inch display, and 16 GB of internal storage for map data. For field survey route logging, it records trackpoints at user-defined intervals and exports data in GPX format, which integrates cleanly with GIS platforms like QGIS and ArcGIS.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t44",
+      "turn_index": 43,
+      "user_message": "Does the GPSMAP 67 have any limitations I should know about for dense urban environments specifically?",
+      "assistant_message": "In dense urban canyons, the GPSMAP 67's multi-band reception helps significantly compared to single-band units, but you can still expect positional drift of up to 3–5 meters near tall buildings. The device's SirfStar V chipset struggles with severe multipath interference when surrounded by glass-and-steel facades higher than about 30 stories. One practical workaround is enabling the 'Pedestrian' activity profile, which applies a dead-reckoning algorithm that smooths out short gaps in satellite lock. Battery performance also drops to around 28 hours in dense urban settings due to the unit working harder to maintain satellite acquisition.",
+      "gold_parents": [
+        "t43"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t45",
+      "turn_index": 44,
+      "user_message": "What file formats does the GPSMAP 67 support for exporting track logs?",
+      "assistant_message": "The GPSMAP 67 exports track logs primarily in GPX format, which is the standard XML-based GPS exchange format compatible with virtually all GIS and mapping software. It also supports FIT files, which are Garmin's proprietary compressed format used mainly in their fitness ecosystem, and KML export is available through Garmin BaseCamp version 4.9.3 or later when you connect the device via USB. Direct export to shapefiles is not supported natively; you would need a conversion step through QGIS or a tool like GPSBabel 1.8.0 to get a shapefile from the raw GPX output.",
+      "gold_parents": [
+        "t44"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t46",
+      "turn_index": 45,
+      "user_message": "Is there a recommended software version of Garmin BaseCamp for managing large track log archives from multiple field seasons?",
+      "assistant_message": "For managing large multi-season track log archives from the GPSMAP 67, Garmin BaseCamp version 4.9.3 is the current stable release and handles bulk GPX imports well. However, if your archive exceeds roughly 10,000 individual trackpoints per session, many users report that BaseCamp's rendering slows noticeably; version 4.9.3 introduced a new indexed database backend that helps but doesn't fully resolve the issue. A common workflow is to use BaseCamp only for initial organization and metadata tagging, then migrate everything to QGIS 3.34 for spatial analysis, since QGIS handles large GPX datasets far more efficiently. You can also script batch conversions using GPSBabel 1.8.0 on the command line if you need to process hundreds of files at once.",
+      "gold_parents": [
+        "t45"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t47",
+      "turn_index": 46,
+      "user_message": "Does the Category 1 exemption cover situations where I might incidentally record audio of people in the park while doing dawn chorus recordings?",
+      "assistant_message": "Incidental audio recording of people in a public park is generally still covered under Category 1 if the recordings are not analyzed for human content and subjects cannot be identified, but many IRB offices will push this toward a Category 2 or Category 3 determination if the audio could capture private conversations. The key regulatory language in 45 CFR 46.104(d)(2) requires that any disclosure of responses outside the research context would not reasonably place subjects at risk of harm, and identifiable voice recordings could theoretically fail that test. To stay cleanly within Category 1, you could document in your exemption request that audio files will be processed only through automated bird-detection software such as BirdNET and immediately overwritten, with no human-audible playback. That procedural safeguard is usually sufficient to satisfy an IRB reviewer without escalating to a full review.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t48",
+      "turn_index": 47,
+      "user_message": "My institution uses the Kuali Research system for IRB submissions. Is there a standard template for the exemption determination request I should look for in that system?",
+      "assistant_message": "In Kuali Research, exemption determination requests are typically initiated through the 'New Study' workflow, where you select 'Exempt' as the review type on the initial submission screen rather than 'Expedited' or 'Full Board.' Most institutions that use Kuali have pre-loaded a smart form called the Exempt Research Determination Form, which walks you through the 45 CFR 46.104(d) categories with branching logic questions so you self-identify the applicable exemption. You should check your institution's research compliance office webpage for any locally customized version, since Kuali allows significant template modification at the institutional level. If you cannot locate it, the research compliance office can usually point you to the correct form within one business day.",
+      "gold_parents": [
+        "t47"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t49",
+      "turn_index": 48,
+      "user_message": "There's also a space over on Caldwell Avenue we've been eyeing. It's listed by a property management company called Hartwell & Dunn, and it's 950 sq ft at $3,200 a month.",
+      "assistant_message": "Caldwell Avenue at 950 square feet and $3,200 a month works out to about $3.37 per square foot, which is slightly cheaper per square foot than the Renfield Street option. The smaller footprint could be a constraint if you're planning significant in-house production, since you'd have less room for proofing racks and large deck ovens. Hartwell & Dunn is a well-known commercial property manager, so the administrative side of the lease process would likely be straightforward. It really comes down to whether the lower cost justifies the tighter space.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t50",
+      "turn_index": 49,
+      "user_message": "The Caldwell Avenue place is a former sandwich shop, so it already has a Type I hood and a grease trap installed, which would save us on build-out costs.",
+      "assistant_message": "That's a significant advantage — a Type I hood and a grease trap can easily run $15,000 to $25,000 to install from scratch, so inheriting those from the previous tenant is a real cost saving. You'd still want a licensed inspector to verify they meet current health code standards and are sized appropriately for bakery equipment, since a sandwich shop's ventilation needs differ from high-volume oven use. If everything checks out, the Caldwell Avenue space's lower upfront build-out cost could offset the smaller square footage. It's worth getting an HVAC contractor in there before you make a final comparison.",
+      "gold_parents": [
+        "t49"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t51",
+      "turn_index": 50,
+      "user_message": "We also need to think about our barrel storage area. What are the specs on the Mopec M30 refrigeration unit used in wine caves?",
+      "assistant_message": "The Mopec M30 is a ducted split-system refrigeration unit rated at 3.0 tons of cooling capacity, designed to maintain cellar temperatures in the range of 55–58°F with a relative humidity target of 70–75%. It operates on a 208/230V single-phase power supply and draws a maximum of 18 amps at full load. The M30 uses R-410A refrigerant and carries an ENERGY STAR certification with an EER rating of 11.5, making it one of the more efficient options in its class for wine cave applications. Mopec recommends a minimum cave volume of 2,400 cubic feet for this unit to avoid short-cycling.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t52",
+      "turn_index": 51,
+      "user_message": "How often does the M30 need its refrigerant levels checked and its coils cleaned?",
+      "assistant_message": "Mopec's maintenance schedule for the M30 calls for refrigerant pressure checks every 6 months by a certified HVAC technician, and they specify that the system should hold between 410 and 420 PSI on the high side at 95°F ambient. Evaporator coil cleaning is recommended every 90 days using a no-rinse foaming coil cleaner, and the condenser coils should be cleaned at least twice a year, ideally before summer and again in late fall. The air filter on the M30 is a MERV-8 rated panel filter measuring 16×20×2 inches, and Mopec recommends replacing it every 45 days during operation. Neglecting the coil cleaning interval can reduce the unit's efficiency by up to 15% and shorten compressor life by 2–3 years according to Mopec's service documentation.",
+      "gold_parents": [
+        "t51"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t53",
+      "turn_index": 52,
+      "user_message": "What pressure range does the M30 operate at on the low side, and what's the minimum cave size again?",
+      "assistant_message": "On the low side, the Mopec M30 should read between 115 and 125 PSI during normal operation at a 55°F cave setpoint, and any reading below 110 PSI on the low side typically indicates a refrigerant leak or a restriction in the suction line. Mopec's installation manual, revision 4.2, specifies the minimum recommended cave volume as 2,400 cubic feet, which is the same figure from the original spec sheet. If the cave is smaller than that threshold, you'll need to install a crankcase pressure regulator to prevent the compressor from cycling too rapidly, which can cause premature failure within 18 months of installation according to Mopec's warranty exclusion clause 7B.",
+      "gold_parents": [
+        "t52"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t54",
+      "turn_index": 53,
+      "user_message": "We also need to figure out the team's travel situation. We have 14 members and two mentors going to the competition, and the school van only seats 12.",
+      "assistant_message": "With 16 people total and only 12 seats in the van, you'll need to arrange additional transportation for at least 4 people. Options include a second school vehicle, parent carpools, or renting a passenger van. Make sure you get the necessary permission slips and insurance documentation sorted well in advance.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t55",
+      "turn_index": 54,
+      "user_message": "For the travel logistics, do we need the school's insurance certificate to reserve a rental van?",
+      "assistant_message": "Yes, most rental companies require a certificate of insurance when a school organization is renting a vehicle for an official trip. You'll typically need to contact your school's business office or district risk management department to obtain that certificate. Give them at least two weeks' notice since processing can take time, and confirm whether the rental company needs to be listed as an additional insured on the policy.",
+      "gold_parents": [
+        "t54"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t56",
+      "turn_index": 55,
+      "user_message": "What kind of permits do I need to handle and band birds in Illinois if I decide to add mist-netting to the study?",
+      "assistant_message": "To band birds in Illinois you need two separate federal permits: a Federal Bird Banding Permit issued by the USGS Bird Banding Laboratory (BBL), and because House Sparrows are an introduced species they are not protected under the Migratory Bird Treaty Act, so you technically don't need an MBTA permit specifically for them — but you will still need the BBL permit if you plan to use any standardized aluminum bands from the federal supply. At the state level, Illinois requires a Scientific Collecting Permit issued by the Illinois Department of Natural Resources (IDNR), and the application processing time is typically 60 to 90 days, so you should apply well in advance of your field season.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t57",
+      "turn_index": 56,
+      "user_message": "What about institutional requirements? My university has an IACUC, and I wasn't sure if mist-netting songbirds falls under their oversight.",
+      "assistant_message": "Yes, mist-netting wild birds absolutely falls under IACUC oversight at most U.S. research institutions, because the animals are being captured, handled, and potentially marked, which meets the threshold for an animal use protocol under the Animal Welfare Act and PHS Policy. You'll need to submit an Animal Use Protocol (AUP) describing your capture methods, expected sample sizes, handling duration, and any potential harms, and most IACUCs require that at least one listed personnel member hold a current BBL banding permit before they will approve the protocol. Review cycles at many universities run on a 4-to-6-week schedule, so factor that into your timeline alongside the IDNR permit.",
+      "gold_parents": [
+        "t56"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t58",
+      "turn_index": 57,
+      "user_message": "How long can you legally hold a bird during a banding session before it has to be released?",
+      "assistant_message": "The USGS BBL guidelines recommend keeping any wild bird in a holding bag for no longer than 30 minutes from the time of extraction from the net, and total processing time including measurements, banding, and photography should ideally stay under 15 minutes per bird. Many IACUC protocols set an even stricter internal limit of 10 minutes of active handling, particularly for small passerines that are prone to capture myopathy and stress-related mortality. If a bird shows signs of distress — open-mouth breathing, unresponsiveness, or extreme lethargy — the BBL guidelines specify immediate release regardless of whether processing is complete.",
+      "gold_parents": [
+        "t57"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t59",
+      "turn_index": 58,
+      "user_message": "What mesh size should I use for the mist nets to target House Sparrows specifically?",
+      "assistant_message": "For House Sparrows, which have a body mass typically ranging from 24 to 39 grams, the recommended mist net mesh size is 30 mm (bar mesh), which is the most common size used for small passerines in North America. Nets with a 36 mm mesh are also acceptable but have a slightly higher escape rate for very small sparrows. Standard mist nets used in North American banding operations are 12 meters long and 2.5 meters tall with four shelves, and are manufactured to those dimensions by suppliers like Avinet and Ecotone.",
+      "gold_parents": [
+        "t58"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t60",
+      "turn_index": 59,
+      "user_message": "Are there specific times of day I should be setting nets to maximize capture rates for House Sparrows?",
+      "assistant_message": "House Sparrows are most active and most readily captured in the first two hours after sunrise, which in Chicago during peak breeding season (May through June) means approximately 5:30 to 7:30 AM CDT. Activity drops off significantly by mid-morning as temperatures rise and the birds shift to foraging in more sheltered microhabitats. A secondary capture window exists in the late afternoon, roughly 5:00 to 7:00 PM CDT, but capture rates in that window are typically 40 to 60 percent lower than the morning window based on published urban banding studies.",
+      "gold_parents": [
+        "t59"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t61",
+      "turn_index": 60,
+      "user_message": "Should I close the nets during midday even if I'm on site?",
+      "assistant_message": "Yes, closing nets during midday is strongly recommended and is actually required under many IACUC protocols and BBL best-practice guidelines when ambient temperatures exceed 30°C (86°F), because heat stress in a net can kill a small bird within minutes. The standard practice is to close nets between approximately 10:00 AM and 4:00 PM during warm weather, which in Chicago's summer months is most days from late June onward. Some banders use a rule of thumb that nets must be checked every 20 to 30 minutes at minimum whenever they are open, and if continuous monitoring isn't possible the nets must be furled.",
+      "gold_parents": [
+        "t60"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t62",
+      "turn_index": 61,
+      "user_message": "I want to run an occupancy model on my point count data. What's the minimum number of survey stations I need and how many repeat visits per station does the standard framework require to estimate detection probability?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t42"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t26",
+    "t42"
+  ],
+  "distractor_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t7",
+    "t8",
+    "t9",
+    "t10",
+    "t11",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t20",
+    "t21",
+    "t22",
+    "t23",
+    "t24",
+    "t25",
+    "t27",
+    "t28",
+    "t29",
+    "t30",
+    "t31",
+    "t32",
+    "t33",
+    "t34",
+    "t35",
+    "t36",
+    "t37",
+    "t38",
+    "t39",
+    "t40",
+    "t41",
+    "t43",
+    "t44",
+    "t45",
+    "t46",
+    "t47",
+    "t48",
+    "t49",
+    "t50",
+    "t51",
+    "t52",
+    "t53",
+    "t54",
+    "t55",
+    "t56",
+    "t57",
+    "t58",
+    "t59",
+    "t60",
+    "t61"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that a minimum of 40 point count stations is recommended for the study.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that a minimum of 3 repeat visits per station is required by the MacKenzie et al. 2002 occupancy modeling framework to estimate detection probability.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer references the MacKenzie et al. 2002 paper published in Ecology as the source of the 3-visit standard.",
+      "required": false
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not import details about mist-netting, banding permits, IACUC protocols, net mesh sizes, or capture timing windows from the B-branch turns.",
+      "required": true
+    }
+  ],
+  "notes": "The facts the query needs — 40-station minimum and 3-visit minimum from MacKenzie et al. 2002 — are established in t2. Turns t3 through t8 form the distractor branch on mist-netting logistics (permits, IACUC, handling time, mesh size, capture timing, net closure) and contain no information relevant to the occupancy modeling query; the main trap is importing net-timing or permit details into the answer.\n\nReference answer: For a city-scale urban bird occupancy study, you should deploy a minimum of 40 point count stations distributed across your urban gradient. The standard for estimating detection probability comes from the MacKenzie et al. 2002 framework published in Ecology, which requires a minimum of 3 repeat visits per station within a single breeding season. For House Sparrows in the Chicago area, those visits should fall within the April 15 through July 15 peak singing window to ensure consistent detectability.",
+  "evidence_note": null,
+  "premise": "a PhD student planning a field study on urban bird populations",
+  "evidence_spans": null,
+  "benchmark_version": "1.1-length-ablation",
+  "length_class": "spliced_60"
+}

@@ -1,0 +1,202 @@
+{
+ "target": "two_branch_join_003",
+ "family": "two_branch_join",
+ "base_history": 9,
+ "gold_closure": [
+  "t1",
+  "t2",
+  "t3",
+  "t6",
+  "t7",
+  "t8"
+ ],
+ "gold_entities": [
+  "25",
+  "4-year-old",
+  "50",
+  "500 miles",
+  "50\u201355 mph",
+  "60-pound",
+  "633 miles",
+  "7-year-old",
+  "8,400",
+  "about 1,900 miles",
+  "albuquerque",
+  "around 11\u201312 hours",
+  "austin",
+  "bekins van lines",
+  "biscuit",
+  "early june",
+  "every 2 hours",
+  "four days",
+  "la quinta",
+  "la quinta's",
+  "labrador named biscuit",
+  "last-minute",
+  "new mexico",
+  "oregon",
+  "overnight",
+  "portland",
+  "roughly 633 miles",
+  "salt lake city",
+  "texas",
+  "three days",
+  "two nights",
+  "utah"
+ ],
+ "query_entities": [],
+ "donors_rejected_by_exclusion": 32,
+ "sufficient_to_60": true,
+ "chosen": [
+  {
+   "donor": "join_then_split_001#0",
+   "turns": 2,
+   "cosine": 0.3214
+  },
+  {
+   "donor": "three_way_join_003#0",
+   "turns": 3,
+   "cosine": 0.3108
+  },
+  {
+   "donor": "topic_fork_009#0",
+   "turns": 2,
+   "cosine": 0.3046
+  },
+  {
+   "donor": "two_branch_join_009#0",
+   "turns": 2,
+   "cosine": 0.2543
+  },
+  {
+   "donor": "semantic_decoy_007#0",
+   "turns": 3,
+   "cosine": 0.2288
+  },
+  {
+   "donor": "compound_turn_001#0",
+   "turns": 2,
+   "cosine": 0.2264
+  },
+  {
+   "donor": "three_way_join_008#0",
+   "turns": 2,
+   "cosine": 0.2193
+  },
+  {
+   "donor": "ambiguous_reference_004#0",
+   "turns": 2,
+   "cosine": 0.2169
+  },
+  {
+   "donor": "ambiguous_reference_003#1",
+   "turns": 1,
+   "cosine": 0.215
+  },
+  {
+   "donor": "topic_fork_005#0",
+   "turns": 2,
+   "cosine": 0.2122
+  },
+  {
+   "donor": "topic_fork_007#0",
+   "turns": 2,
+   "cosine": 0.2018
+  },
+  {
+   "donor": "three_way_join_002#0",
+   "turns": 3,
+   "cosine": 0.1995
+  },
+  {
+   "donor": "join_then_split_001#1",
+   "turns": 1,
+   "cosine": 0.1989
+  },
+  {
+   "donor": "join_then_split_005#1",
+   "turns": 1,
+   "cosine": 0.1952
+  },
+  {
+   "donor": "resume_004#0",
+   "turns": 3,
+   "cosine": 0.1943
+  },
+  {
+   "donor": "two_branch_join_014#0",
+   "turns": 3,
+   "cosine": 0.1863
+  },
+  {
+   "donor": "two_branch_join_008#0",
+   "turns": 1,
+   "cosine": 0.1828
+  },
+  {
+   "donor": "knowledge_update_010#0",
+   "turns": 2,
+   "cosine": 0.1824
+  },
+  {
+   "donor": "constraint_retention_005#0",
+   "turns": 20,
+   "cosine": 0.1804
+  }
+ ],
+ "used": {
+  "30": [
+   "join_then_split_001#0",
+   "three_way_join_003#0",
+   "topic_fork_009#0",
+   "two_branch_join_009#0",
+   "semantic_decoy_007#0",
+   "compound_turn_001#0",
+   "three_way_join_008#0",
+   "ambiguous_reference_004#0",
+   "ambiguous_reference_003#1",
+   "topic_fork_005#0"
+  ],
+  "60": [
+   "join_then_split_001#0",
+   "three_way_join_003#0",
+   "topic_fork_009#0",
+   "two_branch_join_009#0",
+   "semantic_decoy_007#0",
+   "compound_turn_001#0",
+   "three_way_join_008#0",
+   "ambiguous_reference_004#0",
+   "ambiguous_reference_003#1",
+   "topic_fork_005#0",
+   "topic_fork_007#0",
+   "three_way_join_002#0",
+   "join_then_split_001#1",
+   "join_then_split_005#1",
+   "resume_004#0",
+   "two_branch_join_014#0",
+   "two_branch_join_008#0",
+   "knowledge_update_010#0",
+   "constraint_retention_005#0"
+  ]
+ },
+ "actual_lengths": {
+  "30": 30,
+  "60": 66
+ },
+ "preflight": {
+  "oracle_hash_equal": true,
+  "checklist_query_closure_identical": true,
+  "l30_subsequence_of_l60": true,
+  "base_subsequence_of_l60": true,
+  "oracle_tokens": 712,
+  "full_tokens": {
+   "base": 1013,
+   "30": 3707,
+   "60": 8710
+  }
+ },
+ "lengths_built": [
+  30,
+  60
+ ]
+}

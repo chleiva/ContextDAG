@@ -1,0 +1,385 @@
+{
+  "scenario_id": "two_branch_join_003__L30",
+  "family": "two_branch_join",
+  "label": "JOIN",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "Coach wants to know what size van we need to rent to transport everything to the competition venue.",
+      "assistant_message": "For a full robotics team transport including the robot, toolboxes, spare parts bins, and team gear, a 15-passenger van typically isn't enough cargo space on its own. Most teams in similar situations rent a 10-foot cargo truck or pair a standard passenger van with a small trailer. You'll want to confirm the venue's loading dock hours before you finalize the rental.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "We also need to figure out the hotel situation — how many rooms should we book for a team of 14 students and 3 mentors?",
+      "assistant_message": "For 14 students and 3 mentors, you're looking at 17 people total. Assuming two students per room and mentors in single rooms, you'd need 7 student rooms and 3 mentor rooms, so 10 rooms minimum. Booking a block rate with the hotel as early as possible usually saves the team significant money.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "For the drive team, do we need matching shirts or full uniforms for the competition?",
+      "assistant_message": "Most regional competitions require drive team members to wear matching shirts with the team number clearly visible, but full uniforms with logos are optional unless your team has a sponsor agreement requiring them. Check the specific event's drive team dress code in the event information packet, since some venues have additional safety requirements like closed-toe shoes. Ordering shirts at least two weeks before the event is usually necessary to guarantee delivery in time.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "The city also just notified me that the duplex needs a new backflow preventer on the main water line — they're requiring it under a new municipal ordinance that took effect January 1, 2025.",
+      "assistant_message": "That's a separate compliance item you'll want to handle promptly. Backflow preventer installations for residential properties typically run between $300 and $700 for parts and labor, depending on the pipe diameter and local permit fees. Check whether the ordinance specifies a deadline for compliance, as some municipalities give property owners a 90-day window from the notice date before issuing fines.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "We've decided we're moving from Austin, Texas to Portland, Oregon in early June. I've been getting quotes from moving companies and I think we're going with Bekins Van Lines. They gave us a binding estimate of $8,400 for a full-service pack-and-move.",
+      "assistant_message": "That sounds like a solid choice — Bekins is one of the larger, more established interstate movers, so a binding estimate of $8,400 gives you real cost certainty. Just make sure you have a copy of the binding estimate in writing before moving day so there are no surprises at delivery.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "Good to know on the audit approach. One more migration concern — what happens to our existing insurance fee schedules in Dentrix? Do those transfer automatically?",
+      "assistant_message": "Insurance fee schedules are another area that rarely transfers automatically between these two systems. Dentrix stores fee schedules as flat files tied to insurance plan records, while Sensei Cloud uses a relational structure that links fees directly to CDT procedure codes at the plan level. In most migrations, Carestream's team can import the raw fee data, but you'll need to manually verify and re-link each fee schedule to the correct insurance plans inside Sensei Cloud before you start submitting claims.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "That's frustrating. How many insurance plans are typically involved in a practice our size, and is there a faster way to handle the relinking?",
+      "assistant_message": "A general dentistry practice with around 4,200 active patients typically carries between 30 and 60 distinct insurance plans, though high-volume PPO practices sometimes exceed 80. Carestream offers a fee schedule import template — a standardized CSV file — that lets you bulk-upload pre-mapped fee schedules rather than entering them one by one, which can cut the relinking time from several days down to a few hours. Your Dentrix G7 system can export a fee schedule report under Reports > Practice Management > Fee Schedule that gives you the raw data you need to populate that CSV.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "I also need to figure out the road trip logistics since my husband is driving the moving truck and I'll be driving our SUV with the kids. We have a 7-year-old and a 4-year-old.",
+      "assistant_message": "With a 7-year-old and a 4-year-old, you'll want to plan for frequent breaks — young kids generally do best with a stop every 2 hours or so. Mapping out the route in advance with specific rest stops and kid-friendly spots can make the trip much more manageable.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "Our waiting room chairs are getting pretty worn. What's a reasonable budget for replacing the seating in a six-chair waiting room?",
+      "assistant_message": "For a professional dental waiting room, commercial-grade seating typically runs between $150 and $400 per chair, so a six-chair setup would cost roughly $900 to $2,400 for the furniture itself. You'd also want to factor in delivery and any reupholstering of existing pieces if you want to save some money.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "The office manager also wants to repaint the reception area. Does the color of the walls actually affect patient anxiety levels?",
+      "assistant_message": "There is actually research suggesting that soft blues and greens are associated with lower anxiety in clinical settings, while bright whites and stark grays can feel more sterile and increase tension. For a dental office specifically, muted sage greens or warm taupes tend to be popular choices for that reason.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "The drive from Austin to Portland is about 1,900 miles. We're planning to split it over three days, so roughly 633 miles per day. Does that sound reasonable with young kids?",
+      "assistant_message": "633 miles per day is on the ambitious side with a 4-year-old and a 7-year-old — you'll likely average 50–55 mph including stops, which puts each driving day at around 11–12 hours of total travel time. Many families with young children aim for 500 miles or fewer per day to keep everyone sane; you might consider stretching it to four days if your schedule allows.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "What about luggage forwarding services? I've heard you can send bags ahead to hotels in Japan.",
+      "assistant_message": "Yes, the takkyubin luggage forwarding service is very popular with tourists. Yamato Transport's TA-Q-BIN is the most widely used provider, and a standard suitcase (up to 30 kg) sent between Tokyo and Kyoto typically costs around ¥1,500 to ¥2,000 per bag. You can drop off luggage at convenience stores like FamilyMart or Lawson, and it usually arrives at the destination hotel the next day by 2 PM.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "How far in advance should we arrange the luggage forwarding? We arrive at Narita and our first hotel is in Shinjuku.",
+      "assistant_message": "For Narita to Shinjuku, Yamato Transport has counters at Narita Terminal 1 and Terminal 2 arrivals halls, and you can arrange same-day forwarding directly there. The cut-off time for next-day delivery is generally 12 noon, and the service to central Tokyo hotels typically costs around ¥2,500 per large bag. If you book through your hotel concierge in advance, some hotels offer a slightly discounted rate of around ¥2,200 per piece.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "Can we send luggage from Kyoto to Tokyo near the end of the trip, or does the forwarding only work in one direction?",
+      "assistant_message": "Yamato Transport's TA-Q-BIN works in any direction across Japan, so sending bags from Kyoto to Tokyo is no problem at all. Drop-off points in Kyoto include 7-Eleven and FamilyMart locations, and the standard rate for a large suitcase on that route is approximately ¥1,800 to ¥2,200 depending on size and weight. Delivery to your Tokyo hotel is typically guaranteed by 2 PM the following day if you drop off before noon.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "I'm also stressing about the kids' school enrollment in Portland. My 7-year-old will need to start second grade in the fall.",
+      "assistant_message": "Portland Public Schools typically opens online enrollment for incoming students in late February through March for the following fall, so depending on your move date you may need to enroll shortly after arriving. You'll generally need proof of residency, immunization records, and a birth certificate to complete registration.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "The school we're zoned for is Glencoe Elementary in the Beaverton School District actually, not Portland Public. Do they have a different enrollment timeline?",
+      "assistant_message": "Beaverton School District typically runs its open enrollment window from early January through mid-February for the following school year, though new students moving into the district can register on a rolling basis outside that window. Glencoe Elementary specifically has a strong dual-language immersion program, so it's worth asking about waitlist status for that track when you register.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "One thing I realized is that we also have our dog, a 60-pound Labrador named Biscuit. Bekins told me they don't transport pets, so Biscuit will ride in the SUV with me and the kids.",
+      "assistant_message": "That's standard — virtually no moving company will transport live animals, so Biscuit riding with you is the right call. With a 60-pound Lab plus two young children in the SUV, you'll want to make sure you have a secured crate or a dog seatbelt harness rated for his weight, both for safety and to keep the trip manageable over multiple days.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "We're also trying to figure out what to budget for office furniture. We need to outfit 8 workstations and a small conference room for 6 people. Any rough guidance on cost?",
+      "assistant_message": "For 8 workstations with desks, ergonomic chairs, and basic storage, you're typically looking at $800 to $1,500 per station, so a budget of $6,400 to $12,000 is reasonable. A 6-person conference table with chairs can run another $2,000 to $5,000 depending on quality. All in, plan for roughly $8,400 to $17,000 for a functional but not extravagant setup.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "We found a vendor called WorkNest Office Solutions that can do all 8 workstations and the conference room package for $11,200 flat, with delivery and assembly included. That sound fair?",
+      "assistant_message": "Yes, $11,200 all-in for 8 workstations plus a 6-person conference room package with delivery and assembly from WorkNest Office Solutions is competitive and sits comfortably in the middle of the typical range. Getting delivery and assembly bundled is a meaningful convenience, since coordinating that separately can easily add $500 to $1,000 in labor. It's a fair price to accept if you're satisfied with the product quality.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "There's also a space over on Caldwell Avenue we've been eyeing. It's listed by a property management company called Hartwell & Dunn, and it's 950 sq ft at $3,200 a month.",
+      "assistant_message": "Caldwell Avenue at 950 square feet and $3,200 a month works out to about $3.37 per square foot, which is slightly cheaper per square foot than the Renfield Street option. The smaller footprint could be a constraint if you're planning significant in-house production, since you'd have less room for proofing racks and large deck ovens. Hartwell & Dunn is a well-known commercial property manager, so the administrative side of the lease process would likely be straightforward. It really comes down to whether the lower cost justifies the tighter space.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "The Caldwell Avenue place is a former sandwich shop, so it already has a Type I hood and a grease trap installed, which would save us on build-out costs.",
+      "assistant_message": "That's a significant advantage — a Type I hood and a grease trap can easily run $15,000 to $25,000 to install from scratch, so inheriting those from the previous tenant is a real cost saving. You'd still want a licensed inspector to verify they meet current health code standards and are sized appropriately for bakery equipment, since a sandwich shop's ventilation needs differ from high-volume oven use. If everything checks out, the Caldwell Avenue space's lower upfront build-out cost could offset the smaller square footage. It's worth getting an HVAC contractor in there before you make a final comparison.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "We've been looking at hotels along the route and most of them charge a pet fee. We found that La Quinta generally allows pets for free, but a lot of the specific locations along our route charge $25 per night per pet.",
+      "assistant_message": "La Quinta's corporate policy is pet-friendly at no charge, but individual franchise locations do sometimes add their own fees, so that $25-per-night figure at specific stops is unfortunately not unusual. It's worth calling ahead to confirm each location's policy rather than relying solely on what's listed online, since fees can also vary by pet size.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "What about the furnaces? Both units still have the original 1962 gas furnaces and I know those are ancient.",
+      "assistant_message": "A 1962 gas furnace almost certainly runs at 55–65% AFUE (Annual Fuel Utilization Efficiency), meaning up to 45 cents of every dollar spent on gas is lost as exhaust. Replacing them with modern 96% AFUE condensing furnaces — brands like Carrier, Lennox, or Trane all make well-reviewed units in that range — would dramatically cut heating costs, and Xcel Energy offers a $200 rebate per furnace when you upgrade to a unit with 95% AFUE or higher. For a 900-square-foot Denver unit, a 60,000 BTU input furnace is typically sufficient.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "One of my tenants mentioned the water heater in their unit is also original and making noise. Should I factor that into my upgrade budget?",
+      "assistant_message": "A 1962 water heater would be extraordinarily old if it's truly original — most tank water heaters last 10–15 years, so it's almost certainly been replaced at least once. If the current unit is making rumbling or popping sounds, that typically indicates sediment buildup on the heating element, which is a sign the tank is near end of life. Replacing it with a heat-pump water heater like the Rheem ProTerra 50-gallon (model XE50T10H45U0) would qualify for a $300 federal 25C tax credit and uses roughly 70% less electricity than a conventional electric resistance unit.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "I'm also trying to decide on cabinet style. I'm torn between shaker-style painted MDF cabinets and original-style beadboard inset cabinets that would be more period-appropriate for a 1920s house.",
+      "assistant_message": "Inset beadboard cabinets are historically accurate for a 1920s kitchen and can look stunning, but they cost significantly more because the door fitting is labor-intensive — expect to pay 25–40% more per linear foot than comparable overlay shaker cabinets. Shaker-style painted MDF from a semi-custom line like IKEA SEKTION or Hampton Bay can run $150–$250 per linear foot installed, while solid-wood inset beadboard from a custom shop often starts at $350–$500 per linear foot installed. Given your $6,150 remaining after electrical, the style choice will heavily determine how much you have left for countertops and flooring.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "For the countertops, I've been looking at butcher block as a period-appropriate option. What thickness is standard and what's a realistic cost per square foot installed?",
+      "assistant_message": "Standard butcher block countertop thickness for residential kitchens is 1.5 inches (sometimes listed as 1-1/2\"), though 2-inch and 3-inch slabs exist for heavier-use surfaces. Installed cost from a supplier like Lumber Liquidators or IKEA's KARLBY line runs roughly $30–$60 per square foot for maple or birch, while walnut or teak butcher block can reach $80–$120 per square foot installed. For a 120-square-foot kitchen you'd typically have 25–40 square feet of countertop, so budget $750–$2,400 depending on wood species and edge profile.",
+      "gold_parents": [
+        "t25"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "We've confirmed two overnight stops — one in Albuquerque, New Mexico and one in Salt Lake City, Utah. Both hotels are pet-friendly and will each charge that $25 pet fee. So that's two nights with the pet fee.",
+      "assistant_message": "With two confirmed overnight stops in Albuquerque and Salt Lake City, each carrying a $25 pet fee, you're looking at $50 total in pet surcharges for the road trip portion. That's a pretty manageable addition to your overall trip budget, especially compared to last-minute scrambling to find pet-friendly lodging.",
+      "gold_parents": [
+        "t22"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "We also need to figure out the team's travel situation. We have 14 members and two mentors going to the competition, and the school van only seats 12.",
+      "assistant_message": "With 16 people total and only 12 seats in the van, you'll need to arrange additional transportation for at least 4 people. Options include a second school vehicle, parent carpools, or renting a passenger van. Make sure you get the necessary permission slips and insurance documentation sorted well in advance.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "For the travel logistics, do we need the school's insurance certificate to reserve a rental van?",
+      "assistant_message": "Yes, most rental companies require a certificate of insurance when a school organization is renting a vehicle for an official trip. You'll typically need to contact your school's business office or district risk management department to obtain that certificate. Give them at least two weeks' notice since processing can take time, and confirm whether the rental company needs to be listed as an additional insured on the policy.",
+      "gold_parents": [
+        "t28"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t30",
+      "turn_index": 29,
+      "user_message": "I want to make sure my older one doesn't fall behind academically over the summer with the move disruption. Are there any good summer bridge programs?",
+      "assistant_message": "Many districts, including Beaverton, offer summer learning programs specifically for incoming students, and there are also independent options like Kumon or Khan Academy's free online curriculum for self-paced review. For a rising second-grader, focusing on reading fluency and basic addition and subtraction facts over the summer would give a solid academic foundation heading into the new school year.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t31",
+      "turn_index": 30,
+      "user_message": "Can you give me a total estimated cost just for the move itself plus the road trip pet expenses, so I have a single number to plug into our budget spreadsheet?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t17",
+        "t27"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t5",
+    "t8",
+    "t11",
+    "t17",
+    "t22",
+    "t27"
+  ],
+  "distractor_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t6",
+    "t7",
+    "t9",
+    "t10",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t18",
+    "t19",
+    "t20",
+    "t21",
+    "t23",
+    "t24",
+    "t25",
+    "t26",
+    "t28",
+    "t29",
+    "t30"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer includes $8,400 as the binding estimate from Bekins Van Lines for the move.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer includes $50 as the total pet fees (two overnight stops at $25 each, in Albuquerque and Salt Lake City).",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer states the combined total is $8,450 ($8,400 + $50).",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not include any costs related to school enrollment fees, summer programs, or Beaverton School District registration as part of this budget figure.",
+      "required": true
+    }
+  ],
+  "notes": "t6 establishes that Biscuit (60 lbs) will ride in the SUV and t1 establishes the $8,400 Bekins binding estimate — both needed for the query. t8 establishes the two confirmed overnight stops with $25 pet fees each ($50 total), built on t7 and t3. The distractor branch (t4, t5, t9) covers school enrollment details for Glencoe Elementary/Beaverton School District, which are plausible move concerns but irrelevant to the cost-total query.\n\nReference answer: Your move cost from the Bekins Van Lines binding estimate is $8,400. For the road trip, you have two confirmed overnight stops — Albuquerque and Salt Lake City — each with a $25 pet fee for Biscuit, totaling $50 in pet surcharges. Adding those together gives you a combined figure of $8,450 to plug into your budget spreadsheet for the move itself plus road-trip pet expenses.",
+  "evidence_note": null,
+  "premise": "planning a cross-country house move with two kids and a dog",
+  "evidence_spans": null,
+  "benchmark_version": "1.1-length-ablation",
+  "length_class": "spliced_30"
+}

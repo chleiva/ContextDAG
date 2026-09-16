@@ -1,0 +1,101 @@
+{
+ "target": "resume_004",
+ "family": "resume",
+ "base_history": 5,
+ "gold_closure": [
+  "t1",
+  "t2"
+ ],
+ "gold_entities": [
+  "2019",
+  "340,000",
+  "45\u201355%",
+  "500,000",
+  "65\u201368\u00b0",
+  "above $200,000",
+  "andean",
+  "axa art",
+  "berkley one",
+  "ce",
+  "christie's",
+  "chubb",
+  "march 2023",
+  "roughly 1200\u20131450",
+  "the american alliance of museums",
+  "the textile museum of lima"
+ ],
+ "query_entities": [
+  "chancay"
+ ],
+ "donors_rejected_by_exclusion": 6,
+ "sufficient_to_60": true,
+ "chosen": [
+  {
+   "donor": "compound_turn_012#0",
+   "turns": 2,
+   "cosine": 0.4709
+  },
+  {
+   "donor": "two_branch_join_013#0",
+   "turns": 1,
+   "cosine": 0.4206
+  },
+  {
+   "donor": "two_branch_join_009#0",
+   "turns": 2,
+   "cosine": 0.4027
+  },
+  {
+   "donor": "ambiguous_reference_008#1",
+   "turns": 1,
+   "cosine": 0.3874
+  },
+  {
+   "donor": "constraint_retention_011#0",
+   "turns": 20,
+   "cosine": 0.3737
+  },
+  {
+   "donor": "long_noisy_side_thread_006#0",
+   "turns": 32,
+   "cosine": 0.3936
+  }
+ ],
+ "used": {
+  "30": [
+   "compound_turn_012#0",
+   "two_branch_join_013#0",
+   "two_branch_join_009#0",
+   "ambiguous_reference_008#1",
+   "constraint_retention_011#0"
+  ],
+  "60": [
+   "compound_turn_012#0",
+   "two_branch_join_013#0",
+   "two_branch_join_009#0",
+   "ambiguous_reference_008#1",
+   "constraint_retention_011#0",
+   "long_noisy_side_thread_006#0"
+  ]
+ },
+ "actual_lengths": {
+  "30": 31,
+  "60": 63
+ },
+ "preflight": {
+  "oracle_hash_equal": true,
+  "checklist_query_closure_identical": true,
+  "l30_subsequence_of_l60": true,
+  "base_subsequence_of_l60": true,
+  "oracle_tokens": 412,
+  "full_tokens": {
+   "base": 921,
+   "30": 3761,
+   "60": 8460
+  }
+ },
+ "lengths_built": [
+  30,
+  60
+ ]
+}

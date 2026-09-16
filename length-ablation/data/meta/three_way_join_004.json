@@ -1,0 +1,180 @@
+{
+ "target": "three_way_join_004",
+ "family": "three_way_join",
+ "base_history": 12,
+ "gold_closure": [
+  "t1",
+  "t11",
+  "t2",
+  "t3",
+  "t4",
+  "t6",
+  "t7",
+  "t8",
+  "t9"
+ ],
+ "gold_entities": [
+  "05:00 utc each morning",
+  "05:30 utc",
+  "15%",
+  "2 hours and 45 minutes",
+  "2.4",
+  "27%",
+  "4.2 million",
+  "42%",
+  "58%",
+  "6.8 million",
+  "8 seconds",
+  "amer",
+  "apac",
+  "approximately 05:00",
+  "approximately 2 hours and 10 minutes",
+  "autosys",
+  "doc",
+  "emea",
+  "every night",
+  "job_orders_nightly",
+  "june 14, 2024",
+  "march 2022",
+  "november 29, 2024",
+  "rap_region_filter",
+  "roughly 58%",
+  "sla",
+  "snowflake",
+  "the past 90 days",
+  "under 1 second",
+  "utc"
+ ],
+ "query_entities": [
+  "sla",
+  "snowflake"
+ ],
+ "donors_rejected_by_exclusion": 11,
+ "sufficient_to_60": true,
+ "chosen": [
+  {
+   "donor": "knowledge_update_007#0",
+   "turns": 4,
+   "cosine": 0.4696
+  },
+  {
+   "donor": "ambiguous_reference_007#1",
+   "turns": 1,
+   "cosine": 0.2652
+  },
+  {
+   "donor": "compound_turn_001#0",
+   "turns": 2,
+   "cosine": 0.253
+  },
+  {
+   "donor": "compound_turn_010#0",
+   "turns": 4,
+   "cosine": 0.2484
+  },
+  {
+   "donor": "compound_turn_009#0",
+   "turns": 3,
+   "cosine": 0.2395
+  },
+  {
+   "donor": "ambiguous_reference_003#0",
+   "turns": 2,
+   "cosine": 0.2018
+  },
+  {
+   "donor": "topic_fork_001#0",
+   "turns": 1,
+   "cosine": 0.2008
+  },
+  {
+   "donor": "two_branch_join_003#0",
+   "turns": 3,
+   "cosine": 0.1958
+  },
+  {
+   "donor": "join_then_split_004#1",
+   "turns": 1,
+   "cosine": 0.1904
+  },
+  {
+   "donor": "three_way_join_005#0",
+   "turns": 3,
+   "cosine": 0.1882
+  },
+  {
+   "donor": "join_then_split_001#1",
+   "turns": 1,
+   "cosine": 0.1808
+  },
+  {
+   "donor": "join_then_split_006#1",
+   "turns": 2,
+   "cosine": 0.1805
+  },
+  {
+   "donor": "semantic_decoy_005#0",
+   "turns": 4,
+   "cosine": 0.1712
+  },
+  {
+   "donor": "knowledge_update_005#1",
+   "turns": 12,
+   "cosine": 0.1692
+  },
+  {
+   "donor": "new_root_007#0",
+   "turns": 5,
+   "cosine": 0.1669
+  }
+ ],
+ "used": {
+  "30": [
+   "knowledge_update_007#0",
+   "ambiguous_reference_007#1",
+   "compound_turn_001#0",
+   "compound_turn_010#0",
+   "compound_turn_009#0",
+   "ambiguous_reference_003#0",
+   "topic_fork_001#0",
+   "two_branch_join_003#0"
+  ],
+  "60": [
+   "knowledge_update_007#0",
+   "ambiguous_reference_007#1",
+   "compound_turn_001#0",
+   "compound_turn_010#0",
+   "compound_turn_009#0",
+   "ambiguous_reference_003#0",
+   "topic_fork_001#0",
+   "two_branch_join_003#0",
+   "join_then_split_004#1",
+   "three_way_join_005#0",
+   "join_then_split_001#1",
+   "join_then_split_006#1",
+   "semantic_decoy_005#0",
+   "knowledge_update_005#1",
+   "new_root_007#0"
+  ]
+ },
+ "actual_lengths": {
+  "30": 32,
+  "60": 60
+ },
+ "preflight": {
+  "oracle_hash_equal": true,
+  "checklist_query_closure_identical": true,
+  "l30_subsequence_of_l60": true,
+  "base_subsequence_of_l60": true,
+  "oracle_tokens": 671,
+  "full_tokens": {
+   "base": 881,
+   "30": 3696,
+   "60": 7047
+  }
+ },
+ "lengths_built": [
+  30,
+  60
+ ]
+}

@@ -1,0 +1,805 @@
+{
+  "scenario_id": "two_branch_join_007__L60",
+  "family": "two_branch_join",
+  "label": "JOIN",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're building out our live-ops event calendar for the next quarter and want to start with a big seasonal event in October. What are some structural best practices for a month-long Halloween event in a mobile RPG?",
+      "assistant_message": "A month-long Halloween event typically works best when divided into two or three distinct phases so players have fresh content to return to rather than burning through everything on day one. A common structure is a two-week story chapter followed by a one-week challenge sprint and a final three-day boss rush, giving you natural re-engagement hooks around October 15 and October 22. You should also plan a limited currency, like a 'Soul Coin,' that is only earnable during the event so the economy stays contained and doesn't bleed into your standard progression. Tying the final boss rush to a community milestone—where collective damage unlocks a shared cosmetic reward—adds a social layer that boosts daily active users in the closing days.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "We like the Soul Coin idea. How should we set the earn rate so players feel rewarded without making the premium shop feel pointless?",
+      "assistant_message": "A well-tested ratio is to let free-play earn roughly 60–70% of the currency needed to claim the event's marquee reward, so a player who logs in daily for all 30 days can reach it without spending. If your marquee item costs 1,200 Soul Coins, a daily free cap of around 28 coins puts a dedicated free player at 840 coins, leaving a natural 360-coin gap that the premium shop can fill at roughly $4.99 for a bundle of 400 coins. This 'almost there' gap is sometimes called the 'completion nudge' in monetization design and has shown conversion lifts of 12–18% in published post-mortems from studios like Jam City. Make sure your lowest-tier paid bundle covers the gap exactly so the purchase decision feels satisfying rather than arbitrary.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "That conversion range is really helpful. What about the challenge sprint phase—what kinds of daily missions keep engagement without causing burnout?",
+      "assistant_message": "Daily missions during a challenge sprint should follow a three-tier structure: one trivially easy task completable in under two minutes, one moderate task taking roughly 15 minutes, and one stretch goal that rewards players who engage deeply for 30–45 minutes. Research published in the 2022 GDC session 'Designing for Habit, Not Addiction' by Kongregate's live-ops team found that three-tier daily systems produced 23% higher day-14 retention compared to single flat-mission designs. You should also rotate mission categories—combat, crafting, social—on a fixed weekly cadence so no single playstyle feels excluded for more than two consecutive days. Avoid time-gating the stretch goal behind a paywall; that specific pattern was cited in a 2023 Apple App Store guideline update as a friction point that increases refund requests.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "Got it. How should we handle the community milestone mechanic for the final boss rush so it actually feels meaningful and not like a hollow checkbox?",
+      "assistant_message": "The key is making the milestone tracker visible and granular—show a global damage counter that updates every 15 minutes rather than once a day, so individual contributions feel perceptible. Supercell's Clash of Clans used a similar 'Clan Games' point aggregator in its December 2017 update, and they reported in a 2018 developer blog post that near-real-time counters increased average session length by 11% compared to daily-snapshot trackers. Set the community threshold at roughly 80% of what your active player base would naturally generate in three days, so success feels earned but not trivially guaranteed. If the threshold is missed, still grant a consolation cosmetic at 60% completion so late joiners don't feel their participation was wasted.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "We're also thinking about a Thanksgiving event in November right after Halloween wraps. How long of a gap do we need between events to avoid player fatigue?",
+      "assistant_message": "Industry convention, backed by data from Sensor Tower's 2022 mobile gaming report, suggests a minimum five-to-seven day 'breathing gap' between major live-ops events to allow players to clear backlogs and prevent the 'always-on' fatigue that spikes uninstall rates. If your Halloween event ends October 31, launching Thanksgiving content on November 7 at the earliest gives you the minimum buffer, though November 10 is a safer target that also aligns with post-weekend engagement peaks typically seen on Mondays and Tuesdays. Use the gap period to run a lightweight 'catch-up week' where players can spend any leftover Soul Coins on a rotating discount shop, which also serves as a soft currency sink. Zynga's FarmVille 3 team publicly noted in a 2021 GDC talk that inter-event discount windows reduced Soul Coin-equivalent hoarding by 34% ahead of the next event launch.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "The catch-up week discount shop is a great idea. What discount depth should we use to make it feel valuable without devaluing the event items permanently?",
+      "assistant_message": "A 30–40% discount on non-marquee event cosmetics is the standard range; it feels generous to players while keeping marquee items at full perceived value since those should not enter the discount rotation at all. Kabam's Marvel Contest of Champions used a 35% discount window in its 'Glory Store' rotations starting in 2019, and community sentiment tracked by third-party site ContestChampions.io showed approval ratings of 78% for that discount tier versus 52% for a 20% tier tested in 2018. Time-limit the window to exactly seven days and display a countdown timer prominently, as urgency is the mechanism that prevents players from waiting for a deeper future discount. If you later run a year-anniversary sale, keep Halloween catch-up items out of that sale entirely to preserve the seasonal scarcity signal.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "We're finalizing the venues for our spring concert tour. The first stop is St. Cecilia's Church in Millbrook — they've confirmed we can use the main nave, which seats exactly 320 people.",
+      "assistant_message": "That's a solid venue to open with. St. Cecilia's main nave seating 320 is a good capacity for an amateur choir tour — large enough to feel like an event but intimate enough that ticket demand should be manageable. Make sure you get their confirmed date in writing early so it doesn't slip away.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "For our restaurant reservation platform Tableaux, we're seeing a 71% drop-off rate at the account creation screen, specifically on the step where users enter their phone number for SMS verification.",
+      "assistant_message": "A 71% abandonment at SMS verification is a well-documented friction point in reservation platforms. The main culprits are users not wanting to share a phone number this early and SMS delivery delays that cause timeout errors. Tableaux could consider offering email-based verification as a fallback option, and A/B tests in the hospitality SaaS space have shown that adding a 'Why we need this' tooltip at that step can reduce drop-off to roughly 29–34%.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "For Tableaux we also see that users who do complete SMS verification still abandon at 52% before finishing profile setup — they drop off at the cuisine preference selection on step 3 of 5.",
+      "assistant_message": "A 52% abandonment at cuisine preference selection on step 3 of 5 suggests that users perceive it as mandatory gatekeeping rather than personalization. Making that screen entirely skippable with a 'Set up later' option is the most reliable quick fix — Tableaux's competitors in the OpenTable and Resy space have reported a 40% reduction in profile-setup abandonment after making preference screens optional. You could also reduce the number of cuisine categories displayed from however many you currently show down to a curated list of 8–10 to lower decision fatigue.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "What day-30 retention should Tableaux realistically target after fixing the SMS and profile-setup issues?",
+      "assistant_message": "Restaurant reservation platforms operate on fundamentally different engagement rhythms than daily-use apps, so day-30 retention benchmarks are lower — a realistic target for Tableaux after fixing onboarding friction would be 14–19%. The reference point here is Resy's 2021 mobile relaunch, which improved day-30 retention from 9% to 16% after simplifying account creation to a single email-plus-password step and deferring all preference collection. I'd recommend Tableaux aim for 16% as a primary target, since that aligns with the upper-mid range of the hospitality booking app category.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "We're also running an A/B test for Tableaux's onboarding in their v3.1.0 release. What sample size and test duration make sense there?",
+      "assistant_message": "For Tableaux, to detect a meaningful improvement from the 71% SMS drop-off rate down to a target of roughly 32%, you'd need approximately 900 users per variant at 80% power and a 5% significance level — 1,800 total. Reservation platforms tend to have lower weekly new-user volumes than fitness apps, so if Tableaux is acquiring around 400 new users per week, plan for a 5-week test duration to accumulate enough completions. Unlike daily-use apps, you'll also want to extend your observation window to day-60 rather than day-30 to capture meaningful repeat-booking behavior.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "For the ticket pricing, we've decided to go with a tiered model. Standard tickets will be £12 each.",
+      "assistant_message": "A £12 standard ticket is a reasonable price point for a community choir concert — accessible enough to attract casual attendees while still generating meaningful revenue. You'll want to decide early whether to sell through a platform or handle box office sales yourselves, since platform fees can eat into that margin.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "We noticed both schools have a parent-teacher association. Does the PTA at either school run fundraising events in autumn?",
+      "assistant_message": "Both schools do have active PTAs. Hartwell Academy's PTA holds an annual Autumn Fair in October, which last year raised £4,200 for new library resources. Greystone High's PTA organises a sponsored walk each November, with proceeds going toward extracurricular equipment. Both are well-attended and welcome new families to get involved from the start.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "We're also adding a second venue on the tour: the Hartwell Assembly Rooms. They've told us the hall holds 480 people.",
+      "assistant_message": "The Hartwell Assembly Rooms at 480 seats is a noticeable step up from St. Cecilia's — that's a 50% larger audience capacity. It's worth thinking about whether your choir's stage presence and sound will fill that bigger space comfortably, and whether local marketing can realistically drive that many ticket sales.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "Our musical director wants to add a post-concert reception at the Dellwood stop. She's asking whether we should hire a local catering company or just do a self-catered spread with volunteers.",
+      "assistant_message": "Both options have real merit depending on your budget and how formal you want the reception to feel. A local catering company removes the logistical burden from your volunteers but can easily add £300–£600 to your costs for a modest spread. If you go self-catered, assigning a dedicated reception coordinator among your volunteers tends to prevent the last-minute scramble that often derails these events.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "How many folding tables should we rent for a fundraising gala with 200 seated guests? We're planning round tables that seat 8 per table.",
+      "assistant_message": "For 200 guests at 8 per round table, you'll need exactly 25 tables for seating. It's also wise to rent 3–5 extra tables for the registration area, gift display, and catering stations, so a total order of 28–30 folding or banquet rounds is typical for an event that size.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "The venue has a 6,000 square foot ballroom. Is that enough space for 25 tables plus a small stage and dance floor?",
+      "assistant_message": "6,000 square feet is workable for that setup, though it will feel fairly full. A standard 60-inch round table with chairs needs roughly 100–120 square feet of floor space including circulation, so 25 tables alone consume about 2,500–3,000 square feet. That leaves 3,000–3,500 square feet for a modest stage (typically 400–600 sq ft for a 20×25 ft platform) and a 400–600 sq ft dance floor, which is tight but achievable if you keep the stage to one end and the dance floor adjacent to it.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "We're thinking of hiring a 4-piece band. What's a reasonable budget line for live music at a nonprofit gala?",
+      "assistant_message": "A professional 4-piece band for a nonprofit gala typically runs between $3,000 and $7,000 for a 4-hour evening, depending on your market and the musicians' experience level. Many bands also charge a travel or setup fee of $200–$500 on top of the performance rate. It's worth asking whether the band carries their own liability insurance, since some venues require vendors to show a certificate of insurance naming the venue as an additional insured.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "We need to send save-the-date cards to 450 invitees. Is six weeks out enough lead time for a Saturday evening event?",
+      "assistant_message": "Six weeks is on the shorter end but generally acceptable for a local or regional gala audience. Most event planners recommend 8–10 weeks for save-the-dates, especially if many guests need to arrange travel or childcare. If you're printing physical cards, factor in 5–7 business days for printing and 3–5 business days for mailing, which means you'd need to finalize your guest list and artwork no later than 7 weeks before the event to hit a 6-week delivery window.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "The caterer is quoting $85 per person for a plated three-course dinner. Does that seem reasonable?",
+      "assistant_message": "$85 per person for a plated three-course dinner is within the normal range for nonprofit gala catering, though it sits toward the mid-tier. Depending on your city, comparable plated dinners run from about $65 to $125 per person including service staff but excluding bar service. Make sure the quote specifies whether gratuity (typically 18–22%) and any room rental or setup fees are included, as those can add 25–30% to the final invoice.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "We want to do a silent auction with 30 items. What's the recommended minimum bid increment for items valued between $100 and $500?",
+      "assistant_message": "For items valued between $100 and $500, a standard minimum bid increment is $25, which keeps bidding competitive without discouraging participation. Some auction software defaults to 10% of the item's fair market value as the increment, which would put you in the $10–$50 range for that tier. Setting your opening bid at roughly 30–40% of the item's retail value is a common practice that encourages early bids while still generating meaningful revenue.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "We're using OneCause for the auction platform. Does it support mobile bidding out of the box?",
+      "assistant_message": "Yes, OneCause includes mobile bidding as a core feature — guests receive a text message link and can bid from any smartphone browser without downloading an app. The platform also supports outbid notifications via SMS, a bid history log per item, and a checkout process that can process credit cards directly through the platform. You'll want to run a test event in their sandbox environment at least two weeks before the gala to confirm your item catalog, bid increments, and payment processing are all configured correctly.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "How early should we open check-in for a 6:30 PM event start?",
+      "assistant_message": "Opening check-in 45 to 60 minutes before the stated start time is standard, so 5:30–5:45 PM for a 6:30 PM event. For 200 guests, staffing at least 4 check-in stations helps keep the line moving and prevents a bottleneck during the first 20 minutes, which is typically the busiest window. If you're distributing auction paddles or wristbands at check-in, add one extra staff member per 50 guests to avoid delays.",
+      "gold_parents": [
+        "t22"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "We're also planning a paddle raise during the live program. What's a good target ask amount for a mid-tier nonprofit gala audience?",
+      "assistant_message": "For a mid-tier gala audience, a tiered paddle raise typically starts at $1,000 and steps down through $500, $250, $100, and $50 levels. The $250 and $100 tiers usually generate the most total revenue because they capture the broadest participation. A skilled auctioneer or emcee can coach the room through the tiers in about 8–10 minutes, and it's common for a well-run paddle raise to generate 20–35% of the evening's total fundraising revenue.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "What kind of AV setup do we need for a live program with video, a speaker, and the paddle raise?",
+      "assistant_message": "For a 6,000 square foot ballroom with 200 guests, you'll want at minimum two 10-foot projection screens with HDMI-connected projectors rated at 5,000 lumens or higher, a wireless handheld microphone for the emcee, and a lavalier mic for any seated speakers. A dedicated AV technician on-site throughout the event is strongly recommended — budget $1,200–$2,500 for professional AV services depending on your market. If you're showing a video, make sure you test the audio levels in the room at least 90 minutes before doors open, since ballroom acoustics vary significantly when the room is empty versus full.",
+      "gold_parents": [
+        "t24"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "We want to put a centerpiece on each table. Floral arrangements versus candle centerpieces — which tends to be more cost-effective?",
+      "assistant_message": "Candle centerpieces are generally more cost-effective: a cluster of pillar or votive candles with a mirror tile or simple vessel can run $15–$35 per table, versus $60–$150 per table for fresh floral arrangements depending on the flowers and florist. However, many venues have restrictions on open flames, so you'd need to confirm whether LED candles are required, which are typically $8–$20 per candle but reusable. If budget allows, a hybrid approach — one or two statement floral arrangements near the stage and candle centerpieces on guest tables — can look elegant while keeping costs down.",
+      "gold_parents": [
+        "t25"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "The venue requires a certificate of insurance from us. What coverage limits should we ask our broker for?",
+      "assistant_message": "Most event venues require a commercial general liability policy with at least $1,000,000 per occurrence and $2,000,000 aggregate for a seated dinner event of this size. You'll also want to confirm whether the venue requires liquor liability coverage if you're serving alcohol, which typically adds $150–$400 to the event policy premium. Ask your broker to add the venue as an additional insured on the certificate and have it delivered to the venue at least two weeks before the event date to satisfy their administrative requirements.",
+      "gold_parents": [
+        "t26"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "We're expecting about 15 volunteers the night of the event. Do they need to be covered under that same policy?",
+      "assistant_message": "Yes, volunteers acting on behalf of your nonprofit during the event are typically covered as insured persons under your organization's general liability policy, but you should confirm this with your broker since some policies exclude unpaid volunteers unless specifically endorsed. It's also good practice to have each volunteer sign a brief volunteer agreement acknowledging their role and any safety guidelines, which helps establish that they were acting within the scope of authorized activities. If any volunteers will be handling cash or auction items of significant value, a crime or fidelity endorsement is worth discussing with your broker.",
+      "gold_parents": [
+        "t27"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "We need to arrange parking for guests. The venue has 80 spots on-site. Should we hire valet?",
+      "assistant_message": "With 200 guests and only 80 on-site spots, you'll likely need to address the parking gap, especially if guests are arriving within a narrow 45-minute window. Valet parking is one option — a valet company can typically handle 150–200 cars in a 6,000 sq ft lot by stacking, and rates run $600–$1,200 for the evening plus tips. Alternatively, if there's a public garage or surface lot within two blocks, negotiating a reserved block of 80–100 spaces for a flat fee of $5–$10 per space is often more cost-effective and guests appreciate the simplicity.",
+      "gold_parents": [
+        "t28"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t30",
+      "turn_index": 29,
+      "user_message": "We want to send a post-event thank-you email within 48 hours. What should it include?",
+      "assistant_message": "A strong post-event thank-you email should include a specific dollar amount raised (even if preliminary), a genuine personal note from your executive director or board chair, and a clear next step — such as a link to view photos, a survey, or information about your next campaign. If guests made auction purchases or paddle raise gifts, the thank-you email should also include or link to their tax receipt, since IRS guidelines require written acknowledgment for charitable contributions of $250 or more. Sending it within 24–48 hours while the event is fresh significantly improves open rates and donor satisfaction scores.",
+      "gold_parents": [
+        "t29"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t31",
+      "turn_index": 30,
+      "user_message": "What's the IRS rule on acknowledging in-kind auction item donations from businesses?",
+      "assistant_message": "For in-kind donations from businesses, the IRS requires your nonprofit to provide a written acknowledgment that describes the donated property but does not assign a dollar value — the donor is responsible for determining the fair market value and reporting it on Form 8283 if the total deduction exceeds $500. Your acknowledgment letter should include your organization's name, EIN, the date of the donation, a description of the items donated, and a statement confirming whether any goods or services were provided in exchange. For donated items valued over $5,000, the donor must also obtain a qualified appraisal, so it's worth flagging high-value auction items to your corporate donors early.",
+      "gold_parents": [
+        "t30"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t32",
+      "turn_index": 31,
+      "user_message": "We have a corporate sponsor donating $10,000 in cash. Does that change the acknowledgment requirements?",
+      "assistant_message": "A $10,000 cash donation requires a contemporaneous written acknowledgment from your organization — 'contemporaneous' means the donor must receive it by the earlier of the date they file their tax return or the due date of that return. The acknowledgment must state the amount of cash contributed and include a statement that no goods or services were provided in exchange, or if any were (such as a sponsor table), it must describe and provide a good-faith estimate of the value of those benefits. If the sponsor receives a table valued at $2,000 as a benefit, for example, only $8,000 of the $10,000 is deductible, and your acknowledgment must reflect that split.",
+      "gold_parents": [
+        "t31"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t33",
+      "turn_index": 32,
+      "user_message": "How should we handle the sponsor's logo on our event signage and website — is there a legal distinction between sponsorship and advertising?",
+      "assistant_message": "Yes, this is an important distinction for nonprofits. Sponsorship payments are generally treated as non-taxable contributions under IRS rules as long as your acknowledgment is limited to the sponsor's name, logo, and a brief description of their products or services without comparative or qualitative language. If your acknowledgment crosses into advertising — for example, saying the sponsor's product is 'the best' or including a call to action like 'visit their website for a discount' — the IRS may treat the payment as unrelated business income (UBI), which is taxable. Keeping sponsor recognition to logo placement, a tagline, and contact information keeps you safely in the sponsorship category.",
+      "gold_parents": [
+        "t32"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t34",
+      "turn_index": 33,
+      "user_message": "We're also applying for a $25,000 grant from a local community foundation to help fund our summer programs. The deadline is February 28, 2025. What's typically in a letter of inquiry?",
+      "assistant_message": "A letter of inquiry (LOI) to a community foundation typically runs 1–3 pages and includes a brief organizational overview, a clear statement of the specific need your project addresses, a description of the proposed program with measurable outcomes, the amount requested (in your case $25,000), and a one-sentence note on your organization's total budget for context. Many community foundations also want to see the target population served and a timeline, so mentioning your summer program dates and estimated number of beneficiaries strengthens the LOI. Since your deadline is February 28, 2025, you'd want a draft ready for internal review by February 14 at the latest to allow time for revisions and sign-off.",
+      "gold_parents": [
+        "t33"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t35",
+      "turn_index": 34,
+      "user_message": "The foundation requires two letters of support from community partners. How do we ask for those without it feeling transactional?",
+      "assistant_message": "The most effective approach is to frame the request around the shared mission rather than your organizational need — reach out to partners you've collaborated with directly and reference a specific project or outcome you accomplished together. A personal phone call or meeting before sending a formal request goes a long way toward making it feel relational rather than transactional. Give partners at least three weeks to draft and sign the letter, and offer to provide a one-page brief with key program details and talking points so their letter is accurate and easy to write.",
+      "gold_parents": [
+        "t34"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t36",
+      "turn_index": 35,
+      "user_message": "One of our potential support letter writers is a city council member. Is there any issue with using a government official's letter for a grant application?",
+      "assistant_message": "Using a city council member's letter of support is generally permissible and can actually strengthen your application, as it signals community buy-in and local government awareness of your work. The main thing to verify is that the council member is writing in their capacity as a community stakeholder or based on direct knowledge of your programs, not making any commitment of public funds or official city endorsement, which could create complications. Some foundations also have policies about letters from elected officials — it's worth checking the foundation's FAQ or calling their program officer to confirm there's no restriction before you submit.",
+      "gold_parents": [
+        "t35"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t37",
+      "turn_index": 36,
+      "user_message": "The grant application asks for a logic model. We've never built one before. What are the core components?",
+      "assistant_message": "A logic model has five core components arranged left to right: Inputs (resources you invest, such as staff time, funding, and volunteers), Activities (what you do with those inputs, like workshops or mentorship sessions), Outputs (the direct, countable products of your activities, such as number of youth served or sessions delivered), Short-term Outcomes (changes in knowledge, skills, or attitudes within 1–2 years), and Long-term Outcomes or Impact (sustained behavior change or community-level results over 3–5 years). Most community foundations are satisfied with a one-page visual table or diagram, and many have a template on their website you can adapt. The clearest logic models use active verbs and specific numbers wherever possible.",
+      "gold_parents": [
+        "t36"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t38",
+      "turn_index": 37,
+      "user_message": "For our summer program, we expect to serve 120 youth ages 10–14 over eight weeks. What would a reasonable short-term outcome look like?",
+      "assistant_message": "A well-written short-term outcome for that program might be: 'By the end of the 8-week program, 80% of participating youth will demonstrate increased confidence in STEM problem-solving as measured by pre- and post-program self-assessment surveys.' The key elements are a timeframe, a percentage or number target, the population (120 youth ages 10–14), the specific change being measured, and the measurement method. Funders respond well to outcomes that are ambitious but realistic — an 80% target on a skill-confidence measure is credible for an intensive 8-week intervention.",
+      "gold_parents": [
+        "t37"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t39",
+      "turn_index": 38,
+      "user_message": "We need to hire a part-time program coordinator for the summer. What should the job posting include to attract strong candidates?",
+      "assistant_message": "A strong part-time program coordinator posting should clearly state the hourly rate or salary range (transparency significantly increases application volume), the expected hours per week, the specific start and end dates of the position, and the primary responsibilities with enough specificity that candidates can self-select appropriately. Include the required qualifications versus preferred qualifications in separate lists so candidates don't screen themselves out unnecessarily, and describe your organizational culture briefly — mission-driven candidates respond to authenticity. Posting on Idealist, LinkedIn, and your local workforce development board typically yields the strongest nonprofit-sector applicant pool.",
+      "gold_parents": [
+        "t38"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t40",
+      "turn_index": 39,
+      "user_message": "We're planning to pay $22 per hour for 20 hours per week over 10 weeks. Do we need to provide any benefits at that level?",
+      "assistant_message": "At 20 hours per week, this would typically be classified as part-time, and under federal law there is no requirement to provide health insurance, paid leave, or retirement benefits to part-time employees working under 30 hours per week. However, you must still withhold and remit payroll taxes (federal income tax, Social Security at 6.2%, and Medicare at 1.45%), and your state may have additional requirements such as paid sick leave accrual for part-time workers — for example, California, New York, and Washington require paid sick leave for part-time employees regardless of hours worked. Confirm your state's specific rules with your payroll provider or HR counsel before the hire.",
+      "gold_parents": [
+        "t39"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t41",
+      "turn_index": 40,
+      "user_message": "We use ADP Run for payroll. Can it handle a short-term seasonal employee like this?",
+      "assistant_message": "Yes, ADP Run handles seasonal and short-term employees well — you can add them as active employees, process payroll normally for the duration of their assignment, and then terminate them in the system at the end date without any special configuration. The platform will automatically calculate and withhold the correct federal and state taxes based on the W-4 the employee submits, and it generates the W-2 at year-end even for employees who only worked part of the year. Just make sure to set the employee's termination date in ADP Run before their last payroll run so the system flags them correctly and doesn't generate unnecessary payroll periods afterward.",
+      "gold_parents": [
+        "t40"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t42",
+      "turn_index": 41,
+      "user_message": "Our executive director wants to know if we need to update our employee handbook before bringing on summer staff. What sections are most commonly outdated?",
+      "assistant_message": "The sections most commonly outdated in nonprofit handbooks are the anti-harassment and discrimination policy (which should reference current EEOC guidance and any state-level expansions), the remote work or hybrid work policy (many organizations haven't updated these since 2020–2021), and the leave policies, especially if your state has enacted or expanded paid family and medical leave laws recently. If your handbook still references the pre-2020 FFCRA emergency leave provisions as ongoing policy, that section needs to be corrected. A quick legal review of those four areas — harassment, remote work, leave, and any wage and hour language — typically takes 2–4 hours for an employment attorney and is well worth it before onboarding new staff.",
+      "gold_parents": [
+        "t41"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t43",
+      "turn_index": 42,
+      "user_message": "We also need to update our conflict of interest policy before our June board meeting. What should it cover?",
+      "assistant_message": "A solid nonprofit conflict of interest policy should cover the definition of a conflict (financial interests, family relationships, and outside employment or board service that could influence decisions), the disclosure process (typically an annual disclosure form plus real-time disclosure when a conflict arises in a meeting), the recusal procedure (the conflicted party leaves the room during deliberation and vote), and documentation requirements (minutes must record that the conflict was disclosed, the person recused, and the vote was taken without their participation). The IRS Form 990 asks whether your organization has a written conflict of interest policy and whether board members complete annual disclosure statements, so having both the policy and a signed annual form on file for each board member is important for compliance. Many state nonprofit associations publish a model policy you can adapt.",
+      "gold_parents": [
+        "t42"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t44",
+      "turn_index": 43,
+      "user_message": "We have 11 board members. How often should the full board meet, and is there a legal minimum?",
+      "assistant_message": "There is no universal federal legal minimum for nonprofit board meeting frequency, but most state nonprofit corporation acts require at least one annual meeting of the board, and many states require it to be documented with formal minutes. Best practice, and the expectation of most accreditation bodies and sophisticated funders, is quarterly meetings of the full board, supplemented by committee meetings in between. With 11 members, quarterly full-board meetings of 90–120 minutes, combined with active executive and finance committee work in the off-months, is a structure that keeps governance strong without burning out volunteer board members.",
+      "gold_parents": [
+        "t43"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t45",
+      "turn_index": 44,
+      "user_message": "Two of our board members haven't attended a meeting in over a year. What's the right way to handle that?",
+      "assistant_message": "The first step is a private, direct conversation — ideally from the board chair — to understand whether there are personal circumstances, a mismatch of expectations, or a loss of engagement that can be addressed. Many bylaws include an automatic removal provision for members who miss a specified number of consecutive meetings (commonly three), so review your bylaws to see whether removal is already triggered and whether you need to formally act on it. If the member wants to remain but has genuine barriers, some boards create an 'emeritus' or 'advisory' designation that honors their relationship without counting them toward quorum, though this requires a bylaw amendment or board resolution depending on your governance documents.",
+      "gold_parents": [
+        "t44"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t46",
+      "turn_index": 45,
+      "user_message": "Our bylaws haven't been reviewed since 2017. Is that a problem?",
+      "assistant_message": "A 2017 review date means your bylaws are about 8 years old, which is long enough that several areas are likely outdated — particularly any provisions referencing in-person-only meeting requirements (many states have since codified the right to meet electronically), officer titles or committee structures that no longer reflect your actual governance, and any indemnification language that predates recent state law updates. Most governance consultants and nonprofit attorneys recommend a full bylaws review every 3–5 years, or whenever there's a significant change in organizational structure, state law, or leadership. Scheduling a bylaws review as a standing agenda item at your June board meeting, with a task force assigned to bring a redlined draft by September, is a practical approach.",
+      "gold_parents": [
+        "t45"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t47",
+      "turn_index": 46,
+      "user_message": "We're also considering adding a term limits provision. What's the standard term structure for nonprofit boards?",
+      "assistant_message": "The most common term structure for nonprofit boards is two consecutive 3-year terms, after which a board member must rotate off for at least one year before being eligible for re-election. Some organizations use three 2-year terms, which provides more flexibility for gradually cycling members. Term limits are widely recommended by governance experts because they create planned leadership transitions, bring in fresh perspectives, and provide a graceful exit for members who have become disengaged — the situation you described with your two inactive members is actually a classic argument for adopting them.",
+      "gold_parents": [
+        "t46"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t48",
+      "turn_index": 47,
+      "user_message": "One of our tenors is asking about the dress code for the tour. We've always worn black tie in the past — is that still the expectation?",
+      "assistant_message": "Black tie is a classic choice for choral concerts and gives a polished, unified look on stage. That said, some amateur choirs are shifting toward smart-casual or matching coloured outfits to feel more approachable to community audiences. It's worth putting the question to the full choir and committee so everyone is aligned before you order or hire anything.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t49",
+      "turn_index": 48,
+      "user_message": "We also need to think about whether to hire a professional accompanist or use one of our own members who plays piano. What factors should we weigh up?",
+      "assistant_message": "The main considerations are reliability, rehearsal availability, and cost. A professional accompanist brings experience sight-reading and following a conductor under pressure, but typically charges a fee per rehearsal and per concert. Using a member can save money and aids familiarity, but you risk putting too much pressure on that person and losing a voice from the choir during performances.",
+      "gold_parents": [
+        "t48"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t50",
+      "turn_index": 49,
+      "user_message": "We've also decided to offer a concessions discount. Students and over-65s will get tickets at £8.",
+      "assistant_message": "A £8 concession price alongside the £12 standard rate is a clear and meaningful discount — it's a third off, which is generous enough to actually shift behaviour. Just make sure your box office volunteers know to ask for proof of eligibility, and consider whether you want to cap the proportion of concession tickets per show to protect overall revenue.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t51",
+      "turn_index": 50,
+      "user_message": "Our choir director wants to add a post-concert reception. The Hartwell Center's catering manager is called Patricia Osei and she said the kitchen closes at 9 p.m. on weeknights.",
+      "assistant_message": "That's worth flagging early with Patricia so you can plan your concert schedule around it. If your performance runs long or you want a proper reception rather than a rushed one, you might need to negotiate an exception or look at bringing in an external caterer.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t52",
+      "turn_index": 51,
+      "user_message": "The Millbrook date at St. Cecilia's is confirmed for Saturday the 14th of April. We're expecting a sell-out.",
+      "assistant_message": "A sell-out at St. Cecilia's on April 14th would be a fantastic opening night — 320 tickets sold is a real statement for an amateur choir. It's worth setting up a waiting list from the moment you go on sale, so you can fill any last-minute cancellations and gauge overflow demand for future tours.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t53",
+      "turn_index": 52,
+      "user_message": "We also want to host weekly in-library events. What kinds of programming work well for the 6–12 age range over an eight-week run?",
+      "assistant_message": "A proven mix is to alternate between passive and active formats—think a craft or STEM activity one week, then a visiting author or storyteller the next, so no two consecutive weeks feel identical. For an eight-week program you might anchor weeks one and eight with high-energy kickoff and closing parties, then fill weeks two through seven with two crafts, two STEM workshops, one author visit, and one themed movie afternoon, which keeps the calendar varied without overwhelming volunteer or staff resources.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t54",
+      "turn_index": 53,
+      "user_message": "We have a $3,500 budget for those events. Does that seem workable for eight weeks?",
+      "assistant_message": "At $3,500 across eight events, you're working with roughly $437 per event, which is tight but doable if you lean on community partnerships. Local STEM educators or university student groups will often run workshops for free or for a small stipend under $100, and many children's authors charge between $150 and $300 for a library visit, leaving meaningful room in each week's allocation for materials and light refreshments.",
+      "gold_parents": [
+        "t53"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t55",
+      "turn_index": 54,
+      "user_message": "We're also considering hiring a part-time program coordinator just for the summer. What hours and pay rate would be typical?",
+      "assistant_message": "For a summer reading program of this scale, a part-time coordinator typically works 15 to 20 hours per week at a rate between $18 and $24 per hour depending on your region and the candidate's experience. Over an eight-week program that comes to roughly 120 to 160 total hours, so your all-in labor cost would land somewhere between $2,160 and $3,840 before any employer taxes or benefits, which is worth factoring into your overall program budget alongside the events spend.",
+      "gold_parents": [
+        "t54"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t56",
+      "turn_index": 55,
+      "user_message": "We've also decided to add a premium ticket tier. Premium seats will be £20 and include a pre-concert drinks reception.",
+      "assistant_message": "A £20 premium tier with a drinks reception is an excellent upsell — it roughly doubles the revenue per seat compared to the standard £12 ticket. You'll need to decide how many premium seats to allocate per venue, since the reception logistics will set a practical ceiling, and you'll want to cost in the drinks so the uplift is genuinely profitable.",
+      "gold_parents": [
+        "t50"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t57",
+      "turn_index": 56,
+      "user_message": "We're also trying to figure out what to budget for office furniture. We need to outfit 8 workstations and a small conference room for 6 people. Any rough guidance on cost?",
+      "assistant_message": "For 8 workstations with desks, ergonomic chairs, and basic storage, you're typically looking at $800 to $1,500 per station, so a budget of $6,400 to $12,000 is reasonable. A 6-person conference table with chairs can run another $2,000 to $5,000 depending on quality. All in, plan for roughly $8,400 to $17,000 for a functional but not extravagant setup.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t58",
+      "turn_index": 57,
+      "user_message": "We found a vendor called WorkNest Office Solutions that can do all 8 workstations and the conference room package for $11,200 flat, with delivery and assembly included. That sound fair?",
+      "assistant_message": "Yes, $11,200 all-in for 8 workstations plus a 6-person conference room package with delivery and assembly from WorkNest Office Solutions is competitive and sits comfortably in the middle of the typical range. Getting delivery and assembly bundled is a meaningful convenience, since coordinating that separately can easily add $500 to $1,000 in labor. It's a fair price to accept if you're satisfied with the product quality.",
+      "gold_parents": [
+        "t57"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t59",
+      "turn_index": 58,
+      "user_message": "For the St. Cecilia's show on April 14th, we've decided to reserve 40 of those 320 seats as premium.",
+      "assistant_message": "Reserving 40 premium seats out of 320 means 280 seats remain for standard and concession tickets — that's about 12.5% of the house going premium, which is a conservative and sensible ratio. At £20 each, those 40 seats alone would bring in £800 if sold out, on top of revenue from the remaining seats.",
+      "gold_parents": [
+        "t52"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t60",
+      "turn_index": 59,
+      "user_message": "We're also looking at the Elmsworth Civic Auditorium for another stop on the tour. What can you tell me about it?",
+      "assistant_message": "Elmsworth Civic Auditorium is a larger venue on Parade Street in Elmsworth town centre, with a seating capacity of 780 and a grand pipe organ that choral groups can arrange to use for an additional hire fee. It's owned by the local council and managed by a team led by events coordinator Paul Renwick. The auditorium hosts roughly 120 events per year and has a well-regarded reputation for community and touring performances.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t61",
+      "turn_index": 60,
+      "user_message": "Does Elmsworth have good dressing room facilities for a choir our size? We have about 45 singers.",
+      "assistant_message": "Elmsworth Civic Auditorium has three dedicated dressing rooms backstage, with the largest accommodating up to 35 people and the other two fitting around 15 each, so 45 singers would spread comfortably across all three. Each room has its own mirror stations, coat rails, and a shared adjoining shower block. Paul Renwick has mentioned that choral groups often use the two smaller rooms for section warm-ups as well.",
+      "gold_parents": [
+        "t60"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t62",
+      "turn_index": 61,
+      "user_message": "We think about 60% of the non-premium tickets at each show will sell at the standard rate and the remaining 40% at the concession rate. Does that split seem workable?",
+      "assistant_message": "A 60/40 split between standard and concession tickets is plausible for a community choir with a broad audience — choral concerts do tend to attract students and older attendees in significant numbers. At £12 standard and £8 concession, that mix gives you a blended price of roughly £10.40 per non-premium ticket, which is useful for revenue forecasting. It's worth revisiting that assumption after your first show once you have real sales data.",
+      "gold_parents": [
+        "t56"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t63",
+      "turn_index": 62,
+      "user_message": "Coach wants to know what size van we need to rent to transport everything to the competition venue.",
+      "assistant_message": "For a full robotics team transport including the robot, toolboxes, spare parts bins, and team gear, a 15-passenger van typically isn't enough cargo space on its own. Most teams in similar situations rent a 10-foot cargo truck or pair a standard passenger van with a small trailer. You'll want to confirm the venue's loading dock hours before you finalize the rental.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t64",
+      "turn_index": 63,
+      "user_message": "We also need to figure out the hotel situation — how many rooms should we book for a team of 14 students and 3 mentors?",
+      "assistant_message": "For 14 students and 3 mentors, you're looking at 17 people total. Assuming two students per room and mentors in single rooms, you'd need 7 student rooms and 3 mentor rooms, so 10 rooms minimum. Booking a block rate with the hotel as early as possible usually saves the team significant money.",
+      "gold_parents": [
+        "t63"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t65",
+      "turn_index": 64,
+      "user_message": "For the drive team, do we need matching shirts or full uniforms for the competition?",
+      "assistant_message": "Most regional competitions require drive team members to wear matching shirts with the team number clearly visible, but full uniforms with logos are optional unless your team has a sponsor agreement requiring them. Check the specific event's drive team dress code in the event information packet, since some venues have additional safety requirements like closed-toe shoes. Ordering shirts at least two weeks before the event is usually necessary to guarantee delivery in time.",
+      "gold_parents": [
+        "t64"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t66",
+      "turn_index": 65,
+      "user_message": "Can you work out the total projected ticket revenue for the St. Cecilia's concert on April 14th, assuming a full sell-out across all ticket types?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t59",
+        "t62"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t7",
+    "t12",
+    "t14",
+    "t50",
+    "t52",
+    "t56",
+    "t59",
+    "t62"
+  ],
+  "distractor_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t8",
+    "t9",
+    "t10",
+    "t11",
+    "t13",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t20",
+    "t21",
+    "t22",
+    "t23",
+    "t24",
+    "t25",
+    "t26",
+    "t27",
+    "t28",
+    "t29",
+    "t30",
+    "t31",
+    "t32",
+    "t33",
+    "t34",
+    "t35",
+    "t36",
+    "t37",
+    "t38",
+    "t39",
+    "t40",
+    "t41",
+    "t42",
+    "t43",
+    "t44",
+    "t45",
+    "t46",
+    "t47",
+    "t48",
+    "t49",
+    "t51",
+    "t53",
+    "t54",
+    "t55",
+    "t57",
+    "t58",
+    "t60",
+    "t61",
+    "t63",
+    "t64",
+    "t65"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer correctly uses 320 total seats at St. Cecilia's, with 40 of those reserved as premium seats, leaving 280 non-premium seats.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer correctly applies the three ticket prices: £20 for premium (40 seats), £12 for standard (60% of 280 = 168 seats), and £8 for concessions (40% of 280 = 112 seats).",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer arrives at a total of £3,512 (40×£20 = £800; 168×£12 = £2,016; 112×£8 = £896; total = £3,712). The answer must not use only one ticket tier or ignore the 60/40 concession split when calculating non-premium revenue.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not incorporate the Hartwell Assembly Rooms capacity of 480 seats, which belongs to a different venue and is irrelevant to the St. Cecilia's revenue calculation.",
+      "required": true
+    }
+  ],
+  "notes": "Branch A (t1, t3, t7, t9) establishes the St. Cecilia's venue with 320 seats and 40 premium seats reserved. Branch B (t2, t6, t8, t10) establishes the three ticket prices (£12 standard, £8 concession, £20 premium) and the 60/40 non-premium split. Both branches are needed to compute the revenue figure; the Hartwell 480-seat figure (t3) is the main numerical trap, and the dress code / accompanist turns (t4, t5) are the distractor branch.\n\nReference answer: For the St. Cecilia's concert on April 14th, there are 320 total seats, of which 40 are premium at £20 each, generating £800. The remaining 280 non-premium seats split 60/40 between standard and concession: 168 standard tickets at £12 each give £2,016, and 112 concession tickets at £8 each give £896. Adding those together, the total projected revenue for a full sell-out is £3,712.",
+  "evidence_note": null,
+  "premise": "an amateur choir organizing a spring concert tour",
+  "evidence_spans": null,
+  "benchmark_version": "1.1-length-ablation",
+  "length_class": "spliced_60"
+}

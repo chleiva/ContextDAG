@@ -1,0 +1,183 @@
+{
+ "target": "three_way_join_001",
+ "family": "three_way_join",
+ "base_history": 9,
+ "gold_closure": [
+  "t1",
+  "t2",
+  "t3",
+  "t4",
+  "t5",
+  "t6",
+  "t7",
+  "t8"
+ ],
+ "gold_entities": [
+  "12:30 pm",
+  "15 minutes",
+  "15-minute",
+  "20 minutes",
+  "2019",
+  "2022",
+  "2023",
+  "25-metre",
+  "320",
+  "3:20 pm",
+  "3:45 pm",
+  "480",
+  "50-minute",
+  "60 minutes",
+  "6:00 pm",
+  "8:00 am to 8:00 pm",
+  "8:20 am",
+  "8:30 am",
+  "8:40 am",
+  "8:55 am",
+  "9:00 am",
+  "at least 24 hours",
+  "darren okafor",
+  "english",
+  "fewer than 8",
+  "five-period day",
+  "greystone high's",
+  "greystone sports complex",
+  "greystone's sports complex",
+  "hartwell",
+  "hartwell academy",
+  "pe",
+  "six-period day",
+  "sixth",
+  "the county schools swimming league",
+  "the greystone sports complex",
+  "the morning",
+  "the morning and afternoon",
+  "the school day",
+  "the weekend",
+  "weekday",
+  "year 10 and year 11",
+  "years 10 or 11"
+ ],
+ "query_entities": [
+  "10",
+  "8:40 am",
+  "english",
+  "maths",
+  "years 10 and 11"
+ ],
+ "donors_rejected_by_exclusion": 44,
+ "sufficient_to_60": true,
+ "chosen": [
+  {
+   "donor": "knowledge_update_012#0",
+   "turns": 3,
+   "cosine": 0.4487
+  },
+  {
+   "donor": "two_branch_join_003#0",
+   "turns": 3,
+   "cosine": 0.3713
+  },
+  {
+   "donor": "compound_turn_013#0",
+   "turns": 3,
+   "cosine": 0.3684
+  },
+  {
+   "donor": "ambiguous_reference_001#0",
+   "turns": 2,
+   "cosine": 0.2565
+  },
+  {
+   "donor": "knowledge_update_006#0",
+   "turns": 4,
+   "cosine": 0.2277
+  },
+  {
+   "donor": "topic_fork_010#0",
+   "turns": 3,
+   "cosine": 0.2276
+  },
+  {
+   "donor": "ambiguous_reference_002#0",
+   "turns": 2,
+   "cosine": 0.2205
+  },
+  {
+   "donor": "two_branch_join_009#0",
+   "turns": 2,
+   "cosine": 0.2189
+  },
+  {
+   "donor": "knowledge_update_006#1",
+   "turns": 18,
+   "cosine": 0.2279
+  },
+  {
+   "donor": "join_then_split_008#1",
+   "turns": 2,
+   "cosine": 0.1847
+  },
+  {
+   "donor": "compound_turn_002#0",
+   "turns": 3,
+   "cosine": 0.1808
+  },
+  {
+   "donor": "semantic_decoy_006#0",
+   "turns": 4,
+   "cosine": 0.1716
+  },
+  {
+   "donor": "two_branch_join_005#0",
+   "turns": 2,
+   "cosine": 0.1678
+  }
+ ],
+ "used": {
+  "30": [
+   "knowledge_update_012#0",
+   "two_branch_join_003#0",
+   "compound_turn_013#0",
+   "ambiguous_reference_001#0",
+   "knowledge_update_006#0",
+   "topic_fork_010#0",
+   "ambiguous_reference_002#0",
+   "two_branch_join_009#0"
+  ],
+  "60": [
+   "knowledge_update_012#0",
+   "two_branch_join_003#0",
+   "compound_turn_013#0",
+   "ambiguous_reference_001#0",
+   "knowledge_update_006#0",
+   "topic_fork_010#0",
+   "ambiguous_reference_002#0",
+   "two_branch_join_009#0",
+   "knowledge_update_006#1",
+   "join_then_split_008#1",
+   "compound_turn_002#0",
+   "semantic_decoy_006#0",
+   "two_branch_join_005#0"
+  ]
+ },
+ "actual_lengths": {
+  "30": 31,
+  "60": 60
+ },
+ "preflight": {
+  "oracle_hash_equal": true,
+  "checklist_query_closure_identical": true,
+  "l30_subsequence_of_l60": true,
+  "base_subsequence_of_l60": true,
+  "oracle_tokens": 792,
+  "full_tokens": {
+   "base": 895,
+   "30": 3208,
+   "60": 6503
+  }
+ },
+ "lengths_built": [
+  30,
+  60
+ ]
+}

@@ -1,0 +1,145 @@
+{
+ "target": "resume_002",
+ "family": "resume",
+ "base_history": 5,
+ "gold_closure": [
+  "t1",
+  "t2"
+ ],
+ "gold_entities": [
+  "16.50",
+  "17.00",
+  "28%",
+  "4.76",
+  "about 4",
+  "june 12th",
+  "september 1st"
+ ],
+ "query_entities": [],
+ "donors_rejected_by_exclusion": 1,
+ "sufficient_to_60": true,
+ "chosen": [
+  {
+   "donor": "join_then_split_004#1",
+   "turns": 1,
+   "cosine": 0.4475
+  },
+  {
+   "donor": "topic_fork_005#0",
+   "turns": 2,
+   "cosine": 0.3489
+  },
+  {
+   "donor": "new_root_007#0",
+   "turns": 5,
+   "cosine": 0.3441
+  },
+  {
+   "donor": "knowledge_update_005#1",
+   "turns": 12,
+   "cosine": 0.3089
+  },
+  {
+   "donor": "topic_fork_004#0",
+   "turns": 3,
+   "cosine": 0.2925
+  },
+  {
+   "donor": "join_then_split_004#0",
+   "turns": 2,
+   "cosine": 0.2847
+  },
+  {
+   "donor": "knowledge_update_008#1",
+   "turns": 17,
+   "cosine": 0.2823
+  },
+  {
+   "donor": "join_then_split_001#0",
+   "turns": 2,
+   "cosine": 0.2729
+  },
+  {
+   "donor": "ambiguous_reference_004#1",
+   "turns": 1,
+   "cosine": 0.2725
+  },
+  {
+   "donor": "join_then_split_010#0",
+   "turns": 2,
+   "cosine": 0.2724
+  },
+  {
+   "donor": "ambiguous_reference_004#0",
+   "turns": 2,
+   "cosine": 0.2611
+  },
+  {
+   "donor": "two_branch_join_008#0",
+   "turns": 1,
+   "cosine": 0.2573
+  },
+  {
+   "donor": "compound_turn_012#0",
+   "turns": 2,
+   "cosine": 0.2337
+  },
+  {
+   "donor": "ambiguous_reference_006#0",
+   "turns": 2,
+   "cosine": 0.2337
+  },
+  {
+   "donor": "knowledge_update_005#0",
+   "turns": 3,
+   "cosine": 0.2189
+  }
+ ],
+ "used": {
+  "30": [
+   "join_then_split_004#1",
+   "topic_fork_005#0",
+   "new_root_007#0",
+   "knowledge_update_005#1",
+   "topic_fork_004#0",
+   "join_then_split_004#0"
+  ],
+  "60": [
+   "join_then_split_004#1",
+   "topic_fork_005#0",
+   "new_root_007#0",
+   "knowledge_update_005#1",
+   "topic_fork_004#0",
+   "join_then_split_004#0",
+   "knowledge_update_008#1",
+   "join_then_split_001#0",
+   "ambiguous_reference_004#1",
+   "join_then_split_010#0",
+   "ambiguous_reference_004#0",
+   "two_branch_join_008#0",
+   "compound_turn_012#0",
+   "ambiguous_reference_006#0",
+   "knowledge_update_005#0"
+  ]
+ },
+ "actual_lengths": {
+  "30": 30,
+  "60": 62
+ },
+ "preflight": {
+  "oracle_hash_equal": true,
+  "checklist_query_closure_identical": true,
+  "l30_subsequence_of_l60": true,
+  "base_subsequence_of_l60": true,
+  "oracle_tokens": 274,
+  "full_tokens": {
+   "base": 681,
+   "30": 3857,
+   "60": 7928
+  }
+ },
+ "lengths_built": [
+  30,
+  60
+ ]
+}

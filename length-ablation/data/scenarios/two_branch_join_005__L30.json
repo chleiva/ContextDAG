@@ -1,0 +1,389 @@
+{
+  "scenario_id": "two_branch_join_005__L30",
+  "family": "two_branch_join",
+  "label": "JOIN",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We also need to figure out our delivery cutoff time. We're thinking orders placed by 2 PM on Thursdays get delivered the following Tuesday. Does that give us enough lead time?",
+      "assistant_message": "A Thursday 2 PM cutoff for Tuesday delivery gives you roughly five days of lead time, which is quite comfortable for local farm logistics. That window should cover harvesting on Friday or Saturday, packing over the weekend, and any route planning you need to do Monday morning. Just make sure your website clearly displays the cutoff time in the customer's local timezone to avoid confusion.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Good point on the timezone. We serve customers across two time zones — Eastern and Central. Should we just display the cutoff in Eastern time and note the Central equivalent?",
+      "assistant_message": "Displaying Eastern time as the primary with a parenthetical Central time equivalent is a clean, common approach — something like 'Order by 2 PM ET (1 PM CT) on Thursdays.' This avoids ambiguity without cluttering the page. You could also consider auto-detecting the user's timezone if your platform supports it, but the explicit dual-time display is the simplest reliable solution.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "We've decided we're moving from Austin, Texas to Portland, Oregon in mid-July. I'm trying to figure out the best way to ship our two cars since my husband and I can't both drive and manage the kids.",
+      "assistant_message": "Mid-July is actually peak season for auto transport, so booking early is important. A door-to-door open carrier from Austin to Portland typically runs about $900–$1,100 per vehicle, while enclosed transport is closer to $1,400–$1,600 per vehicle. Most reputable brokers like Montway or AmeriFreight recommend booking at least 4–6 weeks in advance for summer moves.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "We're locking in our shoot days for the short film. We have the Riverside Warehouse location confirmed for Saturday, March 15th, and Sunday, March 16th. How should we structure the two-day call sheet?",
+      "assistant_message": "For a two-day warehouse shoot, it's standard practice to front-load your most complex, multi-character scenes on day one when the crew is freshest. Reserve day two for coverage, pickups, and any single-actor inserts that can be reorganized if something runs long on day one. Make sure your call sheet lists the first unit call time, talent call times, and a hard wrap time so everyone knows the outer limits of the day.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "Our director wants a 7 AM crew call on Saturday. We have 6 principal cast members and a crew of 14. Does that size change anything about how we run the day?",
+      "assistant_message": "With 14 crew and 6 principals, you're squarely in low-budget short-film territory, so a single AD can realistically manage the floor as long as scenes don't require simultaneous unit splits. At that crew size, SAG-AFTRA's Short Film Agreement kicks in if any of your principals are union members — that agreement caps your shoot day at 10 hours before overtime penalties apply. With a 7 AM crew call, that puts your base wrap at 5 PM, so plan your scene order accordingly.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "Two of our principals are SAG members. Under that Short Film Agreement, what's the daily rate we need to pay them?",
+      "assistant_message": "Under the SAG-AFTRA Low Budget Short Film Agreement (the current version ratified in 2023), the minimum day rate for a principal performer is $216 per day for projects with total budgets under $50,000. If your total budget is between $50,000 and $200,000, the rate steps up to $335 per day. Both tiers still require pension and health contributions at 21.5% on top of the base scale.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "Our total budget is $38,000, so we're in that lower tier. What about meal breaks — are those regulated under the same agreement?",
+      "assistant_message": "Yes, the SAG-AFTRA Short Film Agreement requires a meal break of no less than 30 minutes within every 6 hours of work from the performer's call time, not from general crew call. If you exceed that 6-hour window without a break, you owe a meal penalty of $25 for the first half-hour and $35 for each subsequent half-hour. For a 7 AM talent call, you must have lunch no later than 1 PM to stay compliant.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "Good to know. We're planning to cater lunch on both days. The warehouse doesn't have a kitchen, so we're hiring a craft services vendor. Any guidance on budgeting for that?",
+      "assistant_message": "For a crew of 14 plus 6 principals, that's 20 people to feed. A typical low-budget catering vendor in most U.S. markets charges between $18 and $28 per person per meal for a hot lunch, so budget roughly $360 to $560 per lunch day, or $720 to $1,120 across both shoot days. Don't forget to add craft services snacks and beverages separately — a standard craft services daily rate for a crew your size runs about $150 to $200 per day.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "We've set aside $900 total for catering both days. Is that going to be tight? We also need to account for the craft services person's day rate as a crew member.",
+      "assistant_message": "At $900 for two lunch services for 20 people, you're working with $450 per day, which is $22.50 per head — that's achievable but at the high end of modest. You'll likely need to negotiate with vendors or choose a simpler menu to stay there. The craft services PA day rate on a non-union low-budget production typically runs $150 to $200 for a 10-hour day, so add that to your crew costs separately from the food budget itself.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "The warehouse rental is $800 for the full weekend. We also need a generator because there's no accessible power on the floor. What size generator should we be renting?",
+      "assistant_message": "For a small narrative short with a standard lighting package — typically a 1.2K HMI, a few 650W fresnels, and monitor/playback equipment — a 45 kW generator is the common floor for professional sets of your size, though a 30 kW unit can work if your gaffer is disciplined about load management. Generator rentals in that range run approximately $350 to $550 per day from most grip-and-electric houses, so budget $700 to $1,100 for the two-day weekend. Always confirm fuel is included or budget an additional $80 to $120 per day for diesel.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "Our gaffer says she can work with a 30 kW. She's also asking whether we need a film permit for the warehouse since it's private property.",
+      "assistant_message": "Generally, shooting on private property does not require a city film permit as long as you're fully contained within that property and not affecting public streets, sidewalks, or right-of-way. However, many cities — including Los Angeles, New York, and Chicago — require a permit any time you use a generator on a production regardless of whether you're on private property, because the generator is often positioned near a public street. Check with your specific city's film office; in Los Angeles, for example, the Entertainment Permit desk at FilmLA requires a permit for any production that uses a generator or production vehicles on or adjacent to public space.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "We decided to go with Montway for both cars and got a confirmed pickup window of July 14–15 from our Austin address. Does that affect anything else we need to plan?",
+      "assistant_message": "Yes, that July 14–15 pickup window is a critical anchor date for your move. It means your Austin address needs to be accessible and your cars fully ready — tanks under a quarter full, no personal items inside, and all custom accessories documented — by the morning of July 14. It also means you'll need alternative transportation from that point until you're in Portland, so coordinating your family's own travel departure around that window is essential.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "Coach wants to know what size van we need to rent to transport everything to the competition venue.",
+      "assistant_message": "For a full robotics team transport including the robot, toolboxes, spare parts bins, and team gear, a 15-passenger van typically isn't enough cargo space on its own. Most teams in similar situations rent a 10-foot cargo truck or pair a standard passenger van with a small trailer. You'll want to confirm the venue's loading dock hours before you finalize the rental.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "We also need to figure out the hotel situation — how many rooms should we book for a team of 14 students and 3 mentors?",
+      "assistant_message": "For 14 students and 3 mentors, you're looking at 17 people total. Assuming two students per room and mentors in single rooms, you'd need 7 student rooms and 3 mentor rooms, so 10 rooms minimum. Booking a block rate with the hotel as early as possible usually saves the team significant money.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "For the drive team, do we need matching shirts or full uniforms for the competition?",
+      "assistant_message": "Most regional competitions require drive team members to wear matching shirts with the team number clearly visible, but full uniforms with logos are optional unless your team has a sponsor agreement requiring them. Check the specific event's drive team dress code in the event information packet, since some venues have additional safety requirements like closed-toe shoes. Ordering shirts at least two weeks before the event is usually necessary to guarantee delivery in time.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "What are the best options for packing fragile artwork for a long-distance move?",
+      "assistant_message": "For long-distance moves, artwork should be wrapped in acid-free tissue paper first, then surrounded by at least two inches of bubble wrap. Mirror and picture boxes — which telescope to fit custom sizes — are ideal, and you should label them 'Fragile – Do Not Stack' on all four sides. For very valuable pieces, a specialty art shipping company like Atelier 4 or Crozier Fine Arts can provide climate-controlled crating and transit insurance valued up to the appraised amount.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "I need to figure out the pet travel situation. Our dog is a 70-pound Labrador named Biscuit. What are our options for getting him to Portland?",
+      "assistant_message": "At 70 pounds, Biscuit is too large to travel in-cabin on any commercial airline, so your realistic options are checked baggage cargo, a dedicated pet transport service, or simply driving him with the family. Most major airlines like American and United have an embargo on checked pet cargo during summer months — typically June 1 through September 15 — due to heat restrictions, which is worth confirming for your July travel dates. Many families in your situation find that driving with the dog is the most stress-free option, especially with kids who can help keep him calm.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "We're also trying to decide between harvesting at 24 Brix versus waiting for 26 Brix. What does the timing difference usually look like in Paso Robles?",
+      "assistant_message": "In Paso Robles, Cabernet Sauvignon typically accumulates roughly 0.3 to 0.5 Brix per day during the final ripening push in late August and early September when daytime highs are in the mid-90s Fahrenheit. Moving from 24 to 26 Brix therefore usually means an additional 4 to 7 days on the vine, though a heat spike can compress that to 2 days and a cool marine layer can stretch it past 10. Most growers in the Westside AVA target 25–25.5 Brix as a compromise to preserve acidity above 0.60% tartaric while still achieving phenolic ripeness.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "Driving with him sounds right. We're thinking of making a road trip out of it and driving ourselves. How long does the Austin to Portland drive take?",
+      "assistant_message": "The Austin to Portland drive is approximately 1,900 miles and typically takes about 27–30 hours of pure driving time. Most families split it into three days, which works out to roughly 9–10 hours of driving per day — a manageable but full day, especially with kids and a dog requiring rest stops. A common three-day routing goes Austin to Albuquerque (roughly 9 hours), Albuquerque to Salt Lake City (roughly 9.5 hours), and Salt Lake City to Portland (roughly 9 hours).",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "What about luggage forwarding services? I've heard you can send bags ahead to hotels in Japan.",
+      "assistant_message": "Yes, the takkyubin luggage forwarding service is very popular with tourists. Yamato Transport's TA-Q-BIN is the most widely used provider, and a standard suitcase (up to 30 kg) sent between Tokyo and Kyoto typically costs around ¥1,500 to ¥2,000 per bag. You can drop off luggage at convenience stores like FamilyMart or Lawson, and it usually arrives at the destination hotel the next day by 2 PM.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "How far in advance should we arrange the luggage forwarding? We arrive at Narita and our first hotel is in Shinjuku.",
+      "assistant_message": "For Narita to Shinjuku, Yamato Transport has counters at Narita Terminal 1 and Terminal 2 arrivals halls, and you can arrange same-day forwarding directly there. The cut-off time for next-day delivery is generally 12 noon, and the service to central Tokyo hotels typically costs around ¥2,500 per large bag. If you book through your hotel concierge in advance, some hotels offer a slightly discounted rate of around ¥2,200 per piece.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "Can we send luggage from Kyoto to Tokyo near the end of the trip, or does the forwarding only work in one direction?",
+      "assistant_message": "Yamato Transport's TA-Q-BIN works in any direction across Japan, so sending bags from Kyoto to Tokyo is no problem at all. Drop-off points in Kyoto include 7-Eleven and FamilyMart locations, and the standard rate for a large suitcase on that route is approximately ¥1,800 to ¥2,200 depending on size and weight. Delivery to your Tokyo hotel is typically guaranteed by 2 PM the following day if you drop off before noon.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "That three-day routing sounds doable. We want to arrive in Portland by July 17 at the latest since our movers are delivering furniture on July 18. What date should we leave Austin?",
+      "assistant_message": "If you need to arrive in Portland by end of day July 17 and the drive is three days, you would need to depart Austin on the morning of July 15 at the latest. Leaving July 15 would give you July 15 Austin to Albuquerque, July 16 Albuquerque to Salt Lake City, and July 17 Salt Lake City to Portland, arriving in time before your July 18 furniture delivery. Building in even a half-day buffer by departing July 14 would be wise if you want flexibility for rest stops and unexpected delays with kids and a dog.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "If we sign the lease for September 1, 2025 and order the furniture from WorkNest at the same time, could we realistically be fully operational by October 1, 2025? WorkNest told us their lead time is 3 to 4 weeks.",
+      "assistant_message": "With a September 1 lease commencement and a 3-to-4-week lead time from WorkNest, your furniture would arrive between September 22 and September 29, leaving a few days for any IT setup or finishing touches before October 1. That timeline is tight but achievable, provided there are no delays in permitting or build-out work that the landlord is responsible for. It would be worth confirming in writing with WorkNest that they can guarantee delivery within that window once you place the order.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "We're also trying to sort out choir robes for the tour. Our current robes are navy blue, but a few members want to switch to burgundy.",
+      "assistant_message": "A robe color change is worth thinking through carefully, since it affects the choir's visual identity and can be costly to replace all at once. If budget is a concern, you might consider a phased replacement or a compromise like adding a burgundy accent piece to the existing navy robes.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "The robe supplier we've used before is Chorister's Choice, and they require a minimum order of 20 robes with at least six weeks' lead time. Do you think we should go ahead with them?",
+      "assistant_message": "Given the six-week lead time requirement from Chorister's Choice, you'd want to place any order well before the tour begins to avoid arriving without the new robes. If your choir has at least 20 members needing new robes, meeting their minimum order shouldn't be a problem, but it's worth confirming exact numbers soon.",
+      "gold_parents": [
+        "t25"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "What's the best way to transfer school records for the kids when you move to a new state?",
+      "assistant_message": "The most reliable approach is to contact your children's current school registrar in writing at least two weeks before the move and request that official records be sent directly to the new school. Oregon, like most states, participates in the Interstate Compact on Educational Opportunity for Military Children, though for civilian families the process is handled school-district to school-district. You'll typically need to provide proof of residency in the new district — a signed lease or utility bill — before the new school will formally enroll the children and request the records themselves.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "One thing I'm worried about is whether we can actually leave on July 14 given everything happening that day. Is that realistic?",
+      "assistant_message": "Leaving on July 14 would be very tight, since that's the start of your Montway car pickup window — the carrier could arrive anytime that morning to collect both vehicles. Once your cars are gone, you'd be loading Biscuit and the kids into whatever rental or remaining vehicle you have and hitting the road, all likely before noon. It's doable, but July 15 is the more realistic and stress-free departure date, still comfortably meeting your July 17 Portland arrival deadline.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "How should we handle members who want to pick up their orders instead of getting delivery? Do we need a separate workflow for that?",
+      "assistant_message": "Yes, it's worth building a distinct pickup workflow. You'd want members to select 'pickup' at checkout, which suppresses the delivery fee and routes the order to a fulfillment queue tied to your designated pickup window — say, Saturdays 9 a.m. to noon at your barn. This keeps pickup orders separate from the delivery manifest so your drivers aren't sorting through them.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t30",
+      "turn_index": 29,
+      "user_message": "We have two pickup locations — the main barn on Route 9 and a satellite spot at the Millfield Community Center. Can the system handle assigning orders to one or the other?",
+      "assistant_message": "Absolutely. Most cooperative ordering platforms let you define multiple pickup locations as selectable options during checkout, so members choose between the Route 9 barn and the Millfield Community Center when they place their order. Each location can then have its own fulfillment list, which your volunteers at each site print or view on a tablet. Just make sure you set cutoff times per location if their pickup windows differ.",
+      "gold_parents": [
+        "t29"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t31",
+      "turn_index": 30,
+      "user_message": "So given everything, what's the actual latest date we can leave Austin to make sure we get to Portland in time, and is there any conflict with the car shipping we need to watch out for?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t12",
+        "t28"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t3",
+    "t12",
+    "t17",
+    "t19",
+    "t23",
+    "t28"
+  ],
+  "distractor_turn_ids": [
+    "t1",
+    "t2",
+    "t4",
+    "t5",
+    "t6",
+    "t7",
+    "t8",
+    "t9",
+    "t10",
+    "t11",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t18",
+    "t20",
+    "t21",
+    "t22",
+    "t24",
+    "t25",
+    "t26",
+    "t27",
+    "t29",
+    "t30"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer identifies July 15 as the latest realistic departure date from Austin to arrive in Portland by July 17 (the three-day drive requires departing no later than July 15).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer references the Montway car pickup window of July 14–15 as the specific conflict that makes July 14 a problematic or unrealistic departure date.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not cite the school records transfer process or the artwork packing guidance as relevant factors in determining the departure date or the shipping conflict.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer acknowledges that July 18 is the furniture delivery date in Portland, confirming why a July 17 arrival deadline exists and why the latest departure is July 15.",
+      "required": false
+    }
+  ],
+  "notes": "t2 holds the Montway July 14–15 pickup window (Branch A evidence) and t6 holds the three-day drive schedule with the July 17 arrival deadline (Branch B evidence); together they determine both the latest departure date and the shipping conflict. t3 and t7 (artwork and school records) are the distractor turns — plausible move concerns but irrelevant to the departure-date calculation.\n\nReference answer: The latest you can realistically leave Austin is the morning of July 15. The Austin-to-Portland drive takes three days on the routing through Albuquerque and Salt Lake City, so a July 15 departure gets you to Portland by end of day July 17 — just in time before your furniture delivery on July 18. The key conflict to watch is that July 14 is the first day of your Montway pickup window, meaning your cars could be collected that morning, making it chaotic and impractical to also pack up the family and depart that same day. July 15 remains within the Montway window and is a far cleaner departure day.",
+  "evidence_note": null,
+  "premise": "planning a cross-country house move with two kids and a dog",
+  "evidence_spans": null,
+  "benchmark_version": "1.1-length-ablation",
+  "length_class": "spliced_30"
+}

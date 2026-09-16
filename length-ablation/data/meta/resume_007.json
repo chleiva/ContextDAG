@@ -1,0 +1,150 @@
+{
+ "target": "resume_007",
+ "family": "resume",
+ "base_history": 6,
+ "gold_closure": [
+  "t1",
+  "t2",
+  "t3"
+ ],
+ "gold_entities": [
+  "10-foot",
+  "10-inch",
+  "12-inch",
+  "200\u2013250",
+  "4 feet",
+  "40-inch",
+  "44",
+  "48 inches",
+  "48-inch",
+  "a foot or",
+  "about 14 inches",
+  "about 46 inches",
+  "about 48 inches",
+  "about 8 inches",
+  "exploradome and sirius observatories",
+  "g-11",
+  "losmandy g-11",
+  "newtonian",
+  "roughly 18 inches",
+  "roughly 3-meter"
+ ],
+ "query_entities": [],
+ "donors_rejected_by_exclusion": 10,
+ "sufficient_to_60": true,
+ "chosen": [
+  {
+   "donor": "join_then_split_003#0",
+   "turns": 2,
+   "cosine": 0.2943
+  },
+  {
+   "donor": "ambiguous_reference_005#1",
+   "turns": 2,
+   "cosine": 0.2728
+  },
+  {
+   "donor": "ambiguous_reference_005#0",
+   "turns": 3,
+   "cosine": 0.2579
+  },
+  {
+   "donor": "compound_turn_011#0",
+   "turns": 2,
+   "cosine": 0.2509
+  },
+  {
+   "donor": "join_then_split_005#0",
+   "turns": 2,
+   "cosine": 0.2017
+  },
+  {
+   "donor": "semantic_decoy_004#0",
+   "turns": 3,
+   "cosine": 0.1884
+  },
+  {
+   "donor": "new_root_005#0",
+   "turns": 5,
+   "cosine": 0.1734
+  },
+  {
+   "donor": "compound_turn_015#0",
+   "turns": 2,
+   "cosine": 0.1724
+  },
+  {
+   "donor": "topic_fork_008#0",
+   "turns": 3,
+   "cosine": 0.171
+  },
+  {
+   "donor": "constraint_retention_010#0",
+   "turns": 22,
+   "cosine": 0.2086
+  },
+  {
+   "donor": "semantic_decoy_010#0",
+   "turns": 3,
+   "cosine": 0.1636
+  },
+  {
+   "donor": "two_branch_join_006#0",
+   "turns": 2,
+   "cosine": 0.1602
+  },
+  {
+   "donor": "semantic_decoy_008#0",
+   "turns": 4,
+   "cosine": 0.1535
+  }
+ ],
+ "used": {
+  "30": [
+   "join_then_split_003#0",
+   "ambiguous_reference_005#1",
+   "ambiguous_reference_005#0",
+   "compound_turn_011#0",
+   "join_then_split_005#0",
+   "semantic_decoy_004#0",
+   "new_root_005#0",
+   "compound_turn_015#0",
+   "topic_fork_008#0"
+  ],
+  "60": [
+   "join_then_split_003#0",
+   "ambiguous_reference_005#1",
+   "ambiguous_reference_005#0",
+   "compound_turn_011#0",
+   "join_then_split_005#0",
+   "semantic_decoy_004#0",
+   "new_root_005#0",
+   "compound_turn_015#0",
+   "topic_fork_008#0",
+   "constraint_retention_010#0",
+   "semantic_decoy_010#0",
+   "two_branch_join_006#0",
+   "semantic_decoy_008#0"
+  ]
+ },
+ "actual_lengths": {
+  "30": 30,
+  "60": 61
+ },
+ "preflight": {
+  "oracle_hash_equal": true,
+  "checklist_query_closure_identical": true,
+  "l30_subsequence_of_l60": true,
+  "base_subsequence_of_l60": true,
+  "oracle_tokens": 542,
+  "full_tokens": {
+   "base": 1019,
+   "30": 4601,
+   "60": 8964
+  }
+ },
+ "lengths_built": [
+  30,
+  60
+ ]
+}

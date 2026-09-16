@@ -1,0 +1,139 @@
+{
+ "target": "three_way_join_002",
+ "family": "three_way_join",
+ "base_history": 9,
+ "gold_closure": [
+  "t1",
+  "t2",
+  "t3",
+  "t5",
+  "t6",
+  "t7"
+ ],
+ "gold_entities": [
+  "118,000",
+  "163,000",
+  "28,000",
+  "3-year",
+  "4,200",
+  "45,000",
+  "50,400",
+  "52,000",
+  "900-square-foot",
+  "about two",
+  "annually",
+  "approximately $80,000",
+  "around $52,000",
+  "at least $151,200",
+  "baker",
+  "elm street",
+  "hartwell avenue",
+  "maplewood",
+  "roughly $28,000",
+  "this year"
+ ],
+ "query_entities": [
+  "elm street"
+ ],
+ "donors_rejected_by_exclusion": 19,
+ "sufficient_to_60": true,
+ "chosen": [
+  {
+   "donor": "ambiguous_reference_004#0",
+   "turns": 2,
+   "cosine": 0.4076
+  },
+  {
+   "donor": "ambiguous_reference_002#0",
+   "turns": 2,
+   "cosine": 0.3183
+  },
+  {
+   "donor": "join_then_split_004#1",
+   "turns": 1,
+   "cosine": 0.3105
+  },
+  {
+   "donor": "join_then_split_001#1",
+   "turns": 1,
+   "cosine": 0.2826
+  },
+  {
+   "donor": "knowledge_update_012#1",
+   "turns": 20,
+   "cosine": 0.2743
+  },
+  {
+   "donor": "knowledge_update_011#1",
+   "turns": 13,
+   "cosine": 0.2727
+  },
+  {
+   "donor": "ambiguous_reference_003#0",
+   "turns": 2,
+   "cosine": 0.2592
+  },
+  {
+   "donor": "new_root_005#0",
+   "turns": 5,
+   "cosine": 0.2568
+  },
+  {
+   "donor": "join_then_split_005#0",
+   "turns": 2,
+   "cosine": 0.2566
+  },
+  {
+   "donor": "join_then_split_006#0",
+   "turns": 2,
+   "cosine": 0.2507
+  },
+  {
+   "donor": "new_root_004#0",
+   "turns": 6,
+   "cosine": 0.2485
+  }
+ ],
+ "used": {
+  "30": [
+   "ambiguous_reference_004#0",
+   "ambiguous_reference_002#0",
+   "join_then_split_004#1",
+   "join_then_split_001#1",
+   "knowledge_update_012#1"
+  ],
+  "60": [
+   "ambiguous_reference_004#0",
+   "ambiguous_reference_002#0",
+   "join_then_split_004#1",
+   "join_then_split_001#1",
+   "knowledge_update_012#1",
+   "knowledge_update_011#1",
+   "ambiguous_reference_003#0",
+   "new_root_005#0",
+   "join_then_split_005#0",
+   "join_then_split_006#0",
+   "new_root_004#0"
+  ]
+ },
+ "actual_lengths": {
+  "30": 35,
+  "60": 65
+ },
+ "preflight": {
+  "oracle_hash_equal": true,
+  "checklist_query_closure_identical": true,
+  "l30_subsequence_of_l60": true,
+  "base_subsequence_of_l60": true,
+  "oracle_tokens": 518,
+  "full_tokens": {
+   "base": 746,
+   "30": 3610,
+   "60": 7788
+  }
+ },
+ "lengths_built": [
+  30,
+  60
+ ]
+}

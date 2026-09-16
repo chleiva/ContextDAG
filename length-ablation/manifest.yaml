@@ -1,0 +1,60 @@
+# Length ablation (final experiment). Controlled: donor distractor branches from other benchmark 1.1
+# scenarios are spliced into 40 target 1.1 scenarios to reach ~30 and ~60 history turns. No turn text
+# is written or changed. The oracle_dag context is identical at every length by construction.
+# Interpretation table (handoff §4) is frozen here before the first billed call.
+
+run:
+  name: length-ablation
+  created: 2026-09-16
+  seed: 20260916
+  benchmark_version: 1.1-length-ablation
+  f0_dir: ../f0-oracle-feasibility
+  f05_dir: ../f05-candidate-realism
+
+provider: {name: amazon-bedrock, region: us-east-1, fallback_regions: [us-east-1, us-west-2, us-east-2]}
+
+models:
+  response_a: {id: us.anthropic.claude-sonnet-4-6, display: Claude Sonnet 4.6, temperature: 0.0, max_tokens: 2048}
+  response_b: {id: us.anthropic.claude-haiku-4-5-20251001-v1:0, display: Claude Haiku 4.5, temperature: 0.0, max_tokens: 2048}
+  response_c: {id: minimax.minimax-m2.5, display: MiniMax M2.5, temperature: 0.0, max_tokens: 6000}
+  judge: {id: us.meta.llama4-maverick-17b-instruct-v1:0, display: Llama 4 Maverick, role: sole judge; zero Opus}
+  judge_settings: {temperature: 0.0, max_tokens: 4096}
+  embedding: {id: sentence-transformers/all-mpnet-base-v2, runs: local}
+  tokenizer: {library: tiktoken, encoding: cl100k_base}
+
+construction:                            # handoff §2
+  families: [two_branch_join, three_way_join, resume, long_noisy_side_thread, new_root]
+  per_family: 8                          # first 8 ids per family (sorted)
+  lengths: [30, 60]                      # plus the unmodified base scenario
+  donor_unit: branch                     # a donor branch is spliced whole, never split
+  donor_ranking: cosine(branch text, target query), all-mpnet-base-v2, greedy from the top
+  exclusion: donor shares no named entity with the target gold closure; no query entity appears in the donor (spaCy + regex, F0.5 extractor)
+  interleave: contiguous donor blocks in the slots before the first gold turn, between gold turns, after the last; one RNG per target; 30-turn history is a strict subsequence of the 60-turn history
+  base_arm_reuse: full_history(base) and oracle_dag answers + Llama verdicts are reused from F0 / F0.5 / check 3 (identical prompts); only the spliced lengths are answered here
+
+preflight:                               # handoff §3, all before the first billed call
+  - oracle_context_hash_equal_across_lengths
+  - entity_disjointness_per_splice
+  - donor_pool_sufficiency_to_60
+  - checklist_query_closure_byte_identical_to_1.1
+
+stage1:
+  arms: [full_history@base, full_history@30, full_history@60, oracle_dag]
+  primary: full_history(base) minus full_history(60), paired, cluster bootstrap over scenario ids, 10000 resamples, pinned per-comparison seeds
+  validity: full-history distractor leakage must rise with length; if flat or falling from base to 60 the run is void
+  interpretation:
+    amplifies: ">= +0.05 and CI excludes zero"
+    directional: "+0.02 to +0.05; report point estimate + CI + trend; no significance claim"
+    closed: "< +0.02 or negative: full history does not degrade to 60 turns on this benchmark; quality claim closed (a finding)"
+stage2:
+  run_only_if_stage1_under_usd: 7
+  arms: [semantic_retrieval@matched at base / 30 / 60]   # budget = that scenario's oracle_dag token count
+
+pricing_usd_per_1m_tokens:
+  us.anthropic.claude-sonnet-4-6: {input: 3.00, output: 15.00}
+  global.anthropic.claude-sonnet-4-6: {input: 3.00, output: 15.00}
+  us.anthropic.claude-haiku-4-5-20251001-v1:0: {input: 1.00, output: 5.00}
+  global.anthropic.claude-haiku-4-5-20251001-v1:0: {input: 1.00, output: 5.00}
+  minimax.minimax-m2.5: {input: 0.60, output: 2.40}
+  us.meta.llama4-maverick-17b-instruct-v1:0: {input: 0.24, output: 0.97}
+budget: {estimate_usd: 8, warn_usd: 10, hard_limit_usd: 15}

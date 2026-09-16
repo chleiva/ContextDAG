@@ -1,0 +1,186 @@
+{
+ "target": "two_branch_join_001",
+ "family": "two_branch_join",
+ "base_history": 7,
+ "gold_closure": [
+  "t1",
+  "t2",
+  "t3",
+  "t4",
+  "t6",
+  "t7"
+ ],
+ "gold_entities": [
+  "$3,000",
+  "1,500",
+  "10,000",
+  "14,750",
+  "20%",
+  "3,000",
+  "50",
+  "5:00 pm",
+  "at least $2,950",
+  "at least a few days",
+  "community green spaces grant",
+  "hardware",
+  "hartley",
+  "last-minute",
+  "maplewood community green spaces grant",
+  "march 15, 2025",
+  "no more than $10,000",
+  "no more than 1,500",
+  "pdf",
+  "the maplewood community garden",
+  "zero"
+ ],
+ "query_entities": [],
+ "donors_rejected_by_exclusion": 27,
+ "sufficient_to_60": true,
+ "chosen": [
+  {
+   "donor": "join_then_split_005#0",
+   "turns": 2,
+   "cosine": 0.4445
+  },
+  {
+   "donor": "topic_fork_010#0",
+   "turns": 3,
+   "cosine": 0.4426
+  },
+  {
+   "donor": "new_root_005#0",
+   "turns": 5,
+   "cosine": 0.4265
+  },
+  {
+   "donor": "ambiguous_reference_006#0",
+   "turns": 2,
+   "cosine": 0.3967
+  },
+  {
+   "donor": "join_then_split_005#1",
+   "turns": 1,
+   "cosine": 0.3967
+  },
+  {
+   "donor": "topic_fork_003#0",
+   "turns": 3,
+   "cosine": 0.3419
+  },
+  {
+   "donor": "ambiguous_reference_008#1",
+   "turns": 1,
+   "cosine": 0.3329
+  },
+  {
+   "donor": "ambiguous_reference_006#1",
+   "turns": 1,
+   "cosine": 0.3323
+  },
+  {
+   "donor": "semantic_decoy_011#0",
+   "turns": 3,
+   "cosine": 0.3234
+  },
+  {
+   "donor": "join_then_split_004#1",
+   "turns": 1,
+   "cosine": 0.3175
+  },
+  {
+   "donor": "three_way_join_001#0",
+   "turns": 1,
+   "cosine": 0.3171
+  },
+  {
+   "donor": "topic_fork_009#0",
+   "turns": 2,
+   "cosine": 0.3066
+  },
+  {
+   "donor": "three_way_join_002#0",
+   "turns": 3,
+   "cosine": 0.3034
+  },
+  {
+   "donor": "three_way_join_003#0",
+   "turns": 3,
+   "cosine": 0.3016
+  },
+  {
+   "donor": "join_then_split_001#0",
+   "turns": 2,
+   "cosine": 0.2907
+  },
+  {
+   "donor": "new_root_002#0",
+   "turns": 5,
+   "cosine": 0.2893
+  },
+  {
+   "donor": "compound_turn_012#0",
+   "turns": 2,
+   "cosine": 0.2827
+  },
+  {
+   "donor": "knowledge_update_006#1",
+   "turns": 18,
+   "cosine": 0.2763
+  }
+ ],
+ "used": {
+  "30": [
+   "join_then_split_005#0",
+   "topic_fork_010#0",
+   "new_root_005#0",
+   "ambiguous_reference_006#0",
+   "join_then_split_005#1",
+   "topic_fork_003#0",
+   "ambiguous_reference_008#1",
+   "ambiguous_reference_006#1",
+   "semantic_decoy_011#0",
+   "join_then_split_004#1",
+   "three_way_join_001#0"
+  ],
+  "60": [
+   "join_then_split_005#0",
+   "topic_fork_010#0",
+   "new_root_005#0",
+   "ambiguous_reference_006#0",
+   "join_then_split_005#1",
+   "topic_fork_003#0",
+   "ambiguous_reference_008#1",
+   "ambiguous_reference_006#1",
+   "semantic_decoy_011#0",
+   "join_then_split_004#1",
+   "three_way_join_001#0",
+   "topic_fork_009#0",
+   "three_way_join_002#0",
+   "three_way_join_003#0",
+   "join_then_split_001#0",
+   "new_root_002#0",
+   "compound_turn_012#0",
+   "knowledge_update_006#1"
+  ]
+ },
+ "actual_lengths": {
+  "30": 30,
+  "60": 65
+ },
+ "preflight": {
+  "oracle_hash_equal": true,
+  "checklist_query_closure_identical": true,
+  "l30_subsequence_of_l60": true,
+  "base_subsequence_of_l60": true,
+  "oracle_tokens": 654,
+  "full_tokens": {
+   "base": 778,
+   "30": 3862,
+   "60": 7692
+  }
+ },
+ "lengths_built": [
+  30,
+  60
+ ]
+}

@@ -1,0 +1,111 @@
+{
+ "target": "long_noisy_side_thread_001",
+ "family": "long_noisy_side_thread",
+ "base_history": 34,
+ "gold_closure": [
+  "t1",
+  "t2"
+ ],
+ "gold_entities": [
+  "11.0.44",
+  "14 business days",
+  "2019",
+  "4,200",
+  "about 4,200",
+  "curve",
+  "curve dental's",
+  "dentrix",
+  "dentrix 11.0.44",
+  "february 14, 2025",
+  "march 3, 2025",
+  "xml"
+ ],
+ "query_entities": [
+  "curve"
+ ],
+ "donors_rejected_by_exclusion": 10,
+ "sufficient_to_60": true,
+ "chosen": [
+  {
+   "donor": "compound_turn_005#0",
+   "turns": 4,
+   "cosine": 0.3245
+  },
+  {
+   "donor": "semantic_decoy_001#0",
+   "turns": 4,
+   "cosine": 0.3083
+  },
+  {
+   "donor": "semantic_decoy_008#0",
+   "turns": 4,
+   "cosine": 0.3022
+  },
+  {
+   "donor": "join_then_split_001#1",
+   "turns": 1,
+   "cosine": 0.2614
+  },
+  {
+   "donor": "resume_015#0",
+   "turns": 3,
+   "cosine": 0.2569
+  },
+  {
+   "donor": "three_way_join_004#0",
+   "turns": 3,
+   "cosine": 0.253
+  },
+  {
+   "donor": "topic_fork_006#0",
+   "turns": 1,
+   "cosine": 0.2517
+  },
+  {
+   "donor": "join_then_split_006#0",
+   "turns": 2,
+   "cosine": 0.2391
+  },
+  {
+   "donor": "topic_fork_007#0",
+   "turns": 2,
+   "cosine": 0.2245
+  },
+  {
+   "donor": "join_then_split_006#1",
+   "turns": 2,
+   "cosine": 0.2234
+  }
+ ],
+ "used": {
+  "60": [
+   "compound_turn_005#0",
+   "semantic_decoy_001#0",
+   "semantic_decoy_008#0",
+   "join_then_split_001#1",
+   "resume_015#0",
+   "three_way_join_004#0",
+   "topic_fork_006#0",
+   "join_then_split_006#0",
+   "topic_fork_007#0",
+   "join_then_split_006#1"
+  ]
+ },
+ "actual_lengths": {
+  "60": 60
+ },
+ "preflight": {
+  "oracle_hash_equal": true,
+  "checklist_query_closure_identical": true,
+  "l30_subsequence_of_l60": true,
+  "base_subsequence_of_l60": true,
+  "oracle_tokens": 375,
+  "full_tokens": {
+   "base": 6725,
+   "60": 10505
+  }
+ },
+ "lengths_built": [
+  60
+ ]
+}

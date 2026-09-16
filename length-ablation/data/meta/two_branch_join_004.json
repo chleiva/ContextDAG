@@ -1,0 +1,186 @@
+{
+ "target": "two_branch_join_004",
+ "family": "two_branch_join",
+ "base_history": 7,
+ "gold_closure": [
+  "t1",
+  "t2",
+  "t3",
+  "t4",
+  "t5",
+  "t7"
+ ],
+ "gold_entities": [
+  "1,000",
+  "1,500",
+  "14,000",
+  "150",
+  "17,000",
+  "2,500",
+  "200",
+  "3,000",
+  "3,400",
+  "3,500",
+  "4,250",
+  "500",
+  "750",
+  "a single week",
+  "all four weeks",
+  "any single week",
+  "august 11",
+  "day",
+  "every single day",
+  "every week",
+  "five per week",
+  "four weeks",
+  "four-week",
+  "july 14 to august 11",
+  "roughly 69%",
+  "seven-day",
+  "seven-day week",
+  "solar surge",
+  "solaris coins",
+  "summer",
+  "the final day",
+  "the full july 14 to august 11",
+  "the last day",
+  "tier 1",
+  "tier 2",
+  "tier 3",
+  "tier 4",
+  "tier 4's",
+  "up to",
+  "week three",
+  "week\u20143,500"
+ ],
+ "query_entities": [
+  "solar surge"
+ ],
+ "donors_rejected_by_exclusion": 44,
+ "sufficient_to_60": true,
+ "chosen": [
+  {
+   "donor": "new_root_004#0",
+   "turns": 6,
+   "cosine": 0.2521
+  },
+  {
+   "donor": "knowledge_update_011#0",
+   "turns": 2,
+   "cosine": 0.2281
+  },
+  {
+   "donor": "compound_turn_012#0",
+   "turns": 2,
+   "cosine": 0.1922
+  },
+  {
+   "donor": "join_then_split_008#1",
+   "turns": 2,
+   "cosine": 0.1907
+  },
+  {
+   "donor": "new_root_001#0",
+   "turns": 7,
+   "cosine": 0.1655
+  },
+  {
+   "donor": "compound_turn_014#0",
+   "turns": 2,
+   "cosine": 0.1498
+  },
+  {
+   "donor": "topic_fork_002#0",
+   "turns": 2,
+   "cosine": 0.1415
+  },
+  {
+   "donor": "join_then_split_004#1",
+   "turns": 1,
+   "cosine": 0.1375
+  },
+  {
+   "donor": "resume_007#0",
+   "turns": 3,
+   "cosine": 0.129
+  },
+  {
+   "donor": "knowledge_update_007#1",
+   "turns": 16,
+   "cosine": 0.1289
+  },
+  {
+   "donor": "ambiguous_reference_007#0",
+   "turns": 2,
+   "cosine": 0.1257
+  },
+  {
+   "donor": "resume_015#0",
+   "turns": 3,
+   "cosine": 0.1244
+  },
+  {
+   "donor": "ambiguous_reference_005#0",
+   "turns": 3,
+   "cosine": 0.121
+  },
+  {
+   "donor": "topic_fork_006#0",
+   "turns": 1,
+   "cosine": 0.1188
+  },
+  {
+   "donor": "compound_turn_009#0",
+   "turns": 3,
+   "cosine": 0.1129
+  }
+ ],
+ "used": {
+  "30": [
+   "new_root_004#0",
+   "knowledge_update_011#0",
+   "compound_turn_012#0",
+   "join_then_split_008#1",
+   "new_root_001#0",
+   "compound_turn_014#0",
+   "topic_fork_002#0"
+  ],
+  "60": [
+   "new_root_004#0",
+   "knowledge_update_011#0",
+   "compound_turn_012#0",
+   "join_then_split_008#1",
+   "new_root_001#0",
+   "compound_turn_014#0",
+   "topic_fork_002#0",
+   "join_then_split_004#1",
+   "resume_007#0",
+   "knowledge_update_007#1",
+   "ambiguous_reference_007#0",
+   "resume_015#0",
+   "ambiguous_reference_005#0",
+   "topic_fork_006#0",
+   "compound_turn_009#0"
+  ]
+ },
+ "actual_lengths": {
+  "30": 30,
+  "60": 62
+ },
+ "preflight": {
+  "oracle_hash_equal": true,
+  "checklist_query_closure_identical": true,
+  "l30_subsequence_of_l60": true,
+  "base_subsequence_of_l60": true,
+  "oracle_tokens": 818,
+  "full_tokens": {
+   "base": 962,
+   "30": 4577,
+   "60": 8711
+  }
+ },
+ "lengths_built": [
+  30,
+  60
+ ]
+}

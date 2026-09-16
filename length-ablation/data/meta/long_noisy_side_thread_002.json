@@ -1,0 +1,99 @@
+{
+ "target": "long_noisy_side_thread_002",
+ "family": "long_noisy_side_thread",
+ "base_history": 37,
+ "gold_closure": [
+  "t1",
+  "t2"
+ ],
+ "gold_entities": [
+  "1,680 square feet",
+  "120-foot",
+  "14",
+  "1987",
+  "30 feet",
+  "30 feet by",
+  "30-year",
+  "340,000",
+  "4 feet",
+  "fourteen",
+  "march 14th",
+  "the harborview sailing club"
+ ],
+ "query_entities": [
+  "340,000"
+ ],
+ "donors_rejected_by_exclusion": 10,
+ "sufficient_to_60": true,
+ "chosen": [
+  {
+   "donor": "ambiguous_reference_005#0",
+   "turns": 3,
+   "cosine": 0.3867
+  },
+  {
+   "donor": "two_branch_join_013#0",
+   "turns": 1,
+   "cosine": 0.3803
+  },
+  {
+   "donor": "knowledge_update_001#0",
+   "turns": 2,
+   "cosine": 0.3539
+  },
+  {
+   "donor": "compound_turn_010#0",
+   "turns": 4,
+   "cosine": 0.3261
+  },
+  {
+   "donor": "resume_014#0",
+   "turns": 5,
+   "cosine": 0.275
+  },
+  {
+   "donor": "join_then_split_005#0",
+   "turns": 2,
+   "cosine": 0.2749
+  },
+  {
+   "donor": "topic_fork_003#0",
+   "turns": 3,
+   "cosine": 0.2746
+  },
+  {
+   "donor": "resume_003#0",
+   "turns": 5,
+   "cosine": 0.2642
+  }
+ ],
+ "used": {
+  "60": [
+   "ambiguous_reference_005#0",
+   "two_branch_join_013#0",
+   "knowledge_update_001#0",
+   "compound_turn_010#0",
+   "resume_014#0",
+   "join_then_split_005#0",
+   "topic_fork_003#0",
+   "resume_003#0"
+  ]
+ },
+ "actual_lengths": {
+  "60": 62
+ },
+ "preflight": {
+  "oracle_hash_equal": true,
+  "checklist_query_closure_identical": true,
+  "l30_subsequence_of_l60": true,
+  "base_subsequence_of_l60": true,
+  "oracle_tokens": 286,
+  "full_tokens": {
+   "base": 4696,
+   "60": 8016
+  }
+ },
+ "lengths_built": [
+  60
+ ]
+}

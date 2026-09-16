@@ -1,0 +1,388 @@
+{
+  "scenario_id": "resume_007__L30",
+  "family": "resume",
+  "label": "RESUME",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I need to figure out roofing for the observatory too. I'm thinking a roll-off roof design using corrugated polycarbonate panels. Is 8mm twin-wall the right thickness?",
+      "assistant_message": "8mm twin-wall polycarbonate is a solid choice for a roll-off observatory roof — it balances light weight with enough structural rigidity to resist moderate snow loads, typically rated around 15 lbs per square foot depending on the brand. For a backyard observatory you'll want to make sure the panels are UV-coated on both sides, since single-sided UV protection will degrade the inner surface over time from reflected heat.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "What kind of track system works best for rolling the roof off? I'm looking at either aluminum extrusion rails or steel angle iron.",
+      "assistant_message": "Steel angle iron is the more common choice for permanent observatories because it resists the lateral flex that aluminum extrusion can develop over time under repeated thermal cycling. A standard setup uses 2-inch by 2-inch by 1/4-inch steel angle iron with V-groove wheels, which gives you smooth rolling and self-centering behavior without needing a complex alignment jig every season.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "I'm setting up a drip irrigation system for my vegetable garden. I'm planning to run it for 20 minutes every three days and use 1/2-inch mainline tubing. Does that setup make sense?",
+      "assistant_message": "A 20-minute cycle every three days is a reasonable starting point for most vegetable gardens, though you may need to adjust based on your soil type and local climate. Half-inch mainline tubing is the standard choice and can typically support flow rates up to about 200 gallons per hour, which is more than enough for a home garden. You'll want to make sure your emitter spacing matches your plant layout, with most vegetables doing well with emitters placed every 12 inches along the drip line. Monitoring soil moisture with an inexpensive probe during the first few weeks will help you dial in the timing more precisely.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "What pressure should I be running the system at, and do I need a pressure regulator?",
+      "assistant_message": "Most drip irrigation systems are designed to operate at 25 to 30 PSI, and since household water pressure typically comes in between 60 and 80 PSI, a pressure regulator is almost always necessary. Without one, you risk blowing apart emitters and fittings, especially the smaller 1/4-inch barbed connectors. A 25 PSI inline regulator costs around $8 to $15 and installs directly at the hose bib before your filter and mainline. Pair it with a 150-mesh filter to keep sediment from clogging your emitters, and your system should run reliably for several seasons.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "Should I use pressure-compensating emitters or standard ones for a sloped garden bed?",
+      "assistant_message": "For a sloped bed, pressure-compensating emitters are strongly recommended because they deliver a consistent flow rate, typically 0.5 or 1.0 GPH, regardless of elevation changes or pressure variation along the line. Standard emitters on a slope will over-water plants at the bottom of the run and under-water those at the top, sometimes by as much as 30 to 40 percent. The pressure-compensating models do cost more, usually around $0.40 to $0.80 per emitter compared to $0.10 to $0.20 for standard ones, but the uniform output is worth it for a productive vegetable bed. If your slope is less than about 2 feet of elevation change over the run, standard emitters with careful placement can still work acceptably.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "I'm planning to build a small backyard observatory and I want to use a dome rather than a roll-off roof. I'm thinking a 10-foot diameter fiberglass dome — does that size make sense for a mid-size Newtonian reflector?",
+      "assistant_message": "A 10-foot (roughly 3-meter) dome is a solid choice for a mid-size Newtonian in the 8- to 12-inch aperture range. The general rule of thumb is that the dome opening should be at least twice the telescope's tube diameter, and a 10-foot dome gives you plenty of clearance for tubes up to about 14 inches across. Manufacturers like Exploradome and Sirius Observatories both offer 10-foot fiberglass shells that weigh in the 200–250 lb range for the dome cap alone, so your pier and base structure need to handle that load.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "How do I attach that brush seal to a fiberglass dome shutter? I'm worried screws won't hold well in fiberglass.",
+      "assistant_message": "Fiberglass holds screws reasonably well as long as you use the right fasteners and technique. Use #10 stainless steel pan-head screws with a neoprene bonded washer, spaced every 6 inches along the seal's backing channel, and pre-drill each hole at 3/32 inch to avoid cracking the laminate. For extra security, run a bead of 3M 5200 marine adhesive sealant behind the backing channel before screwing it down — that adhesive bonds tenaciously to fiberglass and makes the attachment essentially permanent while also sealing the screw holes against water intrusion.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "Will the 3M 5200 hold up to UV exposure on the dome exterior, or should I use something else?",
+      "assistant_message": "3M 5200 is rated for continuous UV and saltwater exposure and carries a 20-year durability rating in marine applications, so it will hold up well on an observatory dome exterior. If you ever need a removable option — say, to replace the seal in 10–15 years — consider 3M 4200 instead, which has the same UV resistance but is formulated to release with effort rather than being truly permanent like 5200. Either way, apply it when surface temperatures are between 40°F and 100°F for proper cure.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "Does the Category 1 exemption cover situations where I might incidentally record audio of people in the park while doing dawn chorus recordings?",
+      "assistant_message": "Incidental audio recording of people in a public park is generally still covered under Category 1 if the recordings are not analyzed for human content and subjects cannot be identified, but many IRB offices will push this toward a Category 2 or Category 3 determination if the audio could capture private conversations. The key regulatory language in 45 CFR 46.104(d)(2) requires that any disclosure of responses outside the research context would not reasonably place subjects at risk of harm, and identifiable voice recordings could theoretically fail that test. To stay cleanly within Category 1, you could document in your exemption request that audio files will be processed only through automated bird-detection software such as BirdNET and immediately overwritten, with no human-audible playback. That procedural safeguard is usually sufficient to satisfy an IRB reviewer without escalating to a full review.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "My institution uses the Kuali Research system for IRB submissions. Is there a standard template for the exemption determination request I should look for in that system?",
+      "assistant_message": "In Kuali Research, exemption determination requests are typically initiated through the 'New Study' workflow, where you select 'Exempt' as the review type on the initial submission screen rather than 'Expedited' or 'Full Board.' Most institutions that use Kuali have pre-loaded a smart form called the Exempt Research Determination Form, which walks you through the 45 CFR 46.104(d) categories with branching logic questions so you self-identify the applicable exemption. You should check your institution's research compliance office webpage for any locally customized version, since Kuali allows significant template modification at the institutional level. If you cannot locate it, the research compliance office can usually point you to the correct form within one business day.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "I'll be mounting a 10-inch f/4.7 Newtonian on a Losmandy G-11 equatorial mount. What kind of pier height should I be planning for so I can actually use the scope comfortably?",
+      "assistant_message": "For a 10-inch f/4.7 Newtonian on a G-11, the optical tube is about 48 inches long, and when pointed near the zenith the eyepiece end drops to within a foot or two of the mount head. A common guideline is to set the top of the pier so that the declination axis sits at roughly your standing elbow height — typically 44 to 48 inches above the observatory floor for an average adult. That usually means a steel or concrete pier in the 36- to 40-inch range above finished floor level, since the G-11 mount head itself adds about 8 inches before you reach the optical axis.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "I also looked at a pier from a guy named Marcus Delray who runs a one-man shop called IronSky Custom Piers in Bozeman, Montana. He builds a 42-inch model called the Meridian-3 out of Schedule 40 DOM tubing.",
+      "assistant_message": "Marcus Delray's IronSky Custom Piers has a strong reputation in the amateur community for hand-finished welds and custom anodizing options. The Meridian-3 at 42 inches is a bit shorter than some competitors, but the Schedule 40 DOM tubing gives it excellent rigidity — it's a popular choice for people running heavier refractors where vibration damping matters more than raw load capacity.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "What's the load rating on the Meridian-3?",
+      "assistant_message": "Marcus rates the Meridian-3 at 60 lbs for the mount head, which is a bit conservative compared to some similarly sized piers. He publishes a safety factor of 3:1 in his spec sheet, meaning the structure itself is engineered to handle up to 180 lbs before any deformation, but the 60 lb figure is what he warranties for tracking accuracy under normal use.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "Does Marcus Delray do any customization on the Meridian-3's height?",
+      "assistant_message": "Yes, Marcus offers custom height cuts on the Meridian-3 in 2-inch increments, ranging from 36 inches up to 54 inches, all at the same base price of $620. Beyond 54 inches he charges a $40 per-inch upcharge and requires a thicker wall tube for structural reasons. He also offers a laser-cut top plate option with custom bolt circle patterns for an additional $95, which is handy if you're using a non-standard mount.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "We're putting together our application for the Riverside Municipal Community Garden Grant and need to nail down our plot layout. We have a 0.4-acre lot at the corner of Elm and 5th, and we're planning 40 raised beds.",
+      "assistant_message": "That sounds like a well-sized project for a community garden. With 0.4 acres, you have roughly 17,424 square feet to work with, which gives you comfortable spacing if each raised bed is the standard 4×8 feet (32 square feet each), totaling 1,280 square feet of actual growing surface. You'll want to leave at least 3-foot-wide pathways between beds to meet ADA accessibility guidelines, which many municipal grants require as a condition of funding.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "Good point on the ADA pathways. We're also planning to install a 500-gallon rainwater harvesting tank to reduce our municipal water dependency. Does that kind of infrastructure typically strengthen a grant application?",
+      "assistant_message": "Yes, water conservation infrastructure is a strong asset in municipal grant applications, particularly under programs that score applicants on environmental sustainability metrics. A 500-gallon tank collecting from a 1,000-square-foot roof catchment area can yield roughly 600 gallons from a single inch of rainfall, assuming an 0.9 collection efficiency coefficient. Many reviewers look favorably on this because it demonstrates long-term operational planning and reduces the garden's ongoing cost burden on the city.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "We also want to dedicate 8 of the 40 beds specifically to a food-donation program for the Riverside Food Pantry. Would calling that out explicitly in the application help our scoring?",
+      "assistant_message": "Explicitly naming the Riverside Food Pantry partnership and committing 20 percent of your beds—8 of 40—to food donation is a concrete, verifiable commitment that reviewers can score against community-benefit criteria. Many municipal grant rubrics, including common frameworks modeled on the USDA Community Food Projects guidelines, award bonus points for documented partnerships with named food-security organizations. Make sure you attach a letter of intent or MOU from the pantry to substantiate the claim, since unverified partnerships are often discounted during review.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "We have a draft MOU ready. Our lead organizer, Maria Chen, has 12 years of urban agriculture experience and managed the Oakdale Community Farm from 2011 to 2019. Should we feature her credentials prominently?",
+      "assistant_message": "Absolutely—applicant capacity is one of the most heavily weighted sections in most municipal grant reviews, often accounting for 25 to 30 percent of the total score. Maria's eight-year tenure at Oakdale Community Farm from 2011 to 2019 is exactly the kind of sustained, verifiable track record reviewers want to see. Include her full CV as an appendix and reference specific outcomes from Oakdale, such as annual yield figures or number of member households served, to make the credential concrete rather than merely biographical.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "Great. We're budgeting $18,500 for the first-year build-out, covering soil, lumber for the beds, the rainwater tank, and a tool shed. Does that figure seem reasonable to justify in the budget narrative?",
+      "assistant_message": "An $18,500 first-year build-out for 40 raised beds with supporting infrastructure is reasonable and defensible. Breaking it down, pressure-treated or cedar lumber for 40 beds at roughly $120 to $150 per bed runs $4,800 to $6,000; quality raised-bed soil mix at about $50 per cubic yard and 2 cubic yards per bed adds another $4,000; a 500-gallon polyethylene rainwater tank typically costs $800 to $1,200 installed; and a basic tool shed runs $2,500 to $4,000 depending on size. Itemizing those figures explicitly in your budget narrative, with vendor quotes as attachments, will demonstrate fiscal responsibility and reduce the chance of a reviewer questioning the totals.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "That makes sense. I've read that the dome slit needs to be wide enough to avoid vignetting. What's the minimum slit width I should spec for this setup?",
+      "assistant_message": "For a 10-inch Newtonian, the minimum slit width to avoid vignetting is calculated from the fully baffled light cone plus a margin for polar alignment drift. The accepted formula is to take the telescope's aperture and add twice the focuser-to-dome-center offset; for a 10-inch scope mounted near the center of a 10-foot dome, that offset is roughly 18 inches, giving a minimum slit width of about 46 inches — but most builders round up to 48 inches (4 feet) to allow for the mount's pointing range. Sirius Observatories, for example, specifies a 48-inch slit on their 10-foot HDome model specifically to accommodate telescopes in this aperture class.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "I also need to wire the observatory for power. I'm thinking of running a 20-amp dedicated circuit out from the main panel, using 12 AWG wire in a conduit buried 18 inches underground.",
+      "assistant_message": "A 20-amp circuit on 12 AWG wire is correctly matched — 12 AWG is rated for exactly 20 amps under the NEC. For direct-buried conduit, the 2020 NEC (Article 300.5) requires a minimum burial depth of 18 inches for rigid metal conduit and intermediate metal conduit, or 24 inches for PVC conduit unless it's protected by a concrete encasement. Make sure you're using the right conduit type to meet that depth requirement, and consider pulling a ground wire alongside the circuit for your equipment.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "I was planning to use Schedule 40 PVC conduit — does that change the burial depth requirement?",
+      "assistant_message": "Yes, Schedule 40 PVC conduit falls under the PVC category in NEC Table 300.5, which requires a minimum burial depth of 24 inches for a residential branch circuit, not 18 inches. You'd either need to dig deeper to 24 inches, switch to rigid metal conduit to stay at 18 inches, or encase the PVC in concrete, which would allow you to reduce the depth to 12 inches. Most hobbyists find it easiest to just go to 24 inches with the PVC rather than switching materials.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "We also need to decide on signage for the garden entrance. We're looking at a cedar post-and-panel sign, roughly 4 feet by 6 feet, and the fabricator quoted us $1,200 installed.",
+      "assistant_message": "A 4-by-6-foot cedar post-and-panel sign at $1,200 installed is a fairly standard price point for that size and material in most municipal contexts. You'll want to confirm whether the sign design needs to include the City of Hartwell logo, since many green-spaces grants require co-branding on any permanent installations funded through the program. Getting that specification in writing from the fabricator now will save revisions later.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "The fabricator is Greenline Signs & Displays, and they've confirmed in writing that the $1,200 quote is valid through March 31, 2025.",
+      "assistant_message": "Having a written quote from Greenline Signs & Displays valid through March 31, 2025 is exactly the kind of vendor documentation grant reviewers want to see attached as an exhibit. If your submission deadline falls before that date, you can include the quote directly; if it's after, you'd need a refreshed quote. File that letter with your other supporting documents so it's easy to attach when you compile the final application package.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "What should our pagination strategy look like for listing payments? We might have merchants with hundreds of thousands of transactions.",
+      "assistant_message": "Cursor-based pagination is strongly preferred over offset pagination at that scale because offset queries require the database to count and skip rows, which degrades to full-table scans on large datasets. You'd add a cursor query parameter — typically an opaque base64-encoded string encoding the last seen payment_id and created_at timestamp — and return a next_cursor field in the response envelope alongside the data array. A page size of 100 records is a common default with a maximum cap of 500, and you should enforce that cap server-side rather than trusting the client's limit parameter.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "What about rate limiting? We need to protect the API from abuse without throttling legitimate high-volume merchants.",
+      "assistant_message": "A tiered rate limiting model works well here: apply a default limit of 1,000 requests per minute per API key at the platform level, but allow merchants to be promoted to a higher tier — say 10,000 requests per minute — through an account-level configuration flag. Return a 429 Too Many Requests response when the limit is exceeded, and always include the Retry-After header set to the number of seconds until the window resets so clients can back off intelligently. You should also return X-RateLimit-Limit, X-RateLimit-Remaining, and X-RateLimit-Reset headers on every response so well-behaved clients can self-throttle before hitting the hard limit.",
+      "gold_parents": [
+        "t25"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "For the refund endpoint specifically, should we make it idempotent? A merchant might retry a refund request if they don't get a response.",
+      "assistant_message": "Yes, the refund endpoint must be idempotent, and the standard mechanism is an Idempotency-Key header that the client generates — typically a UUID v4 — and includes with the request. Your server stores a hash of the idempotency key alongside the resulting response for at least 24 hours, and any duplicate request with the same key within that window returns the cached response with a 200 rather than creating a second refund. If a second request arrives with the same idempotency key but a different request body, you should return a 422 Unprocessable Entity with an error code of \"idempotency_key_reuse\" to signal the conflict. This is the same pattern Stripe documents in their API reference under \"Idempotent Requests\".",
+      "gold_parents": [
+        "t26"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "I need to figure out the electrical situation for the observatory. Can I run a standard 120V 15-amp circuit out there, or do I need something heavier for dew heaters and a mount drive?",
+      "assistant_message": "A 15-amp, 120V circuit is usually enough for a modest setup, but it can get tight once you stack dew heaters, a mount controller, a laptop, and maybe a red LED work light. A typical dew heater system for a 10-inch scope and finder can draw 3–5 amps on its own, and the G-11's Gemini 2 controller pulls about 2 amps at 12V DC through its wall-wart adapter. Most experienced builders recommend running a 20-amp circuit with a small sub-panel inside the observatory so you have at least two separate 15-amp branch circuits to distribute the load.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "What gauge wire should I use for a 50-foot run from the main panel to the observatory sub-panel?",
+      "assistant_message": "For a 50-foot run feeding a 20-amp sub-panel, you'll want 10 AWG copper wire to keep voltage drop under the NEC-recommended 3% threshold. Using 12 AWG over that distance with a 20-amp load would push voltage drop to around 4–5%, which can cause erratic behavior in sensitive electronics like motor controllers. You should run the wire in conduit — either PVC Schedule 40 buried at least 18 inches deep per NEC Article 352, or rigid metal conduit at 6 inches — and include a ground wire back to the main panel's grounding electrode system.",
+      "gold_parents": [
+        "t28"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t30",
+      "turn_index": 29,
+      "user_message": "Should I put a surge protector or a UPS inside the observatory?",
+      "assistant_message": "A UPS is the better choice if your budget allows, because it handles both surge protection and brief power outages that could cause a GoTo mount to lose its alignment. A unit like the APC Back-UPS 600VA (model BE600M1) provides around 10–15 minutes of runtime for a typical observatory load of 150–200 watts, which is enough time to safely park the mount and close the dome. Make sure whatever you choose is rated for the continuous load — add up the wattage of every device you'll plug in and stay below 80% of the UPS's rated VA capacity.",
+      "gold_parents": [
+        "t29"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t31",
+      "turn_index": 30,
+      "user_message": "What minimum slit width should I actually spec on the dome order form, and why is that the right number for my specific scope?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t6",
+    "t11",
+    "t20"
+  ],
+  "distractor_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5",
+    "t7",
+    "t8",
+    "t9",
+    "t10",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t21",
+    "t22",
+    "t23",
+    "t24",
+    "t25",
+    "t26",
+    "t27",
+    "t28",
+    "t29",
+    "t30"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states the minimum slit width is 48 inches (or 4 feet), not merely 46 inches.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer explains that the 48-inch figure accounts for the 10-inch aperture plus twice the ~18-inch focuser-to-dome-center offset (yielding 46 inches) rounded up to 48 inches for pointing range.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer references the Sirius Observatories 10-foot HDome as a real-world example that specifies a 48-inch slit for this aperture class.",
+      "required": false
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not mention wire gauge, UPS capacity, sub-panel amperage, or any other electrical detail from the B-branch turns.",
+      "required": true
+    }
+  ],
+  "notes": "The facts the query needs (46-inch calculated minimum, 48-inch practical spec, Sirius HDome reference) are all established in t3. Turns t4–t6 cover electrical wiring and power protection, which are plausible observatory concerns but entirely irrelevant to the slit-width question; a model that imports amperage, wire gauge, or UPS figures into the answer has incorrectly cross-contaminated branches.\n\nReference answer: For your 10-inch Newtonian mounted near the center of a 10-foot dome, the minimum slit width to avoid vignetting is derived by taking the telescope's aperture and adding twice the focuser-to-dome-center offset of roughly 18 inches, which gives 46 inches. In practice, builders round that up to 48 inches — 4 feet — to accommodate the full pointing range of the G-11 mount. Sirius Observatories specifies exactly that 48-inch slit width on their 10-foot HDome model for telescopes in this aperture class, so 48 inches is the figure you should put on the order form.",
+  "evidence_note": null,
+  "premise": "a hobbyist building a backyard observatory",
+  "evidence_spans": null,
+  "benchmark_version": "1.1-length-ablation",
+  "length_class": "spliced_30"
+}

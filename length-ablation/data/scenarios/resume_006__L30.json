@@ -1,0 +1,428 @@
+{
+  "scenario_id": "resume_006__L30",
+  "family": "resume",
+  "label": "RESUME",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "What are the age brackets we should use for dividing the reading levels? We want to make sure the book lists are age-appropriate.",
+      "assistant_message": "A common approach for public library summer programs is to use three tiers: early readers ages 4–6, middle readers ages 7–9, and independent readers ages 10–12. You could also add a teen tier for ages 13–17 if your program extends that high.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "We do want to include teens. Should the teen tier have a separate reading log format from the younger kids?",
+      "assistant_message": "Yes, a separate log format for teens usually works better — they tend to respond well to tracking minutes or pages read rather than just book counts, which can feel more juvenile. You might also include a short reflection prompt or rating field to keep older readers engaged.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "That makes sense. How many minutes of reading per day would be a reasonable goal for the teen tier?",
+      "assistant_message": "A target of 30 minutes per day is widely recommended for teens by reading advocacy groups, and it aligns with what many school summer programs suggest to prevent learning loss. Over an 8-week program, that adds up to roughly 28 hours of reading, which is an achievable and meaningful goal.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "We're thinking of running the program for exactly 8 weeks, from June 16 to August 8. Does that timeline work with typical school calendars?",
+      "assistant_message": "June 16 to August 8 is a strong window — most schools in the U.S. let out by mid-June and resume after Labor Day in early September, so that 8-week span captures the heart of summer break. It also gives you a comfortable buffer before back-to-school shopping season pulls families' attention away from library activities.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "We also need to sort out the post-race refreshments. A local bakery called Sugarmill has offered to donate 400 assorted muffins and cookies.",
+      "assistant_message": "A donation from Sugarmill is a generous offer and 400 items should cover your runners plus volunteers with some buffer. It's worth confirming what assortment they plan — a mix of muffins and cookies works well for post-race recovery since runners appreciate both savory and sweet options. Make sure to arrange a delivery or pickup time that lands close to the finish window so everything stays fresh.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "They'll deliver by 10:00 AM and the assortment will be 250 muffins and 150 cookies. We'll set up the refreshment table near the park's picnic shelter, which is about 30 meters from the finish line.",
+      "assistant_message": "A 10:00 AM delivery from Sugarmill works well assuming your lead runners finish around 45 to 50 minutes after the 8:00 AM start, giving you a comfortable buffer before the refreshment table needs to be fully stocked. The picnic shelter location 30 meters from the finish line is practical — close enough for finishers to walk straight over, but far enough not to crowd the finish chute. Keeping the 250 muffins and 150 cookies separated by type will also speed up the line.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "I'm starting a 16-week marathon training plan and I want to build my long runs properly. What's the standard rule for how much to increase weekly mileage?",
+      "assistant_message": "The widely accepted guideline is the 10% rule: you should increase your total weekly mileage by no more than 10% from one week to the next. So if you're running 20 miles this week, you'd cap next week at 22 miles. This limit applies to your long run distance as well, not just total volume. Most coaches trace this rule back to its popularization by Hal Higdon and Runner's World in the early 1990s, though it has been part of running lore even longer.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "We're also reworking the paywall. It currently appears after step 5 and offers a 7-day free trial at $9.99/month after that.",
+      "assistant_message": "A paywall at step 5 with a 7-day trial is a fairly standard placement, though the timing relative to perceived value matters a lot. At $9.99/month you're in the mid-tier range for mobile subscriptions, which means the trial window needs to be long enough for users to hit at least two or three 'aha moments' before they're asked to commit. Seven days can work, but only if your core value loop is short enough to demonstrate within the first couple of sessions.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "We tested a 14-day trial and conversion actually dropped from 18% to 12%. So we're sticking with 7 days and $9.99.",
+      "assistant_message": "That's a counterintuitive but well-documented result — longer trials often reduce urgency and lead to users forgetting to cancel rather than actively choosing to subscribe. Your 18% conversion on a 7-day trial at $9.99/month is actually a solid baseline; many apps in the productivity and lifestyle categories benchmark around 10–15%, so you're above average there. Keeping the 7-day trial is the right call given your own data.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "That makes sense. I'm currently running about 15 miles per week. What should my long run be as a fraction of that weekly total?",
+      "assistant_message": "A standard recommendation is that your long run should account for no more than 30% of your total weekly mileage, though some plans allow up to 35% for lower-mileage runners. At 15 miles per week, that puts your long run at roughly 4.5 to 5.25 miles right now. As your base grows over the 16 weeks, the long run typically peaks at 20 miles — the classic marathon long-run cap used by plans like Hal Higdon's Novice 1 — about two to three weeks before race day.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "I also need to pick out running shoes for this training block. I've been told I overpronate — what kind of shoe should I be looking for?",
+      "assistant_message": "For overpronation, you generally want a stability or motion-control shoe rather than a neutral shoe. Stability shoes include features like a medial post — a denser foam wedge on the inner midsole — that resists inward rolling; well-regarded options include the Brooks Adrenaline GTS 23 and the ASICS Gel-Kayano 30. If your overpronation is severe, a motion-control shoe like the New Balance 860v13 offers even firmer support structures, though most moderate overpronators do fine in a standard stability category.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "I think moderate overpronation fits me. Should I go up a half size from my normal shoe size?",
+      "assistant_message": "Yes, going up a half size — or even a full size — is standard advice for running shoes, particularly for marathon training. Your feet swell during long runs, and you want roughly a thumb's width of space between your longest toe and the front of the shoe to prevent black toenails and blisters over high mileage. Most specialty running stores like Fleet Feet do a gait analysis and fit you while you're standing and after a short treadmill run, which is the most reliable way to confirm the right size.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "How should I be fueling during long runs? I've never used gels or anything like that.",
+      "assistant_message": "For runs under about 60–75 minutes you generally don't need to take in fuel during the run itself, but once you're pushing past 90 minutes you'll want to start practicing with carbohydrate sources. Energy gels like GU or Maurten are common, and most provide around 20–25 grams of carbohydrates per packet, which you'd take every 30–45 minutes after the first hour. The most important thing is to practice with your fueling strategy on long runs well before race day so your stomach is adapted.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "What about electrolytes? Do I need those too?",
+      "assistant_message": "Yes, electrolytes become important on runs lasting longer than an hour, especially if you're a heavy sweater or training in heat. Sodium is the most critical electrolyte to replace — you lose it through sweat and low sodium can contribute to hyponatremia in extreme cases. You can get electrolytes from sports drinks like Gatorade Endurance, electrolyte tablets like Nuun or SaltStick, or some gels that include sodium alongside the carbohydrates.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "How much water should I be drinking on a run that's, say, 2 hours long?",
+      "assistant_message": "A general guideline is to drink 4–8 ounces of water or sports drink every 15–20 minutes during a run, which works out to roughly 24–48 ounces over two hours. However, the better modern advice is to drink to thirst rather than on a rigid schedule, since overdrinking can be as dangerous as underdrinking. Weigh yourself before and after a long training run — each pound of body weight lost represents about 16 ounces of fluid you need to replace.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "Should I carry water myself or rely on water stops on my training routes?",
+      "assistant_message": "That depends on the length of your run and how reliably spaced the water stops or water fountains are on your route. For runs over 90 minutes, most coaches recommend carrying at least some fluid rather than depending entirely on external sources, since fountains can be out of service and you may not always run a route with regular stops. Handheld bottles, hydration vests, and waist-belt bottles are the main options — vests become especially practical once your long runs exceed 14–15 miles.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "I'm thinking about using a hydration vest. How much capacity do I actually need?",
+      "assistant_message": "For marathon training long runs, a vest with a 1–1.5 liter reservoir is usually sufficient, since you'll typically be out for 2–3 hours at most and can supplement at water fountains if available. Vests like the Salomon Active Skin 8 hold up to 1.5 liters and weigh very little when empty, making them a popular choice for road marathon training. If you ever plan to do trail running or ultras down the road, you'd want to go up to 2 liters or more.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "What about nutrition the night before a long run — is carb loading a real thing?",
+      "assistant_message": "Carb loading is real, but it's most effective for events lasting longer than 90 minutes and works best when done over 2–3 days rather than just the night before. The classic protocol involves increasing carbohydrate intake to around 8–12 grams per kilogram of body weight per day in the 2–3 days before a race, while tapering your exercise. For a weekly long training run you don't need a full loading protocol — just make sure dinner the night before is carbohydrate-rich and easily digestible, like pasta, rice, or potatoes with a moderate amount of protein.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "What foods should I avoid the night before a long run?",
+      "assistant_message": "You want to avoid anything high in fiber, fat, or spice the night before, since these slow digestion and can cause gastrointestinal distress during your run. Specifically, steer clear of things like large salads with raw cruciferous vegetables, heavily fried foods, rich creamy sauces, very spicy dishes, and excessive alcohol. A reliable pre-long-run dinner for many runners is plain pasta with a light tomato sauce, white rice with chicken, or a baked potato — simple, familiar, and easy on the stomach.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "Makes sense. I'm also thinking about my breakfast the morning of the long run — should I eat the same thing every time so my stomach knows what to expect? Like I could try to standardize it the same way I'm standardizing my mileage increase from that 8-mile starting point.",
+      "assistant_message": "Consistency in your pre-run breakfast is definitely a good idea — it trains your gut just as much as your legs. Most runners settle on something like a banana with peanut butter, oatmeal with honey, or white toast with jam, eaten about 60–90 minutes before the run starts. Repeating the same meal every long-run morning also removes decision fatigue and lets you zero in on what feels best.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "How long before the run should I stop eating? You mentioned 60–90 minutes — is earlier better?",
+      "assistant_message": "For most runners, 60–90 minutes is the sweet spot — it gives food time to leave your stomach without leaving you feeling depleted from hunger. Some people with sensitive stomachs do better eating 2 hours before, especially for meals with more protein or fat. Eating too close to the run, within 30 minutes or so, often causes cramping or a stitch, so if you're unsure, erring on the side of earlier is safer.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "What about coffee? I drink a cup every morning and I don't want to mess with my routine.",
+      "assistant_message": "Caffeine is actually a well-documented ergogenic aid for endurance running — studies show that 3–6 mg per kilogram of body weight consumed about 60 minutes before exercise can measurably improve performance and perceived effort. A standard 8-ounce cup of drip coffee contains roughly 80–100 mg of caffeine, so for most people one cup is well within the beneficial range. Keep your routine — just make sure you're accounting for the mild diuretic effect and drinking some water alongside it.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "I read that some elite runners use caffeine gels late in the race. Is that something I should try in training?",
+      "assistant_message": "Yes, caffeinated gels can be a useful tool in the later miles when fatigue is highest — brands like GU offer caffeinated versions with 20–40 mg of caffeine per gel. The strategy many runners use is to take non-caffeinated gels for the first half of a long effort and switch to a caffeinated gel around the two-thirds mark for a mental and physical boost. Practice it in training first so you know how your stomach handles caffeine mid-run, since some people experience GI upset from it.",
+      "gold_parents": [
+        "t22"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "Good to know. Should I keep a training log to track all this stuff — gels used, how I felt, weather conditions?",
+      "assistant_message": "Keeping a training log is one of the most valuable habits a first-time marathoner can develop. Recording data points like distance, pace, perceived effort, weather, temperature, fueling choices, and how your legs felt afterward gives you a feedback loop that helps you spot patterns — for example, which meals correlate with good long runs, or which weather conditions tank your pace. Apps like Strava or Garmin Connect do this automatically if you wear a GPS watch, but even a simple notebook works perfectly well.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "Got it. And when in the plan should I schedule a cutback week to let my body recover?",
+      "assistant_message": "Most 16-week plans build for three weeks and then drop mileage by roughly 20–25% on the fourth week — that's called a cutback or recovery week. So your pattern would look like: build, build, build, cut, then start the next build cycle. The final taper typically begins at week 13 of a 16-week plan, reducing mileage significantly over weeks 13, 14, and 15 before the race on week 16. Hal Higdon's Novice 1 plan explicitly uses this every-fourth-week cutback structure.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "How does the point system work for the volunteer hours program the library also runs?",
+      "assistant_message": "The Volunteer Hours Program awards 25 points for every 30 minutes of service completed at a library branch. Volunteers must be at least 13 years old, and the program runs year-round with a special summer sprint from July 1 through July 31, 2025.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "Is there a daily cap on volunteer points too?",
+      "assistant_message": "The Volunteer Hours Program caps daily earnings at 100 points, equivalent to two hours of service in one day. Any service time beyond two hours in a single day does not count toward the point total, though the hours themselves are still logged for the volunteer's record.",
+      "gold_parents": [
+        "t26"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "What are the reward tiers for the volunteer program?",
+      "assistant_message": "Volunteers hit their first reward at 150 points, receiving a library tote bag; the second tier at 400 points earns a $10 gift card to the library bookstore; and the top tier at 800 points earns a certificate of commendation signed by the library director plus a feature in the library's fall newsletter.",
+      "gold_parents": [
+        "t27"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "I want to tie the field journal rubric directly to the point-count data collection so students are graded as one integrated assignment rather than two separate ones. If a student's data accuracy score is below 30 out of 40, their reflection score gets capped at 20 out of 35 regardless of writing quality.",
+      "assistant_message": "That interdependency creates a strong incentive for rigorous data collection before students even sit down to write. The cap mechanic—reflection capped at 20 out of 35 when data accuracy falls below 30 out of 40—means a student cannot coast on eloquent writing while producing sloppy field records. You'll want to document this rule explicitly in the rubric so it survives any grade appeals, and it may be worth flagging it to parents at the semester kickoff night.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t30",
+      "turn_index": 29,
+      "user_message": "Right, and I'm thinking that a student who hits the data accuracy cap situation but still turns in all 8 required visits will get a 'completion credit' worth 5 bonus points added to their total journal score. Does that seem fair?",
+      "assistant_message": "A 5-point completion credit for fulfilling all 8 visits even under the cap is a reasonable way to reward persistence and attendance without undermining the accuracy incentive. It means a capped student's maximum journal total would be 20 (capped reflection) + 40 (full data accuracy, hypothetically) + 25 (sketch) + 5 (bonus) = 90, which still distinguishes them from a fully proficient student. Just make sure the bonus is framed as an attendance-and-effort recognition rather than a content grade, to keep your grading defensible.",
+      "gold_parents": [
+        "t29"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t31",
+      "turn_index": 30,
+      "user_message": "What should I be eating the morning of a long run? I've been skipping breakfast and feeling awful by mile 8.",
+      "assistant_message": "Eating 1.5 to 2 hours before a long run is generally recommended so your body has time to digest without feeling heavy. A good pre-run meal is moderate in carbohydrates and low in fat and fiber — something like a banana with peanut butter on white toast, or oatmeal with a little honey. Aim for roughly 200–300 calories for runs under 2 hours. Skipping food entirely before runs longer than 90 minutes is a common reason runners hit the wall early, since glycogen stores are already partially depleted after an overnight fast.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t32",
+      "turn_index": 31,
+      "user_message": "What about fueling during the run itself? Should I be taking gels?",
+      "assistant_message": "For runs lasting longer than 75–90 minutes, taking on carbohydrates mid-run is strongly recommended to prevent glycogen depletion. Energy gels are a popular option — most contain 20–25 grams of carbohydrates per packet, and the standard advice is to take one every 45 minutes after the first 45 minutes of running. Brands like GU Energy and Maurten are common choices; Maurten gels are notable for using a hydrogel technology that some runners find easier on the stomach. Always practice with gels on training runs rather than debuting them on race day.",
+      "gold_parents": [
+        "t31"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t33",
+      "turn_index": 32,
+      "user_message": "Does the type of water bottle or hydration vest I carry matter for a 20-mile training run?",
+      "assistant_message": "For a 20-mile training run, most runners find a hydration vest more practical than a handheld bottle because it distributes weight across your shoulders and can carry 1.5 to 2 liters of fluid plus pockets for gels and a phone. Popular options include the Salomon Active Skin 8, which holds 1.5 liters and weighs about 200 grams empty, and the Nathan VaporAiress 2, designed specifically for women. If you prefer handhelds, an 18-ounce soft flask like the Ultimate Direction FK is manageable, but you'd likely need to plan your route around water fountains. Fit matters most — try a vest on before buying, as a bouncing vest causes chafing over 20 miles.",
+      "gold_parents": [
+        "t32"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t34",
+      "turn_index": 33,
+      "user_message": "So if I'm at 15 miles per week right now and following the 10% rule, roughly what week of the plan would I realistically hit that 20-mile long run peak?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t25"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t7",
+    "t10",
+    "t25"
+  ],
+  "distractor_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t8",
+    "t9",
+    "t11",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t20",
+    "t21",
+    "t22",
+    "t23",
+    "t24",
+    "t26",
+    "t27",
+    "t28",
+    "t29",
+    "t30",
+    "t31",
+    "t32",
+    "t33"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer uses the 10% weekly mileage increase rule (established in t1) to project growth from the current 15 miles per week.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer identifies week 12 or 13 (consistent with the taper starting at week 13 of a 16-week plan, established in t3) as the approximate point when the 20-mile long run is reached.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer acknowledges cutback weeks (every 4th week reducing mileage ~20–25%, established in t3) as a factor that slows the progression timeline.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not import information about hydration vests, gel brands, or pre-run meal calorie counts from the B-branch turns (t4–t6).",
+      "required": true
+    }
+  ],
+  "notes": "t1, t2, and t3 hold all the facts the query needs (10% rule, current 15 mpw baseline, 20-mile long-run peak, every-4th-week cutback, taper at week 13). Turns t4–t6 cover pre-run nutrition and gear — plausible marathon topics but completely irrelevant to the mileage-progression calculation the query asks about, making them effective distractors.\n\nReference answer: Starting at 15 miles per week and applying the 10% rule, your weekly mileage grows to roughly 20 miles total around week 10 or 11 of the plan — but your long run is capped at about 30% of weekly volume, so it lags behind that. With every-fourth-week cutback weeks slowing the climb, your long run would realistically peak at 20 miles around week 12, which aligns with the taper starting at week 13 in a standard 16-week plan. That gives you a two-to-three week taper before race day on week 16, exactly as Hal Higdon's Novice 1 structure prescribes.",
+  "evidence_note": null,
+  "premise": "training for a first marathon in 16 weeks",
+  "evidence_spans": null,
+  "benchmark_version": "1.1-length-ablation",
+  "length_class": "spliced_30"
+}

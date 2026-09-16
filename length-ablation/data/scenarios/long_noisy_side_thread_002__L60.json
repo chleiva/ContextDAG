@@ -1,0 +1,774 @@
+{
+  "scenario_id": "long_noisy_side_thread_002__L60",
+  "family": "long_noisy_side_thread",
+  "label": "NOISE",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I also looked at a pier from a guy named Marcus Delray who runs a one-man shop called IronSky Custom Piers in Bozeman, Montana. He builds a 42-inch model called the Meridian-3 out of Schedule 40 DOM tubing.",
+      "assistant_message": "Marcus Delray's IronSky Custom Piers has a strong reputation in the amateur community for hand-finished welds and custom anodizing options. The Meridian-3 at 42 inches is a bit shorter than some competitors, but the Schedule 40 DOM tubing gives it excellent rigidity — it's a popular choice for people running heavier refractors where vibration damping matters more than raw load capacity.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "What's the load rating on the Meridian-3?",
+      "assistant_message": "Marcus rates the Meridian-3 at 60 lbs for the mount head, which is a bit conservative compared to some similarly sized piers. He publishes a safety factor of 3:1 in his spec sheet, meaning the structure itself is engineered to handle up to 180 lbs before any deformation, but the 60 lb figure is what he warranties for tracking accuracy under normal use.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "Does Marcus Delray do any customization on the Meridian-3's height?",
+      "assistant_message": "Yes, Marcus offers custom height cuts on the Meridian-3 in 2-inch increments, ranging from 36 inches up to 54 inches, all at the same base price of $620. Beyond 54 inches he charges a $40 per-inch upcharge and requires a thicker wall tube for structural reasons. He also offers a laser-cut top plate option with custom bolt circle patterns for an additional $95, which is handy if you're using a non-standard mount.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "On the permit drawings — does the Corps have a specific format requirement, or can our engineer use whatever CAD standard they prefer?",
+      "assistant_message": "The Corps doesn't mandate a single CAD standard, but the New England District's guidance document (ER 1110-1-8156) specifies that permit drawings must include plan views, cross-sections, and an overall location map at a scale no smaller than 1:2400, and all sheets must be 11-by-17 inches or 24-by-36 inches. Coordinates should be provided in NAD83 and elevations referenced to NAVD88, not to a local benchmark. Your engineer should also include a separate sheet showing the ordinary high water mark and mean high water line, since those are the jurisdictional boundaries the reviewer will check first.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "We're planning to use composite decking rather than pressure-treated wood. Does that affect the environmental review at all?",
+      "assistant_message": "Yes, material choice can meaningfully affect both the state and federal review. Composite decking eliminates concerns about leaching of copper azole or chromated copper arsenate from treated lumber, which DEEP reviewers flag as a water quality issue under Connecticut's Section 401 Water Quality Certification process. The Army Corps also references EPA's 2007 guidance on aquatic toxicity of treated wood preservatives, and switching to composite material removes that line of inquiry entirely. Some districts have informally noted faster review times for projects using non-treated materials, though there's no formal expedited track.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What about the pile driving itself — are there noise or vibration thresholds we need to worry about for the estuarine habitat?",
+      "assistant_message": "Pile driving in tidal estuaries in Connecticut typically triggers a review under the federal Essential Fish Habitat consultation requirement, since Long Island Sound and its tributaries are designated EFH for species including winter flounder and Atlantic bluefish under the Magnuson-Stevens Act. The National Marine Fisheries Service uses a peak pressure threshold of 206 dB re 1 µPa for injury to fish, and if your contractor uses impact hammers rather than vibratory installation, you may need an underwater noise monitoring plan as a permit condition. Scheduling pile driving outside the March 1 through June 30 window is commonly required by DEEP to protect spawning activity, so that constraint should go into your construction contract.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "Our contractor mentioned they might use a vibratory hammer to avoid some of those noise thresholds. Is that a reliable workaround?",
+      "assistant_message": "Vibratory hammers do produce significantly lower peak pressure levels than impact hammers — typically in the 160 to 170 dB re 1 µPa range versus the 180 to 210 dB range for impact — so they often fall below NMFS injury thresholds for fish. However, DEEP and the Corps may still condition the permit to require a soft-start procedure even with vibratory equipment, and some reviewers require a qualified biological monitor on site during all pile installation. The tradeoff is that vibratory installation is less reliable in dense glacial till, which is common in Connecticut estuaries, so your geotechnical report will determine whether it's actually feasible at your specific site.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "Got it. What about the TI allowance—the space needs new flooring, a small server room, and a glass-walled conference room. How do we structure the TI negotiation?",
+      "assistant_message": "For those three improvements, get contractor bids before you negotiate the TI number so you can anchor to real costs—glass-walled conference rooms typically run $15,000–$25,000 installed, a basic server room with dedicated cooling and a 20-amp circuit can run $8,000–$15,000, and commercial LVT flooring for 2,400 sq ft usually costs $6–$10 per sq ft installed. Present the landlord with a detailed scope of work and request a $60,000 TI allowance, structured as a landlord-managed build-out rather than a tenant reimbursement so you're not fronting capital. If they resist, propose splitting the allowance: $40,000 at lease signing and the remaining $20,000 after the first 12 months of on-time payments.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "The landlord is insisting on a 'landlord-managed build-out' clause that gives them the right to select all contractors. What risks does that create for us?",
+      "assistant_message": "The biggest risk is cost inflation—when landlords control contractor selection, they often use preferred vendors who charge 15–25% above market rates, and since it's your TI dollars being spent, the overage comes directly out of your allowance. You could end up with $60,000 committed but only $45,000 worth of actual work completed. Negotiate for a 'competitive bid' carve-out requiring the landlord to solicit at least three bids for any job over $5,000, with you retaining approval rights over the final selection, and cap the landlord's project management fee at 5% of construction costs.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "What happens to our TI allowance if we need to terminate the lease early? Does the landlord claw it back?",
+      "assistant_message": "Yes, most commercial leases include a TI recapture provision that requires you to repay a prorated portion of the allowance if you terminate early—on a 3-year lease with a $60,000 TI, that means roughly $20,000 per year of remaining term. Some landlords structure this as a separate 'TI note' that you sign alongside the lease, which can even accrue interest at 6–8% annually. You should negotiate to have the recapture obligation extinguish after month 24, so that if you make it two-thirds through the lease without default, the landlord absorbs the remaining TI cost as a cost of doing business.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "We're the Harborview Sailing Club and we're finally moving forward on replacing our main dock. The existing structure is a 120-foot fixed timber dock built in 1987, and the board approved a budget of $340,000 for the replacement at the March 14th meeting.",
+      "assistant_message": "That's a significant project — a 1987 timber dock is well past its typical 30-year service life, so the timing makes sense. A $340,000 budget for a 120-foot replacement is in a reasonable range, though final costs will depend heavily on materials, pile work, and any permitting requirements in your jurisdiction. Do you have a preferred replacement material in mind, such as composite decking or aluminum framing?",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "What's the typical liability insurance requirement for a sailing club with about 200 members?",
+      "assistant_message": "For a recreational sailing club of that size, most insurers and marina landlords require a minimum of $1 million per occurrence in general liability coverage, with many now asking for $2 million aggregate. You should also look into a specific watercraft liability endorsement, since general policies sometimes exclude vessels under club management. Consulting a marine insurance broker who specializes in yacht clubs will give you the most accurate picture for your jurisdiction.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "What kind of flooring would you recommend for a home studio? I want something that looks good on camera but is also easy to clean.",
+      "assistant_message": "Luxury vinyl plank, often called LVP, is a popular choice for home studios because it photographs well, mimics hardwood convincingly on camera, and wipes clean in seconds. A mid-tone gray or warm oak finish tends to be the most versatile neutral — it doesn't compete with subjects and works across multiple shooting styles. Brands like LifeProof and COREtec offer click-lock floating planks that are DIY-friendly and run roughly $2 to $4 per square foot for material alone.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "I've also been thinking about putting up a seamless paper backdrop system. How do I mount those in a room with standard 8-foot ceilings?",
+      "assistant_message": "With 8-foot ceilings, a wall-mounted roller system is usually the best approach because a freestanding stand would eat too much floor space and limit your shooting distance. Companies like Savage and Kate sell wall-mount brackets that hold 2-inch diameter backdrop tubes and can be installed directly into wall studs with lag bolts. You'd typically mount the brackets about 7.5 feet high so the paper unrolls with a few inches of clearance, letting you sweep it onto the floor for a seamless curve.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "How wide a seamless paper roll do I need for full-length portraits?",
+      "assistant_message": "For full-length portraits, a 107-inch-wide roll — that's the standard 9-foot width — is the industry go-to because it comfortably frames a standing adult with room to spare on both sides. If you're shooting only headshots or half-body, a 53-inch (4.5-foot) roll can work and is cheaper to replace. Savage Widetone and Colorama are the two most widely stocked brands, and a single 107-inch roll in a neutral color like Arctic White or Super White runs about $60 to $80 for a 36-foot length.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "What colors of seamless paper are considered must-haves to start with?",
+      "assistant_message": "Most working photographers start with three rolls: Super White for high-key and product work, a medium gray like Savage's #17 Gray or Colorama's Smoke Gray for versatile portrait work, and a dark tone like Black or Deep Olive for dramatic low-key setups. Those three cover the majority of client requests without requiring you to stock a full range. Once your business grows you can add fashion-forward accent colors, but white, gray, and black form the practical foundation.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "Is there a way to extend the life of seamless paper so I'm not replacing rolls constantly?",
+      "assistant_message": "The biggest life-extender is asking subjects to remove shoes before stepping onto the paper, which alone can triple the usable footage on a roll. You can also roll the paper back up after each session rather than leaving it unrolled, which prevents dust accumulation and edge curling. Some photographers tape a 12-inch strip of black gaffer tape along the leading edge as a sacrificial walkway; when that strip gets scuffed, they pull it off and expose fresh paper underneath.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "What kind of flooring actually holds up best under rolling equipment like light stands and heavy cases?",
+      "assistant_message": "Luxury vinyl plank (LVP) is widely considered the best balance of durability and practicality for a working studio floor. It resists the denting that hardwood suffers from stand feet, cleans easily when you spill anything, and a commercial-grade product rated AC4 or AC5 handles rolling loads without delaminating.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "How thick should the LVP be? I've seen everything from 4mm to 8mm at the hardware store.",
+      "assistant_message": "For a studio with heavy rolling equipment, you want at least 6mm total thickness with a wear layer of 12 mil or thicker. The 4mm products are designed for light residential foot traffic and will show indentations from stand feet within months. An 8mm plank with a 20-mil wear layer is the sweet spot — it's rigid enough to prevent flex over subfloor imperfections and rated for commercial use.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "Does the underlayment matter if I'm going with 8mm LVP?",
+      "assistant_message": "Yes, underlayment still matters significantly. Many 8mm LVP products come with a pre-attached 1mm foam underlayment, but for a studio you should add a separate 2mm cork underlayment underneath, which brings total cushion to about 3mm and dampens the hollow sound that bare LVP produces when equipment rolls across it. Avoid anything thicker than 3mm total underlayment, because excess flex can stress the locking joints and void most manufacturer warranties.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "I was also thinking about painting the floor with a seamless gray. Is that a realistic option instead of LVP?",
+      "assistant_message": "A painted concrete floor with a two-part epoxy coating is absolutely a professional option used in many commercial studios. You'd want a 100-percent solids epoxy at 4 to 6 mils dry film thickness, followed by a polyurethane topcoat for scratch resistance — brands like Rust-Oleum EpoxyShield Professional or Sherwin-Williams ArmorSeal are standard choices. The downside is that concrete transmits cold and sound more than LVP, so you'd want radiant heat or thick anti-fatigue mats at standing positions.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "Would a mid-gray floor tone affect my exposure readings in a meaningful way?",
+      "assistant_message": "Yes, floor color has a measurable but manageable effect. A mid-gray floor — roughly 18-percent reflectance, similar to a photographic gray card — will bounce a small amount of fill light upward onto your subject's chin and under-eye area, which most portrait photographers actually find flattering. A white floor can add as much as 1/3 to 2/3 of a stop of fill from below, which can be enough to visibly reduce shadow depth on a Rembrandt or split-lighting setup, so metering carefully with a gray floor is the more predictable choice.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "Yes, the board specifically voted to go with a floating aluminum dock system rather than a fixed structure, and they want 14 finger slips added along the main dock, each 30 feet long and 4 feet wide.",
+      "assistant_message": "A floating aluminum system is a solid choice — it handles tidal variation well and requires far less maintenance than timber over the long run. Fourteen finger slips at 30 feet by 4 feet each adds up to 1,680 square feet of slip surface, which will significantly increase your usable berthing capacity. That specification will be important when you go out to bid, since slip count and individual slip dimensions are primary cost drivers for floating dock contractors.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "Do you know anything about permits for having an outdoor ceremony directly on a lake dock? We're using a private property on Lake Champlain.",
+      "assistant_message": "For a private-property dock ceremony on Lake Champlain, you'll generally need to check with the Vermont or New York Department of Environmental Conservation depending on which shore you're on, since the lake straddles the state line. Even on private land, gatherings of over 50 people often trigger a special-use or assembly permit requirement, so it's worth contacting the local town clerk's office at least 60 days before your event date.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "The property is on the Vermont side, in South Hero. Is there anything specific to that town we should know about?",
+      "assistant_message": "South Hero is in Grand Isle County, and the town operates under Vermont's Act 250 land-use rules for larger gatherings on waterfront property. You'd want to contact the South Hero Town Clerk directly — their office handles event assembly notices — and also confirm with the Grand Isle County Natural Resources Board whether your dock setup requires any shoreline impact review, especially if you're adding temporary structures like an arch or chairs on the dock itself.",
+      "gold_parents": [
+        "t24"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "We also need to decide on signage for the garden entrance. We're looking at a cedar post-and-panel sign, roughly 4 feet by 6 feet, and the fabricator quoted us $1,200 installed.",
+      "assistant_message": "A 4-by-6-foot cedar post-and-panel sign at $1,200 installed is a fairly standard price point for that size and material in most municipal contexts. You'll want to confirm whether the sign design needs to include the City of Hartwell logo, since many green-spaces grants require co-branding on any permanent installations funded through the program. Getting that specification in writing from the fabricator now will save revisions later.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "The fabricator is Greenline Signs & Displays, and they've confirmed in writing that the $1,200 quote is valid through March 31, 2025.",
+      "assistant_message": "Having a written quote from Greenline Signs & Displays valid through March 31, 2025 is exactly the kind of vendor documentation grant reviewers want to see attached as an exhibit. If your submission deadline falls before that date, you can include the quote directly; if it's after, you'd need a refreshed quote. File that letter with your other supporting documents so it's easy to attach when you compile the final application package.",
+      "gold_parents": [
+        "t26"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "How long does it typically take to get a food handler's certification in California?",
+      "assistant_message": "In California, a food handler card is obtained by completing an accredited food handler training course and passing the associated exam, which typically takes about two to three hours in total. The card is valid for three years from the date of completion, and the fee is generally around $15 depending on the provider. Many people complete the course online through providers accredited by the American National Standards Institute.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "Is there a difference between a food handler card and a food manager certification?",
+      "assistant_message": "Yes, they are distinct credentials with different scopes. A food handler card is required for most employees who work with unpackaged food and covers basic hygiene and safe handling practices. A food manager certification, such as the ServSafe Manager Certificate, requires a more rigorous proctored exam and demonstrates that the holder can oversee food safety systems for an entire establishment — it's typically required for at least one person per food service location in California.",
+      "gold_parents": [
+        "t28"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t30",
+      "turn_index": 29,
+      "user_message": "How often does the ServSafe Manager exam need to be renewed?",
+      "assistant_message": "The ServSafe Manager Certification is valid for five years from the date the exam is passed. After five years, the certificate holder must retake and pass the proctored exam to renew — there is no shorter refresher course option that satisfies the renewal requirement. The National Restaurant Association Educational Foundation administers the program, and many local health departments accept it as meeting their certified food protection manager requirement.",
+      "gold_parents": [
+        "t29"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t31",
+      "turn_index": 30,
+      "user_message": "What's the passing score for the ServSafe Manager exam?",
+      "assistant_message": "The passing score for the ServSafe Manager Certification exam is 75 percent, meaning a candidate must answer at least 56 out of 80 scored questions correctly. The exam contains 90 questions total, but 10 of those are pilot questions that are not scored. Results are typically available immediately when the exam is taken in a proctored digital format.",
+      "gold_parents": [
+        "t30"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t32",
+      "turn_index": 31,
+      "user_message": "Are there other nationally recognized food manager certifications besides ServSafe?",
+      "assistant_message": "Yes, several other certifications are accredited by the American National Standards Institute and the Conference for Food Protection, making them equivalent to ServSafe in the eyes of most health authorities. The Prometric Food Protection Manager Certification and the National Registry of Food Safety Professionals exam are two well-known alternatives. Some states and localities specify which certifications they accept, so it's worth checking your local health department's approved list before choosing a program.",
+      "gold_parents": [
+        "t31"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t33",
+      "turn_index": 32,
+      "user_message": "What topics are covered on the ServSafe Manager exam?",
+      "assistant_message": "The ServSafe Manager exam covers eight major content areas: providing safe food, forms of contamination, the safe food handler, the flow of food, food safety management systems, safe facilities and pest management, cleaning and sanitizing, and receiving and storing food. Each area corresponds to a chapter in the ServSafe Manager textbook, which is currently in its seventh edition. The exam is weighted, with the flow of food and food safety management systems sections carrying the most questions.",
+      "gold_parents": [
+        "t32"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t34",
+      "turn_index": 33,
+      "user_message": "What temperature does the FDA Food Code say poultry needs to reach for safe cooking?",
+      "assistant_message": "The FDA Food Code requires that poultry — including whole birds, ground poultry, and stuffed poultry — reach an internal temperature of 165°F (74°C) for at least 15 seconds. This applies to chicken, turkey, duck, and other birds. This is a higher target than for whole muscle beef, which the Food Code allows at 145°F with a three-minute rest time.",
+      "gold_parents": [
+        "t33"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t35",
+      "turn_index": 34,
+      "user_message": "What about the temperature danger zone — what range does the FDA define that as?",
+      "assistant_message": "The FDA Food Code defines the temperature danger zone as 41°F to 135°F (5°C to 57°C). Within this range, bacteria capable of causing foodborne illness can multiply rapidly, with the fastest growth occurring between 70°F and 125°F. The two-hour rule applies within this zone: potentially hazardous foods should not remain in the danger zone for more than two hours in total before being cooked, cooled, or discarded.",
+      "gold_parents": [
+        "t34"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t36",
+      "turn_index": 35,
+      "user_message": "How quickly does the FDA say hot food needs to be cooled once it's removed from heat?",
+      "assistant_message": "The FDA Food Code's two-stage cooling requirement says that cooked food must be cooled from 135°F to 70°F within the first two hours, and then from 70°F to 41°F or below within an additional four hours, for a total cooling time of no more than six hours. Failing to hit the 70°F mark in the first two hours is the more critical failure, as that is when bacterial growth is most rapid. Approved cooling methods include ice-water baths, blast chillers, and dividing food into shallow pans.",
+      "gold_parents": [
+        "t35"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t37",
+      "turn_index": 36,
+      "user_message": "What sanitizer concentration does the FDA recommend for chlorine-based sanitizing solutions?",
+      "assistant_message": "For chlorine-based sanitizing solutions used on food-contact surfaces, the FDA Food Code specifies a concentration of 50 to 100 parts per million (ppm) of available chlorine. The solution must be at a minimum temperature of 55°F and have a contact time of at least seven seconds for the 100 ppm concentration, or at least 10 seconds for concentrations between 50 and 99 ppm. Concentrations above 200 ppm are not recommended because they can leave harmful residue and may corrode equipment.",
+      "gold_parents": [
+        "t36"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t38",
+      "turn_index": 37,
+      "user_message": "Can you explain what a HACCP plan is and when a food business is required to have one?",
+      "assistant_message": "HACCP stands for Hazard Analysis and Critical Control Points, and it is a systematic, science-based approach to identifying and controlling biological, chemical, and physical hazards in food production. In the United States, HACCP plans are federally mandated for meat and poultry processors under USDA/FSIS regulations, for seafood processors under FDA 21 CFR Part 123, and for juice processors under FDA 21 CFR Part 120. Many state and local health codes also require HACCP-based plans for retail food establishments that conduct certain specialized processes, such as smoking meat for preservation or using reduced-oxygen packaging.",
+      "gold_parents": [
+        "t37"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t39",
+      "turn_index": 38,
+      "user_message": "What are the seven principles of HACCP?",
+      "assistant_message": "The seven HACCP principles are: conduct a hazard analysis, identify the critical control points (CCPs), establish critical limits for each CCP, establish monitoring procedures, establish corrective actions to take when monitoring indicates a CCP is not under control, establish verification procedures to confirm the system is working effectively, and establish record-keeping and documentation procedures. These principles were codified by the Codex Alimentarius Commission and are referenced in both FDA and USDA regulations. A properly implemented HACCP plan addresses all seven principles with specific, measurable parameters.",
+      "gold_parents": [
+        "t38"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t40",
+      "turn_index": 39,
+      "user_message": "What's the difference between verification and validation in a HACCP plan?",
+      "assistant_message": "Validation is the process of confirming, usually through scientific evidence or expert consultation, that the control measures chosen for each CCP are actually capable of controlling the identified hazard — it answers the question 'will this work?' Verification, on the other hand, is the ongoing activity of confirming that the validated HACCP system is actually being implemented correctly and is functioning as intended — it answers the question 'is this working?' For example, validating a cooking step might involve reviewing scientific literature on pathogen destruction, while verifying it involves checking thermometer calibration logs and reviewing cooking temperature records.",
+      "gold_parents": [
+        "t39"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t41",
+      "turn_index": 40,
+      "user_message": "How often should thermometers used in food service be calibrated?",
+      "assistant_message": "The FDA Food Code recommends that food thermometers be calibrated before each shift or whenever they are dropped or subjected to extreme temperature changes, since both events can knock them out of calibration. For bimetallic stemmed thermometers, the most common calibration method is the ice-point method, which involves inserting the probe into a container of crushed ice and water and adjusting the calibration nut until the reading is 32°F (0°C). Digital thermometers with non-adjustable calibration should be checked against a known standard and replaced if they read more than 2°F off.",
+      "gold_parents": [
+        "t40"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t42",
+      "turn_index": 41,
+      "user_message": "What's the proper handwashing procedure and duration according to food safety guidelines?",
+      "assistant_message": "The FDA Food Code specifies a handwashing procedure of at least 20 seconds: wet hands and exposed forearms with warm water, apply soap and scrub vigorously including between fingers and under fingernails for at least 10 to 15 seconds, rinse thoroughly under running water, and dry with a single-use paper towel or an air dryer. Hands must be washed before beginning work, after handling raw meat or poultry, after touching the face or hair, after using the restroom, and after handling garbage, among other situations. Hand sanitizers do not substitute for handwashing in food service contexts under the Food Code.",
+      "gold_parents": [
+        "t41"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t43",
+      "turn_index": 42,
+      "user_message": "What are the most common foodborne illness pathogens that food handlers are trained to watch for?",
+      "assistant_message": "ServSafe and the FDA Food Code both emphasize what are called the 'Big Six' pathogens because they are highly contagious or particularly dangerous: Shigella spp., Salmonella Typhi, nontyphoidal Salmonella, Shiga toxin-producing Escherichia coli (such as E. coli O157:H7), hepatitis A virus, and norovirus. Food handlers diagnosed with or exposed to these pathogens may be required to be excluded from work or restricted from working with exposed food, depending on the specific pathogen. Norovirus is the leading cause of foodborne illness outbreaks in the United States, responsible for roughly 58 percent of all such outbreaks annually according to CDC data.",
+      "gold_parents": [
+        "t42"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t44",
+      "turn_index": 43,
+      "user_message": "How long can a person infected with norovirus shed the virus after symptoms resolve?",
+      "assistant_message": "Individuals infected with norovirus can continue to shed the virus in their stool for up to two weeks after symptoms have fully resolved, though the highest concentration of viral shedding occurs during the acute symptomatic phase. The FDA Food Code requires that food employees who have been diagnosed with norovirus illness be excluded from working with food until they have been symptom-free for at least 48 hours. Some immunocompromised individuals can shed the virus for months, making them a persistent transmission risk in food service environments.",
+      "gold_parents": [
+        "t43"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t45",
+      "turn_index": 44,
+      "user_message": "What's the incubation period for norovirus compared to Salmonella?",
+      "assistant_message": "Norovirus has a relatively short incubation period of 12 to 48 hours after exposure, with most people becoming symptomatic within 24 to 36 hours. Nontyphoidal Salmonella has a longer incubation period, typically 6 to 72 hours, but most commonly 12 to 36 hours. One practical difference is that Salmonella illness tends to last longer — four to seven days on average — compared to norovirus, which usually resolves within one to three days in otherwise healthy adults.",
+      "gold_parents": [
+        "t44"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t46",
+      "turn_index": 45,
+      "user_message": "What foods are most commonly associated with Salmonella outbreaks?",
+      "assistant_message": "According to CDC surveillance data, the foods most frequently linked to Salmonella outbreaks in the United States are poultry and poultry products, shell eggs, fresh produce (particularly tomatoes, sprouts, and leafy greens), and nut butters. Raw or undercooked chicken is historically the single most common vehicle, but in recent decades contaminated fresh produce has become an increasingly significant source. Proper temperature control during storage and thorough cooking to 165°F are the primary controls for poultry-associated Salmonella.",
+      "gold_parents": [
+        "t45"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t47",
+      "turn_index": 46,
+      "user_message": "Are there specific rules about how eggs must be stored in a commercial kitchen?",
+      "assistant_message": "Yes, the FDA Food Code requires that shell eggs received from a supplier must be stored at an ambient air temperature of 45°F (7°C) or below. They should be stored in their original cartons to prevent cross-contamination and to retain the date coding from the supplier. Shell eggs should never be stored near ready-to-eat foods and should be placed below them in the refrigerator to prevent drip contamination in the event of a cracked egg.",
+      "gold_parents": [
+        "t46"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t48",
+      "turn_index": 47,
+      "user_message": "What does 'use by' versus 'sell by' versus 'best by' actually mean on food labels?",
+      "assistant_message": "In the United States, these dates are largely unregulated for most foods — only infant formula is required by federal law to carry a use-by date. 'Sell by' is a retailer-facing inventory management date and does not indicate the product is unsafe after that date. 'Best by' or 'best if used by' is a manufacturer's quality indicator, suggesting the product will be at peak flavor and texture before that date but is not necessarily unsafe afterward. 'Use by' is the closest to a safety date and is the manufacturer's recommendation for when the product should be consumed for best quality and, in some cases, safety.",
+      "gold_parents": [
+        "t47"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t49",
+      "turn_index": 48,
+      "user_message": "How does the FDA regulate allergen labeling on packaged food?",
+      "assistant_message": "The Food Allergen Labeling and Consumer Protection Act of 2004 (FALCPA) requires that the eight major allergens — milk, eggs, fish, shellfish, tree nuts, peanuts, wheat, and soybeans — be declared on the label of packaged foods sold in the United States, either within the ingredient list or in a separate 'Contains' statement. In January 2023, sesame was added as the ninth major allergen under the FASTER Act, which was signed into law in April 2021. Advisory statements like 'may contain' or 'processed in a facility with' are voluntary and not regulated by the FDA, which means their absence does not guarantee a product is allergen-free.",
+      "gold_parents": [
+        "t48"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t50",
+      "turn_index": 49,
+      "user_message": "What's the difference between a food allergy and a food intolerance from a medical standpoint?",
+      "assistant_message": "A food allergy is an immune-mediated response in which the body's immune system incorrectly identifies a food protein as harmful and mounts an IgE-mediated reaction that can range from hives and gastrointestinal symptoms to anaphylaxis. A food intolerance, by contrast, does not involve the immune system and is typically a metabolic issue — the most common example being lactose intolerance, where the body lacks sufficient lactase enzyme to digest lactose, leading to gastrointestinal discomfort. The key clinical distinction is that food allergies can be life-threatening even with trace exposure, while food intolerances are generally dose-dependent and not life-threatening.",
+      "gold_parents": [
+        "t49"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t51",
+      "turn_index": 50,
+      "user_message": "How is anaphylaxis treated in an emergency?",
+      "assistant_message": "The first-line treatment for anaphylaxis is epinephrine, delivered via intramuscular injection into the outer thigh — most commonly through an auto-injector device such as an EpiPen, which delivers a 0.3 mg dose for adults. Epinephrine should be administered immediately at the first signs of anaphylaxis and the patient should be transported to an emergency room even if symptoms resolve, because biphasic reactions can occur hours later. Antihistamines and corticosteroids are adjunct treatments but are not substitutes for epinephrine and should not delay its administration.",
+      "gold_parents": [
+        "t50"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t52",
+      "turn_index": 51,
+      "user_message": "Are food service establishments required to have epinephrine auto-injectors on hand?",
+      "assistant_message": "There is no uniform federal requirement for food service establishments to stock epinephrine auto-injectors, but several states have enacted laws permitting or encouraging restaurants to voluntarily stock them. Illinois, for example, passed the Restaurant Responsibility Act in 2018, which allows restaurants to stock and administer epinephrine auto-injectors. Staff who administer epinephrine in good faith are generally protected from civil liability under these state laws, but the specifics vary by jurisdiction, so operators should consult their state health department and legal counsel.",
+      "gold_parents": [
+        "t51"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t53",
+      "turn_index": 52,
+      "user_message": "What training do restaurant staff typically need to handle allergic reaction emergencies?",
+      "assistant_message": "Most food safety and allergen training programs recommend that at least some staff members be trained in recognizing the symptoms of an allergic reaction — including hives, swelling of the lips or throat, difficulty breathing, and a sudden drop in blood pressure — and know how to call emergency services promptly. In establishments that stock epinephrine auto-injectors, staff designated to use them should receive hands-on training, typically through a brief certification course offered by programs like AllerTrain or through a local health department. The FDA's FASTER Act also encouraged the development of clearer voluntary guidance for food establishments on allergen management protocols.",
+      "gold_parents": [
+        "t52"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t54",
+      "turn_index": 53,
+      "user_message": "How does cross-contact differ from cross-contamination in the allergen context?",
+      "assistant_message": "Cross-contact refers specifically to the unintentional transfer of an allergenic food or ingredient to a food that is not supposed to contain that allergen — for example, using the same cutting board for peanut-containing products and peanut-free products without washing it between uses. Cross-contamination is a broader term that refers to the transfer of any harmful substance, including pathogens, to food. In allergen management, cross-contact is the key concern because even microscopic amounts of an allergen can trigger a reaction in a sensitized individual, and unlike pathogens, allergens cannot be destroyed by cooking.",
+      "gold_parents": [
+        "t53"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t55",
+      "turn_index": 54,
+      "user_message": "What cleaning procedures actually eliminate allergens from food contact surfaces?",
+      "assistant_message": "Allergens must be physically removed through cleaning, not just sanitizing — sanitizers kill pathogens but do not break down or remove allergenic proteins. The most effective method is a thorough wash with hot water and an appropriate detergent, followed by rinsing and then sanitizing. Studies have shown that a two-step clean-in-place procedure using an alkaline detergent followed by an acid rinse can reduce peanut allergen on stainless steel surfaces to below detectable limits, but the critical factor is mechanical scrubbing action to physically dislodge the protein, not the chemical alone.",
+      "gold_parents": [
+        "t54"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t56",
+      "turn_index": 55,
+      "user_message": "Are there any FDA-approved tests for detecting allergens on food contact surfaces?",
+      "assistant_message": "The FDA does not formally approve specific commercial allergen test kits, but it does reference lateral flow immunoassay devices and enzyme-linked immunosorbent assay (ELISA) tests as commonly used verification tools in food manufacturing. ELISA tests are considered the gold standard for quantitative allergen detection and can typically detect allergen concentrations in the range of 1 to 5 parts per million. Companies like Neogen and R-Biopharm manufacture widely used commercial ELISA and lateral flow test kits for major allergens including peanut, gluten, milk, and egg.",
+      "gold_parents": [
+        "t55"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t57",
+      "turn_index": 56,
+      "user_message": "What is the FDA's threshold for gluten in food labeled 'gluten-free'?",
+      "assistant_message": "The FDA's final rule on gluten-free labeling, which took effect in August 2014, defines 'gluten-free' as containing less than 20 parts per million (ppm) of gluten. This threshold was chosen because it is the lowest level that can be consistently detected with validated analytical methods, and scientific evidence indicates that most people with celiac disease can tolerate foods at this level without adverse health effects. The rule applies to packaged foods that voluntarily use the term 'gluten-free,' 'free of gluten,' 'without gluten,' or 'no gluten' on their labeling.",
+      "gold_parents": [
+        "t56"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t58",
+      "turn_index": 57,
+      "user_message": "How prevalent is celiac disease in the United States?",
+      "assistant_message": "Celiac disease affects approximately 1 percent of the general U.S. population, or roughly 3 million people, according to estimates from the National Institutes of Health and the Celiac Disease Foundation. However, it is believed to be significantly underdiagnosed — some studies suggest that for every person diagnosed, six to seven others have the condition but remain undiagnosed. The only treatment is strict, lifelong adherence to a gluten-free diet, which is why accurate labeling and cross-contact prevention are clinically important for this population.",
+      "gold_parents": [
+        "t57"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t59",
+      "turn_index": 58,
+      "user_message": "What grains naturally contain gluten?",
+      "assistant_message": "The three primary gluten-containing grains are wheat, barley, and rye — all of which contain the storage proteins that together are collectively referred to as gluten. Triticale, a hybrid of wheat and rye, also contains gluten. Oats are naturally gluten-free but are frequently contaminated with wheat during growing or processing, which is why the FDA allows oats to be included in gluten-free labeled products only if they are certified uncontaminated, often labeled as 'purity protocol' or 'gluten-free oats.'",
+      "gold_parents": [
+        "t58"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t60",
+      "turn_index": 59,
+      "user_message": "Is there a difference between wheat allergy and celiac disease?",
+      "assistant_message": "Yes, they are distinct conditions with different mechanisms. Wheat allergy is an IgE-mediated immune response to proteins found in wheat — not exclusively gluten — and can cause symptoms ranging from hives and gastrointestinal distress to anaphylaxis, similar to other food allergies. Celiac disease is an autoimmune condition triggered specifically by gluten, in which the immune response damages the villi of the small intestine, impairing nutrient absorption. A person with celiac disease must avoid wheat, barley, and rye, while a person with a wheat allergy must avoid wheat specifically but may be able to tolerate barley, rye, and other gluten-containing grains.",
+      "gold_parents": [
+        "t59"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t61",
+      "turn_index": 60,
+      "user_message": "What is non-celiac gluten sensitivity and how is it diagnosed?",
+      "assistant_message": "Non-celiac gluten sensitivity (NCGS) refers to a condition in which individuals experience gastrointestinal and extra-intestinal symptoms in response to gluten consumption, but test negative for celiac disease antibodies and show no intestinal damage on biopsy. There is currently no validated biomarker for NCGS, so diagnosis is made by exclusion — ruling out celiac disease and wheat allergy, trialing a gluten-free diet, and confirming that symptoms resolve and then recur upon gluten reintroduction in a blinded challenge. The underlying mechanism of NCGS is still debated, with some researchers suggesting that FODMAPs (fermentable oligosaccharides) in wheat, rather than gluten itself, may be the actual trigger for many patients.",
+      "gold_parents": [
+        "t60"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t62",
+      "turn_index": 61,
+      "user_message": "Are there any approved medications for celiac disease other than dietary management?",
+      "assistant_message": "As of early 2024, there are no FDA-approved medications specifically for celiac disease, and a strict gluten-free diet remains the only established treatment. However, several drugs are in clinical development, including larazotide acetate, which aims to reduce intestinal permeability, and various enzyme therapies designed to break down gluten peptides before they trigger an immune response. The FDA granted Breakthrough Therapy designation to at least one investigational therapy, TAK-101, though it had not completed Phase 3 trials as of the knowledge cutoff.",
+      "gold_parents": [
+        "t61"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t63",
+      "turn_index": 62,
+      "user_message": "What's the total square footage of slip surface the club is getting, and does the $340,000 budget seem adequate for a floating aluminum dock of that spec?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t11",
+    "t23"
+  ],
+  "distractor_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t7",
+    "t8",
+    "t9",
+    "t10",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t20",
+    "t21",
+    "t22",
+    "t24",
+    "t25",
+    "t26",
+    "t27",
+    "t28",
+    "t29",
+    "t30",
+    "t31",
+    "t32",
+    "t33",
+    "t34",
+    "t35",
+    "t36",
+    "t37",
+    "t38",
+    "t39",
+    "t40",
+    "t41",
+    "t42",
+    "t43",
+    "t44",
+    "t45",
+    "t46",
+    "t47",
+    "t48",
+    "t49",
+    "t50",
+    "t51",
+    "t52",
+    "t53",
+    "t54",
+    "t55",
+    "t56",
+    "t57",
+    "t58",
+    "t59",
+    "t60",
+    "t61",
+    "t62"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer correctly states that there are 14 finger slips, each 30 feet long and 4 feet wide, yielding 1,680 square feet of total slip surface (14 × 30 × 4 = 1,680 sq ft).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer references the approved budget of $340,000 when assessing adequacy for the floating aluminum dock replacement.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer correctly identifies the dock as a 120-foot floating aluminum system (not a fixed structure), consistent with the board's vote described in t2.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not import any figure, threshold, or fact from the food safety thread (e.g., ppm concentrations, temperature values, pathogen names, allergen counts, or gluten thresholds).",
+      "required": true
+    }
+  ],
+  "notes": "t1 and t2 hold all the facts the query needs: the 120-foot length, the $340,000 budget, the floating aluminum material choice, and the 14-slip specification (30 ft × 4 ft each). Turns t3 through t37 form a long food-safety side thread (food handler certification → ServSafe → FDA Food Code temperatures → HACCP → allergens → celiac disease) that is entirely irrelevant to the dock query; the main traps are importing food-safety numbers (ppm, °F values, percentages) as if they were dock-related figures.\n\nReference answer: The club approved a floating aluminum dock system with 14 finger slips, each 30 feet long and 4 feet wide, giving a total slip surface of 1,680 square feet (14 × 30 × 4). Combined with the 120-foot main dock, that is a substantial structure. The board's approved budget of $340,000 is in a plausible range for a floating aluminum system of that specification, though it is on the tighter end once engineering, permitting, pile installation, and gangway connections are factored in, so obtaining multiple contractor bids early is advisable.",
+  "evidence_note": null,
+  "premise": "a sailing club replacing its aging dock",
+  "evidence_spans": null,
+  "benchmark_version": "1.1-length-ablation",
+  "length_class": "spliced_60"
+}

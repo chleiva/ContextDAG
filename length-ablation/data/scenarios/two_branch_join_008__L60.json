@@ -1,0 +1,803 @@
+{
+  "scenario_id": "two_branch_join_008__L60",
+  "family": "two_branch_join",
+  "label": "JOIN",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "One of our tenors is asking about the dress code for the tour. We've always worn black tie in the past — is that still the expectation?",
+      "assistant_message": "Black tie is a classic choice for choral concerts and gives a polished, unified look on stage. That said, some amateur choirs are shifting toward smart-casual or matching coloured outfits to feel more approachable to community audiences. It's worth putting the question to the full choir and committee so everyone is aligned before you order or hire anything.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "We also need to think about whether to hire a professional accompanist or use one of our own members who plays piano. What factors should we weigh up?",
+      "assistant_message": "The main considerations are reliability, rehearsal availability, and cost. A professional accompanist brings experience sight-reading and following a conductor under pressure, but typically charges a fee per rehearsal and per concert. Using a member can save money and aids familiarity, but you risk putting too much pressure on that person and losing a voice from the choir during performances.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "We also want to host weekly in-library events. What kinds of programming work well for the 6–12 age range over an eight-week run?",
+      "assistant_message": "A proven mix is to alternate between passive and active formats—think a craft or STEM activity one week, then a visiting author or storyteller the next, so no two consecutive weeks feel identical. For an eight-week program you might anchor weeks one and eight with high-energy kickoff and closing parties, then fill weeks two through seven with two crafts, two STEM workshops, one author visit, and one themed movie afternoon, which keeps the calendar varied without overwhelming volunteer or staff resources.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "We have a $3,500 budget for those events. Does that seem workable for eight weeks?",
+      "assistant_message": "At $3,500 across eight events, you're working with roughly $437 per event, which is tight but doable if you lean on community partnerships. Local STEM educators or university student groups will often run workshops for free or for a small stipend under $100, and many children's authors charge between $150 and $300 for a library visit, leaving meaningful room in each week's allocation for materials and light refreshments.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "We're also considering hiring a part-time program coordinator just for the summer. What hours and pay rate would be typical?",
+      "assistant_message": "For a summer reading program of this scale, a part-time coordinator typically works 15 to 20 hours per week at a rate between $18 and $24 per hour depending on your region and the candidate's experience. Over an eight-week program that comes to roughly 120 to 160 total hours, so your all-in labor cost would land somewhere between $2,160 and $3,840 before any employer taxes or benefits, which is worth factoring into your overall program budget alongside the events spend.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What's the etiquette around tipping in Japan? I want to make sure we don't accidentally offend anyone.",
+      "assistant_message": "Tipping in Japan is genuinely not practiced and can actually cause embarrassment or offense rather than gratitude. In restaurants, hotels, taxis, and even ryokan, the service is considered part of the price and staff may chase you down to return money they think you left by mistake. The one partial exception is some high-end ryokan, where a tip-like gesture called 'senbetsu' can be given wrapped neatly in a special envelope called a 'pochibukuro' before the stay, though even this is optional and increasingly uncommon with foreign guests.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "Good to know. What about cash versus cards — how much yen should we each carry?",
+      "assistant_message": "Japan remains heavily cash-dependent compared to most Western countries, though acceptance of cards has improved since the 2020 Olympics push. A reasonable rule of thumb for tourists is to carry about 50,000 to 70,000 yen per person per week to cover meals at smaller restaurants, shrine entry fees, local buses, and incidentals. 7-Eleven, Japan Post, and some Lawson ATMs reliably accept foreign cards, so you can withdraw yen in-country rather than exchanging everything before you go. Notify your bank before departure to avoid fraud blocks.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "We're hoping to visit Fushimi Inari in Kyoto. Is there an entry fee and how long does the full hike take?",
+      "assistant_message": "Fushimi Inari Taisha has no entry fee — it's free to enter at any time of day or night, which is part of what makes it so popular. The full hike to the summit of Mount Inari and back covers roughly 4 kilometers and takes most visitors between 2 and 3 hours, though you can turn around at the Yotsutsuji intersection about halfway up for a shorter 1 to 1.5 hour version that still gives great views. Early morning visits, ideally before 8 a.m., are strongly recommended in April because mid-April coincides with peak tourist season and the main torii tunnel gets extremely crowded by mid-morning.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "What about the deer in Nara — can you actually feed them and where do you buy the crackers?",
+      "assistant_message": "Yes, the deer in Nara Park are classified as natural treasures and roam freely, and feeding them is actively encouraged as part of the park experience. The food is called 'shika senbei' (deer crackers) and is sold by licensed vendors stationed throughout the park, including near Todai-ji and along the main approach paths, for 200 yen per bundle of roughly 10 crackers. Be warned that the deer are quite bold — they've learned to bow to prompt tourists for food and will headbutt or nibble bags they suspect contain crackers. Keep bags zipped and hold crackers out quickly once you start feeding or you may attract a small mob.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "How far is Nara from Kyoto, and what's the easiest way to get there?",
+      "assistant_message": "Nara is very manageable as a day trip from Kyoto, sitting about 35 kilometers to the south. The fastest and most convenient option is the Kintetsu Kyoto Line from Kintetsu-Kyoto Station, which takes about 35 minutes on the Kintetsu Limited Express to Kintetsu-Nara Station for a fare of around 760 yen each way. The JR Nara Line from JR Kyoto Station also works and takes about 45 minutes on the Miyakoji Rapid service, though that route deposits you at JR Nara Station which is a bit farther from the main deer park than Kintetsu-Nara Station. Either option makes for an easy half-day or full-day excursion.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "We've finally locked in the venues for our spring concert tour. We'll be performing at St. Agatha's Church in Millbrook on April 12th, the Harrington Arts Center in Dellwood on April 14th, and the Riverside Pavilion in Crestfield on April 16th.",
+      "assistant_message": "That's a lovely three-stop itinerary spread over five days! Having the performances on April 12th, 14th, and 16th gives the choir a day of rest between each venue, which is smart planning for vocal health. I'd recommend confirming load-in times and soundcheck windows with each venue at least four weeks in advance.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "Coach wants to know what size van we need to rent to transport everything to the competition venue.",
+      "assistant_message": "For a full robotics team transport including the robot, toolboxes, spare parts bins, and team gear, a 15-passenger van typically isn't enough cargo space on its own. Most teams in similar situations rent a 10-foot cargo truck or pair a standard passenger van with a small trailer. You'll want to confirm the venue's loading dock hours before you finalize the rental.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "We also need to figure out the hotel situation — how many rooms should we book for a team of 14 students and 3 mentors?",
+      "assistant_message": "For 14 students and 3 mentors, you're looking at 17 people total. Assuming two students per room and mentors in single rooms, you'd need 7 student rooms and 3 mentor rooms, so 10 rooms minimum. Booking a block rate with the hotel as early as possible usually saves the team significant money.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "For the drive team, do we need matching shirts or full uniforms for the competition?",
+      "assistant_message": "Most regional competitions require drive team members to wear matching shirts with the team number clearly visible, but full uniforms with logos are optional unless your team has a sponsor agreement requiring them. Check the specific event's drive team dress code in the event information packet, since some venues have additional safety requirements like closed-toe shoes. Ordering shirts at least two weeks before the event is usually necessary to guarantee delivery in time.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "Can you help me think through the shipping crates we'll need? The largest piece in the collection is a 19th-century Flemish tapestry measuring 4.2 meters wide by 3.1 meters tall.",
+      "assistant_message": "For a tapestry of those dimensions you'll want a custom-built crate with interior clearance of at least 4.5 meters wide and 3.4 meters tall to allow for padding and frame protection. Many conservators recommend a minimum 10 cm of acid-free foam lining on all sides for textiles of that scale and age.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "The tapestry weighs about 85 kilograms — will standard art freight carriers handle that?",
+      "assistant_message": "85 kilograms is well within the standard capacity for most fine-art freight carriers; companies like Crozier Fine Arts and Masterpiece International routinely handle single textile pieces over 200 kilograms. You'll still want to specify 'white glove' handling and confirm the carrier has climate-controlled vehicles, since temperature fluctuations during transit are a major risk for woven fibers.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "What humidity levels should the crates maintain during transit?",
+      "assistant_message": "For historical textiles, the standard recommendation from the American Institute for Conservation is to maintain relative humidity between 45% and 55% during transit. Fluctuations beyond a 5% swing within any 24-hour period can cause fiber stress, so passive humidity buffering materials like silica gel or Artsorb are commonly packed inside sealed crates.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "We're also trying to decide on the exhibit layout. The first venue, the Field Museum in Chicago, has allocated us Gallery 12, which is roughly 280 square meters.",
+      "assistant_message": "280 square meters is a generous footprint for a textile exhibit — many comparable traveling shows work comfortably in 200 to 250 square meters. With that space you should be able to display large hanging pieces, freestanding cases for folded or flat textiles, and still maintain the 1.5-meter visitor circulation corridors that most accessibility standards require.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "We have 47 artifacts in total. Is that too many for 280 square meters?",
+      "assistant_message": "47 artifacts in 280 square meters works out to roughly 6 square meters per object, which is actually quite comfortable for a textile show where many pieces hang vertically rather than occupying floor space. A common curatorial guideline is to allow at least 3 square meters per object as an absolute minimum, so you have considerable flexibility in how you arrange groupings.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "The lighting plan calls for fiber-optic or LED fixtures only — what lux levels are safe for antique silk?",
+      "assistant_message": "The standard conservation recommendation for light-sensitive textiles such as antique silk is a maximum of 50 lux at the object surface, with an annual light exposure not exceeding 150,000 lux-hours. UV output should be kept below 75 microwatts per lumen, which is easily achievable with modern LED fixtures but should still be verified with a UV meter after installation.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "We're working with a graphic design firm on the interpretive panels. They've proposed using a typeface called Freight Text Pro at 14-point size for the body copy — does that meet accessibility standards?",
+      "assistant_message": "14-point Freight Text Pro is a reasonable choice; the ADA and most museum accessibility guidelines recommend a minimum of 18-point type for primary interpretive text that visitors read while standing at a normal viewing distance of about 45 centimeters. You may want to bump the body copy to 18 or 20 points and reserve 14-point for secondary captions closer to eye level on low-mounted labels.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "The panels will be mounted at 145 centimeters to the center line — is that the right height?",
+      "assistant_message": "145 centimeters to the centerline is the standard recommended mounting height per the Smithsonian Institution's guidelines for interpretive panels and is consistent with ADA requirements, which specify that the centerline of primary text panels should be at approximately 143 to 152 centimeters for standing adults. It also falls within the comfortable sightline range for most wheelchair users when panels are angled slightly forward.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "We need to finalize the exhibit title. The marketing team is proposing 'Threads of Time: Five Centuries of Global Textile Art' — what do you think of that from a curatorial standpoint?",
+      "assistant_message": "It's a strong title — 'Threads of Time' is evocative without being overly literal, and specifying 'Five Centuries' immediately tells visitors the temporal scope, which helps set expectations. The phrase 'Global Textile Art' is broad enough to encompass your diverse collection while signaling that the show goes beyond a single regional tradition, which should help with international venue interest.",
+      "gold_parents": [
+        "t22"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "The exhibit catalog will be 128 pages with full-color photography. We're printing 3,000 copies for the first venue — does that seem like the right print run?",
+      "assistant_message": "3,000 copies for an opening venue is a fairly standard initial print run for a mid-scale traveling exhibit catalog. If the Field Museum averages around 1.5 million annual visitors and your exhibit runs for several weeks, you might sell between 500 and 1,200 catalogs depending on pricing and placement, so 3,000 gives you enough to supply subsequent venues without a costly reprint.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "We're pricing the catalog at $45. Is that in line with comparable museum publications?",
+      "assistant_message": "$45 is squarely within the typical range for a 128-page full-color hardcover museum catalog — similar publications from the Metropolitan Museum of Art and the Art Institute of Chicago generally retail between $35 and $65 depending on page count and production quality. If your catalog includes scholarly essays by named curators or conservators, pricing toward the upper end of that range is well justified.",
+      "gold_parents": [
+        "t24"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "Speaking of essays, we've commissioned Dr. Amara Osei from the Victoria and Albert Museum to write the lead essay on West African kente cloth. She's asking for a 5,000-word limit — is that standard?",
+      "assistant_message": "5,000 words is on the longer side for a catalog essay but entirely appropriate for a lead scholarly contribution, particularly on a topic as rich as kente cloth traditions. Many major museum catalogs reserve 4,000 to 6,000 words for the anchor essay and ask contributing scholars to keep secondary essays to 2,000 to 3,000 words to maintain a balance between depth and readability.",
+      "gold_parents": [
+        "t25"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "We're also planning a public programming series to accompany the exhibit. The first event is a weaving demonstration by master weaver Kofi Mensah on March 8th.",
+      "assistant_message": "A live weaving demonstration in the first week of the exhibit is an excellent way to draw early attendance and generate social media coverage. You'll want to confirm with the Field Museum's events team that Gallery 12 or an adjacent space can accommodate an audience of at least 50 to 80 people comfortably, and that Kofi Mensah's loom and materials can be set up without interfering with the artifact display.",
+      "gold_parents": [
+        "t26"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "The museum's event capacity for that space is 120 people. We're thinking of charging $25 per ticket for the demonstration.",
+      "assistant_message": "A $25 ticket for a master weaver demonstration is very reasonable and consistent with programming fees at peer institutions — many comparable museum events of that type charge between $20 and $40. With a 120-person capacity you could generate up to $3,000 in ticket revenue per event, which would meaningfully offset programming costs.",
+      "gold_parents": [
+        "t27"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "We're also applying for an NEA grant to help fund the tour. The next deadline for the NEA Art Works grant is August 11th of this year.",
+      "assistant_message": "The NEA Art Works grant is a strong fit for a traveling exhibit of this scope — the program regularly funds museum projects with national reach. With an August 11th deadline you'll want to have your final venue list, budget narrative, and letters of support from participating institutions finalized at least three weeks in advance, so targeting a July 18th internal deadline for a complete draft would be prudent.",
+      "gold_parents": [
+        "t28"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t30",
+      "turn_index": 29,
+      "user_message": "The total project budget is $1.2 million across all four venues. The NEA typically funds up to 50% of project costs — so we could potentially receive $600,000?",
+      "assistant_message": "That's the correct calculation — if your total eligible project costs are $1.2 million and the NEA funds up to 50%, the maximum award would be $600,000. In practice, NEA Art Works grants for museum exhibitions have recently averaged around $100,000 to $200,000, so budgeting conservatively and identifying matching funds from venue partners and corporate sponsors is important.",
+      "gold_parents": [
+        "t29"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t31",
+      "turn_index": 30,
+      "user_message": "The four venues are Chicago, Houston, Seattle, and Philadelphia, in that order. The tour runs from March through November.",
+      "assistant_message": "A nine-month tour across four venues gives you roughly two months at each location, which is a solid run for a traveling textile exhibit. You'll want to build transit time and installation days into the schedule between each venue — typically five to ten days for deinstallation, shipping, and reinstallation, depending on the distance between cities.",
+      "gold_parents": [
+        "t30"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t32",
+      "turn_index": 31,
+      "user_message": "The Houston venue is the Museum of Fine Arts Houston, and they've requested we arrive no later than May 15th for a May 20th opening.",
+      "assistant_message": "A five-day window between arrival and opening is tight but workable if your installation team is experienced with textile exhibits. You'll want to confirm that the MFAH's receiving dock and gallery prep crew are available immediately on May 15th, and that all hanging hardware and case fittings are pre-fabricated to the MFAH gallery specifications so no custom fabrication is needed on-site.",
+      "gold_parents": [
+        "t31"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t33",
+      "turn_index": 32,
+      "user_message": "We're also considering adding a children's interactive station where kids can handle reproduction textiles. What materials work best for high-touch reproductions?",
+      "assistant_message": "For high-touch interactive reproductions, tightly woven wool and cotton blends are the most durable and washable options — they can withstand repeated handling and laundering without significant degradation. Avoid loose weaves or pieces with raised pile that can snag, and consider having at least three sets of each reproduction so one can always be in rotation for cleaning while two are in use.",
+      "gold_parents": [
+        "t32"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t34",
+      "turn_index": 33,
+      "user_message": "Great idea on the rotation. The interactive station will be staffed by two volunteers per shift, with shifts running four hours each.",
+      "assistant_message": "Two volunteers per four-hour shift is a sensible staffing model for an interactive station — one person can manage direct visitor engagement while the other monitors the reproductions and handles any crowd flow issues. You'll want to create a brief volunteer training guide covering the cultural context of each reproduction textile so staff can answer the questions children and parents are most likely to ask.",
+      "gold_parents": [
+        "t33"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t35",
+      "turn_index": 34,
+      "user_message": "We're thinking the sign cost should be one of the line items we cover with the grant funds rather than the match, and we want to place the sign near the new raised beds we're also funding through this grant. Does that approach make sense for how the budget is structured?",
+      "assistant_message": "Yes, allocating the $1,200 Greenline sign cost as a grant-funded line item rather than part of your $2,775 cash match is a clean approach, since match funds are typically better used for labor or pre-existing materials you can document independently. Positioning the sign near the raised beds also makes narrative sense — it ties the two funded elements together visually and helps reviewers see the project as a cohesive site improvement. Just make sure each line item (sign, raised beds, any other elements) is individually itemized in the budget table so the total still reconciles to $21,275.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t36",
+      "turn_index": 35,
+      "user_message": "Our choir director wants to add a post-concert reception. The Hartwell Center's catering manager is called Patricia Osei and she said the kitchen closes at 9 p.m. on weeknights.",
+      "assistant_message": "That's worth flagging early with Patricia so you can plan your concert schedule around it. If your performance runs long or you want a proper reception rather than a rushed one, you might need to negotiate an exception or look at bringing in an external caterer.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t37",
+      "turn_index": 36,
+      "user_message": "For transportation, we got a quote from Greenway Coach Hire. They can provide a 42-seat coach for the full tour at a flat rate of £1,840, and that includes the driver and fuel.",
+      "assistant_message": "That's a competitive rate for three venue stops over several days. A 42-seat coach gives you plenty of room if your choir is smaller than 42 members, which is handy for storing instrument cases and luggage in the seats. Make sure to confirm whether the flat rate covers waiting time on performance days or if there's an hourly surcharge after a certain point.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t38",
+      "turn_index": 37,
+      "user_message": "We're also trying to sort out choir robes for the tour. Our current robes are navy blue, but a few members want to switch to burgundy.",
+      "assistant_message": "A robe color change is worth thinking through carefully, since it affects the choir's visual identity and can be costly to replace all at once. If budget is a concern, you might consider a phased replacement or a compromise like adding a burgundy accent piece to the existing navy robes.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t39",
+      "turn_index": 38,
+      "user_message": "The robe supplier we've used before is Chorister's Choice, and they require a minimum order of 20 robes with at least six weeks' lead time. Do you think we should go ahead with them?",
+      "assistant_message": "Given the six-week lead time requirement from Chorister's Choice, you'd want to place any order well before the tour begins to avoid arriving without the new robes. If your choir has at least 20 members needing new robes, meeting their minimum order shouldn't be a problem, but it's worth confirming exact numbers soon.",
+      "gold_parents": [
+        "t38"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t40",
+      "turn_index": 39,
+      "user_message": "The $85–$120 range is helpful. Is a single-day event policy enough, or should we look at an annual volunteer program policy instead?",
+      "assistant_message": "If your garden plans to hold more than three or four volunteer events per year, an annual volunteer program policy is almost always more cost-effective than stacking single-day policies. A typical annual general liability policy for a small nonprofit community garden runs $300–$500 per year through carriers like Philadelphia Insurance Companies or Markel, and it covers all scheduled volunteer activities without requiring you to file a new certificate for each event. You'd still need to issue updated additional-insured certificates to the city for each specific event date, but the underlying coverage stays in place year-round.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t41",
+      "turn_index": 40,
+      "user_message": "Does the annual policy cover injuries to the volunteers themselves, or just third-party liability?",
+      "assistant_message": "Standard general liability policies cover third-party bodily injury and property damage, meaning a visitor or neighbor who is hurt, but they do not cover injuries to the volunteers themselves while they are working. For volunteer injury coverage you need a separate Volunteer Accident policy, which typically provides medical expense benefits of $5,000–$25,000 per volunteer per incident and costs roughly $150–$250 annually for a small garden program. Some umbrella policies can extend coverage, but you should confirm the scope in writing with your broker before your March 15th event.",
+      "gold_parents": [
+        "t40"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t42",
+      "turn_index": 41,
+      "user_message": "We also need to sort out the post-race refreshments. A local bakery called Sugarmill has offered to donate 400 assorted muffins and cookies.",
+      "assistant_message": "A donation from Sugarmill is a generous offer and 400 items should cover your runners plus volunteers with some buffer. It's worth confirming what assortment they plan — a mix of muffins and cookies works well for post-race recovery since runners appreciate both savory and sweet options. Make sure to arrange a delivery or pickup time that lands close to the finish window so everything stays fresh.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t43",
+      "turn_index": 42,
+      "user_message": "They'll deliver by 10:00 AM and the assortment will be 250 muffins and 150 cookies. We'll set up the refreshment table near the park's picnic shelter, which is about 30 meters from the finish line.",
+      "assistant_message": "A 10:00 AM delivery from Sugarmill works well assuming your lead runners finish around 45 to 50 minutes after the 8:00 AM start, giving you a comfortable buffer before the refreshment table needs to be fully stocked. The picnic shelter location 30 meters from the finish line is practical — close enough for finishers to walk straight over, but far enough not to crowd the finish chute. Keeping the 250 muffins and 150 cookies separated by type will also speed up the line.",
+      "gold_parents": [
+        "t42"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t44",
+      "turn_index": 43,
+      "user_message": "We just heard back from St. Agatha's — they require all performing groups to carry public liability insurance with a minimum cover of £5 million. I'm assuming the other venues will have similar requirements.",
+      "assistant_message": "That's a very standard requirement for church and arts venues in the UK, so yes, it's wise to assume Harrington and Riverside will ask for the same or similar. You'll want to check whether your choir's existing membership with a choral association includes PLI cover, as many do — the Association of British Choral Directors, for instance, offers affiliated groups PLI up to £10 million. If you're not already affiliated, getting a standalone policy specifically for the tour dates is usually straightforward and not too costly.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t45",
+      "turn_index": 44,
+      "user_message": "We're also looking at the Elmsworth Civic Auditorium for another stop on the tour. What can you tell me about it?",
+      "assistant_message": "Elmsworth Civic Auditorium is a larger venue on Parade Street in Elmsworth town centre, with a seating capacity of 780 and a grand pipe organ that choral groups can arrange to use for an additional hire fee. It's owned by the local council and managed by a team led by events coordinator Paul Renwick. The auditorium hosts roughly 120 events per year and has a well-regarded reputation for community and touring performances.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t46",
+      "turn_index": 45,
+      "user_message": "Does Elmsworth have good dressing room facilities for a choir our size? We have about 45 singers.",
+      "assistant_message": "Elmsworth Civic Auditorium has three dedicated dressing rooms backstage, with the largest accommodating up to 35 people and the other two fitting around 15 each, so 45 singers would spread comfortably across all three. Each room has its own mirror stations, coat rails, and a shared adjoining shower block. Paul Renwick has mentioned that choral groups often use the two smaller rooms for section warm-ups as well.",
+      "gold_parents": [
+        "t45"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t47",
+      "turn_index": 46,
+      "user_message": "What's the typical liability insurance requirement for a sailing club with about 200 members?",
+      "assistant_message": "For a recreational sailing club of that size, most insurers and marina landlords require a minimum of $1 million per occurrence in general liability coverage, with many now asking for $2 million aggregate. You should also look into a specific watercraft liability endorsement, since general policies sometimes exclude vessels under club management. Consulting a marine insurance broker who specializes in yacht clubs will give you the most accurate picture for your jurisdiction.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t48",
+      "turn_index": 47,
+      "user_message": "We're also trying to figure out what to budget for office furniture. We need to outfit 8 workstations and a small conference room for 6 people. Any rough guidance on cost?",
+      "assistant_message": "For 8 workstations with desks, ergonomic chairs, and basic storage, you're typically looking at $800 to $1,500 per station, so a budget of $6,400 to $12,000 is reasonable. A 6-person conference table with chairs can run another $2,000 to $5,000 depending on quality. All in, plan for roughly $8,400 to $17,000 for a functional but not extravagant setup.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t49",
+      "turn_index": 48,
+      "user_message": "We found a vendor called WorkNest Office Solutions that can do all 8 workstations and the conference room package for $11,200 flat, with delivery and assembly included. That sound fair?",
+      "assistant_message": "Yes, $11,200 all-in for 8 workstations plus a 6-person conference room package with delivery and assembly from WorkNest Office Solutions is competitive and sits comfortably in the middle of the typical range. Getting delivery and assembly bundled is a meaningful convenience, since coordinating that separately can easily add $500 to $1,000 in labor. It's a fair price to accept if you're satisfied with the product quality.",
+      "gold_parents": [
+        "t48"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t50",
+      "turn_index": 49,
+      "user_message": "Our musical director wants to add a post-concert reception at the Dellwood stop. She's asking whether we should hire a local catering company or just do a self-catered spread with volunteers.",
+      "assistant_message": "Both options have real merit depending on your budget and how formal you want the reception to feel. A local catering company removes the logistical burden from your volunteers but can easily add £300–£600 to your costs for a modest spread. If you go self-catered, assigning a dedicated reception coordinator among your volunteers tends to prevent the last-minute scramble that often derails these events.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t51",
+      "turn_index": 50,
+      "user_message": "We've confirmed the choir headcount for the tour — 38 singers plus our musical director and the accompanist, so 40 people travelling in total.",
+      "assistant_message": "Perfect — 40 travellers fits comfortably within the 42-seat coach you've quoted, leaving two spare seats which can absorb any last-minute additions or be used for luggage overflow. It's worth noting that the accompanist may need to travel separately to the first venue if there's a piano pre-delivery or tuning appointment to oversee, so keep that contingency in mind.",
+      "gold_parents": [
+        "t37"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t52",
+      "turn_index": 51,
+      "user_message": "We also need to figure out the team's travel situation. We have 14 members and two mentors going to the competition, and the school van only seats 12.",
+      "assistant_message": "With 16 people total and only 12 seats in the van, you'll need to arrange additional transportation for at least 4 people. Options include a second school vehicle, parent carpools, or renting a passenger van. Make sure you get the necessary permission slips and insurance documentation sorted well in advance.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t53",
+      "turn_index": 52,
+      "user_message": "For the travel logistics, do we need the school's insurance certificate to reserve a rental van?",
+      "assistant_message": "Yes, most rental companies require a certificate of insurance when a school organization is renting a vehicle for an official trip. You'll typically need to contact your school's business office or district risk management department to obtain that certificate. Give them at least two weeks' notice since processing can take time, and confirm whether the rental company needs to be listed as an additional insured on the policy.",
+      "gold_parents": [
+        "t52"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t54",
+      "turn_index": 53,
+      "user_message": "We also need to decide on signage for the garden entrance. We're looking at a cedar post-and-panel sign, roughly 4 feet by 6 feet, and the fabricator quoted us $1,200 installed.",
+      "assistant_message": "A 4-by-6-foot cedar post-and-panel sign at $1,200 installed is a fairly standard price point for that size and material in most municipal contexts. You'll want to confirm whether the sign design needs to include the City of Hartwell logo, since many green-spaces grants require co-branding on any permanent installations funded through the program. Getting that specification in writing from the fabricator now will save revisions later.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t55",
+      "turn_index": 54,
+      "user_message": "The fabricator is Greenline Signs & Displays, and they've confirmed in writing that the $1,200 quote is valid through March 31, 2025.",
+      "assistant_message": "Having a written quote from Greenline Signs & Displays valid through March 31, 2025 is exactly the kind of vendor documentation grant reviewers want to see attached as an exhibit. If your submission deadline falls before that date, you can include the quote directly; if it's after, you'd need a refreshed quote. File that letter with your other supporting documents so it's easy to attach when you compile the final application package.",
+      "gold_parents": [
+        "t54"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t56",
+      "turn_index": 55,
+      "user_message": "The club's junior sailing program runs eight weeks in summer and we need to figure out instructor-to-student ratios. US Sailing's Level 1 certification guidelines recommend a maximum of 8 students per certified instructor on the water at one time — is that the right standard to apply?",
+      "assistant_message": "US Sailing's Small Boat Instructor program does recommend a maximum of 8 students per instructor as a general on-water guideline, though the exact ratio can tighten to 6:1 for students under age 10 or in high-wind conditions above 15 knots. Many clubs also require a dedicated safety-boat operator separate from the instructor count, which effectively adds supervision capacity without changing the ratio. Checking your local US Sailing regional coordinator is worthwhile since some districts have adopted stricter standards than the national baseline.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t57",
+      "turn_index": 56,
+      "user_message": "We have 48 kids enrolled for the first session. If we split them into two age groups — under-12 and 12-and-up — and the under-12 group is 20 kids, how many instructors do we need for each group?",
+      "assistant_message": "For the 20 under-12 sailors, using the 6:1 ratio means you need a minimum of 4 instructors, since 20 divided by 6 rounds up to 3.33. The remaining 28 kids in the 12-and-up group fall under the standard 8:1 ratio, requiring 4 instructors there as well (28 ÷ 8 = 3.5, rounded up to 4). So you'd need at least 8 certified instructors total for that first session, not counting safety-boat operators.",
+      "gold_parents": [
+        "t56"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t58",
+      "turn_index": 57,
+      "user_message": "The club only has 6 certified instructors available for the first week. Can we legally run both groups simultaneously with that staffing level?",
+      "assistant_message": "With only 6 certified instructors, you'd fall short of the 8 needed to run both groups simultaneously at the recommended ratios. One practical option is to stagger the groups — run the under-12 group in the morning with 4 instructors and the older group in the afternoon with the same 4, freeing the other 2 instructors for breaks or safety-boat duty. Alternatively, you could recruit two more US Sailing-certified instructors, even on a temporary or volunteer basis, to meet the ratio requirements for concurrent sessions. Running both groups at the same time with 6 instructors would leave at least one group out of compliance with the recommended supervision standard.",
+      "gold_parents": [
+        "t57"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t59",
+      "turn_index": 58,
+      "user_message": "We're locking in our shoot days for the short film. We have the Riverside Warehouse location confirmed for Saturday, March 15th, and Sunday, March 16th. How should we structure the two-day call sheet?",
+      "assistant_message": "For a two-day warehouse shoot, it's standard practice to front-load your most complex, multi-character scenes on day one when the crew is freshest. Reserve day two for coverage, pickups, and any single-actor inserts that can be reorganized if something runs long on day one. Make sure your call sheet lists the first unit call time, talent call times, and a hard wrap time so everyone knows the outer limits of the day.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t60",
+      "turn_index": 59,
+      "user_message": "Our director wants a 7 AM crew call on Saturday. We have 6 principal cast members and a crew of 14. Does that size change anything about how we run the day?",
+      "assistant_message": "With 14 crew and 6 principals, you're squarely in low-budget short-film territory, so a single AD can realistically manage the floor as long as scenes don't require simultaneous unit splits. At that crew size, SAG-AFTRA's Short Film Agreement kicks in if any of your principals are union members — that agreement caps your shoot day at 10 hours before overtime penalties apply. With a 7 AM crew call, that puts your base wrap at 5 PM, so plan your scene order accordingly.",
+      "gold_parents": [
+        "t59"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t61",
+      "turn_index": 60,
+      "user_message": "Two of our principals are SAG members. Under that Short Film Agreement, what's the daily rate we need to pay them?",
+      "assistant_message": "Under the SAG-AFTRA Low Budget Short Film Agreement (the current version ratified in 2023), the minimum day rate for a principal performer is $216 per day for projects with total budgets under $50,000. If your total budget is between $50,000 and $200,000, the rate steps up to $335 per day. Both tiers still require pension and health contributions at 21.5% on top of the base scale.",
+      "gold_parents": [
+        "t60"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t62",
+      "turn_index": 61,
+      "user_message": "Our total budget is $38,000, so we're in that lower tier. What about meal breaks — are those regulated under the same agreement?",
+      "assistant_message": "Yes, the SAG-AFTRA Short Film Agreement requires a meal break of no less than 30 minutes within every 6 hours of work from the performer's call time, not from general crew call. If you exceed that 6-hour window without a break, you owe a meal penalty of $25 for the first half-hour and $35 for each subsequent half-hour. For a 7 AM talent call, you must have lunch no later than 1 PM to stay compliant.",
+      "gold_parents": [
+        "t61"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t63",
+      "turn_index": 62,
+      "user_message": "Good to know. We're planning to cater lunch on both days. The warehouse doesn't have a kitchen, so we're hiring a craft services vendor. Any guidance on budgeting for that?",
+      "assistant_message": "For a crew of 14 plus 6 principals, that's 20 people to feed. A typical low-budget catering vendor in most U.S. markets charges between $18 and $28 per person per meal for a hot lunch, so budget roughly $360 to $560 per lunch day, or $720 to $1,120 across both shoot days. Don't forget to add craft services snacks and beverages separately — a standard craft services daily rate for a crew your size runs about $150 to $200 per day.",
+      "gold_parents": [
+        "t62"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t64",
+      "turn_index": 63,
+      "user_message": "We've set aside $900 total for catering both days. Is that going to be tight? We also need to account for the craft services person's day rate as a crew member.",
+      "assistant_message": "At $900 for two lunch services for 20 people, you're working with $450 per day, which is $22.50 per head — that's achievable but at the high end of modest. You'll likely need to negotiate with vendors or choose a simpler menu to stay there. The craft services PA day rate on a non-union low-budget production typically runs $150 to $200 for a 10-hour day, so add that to your crew costs separately from the food budget itself.",
+      "gold_parents": [
+        "t63"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t65",
+      "turn_index": 64,
+      "user_message": "The warehouse rental is $800 for the full weekend. We also need a generator because there's no accessible power on the floor. What size generator should we be renting?",
+      "assistant_message": "For a small narrative short with a standard lighting package — typically a 1.2K HMI, a few 650W fresnels, and monitor/playback equipment — a 45 kW generator is the common floor for professional sets of your size, though a 30 kW unit can work if your gaffer is disciplined about load management. Generator rentals in that range run approximately $350 to $550 per day from most grip-and-electric houses, so budget $700 to $1,100 for the two-day weekend. Always confirm fuel is included or budget an additional $80 to $120 per day for diesel.",
+      "gold_parents": [
+        "t64"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t66",
+      "turn_index": 65,
+      "user_message": "Our gaffer says she can work with a 30 kW. She's also asking whether we need a film permit for the warehouse since it's private property.",
+      "assistant_message": "Generally, shooting on private property does not require a city film permit as long as you're fully contained within that property and not affecting public streets, sidewalks, or right-of-way. However, many cities — including Los Angeles, New York, and Chicago — require a permit any time you use a generator on a production regardless of whether you're on private property, because the generator is often positioned near a public street. Check with your specific city's film office; in Los Angeles, for example, the Entertainment Permit desk at FilmLA requires a permit for any production that uses a generator or production vehicles on or adjacent to public space.",
+      "gold_parents": [
+        "t65"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t67",
+      "turn_index": 66,
+      "user_message": "Can you work out whether the Greenway coach fits our group, and what the per-person transport cost will be for the tour?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t44",
+        "t51"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t11",
+    "t37",
+    "t44",
+    "t51"
+  ],
+  "distractor_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t7",
+    "t8",
+    "t9",
+    "t10",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t20",
+    "t21",
+    "t22",
+    "t23",
+    "t24",
+    "t25",
+    "t26",
+    "t27",
+    "t28",
+    "t29",
+    "t30",
+    "t31",
+    "t32",
+    "t33",
+    "t34",
+    "t35",
+    "t36",
+    "t38",
+    "t39",
+    "t40",
+    "t41",
+    "t42",
+    "t43",
+    "t45",
+    "t46",
+    "t47",
+    "t48",
+    "t49",
+    "t50",
+    "t52",
+    "t53",
+    "t54",
+    "t55",
+    "t56",
+    "t57",
+    "t58",
+    "t59",
+    "t60",
+    "t61",
+    "t62",
+    "t63",
+    "t64",
+    "t65",
+    "t66"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer confirms the Greenway coach (42 seats) is sufficient for the group of 40 travellers, noting 2 seats to spare.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer calculates the per-person cost as £46 (£1,840 ÷ 40 people).",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not include any costs or figures related to the post-concert reception catering at Dellwood.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer uses exactly 40 as the total number of travellers (38 singers + musical director + accompanist), not any other headcount.",
+      "required": true
+    }
+  ],
+  "notes": "t3 establishes the PLI insurance requirement (a distractor for the query but evidence for other potential questions), while t2 and t5 are the true evidence branches the query joins: t2 gives the £1,840 flat rate and t5 gives the 40-person headcount needed to compute the per-person cost. t4 (catering discussion) is the distractor — plausible and on-premise but irrelevant to transport cost calculation.\n\nReference answer: The Greenway coach seats 42 people, and your total travelling party is 40 (38 singers plus the musical director and accompanist), so the coach fits your group with 2 seats to spare. The flat-rate cost from Greenway is £1,840 for the full tour, which divided across 40 travellers comes to exactly £46 per person. That's a very reasonable transport cost per head for a three-venue tour.",
+  "evidence_note": null,
+  "premise": "an amateur choir organizing a spring concert tour",
+  "evidence_spans": null,
+  "benchmark_version": "1.1-length-ablation",
+  "length_class": "spliced_60"
+}

@@ -1,0 +1,834 @@
+{
+ "n_targets": 40,
+ "all_oracle_hash_equal": true,
+ "all_checklist_identical": true,
+ "all_subsequence": true,
+ "insufficient_targets": [],
+ "total_rejected_donors": 771,
+ "targets": [
+  {
+   "target": "two_branch_join_001",
+   "family": "two_branch_join",
+   "base": 7,
+   "lengths": {
+    "30": 30,
+    "60": 65
+   },
+   "rejected": 27,
+   "sufficient": true,
+   "oracle_hash_equal": true,
+   "checklist_query_closure_identical": true,
+   "l30_subsequence_of_l60": true,
+   "base_subsequence_of_l60": true,
+   "oracle_tokens": 654,
+   "full_tokens": {
+    "base": 778,
+    "30": 3862,
+    "60": 7692
+   }
+  },
+  {
+   "target": "two_branch_join_002",
+   "family": "two_branch_join",
+   "base": 6,
+   "lengths": {
+    "30": 30,
+    "60": 61
+   },
+   "rejected": 68,
+   "sufficient": true,
+   "oracle_hash_equal": true,
+   "checklist_query_closure_identical": true,
+   "l30_subsequence_of_l60": true,
+   "base_subsequence_of_l60": true,
+   "oracle_tokens": 723,
+   "full_tokens": {
+    "base": 723,
+    "30": 3894,
+    "60": 7914
+   }
+  },
+  {
+   "target": "two_branch_join_003",
+   "family": "two_branch_join",
+   "base": 9,
+   "lengths": {
+    "30": 30,
+    "60": 66
+   },
+   "rejected": 32,
+   "sufficient": true,
+   "oracle_hash_equal": true,
+   "checklist_query_closure_identical": true,
+   "l30_subsequence_of_l60": true,
+   "base_subsequence_of_l60": true,
+   "oracle_tokens": 712,
+   "full_tokens": {
+    "base": 1013,
+    "30": 3707,
+    "60": 8710
+   }
+  },
+  {
+   "target": "two_branch_join_004",
+   "family": "two_branch_join",
+   "base": 7,
+   "lengths": {
+    "30": 30,
+    "60": 62
+   },
+   "rejected": 44,
+   "sufficient": true,
+   "oracle_hash_equal": true,
+   "checklist_query_closure_identical": true,
+   "l30_subsequence_of_l60": true,
+   "base_subsequence_of_l60": true,
+   "oracle_tokens": 818,
+   "full_tokens": {
+    "base": 962,
+    "30": 4577,
+    "60": 8711
+   }
+  },
+  {
+   "target": "two_branch_join_005",
+   "family": "two_branch_join",
+   "base": 8,
+   "lengths": {
+    "30": 30,
+    "60": 61
+   },
+   "rejected": 29,
+   "sufficient": true,
+   "oracle_hash_equal": true,
+   "checklist_query_closure_identical": true,
+   "l30_subsequence_of_l60": true,
+   "base_subsequence_of_l60": true,
+   "oracle_tokens": 845,
+   "full_tokens": {
+    "base": 1091,
+    "30": 3903,
+    "60": 7356
+   }
+  },
+  {
+   "target": "two_branch_join_006",
+   "family": "two_branch_join",
+   "base": 8,
+   "lengths": {
+    "30": 33,
+    "60": 61
+   },
+   "rejected": 14,
+   "sufficient": true,
+   "oracle_hash_equal": true,
+   "checklist_query_closure_identical": true,
+   "l30_subsequence_of_l60": true,
+   "base_subsequence_of_l60": true,
+   "oracle_tokens": 753,
+   "full_tokens": {
+    "base": 1033,
+    "30": 4735,
+    "60": 8386
+   }
+  },
+  {
+   "target": "two_branch_join_007",
+   "family": "two_branch_join",
+   "base": 10,
+   "lengths": {
+    "30": 33,
+    "60": 65
+   },
+   "rejected": 48,
+   "sufficient": true,
+   "oracle_hash_equal": true,
+   "checklist_query_closure_identical": true,
+   "l30_subsequence_of_l60": true,
+   "base_subsequence_of_l60": true,
+   "oracle_tokens": 819,
+   "full_tokens": {
+    "base": 1030,
+    "30": 4317,
+    "60": 9016
+   }
+  },
+  {
+   "target": "two_branch_join_008",
+   "family": "two_branch_join",
+   "base": 5,
+   "lengths": {
+    "30": 36,
+    "60": 66
+   },
+   "rejected": 31,
+   "sufficient": true,
+   "oracle_hash_equal": true,
+   "checklist_query_closure_identical": true,
+   "l30_subsequence_of_l60": true,
+   "base_subsequence_of_l60": true,
+   "oracle_tokens": 514,
+   "full_tokens": {
+    "base": 635,
+    "30": 3928,
+    "60": 8162
+   }
+  },
+  {
+   "target": "three_way_join_001",
+   "family": "three_way_join",
+   "base": 9,
+   "lengths": {
+    "30": 31,
+    "60": 60
+   },
+   "rejected": 44,
+   "sufficient": true,
+   "oracle_hash_equal": true,
+   "checklist_query_closure_identical": true,
+   "l30_subsequence_of_l60": true,
+   "base_subsequence_of_l60": true,
+   "oracle_tokens": 792,
+   "full_tokens": {
+    "base": 895,
+    "30": 3208,
+    "60": 6503
+   }
+  },
+  {
+   "target": "three_way_join_002",
+   "family": "three_way_join",
+   "base": 9,
+   "lengths": {
+    "30": 35,
+    "60": 65
+   },
+   "rejected": 19,
+   "sufficient": true,
+   "oracle_hash_equal": true,
+   "checklist_query_closure_identical": true,
+   "l30_subsequence_of_l60": true,
+   "base_subsequence_of_l60": true,
+   "oracle_tokens": 518,
+   "full_tokens": {
+    "base": 746,
+    "30": 3610,
+    "60": 7788
+   }
+  },
+  {
+   "target": "three_way_join_003",
+   "family": "three_way_join",
+   "base": 12,
+   "lengths": {
+    "30": 33,
+    "60": 62
+   },
+   "rejected": 33,
+   "sufficient": true,
+   "oracle_hash_equal": true,
+   "checklist_query_closure_identical": true,
+   "l30_subsequence_of_l60": true,
+   "base_subsequence_of_l60": true,
+   "oracle_tokens": 857,
+   "full_tokens": {
+    "base": 1157,
+    "30": 3910,
+    "60": 7574
+   }
+  },
+  {
+   "target": "three_way_join_004",
+   "family": "three_way_join",
+   "base": 12,
+   "lengths": {
+    "30": 32,
+    "60": 60
+   },
+   "rejected": 11,
+   "sufficient": true,
+   "oracle_hash_equal": true,
+   "checklist_query_closure_identical": true,
+   "l30_subsequence_of_l60": true,
+   "base_subsequence_of_l60": true,
+   "oracle_tokens": 671,
+   "full_tokens": {
+    "base": 881,
+    "30": 3696,
+    "60": 7047
+   }
+  },
+  {
+   "target": "three_way_join_005",
+   "family": "three_way_join",
+   "base": 10,
+   "lengths": {
+    "30": 30,
+    "60": 65
+   },
+   "rejected": 19,
+   "sufficient": true,
+   "oracle_hash_equal": true,
+   "checklist_query_closure_identical": true,
+   "l30_subsequence_of_l60": true,
+   "base_subsequence_of_l60": true,
+   "oracle_tokens": 687,
+   "full_tokens": {
+    "base": 967,
+    "30": 3570,
+    "60": 9578
+   }
+  },
+  {
+   "target": "three_way_join_006",
+   "family": "three_way_join",
+   "base": 8,
+   "lengths": {
+    "30": 31,
+    "60": 63
+   },
+   "rejected": 22,
+   "sufficient": true,
+   "oracle_hash_equal": true,
+   "checklist_query_closure_identical": true,
+   "l30_subsequence_of_l60": true,
+   "base_subsequence_of_l60": true,
+   "oracle_tokens": 639,
+   "full_tokens": {
+    "base": 736,
+    "30": 3597,
+    "60": 7758
+   }
+  },
+  {
+   "target": "three_way_join_007",
+   "family": "three_way_join",
+   "base": 9,
+   "lengths": {
+    "30": 31,
+    "60": 60
+   },
+   "rejected": 13,
+   "sufficient": true,
+   "oracle_hash_equal": true,
+   "checklist_query_closure_identical": true,
+   "l30_subsequence_of_l60": true,
+   "base_subsequence_of_l60": true,
+   "oracle_tokens": 993,
+   "full_tokens": {
+    "base": 1109,
+    "30": 4147,
+    "60": 7957
+   }
+  },
+  {
+   "target": "three_way_join_008",
+   "family": "three_way_join",
+   "base": 9,
+   "lengths": {
+    "30": 30,
+    "60": 60
+   },
+   "rejected": 25,
+   "sufficient": true,
+   "oracle_hash_equal": true,
+   "checklist_query_closure_identical": true,
+   "l30_subsequence_of_l60": true,
+   "base_subsequence_of_l60": true,
+   "oracle_tokens": 644,
+   "full_tokens": {
+    "base": 824,
+    "30": 3501,
+    "60": 7726
+   }
+  },
+  {
+   "target": "resume_001",
+   "family": "resume",
+   "base": 5,
+   "lengths": {
+    "30": 30,
+    "60": 63
+   },
+   "rejected": 11,
+   "sufficient": true,
+   "oracle_hash_equal": true,
+   "checklist_query_closure_identical": true,
+   "l30_subsequence_of_l60": true,
+   "base_subsequence_of_l60": true,
+   "oracle_tokens": 442,
+   "full_tokens": {
+    "base": 931,
+    "30": 4435,
+    "60": 8020
+   }
+  },
+  {
+   "target": "resume_002",
+   "family": "resume",
+   "base": 5,
+   "lengths": {
+    "30": 30,
+    "60": 62
+   },
+   "rejected": 1,
+   "sufficient": true,
+   "oracle_hash_equal": true,
+   "checklist_query_closure_identical": true,
+   "l30_subsequence_of_l60": true,
+   "base_subsequence_of_l60": true,
+   "oracle_tokens": 274,
+   "full_tokens": {
+    "base": 681,
+    "30": 3857,
+    "60": 7928
+   }
+  },
+  {
+   "target": "resume_003",
+   "family": "resume",
+   "base": 7,
+   "lengths": {
+    "30": 30,
+    "60": 65
+   },
+   "rejected": 10,
+   "sufficient": true,
+   "oracle_hash_equal": true,
+   "checklist_query_closure_identical": true,
+   "l30_subsequence_of_l60": true,
+   "base_subsequence_of_l60": true,
+   "oracle_tokens": 260,
+   "full_tokens": {
+    "base": 852,
+    "30": 4001,
+    "60": 8197
+   }
+  },
+  {
+   "target": "resume_004",
+   "family": "resume",
+   "base": 5,
+   "lengths": {
+    "30": 31,
+    "60": 63
+   },
+   "rejected": 6,
+   "sufficient": true,
+   "oracle_hash_equal": true,
+   "checklist_query_closure_identical": true,
+   "l30_subsequence_of_l60": true,
+   "base_subsequence_of_l60": true,
+   "oracle_tokens": 412,
+   "full_tokens": {
+    "base": 921,
+    "30": 3761,
+    "60": 8460
+   }
+  },
+  {
+   "target": "resume_005",
+   "family": "resume",
+   "base": 8,
+   "lengths": {
+    "30": 30,
+    "60": 61
+   },
+   "rejected": 27,
+   "sufficient": true,
+   "oracle_hash_equal": true,
+   "checklist_query_closure_identical": true,
+   "l30_subsequence_of_l60": true,
+   "base_subsequence_of_l60": true,
+   "oracle_tokens": 347,
+   "full_tokens": {
+    "base": 1271,
+    "30": 4537,
+    "60": 8328
+   }
+  },
+  {
+   "target": "resume_006",
+   "family": "resume",
+   "base": 6,
+   "lengths": {
+    "30": 33,
+    "60": 61
+   },
+   "rejected": 32,
+   "sufficient": true,
+   "oracle_hash_equal": true,
+   "checklist_query_closure_identical": true,
+   "l30_subsequence_of_l60": true,
+   "base_subsequence_of_l60": true,
+   "oracle_tokens": 432,
+   "full_tokens": {
+    "base": 878,
+    "30": 4117,
+    "60": 8090
+   }
+  },
+  {
+   "target": "resume_007",
+   "family": "resume",
+   "base": 6,
+   "lengths": {
+    "30": 30,
+    "60": 61
+   },
+   "rejected": 10,
+   "sufficient": true,
+   "oracle_hash_equal": true,
+   "checklist_query_closure_identical": true,
+   "l30_subsequence_of_l60": true,
+   "base_subsequence_of_l60": true,
+   "oracle_tokens": 542,
+   "full_tokens": {
+    "base": 1019,
+    "30": 4601,
+    "60": 8964
+   }
+  },
+  {
+   "target": "resume_008",
+   "family": "resume",
+   "base": 8,
+   "lengths": {
+    "30": 30,
+    "60": 60
+   },
+   "rejected": 58,
+   "sufficient": true,
+   "oracle_hash_equal": true,
+   "checklist_query_closure_identical": true,
+   "l30_subsequence_of_l60": true,
+   "base_subsequence_of_l60": true,
+   "oracle_tokens": 427,
+   "full_tokens": {
+    "base": 1326,
+    "30": 4022,
+    "60": 7306
+   }
+  },
+  {
+   "target": "long_noisy_side_thread_001",
+   "family": "long_noisy_side_thread",
+   "base": 34,
+   "lengths": {
+    "60": 60
+   },
+   "rejected": 10,
+   "sufficient": true,
+   "oracle_hash_equal": true,
+   "checklist_query_closure_identical": true,
+   "l30_subsequence_of_l60": true,
+   "base_subsequence_of_l60": true,
+   "oracle_tokens": 375,
+   "full_tokens": {
+    "base": 6725,
+    "60": 10505
+   }
+  },
+  {
+   "target": "long_noisy_side_thread_002",
+   "family": "long_noisy_side_thread",
+   "base": 37,
+   "lengths": {
+    "60": 62
+   },
+   "rejected": 10,
+   "sufficient": true,
+   "oracle_hash_equal": true,
+   "checklist_query_closure_identical": true,
+   "l30_subsequence_of_l60": true,
+   "base_subsequence_of_l60": true,
+   "oracle_tokens": 286,
+   "full_tokens": {
+    "base": 4696,
+    "60": 8016
+   }
+  },
+  {
+   "target": "long_noisy_side_thread_003",
+   "family": "long_noisy_side_thread",
+   "base": 40,
+   "lengths": {
+    "60": 61
+   },
+   "rejected": 16,
+   "sufficient": true,
+   "oracle_hash_equal": true,
+   "checklist_query_closure_identical": true,
+   "l30_subsequence_of_l60": true,
+   "base_subsequence_of_l60": true,
+   "oracle_tokens": 303,
+   "full_tokens": {
+    "base": 5675,
+    "60": 8772
+   }
+  },
+  {
+   "target": "long_noisy_side_thread_004",
+   "family": "long_noisy_side_thread",
+   "base": 37,
+   "lengths": {
+    "60": 60
+   },
+   "rejected": 10,
+   "sufficient": true,
+   "oracle_hash_equal": true,
+   "checklist_query_closure_identical": true,
+   "l30_subsequence_of_l60": true,
+   "base_subsequence_of_l60": true,
+   "oracle_tokens": 376,
+   "full_tokens": {
+    "base": 6384,
+    "60": 9688
+   }
+  },
+  {
+   "target": "long_noisy_side_thread_005",
+   "family": "long_noisy_side_thread",
+   "base": 38,
+   "lengths": {
+    "60": 61
+   },
+   "rejected": 9,
+   "sufficient": true,
+   "oracle_hash_equal": true,
+   "checklist_query_closure_identical": true,
+   "l30_subsequence_of_l60": true,
+   "base_subsequence_of_l60": true,
+   "oracle_tokens": 389,
+   "full_tokens": {
+    "base": 5471,
+    "60": 8847
+   }
+  },
+  {
+   "target": "long_noisy_side_thread_006",
+   "family": "long_noisy_side_thread",
+   "base": 34,
+   "lengths": {
+    "60": 61
+   },
+   "rejected": 7,
+   "sufficient": true,
+   "oracle_hash_equal": true,
+   "checklist_query_closure_identical": true,
+   "l30_subsequence_of_l60": true,
+   "base_subsequence_of_l60": true,
+   "oracle_tokens": 337,
+   "full_tokens": {
+    "base": 5036,
+    "60": 8787
+   }
+  },
+  {
+   "target": "long_noisy_side_thread_007",
+   "family": "long_noisy_side_thread",
+   "base": 34,
+   "lengths": {
+    "60": 64
+   },
+   "rejected": 29,
+   "sufficient": true,
+   "oracle_hash_equal": true,
+   "checklist_query_closure_identical": true,
+   "l30_subsequence_of_l60": true,
+   "base_subsequence_of_l60": true,
+   "oracle_tokens": 260,
+   "full_tokens": {
+    "base": 4132,
+    "60": 8512
+   }
+  },
+  {
+   "target": "long_noisy_side_thread_008",
+   "family": "long_noisy_side_thread",
+   "base": 33,
+   "lengths": {
+    "60": 60
+   },
+   "rejected": 25,
+   "sufficient": true,
+   "oracle_hash_equal": true,
+   "checklist_query_closure_identical": true,
+   "l30_subsequence_of_l60": true,
+   "base_subsequence_of_l60": true,
+   "oracle_tokens": 303,
+   "full_tokens": {
+    "base": 4942,
+    "60": 8816
+   }
+  },
+  {
+   "target": "new_root_001",
+   "family": "new_root",
+   "base": 7,
+   "lengths": {
+    "30": 31,
+    "60": 63
+   },
+   "rejected": 0,
+   "sufficient": true,
+   "oracle_hash_equal": true,
+   "checklist_query_closure_identical": true,
+   "l30_subsequence_of_l60": true,
+   "base_subsequence_of_l60": true,
+   "oracle_tokens": 0,
+   "full_tokens": {
+    "base": 1078,
+    "30": 3652,
+    "60": 8351
+   }
+  },
+  {
+   "target": "new_root_002",
+   "family": "new_root",
+   "base": 5,
+   "lengths": {
+    "30": 36,
+    "60": 60
+   },
+   "rejected": 8,
+   "sufficient": true,
+   "oracle_hash_equal": true,
+   "checklist_query_closure_identical": true,
+   "l30_subsequence_of_l60": true,
+   "base_subsequence_of_l60": true,
+   "oracle_tokens": 0,
+   "full_tokens": {
+    "base": 737,
+    "30": 4415,
+    "60": 7130
+   }
+  },
+  {
+   "target": "new_root_003",
+   "family": "new_root",
+   "base": 8,
+   "lengths": {
+    "30": 31,
+    "60": 63
+   },
+   "rejected": 0,
+   "sufficient": true,
+   "oracle_hash_equal": true,
+   "checklist_query_closure_identical": true,
+   "l30_subsequence_of_l60": true,
+   "base_subsequence_of_l60": true,
+   "oracle_tokens": 0,
+   "full_tokens": {
+    "base": 1154,
+    "30": 3578,
+    "60": 7146
+   }
+  },
+  {
+   "target": "new_root_004",
+   "family": "new_root",
+   "base": 6,
+   "lengths": {
+    "30": 31,
+    "60": 61
+   },
+   "rejected": 2,
+   "sufficient": true,
+   "oracle_hash_equal": true,
+   "checklist_query_closure_identical": true,
+   "l30_subsequence_of_l60": true,
+   "base_subsequence_of_l60": true,
+   "oracle_tokens": 0,
+   "full_tokens": {
+    "base": 1198,
+    "30": 4067,
+    "60": 8183
+   }
+  },
+  {
+   "target": "new_root_005",
+   "family": "new_root",
+   "base": 5,
+   "lengths": {
+    "30": 31,
+    "60": 62
+   },
+   "rejected": 9,
+   "sufficient": true,
+   "oracle_hash_equal": true,
+   "checklist_query_closure_identical": true,
+   "l30_subsequence_of_l60": true,
+   "base_subsequence_of_l60": true,
+   "oracle_tokens": 0,
+   "full_tokens": {
+    "base": 791,
+    "30": 4339,
+    "60": 7971
+   }
+  },
+  {
+   "target": "new_root_006",
+   "family": "new_root",
+   "base": 7,
+   "lengths": {
+    "30": 31,
+    "60": 66
+   },
+   "rejected": 2,
+   "sufficient": true,
+   "oracle_hash_equal": true,
+   "checklist_query_closure_identical": true,
+   "l30_subsequence_of_l60": true,
+   "base_subsequence_of_l60": true,
+   "oracle_tokens": 0,
+   "full_tokens": {
+    "base": 1099,
+    "30": 3758,
+    "60": 8165
+   }
+  },
+  {
+   "target": "new_root_007",
+   "family": "new_root",
+   "base": 5,
+   "lengths": {
+    "30": 31,
+    "60": 66
+   },
+   "rejected": 0,
+   "sufficient": true,
+   "oracle_hash_equal": true,
+   "checklist_query_closure_identical": true,
+   "l30_subsequence_of_l60": true,
+   "base_subsequence_of_l60": true,
+   "oracle_tokens": 0,
+   "full_tokens": {
+    "base": 755,
+    "30": 4403,
+    "60": 8813
+   }
+  },
+  {
+   "target": "new_root_008",
+   "family": "new_root",
+   "base": 5,
+   "lengths": {
+    "30": 30,
+    "60": 61
+   },
+   "rejected": 0,
+   "sufficient": true,
+   "oracle_hash_equal": true,
+   "checklist_query_closure_identical": true,
+   "l30_subsequence_of_l60": true,
+   "base_subsequence_of_l60": true,
+   "oracle_tokens": 0,
+   "full_tokens": {
+    "base": 707,
+    "30": 3981,
+    "60": 7940
+   }
+  }
+ ]
+}

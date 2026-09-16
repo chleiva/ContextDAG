@@ -1,0 +1,110 @@
+{
+ "target": "long_noisy_side_thread_008",
+ "family": "long_noisy_side_thread",
+ "base_history": 33,
+ "gold_closure": [
+  "t1",
+  "t2"
+ ],
+ "gold_entities": [
+  "1,050",
+  "10k",
+  "15%",
+  "200",
+  "35",
+  "5,950",
+  "50",
+  "7,000",
+  "august 1",
+  "august 1, 2025",
+  "maplewood children's hospital",
+  "riverside park",
+  "riverside park on elm street",
+  "saturday, september 13, 2025",
+  "the maplewood children's hospital",
+  "up to $50"
+ ],
+ "query_entities": [
+  "200",
+  "the maplewood children's hospital"
+ ],
+ "donors_rejected_by_exclusion": 25,
+ "sufficient_to_60": true,
+ "chosen": [
+  {
+   "donor": "semantic_decoy_011#0",
+   "turns": 3,
+   "cosine": 0.3567
+  },
+  {
+   "donor": "join_then_split_004#1",
+   "turns": 1,
+   "cosine": 0.3248
+  },
+  {
+   "donor": "topic_fork_010#0",
+   "turns": 3,
+   "cosine": 0.3176
+  },
+  {
+   "donor": "new_root_004#0",
+   "turns": 6,
+   "cosine": 0.3138
+  },
+  {
+   "donor": "join_then_split_006#0",
+   "turns": 2,
+   "cosine": 0.3073
+  },
+  {
+   "donor": "three_way_join_001#0",
+   "turns": 1,
+   "cosine": 0.307
+  },
+  {
+   "donor": "compound_turn_005#0",
+   "turns": 4,
+   "cosine": 0.2956
+  },
+  {
+   "donor": "semantic_decoy_008#0",
+   "turns": 4,
+   "cosine": 0.2899
+  },
+  {
+   "donor": "three_way_join_003#0",
+   "turns": 3,
+   "cosine": 0.2799
+  }
+ ],
+ "used": {
+  "60": [
+   "semantic_decoy_011#0",
+   "join_then_split_004#1",
+   "topic_fork_010#0",
+   "new_root_004#0",
+   "join_then_split_006#0",
+   "three_way_join_001#0",
+   "compound_turn_005#0",
+   "semantic_decoy_008#0",
+   "three_way_join_003#0"
+  ]
+ },
+ "actual_lengths": {
+  "60": 60
+ },
+ "preflight": {
+  "oracle_hash_equal": true,
+  "checklist_query_closure_identical": true,
+  "l30_subsequence_of_l60": true,
+  "base_subsequence_of_l60": true,
+  "oracle_tokens": 303,
+  "full_tokens": {
+   "base": 4942,
+   "60": 8816
+  }
+ },
+ "lengths_built": [
+  60
+ ]
+}

@@ -1,0 +1,71 @@
+{
+ "target": "long_noisy_side_thread_006",
+ "family": "long_noisy_side_thread",
+ "base_history": 34,
+ "gold_closure": [
+  "t1",
+  "t2"
+ ],
+ "gold_entities": [
+  "10\u201320",
+  "14,872",
+  "3.210",
+  "312",
+  "api",
+  "bloomerang",
+  "bloomerang-to-salesforce npsp",
+  "contact and account",
+  "legacy pledge flag",
+  "march 15",
+  "march 15, 2025",
+  "npsp",
+  "salesforce",
+  "the legacy pledge flag"
+ ],
+ "query_entities": [
+  "the legacy pledge flag"
+ ],
+ "donors_rejected_by_exclusion": 7,
+ "sufficient_to_60": true,
+ "chosen": [
+  {
+   "donor": "constraint_retention_005#0",
+   "turns": 20,
+   "cosine": 0.3149
+  },
+  {
+   "donor": "two_branch_join_014#0",
+   "turns": 3,
+   "cosine": 0.2883
+  },
+  {
+   "donor": "knowledge_update_007#0",
+   "turns": 4,
+   "cosine": 0.2779
+  }
+ ],
+ "used": {
+  "60": [
+   "constraint_retention_005#0",
+   "two_branch_join_014#0",
+   "knowledge_update_007#0"
+  ]
+ },
+ "actual_lengths": {
+  "60": 61
+ },
+ "preflight": {
+  "oracle_hash_equal": true,
+  "checklist_query_closure_identical": true,
+  "l30_subsequence_of_l60": true,
+  "base_subsequence_of_l60": true,
+  "oracle_tokens": 337,
+  "full_tokens": {
+   "base": 5036,
+   "60": 8787
+  }
+ },
+ "lengths_built": [
+  60
+ ]
+}

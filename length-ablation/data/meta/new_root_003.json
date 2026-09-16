@@ -1,0 +1,72 @@
+{
+ "target": "new_root_003",
+ "family": "new_root",
+ "base_history": 8,
+ "gold_closure": [],
+ "gold_entities": [],
+ "query_entities": [
+  "sundance"
+ ],
+ "donors_rejected_by_exclusion": 0,
+ "sufficient_to_60": true,
+ "chosen": [
+  {
+   "donor": "constraint_retention_002#0",
+   "turns": 21,
+   "cosine": 0.2766
+  },
+  {
+   "donor": "join_then_split_010#1",
+   "turns": 2,
+   "cosine": 0.2387
+  },
+  {
+   "donor": "constraint_retention_001#0",
+   "turns": 22,
+   "cosine": 0.2465
+  },
+  {
+   "donor": "new_root_008#0",
+   "turns": 5,
+   "cosine": 0.2325
+  },
+  {
+   "donor": "resume_014#0",
+   "turns": 5,
+   "cosine": 0.2287
+  }
+ ],
+ "used": {
+  "30": [
+   "constraint_retention_002#0",
+   "join_then_split_010#1"
+  ],
+  "60": [
+   "constraint_retention_002#0",
+   "join_then_split_010#1",
+   "constraint_retention_001#0",
+   "new_root_008#0",
+   "resume_014#0"
+  ]
+ },
+ "actual_lengths": {
+  "30": 31,
+  "60": 63
+ },
+ "preflight": {
+  "oracle_hash_equal": true,
+  "checklist_query_closure_identical": true,
+  "l30_subsequence_of_l60": true,
+  "base_subsequence_of_l60": true,
+  "oracle_tokens": 0,
+  "full_tokens": {
+   "base": 1154,
+   "30": 3578,
+   "60": 7146
+  }
+ },
+ "lengths_built": [
+  30,
+  60
+ ]
+}

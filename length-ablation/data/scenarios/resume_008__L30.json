@@ -1,0 +1,386 @@
+{
+  "scenario_id": "resume_008__L30",
+  "family": "resume",
+  "label": "RESUME",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "What questions should we be asking about the pastoral care at each school? Our daughter has mild anxiety and we want to make sure there's proper support.",
+      "assistant_message": "It's worth asking whether each school has a dedicated school counsellor on site every day, or only part-time. You should also ask how form tutors are trained to identify signs of anxiety, and what the referral pathway looks like when a student needs more than classroom support.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Northgate said they have a full-time counsellor plus a learning mentor who works specifically with students with anxiety and low-level mental health needs.",
+      "assistant_message": "That sounds like a solid pastoral structure. Having both a counsellor and a specialist learning mentor means your daughter would have two distinct points of contact depending on whether her needs are more emotional or more academic in nature, which can make a real difference day to day.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "Riverside only has a part-time counsellor who comes in on Tuesdays and Thursdays. Does that seem like a gap?",
+      "assistant_message": "It could be, particularly on days when she's struggling and the counsellor isn't available. It would be worth asking Riverside who covers pastoral support on the other three days, and whether form tutors or a head of year have any formal mental health first aid training to bridge those gaps.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "Do you know anything about permits for having an outdoor ceremony directly on a lake dock? We're using a private property on Lake Champlain.",
+      "assistant_message": "For a private-property dock ceremony on Lake Champlain, you'll generally need to check with the Vermont or New York Department of Environmental Conservation depending on which shore you're on, since the lake straddles the state line. Even on private land, gatherings of over 50 people often trigger a special-use or assembly permit requirement, so it's worth contacting the local town clerk's office at least 60 days before your event date.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "The property is on the Vermont side, in South Hero. Is there anything specific to that town we should know about?",
+      "assistant_message": "South Hero is in Grand Isle County, and the town operates under Vermont's Act 250 land-use rules for larger gatherings on waterfront property. You'd want to contact the South Hero Town Clerk directly — their office handles event assembly notices — and also confirm with the Grand Isle County Natural Resources Board whether your dock setup requires any shoreline impact review, especially if you're adding temporary structures like an arch or chairs on the dock itself.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "I'm building a magic system for my fantasy novel where mages draw power from a finite internal reservoir called 'Aether.' I want the reservoir to have a hard numerical cap so readers can track it. Each mage starts with exactly 100 Aether points at full capacity.",
+      "assistant_message": "That's a clean, trackable foundation — 100 points as a universal ceiling gives readers an intuitive baseline. You might consider whether all mages share that same cap or whether specialization, bloodline, or training can push it higher over the course of the story. Keeping it fixed at 100 for now makes early-game balancing much simpler.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "What kinds of secondary characters should I develop alongside the main mage protagonist?",
+      "assistant_message": "A well-rounded supporting cast for a mage protagonist often includes a non-magical foil who challenges the mage's reliance on power, a mentor figure who understands the system's limits from hard experience, and perhaps a rival mage with a contrasting philosophy. You might also consider a scholar or archivist character who can naturally deliver exposition about your world's magical history without it feeling forced.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "I like the idea of a rival mage. Should the rival use the same aether system or a completely different type of magic?",
+      "assistant_message": "Having the rival use the same aether system but exploit it differently creates rich thematic contrast — they might be reckless and burn through reserves quickly while your protagonist is conservative, or vice versa. A completely different magic type works well too if you want to highlight that your world has multiple magical traditions and raise questions about which approach is superior. Either choice lets you dramatize the cost-versus-power tradeoffs you've built into your system.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "What time zone should we use for event start and end times displayed in-game?",
+      "assistant_message": "The industry standard is to display event times in UTC and then localize them on the client side based on the player's device settings. This avoids confusion during daylight saving transitions and keeps your server-side logic clean. Many studios also show a countdown timer alongside the absolute time so players aren't doing mental math.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "Should the event reset at midnight UTC or at a different hour to avoid peak traffic?",
+      "assistant_message": "Midnight UTC often coincides with peak evening hours in North America, which can spike your server load right at reset. A lot of studios shift the reset to 10:00 AM UTC, which lands during off-peak hours globally and still feels like a clean daily boundary. I'd recommend load-testing your reset logic at whatever time you choose before the event goes live.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "We noticed both schools have a parent-teacher association. Does the PTA at either school run fundraising events in autumn?",
+      "assistant_message": "Both schools do have active PTAs. Hartwell Academy's PTA holds an annual Autumn Fair in October, which last year raised £4,200 for new library resources. Greystone High's PTA organises a sponsored walk each November, with proceeds going toward extracurricular equipment. Both are well-attended and welcome new families to get involved from the start.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "Good point. Let's say the cap stays at 100 for everyone, but casting spells costs different amounts. I want a basic fireball to cost 12 Aether points and a healing spell to cost 8 points. Does that ratio feel balanced?",
+      "assistant_message": "The ratio works well — fireball at 12 and healing at 8 means offense costs 50% more than basic healing, which creates an interesting tension between combat and survival decisions. With a 100-point pool, a mage can throw roughly 8 fireballs before running dry, or about 12 healing spells, which gives you clear dramatic stakes. You could use those numbers as anchors when pricing more exotic spells later.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "For the Solar Clash summer event we discussed last month, remind me what point bands we settled on for the three reward tiers.",
+      "assistant_message": "Solar Clash uses Tier 1 at 300 points, Tier 2 at 900 points, and Tier 3 at 2,500 points. The lower ceiling reflects the shorter 10-day event window and the faster daily quest cadence we designed for the summer schedule.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "And what are players getting at each Solar Clash tier?",
+      "assistant_message": "Solar Clash Tier 1 gives the Sunburst Banner and 150 gold coins, Tier 2 awards the Ember Armor Skin plus 400 gold coins, and Tier 3 delivers the exclusive Solaris Drake Mount, 1,000 gold coins, and the Solar Clash Title. The event runs June 1st through June 10th, and all rewards expire from the shop on that last day.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "What's the point-earning breakdown for Solar Clash so I can sanity-check the free-to-play ceiling?",
+      "assistant_message": "In Solar Clash, completing a daily Sun Spire quest gives 60 points, winning a Casual Arena match awards 90 points, and cracking open a Solar Chest yields 40 points. There's a one-time weekend login bonus of 200 points on the single Saturday that falls within the 10-day window, so a free-to-play player maxing daily quests and one match win per day hits 60 × 10 + 90 × 10 + 200 = 1,700 points, safely clearing Tier 2 at 900 but short of Tier 3's 2,500 threshold.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "I'm setting up a drip irrigation system for my vegetable garden. I'm planning to run it for 20 minutes every three days and use 1/2-inch mainline tubing. Does that setup make sense?",
+      "assistant_message": "A 20-minute cycle every three days is a reasonable starting point for most vegetable gardens, though you may need to adjust based on your soil type and local climate. Half-inch mainline tubing is the standard choice and can typically support flow rates up to about 200 gallons per hour, which is more than enough for a home garden. You'll want to make sure your emitter spacing matches your plant layout, with most vegetables doing well with emitters placed every 12 inches along the drip line. Monitoring soil moisture with an inexpensive probe during the first few weeks will help you dial in the timing more precisely.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "What pressure should I be running the system at, and do I need a pressure regulator?",
+      "assistant_message": "Most drip irrigation systems are designed to operate at 25 to 30 PSI, and since household water pressure typically comes in between 60 and 80 PSI, a pressure regulator is almost always necessary. Without one, you risk blowing apart emitters and fittings, especially the smaller 1/4-inch barbed connectors. A 25 PSI inline regulator costs around $8 to $15 and installs directly at the hose bib before your filter and mainline. Pair it with a 150-mesh filter to keep sediment from clogging your emitters, and your system should run reliably for several seasons.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "Should I use pressure-compensating emitters or standard ones for a sloped garden bed?",
+      "assistant_message": "For a sloped bed, pressure-compensating emitters are strongly recommended because they deliver a consistent flow rate, typically 0.5 or 1.0 GPH, regardless of elevation changes or pressure variation along the line. Standard emitters on a slope will over-water plants at the bottom of the run and under-water those at the top, sometimes by as much as 30 to 40 percent. The pressure-compensating models do cost more, usually around $0.40 to $0.80 per emitter compared to $0.10 to $0.20 for standard ones, but the uniform output is worth it for a productive vegetable bed. If your slope is less than about 2 feet of elevation change over the run, standard emitters with careful placement can still work acceptably.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "I'm thinking about how the pier and the electrical work interact — specifically, I want to bond the steel anchor bolts in the concrete pier to the observatory's grounding system. Does the pier rebar or hardware count as a grounding electrode under the NEC?",
+      "assistant_message": "Yes, under NEC Article 250.52(A)(3), a concrete-encased electrode — sometimes called a Ufer ground — qualifies as a grounding electrode if it contains at least 20 feet of steel reinforcing bar no smaller than 1/2 inch in diameter, or at least 20 feet of bare copper wire no smaller than 4 AWG, encased in at least 2 inches of concrete. Your 10-inch Sonotube pier is only 48 inches (4 feet) deep, so the rebar alone won't qualify as a Ufer ground due to the length requirement. You could still bond the anchor bolts to your grounding system as supplemental bonding, but you'd need a separate grounding electrode — such as a ground rod driven at least 8 feet deep — to satisfy the NEC grounding electrode requirement for the structure.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "That makes sense. Should I install the ground rod before or after I pour the pier, and is there a minimum distance the rod needs to be from the pier itself?",
+      "assistant_message": "The ground rod can be installed at any point relative to the pour, but most electricians drive it before the final backfill so the trench work is already open. NEC 250.53(A)(2) requires that if you install two ground rods, they must be spaced at least 6 feet apart, but there's no NEC-specified minimum distance between a ground rod and a concrete pier. Practically, keeping the rod at least 2 to 3 feet away from the pier avoids interference with the Sonotube formwork and makes the bonding conductor run cleaner.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "I like that. Now I need a rule for how Aether recovers. I'm thinking it regenerates passively at 5 points per hour, but a mage can also meditate to recover 20 points in 10 minutes. Does that feel right mechanically?",
+      "assistant_message": "Those two recovery rates create a satisfying tactical choice: passive regeneration at 5 points per hour is slow enough to matter in a long dungeon sequence, while meditation at 20 points per 10 minutes is powerful but requires the mage to be stationary and vulnerable. Full passive recovery from zero would take 20 hours, which is essentially an overnight rest, so that lines up with a natural story rhythm. The meditation rate is 24 times faster than passive regen, which makes it feel genuinely worth the risk.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "I'm thinking of combining both approaches — using the 50-meter fixed-radius point counts and recording ambient noise with the SM4 at each station. How should I structure my data sheet to link the acoustic data to each count?",
+      "assistant_message": "A practical approach is to assign each station a unique alphanumeric ID (e.g., CHI-001 through CHI-060) that appears on both the point count data sheet and the SM4 file-naming convention, so you can join tables without ambiguity. Record the Leq in dB(A) for the 3-minute count window and log it as a covariate in your detection model, which is the approach used by Francis et al. (2011) in Ecological Applications. You should also note the SM4 gain setting used — most urban deployments use 0 dB gain to avoid clipping — and record wind speed with a handheld anemometer, since wind above Beaufort scale 3 (roughly 12–19 km/h) is a standard exclusion criterion for both point counts and acoustic recordings.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "I'm also stressing about the kids' school enrollment in Portland. My 7-year-old will need to start second grade in the fall.",
+      "assistant_message": "Portland Public Schools typically opens online enrollment for incoming students in late February through March for the following fall, so depending on your move date you may need to enroll shortly after arriving. You'll generally need proof of residency, immunization records, and a birth certificate to complete registration.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "The school we're zoned for is Glencoe Elementary in the Beaverton School District actually, not Portland Public. Do they have a different enrollment timeline?",
+      "assistant_message": "Beaverton School District typically runs its open enrollment window from early January through mid-February for the following school year, though new students moving into the district can register on a rolling basis outside that window. Glencoe Elementary specifically has a strong dual-language immersion program, so it's worth asking about waitlist status for that track when you register.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "I want to make sure my older one doesn't fall behind academically over the summer with the move disruption. Are there any good summer bridge programs?",
+      "assistant_message": "Many districts, including Beaverton, offer summer learning programs specifically for incoming students, and there are also independent options like Kumon or Khan Academy's free online curriculum for self-paced review. For a rising second-grader, focusing on reading fluency and basic addition and subtraction facts over the summer would give a solid academic foundation heading into the new school year.",
+      "gold_parents": [
+        "t24"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "I also need to figure out the world's political structure. The story is set in a kingdom called Valdenmoor, and I want three noble houses vying for the throne. Can you help me name them with distinct heraldic identities?",
+      "assistant_message": "Here are three distinct houses for Valdenmoor: House Carenthal, whose sigil is a silver wolf on a field of deep crimson, representing cunning and old blood; House Ossivane, bearing a golden tower on black, symbolizing wealth built on iron mercantile control; and House Drael, marked by twin blue serpents on white, evoking ancient sorcerous lineage and diplomatic duplicity. Each house's visual identity can reinforce their political personality — Carenthal as military aggressors, Ossivane as economic manipulators, and Drael as scheming court mages.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "I love those. Let's say House Drael has held the throne for the past 200 years through a hereditary compact signed in the year 743 of the Valdenmoor Calendar. What kind of political crisis could shatter that compact now?",
+      "assistant_message": "The most natural fracture point would be a succession crisis: if the current Drael monarch, say King Eravel III, dies without a clear heir, the compact's language about 'direct bloodline succession' becomes legally ambiguous. House Carenthal could argue that a distant cousin once removed doesn't satisfy the compact's terms, while Ossivane might fund a pretender entirely to destabilize the throne and renegotiate trade privileges. The 200-year-old document likely has archaic clauses no one has needed to interpret before, which gives you rich room for legal and political drama.",
+      "gold_parents": [
+        "t26"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "That's perfect. Let's say King Eravel III dies at the age of 67 after a 34-year reign, and his only child, Princess Seraveth, is considered illegitimate by House Carenthal because her mother was a foreign-born commoner. How would Ossivane exploit that?",
+      "assistant_message": "Ossivane would likely move fast — within days of Eravel's death, they'd present the Royal Compact's Clause 7 (the 'pure lineage' provision, if you establish one) to the High Tribunal, formally questioning Seraveth's eligibility. Simultaneously, they'd offer Carenthal a secret trade agreement: Carenthal gets military support for their claimant, and Ossivane gets monopoly rights over the Valdenmoor eastern ports for 50 years. Seraveth's best counter-move would be to secure the loyalty of the city garrison before the Tribunal rules, giving her a fait accompli on the ground.",
+      "gold_parents": [
+        "t27"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "I want Seraveth to have a hidden ace: she's secretly married a minor lord, Lord Fenwick Tal, who has a tenuous but documented claim through a female-line descent from the original Drael founders. How strong would that actually make her position?",
+      "assistant_message": "It makes her position genuinely viable but still contested — female-line descent was typically considered inferior in most medieval succession frameworks, so Carenthal's lawyers could argue it fails the compact's standards, but it's far harder to dismiss entirely than Seraveth's own commoner-mother problem. The marriage to Fenwick Tal essentially launders her claim: she rules, he provides the bloodline pedigree, and together they form a composite claim that neither house can easily invalidate without also undermining the compact's legitimacy as a whole. The key weakness is that the marriage is secret, so Ossivane will have agents trying to expose or discredit it before it can be registered with the Tribunal.",
+      "gold_parents": [
+        "t28"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t30",
+      "turn_index": 29,
+      "user_message": "What if Ossivane succeeds in exposing the marriage, but Fenwick Tal is killed before he can testify? Does Seraveth lose everything?",
+      "assistant_message": "Not necessarily — marriage records in a medieval-style kingdom would typically be recorded by a religious officiant, so if the ceremony was performed by a recognized cleric of the realm, the church record alone could stand as legal proof without Fenwick's testimony. Seraveth would need to produce that cleric and the parish register before Ossivane can have either destroyed or discredited. If she also carries documentary proof of Fenwick's descent — a genealogical charter sealed by House Drael's own archivists — that document survives his death and could be her strongest single piece of evidence at the Tribunal.",
+      "gold_parents": [
+        "t29"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t31",
+      "turn_index": 30,
+      "user_message": "If my protagonist mage starts a major battle at full Aether and casts four fireballs and three healing spells, then meditates once before the second wave hits, exactly how many Aether points does she have when the second wave begins?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t6",
+    "t12",
+    "t21"
+  ],
+  "distractor_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5",
+    "t7",
+    "t8",
+    "t9",
+    "t10",
+    "t11",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t20",
+    "t22",
+    "t23",
+    "t24",
+    "t25",
+    "t26",
+    "t27",
+    "t28",
+    "t29",
+    "t30"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer correctly identifies that four fireballs cost 4 × 12 = 48 Aether points and three healing spells cost 3 × 8 = 24 Aether points, for a total expenditure of 72 points, leaving 28 points from the 100-point cap.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer correctly adds 20 Aether points for one meditation session, arriving at a final total of 48 Aether points at the start of the second wave.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not import any figures or facts from the Valdenmoor political storyline (House Carenthal, Ossivane, Drael, the 200-year compact, King Eravel's 34-year reign, etc.) into the Aether calculation.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not use the passive regeneration rate of 5 points per hour in place of the meditation recovery of 20 points, as the question specifies the mage meditates once.",
+      "required": true
+    }
+  ],
+  "notes": "The key facts are established in t1 (100-point cap), t2 (fireball = 12, healing = 8), and t3 (meditation restores 20 points). Turns t4 through t8 cover the Valdenmoor political plot and are pure distractors — none of the noble house details, reign lengths, or legal maneuvers are relevant to the arithmetic query in t9.\n\nReference answer: Starting at full capacity, the mage has 100 Aether points. Four fireballs cost 4 × 12 = 48 points and three healing spells cost 3 × 8 = 24 points, totaling 72 points spent, leaving her with 28 points. One meditation session then restores 20 points, bringing her total to 48 Aether points when the second wave begins.",
+  "evidence_note": null,
+  "premise": "writing a fantasy novel and planning its magic system",
+  "evidence_spans": null,
+  "benchmark_version": "1.1-length-ablation",
+  "length_class": "spliced_30"
+}

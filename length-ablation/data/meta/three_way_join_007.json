@@ -1,0 +1,179 @@
+{
+ "target": "three_way_join_007",
+ "family": "three_way_join",
+ "base_history": 9,
+ "gold_closure": [
+  "t1",
+  "t2",
+  "t3",
+  "t4",
+  "t5",
+  "t6",
+  "t8",
+  "t9"
+ ],
+ "gold_entities": [
+  "1 foot",
+  "12 inches",
+  "12-inch",
+  "122 cm",
+  "14 inches",
+  "27 kg",
+  "3.5 degrees",
+  "30 cm",
+  "35.6 cm",
+  "48 inches",
+  "5 feet",
+  "60 inches",
+  "60 pounds",
+  "60-inch",
+  "64 square feet",
+  "8 feet",
+  "8\u00d78",
+  "about 14 inches",
+  "about 3 feet 10 inches",
+  "about 6 inches",
+  "approximately 14 inches",
+  "at least",
+  "at least 1 foot",
+  "at least 12 inches",
+  "at least 9 feet",
+  "at least another",
+  "below 75%",
+  "between 55 and 65",
+  "g11",
+  "gemini 2",
+  "losmandy g11",
+  "ota",
+  "roughly 20 degrees",
+  "roughly 45 pounds",
+  "roughly 46 inches",
+  "the losmandy g11"
+ ],
+ "query_entities": [
+  "8\u00d78"
+ ],
+ "donors_rejected_by_exclusion": 13,
+ "sufficient_to_60": true,
+ "chosen": [
+  {
+   "donor": "join_then_split_005#0",
+   "turns": 2,
+   "cosine": 0.4246
+  },
+  {
+   "donor": "new_root_005#0",
+   "turns": 5,
+   "cosine": 0.4108
+  },
+  {
+   "donor": "knowledge_update_001#0",
+   "turns": 2,
+   "cosine": 0.3922
+  },
+  {
+   "donor": "compound_turn_010#0",
+   "turns": 4,
+   "cosine": 0.3913
+  },
+  {
+   "donor": "ambiguous_reference_006#1",
+   "turns": 1,
+   "cosine": 0.372
+  },
+  {
+   "donor": "ambiguous_reference_005#1",
+   "turns": 2,
+   "cosine": 0.3633
+  },
+  {
+   "donor": "ambiguous_reference_005#0",
+   "turns": 3,
+   "cosine": 0.3492
+  },
+  {
+   "donor": "join_then_split_005#1",
+   "turns": 1,
+   "cosine": 0.3307
+  },
+  {
+   "donor": "ambiguous_reference_008#0",
+   "turns": 2,
+   "cosine": 0.3132
+  },
+  {
+   "donor": "constraint_retention_010#0",
+   "turns": 22,
+   "cosine": 0.3272
+  },
+  {
+   "donor": "join_then_split_010#1",
+   "turns": 2,
+   "cosine": 0.2963
+  },
+  {
+   "donor": "ambiguous_reference_008#1",
+   "turns": 1,
+   "cosine": 0.2705
+  },
+  {
+   "donor": "ambiguous_reference_006#0",
+   "turns": 2,
+   "cosine": 0.265
+  },
+  {
+   "donor": "compound_turn_012#0",
+   "turns": 2,
+   "cosine": 0.2631
+  }
+ ],
+ "used": {
+  "30": [
+   "join_then_split_005#0",
+   "new_root_005#0",
+   "knowledge_update_001#0",
+   "compound_turn_010#0",
+   "ambiguous_reference_006#1",
+   "ambiguous_reference_005#1",
+   "ambiguous_reference_005#0",
+   "join_then_split_005#1",
+   "ambiguous_reference_008#0"
+  ],
+  "60": [
+   "join_then_split_005#0",
+   "new_root_005#0",
+   "knowledge_update_001#0",
+   "compound_turn_010#0",
+   "ambiguous_reference_006#1",
+   "ambiguous_reference_005#1",
+   "ambiguous_reference_005#0",
+   "join_then_split_005#1",
+   "ambiguous_reference_008#0",
+   "constraint_retention_010#0",
+   "join_then_split_010#1",
+   "ambiguous_reference_008#1",
+   "ambiguous_reference_006#0",
+   "compound_turn_012#0"
+  ]
+ },
+ "actual_lengths": {
+  "30": 31,
+  "60": 60
+ },
+ "preflight": {
+  "oracle_hash_equal": true,
+  "checklist_query_closure_identical": true,
+  "l30_subsequence_of_l60": true,
+  "base_subsequence_of_l60": true,
+  "oracle_tokens": 993,
+  "full_tokens": {
+   "base": 1109,
+   "30": 4147,
+   "60": 7957
+  }
+ },
+ "lengths_built": [
+  30,
+  60
+ ]
+}

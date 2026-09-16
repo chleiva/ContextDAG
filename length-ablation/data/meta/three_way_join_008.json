@@ -1,0 +1,135 @@
+{
+ "target": "three_way_join_008",
+ "family": "three_way_join",
+ "base_history": 9,
+ "gold_closure": [
+  "t1",
+  "t2",
+  "t4",
+  "t5",
+  "t7",
+  "t8",
+  "t9"
+ ],
+ "gold_entities": [
+  "1,400",
+  "14",
+  "16",
+  "18",
+  "34",
+  "408",
+  "42",
+  "850",
+  "day one",
+  "dentalsync",
+  "eaglesoft",
+  "hipaa",
+  "pro's professional",
+  "professional",
+  "sharing",
+  "the full year"
+ ],
+ "query_entities": [
+  "dentalsync",
+  "first-year"
+ ],
+ "donors_rejected_by_exclusion": 25,
+ "sufficient_to_60": true,
+ "chosen": [
+  {
+   "donor": "compound_turn_001#0",
+   "turns": 2,
+   "cosine": 0.4666
+  },
+  {
+   "donor": "join_then_split_001#0",
+   "turns": 2,
+   "cosine": 0.4435
+  },
+  {
+   "donor": "knowledge_update_008#1",
+   "turns": 17,
+   "cosine": 0.3574
+  },
+  {
+   "donor": "join_then_split_006#0",
+   "turns": 2,
+   "cosine": 0.3303
+  },
+  {
+   "donor": "topic_fork_004#0",
+   "turns": 3,
+   "cosine": 0.2985
+  },
+  {
+   "donor": "topic_fork_003#0",
+   "turns": 3,
+   "cosine": 0.2888
+  },
+  {
+   "donor": "compound_turn_009#0",
+   "turns": 3,
+   "cosine": 0.28
+  },
+  {
+   "donor": "knowledge_update_010#1",
+   "turns": 14,
+   "cosine": 0.2668
+  },
+  {
+   "donor": "join_then_split_001#1",
+   "turns": 1,
+   "cosine": 0.2498
+  },
+  {
+   "donor": "ambiguous_reference_004#0",
+   "turns": 2,
+   "cosine": 0.2447
+  },
+  {
+   "donor": "two_branch_join_006#0",
+   "turns": 2,
+   "cosine": 0.2398
+  }
+ ],
+ "used": {
+  "30": [
+   "compound_turn_001#0",
+   "join_then_split_001#0",
+   "knowledge_update_008#1"
+  ],
+  "60": [
+   "compound_turn_001#0",
+   "join_then_split_001#0",
+   "knowledge_update_008#1",
+   "join_then_split_006#0",
+   "topic_fork_004#0",
+   "topic_fork_003#0",
+   "compound_turn_009#0",
+   "knowledge_update_010#1",
+   "join_then_split_001#1",
+   "ambiguous_reference_004#0",
+   "two_branch_join_006#0"
+  ]
+ },
+ "actual_lengths": {
+  "30": 30,
+  "60": 60
+ },
+ "preflight": {
+  "oracle_hash_equal": true,
+  "checklist_query_closure_identical": true,
+  "l30_subsequence_of_l60": true,
+  "base_subsequence_of_l60": true,
+  "oracle_tokens": 644,
+  "full_tokens": {
+   "base": 824,
+   "30": 3501,
+   "60": 7726
+  }
+ },
+ "lengths_built": [
+  30,
+  60
+ ]
+}

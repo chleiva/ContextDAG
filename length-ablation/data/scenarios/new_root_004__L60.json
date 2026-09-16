@@ -1,0 +1,741 @@
+{
+  "scenario_id": "new_root_004__L60",
+  "family": "new_root",
+  "label": "NEW_ROOT",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're also trying to figure out the daily quest system for the event. How many daily quests should we offer players?",
+      "assistant_message": "Most successful live-ops events offer between 3 and 5 daily quests to keep engagement high without causing burnout. Three quests is the minimum to make the system feel alive, while five gives players enough variety that they can skip one they dislike and still feel productive. I'd recommend starting with 4 daily quests and adjusting based on completion rate data after the first week.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Each quest should reward Event Tokens. How many tokens per quest feels right if the event runs for 28 days?",
+      "assistant_message": "If the event runs 28 days and you want a dedicated player to feel rewarded but not overwhelmed, somewhere around 50 to 75 Event Tokens per quest works well. At 4 quests per day and 50 tokens each, a player completing everything earns 5,600 tokens over the full event. That gives you a clear ceiling to design your token shop rewards around.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "The token shop will have a legendary skin for 3,500 tokens. Does 5,600 tokens as the ceiling give enough headroom?",
+      "assistant_message": "Yes, 5,600 tokens as the ceiling against a 3,500-token legendary skin is a healthy ratio — players who complete roughly 63% of daily quests can unlock the marquee item. That threshold is achievable for casual players while still feeling like an accomplishment. You'd also have around 2,100 tokens of headroom for players to spend on secondary shop items.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "We want to add a weekly challenge on top of the dailies. Should it award bonus tokens or a unique cosmetic?",
+      "assistant_message": "A unique cosmetic for weekly challenges is generally more motivating than bonus tokens because it creates a distinct collectible that players can't get any other way. If you award tokens instead, players will just mentally fold it into their shop math, which dilutes the sense of achievement. I'd suggest a unique avatar frame or weapon charm that's visually distinct and labeled 'Weekly Challenge Exclusive' in the UI.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "How many weekly challenges should there be across the 28-day event?",
+      "assistant_message": "A 28-day event naturally divides into 4 full weeks, so 4 weekly challenges is the clean answer. Each challenge can escalate in difficulty — week 1 being introductory, week 4 being the hardest — to create a narrative arc of progression. That also means 4 unique cosmetics to design, which is a manageable scope for your art team.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "For the week 4 challenge, we're thinking players need to win 20 ranked matches. Is that too steep?",
+      "assistant_message": "20 ranked wins in a week is on the steeper side — it assumes a player can dedicate significant daily time and maintain a positive win rate. If your average match length is around 15 minutes, that's a minimum of 5 hours of winning play, likely more accounting for losses. You might consider 15 ranked wins as a threshold that still feels prestigious but doesn't alienate players with busier schedules.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "Good point. We'll go with 15 ranked wins for week 4. What should the week 1 challenge be to ease players in?",
+      "assistant_message": "Week 1 should be something almost every player can complete regardless of skill level — something like 'Play 5 matches of any mode' or 'Log in on 3 different days this week.' Completion of the week 1 challenge should feel nearly guaranteed so players get hooked on the reward loop early. High week 1 completion rates are one of the strongest predictors of players staying engaged through the full event.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "We're also planning a referral bonus during the event. New players referred by an existing player get a starter pack. What should be in that starter pack?",
+      "assistant_message": "A strong referral starter pack should include enough to get the new player meaningfully into the event — something like 500 Event Tokens, one common cosmetic, and a 3-day XP booster. The 500 tokens gives them an immediate head start in the token shop without making the referred player feel like the system is exploitable. Keep the cosmetic common so it doesn't devalue your rare rewards but still feels like a real gift.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "Should the referring player get a reward too, and if so what?",
+      "assistant_message": "Yes, the referring player absolutely needs a reward or the referral system won't drive organic sharing. A tiered reward works well — for example, 200 Event Tokens per successful referral, with a bonus unique cosmetic unlocked at 5 referrals. Capping the bonus cosmetic at 5 referrals keeps it aspirational without letting a handful of super-connectors flood your new player pool with low-quality sign-ups.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "We need a name for the event. We're going with a summer solstice theme. Any suggestions?",
+      "assistant_message": "A few strong options for a summer solstice theme: 'Festival of the Longest Day,' 'Solar Apex,' or 'The Sunfire Convergence.' 'Solar Apex' is punchy and works well in UI labels and push notifications where space is tight. 'The Sunfire Convergence' has more lore flavor if your game has a fantasy or sci-fi setting that can support that kind of language.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "We'll go with Solar Apex. How early should we start marketing it before the event launches?",
+      "assistant_message": "For a 28-day live-ops event like Solar Apex, a two-week pre-launch marketing window is the sweet spot. You'd want a teaser announcement at the two-week mark, a full reveal with trailer at one week out, and a 'going live tomorrow' push notification the day before. That cadence builds anticipation without giving players so much lead time that excitement fades before the event starts.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "For the push notification copy on launch day, should we mention the battle pass price? Like '950 Gems unlocks the full Solar Apex experience'?",
+      "assistant_message": "The copy angle is solid — leading with the price in a push notification can work if the number feels accessible. I'd keep the focus on the value and excitement rather than the cost in that limited character space, though. Something like 'Solar Apex is LIVE — unlock the full experience and claim your first reward now' tends to drive more taps than price-forward messaging.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "That makes sense. Should the push notification go out at the same 10:00 AM UTC time as the event reset?",
+      "assistant_message": "Yes, aligning the launch push notification with the 10:00 AM UTC event reset is the right call — players who tap the notification are immediately dropped into a live, active event rather than a holding screen. Schedule the notification to fire at 10:05 AM UTC so the servers have a five-minute buffer to stabilize before the traffic spike from the notification hits. You can also queue a second reminder notification for 6 hours later to catch players in different time zones.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "So if we hire a bartending service that already holds the Category 3 license, we're covered for the whole event?",
+      "assistant_message": "Yes, as long as the bartending company's Category 3 Nevada Catering License is current and lists your event date within its coverage period, you are covered and no additional license is required from you as the host. You should ask the company to provide a copy of their license certificate at least 30 days before the event, and confirm that the license explicitly covers Washoe County, since some Category 3 licenses are issued with county-specific restrictions. Keep a copy of that certificate on-site during the event in case a Nevada Department of Taxation compliance officer requests it.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "What happens if the bartending company's license lapses between now and June 14th?",
+      "assistant_message": "If the company's Category 3 license lapses before or on your event date, serving alcohol through them would be a violation of NRS 369.180, which carries a misdemeanor charge and a fine of up to $1,000 per violation for the unlicensed party. To protect yourselves, include a clause in your vendor contract requiring the bartending company to maintain valid licensure through June 15th and to provide proof of renewal within 10 business days of any renewal date that falls before your event. You could also name a backup licensed bartending service in the contract as a contingency if the primary vendor fails to maintain compliance.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "Our localization team asked whether the in-game event banners need to be translated into Thai for the Southeast Asia server launch. What's the typical turnaround for banner localization?",
+      "assistant_message": "For a live-ops event banner—typically a handful of short strings plus a key visual tagline—professional game localization studios generally quote a two-to-three business day turnaround for a single language like Thai, assuming the source copy is locked. If your Southeast Asia launch is on a tight schedule, submitting final copy at least five business days before the banner goes live gives you a comfortable buffer for revision rounds. Make sure your localization kit includes font licensing for Thai script, since many default game UI fonts don't cover the full Thai Unicode block.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "For our restaurant reservation platform Tableaux, we're seeing a 71% drop-off rate at the account creation screen, specifically on the step where users enter their phone number for SMS verification.",
+      "assistant_message": "A 71% abandonment at SMS verification is a well-documented friction point in reservation platforms. The main culprits are users not wanting to share a phone number this early and SMS delivery delays that cause timeout errors. Tableaux could consider offering email-based verification as a fallback option, and A/B tests in the hospitality SaaS space have shown that adding a 'Why we need this' tooltip at that step can reduce drop-off to roughly 29–34%.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "For Tableaux we also see that users who do complete SMS verification still abandon at 52% before finishing profile setup — they drop off at the cuisine preference selection on step 3 of 5.",
+      "assistant_message": "A 52% abandonment at cuisine preference selection on step 3 of 5 suggests that users perceive it as mandatory gatekeeping rather than personalization. Making that screen entirely skippable with a 'Set up later' option is the most reliable quick fix — Tableaux's competitors in the OpenTable and Resy space have reported a 40% reduction in profile-setup abandonment after making preference screens optional. You could also reduce the number of cuisine categories displayed from however many you currently show down to a curated list of 8–10 to lower decision fatigue.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "What day-30 retention should Tableaux realistically target after fixing the SMS and profile-setup issues?",
+      "assistant_message": "Restaurant reservation platforms operate on fundamentally different engagement rhythms than daily-use apps, so day-30 retention benchmarks are lower — a realistic target for Tableaux after fixing onboarding friction would be 14–19%. The reference point here is Resy's 2021 mobile relaunch, which improved day-30 retention from 9% to 16% after simplifying account creation to a single email-plus-password step and deferring all preference collection. I'd recommend Tableaux aim for 16% as a primary target, since that aligns with the upper-mid range of the hospitality booking app category.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "We're also running an A/B test for Tableaux's onboarding in their v3.1.0 release. What sample size and test duration make sense there?",
+      "assistant_message": "For Tableaux, to detect a meaningful improvement from the 71% SMS drop-off rate down to a target of roughly 32%, you'd need approximately 900 users per variant at 80% power and a 5% significance level — 1,800 total. Reservation platforms tend to have lower weekly new-user volumes than fitness apps, so if Tableaux is acquiring around 400 new users per week, plan for a 5-week test duration to accumulate enough completions. Unlike daily-use apps, you'll also want to extend your observation window to day-60 rather than day-30 to capture meaningful repeat-booking behavior.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "We also need to decide on signage for the garden entrance. We're looking at a cedar post-and-panel sign, roughly 4 feet by 6 feet, and the fabricator quoted us $1,200 installed.",
+      "assistant_message": "A 4-by-6-foot cedar post-and-panel sign at $1,200 installed is a fairly standard price point for that size and material in most municipal contexts. You'll want to confirm whether the sign design needs to include the City of Hartwell logo, since many green-spaces grants require co-branding on any permanent installations funded through the program. Getting that specification in writing from the fabricator now will save revisions later.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "The fabricator is Greenline Signs & Displays, and they've confirmed in writing that the $1,200 quote is valid through March 31, 2025.",
+      "assistant_message": "Having a written quote from Greenline Signs & Displays valid through March 31, 2025 is exactly the kind of vendor documentation grant reviewers want to see attached as an exhibit. If your submission deadline falls before that date, you can include the quote directly; if it's after, you'd need a refreshed quote. File that letter with your other supporting documents so it's easy to attach when you compile the final application package.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "Does the Category 1 exemption cover situations where I might incidentally record audio of people in the park while doing dawn chorus recordings?",
+      "assistant_message": "Incidental audio recording of people in a public park is generally still covered under Category 1 if the recordings are not analyzed for human content and subjects cannot be identified, but many IRB offices will push this toward a Category 2 or Category 3 determination if the audio could capture private conversations. The key regulatory language in 45 CFR 46.104(d)(2) requires that any disclosure of responses outside the research context would not reasonably place subjects at risk of harm, and identifiable voice recordings could theoretically fail that test. To stay cleanly within Category 1, you could document in your exemption request that audio files will be processed only through automated bird-detection software such as BirdNET and immediately overwritten, with no human-audible playback. That procedural safeguard is usually sufficient to satisfy an IRB reviewer without escalating to a full review.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "My institution uses the Kuali Research system for IRB submissions. Is there a standard template for the exemption determination request I should look for in that system?",
+      "assistant_message": "In Kuali Research, exemption determination requests are typically initiated through the 'New Study' workflow, where you select 'Exempt' as the review type on the initial submission screen rather than 'Expedited' or 'Full Board.' Most institutions that use Kuali have pre-loaded a smart form called the Exempt Research Determination Form, which walks you through the 45 CFR 46.104(d) categories with branching logic questions so you self-identify the applicable exemption. You should check your institution's research compliance office webpage for any locally customized version, since Kuali allows significant template modification at the institutional level. If you cannot locate it, the research compliance office can usually point you to the correct form within one business day.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "Does the municipal grant require us to have liability insurance in place before we submit, or can we get it after approval?",
+      "assistant_message": "Most municipal community garden grants require proof of liability insurance at the time of application, not just after approval, so you'll want to check the specific program guidelines carefully. Typically a certificate of insurance naming the city as an additional insured is required, and coverage of at least $1 million per occurrence is a common threshold. I'd recommend calling the grants office directly to confirm their exact requirement before you finalize your submission packet.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "Our plot coordinator, Diane Osei, is also asking whether we need to get the city's parks department to co-sign the grant application since the garden sits on city-leased land.",
+      "assistant_message": "That's a critical procedural question — many municipal grant programs do require a co-signature or formal letter of support from the parks department when the project site is on city-leased or city-owned land. You should check the specific language in the Maplewood grant guidelines under the eligibility or site control section. Reaching out to your parks department liaison as early as possible is wise, since securing institutional signatures can take several weeks.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "What should I actually be eating the night before a long run? I keep getting conflicting advice about carb loading.",
+      "assistant_message": "True carb loading — the kind used by elite athletes — involves a multi-day protocol of depleting glycogen and then super-compensating with very high carbohydrate intake, typically 8 to 12 grams of carbohydrate per kilogram of body weight per day for two to three days before a race. For a regular training long run, though, a simpler approach works fine: eat a moderate, familiar dinner the night before that's roughly 60 to 65 percent carbohydrates, something like pasta, rice, or potatoes with a lean protein source.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "What about the morning of the long run — how far in advance should I eat and what should I eat?",
+      "assistant_message": "Aim to eat your pre-run meal about two to three hours before you start, so your stomach has time to empty and you avoid cramping. A good target is around 1 to 4 grams of carbohydrate per kilogram of body weight, something easily digestible like oatmeal with a banana, white toast with peanut butter, or a bagel with honey. Keep fat and fiber low that morning because both slow gastric emptying and can cause GI distress mid-run.",
+      "gold_parents": [
+        "t27"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "Should I be taking any gels or fuel during the long run itself?",
+      "assistant_message": "General guidance is to start taking on fuel for runs lasting longer than 75 to 90 minutes. A common protocol is to take 30 to 60 grams of carbohydrate per hour during the run, usually via gels, chews, or sports drinks. You should practice with whatever fuel you plan to use on race day during your training long runs — never introduce a new product on race day — and aim to take your first gel around the 45-minute mark rather than waiting until you feel depleted.",
+      "gold_parents": [
+        "t28"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t30",
+      "turn_index": 29,
+      "user_message": "How important is hydration during those long runs? I tend to just drink when I'm thirsty.",
+      "assistant_message": "Drinking to thirst is actually endorsed by current sports science consensus, including guidelines from the International Marathon Medical Directors Association, as preferable to scheduled drinking on a fixed interval — over-drinking can cause hyponatremia, which is dangerously low blood sodium. That said, for runs over 90 minutes in warm weather, you should also consider electrolyte replacement, not just plain water, because sweat losses of sodium can average 460 to 1,840 milligrams per liter of sweat depending on the individual. A simple test is to weigh yourself before and after a long run: each pound of body weight lost equals roughly 16 ounces of fluid deficit.",
+      "gold_parents": [
+        "t29"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t31",
+      "turn_index": 30,
+      "user_message": "Is there a good way to tell if I'm properly hydrated going into a run, without testing my blood or anything?",
+      "assistant_message": "The easiest field test is urine color: pale straw yellow, roughly matching the color of lemonade, indicates good hydration, while dark amber signals you need more fluid. Urine that is completely clear can actually indicate over-hydration. Many coaches recommend checking urine color first thing in the morning on long-run days and, if it's dark, drinking 16 to 24 ounces of water or an electrolyte drink in the hour before you head out.",
+      "gold_parents": [
+        "t30"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t32",
+      "turn_index": 31,
+      "user_message": "We're building out our live-ops event calendar for the next quarter and want to start with a big seasonal event in October. What are some structural best practices for a month-long Halloween event in a mobile RPG?",
+      "assistant_message": "A month-long Halloween event typically works best when divided into two or three distinct phases so players have fresh content to return to rather than burning through everything on day one. A common structure is a two-week story chapter followed by a one-week challenge sprint and a final three-day boss rush, giving you natural re-engagement hooks around October 15 and October 22. You should also plan a limited currency, like a 'Soul Coin,' that is only earnable during the event so the economy stays contained and doesn't bleed into your standard progression. Tying the final boss rush to a community milestone—where collective damage unlocks a shared cosmetic reward—adds a social layer that boosts daily active users in the closing days.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t33",
+      "turn_index": 32,
+      "user_message": "We like the Soul Coin idea. How should we set the earn rate so players feel rewarded without making the premium shop feel pointless?",
+      "assistant_message": "A well-tested ratio is to let free-play earn roughly 60–70% of the currency needed to claim the event's marquee reward, so a player who logs in daily for all 30 days can reach it without spending. If your marquee item costs 1,200 Soul Coins, a daily free cap of around 28 coins puts a dedicated free player at 840 coins, leaving a natural 360-coin gap that the premium shop can fill at roughly $4.99 for a bundle of 400 coins. This 'almost there' gap is sometimes called the 'completion nudge' in monetization design and has shown conversion lifts of 12–18% in published post-mortems from studios like Jam City. Make sure your lowest-tier paid bundle covers the gap exactly so the purchase decision feels satisfying rather than arbitrary.",
+      "gold_parents": [
+        "t32"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t34",
+      "turn_index": 33,
+      "user_message": "That conversion range is really helpful. What about the challenge sprint phase—what kinds of daily missions keep engagement without causing burnout?",
+      "assistant_message": "Daily missions during a challenge sprint should follow a three-tier structure: one trivially easy task completable in under two minutes, one moderate task taking roughly 15 minutes, and one stretch goal that rewards players who engage deeply for 30–45 minutes. Research published in the 2022 GDC session 'Designing for Habit, Not Addiction' by Kongregate's live-ops team found that three-tier daily systems produced 23% higher day-14 retention compared to single flat-mission designs. You should also rotate mission categories—combat, crafting, social—on a fixed weekly cadence so no single playstyle feels excluded for more than two consecutive days. Avoid time-gating the stretch goal behind a paywall; that specific pattern was cited in a 2023 Apple App Store guideline update as a friction point that increases refund requests.",
+      "gold_parents": [
+        "t33"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t35",
+      "turn_index": 34,
+      "user_message": "Got it. How should we handle the community milestone mechanic for the final boss rush so it actually feels meaningful and not like a hollow checkbox?",
+      "assistant_message": "The key is making the milestone tracker visible and granular—show a global damage counter that updates every 15 minutes rather than once a day, so individual contributions feel perceptible. Supercell's Clash of Clans used a similar 'Clan Games' point aggregator in its December 2017 update, and they reported in a 2018 developer blog post that near-real-time counters increased average session length by 11% compared to daily-snapshot trackers. Set the community threshold at roughly 80% of what your active player base would naturally generate in three days, so success feels earned but not trivially guaranteed. If the threshold is missed, still grant a consolation cosmetic at 60% completion so late joiners don't feel their participation was wasted.",
+      "gold_parents": [
+        "t34"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t36",
+      "turn_index": 35,
+      "user_message": "We're also thinking about a Thanksgiving event in November right after Halloween wraps. How long of a gap do we need between events to avoid player fatigue?",
+      "assistant_message": "Industry convention, backed by data from Sensor Tower's 2022 mobile gaming report, suggests a minimum five-to-seven day 'breathing gap' between major live-ops events to allow players to clear backlogs and prevent the 'always-on' fatigue that spikes uninstall rates. If your Halloween event ends October 31, launching Thanksgiving content on November 7 at the earliest gives you the minimum buffer, though November 10 is a safer target that also aligns with post-weekend engagement peaks typically seen on Mondays and Tuesdays. Use the gap period to run a lightweight 'catch-up week' where players can spend any leftover Soul Coins on a rotating discount shop, which also serves as a soft currency sink. Zynga's FarmVille 3 team publicly noted in a 2021 GDC talk that inter-event discount windows reduced Soul Coin-equivalent hoarding by 34% ahead of the next event launch.",
+      "gold_parents": [
+        "t35"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t37",
+      "turn_index": 36,
+      "user_message": "The catch-up week discount shop is a great idea. What discount depth should we use to make it feel valuable without devaluing the event items permanently?",
+      "assistant_message": "A 30–40% discount on non-marquee event cosmetics is the standard range; it feels generous to players while keeping marquee items at full perceived value since those should not enter the discount rotation at all. Kabam's Marvel Contest of Champions used a 35% discount window in its 'Glory Store' rotations starting in 2019, and community sentiment tracked by third-party site ContestChampions.io showed approval ratings of 78% for that discount tier versus 52% for a 20% tier tested in 2018. Time-limit the window to exactly seven days and display a countdown timer prominently, as urgency is the mechanism that prevents players from waiting for a deeper future discount. If you later run a year-anniversary sale, keep Halloween catch-up items out of that sale entirely to preserve the seasonal scarcity signal.",
+      "gold_parents": [
+        "t36"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t38",
+      "turn_index": 37,
+      "user_message": "We also need to figure out the team's travel situation. We have 14 members and two mentors going to the competition, and the school van only seats 12.",
+      "assistant_message": "With 16 people total and only 12 seats in the van, you'll need to arrange additional transportation for at least 4 people. Options include a second school vehicle, parent carpools, or renting a passenger van. Make sure you get the necessary permission slips and insurance documentation sorted well in advance.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t39",
+      "turn_index": 38,
+      "user_message": "For the travel logistics, do we need the school's insurance certificate to reserve a rental van?",
+      "assistant_message": "Yes, most rental companies require a certificate of insurance when a school organization is renting a vehicle for an official trip. You'll typically need to contact your school's business office or district risk management department to obtain that certificate. Give them at least two weeks' notice since processing can take time, and confirm whether the rental company needs to be listed as an additional insured on the policy.",
+      "gold_parents": [
+        "t38"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t40",
+      "turn_index": 39,
+      "user_message": "We're also reworking the paywall. It currently appears after step 5 and offers a 7-day free trial at $9.99/month after that.",
+      "assistant_message": "A paywall at step 5 with a 7-day trial is a fairly standard placement, though the timing relative to perceived value matters a lot. At $9.99/month you're in the mid-tier range for mobile subscriptions, which means the trial window needs to be long enough for users to hit at least two or three 'aha moments' before they're asked to commit. Seven days can work, but only if your core value loop is short enough to demonstrate within the first couple of sessions.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t41",
+      "turn_index": 40,
+      "user_message": "We tested a 14-day trial and conversion actually dropped from 18% to 12%. So we're sticking with 7 days and $9.99.",
+      "assistant_message": "That's a counterintuitive but well-documented result — longer trials often reduce urgency and lead to users forgetting to cancel rather than actively choosing to subscribe. Your 18% conversion on a 7-day trial at $9.99/month is actually a solid baseline; many apps in the productivity and lifestyle categories benchmark around 10–15%, so you're above average there. Keeping the 7-day trial is the right call given your own data.",
+      "gold_parents": [
+        "t40"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t42",
+      "turn_index": 41,
+      "user_message": "Coach wants to know what size van we need to rent to transport everything to the competition venue.",
+      "assistant_message": "For a full robotics team transport including the robot, toolboxes, spare parts bins, and team gear, a 15-passenger van typically isn't enough cargo space on its own. Most teams in similar situations rent a 10-foot cargo truck or pair a standard passenger van with a small trailer. You'll want to confirm the venue's loading dock hours before you finalize the rental.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t43",
+      "turn_index": 42,
+      "user_message": "We also need to figure out the hotel situation — how many rooms should we book for a team of 14 students and 3 mentors?",
+      "assistant_message": "For 14 students and 3 mentors, you're looking at 17 people total. Assuming two students per room and mentors in single rooms, you'd need 7 student rooms and 3 mentor rooms, so 10 rooms minimum. Booking a block rate with the hotel as early as possible usually saves the team significant money.",
+      "gold_parents": [
+        "t42"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t44",
+      "turn_index": 43,
+      "user_message": "For the drive team, do we need matching shirts or full uniforms for the competition?",
+      "assistant_message": "Most regional competitions require drive team members to wear matching shirts with the team number clearly visible, but full uniforms with logos are optional unless your team has a sponsor agreement requiring them. Check the specific event's drive team dress code in the event information packet, since some venues have additional safety requirements like closed-toe shoes. Ordering shirts at least two weeks before the event is usually necessary to guarantee delivery in time.",
+      "gold_parents": [
+        "t43"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t45",
+      "turn_index": 44,
+      "user_message": "We also need to sort out the post-race refreshments. A local bakery called Sugarmill has offered to donate 400 assorted muffins and cookies.",
+      "assistant_message": "A donation from Sugarmill is a generous offer and 400 items should cover your runners plus volunteers with some buffer. It's worth confirming what assortment they plan — a mix of muffins and cookies works well for post-race recovery since runners appreciate both savory and sweet options. Make sure to arrange a delivery or pickup time that lands close to the finish window so everything stays fresh.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t46",
+      "turn_index": 45,
+      "user_message": "They'll deliver by 10:00 AM and the assortment will be 250 muffins and 150 cookies. We'll set up the refreshment table near the park's picnic shelter, which is about 30 meters from the finish line.",
+      "assistant_message": "A 10:00 AM delivery from Sugarmill works well assuming your lead runners finish around 45 to 50 minutes after the 8:00 AM start, giving you a comfortable buffer before the refreshment table needs to be fully stocked. The picnic shelter location 30 meters from the finish line is practical — close enough for finishers to walk straight over, but far enough not to crowd the finish chute. Keeping the 250 muffins and 150 cookies separated by type will also speed up the line.",
+      "gold_parents": [
+        "t45"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t47",
+      "turn_index": 46,
+      "user_message": "What time zone should we use for event start and end times displayed in-game?",
+      "assistant_message": "The industry standard is to display event times in UTC and then localize them on the client side based on the player's device settings. This avoids confusion during daylight saving transitions and keeps your server-side logic clean. Many studios also show a countdown timer alongside the absolute time so players aren't doing mental math.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t48",
+      "turn_index": 47,
+      "user_message": "Should the event reset at midnight UTC or at a different hour to avoid peak traffic?",
+      "assistant_message": "Midnight UTC often coincides with peak evening hours in North America, which can spike your server load right at reset. A lot of studios shift the reset to 10:00 AM UTC, which lands during off-peak hours globally and still feels like a clean daily boundary. I'd recommend load-testing your reset logic at whatever time you choose before the event goes live.",
+      "gold_parents": [
+        "t47"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t49",
+      "turn_index": 48,
+      "user_message": "I'm trying to figure out what to eat the night before a long run. I keep hearing about carb-loading — is that actually useful, or is it overhyped?",
+      "assistant_message": "Carb-loading is a legitimate strategy, but its benefits are really only significant for events lasting longer than 90 minutes, according to research published in the Journal of Sports Sciences. The classic protocol involves spending three days eating roughly 10 to 12 grams of carbohydrates per kilogram of body weight per day while reducing training intensity. For a pre-run dinner the night before, most sports dietitians simply recommend a moderate, familiar meal high in complex carbohydrates — something like pasta or rice — rather than eating to excess, which can cause GI distress.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t50",
+      "turn_index": 49,
+      "user_message": "What about during the run itself? When should I start taking in fuel, and what kind?",
+      "assistant_message": "The general guideline is to begin fueling around the 45-minute mark and then consume 30 to 60 grams of carbohydrates per hour after that, according to recommendations from the American College of Sports Medicine. Energy gels are the most common choice because they're portable and easy to digest — brands like GU Energy and Maurten are popular, with Maurten's Gel 100 providing exactly 25 grams of carbs per packet. You should also practice fueling on your long training runs rather than trying something new on race day.",
+      "gold_parents": [
+        "t49"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t51",
+      "turn_index": 50,
+      "user_message": "Do I need to take anything with water, or can I wash gels down with a sports drink?",
+      "assistant_message": "You should always take gels with water, not a sports drink, because combining a gel with an electrolyte drink like Gatorade means you're consuming two concentrated carbohydrate sources simultaneously, which dramatically increases the risk of GI cramping and nausea. Water allows the gel to dilute properly and absorb efficiently. Most race courses post signs indicating which aid stations offer water versus sports drink, so it's worth memorizing the course map beforehand.",
+      "gold_parents": [
+        "t50"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t52",
+      "turn_index": 51,
+      "user_message": "For the Solar Clash summer event we discussed last month, remind me what point bands we settled on for the three reward tiers.",
+      "assistant_message": "Solar Clash uses Tier 1 at 300 points, Tier 2 at 900 points, and Tier 3 at 2,500 points. The lower ceiling reflects the shorter 10-day event window and the faster daily quest cadence we designed for the summer schedule.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t53",
+      "turn_index": 52,
+      "user_message": "And what are players getting at each Solar Clash tier?",
+      "assistant_message": "Solar Clash Tier 1 gives the Sunburst Banner and 150 gold coins, Tier 2 awards the Ember Armor Skin plus 400 gold coins, and Tier 3 delivers the exclusive Solaris Drake Mount, 1,000 gold coins, and the Solar Clash Title. The event runs June 1st through June 10th, and all rewards expire from the shop on that last day.",
+      "gold_parents": [
+        "t52"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t54",
+      "turn_index": 53,
+      "user_message": "What's the point-earning breakdown for Solar Clash so I can sanity-check the free-to-play ceiling?",
+      "assistant_message": "In Solar Clash, completing a daily Sun Spire quest gives 60 points, winning a Casual Arena match awards 90 points, and cracking open a Solar Chest yields 40 points. There's a one-time weekend login bonus of 200 points on the single Saturday that falls within the 10-day window, so a free-to-play player maxing daily quests and one match win per day hits 60 × 10 + 90 × 10 + 200 = 1,700 points, safely clearing Tier 2 at 900 but short of Tier 3's 2,500 threshold.",
+      "gold_parents": [
+        "t53"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t55",
+      "turn_index": 54,
+      "user_message": "What kind of permits do I need to handle and band birds in Illinois if I decide to add mist-netting to the study?",
+      "assistant_message": "To band birds in Illinois you need two separate federal permits: a Federal Bird Banding Permit issued by the USGS Bird Banding Laboratory (BBL), and because House Sparrows are an introduced species they are not protected under the Migratory Bird Treaty Act, so you technically don't need an MBTA permit specifically for them — but you will still need the BBL permit if you plan to use any standardized aluminum bands from the federal supply. At the state level, Illinois requires a Scientific Collecting Permit issued by the Illinois Department of Natural Resources (IDNR), and the application processing time is typically 60 to 90 days, so you should apply well in advance of your field season.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t56",
+      "turn_index": 55,
+      "user_message": "What about institutional requirements? My university has an IACUC, and I wasn't sure if mist-netting songbirds falls under their oversight.",
+      "assistant_message": "Yes, mist-netting wild birds absolutely falls under IACUC oversight at most U.S. research institutions, because the animals are being captured, handled, and potentially marked, which meets the threshold for an animal use protocol under the Animal Welfare Act and PHS Policy. You'll need to submit an Animal Use Protocol (AUP) describing your capture methods, expected sample sizes, handling duration, and any potential harms, and most IACUCs require that at least one listed personnel member hold a current BBL banding permit before they will approve the protocol. Review cycles at many universities run on a 4-to-6-week schedule, so factor that into your timeline alongside the IDNR permit.",
+      "gold_parents": [
+        "t55"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t57",
+      "turn_index": 56,
+      "user_message": "How long can you legally hold a bird during a banding session before it has to be released?",
+      "assistant_message": "The USGS BBL guidelines recommend keeping any wild bird in a holding bag for no longer than 30 minutes from the time of extraction from the net, and total processing time including measurements, banding, and photography should ideally stay under 15 minutes per bird. Many IACUC protocols set an even stricter internal limit of 10 minutes of active handling, particularly for small passerines that are prone to capture myopathy and stress-related mortality. If a bird shows signs of distress — open-mouth breathing, unresponsiveness, or extreme lethargy — the BBL guidelines specify immediate release regardless of whether processing is complete.",
+      "gold_parents": [
+        "t56"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t58",
+      "turn_index": 57,
+      "user_message": "What mesh size should I use for the mist nets to target House Sparrows specifically?",
+      "assistant_message": "For House Sparrows, which have a body mass typically ranging from 24 to 39 grams, the recommended mist net mesh size is 30 mm (bar mesh), which is the most common size used for small passerines in North America. Nets with a 36 mm mesh are also acceptable but have a slightly higher escape rate for very small sparrows. Standard mist nets used in North American banding operations are 12 meters long and 2.5 meters tall with four shelves, and are manufactured to those dimensions by suppliers like Avinet and Ecotone.",
+      "gold_parents": [
+        "t57"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t59",
+      "turn_index": 58,
+      "user_message": "Are there specific times of day I should be setting nets to maximize capture rates for House Sparrows?",
+      "assistant_message": "House Sparrows are most active and most readily captured in the first two hours after sunrise, which in Chicago during peak breeding season (May through June) means approximately 5:30 to 7:30 AM CDT. Activity drops off significantly by mid-morning as temperatures rise and the birds shift to foraging in more sheltered microhabitats. A secondary capture window exists in the late afternoon, roughly 5:00 to 7:00 PM CDT, but capture rates in that window are typically 40 to 60 percent lower than the morning window based on published urban banding studies.",
+      "gold_parents": [
+        "t58"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t60",
+      "turn_index": 59,
+      "user_message": "Should I close the nets during midday even if I'm on site?",
+      "assistant_message": "Yes, closing nets during midday is strongly recommended and is actually required under many IACUC protocols and BBL best-practice guidelines when ambient temperatures exceed 30°C (86°F), because heat stress in a net can kill a small bird within minutes. The standard practice is to close nets between approximately 10:00 AM and 4:00 PM during warm weather, which in Chicago's summer months is most days from late June onward. Some banders use a rule of thumb that nets must be checked every 20 to 30 minutes at minimum whenever they are open, and if continuous monitoring isn't possible the nets must be furled.",
+      "gold_parents": [
+        "t59"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t61",
+      "turn_index": 60,
+      "user_message": "I'm thinking the tasting menu for the fall launch should pair the butternut squash bisque as the soup course with the salted caramel tart as the dessert course. If I set the tasting menu at $65 per person and project 40 covers on opening night, that's $2,600 in tasting menu revenue to start.",
+      "assistant_message": "A $65 tasting menu with those two dishes as anchors gives you a cohesive autumn narrative — the savory warmth of the bisque leading into the sweet-salty richness of the caramel tart is a classic progression. At 40 covers, $2,600 in projected tasting revenue is a reasonable opening-night target, and it gives you a clear benchmark to measure against actual ticket sales. Just make sure your batch quantities for both the bisque and the tart shells are scaled to cover 40 portions with some buffer, typically 10–15% overage.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t62",
+      "turn_index": 61,
+      "user_message": "What are the legal requirements a mobile game studio in the United States must follow when running a sweepstakes as part of a live event, specifically around the 'no purchase necessary' rule?",
+      "assistant_message": null,
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [],
+  "distractor_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t7",
+    "t8",
+    "t9",
+    "t10",
+    "t11",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t20",
+    "t21",
+    "t22",
+    "t23",
+    "t24",
+    "t25",
+    "t26",
+    "t27",
+    "t28",
+    "t29",
+    "t30",
+    "t31",
+    "t32",
+    "t33",
+    "t34",
+    "t35",
+    "t36",
+    "t37",
+    "t38",
+    "t39",
+    "t40",
+    "t41",
+    "t42",
+    "t43",
+    "t44",
+    "t45",
+    "t46",
+    "t47",
+    "t48",
+    "t49",
+    "t50",
+    "t51",
+    "t52",
+    "t53",
+    "t54",
+    "t55",
+    "t56",
+    "t57",
+    "t58",
+    "t59",
+    "t60",
+    "t61"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer must state that US sweepstakes law requires an alternative free method of entry (the 'no purchase necessary' rule) so that purchasing does not confer an advantage or be required to participate.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer must identify that sweepstakes (unlike lotteries) are legal without a gambling license because they require no consideration (or provide a free entry alternative), and must not conflate sweepstakes with contests of skill or lotteries.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must mention at least one specific disclosure requirement, such as the official rules stating odds of winning, the prize description, or the sponsor's name and address.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not import Soul Coin earn rates, discount percentages, or any other event-economy detail from the prior conversation, as those are irrelevant to sweepstakes legal requirements.",
+      "required": true
+    }
+  ],
+  "notes": "Turns t1–t6 are all distractors covering Halloween event structure, Soul Coin earn rates, daily missions, community milestones, inter-event gaps, and discount shop depth; none of this is relevant to US sweepstakes law. The query (t7) is a self-contained legal question answerable from general knowledge, and the main trap in the checklist (c4) is importing Soul Coin or discount-percentage details into a legal answer.\n\nReference answer: In the United States, a sweepstakes must include a 'no purchase necessary' alternative entry method—typically a mail-in or online free entry—so that buying something is never required to win and confers no advantage, which is what legally distinguishes a sweepstakes from an illegal lottery. The three elements of an illegal lottery are prize, chance, and consideration; removing consideration (the purchase requirement) keeps the promotion lawful without needing a gambling license. Official rules must be posted and must disclose the sponsor's full legal name and address, all prize descriptions and approximate retail values, the odds of winning, the entry deadline, and any geographic eligibility restrictions. Some states, notably New York and Florida, impose additional registration and bonding requirements for sweepstakes with prize pools exceeding $5,000, so studios should verify state-specific filings before launch.",
+  "evidence_note": null,
+  "premise": "a game studio planning a live-ops event calendar",
+  "evidence_spans": null,
+  "benchmark_version": "1.1-length-ablation",
+  "length_class": "spliced_60"
+}

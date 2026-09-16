@@ -1,0 +1,742 @@
+{
+  "scenario_id": "three_way_join_008__L60",
+  "family": "three_way_join",
+  "label": "JOIN",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "Got it. What about the TI allowance—the space needs new flooring, a small server room, and a glass-walled conference room. How do we structure the TI negotiation?",
+      "assistant_message": "For those three improvements, get contractor bids before you negotiate the TI number so you can anchor to real costs—glass-walled conference rooms typically run $15,000–$25,000 installed, a basic server room with dedicated cooling and a 20-amp circuit can run $8,000–$15,000, and commercial LVT flooring for 2,400 sq ft usually costs $6–$10 per sq ft installed. Present the landlord with a detailed scope of work and request a $60,000 TI allowance, structured as a landlord-managed build-out rather than a tenant reimbursement so you're not fronting capital. If they resist, propose splitting the allowance: $40,000 at lease signing and the remaining $20,000 after the first 12 months of on-time payments.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "The landlord is insisting on a 'landlord-managed build-out' clause that gives them the right to select all contractors. What risks does that create for us?",
+      "assistant_message": "The biggest risk is cost inflation—when landlords control contractor selection, they often use preferred vendors who charge 15–25% above market rates, and since it's your TI dollars being spent, the overage comes directly out of your allowance. You could end up with $60,000 committed but only $45,000 worth of actual work completed. Negotiate for a 'competitive bid' carve-out requiring the landlord to solicit at least three bids for any job over $5,000, with you retaining approval rights over the final selection, and cap the landlord's project management fee at 5% of construction costs.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "What happens to our TI allowance if we need to terminate the lease early? Does the landlord claw it back?",
+      "assistant_message": "Yes, most commercial leases include a TI recapture provision that requires you to repay a prorated portion of the allowance if you terminate early—on a 3-year lease with a $60,000 TI, that means roughly $20,000 per year of remaining term. Some landlords structure this as a separate 'TI note' that you sign alongside the lease, which can even accrue interest at 6–8% annually. You should negotiate to have the recapture obligation extinguish after month 24, so that if you make it two-thirds through the lease without default, the landlord absorbs the remaining TI cost as a cost of doing business.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "We're evaluating DentalSync Pro as our new scheduling platform. What's the per-seat monthly cost for their Professional tier?",
+      "assistant_message": "DentalSync Pro's Professional tier is priced at $42 per seat per month when billed monthly, or $34 per seat per month if you commit to an annual contract. That pricing covers up to 5 operatories and includes their automated appointment reminder system.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "We're also trying to figure out staffing for the new location. How many employees would a typical 1,100 square foot bakery need?",
+      "assistant_message": "For a production-and-retail bakery of around 1,100 square feet, a lean opening team typically includes 1 lead baker, 1–2 production assistants, and 2–3 front-of-house staff, totaling roughly 4–6 employees. In Portland, the current minimum wage as of July 1, 2024 is $15.95 per hour for standard employers, which sets your baseline labor cost floor. Many second-location bakeries also cross-train one manager from the original location to oversee both sites during the first six months, which reduces training costs but increases that individual's hours significantly.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What about equipment? We'd need at least a deck oven for the new space.",
+      "assistant_message": "A commercial deck oven suitable for a bakery of that size—something like a Bongard Cervap 4-deck or a Revent 724—typically runs between $18,000 and $35,000 new, depending on the number of decks and steam injection capability. Used or refurbished units from restaurant equipment dealers like Central Restaurant Products or local auction houses can cut that cost to $6,000–$12,000, though you'd want a technician to inspect the heating elements and stone decks before purchase. Don't forget that installation, including gas line hookup and ventilation, can add another $2,000–$5,000 on top of the equipment cost.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "We're also thinking about whether to keep the same menu at the second location or introduce some new items exclusive to Mississippi Avenue.",
+      "assistant_message": "Exclusive menu items at a second location can create a destination draw and generate social media buzz, but they also complicate your supply chain and training requirements. A common middle-ground strategy is an 80/20 split: 80% of the menu mirrors the original location to maintain brand consistency and simplify ordering, while 20% consists of location-specific items that reflect the neighborhood's character. Several Portland bakeries, like Little T American Baker, have used neighborhood-specific specials to build a loyal local following without straining back-of-house operations.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "How many staff members would need a login? We have front desk, hygienists, and dentists all needing access.",
+      "assistant_message": "That depends on how you define concurrent users versus named users. Most platforms count named users, meaning each person who needs their own login counts as one seat regardless of whether they're working at the same time. For a typical dental office with two dentists, three hygienists, and two front-desk staff, you'd be looking at seven named users.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "We're also reworking the paywall. It currently appears after step 5 and offers a 7-day free trial at $9.99/month after that.",
+      "assistant_message": "A paywall at step 5 with a 7-day trial is a fairly standard placement, though the timing relative to perceived value matters a lot. At $9.99/month you're in the mid-tier range for mobile subscriptions, which means the trial window needs to be long enough for users to hit at least two or three 'aha moments' before they're asked to commit. Seven days can work, but only if your core value loop is short enough to demonstrate within the first couple of sessions.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "We tested a 14-day trial and conversion actually dropped from 18% to 12%. So we're sticking with 7 days and $9.99.",
+      "assistant_message": "That's a counterintuitive but well-documented result — longer trials often reduce urgency and lead to users forgetting to cancel rather than actively choosing to subscribe. Your 18% conversion on a 7-day trial at $9.99/month is actually a solid baseline; many apps in the productivity and lifestyle categories benchmark around 10–15%, so you're above average there. Keeping the 7-day trial is the right call given your own data.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "Our waiting room chairs are getting pretty worn. What's a reasonable budget for replacing the seating in a six-chair waiting room?",
+      "assistant_message": "For a professional dental waiting room, commercial-grade seating typically runs between $150 and $400 per chair, so a six-chair setup would cost roughly $900 to $2,400 for the furniture itself. You'd also want to factor in delivery and any reupholstering of existing pieces if you want to save some money.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "We currently have 2 dentists, 3 hygienists, and 2 front-desk staff. Does everyone need their own seat, or can hygienists share a login?",
+      "assistant_message": "Sharing logins is generally a bad practice for compliance and audit-trail reasons, particularly under HIPAA, which requires individual user accountability for accessing patient records. You should plan on one seat per person, which in your case means 7 seats total across your two dentists, three hygienists, and two front-desk staff.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "We're also trying to figure out what to budget for office furniture. We need to outfit 8 workstations and a small conference room for 6 people. Any rough guidance on cost?",
+      "assistant_message": "For 8 workstations with desks, ergonomic chairs, and basic storage, you're typically looking at $800 to $1,500 per station, so a budget of $6,400 to $12,000 is reasonable. A 6-person conference table with chairs can run another $2,000 to $5,000 depending on quality. All in, plan for roughly $8,400 to $17,000 for a functional but not extravagant setup.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "We found a vendor called WorkNest Office Solutions that can do all 8 workstations and the conference room package for $11,200 flat, with delivery and assembly included. That sound fair?",
+      "assistant_message": "Yes, $11,200 all-in for 8 workstations plus a 6-person conference room package with delivery and assembly from WorkNest Office Solutions is competitive and sits comfortably in the middle of the typical range. Getting delivery and assembly bundled is a meaningful convenience, since coordinating that separately can easily add $500 to $1,000 in labor. It's a fair price to accept if you're satisfied with the product quality.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "There's also a space over on Caldwell Avenue we've been eyeing. It's listed by a property management company called Hartwell & Dunn, and it's 950 sq ft at $3,200 a month.",
+      "assistant_message": "Caldwell Avenue at 950 square feet and $3,200 a month works out to about $3.37 per square foot, which is slightly cheaper per square foot than the Renfield Street option. The smaller footprint could be a constraint if you're planning significant in-house production, since you'd have less room for proofing racks and large deck ovens. Hartwell & Dunn is a well-known commercial property manager, so the administrative side of the lease process would likely be straightforward. It really comes down to whether the lower cost justifies the tighter space.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "The Caldwell Avenue place is a former sandwich shop, so it already has a Type I hood and a grease trap installed, which would save us on build-out costs.",
+      "assistant_message": "That's a significant advantage — a Type I hood and a grease trap can easily run $15,000 to $25,000 to install from scratch, so inheriting those from the previous tenant is a real cost saving. You'd still want a licensed inspector to verify they meet current health code standards and are sized appropriately for bakery equipment, since a sandwich shop's ventilation needs differ from high-volume oven use. If everything checks out, the Caldwell Avenue space's lower upfront build-out cost could offset the smaller square footage. It's worth getting an HVAC contractor in there before you make a final comparison.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "DentalSync Pro says there's a one-time data migration fee to import our existing patient records. Do you know what they typically charge for that?",
+      "assistant_message": "DentalSync Pro's published one-time data migration fee is $850 for practices importing from any of their supported legacy systems. If your current software is not on their supported list, the fee jumps to $1,400 for a custom migration, so it's worth confirming whether your existing platform is supported before budgeting.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "Good to know on the audit approach. One more migration concern — what happens to our existing insurance fee schedules in Dentrix? Do those transfer automatically?",
+      "assistant_message": "Insurance fee schedules are another area that rarely transfers automatically between these two systems. Dentrix stores fee schedules as flat files tied to insurance plan records, while Sensei Cloud uses a relational structure that links fees directly to CDT procedure codes at the plan level. In most migrations, Carestream's team can import the raw fee data, but you'll need to manually verify and re-link each fee schedule to the correct insurance plans inside Sensei Cloud before you start submitting claims.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "That's frustrating. How many insurance plans are typically involved in a practice our size, and is there a faster way to handle the relinking?",
+      "assistant_message": "A general dentistry practice with around 4,200 active patients typically carries between 30 and 60 distinct insurance plans, though high-volume PPO practices sometimes exceed 80. Carestream offers a fee schedule import template — a standardized CSV file — that lets you bulk-upload pre-mapped fee schedules rather than entering them one by one, which can cut the relinking time from several days down to a few hours. Your Dentrix G7 system can export a fee schedule report under Reports > Practice Management > Fee Schedule that gives you the raw data you need to populate that CSV.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "If we sign the lease for September 1, 2025 and order the furniture from WorkNest at the same time, could we realistically be fully operational by October 1, 2025? WorkNest told us their lead time is 3 to 4 weeks.",
+      "assistant_message": "With a September 1 lease commencement and a 3-to-4-week lead time from WorkNest, your furniture would arrive between September 22 and September 29, leaving a few days for any IT setup or finishing touches before October 1. That timeline is tight but achievable, provided there are no delays in permitting or build-out work that the landlord is responsible for. It would be worth confirming in writing with WorkNest that they can guarantee delivery within that window once you place the order.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "The office manager also wants to repaint the reception area. Does the color of the walls actually affect patient anxiety levels?",
+      "assistant_message": "There is actually research suggesting that soft blues and greens are associated with lower anxiety in clinical settings, while bright whites and stark grays can feel more sterile and increase tension. For a dental office specifically, muted sage greens or warm taupes tend to be popular choices for that reason.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "Our current software is Eaglesoft version 16. Is that on DentalSync Pro's supported migration list?",
+      "assistant_message": "Yes, Eaglesoft is one of DentalSync Pro's supported legacy platforms for data migration, and specifically versions 14 through 18 are listed as fully supported for the standard migration process. That means you would qualify for the standard $850 migration fee rather than the custom rate.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "After the two-pass load is done, what's the best way to validate that all 12,000 donor records came across correctly?",
+      "assistant_message": "The most reliable validation strategy is a three-layer reconciliation: record count, financial totals, and relationship integrity. Start by comparing the total record count in your new Salesforce org's Contact object against the source CSV row count, then compare the sum of all Opportunity amounts in NPSP against the sum from your legacy system's export. For relationship integrity, run a SOQL query on npsp__Partial_Soft_Credit__c to confirm you have exactly 800 records and that every one has a non-null npsp__Amount__c and a valid Opportunity lookup. Any discrepancy at any layer should halt your go-live until resolved.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "We're also worried about duplicate contacts. Our old system wasn't strict about deduplication, so we suspect there could be several hundred duplicates in those 12,000 records. What tools does NPSP offer for that?",
+      "assistant_message": "NPSP itself doesn't ship with a standalone dedup engine, but Salesforce's native Duplicate Management feature (available in all editions since the Spring '15 release) works well in conjunction with it. You can configure Duplicate Rules and Matching Rules on the Contact object—the standard 'Standard Contact Duplicate Rule' uses fuzzy matching on first name, last name, and email. For a pre-migration dedup pass on your CSV before you ever load into Salesforce, tools like OpenRefine (free, open-source) or a commercial option like Dedupe.io can cluster likely duplicates using Jaro-Winkler string similarity, which handles common misspellings in donor names. Running the dedup before load is strongly preferable to cleaning up inside Salesforce after the fact.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "That's helpful. One of our data fields is 'preferred_contact_method' with values like Email, Phone, Mail, and Do Not Contact. Is there a standard NPSP field for that, or do we need to create a custom one?",
+      "assistant_message": "NPSP doesn't have a single out-of-the-box field that exactly mirrors a four-value 'preferred_contact_method' picklist. The closest standard field is the Salesforce Contact object's 'HasOptedOutOfEmail' boolean and the related 'DoNotCall' boolean, but those only cover opt-outs rather than positive preferences. For 'Do Not Contact' you can map to a combination of both booleans set to true, but for Email, Phone, and Mail preferences you'll want to create a custom picklist field—something like Contact.Preferred_Contact_Method__c—so you preserve the full fidelity of your source data. Document that mapping decision in your migration spec so future staff know why the custom field exists.",
+      "gold_parents": [
+        "t24"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "Is that $850 migration fee a one-time thing, or does it recur if we do a second data import later?",
+      "assistant_message": "The $850 fee is strictly one-time and covers the initial migration of your full patient records database at the time of onboarding. Any subsequent imports, such as adding records from a practice acquisition later, would be billed as a new migration at the prevailing rate at that time.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "We also need to decide how members register on the platform. Should we require them to use their cooperative membership ID to sign up?",
+      "assistant_message": "Requiring the membership ID during registration is a solid approach because it ensures only current members can place orders without any manual vetting on your end. You'd store the ID in their profile and validate it against your membership database — or even a simple spreadsheet — before activating the account. Just make sure you have a clear process for new members who joined recently and may not have their ID yet when they try to register.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "Our membership database is in a Google Sheet right now. Is there a straightforward way to connect that to the ordering platform for ID validation?",
+      "assistant_message": "Many lightweight ordering platforms support Zapier or direct Google Sheets API integration, so when a new user submits their membership ID the system can do a lookup against your sheet in near-real time. If the ID matches a row in the sheet, registration proceeds; if not, the user gets a message to contact the cooperative administrator. It's not enterprise-grade but it's reliable enough for a cooperative of typical size.",
+      "gold_parents": [
+        "t27"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "We have 214 active member households right now. Does that affect which platform tier we'd need?",
+      "assistant_message": "214 households is well within the limits of most entry-level cooperative or CSA platform tiers, which typically cap at 250 to 500 members. You likely won't need to pay for a higher tier until you grow past that range. It's worth confirming the exact member cap in the pricing plan you're evaluating, since some platforms count individual user accounts rather than households.",
+      "gold_parents": [
+        "t28"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t30",
+      "turn_index": 29,
+      "user_message": "We're looking at Farmigo and Local Line as our two main options. Do you have a sense of how they compare for something our size?",
+      "assistant_message": "Both are well-regarded for small-to-mid-size cooperatives and CSAs. Local Line tends to have a cleaner modern interface and stronger inventory management tools, while Farmigo has historically been popular with food hubs that need more customizable member-facing storefronts. At 214 households and with your pickup and delivery split, either should handle your volume — Local Line's pricing is generally more transparent upfront, which might simplify your board approval process.",
+      "gold_parents": [
+        "t29"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t31",
+      "turn_index": 30,
+      "user_message": "What payment processors do those platforms support? We want to accept credit cards and also ACH bank transfers.",
+      "assistant_message": "Local Line integrates natively with Stripe, which supports both credit card payments and ACH bank transfers through its platform. Farmigo has historically used Stripe as well, though their ACH support depends on which plan you're on — it's worth confirming with their sales team before committing. ACH typically has a lower processing fee (around 0.8% capped at $5 per transaction on Stripe) compared to credit cards, so offering it can meaningfully reduce your transaction costs over a year.",
+      "gold_parents": [
+        "t30"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t32",
+      "turn_index": 31,
+      "user_message": "We'd also like to let members pay with their cooperative credit balance — basically a prepaid account they top up. Is that a standard feature?",
+      "assistant_message": "It's offered by some platforms but not all at the base tier. In Local Line it's called a 'store credit' or 'wallet' feature and is available on their mid-tier plan. Farmigo has a similar prepaid balance function they refer to as a member account credit. You'd want to confirm whether applying store credit at checkout can be combined with a partial card payment for orders that exceed the balance, since that split-tender scenario trips up some implementations.",
+      "gold_parents": [
+        "t31"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t33",
+      "turn_index": 32,
+      "user_message": "For the prepaid top-up, should we set a minimum top-up amount? I'm thinking $20 minimum so members don't top up in tiny increments and create accounting headaches.",
+      "assistant_message": "A $20 minimum top-up is sensible and pretty standard — it reduces the number of small transactions you have to reconcile and keeps the per-transaction payment processing cost proportionally low. You might also consider a suggested top-up amount, like the $4.50 per-order figure we were working with earlier, to help members load enough for a few weeks of orders at a time. A clear expiration policy for unused credits, such as rolling over annually, is also worth adding to your member agreement.",
+      "gold_parents": [
+        "t32"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t34",
+      "turn_index": 33,
+      "user_message": "Good point on the expiration policy. What's a reasonable timeframe — one year or two years before unused credit expires?",
+      "assistant_message": "One year is the more common choice for small cooperatives because it keeps your liability ledger clean and prompts members to stay engaged with the platform. Two years is more member-friendly but means you're carrying that liability longer on your books. A practical middle ground some cooperatives use is a rolling 12-month inactivity rule — credit expires only if the member hasn't placed any order in 12 months, which avoids penalizing active members who simply haven't spent down their balance.",
+      "gold_parents": [
+        "t33"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t35",
+      "turn_index": 34,
+      "user_message": "We'll probably go with the 12-month inactivity rule. Should that be spelled out in the membership agreement or just in the platform's terms of service?",
+      "assistant_message": "It should appear in both, but the membership agreement is the more binding document from your cooperative's legal standpoint. Putting it there ensures members have explicitly acknowledged the policy at the time they join, which protects you if someone disputes a forfeited balance. A brief plain-language summary in the platform's checkout or account page is also helpful so members encounter the reminder in context rather than only in a document they signed once.",
+      "gold_parents": [
+        "t34"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t36",
+      "turn_index": 35,
+      "user_message": "Our membership agreement is currently a two-page PDF that members sign at the annual meeting. Can we move to e-signatures for new members who join online?",
+      "assistant_message": "Yes, e-signatures are legally valid for this kind of membership agreement in all U.S. states under the federal E-SIGN Act and the Uniform Electronic Transactions Act. Tools like DocuSign, HelloSign (now Dropbox Sign), or even a simple checkbox acknowledgment with a timestamped record can satisfy the requirement. A checkbox with a stored timestamp and the member's IP address is the lightest-weight option and is generally sufficient for a cooperative membership agreement that doesn't involve real estate or other high-stakes transactions.",
+      "gold_parents": [
+        "t35"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t37",
+      "turn_index": 36,
+      "user_message": "We'd want to store those signed agreements somewhere accessible for our board. Is there a good document management approach for a small operation like ours?",
+      "assistant_message": "A shared Google Drive folder with a consistent naming convention — something like MemberID_LastName_AgreementYear — works well for cooperatives at your scale and costs nothing beyond your existing Google Workspace subscription if you have one. For e-signed documents, DocuSign and Dropbox Sign both include cloud storage and audit trails in their base plans, so you may not need a separate system. The key is making sure at least two board members have admin access to the repository so there's no single point of failure.",
+      "gold_parents": [
+        "t36"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t38",
+      "turn_index": 37,
+      "user_message": "We have five board members. Should all five have admin access or just two or three?",
+      "assistant_message": "Three is a practical sweet spot — it gives you redundancy without creating confusion about who's responsible for keeping the repository organized. A common structure is the cooperative manager plus two board officers, such as the president and treasurer, holding admin rights, while the remaining board members have read-only access. That way sensitive member documents aren't editable by everyone, but multiple people can retrieve them when needed.",
+      "gold_parents": [
+        "t37"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t39",
+      "turn_index": 38,
+      "user_message": "That makes sense. We should also think about what happens when a board member's term ends — how do we handle revoking their access?",
+      "assistant_message": "The cleanest approach is to tie access reviews to your board transition dates, which for most cooperatives fall right after the annual meeting. On that date, the outgoing member's account should be downgraded to no-access or removed entirely, and the incoming member's account upgraded. Putting a calendar reminder in your cooperative's shared calendar 48 hours before the transition date ensures it doesn't get overlooked in the post-meeting rush.",
+      "gold_parents": [
+        "t38"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t40",
+      "turn_index": 39,
+      "user_message": "Our annual meeting is the second Saturday of March each year, so March 8, 2025 is the next one. I'll set that reminder for March 6.",
+      "assistant_message": "March 6 is a good lead time — it gives whoever handles admin access a full day to prepare the account changes before the meeting itself. You might also add a brief line to the meeting agenda confirming that access transitions were completed, so it's on the record. That kind of documentation is useful if questions ever come up later about when a former board member's access was revoked.",
+      "gold_parents": [
+        "t39"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t41",
+      "turn_index": 40,
+      "user_message": "We'd be signing an annual contract. Does the $34 per-seat rate apply from day one, or is there a minimum commitment period before it kicks in?",
+      "assistant_message": "The $34 per-seat per-month rate applies from day one of an annual contract, with the full year billed upfront in a single invoice. There is no probationary period at the higher monthly rate; you simply pay the annual amount at signing, which works out to $408 per seat per year.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t42",
+      "turn_index": 41,
+      "user_message": "We're also trying to decide on a platform for the online store. We've narrowed it down to WooCommerce and a co-op-specific platform called Farmigo. Have you heard of Farmigo?",
+      "assistant_message": "Yes, Farmigo is a farm management and online ordering platform specifically designed for CSAs and food hubs. It handles subscription management, member accounts, and pickup/delivery routing out of the box, which can save significant setup time compared to building those features in WooCommerce. The trade-off is that Farmigo charges a percentage of sales — typically around 2% — while WooCommerce is free software but requires hosting and plugin costs that can add up.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t43",
+      "turn_index": 42,
+      "user_message": "The 2% fee on Farmigo concerns me. Last year our gross sales were about $80,000. What would that fee amount to annually?",
+      "assistant_message": "At 2% of $80,000 in gross sales, you'd be paying $1,600 per year to Farmigo. Whether that's worth it depends on how much developer or admin time you'd spend maintaining a WooCommerce setup — if you're paying someone even a few hours a month, the Farmigo fee could easily be the cheaper option. It's worth getting a concrete quote from Farmigo since their rates can vary based on cooperative size and plan tier.",
+      "gold_parents": [
+        "t42"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t44",
+      "turn_index": 43,
+      "user_message": "That's a fair point. Does WooCommerce handle CSA-style subscription boxes natively, or do we need a plugin?",
+      "assistant_message": "WooCommerce doesn't handle recurring subscriptions natively — you'd need a plugin like WooCommerce Subscriptions, which costs $199 per year for a single site license. There are also CSA-specific plugins like CSA Manager for WooCommerce, though those are less widely supported. For a cooperative running regular box subscriptions, the plugin costs and maintenance overhead are real factors to weigh against a purpose-built platform.",
+      "gold_parents": [
+        "t43"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t45",
+      "turn_index": 44,
+      "user_message": "We have about 140 active CSA members right now. Is WooCommerce Subscriptions going to handle that volume without issues?",
+      "assistant_message": "140 active subscriptions is well within WooCommerce Subscriptions' comfortable range — it's been used by stores with thousands of active subscribers. The more important factor at your scale is your hosting plan; you'll want a managed WordPress host like Kinsta or WP Engine rather than shared hosting to ensure checkout and renewal processing stay fast. At 140 members, a mid-tier managed hosting plan in the $30–$50 per month range should be more than sufficient.",
+      "gold_parents": [
+        "t44"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t46",
+      "turn_index": 45,
+      "user_message": "We're also thinking about whether to require accounts for checkout or allow guest checkout. What do most farm stores do?",
+      "assistant_message": "Most farm cooperative stores require accounts because subscription management, order history, and pickup scheduling all depend on persistent member records. Guest checkout works well for one-off retail purchases but gets messy when you need to track a member's box preferences, pause requests, or delivery address changes over a season. I'd recommend requiring accounts but making the signup process as frictionless as possible — ideally a single-page signup that completes during the first checkout.",
+      "gold_parents": [
+        "t45"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t47",
+      "turn_index": 46,
+      "user_message": "Makes sense. We want to add a member referral program too — something like a $10 credit for each new member a current member brings in. Is that easy to set up in WooCommerce?",
+      "assistant_message": "A $10 referral credit is straightforward to implement in WooCommerce using a plugin like ReferralCandy or Affiliate WP. ReferralCandy has a Starter plan at $47 per month, while Affiliate WP is $149 per year for a single site — the latter is more cost-effective if you're running the program long-term. You'd issue the $10 as a store credit coupon that auto-applies at the referred member's first checkout.",
+      "gold_parents": [
+        "t46"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t48",
+      "turn_index": 47,
+      "user_message": "We want to cap the referral credit at 5 referrals per member per season so it doesn't get out of hand. Is that a configurable limit?",
+      "assistant_message": "Yes, both ReferralCandy and Affiliate WP allow you to set maximum referral limits per advocate, and you can scope those limits to a date range that corresponds to your season. Setting a cap of 5 referrals per member per season means your maximum exposure from any single member is $50 in credits, which is very manageable. Just make sure the cap and season dates are clearly communicated in your referral program terms so members aren't surprised when they hit the limit.",
+      "gold_parents": [
+        "t47"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t49",
+      "turn_index": 48,
+      "user_message": "Right. And for the store credit, we want it to apply only to produce boxes, not to add-on items like jam or honey. We'd want it to work kind of like the $28 tomato box pricing tier we set up — restricted to specific product categories.",
+      "assistant_message": "Restricting store credit to specific product categories is doable in both plugins through category-based coupon rules. You'd create a product category called something like 'Produce Boxes' and configure the referral reward coupon to apply only when items from that category are in the cart. That way the $10 credit won't bleed over into jam, honey, or any other add-on categories you add later.",
+      "gold_parents": [
+        "t48"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t50",
+      "turn_index": 49,
+      "user_message": "We also want to add a waitlist feature for when a box type sells out. Does WooCommerce have that built in?",
+      "assistant_message": "WooCommerce doesn't include a waitlist natively, but the plugin WooCommerce Waitlist handles it cleanly — it lets customers register their email on a sold-out product page and automatically notifies them when stock is restored. It costs $79 per year for a single site license. For a cooperative where certain specialty boxes like heirloom tomatoes might have limited weekly quantities, a waitlist is a smart way to capture demand and reduce the frustration of customers hitting a dead end.",
+      "gold_parents": [
+        "t49"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t51",
+      "turn_index": 50,
+      "user_message": "Good idea. We're also thinking about adding a farm blog to the same site to share harvest updates and recipes. Would that live on the same WordPress install?",
+      "assistant_message": "Yes, keeping the blog on the same WordPress install is the standard approach and the most practical for a small cooperative. It means one login, one set of plugins to maintain, and your SEO benefits are consolidated on a single domain. You can use a separate page template or child theme to give the blog a slightly different visual feel from the store if you want, without managing two separate installations.",
+      "gold_parents": [
+        "t50"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t52",
+      "turn_index": 51,
+      "user_message": "We want the blog posts to be written by different farmers on the cooperative — about 6 different contributors. How do we manage author permissions so they can write posts but not touch the store settings?",
+      "assistant_message": "WordPress's built-in 'Author' user role is exactly right for this — Authors can write, edit, and publish their own posts but have no access to WooCommerce settings, plugin management, or other store configuration. You'd create six Author accounts, one per farmer contributor, and only your admin account would have access to the shop backend. If you want editors to review posts before they go live, you could use the 'Contributor' role instead, which requires an admin or editor to approve each post.",
+      "gold_parents": [
+        "t51"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t53",
+      "turn_index": 52,
+      "user_message": "We'll go with Contributor so we can review before publishing. Can contributors upload photos with their posts?",
+      "assistant_message": "By default, the WordPress Contributor role cannot upload media — they can write post content but any images need to be added by an Editor or Admin. This is a common friction point for farm blogs where contributors want to include their own harvest photos. You can grant media upload capability to Contributors using a small permissions plugin like Members by MemberPress, or by adding a single line to your theme's functions.php file.",
+      "gold_parents": [
+        "t52"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t54",
+      "turn_index": 53,
+      "user_message": "We'll use the Members plugin to keep it clean. How large is the typical farm photo file we'd be uploading — should we set a maximum upload size?",
+      "assistant_message": "A typical uncompressed DSLR farm photo runs 4–8 MB, but after reasonable JPEG compression it usually lands between 1–3 MB. WordPress's default maximum upload size is 2 MB on many shared hosts, though managed hosts like Kinsta set it to 128 MB. I'd recommend setting your limit to 10 MB — large enough for high-quality farm photos but small enough to prevent someone accidentally uploading a raw video file. You can set this in your php.ini or wp-config.php file.",
+      "gold_parents": [
+        "t53"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t55",
+      "turn_index": 54,
+      "user_message": "Good to know. We also want to embed a Google Map on the farm pickup location page showing our two pickup sites. Is there a straightforward way to do that in WordPress?",
+      "assistant_message": "The simplest approach is to use Google Maps embed code directly — go to Google Maps, search your location, click Share, and copy the embed iframe. You can paste that into any WordPress page using the HTML block in the block editor. If you need more control, like custom map markers or info windows for both pickup sites, the WP Google Maps plugin handles multiple markers cleanly and has a free tier that covers basic use cases.",
+      "gold_parents": [
+        "t54"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t56",
+      "turn_index": 55,
+      "user_message": "Our two pickup sites are at 142 Orchard Lane and 87 Mill Creek Road. Can we label them differently on the map, like 'East Site' and 'West Site'?",
+      "assistant_message": "Yes, WP Google Maps lets you add a custom title and description to each marker, so you can label them 'East Site — 142 Orchard Lane' and 'West Site — 87 Mill Creek Road' with whatever additional info you want in the popup, like pickup hours. That way customers clicking on either pin get the location and relevant details in one place without needing to read a separate text block on the page.",
+      "gold_parents": [
+        "t55"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t57",
+      "turn_index": 56,
+      "user_message": "We want to add pickup hours to each marker. East Site is open Tuesdays 3–6 PM and West Site is open Wednesdays 4–7 PM. Can we include that in the marker description?",
+      "assistant_message": "Absolutely — WP Google Maps allows HTML in the marker description field, so you can format the hours clearly, something like 'Pickup: Tuesdays 3–6 PM' for the East Site and 'Pickup: Wednesdays 4–7 PM' for the West Site. This is especially useful because customers can confirm their pickup window right on the map without hunting through the page text. Just keep the descriptions concise since the popup window is small on mobile screens.",
+      "gold_parents": [
+        "t56"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t58",
+      "turn_index": 57,
+      "user_message": "Perfect. We also want to add a seasonal availability calendar so customers know which produce items are available in which months. Is there a good plugin for that?",
+      "assistant_message": "A simple and well-regarded option is the TablePress plugin, which lets you build a clean grid with produce items as rows and months as columns — you can mark availability with a checkmark or color-coded cell. It's free and outputs a responsive table that works well on mobile. Alternatively, if you want something more visual, the Seasonality plugin is designed specifically for farm and food businesses and displays availability as a visual bar chart by month, though it's less widely supported than TablePress.",
+      "gold_parents": [
+        "t57"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t59",
+      "turn_index": 58,
+      "user_message": "Our waiting room TV has been broken for two weeks. Would a 55-inch or 65-inch display be better for a room that's about 18 feet deep?",
+      "assistant_message": "For a viewing distance of roughly 18 feet, a 65-inch display is generally the better choice for comfortable readability. The standard recommendation is about 1.5 to 2 times the screen diagonal as a minimum viewing distance, so a 65-inch screen hits that range well at 18 feet. A 55-inch screen would be on the small side and patients seated farther back might find text or images harder to read. Mounting it at eye level or slightly above, around 48 to 54 inches to the center, also helps with comfort.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t60",
+      "turn_index": 59,
+      "user_message": "We're thinking of running a patient education loop on it. What software do people usually use for that in dental offices?",
+      "assistant_message": "Digital signage platforms like Yodeck, ScreenCloud, or Dental Intel's patient education suite are popular choices in dental offices for exactly that purpose. Yodeck in particular is widely used because it runs on a standard Raspberry Pi device and costs around $8 per screen per month. Many practices also use vendor-provided content from companies like Caesy or Sesame Communications, which supply pre-made dental education videos. The choice usually comes down to whether you want fully managed content or prefer to customize your own playlist.",
+      "gold_parents": [
+        "t59"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t61",
+      "turn_index": 60,
+      "user_message": "Given everything we've discussed about our staff count, the contract pricing, and the migration situation, what would our total first-year cost be with DentalSync Pro?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t41",
+        "t26",
+        "t22"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t4",
+    "t8",
+    "t12",
+    "t17",
+    "t22",
+    "t26",
+    "t41"
+  ],
+  "distractor_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t5",
+    "t6",
+    "t7",
+    "t9",
+    "t10",
+    "t11",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t18",
+    "t19",
+    "t20",
+    "t21",
+    "t23",
+    "t24",
+    "t25",
+    "t27",
+    "t28",
+    "t29",
+    "t30",
+    "t31",
+    "t32",
+    "t33",
+    "t34",
+    "t35",
+    "t36",
+    "t37",
+    "t38",
+    "t39",
+    "t40",
+    "t42",
+    "t43",
+    "t44",
+    "t45",
+    "t46",
+    "t47",
+    "t48",
+    "t49",
+    "t50",
+    "t51",
+    "t52",
+    "t53",
+    "t54",
+    "t55",
+    "t56",
+    "t57",
+    "t58",
+    "t59",
+    "t60"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer uses $34 per seat per month (the annual contract rate from branch A, t9) to calculate the subscription cost, not $42.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer uses 7 seats (2 dentists + 3 hygienists + 2 front-desk staff, established in branch C, t4) to calculate the subscription cost.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer includes the $850 one-time migration fee (from branch B, t7/t8, reflecting that Eaglesoft 16 is a supported system qualifying for the standard rate) in the first-year total.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not incorporate any costs related to waiting room furniture or wall paint (distractor branch D topics), as those are irrelevant to the software cost calculation.",
+      "required": true
+    }
+  ],
+  "notes": "The three evidence branches supply the annual per-seat rate ($34, t9), the seat count (7, t4), and the applicable migration fee ($850 standard rate because Eaglesoft 16 is supported, t7). The distractor branch about waiting room furniture and paint (t3, t6) is on-premise but contributes nothing to the cost calculation and must not appear in the answer.\n\nReference answer: With an annual contract, the per-seat rate is $34 per month, and your practice needs 7 seats for your two dentists, three hygienists, and two front-desk staff. That subscription comes to $34 × 7 × 12 = $2,856 for the year. Since you're running Eaglesoft 16, which is on DentalSync Pro's supported migration list, the one-time data migration fee is $850 at the standard rate. Your total first-year cost would therefore be $2,856 + $850 = $3,706.",
+  "evidence_note": null,
+  "premise": "a dentist's office replacing its appointment software",
+  "evidence_spans": null,
+  "benchmark_version": "1.1-length-ablation",
+  "length_class": "spliced_60"
+}

@@ -1,0 +1,761 @@
+{
+  "scenario_id": "two_branch_join_006__L60",
+  "family": "two_branch_join",
+  "label": "JOIN",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We also have a separate dbt project managing our transformations. It's on dbt Core 1.5.4. Are there any version-specific things we should watch for?",
+      "assistant_message": "dbt Core 1.5.4 introduced model contracts, which let you enforce column-level data types and constraints directly in your YAML files — this is worth enabling for your most critical models to catch schema drift early. One known issue in 1.5.4 is that incremental models using the `merge` strategy can silently skip rows if the `unique_key` config references a column with mixed-case names, so double-check your model configs. You'll also want to pin the `dbt-snowflake` adapter to version 1.5.4 exactly, since the 1.5.3 adapter has a bug where `dbt run --select` with tag filters doesn't correctly exclude disabled models.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "In dbt 1.5.4, how do we handle incremental models when we need to backfill a specific date range?",
+      "assistant_message": "In dbt Core 1.5.4, the cleanest backfill approach is to use the `--full-refresh` flag combined with a custom `is_incremental()` filter that reads from a variable, like `var('start_date')` and `var('end_date')`. You'd run something like `dbt run --select my_model --vars '{start_date: 2024-01-01, end_date: 2024-03-31}'` and let your model's WHERE clause scope the data. Keep in mind that in 1.5.4, using `--full-refresh` on a model with a contract defined will raise a warning but not an error, so you won't get blocked during backfills.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "For the dbt project, what's the best way to monitor model run times and catch regressions?",
+      "assistant_message": "dbt Core 1.5.4 emits structured run results to `target/run_results.json` after every invocation, and you can parse that file to extract per-model execution times and compare them against a baseline. A common pattern is to ship those results to your observability platform — many teams send them to a `dbt_run_results` table in Snowflake itself — and then alert if any model's execution time exceeds 150% of its 30-day rolling average. You can also use dbt's built-in `--log-format json` flag in 1.5.4 to stream structured logs to a log aggregator like Datadog or Splunk for real-time alerting.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "Does dbt Core 1.5.4 have any native alerting or is it all handled externally?",
+      "assistant_message": "dbt Core 1.5.4 does not include native alerting — it is a pure transformation framework, so all alerting must be handled by external orchestration tools like Airflow, Prefect, or your CI/CD pipeline catching non-zero exit codes. The `dbt-artifacts` package can help by persisting run metadata into your warehouse automatically, making it easier to build dashboards and threshold-based alerts on top of that data. For teams using Airflow, the `DbtRunOperator` will propagate failures as task failures, which you can hook into PagerDuty or Slack via standard Airflow callback mechanisms.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "We're switching our dental office from Dentrix to a new platform. We've decided to go with Curve Dental, and the migration is scheduled for March 15th. How much lead time do we typically need to prepare staff?",
+      "assistant_message": "For a platform migration of that scale, most dental practices find that four to six weeks of lead time is ideal for staff preparation. That window gives you time for hands-on training sessions, workflow walkthroughs, and a buffer to address questions before go-live. Since your migration is March 15th, you'd want to begin formal staff training no later than February 1st. Starting earlier is always safer, especially for front-desk staff who handle scheduling daily.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "We're also trying to decide on a platform for the online store. We've narrowed it down to WooCommerce and a co-op-specific platform called Farmigo. Have you heard of Farmigo?",
+      "assistant_message": "Yes, Farmigo is a farm management and online ordering platform specifically designed for CSAs and food hubs. It handles subscription management, member accounts, and pickup/delivery routing out of the box, which can save significant setup time compared to building those features in WooCommerce. The trade-off is that Farmigo charges a percentage of sales — typically around 2% — while WooCommerce is free software but requires hosting and plugin costs that can add up.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "The 2% fee on Farmigo concerns me. Last year our gross sales were about $80,000. What would that fee amount to annually?",
+      "assistant_message": "At 2% of $80,000 in gross sales, you'd be paying $1,600 per year to Farmigo. Whether that's worth it depends on how much developer or admin time you'd spend maintaining a WooCommerce setup — if you're paying someone even a few hours a month, the Farmigo fee could easily be the cheaper option. It's worth getting a concrete quote from Farmigo since their rates can vary based on cooperative size and plan tier.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "That's a fair point. Does WooCommerce handle CSA-style subscription boxes natively, or do we need a plugin?",
+      "assistant_message": "WooCommerce doesn't handle recurring subscriptions natively — you'd need a plugin like WooCommerce Subscriptions, which costs $199 per year for a single site license. There are also CSA-specific plugins like CSA Manager for WooCommerce, though those are less widely supported. For a cooperative running regular box subscriptions, the plugin costs and maintenance overhead are real factors to weigh against a purpose-built platform.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "We have about 140 active CSA members right now. Is WooCommerce Subscriptions going to handle that volume without issues?",
+      "assistant_message": "140 active subscriptions is well within WooCommerce Subscriptions' comfortable range — it's been used by stores with thousands of active subscribers. The more important factor at your scale is your hosting plan; you'll want a managed WordPress host like Kinsta or WP Engine rather than shared hosting to ensure checkout and renewal processing stay fast. At 140 members, a mid-tier managed hosting plan in the $30–$50 per month range should be more than sufficient.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "We're also thinking about whether to require accounts for checkout or allow guest checkout. What do most farm stores do?",
+      "assistant_message": "Most farm cooperative stores require accounts because subscription management, order history, and pickup scheduling all depend on persistent member records. Guest checkout works well for one-off retail purchases but gets messy when you need to track a member's box preferences, pause requests, or delivery address changes over a season. I'd recommend requiring accounts but making the signup process as frictionless as possible — ideally a single-page signup that completes during the first checkout.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "Makes sense. We want to add a member referral program too — something like a $10 credit for each new member a current member brings in. Is that easy to set up in WooCommerce?",
+      "assistant_message": "A $10 referral credit is straightforward to implement in WooCommerce using a plugin like ReferralCandy or Affiliate WP. ReferralCandy has a Starter plan at $47 per month, while Affiliate WP is $149 per year for a single site — the latter is more cost-effective if you're running the program long-term. You'd issue the $10 as a store credit coupon that auto-applies at the referred member's first checkout.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "We want to cap the referral credit at 5 referrals per member per season so it doesn't get out of hand. Is that a configurable limit?",
+      "assistant_message": "Yes, both ReferralCandy and Affiliate WP allow you to set maximum referral limits per advocate, and you can scope those limits to a date range that corresponds to your season. Setting a cap of 5 referrals per member per season means your maximum exposure from any single member is $50 in credits, which is very manageable. Just make sure the cap and season dates are clearly communicated in your referral program terms so members aren't surprised when they hit the limit.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "Right. And for the store credit, we want it to apply only to produce boxes, not to add-on items like jam or honey. We'd want it to work kind of like the $28 tomato box pricing tier we set up — restricted to specific product categories.",
+      "assistant_message": "Restricting store credit to specific product categories is doable in both plugins through category-based coupon rules. You'd create a product category called something like 'Produce Boxes' and configure the referral reward coupon to apply only when items from that category are in the cart. That way the $10 credit won't bleed over into jam, honey, or any other add-on categories you add later.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "We also want to add a waitlist feature for when a box type sells out. Does WooCommerce have that built in?",
+      "assistant_message": "WooCommerce doesn't include a waitlist natively, but the plugin WooCommerce Waitlist handles it cleanly — it lets customers register their email on a sold-out product page and automatically notifies them when stock is restored. It costs $79 per year for a single site license. For a cooperative where certain specialty boxes like heirloom tomatoes might have limited weekly quantities, a waitlist is a smart way to capture demand and reduce the frustration of customers hitting a dead end.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "Good idea. We're also thinking about adding a farm blog to the same site to share harvest updates and recipes. Would that live on the same WordPress install?",
+      "assistant_message": "Yes, keeping the blog on the same WordPress install is the standard approach and the most practical for a small cooperative. It means one login, one set of plugins to maintain, and your SEO benefits are consolidated on a single domain. You can use a separate page template or child theme to give the blog a slightly different visual feel from the store if you want, without managing two separate installations.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "We want the blog posts to be written by different farmers on the cooperative — about 6 different contributors. How do we manage author permissions so they can write posts but not touch the store settings?",
+      "assistant_message": "WordPress's built-in 'Author' user role is exactly right for this — Authors can write, edit, and publish their own posts but have no access to WooCommerce settings, plugin management, or other store configuration. You'd create six Author accounts, one per farmer contributor, and only your admin account would have access to the shop backend. If you want editors to review posts before they go live, you could use the 'Contributor' role instead, which requires an admin or editor to approve each post.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "We'll go with Contributor so we can review before publishing. Can contributors upload photos with their posts?",
+      "assistant_message": "By default, the WordPress Contributor role cannot upload media — they can write post content but any images need to be added by an Editor or Admin. This is a common friction point for farm blogs where contributors want to include their own harvest photos. You can grant media upload capability to Contributors using a small permissions plugin like Members by MemberPress, or by adding a single line to your theme's functions.php file.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "We'll use the Members plugin to keep it clean. How large is the typical farm photo file we'd be uploading — should we set a maximum upload size?",
+      "assistant_message": "A typical uncompressed DSLR farm photo runs 4–8 MB, but after reasonable JPEG compression it usually lands between 1–3 MB. WordPress's default maximum upload size is 2 MB on many shared hosts, though managed hosts like Kinsta set it to 128 MB. I'd recommend setting your limit to 10 MB — large enough for high-quality farm photos but small enough to prevent someone accidentally uploading a raw video file. You can set this in your php.ini or wp-config.php file.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "Good to know. We also want to embed a Google Map on the farm pickup location page showing our two pickup sites. Is there a straightforward way to do that in WordPress?",
+      "assistant_message": "The simplest approach is to use Google Maps embed code directly — go to Google Maps, search your location, click Share, and copy the embed iframe. You can paste that into any WordPress page using the HTML block in the block editor. If you need more control, like custom map markers or info windows for both pickup sites, the WP Google Maps plugin handles multiple markers cleanly and has a free tier that covers basic use cases.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "Our two pickup sites are at 142 Orchard Lane and 87 Mill Creek Road. Can we label them differently on the map, like 'East Site' and 'West Site'?",
+      "assistant_message": "Yes, WP Google Maps lets you add a custom title and description to each marker, so you can label them 'East Site — 142 Orchard Lane' and 'West Site — 87 Mill Creek Road' with whatever additional info you want in the popup, like pickup hours. That way customers clicking on either pin get the location and relevant details in one place without needing to read a separate text block on the page.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "We want to add pickup hours to each marker. East Site is open Tuesdays 3–6 PM and West Site is open Wednesdays 4–7 PM. Can we include that in the marker description?",
+      "assistant_message": "Absolutely — WP Google Maps allows HTML in the marker description field, so you can format the hours clearly, something like 'Pickup: Tuesdays 3–6 PM' for the East Site and 'Pickup: Wednesdays 4–7 PM' for the West Site. This is especially useful because customers can confirm their pickup window right on the map without hunting through the page text. Just keep the descriptions concise since the popup window is small on mobile screens.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "Perfect. We also want to add a seasonal availability calendar so customers know which produce items are available in which months. Is there a good plugin for that?",
+      "assistant_message": "A simple and well-regarded option is the TablePress plugin, which lets you build a clean grid with produce items as rows and months as columns — you can mark availability with a checkmark or color-coded cell. It's free and outputs a responsive table that works well on mobile. Alternatively, if you want something more visual, the Seasonality plugin is designed specifically for farm and food businesses and displays availability as a visual bar chart by month, though it's less widely supported than TablePress.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "Curve Dental charges per-provider, right? How does their pricing usually work?",
+      "assistant_message": "Yes, Curve Dental uses a per-provider subscription model, meaning you pay a monthly fee for each licensed provider on the account. Their standard tier, Curve Hero, is currently priced at $299 per provider per month. Additional modules like their analytics add-on or enhanced patient communication tools carry separate fees on top of that base rate. It's worth confirming exact pricing directly with their sales team, as promotional rates can vary.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "Can you help me figure out the right compute tier for the new warehouse? We're looking at the Snowflake X-Large vs. 2X-Large for the initial rollout.",
+      "assistant_message": "For an initial rollout, the choice between X-Large and 2X-Large usually comes down to your peak concurrent query load and the size of your largest batch transforms. X-Large gives you 16 nodes and is typically sufficient for up to around 50 concurrent queries, while 2X-Large doubles that to 32 nodes and is better suited if you're running heavy multi-terabyte joins during the same window. I'd recommend profiling your three or four most resource-intensive jobs on the old system first to get a baseline before committing to the tier.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "We pulled the profiles. The heaviest job, orders_aggregation, peaks at about 180 GB of intermediate spill to disk on the old system. Does that change the recommendation?",
+      "assistant_message": "180 GB of spill is significant and suggests the job is memory-constrained on whatever it's running on today. On Snowflake, spill to local disk happens when a query exceeds the per-node memory, so moving to 2X-Large — with its larger per-node memory allocation — would likely eliminate most of that spill and cut runtime considerably. I'd lean toward 2X-Large as your starting tier specifically because of that orders_aggregation profile.",
+      "gold_parents": [
+        "t24"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "Good to know. What about data transfer costs getting the historical data into Snowflake? We have roughly 12 TB sitting in S3 us-east-1 and the new warehouse is also in us-east-1.",
+      "assistant_message": "Good news there: data transfer between S3 and Snowflake within the same AWS region — us-east-1 to us-east-1 — is free from AWS's perspective, so you won't incur S3 egress charges. Snowflake does charge for the compute used during the COPY INTO load, but the storage transfer itself costs nothing. Staging your 12 TB in an S3 bucket in the same region as your Snowflake account is the right call.",
+      "gold_parents": [
+        "t25"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "We also need to decide on a file format for the staged data. The team is split between Parquet and ORC.",
+      "assistant_message": "Snowflake has native support for both, but Parquet is generally the better choice for Snowflake migrations because its columnar encoding aligns well with Snowflake's internal micro-partition format and the COPY INTO command handles Parquet schema inference more reliably. ORC is perfectly functional but was optimized for Hive/HDFS ecosystems, so you may hit edge cases with complex nested types. Unless your upstream systems are already producing ORC and re-encoding is expensive, I'd go with Parquet.",
+      "gold_parents": [
+        "t26"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "Makes sense. We're also evaluating whether to use Snowflake's built-in scheduling via Tasks or keep using our existing Airflow 2.6 DAGs to orchestrate the migrated jobs.",
+      "assistant_message": "Keeping Airflow 2.6 is usually the safer choice if your team already has mature DAGs with complex dependencies, retries, and alerting baked in, because you'd be throwing away a lot of operational maturity by switching to Tasks. Snowflake Tasks are elegant for simple chains but lack some of the branching and sensor capabilities Airflow provides out of the box. The Snowflake provider package for Airflow 2.6 is well-maintained and lets you trigger Snowflake jobs from your existing DAGs without rearchitecting anything.",
+      "gold_parents": [
+        "t27"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "We're leaning toward keeping Airflow. One concern is secret management — right now credentials are stored in Airflow's built-in metadata database, and we want to move to HashiCorp Vault. Is that straightforward with Airflow 2.6?",
+      "assistant_message": "Airflow 2.6 has a first-class secrets backend interface, and the HashiCorp Vault backend is one of the officially supported providers via the apache-airflow-providers-hashicorp package. You configure it by setting the secrets_backend in airflow.cfg to airflow.providers.hashicorp.secrets.vault.VaultBackend and pointing it at your Vault address and mount path. The main operational step is migrating your existing connection and variable records out of the metadata DB and into Vault, which you can do incrementally without downtime.",
+      "gold_parents": [
+        "t28"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t30",
+      "turn_index": 29,
+      "user_message": "Perfect. Another thing — we need to set up column-level security on the new warehouse. Specifically, the `customer_pii` table has SSN and credit card columns that only the compliance team's role should be able to read in plaintext.",
+      "assistant_message": "Snowflake's Dynamic Data Masking is the right tool for that use case. You create a masking policy that returns the plaintext value when the current role is COMPLIANCE_TEAM and returns a masked or nulled value for all other roles, then attach that policy to the SSN and credit card columns on the customer_pii table. This is enforced at query time so even if someone with a lower-privileged role runs SELECT *, they'll only see the masked output without any application-layer changes.",
+      "gold_parents": [
+        "t29"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t31",
+      "turn_index": 30,
+      "user_message": "Great. We also want to make sure we have query audit logging enabled so we can track who accessed those sensitive columns.",
+      "assistant_message": "Snowflake's ACCESS_HISTORY view in the ACCOUNT_USAGE schema gives you exactly that — it records every query, the user and role that ran it, and which columns were projected in the output, including masked ones. You'll want to make sure your Snowflake account has the Enterprise tier or above, because ACCESS_HISTORY is not available on the Standard tier. Retention in ACCOUNT_USAGE is 365 days, but I'd recommend also shipping the logs to your SIEM for longer-term retention if your compliance requirements exceed that.",
+      "gold_parents": [
+        "t30"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t32",
+      "turn_index": 31,
+      "user_message": "We're on Business Critical tier actually, so that's covered. How should we handle schema evolution? Some of our source tables add new columns fairly frequently.",
+      "assistant_message": "The cleanest pattern for frequent schema evolution in Snowflake is to use VARIANT columns for the semi-structured payload alongside a set of typed columns for the fields you know are stable, so new upstream fields land in the VARIANT without breaking downstream queries. Alternatively, if your source emits Avro or Parquet with an Avro schema registry, you can use Snowflake's schema detection feature with INFER_SCHEMA to automatically pick up new columns during COPY INTO. The right choice depends on whether your consumers query the evolving fields directly or whether they're mostly archival.",
+      "gold_parents": [
+        "t31"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t33",
+      "turn_index": 32,
+      "user_message": "Most consumers do query the evolving fields directly, so VARIANT probably isn't ideal. We'll look at INFER_SCHEMA. What about table clustering — should we define cluster keys on the large fact tables from day one?",
+      "assistant_message": "For large fact tables, defining cluster keys from day one is worthwhile if you have a dominant filter pattern, typically a date or timestamp column that appears in WHERE clauses on almost every query. Snowflake's automatic clustering will maintain the key over time for an ongoing credit cost, so you want to be confident the access pattern justifies it before enabling it. A pragmatic approach is to load the data without clustering first, run your real workload for two to four weeks, then use the SYSTEM$CLUSTERING_INFORMATION function to evaluate whether natural clustering is already good enough before paying for automatic reclustering.",
+      "gold_parents": [
+        "t32"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t34",
+      "turn_index": 33,
+      "user_message": "That makes sense. We also need a rollback plan in case the migrated jobs produce incorrect results. What's the recommended approach for validating output parity between old and new systems during the cutover period?",
+      "assistant_message": "The standard approach is a parallel-run validation: keep the old system writing its outputs to its existing tables while the new warehouse writes to shadow tables, then run a reconciliation job that does row-count checks, null-rate checks, and aggregate sum/average comparisons on key metrics for every job. For financial or order data, you'll want exact-match reconciliation on primary keys, not just aggregates, because rounding and type-casting differences can cancel out in sums. Define a tolerance threshold — many teams use zero tolerance for counts and 0.001% for floating-point aggregates — and fail the cutover automatically if any job exceeds it.",
+      "gold_parents": [
+        "t33"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t35",
+      "turn_index": 34,
+      "user_message": "We've decided on zero tolerance for row counts and 0.01% for numeric aggregates. Who should own the sign-off on parity for each job — the data engineering team or the business stakeholders?",
+      "assistant_message": "Best practice is a two-stage sign-off: data engineering owns the technical parity check against your defined thresholds, and business stakeholders do a spot-check sign-off on the reports or dashboards that consume each job's output. Data engineering can confirm the numbers match mechanically, but only a business user can confirm that the semantics are correct — for example, that a revenue figure is being calculated with the right business logic rather than just producing the same wrong answer as before. Formalizing both sign-offs in your migration checklist protects both teams.",
+      "gold_parents": [
+        "t34"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t36",
+      "turn_index": 35,
+      "user_message": "Good idea. We're also planning to use dbt for transformations in the new warehouse. Should we use dbt Core or dbt Cloud for a team of eight engineers?",
+      "assistant_message": "For a team of eight, dbt Cloud starts to pay for itself because of the hosted scheduler, the IDE, and the centralized job logging — managing dbt Core at that team size means someone has to own the orchestration plumbing, documentation hosting, and environment management, which adds up. dbt Cloud's Teams plan supports up to 8 developer seats and includes CI/CD integration with GitHub or GitLab out of the box. If your organization already has strong infrastructure-as-code practices and wants full control, dbt Core on Airflow is viable, but most eight-person teams find dbt Cloud reduces operational overhead meaningfully.",
+      "gold_parents": [
+        "t35"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t37",
+      "turn_index": 36,
+      "user_message": "We'll go with dbt Cloud. How should we structure our dbt project — one monorepo for all domains or separate projects per domain?",
+      "assistant_message": "For most teams migrating to a new warehouse, a single monorepo with a clear folder structure by domain — staging, intermediate, and marts layers per domain — is the right starting point because cross-domain dependencies are easy to express as ref() calls without inter-project contracts. Splitting into separate dbt projects makes sense only when domains have genuinely independent release cycles and different teams who need deployment isolation. Since you're doing a migration rather than a greenfield build, starting monorepo and splitting later if needed is much lower risk than the reverse.",
+      "gold_parents": [
+        "t36"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t38",
+      "turn_index": 37,
+      "user_message": "Got it. We also need to decide how to handle slowly changing dimensions. Most of our dimension tables are Type 2 SCDs. Does dbt have native support for that?",
+      "assistant_message": "dbt has the dbt-utils snapshot feature, now formalized as the snapshots block in dbt Core, which implements Type 2 SCD logic natively. You define a snapshot with a unique key and a strategy — either timestamp-based or check-based — and dbt manages the dbt_valid_from and dbt_valid_to columns automatically on each run. For your existing Type 2 dimensions, you'd backfill the historical records into the snapshot table on first load and then let dbt maintain the SCD logic going forward.",
+      "gold_parents": [
+        "t37"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t39",
+      "turn_index": 38,
+      "user_message": "We have about 40 dimension tables that need SCD Type 2 treatment. Is there a way to test that the snapshot logic is working correctly in CI?",
+      "assistant_message": "Yes — the standard approach is to write dbt tests that assert invariants on your snapshot tables: for example, that dbt_valid_to is always NULL for exactly one record per natural key (the current record), that no two records for the same key have overlapping validity periods, and that dbt_valid_from is always less than dbt_valid_to for closed records. You can implement these as custom generic tests in dbt or use the dbt-expectations package, which includes a suite of set-based assertions. Running these in your CI pipeline on a sample dataset catches regressions in snapshot logic before they reach production.",
+      "gold_parents": [
+        "t38"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t40",
+      "turn_index": 39,
+      "user_message": "We'll set that up. What's the best way to manage dbt environment configs — dev, staging, and prod — given that all three will point at the same Snowflake account but different databases?",
+      "assistant_message": "The idiomatic dbt approach is to use targets in your profiles.yml, with each target specifying a different database name — for example, ANALYTICS_DEV, ANALYTICS_STAGING, and ANALYTICS_PROD — while the warehouse, role, and schema naming conventions stay consistent. In dbt Cloud you configure these as separate environments with their own credentials and database overrides, and you promote code through environments via CI jobs rather than by manually switching targets. Using the {{ target.name }} variable inside your dbt_project.yml lets you conditionally adjust behavior, like limiting data volume in dev, without duplicating model logic.",
+      "gold_parents": [
+        "t39"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t41",
+      "turn_index": 40,
+      "user_message": "That's clean. We also want to set up cost monitoring so we can alert if a single dbt job consumes more than a defined credit threshold in one run.",
+      "assistant_message": "Snowflake's QUERY_HISTORY view in ACCOUNT_USAGE includes credits_used_cloud_services and you can join it to WAREHOUSE_METERING_HISTORY to attribute credit consumption to specific warehouse activity windows. A practical pattern is to tag each dbt job's warehouse session with a QUERY_TAG set via a dbt on-run-start hook, then query QUERY_HISTORY filtered by that tag after the run completes to sum credits. You can wrap that in an Airflow sensor that fires a PagerDuty or Slack alert if the sum exceeds your threshold before marking the DAG run as successful.",
+      "gold_parents": [
+        "t40"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t42",
+      "turn_index": 41,
+      "user_message": "We'll implement that. One more infrastructure question — should we use separate virtual warehouses for the nightly batch jobs versus the daytime BI queries, or share one warehouse with auto-scaling?",
+      "assistant_message": "Separate virtual warehouses is strongly recommended for workload isolation: batch jobs and BI queries have very different concurrency and memory profiles, and sharing a warehouse means a runaway batch job can starve interactive BI users and vice versa. Dedicated warehouses also give you clean cost attribution and let you set independent auto-suspend and auto-resume policies — for example, the batch warehouse auto-suspends at 5 minutes of inactivity while the BI warehouse might use 1 minute to minimize idle costs during the day. Resource monitors scoped per warehouse make budget enforcement straightforward as well.",
+      "gold_parents": [
+        "t41"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t43",
+      "turn_index": 42,
+      "user_message": "That makes sense. We're planning to name the batch warehouse BATCH_WH and the BI warehouse BI_WH. Should the dbt transformations run on BATCH_WH or get their own warehouse?",
+      "assistant_message": "dbt transformations should get their own dedicated warehouse, typically named something like TRANSFORM_WH, rather than sharing BATCH_WH. dbt runs can be highly concurrent during a full refresh and can easily saturate a warehouse, which would delay the raw ingestion jobs that BATCH_WH needs to run. A separate TRANSFORM_WH also lets you right-size it independently — dbt workloads often benefit from a larger warehouse for the initial historical backfill and then can be scaled down for incremental runs.",
+      "gold_parents": [
+        "t42"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t44",
+      "turn_index": 43,
+      "user_message": "We have three dentists and two hygienists. Would all five count as providers under that model?",
+      "assistant_message": "Under Curve Dental's standard definition, hygienists are counted as providers just like dentists when they have their own patient records and treatment entries in the system. So yes, all five of your staff members would typically count as billable providers. At $299 per provider per month, your base monthly cost would come to $1,495 before any add-ons. Some practices negotiate a volume discount at five or more providers, so that's worth asking about during contract review.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t45",
+      "turn_index": 44,
+      "user_message": "For our restaurant reservation platform Tableaux, we're seeing a 71% drop-off rate at the account creation screen, specifically on the step where users enter their phone number for SMS verification.",
+      "assistant_message": "A 71% abandonment at SMS verification is a well-documented friction point in reservation platforms. The main culprits are users not wanting to share a phone number this early and SMS delivery delays that cause timeout errors. Tableaux could consider offering email-based verification as a fallback option, and A/B tests in the hospitality SaaS space have shown that adding a 'Why we need this' tooltip at that step can reduce drop-off to roughly 29–34%.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t46",
+      "turn_index": 45,
+      "user_message": "For Tableaux we also see that users who do complete SMS verification still abandon at 52% before finishing profile setup — they drop off at the cuisine preference selection on step 3 of 5.",
+      "assistant_message": "A 52% abandonment at cuisine preference selection on step 3 of 5 suggests that users perceive it as mandatory gatekeeping rather than personalization. Making that screen entirely skippable with a 'Set up later' option is the most reliable quick fix — Tableaux's competitors in the OpenTable and Resy space have reported a 40% reduction in profile-setup abandonment after making preference screens optional. You could also reduce the number of cuisine categories displayed from however many you currently show down to a curated list of 8–10 to lower decision fatigue.",
+      "gold_parents": [
+        "t45"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t47",
+      "turn_index": 46,
+      "user_message": "What day-30 retention should Tableaux realistically target after fixing the SMS and profile-setup issues?",
+      "assistant_message": "Restaurant reservation platforms operate on fundamentally different engagement rhythms than daily-use apps, so day-30 retention benchmarks are lower — a realistic target for Tableaux after fixing onboarding friction would be 14–19%. The reference point here is Resy's 2021 mobile relaunch, which improved day-30 retention from 9% to 16% after simplifying account creation to a single email-plus-password step and deferring all preference collection. I'd recommend Tableaux aim for 16% as a primary target, since that aligns with the upper-mid range of the hospitality booking app category.",
+      "gold_parents": [
+        "t46"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t48",
+      "turn_index": 47,
+      "user_message": "We're also running an A/B test for Tableaux's onboarding in their v3.1.0 release. What sample size and test duration make sense there?",
+      "assistant_message": "For Tableaux, to detect a meaningful improvement from the 71% SMS drop-off rate down to a target of roughly 32%, you'd need approximately 900 users per variant at 80% power and a 5% significance level — 1,800 total. Reservation platforms tend to have lower weekly new-user volumes than fitness apps, so if Tableaux is acquiring around 400 new users per week, plan for a 5-week test duration to accumulate enough completions. Unlike daily-use apps, you'll also want to extend your observation window to day-60 rather than day-30 to capture meaningful repeat-booking behavior.",
+      "gold_parents": [
+        "t47"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t49",
+      "turn_index": 48,
+      "user_message": "We also need to plan the actual data migration from Dentrix. Is there anything specific about how Curve handles Dentrix data?",
+      "assistant_message": "Curve Dental has a dedicated data migration team that handles Dentrix conversions specifically, which is one of the more common transitions they manage. They use a proprietary import tool that maps Dentrix patient records, treatment histories, and perio charting into Curve's format. Importantly, they require that you submit your Dentrix data export package at least 21 days before your go-live date so their team has time to validate and test the import. Missing that 21-day submission window is the most common reason migrations get pushed back.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t50",
+      "turn_index": 49,
+      "user_message": "We're also reworking the paywall. It currently appears after step 5 and offers a 7-day free trial at $9.99/month after that.",
+      "assistant_message": "A paywall at step 5 with a 7-day trial is a fairly standard placement, though the timing relative to perceived value matters a lot. At $9.99/month you're in the mid-tier range for mobile subscriptions, which means the trial window needs to be long enough for users to hit at least two or three 'aha moments' before they're asked to commit. Seven days can work, but only if your core value loop is short enough to demonstrate within the first couple of sessions.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t51",
+      "turn_index": 50,
+      "user_message": "We tested a 14-day trial and conversion actually dropped from 18% to 12%. So we're sticking with 7 days and $9.99.",
+      "assistant_message": "That's a counterintuitive but well-documented result — longer trials often reduce urgency and lead to users forgetting to cancel rather than actively choosing to subscribe. Your 18% conversion on a 7-day trial at $9.99/month is actually a solid baseline; many apps in the productivity and lifestyle categories benchmark around 10–15%, so you're above average there. Keeping the 7-day trial is the right call given your own data.",
+      "gold_parents": [
+        "t50"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t52",
+      "turn_index": 51,
+      "user_message": "Our waiting room TV has been broken for two weeks. Would a 55-inch or 65-inch display be better for a room that's about 18 feet deep?",
+      "assistant_message": "For a viewing distance of roughly 18 feet, a 65-inch display is generally the better choice for comfortable readability. The standard recommendation is about 1.5 to 2 times the screen diagonal as a minimum viewing distance, so a 65-inch screen hits that range well at 18 feet. A 55-inch screen would be on the small side and patients seated farther back might find text or images harder to read. Mounting it at eye level or slightly above, around 48 to 54 inches to the center, also helps with comfort.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t53",
+      "turn_index": 52,
+      "user_message": "We're thinking of running a patient education loop on it. What software do people usually use for that in dental offices?",
+      "assistant_message": "Digital signage platforms like Yodeck, ScreenCloud, or Dental Intel's patient education suite are popular choices in dental offices for exactly that purpose. Yodeck in particular is widely used because it runs on a standard Raspberry Pi device and costs around $8 per screen per month. Many practices also use vendor-provided content from companies like Caesy or Sesame Communications, which supply pre-made dental education videos. The choice usually comes down to whether you want fully managed content or prefer to customize your own playlist.",
+      "gold_parents": [
+        "t52"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t54",
+      "turn_index": 53,
+      "user_message": "Is there a contract length we'd be locked into with Curve Dental?",
+      "assistant_message": "Curve Dental's standard agreement is a 12-month contract with auto-renewal unless you provide written cancellation notice at least 60 days before the renewal date. They do offer a month-to-month option, but it comes at a premium—typically around 15 to 20 percent more per provider per month than the annual rate. Most practices opt for the annual contract to keep costs predictable. Early termination before the 12-month term is up generally incurs a fee equal to the remaining months' balance.",
+      "gold_parents": [
+        "t44"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t55",
+      "turn_index": 54,
+      "user_message": "How should we handle the cost allocation side? We have three business units sharing the Snowflake account and the finance team wants per-team billing breakdowns.",
+      "assistant_message": "Snowflake's resource monitors and virtual warehouse tagging are the standard tools for per-team cost allocation. You'd typically create one virtual warehouse per business unit — for example, TEAM_A_WH, TEAM_B_WH, and TEAM_C_WH — and attach a resource monitor to each with a monthly credit quota and an alert threshold, say a notification at 80% and a hard suspend at 100%. Snowflake's ACCOUNT_USAGE.WAREHOUSE_METERING_HISTORY view then lets finance pull exact credit consumption per warehouse with a simple SQL query.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t56",
+      "turn_index": 55,
+      "user_message": "What about Snowflake's Time Travel feature — should we enable it for the tables these jobs write to?",
+      "assistant_message": "Time Travel is worth enabling for tables that are written by nightly batch jobs, especially during the migration period when you might need to roll back a bad load. Snowflake's default Time Travel retention is 1 day for standard tables, but you can extend it up to 90 days for Enterprise edition accounts by setting DATA_RETENTION_TIME_IN_DAYS at the table or schema level. Keep in mind that Time Travel storage counts against your Snowflake storage bill, so a 90-day retention on a table that receives hundreds of gigabytes nightly can add up quickly.",
+      "gold_parents": [
+        "t55"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t57",
+      "turn_index": 56,
+      "user_message": "I've been thinking about updating our logo. The designer we used last time charges $850 for a full brand refresh package.",
+      "assistant_message": "That's a reasonable rate for a full brand refresh from an established designer. It might be worth timing any rebrand with a bigger announcement if you do decide to expand, though the decision can be made independently of your growth plans.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t58",
+      "turn_index": 57,
+      "user_message": "The designer said the $850 package includes three logo concepts and two rounds of revisions. Does that sound standard?",
+      "assistant_message": "Yes, three initial concepts plus two revision rounds is fairly typical for a mid-range brand refresh package. Some designers offer fewer concepts at that price point, so it's actually a decent scope of work for $850.",
+      "gold_parents": [
+        "t57"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t59",
+      "turn_index": 58,
+      "user_message": "She also said the turnaround is four weeks from the deposit. Would we need to budget anything extra for file formats or printing templates?",
+      "assistant_message": "Four weeks is a reasonable turnaround for that scope. You may want to ask specifically whether the deliverables include print-ready vector files and social media variants, as those are sometimes charged separately; budgeting an extra $100 to $200 for an expanded file package is common.",
+      "gold_parents": [
+        "t58"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t60",
+      "turn_index": 59,
+      "user_message": "What happens if we need to add a provider mid-contract, like if we hire a new associate dentist in the summer?",
+      "assistant_message": "Adding a provider mid-contract is straightforward with Curve Dental—you simply contact your account manager and the new provider is activated within one business day. The additional provider is billed at the same per-provider rate as your existing contract, so if you're on the annual plan at $299 per provider per month, the new associate would be added at that same rate. The charge is prorated from the activation date through the end of your current contract term. There is no setup fee for mid-contract provider additions under the standard agreement.",
+      "gold_parents": [
+        "t54"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t61",
+      "turn_index": 60,
+      "user_message": "If we sign the lease for September 1, 2025 and order the furniture from WorkNest at the same time, could we realistically be fully operational by October 1, 2025? WorkNest told us their lead time is 3 to 4 weeks.",
+      "assistant_message": "With a September 1 lease commencement and a 3-to-4-week lead time from WorkNest, your furniture would arrive between September 22 and September 29, leaving a few days for any IT setup or finishing touches before October 1. That timeline is tight but achievable, provided there are no delays in permitting or build-out work that the landlord is responsible for. It would be worth confirming in writing with WorkNest that they can guarantee delivery within that window once you place the order.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t62",
+      "turn_index": 61,
+      "user_message": "Given everything we've sorted out, what's the latest date we can submit our Dentrix data export to Curve, and what will our monthly bill look like once we're fully up and running with all five providers?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t49",
+        "t60"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t5",
+    "t23",
+    "t44",
+    "t49",
+    "t54",
+    "t60"
+  ],
+  "distractor_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t6",
+    "t7",
+    "t8",
+    "t9",
+    "t10",
+    "t11",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t20",
+    "t21",
+    "t22",
+    "t24",
+    "t25",
+    "t26",
+    "t27",
+    "t28",
+    "t29",
+    "t30",
+    "t31",
+    "t32",
+    "t33",
+    "t34",
+    "t35",
+    "t36",
+    "t37",
+    "t38",
+    "t39",
+    "t40",
+    "t41",
+    "t42",
+    "t43",
+    "t45",
+    "t46",
+    "t47",
+    "t48",
+    "t50",
+    "t51",
+    "t52",
+    "t53",
+    "t55",
+    "t56",
+    "t57",
+    "t58",
+    "t59",
+    "t61"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states the data export must be submitted at least 21 days before the March 15th go-live date, giving a latest submission date of February 22nd.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states the monthly base cost for five providers is $1,495 (5 providers × $299 per provider per month).",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not mention the waiting room TV size (65-inch) or digital signage software (e.g., Yodeck) as relevant to the cost or migration deadline.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer does not give a submission deadline earlier than February 22nd (i.e., it does not incorrectly use the February 1st staff training start date as the data deadline).",
+      "required": true
+    }
+  ],
+  "notes": "t4 holds the critical Branch A fact (21-day data submission window before March 15th go-live = February 22nd deadline); t3 and t8 together establish Branch B facts (5 providers at $299/month = $1,495/month). t5 and t6 are the distractor branch about the waiting room TV and digital signage software, which are completely irrelevant to the query about the submission deadline and monthly cost.\n\nReference answer: The latest date to submit the Dentrix data export to Curve Dental is February 22nd, since Curve requires the package at least 21 days before the March 15th go-live date. Once the migration is complete and all five providers—three dentists and two hygienists—are active, the base monthly subscription will be $1,495, calculated at $299 per provider per month under Curve Hero's standard pricing. That figure covers the base plan only and does not include any optional add-on modules. If a new associate is added later in the year, they would be billed at the same $299 rate, prorated from their activation date.",
+  "evidence_note": null,
+  "premise": "a dentist's office replacing its appointment software",
+  "evidence_spans": null,
+  "benchmark_version": "1.1-length-ablation",
+  "length_class": "spliced_60"
+}

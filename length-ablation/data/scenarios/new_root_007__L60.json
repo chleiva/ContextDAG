@@ -1,0 +1,813 @@
+{
+  "scenario_id": "new_root_007__L60",
+  "family": "new_root",
+  "label": "NEW_ROOT",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I also need to figure out the font situation for the printed menus. Our designer suggested using a serif font for the dish names — something like Garamond. Does that typically work well for restaurant menus?",
+      "assistant_message": "Garamond is a classic choice and reads very elegantly on printed menus, especially for upscale or seasonal concepts. It pairs well with a simpler sans-serif font for descriptions, which keeps the hierarchy clear and prevents the page from feeling too heavy.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "We're printing on 100 lb. matte card stock. Will Garamond hold up at smaller point sizes, like 9pt for the descriptions?",
+      "assistant_message": "Garamond at 9pt on 100 lb. matte card stock can work, but it's right at the edge of comfortable readability — some guests, especially in dim lighting, may struggle with it. I'd recommend bumping descriptions to 10pt or 10.5pt to be safe, keeping dish names at 13–14pt for clear visual hierarchy.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "Our printer quoted a turnaround of 5 business days for 200 copies. Does that sound normal?",
+      "assistant_message": "Five business days for 200 copies of a menu on specialty card stock is a pretty standard turnaround for a short-run commercial print job. If your seasonal launch has a hard date, I'd still recommend submitting the files at least a week early to leave room for a proof review and any last-minute corrections.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "We also need to think about our barrel storage area. What are the specs on the Mopec M30 refrigeration unit used in wine caves?",
+      "assistant_message": "The Mopec M30 is a ducted split-system refrigeration unit rated at 3.0 tons of cooling capacity, designed to maintain cellar temperatures in the range of 55–58°F with a relative humidity target of 70–75%. It operates on a 208/230V single-phase power supply and draws a maximum of 18 amps at full load. The M30 uses R-410A refrigerant and carries an ENERGY STAR certification with an EER rating of 11.5, making it one of the more efficient options in its class for wine cave applications. Mopec recommends a minimum cave volume of 2,400 cubic feet for this unit to avoid short-cycling.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "How often does the M30 need its refrigerant levels checked and its coils cleaned?",
+      "assistant_message": "Mopec's maintenance schedule for the M30 calls for refrigerant pressure checks every 6 months by a certified HVAC technician, and they specify that the system should hold between 410 and 420 PSI on the high side at 95°F ambient. Evaporator coil cleaning is recommended every 90 days using a no-rinse foaming coil cleaner, and the condenser coils should be cleaned at least twice a year, ideally before summer and again in late fall. The air filter on the M30 is a MERV-8 rated panel filter measuring 16×20×2 inches, and Mopec recommends replacing it every 45 days during operation. Neglecting the coil cleaning interval can reduce the unit's efficiency by up to 15% and shorten compressor life by 2–3 years according to Mopec's service documentation.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What pressure range does the M30 operate at on the low side, and what's the minimum cave size again?",
+      "assistant_message": "On the low side, the Mopec M30 should read between 115 and 125 PSI during normal operation at a 55°F cave setpoint, and any reading below 110 PSI on the low side typically indicates a refrigerant leak or a restriction in the suction line. Mopec's installation manual, revision 4.2, specifies the minimum recommended cave volume as 2,400 cubic feet, which is the same figure from the original spec sheet. If the cave is smaller than that threshold, you'll need to install a crankcase pressure regulator to prevent the compressor from cycling too rapidly, which can cause premature failure within 18 months of installation according to Mopec's warranty exclusion clause 7B.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "I'm also trying to decide on cabinet style. I'm torn between shaker-style painted MDF cabinets and original-style beadboard inset cabinets that would be more period-appropriate for a 1920s house.",
+      "assistant_message": "Inset beadboard cabinets are historically accurate for a 1920s kitchen and can look stunning, but they cost significantly more because the door fitting is labor-intensive — expect to pay 25–40% more per linear foot than comparable overlay shaker cabinets. Shaker-style painted MDF from a semi-custom line like IKEA SEKTION or Hampton Bay can run $150–$250 per linear foot installed, while solid-wood inset beadboard from a custom shop often starts at $350–$500 per linear foot installed. Given your $6,150 remaining after electrical, the style choice will heavily determine how much you have left for countertops and flooring.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "For the countertops, I've been looking at butcher block as a period-appropriate option. What thickness is standard and what's a realistic cost per square foot installed?",
+      "assistant_message": "Standard butcher block countertop thickness for residential kitchens is 1.5 inches (sometimes listed as 1-1/2\"), though 2-inch and 3-inch slabs exist for heavier-use surfaces. Installed cost from a supplier like Lumber Liquidators or IKEA's KARLBY line runs roughly $30–$60 per square foot for maple or birch, while walnut or teak butcher block can reach $80–$120 per square foot installed. For a 120-square-foot kitchen you'd typically have 25–40 square feet of countertop, so budget $750–$2,400 depending on wood species and edge profile.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "I'm thinking the tasting menu for the fall launch should pair the butternut squash bisque as the soup course with the salted caramel tart as the dessert course. If I set the tasting menu at $65 per person and project 40 covers on opening night, that's $2,600 in tasting menu revenue to start.",
+      "assistant_message": "A $65 tasting menu with those two dishes as anchors gives you a cohesive autumn narrative — the savory warmth of the bisque leading into the sweet-salty richness of the caramel tart is a classic progression. At 40 covers, $2,600 in projected tasting revenue is a reasonable opening-night target, and it gives you a clear benchmark to measure against actual ticket sales. Just make sure your batch quantities for both the bisque and the tart shells are scaled to cover 40 portions with some buffer, typically 10–15% overage.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "We're also trying to decide between harvesting at 24 Brix versus waiting for 26 Brix. What does the timing difference usually look like in Paso Robles?",
+      "assistant_message": "In Paso Robles, Cabernet Sauvignon typically accumulates roughly 0.3 to 0.5 Brix per day during the final ripening push in late August and early September when daytime highs are in the mid-90s Fahrenheit. Moving from 24 to 26 Brix therefore usually means an additional 4 to 7 days on the vine, though a heat spike can compress that to 2 days and a cool marine layer can stretch it past 10. Most growers in the Westside AVA target 25–25.5 Brix as a compromise to preserve acidity above 0.60% tartaric while still achieving phenolic ripeness.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "How long does it typically take to get a food handler's certification in California?",
+      "assistant_message": "In California, a food handler card is obtained by completing an accredited food handler training course and passing the associated exam, which typically takes about two to three hours in total. The card is valid for three years from the date of completion, and the fee is generally around $15 depending on the provider. Many people complete the course online through providers accredited by the American National Standards Institute.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "Is there a difference between a food handler card and a food manager certification?",
+      "assistant_message": "Yes, they are distinct credentials with different scopes. A food handler card is required for most employees who work with unpackaged food and covers basic hygiene and safe handling practices. A food manager certification, such as the ServSafe Manager Certificate, requires a more rigorous proctored exam and demonstrates that the holder can oversee food safety systems for an entire establishment — it's typically required for at least one person per food service location in California.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "How often does the ServSafe Manager exam need to be renewed?",
+      "assistant_message": "The ServSafe Manager Certification is valid for five years from the date the exam is passed. After five years, the certificate holder must retake and pass the proctored exam to renew — there is no shorter refresher course option that satisfies the renewal requirement. The National Restaurant Association Educational Foundation administers the program, and many local health departments accept it as meeting their certified food protection manager requirement.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "What's the passing score for the ServSafe Manager exam?",
+      "assistant_message": "The passing score for the ServSafe Manager Certification exam is 75 percent, meaning a candidate must answer at least 56 out of 80 scored questions correctly. The exam contains 90 questions total, but 10 of those are pilot questions that are not scored. Results are typically available immediately when the exam is taken in a proctored digital format.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "Are there other nationally recognized food manager certifications besides ServSafe?",
+      "assistant_message": "Yes, several other certifications are accredited by the American National Standards Institute and the Conference for Food Protection, making them equivalent to ServSafe in the eyes of most health authorities. The Prometric Food Protection Manager Certification and the National Registry of Food Safety Professionals exam are two well-known alternatives. Some states and localities specify which certifications they accept, so it's worth checking your local health department's approved list before choosing a program.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "What topics are covered on the ServSafe Manager exam?",
+      "assistant_message": "The ServSafe Manager exam covers eight major content areas: providing safe food, forms of contamination, the safe food handler, the flow of food, food safety management systems, safe facilities and pest management, cleaning and sanitizing, and receiving and storing food. Each area corresponds to a chapter in the ServSafe Manager textbook, which is currently in its seventh edition. The exam is weighted, with the flow of food and food safety management systems sections carrying the most questions.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "What temperature does the FDA Food Code say poultry needs to reach for safe cooking?",
+      "assistant_message": "The FDA Food Code requires that poultry — including whole birds, ground poultry, and stuffed poultry — reach an internal temperature of 165°F (74°C) for at least 15 seconds. This applies to chicken, turkey, duck, and other birds. This is a higher target than for whole muscle beef, which the Food Code allows at 145°F with a three-minute rest time.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "What about the temperature danger zone — what range does the FDA define that as?",
+      "assistant_message": "The FDA Food Code defines the temperature danger zone as 41°F to 135°F (5°C to 57°C). Within this range, bacteria capable of causing foodborne illness can multiply rapidly, with the fastest growth occurring between 70°F and 125°F. The two-hour rule applies within this zone: potentially hazardous foods should not remain in the danger zone for more than two hours in total before being cooked, cooled, or discarded.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "How quickly does the FDA say hot food needs to be cooled once it's removed from heat?",
+      "assistant_message": "The FDA Food Code's two-stage cooling requirement says that cooked food must be cooled from 135°F to 70°F within the first two hours, and then from 70°F to 41°F or below within an additional four hours, for a total cooling time of no more than six hours. Failing to hit the 70°F mark in the first two hours is the more critical failure, as that is when bacterial growth is most rapid. Approved cooling methods include ice-water baths, blast chillers, and dividing food into shallow pans.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "What sanitizer concentration does the FDA recommend for chlorine-based sanitizing solutions?",
+      "assistant_message": "For chlorine-based sanitizing solutions used on food-contact surfaces, the FDA Food Code specifies a concentration of 50 to 100 parts per million (ppm) of available chlorine. The solution must be at a minimum temperature of 55°F and have a contact time of at least seven seconds for the 100 ppm concentration, or at least 10 seconds for concentrations between 50 and 99 ppm. Concentrations above 200 ppm are not recommended because they can leave harmful residue and may corrode equipment.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "Can you explain what a HACCP plan is and when a food business is required to have one?",
+      "assistant_message": "HACCP stands for Hazard Analysis and Critical Control Points, and it is a systematic, science-based approach to identifying and controlling biological, chemical, and physical hazards in food production. In the United States, HACCP plans are federally mandated for meat and poultry processors under USDA/FSIS regulations, for seafood processors under FDA 21 CFR Part 123, and for juice processors under FDA 21 CFR Part 120. Many state and local health codes also require HACCP-based plans for retail food establishments that conduct certain specialized processes, such as smoking meat for preservation or using reduced-oxygen packaging.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "What are the seven principles of HACCP?",
+      "assistant_message": "The seven HACCP principles are: conduct a hazard analysis, identify the critical control points (CCPs), establish critical limits for each CCP, establish monitoring procedures, establish corrective actions to take when monitoring indicates a CCP is not under control, establish verification procedures to confirm the system is working effectively, and establish record-keeping and documentation procedures. These principles were codified by the Codex Alimentarius Commission and are referenced in both FDA and USDA regulations. A properly implemented HACCP plan addresses all seven principles with specific, measurable parameters.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "What's the difference between verification and validation in a HACCP plan?",
+      "assistant_message": "Validation is the process of confirming, usually through scientific evidence or expert consultation, that the control measures chosen for each CCP are actually capable of controlling the identified hazard — it answers the question 'will this work?' Verification, on the other hand, is the ongoing activity of confirming that the validated HACCP system is actually being implemented correctly and is functioning as intended — it answers the question 'is this working?' For example, validating a cooking step might involve reviewing scientific literature on pathogen destruction, while verifying it involves checking thermometer calibration logs and reviewing cooking temperature records.",
+      "gold_parents": [
+        "t22"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "How often should thermometers used in food service be calibrated?",
+      "assistant_message": "The FDA Food Code recommends that food thermometers be calibrated before each shift or whenever they are dropped or subjected to extreme temperature changes, since both events can knock them out of calibration. For bimetallic stemmed thermometers, the most common calibration method is the ice-point method, which involves inserting the probe into a container of crushed ice and water and adjusting the calibration nut until the reading is 32°F (0°C). Digital thermometers with non-adjustable calibration should be checked against a known standard and replaced if they read more than 2°F off.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "What's the proper handwashing procedure and duration according to food safety guidelines?",
+      "assistant_message": "The FDA Food Code specifies a handwashing procedure of at least 20 seconds: wet hands and exposed forearms with warm water, apply soap and scrub vigorously including between fingers and under fingernails for at least 10 to 15 seconds, rinse thoroughly under running water, and dry with a single-use paper towel or an air dryer. Hands must be washed before beginning work, after handling raw meat or poultry, after touching the face or hair, after using the restroom, and after handling garbage, among other situations. Hand sanitizers do not substitute for handwashing in food service contexts under the Food Code.",
+      "gold_parents": [
+        "t24"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "What are the most common foodborne illness pathogens that food handlers are trained to watch for?",
+      "assistant_message": "ServSafe and the FDA Food Code both emphasize what are called the 'Big Six' pathogens because they are highly contagious or particularly dangerous: Shigella spp., Salmonella Typhi, nontyphoidal Salmonella, Shiga toxin-producing Escherichia coli (such as E. coli O157:H7), hepatitis A virus, and norovirus. Food handlers diagnosed with or exposed to these pathogens may be required to be excluded from work or restricted from working with exposed food, depending on the specific pathogen. Norovirus is the leading cause of foodborne illness outbreaks in the United States, responsible for roughly 58 percent of all such outbreaks annually according to CDC data.",
+      "gold_parents": [
+        "t25"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "How long can a person infected with norovirus shed the virus after symptoms resolve?",
+      "assistant_message": "Individuals infected with norovirus can continue to shed the virus in their stool for up to two weeks after symptoms have fully resolved, though the highest concentration of viral shedding occurs during the acute symptomatic phase. The FDA Food Code requires that food employees who have been diagnosed with norovirus illness be excluded from working with food until they have been symptom-free for at least 48 hours. Some immunocompromised individuals can shed the virus for months, making them a persistent transmission risk in food service environments.",
+      "gold_parents": [
+        "t26"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "What's the incubation period for norovirus compared to Salmonella?",
+      "assistant_message": "Norovirus has a relatively short incubation period of 12 to 48 hours after exposure, with most people becoming symptomatic within 24 to 36 hours. Nontyphoidal Salmonella has a longer incubation period, typically 6 to 72 hours, but most commonly 12 to 36 hours. One practical difference is that Salmonella illness tends to last longer — four to seven days on average — compared to norovirus, which usually resolves within one to three days in otherwise healthy adults.",
+      "gold_parents": [
+        "t27"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "What foods are most commonly associated with Salmonella outbreaks?",
+      "assistant_message": "According to CDC surveillance data, the foods most frequently linked to Salmonella outbreaks in the United States are poultry and poultry products, shell eggs, fresh produce (particularly tomatoes, sprouts, and leafy greens), and nut butters. Raw or undercooked chicken is historically the single most common vehicle, but in recent decades contaminated fresh produce has become an increasingly significant source. Proper temperature control during storage and thorough cooking to 165°F are the primary controls for poultry-associated Salmonella.",
+      "gold_parents": [
+        "t28"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t30",
+      "turn_index": 29,
+      "user_message": "Are there specific rules about how eggs must be stored in a commercial kitchen?",
+      "assistant_message": "Yes, the FDA Food Code requires that shell eggs received from a supplier must be stored at an ambient air temperature of 45°F (7°C) or below. They should be stored in their original cartons to prevent cross-contamination and to retain the date coding from the supplier. Shell eggs should never be stored near ready-to-eat foods and should be placed below them in the refrigerator to prevent drip contamination in the event of a cracked egg.",
+      "gold_parents": [
+        "t29"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t31",
+      "turn_index": 30,
+      "user_message": "What does 'use by' versus 'sell by' versus 'best by' actually mean on food labels?",
+      "assistant_message": "In the United States, these dates are largely unregulated for most foods — only infant formula is required by federal law to carry a use-by date. 'Sell by' is a retailer-facing inventory management date and does not indicate the product is unsafe after that date. 'Best by' or 'best if used by' is a manufacturer's quality indicator, suggesting the product will be at peak flavor and texture before that date but is not necessarily unsafe afterward. 'Use by' is the closest to a safety date and is the manufacturer's recommendation for when the product should be consumed for best quality and, in some cases, safety.",
+      "gold_parents": [
+        "t30"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t32",
+      "turn_index": 31,
+      "user_message": "How does the FDA regulate allergen labeling on packaged food?",
+      "assistant_message": "The Food Allergen Labeling and Consumer Protection Act of 2004 (FALCPA) requires that the eight major allergens — milk, eggs, fish, shellfish, tree nuts, peanuts, wheat, and soybeans — be declared on the label of packaged foods sold in the United States, either within the ingredient list or in a separate 'Contains' statement. In January 2023, sesame was added as the ninth major allergen under the FASTER Act, which was signed into law in April 2021. Advisory statements like 'may contain' or 'processed in a facility with' are voluntary and not regulated by the FDA, which means their absence does not guarantee a product is allergen-free.",
+      "gold_parents": [
+        "t31"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t33",
+      "turn_index": 32,
+      "user_message": "What's the difference between a food allergy and a food intolerance from a medical standpoint?",
+      "assistant_message": "A food allergy is an immune-mediated response in which the body's immune system incorrectly identifies a food protein as harmful and mounts an IgE-mediated reaction that can range from hives and gastrointestinal symptoms to anaphylaxis. A food intolerance, by contrast, does not involve the immune system and is typically a metabolic issue — the most common example being lactose intolerance, where the body lacks sufficient lactase enzyme to digest lactose, leading to gastrointestinal discomfort. The key clinical distinction is that food allergies can be life-threatening even with trace exposure, while food intolerances are generally dose-dependent and not life-threatening.",
+      "gold_parents": [
+        "t32"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t34",
+      "turn_index": 33,
+      "user_message": "How is anaphylaxis treated in an emergency?",
+      "assistant_message": "The first-line treatment for anaphylaxis is epinephrine, delivered via intramuscular injection into the outer thigh — most commonly through an auto-injector device such as an EpiPen, which delivers a 0.3 mg dose for adults. Epinephrine should be administered immediately at the first signs of anaphylaxis and the patient should be transported to an emergency room even if symptoms resolve, because biphasic reactions can occur hours later. Antihistamines and corticosteroids are adjunct treatments but are not substitutes for epinephrine and should not delay its administration.",
+      "gold_parents": [
+        "t33"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t35",
+      "turn_index": 34,
+      "user_message": "Are food service establishments required to have epinephrine auto-injectors on hand?",
+      "assistant_message": "There is no uniform federal requirement for food service establishments to stock epinephrine auto-injectors, but several states have enacted laws permitting or encouraging restaurants to voluntarily stock them. Illinois, for example, passed the Restaurant Responsibility Act in 2018, which allows restaurants to stock and administer epinephrine auto-injectors. Staff who administer epinephrine in good faith are generally protected from civil liability under these state laws, but the specifics vary by jurisdiction, so operators should consult their state health department and legal counsel.",
+      "gold_parents": [
+        "t34"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t36",
+      "turn_index": 35,
+      "user_message": "What training do restaurant staff typically need to handle allergic reaction emergencies?",
+      "assistant_message": "Most food safety and allergen training programs recommend that at least some staff members be trained in recognizing the symptoms of an allergic reaction — including hives, swelling of the lips or throat, difficulty breathing, and a sudden drop in blood pressure — and know how to call emergency services promptly. In establishments that stock epinephrine auto-injectors, staff designated to use them should receive hands-on training, typically through a brief certification course offered by programs like AllerTrain or through a local health department. The FDA's FASTER Act also encouraged the development of clearer voluntary guidance for food establishments on allergen management protocols.",
+      "gold_parents": [
+        "t35"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t37",
+      "turn_index": 36,
+      "user_message": "How does cross-contact differ from cross-contamination in the allergen context?",
+      "assistant_message": "Cross-contact refers specifically to the unintentional transfer of an allergenic food or ingredient to a food that is not supposed to contain that allergen — for example, using the same cutting board for peanut-containing products and peanut-free products without washing it between uses. Cross-contamination is a broader term that refers to the transfer of any harmful substance, including pathogens, to food. In allergen management, cross-contact is the key concern because even microscopic amounts of an allergen can trigger a reaction in a sensitized individual, and unlike pathogens, allergens cannot be destroyed by cooking.",
+      "gold_parents": [
+        "t36"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t38",
+      "turn_index": 37,
+      "user_message": "What cleaning procedures actually eliminate allergens from food contact surfaces?",
+      "assistant_message": "Allergens must be physically removed through cleaning, not just sanitizing — sanitizers kill pathogens but do not break down or remove allergenic proteins. The most effective method is a thorough wash with hot water and an appropriate detergent, followed by rinsing and then sanitizing. Studies have shown that a two-step clean-in-place procedure using an alkaline detergent followed by an acid rinse can reduce peanut allergen on stainless steel surfaces to below detectable limits, but the critical factor is mechanical scrubbing action to physically dislodge the protein, not the chemical alone.",
+      "gold_parents": [
+        "t37"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t39",
+      "turn_index": 38,
+      "user_message": "Are there any FDA-approved tests for detecting allergens on food contact surfaces?",
+      "assistant_message": "The FDA does not formally approve specific commercial allergen test kits, but it does reference lateral flow immunoassay devices and enzyme-linked immunosorbent assay (ELISA) tests as commonly used verification tools in food manufacturing. ELISA tests are considered the gold standard for quantitative allergen detection and can typically detect allergen concentrations in the range of 1 to 5 parts per million. Companies like Neogen and R-Biopharm manufacture widely used commercial ELISA and lateral flow test kits for major allergens including peanut, gluten, milk, and egg.",
+      "gold_parents": [
+        "t38"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t40",
+      "turn_index": 39,
+      "user_message": "What is the FDA's threshold for gluten in food labeled 'gluten-free'?",
+      "assistant_message": "The FDA's final rule on gluten-free labeling, which took effect in August 2014, defines 'gluten-free' as containing less than 20 parts per million (ppm) of gluten. This threshold was chosen because it is the lowest level that can be consistently detected with validated analytical methods, and scientific evidence indicates that most people with celiac disease can tolerate foods at this level without adverse health effects. The rule applies to packaged foods that voluntarily use the term 'gluten-free,' 'free of gluten,' 'without gluten,' or 'no gluten' on their labeling.",
+      "gold_parents": [
+        "t39"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t41",
+      "turn_index": 40,
+      "user_message": "How prevalent is celiac disease in the United States?",
+      "assistant_message": "Celiac disease affects approximately 1 percent of the general U.S. population, or roughly 3 million people, according to estimates from the National Institutes of Health and the Celiac Disease Foundation. However, it is believed to be significantly underdiagnosed — some studies suggest that for every person diagnosed, six to seven others have the condition but remain undiagnosed. The only treatment is strict, lifelong adherence to a gluten-free diet, which is why accurate labeling and cross-contact prevention are clinically important for this population.",
+      "gold_parents": [
+        "t40"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t42",
+      "turn_index": 41,
+      "user_message": "What grains naturally contain gluten?",
+      "assistant_message": "The three primary gluten-containing grains are wheat, barley, and rye — all of which contain the storage proteins that together are collectively referred to as gluten. Triticale, a hybrid of wheat and rye, also contains gluten. Oats are naturally gluten-free but are frequently contaminated with wheat during growing or processing, which is why the FDA allows oats to be included in gluten-free labeled products only if they are certified uncontaminated, often labeled as 'purity protocol' or 'gluten-free oats.'",
+      "gold_parents": [
+        "t41"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t43",
+      "turn_index": 42,
+      "user_message": "Is there a difference between wheat allergy and celiac disease?",
+      "assistant_message": "Yes, they are distinct conditions with different mechanisms. Wheat allergy is an IgE-mediated immune response to proteins found in wheat — not exclusively gluten — and can cause symptoms ranging from hives and gastrointestinal distress to anaphylaxis, similar to other food allergies. Celiac disease is an autoimmune condition triggered specifically by gluten, in which the immune response damages the villi of the small intestine, impairing nutrient absorption. A person with celiac disease must avoid wheat, barley, and rye, while a person with a wheat allergy must avoid wheat specifically but may be able to tolerate barley, rye, and other gluten-containing grains.",
+      "gold_parents": [
+        "t42"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t44",
+      "turn_index": 43,
+      "user_message": "What is non-celiac gluten sensitivity and how is it diagnosed?",
+      "assistant_message": "Non-celiac gluten sensitivity (NCGS) refers to a condition in which individuals experience gastrointestinal and extra-intestinal symptoms in response to gluten consumption, but test negative for celiac disease antibodies and show no intestinal damage on biopsy. There is currently no validated biomarker for NCGS, so diagnosis is made by exclusion — ruling out celiac disease and wheat allergy, trialing a gluten-free diet, and confirming that symptoms resolve and then recur upon gluten reintroduction in a blinded challenge. The underlying mechanism of NCGS is still debated, with some researchers suggesting that FODMAPs (fermentable oligosaccharides) in wheat, rather than gluten itself, may be the actual trigger for many patients.",
+      "gold_parents": [
+        "t43"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t45",
+      "turn_index": 44,
+      "user_message": "Are there any approved medications for celiac disease other than dietary management?",
+      "assistant_message": "As of early 2024, there are no FDA-approved medications specifically for celiac disease, and a strict gluten-free diet remains the only established treatment. However, several drugs are in clinical development, including larazotide acetate, which aims to reduce intestinal permeability, and various enzyme therapies designed to break down gluten peptides before they trigger an immune response. The FDA granted Breakthrough Therapy designation to at least one investigational therapy, TAK-101, though it had not completed Phase 3 trials as of the knowledge cutoff.",
+      "gold_parents": [
+        "t44"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t46",
+      "turn_index": 45,
+      "user_message": "We're overhauling our menu for the fall season and want to lead with a signature soup. What are the most popular fall soup bases right now?",
+      "assistant_message": "Butternut squash and roasted tomato bisques are performing very strongly in fall menus across the U.S. right now, with butternut squash appearing on roughly 34% of seasonal menus tracked by Datassential's 2023 MenuTrends report. Bone broth-based soups are also surging, partly driven by the wellness dining trend that picked up significant momentum in 2022 and has held since. French onion remains a perennial anchor, especially for mid-range casual dining, because its food cost typically runs between 18% and 22% of menu price.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t47",
+      "turn_index": 46,
+      "user_message": "We're leaning toward the butternut squash bisque. What garnishes make it feel more upscale without blowing the plate cost?",
+      "assistant_message": "A small quenelle of crème fraîche, toasted pepitas, and a drizzle of brown-butter sage oil can each add perceived luxury at a combined garnish cost of roughly $0.40–$0.65 per bowl. Microgreens from a local farm are another strong option; many farms sell 2-oz clamshells wholesale for about $1.20, which is enough for eight to ten portions. Avoid truffle oil as a default upscale signal—it has been widely identified by critics since around 2015 as a shortcut that sophisticated diners now find off-putting.",
+      "gold_parents": [
+        "t46"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t48",
+      "turn_index": 47,
+      "user_message": "Good point on the truffle oil. What bowl size and pricing do you recommend for positioning it as a starter?",
+      "assistant_message": "An 8-oz portion is the industry standard for a starter soup, keeping the diner hungry for subsequent courses while still feeling generous. At a food cost target of 28–30%, and assuming a total ingredient cost of about $1.80 per 8-oz serving with garnishes, you'd price the bowl between $6.00 and $6.50 to hit that margin. The National Restaurant Association's 2023 operator survey found that guests in casual-upscale settings accept starter soup prices up to $9.00 before perceived value drops sharply, so there's room to go slightly higher if your market supports it.",
+      "gold_parents": [
+        "t47"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t49",
+      "turn_index": 48,
+      "user_message": "We also want a fall salad. What ingredients are peaking in October that would work well together?",
+      "assistant_message": "October is peak season for Honeycrisp and Fuji apples, roasted beets, radicchio, and Bosc pears across most of the continental U.S. Honeycrisp apples in particular have become a menu staple—Datassential reported a 47% menu penetration increase for Honeycrisp specifically between 2018 and 2023. Pairing roasted golden beets with candied walnuts, Honeycrisp slices, and a sherry vinaigrette over arugula hits multiple textural and flavor contrasts that test well with guests in the 30–55 age demographic.",
+      "gold_parents": [
+        "t48"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t50",
+      "turn_index": 49,
+      "user_message": "That salad sounds great. Should we include a cheese component, and if so, which variety works best?",
+      "assistant_message": "A cheese component significantly boosts perceived value and satiation, and Gorgonzola dolce is the most complementary choice for that flavor profile—its mild, creamy sweetness balances the acidity of sherry vinaigrette and the bitterness of arugula without overpowering the fruit. Alternatively, aged Manchego shaved thin adds a nutty, firm contrast and typically costs $0.20–$0.30 less per portion than Gorgonzola dolce at wholesale. The James Beard Foundation's flavor-pairing guidance specifically highlights blue cheese and apple as a classic autumn pairing that has maintained menu relevance for over two decades.",
+      "gold_parents": [
+        "t49"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t51",
+      "turn_index": 50,
+      "user_message": "How should we handle staff training when the new menu launches? We have 14 servers and 3 bartenders and want everyone ready before opening on the launch day.",
+      "assistant_message": "For a team of 17 front-of-house staff, a structured tasting session the afternoon before launch day is one of the most effective approaches. Having each server and bartender taste every new dish and receive a one-page reference card with flavor descriptors, allergens, and suggested pairings tends to build real confidence. You might also designate two or three senior servers as menu champions who can answer questions on the floor during the first week of service.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t52",
+      "turn_index": 51,
+      "user_message": "We're planning to hold the tasting on August 31st from 2 PM to 4 PM. Should we pay staff their regular hourly rate for that time or offer a flat stipend?",
+      "assistant_message": "Paying the regular hourly rate is generally the safer choice from a wage-compliance standpoint, since mandatory training time is typically compensable under the Fair Labor Standards Act. A flat stipend can work if it meets or exceeds what the hourly rate would yield for those two hours, but verifying that for each employee's rate adds administrative overhead. Most operators find that simply running it through payroll at the standard rate is the cleanest solution.",
+      "gold_parents": [
+        "t51"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t53",
+      "turn_index": 52,
+      "user_message": "Good point. We also want to print a one-page menu insert for the launch week rather than reprinting the full menu. The insert will highlight three new dishes. What size and stock do you recommend for something like that?",
+      "assistant_message": "A 5-by-7-inch insert on 100 lb gloss cover stock is a popular choice because it feels substantial without overwhelming a standard menu cover pocket. If your menus are leather-bound with a full-page sleeve, bumping up to a 4.25-by-11-inch half-sheet lets you showcase each of the three dishes with a short description and still slip neatly inside. Ordering at least 10 to 15 percent more copies than your expected peak covers for the week gives you a buffer for reprints or damage.",
+      "gold_parents": [
+        "t52"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t54",
+      "turn_index": 53,
+      "user_message": "Our choir director wants to add a post-concert reception. The Hartwell Center's catering manager is called Patricia Osei and she said the kitchen closes at 9 p.m. on weeknights.",
+      "assistant_message": "That's worth flagging early with Patricia so you can plan your concert schedule around it. If your performance runs long or you want a proper reception rather than a rushed one, you might need to negotiate an exception or look at bringing in an external caterer.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t55",
+      "turn_index": 54,
+      "user_message": "The ward's supply room is running low on sterile gloves—size medium. Who should staff flag that to?",
+      "assistant_message": "Staff should report consumable shortages like sterile gloves directly to the ward's charge nurse, who then logs it through the materials-management portal. For urgent shortages, the charge nurse can also contact the central supply department by phone using the direct line posted inside the supply room door. Keeping a written log of each shortage report helps track recurring supply issues over time.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t56",
+      "turn_index": 55,
+      "user_message": "There's also a question about the staff break room—the microwave has been broken for two weeks. Is there a facilities request process for that?",
+      "assistant_message": "Non-clinical equipment repairs like a broken microwave fall under general facilities maintenance, and staff can submit a request through the hospital's FM helpdesk portal using their employee ID. For items in communal staff areas, the ward clerk typically acts as the point of contact to chase up outstanding requests. If the repair hasn't been actioned within five working days, the ward manager can escalate it to the Facilities Manager directly.",
+      "gold_parents": [
+        "t55"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t57",
+      "turn_index": 56,
+      "user_message": "What kind of permits do I need to handle and band birds in Illinois if I decide to add mist-netting to the study?",
+      "assistant_message": "To band birds in Illinois you need two separate federal permits: a Federal Bird Banding Permit issued by the USGS Bird Banding Laboratory (BBL), and because House Sparrows are an introduced species they are not protected under the Migratory Bird Treaty Act, so you technically don't need an MBTA permit specifically for them — but you will still need the BBL permit if you plan to use any standardized aluminum bands from the federal supply. At the state level, Illinois requires a Scientific Collecting Permit issued by the Illinois Department of Natural Resources (IDNR), and the application processing time is typically 60 to 90 days, so you should apply well in advance of your field season.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t58",
+      "turn_index": 57,
+      "user_message": "What about institutional requirements? My university has an IACUC, and I wasn't sure if mist-netting songbirds falls under their oversight.",
+      "assistant_message": "Yes, mist-netting wild birds absolutely falls under IACUC oversight at most U.S. research institutions, because the animals are being captured, handled, and potentially marked, which meets the threshold for an animal use protocol under the Animal Welfare Act and PHS Policy. You'll need to submit an Animal Use Protocol (AUP) describing your capture methods, expected sample sizes, handling duration, and any potential harms, and most IACUCs require that at least one listed personnel member hold a current BBL banding permit before they will approve the protocol. Review cycles at many universities run on a 4-to-6-week schedule, so factor that into your timeline alongside the IDNR permit.",
+      "gold_parents": [
+        "t57"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t59",
+      "turn_index": 58,
+      "user_message": "How long can you legally hold a bird during a banding session before it has to be released?",
+      "assistant_message": "The USGS BBL guidelines recommend keeping any wild bird in a holding bag for no longer than 30 minutes from the time of extraction from the net, and total processing time including measurements, banding, and photography should ideally stay under 15 minutes per bird. Many IACUC protocols set an even stricter internal limit of 10 minutes of active handling, particularly for small passerines that are prone to capture myopathy and stress-related mortality. If a bird shows signs of distress — open-mouth breathing, unresponsiveness, or extreme lethargy — the BBL guidelines specify immediate release regardless of whether processing is complete.",
+      "gold_parents": [
+        "t58"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t60",
+      "turn_index": 59,
+      "user_message": "What mesh size should I use for the mist nets to target House Sparrows specifically?",
+      "assistant_message": "For House Sparrows, which have a body mass typically ranging from 24 to 39 grams, the recommended mist net mesh size is 30 mm (bar mesh), which is the most common size used for small passerines in North America. Nets with a 36 mm mesh are also acceptable but have a slightly higher escape rate for very small sparrows. Standard mist nets used in North American banding operations are 12 meters long and 2.5 meters tall with four shelves, and are manufactured to those dimensions by suppliers like Avinet and Ecotone.",
+      "gold_parents": [
+        "t59"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t61",
+      "turn_index": 60,
+      "user_message": "Are there specific times of day I should be setting nets to maximize capture rates for House Sparrows?",
+      "assistant_message": "House Sparrows are most active and most readily captured in the first two hours after sunrise, which in Chicago during peak breeding season (May through June) means approximately 5:30 to 7:30 AM CDT. Activity drops off significantly by mid-morning as temperatures rise and the birds shift to foraging in more sheltered microhabitats. A secondary capture window exists in the late afternoon, roughly 5:00 to 7:00 PM CDT, but capture rates in that window are typically 40 to 60 percent lower than the morning window based on published urban banding studies.",
+      "gold_parents": [
+        "t60"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t62",
+      "turn_index": 61,
+      "user_message": "Should I close the nets during midday even if I'm on site?",
+      "assistant_message": "Yes, closing nets during midday is strongly recommended and is actually required under many IACUC protocols and BBL best-practice guidelines when ambient temperatures exceed 30°C (86°F), because heat stress in a net can kill a small bird within minutes. The standard practice is to close nets between approximately 10:00 AM and 4:00 PM during warm weather, which in Chicago's summer months is most days from late June onward. Some banders use a rule of thumb that nets must be checked every 20 to 30 minutes at minimum whenever they are open, and if continuous monitoring isn't possible the nets must be furled.",
+      "gold_parents": [
+        "t61"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t63",
+      "turn_index": 62,
+      "user_message": "So if we hire a bartending service that already holds the Category 3 license, we're covered for the whole event?",
+      "assistant_message": "Yes, as long as the bartending company's Category 3 Nevada Catering License is current and lists your event date within its coverage period, you are covered and no additional license is required from you as the host. You should ask the company to provide a copy of their license certificate at least 30 days before the event, and confirm that the license explicitly covers Washoe County, since some Category 3 licenses are issued with county-specific restrictions. Keep a copy of that certificate on-site during the event in case a Nevada Department of Taxation compliance officer requests it.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t64",
+      "turn_index": 63,
+      "user_message": "What happens if the bartending company's license lapses between now and June 14th?",
+      "assistant_message": "If the company's Category 3 license lapses before or on your event date, serving alcohol through them would be a violation of NRS 369.180, which carries a misdemeanor charge and a fine of up to $1,000 per violation for the unlicensed party. To protect yourselves, include a clause in your vendor contract requiring the bartending company to maintain valid licensure through June 15th and to provide proof of renewal within 10 business days of any renewal date that falls before your event. You could also name a backup licensed bartending service in the contract as a contingency if the primary vendor fails to maintain compliance.",
+      "gold_parents": [
+        "t63"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t65",
+      "turn_index": 64,
+      "user_message": "Our waiting room chairs are getting pretty worn. What's a reasonable budget for replacing the seating in a six-chair waiting room?",
+      "assistant_message": "For a professional dental waiting room, commercial-grade seating typically runs between $150 and $400 per chair, so a six-chair setup would cost roughly $900 to $2,400 for the furniture itself. You'd also want to factor in delivery and any reupholstering of existing pieces if you want to save some money.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t66",
+      "turn_index": 65,
+      "user_message": "The office manager also wants to repaint the reception area. Does the color of the walls actually affect patient anxiety levels?",
+      "assistant_message": "There is actually research suggesting that soft blues and greens are associated with lower anxiety in clinical settings, while bright whites and stark grays can feel more sterile and increase tension. For a dental office specifically, muted sage greens or warm taupes tend to be popular choices for that reason.",
+      "gold_parents": [
+        "t65"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t67",
+      "turn_index": 66,
+      "user_message": "What is the standard food safety temperature range that cooked soups must be held at during service to comply with FDA Food Code guidelines?",
+      "assistant_message": null,
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [],
+  "distractor_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t7",
+    "t8",
+    "t9",
+    "t10",
+    "t11",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t20",
+    "t21",
+    "t22",
+    "t23",
+    "t24",
+    "t25",
+    "t26",
+    "t27",
+    "t28",
+    "t29",
+    "t30",
+    "t31",
+    "t32",
+    "t33",
+    "t34",
+    "t35",
+    "t36",
+    "t37",
+    "t38",
+    "t39",
+    "t40",
+    "t41",
+    "t42",
+    "t43",
+    "t44",
+    "t45",
+    "t46",
+    "t47",
+    "t48",
+    "t49",
+    "t50",
+    "t51",
+    "t52",
+    "t53",
+    "t54",
+    "t55",
+    "t56",
+    "t57",
+    "t58",
+    "t59",
+    "t60",
+    "t61",
+    "t62",
+    "t63",
+    "t64",
+    "t65",
+    "t66"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that the FDA Food Code requires hot foods (including soups) to be held at or above 135°F (57°C) during service.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer identifies the temperature danger zone as between 41°F (5°C) and 135°F (57°C) per FDA Food Code.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not reference the butternut squash bisque food cost of $1.80 per serving or the 28–30% food cost target discussed earlier, as those are irrelevant to the food safety temperature question.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer correctly attributes the holding temperature standard to the FDA Food Code (not a different regulatory body such as USDA or a state-specific code).",
+      "required": false
+    }
+  ],
+  "notes": "The query (t6) is a standalone food safety question answerable from general FDA Food Code knowledge; it has no dependency on any prior turn. Turns t1–t5 are all distractors covering soup garnishes, pricing, salad ingredients, and cheese pairings—none of which contain or hint at holding temperature requirements. The main trap is importing the food cost or pricing figures from t3 into the answer.\n\nReference answer: According to the FDA Food Code, cooked soups must be held at a minimum of 135°F (57°C) during service to be considered safe for consumption. The temperature danger zone defined by the FDA Food Code runs from 41°F (5°C) to 135°F (57°C), the range in which bacteria multiply most rapidly. Soups that drop below 135°F must be rapidly reheated to 165°F (74°C) within two hours before being returned to service.",
+  "evidence_note": null,
+  "premise": "a restaurant redesigning its menu for a seasonal change",
+  "evidence_spans": null,
+  "benchmark_version": "1.1-length-ablation",
+  "length_class": "spliced_60"
+}

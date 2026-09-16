@@ -1,0 +1,772 @@
+{
+  "scenario_id": "long_noisy_side_thread_006__L60",
+  "family": "long_noisy_side_thread",
+  "label": "NOISE",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We also need to update our logo before the holiday season. The designer quoted us $850 for a full rebrand package.",
+      "assistant_message": "That's a reasonable price for a professional rebrand, especially if it includes file formats suitable for signage, packaging, and digital use. Make sure the deliverables include vector source files so you're not paying for revisions every time you need a new application. Timing it before the holiday rush could give the new look good visibility.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "The designer also said the turnaround time for the rebrand is six weeks from when we sign the contract.",
+      "assistant_message": "Six weeks is a fairly standard timeline for a thorough rebrand process, including concept rounds and revisions. If your holiday season starts ramping up in mid-November, you'd want to sign the contract by early October at the latest to have everything ready in time. Building in a small buffer for unexpected revision rounds would be wise.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "We're thinking of using the new logo on custom printed boxes too. The box supplier has a minimum order of 500 units.",
+      "assistant_message": "A 500-unit minimum is pretty standard for custom printed packaging, and it's worth calculating the per-unit cost against your current plain box spend to see if the branding premium is justified. If your holiday volume is high enough, 500 units might not last long anyway, making the minimum order less of a concern. Just make sure the box dimensions are finalized before you go to print so you're not stuck with packaging that doesn't fit your products.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "We're migrating our donor database from Bloomerang to Salesforce Nonprofit Success Pack (NPSP) version 3.210. We have exactly 14,872 active donor records, and the migration is scheduled to go live on March 15, 2025. Can you help us think through the data mapping process?",
+      "assistant_message": "Absolutely. Bloomerang-to-Salesforce NPSP migrations at that scale are very manageable but do require careful field mapping, especially around constituent records, gift history, and soft credits. The key is to map Bloomerang's 'Constituents' to NPSP's Contact and Account objects correctly, and to preserve the donation history so your recurring gift schedules don't break. What fields are you most concerned about preserving?",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "Can you help me figure out the right compute tier for the new warehouse? We're looking at the Snowflake X-Large vs. 2X-Large for the initial rollout.",
+      "assistant_message": "For an initial rollout, the choice between X-Large and 2X-Large usually comes down to your peak concurrent query load and the size of your largest batch transforms. X-Large gives you 16 nodes and is typically sufficient for up to around 50 concurrent queries, while 2X-Large doubles that to 32 nodes and is better suited if you're running heavy multi-terabyte joins during the same window. I'd recommend profiling your three or four most resource-intensive jobs on the old system first to get a baseline before committing to the tier.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "We pulled the profiles. The heaviest job, orders_aggregation, peaks at about 180 GB of intermediate spill to disk on the old system. Does that change the recommendation?",
+      "assistant_message": "180 GB of spill is significant and suggests the job is memory-constrained on whatever it's running on today. On Snowflake, spill to local disk happens when a query exceeds the per-node memory, so moving to 2X-Large — with its larger per-node memory allocation — would likely eliminate most of that spill and cut runtime considerably. I'd lean toward 2X-Large as your starting tier specifically because of that orders_aggregation profile.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "Good to know. What about data transfer costs getting the historical data into Snowflake? We have roughly 12 TB sitting in S3 us-east-1 and the new warehouse is also in us-east-1.",
+      "assistant_message": "Good news there: data transfer between S3 and Snowflake within the same AWS region — us-east-1 to us-east-1 — is free from AWS's perspective, so you won't incur S3 egress charges. Snowflake does charge for the compute used during the COPY INTO load, but the storage transfer itself costs nothing. Staging your 12 TB in an S3 bucket in the same region as your Snowflake account is the right call.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "We also need to decide on a file format for the staged data. The team is split between Parquet and ORC.",
+      "assistant_message": "Snowflake has native support for both, but Parquet is generally the better choice for Snowflake migrations because its columnar encoding aligns well with Snowflake's internal micro-partition format and the COPY INTO command handles Parquet schema inference more reliably. ORC is perfectly functional but was optimized for Hive/HDFS ecosystems, so you may hit edge cases with complex nested types. Unless your upstream systems are already producing ORC and re-encoding is expensive, I'd go with Parquet.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "Makes sense. We're also evaluating whether to use Snowflake's built-in scheduling via Tasks or keep using our existing Airflow 2.6 DAGs to orchestrate the migrated jobs.",
+      "assistant_message": "Keeping Airflow 2.6 is usually the safer choice if your team already has mature DAGs with complex dependencies, retries, and alerting baked in, because you'd be throwing away a lot of operational maturity by switching to Tasks. Snowflake Tasks are elegant for simple chains but lack some of the branching and sensor capabilities Airflow provides out of the box. The Snowflake provider package for Airflow 2.6 is well-maintained and lets you trigger Snowflake jobs from your existing DAGs without rearchitecting anything.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "We're leaning toward keeping Airflow. One concern is secret management — right now credentials are stored in Airflow's built-in metadata database, and we want to move to HashiCorp Vault. Is that straightforward with Airflow 2.6?",
+      "assistant_message": "Airflow 2.6 has a first-class secrets backend interface, and the HashiCorp Vault backend is one of the officially supported providers via the apache-airflow-providers-hashicorp package. You configure it by setting the secrets_backend in airflow.cfg to airflow.providers.hashicorp.secrets.vault.VaultBackend and pointing it at your Vault address and mount path. The main operational step is migrating your existing connection and variable records out of the metadata DB and into Vault, which you can do incrementally without downtime.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "Perfect. Another thing — we need to set up column-level security on the new warehouse. Specifically, the `customer_pii` table has SSN and credit card columns that only the compliance team's role should be able to read in plaintext.",
+      "assistant_message": "Snowflake's Dynamic Data Masking is the right tool for that use case. You create a masking policy that returns the plaintext value when the current role is COMPLIANCE_TEAM and returns a masked or nulled value for all other roles, then attach that policy to the SSN and credit card columns on the customer_pii table. This is enforced at query time so even if someone with a lower-privileged role runs SELECT *, they'll only see the masked output without any application-layer changes.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "Great. We also want to make sure we have query audit logging enabled so we can track who accessed those sensitive columns.",
+      "assistant_message": "Snowflake's ACCESS_HISTORY view in the ACCOUNT_USAGE schema gives you exactly that — it records every query, the user and role that ran it, and which columns were projected in the output, including masked ones. You'll want to make sure your Snowflake account has the Enterprise tier or above, because ACCESS_HISTORY is not available on the Standard tier. Retention in ACCOUNT_USAGE is 365 days, but I'd recommend also shipping the logs to your SIEM for longer-term retention if your compliance requirements exceed that.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "We're on Business Critical tier actually, so that's covered. How should we handle schema evolution? Some of our source tables add new columns fairly frequently.",
+      "assistant_message": "The cleanest pattern for frequent schema evolution in Snowflake is to use VARIANT columns for the semi-structured payload alongside a set of typed columns for the fields you know are stable, so new upstream fields land in the VARIANT without breaking downstream queries. Alternatively, if your source emits Avro or Parquet with an Avro schema registry, you can use Snowflake's schema detection feature with INFER_SCHEMA to automatically pick up new columns during COPY INTO. The right choice depends on whether your consumers query the evolving fields directly or whether they're mostly archival.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "Most consumers do query the evolving fields directly, so VARIANT probably isn't ideal. We'll look at INFER_SCHEMA. What about table clustering — should we define cluster keys on the large fact tables from day one?",
+      "assistant_message": "For large fact tables, defining cluster keys from day one is worthwhile if you have a dominant filter pattern, typically a date or timestamp column that appears in WHERE clauses on almost every query. Snowflake's automatic clustering will maintain the key over time for an ongoing credit cost, so you want to be confident the access pattern justifies it before enabling it. A pragmatic approach is to load the data without clustering first, run your real workload for two to four weeks, then use the SYSTEM$CLUSTERING_INFORMATION function to evaluate whether natural clustering is already good enough before paying for automatic reclustering.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "That makes sense. We also need a rollback plan in case the migrated jobs produce incorrect results. What's the recommended approach for validating output parity between old and new systems during the cutover period?",
+      "assistant_message": "The standard approach is a parallel-run validation: keep the old system writing its outputs to its existing tables while the new warehouse writes to shadow tables, then run a reconciliation job that does row-count checks, null-rate checks, and aggregate sum/average comparisons on key metrics for every job. For financial or order data, you'll want exact-match reconciliation on primary keys, not just aggregates, because rounding and type-casting differences can cancel out in sums. Define a tolerance threshold — many teams use zero tolerance for counts and 0.001% for floating-point aggregates — and fail the cutover automatically if any job exceeds it.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "We've decided on zero tolerance for row counts and 0.01% for numeric aggregates. Who should own the sign-off on parity for each job — the data engineering team or the business stakeholders?",
+      "assistant_message": "Best practice is a two-stage sign-off: data engineering owns the technical parity check against your defined thresholds, and business stakeholders do a spot-check sign-off on the reports or dashboards that consume each job's output. Data engineering can confirm the numbers match mechanically, but only a business user can confirm that the semantics are correct — for example, that a revenue figure is being calculated with the right business logic rather than just producing the same wrong answer as before. Formalizing both sign-offs in your migration checklist protects both teams.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "Good idea. We're also planning to use dbt for transformations in the new warehouse. Should we use dbt Core or dbt Cloud for a team of eight engineers?",
+      "assistant_message": "For a team of eight, dbt Cloud starts to pay for itself because of the hosted scheduler, the IDE, and the centralized job logging — managing dbt Core at that team size means someone has to own the orchestration plumbing, documentation hosting, and environment management, which adds up. dbt Cloud's Teams plan supports up to 8 developer seats and includes CI/CD integration with GitHub or GitLab out of the box. If your organization already has strong infrastructure-as-code practices and wants full control, dbt Core on Airflow is viable, but most eight-person teams find dbt Cloud reduces operational overhead meaningfully.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "We'll go with dbt Cloud. How should we structure our dbt project — one monorepo for all domains or separate projects per domain?",
+      "assistant_message": "For most teams migrating to a new warehouse, a single monorepo with a clear folder structure by domain — staging, intermediate, and marts layers per domain — is the right starting point because cross-domain dependencies are easy to express as ref() calls without inter-project contracts. Splitting into separate dbt projects makes sense only when domains have genuinely independent release cycles and different teams who need deployment isolation. Since you're doing a migration rather than a greenfield build, starting monorepo and splitting later if needed is much lower risk than the reverse.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "Got it. We also need to decide how to handle slowly changing dimensions. Most of our dimension tables are Type 2 SCDs. Does dbt have native support for that?",
+      "assistant_message": "dbt has the dbt-utils snapshot feature, now formalized as the snapshots block in dbt Core, which implements Type 2 SCD logic natively. You define a snapshot with a unique key and a strategy — either timestamp-based or check-based — and dbt manages the dbt_valid_from and dbt_valid_to columns automatically on each run. For your existing Type 2 dimensions, you'd backfill the historical records into the snapshot table on first load and then let dbt maintain the SCD logic going forward.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "We have about 40 dimension tables that need SCD Type 2 treatment. Is there a way to test that the snapshot logic is working correctly in CI?",
+      "assistant_message": "Yes — the standard approach is to write dbt tests that assert invariants on your snapshot tables: for example, that dbt_valid_to is always NULL for exactly one record per natural key (the current record), that no two records for the same key have overlapping validity periods, and that dbt_valid_from is always less than dbt_valid_to for closed records. You can implement these as custom generic tests in dbt or use the dbt-expectations package, which includes a suite of set-based assertions. Running these in your CI pipeline on a sample dataset catches regressions in snapshot logic before they reach production.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "We'll set that up. What's the best way to manage dbt environment configs — dev, staging, and prod — given that all three will point at the same Snowflake account but different databases?",
+      "assistant_message": "The idiomatic dbt approach is to use targets in your profiles.yml, with each target specifying a different database name — for example, ANALYTICS_DEV, ANALYTICS_STAGING, and ANALYTICS_PROD — while the warehouse, role, and schema naming conventions stay consistent. In dbt Cloud you configure these as separate environments with their own credentials and database overrides, and you promote code through environments via CI jobs rather than by manually switching targets. Using the {{ target.name }} variable inside your dbt_project.yml lets you conditionally adjust behavior, like limiting data volume in dev, without duplicating model logic.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "That's clean. We also want to set up cost monitoring so we can alert if a single dbt job consumes more than a defined credit threshold in one run.",
+      "assistant_message": "Snowflake's QUERY_HISTORY view in ACCOUNT_USAGE includes credits_used_cloud_services and you can join it to WAREHOUSE_METERING_HISTORY to attribute credit consumption to specific warehouse activity windows. A practical pattern is to tag each dbt job's warehouse session with a QUERY_TAG set via a dbt on-run-start hook, then query QUERY_HISTORY filtered by that tag after the run completes to sum credits. You can wrap that in an Airflow sensor that fires a PagerDuty or Slack alert if the sum exceeds your threshold before marking the DAG run as successful.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "We'll implement that. One more infrastructure question — should we use separate virtual warehouses for the nightly batch jobs versus the daytime BI queries, or share one warehouse with auto-scaling?",
+      "assistant_message": "Separate virtual warehouses is strongly recommended for workload isolation: batch jobs and BI queries have very different concurrency and memory profiles, and sharing a warehouse means a runaway batch job can starve interactive BI users and vice versa. Dedicated warehouses also give you clean cost attribution and let you set independent auto-suspend and auto-resume policies — for example, the batch warehouse auto-suspends at 5 minutes of inactivity while the BI warehouse might use 1 minute to minimize idle costs during the day. Resource monitors scoped per warehouse make budget enforcement straightforward as well.",
+      "gold_parents": [
+        "t22"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "That makes sense. We're planning to name the batch warehouse BATCH_WH and the BI warehouse BI_WH. Should the dbt transformations run on BATCH_WH or get their own warehouse?",
+      "assistant_message": "dbt transformations should get their own dedicated warehouse, typically named something like TRANSFORM_WH, rather than sharing BATCH_WH. dbt runs can be highly concurrent during a full refresh and can easily saturate a warehouse, which would delay the raw ingestion jobs that BATCH_WH needs to run. A separate TRANSFORM_WH also lets you right-size it independently — dbt workloads often benefit from a larger warehouse for the initial historical backfill and then can be scaled down for incremental runs.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "Our biggest concern is the custom field we use called 'Legacy Pledge Flag' — it's a boolean in Bloomerang and we've tagged 312 donors with it. We need that to map to a custom checkbox field in Salesforce on the Contact object, and it has to be done before the March 15 cutover.",
+      "assistant_message": "Got it — 312 donors carrying the Legacy Pledge Flag boolean in Bloomerang, and the target is a custom checkbox field on the Salesforce Contact object, live before March 15, 2025. You'll want to create that custom checkbox field in your Salesforce sandbox first, confirm it appears in the NPSP data import template, and then validate it with a test batch of 10–20 records before your full load. Make sure the field API name you assign in Salesforce is documented so your ETL script references it consistently throughout the migration.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "What's the recommended way to handle schema drift if the source system adds a new column overnight?",
+      "assistant_message": "The safest approach is to enable schema evolution on your target warehouse tables so new columns are automatically appended rather than causing the job to fail. You should also set up an alerting rule that fires whenever the source schema fingerprint changes, so the team is notified before the next nightly run rather than discovering it in a failure log.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "We're using Snowflake as the target. Does it support that kind of automatic schema evolution natively?",
+      "assistant_message": "Snowflake doesn't do fully automatic column addition out of the box during a COPY INTO operation — if the source file has extra columns, the load will error unless you use a defined file format with the STRIP_NULL_VALUES or PURGE options, or route through a staging layer. The cleaner pattern is to land data in a raw variant column or use a transformation layer like dbt that can handle column additions explicitly before writing to the typed target table.",
+      "gold_parents": [
+        "t26"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "We're actually using dbt for the transformation layer. Should we version-pin dbt-snowflake in the project?",
+      "assistant_message": "Yes, absolutely — you should pin both `dbt-core` and `dbt-snowflake` to exact versions in your `requirements.txt` or `packages.yml` so a surprise upgrade doesn't break the nightly run. A common practice is to test the upgrade in a staging environment first, then bump the pin in a PR so the change is reviewed and the pipeline is validated before it touches production.",
+      "gold_parents": [
+        "t27"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "We're currently on dbt-core 1.7.4 and dbt-snowflake 1.7.3. Are those compatible with each other?",
+      "assistant_message": "Yes, dbt-core 1.7.4 and dbt-snowflake 1.7.3 are compatible — the dbt-snowflake adapter minor version tracks dbt-core, so both being on the 1.7.x line means they're designed to work together. Just make sure your Snowflake account is on a supported driver version and that you test any metadata queries after upgrading, since dbt 1.7 introduced some changes to how relation metadata is fetched.",
+      "gold_parents": [
+        "t28"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t30",
+      "turn_index": 29,
+      "user_message": "How many folding tables should we rent for a fundraising gala with 200 seated guests? We're planning round tables that seat 8 per table.",
+      "assistant_message": "For 200 guests at 8 per round table, you'll need exactly 25 tables for seating. It's also wise to rent 3–5 extra tables for the registration area, gift display, and catering stations, so a total order of 28–30 folding or banquet rounds is typical for an event that size.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t31",
+      "turn_index": 30,
+      "user_message": "The venue has a 6,000 square foot ballroom. Is that enough space for 25 tables plus a small stage and dance floor?",
+      "assistant_message": "6,000 square feet is workable for that setup, though it will feel fairly full. A standard 60-inch round table with chairs needs roughly 100–120 square feet of floor space including circulation, so 25 tables alone consume about 2,500–3,000 square feet. That leaves 3,000–3,500 square feet for a modest stage (typically 400–600 sq ft for a 20×25 ft platform) and a 400–600 sq ft dance floor, which is tight but achievable if you keep the stage to one end and the dance floor adjacent to it.",
+      "gold_parents": [
+        "t30"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t32",
+      "turn_index": 31,
+      "user_message": "We're thinking of hiring a 4-piece band. What's a reasonable budget line for live music at a nonprofit gala?",
+      "assistant_message": "A professional 4-piece band for a nonprofit gala typically runs between $3,000 and $7,000 for a 4-hour evening, depending on your market and the musicians' experience level. Many bands also charge a travel or setup fee of $200–$500 on top of the performance rate. It's worth asking whether the band carries their own liability insurance, since some venues require vendors to show a certificate of insurance naming the venue as an additional insured.",
+      "gold_parents": [
+        "t31"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t33",
+      "turn_index": 32,
+      "user_message": "We need to send save-the-date cards to 450 invitees. Is six weeks out enough lead time for a Saturday evening event?",
+      "assistant_message": "Six weeks is on the shorter end but generally acceptable for a local or regional gala audience. Most event planners recommend 8–10 weeks for save-the-dates, especially if many guests need to arrange travel or childcare. If you're printing physical cards, factor in 5–7 business days for printing and 3–5 business days for mailing, which means you'd need to finalize your guest list and artwork no later than 7 weeks before the event to hit a 6-week delivery window.",
+      "gold_parents": [
+        "t32"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t34",
+      "turn_index": 33,
+      "user_message": "The caterer is quoting $85 per person for a plated three-course dinner. Does that seem reasonable?",
+      "assistant_message": "$85 per person for a plated three-course dinner is within the normal range for nonprofit gala catering, though it sits toward the mid-tier. Depending on your city, comparable plated dinners run from about $65 to $125 per person including service staff but excluding bar service. Make sure the quote specifies whether gratuity (typically 18–22%) and any room rental or setup fees are included, as those can add 25–30% to the final invoice.",
+      "gold_parents": [
+        "t33"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t35",
+      "turn_index": 34,
+      "user_message": "We want to do a silent auction with 30 items. What's the recommended minimum bid increment for items valued between $100 and $500?",
+      "assistant_message": "For items valued between $100 and $500, a standard minimum bid increment is $25, which keeps bidding competitive without discouraging participation. Some auction software defaults to 10% of the item's fair market value as the increment, which would put you in the $10–$50 range for that tier. Setting your opening bid at roughly 30–40% of the item's retail value is a common practice that encourages early bids while still generating meaningful revenue.",
+      "gold_parents": [
+        "t34"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t36",
+      "turn_index": 35,
+      "user_message": "We're using OneCause for the auction platform. Does it support mobile bidding out of the box?",
+      "assistant_message": "Yes, OneCause includes mobile bidding as a core feature — guests receive a text message link and can bid from any smartphone browser without downloading an app. The platform also supports outbid notifications via SMS, a bid history log per item, and a checkout process that can process credit cards directly through the platform. You'll want to run a test event in their sandbox environment at least two weeks before the gala to confirm your item catalog, bid increments, and payment processing are all configured correctly.",
+      "gold_parents": [
+        "t35"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t37",
+      "turn_index": 36,
+      "user_message": "How early should we open check-in for a 6:30 PM event start?",
+      "assistant_message": "Opening check-in 45 to 60 minutes before the stated start time is standard, so 5:30–5:45 PM for a 6:30 PM event. For 200 guests, staffing at least 4 check-in stations helps keep the line moving and prevents a bottleneck during the first 20 minutes, which is typically the busiest window. If you're distributing auction paddles or wristbands at check-in, add one extra staff member per 50 guests to avoid delays.",
+      "gold_parents": [
+        "t36"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t38",
+      "turn_index": 37,
+      "user_message": "We're also planning a paddle raise during the live program. What's a good target ask amount for a mid-tier nonprofit gala audience?",
+      "assistant_message": "For a mid-tier gala audience, a tiered paddle raise typically starts at $1,000 and steps down through $500, $250, $100, and $50 levels. The $250 and $100 tiers usually generate the most total revenue because they capture the broadest participation. A skilled auctioneer or emcee can coach the room through the tiers in about 8–10 minutes, and it's common for a well-run paddle raise to generate 20–35% of the evening's total fundraising revenue.",
+      "gold_parents": [
+        "t37"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t39",
+      "turn_index": 38,
+      "user_message": "What kind of AV setup do we need for a live program with video, a speaker, and the paddle raise?",
+      "assistant_message": "For a 6,000 square foot ballroom with 200 guests, you'll want at minimum two 10-foot projection screens with HDMI-connected projectors rated at 5,000 lumens or higher, a wireless handheld microphone for the emcee, and a lavalier mic for any seated speakers. A dedicated AV technician on-site throughout the event is strongly recommended — budget $1,200–$2,500 for professional AV services depending on your market. If you're showing a video, make sure you test the audio levels in the room at least 90 minutes before doors open, since ballroom acoustics vary significantly when the room is empty versus full.",
+      "gold_parents": [
+        "t38"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t40",
+      "turn_index": 39,
+      "user_message": "We want to put a centerpiece on each table. Floral arrangements versus candle centerpieces — which tends to be more cost-effective?",
+      "assistant_message": "Candle centerpieces are generally more cost-effective: a cluster of pillar or votive candles with a mirror tile or simple vessel can run $15–$35 per table, versus $60–$150 per table for fresh floral arrangements depending on the flowers and florist. However, many venues have restrictions on open flames, so you'd need to confirm whether LED candles are required, which are typically $8–$20 per candle but reusable. If budget allows, a hybrid approach — one or two statement floral arrangements near the stage and candle centerpieces on guest tables — can look elegant while keeping costs down.",
+      "gold_parents": [
+        "t39"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t41",
+      "turn_index": 40,
+      "user_message": "The venue requires a certificate of insurance from us. What coverage limits should we ask our broker for?",
+      "assistant_message": "Most event venues require a commercial general liability policy with at least $1,000,000 per occurrence and $2,000,000 aggregate for a seated dinner event of this size. You'll also want to confirm whether the venue requires liquor liability coverage if you're serving alcohol, which typically adds $150–$400 to the event policy premium. Ask your broker to add the venue as an additional insured on the certificate and have it delivered to the venue at least two weeks before the event date to satisfy their administrative requirements.",
+      "gold_parents": [
+        "t40"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t42",
+      "turn_index": 41,
+      "user_message": "We're expecting about 15 volunteers the night of the event. Do they need to be covered under that same policy?",
+      "assistant_message": "Yes, volunteers acting on behalf of your nonprofit during the event are typically covered as insured persons under your organization's general liability policy, but you should confirm this with your broker since some policies exclude unpaid volunteers unless specifically endorsed. It's also good practice to have each volunteer sign a brief volunteer agreement acknowledging their role and any safety guidelines, which helps establish that they were acting within the scope of authorized activities. If any volunteers will be handling cash or auction items of significant value, a crime or fidelity endorsement is worth discussing with your broker.",
+      "gold_parents": [
+        "t41"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t43",
+      "turn_index": 42,
+      "user_message": "We need to arrange parking for guests. The venue has 80 spots on-site. Should we hire valet?",
+      "assistant_message": "With 200 guests and only 80 on-site spots, you'll likely need to address the parking gap, especially if guests are arriving within a narrow 45-minute window. Valet parking is one option — a valet company can typically handle 150–200 cars in a 6,000 sq ft lot by stacking, and rates run $600–$1,200 for the evening plus tips. Alternatively, if there's a public garage or surface lot within two blocks, negotiating a reserved block of 80–100 spaces for a flat fee of $5–$10 per space is often more cost-effective and guests appreciate the simplicity.",
+      "gold_parents": [
+        "t42"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t44",
+      "turn_index": 43,
+      "user_message": "We want to send a post-event thank-you email within 48 hours. What should it include?",
+      "assistant_message": "A strong post-event thank-you email should include a specific dollar amount raised (even if preliminary), a genuine personal note from your executive director or board chair, and a clear next step — such as a link to view photos, a survey, or information about your next campaign. If guests made auction purchases or paddle raise gifts, the thank-you email should also include or link to their tax receipt, since IRS guidelines require written acknowledgment for charitable contributions of $250 or more. Sending it within 24–48 hours while the event is fresh significantly improves open rates and donor satisfaction scores.",
+      "gold_parents": [
+        "t43"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t45",
+      "turn_index": 44,
+      "user_message": "What's the IRS rule on acknowledging in-kind auction item donations from businesses?",
+      "assistant_message": "For in-kind donations from businesses, the IRS requires your nonprofit to provide a written acknowledgment that describes the donated property but does not assign a dollar value — the donor is responsible for determining the fair market value and reporting it on Form 8283 if the total deduction exceeds $500. Your acknowledgment letter should include your organization's name, EIN, the date of the donation, a description of the items donated, and a statement confirming whether any goods or services were provided in exchange. For donated items valued over $5,000, the donor must also obtain a qualified appraisal, so it's worth flagging high-value auction items to your corporate donors early.",
+      "gold_parents": [
+        "t44"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t46",
+      "turn_index": 45,
+      "user_message": "We have a corporate sponsor donating $10,000 in cash. Does that change the acknowledgment requirements?",
+      "assistant_message": "A $10,000 cash donation requires a contemporaneous written acknowledgment from your organization — 'contemporaneous' means the donor must receive it by the earlier of the date they file their tax return or the due date of that return. The acknowledgment must state the amount of cash contributed and include a statement that no goods or services were provided in exchange, or if any were (such as a sponsor table), it must describe and provide a good-faith estimate of the value of those benefits. If the sponsor receives a table valued at $2,000 as a benefit, for example, only $8,000 of the $10,000 is deductible, and your acknowledgment must reflect that split.",
+      "gold_parents": [
+        "t45"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t47",
+      "turn_index": 46,
+      "user_message": "How should we handle the sponsor's logo on our event signage and website — is there a legal distinction between sponsorship and advertising?",
+      "assistant_message": "Yes, this is an important distinction for nonprofits. Sponsorship payments are generally treated as non-taxable contributions under IRS rules as long as your acknowledgment is limited to the sponsor's name, logo, and a brief description of their products or services without comparative or qualitative language. If your acknowledgment crosses into advertising — for example, saying the sponsor's product is 'the best' or including a call to action like 'visit their website for a discount' — the IRS may treat the payment as unrelated business income (UBI), which is taxable. Keeping sponsor recognition to logo placement, a tagline, and contact information keeps you safely in the sponsorship category.",
+      "gold_parents": [
+        "t46"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t48",
+      "turn_index": 47,
+      "user_message": "We're also applying for a $25,000 grant from a local community foundation to help fund our summer programs. The deadline is February 28, 2025. What's typically in a letter of inquiry?",
+      "assistant_message": "A letter of inquiry (LOI) to a community foundation typically runs 1–3 pages and includes a brief organizational overview, a clear statement of the specific need your project addresses, a description of the proposed program with measurable outcomes, the amount requested (in your case $25,000), and a one-sentence note on your organization's total budget for context. Many community foundations also want to see the target population served and a timeline, so mentioning your summer program dates and estimated number of beneficiaries strengthens the LOI. Since your deadline is February 28, 2025, you'd want a draft ready for internal review by February 14 at the latest to allow time for revisions and sign-off.",
+      "gold_parents": [
+        "t47"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t49",
+      "turn_index": 48,
+      "user_message": "The foundation requires two letters of support from community partners. How do we ask for those without it feeling transactional?",
+      "assistant_message": "The most effective approach is to frame the request around the shared mission rather than your organizational need — reach out to partners you've collaborated with directly and reference a specific project or outcome you accomplished together. A personal phone call or meeting before sending a formal request goes a long way toward making it feel relational rather than transactional. Give partners at least three weeks to draft and sign the letter, and offer to provide a one-page brief with key program details and talking points so their letter is accurate and easy to write.",
+      "gold_parents": [
+        "t48"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t50",
+      "turn_index": 49,
+      "user_message": "One of our potential support letter writers is a city council member. Is there any issue with using a government official's letter for a grant application?",
+      "assistant_message": "Using a city council member's letter of support is generally permissible and can actually strengthen your application, as it signals community buy-in and local government awareness of your work. The main thing to verify is that the council member is writing in their capacity as a community stakeholder or based on direct knowledge of your programs, not making any commitment of public funds or official city endorsement, which could create complications. Some foundations also have policies about letters from elected officials — it's worth checking the foundation's FAQ or calling their program officer to confirm there's no restriction before you submit.",
+      "gold_parents": [
+        "t49"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t51",
+      "turn_index": 50,
+      "user_message": "The grant application asks for a logic model. We've never built one before. What are the core components?",
+      "assistant_message": "A logic model has five core components arranged left to right: Inputs (resources you invest, such as staff time, funding, and volunteers), Activities (what you do with those inputs, like workshops or mentorship sessions), Outputs (the direct, countable products of your activities, such as number of youth served or sessions delivered), Short-term Outcomes (changes in knowledge, skills, or attitudes within 1–2 years), and Long-term Outcomes or Impact (sustained behavior change or community-level results over 3–5 years). Most community foundations are satisfied with a one-page visual table or diagram, and many have a template on their website you can adapt. The clearest logic models use active verbs and specific numbers wherever possible.",
+      "gold_parents": [
+        "t50"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t52",
+      "turn_index": 51,
+      "user_message": "For our summer program, we expect to serve 120 youth ages 10–14 over eight weeks. What would a reasonable short-term outcome look like?",
+      "assistant_message": "A well-written short-term outcome for that program might be: 'By the end of the 8-week program, 80% of participating youth will demonstrate increased confidence in STEM problem-solving as measured by pre- and post-program self-assessment surveys.' The key elements are a timeframe, a percentage or number target, the population (120 youth ages 10–14), the specific change being measured, and the measurement method. Funders respond well to outcomes that are ambitious but realistic — an 80% target on a skill-confidence measure is credible for an intensive 8-week intervention.",
+      "gold_parents": [
+        "t51"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t53",
+      "turn_index": 52,
+      "user_message": "We need to hire a part-time program coordinator for the summer. What should the job posting include to attract strong candidates?",
+      "assistant_message": "A strong part-time program coordinator posting should clearly state the hourly rate or salary range (transparency significantly increases application volume), the expected hours per week, the specific start and end dates of the position, and the primary responsibilities with enough specificity that candidates can self-select appropriately. Include the required qualifications versus preferred qualifications in separate lists so candidates don't screen themselves out unnecessarily, and describe your organizational culture briefly — mission-driven candidates respond to authenticity. Posting on Idealist, LinkedIn, and your local workforce development board typically yields the strongest nonprofit-sector applicant pool.",
+      "gold_parents": [
+        "t52"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t54",
+      "turn_index": 53,
+      "user_message": "We're planning to pay $22 per hour for 20 hours per week over 10 weeks. Do we need to provide any benefits at that level?",
+      "assistant_message": "At 20 hours per week, this would typically be classified as part-time, and under federal law there is no requirement to provide health insurance, paid leave, or retirement benefits to part-time employees working under 30 hours per week. However, you must still withhold and remit payroll taxes (federal income tax, Social Security at 6.2%, and Medicare at 1.45%), and your state may have additional requirements such as paid sick leave accrual for part-time workers — for example, California, New York, and Washington require paid sick leave for part-time employees regardless of hours worked. Confirm your state's specific rules with your payroll provider or HR counsel before the hire.",
+      "gold_parents": [
+        "t53"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t55",
+      "turn_index": 54,
+      "user_message": "We use ADP Run for payroll. Can it handle a short-term seasonal employee like this?",
+      "assistant_message": "Yes, ADP Run handles seasonal and short-term employees well — you can add them as active employees, process payroll normally for the duration of their assignment, and then terminate them in the system at the end date without any special configuration. The platform will automatically calculate and withhold the correct federal and state taxes based on the W-4 the employee submits, and it generates the W-2 at year-end even for employees who only worked part of the year. Just make sure to set the employee's termination date in ADP Run before their last payroll run so the system flags them correctly and doesn't generate unnecessary payroll periods afterward.",
+      "gold_parents": [
+        "t54"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t56",
+      "turn_index": 55,
+      "user_message": "Our executive director wants to know if we need to update our employee handbook before bringing on summer staff. What sections are most commonly outdated?",
+      "assistant_message": "The sections most commonly outdated in nonprofit handbooks are the anti-harassment and discrimination policy (which should reference current EEOC guidance and any state-level expansions), the remote work or hybrid work policy (many organizations haven't updated these since 2020–2021), and the leave policies, especially if your state has enacted or expanded paid family and medical leave laws recently. If your handbook still references the pre-2020 FFCRA emergency leave provisions as ongoing policy, that section needs to be corrected. A quick legal review of those four areas — harassment, remote work, leave, and any wage and hour language — typically takes 2–4 hours for an employment attorney and is well worth it before onboarding new staff.",
+      "gold_parents": [
+        "t55"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t57",
+      "turn_index": 56,
+      "user_message": "We also need to update our conflict of interest policy before our June board meeting. What should it cover?",
+      "assistant_message": "A solid nonprofit conflict of interest policy should cover the definition of a conflict (financial interests, family relationships, and outside employment or board service that could influence decisions), the disclosure process (typically an annual disclosure form plus real-time disclosure when a conflict arises in a meeting), the recusal procedure (the conflicted party leaves the room during deliberation and vote), and documentation requirements (minutes must record that the conflict was disclosed, the person recused, and the vote was taken without their participation). The IRS Form 990 asks whether your organization has a written conflict of interest policy and whether board members complete annual disclosure statements, so having both the policy and a signed annual form on file for each board member is important for compliance. Many state nonprofit associations publish a model policy you can adapt.",
+      "gold_parents": [
+        "t56"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t58",
+      "turn_index": 57,
+      "user_message": "We have 11 board members. How often should the full board meet, and is there a legal minimum?",
+      "assistant_message": "There is no universal federal legal minimum for nonprofit board meeting frequency, but most state nonprofit corporation acts require at least one annual meeting of the board, and many states require it to be documented with formal minutes. Best practice, and the expectation of most accreditation bodies and sophisticated funders, is quarterly meetings of the full board, supplemented by committee meetings in between. With 11 members, quarterly full-board meetings of 90–120 minutes, combined with active executive and finance committee work in the off-months, is a structure that keeps governance strong without burning out volunteer board members.",
+      "gold_parents": [
+        "t57"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t59",
+      "turn_index": 58,
+      "user_message": "Two of our board members haven't attended a meeting in over a year. What's the right way to handle that?",
+      "assistant_message": "The first step is a private, direct conversation — ideally from the board chair — to understand whether there are personal circumstances, a mismatch of expectations, or a loss of engagement that can be addressed. Many bylaws include an automatic removal provision for members who miss a specified number of consecutive meetings (commonly three), so review your bylaws to see whether removal is already triggered and whether you need to formally act on it. If the member wants to remain but has genuine barriers, some boards create an 'emeritus' or 'advisory' designation that honors their relationship without counting them toward quorum, though this requires a bylaw amendment or board resolution depending on your governance documents.",
+      "gold_parents": [
+        "t58"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t60",
+      "turn_index": 59,
+      "user_message": "Our bylaws haven't been reviewed since 2017. Is that a problem?",
+      "assistant_message": "A 2017 review date means your bylaws are about 8 years old, which is long enough that several areas are likely outdated — particularly any provisions referencing in-person-only meeting requirements (many states have since codified the right to meet electronically), officer titles or committee structures that no longer reflect your actual governance, and any indemnification language that predates recent state law updates. Most governance consultants and nonprofit attorneys recommend a full bylaws review every 3–5 years, or whenever there's a significant change in organizational structure, state law, or leadership. Scheduling a bylaws review as a standing agenda item at your June board meeting, with a task force assigned to bring a redlined draft by September, is a practical approach.",
+      "gold_parents": [
+        "t59"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t61",
+      "turn_index": 60,
+      "user_message": "We're also considering adding a term limits provision. What's the standard term structure for nonprofit boards?",
+      "assistant_message": "The most common term structure for nonprofit boards is two consecutive 3-year terms, after which a board member must rotate off for at least one year before being eligible for re-election. Some organizations use three 2-year terms, which provides more flexibility for gradually cycling members. Term limits are widely recommended by governance experts because they create planned leadership transitions, bring in fresh perspectives, and provide a graceful exit for members who have become disengaged — the situation you described with your two inactive members is actually a classic argument for adopting them.",
+      "gold_parents": [
+        "t60"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t62",
+      "turn_index": 61,
+      "user_message": "So for the Bloomerang-to-Salesforce migration, how many donor records will be affected by the Legacy Pledge Flag mapping, and what's the deadline for that custom field to be ready in Salesforce?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t25"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t4",
+    "t25"
+  ],
+  "distractor_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t5",
+    "t6",
+    "t7",
+    "t8",
+    "t9",
+    "t10",
+    "t11",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t20",
+    "t21",
+    "t22",
+    "t23",
+    "t24",
+    "t26",
+    "t27",
+    "t28",
+    "t29",
+    "t30",
+    "t31",
+    "t32",
+    "t33",
+    "t34",
+    "t35",
+    "t36",
+    "t37",
+    "t38",
+    "t39",
+    "t40",
+    "t41",
+    "t42",
+    "t43",
+    "t44",
+    "t45",
+    "t46",
+    "t47",
+    "t48",
+    "t49",
+    "t50",
+    "t51",
+    "t52",
+    "t53",
+    "t54",
+    "t55",
+    "t56",
+    "t57",
+    "t58",
+    "t59",
+    "t60",
+    "t61"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that exactly 312 donor records are affected by the Legacy Pledge Flag mapping.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that the custom checkbox field on the Salesforce Contact object must be ready before March 15, 2025 (the migration go-live date).",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer identifies the target object in Salesforce as the Contact object (not Account or Opportunity).",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not reference any figures or facts from the gala, grant, payroll, board governance, or any other Branch B topic (e.g., 200 guests, $25,000 grant, $22/hour, 11 board members).",
+      "required": true
+    }
+  ],
+  "notes": "t1 and t2 hold all the facts the query needs: 312 donors with the Legacy Pledge Flag, the Salesforce Contact object as the target, and the March 15, 2025 deadline. Turns t3 through t34 are the distractor thread covering gala planning, grant writing, payroll, and board governance — none of which should appear in a correct answer.\n\nReference answer: The Legacy Pledge Flag mapping affects exactly 312 donor records. The custom checkbox field needs to be created on the Salesforce Contact object and fully validated before the March 15, 2025 migration go-live date. To meet that deadline, the field should be built and tested in a Salesforce sandbox first, then confirmed in the NPSP data import template with a small test batch before the full load of all 312 flagged records.",
+  "evidence_note": null,
+  "premise": "a nonprofit migrating its donor database to a new CRM",
+  "evidence_spans": null,
+  "benchmark_version": "1.1-length-ablation",
+  "length_class": "spliced_60"
+}

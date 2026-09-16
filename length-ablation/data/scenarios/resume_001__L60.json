@@ -1,0 +1,766 @@
+{
+  "scenario_id": "resume_001__L60",
+  "family": "resume",
+  "label": "RESUME",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "On the permit drawings — does the Corps have a specific format requirement, or can our engineer use whatever CAD standard they prefer?",
+      "assistant_message": "The Corps doesn't mandate a single CAD standard, but the New England District's guidance document (ER 1110-1-8156) specifies that permit drawings must include plan views, cross-sections, and an overall location map at a scale no smaller than 1:2400, and all sheets must be 11-by-17 inches or 24-by-36 inches. Coordinates should be provided in NAD83 and elevations referenced to NAVD88, not to a local benchmark. Your engineer should also include a separate sheet showing the ordinary high water mark and mean high water line, since those are the jurisdictional boundaries the reviewer will check first.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "We're planning to use composite decking rather than pressure-treated wood. Does that affect the environmental review at all?",
+      "assistant_message": "Yes, material choice can meaningfully affect both the state and federal review. Composite decking eliminates concerns about leaching of copper azole or chromated copper arsenate from treated lumber, which DEEP reviewers flag as a water quality issue under Connecticut's Section 401 Water Quality Certification process. The Army Corps also references EPA's 2007 guidance on aquatic toxicity of treated wood preservatives, and switching to composite material removes that line of inquiry entirely. Some districts have informally noted faster review times for projects using non-treated materials, though there's no formal expedited track.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "What about the pile driving itself — are there noise or vibration thresholds we need to worry about for the estuarine habitat?",
+      "assistant_message": "Pile driving in tidal estuaries in Connecticut typically triggers a review under the federal Essential Fish Habitat consultation requirement, since Long Island Sound and its tributaries are designated EFH for species including winter flounder and Atlantic bluefish under the Magnuson-Stevens Act. The National Marine Fisheries Service uses a peak pressure threshold of 206 dB re 1 µPa for injury to fish, and if your contractor uses impact hammers rather than vibratory installation, you may need an underwater noise monitoring plan as a permit condition. Scheduling pile driving outside the March 1 through June 30 window is commonly required by DEEP to protect spawning activity, so that constraint should go into your construction contract.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "Our contractor mentioned they might use a vibratory hammer to avoid some of those noise thresholds. Is that a reliable workaround?",
+      "assistant_message": "Vibratory hammers do produce significantly lower peak pressure levels than impact hammers — typically in the 160 to 170 dB re 1 µPa range versus the 180 to 210 dB range for impact — so they often fall below NMFS injury thresholds for fish. However, DEEP and the Corps may still condition the permit to require a soft-start procedure even with vibratory equipment, and some reviewers require a qualified biological monitor on site during all pile installation. The tradeoff is that vibratory installation is less reliable in dense glacial till, which is common in Connecticut estuaries, so your geotechnical report will determine whether it's actually feasible at your specific site.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "I also looked at a pier from a guy named Marcus Delray who runs a one-man shop called IronSky Custom Piers in Bozeman, Montana. He builds a 42-inch model called the Meridian-3 out of Schedule 40 DOM tubing.",
+      "assistant_message": "Marcus Delray's IronSky Custom Piers has a strong reputation in the amateur community for hand-finished welds and custom anodizing options. The Meridian-3 at 42 inches is a bit shorter than some competitors, but the Schedule 40 DOM tubing gives it excellent rigidity — it's a popular choice for people running heavier refractors where vibration damping matters more than raw load capacity.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What's the load rating on the Meridian-3?",
+      "assistant_message": "Marcus rates the Meridian-3 at 60 lbs for the mount head, which is a bit conservative compared to some similarly sized piers. He publishes a safety factor of 3:1 in his spec sheet, meaning the structure itself is engineered to handle up to 180 lbs before any deformation, but the 60 lb figure is what he warranties for tracking accuracy under normal use.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "Does Marcus Delray do any customization on the Meridian-3's height?",
+      "assistant_message": "Yes, Marcus offers custom height cuts on the Meridian-3 in 2-inch increments, ranging from 36 inches up to 54 inches, all at the same base price of $620. Beyond 54 inches he charges a $40 per-inch upcharge and requires a thicker wall tube for structural reasons. He also offers a laser-cut top plate option with custom bolt circle patterns for an additional $95, which is handy if you're using a non-standard mount.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "Do you know anything about permits for having an outdoor ceremony directly on a lake dock? We're using a private property on Lake Champlain.",
+      "assistant_message": "For a private-property dock ceremony on Lake Champlain, you'll generally need to check with the Vermont or New York Department of Environmental Conservation depending on which shore you're on, since the lake straddles the state line. Even on private land, gatherings of over 50 people often trigger a special-use or assembly permit requirement, so it's worth contacting the local town clerk's office at least 60 days before your event date.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "The property is on the Vermont side, in South Hero. Is there anything specific to that town we should know about?",
+      "assistant_message": "South Hero is in Grand Isle County, and the town operates under Vermont's Act 250 land-use rules for larger gatherings on waterfront property. You'd want to contact the South Hero Town Clerk directly — their office handles event assembly notices — and also confirm with the Grand Isle County Natural Resources Board whether your dock setup requires any shoreline impact review, especially if you're adding temporary structures like an arch or chairs on the dock itself.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "I also got a quote from a company called GreenLayer Insulation for the same duplex. They focus on blown-in cellulose rather than spray foam.",
+      "assistant_message": "GreenLayer Insulation is a well-regarded approach — blown-in cellulose typically has a recycled content of around 80–85% and performs very well for air sealing when dense-packed. It's worth comparing their quoted R-value and cost per square foot directly against the spray foam option, since the two materials behave quite differently in terms of moisture management and long-term settling.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "GreenLayer came in at $5,900 for 1,400 square feet to R-49, and they said they can start any time — their earliest available slot is actually February 3, 2025.",
+      "assistant_message": "So GreenLayer is about $2,300 cheaper but lands at R-49 versus the R-60 FrostShield quoted, and their February 3 availability gives you roughly six weeks of lead time before the competing offer even becomes possible. The cost-per-R-value trade-off is real: you're paying more with FrostShield for a higher thermal resistance ceiling, but the delay means more heating season passes before the upgrade is in place. It's worth modeling the energy savings over one winter to see if the performance gap justifies the price and timing difference.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "How many cards should I include in the base deck? I'm thinking somewhere between 110 and 150.",
+      "assistant_message": "For a card game aimed at 2–4 players, 110–120 cards is usually enough to keep variety without overwhelming new players, while 140–150 gives more replayability if you expect experienced audiences. I'd suggest playtesting at 120 first and scaling up only if players report seeing the same cards too frequently.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "I'm also wrestling with card stock weight. My printer quoted me 280 gsm and 310 gsm options.",
+      "assistant_message": "Most hobby-grade card games use 300–310 gsm for a premium feel, and 310 gsm would align Thornfield with the upper end of that range. If budget is tight, 280 gsm is acceptable but will feel noticeably thinner in hand, which can affect perceived quality at conventions or retail demos.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "What finish should I go with — linen or smooth?",
+      "assistant_message": "Linen finish hides minor scratches and shuffles more easily, which matters a lot in a card game that will see heavy table use. Smooth finish photographs better for marketing materials, but linen is the practical choice for the actual play experience.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "I need to decide on card dimensions. Standard poker size is 63 × 88 mm, but I've seen some designers go with tarot size at 70 × 120 mm.",
+      "assistant_message": "Poker size (63 × 88 mm) is ideal if players will sleeve the cards, since sleeves and storage solutions are abundant and cheap for that format. Tarot size (70 × 120 mm) gives more real estate for artwork and text, but storage boxes and sleeves become harder for consumers to source, which can be a friction point post-sale.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "I'm trying to figure out the right number of card types. Right now I have Resource cards, Action cards, Event cards, and Structure cards — is four types too many for a first release?",
+      "assistant_message": "Four types is manageable if each type has a clearly distinct function that players learn to recognize at a glance. The risk is cognitive load during the first few plays; consider whether Event and Action cards could be collapsed into one type with a keyword distinguishing them, at least for the introductory version.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "My lead artist is asking whether the card backs should all be identical or have suit-specific backs. I like the idea of suit-specific backs but I'm worried it gives away information.",
+      "assistant_message": "Suit-specific backs do give away strategic information — opponents know you're holding an Event card, for example, which can meaningfully change their decisions. Identical backs preserve hidden information, which is almost always preferable in games with hand management as a core mechanic; you can still differentiate suits with a small icon in a corner of the card face.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "Speaking of the artist, she's asking for a style guide. What are the key things I should specify for card illustration consistency?",
+      "assistant_message": "At minimum, specify color palette (exact hex codes or Pantone references), lighting direction, level of detail in backgrounds, and whether characters should follow a consistent anatomical style guide or are treated as unique. You should also clarify whether the art bleeds to the card edge or sits within a defined border, since that affects layout templates significantly.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "I want to add a point-scoring track on the player board. Should the track go from 0 to 50 or 0 to 100?",
+      "assistant_message": "A 0–50 track typically produces shorter games (around 45–60 minutes) and is easier to read at a glance, while 0–100 allows finer scoring granularity and longer play sessions. If your target play time is under an hour, 0–50 is the cleaner choice; for a 90-minute experience, 0–100 gives you more room to reward incremental decisions.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "I'm considering adding a solo mode. Any thoughts on the best mechanism for solo play in card games?",
+      "assistant_message": "Automa systems — where a simplified deck of cards simulates an opponent's decisions — are currently the most popular and well-received solo mechanism in hobby card games. They add meaningful production cost (an extra 20–30 card Automa deck) but dramatically increase perceived value and broaden your market to solo gamers, who are a large and vocal purchasing segment.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "What's a reasonable budget for a first print run of 500 copies?",
+      "assistant_message": "For a 120-card game with a tuck box and player boards, a 500-unit print run through a mid-tier manufacturer like Longpack or Panda typically runs between $3,500 and $5,500 USD depending on component count and finish choices. Shipping from overseas factories can add another $800–$1,500 depending on freight method and current rates, so budget at least $5,500–$7,000 total to be safe.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "Should I run a Kickstarter or try to sell direct through my own website first?",
+      "assistant_message": "Kickstarter provides built-in discovery and social proof, which is especially valuable for a debut title with no established audience, but the campaign itself requires 2–3 months of preparation and marketing spend. Selling direct first lets you iterate quickly on feedback from early adopters, but you'll need to drive all traffic yourself; many first-time designers do a small direct pre-order to fund a prototype run, then launch Kickstarter once they have testimonials.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "I'm thinking about stretch goals. What kind of stretch goals resonate best with card game backers?",
+      "assistant_message": "Upgraded components — foil cards, metal coins replacing cardboard tokens, or a neoprene playmat — consistently outperform content expansions as stretch goals because backers can see the tangible quality upgrade. Exclusive promo cards also perform well, but only if they're cosmetic variants rather than mechanically superior cards, since pay-to-win perceptions kill goodwill fast.",
+      "gold_parents": [
+        "t22"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "I want to include a quick-start reference card for new players. How much information is too much for a single reference card?",
+      "assistant_message": "A single-sided reference card should cover no more than the turn structure, a summary of each card type's function, and the two or three most commonly forgotten rules — anything beyond that and players stop reading it mid-game. If you find yourself needing both sides of a card, that's usually a signal that the game's core loop needs simplification rather than a bigger reference card.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "My playtesters keep saying the game feels long. Average session is running about 95 minutes for 3 players. What levers can I pull to bring that down?",
+      "assistant_message": "The most reliable levers are reducing the total card count in the starting deck, lowering the score threshold needed to trigger end-game, or adding a hard turn limit (e.g., the game ends after round 10 regardless of score). Analyzing where the 95 minutes is spent — setup, decision time, or end-game scoring — will tell you which lever has the highest impact for your specific design.",
+      "gold_parents": [
+        "t24"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "I'm also getting feedback that the Resource cards feel underpowered compared to Action cards. How do I diagnose whether that's a math problem or a perception problem?",
+      "assistant_message": "Track win rates and final scores across a set of at least 20 playtests and compare them for players who drew Resource-heavy hands versus Action-heavy hands — if Resource-heavy players consistently score 15% or more below the mean, it's a math problem. If scores are comparable but players still report feeling underpowered, it's a perception problem, often solved by giving Resource cards more dramatic visual feedback (larger numbers, bolder icons) or renaming them to something that implies agency.",
+      "gold_parents": [
+        "t25"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "I want to add a catch-up mechanism so trailing players don't feel hopeless. What are some options?",
+      "assistant_message": "Common catch-up mechanisms include giving the last-place player a bonus resource at the start of each round, reducing the cost of powerful cards for players below a score threshold, or introducing Event cards that only benefit players outside the top position. The key is making the mechanism feel like an opportunity rather than a handout — framing it as a 'Momentum' bonus rather than a 'Consolation' bonus goes a long way psychologically.",
+      "gold_parents": [
+        "t26"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "What's the best way to handle ties at the end of the game?",
+      "assistant_message": "The clearest tiebreaker is a single, easily counted secondary metric that players accumulate naturally during play — total Resource cards spent is a common choice because it rewards efficiency without requiring extra tracking. Avoid multi-step tiebreaker chains (score, then resources, then cards remaining in deck) because they slow down end-game resolution and can feel arbitrary to the losing player.",
+      "gold_parents": [
+        "t27"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "I need a name for the in-game currency. Right now I'm just calling it 'gold' as a placeholder. Any thoughts?",
+      "assistant_message": "A thematic currency name tied to Thornfield's setting will make the game feel more cohesive — if the setting has a rural or harvest theme, something like 'Grain' or 'Thorn' could double as both currency and flavor. Avoid names that are too close to existing popular games (no 'Coin of the Realm' if you're anywhere near a Dominion shelf comparison) to sidestep confusion in reviews and on forums.",
+      "gold_parents": [
+        "t28"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t30",
+      "turn_index": 29,
+      "user_message": "Should I include cardboard tokens or wooden meeples for player markers?",
+      "assistant_message": "Wooden meeples add a tactile premium feel and photograph well for social media, but they add roughly $0.30–$0.60 per unit to your manufacturing cost at a 500-copy run. Cardboard tokens are cheaper and can carry more printed information (icons, numbers), which is sometimes more useful in a resource-tracking game than a purely aesthetic wooden piece.",
+      "gold_parents": [
+        "t29"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t31",
+      "turn_index": 30,
+      "user_message": "My rulebook is currently 12 pages. Is that too long for this kind of game?",
+      "assistant_message": "Twelve pages is on the longer side for a card game — most successful hobby card games aim for 8 pages or fewer in the learn-to-play rulebook, with a separate reference document for edge cases. Consider whether any pages are devoted to examples that could instead be covered by a short 'how to play' video linked via QR code, which is increasingly standard and frees up page count for clarity.",
+      "gold_parents": [
+        "t30"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t32",
+      "turn_index": 31,
+      "user_message": "I'm thinking about adding an expansion right away. Is it better to design the expansion alongside the base game or wait until after launch?",
+      "assistant_message": "Designing an expansion simultaneously lets you intentionally leave mechanical hooks in the base game that the expansion will fill, creating a tighter overall design — but it risks overcomplicating the base game if you over-engineer those hooks. Most experienced designers recommend completing and locking the base game first, then designing the expansion with full knowledge of what the base game's weaknesses and unfulfilled design space are.",
+      "gold_parents": [
+        "t31"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t33",
+      "turn_index": 32,
+      "user_message": "We're also trying to figure out what to budget for office furniture. We need to outfit 8 workstations and a small conference room for 6 people. Any rough guidance on cost?",
+      "assistant_message": "For 8 workstations with desks, ergonomic chairs, and basic storage, you're typically looking at $800 to $1,500 per station, so a budget of $6,400 to $12,000 is reasonable. A 6-person conference table with chairs can run another $2,000 to $5,000 depending on quality. All in, plan for roughly $8,400 to $17,000 for a functional but not extravagant setup.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t34",
+      "turn_index": 33,
+      "user_message": "We found a vendor called WorkNest Office Solutions that can do all 8 workstations and the conference room package for $11,200 flat, with delivery and assembly included. That sound fair?",
+      "assistant_message": "Yes, $11,200 all-in for 8 workstations plus a 6-person conference room package with delivery and assembly from WorkNest Office Solutions is competitive and sits comfortably in the middle of the typical range. Getting delivery and assembly bundled is a meaningful convenience, since coordinating that separately can easily add $500 to $1,000 in labor. It's a fair price to accept if you're satisfied with the product quality.",
+      "gold_parents": [
+        "t33"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t35",
+      "turn_index": 34,
+      "user_message": "We're trying to nail down the lumber specs for the new dock. The design calls for 2×10 pressure-treated southern yellow pine for the decking boards, and the marina inspector said all lumber must meet a minimum retention level of 0.40 pcf CCA treatment for saltwater exposure. Does that sound right for a fixed pier in tidal saltwater?",
+      "assistant_message": "Yes, 0.40 pcf CCA (or its modern equivalent, CA-C or MCA at the same retention) is the industry-standard minimum for lumber in contact with saltwater or brackish tidal water, per the American Wood Protection Association's Use Category 4B designation. For a fixed pier subject to regular wave wash and tidal immersion, some inspectors actually prefer 0.60 pcf for the substructure piling and framing, though decking boards at 0.40 pcf is widely accepted. Using 2×10 SYP at that treatment level for decking is a solid, code-compliant choice for saltwater dock construction.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t36",
+      "turn_index": 35,
+      "user_message": "I'm also trying to decide on cabinet style. I'm torn between shaker-style painted MDF cabinets and original-style beadboard inset cabinets that would be more period-appropriate for a 1920s house.",
+      "assistant_message": "Inset beadboard cabinets are historically accurate for a 1920s kitchen and can look stunning, but they cost significantly more because the door fitting is labor-intensive — expect to pay 25–40% more per linear foot than comparable overlay shaker cabinets. Shaker-style painted MDF from a semi-custom line like IKEA SEKTION or Hampton Bay can run $150–$250 per linear foot installed, while solid-wood inset beadboard from a custom shop often starts at $350–$500 per linear foot installed. Given your $6,150 remaining after electrical, the style choice will heavily determine how much you have left for countertops and flooring.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t37",
+      "turn_index": 36,
+      "user_message": "For the countertops, I've been looking at butcher block as a period-appropriate option. What thickness is standard and what's a realistic cost per square foot installed?",
+      "assistant_message": "Standard butcher block countertop thickness for residential kitchens is 1.5 inches (sometimes listed as 1-1/2\"), though 2-inch and 3-inch slabs exist for heavier-use surfaces. Installed cost from a supplier like Lumber Liquidators or IKEA's KARLBY line runs roughly $30–$60 per square foot for maple or birch, while walnut or teak butcher block can reach $80–$120 per square foot installed. For a 120-square-foot kitchen you'd typically have 25–40 square feet of countertop, so budget $750–$2,400 depending on wood species and edge profile.",
+      "gold_parents": [
+        "t36"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t38",
+      "turn_index": 37,
+      "user_message": "The city also just notified me that the duplex needs a new backflow preventer on the main water line — they're requiring it under a new municipal ordinance that took effect January 1, 2025.",
+      "assistant_message": "That's a separate compliance item you'll want to handle promptly. Backflow preventer installations for residential properties typically run between $300 and $700 for parts and labor, depending on the pipe diameter and local permit fees. Check whether the ordinance specifies a deadline for compliance, as some municipalities give property owners a 90-day window from the notice date before issuing fines.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t39",
+      "turn_index": 38,
+      "user_message": "What about the furnaces? Both units still have the original 1962 gas furnaces and I know those are ancient.",
+      "assistant_message": "A 1962 gas furnace almost certainly runs at 55–65% AFUE (Annual Fuel Utilization Efficiency), meaning up to 45 cents of every dollar spent on gas is lost as exhaust. Replacing them with modern 96% AFUE condensing furnaces — brands like Carrier, Lennox, or Trane all make well-reviewed units in that range — would dramatically cut heating costs, and Xcel Energy offers a $200 rebate per furnace when you upgrade to a unit with 95% AFUE or higher. For a 900-square-foot Denver unit, a 60,000 BTU input furnace is typically sufficient.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t40",
+      "turn_index": 39,
+      "user_message": "One of my tenants mentioned the water heater in their unit is also original and making noise. Should I factor that into my upgrade budget?",
+      "assistant_message": "A 1962 water heater would be extraordinarily old if it's truly original — most tank water heaters last 10–15 years, so it's almost certainly been replaced at least once. If the current unit is making rumbling or popping sounds, that typically indicates sediment buildup on the heating element, which is a sign the tank is near end of life. Replacing it with a heat-pump water heater like the Rheem ProTerra 50-gallon (model XE50T10H45U0) would qualify for a $300 federal 25C tax credit and uses roughly 70% less electricity than a conventional electric resistance unit.",
+      "gold_parents": [
+        "t39"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t41",
+      "turn_index": 40,
+      "user_message": "I'm also thinking about whether to pour a separate concrete slab for the floor or just use compacted gravel. Which is better for drainage in a wet climate?",
+      "assistant_message": "Compacted gravel with a landscape fabric underlayer is often preferred in wet climates because it allows rainwater and condensation to drain freely rather than pooling on a slab. A concrete slab can work if you add a slight slope (about 1/8 inch per foot) toward a drain, but gravel is simpler and cheaper for a backyard observatory where you don't need a perfectly level working surface.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t42",
+      "turn_index": 41,
+      "user_message": "I've been thinking about updating our logo. The designer we used last time charges $850 for a full brand refresh package.",
+      "assistant_message": "That's a reasonable rate for a full brand refresh from an established designer. It might be worth timing any rebrand with a bigger announcement if you do decide to expand, though the decision can be made independently of your growth plans.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t43",
+      "turn_index": 42,
+      "user_message": "The designer said the $850 package includes three logo concepts and two rounds of revisions. Does that sound standard?",
+      "assistant_message": "Yes, three initial concepts plus two revision rounds is fairly typical for a mid-range brand refresh package. Some designers offer fewer concepts at that price point, so it's actually a decent scope of work for $850.",
+      "gold_parents": [
+        "t42"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t44",
+      "turn_index": 43,
+      "user_message": "She also said the turnaround is four weeks from the deposit. Would we need to budget anything extra for file formats or printing templates?",
+      "assistant_message": "Four weeks is a reasonable turnaround for that scope. You may want to ask specifically whether the deliverables include print-ready vector files and social media variants, as those are sometimes charged separately; budgeting an extra $100 to $200 for an expanded file package is common.",
+      "gold_parents": [
+        "t43"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t45",
+      "turn_index": 44,
+      "user_message": "We're thinking the sign cost should be one of the line items we cover with the grant funds rather than the match, and we want to place the sign near the new raised beds we're also funding through this grant. Does that approach make sense for how the budget is structured?",
+      "assistant_message": "Yes, allocating the $1,200 Greenline sign cost as a grant-funded line item rather than part of your $2,775 cash match is a clean approach, since match funds are typically better used for labor or pre-existing materials you can document independently. Positioning the sign near the raised beds also makes narrative sense — it ties the two funded elements together visually and helps reviewers see the project as a cohesive site improvement. Just make sure each line item (sign, raised beds, any other elements) is individually itemized in the budget table so the total still reconciles to $21,275.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t46",
+      "turn_index": 45,
+      "user_message": "Good. The dock will be 120 feet long and 8 feet wide. We've settled on 16-inch on-center spacing for the decking joists, and the board supplier quoted us $4.85 per linear foot for the treated 2×10 SYP. How many linear feet of decking boards do we need, and what's the rough material cost just for the decking?",
+      "assistant_message": "For an 8-foot-wide deck running 120 feet long, you'll need boards spanning the 8-foot width, placed perpendicular to the joists, with 16-inch joist spacing meaning roughly 91 joist bays across the 120-foot run. At 8 linear feet per board and approximately 91 boards, you need about 728 linear feet of 2×10 decking; adding a standard 10% waste factor brings that to 801 linear feet. At $4.85 per linear foot, the rough material cost for decking boards comes to approximately $3,885, though you should confirm the exact board count with your layout drawing. That figure covers only the decking surface, not framing, hardware, or pilings.",
+      "gold_parents": [
+        "t35"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t47",
+      "turn_index": 46,
+      "user_message": "We're also looking at raised bed suppliers. Timber & Roots Co. reached out to us — they do custom cedar raised beds and have worked with a few other community gardens in the county.",
+      "assistant_message": "Timber & Roots Co. has a good reputation for durable cedar construction, which holds up well in outdoor garden settings. It would be worth asking them for a quote that specifies board thickness and whether their beds are rated for food-safe applications, since some grants require that documentation.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t48",
+      "turn_index": 47,
+      "user_message": "Timber & Roots Co. sent over their catalog. They offer 4×8 foot beds in two depths — 10 inches for $215 each and 18 inches for $290 each — and they require orders of at least 5 units to deliver to our zip code.",
+      "assistant_message": "Those are reasonable prices for custom cedar, and the 18-inch depth is worth considering for root vegetables if your garden plan includes them. The 5-unit minimum delivery requirement is something to factor into your order quantity and budget — ordering exactly 5 of the 18-inch beds, for example, would come to $1,450 before any applicable taxes.",
+      "gold_parents": [
+        "t47"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t49",
+      "turn_index": 48,
+      "user_message": "We also need to decide on signage for the garden entrance. We're looking at a cedar post-and-panel sign, roughly 4 feet by 6 feet, and the fabricator quoted us $1,200 installed.",
+      "assistant_message": "A 4-by-6-foot cedar post-and-panel sign at $1,200 installed is a fairly standard price point for that size and material in most municipal contexts. You'll want to confirm whether the sign design needs to include the City of Hartwell logo, since many green-spaces grants require co-branding on any permanent installations funded through the program. Getting that specification in writing from the fabricator now will save revisions later.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t50",
+      "turn_index": 49,
+      "user_message": "The fabricator is Greenline Signs & Displays, and they've confirmed in writing that the $1,200 quote is valid through March 31, 2025.",
+      "assistant_message": "Having a written quote from Greenline Signs & Displays valid through March 31, 2025 is exactly the kind of vendor documentation grant reviewers want to see attached as an exhibit. If your submission deadline falls before that date, you can include the quote directly; if it's after, you'd need a refreshed quote. File that letter with your other supporting documents so it's easy to attach when you compile the final application package.",
+      "gold_parents": [
+        "t49"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t51",
+      "turn_index": 50,
+      "user_message": "Got it. What about the TI allowance—the space needs new flooring, a small server room, and a glass-walled conference room. How do we structure the TI negotiation?",
+      "assistant_message": "For those three improvements, get contractor bids before you negotiate the TI number so you can anchor to real costs—glass-walled conference rooms typically run $15,000–$25,000 installed, a basic server room with dedicated cooling and a 20-amp circuit can run $8,000–$15,000, and commercial LVT flooring for 2,400 sq ft usually costs $6–$10 per sq ft installed. Present the landlord with a detailed scope of work and request a $60,000 TI allowance, structured as a landlord-managed build-out rather than a tenant reimbursement so you're not fronting capital. If they resist, propose splitting the allowance: $40,000 at lease signing and the remaining $20,000 after the first 12 months of on-time payments.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t52",
+      "turn_index": 51,
+      "user_message": "The landlord is insisting on a 'landlord-managed build-out' clause that gives them the right to select all contractors. What risks does that create for us?",
+      "assistant_message": "The biggest risk is cost inflation—when landlords control contractor selection, they often use preferred vendors who charge 15–25% above market rates, and since it's your TI dollars being spent, the overage comes directly out of your allowance. You could end up with $60,000 committed but only $45,000 worth of actual work completed. Negotiate for a 'competitive bid' carve-out requiring the landlord to solicit at least three bids for any job over $5,000, with you retaining approval rights over the final selection, and cap the landlord's project management fee at 5% of construction costs.",
+      "gold_parents": [
+        "t51"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t53",
+      "turn_index": 52,
+      "user_message": "What happens to our TI allowance if we need to terminate the lease early? Does the landlord claw it back?",
+      "assistant_message": "Yes, most commercial leases include a TI recapture provision that requires you to repay a prorated portion of the allowance if you terminate early—on a 3-year lease with a $60,000 TI, that means roughly $20,000 per year of remaining term. Some landlords structure this as a separate 'TI note' that you sign alongside the lease, which can even accrue interest at 6–8% annually. You should negotiate to have the recapture obligation extinguish after month 24, so that if you make it two-thirds through the lease without default, the landlord absorbs the remaining TI cost as a cost of doing business.",
+      "gold_parents": [
+        "t52"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t54",
+      "turn_index": 53,
+      "user_message": "What's the typical liability insurance requirement for a sailing club with about 200 members?",
+      "assistant_message": "For a recreational sailing club of that size, most insurers and marina landlords require a minimum of $1 million per occurrence in general liability coverage, with many now asking for $2 million aggregate. You should also look into a specific watercraft liability endorsement, since general policies sometimes exclude vessels under club management. Consulting a marine insurance broker who specializes in yacht clubs will give you the most accurate picture for your jurisdiction.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t55",
+      "turn_index": 54,
+      "user_message": "Our waiting room chairs are getting pretty worn. What's a reasonable budget for replacing the seating in a six-chair waiting room?",
+      "assistant_message": "For a professional dental waiting room, commercial-grade seating typically runs between $150 and $400 per chair, so a six-chair setup would cost roughly $900 to $2,400 for the furniture itself. You'd also want to factor in delivery and any reupholstering of existing pieces if you want to save some money.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t56",
+      "turn_index": 55,
+      "user_message": "The office manager also wants to repaint the reception area. Does the color of the walls actually affect patient anxiety levels?",
+      "assistant_message": "There is actually research suggesting that soft blues and greens are associated with lower anxiety in clinical settings, while bright whites and stark grays can feel more sterile and increase tension. For a dental office specifically, muted sage greens or warm taupes tend to be popular choices for that reason.",
+      "gold_parents": [
+        "t55"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t57",
+      "turn_index": 56,
+      "user_message": "I'm also trying to figure out storage unit sizes for some furniture we'll be putting in climate-controlled storage. The facility near us offers a 10x20 unit for $185 per month, which they say fits a 2-bedroom apartment worth of stuff.",
+      "assistant_message": "A 10x20 is one of the most popular storage sizes and that capacity estimate sounds about right — it typically holds around 800 to 1,000 cubic feet of packed household goods. At $185 per month, that's a reasonable rate for climate-controlled in most mid-size metro areas. Just make sure the climate control maintains a consistent temperature range, usually between 55 and 85 degrees Fahrenheit, which matters a lot for wood furniture and electronics.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t58",
+      "turn_index": 57,
+      "user_message": "The storage facility also has a 10x15 unit for $140 per month. I'm wondering if that might be enough.",
+      "assistant_message": "A 10x15 gives you roughly 600 to 750 cubic feet of usable space, which is typically adequate for a one-bedroom apartment or a portion of a two-bedroom. If you're storing furniture from multiple rooms — sofas, bed frames, dressers — you'd likely find the 10x15 too tight and end up stacking things awkwardly. The $45 monthly savings over the 10x20 could cost you more in damaged items or a second unit down the line.",
+      "gold_parents": [
+        "t57"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t59",
+      "turn_index": 58,
+      "user_message": "The facility manager mentioned they also have a 10x30 unit for $260 per month if we end up needing more space.",
+      "assistant_message": "A 10x30 is essentially a large garage-sized space — around 1,200 to 1,500 cubic feet — which is often overkill unless you're storing a full 3- or 4-bedroom house worth of furniture plus outdoor equipment or vehicles. At $260 per month, the jump from the 10x20 at $185 is $75 extra, and you'd want to be confident you'll actually use that extra 400 square feet. For most people in a temporary moving situation, the 10x20 is the sweet spot between cost and capacity.",
+      "gold_parents": [
+        "t58"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t60",
+      "turn_index": 59,
+      "user_message": "They said we'd need to sign a minimum 3-month contract for any of the climate-controlled units. Does that seem standard?",
+      "assistant_message": "A 3-month minimum is on the longer end — many facilities use month-to-month leases or a 1-month minimum, though some do require 2 to 3 months for climate-controlled units specifically because of the higher overhead. If your move timeline is uncertain, it's worth negotiating or shopping around, since a competing facility might offer the same climate-controlled rates on a month-to-month basis. Read the early-termination clause carefully too, because some facilities charge a fee equal to one full month's rent if you leave before the contract period ends.",
+      "gold_parents": [
+        "t59"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t61",
+      "turn_index": 60,
+      "user_message": "The club's junior sailing program runs eight weeks in summer and we need to figure out instructor-to-student ratios. US Sailing's Level 1 certification guidelines recommend a maximum of 8 students per certified instructor on the water at one time — is that the right standard to apply?",
+      "assistant_message": "US Sailing's Small Boat Instructor program does recommend a maximum of 8 students per instructor as a general on-water guideline, though the exact ratio can tighten to 6:1 for students under age 10 or in high-wind conditions above 15 knots. Many clubs also require a dedicated safety-boat operator separate from the instructor count, which effectively adds supervision capacity without changing the ratio. Checking your local US Sailing regional coordinator is worthwhile since some districts have adopted stricter standards than the national baseline.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t62",
+      "turn_index": 61,
+      "user_message": "We have 48 kids enrolled for the first session. If we split them into two age groups — under-12 and 12-and-up — and the under-12 group is 20 kids, how many instructors do we need for each group?",
+      "assistant_message": "For the 20 under-12 sailors, using the 6:1 ratio means you need a minimum of 4 instructors, since 20 divided by 6 rounds up to 3.33. The remaining 28 kids in the 12-and-up group fall under the standard 8:1 ratio, requiring 4 instructors there as well (28 ÷ 8 = 3.5, rounded up to 4). So you'd need at least 8 certified instructors total for that first session, not counting safety-boat operators.",
+      "gold_parents": [
+        "t61"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t63",
+      "turn_index": 62,
+      "user_message": "The club only has 6 certified instructors available for the first week. Can we legally run both groups simultaneously with that staffing level?",
+      "assistant_message": "With only 6 certified instructors, you'd fall short of the 8 needed to run both groups simultaneously at the recommended ratios. One practical option is to stagger the groups — run the under-12 group in the morning with 4 instructors and the older group in the afternoon with the same 4, freeing the other 2 instructors for breaks or safety-boat duty. Alternatively, you could recruit two more US Sailing-certified instructors, even on a temporary or volunteer basis, to meet the ratio requirements for concurrent sessions. Running both groups at the same time with 6 instructors would leave at least one group out of compliance with the recommended supervision standard.",
+      "gold_parents": [
+        "t62"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t64",
+      "turn_index": 63,
+      "user_message": "What's the total estimated cost just for the decking boards, and what treatment retention level do those boards need to meet?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t46"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t35",
+    "t46"
+  ],
+  "distractor_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t7",
+    "t8",
+    "t9",
+    "t10",
+    "t11",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t20",
+    "t21",
+    "t22",
+    "t23",
+    "t24",
+    "t25",
+    "t26",
+    "t27",
+    "t28",
+    "t29",
+    "t30",
+    "t31",
+    "t32",
+    "t33",
+    "t34",
+    "t36",
+    "t37",
+    "t38",
+    "t39",
+    "t40",
+    "t41",
+    "t42",
+    "t43",
+    "t44",
+    "t45",
+    "t47",
+    "t48",
+    "t49",
+    "t50",
+    "t51",
+    "t52",
+    "t53",
+    "t54",
+    "t55",
+    "t56",
+    "t57",
+    "t58",
+    "t59",
+    "t60",
+    "t61",
+    "t62",
+    "t63"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states the decking material cost is approximately $3,885 (derived from 801 linear feet × $4.85/linear foot, or the equivalent ~728–801 LF range at that unit price).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states the minimum CCA (or equivalent) treatment retention level for the decking boards is 0.40 pcf.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not import any figures or facts from the instructor-ratio discussion (e.g., the numbers 6, 8, 48, 20, 28, or any ratio such as 6:1 or 8:1).",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer references the 2×10 southern yellow pine decking boards at $4.85 per linear foot as the basis for the cost estimate.",
+      "required": true
+    }
+  ],
+  "notes": "The key evidence for the query lives in t1 (0.40 pcf treatment requirement) and t2 ($4.85/LF unit price, ~801 LF quantity, ~$3,885 total cost). Turns t3–t5 are the distractor branch covering junior-program instructor ratios; none of those numbers (6, 8, 48, 20, 28, 6:1, 8:1) should appear in a correct answer to t6.\n\nReference answer: The decking boards must meet a minimum retention level of 0.40 pcf CCA treatment (or equivalent, such as CA-C or MCA at the same retention) to satisfy the saltwater/tidal Use Category 4B requirement. Based on the 120-foot by 8-foot deck layout, you need approximately 728 linear feet of 2×10 SYP decking boards, or about 801 linear feet after a 10% waste allowance. At the quoted price of $4.85 per linear foot, the rough material cost for the decking boards alone is approximately $3,885. That figure covers only the surface decking and does not include framing, hardware, or pilings.",
+  "evidence_note": null,
+  "premise": "a sailing club replacing its aging dock",
+  "evidence_spans": null,
+  "benchmark_version": "1.1-length-ablation",
+  "length_class": "spliced_60"
+}

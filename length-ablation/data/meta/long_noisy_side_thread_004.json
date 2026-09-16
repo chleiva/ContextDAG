@@ -1,0 +1,81 @@
+{
+ "target": "long_noisy_side_thread_004",
+ "family": "long_noisy_side_thread",
+ "base_history": 37,
+ "gold_closure": [
+  "t1",
+  "t2"
+ ],
+ "gold_entities": [
+  "23%",
+  "45",
+  "68%",
+  "google",
+  "march 14",
+  "march 14, 2024",
+  "the last 30 days",
+  "v4.3.0"
+ ],
+ "query_entities": [],
+ "donors_rejected_by_exclusion": 10,
+ "sufficient_to_60": true,
+ "chosen": [
+  {
+   "donor": "join_then_split_006#1",
+   "turns": 2,
+   "cosine": 0.3756
+  },
+  {
+   "donor": "semantic_decoy_008#0",
+   "turns": 4,
+   "cosine": 0.3248
+  },
+  {
+   "donor": "join_then_split_006#0",
+   "turns": 2,
+   "cosine": 0.2374
+  },
+  {
+   "donor": "new_root_001#0",
+   "turns": 7,
+   "cosine": 0.1887
+  },
+  {
+   "donor": "resume_015#0",
+   "turns": 3,
+   "cosine": 0.1493
+  },
+  {
+   "donor": "resume_003#0",
+   "turns": 5,
+   "cosine": 0.143
+  }
+ ],
+ "used": {
+  "60": [
+   "join_then_split_006#1",
+   "semantic_decoy_008#0",
+   "join_then_split_006#0",
+   "new_root_001#0",
+   "resume_015#0",
+   "resume_003#0"
+  ]
+ },
+ "actual_lengths": {
+  "60": 60
+ },
+ "preflight": {
+  "oracle_hash_equal": true,
+  "checklist_query_closure_identical": true,
+  "l30_subsequence_of_l60": true,
+  "base_subsequence_of_l60": true,
+  "oracle_tokens": 376,
+  "full_tokens": {
+   "base": 6384,
+   "60": 9688
+  }
+ },
+ "lengths_built": [
+  60
+ ]
+}

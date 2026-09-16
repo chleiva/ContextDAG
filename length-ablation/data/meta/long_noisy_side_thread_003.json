@@ -1,0 +1,101 @@
+{
+ "target": "long_noisy_side_thread_003",
+ "family": "long_noisy_side_thread",
+ "base_history": 40,
+ "gold_closure": [
+  "t1",
+  "t2"
+ ],
+ "gold_entities": [
+  "214",
+  "24-month",
+  "2\u20133%",
+  "3%",
+  "36 months",
+  "36-month",
+  "4%",
+  "4,200",
+  "4,368",
+  "4,542.72",
+  "400",
+  "6,000",
+  "approximately $159,621",
+  "august 1, 2025",
+  "each anniversary date",
+  "first-year",
+  "merchant street",
+  "so year two",
+  "suite",
+  "the first year",
+  "year three",
+  "years two and three"
+ ],
+ "query_entities": [],
+ "donors_rejected_by_exclusion": 16,
+ "sufficient_to_60": true,
+ "chosen": [
+  {
+   "donor": "topic_fork_003#0",
+   "turns": 3,
+   "cosine": 0.4156
+  },
+  {
+   "donor": "ambiguous_reference_004#0",
+   "turns": 2,
+   "cosine": 0.4141
+  },
+  {
+   "donor": "join_then_split_001#1",
+   "turns": 1,
+   "cosine": 0.3062
+  },
+  {
+   "donor": "ambiguous_reference_003#1",
+   "turns": 1,
+   "cosine": 0.3026
+  },
+  {
+   "donor": "join_then_split_005#0",
+   "turns": 2,
+   "cosine": 0.3013
+  },
+  {
+   "donor": "semantic_decoy_003#0",
+   "turns": 4,
+   "cosine": 0.2975
+  },
+  {
+   "donor": "new_root_003#0",
+   "turns": 8,
+   "cosine": 0.2788
+  }
+ ],
+ "used": {
+  "60": [
+   "topic_fork_003#0",
+   "ambiguous_reference_004#0",
+   "join_then_split_001#1",
+   "ambiguous_reference_003#1",
+   "join_then_split_005#0",
+   "semantic_decoy_003#0",
+   "new_root_003#0"
+  ]
+ },
+ "actual_lengths": {
+  "60": 61
+ },
+ "preflight": {
+  "oracle_hash_equal": true,
+  "checklist_query_closure_identical": true,
+  "l30_subsequence_of_l60": true,
+  "base_subsequence_of_l60": true,
+  "oracle_tokens": 303,
+  "full_tokens": {
+   "base": 5675,
+   "60": 8772
+  }
+ },
+ "lengths_built": [
+  60
+ ]
+}

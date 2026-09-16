@@ -1,0 +1,155 @@
+{
+ "target": "new_root_004",
+ "family": "new_root",
+ "base_history": 6,
+ "gold_closure": [],
+ "gold_entities": [],
+ "query_entities": [
+  "the united states"
+ ],
+ "donors_rejected_by_exclusion": 2,
+ "sufficient_to_60": true,
+ "chosen": [
+  {
+   "donor": "two_branch_join_009#0",
+   "turns": 2,
+   "cosine": 0.2883
+  },
+  {
+   "donor": "knowledge_update_011#1",
+   "turns": 13,
+   "cosine": 0.2753
+  },
+  {
+   "donor": "join_then_split_006#0",
+   "turns": 2,
+   "cosine": 0.2659
+  },
+  {
+   "donor": "compound_turn_014#0",
+   "turns": 2,
+   "cosine": 0.241
+  },
+  {
+   "donor": "three_way_join_003#0",
+   "turns": 3,
+   "cosine": 0.2159
+  },
+  {
+   "donor": "two_branch_join_004#0",
+   "turns": 1,
+   "cosine": 0.2146
+  },
+  {
+   "donor": "join_then_split_010#0",
+   "turns": 2,
+   "cosine": 0.2118
+  },
+  {
+   "donor": "semantic_decoy_008#0",
+   "turns": 4,
+   "cosine": 0.2081
+  },
+  {
+   "donor": "knowledge_update_011#0",
+   "turns": 2,
+   "cosine": 0.1937
+  },
+  {
+   "donor": "join_then_split_005#0",
+   "turns": 2,
+   "cosine": 0.1931
+  },
+  {
+   "donor": "resume_010#0",
+   "turns": 3,
+   "cosine": 0.1913
+  },
+  {
+   "donor": "compound_turn_015#0",
+   "turns": 2,
+   "cosine": 0.189
+  },
+  {
+   "donor": "semantic_decoy_002#0",
+   "turns": 3,
+   "cosine": 0.189
+  },
+  {
+   "donor": "ambiguous_reference_008#1",
+   "turns": 1,
+   "cosine": 0.1858
+  },
+  {
+   "donor": "resume_005#0",
+   "turns": 6,
+   "cosine": 0.1827
+  },
+  {
+   "donor": "ambiguous_reference_006#1",
+   "turns": 1,
+   "cosine": 0.1786
+  },
+  {
+   "donor": "join_then_split_004#1",
+   "turns": 1,
+   "cosine": 0.165
+  },
+  {
+   "donor": "resume_013#0",
+   "turns": 5,
+   "cosine": 0.1537
+  }
+ ],
+ "used": {
+  "30": [
+   "two_branch_join_009#0",
+   "knowledge_update_011#1",
+   "join_then_split_006#0",
+   "compound_turn_014#0",
+   "three_way_join_003#0",
+   "two_branch_join_004#0",
+   "join_then_split_010#0"
+  ],
+  "60": [
+   "two_branch_join_009#0",
+   "knowledge_update_011#1",
+   "join_then_split_006#0",
+   "compound_turn_014#0",
+   "three_way_join_003#0",
+   "two_branch_join_004#0",
+   "join_then_split_010#0",
+   "semantic_decoy_008#0",
+   "knowledge_update_011#0",
+   "join_then_split_005#0",
+   "resume_010#0",
+   "compound_turn_015#0",
+   "semantic_decoy_002#0",
+   "ambiguous_reference_008#1",
+   "resume_005#0",
+   "ambiguous_reference_006#1",
+   "join_then_split_004#1",
+   "resume_013#0"
+  ]
+ },
+ "actual_lengths": {
+  "30": 31,
+  "60": 61
+ },
+ "preflight": {
+  "oracle_hash_equal": true,
+  "checklist_query_closure_identical": true,
+  "l30_subsequence_of_l60": true,
+  "base_subsequence_of_l60": true,
+  "oracle_tokens": 0,
+  "full_tokens": {
+   "base": 1198,
+   "30": 4067,
+   "60": 8183
+  }
+ },
+ "lengths_built": [
+  30,
+  60
+ ]
+}

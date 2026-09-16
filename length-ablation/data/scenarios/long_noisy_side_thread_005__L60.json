@@ -1,0 +1,762 @@
+{
+  "scenario_id": "long_noisy_side_thread_005__L60",
+  "family": "long_noisy_side_thread",
+  "label": "NOISE",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "The city also just notified me that the duplex needs a new backflow preventer on the main water line — they're requiring it under a new municipal ordinance that took effect January 1, 2025.",
+      "assistant_message": "That's a separate compliance item you'll want to handle promptly. Backflow preventer installations for residential properties typically run between $300 and $700 for parts and labor, depending on the pipe diameter and local permit fees. Check whether the ordinance specifies a deadline for compliance, as some municipalities give property owners a 90-day window from the notice date before issuing fines.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Got it. What about the TI allowance—the space needs new flooring, a small server room, and a glass-walled conference room. How do we structure the TI negotiation?",
+      "assistant_message": "For those three improvements, get contractor bids before you negotiate the TI number so you can anchor to real costs—glass-walled conference rooms typically run $15,000–$25,000 installed, a basic server room with dedicated cooling and a 20-amp circuit can run $8,000–$15,000, and commercial LVT flooring for 2,400 sq ft usually costs $6–$10 per sq ft installed. Present the landlord with a detailed scope of work and request a $60,000 TI allowance, structured as a landlord-managed build-out rather than a tenant reimbursement so you're not fronting capital. If they resist, propose splitting the allowance: $40,000 at lease signing and the remaining $20,000 after the first 12 months of on-time payments.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "The landlord is insisting on a 'landlord-managed build-out' clause that gives them the right to select all contractors. What risks does that create for us?",
+      "assistant_message": "The biggest risk is cost inflation—when landlords control contractor selection, they often use preferred vendors who charge 15–25% above market rates, and since it's your TI dollars being spent, the overage comes directly out of your allowance. You could end up with $60,000 committed but only $45,000 worth of actual work completed. Negotiate for a 'competitive bid' carve-out requiring the landlord to solicit at least three bids for any job over $5,000, with you retaining approval rights over the final selection, and cap the landlord's project management fee at 5% of construction costs.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "What happens to our TI allowance if we need to terminate the lease early? Does the landlord claw it back?",
+      "assistant_message": "Yes, most commercial leases include a TI recapture provision that requires you to repay a prorated portion of the allowance if you terminate early—on a 3-year lease with a $60,000 TI, that means roughly $20,000 per year of remaining term. Some landlords structure this as a separate 'TI note' that you sign alongside the lease, which can even accrue interest at 6–8% annually. You should negotiate to have the recapture obligation extinguish after month 24, so that if you make it two-thirds through the lease without default, the landlord absorbs the remaining TI cost as a cost of doing business.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "We also need to think about our barrel storage area. What are the specs on the Mopec M30 refrigeration unit used in wine caves?",
+      "assistant_message": "The Mopec M30 is a ducted split-system refrigeration unit rated at 3.0 tons of cooling capacity, designed to maintain cellar temperatures in the range of 55–58°F with a relative humidity target of 70–75%. It operates on a 208/230V single-phase power supply and draws a maximum of 18 amps at full load. The M30 uses R-410A refrigerant and carries an ENERGY STAR certification with an EER rating of 11.5, making it one of the more efficient options in its class for wine cave applications. Mopec recommends a minimum cave volume of 2,400 cubic feet for this unit to avoid short-cycling.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "How often does the M30 need its refrigerant levels checked and its coils cleaned?",
+      "assistant_message": "Mopec's maintenance schedule for the M30 calls for refrigerant pressure checks every 6 months by a certified HVAC technician, and they specify that the system should hold between 410 and 420 PSI on the high side at 95°F ambient. Evaporator coil cleaning is recommended every 90 days using a no-rinse foaming coil cleaner, and the condenser coils should be cleaned at least twice a year, ideally before summer and again in late fall. The air filter on the M30 is a MERV-8 rated panel filter measuring 16×20×2 inches, and Mopec recommends replacing it every 45 days during operation. Neglecting the coil cleaning interval can reduce the unit's efficiency by up to 15% and shorten compressor life by 2–3 years according to Mopec's service documentation.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "What pressure range does the M30 operate at on the low side, and what's the minimum cave size again?",
+      "assistant_message": "On the low side, the Mopec M30 should read between 115 and 125 PSI during normal operation at a 55°F cave setpoint, and any reading below 110 PSI on the low side typically indicates a refrigerant leak or a restriction in the suction line. Mopec's installation manual, revision 4.2, specifies the minimum recommended cave volume as 2,400 cubic feet, which is the same figure from the original spec sheet. If the cave is smaller than that threshold, you'll need to install a crankcase pressure regulator to prevent the compressor from cycling too rapidly, which can cause premature failure within 18 months of installation according to Mopec's warranty exclusion clause 7B.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "I own a duplex at 412 Maplewood Drive — built in 1978, about 1,800 square feet per unit. I'm trying to figure out which energy-efficiency upgrades will give me the best return. The two options I'm seriously considering are adding attic insulation and replacing the old gas furnaces.",
+      "assistant_message": "For a 1978 duplex of that size, both upgrades are strong candidates. Attic insulation is typically the highest-impact measure in homes of that era because the original fiberglass batts have usually settled to around R-11, well below the current DOE recommendation of R-49 to R-60 for your climate zone. Furnace replacement is compelling if the existing units are older than 20 years, since modern AFUE ratings of 96–98% compare favorably to the 60–65% AFUE common in late-1970s equipment.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "There's also a space over on Caldwell Avenue we've been eyeing. It's listed by a property management company called Hartwell & Dunn, and it's 950 sq ft at $3,200 a month.",
+      "assistant_message": "Caldwell Avenue at 950 square feet and $3,200 a month works out to about $3.37 per square foot, which is slightly cheaper per square foot than the Renfield Street option. The smaller footprint could be a constraint if you're planning significant in-house production, since you'd have less room for proofing racks and large deck ovens. Hartwell & Dunn is a well-known commercial property manager, so the administrative side of the lease process would likely be straightforward. It really comes down to whether the lower cost justifies the tighter space.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "The Caldwell Avenue place is a former sandwich shop, so it already has a Type I hood and a grease trap installed, which would save us on build-out costs.",
+      "assistant_message": "That's a significant advantage — a Type I hood and a grease trap can easily run $15,000 to $25,000 to install from scratch, so inheriting those from the previous tenant is a real cost saving. You'd still want a licensed inspector to verify they meet current health code standards and are sized appropriately for bakery equipment, since a sandwich shop's ventilation needs differ from high-volume oven use. If everything checks out, the Caldwell Avenue space's lower upfront build-out cost could offset the smaller square footage. It's worth getting an HVAC contractor in there before you make a final comparison.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "I'm also trying to figure out storage unit sizes for some furniture we'll be putting in climate-controlled storage. The facility near us offers a 10x20 unit for $185 per month, which they say fits a 2-bedroom apartment worth of stuff.",
+      "assistant_message": "A 10x20 is one of the most popular storage sizes and that capacity estimate sounds about right — it typically holds around 800 to 1,000 cubic feet of packed household goods. At $185 per month, that's a reasonable rate for climate-controlled in most mid-size metro areas. Just make sure the climate control maintains a consistent temperature range, usually between 55 and 85 degrees Fahrenheit, which matters a lot for wood furniture and electronics.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "The storage facility also has a 10x15 unit for $140 per month. I'm wondering if that might be enough.",
+      "assistant_message": "A 10x15 gives you roughly 600 to 750 cubic feet of usable space, which is typically adequate for a one-bedroom apartment or a portion of a two-bedroom. If you're storing furniture from multiple rooms — sofas, bed frames, dressers — you'd likely find the 10x15 too tight and end up stacking things awkwardly. The $45 monthly savings over the 10x20 could cost you more in damaged items or a second unit down the line.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "The facility manager mentioned they also have a 10x30 unit for $260 per month if we end up needing more space.",
+      "assistant_message": "A 10x30 is essentially a large garage-sized space — around 1,200 to 1,500 cubic feet — which is often overkill unless you're storing a full 3- or 4-bedroom house worth of furniture plus outdoor equipment or vehicles. At $260 per month, the jump from the 10x20 at $185 is $75 extra, and you'd want to be confident you'll actually use that extra 400 square feet. For most people in a temporary moving situation, the 10x20 is the sweet spot between cost and capacity.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "They said we'd need to sign a minimum 3-month contract for any of the climate-controlled units. Does that seem standard?",
+      "assistant_message": "A 3-month minimum is on the longer end — many facilities use month-to-month leases or a 1-month minimum, though some do require 2 to 3 months for climate-controlled units specifically because of the higher overhead. If your move timeline is uncertain, it's worth negotiating or shopping around, since a competing facility might offer the same climate-controlled rates on a month-to-month basis. Read the early-termination clause carefully too, because some facilities charge a fee equal to one full month's rent if you leave before the contract period ends.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "We've been getting complaints from the tasting room staff about the temperature in the barrel room during summer. It's been hitting 72°F in there and we're worried about the aging Chardonnay.",
+      "assistant_message": "That's a legitimate concern—barrel aging rooms for white wines like Chardonnay should ideally stay between 55°F and 60°F, and 72°F is well outside that range. At elevated temperatures, malolactic fermentation can restart unintentionally and the wine can age far too quickly, stripping it of the freshness that defines a good Chardonnay. You should look at either upgrading to a dedicated split-system HVAC unit rated for the room's cubic footage or improving insulation in the walls and ceiling before next summer.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "The barrel room is about 1,200 square feet with 10-foot ceilings. What size cooling unit would handle that?",
+      "assistant_message": "For a 12,000 cubic foot space held at 58°F in a warm climate, a common rule of thumb puts your cooling load at roughly 3–4 tons of refrigeration capacity, or about 36,000–48,000 BTU/hr. However, barrel rooms have high latent heat loads because barrels continuously evaporate moisture, so many winery HVAC engineers add a 20–25% buffer, bringing your practical target to around 45,000–60,000 BTU/hr. A dedicated glycol-chilled split system from a supplier like Bohn or Heatcraft in the 4-ton range would be a solid starting point for your room dimensions.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "Would a standard commercial mini-split work, or does it have to be a specialized wine room unit?",
+      "assistant_message": "Standard commercial mini-splits are not ideal for barrel rooms because they are designed to dehumidify aggressively, which would accelerate evaporative loss from barrels—the so-called 'angel's share'—and could cause barrel staves to dry and leak. Specialized wine room or cellar units from brands like CellarPro or Breezaire are engineered to maintain higher relative humidity, typically 60–75% RH, while still cooling, which protects both the barrels and the wine inside. For a 1,200-square-foot barrel room you would be looking at CellarPro's 8000VSx or an equivalent unit rated for spaces up to 2,000 cubic feet, scaled up with a second unit if needed.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "How quickly could a unit like that bring the room from 72°F down to 58°F once installed?",
+      "assistant_message": "With a properly sized unit like the CellarPro 8000VSx running at full capacity in a well-insulated 12,000-cubic-foot room, you can expect a pulldown rate of roughly 1–2°F per hour under a heavy load. That means pulling from 72°F to 58°F—a 14-degree drop—would take approximately 7–14 hours on the first full cooling cycle. Once the room stabilizes, the unit cycles on and off to maintain setpoint and the daily temperature swing typically stays within 1–2°F, which is well within acceptable aging parameters.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "Right, the furnaces were installed in 1981 and the contractor who inspected them last spring rated them at 62% AFUE. He quoted me $4,200 per unit to swap them out for a 96% AFUE model. What payback period should I expect?",
+      "assistant_message": "With a jump from 62% to 96% AFUE, you're recovering about 34 percentage points of previously wasted fuel, which works out to roughly a 35% reduction in gas consumption per furnace. At typical Midwest residential gas rates of around $1.10 per therm and an average annual usage of 900 therms per unit for a home that size, you'd save approximately $335 per unit per year. That puts the simple payback period at about 12.5 years per unit at the $4,200 installed cost, though utility rebates — often $300–$600 per unit from programs like EnergyStar's utility partner network — can trim that to closer to 10–11 years.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "We're also trying to figure out staffing for the new location. How many employees would a typical 1,100 square foot bakery need?",
+      "assistant_message": "For a production-and-retail bakery of around 1,100 square feet, a lean opening team typically includes 1 lead baker, 1–2 production assistants, and 2–3 front-of-house staff, totaling roughly 4–6 employees. In Portland, the current minimum wage as of July 1, 2024 is $15.95 per hour for standard employers, which sets your baseline labor cost floor. Many second-location bakeries also cross-train one manager from the original location to oversee both sites during the first six months, which reduces training costs but increases that individual's hours significantly.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "What about equipment? We'd need at least a deck oven for the new space.",
+      "assistant_message": "A commercial deck oven suitable for a bakery of that size—something like a Bongard Cervap 4-deck or a Revent 724—typically runs between $18,000 and $35,000 new, depending on the number of decks and steam injection capability. Used or refurbished units from restaurant equipment dealers like Central Restaurant Products or local auction houses can cut that cost to $6,000–$12,000, though you'd want a technician to inspect the heating elements and stone decks before purchase. Don't forget that installation, including gas line hookup and ventilation, can add another $2,000–$5,000 on top of the equipment cost.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "We're also thinking about whether to keep the same menu at the second location or introduce some new items exclusive to Mississippi Avenue.",
+      "assistant_message": "Exclusive menu items at a second location can create a destination draw and generate social media buzz, but they also complicate your supply chain and training requirements. A common middle-ground strategy is an 80/20 split: 80% of the menu mirrors the original location to maintain brand consistency and simplify ordering, while 20% consists of location-specific items that reflect the neighborhood's character. Several Portland bakeries, like Little T American Baker, have used neighborhood-specific specials to build a loyal local following without straining back-of-house operations.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "I've been thinking about updating our logo. The designer we used last time charges $850 for a full brand refresh package.",
+      "assistant_message": "That's a reasonable rate for a full brand refresh from an established designer. It might be worth timing any rebrand with a bigger announcement if you do decide to expand, though the decision can be made independently of your growth plans.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "The designer said the $850 package includes three logo concepts and two rounds of revisions. Does that sound standard?",
+      "assistant_message": "Yes, three initial concepts plus two revision rounds is fairly typical for a mid-range brand refresh package. Some designers offer fewer concepts at that price point, so it's actually a decent scope of work for $850.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "She also said the turnaround is four weeks from the deposit. Would we need to budget anything extra for file formats or printing templates?",
+      "assistant_message": "Four weeks is a reasonable turnaround for that scope. You may want to ask specifically whether the deliverables include print-ready vector files and social media variants, as those are sometimes charged separately; budgeting an extra $100 to $200 for an expanded file package is common.",
+      "gold_parents": [
+        "t24"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "I also manage a small storage facility across town and one of the roll-up doors on bay 7 has been sticking badly. Any idea what usually causes that?",
+      "assistant_message": "Sticking roll-up doors on storage units most often come down to three culprits: worn or dry torsion spring bearings, a bent bottom rail, or corroded roller stems. The quickest diagnostic is to manually lift the door about three feet and let go — if it free-falls rather than staying put, the spring tension is off and likely needs adjustment or replacement.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "The door does drop when I let go at waist height. The facility was built in 2003 and I don't think those springs have ever been serviced.",
+      "assistant_message": "Twenty-plus years on an original torsion spring is well past the typical service life, which is rated at about 10,000 cycles — roughly 7–10 years for a busy storage bay. A standard two-inch torsion spring for a 10-foot commercial roll-up runs $80–$130 for the part, and a qualified door technician will usually charge $150–$250 in labor, so budget around $300–$380 total. I'd strongly advise against DIY on this; torsion springs store a tremendous amount of energy and can cause serious injury if released improperly.",
+      "gold_parents": [
+        "t26"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "Good to know. While the technician is there, should I have them look at the door tracks too?",
+      "assistant_message": "Absolutely — it's smart to bundle the inspection since the technician will already have the door disassembled. They should check the vertical and horizontal track alignment with a level, look for any crimps or flat spots in the track where rollers have been grinding, and verify that the track mounting bolts are torqued to spec (typically 20–25 ft-lbs on commercial hardware). Misaligned tracks are a very common secondary cause of the same sticking symptom and can accelerate roller wear significantly.",
+      "gold_parents": [
+        "t27"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "The facility manager mentioned the door on bay 7 gets used about 15 times a day on average. Does that change the maintenance schedule?",
+      "assistant_message": "At 15 cycles per day, you're logging roughly 5,475 cycles per year, which means a standard 10,000-cycle spring would reach end-of-life in under two years. For that usage level, you should specify a high-cycle torsion spring rated for 25,000 or even 50,000 cycles — those typically cost $180–$260 per spring but can go five to nine years between replacements at that pace. It's also worth scheduling a full lubrication and inspection every six months rather than annually.",
+      "gold_parents": [
+        "t28"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t30",
+      "turn_index": 29,
+      "user_message": "Makes sense. The facility has 24 bays total — should I just proactively replace all the springs at once?",
+      "assistant_message": "A blanket replacement isn't necessarily the best use of capital, especially since bays with lower cycle counts likely still have years of service life left. A more cost-effective approach is to pull the maintenance log and flag any bays that opened in 2003 and have been high-traffic since; those are your priority replacements. For the remaining bays, a technician can do a tension test and visual inspection in about 10 minutes per door, so a full 24-bay audit typically runs $400–$600 in labor and gives you a prioritized replacement schedule.",
+      "gold_parents": [
+        "t29"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t31",
+      "turn_index": 30,
+      "user_message": "I don't actually have a maintenance log — the previous owner didn't keep records. How do I estimate which springs are most at risk?",
+      "assistant_message": "Without records, you can use a few physical proxies. Check the spring wire for visible corrosion, flaking, or a gap in the coils — a gap of even 1/4 inch indicates the spring has already partially failed. Also, doors that require noticeably more effort to open manually than others in the same row are a reliable sign of a fatigued spring. If you want a number-based approach, a door technician can measure the spring's current tension with a torque gauge and compare it to the manufacturer's spec, which is stamped on the spring's end cone.",
+      "gold_parents": [
+        "t30"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t32",
+      "turn_index": 31,
+      "user_message": "That's helpful. Can I use the same contractor for both the spring work and general facility maintenance, or is it better to keep them separate?",
+      "assistant_message": "Many commercial door contractors also offer general facility maintenance contracts, and bundling can get you a 10–15% discount on labor rates. However, it's worth verifying that any contractor you use for the storage facility carries commercial general liability insurance of at least $1 million per occurrence and workers' comp coverage — your lease agreements with tenants likely require you to maintain the premises in safe working order, and an uninsured contractor injury could expose you to liability. Ask for certificates of insurance before signing any service agreement.",
+      "gold_parents": [
+        "t31"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t33",
+      "turn_index": 32,
+      "user_message": "Good point. I think my current property insurance might cover some contractor-related incidents — I should check that policy.",
+      "assistant_message": "It's worth reviewing carefully. Most commercial property policies include a premises liability component, but they typically exclude incidents arising from work performed by uninsured or unlicensed contractors — a clause sometimes called the 'independent contractor exclusion.' Your policy's declarations page will list your liability limits, and the exclusions are usually in Section II or the general conditions endorsement. If you're unsure, a 30-minute call with your insurance agent to walk through the relevant sections is time well spent before you hire anyone.",
+      "gold_parents": [
+        "t32"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t34",
+      "turn_index": 33,
+      "user_message": "My policy is through Hartfield Commercial Mutual and I think it renews in March. I'll pull it out tonight.",
+      "assistant_message": "That's a good plan. When you review it, also look for an 'additional insured' endorsement option — many commercial policies let you add a contractor as an additional insured for a specific project at minimal or no extra premium, which gives you an extra layer of protection. Hartfield Commercial Mutual policies typically have a 30-day notice requirement for mid-term endorsement changes, so keep that timeline in mind if your spring replacement is coming up soon.",
+      "gold_parents": [
+        "t33"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t35",
+      "turn_index": 34,
+      "user_message": "I didn't realize I could add contractors to my policy like that. Does the contractor benefit from it too?",
+      "assistant_message": "Yes — being named as an additional insured on your policy means your insurer would help defend the contractor against third-party claims arising from work done on your property, which reduces the contractor's own exposure. In practice, it also signals to the contractor that you're a professional property owner who understands liability, which can improve the working relationship. That said, it doesn't replace the need for the contractor to carry their own primary coverage; your policy would typically respond only after the contractor's own insurance is exhausted.",
+      "gold_parents": [
+        "t34"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t36",
+      "turn_index": 35,
+      "user_message": "That makes sense. How do I actually request that endorsement — do I call Hartfield directly or go through my broker?",
+      "assistant_message": "If you purchased the policy through an independent broker, always route endorsement requests through the broker first — they have a direct underwriting relationship with Hartfield and can often process changes faster than calling the carrier's general customer service line. Provide your broker with the contractor's full legal business name, their license number, and the specific dates of the project; the endorsement is usually issued within one to three business days. Keep a copy of the endorsement certificate on file at the storage facility for the duration of the work.",
+      "gold_parents": [
+        "t35"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t37",
+      "turn_index": 36,
+      "user_message": "I actually bought the policy directly through Hartfield's website, not through a broker. Does that change anything?",
+      "assistant_message": "It does slightly — without a broker, you'll need to call Hartfield's commercial lines service center directly, which typically has longer hold times than a broker's dedicated underwriting contact. Look for a 'commercial lines endorsement request' form on their policyholder portal; many direct insurers now let you submit these online and receive a confirmation within 24 hours. Make sure to print or save the confirmation email as your proof of coverage for the contractor.",
+      "gold_parents": [
+        "t36"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t38",
+      "turn_index": 37,
+      "user_message": "I'll do that. The storage facility is in Clarksburg, Ohio — does state law have any specific requirements about contractor licensing for this kind of door work?",
+      "assistant_message": "Ohio does not require a state-level contractor license specifically for commercial door installation and repair; it falls under general construction work, which is regulated at the county or municipal level rather than the state level. In Harrison County, where Clarksburg is located, contractors performing commercial property repairs are required to register with the county building department and pull a permit for structural work, though spring replacement on an existing door typically doesn't trigger a permit requirement. It's still worth confirming with the Harrison County Building Department at (740) 942-8863 before work begins.",
+      "gold_parents": [
+        "t37"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t39",
+      "turn_index": 38,
+      "user_message": "Helpful, thanks. The facility manager also mentioned that one of the tenant's units has a slow water leak from the roof above bay 12. That seems more urgent than the door.",
+      "assistant_message": "A roof leak above a storage unit is definitely higher priority, especially because tenant property damage claims can escalate quickly if the leak isn't documented and addressed promptly. Your first step should be to photograph the leak and the affected area today and send the tenant a written acknowledgment — even a text message — stating you're aware of the issue and are arranging repairs; this creates a timestamped record that limits your liability exposure. For a commercial metal roof typical of 2003-era storage facilities, a roofing contractor can usually apply a temporary elastomeric sealant within 24–48 hours while a permanent repair is scheduled.",
+      "gold_parents": [
+        "t38"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t40",
+      "turn_index": 39,
+      "user_message": "The tenant in bay 12 has been there since 2019 and has a month-to-month lease. Should I be worried about them making a damage claim?",
+      "assistant_message": "Month-to-month tenants have the same rights under Ohio landlord-tenant law as those on fixed-term leases when it comes to habitability and property damage caused by landlord negligence. Under Ohio Revised Code Section 5321.02, a tenant can seek damages if they can show the landlord had notice of a condition and failed to act within a reasonable time — generally interpreted as 30 days for non-emergency repairs, though a water leak would likely be considered an emergency requiring faster action. Documenting your prompt response and keeping repair invoices will be your strongest defense if a claim arises.",
+      "gold_parents": [
+        "t39"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t41",
+      "turn_index": 40,
+      "user_message": "What if the tenant's stored goods were already damaged before they told me about the leak?",
+      "assistant_message": "If you had no prior notice of the leak, your liability is significantly reduced — landlord negligence generally requires proof that you knew or should have known about the defect. However, if a routine inspection would have revealed the roof damage, a court could find constructive notice even without a formal complaint from the tenant. Check whether your lease agreement includes a 'tenant's own risk' or 'self-storage disclaimer' clause, as many commercial storage leases explicitly require tenants to carry their own contents insurance, which would shift the claim to the tenant's insurer.",
+      "gold_parents": [
+        "t40"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t42",
+      "turn_index": 41,
+      "user_message": "Our lease does have a clause saying tenants are responsible for insuring their own contents. Does that fully protect me?",
+      "assistant_message": "It provides strong protection but isn't an absolute shield. Ohio courts have generally upheld self-storage disclaimer clauses when they are clearly written and conspicuously placed in the lease — typically in bold or a larger font, not buried in fine print. If a court finds the clause was not sufficiently prominent or that the damage resulted from gross negligence on your part (such as ignoring a known roof problem for months), the clause could be set aside. Having the clause reviewed by a local real estate attorney would be worthwhile if the tenant's claim appears to be significant.",
+      "gold_parents": [
+        "t41"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t43",
+      "turn_index": 42,
+      "user_message": "The tenant is saying they had about $3,000 worth of furniture stored in bay 12. Is that worth fighting over legally?",
+      "assistant_message": "At $3,000, the claim falls squarely within Ohio's small claims court jurisdiction, which handles disputes up to $6,000 in Franklin County and most Ohio counties. Small claims court is relatively inexpensive — filing fees are around $75–$100 — and neither party typically needs an attorney, though you can bring one. Given your lease clause and the fact that you responded promptly once notified, you're in a reasonable position, but a one-time settlement offer of $500–$800 might be worth considering to avoid the time cost of a court appearance.",
+      "gold_parents": [
+        "t42"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t44",
+      "turn_index": 43,
+      "user_message": "That's a pragmatic take. How do I formally document a settlement offer to make sure it's binding?",
+      "assistant_message": "A written settlement agreement signed by both parties is the safest route — it should state the amount being paid, that it constitutes full and final settlement of all claims related to the water damage incident, and the date by which payment will be made. Including a 'release of all claims' clause prevents the tenant from later filing a small claims action for the same incident. You can find Ohio-specific settlement agreement templates through the Ohio State Bar Association's public resources, or a local attorney can draft one for $150–$250.",
+      "gold_parents": [
+        "t43"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t45",
+      "turn_index": 44,
+      "user_message": "The tenant mentioned they might want to move out because of the damage. What notice do they need to give on a month-to-month lease?",
+      "assistant_message": "Under Ohio Revised Code Section 5321.17, a month-to-month tenant must give at least 30 days' written notice before the next rental due date to terminate the tenancy. If their rent is due on the first of the month and they give notice on, say, October 10th, the earliest valid termination date would be December 1st — the first of the month following 30 days. You should acknowledge receipt of any notice in writing and note the effective termination date to avoid disputes about the final month's rent.",
+      "gold_parents": [
+        "t44"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t46",
+      "turn_index": 45,
+      "user_message": "If they leave, how quickly can I re-rent bay 12 after the roof is repaired?",
+      "assistant_message": "Assuming the repair is completed and the unit is dry and clean, there's no legal waiting period — you can list and rent it the same day the work is done. For a commercial storage unit, a basic listing on SpareFoot or StorageCafe can go live within a few hours of submission, and those platforms typically see inquiries within 24–72 hours for well-priced units. Set your rate by checking the going rate for comparable bay sizes in Clarksburg; self-storage vacancy rates in small Ohio markets have been running around 8–12%, so demand should be steady.",
+      "gold_parents": [
+        "t45"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t47",
+      "turn_index": 46,
+      "user_message": "What's a reasonable monthly rate for a standard 10x20 storage bay in a small Ohio market right now?",
+      "assistant_message": "Based on current SpareFoot data for small Ohio markets, a non-climate-controlled 10x20 bay runs approximately $95–$135 per month, with the lower end of that range in rural areas and the higher end in towns with a college or industrial employer driving demand. If your facility has security features like individual door alarms or 24-hour camera surveillance, you can typically command a $10–$20 premium over the base market rate. Climate-controlled units of the same size run $150–$200 in comparable markets.",
+      "gold_parents": [
+        "t46"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t48",
+      "turn_index": 47,
+      "user_message": "Bay 12 is not climate-controlled but we do have 24-hour cameras. I'm currently charging $105 per month — sounds like I might be underpriced.",
+      "assistant_message": "Yes, with 24-hour surveillance you're likely leaving $15–$25 per month on the table relative to market. Once the unit is re-rented after the repair, you'd be justified in listing it at $120–$125 per month, and you can implement a gradual rate increase for existing long-term tenants — Ohio law requires only 30 days' written notice for a rent increase on a month-to-month commercial storage lease. Over 24 bays, even a $10 across-the-board increase would add $2,880 per year to your gross revenue.",
+      "gold_parents": [
+        "t47"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t49",
+      "turn_index": 48,
+      "user_message": "That's a good point about the existing tenants. How do I handle a rate increase without triggering a wave of move-outs?",
+      "assistant_message": "The key is timing and framing. Implement increases of no more than 8–10% at a time, and give tenants 45–60 days' notice rather than the 30-day minimum — the extra buffer reduces the sense of urgency to leave. Pairing the increase with a visible improvement, like new exterior lighting or freshly painted bay numbers, gives tenants a tangible reason for the change and tends to reduce pushback significantly. Industry data from the Self Storage Association suggests that well-managed facilities see less than 5% move-out rates in response to increases under 10%.",
+      "gold_parents": [
+        "t48"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t50",
+      "turn_index": 49,
+      "user_message": "The facility hasn't had new exterior lighting since it was built in 2003. What kind of lighting upgrade would make the most sense?",
+      "assistant_message": "For a 2003-era storage facility, you're almost certainly still running 250-watt metal halide fixtures, which are inefficient and require a 3–5 minute warm-up time. Replacing them with 80-watt LED shoebox fixtures gives you equivalent or better foot-candles of illumination at about 68% less energy consumption, and modern LEDs have a rated lifespan of 50,000 hours compared to 15,000 for metal halide. For a facility with a standard perimeter driveway, you'd typically need 8–12 pole-mounted fixtures; at roughly $350–$500 per installed LED fixture, the full upgrade runs $2,800–$6,000 and typically pays back in energy savings within 4–6 years.",
+      "gold_parents": [
+        "t49"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t51",
+      "turn_index": 50,
+      "user_message": "Is there a utility rebate available for commercial LED upgrades in Ohio?",
+      "assistant_message": "Yes — AEP Ohio and FirstEnergy both offer commercial lighting rebates through their Ohio Energy Efficiency programs, which are administered under the Ohio Advanced Energy Portfolio Standard. The rebate for LED exterior fixtures typically runs $15–$40 per fixture depending on wattage reduction, and you can stack those with federal Section 179D deductions if the lighting upgrade meets the energy-savings threshold of 25% reduction relative to the ASHRAE 90.1-2007 baseline. Your electrical contractor should be able to file the rebate application on your behalf as part of the installation contract.",
+      "gold_parents": [
+        "t50"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t52",
+      "turn_index": 51,
+      "user_message": "I wasn't aware of the Section 179D deduction. Does it apply to storage facility owners specifically?",
+      "assistant_message": "Section 179D was expanded under the Inflation Reduction Act of 2022 to cover a broader range of commercial building owners, including self-storage facilities, as long as the building is subject to depreciation and the energy-saving improvements meet the required threshold. The maximum deduction is $5.00 per square foot of the improved building area for projects placed in service after January 1, 2023, and the threshold requires a 25–50% energy reduction depending on the deduction tier. You'd need a qualified energy auditor to produce a 179D certification, which typically costs $1,500–$3,000 but is often worth it for larger facilities.",
+      "gold_parents": [
+        "t51"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t53",
+      "turn_index": 52,
+      "user_message": "My storage facility is about 18,000 square feet total. What would the maximum 179D deduction be for me?",
+      "assistant_message": "At $5.00 per square foot for the full 18,000 square feet, the theoretical maximum deduction would be $90,000, though in practice you'd only apply the deduction to the square footage of the areas actually improved. If the lighting upgrade covers the full exterior and common areas — say, 12,000 square feet of the facility footprint — you'd be looking at up to $60,000 in deductions, which at a 24% federal tax rate would translate to roughly $14,400 in tax savings. That's a meaningful number that could significantly change the ROI calculation for the lighting project.",
+      "gold_parents": [
+        "t52"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t54",
+      "turn_index": 53,
+      "user_message": "That's significant. I should probably talk to my accountant before I pull the trigger on the lighting project.",
+      "assistant_message": "Definitely — a CPA with commercial real estate experience will know whether you can fully utilize a deduction of that size in the current tax year or whether you'd need to carry it forward. They'll also advise on whether cost segregation on the storage facility might unlock additional depreciation that interacts favorably with the 179D deduction. It's worth scheduling that conversation before you sign any contractor agreement so the project timing can be optimized for your tax year.",
+      "gold_parents": [
+        "t53"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t55",
+      "turn_index": 54,
+      "user_message": "My accountant is based in Columbus and I see her quarterly — my next appointment is in November. Should I wait until then or call her sooner?",
+      "assistant_message": "If you're planning to place the lighting project in service before December 31st to capture the deduction in the current tax year, waiting until November may be cutting it close — contractors in Ohio get booked out 4–6 weeks in the fall, and you'd want the work completed and invoiced before year-end. A 20-minute phone call with your accountant now to confirm the strategy is worth the effort; most CPAs with commercial clients are accustomed to brief interim calls between quarterly meetings, especially for time-sensitive decisions.",
+      "gold_parents": [
+        "t54"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t56",
+      "turn_index": 55,
+      "user_message": "Fair enough. The storage facility is held in an LLC — does that affect how the 179D deduction flows through?",
+      "assistant_message": "Yes, it matters. If your LLC is taxed as a pass-through entity — either a single-member LLC treated as a disregarded entity or a multi-member LLC taxed as a partnership — the 179D deduction flows through to your personal return on Schedule E, subject to passive activity loss rules. If you materially participate in managing the storage facility (which most active landlords do), the passive activity limitation generally doesn't apply and you can use the deduction against ordinary income. Your accountant will need to confirm your participation level meets the IRS's 500-hour-per-year material participation test or one of the other qualifying tests.",
+      "gold_parents": [
+        "t55"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t57",
+      "turn_index": 56,
+      "user_message": "I spend probably 200 hours a year on the storage facility. Does that clear the 500-hour threshold?",
+      "assistant_message": "200 hours alone does not clear the primary 500-hour test, but there are seven IRS material participation tests under Treasury Regulation 1.469-5T, and you only need to satisfy one. The most likely alternative for you is the 'facts and circumstances' test, which can qualify participation as material if you spend more than 100 hours and no other individual spends more time on the activity than you do. If your facility manager is a part-time contractor rather than an employee who logs more hours than you, you may still qualify — your accountant can make that determination based on your specific situation.",
+      "gold_parents": [
+        "t56"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t58",
+      "turn_index": 57,
+      "user_message": "The facility manager works about 15 hours a week on-site, so that's roughly 780 hours a year. That's more than my 200 hours.",
+      "assistant_message": "In that case, the facts-and-circumstances test would likely not apply since the manager logs significantly more hours than you. You'd need to look at whether any of the other IRS tests apply — for example, the 'significant participation activity' test, which aggregates hours across multiple activities where you participate more than 100 hours each, or whether you can reclassify the manager as an employee and count their hours differently. This is genuinely a question for your CPA or a tax attorney, as misclassifying participation status can trigger penalties on audit.",
+      "gold_parents": [
+        "t57"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t59",
+      "turn_index": 58,
+      "user_message": "Understood. If I can't use 179D, is the lighting upgrade still worth it purely on energy savings?",
+      "assistant_message": "Yes — even without the tax deduction, replacing 250-watt metal halide fixtures with 80-watt LEDs at a facility that runs lights 12 hours per night saves roughly 170 watts per fixture per operating hour. For 10 fixtures running 4,380 hours per year, that's about 7,446 kWh annually; at Ohio's average commercial rate of approximately $0.11 per kWh, that's roughly $819 per year in energy savings. At a $4,000 installed cost for 10 fixtures, the pure energy payback is about 4.9 years, which is a solid return for a long-lived asset.",
+      "gold_parents": [
+        "t58"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t60",
+      "turn_index": 59,
+      "user_message": "That's reassuring. What about maintenance savings from LEDs versus the old metal halide bulbs?",
+      "assistant_message": "Maintenance savings are often underestimated in lighting ROI calculations. Metal halide lamps need replacement every 15,000–20,000 hours and require a licensed electrician for pole-mounted commercial fixtures, costing $50–$80 per lamp plus labor — at $150 per service call, you're spending $200–$230 per fixture every 3–4 years. LEDs rated for 50,000 hours won't need lamp replacement for over 11 years at your usage rate, effectively eliminating that recurring cost. When you factor in maintenance savings alongside energy savings, the true payback period for the LED upgrade can be 30–40% shorter than the energy-only calculation suggests.",
+      "gold_parents": [
+        "t59"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t61",
+      "turn_index": 60,
+      "user_message": "I'm sold on the LEDs. Let me get a few contractor quotes this month. Is there anything specific I should ask contractors to include in their bids?",
+      "assistant_message": "Ask each contractor to specify the fixture manufacturer and model number, the rated lumens and color temperature (aim for 4000K to 5000K for security lighting), the warranty terms (a minimum five-year fixture warranty is standard for commercial LED), and whether the bid includes filing for utility rebates on your behalf. Also request a photometric plan — a lighting layout showing foot-candle levels across the driveway and bay entrances — so you can compare bids on actual illumination quality rather than just wattage. Get at least three bids and verify that each contractor is licensed in Ohio and carries the insurance coverage we discussed earlier.",
+      "gold_parents": [
+        "t60"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t62",
+      "turn_index": 61,
+      "user_message": "Let's figure out the furnace upgrade for the duplex. If I replace both units at the $4,200 per unit price, what's my total outlay and roughly how long until I break even on the investment?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t8",
+    "t19"
+  ],
+  "distractor_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t7",
+    "t9",
+    "t10",
+    "t11",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t20",
+    "t21",
+    "t22",
+    "t23",
+    "t24",
+    "t25",
+    "t26",
+    "t27",
+    "t28",
+    "t29",
+    "t30",
+    "t31",
+    "t32",
+    "t33",
+    "t34",
+    "t35",
+    "t36",
+    "t37",
+    "t38",
+    "t39",
+    "t40",
+    "t41",
+    "t42",
+    "t43",
+    "t44",
+    "t45",
+    "t46",
+    "t47",
+    "t48",
+    "t49",
+    "t50",
+    "t51",
+    "t52",
+    "t53",
+    "t54",
+    "t55",
+    "t56",
+    "t57",
+    "t58",
+    "t59",
+    "t60",
+    "t61"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states the total cost is $8,400 (two units at $4,200 each).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer references annual savings of approximately $335 per unit (or $670 total) based on the 62%-to-96% AFUE upgrade at $1.10/therm and 900 therms/year.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer gives a simple payback period of approximately 12–13 years (or ~10–11 years with utility rebates of $300–$600 per unit).",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not import any figures or facts from the storage facility side thread (e.g., LED lighting costs, bay rental rates, Ohio small claims limits, or 179D deduction amounts).",
+      "required": true
+    }
+  ],
+  "notes": "The key facts — $4,200 per unit, 62% existing AFUE, 96% replacement AFUE, ~$335/unit/year savings, ~12.5-year payback, and $300–$600 rebate range — are all established in t1 and t2. Turns t3 through t38 cover storage facility concerns (door springs, roof leaks, tenant law, LED lighting, 179D tax deductions) and must not bleed into the answer.\n\nReference answer: Replacing both furnaces at $4,200 per unit brings the total upfront cost to $8,400. Based on the upgrade from 62% to 96% AFUE, each unit saves roughly $335 per year in gas costs at $1.10 per therm and 900 therms of annual usage, for a combined annual saving of about $670. That puts the simple payback period at approximately 12.5 years; if you capture utility rebates of $300–$600 per unit, the net cost drops to $6,600–$7,800 and the payback shortens to roughly 10–12 years.",
+  "evidence_note": null,
+  "premise": "a landlord deciding on energy-efficiency upgrades for a duplex",
+  "evidence_spans": null,
+  "benchmark_version": "1.1-length-ablation",
+  "length_class": "spliced_60"
+}

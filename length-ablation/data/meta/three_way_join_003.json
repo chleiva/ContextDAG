@@ -1,0 +1,173 @@
+{
+ "target": "three_way_join_003",
+ "family": "three_way_join",
+ "base_history": 12,
+ "gold_closure": [
+  "t1",
+  "t10",
+  "t12",
+  "t2",
+  "t3",
+  "t4",
+  "t5",
+  "t7",
+  "t8"
+ ],
+ "gold_entities": [
+  "1.1",
+  "1.6.2",
+  "105",
+  "118 pounds",
+  "12",
+  "125 pounds",
+  "125-pound",
+  "40",
+  "5,880",
+  "7 pounds",
+  "about 100",
+  "about 90 seconds",
+  "approximately 100 degrees",
+  "between 15 and 20 pounds",
+  "ids",
+  "january 14th",
+  "last year's",
+  "max",
+  "neo",
+  "no more than 125 pounds",
+  "no more than 60",
+  "pwm",
+  "rev",
+  "rev robotics",
+  "season",
+  "spark",
+  "this season",
+  "this year",
+  "windows"
+ ],
+ "query_entities": [
+  "1.1",
+  "neo"
+ ],
+ "donors_rejected_by_exclusion": 33,
+ "sufficient_to_60": true,
+ "chosen": [
+  {
+   "donor": "semantic_decoy_005#0",
+   "turns": 4,
+   "cosine": 0.2399
+  },
+  {
+   "donor": "topic_fork_002#0",
+   "turns": 2,
+   "cosine": 0.215
+  },
+  {
+   "donor": "join_then_split_007#0",
+   "turns": 2,
+   "cosine": 0.2004
+  },
+  {
+   "donor": "join_then_split_010#0",
+   "turns": 2,
+   "cosine": 0.194
+  },
+  {
+   "donor": "join_then_split_010#1",
+   "turns": 2,
+   "cosine": 0.1582
+  },
+  {
+   "donor": "knowledge_update_011#0",
+   "turns": 2,
+   "cosine": 0.1576
+  },
+  {
+   "donor": "join_then_split_007#1",
+   "turns": 2,
+   "cosine": 0.1567
+  },
+  {
+   "donor": "resume_013#0",
+   "turns": 5,
+   "cosine": 0.1558
+  },
+  {
+   "donor": "resume_010#0",
+   "turns": 3,
+   "cosine": 0.1532
+  },
+  {
+   "donor": "resume_006#0",
+   "turns": 3,
+   "cosine": 0.1381
+  },
+  {
+   "donor": "semantic_decoy_009#0",
+   "turns": 4,
+   "cosine": 0.1303
+  },
+  {
+   "donor": "compound_turn_008#0",
+   "turns": 4,
+   "cosine": 0.1288
+  },
+  {
+   "donor": "three_way_join_002#0",
+   "turns": 3,
+   "cosine": 0.1267
+  },
+  {
+   "donor": "knowledge_update_002#1",
+   "turns": 12,
+   "cosine": 0.1262
+  }
+ ],
+ "used": {
+  "30": [
+   "semantic_decoy_005#0",
+   "topic_fork_002#0",
+   "join_then_split_007#0",
+   "join_then_split_010#0",
+   "join_then_split_010#1",
+   "knowledge_update_011#0",
+   "join_then_split_007#1",
+   "resume_013#0"
+  ],
+  "60": [
+   "semantic_decoy_005#0",
+   "topic_fork_002#0",
+   "join_then_split_007#0",
+   "join_then_split_010#0",
+   "join_then_split_010#1",
+   "knowledge_update_011#0",
+   "join_then_split_007#1",
+   "resume_013#0",
+   "resume_010#0",
+   "resume_006#0",
+   "semantic_decoy_009#0",
+   "compound_turn_008#0",
+   "three_way_join_002#0",
+   "knowledge_update_002#1"
+  ]
+ },
+ "actual_lengths": {
+  "30": 33,
+  "60": 62
+ },
+ "preflight": {
+  "oracle_hash_equal": true,
+  "checklist_query_closure_identical": true,
+  "l30_subsequence_of_l60": true,
+  "base_subsequence_of_l60": true,
+  "oracle_tokens": 857,
+  "full_tokens": {
+   "base": 1157,
+   "30": 3910,
+   "60": 7574
+  }
+ },
+ "lengths_built": [
+  30,
+  60
+ ]
+}

@@ -1,0 +1,72 @@
+{
+ "target": "new_root_006",
+ "family": "new_root",
+ "base_history": 7,
+ "gold_closure": [],
+ "gold_entities": [],
+ "query_entities": [
+  "dss"
+ ],
+ "donors_rejected_by_exclusion": 2,
+ "sufficient_to_60": true,
+ "chosen": [
+  {
+   "donor": "topic_fork_008#0",
+   "turns": 3,
+   "cosine": 0.3272
+  },
+  {
+   "donor": "constraint_retention_002#0",
+   "turns": 21,
+   "cosine": 0.3121
+  },
+  {
+   "donor": "knowledge_update_010#1",
+   "turns": 14,
+   "cosine": 0.3116
+  },
+  {
+   "donor": "semantic_decoy_008#0",
+   "turns": 4,
+   "cosine": 0.305
+  },
+  {
+   "donor": "knowledge_update_008#1",
+   "turns": 17,
+   "cosine": 0.2694
+  }
+ ],
+ "used": {
+  "30": [
+   "topic_fork_008#0",
+   "constraint_retention_002#0"
+  ],
+  "60": [
+   "topic_fork_008#0",
+   "constraint_retention_002#0",
+   "knowledge_update_010#1",
+   "semantic_decoy_008#0",
+   "knowledge_update_008#1"
+  ]
+ },
+ "actual_lengths": {
+  "30": 31,
+  "60": 66
+ },
+ "preflight": {
+  "oracle_hash_equal": true,
+  "checklist_query_closure_identical": true,
+  "l30_subsequence_of_l60": true,
+  "base_subsequence_of_l60": true,
+  "oracle_tokens": 0,
+  "full_tokens": {
+   "base": 1099,
+   "30": 3758,
+   "60": 8165
+  }
+ },
+ "lengths_built": [
+  30,
+  60
+ ]
+}

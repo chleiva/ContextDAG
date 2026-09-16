@@ -1,0 +1,123 @@
+{
+ "target": "new_root_007",
+ "family": "new_root",
+ "base_history": 5,
+ "gold_closure": [],
+ "gold_entities": [],
+ "query_entities": [
+  "fda food code"
+ ],
+ "donors_rejected_by_exclusion": 0,
+ "sufficient_to_60": true,
+ "chosen": [
+  {
+   "donor": "resume_002#0",
+   "turns": 3,
+   "cosine": 0.2695
+  },
+  {
+   "donor": "knowledge_update_005#0",
+   "turns": 3,
+   "cosine": 0.2311
+  },
+  {
+   "donor": "three_way_join_006#0",
+   "turns": 1,
+   "cosine": 0.2257
+  },
+  {
+   "donor": "semantic_decoy_010#0",
+   "turns": 3,
+   "cosine": 0.2016
+  },
+  {
+   "donor": "two_branch_join_015#0",
+   "turns": 2,
+   "cosine": 0.1761
+  },
+  {
+   "donor": "topic_fork_005#0",
+   "turns": 2,
+   "cosine": 0.1719
+  },
+  {
+   "donor": "resume_005#0",
+   "turns": 6,
+   "cosine": 0.1639
+  },
+  {
+   "donor": "join_then_split_004#1",
+   "turns": 1,
+   "cosine": 0.1603
+  },
+  {
+   "donor": "compound_turn_014#0",
+   "turns": 2,
+   "cosine": 0.1601
+  },
+  {
+   "donor": "topic_fork_006#0",
+   "turns": 1,
+   "cosine": 0.1594
+  },
+  {
+   "donor": "three_way_join_008#0",
+   "turns": 2,
+   "cosine": 0.1563
+  },
+  {
+   "donor": "long_noisy_side_thread_002#0",
+   "turns": 35,
+   "cosine": 0.2768
+  }
+ ],
+ "used": {
+  "30": [
+   "resume_002#0",
+   "knowledge_update_005#0",
+   "three_way_join_006#0",
+   "semantic_decoy_010#0",
+   "two_branch_join_015#0",
+   "topic_fork_005#0",
+   "resume_005#0",
+   "join_then_split_004#1",
+   "compound_turn_014#0",
+   "topic_fork_006#0",
+   "three_way_join_008#0"
+  ],
+  "60": [
+   "resume_002#0",
+   "knowledge_update_005#0",
+   "three_way_join_006#0",
+   "semantic_decoy_010#0",
+   "two_branch_join_015#0",
+   "topic_fork_005#0",
+   "resume_005#0",
+   "join_then_split_004#1",
+   "compound_turn_014#0",
+   "topic_fork_006#0",
+   "three_way_join_008#0",
+   "long_noisy_side_thread_002#0"
+  ]
+ },
+ "actual_lengths": {
+  "30": 31,
+  "60": 66
+ },
+ "preflight": {
+  "oracle_hash_equal": true,
+  "checklist_query_closure_identical": true,
+  "l30_subsequence_of_l60": true,
+  "base_subsequence_of_l60": true,
+  "oracle_tokens": 0,
+  "full_tokens": {
+   "base": 755,
+   "30": 4403,
+   "60": 8813
+  }
+ },
+ "lengths_built": [
+  30,
+  60
+ ]
+}

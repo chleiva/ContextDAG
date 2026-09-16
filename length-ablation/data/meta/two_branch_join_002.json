@@ -1,0 +1,209 @@
+{
+ "target": "two_branch_join_002",
+ "family": "two_branch_join",
+ "base_history": 6,
+ "gold_closure": [
+  "t1",
+  "t2",
+  "t3",
+  "t4",
+  "t5",
+  "t6"
+ ],
+ "gold_entities": [
+  "10",
+  "100",
+  "16-week",
+  "20",
+  "30",
+  "40",
+  "48 hours",
+  "at least three",
+  "every 30 days",
+  "every two weeks",
+  "one meter",
+  "roughly 8",
+  "the ysi pro20i",
+  "\u00b10.1 mg/l"
+ ],
+ "query_entities": [
+  "4.2"
+ ],
+ "donors_rejected_by_exclusion": 68,
+ "sufficient_to_60": true,
+ "chosen": [
+  {
+   "donor": "knowledge_update_003#0",
+   "turns": 4,
+   "cosine": 0.4372
+  },
+  {
+   "donor": "two_branch_join_011#0",
+   "turns": 3,
+   "cosine": 0.3496
+  },
+  {
+   "donor": "semantic_decoy_006#0",
+   "turns": 4,
+   "cosine": 0.2895
+  },
+  {
+   "donor": "ambiguous_reference_001#1",
+   "turns": 1,
+   "cosine": 0.2643
+  },
+  {
+   "donor": "compound_turn_005#0",
+   "turns": 4,
+   "cosine": 0.224
+  },
+  {
+   "donor": "ambiguous_reference_001#0",
+   "turns": 2,
+   "cosine": 0.2189
+  },
+  {
+   "donor": "join_then_split_002#1",
+   "turns": 1,
+   "cosine": 0.1977
+  },
+  {
+   "donor": "two_branch_join_015#0",
+   "turns": 2,
+   "cosine": 0.1717
+  },
+  {
+   "donor": "compound_turn_002#0",
+   "turns": 3,
+   "cosine": 0.1708
+  },
+  {
+   "donor": "ambiguous_reference_004#1",
+   "turns": 1,
+   "cosine": 0.1702
+  },
+  {
+   "donor": "compound_turn_015#0",
+   "turns": 2,
+   "cosine": 0.1668
+  },
+  {
+   "donor": "knowledge_update_006#0",
+   "turns": 4,
+   "cosine": 0.1642
+  },
+  {
+   "donor": "two_branch_join_003#0",
+   "turns": 3,
+   "cosine": 0.1574
+  },
+  {
+   "donor": "compound_turn_009#0",
+   "turns": 3,
+   "cosine": 0.1573
+  },
+  {
+   "donor": "compound_turn_014#0",
+   "turns": 2,
+   "cosine": 0.1493
+  },
+  {
+   "donor": "compound_turn_013#0",
+   "turns": 3,
+   "cosine": 0.1341
+  },
+  {
+   "donor": "join_then_split_010#0",
+   "turns": 2,
+   "cosine": 0.1339
+  },
+  {
+   "donor": "join_then_split_010#1",
+   "turns": 2,
+   "cosine": 0.1327
+  },
+  {
+   "donor": "two_branch_join_009#0",
+   "turns": 2,
+   "cosine": 0.1304
+  },
+  {
+   "donor": "join_then_split_006#1",
+   "turns": 2,
+   "cosine": 0.1254
+  },
+  {
+   "donor": "ambiguous_reference_003#1",
+   "turns": 1,
+   "cosine": 0.1252
+  },
+  {
+   "donor": "join_then_split_005#1",
+   "turns": 1,
+   "cosine": 0.1248
+  },
+  {
+   "donor": "knowledge_update_012#0",
+   "turns": 3,
+   "cosine": 0.1164
+  }
+ ],
+ "used": {
+  "30": [
+   "knowledge_update_003#0",
+   "two_branch_join_011#0",
+   "semantic_decoy_006#0",
+   "ambiguous_reference_001#1",
+   "compound_turn_005#0",
+   "ambiguous_reference_001#0",
+   "join_then_split_002#1",
+   "two_branch_join_015#0",
+   "compound_turn_002#0"
+  ],
+  "60": [
+   "knowledge_update_003#0",
+   "two_branch_join_011#0",
+   "semantic_decoy_006#0",
+   "ambiguous_reference_001#1",
+   "compound_turn_005#0",
+   "ambiguous_reference_001#0",
+   "join_then_split_002#1",
+   "two_branch_join_015#0",
+   "compound_turn_002#0",
+   "ambiguous_reference_004#1",
+   "compound_turn_015#0",
+   "knowledge_update_006#0",
+   "two_branch_join_003#0",
+   "compound_turn_009#0",
+   "compound_turn_014#0",
+   "compound_turn_013#0",
+   "join_then_split_010#0",
+   "join_then_split_010#1",
+   "two_branch_join_009#0",
+   "join_then_split_006#1",
+   "ambiguous_reference_003#1",
+   "join_then_split_005#1",
+   "knowledge_update_012#0"
+  ]
+ },
+ "actual_lengths": {
+  "30": 30,
+  "60": 61
+ },
+ "preflight": {
+  "oracle_hash_equal": true,
+  "checklist_query_closure_identical": true,
+  "l30_subsequence_of_l60": true,
+  "base_subsequence_of_l60": true,
+  "oracle_tokens": 723,
+  "full_tokens": {
+   "base": 723,
+   "30": 3894,
+   "60": 7914
+  }
+ },
+ "lengths_built": [
+  30,
+  60
+ ]
+}

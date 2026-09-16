@@ -1,0 +1,388 @@
+{
+  "scenario_id": "resume_003__L30",
+  "family": "resume",
+  "label": "RESUME",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I also looked at a pier from a guy named Marcus Delray who runs a one-man shop called IronSky Custom Piers in Bozeman, Montana. He builds a 42-inch model called the Meridian-3 out of Schedule 40 DOM tubing.",
+      "assistant_message": "Marcus Delray's IronSky Custom Piers has a strong reputation in the amateur community for hand-finished welds and custom anodizing options. The Meridian-3 at 42 inches is a bit shorter than some competitors, but the Schedule 40 DOM tubing gives it excellent rigidity — it's a popular choice for people running heavier refractors where vibration damping matters more than raw load capacity.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "What's the load rating on the Meridian-3?",
+      "assistant_message": "Marcus rates the Meridian-3 at 60 lbs for the mount head, which is a bit conservative compared to some similarly sized piers. He publishes a safety factor of 3:1 in his spec sheet, meaning the structure itself is engineered to handle up to 180 lbs before any deformation, but the 60 lb figure is what he warranties for tracking accuracy under normal use.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "Does Marcus Delray do any customization on the Meridian-3's height?",
+      "assistant_message": "Yes, Marcus offers custom height cuts on the Meridian-3 in 2-inch increments, ranging from 36 inches up to 54 inches, all at the same base price of $620. Beyond 54 inches he charges a $40 per-inch upcharge and requires a thicker wall tube for structural reasons. He also offers a laser-cut top plate option with custom bolt circle patterns for an additional $95, which is handy if you're using a non-standard mount.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "Got it. What about the TI allowance—the space needs new flooring, a small server room, and a glass-walled conference room. How do we structure the TI negotiation?",
+      "assistant_message": "For those three improvements, get contractor bids before you negotiate the TI number so you can anchor to real costs—glass-walled conference rooms typically run $15,000–$25,000 installed, a basic server room with dedicated cooling and a 20-amp circuit can run $8,000–$15,000, and commercial LVT flooring for 2,400 sq ft usually costs $6–$10 per sq ft installed. Present the landlord with a detailed scope of work and request a $60,000 TI allowance, structured as a landlord-managed build-out rather than a tenant reimbursement so you're not fronting capital. If they resist, propose splitting the allowance: $40,000 at lease signing and the remaining $20,000 after the first 12 months of on-time payments.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "The landlord is insisting on a 'landlord-managed build-out' clause that gives them the right to select all contractors. What risks does that create for us?",
+      "assistant_message": "The biggest risk is cost inflation—when landlords control contractor selection, they often use preferred vendors who charge 15–25% above market rates, and since it's your TI dollars being spent, the overage comes directly out of your allowance. You could end up with $60,000 committed but only $45,000 worth of actual work completed. Negotiate for a 'competitive bid' carve-out requiring the landlord to solicit at least three bids for any job over $5,000, with you retaining approval rights over the final selection, and cap the landlord's project management fee at 5% of construction costs.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What happens to our TI allowance if we need to terminate the lease early? Does the landlord claw it back?",
+      "assistant_message": "Yes, most commercial leases include a TI recapture provision that requires you to repay a prorated portion of the allowance if you terminate early—on a 3-year lease with a $60,000 TI, that means roughly $20,000 per year of remaining term. Some landlords structure this as a separate 'TI note' that you sign alongside the lease, which can even accrue interest at 6–8% annually. You should negotiate to have the recapture obligation extinguish after month 24, so that if you make it two-thirds through the lease without default, the landlord absorbs the remaining TI cost as a cost of doing business.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "I also got a quote from a company called GreenLayer Insulation for the same duplex. They focus on blown-in cellulose rather than spray foam.",
+      "assistant_message": "GreenLayer Insulation is a well-regarded approach — blown-in cellulose typically has a recycled content of around 80–85% and performs very well for air sealing when dense-packed. It's worth comparing their quoted R-value and cost per square foot directly against the spray foam option, since the two materials behave quite differently in terms of moisture management and long-term settling.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "GreenLayer came in at $5,900 for 1,400 square feet to R-49, and they said they can start any time — their earliest available slot is actually February 3, 2025.",
+      "assistant_message": "So GreenLayer is about $2,300 cheaper but lands at R-49 versus the R-60 FrostShield quoted, and their February 3 availability gives you roughly six weeks of lead time before the competing offer even becomes possible. The cost-per-R-value trade-off is real: you're paying more with FrostShield for a higher thermal resistance ceiling, but the delay means more heating season passes before the upgrade is in place. It's worth modeling the energy savings over one winter to see if the performance gap justifies the price and timing difference.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "I'm trying to figure out the right ceiling height for my home studio. I shoot mostly portrait and headshot work, and I want to be able to use a 7-foot parabolic umbrella overhead as a key light.",
+      "assistant_message": "For a 7-foot parabolic umbrella used overhead, you generally need the light stand to position the umbrella's center at least 10 to 11 feet off the ground to get a proper downward angle without clipping the ceiling. That means your ceiling should be a minimum of 12 feet to give you safe clearance for the stand hardware and any boom arm extension above the umbrella.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "I'm also trying to figure out storage unit sizes for some furniture we'll be putting in climate-controlled storage. The facility near us offers a 10x20 unit for $185 per month, which they say fits a 2-bedroom apartment worth of stuff.",
+      "assistant_message": "A 10x20 is one of the most popular storage sizes and that capacity estimate sounds about right — it typically holds around 800 to 1,000 cubic feet of packed household goods. At $185 per month, that's a reasonable rate for climate-controlled in most mid-size metro areas. Just make sure the climate control maintains a consistent temperature range, usually between 55 and 85 degrees Fahrenheit, which matters a lot for wood furniture and electronics.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "The storage facility also has a 10x15 unit for $140 per month. I'm wondering if that might be enough.",
+      "assistant_message": "A 10x15 gives you roughly 600 to 750 cubic feet of usable space, which is typically adequate for a one-bedroom apartment or a portion of a two-bedroom. If you're storing furniture from multiple rooms — sofas, bed frames, dressers — you'd likely find the 10x15 too tight and end up stacking things awkwardly. The $45 monthly savings over the 10x20 could cost you more in damaged items or a second unit down the line.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "The facility manager mentioned they also have a 10x30 unit for $260 per month if we end up needing more space.",
+      "assistant_message": "A 10x30 is essentially a large garage-sized space — around 1,200 to 1,500 cubic feet — which is often overkill unless you're storing a full 3- or 4-bedroom house worth of furniture plus outdoor equipment or vehicles. At $260 per month, the jump from the 10x20 at $185 is $75 extra, and you'd want to be confident you'll actually use that extra 400 square feet. For most people in a temporary moving situation, the 10x20 is the sweet spot between cost and capacity.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "They said we'd need to sign a minimum 3-month contract for any of the climate-controlled units. Does that seem standard?",
+      "assistant_message": "A 3-month minimum is on the longer end — many facilities use month-to-month leases or a 1-month minimum, though some do require 2 to 3 months for climate-controlled units specifically because of the higher overhead. If your move timeline is uncertain, it's worth negotiating or shopping around, since a competing facility might offer the same climate-controlled rates on a month-to-month basis. Read the early-termination clause carefully too, because some facilities charge a fee equal to one full month's rent if you leave before the contract period ends.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "There's also a space over on Caldwell Avenue we've been eyeing. It's listed by a property management company called Hartwell & Dunn, and it's 950 sq ft at $3,200 a month.",
+      "assistant_message": "Caldwell Avenue at 950 square feet and $3,200 a month works out to about $3.37 per square foot, which is slightly cheaper per square foot than the Renfield Street option. The smaller footprint could be a constraint if you're planning significant in-house production, since you'd have less room for proofing racks and large deck ovens. Hartwell & Dunn is a well-known commercial property manager, so the administrative side of the lease process would likely be straightforward. It really comes down to whether the lower cost justifies the tighter space.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "The Caldwell Avenue place is a former sandwich shop, so it already has a Type I hood and a grease trap installed, which would save us on build-out costs.",
+      "assistant_message": "That's a significant advantage — a Type I hood and a grease trap can easily run $15,000 to $25,000 to install from scratch, so inheriting those from the previous tenant is a real cost saving. You'd still want a licensed inspector to verify they meet current health code standards and are sized appropriately for bakery equipment, since a sandwich shop's ventilation needs differ from high-volume oven use. If everything checks out, the Caldwell Avenue space's lower upfront build-out cost could offset the smaller square footage. It's worth getting an HVAC contractor in there before you make a final comparison.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "So if we hire a bartending service that already holds the Category 3 license, we're covered for the whole event?",
+      "assistant_message": "Yes, as long as the bartending company's Category 3 Nevada Catering License is current and lists your event date within its coverage period, you are covered and no additional license is required from you as the host. You should ask the company to provide a copy of their license certificate at least 30 days before the event, and confirm that the license explicitly covers Washoe County, since some Category 3 licenses are issued with county-specific restrictions. Keep a copy of that certificate on-site during the event in case a Nevada Department of Taxation compliance officer requests it.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "What happens if the bartending company's license lapses between now and June 14th?",
+      "assistant_message": "If the company's Category 3 license lapses before or on your event date, serving alcohol through them would be a violation of NRS 369.180, which carries a misdemeanor charge and a fine of up to $1,000 per violation for the unlicensed party. To protect yourselves, include a clause in your vendor contract requiring the bartending company to maintain valid licensure through June 15th and to provide proof of renewal within 10 business days of any renewal date that falls before your event. You could also name a backup licensed bartending service in the contract as a contingency if the primary vendor fails to maintain compliance.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "My current spare room has a 10-foot ceiling. Is that workable, or should I look at a different space?",
+      "assistant_message": "A 10-foot ceiling is tight but workable only if you switch to a smaller modifier — a 7-foot para is essentially off the table at that height. The practical ceiling for that room is a 5-foot octabox or a 60-inch parabolic umbrella, which needs the center positioned roughly 8 feet high, leaving you about 18 to 24 inches of clearance. If you want to stay with the 7-foot para, you'd need to find a space with at least 12 feet of ceiling clearance.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "I'm also thinking about whether to pour a separate concrete slab for the floor or just use compacted gravel. Which is better for drainage in a wet climate?",
+      "assistant_message": "Compacted gravel with a landscape fabric underlayer is often preferred in wet climates because it allows rainwater and condensation to drain freely rather than pooling on a slab. A concrete slab can work if you add a slight slope (about 1/8 inch per foot) toward a drain, but gravel is simpler and cheaper for a backyard observatory where you don't need a perfectly level working surface.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "What kind of flooring would you recommend for a home studio? I want something that looks good on camera but is also easy to clean.",
+      "assistant_message": "Luxury vinyl plank, often called LVP, is a popular choice for home studios because it photographs well, mimics hardwood convincingly on camera, and wipes clean in seconds. A mid-tone gray or warm oak finish tends to be the most versatile neutral — it doesn't compete with subjects and works across multiple shooting styles. Brands like LifeProof and COREtec offer click-lock floating planks that are DIY-friendly and run roughly $2 to $4 per square foot for material alone.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "I've also been thinking about putting up a seamless paper backdrop system. How do I mount those in a room with standard 8-foot ceilings?",
+      "assistant_message": "With 8-foot ceilings, a wall-mounted roller system is usually the best approach because a freestanding stand would eat too much floor space and limit your shooting distance. Companies like Savage and Kate sell wall-mount brackets that hold 2-inch diameter backdrop tubes and can be installed directly into wall studs with lag bolts. You'd typically mount the brackets about 7.5 feet high so the paper unrolls with a few inches of clearance, letting you sweep it onto the floor for a seamless curve.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "How wide a seamless paper roll do I need for full-length portraits?",
+      "assistant_message": "For full-length portraits, a 107-inch-wide roll — that's the standard 9-foot width — is the industry go-to because it comfortably frames a standing adult with room to spare on both sides. If you're shooting only headshots or half-body, a 53-inch (4.5-foot) roll can work and is cheaper to replace. Savage Widetone and Colorama are the two most widely stocked brands, and a single 107-inch roll in a neutral color like Arctic White or Super White runs about $60 to $80 for a 36-foot length.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "What colors of seamless paper are considered must-haves to start with?",
+      "assistant_message": "Most working photographers start with three rolls: Super White for high-key and product work, a medium gray like Savage's #17 Gray or Colorama's Smoke Gray for versatile portrait work, and a dark tone like Black or Deep Olive for dramatic low-key setups. Those three cover the majority of client requests without requiring you to stock a full range. Once your business grows you can add fashion-forward accent colors, but white, gray, and black form the practical foundation.",
+      "gold_parents": [
+        "t22"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "Is there a way to extend the life of seamless paper so I'm not replacing rolls constantly?",
+      "assistant_message": "The biggest life-extender is asking subjects to remove shoes before stepping onto the paper, which alone can triple the usable footage on a roll. You can also roll the paper back up after each session rather than leaving it unrolled, which prevents dust accumulation and edge curling. Some photographers tape a 12-inch strip of black gaffer tape along the leading edge as a sacrificial walkway; when that strip gets scuffed, they pull it off and expose fresh paper underneath.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "Our choir director wants to add a post-concert reception. The Hartwell Center's catering manager is called Patricia Osei and she said the kitchen closes at 9 p.m. on weeknights.",
+      "assistant_message": "That's worth flagging early with Patricia so you can plan your concert schedule around it. If your performance runs long or you want a proper reception rather than a rushed one, you might need to negotiate an exception or look at bringing in an external caterer.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "What kind of flooring actually holds up best under rolling equipment like light stands and heavy cases?",
+      "assistant_message": "Luxury vinyl plank (LVP) is widely considered the best balance of durability and practicality for a working studio floor. It resists the denting that hardwood suffers from stand feet, cleans easily when you spill anything, and a commercial-grade product rated AC4 or AC5 handles rolling loads without delaminating.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "How thick should the LVP be? I've seen everything from 4mm to 8mm at the hardware store.",
+      "assistant_message": "For a studio with heavy rolling equipment, you want at least 6mm total thickness with a wear layer of 12 mil or thicker. The 4mm products are designed for light residential foot traffic and will show indentations from stand feet within months. An 8mm plank with a 20-mil wear layer is the sweet spot — it's rigid enough to prevent flex over subfloor imperfections and rated for commercial use.",
+      "gold_parents": [
+        "t26"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "Does the underlayment matter if I'm going with 8mm LVP?",
+      "assistant_message": "Yes, underlayment still matters significantly. Many 8mm LVP products come with a pre-attached 1mm foam underlayment, but for a studio you should add a separate 2mm cork underlayment underneath, which brings total cushion to about 3mm and dampens the hollow sound that bare LVP produces when equipment rolls across it. Avoid anything thicker than 3mm total underlayment, because excess flex can stress the locking joints and void most manufacturer warranties.",
+      "gold_parents": [
+        "t27"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "I was also thinking about painting the floor with a seamless gray. Is that a realistic option instead of LVP?",
+      "assistant_message": "A painted concrete floor with a two-part epoxy coating is absolutely a professional option used in many commercial studios. You'd want a 100-percent solids epoxy at 4 to 6 mils dry film thickness, followed by a polyurethane topcoat for scratch resistance — brands like Rust-Oleum EpoxyShield Professional or Sherwin-Williams ArmorSeal are standard choices. The downside is that concrete transmits cold and sound more than LVP, so you'd want radiant heat or thick anti-fatigue mats at standing positions.",
+      "gold_parents": [
+        "t28"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t30",
+      "turn_index": 29,
+      "user_message": "Would a mid-gray floor tone affect my exposure readings in a meaningful way?",
+      "assistant_message": "Yes, floor color has a measurable but manageable effect. A mid-gray floor — roughly 18-percent reflectance, similar to a photographic gray card — will bounce a small amount of fill light upward onto your subject's chin and under-eye area, which most portrait photographers actually find flattering. A white floor can add as much as 1/3 to 2/3 of a stop of fill from below, which can be enough to visibly reduce shadow depth on a Rembrandt or split-lighting setup, so metering carefully with a gray floor is the more predictable choice.",
+      "gold_parents": [
+        "t29"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t31",
+      "turn_index": 30,
+      "user_message": "Given that my spare room has a 10-foot ceiling, can I still make the 7-foot parabolic umbrella work in there somehow?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t9",
+    "t18"
+  ],
+  "distractor_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t7",
+    "t8",
+    "t10",
+    "t11",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t19",
+    "t20",
+    "t21",
+    "t22",
+    "t23",
+    "t24",
+    "t25",
+    "t26",
+    "t27",
+    "t28",
+    "t29",
+    "t30"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that a 7-foot parabolic umbrella requires at least 12 feet of ceiling clearance, making the 10-foot ceiling insufficient for it.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer identifies the 60-inch (5-foot) parabolic umbrella or 5-foot octabox as the recommended alternative modifier for a 10-foot ceiling.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer references the 8-foot positioning height needed for the smaller modifier and/or the 18-to-24-inch clearance figure from t2.",
+      "required": false
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not import any facts about LVP flooring thickness, underlayment depth, epoxy coatings, or floor reflectance from the B-branch turns.",
+      "required": true
+    }
+  ],
+  "notes": "t1 and t2 hold all the facts the query needs: the 12-foot minimum for the 7-foot para, the 10-foot ceiling constraint, and the 60-inch/5-foot modifier as the stated alternative. Turns t3 through t7 form the flooring distractor branch and contain no information relevant to the ceiling/modifier question; the main trap is importing the 18-percent reflectance or epoxy figures into the answer.\n\nReference answer: With a 10-foot ceiling, the 7-foot parabolic umbrella is not workable — it needs at least 12 feet of clearance to position the umbrella's center at the required 10 to 11 feet with safe overhead room. There is no practical workaround that makes the 7-foot para fit in that space. Your best alternative is to use a 5-foot octabox or a 60-inch parabolic umbrella, which only needs its center at about 8 feet high, leaving you 18 to 24 inches of clearance in your 10-foot room. If the 7-foot para is essential to your work, you would need to find a space with at least 12 feet of ceiling height.",
+  "evidence_note": null,
+  "premise": "a freelance photographer setting up a home studio",
+  "evidence_spans": null,
+  "benchmark_version": "1.1-length-ablation",
+  "length_class": "spliced_30"
+}

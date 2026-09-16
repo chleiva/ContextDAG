@@ -1,0 +1,400 @@
+{
+  "scenario_id": "three_way_join_001__L30",
+  "family": "three_way_join",
+  "label": "JOIN",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We're trying to decide between Hartwell Academy and Greystone High for our daughter. Can you tell me about Hartwell's sixth-form entry requirements?",
+      "assistant_message": "Hartwell Academy requires a minimum of 5 GCSEs at grade 5 or above for sixth-form entry, including grade 6 in any subject the student wishes to study at A-level. They also require a grade 5 in both English Language and Mathematics regardless of the subjects chosen. It's a fairly standard set of requirements for a selective sixth form.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "I'm also stressing about the kids' school enrollment in Portland. My 7-year-old will need to start second grade in the fall.",
+      "assistant_message": "Portland Public Schools typically opens online enrollment for incoming students in late February through March for the following fall, so depending on your move date you may need to enroll shortly after arriving. You'll generally need proof of residency, immunization records, and a birth certificate to complete registration.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "The school we're zoned for is Glencoe Elementary in the Beaverton School District actually, not Portland Public. Do they have a different enrollment timeline?",
+      "assistant_message": "Beaverton School District typically runs its open enrollment window from early January through mid-February for the following school year, though new students moving into the district can register on a rolling basis outside that window. Glencoe Elementary specifically has a strong dual-language immersion program, so it's worth asking about waitlist status for that track when you register.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "I want to make sure my older one doesn't fall behind academically over the summer with the move disruption. Are there any good summer bridge programs?",
+      "assistant_message": "Many districts, including Beaverton, offer summer learning programs specifically for incoming students, and there are also independent options like Kumon or Khan Academy's free online curriculum for self-paced review. For a rising second-grader, focusing on reading fluency and basic addition and subtraction facts over the summer would give a solid academic foundation heading into the new school year.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "What about the sports facilities at Greystone High?",
+      "assistant_message": "Greystone High has a well-regarded sports program centred around its main facility, the Greystone Sports Complex, which opened in 2019. The complex includes a 25-metre indoor swimming pool, two full-size 3G artificial pitches, and a sports hall with six badminton courts. It's one of the more comprehensively equipped secondary school facilities in the region.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "We also want to host weekly in-library events. What kinds of programming work well for the 6–12 age range over an eight-week run?",
+      "assistant_message": "A proven mix is to alternate between passive and active formats—think a craft or STEM activity one week, then a visiting author or storyteller the next, so no two consecutive weeks feel identical. For an eight-week program you might anchor weeks one and eight with high-energy kickoff and closing parties, then fill weeks two through seven with two crafts, two STEM workshops, one author visit, and one themed movie afternoon, which keeps the calendar varied without overwhelming volunteer or staff resources.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "We have a $3,500 budget for those events. Does that seem workable for eight weeks?",
+      "assistant_message": "At $3,500 across eight events, you're working with roughly $437 per event, which is tight but doable if you lean on community partnerships. Local STEM educators or university student groups will often run workshops for free or for a small stipend under $100, and many children's authors charge between $150 and $300 for a library visit, leaving meaningful room in each week's allocation for materials and light refreshments.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "We're also considering hiring a part-time program coordinator just for the summer. What hours and pay rate would be typical?",
+      "assistant_message": "For a summer reading program of this scale, a part-time coordinator typically works 15 to 20 hours per week at a rate between $18 and $24 per hour depending on your region and the candidate's experience. Over an eight-week program that comes to roughly 120 to 160 total hours, so your all-in labor cost would land somewhere between $2,160 and $3,840 before any employer taxes or benefits, which is worth factoring into your overall program budget alongside the events spend.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "How does Hartwell Academy handle the school day? We have an early commute to manage.",
+      "assistant_message": "Hartwell Academy runs a six-period day, with the school day starting at 8:30 AM and finishing at 3:20 PM. There is a 50-minute lunch break at 12:30 PM and two 15-minute breaks in the morning and afternoon. Registration begins at 8:20 AM, so students are expected on site before the official start time.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "What questions should we be asking about the pastoral care at each school? Our daughter has mild anxiety and we want to make sure there's proper support.",
+      "assistant_message": "It's worth asking whether each school has a dedicated school counsellor on site every day, or only part-time. You should also ask how form tutors are trained to identify signs of anxiety, and what the referral pathway looks like when a student needs more than classroom support.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "Northgate said they have a full-time counsellor plus a learning mentor who works specifically with students with anxiety and low-level mental health needs.",
+      "assistant_message": "That sounds like a solid pastoral structure. Having both a counsellor and a specialist learning mentor means your daughter would have two distinct points of contact depending on whether her needs are more emotional or more academic in nature, which can make a real difference day to day.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "Riverside only has a part-time counsellor who comes in on Tuesdays and Thursdays. Does that seem like a gap?",
+      "assistant_message": "It could be, particularly on days when she's struggling and the counsellor isn't available. It would be worth asking Riverside who covers pastoral support on the other three days, and whether form tutors or a head of year have any formal mental health first aid training to bridge those gaps.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "And what about Greystone High's school day timing?",
+      "assistant_message": "Greystone High starts later than many local schools, with the school day beginning at 9:00 AM and ending at 3:45 PM. This is based on a five-period day, with each lesson running for 60 minutes. Registration is at 8:55 AM, so there's a little more flexibility in the morning compared to schools with earlier starts.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "What are the age brackets we should use for dividing the reading levels? We want to make sure the book lists are age-appropriate.",
+      "assistant_message": "A common approach for public library summer programs is to use three tiers: early readers ages 4–6, middle readers ages 7–9, and independent readers ages 10–12. You could also add a teen tier for ages 13–17 if your program extends that high.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "We do want to include teens. Should the teen tier have a separate reading log format from the younger kids?",
+      "assistant_message": "Yes, a separate log format for teens usually works better — they tend to respond well to tracking minutes or pages read rather than just book counts, which can feel more juvenile. You might also include a short reflection prompt or rating field to keep older readers engaged.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "That makes sense. How many minutes of reading per day would be a reasonable goal for the teen tier?",
+      "assistant_message": "A target of 30 minutes per day is widely recommended for teens by reading advocacy groups, and it aligns with what many school summer programs suggest to prevent learning loss. Over an 8-week program, that adds up to roughly 28 hours of reading, which is an achievable and meaningful goal.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "We're thinking of running the program for exactly 8 weeks, from June 16 to August 8. Does that timeline work with typical school calendars?",
+      "assistant_message": "June 16 to August 8 is a strong window — most schools in the U.S. let out by mid-June and resume after Labor Day in early September, so that 8-week span captures the heart of summer break. It also gives you a comfortable buffer before back-to-school shopping season pulls families' attention away from library activities.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "Does Greystone High have a swimming team that competes externally?",
+      "assistant_message": "Yes, Greystone High fields a competitive swimming team that participates in the County Schools Swimming League. The team competes at regional level and won the Under-16 County Championship in both 2022 and 2023. The school's head of PE, Mr. Darren Okafor, coaches the squad personally.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "We're also looking at the Elmsworth Civic Auditorium for another stop on the tour. What can you tell me about it?",
+      "assistant_message": "Elmsworth Civic Auditorium is a larger venue on Parade Street in Elmsworth town centre, with a seating capacity of 780 and a grand pipe organ that choral groups can arrange to use for an additional hire fee. It's owned by the local council and managed by a team led by events coordinator Paul Renwick. The auditorium hosts roughly 120 events per year and has a well-regarded reputation for community and touring performances.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "Does Elmsworth have good dressing room facilities for a choir our size? We have about 45 singers.",
+      "assistant_message": "Elmsworth Civic Auditorium has three dedicated dressing rooms backstage, with the largest accommodating up to 35 people and the other two fitting around 15 each, so 45 singers would spread comfortably across all three. Each room has its own mirror stations, coat rails, and a shared adjoining shower block. Paul Renwick has mentioned that choral groups often use the two smaller rooms for section warm-ups as well.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "Does Hartwell also have sixth-form requirements around attendance or behaviour records?",
+      "assistant_message": "Yes, Hartwell Academy adds a non-academic condition: applicants from other schools must provide a reference confirming fewer than 8 unauthorised absences in Year 10 and Year 11 combined. Internal students are assessed on the same threshold but via their own pastoral records. Any fixed-term exclusion in Years 10 or 11 automatically triggers a review panel before an offer can be made.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "We also need to figure out the team's travel situation. We have 14 members and two mentors going to the competition, and the school van only seats 12.",
+      "assistant_message": "With 16 people total and only 12 seats in the van, you'll need to arrange additional transportation for at least 4 people. Options include a second school vehicle, parent carpools, or renting a passenger van. Make sure you get the necessary permission slips and insurance documentation sorted well in advance.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "For the travel logistics, do we need the school's insurance certificate to reserve a rental van?",
+      "assistant_message": "Yes, most rental companies require a certificate of insurance when a school organization is renting a vehicle for an official trip. You'll typically need to contact your school's business office or district risk management department to obtain that certificate. Give them at least two weeks' notice since processing can take time, and confirm whether the rental company needs to be listed as an additional insured on the policy.",
+      "gold_parents": [
+        "t22"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "What is the annual fee for using Greystone's Sports Complex for community members outside the school?",
+      "assistant_message": "For community members, Greystone Sports Complex offers an annual membership at £480 per adult per year, or £320 for students and concessions. The complex is open to the public on weekday evenings after 6:00 PM and throughout the weekend from 8:00 AM to 8:00 PM. Booking for lane swimming must be made at least 24 hours in advance through the school's online portal.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "The £150–£250 range is quite wide. What drives the cost toward the higher end?",
+      "assistant_message": "The main driver is whether the school requires branded, supplier-exclusive items — a blazer that can only be bought from one approved retailer often costs £55–£75 on its own, compared to a generic one from a supermarket that might be £15–£20. Schools that mandate logoed PE kit, a specific branded sports bag, and formal shoes from a named supplier can push the total well past £200 before you've bought stationery. Academy chains and schools with a strong uniform identity tend to sit at the higher end of that range.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "Is there any legal requirement for schools to keep uniform costs reasonable?",
+      "assistant_message": "Yes — since November 2021, the UK government's statutory guidance on school uniforms requires governing bodies in England to ensure uniform costs are reasonable and to have regard to value for money. The guidance specifically states that schools must avoid requiring items that can only be bought from a single expensive supplier, and it recommends that branded items be kept to a minimum. Ofsted can consider uniform affordability during inspections, and parents can raise concerns formally with the governing body if they believe the policy breaches the statutory guidance.",
+      "gold_parents": [
+        "t25"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "Would it be worth contacting both schools to ask for an itemised uniform price list before making our decision?",
+      "assistant_message": "Absolutely — schools are expected to publish or provide a full uniform list with indicative prices, and requesting an itemised breakdown is entirely reasonable. Comparing the two lists side by side will show you not just the total cost but how many items are supplier-exclusive versus available on the high street. If one school's list is significantly longer or more restrictive, that's useful practical information alongside all the academic factors.",
+      "gold_parents": [
+        "t26"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "If our daughter takes the bus, which school would she get to first given that the bus arrives at both areas around 8:40 AM?",
+      "assistant_message": "If the bus arrives at 8:40 AM, Greystone High would be the more comfortable option for that timing, since registration there isn't until 8:55 AM — giving her 15 minutes of buffer. At Hartwell Academy, registration begins at 8:20 AM, which means a bus arriving at 8:40 AM would already be 20 minutes late for registration. She would miss registration entirely and would need a late pass to enter.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "I'm also considering Saltmarsh Creek Wetlands as an alternative site. Do you know much about wetland sampling for high schoolers?",
+      "assistant_message": "Saltmarsh Creek Wetlands would offer a really different ecological context — estuarine and brackish-water species versus the upland or freshwater communities you'd find at a reserve like Ridgeline. For high schoolers, wetland macroinvertebrate sampling is a popular and accessible method, often using kick-nets and Surber samplers to assess biodiversity. The site tends to be especially good for projects focusing on nutrient cycling or the effects of tidal fluctuation on species distribution.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t30",
+      "turn_index": 29,
+      "user_message": "Saltmarsh Creek has a visitor center that rents equipment, right? I think they also do guided educator sessions.",
+      "assistant_message": "Yes, Saltmarsh Creek's visitor center does rent basic field equipment — kick-nets, pH meters, and salinity probes — to school groups for a flat fee of $45 per session. They also offer a two-hour guided educator orientation on the third Saturday of each month, which is designed to help teachers understand the site's ecology before bringing students. Booking for those orientations fills up fast, so early registration is recommended.",
+      "gold_parents": [
+        "t29"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t31",
+      "turn_index": 30,
+      "user_message": "We noticed both schools have a parent-teacher association. Does the PTA at either school run fundraising events in autumn?",
+      "assistant_message": "Both schools do have active PTAs. Hartwell Academy's PTA holds an annual Autumn Fair in October, which last year raised £4,200 for new library resources. Greystone High's PTA organises a sponsored walk each November, with proceeds going toward extracurricular equipment. Both are well-attended and welcome new families to get involved from the start.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t32",
+      "turn_index": 31,
+      "user_message": "Our daughter has 6 GCSEs all at grade 5, including a grade 5 in English and Maths, but she had 10 unauthorised absences across Years 10 and 11 and no exclusions. She wants to do A-levels but also swim competitively, and the bus gets her to both schools at 8:40 AM. Which school is actually viable for her?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t21",
+        "t24",
+        "t28"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t5",
+    "t9",
+    "t13",
+    "t18",
+    "t21",
+    "t24",
+    "t28"
+  ],
+  "distractor_turn_ids": [
+    "t2",
+    "t3",
+    "t4",
+    "t6",
+    "t7",
+    "t8",
+    "t10",
+    "t11",
+    "t12",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t19",
+    "t20",
+    "t22",
+    "t23",
+    "t25",
+    "t26",
+    "t27",
+    "t29",
+    "t30",
+    "t31"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer identifies that Hartwell Academy's sixth-form attendance requirement is fewer than 8 unauthorised absences in Years 10 and 11 combined, and that the daughter's 10 unauthorised absences disqualify her from a standard offer at Hartwell.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer identifies that Greystone High's registration is at 8:55 AM, making a bus arrival at 8:40 AM viable, whereas Hartwell's registration at 8:20 AM means the 8:40 AM bus makes her late.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer identifies that Greystone High has a competitive swimming team that participates in the County Schools Swimming League, supporting the daughter's goal of competitive swimming.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not cite PTA fundraising amounts or activities (e.g., the £4,200 raised by Hartwell's Autumn Fair or Greystone's sponsored walk) as a factor in the school choice recommendation.",
+      "required": true
+    }
+  ],
+  "notes": "The three gold evidence turns are t6 (Hartwell's attendance threshold of fewer than 8 unauthorised absences), t8 (registration times making Hartwell inaccessible by the 8:40 AM bus), and t5 (Greystone's competitive swimming team). The distractor is t9 (PTA fundraising details), which is plausible school context but irrelevant to viability.\n\nReference answer: Greystone High is the only viable option for your daughter. Hartwell Academy requires fewer than 8 unauthorised absences in Years 10 and 11 combined for sixth-form entry, and her 10 unauthorised absences would prevent her from receiving a standard offer there. On top of that, Hartwell's registration starts at 8:20 AM, so the 8:40 AM bus would already make her late every day, whereas Greystone's registration is at 8:55 AM, giving her a comfortable 15-minute buffer. Greystone also has a competitive swimming team that competes in the County Schools Swimming League, which aligns well with her goal of swimming competitively.",
+  "evidence_note": null,
+  "premise": "a family choosing between two secondary schools",
+  "evidence_spans": null,
+  "benchmark_version": "1.1-length-ablation",
+  "length_class": "spliced_30"
+}

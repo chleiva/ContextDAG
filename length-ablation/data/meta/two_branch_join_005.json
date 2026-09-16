@@ -1,0 +1,169 @@
+{
+ "target": "two_branch_join_005",
+ "family": "two_branch_join",
+ "base_history": 8,
+ "gold_closure": [
+  "t1",
+  "t2",
+  "t4",
+  "t5",
+  "t6",
+  "t8"
+ ],
+ "gold_entities": [
+  "1,400\u2013$1,600",
+  "70 pounds",
+  "70-pound",
+  "about $900\u2013$1,100",
+  "about 27\u201330 hours",
+  "albuquerque",
+  "american",
+  "amerifreight",
+  "approximately 1,900 miles",
+  "at least 4\u20136 weeks",
+  "austin",
+  "biscuit",
+  "full day",
+  "half-day",
+  "july",
+  "july 14",
+  "july 14\u201315",
+  "july 15",
+  "july 16",
+  "july 17",
+  "july 18",
+  "june 1 through september 15",
+  "labrador named biscuit",
+  "mid-july",
+  "montway",
+  "noon",
+  "oregon",
+  "portland",
+  "roughly 9 hours",
+  "roughly 9.5 hours",
+  "roughly 9\u201310 hours",
+  "salt lake city",
+  "summer",
+  "summer months",
+  "texas",
+  "that morning",
+  "the morning",
+  "three days",
+  "three-day",
+  "united"
+ ],
+ "query_entities": [
+  "austin",
+  "portland"
+ ],
+ "donors_rejected_by_exclusion": 29,
+ "sufficient_to_60": true,
+ "chosen": [
+  {
+   "donor": "join_then_split_001#1",
+   "turns": 1,
+   "cosine": 0.3778
+  },
+  {
+   "donor": "knowledge_update_008#0",
+   "turns": 2,
+   "cosine": 0.3284
+  },
+  {
+   "donor": "knowledge_update_010#0",
+   "turns": 2,
+   "cosine": 0.3017
+  },
+  {
+   "donor": "three_way_join_003#0",
+   "turns": 3,
+   "cosine": 0.2493
+  },
+  {
+   "donor": "topic_fork_006#0",
+   "turns": 1,
+   "cosine": 0.2481
+  },
+  {
+   "donor": "semantic_decoy_007#0",
+   "turns": 3,
+   "cosine": 0.2453
+  },
+  {
+   "donor": "new_root_003#0",
+   "turns": 8,
+   "cosine": 0.2404
+  },
+  {
+   "donor": "two_branch_join_010#0",
+   "turns": 2,
+   "cosine": 0.2274
+  },
+  {
+   "donor": "knowledge_update_005#0",
+   "turns": 3,
+   "cosine": 0.2189
+  },
+  {
+   "donor": "two_branch_join_014#0",
+   "turns": 3,
+   "cosine": 0.2182
+  },
+  {
+   "donor": "new_root_008#0",
+   "turns": 5,
+   "cosine": 0.2143
+  },
+  {
+   "donor": "constraint_retention_011#0",
+   "turns": 20,
+   "cosine": 0.2068
+  }
+ ],
+ "used": {
+  "30": [
+   "join_then_split_001#1",
+   "knowledge_update_008#0",
+   "knowledge_update_010#0",
+   "three_way_join_003#0",
+   "topic_fork_006#0",
+   "semantic_decoy_007#0",
+   "new_root_003#0",
+   "two_branch_join_010#0"
+  ],
+  "60": [
+   "join_then_split_001#1",
+   "knowledge_update_008#0",
+   "knowledge_update_010#0",
+   "three_way_join_003#0",
+   "topic_fork_006#0",
+   "semantic_decoy_007#0",
+   "new_root_003#0",
+   "two_branch_join_010#0",
+   "knowledge_update_005#0",
+   "two_branch_join_014#0",
+   "new_root_008#0",
+   "constraint_retention_011#0"
+  ]
+ },
+ "actual_lengths": {
+  "30": 30,
+  "60": 61
+ },
+ "preflight": {
+  "oracle_hash_equal": true,
+  "checklist_query_closure_identical": true,
+  "l30_subsequence_of_l60": true,
+  "base_subsequence_of_l60": true,
+  "oracle_tokens": 845,
+  "full_tokens": {
+   "base": 1091,
+   "30": 3903,
+   "60": 7356
+  }
+ },
+ "lengths_built": [
+  30,
+  60
+ ]
+}

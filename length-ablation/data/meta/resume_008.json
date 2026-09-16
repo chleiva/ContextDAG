@@ -1,0 +1,157 @@
+{
+ "target": "resume_008",
+ "family": "resume",
+ "base_history": 8,
+ "gold_closure": [
+  "t1",
+  "t2",
+  "t3"
+ ],
+ "gold_entities": [
+  "10 minutes",
+  "100",
+  "12",
+  "20",
+  "20 hours",
+  "24",
+  "50%",
+  "about 12",
+  "aether",
+  "overnight",
+  "roughly 8",
+  "zero"
+ ],
+ "query_entities": [
+  "aether"
+ ],
+ "donors_rejected_by_exclusion": 58,
+ "sufficient_to_60": true,
+ "chosen": [
+  {
+   "donor": "knowledge_update_004#0",
+   "turns": 2,
+   "cosine": 0.2586
+  },
+  {
+   "donor": "semantic_decoy_002#0",
+   "turns": 3,
+   "cosine": 0.2386
+  },
+  {
+   "donor": "knowledge_update_012#0",
+   "turns": 3,
+   "cosine": 0.2058
+  },
+  {
+   "donor": "join_then_split_002#1",
+   "turns": 1,
+   "cosine": 0.182
+  },
+  {
+   "donor": "knowledge_update_011#0",
+   "turns": 2,
+   "cosine": 0.171
+  },
+  {
+   "donor": "semantic_decoy_004#0",
+   "turns": 3,
+   "cosine": 0.1528
+  },
+  {
+   "donor": "knowledge_update_001#0",
+   "turns": 2,
+   "cosine": 0.1512
+  },
+  {
+   "donor": "two_branch_join_003#0",
+   "turns": 3,
+   "cosine": 0.1492
+  },
+  {
+   "donor": "three_way_join_001#0",
+   "turns": 1,
+   "cosine": 0.1306
+  },
+  {
+   "donor": "join_then_split_003#1",
+   "turns": 2,
+   "cosine": 0.1228
+  },
+  {
+   "donor": "knowledge_update_001#1",
+   "turns": 19,
+   "cosine": 0.1635
+  },
+  {
+   "donor": "join_then_split_007#1",
+   "turns": 2,
+   "cosine": 0.1173
+  },
+  {
+   "donor": "join_then_split_007#0",
+   "turns": 2,
+   "cosine": 0.1117
+  },
+  {
+   "donor": "three_way_join_002#0",
+   "turns": 3,
+   "cosine": 0.1085
+  },
+  {
+   "donor": "knowledge_update_006#0",
+   "turns": 4,
+   "cosine": 0.1038
+  }
+ ],
+ "used": {
+  "30": [
+   "knowledge_update_004#0",
+   "semantic_decoy_002#0",
+   "knowledge_update_012#0",
+   "join_then_split_002#1",
+   "knowledge_update_011#0",
+   "semantic_decoy_004#0",
+   "knowledge_update_001#0",
+   "two_branch_join_003#0",
+   "three_way_join_001#0",
+   "join_then_split_003#1"
+  ],
+  "60": [
+   "knowledge_update_004#0",
+   "semantic_decoy_002#0",
+   "knowledge_update_012#0",
+   "join_then_split_002#1",
+   "knowledge_update_011#0",
+   "semantic_decoy_004#0",
+   "knowledge_update_001#0",
+   "two_branch_join_003#0",
+   "three_way_join_001#0",
+   "join_then_split_003#1",
+   "knowledge_update_001#1",
+   "join_then_split_007#1",
+   "join_then_split_007#0",
+   "three_way_join_002#0",
+   "knowledge_update_006#0"
+  ]
+ },
+ "actual_lengths": {
+  "30": 30,
+  "60": 60
+ },
+ "preflight": {
+  "oracle_hash_equal": true,
+  "checklist_query_closure_identical": true,
+  "l30_subsequence_of_l60": true,
+  "base_subsequence_of_l60": true,
+  "oracle_tokens": 427,
+  "full_tokens": {
+   "base": 1326,
+   "30": 4022,
+   "60": 7306
+  }
+ },
+ "lengths_built": [
+  30,
+  60
+ ]
+}

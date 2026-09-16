@@ -1,0 +1,802 @@
+{
+  "scenario_id": "three_way_join_002__L60",
+  "family": "three_way_join",
+  "label": "JOIN",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I also got a quote from a company called GreenLayer Insulation for the same duplex. They focus on blown-in cellulose rather than spray foam.",
+      "assistant_message": "GreenLayer Insulation is a well-regarded approach — blown-in cellulose typically has a recycled content of around 80–85% and performs very well for air sealing when dense-packed. It's worth comparing their quoted R-value and cost per square foot directly against the spray foam option, since the two materials behave quite differently in terms of moisture management and long-term settling.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "GreenLayer came in at $5,900 for 1,400 square feet to R-49, and they said they can start any time — their earliest available slot is actually February 3, 2025.",
+      "assistant_message": "So GreenLayer is about $2,300 cheaper but lands at R-49 versus the R-60 FrostShield quoted, and their February 3 availability gives you roughly six weeks of lead time before the competing offer even becomes possible. The cost-per-R-value trade-off is real: you're paying more with FrostShield for a higher thermal resistance ceiling, but the delay means more heating season passes before the upgrade is in place. It's worth modeling the energy savings over one winter to see if the performance gap justifies the price and timing difference.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "I've been looking at the lease costs for the Maplewood district location. The landlord is asking $4,200 per month for a 900-square-foot space on Elm Street.",
+      "assistant_message": "That's a fairly specific ask for that neighborhood. At $4,200 per month, you'd be looking at $50,400 annually just in base rent before utilities, insurance, or build-out costs, so it's worth benchmarking against your current location's overhead to see how it compares.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "I'm thinking the tasting menu for the fall launch should pair the butternut squash bisque as the soup course with the salted caramel tart as the dessert course. If I set the tasting menu at $65 per person and project 40 covers on opening night, that's $2,600 in tasting menu revenue to start.",
+      "assistant_message": "A $65 tasting menu with those two dishes as anchors gives you a cohesive autumn narrative — the savory warmth of the bisque leading into the sweet-salty richness of the caramel tart is a classic progression. At 40 covers, $2,600 in projected tasting revenue is a reasonable opening-night target, and it gives you a clear benchmark to measure against actual ticket sales. Just make sure your batch quantities for both the bisque and the tart shells are scaled to cover 40 portions with some buffer, typically 10–15% overage.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "We're also reworking the paywall. It currently appears after step 5 and offers a 7-day free trial at $9.99/month after that.",
+      "assistant_message": "A paywall at step 5 with a 7-day trial is a fairly standard placement, though the timing relative to perceived value matters a lot. At $9.99/month you're in the mid-tier range for mobile subscriptions, which means the trial window needs to be long enough for users to hit at least two or three 'aha moments' before they're asked to commit. Seven days can work, but only if your core value loop is short enough to demonstrate within the first couple of sessions.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "We tested a 14-day trial and conversion actually dropped from 18% to 12%. So we're sticking with 7 days and $9.99.",
+      "assistant_message": "That's a counterintuitive but well-documented result — longer trials often reduce urgency and lead to users forgetting to cancel rather than actively choosing to subscribe. Your 18% conversion on a 7-day trial at $9.99/month is actually a solid baseline; many apps in the productivity and lifestyle categories benchmark around 10–15%, so you're above average there. Keeping the 7-day trial is the right call given your own data.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "Our head baker said she can only supervise one location herself. Hiring a qualified pastry supervisor for a second site would cost around $52,000 per year in salary.",
+      "assistant_message": "That's a significant fixed labor cost to factor in. A pastry supervisor at $52,000 annually means you'd need the second location to generate enough margin above that salary—plus all other costs—before it contributes anything to overall profit.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "We're also looking at the Elmsworth Civic Auditorium for another stop on the tour. What can you tell me about it?",
+      "assistant_message": "Elmsworth Civic Auditorium is a larger venue on Parade Street in Elmsworth town centre, with a seating capacity of 780 and a grand pipe organ that choral groups can arrange to use for an additional hire fee. It's owned by the local council and managed by a team led by events coordinator Paul Renwick. The auditorium hosts roughly 120 events per year and has a well-regarded reputation for community and touring performances.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "Does Elmsworth have good dressing room facilities for a choir our size? We have about 45 singers.",
+      "assistant_message": "Elmsworth Civic Auditorium has three dedicated dressing rooms backstage, with the largest accommodating up to 35 people and the other two fitting around 15 each, so 45 singers would spread comfortably across all three. Each room has its own mirror stations, coat rails, and a shared adjoining shower block. Paul Renwick has mentioned that choral groups often use the two smaller rooms for section warm-ups as well.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "We also need to decide on signage for the garden entrance. We're looking at a cedar post-and-panel sign, roughly 4 feet by 6 feet, and the fabricator quoted us $1,200 installed.",
+      "assistant_message": "A 4-by-6-foot cedar post-and-panel sign at $1,200 installed is a fairly standard price point for that size and material in most municipal contexts. You'll want to confirm whether the sign design needs to include the City of Hartwell logo, since many green-spaces grants require co-branding on any permanent installations funded through the program. Getting that specification in writing from the fabricator now will save revisions later.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "The fabricator is Greenline Signs & Displays, and they've confirmed in writing that the $1,200 quote is valid through March 31, 2025.",
+      "assistant_message": "Having a written quote from Greenline Signs & Displays valid through March 31, 2025 is exactly the kind of vendor documentation grant reviewers want to see attached as an exhibit. If your submission deadline falls before that date, you can include the quote directly; if it's after, you'd need a refreshed quote. File that letter with your other supporting documents so it's easy to attach when you compile the final application package.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "I pulled our current financials. The original bakery on Hartwell Avenue nets $118,000 per year after all expenses.",
+      "assistant_message": "That's a solid baseline to work from. A net of $118,000 at your existing location gives you a clear benchmark for what a second site would need to achieve to be worth the added complexity and risk of expansion.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "We're also trying to figure out the daily quest system for the event. How many daily quests should we offer players?",
+      "assistant_message": "Most successful live-ops events offer between 3 and 5 daily quests to keep engagement high without causing burnout. Three quests is the minimum to make the system feel alive, while five gives players enough variety that they can skip one they dislike and still feel productive. I'd recommend starting with 4 daily quests and adjusting based on completion rate data after the first week.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "Each quest should reward Event Tokens. How many tokens per quest feels right if the event runs for 28 days?",
+      "assistant_message": "If the event runs 28 days and you want a dedicated player to feel rewarded but not overwhelmed, somewhere around 50 to 75 Event Tokens per quest works well. At 4 quests per day and 50 tokens each, a player completing everything earns 5,600 tokens over the full event. That gives you a clear ceiling to design your token shop rewards around.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "The token shop will have a legendary skin for 3,500 tokens. Does 5,600 tokens as the ceiling give enough headroom?",
+      "assistant_message": "Yes, 5,600 tokens as the ceiling against a 3,500-token legendary skin is a healthy ratio — players who complete roughly 63% of daily quests can unlock the marquee item. That threshold is achievable for casual players while still feeling like an accomplishment. You'd also have around 2,100 tokens of headroom for players to spend on secondary shop items.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "We want to add a weekly challenge on top of the dailies. Should it award bonus tokens or a unique cosmetic?",
+      "assistant_message": "A unique cosmetic for weekly challenges is generally more motivating than bonus tokens because it creates a distinct collectible that players can't get any other way. If you award tokens instead, players will just mentally fold it into their shop math, which dilutes the sense of achievement. I'd suggest a unique avatar frame or weapon charm that's visually distinct and labeled 'Weekly Challenge Exclusive' in the UI.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "How many weekly challenges should there be across the 28-day event?",
+      "assistant_message": "A 28-day event naturally divides into 4 full weeks, so 4 weekly challenges is the clean answer. Each challenge can escalate in difficulty — week 1 being introductory, week 4 being the hardest — to create a narrative arc of progression. That also means 4 unique cosmetics to design, which is a manageable scope for your art team.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "For the week 4 challenge, we're thinking players need to win 20 ranked matches. Is that too steep?",
+      "assistant_message": "20 ranked wins in a week is on the steeper side — it assumes a player can dedicate significant daily time and maintain a positive win rate. If your average match length is around 15 minutes, that's a minimum of 5 hours of winning play, likely more accounting for losses. You might consider 15 ranked wins as a threshold that still feels prestigious but doesn't alienate players with busier schedules.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "Good point. We'll go with 15 ranked wins for week 4. What should the week 1 challenge be to ease players in?",
+      "assistant_message": "Week 1 should be something almost every player can complete regardless of skill level — something like 'Play 5 matches of any mode' or 'Log in on 3 different days this week.' Completion of the week 1 challenge should feel nearly guaranteed so players get hooked on the reward loop early. High week 1 completion rates are one of the strongest predictors of players staying engaged through the full event.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "We're also planning a referral bonus during the event. New players referred by an existing player get a starter pack. What should be in that starter pack?",
+      "assistant_message": "A strong referral starter pack should include enough to get the new player meaningfully into the event — something like 500 Event Tokens, one common cosmetic, and a 3-day XP booster. The 500 tokens gives them an immediate head start in the token shop without making the referred player feel like the system is exploitable. Keep the cosmetic common so it doesn't devalue your rare rewards but still feels like a real gift.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "Should the referring player get a reward too, and if so what?",
+      "assistant_message": "Yes, the referring player absolutely needs a reward or the referral system won't drive organic sharing. A tiered reward works well — for example, 200 Event Tokens per successful referral, with a bonus unique cosmetic unlocked at 5 referrals. Capping the bonus cosmetic at 5 referrals keeps it aspirational without letting a handful of super-connectors flood your new player pool with low-quality sign-ups.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "We need a name for the event. We're going with a summer solstice theme. Any suggestions?",
+      "assistant_message": "A few strong options for a summer solstice theme: 'Festival of the Longest Day,' 'Solar Apex,' or 'The Sunfire Convergence.' 'Solar Apex' is punchy and works well in UI labels and push notifications where space is tight. 'The Sunfire Convergence' has more lore flavor if your game has a fantasy or sci-fi setting that can support that kind of language.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "We'll go with Solar Apex. How early should we start marketing it before the event launches?",
+      "assistant_message": "For a 28-day live-ops event like Solar Apex, a two-week pre-launch marketing window is the sweet spot. You'd want a teaser announcement at the two-week mark, a full reveal with trailer at one week out, and a 'going live tomorrow' push notification the day before. That cadence builds anticipation without giving players so much lead time that excitement fades before the event starts.",
+      "gold_parents": [
+        "t22"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "For the push notification copy on launch day, should we mention the battle pass price? Like '950 Gems unlocks the full Solar Apex experience'?",
+      "assistant_message": "The copy angle is solid — leading with the price in a push notification can work if the number feels accessible. I'd keep the focus on the value and excitement rather than the cost in that limited character space, though. Something like 'Solar Apex is LIVE — unlock the full experience and claim your first reward now' tends to drive more taps than price-forward messaging.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "That makes sense. Should the push notification go out at the same 10:00 AM UTC time as the event reset?",
+      "assistant_message": "Yes, aligning the launch push notification with the 10:00 AM UTC event reset is the right call — players who tap the notification are immediately dropped into a live, active event rather than a holding screen. Schedule the notification to fire at 10:05 AM UTC so the servers have a five-minute buffer to stabilize before the traffic spike from the notification hits. You can also queue a second reminder notification for 6 hours later to catch players in different time zones.",
+      "gold_parents": [
+        "t24"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "I've been thinking about updating our logo. The designer we used last time charges $850 for a full brand refresh package.",
+      "assistant_message": "That's a reasonable rate for a full brand refresh from an established designer. It might be worth timing any rebrand with a bigger announcement if you do decide to expand, though the decision can be made independently of your growth plans.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "On top of the supervisor salary, we'd also need a part-time counter staff of about two people at the second location. That comes to roughly $28,000 per year combined.",
+      "assistant_message": "So total staffing costs for the second location would be approximately $80,000 per year when you add the $52,000 supervisor salary to the $28,000 for counter staff. That's a substantial labor line before you even account for rent, ingredients, or equipment.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "How do the two schools compare on GCSE results? That's obviously a big factor for us.",
+      "assistant_message": "Comparing headline figures is a good starting point, but you'll want to look at Progress 8 scores rather than just raw attainment, since Progress 8 measures how much value the school adds relative to each pupil's starting point. It's also worth checking the percentage achieving grade 5 or above in both English and Maths, which is the standard 'strong pass' benchmark.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "Northgate's last Ofsted report rated them Outstanding, and their Progress 8 score was +0.41. Riverside was rated Good with a Progress 8 of +0.18.",
+      "assistant_message": "Both positive Progress 8 scores mean both schools are adding value above the national average, which is encouraging. Northgate's +0.41 is notably stronger, though it's worth checking how recent those figures are and whether Riverside has shown an improving trend, since a school on the way up can sometimes outperform a static Outstanding school.",
+      "gold_parents": [
+        "t28"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t30",
+      "turn_index": 29,
+      "user_message": "The Northgate report is from 2022 and Riverside's is from 2023, so Riverside's is actually more recent.",
+      "assistant_message": "That's a useful detail — Riverside's 2023 rating is more current, so it may better reflect where the school is now. It would be worth checking whether Northgate has had any interim monitoring visits since their 2022 inspection, as Outstanding schools can sometimes go longer between full inspections.",
+      "gold_parents": [
+        "t29"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t31",
+      "turn_index": 30,
+      "user_message": "What subjects does your typical strong secondary school offer at GCSE beyond the core? We want to know if the options are broad enough.",
+      "assistant_message": "A well-rounded GCSE offer usually includes at least one modern foreign language, history, geography, the three separate sciences, design and technology, music, art, drama, and computer science. Schools that also offer vocational options like health and social care or business studies give students more flexibility, particularly those whose strengths lie outside traditional academic subjects.",
+      "gold_parents": [
+        "t30"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t32",
+      "turn_index": 31,
+      "user_message": "Northgate offers 22 GCSE subjects and Riverside offers 17. Is 17 considered limited?",
+      "assistant_message": "Seventeen is on the lower end but not unusually restricted — many good schools operate comfortably in the 16 to 20 range. The more important question is whether Riverside's 17 subjects cover the areas your daughter is interested in, since a smaller offer that includes her preferences is more useful than a larger one that doesn't.",
+      "gold_parents": [
+        "t31"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t33",
+      "turn_index": 32,
+      "user_message": "She wants to do Drama and Computer Science, and both of those are available at Riverside, so that's reassuring.",
+      "assistant_message": "That's the key thing — the headline number matters less than whether her specific choices are there. If Drama and Computer Science are both on Riverside's timetable, the difference in the overall subject count probably won't affect her directly.",
+      "gold_parents": [
+        "t32"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t34",
+      "turn_index": 33,
+      "user_message": "She's also keen on sports, and we noticed Northgate has a really impressive sports programme — reminded us of the kind of investment you'd expect from a school charging, say, £1,200 a term for extras.",
+      "assistant_message": "It's not uncommon for schools with strong enrichment fees to channel some of that income into facilities and co-curricular activities, so a well-funded sports programme would fit that picture. It's worth asking Northgate specifically which sports are available, whether they compete in regional leagues, and whether participation in sports teams is included in the standard fee or costs extra.",
+      "gold_parents": [
+        "t33"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t35",
+      "turn_index": 34,
+      "user_message": "Northgate has a 25-metre indoor swimming pool, four tennis courts, and a full-size 3G pitch. Riverside just has a small sports hall and a grass field.",
+      "assistant_message": "That's a significant difference in facilities, particularly the indoor pool and the 3G pitch, which allow year-round training regardless of weather. If sport is a genuine priority for your daughter, Northgate's infrastructure could give her meaningfully more opportunity, though it's still worth asking whether access to those facilities is timetabled for all students or mainly for pupils in elite squads.",
+      "gold_parents": [
+        "t34"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t36",
+      "turn_index": 35,
+      "user_message": "She swims competitively at county level, so the pool is actually a big practical benefit — she could train before school.",
+      "assistant_message": "That changes things considerably — having a 25-metre pool on site means she could potentially train early morning before lessons without the additional travel to a separate leisure centre. It's worth confirming with Northgate whether they have a formal arrangement for competitive swimmers, and whether a coach is present during those early sessions.",
+      "gold_parents": [
+        "t35"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t37",
+      "turn_index": 36,
+      "user_message": "They do have a swimming coach on site three mornings a week starting at 7am. That would fit perfectly with her current training schedule.",
+      "assistant_message": "That's a genuinely compelling practical advantage — three coached sessions a week before school starts, without any extra travel, could make a real difference to her development and remove a lot of logistical pressure from your family. It's the kind of detail that doesn't show up in a prospectus headline but can be decisive.",
+      "gold_parents": [
+        "t36"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t38",
+      "turn_index": 37,
+      "user_message": "What's the typical class size at each school? We've heard mixed things.",
+      "assistant_message": "Average class sizes at secondary level in England tend to run between 25 and 32 pupils, with selective or independent schools often smaller. It's worth asking each school for their actual average rather than their maximum, and also whether sets are used in core subjects, since a top maths set might have 20 pupils while a mixed-ability English class has 30.",
+      "gold_parents": [
+        "t37"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t39",
+      "turn_index": 38,
+      "user_message": "Northgate said their average is 26 and Riverside said theirs is 29. Both use setting for Maths and English from Year 7.",
+      "assistant_message": "Both averages are reasonable, and the fact that both schools set for Maths and English from Year 7 means your daughter's experience in those core subjects will depend more on which set she's placed in than on the overall class-size average. A three-pupil difference across the school is unlikely to be decisive on its own.",
+      "gold_parents": [
+        "t38"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t40",
+      "turn_index": 39,
+      "user_message": "What should we look for when we do the open day visits next month?",
+      "assistant_message": "Pay attention to how students behave in corridors between lessons — whether they're calm and purposeful is often a better indicator of school culture than anything staff say in a formal presentation. It's also worth asking to see a lesson in progress rather than just the show rooms, and speaking directly to current students without a teacher present to get honest impressions.",
+      "gold_parents": [
+        "t39"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t41",
+      "turn_index": 40,
+      "user_message": "Good idea. We've booked Northgate on the 14th October and Riverside on the 21st October.",
+      "assistant_message": "Having them a week apart is useful — your impressions of Northgate will still be fresh when you visit Riverside, which makes it easier to draw direct comparisons. Try to take notes or photos of anything specific so the details don't blur together by the time you're making the final decision.",
+      "gold_parents": [
+        "t40"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t42",
+      "turn_index": 41,
+      "user_message": "Is there a standard checklist of questions families should ask on school open days?",
+      "assistant_message": "Some of the most useful questions include: what the school's policy is on mobile phones during the day, how they handle bullying and what their typical response timeline is, what support is available for students who fall behind in a subject, and how the school communicates with parents — whether that's through an app, a portal, or letters home. Asking about staff turnover in the last two years can also be revealing.",
+      "gold_parents": [
+        "t41"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t43",
+      "turn_index": 42,
+      "user_message": "That's helpful. We'll also ask about the sixth form offer, since we want to know if she could stay on for A-levels.",
+      "assistant_message": "That's a sensible thing to investigate early — some families choose a secondary school partly on the strength of its sixth form, since continuity of relationships with teachers can be valuable at A-level. You'll want to ask about the range of A-level subjects, whether the school has any entry requirements for its own sixth form, and what proportion of Year 11 students typically stay on.",
+      "gold_parents": [
+        "t42"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t44",
+      "turn_index": 43,
+      "user_message": "Northgate has a dedicated sixth form building with 340 students currently enrolled. Riverside doesn't have a sixth form at all — students have to move to the local FE college.",
+      "assistant_message": "That's a notable difference if continuity matters to you. A sixth form of 340 is a reasonable size — large enough to offer a decent range of A-level subjects and have peer groups, but not so large that students get lost. The FE college route isn't necessarily worse, but it does mean your daughter would need to make a fresh transition at 16 rather than staying in a familiar environment.",
+      "gold_parents": [
+        "t43"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t45",
+      "turn_index": 44,
+      "user_message": "The FE college is Westfield College and it's about a 20-minute bus journey from the Riverside catchment area.",
+      "assistant_message": "Twenty minutes is manageable, and many students find the greater independence of an FE college suits them well at 16. It's worth visiting Westfield College separately if Riverside moves up your list, since the quality and subject range there would effectively be part of the Riverside package for the post-16 years.",
+      "gold_parents": [
+        "t44"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t46",
+      "turn_index": 45,
+      "user_message": "Do schools have to publish their admissions criteria publicly? We're not sure we live close enough to Northgate to get a place.",
+      "assistant_message": "Yes — all state-funded schools in England are legally required to publish their admissions criteria in a School Admissions Policy, which must be on their website and submitted to the local authority each year. For oversubscribed schools the criteria typically prioritise looked-after children first, then siblings, then distance from the school gate, so it's worth checking the last distance offered in the most recent admissions round.",
+      "gold_parents": [
+        "t45"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t47",
+      "turn_index": 46,
+      "user_message": "Northgate's admissions page says the furthest distance offered last year was 1.3 kilometres and we live 1.1 kilometres away, so we should be within range.",
+      "assistant_message": "That's a relatively comfortable margin — 200 metres inside the furthest-offered distance gives you a reasonable buffer, though it's worth noting that the cut-off distance can shift slightly year on year depending on sibling applications and the size of the cohort. Checking whether you're also in the correct local authority catchment zone is worth confirming before you get too far into planning.",
+      "gold_parents": [
+        "t46"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t48",
+      "turn_index": 47,
+      "user_message": "The landlord also mentioned the Elm Street lease requires a 3-year minimum commitment with no early exit clause.",
+      "assistant_message": "A 3-year minimum with no exit clause is a meaningful risk factor. Combined with the $4,200 monthly rent, that locks you into at least $151,200 in rent obligations over the lease term regardless of how the second location performs.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t49",
+      "turn_index": 48,
+      "user_message": "If we sign the lease for September 1, 2025 and order the furniture from WorkNest at the same time, could we realistically be fully operational by October 1, 2025? WorkNest told us their lead time is 3 to 4 weeks.",
+      "assistant_message": "With a September 1 lease commencement and a 3-to-4-week lead time from WorkNest, your furniture would arrive between September 22 and September 29, leaving a few days for any IT setup or finishing touches before October 1. That timeline is tight but achievable, provided there are no delays in permitting or build-out work that the landlord is responsible for. It would be worth confirming in writing with WorkNest that they can guarantee delivery within that window once you place the order.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t50",
+      "turn_index": 49,
+      "user_message": "We're building out our live-ops event calendar for the next quarter and want to start with a big seasonal event in October. What are some structural best practices for a month-long Halloween event in a mobile RPG?",
+      "assistant_message": "A month-long Halloween event typically works best when divided into two or three distinct phases so players have fresh content to return to rather than burning through everything on day one. A common structure is a two-week story chapter followed by a one-week challenge sprint and a final three-day boss rush, giving you natural re-engagement hooks around October 15 and October 22. You should also plan a limited currency, like a 'Soul Coin,' that is only earnable during the event so the economy stays contained and doesn't bleed into your standard progression. Tying the final boss rush to a community milestone—where collective damage unlocks a shared cosmetic reward—adds a social layer that boosts daily active users in the closing days.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t51",
+      "turn_index": 50,
+      "user_message": "We like the Soul Coin idea. How should we set the earn rate so players feel rewarded without making the premium shop feel pointless?",
+      "assistant_message": "A well-tested ratio is to let free-play earn roughly 60–70% of the currency needed to claim the event's marquee reward, so a player who logs in daily for all 30 days can reach it without spending. If your marquee item costs 1,200 Soul Coins, a daily free cap of around 28 coins puts a dedicated free player at 840 coins, leaving a natural 360-coin gap that the premium shop can fill at roughly $4.99 for a bundle of 400 coins. This 'almost there' gap is sometimes called the 'completion nudge' in monetization design and has shown conversion lifts of 12–18% in published post-mortems from studios like Jam City. Make sure your lowest-tier paid bundle covers the gap exactly so the purchase decision feels satisfying rather than arbitrary.",
+      "gold_parents": [
+        "t50"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t52",
+      "turn_index": 51,
+      "user_message": "That conversion range is really helpful. What about the challenge sprint phase—what kinds of daily missions keep engagement without causing burnout?",
+      "assistant_message": "Daily missions during a challenge sprint should follow a three-tier structure: one trivially easy task completable in under two minutes, one moderate task taking roughly 15 minutes, and one stretch goal that rewards players who engage deeply for 30–45 minutes. Research published in the 2022 GDC session 'Designing for Habit, Not Addiction' by Kongregate's live-ops team found that three-tier daily systems produced 23% higher day-14 retention compared to single flat-mission designs. You should also rotate mission categories—combat, crafting, social—on a fixed weekly cadence so no single playstyle feels excluded for more than two consecutive days. Avoid time-gating the stretch goal behind a paywall; that specific pattern was cited in a 2023 Apple App Store guideline update as a friction point that increases refund requests.",
+      "gold_parents": [
+        "t51"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t53",
+      "turn_index": 52,
+      "user_message": "Got it. How should we handle the community milestone mechanic for the final boss rush so it actually feels meaningful and not like a hollow checkbox?",
+      "assistant_message": "The key is making the milestone tracker visible and granular—show a global damage counter that updates every 15 minutes rather than once a day, so individual contributions feel perceptible. Supercell's Clash of Clans used a similar 'Clan Games' point aggregator in its December 2017 update, and they reported in a 2018 developer blog post that near-real-time counters increased average session length by 11% compared to daily-snapshot trackers. Set the community threshold at roughly 80% of what your active player base would naturally generate in three days, so success feels earned but not trivially guaranteed. If the threshold is missed, still grant a consolation cosmetic at 60% completion so late joiners don't feel their participation was wasted.",
+      "gold_parents": [
+        "t52"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t54",
+      "turn_index": 53,
+      "user_message": "We're also thinking about a Thanksgiving event in November right after Halloween wraps. How long of a gap do we need between events to avoid player fatigue?",
+      "assistant_message": "Industry convention, backed by data from Sensor Tower's 2022 mobile gaming report, suggests a minimum five-to-seven day 'breathing gap' between major live-ops events to allow players to clear backlogs and prevent the 'always-on' fatigue that spikes uninstall rates. If your Halloween event ends October 31, launching Thanksgiving content on November 7 at the earliest gives you the minimum buffer, though November 10 is a safer target that also aligns with post-weekend engagement peaks typically seen on Mondays and Tuesdays. Use the gap period to run a lightweight 'catch-up week' where players can spend any leftover Soul Coins on a rotating discount shop, which also serves as a soft currency sink. Zynga's FarmVille 3 team publicly noted in a 2021 GDC talk that inter-event discount windows reduced Soul Coin-equivalent hoarding by 34% ahead of the next event launch.",
+      "gold_parents": [
+        "t53"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t55",
+      "turn_index": 54,
+      "user_message": "The catch-up week discount shop is a great idea. What discount depth should we use to make it feel valuable without devaluing the event items permanently?",
+      "assistant_message": "A 30–40% discount on non-marquee event cosmetics is the standard range; it feels generous to players while keeping marquee items at full perceived value since those should not enter the discount rotation at all. Kabam's Marvel Contest of Champions used a 35% discount window in its 'Glory Store' rotations starting in 2019, and community sentiment tracked by third-party site ContestChampions.io showed approval ratings of 78% for that discount tier versus 52% for a 20% tier tested in 2018. Time-limit the window to exactly seven days and display a countdown timer prominently, as urgency is the mechanism that prevents players from waiting for a deeper future discount. If you later run a year-anniversary sale, keep Halloween catch-up items out of that sale entirely to preserve the seasonal scarcity signal.",
+      "gold_parents": [
+        "t54"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t56",
+      "turn_index": 55,
+      "user_message": "I should mention that figure of $118,000 net is after we already paid ourselves a $45,000 owner's draw this year.",
+      "assistant_message": "That's an important clarification—it means the bakery's true gross profit before owner compensation is $163,000 annually. So the $118,000 net already reflects your personal income from the business, which matters a lot when projecting how a second location would affect your take-home pay.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t57",
+      "turn_index": 56,
+      "user_message": "There's also a space over on Caldwell Avenue we've been eyeing. It's listed by a property management company called Hartwell & Dunn, and it's 950 sq ft at $3,200 a month.",
+      "assistant_message": "Caldwell Avenue at 950 square feet and $3,200 a month works out to about $3.37 per square foot, which is slightly cheaper per square foot than the Renfield Street option. The smaller footprint could be a constraint if you're planning significant in-house production, since you'd have less room for proofing racks and large deck ovens. Hartwell & Dunn is a well-known commercial property manager, so the administrative side of the lease process would likely be straightforward. It really comes down to whether the lower cost justifies the tighter space.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t58",
+      "turn_index": 57,
+      "user_message": "The Caldwell Avenue place is a former sandwich shop, so it already has a Type I hood and a grease trap installed, which would save us on build-out costs.",
+      "assistant_message": "That's a significant advantage — a Type I hood and a grease trap can easily run $15,000 to $25,000 to install from scratch, so inheriting those from the previous tenant is a real cost saving. You'd still want a licensed inspector to verify they meet current health code standards and are sized appropriately for bakery equipment, since a sandwich shop's ventilation needs differ from high-volume oven use. If everything checks out, the Caldwell Avenue space's lower upfront build-out cost could offset the smaller square footage. It's worth getting an HVAC contractor in there before you make a final comparison.",
+      "gold_parents": [
+        "t57"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t59",
+      "turn_index": 58,
+      "user_message": "We're putting together our application for the Riverside Municipal Community Garden Grant and need to nail down our plot layout. We have a 0.4-acre lot at the corner of Elm and 5th, and we're planning 40 raised beds.",
+      "assistant_message": "That sounds like a well-sized project for a community garden. With 0.4 acres, you have roughly 17,424 square feet to work with, which gives you comfortable spacing if each raised bed is the standard 4×8 feet (32 square feet each), totaling 1,280 square feet of actual growing surface. You'll want to leave at least 3-foot-wide pathways between beds to meet ADA accessibility guidelines, which many municipal grants require as a condition of funding.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t60",
+      "turn_index": 59,
+      "user_message": "Good point on the ADA pathways. We're also planning to install a 500-gallon rainwater harvesting tank to reduce our municipal water dependency. Does that kind of infrastructure typically strengthen a grant application?",
+      "assistant_message": "Yes, water conservation infrastructure is a strong asset in municipal grant applications, particularly under programs that score applicants on environmental sustainability metrics. A 500-gallon tank collecting from a 1,000-square-foot roof catchment area can yield roughly 600 gallons from a single inch of rainfall, assuming an 0.9 collection efficiency coefficient. Many reviewers look favorably on this because it demonstrates long-term operational planning and reduces the garden's ongoing cost burden on the city.",
+      "gold_parents": [
+        "t59"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t61",
+      "turn_index": 60,
+      "user_message": "We also want to dedicate 8 of the 40 beds specifically to a food-donation program for the Riverside Food Pantry. Would calling that out explicitly in the application help our scoring?",
+      "assistant_message": "Explicitly naming the Riverside Food Pantry partnership and committing 20 percent of your beds—8 of 40—to food donation is a concrete, verifiable commitment that reviewers can score against community-benefit criteria. Many municipal grant rubrics, including common frameworks modeled on the USDA Community Food Projects guidelines, award bonus points for documented partnerships with named food-security organizations. Make sure you attach a letter of intent or MOU from the pantry to substantiate the claim, since unverified partnerships are often discounted during review.",
+      "gold_parents": [
+        "t60"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t62",
+      "turn_index": 61,
+      "user_message": "We have a draft MOU ready. Our lead organizer, Maria Chen, has 12 years of urban agriculture experience and managed the Oakdale Community Farm from 2011 to 2019. Should we feature her credentials prominently?",
+      "assistant_message": "Absolutely—applicant capacity is one of the most heavily weighted sections in most municipal grant reviews, often accounting for 25 to 30 percent of the total score. Maria's eight-year tenure at Oakdale Community Farm from 2011 to 2019 is exactly the kind of sustained, verifiable track record reviewers want to see. Include her full CV as an appendix and reference specific outcomes from Oakdale, such as annual yield figures or number of member households served, to make the credential concrete rather than merely biographical.",
+      "gold_parents": [
+        "t61"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t63",
+      "turn_index": 62,
+      "user_message": "Great. We're budgeting $18,500 for the first-year build-out, covering soil, lumber for the beds, the rainwater tank, and a tool shed. Does that figure seem reasonable to justify in the budget narrative?",
+      "assistant_message": "An $18,500 first-year build-out for 40 raised beds with supporting infrastructure is reasonable and defensible. Breaking it down, pressure-treated or cedar lumber for 40 beds at roughly $120 to $150 per bed runs $4,800 to $6,000; quality raised-bed soil mix at about $50 per cubic yard and 2 cubic yards per bed adds another $4,000; a 500-gallon polyethylene rainwater tank typically costs $800 to $1,200 installed; and a basic tool shed runs $2,500 to $4,000 depending on size. Itemizing those figures explicitly in your budget narrative, with vendor quotes as attachments, will demonstrate fiscal responsibility and reduce the chance of a reviewer questioning the totals.",
+      "gold_parents": [
+        "t62"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t64",
+      "turn_index": 63,
+      "user_message": "The designer said the $850 package includes three logo concepts and two rounds of revisions. Does that sound standard?",
+      "assistant_message": "Yes, three initial concepts plus two revision rounds is fairly typical for a mid-range brand refresh package. Some designers offer fewer concepts at that price point, so it's actually a decent scope of work for $850.",
+      "gold_parents": [
+        "t26"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t65",
+      "turn_index": 64,
+      "user_message": "She also said the turnaround is four weeks from the deposit. Would we need to budget anything extra for file formats or printing templates?",
+      "assistant_message": "Four weeks is a reasonable turnaround for that scope. You may want to ask specifically whether the deliverables include print-ready vector files and social media variants, as those are sometimes charged separately; budgeting an extra $100 to $200 for an expanded file package is common.",
+      "gold_parents": [
+        "t64"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t66",
+      "turn_index": 65,
+      "user_message": "Given everything we've discussed about the second location, would the Elm Street site actually improve our overall financial position, and how long before we'd realistically break even on the expansion?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t48",
+        "t27",
+        "t56"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t3",
+    "t7",
+    "t12",
+    "t27",
+    "t48",
+    "t56"
+  ],
+  "distractor_turn_ids": [
+    "t1",
+    "t2",
+    "t4",
+    "t5",
+    "t6",
+    "t8",
+    "t9",
+    "t10",
+    "t11",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t20",
+    "t21",
+    "t22",
+    "t23",
+    "t24",
+    "t25",
+    "t26",
+    "t28",
+    "t29",
+    "t30",
+    "t31",
+    "t32",
+    "t33",
+    "t34",
+    "t35",
+    "t36",
+    "t37",
+    "t38",
+    "t39",
+    "t40",
+    "t41",
+    "t42",
+    "t43",
+    "t44",
+    "t45",
+    "t46",
+    "t47",
+    "t49",
+    "t50",
+    "t51",
+    "t52",
+    "t53",
+    "t54",
+    "t55",
+    "t57",
+    "t58",
+    "t59",
+    "t60",
+    "t61",
+    "t62",
+    "t63",
+    "t64",
+    "t65"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer uses the Elm Street rent of $4,200/month ($50,400/year) and the 3-year minimum lease commitment of $151,200 total rent obligation when assessing the cost or break-even of the second location.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer accounts for total second-location staffing costs of approximately $80,000/year ($52,000 supervisor + $28,000 counter staff).",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer references the original bakery's true gross profit of $163,000/year (the $118,000 net plus the $45,000 owner's draw) as the financial baseline for comparison.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not incorporate the $850 logo/brand refresh cost as a factor in the break-even or financial position analysis.",
+      "required": true
+    }
+  ],
+  "notes": "The three gold evidence facts are: (A) $4,200/month rent with a 3-year no-exit lease from t1/t6; (B) $80,000 total annual staffing cost ($52,000 + $28,000) from t2/t5; (C) $163,000 true gross profit ($118,000 net + $45,000 owner's draw) from t3/t7. The trap is branch D (logo refresh at $850), which is plausible bakery spending but entirely irrelevant to the expansion break-even calculation.\n\nReference answer: The Elm Street location would cost at least $130,400 per year in fixed overhead—$50,400 in rent plus $80,000 in staffing—before ingredients, utilities, or other expenses. Your original bakery generates $163,000 in gross profit (the $118,000 net plus your $45,000 owner's draw), so the second site would need to clear roughly $130,400 in annual costs just to break even, meaning it must produce profit margins comparable to your current location to justify the investment. With the 3-year no-exit lease locking in $151,200 in rent alone, you'd have very limited ability to cut losses if the new site underperforms. Realistically, break-even on the expansion could take two to three years assuming the second location ramps up to match your current store's performance.",
+  "evidence_note": null,
+  "premise": "a small bakery deciding whether to open a second location",
+  "evidence_spans": null,
+  "benchmark_version": "1.1-length-ablation",
+  "length_class": "spliced_60"
+}

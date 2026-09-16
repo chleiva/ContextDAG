@@ -1,0 +1,183 @@
+{
+ "target": "resume_001",
+ "family": "resume",
+ "base_history": 5,
+ "gold_closure": [
+  "t1",
+  "t2"
+ ],
+ "gold_entities": [
+  "0.40",
+  "0.60",
+  "10%",
+  "120 feet",
+  "120-foot",
+  "16-inch",
+  "2\u00d710",
+  "4.85",
+  "8 feet",
+  "8 linear feet",
+  "8-foot",
+  "801 linear feet",
+  "about 728 linear feet",
+  "approximately $3,885",
+  "approximately 91",
+  "ca-c",
+  "cca",
+  "mca",
+  "roughly 91",
+  "syp",
+  "the american wood protection association's"
+ ],
+ "query_entities": [],
+ "donors_rejected_by_exclusion": 11,
+ "sufficient_to_60": true,
+ "chosen": [
+  {
+   "donor": "compound_turn_010#0",
+   "turns": 4,
+   "cosine": 0.4631
+  },
+  {
+   "donor": "topic_fork_005#0",
+   "turns": 2,
+   "cosine": 0.3318
+  },
+  {
+   "donor": "ambiguous_reference_008#0",
+   "turns": 2,
+   "cosine": 0.3196
+  },
+  {
+   "donor": "ambiguous_reference_005#0",
+   "turns": 3,
+   "cosine": 0.3165
+  },
+  {
+   "donor": "ambiguous_reference_003#1",
+   "turns": 1,
+   "cosine": 0.2977
+  },
+  {
+   "donor": "join_then_split_005#0",
+   "turns": 2,
+   "cosine": 0.296
+  },
+  {
+   "donor": "knowledge_update_001#0",
+   "turns": 2,
+   "cosine": 0.2626
+  },
+  {
+   "donor": "topic_fork_009#0",
+   "turns": 2,
+   "cosine": 0.261
+  },
+  {
+   "donor": "topic_fork_003#0",
+   "turns": 3,
+   "cosine": 0.2552
+  },
+  {
+   "donor": "ambiguous_reference_003#0",
+   "turns": 2,
+   "cosine": 0.2548
+  },
+  {
+   "donor": "three_way_join_007#0",
+   "turns": 1,
+   "cosine": 0.253
+  },
+  {
+   "donor": "two_branch_join_013#0",
+   "turns": 1,
+   "cosine": 0.2506
+  },
+  {
+   "donor": "constraint_retention_002#0",
+   "turns": 21,
+   "cosine": 0.2577
+  },
+  {
+   "donor": "three_way_join_002#0",
+   "turns": 3,
+   "cosine": 0.2457
+  },
+  {
+   "donor": "three_way_join_008#0",
+   "turns": 2,
+   "cosine": 0.2424
+  },
+  {
+   "donor": "join_then_split_001#0",
+   "turns": 2,
+   "cosine": 0.2381
+  },
+  {
+   "donor": "join_then_split_005#1",
+   "turns": 1,
+   "cosine": 0.2236
+  },
+  {
+   "donor": "semantic_decoy_003#0",
+   "turns": 4,
+   "cosine": 0.2075
+  }
+ ],
+ "used": {
+  "30": [
+   "compound_turn_010#0",
+   "topic_fork_005#0",
+   "ambiguous_reference_008#0",
+   "ambiguous_reference_005#0",
+   "ambiguous_reference_003#1",
+   "join_then_split_005#0",
+   "knowledge_update_001#0",
+   "topic_fork_009#0",
+   "topic_fork_003#0",
+   "ambiguous_reference_003#0",
+   "three_way_join_007#0",
+   "two_branch_join_013#0"
+  ],
+  "60": [
+   "compound_turn_010#0",
+   "topic_fork_005#0",
+   "ambiguous_reference_008#0",
+   "ambiguous_reference_005#0",
+   "ambiguous_reference_003#1",
+   "join_then_split_005#0",
+   "knowledge_update_001#0",
+   "topic_fork_009#0",
+   "topic_fork_003#0",
+   "ambiguous_reference_003#0",
+   "three_way_join_007#0",
+   "two_branch_join_013#0",
+   "constraint_retention_002#0",
+   "three_way_join_002#0",
+   "three_way_join_008#0",
+   "join_then_split_001#0",
+   "join_then_split_005#1",
+   "semantic_decoy_003#0"
+  ]
+ },
+ "actual_lengths": {
+  "30": 30,
+  "60": 63
+ },
+ "preflight": {
+  "oracle_hash_equal": true,
+  "checklist_query_closure_identical": true,
+  "l30_subsequence_of_l60": true,
+  "base_subsequence_of_l60": true,
+  "oracle_tokens": 442,
+  "full_tokens": {
+   "base": 931,
+   "30": 4435,
+   "60": 8020
+  }
+ },
+ "lengths_built": [
+  30,
+  60
+ ]
+}

@@ -1,0 +1,78 @@
+{
+ "target": "long_noisy_side_thread_007",
+ "family": "long_noisy_side_thread",
+ "base_history": 34,
+ "gold_closure": [
+  "t1",
+  "t2"
+ ],
+ "gold_entities": [
+  "10k",
+  "15",
+  "200",
+  "250",
+  "35",
+  "8:00 am",
+  "riverside park's",
+  "september 14th",
+  "september 14th, 2025",
+  "the maplewood children's hospital",
+  "under 18"
+ ],
+ "query_entities": [],
+ "donors_rejected_by_exclusion": 29,
+ "sufficient_to_60": true,
+ "chosen": [
+  {
+   "donor": "join_then_split_006#0",
+   "turns": 2,
+   "cosine": 0.3772
+  },
+  {
+   "donor": "new_root_004#0",
+   "turns": 6,
+   "cosine": 0.351
+  },
+  {
+   "donor": "semantic_decoy_008#0",
+   "turns": 4,
+   "cosine": 0.3509
+  },
+  {
+   "donor": "join_then_split_004#1",
+   "turns": 1,
+   "cosine": 0.3128
+  },
+  {
+   "donor": "knowledge_update_008#1",
+   "turns": 17,
+   "cosine": 0.3062
+  }
+ ],
+ "used": {
+  "60": [
+   "join_then_split_006#0",
+   "new_root_004#0",
+   "semantic_decoy_008#0",
+   "join_then_split_004#1",
+   "knowledge_update_008#1"
+  ]
+ },
+ "actual_lengths": {
+  "60": 64
+ },
+ "preflight": {
+  "oracle_hash_equal": true,
+  "checklist_query_closure_identical": true,
+  "l30_subsequence_of_l60": true,
+  "base_subsequence_of_l60": true,
+  "oracle_tokens": 260,
+  "full_tokens": {
+   "base": 4132,
+   "60": 8512
+  }
+ },
+ "lengths_built": [
+  60
+ ]
+}

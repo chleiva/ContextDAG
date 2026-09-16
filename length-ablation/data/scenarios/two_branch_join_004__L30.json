@@ -1,0 +1,391 @@
+{
+  "scenario_id": "two_branch_join_004__L30",
+  "family": "two_branch_join",
+  "label": "JOIN",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I want to tie the field journal rubric directly to the point-count data collection so students are graded as one integrated assignment rather than two separate ones. If a student's data accuracy score is below 30 out of 40, their reflection score gets capped at 20 out of 35 regardless of writing quality.",
+      "assistant_message": "That interdependency creates a strong incentive for rigorous data collection before students even sit down to write. The cap mechanic—reflection capped at 20 out of 35 when data accuracy falls below 30 out of 40—means a student cannot coast on eloquent writing while producing sloppy field records. You'll want to document this rule explicitly in the rubric so it survives any grade appeals, and it may be worth flagging it to parents at the semester kickoff night.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "Right, and I'm thinking that a student who hits the data accuracy cap situation but still turns in all 8 required visits will get a 'completion credit' worth 5 bonus points added to their total journal score. Does that seem fair?",
+      "assistant_message": "A 5-point completion credit for fulfilling all 8 visits even under the cap is a reasonable way to reward persistence and attendance without undermining the accuracy incentive. It means a capped student's maximum journal total would be 20 (capped reflection) + 40 (full data accuracy, hypothetically) + 25 (sketch) + 5 (bonus) = 90, which still distinguishes them from a fully proficient student. Just make sure the bonus is framed as an attendance-and-effort recognition rather than a content grade, to keep your grading defensible.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "We're finalizing the structure for our summer live-ops event called Solar Surge. It runs from July 14 to August 11, which is exactly four weeks. How should we think about pacing the reward tiers?",
+      "assistant_message": "For a four-week event like Solar Surge, a common approach is to divide rewards into weekly milestone tiers so players feel consistent progress rather than a single end-gate grind. You could set four distinct tiers that unlock at the end of each seven-day period, with the final tier—the prestige reward—only accessible to players who hit all four weekly gates. This keeps engagement high across the full July 14 to August 11 window rather than spiking at launch and collapsing in week three.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "The $85–$120 range is helpful. Is a single-day event policy enough, or should we look at an annual volunteer program policy instead?",
+      "assistant_message": "If your garden plans to hold more than three or four volunteer events per year, an annual volunteer program policy is almost always more cost-effective than stacking single-day policies. A typical annual general liability policy for a small nonprofit community garden runs $300–$500 per year through carriers like Philadelphia Insurance Companies or Markel, and it covers all scheduled volunteer activities without requiring you to file a new certificate for each event. You'd still need to issue updated additional-insured certificates to the city for each specific event date, but the underlying coverage stays in place year-round.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "Does the annual policy cover injuries to the volunteers themselves, or just third-party liability?",
+      "assistant_message": "Standard general liability policies cover third-party bodily injury and property damage, meaning a visitor or neighbor who is hurt, but they do not cover injuries to the volunteers themselves while they are working. For volunteer injury coverage you need a separate Volunteer Accident policy, which typically provides medical expense benefits of $5,000–$25,000 per volunteer per incident and costs roughly $150–$250 annually for a small garden program. Some umbrella policies can extend coverage, but you should confirm the scope in writing with your broker before your March 15th event.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "That makes sense. What point threshold should we use for each weekly tier if the maximum earnable points per day is 500?",
+      "assistant_message": "With a 500-point daily cap, players can earn at most 3,500 points in a seven-day week. A reasonable tier structure would set the weekly gates at 1,500 points for Tier 1, 2,500 for Tier 2, 3,000 for Tier 3, and 3,400 for Tier 4, making the top tier challenging but achievable for dedicated players. This ensures roughly 69% of the weekly cap is needed for the hardest gate, rewarding consistent play without requiring perfection every single day.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "I'm designing a card game called Ironveil and I'm trying to nail down the action economy. Right now each player gets 2 actions per turn, but it feels too restrictive. What do other popular card games do?",
+      "assistant_message": "Most modern card games land between 1 and 3 actions per turn, with the exact number heavily influencing pacing. Dominion, for example, starts each player with exactly 1 Action, 1 Buy, and 1 Coin per turn, then lets cards extend those resources. Hearthstone gives each player a fixed 1 attack per minion but scales mana crystals from 1 to 10 over ten turns, which creates a very different kind of tempo curve.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "I was thinking about a mana-scaling system similar to Hearthstone, but I want the ceiling to be 7 mana crystals instead of 10. Does capping it lower tend to cause problems?",
+      "assistant_message": "A lower ceiling compresses the power curve significantly, meaning late-game spells can't get as expensive and potentially as impactful as in a 10-crystal system. Magic: The Gathering's Limited formats often feel resolved around turn 6 or 7 because most relevant spells cost between 3 and 5 mana, so a 7-crystal cap actually aligns with that sweet spot. The main risk is that your most powerful cards all cluster at the 6–7 cost range and create a predictable 'spike' turn that skilled players will always play around.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "That clustering problem sounds real. I was planning to have exactly 12 cards in each player's starting deck. Is that a reasonable deck size to avoid the spike problem?",
+      "assistant_message": "Twelve cards is on the small side but not unprecedented — Star Realms ships each player a 10-card starting deck, and the tightness is intentional to speed up cycling. With 12 cards, you'll see your full deck roughly every 3 to 4 turns depending on draw rate, which means high-cost cards come around very frequently. To avoid the spike, you might consider distributing your powerful cards across the 4–7 cost band rather than stacking them at 6–7, giving each turn a different kind of threat.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "Good point. I'm also planning a faction system — three factions at launch, each with 40 unique cards. How do other games handle faction balance across that kind of card pool?",
+      "assistant_message": "Android: Netrunner launched with three Corporation factions each having roughly 35–40 cards and maintained balance through asymmetric win conditions rather than mirrored stat lines. Keyforge takes a different approach by procedurally generating unique decks, so balance is statistical rather than designed card-by-card. For a 40-card-per-faction pool, most designers recommend that each faction's average power level target the same expected win rate — typically 50% ± 5% — against a standardized 'control deck' during playtesting.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "I want one of the three factions, the Ashborne, to specialize in burn damage. I'm debating whether their direct damage spells should deal flat amounts or scaled amounts. What are the tradeoffs?",
+      "assistant_message": "Flat damage spells, like Magic's Lightning Bolt at a fixed 3 damage for 1 mana, are easy to evaluate and rarely create feel-bad moments because players know exactly what they're getting. Scaled spells, such as those that deal damage equal to the number of cards in hand, introduce variance and can swing from underwhelming to game-ending depending on game state. For a burn faction like Ashborne, a mix of both is common — flat spells for reliable chip damage and one or two signature scaled spells that reward the faction's specific strategy.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "I like that. For the Ashborne's signature scaled spell, I'm thinking it deals 1 damage for each mana crystal the opponent has spent this game. With a 7-crystal cap, that maxes out at around 28 damage over four turns. Does that feel breakable?",
+      "assistant_message": "A potential ceiling of 28 damage is extremely high — most card games set player health at 20 to 30, so that one spell could represent a near-lethal hit on its own late in the game. Magic's Fireball scales with mana paid into it, but the damage is immediate and tied to the caster's resources, not the opponent's cumulative spending, which limits abuse. You'd want to either add a hard cap to the spell's output, increase its mana cost significantly, or restrict it to once-per-game to prevent it from warping every Ashborne matchup.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "I'll cap it at 15 damage maximum and cost it at 6 mana. That feels more in line. Now I need to decide on player health totals — I was thinking 25 health. Is that a standard range?",
+      "assistant_message": "25 health is solidly within the standard range: Hearthstone uses 30, Magic: The Gathering starts at 20 in most formats, and Legends of Runeterra uses 20 as well. At 25 health with a 6-mana 15-damage spell available, a single casting would eliminate 60% of a player's total life, which is still threatening but no longer automatically game-ending. That ratio feels healthy — it makes the Ashborne spell feel powerful and decisive without being a one-card win condition.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "We also need to nail down the premium currency conversion rate for Solar Surge. Players will be able to spend Solaris Coins to buy event boosters. What's a fair conversion rate?",
+      "assistant_message": "For live-ops events with a dedicated premium currency like Solaris Coins, a widely used benchmark is to price boosters so that a single booster costs 200 Solaris Coins and grants a flat bonus of 150 points on top of whatever the player earns in that session. This keeps the booster meaningful without making free-to-play progression feel hopeless. You should also consider capping booster purchases at five per week per account to prevent heavy spenders from trivializing the tier gates entirely.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "So if we hire a bartending service that already holds the Category 3 license, we're covered for the whole event?",
+      "assistant_message": "Yes, as long as the bartending company's Category 3 Nevada Catering License is current and lists your event date within its coverage period, you are covered and no additional license is required from you as the host. You should ask the company to provide a copy of their license certificate at least 30 days before the event, and confirm that the license explicitly covers Washoe County, since some Category 3 licenses are issued with county-specific restrictions. Keep a copy of that certificate on-site during the event in case a Nevada Department of Taxation compliance officer requests it.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "What happens if the bartending company's license lapses between now and June 14th?",
+      "assistant_message": "If the company's Category 3 license lapses before or on your event date, serving alcohol through them would be a violation of NRS 369.180, which carries a misdemeanor charge and a fine of up to $1,000 per violation for the unlicensed party. To protect yourselves, include a clause in your vendor contract requiring the bartending company to maintain valid licensure through June 15th and to provide proof of renewal within 10 business days of any renewal date that falls before your event. You could also name a backup licensed bartending service in the contract as a contingency if the primary vendor fails to maintain compliance.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "Five per week sounds reasonable. What's the maximum point bonus a player could gain from boosters in a single week under that cap?",
+      "assistant_message": "If each booster grants 150 bonus points and a player is capped at five booster purchases per week, the maximum booster-derived bonus in any single week is 750 points. That means a fully boosted player could theoretically earn up to 4,250 points in a week—3,500 from normal play plus 750 from boosters. This is an important number to keep in mind when setting tier thresholds, since it defines the real ceiling for premium players.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "Got it. We also need to think about our autonomous routine. Right now we're planning to use the April Tag vision system to localize the robot. What cameras do teams typically use for that in FTC?",
+      "assistant_message": "The most common camera for AprilTag localization in FTC is the Logitech C920, which is widely supported by the FTC SDK's built-in vision pipeline and runs reliably at 30 frames per second at 1080p. Many teams also use the Logitech C270 as a budget option, though its lower resolution can reduce detection reliability at longer distances. The EasyOpenCV library and the official FTC SDK Vision Portal both support these cameras out of the box, which significantly reduces setup time.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "For the autonomous period, how many points can we score if we successfully park in the observation zone versus the ascent zone?",
+      "assistant_message": "In the current FTC season, parking in the observation zone during autonomous earns 3 points, while parking in the ascent zone earns 5 points. The 2-point difference might seem small, but in close qualifier matches where rankings are decided by cumulative ranking points, consistently choosing the higher-value park can matter over a full day of competition. Teams that can reliably complete a scoring task and then navigate to the ascent zone tend to rank notably higher than those who only park.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "We want to add a bonus challenge on the final day of the event. Should that day's point cap still be 500, or should we raise it?",
+      "assistant_message": "Raising the final-day cap is a great way to create a memorable climax for Solar Surge. A common design choice is to double the daily cap for the last day only, setting it at 1,000 points on August 11 instead of the standard 500. This gives players who are just short of Tier 4's 3,400-point gate a real shot at finishing strong, and it generates a natural social moment as the community rallies for the finale.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "We're building out our live-ops event calendar for the next quarter and want to start with a big seasonal event in October. What are some structural best practices for a month-long Halloween event in a mobile RPG?",
+      "assistant_message": "A month-long Halloween event typically works best when divided into two or three distinct phases so players have fresh content to return to rather than burning through everything on day one. A common structure is a two-week story chapter followed by a one-week challenge sprint and a final three-day boss rush, giving you natural re-engagement hooks around October 15 and October 22. You should also plan a limited currency, like a 'Soul Coin,' that is only earnable during the event so the economy stays contained and doesn't bleed into your standard progression. Tying the final boss rush to a community milestone—where collective damage unlocks a shared cosmetic reward—adds a social layer that boosts daily active users in the closing days.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "We like the Soul Coin idea. How should we set the earn rate so players feel rewarded without making the premium shop feel pointless?",
+      "assistant_message": "A well-tested ratio is to let free-play earn roughly 60–70% of the currency needed to claim the event's marquee reward, so a player who logs in daily for all 30 days can reach it without spending. If your marquee item costs 1,200 Soul Coins, a daily free cap of around 28 coins puts a dedicated free player at 840 coins, leaving a natural 360-coin gap that the premium shop can fill at roughly $4.99 for a bundle of 400 coins. This 'almost there' gap is sometimes called the 'completion nudge' in monetization design and has shown conversion lifts of 12–18% in published post-mortems from studios like Jam City. Make sure your lowest-tier paid bundle covers the gap exactly so the purchase decision feels satisfying rather than arbitrary.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "That conversion range is really helpful. What about the challenge sprint phase—what kinds of daily missions keep engagement without causing burnout?",
+      "assistant_message": "Daily missions during a challenge sprint should follow a three-tier structure: one trivially easy task completable in under two minutes, one moderate task taking roughly 15 minutes, and one stretch goal that rewards players who engage deeply for 30–45 minutes. Research published in the 2022 GDC session 'Designing for Habit, Not Addiction' by Kongregate's live-ops team found that three-tier daily systems produced 23% higher day-14 retention compared to single flat-mission designs. You should also rotate mission categories—combat, crafting, social—on a fixed weekly cadence so no single playstyle feels excluded for more than two consecutive days. Avoid time-gating the stretch goal behind a paywall; that specific pattern was cited in a 2023 Apple App Store guideline update as a friction point that increases refund requests.",
+      "gold_parents": [
+        "t22"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "Got it. How should we handle the community milestone mechanic for the final boss rush so it actually feels meaningful and not like a hollow checkbox?",
+      "assistant_message": "The key is making the milestone tracker visible and granular—show a global damage counter that updates every 15 minutes rather than once a day, so individual contributions feel perceptible. Supercell's Clash of Clans used a similar 'Clan Games' point aggregator in its December 2017 update, and they reported in a 2018 developer blog post that near-real-time counters increased average session length by 11% compared to daily-snapshot trackers. Set the community threshold at roughly 80% of what your active player base would naturally generate in three days, so success feels earned but not trivially guaranteed. If the threshold is missed, still grant a consolation cosmetic at 60% completion so late joiners don't feel their participation was wasted.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "We're also thinking about a Thanksgiving event in November right after Halloween wraps. How long of a gap do we need between events to avoid player fatigue?",
+      "assistant_message": "Industry convention, backed by data from Sensor Tower's 2022 mobile gaming report, suggests a minimum five-to-seven day 'breathing gap' between major live-ops events to allow players to clear backlogs and prevent the 'always-on' fatigue that spikes uninstall rates. If your Halloween event ends October 31, launching Thanksgiving content on November 7 at the earliest gives you the minimum buffer, though November 10 is a safer target that also aligns with post-weekend engagement peaks typically seen on Mondays and Tuesdays. Use the gap period to run a lightweight 'catch-up week' where players can spend any leftover Soul Coins on a rotating discount shop, which also serves as a soft currency sink. Zynga's FarmVille 3 team publicly noted in a 2021 GDC talk that inter-event discount windows reduced Soul Coin-equivalent hoarding by 34% ahead of the next event launch.",
+      "gold_parents": [
+        "t24"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "The catch-up week discount shop is a great idea. What discount depth should we use to make it feel valuable without devaluing the event items permanently?",
+      "assistant_message": "A 30–40% discount on non-marquee event cosmetics is the standard range; it feels generous to players while keeping marquee items at full perceived value since those should not enter the discount rotation at all. Kabam's Marvel Contest of Champions used a 35% discount window in its 'Glory Store' rotations starting in 2019, and community sentiment tracked by third-party site ContestChampions.io showed approval ratings of 78% for that discount tier versus 52% for a 20% tier tested in 2018. Time-limit the window to exactly seven days and display a countdown timer prominently, as urgency is the mechanism that prevents players from waiting for a deeper future discount. If you later run a year-anniversary sale, keep Halloween catch-up items out of that sale entirely to preserve the seasonal scarcity signal.",
+      "gold_parents": [
+        "t25"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "Our localization team asked whether the in-game event banners need to be translated into Thai for the Southeast Asia server launch. What's the typical turnaround for banner localization?",
+      "assistant_message": "For a live-ops event banner—typically a handful of short strings plus a key visual tagline—professional game localization studios generally quote a two-to-three business day turnaround for a single language like Thai, assuming the source copy is locked. If your Southeast Asia launch is on a tight schedule, submitting final copy at least five business days before the banner goes live gives you a comfortable buffer for revision rounds. Make sure your localization kit includes font licensing for Thai script, since many default game UI fonts don't cover the full Thai Unicode block.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "If a player uses the maximum boosters every week for all four weeks of Solar Surge, what's the total booster bonus they accumulate over the whole event?",
+      "assistant_message": "With a maximum of 750 booster-bonus points per week and the event running for exactly four weeks, a player who maxes out booster purchases every week accumulates a total booster bonus of 3,000 points over the full Solar Surge event. Combined with the standard four-week point ceiling of 14,000 points from normal play, a fully boosted player could reach a grand total of 17,000 points across the event. That's the absolute ceiling you should use when stress-testing whether your tier gates are properly balanced against premium spending.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "What time zone should we use for event start and end times displayed in-game?",
+      "assistant_message": "The industry standard is to display event times in UTC and then localize them on the client side based on the player's device settings. This avoids confusion during daylight saving transitions and keeps your server-side logic clean. Many studios also show a countdown timer alongside the absolute time so players aren't doing mental math.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t30",
+      "turn_index": 29,
+      "user_message": "Should the event reset at midnight UTC or at a different hour to avoid peak traffic?",
+      "assistant_message": "Midnight UTC often coincides with peak evening hours in North America, which can spike your server load right at reset. A lot of studios shift the reset to 10:00 AM UTC, which lands during off-peak hours globally and still feels like a clean daily boundary. I'd recommend load-testing your reset logic at whatever time you choose before the event goes live.",
+      "gold_parents": [
+        "t29"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t31",
+      "turn_index": 30,
+      "user_message": "Given the final-day cap change and the total booster bonus ceiling, what is the absolute maximum number of points a single player can earn across the entire Solar Surge event?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t20",
+        "t28"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t3",
+    "t6",
+    "t14",
+    "t17",
+    "t20",
+    "t28"
+  ],
+  "distractor_turn_ids": [
+    "t1",
+    "t2",
+    "t4",
+    "t5",
+    "t7",
+    "t8",
+    "t9",
+    "t10",
+    "t11",
+    "t12",
+    "t13",
+    "t15",
+    "t16",
+    "t18",
+    "t19",
+    "t21",
+    "t22",
+    "t23",
+    "t24",
+    "t25",
+    "t26",
+    "t27",
+    "t29",
+    "t30"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer correctly incorporates the final-day cap of 1,000 points on August 11 (instead of the standard 500), adding an extra 500 points to the normal-play total (from t5).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer correctly uses the total booster bonus of 3,000 points over four weeks (5 boosters × 150 points × 4 weeks) as established in t7.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer arrives at a grand total of 17,500 points: 14,500 from normal play (13 days × 500 + 1 day × 1,000) plus 3,000 from boosters.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not use 17,000 points as the final total, which is the figure from t7 that does not yet account for the final-day cap increase introduced in t5.",
+      "required": true
+    }
+  ],
+  "notes": "t5 holds the final-day cap increase to 1,000 points (branch A), and t7 holds the four-week total booster bonus of 3,000 points (branch B); together they are required for the correct answer of 17,500. t6 (banner localization turnaround) is the distractor and contributes nothing to the calculation. A reader with only branch B would use 17,000 points and miss the extra 500 from the final-day change.\n\nReference answer: The absolute maximum requires combining two separate decisions. For normal play, the event runs 28 days but the final day (August 11) has a raised cap of 1,000 points instead of 500, so normal-play earnings total 27 × 500 + 1 × 1,000 = 14,500 points. Adding the maximum booster bonus of 3,000 points (five boosters per week at 150 points each, across four weeks) brings the grand ceiling to 17,500 points for a single player over the full Solar Surge event.",
+  "evidence_note": null,
+  "premise": "a game studio planning a live-ops event calendar",
+  "evidence_spans": null,
+  "benchmark_version": "1.1-length-ablation",
+  "length_class": "spliced_30"
+}

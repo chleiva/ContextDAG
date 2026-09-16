@@ -1,0 +1,152 @@
+{
+ "target": "three_way_join_005",
+ "family": "three_way_join",
+ "base_history": 10,
+ "gold_closure": [
+  "t1",
+  "t10",
+  "t2",
+  "t3",
+  "t4",
+  "t5",
+  "t8"
+ ],
+ "gold_entities": [
+  "12.50",
+  "150 minutes",
+  "2.50",
+  "a given week",
+  "age 13",
+  "around $2.50",
+  "early readers",
+  "eight weeks",
+  "eight-week",
+  "fewer than 150 minutes",
+  "imls",
+  "mid-july",
+  "middle readers",
+  "minutes per week",
+  "one-week",
+  "per week",
+  "scholastic",
+  "school-year",
+  "summer",
+  "teen readers",
+  "ten weeks",
+  "that week",
+  "the american library association's",
+  "the current week",
+  "the every child ready",
+  "the institute of museum and library services",
+  "the previous week's",
+  "the second week of june through the first week of august",
+  "the summer",
+  "two or more weeks",
+  "under 13",
+  "weeks"
+ ],
+ "query_entities": [
+  "13-year-old",
+  "every week",
+  "the teen readers"
+ ],
+ "donors_rejected_by_exclusion": 19,
+ "sufficient_to_60": true,
+ "chosen": [
+  {
+   "donor": "three_way_join_001#0",
+   "turns": 1,
+   "cosine": 0.2672
+  },
+  {
+   "donor": "join_then_split_008#1",
+   "turns": 2,
+   "cosine": 0.2181
+  },
+  {
+   "donor": "two_branch_join_009#0",
+   "turns": 2,
+   "cosine": 0.213
+  },
+  {
+   "donor": "join_then_split_006#0",
+   "turns": 2,
+   "cosine": 0.207
+  },
+  {
+   "donor": "two_branch_join_013#0",
+   "turns": 1,
+   "cosine": 0.1942
+  },
+  {
+   "donor": "resume_002#0",
+   "turns": 3,
+   "cosine": 0.1872
+  },
+  {
+   "donor": "two_branch_join_011#0",
+   "turns": 3,
+   "cosine": 0.1746
+  },
+  {
+   "donor": "semantic_decoy_008#0",
+   "turns": 4,
+   "cosine": 0.1698
+  },
+  {
+   "donor": "compound_turn_012#0",
+   "turns": 2,
+   "cosine": 0.1651
+  },
+  {
+   "donor": "long_noisy_side_thread_004#0",
+   "turns": 35,
+   "cosine": 0.199
+  }
+ ],
+ "used": {
+  "30": [
+   "three_way_join_001#0",
+   "join_then_split_008#1",
+   "two_branch_join_009#0",
+   "join_then_split_006#0",
+   "two_branch_join_013#0",
+   "resume_002#0",
+   "two_branch_join_011#0",
+   "semantic_decoy_008#0",
+   "compound_turn_012#0"
+  ],
+  "60": [
+   "three_way_join_001#0",
+   "join_then_split_008#1",
+   "two_branch_join_009#0",
+   "join_then_split_006#0",
+   "two_branch_join_013#0",
+   "resume_002#0",
+   "two_branch_join_011#0",
+   "semantic_decoy_008#0",
+   "compound_turn_012#0",
+   "long_noisy_side_thread_004#0"
+  ]
+ },
+ "actual_lengths": {
+  "30": 30,
+  "60": 65
+ },
+ "preflight": {
+  "oracle_hash_equal": true,
+  "checklist_query_closure_identical": true,
+  "l30_subsequence_of_l60": true,
+  "base_subsequence_of_l60": true,
+  "oracle_tokens": 687,
+  "full_tokens": {
+   "base": 967,
+   "30": 3570,
+   "60": 9578
+  }
+ },
+ "lengths_built": [
+  30,
+  60
+ ]
+}

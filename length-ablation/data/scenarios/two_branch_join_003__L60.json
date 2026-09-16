@@ -1,0 +1,799 @@
+{
+  "scenario_id": "two_branch_join_003__L60",
+  "family": "two_branch_join",
+  "label": "JOIN",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "Coach wants to know what size van we need to rent to transport everything to the competition venue.",
+      "assistant_message": "For a full robotics team transport including the robot, toolboxes, spare parts bins, and team gear, a 15-passenger van typically isn't enough cargo space on its own. Most teams in similar situations rent a 10-foot cargo truck or pair a standard passenger van with a small trailer. You'll want to confirm the venue's loading dock hours before you finalize the rental.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "We also need to figure out the hotel situation — how many rooms should we book for a team of 14 students and 3 mentors?",
+      "assistant_message": "For 14 students and 3 mentors, you're looking at 17 people total. Assuming two students per room and mentors in single rooms, you'd need 7 student rooms and 3 mentor rooms, so 10 rooms minimum. Booking a block rate with the hotel as early as possible usually saves the team significant money.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "For the drive team, do we need matching shirts or full uniforms for the competition?",
+      "assistant_message": "Most regional competitions require drive team members to wear matching shirts with the team number clearly visible, but full uniforms with logos are optional unless your team has a sponsor agreement requiring them. Check the specific event's drive team dress code in the event information packet, since some venues have additional safety requirements like closed-toe shoes. Ordering shirts at least two weeks before the event is usually necessary to guarantee delivery in time.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "The city also just notified me that the duplex needs a new backflow preventer on the main water line — they're requiring it under a new municipal ordinance that took effect January 1, 2025.",
+      "assistant_message": "That's a separate compliance item you'll want to handle promptly. Backflow preventer installations for residential properties typically run between $300 and $700 for parts and labor, depending on the pipe diameter and local permit fees. Check whether the ordinance specifies a deadline for compliance, as some municipalities give property owners a 90-day window from the notice date before issuing fines.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "We also need to update our logo before the holiday season. The designer quoted us $850 for a full rebrand package.",
+      "assistant_message": "That's a reasonable price for a professional rebrand, especially if it includes file formats suitable for signage, packaging, and digital use. Make sure the deliverables include vector source files so you're not paying for revisions every time you need a new application. Timing it before the holiday rush could give the new look good visibility.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "The designer also said the turnaround time for the rebrand is six weeks from when we sign the contract.",
+      "assistant_message": "Six weeks is a fairly standard timeline for a thorough rebrand process, including concept rounds and revisions. If your holiday season starts ramping up in mid-November, you'd want to sign the contract by early October at the latest to have everything ready in time. Building in a small buffer for unexpected revision rounds would be wise.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "We're thinking of using the new logo on custom printed boxes too. The box supplier has a minimum order of 500 units.",
+      "assistant_message": "A 500-unit minimum is pretty standard for custom printed packaging, and it's worth calculating the per-unit cost against your current plain box spend to see if the branding premium is justified. If your holiday volume is high enough, 500 units might not last long anyway, making the minimum order less of a concern. Just make sure the box dimensions are finalized before you go to print so you're not stuck with packaging that doesn't fit your products.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "We've decided we're moving from Austin, Texas to Portland, Oregon in early June. I've been getting quotes from moving companies and I think we're going with Bekins Van Lines. They gave us a binding estimate of $8,400 for a full-service pack-and-move.",
+      "assistant_message": "That sounds like a solid choice — Bekins is one of the larger, more established interstate movers, so a binding estimate of $8,400 gives you real cost certainty. Just make sure you have a copy of the binding estimate in writing before moving day so there are no surprises at delivery.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "Good to know on the audit approach. One more migration concern — what happens to our existing insurance fee schedules in Dentrix? Do those transfer automatically?",
+      "assistant_message": "Insurance fee schedules are another area that rarely transfers automatically between these two systems. Dentrix stores fee schedules as flat files tied to insurance plan records, while Sensei Cloud uses a relational structure that links fees directly to CDT procedure codes at the plan level. In most migrations, Carestream's team can import the raw fee data, but you'll need to manually verify and re-link each fee schedule to the correct insurance plans inside Sensei Cloud before you start submitting claims.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "That's frustrating. How many insurance plans are typically involved in a practice our size, and is there a faster way to handle the relinking?",
+      "assistant_message": "A general dentistry practice with around 4,200 active patients typically carries between 30 and 60 distinct insurance plans, though high-volume PPO practices sometimes exceed 80. Carestream offers a fee schedule import template — a standardized CSV file — that lets you bulk-upload pre-mapped fee schedules rather than entering them one by one, which can cut the relinking time from several days down to a few hours. Your Dentrix G7 system can export a fee schedule report under Reports > Practice Management > Fee Schedule that gives you the raw data you need to populate that CSV.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "If we sign the lease for September 1, 2025 and order the furniture from WorkNest at the same time, could we realistically be fully operational by October 1, 2025? WorkNest told us their lead time is 3 to 4 weeks.",
+      "assistant_message": "With a September 1 lease commencement and a 3-to-4-week lead time from WorkNest, your furniture would arrive between September 22 and September 29, leaving a few days for any IT setup or finishing touches before October 1. That timeline is tight but achievable, provided there are no delays in permitting or build-out work that the landlord is responsible for. It would be worth confirming in writing with WorkNest that they can guarantee delivery within that window once you place the order.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "I also need to figure out the road trip logistics since my husband is driving the moving truck and I'll be driving our SUV with the kids. We have a 7-year-old and a 4-year-old.",
+      "assistant_message": "With a 7-year-old and a 4-year-old, you'll want to plan for frequent breaks — young kids generally do best with a stop every 2 hours or so. Mapping out the route in advance with specific rest stops and kid-friendly spots can make the trip much more manageable.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "Our waiting room chairs are getting pretty worn. What's a reasonable budget for replacing the seating in a six-chair waiting room?",
+      "assistant_message": "For a professional dental waiting room, commercial-grade seating typically runs between $150 and $400 per chair, so a six-chair setup would cost roughly $900 to $2,400 for the furniture itself. You'd also want to factor in delivery and any reupholstering of existing pieces if you want to save some money.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "The office manager also wants to repaint the reception area. Does the color of the walls actually affect patient anxiety levels?",
+      "assistant_message": "There is actually research suggesting that soft blues and greens are associated with lower anxiety in clinical settings, while bright whites and stark grays can feel more sterile and increase tension. For a dental office specifically, muted sage greens or warm taupes tend to be popular choices for that reason.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "We're thinking the sign cost should be one of the line items we cover with the grant funds rather than the match, and we want to place the sign near the new raised beds we're also funding through this grant. Does that approach make sense for how the budget is structured?",
+      "assistant_message": "Yes, allocating the $1,200 Greenline sign cost as a grant-funded line item rather than part of your $2,775 cash match is a clean approach, since match funds are typically better used for labor or pre-existing materials you can document independently. Positioning the sign near the raised beds also makes narrative sense — it ties the two funded elements together visually and helps reviewers see the project as a cohesive site improvement. Just make sure each line item (sign, raised beds, any other elements) is individually itemized in the budget table so the total still reconciles to $21,275.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "The drive from Austin to Portland is about 1,900 miles. We're planning to split it over three days, so roughly 633 miles per day. Does that sound reasonable with young kids?",
+      "assistant_message": "633 miles per day is on the ambitious side with a 4-year-old and a 7-year-old — you'll likely average 50–55 mph including stops, which puts each driving day at around 11–12 hours of total travel time. Many families with young children aim for 500 miles or fewer per day to keep everyone sane; you might consider stretching it to four days if your schedule allows.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "What about luggage forwarding services? I've heard you can send bags ahead to hotels in Japan.",
+      "assistant_message": "Yes, the takkyubin luggage forwarding service is very popular with tourists. Yamato Transport's TA-Q-BIN is the most widely used provider, and a standard suitcase (up to 30 kg) sent between Tokyo and Kyoto typically costs around ¥1,500 to ¥2,000 per bag. You can drop off luggage at convenience stores like FamilyMart or Lawson, and it usually arrives at the destination hotel the next day by 2 PM.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "How far in advance should we arrange the luggage forwarding? We arrive at Narita and our first hotel is in Shinjuku.",
+      "assistant_message": "For Narita to Shinjuku, Yamato Transport has counters at Narita Terminal 1 and Terminal 2 arrivals halls, and you can arrange same-day forwarding directly there. The cut-off time for next-day delivery is generally 12 noon, and the service to central Tokyo hotels typically costs around ¥2,500 per large bag. If you book through your hotel concierge in advance, some hotels offer a slightly discounted rate of around ¥2,200 per piece.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "Can we send luggage from Kyoto to Tokyo near the end of the trip, or does the forwarding only work in one direction?",
+      "assistant_message": "Yamato Transport's TA-Q-BIN works in any direction across Japan, so sending bags from Kyoto to Tokyo is no problem at all. Drop-off points in Kyoto include 7-Eleven and FamilyMart locations, and the standard rate for a large suitcase on that route is approximately ¥1,800 to ¥2,200 depending on size and weight. Delivery to your Tokyo hotel is typically guaranteed by 2 PM the following day if you drop off before noon.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "I've been thinking about updating our logo. The designer we used last time charges $850 for a full brand refresh package.",
+      "assistant_message": "That's a reasonable rate for a full brand refresh from an established designer. It might be worth timing any rebrand with a bigger announcement if you do decide to expand, though the decision can be made independently of your growth plans.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "The designer said the $850 package includes three logo concepts and two rounds of revisions. Does that sound standard?",
+      "assistant_message": "Yes, three initial concepts plus two revision rounds is fairly typical for a mid-range brand refresh package. Some designers offer fewer concepts at that price point, so it's actually a decent scope of work for $850.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "She also said the turnaround is four weeks from the deposit. Would we need to budget anything extra for file formats or printing templates?",
+      "assistant_message": "Four weeks is a reasonable turnaround for that scope. You may want to ask specifically whether the deliverables include print-ready vector files and social media variants, as those are sometimes charged separately; budgeting an extra $100 to $200 for an expanded file package is common.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "Can you help me figure out the right compute tier for the new warehouse? We're looking at the Snowflake X-Large vs. 2X-Large for the initial rollout.",
+      "assistant_message": "For an initial rollout, the choice between X-Large and 2X-Large usually comes down to your peak concurrent query load and the size of your largest batch transforms. X-Large gives you 16 nodes and is typically sufficient for up to around 50 concurrent queries, while 2X-Large doubles that to 32 nodes and is better suited if you're running heavy multi-terabyte joins during the same window. I'd recommend profiling your three or four most resource-intensive jobs on the old system first to get a baseline before committing to the tier.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "We pulled the profiles. The heaviest job, orders_aggregation, peaks at about 180 GB of intermediate spill to disk on the old system. Does that change the recommendation?",
+      "assistant_message": "180 GB of spill is significant and suggests the job is memory-constrained on whatever it's running on today. On Snowflake, spill to local disk happens when a query exceeds the per-node memory, so moving to 2X-Large — with its larger per-node memory allocation — would likely eliminate most of that spill and cut runtime considerably. I'd lean toward 2X-Large as your starting tier specifically because of that orders_aggregation profile.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "Good to know. What about data transfer costs getting the historical data into Snowflake? We have roughly 12 TB sitting in S3 us-east-1 and the new warehouse is also in us-east-1.",
+      "assistant_message": "Good news there: data transfer between S3 and Snowflake within the same AWS region — us-east-1 to us-east-1 — is free from AWS's perspective, so you won't incur S3 egress charges. Snowflake does charge for the compute used during the COPY INTO load, but the storage transfer itself costs nothing. Staging your 12 TB in an S3 bucket in the same region as your Snowflake account is the right call.",
+      "gold_parents": [
+        "t24"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "We also need to decide on a file format for the staged data. The team is split between Parquet and ORC.",
+      "assistant_message": "Snowflake has native support for both, but Parquet is generally the better choice for Snowflake migrations because its columnar encoding aligns well with Snowflake's internal micro-partition format and the COPY INTO command handles Parquet schema inference more reliably. ORC is perfectly functional but was optimized for Hive/HDFS ecosystems, so you may hit edge cases with complex nested types. Unless your upstream systems are already producing ORC and re-encoding is expensive, I'd go with Parquet.",
+      "gold_parents": [
+        "t25"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "Makes sense. We're also evaluating whether to use Snowflake's built-in scheduling via Tasks or keep using our existing Airflow 2.6 DAGs to orchestrate the migrated jobs.",
+      "assistant_message": "Keeping Airflow 2.6 is usually the safer choice if your team already has mature DAGs with complex dependencies, retries, and alerting baked in, because you'd be throwing away a lot of operational maturity by switching to Tasks. Snowflake Tasks are elegant for simple chains but lack some of the branching and sensor capabilities Airflow provides out of the box. The Snowflake provider package for Airflow 2.6 is well-maintained and lets you trigger Snowflake jobs from your existing DAGs without rearchitecting anything.",
+      "gold_parents": [
+        "t26"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "We're leaning toward keeping Airflow. One concern is secret management — right now credentials are stored in Airflow's built-in metadata database, and we want to move to HashiCorp Vault. Is that straightforward with Airflow 2.6?",
+      "assistant_message": "Airflow 2.6 has a first-class secrets backend interface, and the HashiCorp Vault backend is one of the officially supported providers via the apache-airflow-providers-hashicorp package. You configure it by setting the secrets_backend in airflow.cfg to airflow.providers.hashicorp.secrets.vault.VaultBackend and pointing it at your Vault address and mount path. The main operational step is migrating your existing connection and variable records out of the metadata DB and into Vault, which you can do incrementally without downtime.",
+      "gold_parents": [
+        "t27"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "Perfect. Another thing — we need to set up column-level security on the new warehouse. Specifically, the `customer_pii` table has SSN and credit card columns that only the compliance team's role should be able to read in plaintext.",
+      "assistant_message": "Snowflake's Dynamic Data Masking is the right tool for that use case. You create a masking policy that returns the plaintext value when the current role is COMPLIANCE_TEAM and returns a masked or nulled value for all other roles, then attach that policy to the SSN and credit card columns on the customer_pii table. This is enforced at query time so even if someone with a lower-privileged role runs SELECT *, they'll only see the masked output without any application-layer changes.",
+      "gold_parents": [
+        "t28"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t30",
+      "turn_index": 29,
+      "user_message": "Great. We also want to make sure we have query audit logging enabled so we can track who accessed those sensitive columns.",
+      "assistant_message": "Snowflake's ACCESS_HISTORY view in the ACCOUNT_USAGE schema gives you exactly that — it records every query, the user and role that ran it, and which columns were projected in the output, including masked ones. You'll want to make sure your Snowflake account has the Enterprise tier or above, because ACCESS_HISTORY is not available on the Standard tier. Retention in ACCOUNT_USAGE is 365 days, but I'd recommend also shipping the logs to your SIEM for longer-term retention if your compliance requirements exceed that.",
+      "gold_parents": [
+        "t29"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t31",
+      "turn_index": 30,
+      "user_message": "We're on Business Critical tier actually, so that's covered. How should we handle schema evolution? Some of our source tables add new columns fairly frequently.",
+      "assistant_message": "The cleanest pattern for frequent schema evolution in Snowflake is to use VARIANT columns for the semi-structured payload alongside a set of typed columns for the fields you know are stable, so new upstream fields land in the VARIANT without breaking downstream queries. Alternatively, if your source emits Avro or Parquet with an Avro schema registry, you can use Snowflake's schema detection feature with INFER_SCHEMA to automatically pick up new columns during COPY INTO. The right choice depends on whether your consumers query the evolving fields directly or whether they're mostly archival.",
+      "gold_parents": [
+        "t30"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t32",
+      "turn_index": 31,
+      "user_message": "Most consumers do query the evolving fields directly, so VARIANT probably isn't ideal. We'll look at INFER_SCHEMA. What about table clustering — should we define cluster keys on the large fact tables from day one?",
+      "assistant_message": "For large fact tables, defining cluster keys from day one is worthwhile if you have a dominant filter pattern, typically a date or timestamp column that appears in WHERE clauses on almost every query. Snowflake's automatic clustering will maintain the key over time for an ongoing credit cost, so you want to be confident the access pattern justifies it before enabling it. A pragmatic approach is to load the data without clustering first, run your real workload for two to four weeks, then use the SYSTEM$CLUSTERING_INFORMATION function to evaluate whether natural clustering is already good enough before paying for automatic reclustering.",
+      "gold_parents": [
+        "t31"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t33",
+      "turn_index": 32,
+      "user_message": "That makes sense. We also need a rollback plan in case the migrated jobs produce incorrect results. What's the recommended approach for validating output parity between old and new systems during the cutover period?",
+      "assistant_message": "The standard approach is a parallel-run validation: keep the old system writing its outputs to its existing tables while the new warehouse writes to shadow tables, then run a reconciliation job that does row-count checks, null-rate checks, and aggregate sum/average comparisons on key metrics for every job. For financial or order data, you'll want exact-match reconciliation on primary keys, not just aggregates, because rounding and type-casting differences can cancel out in sums. Define a tolerance threshold — many teams use zero tolerance for counts and 0.001% for floating-point aggregates — and fail the cutover automatically if any job exceeds it.",
+      "gold_parents": [
+        "t32"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t34",
+      "turn_index": 33,
+      "user_message": "We've decided on zero tolerance for row counts and 0.01% for numeric aggregates. Who should own the sign-off on parity for each job — the data engineering team or the business stakeholders?",
+      "assistant_message": "Best practice is a two-stage sign-off: data engineering owns the technical parity check against your defined thresholds, and business stakeholders do a spot-check sign-off on the reports or dashboards that consume each job's output. Data engineering can confirm the numbers match mechanically, but only a business user can confirm that the semantics are correct — for example, that a revenue figure is being calculated with the right business logic rather than just producing the same wrong answer as before. Formalizing both sign-offs in your migration checklist protects both teams.",
+      "gold_parents": [
+        "t33"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t35",
+      "turn_index": 34,
+      "user_message": "Good idea. We're also planning to use dbt for transformations in the new warehouse. Should we use dbt Core or dbt Cloud for a team of eight engineers?",
+      "assistant_message": "For a team of eight, dbt Cloud starts to pay for itself because of the hosted scheduler, the IDE, and the centralized job logging — managing dbt Core at that team size means someone has to own the orchestration plumbing, documentation hosting, and environment management, which adds up. dbt Cloud's Teams plan supports up to 8 developer seats and includes CI/CD integration with GitHub or GitLab out of the box. If your organization already has strong infrastructure-as-code practices and wants full control, dbt Core on Airflow is viable, but most eight-person teams find dbt Cloud reduces operational overhead meaningfully.",
+      "gold_parents": [
+        "t34"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t36",
+      "turn_index": 35,
+      "user_message": "We'll go with dbt Cloud. How should we structure our dbt project — one monorepo for all domains or separate projects per domain?",
+      "assistant_message": "For most teams migrating to a new warehouse, a single monorepo with a clear folder structure by domain — staging, intermediate, and marts layers per domain — is the right starting point because cross-domain dependencies are easy to express as ref() calls without inter-project contracts. Splitting into separate dbt projects makes sense only when domains have genuinely independent release cycles and different teams who need deployment isolation. Since you're doing a migration rather than a greenfield build, starting monorepo and splitting later if needed is much lower risk than the reverse.",
+      "gold_parents": [
+        "t35"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t37",
+      "turn_index": 36,
+      "user_message": "Got it. We also need to decide how to handle slowly changing dimensions. Most of our dimension tables are Type 2 SCDs. Does dbt have native support for that?",
+      "assistant_message": "dbt has the dbt-utils snapshot feature, now formalized as the snapshots block in dbt Core, which implements Type 2 SCD logic natively. You define a snapshot with a unique key and a strategy — either timestamp-based or check-based — and dbt manages the dbt_valid_from and dbt_valid_to columns automatically on each run. For your existing Type 2 dimensions, you'd backfill the historical records into the snapshot table on first load and then let dbt maintain the SCD logic going forward.",
+      "gold_parents": [
+        "t36"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t38",
+      "turn_index": 37,
+      "user_message": "We have about 40 dimension tables that need SCD Type 2 treatment. Is there a way to test that the snapshot logic is working correctly in CI?",
+      "assistant_message": "Yes — the standard approach is to write dbt tests that assert invariants on your snapshot tables: for example, that dbt_valid_to is always NULL for exactly one record per natural key (the current record), that no two records for the same key have overlapping validity periods, and that dbt_valid_from is always less than dbt_valid_to for closed records. You can implement these as custom generic tests in dbt or use the dbt-expectations package, which includes a suite of set-based assertions. Running these in your CI pipeline on a sample dataset catches regressions in snapshot logic before they reach production.",
+      "gold_parents": [
+        "t37"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t39",
+      "turn_index": 38,
+      "user_message": "We'll set that up. What's the best way to manage dbt environment configs — dev, staging, and prod — given that all three will point at the same Snowflake account but different databases?",
+      "assistant_message": "The idiomatic dbt approach is to use targets in your profiles.yml, with each target specifying a different database name — for example, ANALYTICS_DEV, ANALYTICS_STAGING, and ANALYTICS_PROD — while the warehouse, role, and schema naming conventions stay consistent. In dbt Cloud you configure these as separate environments with their own credentials and database overrides, and you promote code through environments via CI jobs rather than by manually switching targets. Using the {{ target.name }} variable inside your dbt_project.yml lets you conditionally adjust behavior, like limiting data volume in dev, without duplicating model logic.",
+      "gold_parents": [
+        "t38"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t40",
+      "turn_index": 39,
+      "user_message": "That's clean. We also want to set up cost monitoring so we can alert if a single dbt job consumes more than a defined credit threshold in one run.",
+      "assistant_message": "Snowflake's QUERY_HISTORY view in ACCOUNT_USAGE includes credits_used_cloud_services and you can join it to WAREHOUSE_METERING_HISTORY to attribute credit consumption to specific warehouse activity windows. A practical pattern is to tag each dbt job's warehouse session with a QUERY_TAG set via a dbt on-run-start hook, then query QUERY_HISTORY filtered by that tag after the run completes to sum credits. You can wrap that in an Airflow sensor that fires a PagerDuty or Slack alert if the sum exceeds your threshold before marking the DAG run as successful.",
+      "gold_parents": [
+        "t39"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t41",
+      "turn_index": 40,
+      "user_message": "We'll implement that. One more infrastructure question — should we use separate virtual warehouses for the nightly batch jobs versus the daytime BI queries, or share one warehouse with auto-scaling?",
+      "assistant_message": "Separate virtual warehouses is strongly recommended for workload isolation: batch jobs and BI queries have very different concurrency and memory profiles, and sharing a warehouse means a runaway batch job can starve interactive BI users and vice versa. Dedicated warehouses also give you clean cost attribution and let you set independent auto-suspend and auto-resume policies — for example, the batch warehouse auto-suspends at 5 minutes of inactivity while the BI warehouse might use 1 minute to minimize idle costs during the day. Resource monitors scoped per warehouse make budget enforcement straightforward as well.",
+      "gold_parents": [
+        "t40"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t42",
+      "turn_index": 41,
+      "user_message": "That makes sense. We're planning to name the batch warehouse BATCH_WH and the BI warehouse BI_WH. Should the dbt transformations run on BATCH_WH or get their own warehouse?",
+      "assistant_message": "dbt transformations should get their own dedicated warehouse, typically named something like TRANSFORM_WH, rather than sharing BATCH_WH. dbt runs can be highly concurrent during a full refresh and can easily saturate a warehouse, which would delay the raw ingestion jobs that BATCH_WH needs to run. A separate TRANSFORM_WH also lets you right-size it independently — dbt workloads often benefit from a larger warehouse for the initial historical backfill and then can be scaled down for incremental runs.",
+      "gold_parents": [
+        "t41"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t43",
+      "turn_index": 42,
+      "user_message": "I'm also stressing about the kids' school enrollment in Portland. My 7-year-old will need to start second grade in the fall.",
+      "assistant_message": "Portland Public Schools typically opens online enrollment for incoming students in late February through March for the following fall, so depending on your move date you may need to enroll shortly after arriving. You'll generally need proof of residency, immunization records, and a birth certificate to complete registration.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t44",
+      "turn_index": 43,
+      "user_message": "The school we're zoned for is Glencoe Elementary in the Beaverton School District actually, not Portland Public. Do they have a different enrollment timeline?",
+      "assistant_message": "Beaverton School District typically runs its open enrollment window from early January through mid-February for the following school year, though new students moving into the district can register on a rolling basis outside that window. Glencoe Elementary specifically has a strong dual-language immersion program, so it's worth asking about waitlist status for that track when you register.",
+      "gold_parents": [
+        "t43"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t45",
+      "turn_index": 44,
+      "user_message": "One thing I realized is that we also have our dog, a 60-pound Labrador named Biscuit. Bekins told me they don't transport pets, so Biscuit will ride in the SUV with me and the kids.",
+      "assistant_message": "That's standard — virtually no moving company will transport live animals, so Biscuit riding with you is the right call. With a 60-pound Lab plus two young children in the SUV, you'll want to make sure you have a secured crate or a dog seatbelt harness rated for his weight, both for safety and to keep the trip manageable over multiple days.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t46",
+      "turn_index": 45,
+      "user_message": "We're also trying to figure out what to budget for office furniture. We need to outfit 8 workstations and a small conference room for 6 people. Any rough guidance on cost?",
+      "assistant_message": "For 8 workstations with desks, ergonomic chairs, and basic storage, you're typically looking at $800 to $1,500 per station, so a budget of $6,400 to $12,000 is reasonable. A 6-person conference table with chairs can run another $2,000 to $5,000 depending on quality. All in, plan for roughly $8,400 to $17,000 for a functional but not extravagant setup.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t47",
+      "turn_index": 46,
+      "user_message": "We found a vendor called WorkNest Office Solutions that can do all 8 workstations and the conference room package for $11,200 flat, with delivery and assembly included. That sound fair?",
+      "assistant_message": "Yes, $11,200 all-in for 8 workstations plus a 6-person conference room package with delivery and assembly from WorkNest Office Solutions is competitive and sits comfortably in the middle of the typical range. Getting delivery and assembly bundled is a meaningful convenience, since coordinating that separately can easily add $500 to $1,000 in labor. It's a fair price to accept if you're satisfied with the product quality.",
+      "gold_parents": [
+        "t46"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t48",
+      "turn_index": 47,
+      "user_message": "There's also a space over on Caldwell Avenue we've been eyeing. It's listed by a property management company called Hartwell & Dunn, and it's 950 sq ft at $3,200 a month.",
+      "assistant_message": "Caldwell Avenue at 950 square feet and $3,200 a month works out to about $3.37 per square foot, which is slightly cheaper per square foot than the Renfield Street option. The smaller footprint could be a constraint if you're planning significant in-house production, since you'd have less room for proofing racks and large deck ovens. Hartwell & Dunn is a well-known commercial property manager, so the administrative side of the lease process would likely be straightforward. It really comes down to whether the lower cost justifies the tighter space.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t49",
+      "turn_index": 48,
+      "user_message": "The Caldwell Avenue place is a former sandwich shop, so it already has a Type I hood and a grease trap installed, which would save us on build-out costs.",
+      "assistant_message": "That's a significant advantage — a Type I hood and a grease trap can easily run $15,000 to $25,000 to install from scratch, so inheriting those from the previous tenant is a real cost saving. You'd still want a licensed inspector to verify they meet current health code standards and are sized appropriately for bakery equipment, since a sandwich shop's ventilation needs differ from high-volume oven use. If everything checks out, the Caldwell Avenue space's lower upfront build-out cost could offset the smaller square footage. It's worth getting an HVAC contractor in there before you make a final comparison.",
+      "gold_parents": [
+        "t48"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t50",
+      "turn_index": 49,
+      "user_message": "We're also trying to figure out the best way to handle multilingual labeling for the exhibit. Our current visitor demographics show about 28% of attendees at the first two venues are Spanish-speaking.",
+      "assistant_message": "For a 28% Spanish-speaking audience, bilingual English-Spanish labeling on all primary object labels is strongly justified and increasingly considered a baseline accessibility standard. The American Alliance of Museums' 2022 Facing Change initiative explicitly encourages institutions to match label languages to documented community demographics, and many grant-funders, including the NEH, now ask applicants to describe their language access plan. You might consider a tiered approach: full bilingual text on the primary labels, with QR codes linking to extended Spanish-language interpretive content for visitors who want more depth.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t51",
+      "turn_index": 50,
+      "user_message": "That makes sense. We're working with a translation firm called Lengua Viva based in Miami; they quoted us $0.18 per word for standard museum label copy and $0.26 per word for specialized technical or historical terminology. Our current draft label copy runs to about 4,200 words total.",
+      "assistant_message": "With 4,200 words at $0.18 per word for standard copy, you're looking at $756 for that tier. If roughly a third of your copy — say 1,400 words — involves specialized terminology like weaving techniques, dye processes, or archaeological provenance language, that portion at $0.26 per word would come to $364, bringing a rough blended total to around $1,120 before any revision rounds. It's worth asking Lengua Viva whether their quote includes one round of revisions, since museum labels often go through content edits after the initial translation is delivered.",
+      "gold_parents": [
+        "t50"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t52",
+      "turn_index": 51,
+      "user_message": "They confirmed one free revision round is included. We're also thinking about adding an audio guide in Spanish — they quoted a separate rate of $320 per finished audio minute, and we're estimating 22 minutes of total content.",
+      "assistant_message": "At $320 per finished minute for 22 minutes, the audio guide would run $7,040, which is a meaningful addition to your translation budget but very competitive for professional museum audio localization; rates in the industry typically range from $280 to $450 per finished minute depending on studio and talent. That total would bring your combined Spanish-language accessibility budget to roughly $8,160 if you go with the blended label estimate plus the full audio guide. It's worth checking whether any of your venue partners can cost-share on the audio guide, since they'll benefit from it equally.",
+      "gold_parents": [
+        "t51"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t53",
+      "turn_index": 52,
+      "user_message": "We've been looking at hotels along the route and most of them charge a pet fee. We found that La Quinta generally allows pets for free, but a lot of the specific locations along our route charge $25 per night per pet.",
+      "assistant_message": "La Quinta's corporate policy is pet-friendly at no charge, but individual franchise locations do sometimes add their own fees, so that $25-per-night figure at specific stops is unfortunately not unusual. It's worth calling ahead to confirm each location's policy rather than relying solely on what's listed online, since fees can also vary by pet size.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t54",
+      "turn_index": 53,
+      "user_message": "What about the furnaces? Both units still have the original 1962 gas furnaces and I know those are ancient.",
+      "assistant_message": "A 1962 gas furnace almost certainly runs at 55–65% AFUE (Annual Fuel Utilization Efficiency), meaning up to 45 cents of every dollar spent on gas is lost as exhaust. Replacing them with modern 96% AFUE condensing furnaces — brands like Carrier, Lennox, or Trane all make well-reviewed units in that range — would dramatically cut heating costs, and Xcel Energy offers a $200 rebate per furnace when you upgrade to a unit with 95% AFUE or higher. For a 900-square-foot Denver unit, a 60,000 BTU input furnace is typically sufficient.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t55",
+      "turn_index": 54,
+      "user_message": "One of my tenants mentioned the water heater in their unit is also original and making noise. Should I factor that into my upgrade budget?",
+      "assistant_message": "A 1962 water heater would be extraordinarily old if it's truly original — most tank water heaters last 10–15 years, so it's almost certainly been replaced at least once. If the current unit is making rumbling or popping sounds, that typically indicates sediment buildup on the heating element, which is a sign the tank is near end of life. Replacing it with a heat-pump water heater like the Rheem ProTerra 50-gallon (model XE50T10H45U0) would qualify for a $300 federal 25C tax credit and uses roughly 70% less electricity than a conventional electric resistance unit.",
+      "gold_parents": [
+        "t54"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t56",
+      "turn_index": 55,
+      "user_message": "I'm also trying to decide on cabinet style. I'm torn between shaker-style painted MDF cabinets and original-style beadboard inset cabinets that would be more period-appropriate for a 1920s house.",
+      "assistant_message": "Inset beadboard cabinets are historically accurate for a 1920s kitchen and can look stunning, but they cost significantly more because the door fitting is labor-intensive — expect to pay 25–40% more per linear foot than comparable overlay shaker cabinets. Shaker-style painted MDF from a semi-custom line like IKEA SEKTION or Hampton Bay can run $150–$250 per linear foot installed, while solid-wood inset beadboard from a custom shop often starts at $350–$500 per linear foot installed. Given your $6,150 remaining after electrical, the style choice will heavily determine how much you have left for countertops and flooring.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t57",
+      "turn_index": 56,
+      "user_message": "For the countertops, I've been looking at butcher block as a period-appropriate option. What thickness is standard and what's a realistic cost per square foot installed?",
+      "assistant_message": "Standard butcher block countertop thickness for residential kitchens is 1.5 inches (sometimes listed as 1-1/2\"), though 2-inch and 3-inch slabs exist for heavier-use surfaces. Installed cost from a supplier like Lumber Liquidators or IKEA's KARLBY line runs roughly $30–$60 per square foot for maple or birch, while walnut or teak butcher block can reach $80–$120 per square foot installed. For a 120-square-foot kitchen you'd typically have 25–40 square feet of countertop, so budget $750–$2,400 depending on wood species and edge profile.",
+      "gold_parents": [
+        "t56"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t58",
+      "turn_index": 57,
+      "user_message": "Our musical director wants to add a post-concert reception at the Dellwood stop. She's asking whether we should hire a local catering company or just do a self-catered spread with volunteers.",
+      "assistant_message": "Both options have real merit depending on your budget and how formal you want the reception to feel. A local catering company removes the logistical burden from your volunteers but can easily add £300–£600 to your costs for a modest spread. If you go self-catered, assigning a dedicated reception coordinator among your volunteers tends to prevent the last-minute scramble that often derails these events.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t59",
+      "turn_index": 58,
+      "user_message": "We've confirmed two overnight stops — one in Albuquerque, New Mexico and one in Salt Lake City, Utah. Both hotels are pet-friendly and will each charge that $25 pet fee. So that's two nights with the pet fee.",
+      "assistant_message": "With two confirmed overnight stops in Albuquerque and Salt Lake City, each carrying a $25 pet fee, you're looking at $50 total in pet surcharges for the road trip portion. That's a pretty manageable addition to your overall trip budget, especially compared to last-minute scrambling to find pet-friendly lodging.",
+      "gold_parents": [
+        "t53"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t60",
+      "turn_index": 59,
+      "user_message": "We also need to figure out the team's travel situation. We have 14 members and two mentors going to the competition, and the school van only seats 12.",
+      "assistant_message": "With 16 people total and only 12 seats in the van, you'll need to arrange additional transportation for at least 4 people. Options include a second school vehicle, parent carpools, or renting a passenger van. Make sure you get the necessary permission slips and insurance documentation sorted well in advance.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t61",
+      "turn_index": 60,
+      "user_message": "For the travel logistics, do we need the school's insurance certificate to reserve a rental van?",
+      "assistant_message": "Yes, most rental companies require a certificate of insurance when a school organization is renting a vehicle for an official trip. You'll typically need to contact your school's business office or district risk management department to obtain that certificate. Give them at least two weeks' notice since processing can take time, and confirm whether the rental company needs to be listed as an additional insured on the policy.",
+      "gold_parents": [
+        "t60"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t62",
+      "turn_index": 61,
+      "user_message": "How should we handle the cost allocation side? We have three business units sharing the Snowflake account and the finance team wants per-team billing breakdowns.",
+      "assistant_message": "Snowflake's resource monitors and virtual warehouse tagging are the standard tools for per-team cost allocation. You'd typically create one virtual warehouse per business unit — for example, TEAM_A_WH, TEAM_B_WH, and TEAM_C_WH — and attach a resource monitor to each with a monthly credit quota and an alert threshold, say a notification at 80% and a hard suspend at 100%. Snowflake's ACCOUNT_USAGE.WAREHOUSE_METERING_HISTORY view then lets finance pull exact credit consumption per warehouse with a simple SQL query.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t63",
+      "turn_index": 62,
+      "user_message": "What about Snowflake's Time Travel feature — should we enable it for the tables these jobs write to?",
+      "assistant_message": "Time Travel is worth enabling for tables that are written by nightly batch jobs, especially during the migration period when you might need to roll back a bad load. Snowflake's default Time Travel retention is 1 day for standard tables, but you can extend it up to 90 days for Enterprise edition accounts by setting DATA_RETENTION_TIME_IN_DAYS at the table or schema level. Keep in mind that Time Travel storage counts against your Snowflake storage bill, so a 90-day retention on a table that receives hundreds of gigabytes nightly can add up quickly.",
+      "gold_parents": [
+        "t62"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t64",
+      "turn_index": 63,
+      "user_message": "How should we handle members who want to pick up their orders instead of getting delivery? Do we need a separate workflow for that?",
+      "assistant_message": "Yes, it's worth building a distinct pickup workflow. You'd want members to select 'pickup' at checkout, which suppresses the delivery fee and routes the order to a fulfillment queue tied to your designated pickup window — say, Saturdays 9 a.m. to noon at your barn. This keeps pickup orders separate from the delivery manifest so your drivers aren't sorting through them.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t65",
+      "turn_index": 64,
+      "user_message": "We have two pickup locations — the main barn on Route 9 and a satellite spot at the Millfield Community Center. Can the system handle assigning orders to one or the other?",
+      "assistant_message": "Absolutely. Most cooperative ordering platforms let you define multiple pickup locations as selectable options during checkout, so members choose between the Route 9 barn and the Millfield Community Center when they place their order. Each location can then have its own fulfillment list, which your volunteers at each site print or view on a tablet. Just make sure you set cutoff times per location if their pickup windows differ.",
+      "gold_parents": [
+        "t64"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t66",
+      "turn_index": 65,
+      "user_message": "I want to make sure my older one doesn't fall behind academically over the summer with the move disruption. Are there any good summer bridge programs?",
+      "assistant_message": "Many districts, including Beaverton, offer summer learning programs specifically for incoming students, and there are also independent options like Kumon or Khan Academy's free online curriculum for self-paced review. For a rising second-grader, focusing on reading fluency and basic addition and subtraction facts over the summer would give a solid academic foundation heading into the new school year.",
+      "gold_parents": [
+        "t44"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t67",
+      "turn_index": 66,
+      "user_message": "Can you give me a total estimated cost just for the move itself plus the road trip pet expenses, so I have a single number to plug into our budget spreadsheet?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t45",
+        "t59"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t8",
+    "t12",
+    "t16",
+    "t45",
+    "t53",
+    "t59"
+  ],
+  "distractor_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t7",
+    "t9",
+    "t10",
+    "t11",
+    "t13",
+    "t14",
+    "t15",
+    "t17",
+    "t18",
+    "t19",
+    "t20",
+    "t21",
+    "t22",
+    "t23",
+    "t24",
+    "t25",
+    "t26",
+    "t27",
+    "t28",
+    "t29",
+    "t30",
+    "t31",
+    "t32",
+    "t33",
+    "t34",
+    "t35",
+    "t36",
+    "t37",
+    "t38",
+    "t39",
+    "t40",
+    "t41",
+    "t42",
+    "t43",
+    "t44",
+    "t46",
+    "t47",
+    "t48",
+    "t49",
+    "t50",
+    "t51",
+    "t52",
+    "t54",
+    "t55",
+    "t56",
+    "t57",
+    "t58",
+    "t60",
+    "t61",
+    "t62",
+    "t63",
+    "t64",
+    "t65",
+    "t66"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer includes $8,400 as the binding estimate from Bekins Van Lines for the move.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer includes $50 as the total pet fees (two overnight stops at $25 each, in Albuquerque and Salt Lake City).",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer states the combined total is $8,450 ($8,400 + $50).",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not include any costs related to school enrollment fees, summer programs, or Beaverton School District registration as part of this budget figure.",
+      "required": true
+    }
+  ],
+  "notes": "t6 establishes that Biscuit (60 lbs) will ride in the SUV and t1 establishes the $8,400 Bekins binding estimate — both needed for the query. t8 establishes the two confirmed overnight stops with $25 pet fees each ($50 total), built on t7 and t3. The distractor branch (t4, t5, t9) covers school enrollment details for Glencoe Elementary/Beaverton School District, which are plausible move concerns but irrelevant to the cost-total query.\n\nReference answer: Your move cost from the Bekins Van Lines binding estimate is $8,400. For the road trip, you have two confirmed overnight stops — Albuquerque and Salt Lake City — each with a $25 pet fee for Biscuit, totaling $50 in pet surcharges. Adding those together gives you a combined figure of $8,450 to plug into your budget spreadsheet for the move itself plus road-trip pet expenses.",
+  "evidence_note": null,
+  "premise": "planning a cross-country house move with two kids and a dog",
+  "evidence_spans": null,
+  "benchmark_version": "1.1-length-ablation",
+  "length_class": "spliced_60"
+}

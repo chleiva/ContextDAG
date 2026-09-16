@@ -1,0 +1,382 @@
+{
+  "scenario_id": "resume_001__L30",
+  "family": "resume",
+  "label": "RESUME",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "On the permit drawings — does the Corps have a specific format requirement, or can our engineer use whatever CAD standard they prefer?",
+      "assistant_message": "The Corps doesn't mandate a single CAD standard, but the New England District's guidance document (ER 1110-1-8156) specifies that permit drawings must include plan views, cross-sections, and an overall location map at a scale no smaller than 1:2400, and all sheets must be 11-by-17 inches or 24-by-36 inches. Coordinates should be provided in NAD83 and elevations referenced to NAVD88, not to a local benchmark. Your engineer should also include a separate sheet showing the ordinary high water mark and mean high water line, since those are the jurisdictional boundaries the reviewer will check first.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "We're planning to use composite decking rather than pressure-treated wood. Does that affect the environmental review at all?",
+      "assistant_message": "Yes, material choice can meaningfully affect both the state and federal review. Composite decking eliminates concerns about leaching of copper azole or chromated copper arsenate from treated lumber, which DEEP reviewers flag as a water quality issue under Connecticut's Section 401 Water Quality Certification process. The Army Corps also references EPA's 2007 guidance on aquatic toxicity of treated wood preservatives, and switching to composite material removes that line of inquiry entirely. Some districts have informally noted faster review times for projects using non-treated materials, though there's no formal expedited track.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "What about the pile driving itself — are there noise or vibration thresholds we need to worry about for the estuarine habitat?",
+      "assistant_message": "Pile driving in tidal estuaries in Connecticut typically triggers a review under the federal Essential Fish Habitat consultation requirement, since Long Island Sound and its tributaries are designated EFH for species including winter flounder and Atlantic bluefish under the Magnuson-Stevens Act. The National Marine Fisheries Service uses a peak pressure threshold of 206 dB re 1 µPa for injury to fish, and if your contractor uses impact hammers rather than vibratory installation, you may need an underwater noise monitoring plan as a permit condition. Scheduling pile driving outside the March 1 through June 30 window is commonly required by DEEP to protect spawning activity, so that constraint should go into your construction contract.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "Our contractor mentioned they might use a vibratory hammer to avoid some of those noise thresholds. Is that a reliable workaround?",
+      "assistant_message": "Vibratory hammers do produce significantly lower peak pressure levels than impact hammers — typically in the 160 to 170 dB re 1 µPa range versus the 180 to 210 dB range for impact — so they often fall below NMFS injury thresholds for fish. However, DEEP and the Corps may still condition the permit to require a soft-start procedure even with vibratory equipment, and some reviewers require a qualified biological monitor on site during all pile installation. The tradeoff is that vibratory installation is less reliable in dense glacial till, which is common in Connecticut estuaries, so your geotechnical report will determine whether it's actually feasible at your specific site.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "I also looked at a pier from a guy named Marcus Delray who runs a one-man shop called IronSky Custom Piers in Bozeman, Montana. He builds a 42-inch model called the Meridian-3 out of Schedule 40 DOM tubing.",
+      "assistant_message": "Marcus Delray's IronSky Custom Piers has a strong reputation in the amateur community for hand-finished welds and custom anodizing options. The Meridian-3 at 42 inches is a bit shorter than some competitors, but the Schedule 40 DOM tubing gives it excellent rigidity — it's a popular choice for people running heavier refractors where vibration damping matters more than raw load capacity.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What's the load rating on the Meridian-3?",
+      "assistant_message": "Marcus rates the Meridian-3 at 60 lbs for the mount head, which is a bit conservative compared to some similarly sized piers. He publishes a safety factor of 3:1 in his spec sheet, meaning the structure itself is engineered to handle up to 180 lbs before any deformation, but the 60 lb figure is what he warranties for tracking accuracy under normal use.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "Does Marcus Delray do any customization on the Meridian-3's height?",
+      "assistant_message": "Yes, Marcus offers custom height cuts on the Meridian-3 in 2-inch increments, ranging from 36 inches up to 54 inches, all at the same base price of $620. Beyond 54 inches he charges a $40 per-inch upcharge and requires a thicker wall tube for structural reasons. He also offers a laser-cut top plate option with custom bolt circle patterns for an additional $95, which is handy if you're using a non-standard mount.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "Do you know anything about permits for having an outdoor ceremony directly on a lake dock? We're using a private property on Lake Champlain.",
+      "assistant_message": "For a private-property dock ceremony on Lake Champlain, you'll generally need to check with the Vermont or New York Department of Environmental Conservation depending on which shore you're on, since the lake straddles the state line. Even on private land, gatherings of over 50 people often trigger a special-use or assembly permit requirement, so it's worth contacting the local town clerk's office at least 60 days before your event date.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "The property is on the Vermont side, in South Hero. Is there anything specific to that town we should know about?",
+      "assistant_message": "South Hero is in Grand Isle County, and the town operates under Vermont's Act 250 land-use rules for larger gatherings on waterfront property. You'd want to contact the South Hero Town Clerk directly — their office handles event assembly notices — and also confirm with the Grand Isle County Natural Resources Board whether your dock setup requires any shoreline impact review, especially if you're adding temporary structures like an arch or chairs on the dock itself.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "I also got a quote from a company called GreenLayer Insulation for the same duplex. They focus on blown-in cellulose rather than spray foam.",
+      "assistant_message": "GreenLayer Insulation is a well-regarded approach — blown-in cellulose typically has a recycled content of around 80–85% and performs very well for air sealing when dense-packed. It's worth comparing their quoted R-value and cost per square foot directly against the spray foam option, since the two materials behave quite differently in terms of moisture management and long-term settling.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "GreenLayer came in at $5,900 for 1,400 square feet to R-49, and they said they can start any time — their earliest available slot is actually February 3, 2025.",
+      "assistant_message": "So GreenLayer is about $2,300 cheaper but lands at R-49 versus the R-60 FrostShield quoted, and their February 3 availability gives you roughly six weeks of lead time before the competing offer even becomes possible. The cost-per-R-value trade-off is real: you're paying more with FrostShield for a higher thermal resistance ceiling, but the delay means more heating season passes before the upgrade is in place. It's worth modeling the energy savings over one winter to see if the performance gap justifies the price and timing difference.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "We're trying to nail down the lumber specs for the new dock. The design calls for 2×10 pressure-treated southern yellow pine for the decking boards, and the marina inspector said all lumber must meet a minimum retention level of 0.40 pcf CCA treatment for saltwater exposure. Does that sound right for a fixed pier in tidal saltwater?",
+      "assistant_message": "Yes, 0.40 pcf CCA (or its modern equivalent, CA-C or MCA at the same retention) is the industry-standard minimum for lumber in contact with saltwater or brackish tidal water, per the American Wood Protection Association's Use Category 4B designation. For a fixed pier subject to regular wave wash and tidal immersion, some inspectors actually prefer 0.60 pcf for the substructure piling and framing, though decking boards at 0.40 pcf is widely accepted. Using 2×10 SYP at that treatment level for decking is a solid, code-compliant choice for saltwater dock construction.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "I'm also trying to decide on cabinet style. I'm torn between shaker-style painted MDF cabinets and original-style beadboard inset cabinets that would be more period-appropriate for a 1920s house.",
+      "assistant_message": "Inset beadboard cabinets are historically accurate for a 1920s kitchen and can look stunning, but they cost significantly more because the door fitting is labor-intensive — expect to pay 25–40% more per linear foot than comparable overlay shaker cabinets. Shaker-style painted MDF from a semi-custom line like IKEA SEKTION or Hampton Bay can run $150–$250 per linear foot installed, while solid-wood inset beadboard from a custom shop often starts at $350–$500 per linear foot installed. Given your $6,150 remaining after electrical, the style choice will heavily determine how much you have left for countertops and flooring.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "For the countertops, I've been looking at butcher block as a period-appropriate option. What thickness is standard and what's a realistic cost per square foot installed?",
+      "assistant_message": "Standard butcher block countertop thickness for residential kitchens is 1.5 inches (sometimes listed as 1-1/2\"), though 2-inch and 3-inch slabs exist for heavier-use surfaces. Installed cost from a supplier like Lumber Liquidators or IKEA's KARLBY line runs roughly $30–$60 per square foot for maple or birch, while walnut or teak butcher block can reach $80–$120 per square foot installed. For a 120-square-foot kitchen you'd typically have 25–40 square feet of countertop, so budget $750–$2,400 depending on wood species and edge profile.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "The city also just notified me that the duplex needs a new backflow preventer on the main water line — they're requiring it under a new municipal ordinance that took effect January 1, 2025.",
+      "assistant_message": "That's a separate compliance item you'll want to handle promptly. Backflow preventer installations for residential properties typically run between $300 and $700 for parts and labor, depending on the pipe diameter and local permit fees. Check whether the ordinance specifies a deadline for compliance, as some municipalities give property owners a 90-day window from the notice date before issuing fines.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "What about the furnaces? Both units still have the original 1962 gas furnaces and I know those are ancient.",
+      "assistant_message": "A 1962 gas furnace almost certainly runs at 55–65% AFUE (Annual Fuel Utilization Efficiency), meaning up to 45 cents of every dollar spent on gas is lost as exhaust. Replacing them with modern 96% AFUE condensing furnaces — brands like Carrier, Lennox, or Trane all make well-reviewed units in that range — would dramatically cut heating costs, and Xcel Energy offers a $200 rebate per furnace when you upgrade to a unit with 95% AFUE or higher. For a 900-square-foot Denver unit, a 60,000 BTU input furnace is typically sufficient.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "One of my tenants mentioned the water heater in their unit is also original and making noise. Should I factor that into my upgrade budget?",
+      "assistant_message": "A 1962 water heater would be extraordinarily old if it's truly original — most tank water heaters last 10–15 years, so it's almost certainly been replaced at least once. If the current unit is making rumbling or popping sounds, that typically indicates sediment buildup on the heating element, which is a sign the tank is near end of life. Replacing it with a heat-pump water heater like the Rheem ProTerra 50-gallon (model XE50T10H45U0) would qualify for a $300 federal 25C tax credit and uses roughly 70% less electricity than a conventional electric resistance unit.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "I'm also thinking about whether to pour a separate concrete slab for the floor or just use compacted gravel. Which is better for drainage in a wet climate?",
+      "assistant_message": "Compacted gravel with a landscape fabric underlayer is often preferred in wet climates because it allows rainwater and condensation to drain freely rather than pooling on a slab. A concrete slab can work if you add a slight slope (about 1/8 inch per foot) toward a drain, but gravel is simpler and cheaper for a backyard observatory where you don't need a perfectly level working surface.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "Good. The dock will be 120 feet long and 8 feet wide. We've settled on 16-inch on-center spacing for the decking joists, and the board supplier quoted us $4.85 per linear foot for the treated 2×10 SYP. How many linear feet of decking boards do we need, and what's the rough material cost just for the decking?",
+      "assistant_message": "For an 8-foot-wide deck running 120 feet long, you'll need boards spanning the 8-foot width, placed perpendicular to the joists, with 16-inch joist spacing meaning roughly 91 joist bays across the 120-foot run. At 8 linear feet per board and approximately 91 boards, you need about 728 linear feet of 2×10 decking; adding a standard 10% waste factor brings that to 801 linear feet. At $4.85 per linear foot, the rough material cost for decking boards comes to approximately $3,885, though you should confirm the exact board count with your layout drawing. That figure covers only the decking surface, not framing, hardware, or pilings.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "We're also looking at raised bed suppliers. Timber & Roots Co. reached out to us — they do custom cedar raised beds and have worked with a few other community gardens in the county.",
+      "assistant_message": "Timber & Roots Co. has a good reputation for durable cedar construction, which holds up well in outdoor garden settings. It would be worth asking them for a quote that specifies board thickness and whether their beds are rated for food-safe applications, since some grants require that documentation.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "Timber & Roots Co. sent over their catalog. They offer 4×8 foot beds in two depths — 10 inches for $215 each and 18 inches for $290 each — and they require orders of at least 5 units to deliver to our zip code.",
+      "assistant_message": "Those are reasonable prices for custom cedar, and the 18-inch depth is worth considering for root vegetables if your garden plan includes them. The 5-unit minimum delivery requirement is something to factor into your order quantity and budget — ordering exactly 5 of the 18-inch beds, for example, would come to $1,450 before any applicable taxes.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "We also need to decide on signage for the garden entrance. We're looking at a cedar post-and-panel sign, roughly 4 feet by 6 feet, and the fabricator quoted us $1,200 installed.",
+      "assistant_message": "A 4-by-6-foot cedar post-and-panel sign at $1,200 installed is a fairly standard price point for that size and material in most municipal contexts. You'll want to confirm whether the sign design needs to include the City of Hartwell logo, since many green-spaces grants require co-branding on any permanent installations funded through the program. Getting that specification in writing from the fabricator now will save revisions later.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "The fabricator is Greenline Signs & Displays, and they've confirmed in writing that the $1,200 quote is valid through March 31, 2025.",
+      "assistant_message": "Having a written quote from Greenline Signs & Displays valid through March 31, 2025 is exactly the kind of vendor documentation grant reviewers want to see attached as an exhibit. If your submission deadline falls before that date, you can include the quote directly; if it's after, you'd need a refreshed quote. File that letter with your other supporting documents so it's easy to attach when you compile the final application package.",
+      "gold_parents": [
+        "t22"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "Got it. What about the TI allowance—the space needs new flooring, a small server room, and a glass-walled conference room. How do we structure the TI negotiation?",
+      "assistant_message": "For those three improvements, get contractor bids before you negotiate the TI number so you can anchor to real costs—glass-walled conference rooms typically run $15,000–$25,000 installed, a basic server room with dedicated cooling and a 20-amp circuit can run $8,000–$15,000, and commercial LVT flooring for 2,400 sq ft usually costs $6–$10 per sq ft installed. Present the landlord with a detailed scope of work and request a $60,000 TI allowance, structured as a landlord-managed build-out rather than a tenant reimbursement so you're not fronting capital. If they resist, propose splitting the allowance: $40,000 at lease signing and the remaining $20,000 after the first 12 months of on-time payments.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "The landlord is insisting on a 'landlord-managed build-out' clause that gives them the right to select all contractors. What risks does that create for us?",
+      "assistant_message": "The biggest risk is cost inflation—when landlords control contractor selection, they often use preferred vendors who charge 15–25% above market rates, and since it's your TI dollars being spent, the overage comes directly out of your allowance. You could end up with $60,000 committed but only $45,000 worth of actual work completed. Negotiate for a 'competitive bid' carve-out requiring the landlord to solicit at least three bids for any job over $5,000, with you retaining approval rights over the final selection, and cap the landlord's project management fee at 5% of construction costs.",
+      "gold_parents": [
+        "t24"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "What happens to our TI allowance if we need to terminate the lease early? Does the landlord claw it back?",
+      "assistant_message": "Yes, most commercial leases include a TI recapture provision that requires you to repay a prorated portion of the allowance if you terminate early—on a 3-year lease with a $60,000 TI, that means roughly $20,000 per year of remaining term. Some landlords structure this as a separate 'TI note' that you sign alongside the lease, which can even accrue interest at 6–8% annually. You should negotiate to have the recapture obligation extinguish after month 24, so that if you make it two-thirds through the lease without default, the landlord absorbs the remaining TI cost as a cost of doing business.",
+      "gold_parents": [
+        "t25"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "What's the typical liability insurance requirement for a sailing club with about 200 members?",
+      "assistant_message": "For a recreational sailing club of that size, most insurers and marina landlords require a minimum of $1 million per occurrence in general liability coverage, with many now asking for $2 million aggregate. You should also look into a specific watercraft liability endorsement, since general policies sometimes exclude vessels under club management. Consulting a marine insurance broker who specializes in yacht clubs will give you the most accurate picture for your jurisdiction.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "The club's junior sailing program runs eight weeks in summer and we need to figure out instructor-to-student ratios. US Sailing's Level 1 certification guidelines recommend a maximum of 8 students per certified instructor on the water at one time — is that the right standard to apply?",
+      "assistant_message": "US Sailing's Small Boat Instructor program does recommend a maximum of 8 students per instructor as a general on-water guideline, though the exact ratio can tighten to 6:1 for students under age 10 or in high-wind conditions above 15 knots. Many clubs also require a dedicated safety-boat operator separate from the instructor count, which effectively adds supervision capacity without changing the ratio. Checking your local US Sailing regional coordinator is worthwhile since some districts have adopted stricter standards than the national baseline.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "We have 48 kids enrolled for the first session. If we split them into two age groups — under-12 and 12-and-up — and the under-12 group is 20 kids, how many instructors do we need for each group?",
+      "assistant_message": "For the 20 under-12 sailors, using the 6:1 ratio means you need a minimum of 4 instructors, since 20 divided by 6 rounds up to 3.33. The remaining 28 kids in the 12-and-up group fall under the standard 8:1 ratio, requiring 4 instructors there as well (28 ÷ 8 = 3.5, rounded up to 4). So you'd need at least 8 certified instructors total for that first session, not counting safety-boat operators.",
+      "gold_parents": [
+        "t28"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t30",
+      "turn_index": 29,
+      "user_message": "The club only has 6 certified instructors available for the first week. Can we legally run both groups simultaneously with that staffing level?",
+      "assistant_message": "With only 6 certified instructors, you'd fall short of the 8 needed to run both groups simultaneously at the recommended ratios. One practical option is to stagger the groups — run the under-12 group in the morning with 4 instructors and the older group in the afternoon with the same 4, freeing the other 2 instructors for breaks or safety-boat duty. Alternatively, you could recruit two more US Sailing-certified instructors, even on a temporary or volunteer basis, to meet the ratio requirements for concurrent sessions. Running both groups at the same time with 6 instructors would leave at least one group out of compliance with the recommended supervision standard.",
+      "gold_parents": [
+        "t29"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t31",
+      "turn_index": 30,
+      "user_message": "What's the total estimated cost just for the decking boards, and what treatment retention level do those boards need to meet?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t12",
+    "t19"
+  ],
+  "distractor_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t7",
+    "t8",
+    "t9",
+    "t10",
+    "t11",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t20",
+    "t21",
+    "t22",
+    "t23",
+    "t24",
+    "t25",
+    "t26",
+    "t27",
+    "t28",
+    "t29",
+    "t30"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states the decking material cost is approximately $3,885 (derived from 801 linear feet × $4.85/linear foot, or the equivalent ~728–801 LF range at that unit price).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states the minimum CCA (or equivalent) treatment retention level for the decking boards is 0.40 pcf.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not import any figures or facts from the instructor-ratio discussion (e.g., the numbers 6, 8, 48, 20, 28, or any ratio such as 6:1 or 8:1).",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer references the 2×10 southern yellow pine decking boards at $4.85 per linear foot as the basis for the cost estimate.",
+      "required": true
+    }
+  ],
+  "notes": "The key evidence for the query lives in t1 (0.40 pcf treatment requirement) and t2 ($4.85/LF unit price, ~801 LF quantity, ~$3,885 total cost). Turns t3–t5 are the distractor branch covering junior-program instructor ratios; none of those numbers (6, 8, 48, 20, 28, 6:1, 8:1) should appear in a correct answer to t6.\n\nReference answer: The decking boards must meet a minimum retention level of 0.40 pcf CCA treatment (or equivalent, such as CA-C or MCA at the same retention) to satisfy the saltwater/tidal Use Category 4B requirement. Based on the 120-foot by 8-foot deck layout, you need approximately 728 linear feet of 2×10 SYP decking boards, or about 801 linear feet after a 10% waste allowance. At the quoted price of $4.85 per linear foot, the rough material cost for the decking boards alone is approximately $3,885. That figure covers only the surface decking and does not include framing, hardware, or pilings.",
+  "evidence_note": null,
+  "premise": "a sailing club replacing its aging dock",
+  "evidence_spans": null,
+  "benchmark_version": "1.1-length-ablation",
+  "length_class": "spliced_30"
+}

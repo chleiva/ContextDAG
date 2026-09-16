@@ -1,0 +1,120 @@
+{
+ "target": "two_branch_join_006",
+ "family": "two_branch_join",
+ "base_history": 8,
+ "gold_closure": [
+  "t1",
+  "t2",
+  "t3",
+  "t4",
+  "t7",
+  "t8"
+ ],
+ "gold_entities": [
+  "1,495",
+  "12-month",
+  "21-day",
+  "299",
+  "around 15 to 20 percent",
+  "at least 21 days",
+  "at least 60 days",
+  "curve",
+  "curve dental",
+  "curve dental's",
+  "curve hero",
+  "dentrix",
+  "february 1st",
+  "four to six weeks",
+  "march 15th",
+  "month-to-month",
+  "one business day",
+  "the remaining months",
+  "the summer"
+ ],
+ "query_entities": [
+  "curve",
+  "dentrix"
+ ],
+ "donors_rejected_by_exclusion": 14,
+ "sufficient_to_60": true,
+ "chosen": [
+  {
+   "donor": "topic_fork_007#0",
+   "turns": 2,
+   "cosine": 0.3655
+  },
+  {
+   "donor": "join_then_split_006#0",
+   "turns": 2,
+   "cosine": 0.3554
+  },
+  {
+   "donor": "join_then_split_001#1",
+   "turns": 1,
+   "cosine": 0.3115
+  },
+  {
+   "donor": "constraint_retention_005#0",
+   "turns": 20,
+   "cosine": 0.2919
+  },
+  {
+   "donor": "knowledge_update_008#1",
+   "turns": 17,
+   "cosine": 0.2879
+  },
+  {
+   "donor": "semantic_decoy_008#0",
+   "turns": 4,
+   "cosine": 0.2815
+  },
+  {
+   "donor": "semantic_decoy_001#0",
+   "turns": 4,
+   "cosine": 0.266
+  },
+  {
+   "donor": "three_way_join_002#0",
+   "turns": 3,
+   "cosine": 0.2535
+  }
+ ],
+ "used": {
+  "30": [
+   "topic_fork_007#0",
+   "join_then_split_006#0",
+   "join_then_split_001#1",
+   "constraint_retention_005#0"
+  ],
+  "60": [
+   "topic_fork_007#0",
+   "join_then_split_006#0",
+   "join_then_split_001#1",
+   "constraint_retention_005#0",
+   "knowledge_update_008#1",
+   "semantic_decoy_008#0",
+   "semantic_decoy_001#0",
+   "three_way_join_002#0"
+  ]
+ },
+ "actual_lengths": {
+  "30": 33,
+  "60": 61
+ },
+ "preflight": {
+  "oracle_hash_equal": true,
+  "checklist_query_closure_identical": true,
+  "l30_subsequence_of_l60": true,
+  "base_subsequence_of_l60": true,
+  "oracle_tokens": 753,
+  "full_tokens": {
+   "base": 1033,
+   "30": 4735,
+   "60": 8386
+  }
+ },
+ "lengths_built": [
+  30,
+  60
+ ]
+}

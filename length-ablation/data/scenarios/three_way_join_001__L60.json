@@ -1,0 +1,738 @@
+{
+  "scenario_id": "three_way_join_001__L60",
+  "family": "three_way_join",
+  "label": "JOIN",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We also need to think about the reading log design. Should we print physical logs or use a digital platform?",
+      "assistant_message": "Both options have real advantages — physical logs are accessible to families without reliable internet and have a tactile appeal that younger children enjoy, while digital platforms like Beanstack or READsquared allow for automatic tracking, parent visibility, and real-time progress dashboards. Many libraries offer both and let families choose, which tends to maximize participation.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "We're leaning toward Beanstack. Do you know roughly what it costs for a library system our size?",
+      "assistant_message": "Beanstack pricing is typically tiered by the population of the library's service area rather than by active users, and for a mid-sized city library serving a population of around 50,000–100,000, annual licensing has historically run in the range of $1,500–$3,000 per year, though you'd want to request a current quote since pricing can change. They also offer a free tier with limited features if you want to pilot it before committing.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "Good to know. What features should we make sure are included in whatever platform we choose?",
+      "assistant_message": "The most critical features are customizable reading challenges, automated badge or certificate generation, parent and child account linking, and a reporting dashboard that lets staff pull participation data by age group or date range. Integration with your library's existing ILS, such as Sierra or Polaris, is also worth checking so patrons don't have to create entirely separate accounts.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "We use Sierra as our ILS. Is the Beanstack integration with Sierra straightforward to set up?",
+      "assistant_message": "Beanstack does offer integration with Sierra through III's API, and the setup generally involves your systems librarian configuring an OAuth connection and mapping patron barcodes between the two systems. It typically takes a few hours of technical work plus testing, so you'd want to schedule it at least 4–6 weeks before the program launch to troubleshoot any issues.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "Our systems librarian is only available part-time, about 20 hours per week. Will that be enough to handle the integration?",
+      "assistant_message": "Twenty hours per week should be sufficient, especially if the integration work is scoped to a focused two-week window before launch. The bulk of the effort is initial configuration and testing; once it's live, ongoing maintenance is usually minimal unless there's a Sierra or Beanstack update that requires re-authentication.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "We'll also need volunteers to help run the kickoff event. How many volunteers would be reasonable for an event expecting around 150 attendees?",
+      "assistant_message": "A general rule of thumb for library events is one volunteer per 15–20 attendees for smooth crowd management, which would put you at roughly 8–10 volunteers for 150 people. You'll want to assign specific roles — registration table, activity stations, crowd flow, and a floater or two — so no one is overwhelmed and coverage gaps are minimized.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "Where do libraries usually find volunteers for these events? We don't have a big existing volunteer pool.",
+      "assistant_message": "High schools and universities are excellent sources because students often need community service hours — contacting a local high school's National Honor Society chapter or a university's service-learning office can quickly yield 5–10 reliable volunteers. Local civic groups like the Junior League, Rotary Club, or even corporate volunteer programs from area businesses are also worth reaching out to.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "We have a state university about two miles away. Should we contact the library science department specifically?",
+      "assistant_message": "The library science department is a great first contact — graduate students there are often eager for practical public library experience and may count it toward fieldwork or practicum hours. You could also try the education department, since pre-service teachers benefit from literacy-focused community engagement and can bring creative programming ideas.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "That's a great idea. What should the kickoff event actually include to get kids excited about the program?",
+      "assistant_message": "A strong kickoff typically includes a brief, energetic introduction to the reading challenge with a visual display of the prize tiers, a craft or activity station tied to a book theme, and a chance for kids to register on the spot and receive their first reading log or platform login. Having a costumed character, a local children's author, or a story-time performance can dramatically boost excitement and word-of-mouth attendance.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "For the prize tiers, we were thinking of structuring them so that the top-tier prize costs around $8.00 per child, like the amount we budgeted earlier.",
+      "assistant_message": "That's a reasonable instinct for structuring the top tier as the headline prize to motivate participation. Layering in smaller milestone prizes at lower cost points — say $2.00–$3.00 for mid-tier completions — can also keep kids engaged throughout the program rather than only at the finish line.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "What kinds of prizes work best for the milestone rewards at the mid-tier level?",
+      "assistant_message": "Bookmarks, stickers, and small paperback books donated through programs like First Book or Reading Is Fundamental tend to be popular and cost-effective mid-tier options. Coupons for a free ice cream at a local partner business or a free library fine waiver are also crowd-pleasers that cost the library very little while feeling meaningful to kids.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "A local ice cream shop has already expressed interest in partnering. How do we formalize that kind of business partnership?",
+      "assistant_message": "A simple one-page Memorandum of Understanding outlining the terms — number of coupons, redemption window, any co-branding expectations, and a library contact name — is usually sufficient for small local business partnerships. It protects both parties and gives the business something concrete to share with their own management or ownership for approval.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "Should the MOU go through our city legal department for review before we sign it?",
+      "assistant_message": "Yes, routing it through city legal is the safest practice even for a small partnership agreement, since libraries operating under municipal authority typically need legal sign-off on any binding document. In most city systems the review turnaround for a simple one-page MOU is 5–10 business days, so build that into your timeline.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "Our program director wants to send a press release to local media about the summer reading program. When is the best time to send it?",
+      "assistant_message": "Sending the press release 3–4 weeks before the program launch is the sweet spot — it gives print and online outlets time to schedule coverage while the story still feels timely and forward-looking. A follow-up release on the day of the kickoff event, with a photo opportunity invitation for local TV cameras, can generate a second wave of coverage.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "Should we include a quote from the library director in the press release?",
+      "assistant_message": "Absolutely — a quote from the library director adds authority and a human voice to the release, and editors are more likely to run quotes that are already written for them rather than having to call for comment. Keep the quote to two or three sentences focused on community impact and the specific dates of the program so it reads as genuinely newsworthy.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "We want to track how many kids complete the full program versus dropping off partway through. What's a realistic completion rate to expect?",
+      "assistant_message": "Public library summer reading programs typically see completion rates in the range of 40–60% of enrolled participants, with drop-off most common in the third and fourth weeks as the novelty wears off. Sending a midpoint reminder — either through Beanstack's automated notifications or a postcard mailer — can meaningfully bump that rate by 5–10 percentage points.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "If we use Beanstack's automated notifications, can we customize the message content or is it a generic template?",
+      "assistant_message": "Beanstack allows full customization of notification content, including the subject line, body text, and even the sender display name, so you can write messages that reflect your library's voice and reference your specific program milestones. You can also schedule notifications to trigger based on participant behavior, such as sending an encouragement message if a child hasn't logged any reading in seven days.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "That's really useful. Can parents opt their child out of those notifications if they find them intrusive?",
+      "assistant_message": "Yes, Beanstack includes opt-out controls at the account level, and parents managing a child's account can disable email or push notifications at any time through the account settings. It's good practice to mention this opt-out option during registration so families feel in control and are more likely to trust the platform with their contact information.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "We're trying to decide between Hartwell Academy and Greystone High for our daughter. Can you tell me about Hartwell's sixth-form entry requirements?",
+      "assistant_message": "Hartwell Academy requires a minimum of 5 GCSEs at grade 5 or above for sixth-form entry, including grade 6 in any subject the student wishes to study at A-level. They also require a grade 5 in both English Language and Mathematics regardless of the subjects chosen. It's a fairly standard set of requirements for a selective sixth form.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "I'm also stressing about the kids' school enrollment in Portland. My 7-year-old will need to start second grade in the fall.",
+      "assistant_message": "Portland Public Schools typically opens online enrollment for incoming students in late February through March for the following fall, so depending on your move date you may need to enroll shortly after arriving. You'll generally need proof of residency, immunization records, and a birth certificate to complete registration.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "The school we're zoned for is Glencoe Elementary in the Beaverton School District actually, not Portland Public. Do they have a different enrollment timeline?",
+      "assistant_message": "Beaverton School District typically runs its open enrollment window from early January through mid-February for the following school year, though new students moving into the district can register on a rolling basis outside that window. Glencoe Elementary specifically has a strong dual-language immersion program, so it's worth asking about waitlist status for that track when you register.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "I want to make sure my older one doesn't fall behind academically over the summer with the move disruption. Are there any good summer bridge programs?",
+      "assistant_message": "Many districts, including Beaverton, offer summer learning programs specifically for incoming students, and there are also independent options like Kumon or Khan Academy's free online curriculum for self-paced review. For a rising second-grader, focusing on reading fluency and basic addition and subtraction facts over the summer would give a solid academic foundation heading into the new school year.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "For the shift-swap approval process, should Sandra keep a paper log or is there a digital system you'd recommend?",
+      "assistant_message": "A digital system is strongly preferable because it creates an automatic audit trail that paper logs can't easily provide. Many NHS trusts use systems like Allocate HealthRoster or Rotamaster, both of which have built-in swap-request workflows that notify the approving charge nurse by email and timestamp every action. If the trust hasn't licensed one of those, even a simple shared SharePoint form with version history would give Sandra the documentation she needs if a rest-period dispute ever arises.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "Allocate HealthRoster sounds promising. Does it integrate with the NHS Electronic Staff Record system?",
+      "assistant_message": "Yes, Allocate HealthRoster has a certified integration with NHS Electronic Staff Record (ESR) through the NHS Digital interface standard, which means employee contracts, pay bands, and leave balances can sync automatically rather than being entered twice. The integration typically requires a one-time configuration by the trust's IT department and an ESR interface activation request submitted to NHS Shared Business Services. Once live, roster exports from HealthRoster can feed directly into ESR payroll runs, which reduces the manual reconciliation burden on ward administrators significantly.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "What about bank and agency staff — does the HealthRoster integration handle them differently than permanent staff when it comes to the 6-week rotation?",
+      "assistant_message": "Bank and agency staff are handled as separate worker categories in HealthRoster and don't slot into the permanent rotation blocks automatically; instead, they appear in a separate 'bank pool' that Sandra can draw from to fill gaps. For ESR integration purposes, bank staff who are directly employed by the trust will have ESR records and sync normally, but agency staff sourced through a third-party framework — such as NHS Professionals or a private agency — typically won't have ESR entries, so their hours must be logged manually or through the agency's own timesheet portal. Sandra should confirm with the trust's workforce team which agencies are on the approved supplier list before the 14th to avoid any payroll delays.",
+      "gold_parents": [
+        "t24"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "What about the sports facilities at Greystone High?",
+      "assistant_message": "Greystone High has a well-regarded sports program centred around its main facility, the Greystone Sports Complex, which opened in 2019. The complex includes a 25-metre indoor swimming pool, two full-size 3G artificial pitches, and a sports hall with six badminton courts. It's one of the more comprehensively equipped secondary school facilities in the region.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "We also want to host weekly in-library events. What kinds of programming work well for the 6–12 age range over an eight-week run?",
+      "assistant_message": "A proven mix is to alternate between passive and active formats—think a craft or STEM activity one week, then a visiting author or storyteller the next, so no two consecutive weeks feel identical. For an eight-week program you might anchor weeks one and eight with high-energy kickoff and closing parties, then fill weeks two through seven with two crafts, two STEM workshops, one author visit, and one themed movie afternoon, which keeps the calendar varied without overwhelming volunteer or staff resources.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "We have a $3,500 budget for those events. Does that seem workable for eight weeks?",
+      "assistant_message": "At $3,500 across eight events, you're working with roughly $437 per event, which is tight but doable if you lean on community partnerships. Local STEM educators or university student groups will often run workshops for free or for a small stipend under $100, and many children's authors charge between $150 and $300 for a library visit, leaving meaningful room in each week's allocation for materials and light refreshments.",
+      "gold_parents": [
+        "t27"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "We're also considering hiring a part-time program coordinator just for the summer. What hours and pay rate would be typical?",
+      "assistant_message": "For a summer reading program of this scale, a part-time coordinator typically works 15 to 20 hours per week at a rate between $18 and $24 per hour depending on your region and the candidate's experience. Over an eight-week program that comes to roughly 120 to 160 total hours, so your all-in labor cost would land somewhere between $2,160 and $3,840 before any employer taxes or benefits, which is worth factoring into your overall program budget alongside the events spend.",
+      "gold_parents": [
+        "t28"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t30",
+      "turn_index": 29,
+      "user_message": "How does Hartwell Academy handle the school day? We have an early commute to manage.",
+      "assistant_message": "Hartwell Academy runs a six-period day, with the school day starting at 8:30 AM and finishing at 3:20 PM. There is a 50-minute lunch break at 12:30 PM and two 15-minute breaks in the morning and afternoon. Registration begins at 8:20 AM, so students are expected on site before the official start time.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t31",
+      "turn_index": 30,
+      "user_message": "What questions should we be asking about the pastoral care at each school? Our daughter has mild anxiety and we want to make sure there's proper support.",
+      "assistant_message": "It's worth asking whether each school has a dedicated school counsellor on site every day, or only part-time. You should also ask how form tutors are trained to identify signs of anxiety, and what the referral pathway looks like when a student needs more than classroom support.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t32",
+      "turn_index": 31,
+      "user_message": "Northgate said they have a full-time counsellor plus a learning mentor who works specifically with students with anxiety and low-level mental health needs.",
+      "assistant_message": "That sounds like a solid pastoral structure. Having both a counsellor and a specialist learning mentor means your daughter would have two distinct points of contact depending on whether her needs are more emotional or more academic in nature, which can make a real difference day to day.",
+      "gold_parents": [
+        "t31"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t33",
+      "turn_index": 32,
+      "user_message": "Riverside only has a part-time counsellor who comes in on Tuesdays and Thursdays. Does that seem like a gap?",
+      "assistant_message": "It could be, particularly on days when she's struggling and the counsellor isn't available. It would be worth asking Riverside who covers pastoral support on the other three days, and whether form tutors or a head of year have any formal mental health first aid training to bridge those gaps.",
+      "gold_parents": [
+        "t32"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t34",
+      "turn_index": 33,
+      "user_message": "I want to tie the field journal rubric directly to the point-count data collection so students are graded as one integrated assignment rather than two separate ones. If a student's data accuracy score is below 30 out of 40, their reflection score gets capped at 20 out of 35 regardless of writing quality.",
+      "assistant_message": "That interdependency creates a strong incentive for rigorous data collection before students even sit down to write. The cap mechanic—reflection capped at 20 out of 35 when data accuracy falls below 30 out of 40—means a student cannot coast on eloquent writing while producing sloppy field records. You'll want to document this rule explicitly in the rubric so it survives any grade appeals, and it may be worth flagging it to parents at the semester kickoff night.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t35",
+      "turn_index": 34,
+      "user_message": "Right, and I'm thinking that a student who hits the data accuracy cap situation but still turns in all 8 required visits will get a 'completion credit' worth 5 bonus points added to their total journal score. Does that seem fair?",
+      "assistant_message": "A 5-point completion credit for fulfilling all 8 visits even under the cap is a reasonable way to reward persistence and attendance without undermining the accuracy incentive. It means a capped student's maximum journal total would be 20 (capped reflection) + 40 (full data accuracy, hypothetically) + 25 (sketch) + 5 (bonus) = 90, which still distinguishes them from a fully proficient student. Just make sure the bonus is framed as an attendance-and-effort recognition rather than a content grade, to keep your grading defensible.",
+      "gold_parents": [
+        "t34"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t36",
+      "turn_index": 35,
+      "user_message": "And what about Greystone High's school day timing?",
+      "assistant_message": "Greystone High starts later than many local schools, with the school day beginning at 9:00 AM and ending at 3:45 PM. This is based on a five-period day, with each lesson running for 60 minutes. Registration is at 8:55 AM, so there's a little more flexibility in the morning compared to schools with earlier starts.",
+      "gold_parents": [
+        "t30"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t37",
+      "turn_index": 36,
+      "user_message": "What are the age brackets we should use for dividing the reading levels? We want to make sure the book lists are age-appropriate.",
+      "assistant_message": "A common approach for public library summer programs is to use three tiers: early readers ages 4–6, middle readers ages 7–9, and independent readers ages 10–12. You could also add a teen tier for ages 13–17 if your program extends that high.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t38",
+      "turn_index": 37,
+      "user_message": "We do want to include teens. Should the teen tier have a separate reading log format from the younger kids?",
+      "assistant_message": "Yes, a separate log format for teens usually works better — they tend to respond well to tracking minutes or pages read rather than just book counts, which can feel more juvenile. You might also include a short reflection prompt or rating field to keep older readers engaged.",
+      "gold_parents": [
+        "t37"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t39",
+      "turn_index": 38,
+      "user_message": "That makes sense. How many minutes of reading per day would be a reasonable goal for the teen tier?",
+      "assistant_message": "A target of 30 minutes per day is widely recommended for teens by reading advocacy groups, and it aligns with what many school summer programs suggest to prevent learning loss. Over an 8-week program, that adds up to roughly 28 hours of reading, which is an achievable and meaningful goal.",
+      "gold_parents": [
+        "t38"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t40",
+      "turn_index": 39,
+      "user_message": "We're thinking of running the program for exactly 8 weeks, from June 16 to August 8. Does that timeline work with typical school calendars?",
+      "assistant_message": "June 16 to August 8 is a strong window — most schools in the U.S. let out by mid-June and resume after Labor Day in early September, so that 8-week span captures the heart of summer break. It also gives you a comfortable buffer before back-to-school shopping season pulls families' attention away from library activities.",
+      "gold_parents": [
+        "t39"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t41",
+      "turn_index": 40,
+      "user_message": "Does Greystone High have a swimming team that competes externally?",
+      "assistant_message": "Yes, Greystone High fields a competitive swimming team that participates in the County Schools Swimming League. The team competes at regional level and won the Under-16 County Championship in both 2022 and 2023. The school's head of PE, Mr. Darren Okafor, coaches the squad personally.",
+      "gold_parents": [
+        "t26"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t42",
+      "turn_index": 41,
+      "user_message": "We're also looking at the Elmsworth Civic Auditorium for another stop on the tour. What can you tell me about it?",
+      "assistant_message": "Elmsworth Civic Auditorium is a larger venue on Parade Street in Elmsworth town centre, with a seating capacity of 780 and a grand pipe organ that choral groups can arrange to use for an additional hire fee. It's owned by the local council and managed by a team led by events coordinator Paul Renwick. The auditorium hosts roughly 120 events per year and has a well-regarded reputation for community and touring performances.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t43",
+      "turn_index": 42,
+      "user_message": "Does Elmsworth have good dressing room facilities for a choir our size? We have about 45 singers.",
+      "assistant_message": "Elmsworth Civic Auditorium has three dedicated dressing rooms backstage, with the largest accommodating up to 35 people and the other two fitting around 15 each, so 45 singers would spread comfortably across all three. Each room has its own mirror stations, coat rails, and a shared adjoining shower block. Paul Renwick has mentioned that choral groups often use the two smaller rooms for section warm-ups as well.",
+      "gold_parents": [
+        "t42"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t44",
+      "turn_index": 43,
+      "user_message": "Does Hartwell also have sixth-form requirements around attendance or behaviour records?",
+      "assistant_message": "Yes, Hartwell Academy adds a non-academic condition: applicants from other schools must provide a reference confirming fewer than 8 unauthorised absences in Year 10 and Year 11 combined. Internal students are assessed on the same threshold but via their own pastoral records. Any fixed-term exclusion in Years 10 or 11 automatically triggers a review panel before an offer can be made.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t45",
+      "turn_index": 44,
+      "user_message": "We also need to figure out the team's travel situation. We have 14 members and two mentors going to the competition, and the school van only seats 12.",
+      "assistant_message": "With 16 people total and only 12 seats in the van, you'll need to arrange additional transportation for at least 4 people. Options include a second school vehicle, parent carpools, or renting a passenger van. Make sure you get the necessary permission slips and insurance documentation sorted well in advance.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t46",
+      "turn_index": 45,
+      "user_message": "For the travel logistics, do we need the school's insurance certificate to reserve a rental van?",
+      "assistant_message": "Yes, most rental companies require a certificate of insurance when a school organization is renting a vehicle for an official trip. You'll typically need to contact your school's business office or district risk management department to obtain that certificate. Give them at least two weeks' notice since processing can take time, and confirm whether the rental company needs to be listed as an additional insured on the policy.",
+      "gold_parents": [
+        "t45"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t47",
+      "turn_index": 46,
+      "user_message": "What is the annual fee for using Greystone's Sports Complex for community members outside the school?",
+      "assistant_message": "For community members, Greystone Sports Complex offers an annual membership at £480 per adult per year, or £320 for students and concessions. The complex is open to the public on weekday evenings after 6:00 PM and throughout the weekend from 8:00 AM to 8:00 PM. Booking for lane swimming must be made at least 24 hours in advance through the school's online portal.",
+      "gold_parents": [
+        "t41"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t48",
+      "turn_index": 47,
+      "user_message": "The £150–£250 range is quite wide. What drives the cost toward the higher end?",
+      "assistant_message": "The main driver is whether the school requires branded, supplier-exclusive items — a blazer that can only be bought from one approved retailer often costs £55–£75 on its own, compared to a generic one from a supermarket that might be £15–£20. Schools that mandate logoed PE kit, a specific branded sports bag, and formal shoes from a named supplier can push the total well past £200 before you've bought stationery. Academy chains and schools with a strong uniform identity tend to sit at the higher end of that range.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t49",
+      "turn_index": 48,
+      "user_message": "Is there any legal requirement for schools to keep uniform costs reasonable?",
+      "assistant_message": "Yes — since November 2021, the UK government's statutory guidance on school uniforms requires governing bodies in England to ensure uniform costs are reasonable and to have regard to value for money. The guidance specifically states that schools must avoid requiring items that can only be bought from a single expensive supplier, and it recommends that branded items be kept to a minimum. Ofsted can consider uniform affordability during inspections, and parents can raise concerns formally with the governing body if they believe the policy breaches the statutory guidance.",
+      "gold_parents": [
+        "t48"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t50",
+      "turn_index": 49,
+      "user_message": "Would it be worth contacting both schools to ask for an itemised uniform price list before making our decision?",
+      "assistant_message": "Absolutely — schools are expected to publish or provide a full uniform list with indicative prices, and requesting an itemised breakdown is entirely reasonable. Comparing the two lists side by side will show you not just the total cost but how many items are supplier-exclusive versus available on the high street. If one school's list is significantly longer or more restrictive, that's useful practical information alongside all the academic factors.",
+      "gold_parents": [
+        "t49"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t51",
+      "turn_index": 50,
+      "user_message": "I also need to plan a separate unit on soil composition for my 7th graders. They'll be testing soil samples from three different garden beds. What testing sequence would you recommend?",
+      "assistant_message": "For a soil composition unit, I'd recommend a four-stage testing sequence: texture analysis in Session 1, pH measurement in Session 2, nutrient profiling (nitrogen, phosphorus, potassium) in Session 3, and a moisture-retention comparison in Session 4. Students can use the USDA Soil Texture Triangle to classify samples as sandy loam, clay loam, or silt loam based on particle percentages. A reliable field kit like the Rapitest 1662 gives pH readings accurate to within 0.2 units, which is sufficient for 7th-grade precision.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t52",
+      "turn_index": 51,
+      "user_message": "For the soil unit, how many samples per garden bed should the 7th graders collect, and what depth should they dig to?",
+      "assistant_message": "Three core samples per garden bed is the standard for a student-scale study, giving nine total samples across the three beds. Students should collect from the topsoil horizon, which typically means digging to a depth of 15 centimeters — deep enough to capture the O and A horizons where most biological activity occurs. Using a 2.5-centimeter diameter soil probe ensures consistent sample volume, and each core should be air-dried for 24 hours before texture or nutrient testing begins.",
+      "gold_parents": [
+        "t51"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t53",
+      "turn_index": 52,
+      "user_message": "What indicators should 7th graders look for when comparing the nutrient profiles of the three garden beds?",
+      "assistant_message": "Students should focus on three macronutrients: nitrogen (N), phosphorus (P), and potassium (K), reported in parts per million. A healthy vegetable garden bed typically shows nitrogen in the 40–80 ppm range, phosphorus between 30–50 ppm, and potassium between 100–150 ppm using a standard colorimetric test kit. If one bed shows nitrogen above 120 ppm, that signals over-fertilization, while phosphorus below 15 ppm suggests the bed may need amendment before planting. These thresholds come from the Cornell Cooperative Extension soil fertility guidelines for school garden programs.",
+      "gold_parents": [
+        "t52"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t54",
+      "turn_index": 53,
+      "user_message": "What should 7th graders conclude if one garden bed shows consistently low potassium across all three samples?",
+      "assistant_message": "A consistently low potassium reading — below 80 ppm across all three cores from a single bed — is a strong indicator of nutrient leaching, especially in sandy-textured soils that don't retain cations well. Students should cross-reference that bed's texture classification from Session 1: if it was identified as sandy loam on the USDA Soil Texture Triangle, leaching is the most probable explanation. The recommended student conclusion would be to suggest a potassium amendment such as greensand at a rate of 2.2 kilograms per 10 square meters, then retest after 30 days to evaluate uptake. This gives them a complete inquiry cycle: observe, explain, recommend, and verify.",
+      "gold_parents": [
+        "t53"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t55",
+      "turn_index": 54,
+      "user_message": "If our daughter takes the bus, which school would she get to first given that the bus arrives at both areas around 8:40 AM?",
+      "assistant_message": "If the bus arrives at 8:40 AM, Greystone High would be the more comfortable option for that timing, since registration there isn't until 8:55 AM — giving her 15 minutes of buffer. At Hartwell Academy, registration begins at 8:20 AM, which means a bus arriving at 8:40 AM would already be 20 minutes late for registration. She would miss registration entirely and would need a late pass to enter.",
+      "gold_parents": [
+        "t36"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t56",
+      "turn_index": 55,
+      "user_message": "I'm also considering Saltmarsh Creek Wetlands as an alternative site. Do you know much about wetland sampling for high schoolers?",
+      "assistant_message": "Saltmarsh Creek Wetlands would offer a really different ecological context — estuarine and brackish-water species versus the upland or freshwater communities you'd find at a reserve like Ridgeline. For high schoolers, wetland macroinvertebrate sampling is a popular and accessible method, often using kick-nets and Surber samplers to assess biodiversity. The site tends to be especially good for projects focusing on nutrient cycling or the effects of tidal fluctuation on species distribution.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t57",
+      "turn_index": 56,
+      "user_message": "Saltmarsh Creek has a visitor center that rents equipment, right? I think they also do guided educator sessions.",
+      "assistant_message": "Yes, Saltmarsh Creek's visitor center does rent basic field equipment — kick-nets, pH meters, and salinity probes — to school groups for a flat fee of $45 per session. They also offer a two-hour guided educator orientation on the third Saturday of each month, which is designed to help teachers understand the site's ecology before bringing students. Booking for those orientations fills up fast, so early registration is recommended.",
+      "gold_parents": [
+        "t56"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t58",
+      "turn_index": 57,
+      "user_message": "What are the best options for packing fragile artwork for a long-distance move?",
+      "assistant_message": "For long-distance moves, artwork should be wrapped in acid-free tissue paper first, then surrounded by at least two inches of bubble wrap. Mirror and picture boxes — which telescope to fit custom sizes — are ideal, and you should label them 'Fragile – Do Not Stack' on all four sides. For very valuable pieces, a specialty art shipping company like Atelier 4 or Crozier Fine Arts can provide climate-controlled crating and transit insurance valued up to the appraised amount.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t59",
+      "turn_index": 58,
+      "user_message": "What's the best way to transfer school records for the kids when you move to a new state?",
+      "assistant_message": "The most reliable approach is to contact your children's current school registrar in writing at least two weeks before the move and request that official records be sent directly to the new school. Oregon, like most states, participates in the Interstate Compact on Educational Opportunity for Military Children, though for civilian families the process is handled school-district to school-district. You'll typically need to provide proof of residency in the new district — a signed lease or utility bill — before the new school will formally enroll the children and request the records themselves.",
+      "gold_parents": [
+        "t58"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t60",
+      "turn_index": 59,
+      "user_message": "We noticed both schools have a parent-teacher association. Does the PTA at either school run fundraising events in autumn?",
+      "assistant_message": "Both schools do have active PTAs. Hartwell Academy's PTA holds an annual Autumn Fair in October, which last year raised £4,200 for new library resources. Greystone High's PTA organises a sponsored walk each November, with proceeds going toward extracurricular equipment. Both are well-attended and welcome new families to get involved from the start.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t61",
+      "turn_index": 60,
+      "user_message": "Our daughter has 6 GCSEs all at grade 5, including a grade 5 in English and Maths, but she had 10 unauthorised absences across Years 10 and 11 and no exclusions. She wants to do A-levels but also swim competitively, and the bus gets her to both schools at 8:40 AM. Which school is actually viable for her?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t44",
+        "t47",
+        "t55"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t19",
+    "t26",
+    "t30",
+    "t36",
+    "t41",
+    "t44",
+    "t47",
+    "t55"
+  ],
+  "distractor_turn_ids": [
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "t7",
+    "t8",
+    "t9",
+    "t10",
+    "t11",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t20",
+    "t21",
+    "t22",
+    "t23",
+    "t24",
+    "t25",
+    "t27",
+    "t28",
+    "t29",
+    "t31",
+    "t32",
+    "t33",
+    "t34",
+    "t35",
+    "t37",
+    "t38",
+    "t39",
+    "t40",
+    "t42",
+    "t43",
+    "t45",
+    "t46",
+    "t48",
+    "t49",
+    "t50",
+    "t51",
+    "t52",
+    "t53",
+    "t54",
+    "t56",
+    "t57",
+    "t58",
+    "t59",
+    "t60"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer identifies that Hartwell Academy's sixth-form attendance requirement is fewer than 8 unauthorised absences in Years 10 and 11 combined, and that the daughter's 10 unauthorised absences disqualify her from a standard offer at Hartwell.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer identifies that Greystone High's registration is at 8:55 AM, making a bus arrival at 8:40 AM viable, whereas Hartwell's registration at 8:20 AM means the 8:40 AM bus makes her late.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer identifies that Greystone High has a competitive swimming team that participates in the County Schools Swimming League, supporting the daughter's goal of competitive swimming.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not cite PTA fundraising amounts or activities (e.g., the £4,200 raised by Hartwell's Autumn Fair or Greystone's sponsored walk) as a factor in the school choice recommendation.",
+      "required": true
+    }
+  ],
+  "notes": "The three gold evidence turns are t6 (Hartwell's attendance threshold of fewer than 8 unauthorised absences), t8 (registration times making Hartwell inaccessible by the 8:40 AM bus), and t5 (Greystone's competitive swimming team). The distractor is t9 (PTA fundraising details), which is plausible school context but irrelevant to viability.\n\nReference answer: Greystone High is the only viable option for your daughter. Hartwell Academy requires fewer than 8 unauthorised absences in Years 10 and 11 combined for sixth-form entry, and her 10 unauthorised absences would prevent her from receiving a standard offer there. On top of that, Hartwell's registration starts at 8:20 AM, so the 8:40 AM bus would already make her late every day, whereas Greystone's registration is at 8:55 AM, giving her a comfortable 15-minute buffer. Greystone also has a competitive swimming team that competes in the County Schools Swimming League, which aligns well with her goal of swimming competitively.",
+  "evidence_note": null,
+  "premise": "a family choosing between two secondary schools",
+  "evidence_spans": null,
+  "benchmark_version": "1.1-length-ablation",
+  "length_class": "spliced_60"
+}

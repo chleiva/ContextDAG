@@ -1,0 +1,220 @@
+{
+ "target": "three_way_join_006",
+ "family": "three_way_join",
+ "base_history": 8,
+ "gold_closure": [
+  "t1",
+  "t2",
+  "t3",
+  "t4",
+  "t5",
+  "t6",
+  "t8"
+ ],
+ "gold_entities": [
+  "1,000,000",
+  "340",
+  "48",
+  "480",
+  "50",
+  "52",
+  "54",
+  "78",
+  "day",
+  "day one",
+  "day two",
+  "greenway",
+  "greenway coach hire",
+  "spring",
+  "the first day",
+  "the first night",
+  "the full 54",
+  "the hartwell community center"
+ ],
+ "query_entities": [
+  "day one"
+ ],
+ "donors_rejected_by_exclusion": 22,
+ "sufficient_to_60": true,
+ "chosen": [
+  {
+   "donor": "ambiguous_reference_002#0",
+   "turns": 2,
+   "cosine": 0.6152
+  },
+  {
+   "donor": "two_branch_join_007#0",
+   "turns": 2,
+   "cosine": 0.4731
+  },
+  {
+   "donor": "two_branch_join_010#0",
+   "turns": 2,
+   "cosine": 0.4389
+  },
+  {
+   "donor": "three_way_join_003#0",
+   "turns": 3,
+   "cosine": 0.3946
+  },
+  {
+   "donor": "two_branch_join_008#0",
+   "turns": 1,
+   "cosine": 0.359
+  },
+  {
+   "donor": "two_branch_join_009#0",
+   "turns": 2,
+   "cosine": 0.3323
+  },
+  {
+   "donor": "new_root_008#0",
+   "turns": 5,
+   "cosine": 0.2786
+  },
+  {
+   "donor": "compound_turn_005#0",
+   "turns": 4,
+   "cosine": 0.2508
+  },
+  {
+   "donor": "join_then_split_010#1",
+   "turns": 2,
+   "cosine": 0.2507
+  },
+  {
+   "donor": "topic_fork_010#0",
+   "turns": 3,
+   "cosine": 0.2487
+  },
+  {
+   "donor": "join_then_split_004#1",
+   "turns": 1,
+   "cosine": 0.2457
+  },
+  {
+   "donor": "join_then_split_001#1",
+   "turns": 1,
+   "cosine": 0.2408
+  },
+  {
+   "donor": "knowledge_update_012#0",
+   "turns": 3,
+   "cosine": 0.2399
+  },
+  {
+   "donor": "ambiguous_reference_007#0",
+   "turns": 2,
+   "cosine": 0.2231
+  },
+  {
+   "donor": "join_then_split_001#0",
+   "turns": 2,
+   "cosine": 0.2231
+  },
+  {
+   "donor": "three_way_join_001#0",
+   "turns": 1,
+   "cosine": 0.2209
+  },
+  {
+   "donor": "resume_002#0",
+   "turns": 3,
+   "cosine": 0.2166
+  },
+  {
+   "donor": "join_then_split_010#0",
+   "turns": 2,
+   "cosine": 0.2161
+  },
+  {
+   "donor": "three_way_join_008#0",
+   "turns": 2,
+   "cosine": 0.2013
+  },
+  {
+   "donor": "ambiguous_reference_004#0",
+   "turns": 2,
+   "cosine": 0.1973
+  },
+  {
+   "donor": "topic_fork_009#0",
+   "turns": 2,
+   "cosine": 0.1968
+  },
+  {
+   "donor": "join_then_split_006#1",
+   "turns": 2,
+   "cosine": 0.1924
+  },
+  {
+   "donor": "knowledge_update_001#0",
+   "turns": 2,
+   "cosine": 0.1893
+  },
+  {
+   "donor": "semantic_decoy_003#0",
+   "turns": 4,
+   "cosine": 0.1853
+  }
+ ],
+ "used": {
+  "30": [
+   "ambiguous_reference_002#0",
+   "two_branch_join_007#0",
+   "two_branch_join_010#0",
+   "three_way_join_003#0",
+   "two_branch_join_008#0",
+   "two_branch_join_009#0",
+   "new_root_008#0",
+   "compound_turn_005#0",
+   "join_then_split_010#1"
+  ],
+  "60": [
+   "ambiguous_reference_002#0",
+   "two_branch_join_007#0",
+   "two_branch_join_010#0",
+   "three_way_join_003#0",
+   "two_branch_join_008#0",
+   "two_branch_join_009#0",
+   "new_root_008#0",
+   "compound_turn_005#0",
+   "join_then_split_010#1",
+   "topic_fork_010#0",
+   "join_then_split_004#1",
+   "join_then_split_001#1",
+   "knowledge_update_012#0",
+   "ambiguous_reference_007#0",
+   "join_then_split_001#0",
+   "three_way_join_001#0",
+   "resume_002#0",
+   "join_then_split_010#0",
+   "three_way_join_008#0",
+   "ambiguous_reference_004#0",
+   "topic_fork_009#0",
+   "join_then_split_006#1",
+   "knowledge_update_001#0",
+   "semantic_decoy_003#0"
+  ]
+ },
+ "actual_lengths": {
+  "30": 31,
+  "60": 63
+ },
+ "preflight": {
+  "oracle_hash_equal": true,
+  "checklist_query_closure_identical": true,
+  "l30_subsequence_of_l60": true,
+  "base_subsequence_of_l60": true,
+  "oracle_tokens": 639,
+  "full_tokens": {
+   "base": 736,
+   "30": 3597,
+   "60": 7758
+  }
+ },
+ "lengths_built": [
+  30,
+  60
+ ]
+}

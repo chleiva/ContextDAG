@@ -1,0 +1,386 @@
+{
+  "scenario_id": "three_way_join_005__L30",
+  "family": "three_way_join",
+  "label": "JOIN",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "What's the typical liability insurance requirement for a sailing club with about 200 members?",
+      "assistant_message": "For a recreational sailing club of that size, most insurers and marina landlords require a minimum of $1 million per occurrence in general liability coverage, with many now asking for $2 million aggregate. You should also look into a specific watercraft liability endorsement, since general policies sometimes exclude vessels under club management. Consulting a marine insurance broker who specializes in yacht clubs will give you the most accurate picture for your jurisdiction.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "We're finalizing the age brackets for the summer reading program. Can you help us think through how to divide participants into groups?",
+      "assistant_message": "A common structure for library summer reading programs is three tiers: Early Readers (ages 4–7), Middle Readers (ages 8–12), and Teen Readers (ages 13–17). Each tier benefits from distinct prize structures and reading-log formats tailored to their developmental stage. Would you like to go with something like that, or do you need a different breakdown?",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "We also need to figure out the team's travel situation. We have 14 members and two mentors going to the competition, and the school van only seats 12.",
+      "assistant_message": "With 16 people total and only 12 seats in the van, you'll need to arrange additional transportation for at least 4 people. Options include a second school vehicle, parent carpools, or renting a passenger van. Make sure you get the necessary permission slips and insurance documentation sorted well in advance.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "For the travel logistics, do we need the school's insurance certificate to reserve a rental van?",
+      "assistant_message": "Yes, most rental companies require a certificate of insurance when a school organization is renting a vehicle for an official trip. You'll typically need to contact your school's business office or district risk management department to obtain that certificate. Give them at least two weeks' notice since processing can take time, and confirm whether the rental company needs to be listed as an additional insured on the policy.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "What's a reasonable per-book prize budget for a program like this?",
+      "assistant_message": "Many public libraries allocate around $2.50 per participant per completed reading milestone, with a cap of five milestones per participant over the summer. That puts the maximum prize spend at $12.50 per child. Bulk purchasing from vendors like Scholastic or Oriental Trading can help stretch that budget further.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "For our restaurant reservation platform Tableaux, we're seeing a 71% drop-off rate at the account creation screen, specifically on the step where users enter their phone number for SMS verification.",
+      "assistant_message": "A 71% abandonment at SMS verification is a well-documented friction point in reservation platforms. The main culprits are users not wanting to share a phone number this early and SMS delivery delays that cause timeout errors. Tableaux could consider offering email-based verification as a fallback option, and A/B tests in the hospitality SaaS space have shown that adding a 'Why we need this' tooltip at that step can reduce drop-off to roughly 29–34%.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "For Tableaux we also see that users who do complete SMS verification still abandon at 52% before finishing profile setup — they drop off at the cuisine preference selection on step 3 of 5.",
+      "assistant_message": "A 52% abandonment at cuisine preference selection on step 3 of 5 suggests that users perceive it as mandatory gatekeeping rather than personalization. Making that screen entirely skippable with a 'Set up later' option is the most reliable quick fix — Tableaux's competitors in the OpenTable and Resy space have reported a 40% reduction in profile-setup abandonment after making preference screens optional. You could also reduce the number of cuisine categories displayed from however many you currently show down to a curated list of 8–10 to lower decision fatigue.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "What day-30 retention should Tableaux realistically target after fixing the SMS and profile-setup issues?",
+      "assistant_message": "Restaurant reservation platforms operate on fundamentally different engagement rhythms than daily-use apps, so day-30 retention benchmarks are lower — a realistic target for Tableaux after fixing onboarding friction would be 14–19%. The reference point here is Resy's 2021 mobile relaunch, which improved day-30 retention from 9% to 16% after simplifying account creation to a single email-plus-password step and deferring all preference collection. I'd recommend Tableaux aim for 16% as a primary target, since that aligns with the upper-mid range of the hospitality booking app category.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "We're also running an A/B test for Tableaux's onboarding in their v3.1.0 release. What sample size and test duration make sense there?",
+      "assistant_message": "For Tableaux, to detect a meaningful improvement from the 71% SMS drop-off rate down to a target of roughly 32%, you'd need approximately 900 users per variant at 80% power and a 5% significance level — 1,800 total. Reservation platforms tend to have lower weekly new-user volumes than fitness apps, so if Tableaux is acquiring around 400 new users per week, plan for a 5-week test duration to accumulate enough completions. Unlike daily-use apps, you'll also want to extend your observation window to day-60 rather than day-30 to capture meaningful repeat-booking behavior.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "We're also trying to figure out the program duration. What do most libraries do?",
+      "assistant_message": "The most common window for a library summer reading program is eight weeks, typically running from the second week of June through the first week of August. Some urban libraries extend to ten weeks to align with longer school breaks. The American Library Association's summer programming guidelines specifically cite eight weeks as the standard benchmark.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "How should we handle staff training when the new menu launches? We have 14 servers and 3 bartenders and want everyone ready before opening on the launch day.",
+      "assistant_message": "For a team of 17 front-of-house staff, a structured tasting session the afternoon before launch day is one of the most effective approaches. Having each server and bartender taste every new dish and receive a one-page reference card with flavor descriptors, allergens, and suggested pairings tends to build real confidence. You might also designate two or three senior servers as menu champions who can answer questions on the floor during the first week of service.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "We're planning to hold the tasting on August 31st from 2 PM to 4 PM. Should we pay staff their regular hourly rate for that time or offer a flat stipend?",
+      "assistant_message": "Paying the regular hourly rate is generally the safer choice from a wage-compliance standpoint, since mandatory training time is typically compensable under the Fair Labor Standards Act. A flat stipend can work if it meets or exceeds what the hourly rate would yield for those two hours, but verifying that for each employee's rate adds administrative overhead. Most operators find that simply running it through payroll at the standard rate is the cleanest solution.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "Good point. We also want to print a one-page menu insert for the launch week rather than reprinting the full menu. The insert will highlight three new dishes. What size and stock do you recommend for something like that?",
+      "assistant_message": "A 5-by-7-inch insert on 100 lb gloss cover stock is a popular choice because it feels substantial without overwhelming a standard menu cover pocket. If your menus are leather-bound with a full-page sleeve, bumping up to a 4.25-by-11-inch half-sheet lets you showcase each of the three dishes with a short description and still slip neatly inside. Ordering at least 10 to 15 percent more copies than your expected peak covers for the week gives you a buffer for reprints or damage.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "How many reading minutes per week should participants log to count as 'active' in the program?",
+      "assistant_message": "The standard threshold used by most public libraries is 150 minutes of reading per week to qualify as an active participant for that week. This figure comes from the Every Child Ready to Read initiative, which aligns with school-year reading homework expectations. Participants who log fewer than 150 minutes in a given week typically do not earn a milestone credit for that week.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "I also need to figure out the grading breakdown for the class. Should the project count as a larger portion of their grade than tests?",
+      "assistant_message": "Many project-based ecology teachers weight the semester project at around 40% of the final grade, with unit tests collectively accounting for 30%, lab reports 20%, and participation 10%. This weighting signals to students that sustained fieldwork and analysis matter more than single-exam performance. You can always adjust the percentages to fit your school's grading policy.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "What about late penalties? I want something fair but that still holds students accountable.",
+      "assistant_message": "A common and defensible policy is a 10% deduction per school day late, capped at 50% of the assignment's total points, after which the student still receives some credit for completing the work. You might also build in one no-questions-asked 48-hour extension per semester that students must request before the deadline. This balances accountability with the reality that field projects sometimes face weather or scheduling delays.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "Should I also require students to keep a lab notebook throughout the semester, or is the poster enough documentation?",
+      "assistant_message": "A lab notebook is strongly worth requiring—it documents the process rather than just the final product and is easy to assess with a simple dated-entry check. You could require a minimum of two substantive entries per field day, including raw data tables, observational notes, and a brief reflection on sources of error. Collecting notebooks at the midpoint and end of semester also gives you an early-warning system for students who are falling behind before the poster deadline.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "Should the prize budget cover just books, or other incentives too?",
+      "assistant_message": "The $2.50 per milestone figure is intended to cover all incentive types, not just books — so it can include bookmarks, coupons, small toys, or reading certificates. The key is that the total per-participant spend across all five milestones stays at or below the $12.50 cap. Libraries that exceed this cap tend to see budget overruns by mid-July, which is a common pitfall.",
+      "gold_parents": [
+        "t5"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "We're also reworking the paywall. It currently appears after step 5 and offers a 7-day free trial at $9.99/month after that.",
+      "assistant_message": "A paywall at step 5 with a 7-day trial is a fairly standard placement, though the timing relative to perceived value matters a lot. At $9.99/month you're in the mid-tier range for mobile subscriptions, which means the trial window needs to be long enough for users to hit at least two or three 'aha moments' before they're asked to commit. Seven days can work, but only if your core value loop is short enough to demonstrate within the first couple of sessions.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "We tested a 14-day trial and conversion actually dropped from 18% to 12%. So we're sticking with 7 days and $9.99.",
+      "assistant_message": "That's a counterintuitive but well-documented result — longer trials often reduce urgency and lead to users forgetting to cancel rather than actively choosing to subscribe. Your 18% conversion on a 7-day trial at $9.99/month is actually a solid baseline; many apps in the productivity and lifestyle categories benchmark around 10–15%, so you're above average there. Keeping the 7-day trial is the right call given your own data.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "What's the best way to handle the library's social media presence over the summer?",
+      "assistant_message": "For a summer program, posting three to four times per week on platforms like Instagram and Facebook tends to maximize engagement without overwhelming your audience. A content calendar built around themed weeks — such as 'Ocean Week' or 'Space Week' — gives your posts visual coherence. Scheduling tools like Hootsuite or Buffer can automate posts so staff aren't scrambling during busy program days.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "Should we hire a dedicated social media coordinator just for the summer?",
+      "assistant_message": "For a three-month stretch, many libraries opt for a part-time summer communications intern rather than a full coordinator hire, which can cost significantly less — typically around $15–18 per hour for 10 hours per week. This keeps overhead low while still maintaining consistent online presence. A clear content brief handed to the intern at the start of June usually ensures quality stays on track.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "If a participant misses a week of logging, can they make it up?",
+      "assistant_message": "Most programs allow a one-week grace period, meaning a participant can submit the previous week's minutes during the current week without penalty. However, the total number of eligible milestone weeks is capped at the program's full eight-week duration — no extensions are granted beyond the official end date. So a participant who misses two or more weeks without making up the first missed week during the grace period would lose those milestone opportunities permanently.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "We noticed both schools have a parent-teacher association. Does the PTA at either school run fundraising events in autumn?",
+      "assistant_message": "Both schools do have active PTAs. Hartwell Academy's PTA holds an annual Autumn Fair in October, which last year raised £4,200 for new library resources. Greystone High's PTA organises a sponsored walk each November, with proceeds going toward extracurricular equipment. Both are well-attended and welcome new families to get involved from the start.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "The $85–$120 range is helpful. Is a single-day event policy enough, or should we look at an annual volunteer program policy instead?",
+      "assistant_message": "If your garden plans to hold more than three or four volunteer events per year, an annual volunteer program policy is almost always more cost-effective than stacking single-day policies. A typical annual general liability policy for a small nonprofit community garden runs $300–$500 per year through carriers like Philadelphia Insurance Companies or Markel, and it covers all scheduled volunteer activities without requiring you to file a new certificate for each event. You'd still need to issue updated additional-insured certificates to the city for each specific event date, but the underlying coverage stays in place year-round.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "Does the annual policy cover injuries to the volunteers themselves, or just third-party liability?",
+      "assistant_message": "Standard general liability policies cover third-party bodily injury and property damage, meaning a visitor or neighbor who is hurt, but they do not cover injuries to the volunteers themselves while they are working. For volunteer injury coverage you need a separate Volunteer Accident policy, which typically provides medical expense benefits of $5,000–$25,000 per volunteer per incident and costs roughly $150–$250 annually for a small garden program. Some umbrella policies can extend coverage, but you should confirm the scope in writing with your broker before your March 15th event.",
+      "gold_parents": [
+        "t25"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "What platform would you recommend for scheduling those social media posts automatically?",
+      "assistant_message": "Buffer is often the top recommendation for small nonprofit or public-sector organizations because its free tier allows up to ten scheduled posts per channel, which is usually sufficient for a library's needs. Hootsuite's free tier was reduced significantly in 2023, making Buffer the more practical no-cost option now. For a summer-only campaign, paying for a premium tier is rarely justified.",
+      "gold_parents": [
+        "t22"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "For the Teen Readers bracket specifically, is there a recommended minimum age cutoff we should enforce strictly?",
+      "assistant_message": "Yes — for Teen Readers, the recommended minimum is age 13, and libraries are advised to enforce this strictly because teen programming often involves different vendor contracts, content ratings for reading lists, and grant eligibility rules that specify the 13–17 age range. The Institute of Museum and Library Services (IMLS) grant category for youth programming, for instance, distinguishes children (under 13) from teens (13–17) as separate beneficiary groups. Mixing age groups across that boundary can jeopardize grant reporting compliance.",
+      "gold_parents": [
+        "t2"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "I want to tie the field journal rubric directly to the point-count data collection so students are graded as one integrated assignment rather than two separate ones. If a student's data accuracy score is below 30 out of 40, their reflection score gets capped at 20 out of 35 regardless of writing quality.",
+      "assistant_message": "That interdependency creates a strong incentive for rigorous data collection before students even sit down to write. The cap mechanic—reflection capped at 20 out of 35 when data accuracy falls below 30 out of 40—means a student cannot coast on eloquent writing while producing sloppy field records. You'll want to document this rule explicitly in the rubric so it survives any grade appeals, and it may be worth flagging it to parents at the semester kickoff night.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t30",
+      "turn_index": 29,
+      "user_message": "Right, and I'm thinking that a student who hits the data accuracy cap situation but still turns in all 8 required visits will get a 'completion credit' worth 5 bonus points added to their total journal score. Does that seem fair?",
+      "assistant_message": "A 5-point completion credit for fulfilling all 8 visits even under the cap is a reasonable way to reward persistence and attendance without undermining the accuracy incentive. It means a capped student's maximum journal total would be 20 (capped reflection) + 40 (full data accuracy, hypothetically) + 25 (sketch) + 5 (bonus) = 90, which still distinguishes them from a fully proficient student. Just make sure the bonus is framed as an attendance-and-effort recognition rather than a content grade, to keep your grading defensible.",
+      "gold_parents": [
+        "t29"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t31",
+      "turn_index": 30,
+      "user_message": "If a 13-year-old joins the Teen Readers group and participates actively every week without missing any, what is the maximum total dollar value in prizes they could earn by the end of the program, and what does 'active every week' actually require of them in terms of logged minutes?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t28",
+        "t23",
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t2",
+    "t5",
+    "t10",
+    "t14",
+    "t18",
+    "t23",
+    "t28"
+  ],
+  "distractor_turn_ids": [
+    "t1",
+    "t3",
+    "t4",
+    "t6",
+    "t7",
+    "t8",
+    "t9",
+    "t11",
+    "t12",
+    "t13",
+    "t15",
+    "t16",
+    "t17",
+    "t19",
+    "t20",
+    "t21",
+    "t22",
+    "t24",
+    "t25",
+    "t26",
+    "t27",
+    "t29",
+    "t30"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states the maximum prize value is $12.50 (5 milestones × $2.50 per milestone).",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states that 'active every week' requires logging at least 150 minutes of reading per week.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer correctly identifies that the program runs 8 weeks, meaning there are 8 weeks in which the participant must log 150+ minutes to remain active throughout.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not reference the social media budget, intern hourly rate ($15–18/hour), or Buffer/Hootsuite scheduling tools, as those are irrelevant distractor details.",
+      "required": true
+    }
+  ],
+  "notes": "t1 and t10 together establish the Teen Readers age bracket (13–17, minimum age 13 strictly enforced); t3 and t8 establish the 8-week duration and 150-minutes-per-week activity threshold; t2 and t5 establish the $2.50 per milestone / 5 milestones / $12.50 cap prize structure. t6, t7, and t9 form the distractor branch about social media and are entirely irrelevant to the prize/participation query.\n\nReference answer: A 13-year-old in the Teen Readers group (ages 13–17) who participates actively every week of the 8-week program can earn a maximum of $12.50 in prizes, since there are five milestone credits available at $2.50 each. 'Active every week' means logging at least 150 minutes of reading during each of the program's eight weeks. Since the participant misses no weeks, they are eligible for all five milestone credits and face no gap in their participation record.",
+  "evidence_note": null,
+  "premise": "a city library planning a summer reading program",
+  "evidence_spans": null,
+  "benchmark_version": "1.1-length-ablation",
+  "length_class": "spliced_30"
+}

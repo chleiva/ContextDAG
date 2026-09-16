@@ -1,0 +1,135 @@
+{
+ "target": "new_root_002",
+ "family": "new_root",
+ "base_history": 5,
+ "gold_closure": [],
+ "gold_entities": [],
+ "query_entities": [
+  "75",
+  "ada"
+ ],
+ "donors_rejected_by_exclusion": 8,
+ "sufficient_to_60": true,
+ "chosen": [
+  {
+   "donor": "join_then_split_005#0",
+   "turns": 2,
+   "cosine": 0.2856
+  },
+  {
+   "donor": "semantic_decoy_011#0",
+   "turns": 3,
+   "cosine": 0.2711
+  },
+  {
+   "donor": "topic_fork_010#0",
+   "turns": 3,
+   "cosine": 0.2696
+  },
+  {
+   "donor": "three_way_join_003#0",
+   "turns": 3,
+   "cosine": 0.243
+  },
+  {
+   "donor": "join_then_split_010#1",
+   "turns": 2,
+   "cosine": 0.231
+  },
+  {
+   "donor": "topic_fork_002#0",
+   "turns": 2,
+   "cosine": 0.2229
+  },
+  {
+   "donor": "knowledge_update_006#0",
+   "turns": 4,
+   "cosine": 0.2212
+  },
+  {
+   "donor": "ambiguous_reference_004#0",
+   "turns": 2,
+   "cosine": 0.2208
+  },
+  {
+   "donor": "three_way_join_008#0",
+   "turns": 2,
+   "cosine": 0.2189
+  },
+  {
+   "donor": "new_root_003#0",
+   "turns": 8,
+   "cosine": 0.2163
+  },
+  {
+   "donor": "resume_004#0",
+   "turns": 3,
+   "cosine": 0.2097
+  },
+  {
+   "donor": "knowledge_update_006#1",
+   "turns": 18,
+   "cosine": 0.2066
+  },
+  {
+   "donor": "ambiguous_reference_006#1",
+   "turns": 1,
+   "cosine": 0.2048
+  },
+  {
+   "donor": "compound_turn_015#0",
+   "turns": 2,
+   "cosine": 0.2045
+  }
+ ],
+ "used": {
+  "30": [
+   "join_then_split_005#0",
+   "semantic_decoy_011#0",
+   "topic_fork_010#0",
+   "three_way_join_003#0",
+   "join_then_split_010#1",
+   "topic_fork_002#0",
+   "knowledge_update_006#0",
+   "ambiguous_reference_004#0",
+   "three_way_join_008#0",
+   "new_root_003#0"
+  ],
+  "60": [
+   "join_then_split_005#0",
+   "semantic_decoy_011#0",
+   "topic_fork_010#0",
+   "three_way_join_003#0",
+   "join_then_split_010#1",
+   "topic_fork_002#0",
+   "knowledge_update_006#0",
+   "ambiguous_reference_004#0",
+   "three_way_join_008#0",
+   "new_root_003#0",
+   "resume_004#0",
+   "knowledge_update_006#1",
+   "ambiguous_reference_006#1",
+   "compound_turn_015#0"
+  ]
+ },
+ "actual_lengths": {
+  "30": 36,
+  "60": 60
+ },
+ "preflight": {
+  "oracle_hash_equal": true,
+  "checklist_query_closure_identical": true,
+  "l30_subsequence_of_l60": true,
+  "base_subsequence_of_l60": true,
+  "oracle_tokens": 0,
+  "full_tokens": {
+   "base": 737,
+   "30": 4415,
+   "60": 7130
+  }
+ },
+ "lengths_built": [
+  30,
+  60
+ ]
+}

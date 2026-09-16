@@ -1,0 +1,408 @@
+{
+  "scenario_id": "resume_004__L30",
+  "family": "resume",
+  "label": "RESUME",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We also need to figure out the team's travel situation. We have 14 members and two mentors going to the competition, and the school van only seats 12.",
+      "assistant_message": "With 16 people total and only 12 seats in the van, you'll need to arrange additional transportation for at least 4 people. Options include a second school vehicle, parent carpools, or renting a passenger van. Make sure you get the necessary permission slips and insurance documentation sorted well in advance.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "For the travel logistics, do we need the school's insurance certificate to reserve a rental van?",
+      "assistant_message": "Yes, most rental companies require a certificate of insurance when a school organization is renting a vehicle for an official trip. You'll typically need to contact your school's business office or district risk management department to obtain that certificate. Give them at least two weeks' notice since processing can take time, and confirm whether the rental company needs to be listed as an additional insured on the policy.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "We're finalizing the loan agreements for the traveling textile exhibit and need to confirm the insurance requirements for the Andean pieces. The centerpiece is a pre-Columbian Chancay gauze textile dated to roughly 1200–1450 CE, currently valued at $340,000 by Christie's appraisal from March 2023.",
+      "assistant_message": "That's a significant piece, and insurers will likely require a facility report before approving coverage. For a textile in that value range, most fine-art carriers — AXA Art, Berkley One, and Chubb are the three most commonly used for museum loans — require a minimum wall-to-wall coverage policy with no deductible, meaning coverage begins the moment the object leaves the lending institution's premises. You'll also want to confirm that the policy explicitly covers inherent vice exclusions for aged organic materials, since pre-Columbian textiles are particularly vulnerable to humidity fluctuations during transit.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "The $85–$120 range is helpful. Is a single-day event policy enough, or should we look at an annual volunteer program policy instead?",
+      "assistant_message": "If your garden plans to hold more than three or four volunteer events per year, an annual volunteer program policy is almost always more cost-effective than stacking single-day policies. A typical annual general liability policy for a small nonprofit community garden runs $300–$500 per year through carriers like Philadelphia Insurance Companies or Markel, and it covers all scheduled volunteer activities without requiring you to file a new certificate for each event. You'd still need to issue updated additional-insured certificates to the city for each specific event date, but the underlying coverage stays in place year-round.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "Does the annual policy cover injuries to the volunteers themselves, or just third-party liability?",
+      "assistant_message": "Standard general liability policies cover third-party bodily injury and property damage, meaning a visitor or neighbor who is hurt, but they do not cover injuries to the volunteers themselves while they are working. For volunteer injury coverage you need a separate Volunteer Accident policy, which typically provides medical expense benefits of $5,000–$25,000 per volunteer per incident and costs roughly $150–$250 annually for a small garden program. Some umbrella policies can extend coverage, but you should confirm the scope in writing with your broker before your March 15th event.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "Does the municipal grant require us to have liability insurance in place before we submit, or can we get it after approval?",
+      "assistant_message": "Most municipal community garden grants require proof of liability insurance at the time of application, not just after approval, so you'll want to check the specific program guidelines carefully. Typically a certificate of insurance naming the city as an additional insured is required, and coverage of at least $1 million per occurrence is a common threshold. I'd recommend calling the grants office directly to confirm their exact requirement before you finalize your submission packet.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "The lending institution — the Textile Museum of Lima — has specified that the piece must travel in a climate-controlled crate maintaining 45–55% relative humidity and 65–68°F at all times, and they want a courier to accompany it on every leg. They're also requiring the borrowing venues to carry a minimum of $500,000 in fine-art insurance coverage for that single object, which is above the appraised value.",
+      "assistant_message": "That $500,000 minimum is standard practice for high-profile loans — lenders routinely set the required coverage above appraised value to account for potential appreciation and legal costs. The climate parameters they've specified, 45–55% RH and 65–68°F, align with the American Alliance of Museums' 2019 guidelines for organic archaeological materials, so those numbers will be easy to defend to your venues. The courier requirement will add logistical complexity; you'll need to budget for business-class airfare and hotel for the courier on every transit leg, as most lending agreements for objects above $200,000 stipulate business class as a contractual minimum, not merely a preference.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "What's the typical liability insurance requirement for a sailing club with about 200 members?",
+      "assistant_message": "For a recreational sailing club of that size, most insurers and marina landlords require a minimum of $1 million per occurrence in general liability coverage, with many now asking for $2 million aggregate. You should also look into a specific watercraft liability endorsement, since general policies sometimes exclude vessels under club management. Consulting a marine insurance broker who specializes in yacht clubs will give you the most accurate picture for your jurisdiction.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "Can you help me think through the shipping crates we'll need? The largest piece in the collection is a 19th-century Flemish tapestry measuring 4.2 meters wide by 3.1 meters tall.",
+      "assistant_message": "For a tapestry of those dimensions you'll want a custom-built crate with interior clearance of at least 4.5 meters wide and 3.4 meters tall to allow for padding and frame protection. Many conservators recommend a minimum 10 cm of acid-free foam lining on all sides for textiles of that scale and age.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "The tapestry weighs about 85 kilograms — will standard art freight carriers handle that?",
+      "assistant_message": "85 kilograms is well within the standard capacity for most fine-art freight carriers; companies like Crozier Fine Arts and Masterpiece International routinely handle single textile pieces over 200 kilograms. You'll still want to specify 'white glove' handling and confirm the carrier has climate-controlled vehicles, since temperature fluctuations during transit are a major risk for woven fibers.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "What humidity levels should the crates maintain during transit?",
+      "assistant_message": "For historical textiles, the standard recommendation from the American Institute for Conservation is to maintain relative humidity between 45% and 55% during transit. Fluctuations beyond a 5% swing within any 24-hour period can cause fiber stress, so passive humidity buffering materials like silica gel or Artsorb are commonly packed inside sealed crates.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "We're also trying to decide on the exhibit layout. The first venue, the Field Museum in Chicago, has allocated us Gallery 12, which is roughly 280 square meters.",
+      "assistant_message": "280 square meters is a generous footprint for a textile exhibit — many comparable traveling shows work comfortably in 200 to 250 square meters. With that space you should be able to display large hanging pieces, freestanding cases for folded or flat textiles, and still maintain the 1.5-meter visitor circulation corridors that most accessibility standards require.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "We have 47 artifacts in total. Is that too many for 280 square meters?",
+      "assistant_message": "47 artifacts in 280 square meters works out to roughly 6 square meters per object, which is actually quite comfortable for a textile show where many pieces hang vertically rather than occupying floor space. A common curatorial guideline is to allow at least 3 square meters per object as an absolute minimum, so you have considerable flexibility in how you arrange groupings.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "The lighting plan calls for fiber-optic or LED fixtures only — what lux levels are safe for antique silk?",
+      "assistant_message": "The standard conservation recommendation for light-sensitive textiles such as antique silk is a maximum of 50 lux at the object surface, with an annual light exposure not exceeding 150,000 lux-hours. UV output should be kept below 75 microwatts per lumen, which is easily achievable with modern LED fixtures but should still be verified with a UV meter after installation.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "We're working with a graphic design firm on the interpretive panels. They've proposed using a typeface called Freight Text Pro at 14-point size for the body copy — does that meet accessibility standards?",
+      "assistant_message": "14-point Freight Text Pro is a reasonable choice; the ADA and most museum accessibility guidelines recommend a minimum of 18-point type for primary interpretive text that visitors read while standing at a normal viewing distance of about 45 centimeters. You may want to bump the body copy to 18 or 20 points and reserve 14-point for secondary captions closer to eye level on low-mounted labels.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "The panels will be mounted at 145 centimeters to the center line — is that the right height?",
+      "assistant_message": "145 centimeters to the centerline is the standard recommended mounting height per the Smithsonian Institution's guidelines for interpretive panels and is consistent with ADA requirements, which specify that the centerline of primary text panels should be at approximately 143 to 152 centimeters for standing adults. It also falls within the comfortable sightline range for most wheelchair users when panels are angled slightly forward.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "We need to finalize the exhibit title. The marketing team is proposing 'Threads of Time: Five Centuries of Global Textile Art' — what do you think of that from a curatorial standpoint?",
+      "assistant_message": "It's a strong title — 'Threads of Time' is evocative without being overly literal, and specifying 'Five Centuries' immediately tells visitors the temporal scope, which helps set expectations. The phrase 'Global Textile Art' is broad enough to encompass your diverse collection while signaling that the show goes beyond a single regional tradition, which should help with international venue interest.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "The exhibit catalog will be 128 pages with full-color photography. We're printing 3,000 copies for the first venue — does that seem like the right print run?",
+      "assistant_message": "3,000 copies for an opening venue is a fairly standard initial print run for a mid-scale traveling exhibit catalog. If the Field Museum averages around 1.5 million annual visitors and your exhibit runs for several weeks, you might sell between 500 and 1,200 catalogs depending on pricing and placement, so 3,000 gives you enough to supply subsequent venues without a costly reprint.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "We're pricing the catalog at $45. Is that in line with comparable museum publications?",
+      "assistant_message": "$45 is squarely within the typical range for a 128-page full-color hardcover museum catalog — similar publications from the Metropolitan Museum of Art and the Art Institute of Chicago generally retail between $35 and $65 depending on page count and production quality. If your catalog includes scholarly essays by named curators or conservators, pricing toward the upper end of that range is well justified.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "Speaking of essays, we've commissioned Dr. Amara Osei from the Victoria and Albert Museum to write the lead essay on West African kente cloth. She's asking for a 5,000-word limit — is that standard?",
+      "assistant_message": "5,000 words is on the longer side for a catalog essay but entirely appropriate for a lead scholarly contribution, particularly on a topic as rich as kente cloth traditions. Many major museum catalogs reserve 4,000 to 6,000 words for the anchor essay and ask contributing scholars to keep secondary essays to 2,000 to 3,000 words to maintain a balance between depth and readability.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "We're also planning a public programming series to accompany the exhibit. The first event is a weaving demonstration by master weaver Kofi Mensah on March 8th.",
+      "assistant_message": "A live weaving demonstration in the first week of the exhibit is an excellent way to draw early attendance and generate social media coverage. You'll want to confirm with the Field Museum's events team that Gallery 12 or an adjacent space can accommodate an audience of at least 50 to 80 people comfortably, and that Kofi Mensah's loom and materials can be set up without interfering with the artifact display.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "The museum's event capacity for that space is 120 people. We're thinking of charging $25 per ticket for the demonstration.",
+      "assistant_message": "A $25 ticket for a master weaver demonstration is very reasonable and consistent with programming fees at peer institutions — many comparable museum events of that type charge between $20 and $40. With a 120-person capacity you could generate up to $3,000 in ticket revenue per event, which would meaningfully offset programming costs.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "We're also applying for an NEA grant to help fund the tour. The next deadline for the NEA Art Works grant is August 11th of this year.",
+      "assistant_message": "The NEA Art Works grant is a strong fit for a traveling exhibit of this scope — the program regularly funds museum projects with national reach. With an August 11th deadline you'll want to have your final venue list, budget narrative, and letters of support from participating institutions finalized at least three weeks in advance, so targeting a July 18th internal deadline for a complete draft would be prudent.",
+      "gold_parents": [
+        "t22"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "The total project budget is $1.2 million across all four venues. The NEA typically funds up to 50% of project costs — so we could potentially receive $600,000?",
+      "assistant_message": "That's the correct calculation — if your total eligible project costs are $1.2 million and the NEA funds up to 50%, the maximum award would be $600,000. In practice, NEA Art Works grants for museum exhibitions have recently averaged around $100,000 to $200,000, so budgeting conservatively and identifying matching funds from venue partners and corporate sponsors is important.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "The four venues are Chicago, Houston, Seattle, and Philadelphia, in that order. The tour runs from March through November.",
+      "assistant_message": "A nine-month tour across four venues gives you roughly two months at each location, which is a solid run for a traveling textile exhibit. You'll want to build transit time and installation days into the schedule between each venue — typically five to ten days for deinstallation, shipping, and reinstallation, depending on the distance between cities.",
+      "gold_parents": [
+        "t24"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "The Houston venue is the Museum of Fine Arts Houston, and they've requested we arrive no later than May 15th for a May 20th opening.",
+      "assistant_message": "A five-day window between arrival and opening is tight but workable if your installation team is experienced with textile exhibits. You'll want to confirm that the MFAH's receiving dock and gallery prep crew are available immediately on May 15th, and that all hanging hardware and case fittings are pre-fabricated to the MFAH gallery specifications so no custom fabrication is needed on-site.",
+      "gold_parents": [
+        "t25"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "We're also considering adding a children's interactive station where kids can handle reproduction textiles. What materials work best for high-touch reproductions?",
+      "assistant_message": "For high-touch interactive reproductions, tightly woven wool and cotton blends are the most durable and washable options — they can withstand repeated handling and laundering without significant degradation. Avoid loose weaves or pieces with raised pile that can snag, and consider having at least three sets of each reproduction so one can always be in rotation for cleaning while two are in use.",
+      "gold_parents": [
+        "t26"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "Great idea on the rotation. The interactive station will be staffed by two volunteers per shift, with shifts running four hours each.",
+      "assistant_message": "Two volunteers per four-hour shift is a sensible staffing model for an interactive station — one person can manage direct visitor engagement while the other monitors the reproductions and handles any crowd flow issues. You'll want to create a brief volunteer training guide covering the cultural context of each reproduction textile so staff can answer the questions children and parents are most likely to ask.",
+      "gold_parents": [
+        "t27"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "We're also trying to figure out the best way to handle multilingual labeling for the exhibit. Our current visitor demographics show about 28% of attendees at the first two venues are Spanish-speaking.",
+      "assistant_message": "For a 28% Spanish-speaking audience, bilingual English-Spanish labeling on all primary object labels is strongly justified and increasingly considered a baseline accessibility standard. The American Alliance of Museums' 2022 Facing Change initiative explicitly encourages institutions to match label languages to documented community demographics, and many grant-funders, including the NEH, now ask applicants to describe their language access plan. You might consider a tiered approach: full bilingual text on the primary labels, with QR codes linking to extended Spanish-language interpretive content for visitors who want more depth.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t30",
+      "turn_index": 29,
+      "user_message": "That makes sense. We're working with a translation firm called Lengua Viva based in Miami; they quoted us $0.18 per word for standard museum label copy and $0.26 per word for specialized technical or historical terminology. Our current draft label copy runs to about 4,200 words total.",
+      "assistant_message": "With 4,200 words at $0.18 per word for standard copy, you're looking at $756 for that tier. If roughly a third of your copy — say 1,400 words — involves specialized terminology like weaving techniques, dye processes, or archaeological provenance language, that portion at $0.26 per word would come to $364, bringing a rough blended total to around $1,120 before any revision rounds. It's worth asking Lengua Viva whether their quote includes one round of revisions, since museum labels often go through content edits after the initial translation is delivered.",
+      "gold_parents": [
+        "t29"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t31",
+      "turn_index": 30,
+      "user_message": "They confirmed one free revision round is included. We're also thinking about adding an audio guide in Spanish — they quoted a separate rate of $320 per finished audio minute, and we're estimating 22 minutes of total content.",
+      "assistant_message": "At $320 per finished minute for 22 minutes, the audio guide would run $7,040, which is a meaningful addition to your translation budget but very competitive for professional museum audio localization; rates in the industry typically range from $280 to $450 per finished minute depending on studio and talent. That total would bring your combined Spanish-language accessibility budget to roughly $8,160 if you go with the blended label estimate plus the full audio guide. It's worth checking whether any of your venue partners can cost-share on the audio guide, since they'll benefit from it equally.",
+      "gold_parents": [
+        "t30"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t32",
+      "turn_index": 31,
+      "user_message": "For the venues that will be hosting the Chancay textile, what insurance coverage amount do they each need to carry, and what are the climate control specs they'll have to meet?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t3",
+    "t7"
+  ],
+  "distractor_turn_ids": [
+    "t1",
+    "t2",
+    "t4",
+    "t5",
+    "t6",
+    "t8",
+    "t9",
+    "t10",
+    "t11",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t20",
+    "t21",
+    "t22",
+    "t23",
+    "t24",
+    "t25",
+    "t26",
+    "t27",
+    "t28",
+    "t29",
+    "t30",
+    "t31"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer states that each hosting venue must carry a minimum of $500,000 in fine-art insurance coverage for the Chancay textile.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer states the required climate parameters are 45–55% relative humidity and 65–68°F.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer must not mention translation costs, audio guide rates, or any figures from the Lengua Viva quote (e.g., $0.18/word, $0.26/word, $320/minute, $7,040, or $8,160).",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer should note that the $500,000 minimum exceeds the Christie's appraised value of $340,000, explaining this is standard practice.",
+      "required": false
+    }
+  ],
+  "notes": "The key evidence is in t2, which settles the $500,000 insurance minimum and the 45–55% RH / 65–68°F climate specs. Turns t3–t5 are the distractor branch covering translation and audio guide costs from Lengua Viva; a weak answer might import dollar figures or details from those turns, which the negative checklist item guards against.\n\nReference answer: Each venue hosting the Chancay textile must carry a minimum of $500,000 in fine-art insurance coverage for that single object — a figure that exceeds the Christie's appraised value of $340,000, which is standard practice to account for appreciation and legal costs. On the environmental side, every venue must maintain 45–55% relative humidity and a temperature of 65–68°F at all times, in line with the American Alliance of Museums' 2019 guidelines for organic archaeological materials. The lending institution, the Textile Museum of Lima, also requires a courier to accompany the piece on every transit leg, so venues should factor in the logistical and cost implications of that requirement as well.",
+  "evidence_note": null,
+  "premise": "a museum planning a traveling exhibit on textiles",
+  "evidence_spans": null,
+  "benchmark_version": "1.1-length-ablation",
+  "length_class": "spliced_30"
+}

@@ -1,0 +1,454 @@
+{
+  "scenario_id": "three_way_join_002__L30",
+  "family": "three_way_join",
+  "label": "JOIN",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "I've been looking at the lease costs for the Maplewood district location. The landlord is asking $4,200 per month for a 900-square-foot space on Elm Street.",
+      "assistant_message": "That's a fairly specific ask for that neighborhood. At $4,200 per month, you'd be looking at $50,400 annually just in base rent before utilities, insurance, or build-out costs, so it's worth benchmarking against your current location's overhead to see how it compares.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "I'm thinking the tasting menu for the fall launch should pair the butternut squash bisque as the soup course with the salted caramel tart as the dessert course. If I set the tasting menu at $65 per person and project 40 covers on opening night, that's $2,600 in tasting menu revenue to start.",
+      "assistant_message": "A $65 tasting menu with those two dishes as anchors gives you a cohesive autumn narrative — the savory warmth of the bisque leading into the sweet-salty richness of the caramel tart is a classic progression. At 40 covers, $2,600 in projected tasting revenue is a reasonable opening-night target, and it gives you a clear benchmark to measure against actual ticket sales. Just make sure your batch quantities for both the bisque and the tart shells are scaled to cover 40 portions with some buffer, typically 10–15% overage.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "Our head baker said she can only supervise one location herself. Hiring a qualified pastry supervisor for a second site would cost around $52,000 per year in salary.",
+      "assistant_message": "That's a significant fixed labor cost to factor in. A pastry supervisor at $52,000 annually means you'd need the second location to generate enough margin above that salary—plus all other costs—before it contributes anything to overall profit.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "We're also looking at the Elmsworth Civic Auditorium for another stop on the tour. What can you tell me about it?",
+      "assistant_message": "Elmsworth Civic Auditorium is a larger venue on Parade Street in Elmsworth town centre, with a seating capacity of 780 and a grand pipe organ that choral groups can arrange to use for an additional hire fee. It's owned by the local council and managed by a team led by events coordinator Paul Renwick. The auditorium hosts roughly 120 events per year and has a well-regarded reputation for community and touring performances.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "Does Elmsworth have good dressing room facilities for a choir our size? We have about 45 singers.",
+      "assistant_message": "Elmsworth Civic Auditorium has three dedicated dressing rooms backstage, with the largest accommodating up to 35 people and the other two fitting around 15 each, so 45 singers would spread comfortably across all three. Each room has its own mirror stations, coat rails, and a shared adjoining shower block. Paul Renwick has mentioned that choral groups often use the two smaller rooms for section warm-ups as well.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "I pulled our current financials. The original bakery on Hartwell Avenue nets $118,000 per year after all expenses.",
+      "assistant_message": "That's a solid baseline to work from. A net of $118,000 at your existing location gives you a clear benchmark for what a second site would need to achieve to be worth the added complexity and risk of expansion.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "I've been thinking about updating our logo. The designer we used last time charges $850 for a full brand refresh package.",
+      "assistant_message": "That's a reasonable rate for a full brand refresh from an established designer. It might be worth timing any rebrand with a bigger announcement if you do decide to expand, though the decision can be made independently of your growth plans.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "On top of the supervisor salary, we'd also need a part-time counter staff of about two people at the second location. That comes to roughly $28,000 per year combined.",
+      "assistant_message": "So total staffing costs for the second location would be approximately $80,000 per year when you add the $52,000 supervisor salary to the $28,000 for counter staff. That's a substantial labor line before you even account for rent, ingredients, or equipment.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "How do the two schools compare on GCSE results? That's obviously a big factor for us.",
+      "assistant_message": "Comparing headline figures is a good starting point, but you'll want to look at Progress 8 scores rather than just raw attainment, since Progress 8 measures how much value the school adds relative to each pupil's starting point. It's also worth checking the percentage achieving grade 5 or above in both English and Maths, which is the standard 'strong pass' benchmark.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "Northgate's last Ofsted report rated them Outstanding, and their Progress 8 score was +0.41. Riverside was rated Good with a Progress 8 of +0.18.",
+      "assistant_message": "Both positive Progress 8 scores mean both schools are adding value above the national average, which is encouraging. Northgate's +0.41 is notably stronger, though it's worth checking how recent those figures are and whether Riverside has shown an improving trend, since a school on the way up can sometimes outperform a static Outstanding school.",
+      "gold_parents": [
+        "t9"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "The Northgate report is from 2022 and Riverside's is from 2023, so Riverside's is actually more recent.",
+      "assistant_message": "That's a useful detail — Riverside's 2023 rating is more current, so it may better reflect where the school is now. It would be worth checking whether Northgate has had any interim monitoring visits since their 2022 inspection, as Outstanding schools can sometimes go longer between full inspections.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "What subjects does your typical strong secondary school offer at GCSE beyond the core? We want to know if the options are broad enough.",
+      "assistant_message": "A well-rounded GCSE offer usually includes at least one modern foreign language, history, geography, the three separate sciences, design and technology, music, art, drama, and computer science. Schools that also offer vocational options like health and social care or business studies give students more flexibility, particularly those whose strengths lie outside traditional academic subjects.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "Northgate offers 22 GCSE subjects and Riverside offers 17. Is 17 considered limited?",
+      "assistant_message": "Seventeen is on the lower end but not unusually restricted — many good schools operate comfortably in the 16 to 20 range. The more important question is whether Riverside's 17 subjects cover the areas your daughter is interested in, since a smaller offer that includes her preferences is more useful than a larger one that doesn't.",
+      "gold_parents": [
+        "t12"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "She wants to do Drama and Computer Science, and both of those are available at Riverside, so that's reassuring.",
+      "assistant_message": "That's the key thing — the headline number matters less than whether her specific choices are there. If Drama and Computer Science are both on Riverside's timetable, the difference in the overall subject count probably won't affect her directly.",
+      "gold_parents": [
+        "t13"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "She's also keen on sports, and we noticed Northgate has a really impressive sports programme — reminded us of the kind of investment you'd expect from a school charging, say, £1,200 a term for extras.",
+      "assistant_message": "It's not uncommon for schools with strong enrichment fees to channel some of that income into facilities and co-curricular activities, so a well-funded sports programme would fit that picture. It's worth asking Northgate specifically which sports are available, whether they compete in regional leagues, and whether participation in sports teams is included in the standard fee or costs extra.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "Northgate has a 25-metre indoor swimming pool, four tennis courts, and a full-size 3G pitch. Riverside just has a small sports hall and a grass field.",
+      "assistant_message": "That's a significant difference in facilities, particularly the indoor pool and the 3G pitch, which allow year-round training regardless of weather. If sport is a genuine priority for your daughter, Northgate's infrastructure could give her meaningfully more opportunity, though it's still worth asking whether access to those facilities is timetabled for all students or mainly for pupils in elite squads.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "She swims competitively at county level, so the pool is actually a big practical benefit — she could train before school.",
+      "assistant_message": "That changes things considerably — having a 25-metre pool on site means she could potentially train early morning before lessons without the additional travel to a separate leisure centre. It's worth confirming with Northgate whether they have a formal arrangement for competitive swimmers, and whether a coach is present during those early sessions.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "They do have a swimming coach on site three mornings a week starting at 7am. That would fit perfectly with her current training schedule.",
+      "assistant_message": "That's a genuinely compelling practical advantage — three coached sessions a week before school starts, without any extra travel, could make a real difference to her development and remove a lot of logistical pressure from your family. It's the kind of detail that doesn't show up in a prospectus headline but can be decisive.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "What's the typical class size at each school? We've heard mixed things.",
+      "assistant_message": "Average class sizes at secondary level in England tend to run between 25 and 32 pupils, with selective or independent schools often smaller. It's worth asking each school for their actual average rather than their maximum, and also whether sets are used in core subjects, since a top maths set might have 20 pupils while a mixed-ability English class has 30.",
+      "gold_parents": [
+        "t18"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "Northgate said their average is 26 and Riverside said theirs is 29. Both use setting for Maths and English from Year 7.",
+      "assistant_message": "Both averages are reasonable, and the fact that both schools set for Maths and English from Year 7 means your daughter's experience in those core subjects will depend more on which set she's placed in than on the overall class-size average. A three-pupil difference across the school is unlikely to be decisive on its own.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "What should we look for when we do the open day visits next month?",
+      "assistant_message": "Pay attention to how students behave in corridors between lessons — whether they're calm and purposeful is often a better indicator of school culture than anything staff say in a formal presentation. It's also worth asking to see a lesson in progress rather than just the show rooms, and speaking directly to current students without a teacher present to get honest impressions.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "Good idea. We've booked Northgate on the 14th October and Riverside on the 21st October.",
+      "assistant_message": "Having them a week apart is useful — your impressions of Northgate will still be fresh when you visit Riverside, which makes it easier to draw direct comparisons. Try to take notes or photos of anything specific so the details don't blur together by the time you're making the final decision.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "Is there a standard checklist of questions families should ask on school open days?",
+      "assistant_message": "Some of the most useful questions include: what the school's policy is on mobile phones during the day, how they handle bullying and what their typical response timeline is, what support is available for students who fall behind in a subject, and how the school communicates with parents — whether that's through an app, a portal, or letters home. Asking about staff turnover in the last two years can also be revealing.",
+      "gold_parents": [
+        "t22"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "That's helpful. We'll also ask about the sixth form offer, since we want to know if she could stay on for A-levels.",
+      "assistant_message": "That's a sensible thing to investigate early — some families choose a secondary school partly on the strength of its sixth form, since continuity of relationships with teachers can be valuable at A-level. You'll want to ask about the range of A-level subjects, whether the school has any entry requirements for its own sixth form, and what proportion of Year 11 students typically stay on.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "Northgate has a dedicated sixth form building with 340 students currently enrolled. Riverside doesn't have a sixth form at all — students have to move to the local FE college.",
+      "assistant_message": "That's a notable difference if continuity matters to you. A sixth form of 340 is a reasonable size — large enough to offer a decent range of A-level subjects and have peer groups, but not so large that students get lost. The FE college route isn't necessarily worse, but it does mean your daughter would need to make a fresh transition at 16 rather than staying in a familiar environment.",
+      "gold_parents": [
+        "t24"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "The FE college is Westfield College and it's about a 20-minute bus journey from the Riverside catchment area.",
+      "assistant_message": "Twenty minutes is manageable, and many students find the greater independence of an FE college suits them well at 16. It's worth visiting Westfield College separately if Riverside moves up your list, since the quality and subject range there would effectively be part of the Riverside package for the post-16 years.",
+      "gold_parents": [
+        "t25"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "Do schools have to publish their admissions criteria publicly? We're not sure we live close enough to Northgate to get a place.",
+      "assistant_message": "Yes — all state-funded schools in England are legally required to publish their admissions criteria in a School Admissions Policy, which must be on their website and submitted to the local authority each year. For oversubscribed schools the criteria typically prioritise looked-after children first, then siblings, then distance from the school gate, so it's worth checking the last distance offered in the most recent admissions round.",
+      "gold_parents": [
+        "t26"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "Northgate's admissions page says the furthest distance offered last year was 1.3 kilometres and we live 1.1 kilometres away, so we should be within range.",
+      "assistant_message": "That's a relatively comfortable margin — 200 metres inside the furthest-offered distance gives you a reasonable buffer, though it's worth noting that the cut-off distance can shift slightly year on year depending on sibling applications and the size of the cohort. Checking whether you're also in the correct local authority catchment zone is worth confirming before you get too far into planning.",
+      "gold_parents": [
+        "t27"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "The landlord also mentioned the Elm Street lease requires a 3-year minimum commitment with no early exit clause.",
+      "assistant_message": "A 3-year minimum with no exit clause is a meaningful risk factor. Combined with the $4,200 monthly rent, that locks you into at least $151,200 in rent obligations over the lease term regardless of how the second location performs.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t30",
+      "turn_index": 29,
+      "user_message": "If we sign the lease for September 1, 2025 and order the furniture from WorkNest at the same time, could we realistically be fully operational by October 1, 2025? WorkNest told us their lead time is 3 to 4 weeks.",
+      "assistant_message": "With a September 1 lease commencement and a 3-to-4-week lead time from WorkNest, your furniture would arrive between September 22 and September 29, leaving a few days for any IT setup or finishing touches before October 1. That timeline is tight but achievable, provided there are no delays in permitting or build-out work that the landlord is responsible for. It would be worth confirming in writing with WorkNest that they can guarantee delivery within that window once you place the order.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t31",
+      "turn_index": 30,
+      "user_message": "I should mention that figure of $118,000 net is after we already paid ourselves a $45,000 owner's draw this year.",
+      "assistant_message": "That's an important clarification—it means the bakery's true gross profit before owner compensation is $163,000 annually. So the $118,000 net already reflects your personal income from the business, which matters a lot when projecting how a second location would affect your take-home pay.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t32",
+      "turn_index": 31,
+      "user_message": "There's also a space over on Caldwell Avenue we've been eyeing. It's listed by a property management company called Hartwell & Dunn, and it's 950 sq ft at $3,200 a month.",
+      "assistant_message": "Caldwell Avenue at 950 square feet and $3,200 a month works out to about $3.37 per square foot, which is slightly cheaper per square foot than the Renfield Street option. The smaller footprint could be a constraint if you're planning significant in-house production, since you'd have less room for proofing racks and large deck ovens. Hartwell & Dunn is a well-known commercial property manager, so the administrative side of the lease process would likely be straightforward. It really comes down to whether the lower cost justifies the tighter space.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t33",
+      "turn_index": 32,
+      "user_message": "The Caldwell Avenue place is a former sandwich shop, so it already has a Type I hood and a grease trap installed, which would save us on build-out costs.",
+      "assistant_message": "That's a significant advantage — a Type I hood and a grease trap can easily run $15,000 to $25,000 to install from scratch, so inheriting those from the previous tenant is a real cost saving. You'd still want a licensed inspector to verify they meet current health code standards and are sized appropriately for bakery equipment, since a sandwich shop's ventilation needs differ from high-volume oven use. If everything checks out, the Caldwell Avenue space's lower upfront build-out cost could offset the smaller square footage. It's worth getting an HVAC contractor in there before you make a final comparison.",
+      "gold_parents": [
+        "t32"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t34",
+      "turn_index": 33,
+      "user_message": "The designer said the $850 package includes three logo concepts and two rounds of revisions. Does that sound standard?",
+      "assistant_message": "Yes, three initial concepts plus two revision rounds is fairly typical for a mid-range brand refresh package. Some designers offer fewer concepts at that price point, so it's actually a decent scope of work for $850.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t35",
+      "turn_index": 34,
+      "user_message": "She also said the turnaround is four weeks from the deposit. Would we need to budget anything extra for file formats or printing templates?",
+      "assistant_message": "Four weeks is a reasonable turnaround for that scope. You may want to ask specifically whether the deliverables include print-ready vector files and social media variants, as those are sometimes charged separately; budgeting an extra $100 to $200 for an expanded file package is common.",
+      "gold_parents": [
+        "t34"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t36",
+      "turn_index": 35,
+      "user_message": "Given everything we've discussed about the second location, would the Elm Street site actually improve our overall financial position, and how long before we'd realistically break even on the expansion?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t29",
+        "t8",
+        "t31"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t1",
+    "t3",
+    "t6",
+    "t8",
+    "t29",
+    "t31"
+  ],
+  "distractor_turn_ids": [
+    "t2",
+    "t4",
+    "t5",
+    "t7",
+    "t9",
+    "t10",
+    "t11",
+    "t12",
+    "t13",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t20",
+    "t21",
+    "t22",
+    "t23",
+    "t24",
+    "t25",
+    "t26",
+    "t27",
+    "t28",
+    "t30",
+    "t32",
+    "t33",
+    "t34",
+    "t35"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer uses the Elm Street rent of $4,200/month ($50,400/year) and the 3-year minimum lease commitment of $151,200 total rent obligation when assessing the cost or break-even of the second location.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer accounts for total second-location staffing costs of approximately $80,000/year ($52,000 supervisor + $28,000 counter staff).",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer references the original bakery's true gross profit of $163,000/year (the $118,000 net plus the $45,000 owner's draw) as the financial baseline for comparison.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not incorporate the $850 logo/brand refresh cost as a factor in the break-even or financial position analysis.",
+      "required": true
+    }
+  ],
+  "notes": "The three gold evidence facts are: (A) $4,200/month rent with a 3-year no-exit lease from t1/t6; (B) $80,000 total annual staffing cost ($52,000 + $28,000) from t2/t5; (C) $163,000 true gross profit ($118,000 net + $45,000 owner's draw) from t3/t7. The trap is branch D (logo refresh at $850), which is plausible bakery spending but entirely irrelevant to the expansion break-even calculation.\n\nReference answer: The Elm Street location would cost at least $130,400 per year in fixed overhead—$50,400 in rent plus $80,000 in staffing—before ingredients, utilities, or other expenses. Your original bakery generates $163,000 in gross profit (the $118,000 net plus your $45,000 owner's draw), so the second site would need to clear roughly $130,400 in annual costs just to break even, meaning it must produce profit margins comparable to your current location to justify the investment. With the 3-year no-exit lease locking in $151,200 in rent alone, you'd have very limited ability to cut losses if the new site underperforms. Realistically, break-even on the expansion could take two to three years assuming the second location ramps up to match your current store's performance.",
+  "evidence_note": null,
+  "premise": "a small bakery deciding whether to open a second location",
+  "evidence_spans": null,
+  "benchmark_version": "1.1-length-ablation",
+  "length_class": "spliced_30"
+}

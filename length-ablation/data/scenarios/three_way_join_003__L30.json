@@ -1,0 +1,424 @@
+{
+  "scenario_id": "three_way_join_003__L30",
+  "family": "three_way_join",
+  "label": "JOIN",
+  "turns": [
+    {
+      "turn_id": "t1",
+      "turn_index": 0,
+      "user_message": "We also need to sort out the post-race refreshments. A local bakery called Sugarmill has offered to donate 400 assorted muffins and cookies.",
+      "assistant_message": "A donation from Sugarmill is a generous offer and 400 items should cover your runners plus volunteers with some buffer. It's worth confirming what assortment they plan — a mix of muffins and cookies works well for post-race recovery since runners appreciate both savory and sweet options. Make sure to arrange a delivery or pickup time that lands close to the finish window so everything stays fresh.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t2",
+      "turn_index": 1,
+      "user_message": "They'll deliver by 10:00 AM and the assortment will be 250 muffins and 150 cookies. We'll set up the refreshment table near the park's picnic shelter, which is about 30 meters from the finish line.",
+      "assistant_message": "A 10:00 AM delivery from Sugarmill works well assuming your lead runners finish around 45 to 50 minutes after the 8:00 AM start, giving you a comfortable buffer before the refreshment table needs to be fully stocked. The picnic shelter location 30 meters from the finish line is practical — close enough for finishers to walk straight over, but far enough not to crowd the finish chute. Keeping the 250 muffins and 150 cookies separated by type will also speed up the line.",
+      "gold_parents": [
+        "t1"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t3",
+      "turn_index": 2,
+      "user_message": "We're trying to figure out the weight limit for our robot. The rulebook says the robot must weigh no more than 125 pounds including all mechanisms, right?",
+      "assistant_message": "Yes, that's correct for your regional competition. The official rulebook specifies a maximum robot weight of 125 pounds, and that figure includes all onboard mechanisms, batteries, and any game-specific attachments. Exceeding that at inspection means you're disqualified from competing until you bring the robot into compliance.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t4",
+      "turn_index": 3,
+      "user_message": "We're thinking of setting up a combined finish-line and refreshment zone so runners flow directly from crossing the line to getting their food. Would a single 10-meter wide corridor work for both?",
+      "assistant_message": "A 10-meter wide corridor can work for a combined finish-and-refreshment flow, but you'd want to think carefully about pace separation — fast finishers tend to stop abruptly while slower runners are still pushing through. A staggered layout where the refreshment table begins about 5 meters past the timing mat usually prevents bottlenecks. With 350 runners and the Sugarmill table 30 meters from the finish, you have enough linear space to make that stagger comfortable.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t5",
+      "turn_index": 4,
+      "user_message": "That makes sense. We're also thinking of putting up a 4-meter wide inflatable arch over the corridor entrance to mark the transition from the finish chute into the refreshment zone.",
+      "assistant_message": "A 4-meter inflatable arch is a great visual cue to signal to runners that they've cleared the finish chute and can slow down for refreshments. Just verify the arch rental includes ground anchoring hardware suitable for a grass surface, since park ground can be soft in the morning. Positioning it right at the 5-meter stagger point you choose will reinforce the flow direction you're designing for.",
+      "gold_parents": [
+        "t4"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t6",
+      "turn_index": 5,
+      "user_message": "What motor controller are we planning to use for the drivetrain this year?",
+      "assistant_message": "The team decided to go with the REV Robotics SPARK MAX motor controller for the drivetrain this season. It supports both brushed and brushless motors and communicates over CAN bus, which gives you much finer control than PWM. It was chosen partly because the team already has four units from last year's build.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t7",
+      "turn_index": 6,
+      "user_message": "Does the 125-pound limit apply before or after we add the bumpers?",
+      "assistant_message": "The bumpers are actually excluded from the 125-pound weight limit under the regional rulebook. Bumpers are weighed separately and must fall between 15 and 20 pounds on their own. So your robot without bumpers must be at or under 125 pounds at inspection.",
+      "gold_parents": [
+        "t3"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t8",
+      "turn_index": 7,
+      "user_message": "Got it. We also need to think about our autonomous routine. Right now we're planning to use the April Tag vision system to localize the robot. What cameras do teams typically use for that in FTC?",
+      "assistant_message": "The most common camera for AprilTag localization in FTC is the Logitech C920, which is widely supported by the FTC SDK's built-in vision pipeline and runs reliably at 30 frames per second at 1080p. Many teams also use the Logitech C270 as a budget option, though its lower resolution can reduce detection reliability at longer distances. The EasyOpenCV library and the official FTC SDK Vision Portal both support these cameras out of the box, which significantly reduces setup time.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t9",
+      "turn_index": 8,
+      "user_message": "For the autonomous period, how many points can we score if we successfully park in the observation zone versus the ascent zone?",
+      "assistant_message": "In the current FTC season, parking in the observation zone during autonomous earns 3 points, while parking in the ascent zone earns 5 points. The 2-point difference might seem small, but in close qualifier matches where rankings are decided by cumulative ranking points, consistently choosing the higher-value park can matter over a full day of competition. Teams that can reliably complete a scoring task and then navigate to the ascent zone tend to rank notably higher than those who only park.",
+      "gold_parents": [
+        "t8"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t10",
+      "turn_index": 9,
+      "user_message": "What's the current draw limit per motor controller that we need to stay under to avoid tripping the breaker?",
+      "assistant_message": "Each motor controller on the robot is protected by a 40-amp breaker in the power distribution panel. If sustained current through a single channel exceeds 40 amps, the breaker trips and that motor loses power mid-match. For brief peaks, most breakers tolerate up to about 100 amps for under one second before tripping.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t11",
+      "turn_index": 10,
+      "user_message": "I also need to pick out running shoes for this training block. I've been told I overpronate — what kind of shoe should I be looking for?",
+      "assistant_message": "For overpronation, you generally want a stability or motion-control shoe rather than a neutral shoe. Stability shoes include features like a medial post — a denser foam wedge on the inner midsole — that resists inward rolling; well-regarded options include the Brooks Adrenaline GTS 23 and the ASICS Gel-Kayano 30. If your overpronation is severe, a motion-control shoe like the New Balance 860v13 offers even firmer support structures, though most moderate overpronators do fine in a standard stability category.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t12",
+      "turn_index": 11,
+      "user_message": "I think moderate overpronation fits me. Should I go up a half size from my normal shoe size?",
+      "assistant_message": "Yes, going up a half size — or even a full size — is standard advice for running shoes, particularly for marathon training. Your feet swell during long runs, and you want roughly a thumb's width of space between your longest toe and the front of the shoe to prevent black toenails and blisters over high mileage. Most specialty running stores like Fleet Feet do a gait analysis and fit you while you're standing and after a short treadmill run, which is the most reliable way to confirm the right size.",
+      "gold_parents": [
+        "t11"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t13",
+      "turn_index": 12,
+      "user_message": "So if our robot currently weighs 118 pounds without bumpers, how much margin do we have, and can we still add a climbing hook?",
+      "assistant_message": "With a current weight of 118 pounds and a 125-pound limit excluding bumpers, you have exactly 7 pounds of margin to work with. Whether a climbing hook fits depends entirely on how heavy the hook assembly is. As long as the complete robot stays at or below 125 pounds without bumpers, you're within the rules.",
+      "gold_parents": [
+        "t7"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t14",
+      "turn_index": 13,
+      "user_message": "What should I actually be eating the night before a long run? I keep getting conflicting advice about carb loading.",
+      "assistant_message": "True carb loading — the kind used by elite athletes — involves a multi-day protocol of depleting glycogen and then super-compensating with very high carbohydrate intake, typically 8 to 12 grams of carbohydrate per kilogram of body weight per day for two to three days before a race. For a regular training long run, though, a simpler approach works fine: eat a moderate, familiar dinner the night before that's roughly 60 to 65 percent carbohydrates, something like pasta, rice, or potatoes with a lean protein source.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t15",
+      "turn_index": 14,
+      "user_message": "What about the morning of the long run — how far in advance should I eat and what should I eat?",
+      "assistant_message": "Aim to eat your pre-run meal about two to three hours before you start, so your stomach has time to empty and you avoid cramping. A good target is around 1 to 4 grams of carbohydrate per kilogram of body weight, something easily digestible like oatmeal with a banana, white toast with peanut butter, or a bagel with honey. Keep fat and fiber low that morning because both slow gastric emptying and can cause GI distress mid-run.",
+      "gold_parents": [
+        "t14"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t16",
+      "turn_index": 15,
+      "user_message": "Should I be taking any gels or fuel during the long run itself?",
+      "assistant_message": "General guidance is to start taking on fuel for runs lasting longer than 75 to 90 minutes. A common protocol is to take 30 to 60 grams of carbohydrate per hour during the run, usually via gels, chews, or sports drinks. You should practice with whatever fuel you plan to use on race day during your training long runs — never introduce a new product on race day — and aim to take your first gel around the 45-minute mark rather than waiting until you feel depleted.",
+      "gold_parents": [
+        "t15"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t17",
+      "turn_index": 16,
+      "user_message": "How important is hydration during those long runs? I tend to just drink when I'm thirsty.",
+      "assistant_message": "Drinking to thirst is actually endorsed by current sports science consensus, including guidelines from the International Marathon Medical Directors Association, as preferable to scheduled drinking on a fixed interval — over-drinking can cause hyponatremia, which is dangerously low blood sodium. That said, for runs over 90 minutes in warm weather, you should also consider electrolyte replacement, not just plain water, because sweat losses of sodium can average 460 to 1,840 milligrams per liter of sweat depending on the individual. A simple test is to weigh yourself before and after a long run: each pound of body weight lost equals roughly 16 ounces of fluid deficit.",
+      "gold_parents": [
+        "t16"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t18",
+      "turn_index": 17,
+      "user_message": "Is there a good way to tell if I'm properly hydrated going into a run, without testing my blood or anything?",
+      "assistant_message": "The easiest field test is urine color: pale straw yellow, roughly matching the color of lemonade, indicates good hydration, while dark amber signals you need more fluid. Urine that is completely clear can actually indicate over-hydration. Many coaches recommend checking urine color first thing in the morning on long-run days and, if it's dark, drinking 16 to 24 ounces of water or an electrolyte drink in the hour before you head out.",
+      "gold_parents": [
+        "t17"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t19",
+      "turn_index": 18,
+      "user_message": "Coach wants to know what size van we need to rent to transport everything to the competition venue.",
+      "assistant_message": "For a full robotics team transport including the robot, toolboxes, spare parts bins, and team gear, a 15-passenger van typically isn't enough cargo space on its own. Most teams in similar situations rent a 10-foot cargo truck or pair a standard passenger van with a small trailer. You'll want to confirm the venue's loading dock hours before you finalize the rental.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t20",
+      "turn_index": 19,
+      "user_message": "The SPARK MAX — what firmware version should we be running for the competition?",
+      "assistant_message": "For this season's competition, the team should be running SPARK MAX firmware version 1.6.2, which is the latest stable release from REV Robotics. Earlier versions had a known bug where the motor would stall unexpectedly under certain CAN bus load conditions. You can update the firmware using the REV Hardware Client software on any Windows laptop.",
+      "gold_parents": [
+        "t6"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t21",
+      "turn_index": 20,
+      "user_message": "What time zone should we use for event start and end times displayed in-game?",
+      "assistant_message": "The industry standard is to display event times in UTC and then localize them on the client side based on the player's device settings. This avoids confusion during daylight saving transitions and keeps your server-side logic clean. Many studios also show a countdown timer alongside the absolute time so players aren't doing mental math.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t22",
+      "turn_index": 21,
+      "user_message": "Should the event reset at midnight UTC or at a different hour to avoid peak traffic?",
+      "assistant_message": "Midnight UTC often coincides with peak evening hours in North America, which can spike your server load right at reset. A lot of studios shift the reset to 10:00 AM UTC, which lands during off-peak hours globally and still feels like a clean daily boundary. I'd recommend load-testing your reset logic at whatever time you choose before the event goes live.",
+      "gold_parents": [
+        "t21"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t23",
+      "turn_index": 22,
+      "user_message": "What NEO motor are we pairing with the SPARK MAX on the drivetrain?",
+      "assistant_message": "The drivetrain is using the REV NEO 1.1 brushless motor paired with each SPARK MAX. The NEO 1.1 has a free speed of 5,880 RPM and a stall current of 105 amps at 12 volts. It replaced the original NEO in that revision primarily to fix a bearing failure issue that showed up in high-load applications.",
+      "gold_parents": [
+        "t10"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t24",
+      "turn_index": 23,
+      "user_message": "What's the recommended maintenance schedule for a marine diesel engine that's been in service for about the same number of years?",
+      "assistant_message": "A diesel engine with that kind of service life, say a Yanmar 4JH45 or similar 45-horsepower unit, should be on a fairly rigorous schedule. Oil and filter changes are typically recommended every 100 hours or annually, whichever comes first, using 15W-40 marine-grade oil. Injector inspection and impeller replacement are usually due every 500 hours, and a full overhaul including valve clearance checks is recommended around the 2,000-hour mark.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t25",
+      "turn_index": 24,
+      "user_message": "What about the raw water cooling system — how often does that need attention?",
+      "assistant_message": "The raw water impeller in a Yanmar 4JH45 should be replaced every 500 hours or every two years regardless of hours, because the rubber degrades even with minimal use. The heat exchanger zincs should be inspected every 200 hours and replaced when they've lost about 50 percent of their mass. If the engine is operated in saltwater, the entire raw water circuit including the strainer basket should be flushed with fresh water after every outing to prevent accelerated corrosion.",
+      "gold_parents": [
+        "t24"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t26",
+      "turn_index": 25,
+      "user_message": "Is there a break-in procedure if the club installs a brand-new engine?",
+      "assistant_message": "Yes, Yanmar's factory guidelines for the 4JH45 specify a 50-hour break-in period during which you should avoid running the engine above 75 percent of rated RPM, which works out to roughly 2,850 RPM on that model. During the first 20 hours, load should be kept below 50 percent, and the initial oil change is due at exactly 25 hours rather than the standard 100-hour interval. After the break-in period is complete, the engine can be run at full rated output of 45 horsepower at 3,800 RPM.",
+      "gold_parents": [
+        "t25"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t27",
+      "turn_index": 26,
+      "user_message": "How do you properly winterize that diesel if the club is in a cold-weather region?",
+      "assistant_message": "For the Yanmar 4JH45 in a freezing climate, the raw water side of the cooling system must be completely drained or flushed with non-toxic antifreeze rated to at least minus 50 degrees Fahrenheit. The fuel system should be treated with a diesel stabilizer such as Star Tron at a ratio of one ounce per 16 gallons, and the tank should be filled to 95 percent capacity to minimize condensation. Cylinder fogging oil should be introduced through the air intake while the engine is shut down, and the battery should be removed and stored on a trickle charger rated at no more than 2 amps to avoid sulfation over the winter months.",
+      "gold_parents": [
+        "t26"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t28",
+      "turn_index": 27,
+      "user_message": "We also need to figure out the hotel situation — how many rooms should we book for a team of 14 students and 3 mentors?",
+      "assistant_message": "For 14 students and 3 mentors, you're looking at 17 people total. Assuming two students per room and mentors in single rooms, you'd need 7 student rooms and 3 mentor rooms, so 10 rooms minimum. Booking a block rate with the hotel as early as possible usually saves the team significant money.",
+      "gold_parents": [
+        "t19"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t29",
+      "turn_index": 28,
+      "user_message": "Is there a specific CAN bus ID we've assigned to the drivetrain SPARK MAX controllers?",
+      "assistant_message": "Yes, the four drivetrain SPARK MAX units have been assigned CAN IDs 1 through 4, with IDs 1 and 2 on the left side and IDs 3 and 4 on the right side. This assignment is documented in the team's wiring diagram from the January 14th build session. Any changes to those IDs need to be updated in both the hardware client and the robot code to avoid address conflicts.",
+      "gold_parents": [
+        "t20"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t30",
+      "turn_index": 29,
+      "user_message": "Now I'm thinking about how to break in the stability shoes during the training plan. How many miles should I put on them before I use them for the 20-mile long run?",
+      "assistant_message": "Most shoe manufacturers and running coaches recommend accumulating at least 30 to 50 miles in a new pair of running shoes before using them for a key workout or long run. For a stability shoe like the Adrenaline GTS 23, the medial post and structured midsole can feel stiff initially, so spreading those break-in miles across three to four weeks of easy runs and shorter mid-week runs is ideal. That means if your 20-mile long run is in week 13, you'd want to start wearing the new shoes no later than week 9 or 10 to be safe.",
+      "gold_parents": [],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t31",
+      "turn_index": 30,
+      "user_message": "Good point. Should I rotate two pairs of stability shoes or is one pair enough for the whole 16 weeks?",
+      "assistant_message": "Rotating two pairs is actually beneficial if your budget allows it, because foam midsoles need 24 to 48 hours to fully decompress and rebound after a run. Studies published in the Scandinavian Journal of Medicine and Science in Sports have shown that runners who rotate two or more pairs of shoes have a roughly 39 percent lower injury risk than those who use a single pair. For a 16-week block peaking around 38–40 miles per week, one pair will likely accumulate 300–350 miles by race day, which is near the typical 300–500 mile lifespan of a stability shoe, so a second pair also serves as a natural backup as the first pair wears down.",
+      "gold_parents": [
+        "t30"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t32",
+      "turn_index": 31,
+      "user_message": "For the drive team, do we need matching shirts or full uniforms for the competition?",
+      "assistant_message": "Most regional competitions require drive team members to wear matching shirts with the team number clearly visible, but full uniforms with logos are optional unless your team has a sponsor agreement requiring them. Check the specific event's drive team dress code in the event information packet, since some venues have additional safety requirements like closed-toe shoes. Ordering shirts at least two weeks before the event is usually necessary to guarantee delivery in time.",
+      "gold_parents": [
+        "t28"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t33",
+      "turn_index": 32,
+      "user_message": "What happens to the NEO 1.1 if it sustains current near its stall rating — is there a thermal shutoff?",
+      "assistant_message": "The NEO 1.1 does have an internal thermal protection circuit that activates at approximately 100 degrees Celsius. When the motor core reaches that temperature, the thermal cutoff triggers and the motor stops until it cools down, typically requiring about 90 seconds of rest before it resets automatically. To avoid triggering it in a match, the team should configure the SPARK MAX current limit to no more than 60 amps for sustained operation on the drivetrain.",
+      "gold_parents": [
+        "t23"
+      ],
+      "stale": false,
+      "superseded_by": null
+    },
+    {
+      "turn_id": "t34",
+      "turn_index": 33,
+      "user_message": "Given everything about our robot and the drivetrain setup, if we're pushing hard in a match and the NEO 1.1 thermal cutoff triggers, what's the chain of events from the motor shutting down to whether we can keep competing, and does any of this affect our ability to pass inspection?",
+      "assistant_message": null,
+      "gold_parents": [
+        "t13",
+        "t29",
+        "t33"
+      ],
+      "stale": false,
+      "superseded_by": null
+    }
+  ],
+  "evidence_turn_ids": [
+    "t3",
+    "t6",
+    "t7",
+    "t10",
+    "t13",
+    "t20",
+    "t23",
+    "t29",
+    "t33"
+  ],
+  "distractor_turn_ids": [
+    "t1",
+    "t2",
+    "t4",
+    "t5",
+    "t8",
+    "t9",
+    "t11",
+    "t12",
+    "t14",
+    "t15",
+    "t16",
+    "t17",
+    "t18",
+    "t19",
+    "t21",
+    "t22",
+    "t24",
+    "t25",
+    "t26",
+    "t27",
+    "t28",
+    "t30",
+    "t31",
+    "t32"
+  ],
+  "answer_checklist": [
+    {
+      "id": "c1",
+      "criterion": "The answer correctly states that the robot weight limit is 125 pounds (excluding bumpers), and that the team currently has 7 pounds of margin at 118 pounds.",
+      "required": true
+    },
+    {
+      "id": "c2",
+      "criterion": "The answer correctly identifies that the NEO 1.1 thermal cutoff triggers at approximately 100 degrees Celsius and requires about 90 seconds to reset, meaning the robot can continue competing once it resets but cannot drive until then.",
+      "required": true
+    },
+    {
+      "id": "c3",
+      "criterion": "The answer correctly references the SPARK MAX firmware version 1.6.2 and/or the CAN IDs 1–4 assigned to the drivetrain controllers as part of the drivetrain configuration that would be inspected.",
+      "required": true
+    },
+    {
+      "id": "c4",
+      "criterion": "The answer must not mention hotel room counts, van rental size, or drive team uniform requirements as relevant to inspection or match performance.",
+      "required": true
+    }
+  ],
+  "notes": "The three gold branches are: A (t1, t3, t5) establishing the 125-lb weight limit and 7-lb margin, B (t2, t7, t10) establishing SPARK MAX firmware 1.6.2 and CAN IDs 1–4, and C (t4, t8, t12) establishing the NEO 1.1 thermal cutoff at 100°C with a 90-second reset. The distractor branch D (t6, t9, t11) covers van rental, hotel rooms, and team uniforms — all plausible competition logistics but entirely irrelevant to the query about drivetrain shutdown and inspection.\n\nReference answer: If the NEO 1.1 thermal cutoff triggers during a match, the motor stops immediately and the robot loses drivetrain power on the affected side; after approximately 90 seconds of cooling, the thermal circuit resets automatically and the robot can drive again, so the team can continue competing in that match or subsequent ones if the cutoff clears in time. The robot's current weight of 118 pounds leaves 7 pounds of margin under the 125-pound limit (bumpers excluded), so the thermal event itself has no bearing on passing the weight inspection. For the electronics inspection, the team needs to confirm the four SPARK MAX controllers are running firmware version 1.6.2 and are correctly addressed at CAN IDs 1 through 4, since incorrect firmware or ID conflicts could flag a failure. Setting a sustained current limit of no more than 60 amps on each SPARK MAX is the recommended way to prevent the thermal cutoff from triggering again in future matches.",
+  "evidence_note": null,
+  "premise": "a high-school robotics team preparing for a regional competition",
+  "evidence_spans": null,
+  "benchmark_version": "1.1-length-ablation",
+  "length_class": "spliced_30"
+}
